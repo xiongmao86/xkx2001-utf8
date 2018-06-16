@@ -188,21 +188,21 @@ void cat(string file)
 	return;
 }
 
-void tail(string file)
-{
-	object user = this_object();
+// void tail(string file)
+// {
+// 	object user = this_object();
 
-	if( user && userp(user) && find_object(SECURITY_D) && !SECURITY_D->valid_read(file, user, "read_file") && wizardp(user) )
-  {
-		write("Permission denied。\n");
-		return;
-  }
+// 	if( user && userp(user) && find_object(SECURITY_D) && !SECURITY_D->valid_read(file, user, "read_file") && wizardp(user) )
+//   {
+// 		write("Permission denied。\n");
+// 		return;
+//   }
 
-	if( userp(user) && wizardp(user) )
-		log_file("/static/READ_LOG", sprintf("%s %s(%s) tail %s.\n", ctime(time()), geteuid(user), wizhood(user), file));
+// 	if( userp(user) && wizardp(user) )
+// 		log_file("/static/READ_LOG", sprintf("%s %s(%s) tail %s.\n", ctime(time()), geteuid(user), wizhood(user), file));
 
-	efun::tail( file );
-	return;
-}
+// 	efun::tail( file );
+// 	return;
+// }
 
 
