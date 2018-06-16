@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÂÌÖÞ");
+        set("short", "ç»¿æ´²");
         set("long", @long
-ÕâÀïÊÇÉ³Ä®ÖÐµÄÒ»´¦ÂÌÖÞ£¬´Ó´ËÎ÷ÉÏ¾Í¿ÉÒÔµ½´ïÐÇËÞº£¡£        	
-´Ë´¦¿´ÆðÀ´ÆðÏòÆ½ºÍ£¬Êµ¼ÊÉÏÐÇËÞµÜ×Ó³£³£ÔÚ´Ë×øµØ·ÖÔß£¬À´´Ë
-²»µÃ²»·À¡£  	
+è¿™é‡Œæ˜¯æ²™æ¼ ä¸­çš„ä¸€å¤„ç»¿æ´²ï¼Œä»Žæ­¤è¥¿ä¸Šå°±å¯ä»¥åˆ°è¾¾æ˜Ÿå®¿æµ·ã€‚        	
+æ­¤å¤„çœ‹èµ·æ¥èµ·å‘å¹³å’Œï¼Œå®žé™…ä¸Šæ˜Ÿå®¿å¼Ÿå­å¸¸å¸¸åœ¨æ­¤ååœ°åˆ†èµƒï¼Œæ¥æ­¤
+ä¸å¾—ä¸é˜²ã€‚  	
 long);
         set("exits", ([
             "westup" : __DIR__"shankou",

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�軨԰���");
+	set("short", "茶花园入口");
 	set("long", @LONG
-��һ����ɫ��ʯǽ���棬�������Կ���һ���ŵĴ����������ŵ����Ư����
-�����軨��ζ�����в���һ��������
+在一堵青色的石墙后面，隐隐可以看到一排排的垂柳，鼻中闻到随风漂来的
+淡淡茶花香味，心中不禁一阵清明。
 LONG);
 	set("exits", ([
 		"west" : __DIR__"wangfu5.c",

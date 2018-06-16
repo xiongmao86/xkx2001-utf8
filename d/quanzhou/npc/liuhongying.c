@@ -1,14 +1,14 @@
 //Cracked by Roath
-// liuhongying.c Áõºççø
+// liuhongying.c åˆ˜è™¹ç‘›
 // qfy July 30, 1996
 inherit NPC;
 
 void create()
 {
-	set_name("Áõºççø", ({ "liu hongying", "liu", "hongying" }));
-	set("long", "ÁõºççøÊÇÑïÍþÎä¹ÝµÄ½£²¿½ÌÍ·£¬µ±ÄêÔøÆ¾Ò»°Ñ³¤½£¶ÀÌôºÚÑª°ï¡£\n");
-	set("nickname", "¾øÇé½£");
-	set("gender", "Å®ÐÔ");
+	set_name("åˆ˜è™¹ç‘›", ({ "liu hongying", "liu", "hongying" }));
+	set("long", "åˆ˜è™¹ç‘›æ˜¯æ‰¬å¨æ­¦é¦†çš„å‰‘éƒ¨æ•™å¤´ï¼Œå½“å¹´æ›¾å‡­ä¸€æŠŠé•¿å‰‘ç‹¬æŒ‘é»‘è¡€å¸®ã€‚\n");
+	set("nickname", "ç»æƒ…å‰‘");
+	set("gender", "å¥³æ€§");
 	set("age", 34);
 
 	set_skill("literate", 60);
@@ -34,7 +34,7 @@ void init()
         object ob;
 
         ::init();
-        if ( interactive(ob=this_player()) && (int)ob->query_temp("mark/Âí") ) {
+        if ( interactive(ob=this_player()) && (int)ob->query_temp("mark/é©¬") ) {
                 remove_call_out("greeting");
                 call_out("greeting", 1, ob);
         }
@@ -44,12 +44,12 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        command("say »¶Ó­ÕâÎ»"+RANK_D->query_respect(ob)+"£¬Äã¿ÉÏòÎÒÑ§½£·¨(sword)£¬ÕÆ·¨(strike)£¬ÄÚ¹¦(force)£¬ÕÐ¼Ü(parry)¼°Çá¹¦(dodge)¡£");
+        command("say æ¬¢è¿Žè¿™ä½"+RANK_D->query_respect(ob)+"ï¼Œä½ å¯å‘æˆ‘å­¦å‰‘æ³•(sword)ï¼ŒæŽŒæ³•(strike)ï¼Œå†…åŠŸ(force)ï¼Œæ‹›æž¶(parry)åŠè½»åŠŸ(dodge)ã€‚");
 }
 
 int recognize_apprentice(object ob)
 {
-	if (!(int)ob->query_temp("mark/Âí"))
+	if (!(int)ob->query_temp("mark/é©¬"))
 		return 0; 
 	return 1;
 }

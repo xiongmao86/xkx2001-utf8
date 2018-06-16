@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-����һƬ������ԭ������������Ӳݴ�����ˮ���λ�ʱʱ�ɼ�ս��������
-�µĺ��ǡ����Ϯ����һ������֮����Ȼ������
+四周一片荒凉，原本的良田如今杂草丛生，水沟还时时可见战争所遗留
+下的骸骨。冷风袭来，一股凄凉之意油然而生。
 LONG
 	);
 	set("outdoors", "xiangyang");

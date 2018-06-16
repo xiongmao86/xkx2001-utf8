@@ -12,12 +12,12 @@ void do_back(object ob);
 
 void create()
 {
-	set("short", "¹°Öí·¿");
+	set("short", "æ‹±çŒªæˆ¿");
 	set("long", @LONG
-	ÕâÊÇÒ»¼ä×¨ÃÅÎª¹°Öí¶øÌØ±ğÉè¼ÆµÄ¹°Öí·¿¡£·¿¼äÀïÃæµÆ»ğÍ¨Ã÷£¬·Â·ğÓÀ
-Ô¶×¼±¸×ÅÎª¹°Öí¿ñÃÇ·şÎñËÆµÄ¡£·¿¼äµÄÖĞĞÄ·Å×ÅÒ»ÕÅÓÃ°ÙÄêÀÏËÉÊ÷Ä¾²ÄÌØÖÆµÄ¹°
-Öí×À(table)£¬ÖÜÎ§·Å×ÅËÄ°ÑéªÄ¾¿¿±³ÒÎ¡£×À×ÓÉÏ°Ú×ÅÒ»±¾¼Ç·Ö²¾(scoreboard)£¬
-±±±ßµÄÇ½ÉÏÌù×ÅÒ»ÕÅÖ½(paper)¡£
+	è¿™æ˜¯ä¸€é—´ä¸“é—¨ä¸ºæ‹±çŒªè€Œç‰¹åˆ«è®¾è®¡çš„æ‹±çŒªæˆ¿ã€‚æˆ¿é—´é‡Œé¢ç¯ç«é€šæ˜ï¼Œä»¿ä½›æ°¸
+è¿œå‡†å¤‡ç€ä¸ºæ‹±çŒªç‹‚ä»¬æœåŠ¡ä¼¼çš„ã€‚æˆ¿é—´çš„ä¸­å¿ƒæ”¾ç€ä¸€å¼ ç”¨ç™¾å¹´è€æ¾æ ‘æœ¨æç‰¹åˆ¶çš„æ‹±
+çŒªæ¡Œ(table)ï¼Œå‘¨å›´æ”¾ç€å››æŠŠæ¥ æœ¨é èƒŒæ¤…ã€‚æ¡Œå­ä¸Šæ‘†ç€ä¸€æœ¬è®°åˆ†ç°¿(scoreboard)ï¼Œ
+åŒ—è¾¹çš„å¢™ä¸Šè´´ç€ä¸€å¼ çº¸(paper)ã€‚
 LONG
 	);
 	set("pigging", 1);
@@ -25,7 +25,7 @@ LONG
 	set("item_desc", ([
 		"table" : (: look_table :),
 		"scoreboard" : (: look_scoreboard :),
-		"paper" : "ÇëÎñ±Ø¶Á help pig_cmds ºÍ help pig_rules¡£\n",
+		"paper" : "è¯·åŠ¡å¿…è¯» help pig_cmds å’Œ help pig_rulesã€‚\n",
 	]));
 
 	set("exits", ([
@@ -56,7 +56,7 @@ int do_knock(string arg)
 
         if ( (!arg )|| (arg != "table"))
 	  {       
-	        write("ÇÃÊ²Ã´Ñ½£¿(knock table)\n");
+	        write("æ•²ä»€ä¹ˆå‘€ï¼Ÿ(knock table)\n");
                 return 1;
 	  }
         if( (arg == "table") )
@@ -68,7 +68,7 @@ int do_knock(string arg)
                   }
 
                 jiang->move(environment(me));
-                message_vision("$NÉì³öÁ½¸öÖ¸Í·À´£¬ÇÃÁËÇÃ×À×Ó£¬Ö»¼ûÒ»Î»ØäÖí½«ÅÜÁË¹ıÀ´¡£\n", me);
+                message_vision("$Nä¼¸å‡ºä¸¤ä¸ªæŒ‡å¤´æ¥ï¼Œæ•²äº†æ•²æ¡Œå­ï¼Œåªè§ä¸€ä½åŠçŒªå°†è·‘äº†è¿‡æ¥ã€‚\n", me);
 		remove_call_out("do_back");
 	        call_out("do_back", 20 + random(10), jiang);
                 return 1;
@@ -79,7 +79,7 @@ int do_knock(string arg)
 void do_back(object ob)
 {
   message("vision", 
-	  "ØäÖí½«Éì³ö±Ç×ÓĞáÁËĞá£¬ËÆºõÎÅµ½ÁËÊ²Ã´ÏãÎ¶£¬¼±¼±Ã¦Ã¦µØÅÜÁË³öÈ¥¡£\n", 
+	  "åŠçŒªå°†ä¼¸å‡ºé¼»å­å—…äº†å—…ï¼Œä¼¼ä¹é—»åˆ°äº†ä»€ä¹ˆé¦™å‘³ï¼Œæ€¥æ€¥å¿™å¿™åœ°è·‘äº†å‡ºå»ã€‚\n", 
 	  environment(ob), ({ob}));
   ob->move("/d/city/duchang2");
 }
@@ -100,6 +100,6 @@ string look_scoreboard()
 int valid_leave(object me, string dir)
 {
 	if (me->query_temp("pigging_seat"))
-		return notify_fail("ÏÈÀë¿ª¹°Öí×À²ÅÄÜĞĞ¶¯¡£\n");
+		return notify_fail("å…ˆç¦»å¼€æ‹±çŒªæ¡Œæ‰èƒ½è¡ŒåŠ¨ã€‚\n");
 	return ::valid_leave(me, dir);
 }

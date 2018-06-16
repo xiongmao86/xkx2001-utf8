@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÈÕÔÂÉñ½ÌÒª·¸Ãûµ¥", ({"rysj list", "list"}));
+        set_name("æ—¥æœˆç¥æ•™è¦çŠ¯åå•", ({"rysj list", "list"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
                 set("material", "paper");
         }
 }

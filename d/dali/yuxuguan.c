@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÓñÐé¹Û");
+	set("short", "çŽ‰è™šè§‚");
 	set("long", @LONG
-ÓñÐé¹ÛÄÚÊ®·ÖÇå¼ì£¬ÕýÖÐ¹©×ÅÕÅ¹ûÀÏ¡¢ÂÀ¶´±ö¡¢ºÎÏã¹ÃµÈ°ËÏÉµÄËÜÏñ£¬Ïã»ð
-çÔÈÆ£¬¹©×ÀÉÏ°Ú×ÅÐ©ó´ÌÒ¡£ÕýÖÐ·ÅÁË¼¸¸öÆÑÍÅ¡£ÅÔ±ßÒ»¸öÐ¡¼äÀï°Ú×Å×ÀÒÎ£¬ÊÇÓñ
-ÐéÉ¢ÈËÐÝÏ¢ºÍÊÚÍ½µÄµØ·½¡£
+çŽ‰è™šè§‚å†…ååˆ†æ¸…æ£€ï¼Œæ­£ä¸­ä¾›ç€å¼ æžœè€ã€å•æ´žå®¾ã€ä½•é¦™å§‘ç­‰å…«ä»™çš„å¡‘åƒï¼Œé¦™ç«
+ç¼­ç»•ï¼Œä¾›æ¡Œä¸Šæ‘†ç€äº›èŸ æ¡ƒã€‚æ­£ä¸­æ”¾äº†å‡ ä¸ªè’²å›¢ã€‚æ—è¾¹ä¸€ä¸ªå°é—´é‡Œæ‘†ç€æ¡Œæ¤…ï¼Œæ˜¯çŽ‰
+è™šæ•£äººä¼‘æ¯å’ŒæŽˆå¾’çš„åœ°æ–¹ã€‚
 LONG);
 	set("objects", ([
 		"/kungfu/class/dali/daobaifeng.c" : 1,

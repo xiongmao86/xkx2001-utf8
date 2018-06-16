@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tygirl.c Ì¨ÒÄ¹ÃÄï
+// tygirl.c å°å¤·å§‘å¨˜
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ì¨ÒÄ¹ÃÄï", ({ "gu niang", "girl" }) );
-	set("long", "Ò»Î»ÄêÇáµÄÌ¨ÒÄ¹ÃÄï£¬ÉÏ×ÅÎŞÁì³Ä»¨¶Ô½ó£¬ÏÂ´©ÎåÉ«Í²È¹¡£\n");
+	set_name("å°å¤·å§‘å¨˜", ({ "gu niang", "girl" }) );
+	set("long", "ä¸€ä½å¹´è½»çš„å°å¤·å§‘å¨˜ï¼Œä¸Šç€æ— é¢†è¡¬èŠ±å¯¹è¥Ÿï¼Œä¸‹ç©¿äº”è‰²ç­’è£™ã€‚\n");
 
 	set("age", 18);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

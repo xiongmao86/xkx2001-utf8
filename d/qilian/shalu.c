@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯɳ·");
+        set("short", "碎石沙路");
         set("long", @LONG
-������һ����Ƨ����ʯɳ·�ϣ���������һ����ΰ�Ĺذ�������ͨ
-���Ȫ��
+你走在一条荒僻的碎石沙路上，东北面有一座雄伟的关隘，西南通
+向酒泉。
 LONG
         );
         set("exits", ([

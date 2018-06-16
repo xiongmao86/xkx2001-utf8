@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/obj/coffin.c Ê¯¹×
+// /d/emei/obj/coffin.c çŸ³æ£º
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIW"Ê¯¹×"NOR, ({ "coffin", "guan cai", "guan" }) );
+	set_name(HIW"çŸ³æ£º"NOR, ({ "coffin", "guan cai", "guan" }) );
 	set_weight(3000);
 	set_max_encumbrance(50000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ú");
-                set("long", "ÕâÊÇÒ»¾ß°×ÓñÊ¯µñ³ÉµÄÊ¯¹×£¬ÀïÃæÌÉ×ÅÒ»¾ßº¡¹Ç¡£\n");
+		set("unit", "å£");
+                set("long", "è¿™æ˜¯ä¸€å…·ç™½ç‰çŸ³é›•æˆçš„çŸ³æ£ºï¼Œé‡Œé¢èººç€ä¸€å…·éª¸éª¨ã€‚\n");
 		set("value", 1000);
 //		set("material", "stone");
 		set("no_get",1);
@@ -41,20 +41,20 @@ int do_put(string arg)
 	me = this_player();
 
 	if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
                 
         if( item == "all" ) {
-		write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+		write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
 		return 1;
 	}
                                                                 
 	sscanf(item, "%d %s", amount, item);
 	
 	if( !objectp(obj = present(item, me)) )
-		return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+		return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( obj->query("no_drop") ) {
-		write("ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+		write("è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 		return 1;
 	}
 	return 0;
@@ -63,9 +63,9 @@ int do_put(string arg)
 int do_open(string arg)
 {
 	if ( !arg && ( arg != "coffin" ) && ( arg != "guan" ) )
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-	return notify_fail("°×ÓñÊ¯¹×¸ÇÒÑ¾­ÊÇ¿ªµÄÁË¡£\n");
+	return notify_fail("ç™½ç‰çŸ³æ£ºç›–å·²ç»æ˜¯å¼€çš„äº†ã€‚\n");
 }
 
 

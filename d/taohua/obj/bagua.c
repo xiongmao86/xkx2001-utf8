@@ -24,18 +24,18 @@ void init();
 
 void create()
 {
-	set_name("Ìú°ËØÔ", ({ "tie bagua", "bagua" }) );
+	set_name("é“å…«å¦", ({ "tie bagua", "bagua" }) );
 	set_weight(10000);
 	set_color(GRN);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else
 	{
-		set("long", "Ìú°ËØÔÊÇ´¿ÌúËùÖı£¬·ÖÁ¿¼«ÖØ£¬ÉÏÓĞ°ËØÔÍ¼°¸¡£\n"
-			"³öÕóÖ¸Áî£ºchuzhen <·½Ïò>\n");
-		set("unit", "Ã¶");
-		set("wield_msg", GRN "$NÓÉ¿Ú´üÀïÄÃ³ö$n¡£\n" NOR );
-		set("unwield_msg", GRN "$N½«$n·Å»Ø¿Ú´üÖĞ¡£\n" NOR );
+		set("long", "é“å…«å¦æ˜¯çº¯é“æ‰€é“¸ï¼Œåˆ†é‡æé‡ï¼Œä¸Šæœ‰å…«å¦å›¾æ¡ˆã€‚\n"
+			"å‡ºé˜µæŒ‡ä»¤ï¼šchuzhen <æ–¹å‘>\n");
+		set("unit", "æš");
+		set("wield_msg", GRN "$Nç”±å£è¢‹é‡Œæ‹¿å‡º$nã€‚\n" NOR );
+		set("unwield_msg", GRN "$Nå°†$næ”¾å›å£è¢‹ä¸­ã€‚\n" NOR );
 		set("value", 1600);
 		set("tanzhi",200);
 	}
@@ -60,30 +60,30 @@ int do_divine(string arg)
 	string region;
 	int i, lvl, diff, busy_time;
 
-	if (me->is_busy() || me->query_temp("pending/exercising") || me->query_temp("exit_blocked")) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+	if (me->is_busy() || me->query_temp("pending/exercising") || me->query_temp("exit_blocked")) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 	myfam = (mapping)me->query("family");	
-	if( !myfam || myfam["family_name"] != "ÌÒ»¨µº" ) return notify_fail("Äã·ÇÌÒ»¨µÜ×Ó£¬²»ÄÜ½«ÆæÃÅ¶İ¼×ÓÃÓÚÕ¼²·¡£\n");
-	if( (lvl = (int)me->query_skill("qimen-dunjia", 1)) < 60 ) return notify_fail("ÄãÆæÃÅ¶İ¼×µÈ¼¶²»¹»¡£\n");
-	if( me->query("jingli") < 100 ) return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬²»×ãÒÔÕ¼²·£¡\n");
-	if( me->query("jing") < 100 ) return notify_fail("ÄãµÄ¾«²»¹»£¬²»×ãÒÔÕ¼²·£¡\n");
-	if (!arg) return notify_fail("ÄãÒªÕ¼²·Ë­µÄÎ»ÖÃ£¿\n");
-	if( !(ob = find_player(arg)) ) if( !(ob = find_living(arg)) ) return notify_fail("ÏÖÔÚÃ»Õâ¸öÈË.\n");
-	message_vision(CYN"$NÄÃÆğÒ»Ö»Ìú°ËØÔÆÁĞÄÄıÆø£¬Ä´Ö¸ÒÀ´ÎÆşÏòÌú°ËØÔÉÏ×Ó¡¢³ó¡¢Òú¡¢Ã®¡¢³½¡¢ËÈ¡¢Îç¡¢Î´¡¢Éê¡¢ÓÏ¡¢Ğç¡¢º¥\n¸÷¸ö·½Î»£¬Ï¸ĞÄÍÆËãÆğÀ´¡­¡­\n\n\n"NOR, me);
+	if( !myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›" ) return notify_fail("ä½ éæ¡ƒèŠ±å¼Ÿå­ï¼Œä¸èƒ½å°†å¥‡é—¨éç”²ç”¨äºå åœã€‚\n");
+	if( (lvl = (int)me->query_skill("qimen-dunjia", 1)) < 60 ) return notify_fail("ä½ å¥‡é—¨éç”²ç­‰çº§ä¸å¤Ÿã€‚\n");
+	if( me->query("jingli") < 100 ) return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼Œä¸è¶³ä»¥å åœï¼\n");
+	if( me->query("jing") < 100 ) return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿï¼Œä¸è¶³ä»¥å åœï¼\n");
+	if (!arg) return notify_fail("ä½ è¦å åœè°çš„ä½ç½®ï¼Ÿ\n");
+	if( !(ob = find_player(arg)) ) if( !(ob = find_living(arg)) ) return notify_fail("ç°åœ¨æ²¡è¿™ä¸ªäºº.\n");
+	message_vision(CYN"$Næ‹¿èµ·ä¸€åªé“å…«å¦å±å¿ƒå‡æ°”ï¼Œæ‹‡æŒ‡ä¾æ¬¡æå‘é“å…«å¦ä¸Šå­ã€ä¸‘ã€å¯…ã€å¯ã€è¾°ã€å·³ã€åˆã€æœªã€ç”³ã€é…‰ã€æˆŒã€äº¥\nå„ä¸ªæ–¹ä½ï¼Œç»†å¿ƒæ¨ç®—èµ·æ¥â€¦â€¦\n\n\n"NOR, me);
 	busy_time = 25 - lvl/10;
 	if(busy_time < 1) busy_time = 1;
 	me->start_busy(busy_time);
 	me->add("jing", -50);
 	me->add("jingli", -50);
-	if( arg == me->query("zangbu_yapu")) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÇÀïÒ®...\n");
-	if( !(where = environment(ob))) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÇÀïÒ®...\n");
-	if( !wizardp(me) && wizardp(ob) ) return notify_fail("´óµ¨£¡¾¹ÏëÄ±º¦Î×Ê¦£¡\n");
-	if( strsrch(file_name(where), "/d/") != 0 ||  undefinedp(region = region_names[explode(file_name(where), "/")[1]]) ) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÇÀïÒ®...\n");
+	if( arg == me->query("zangbu_yapu")) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨é‚£é‡Œè€¶...\n");
+	if( !(where = environment(ob))) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨é‚£é‡Œè€¶...\n");
+	if( !wizardp(me) && wizardp(ob) ) return notify_fail("å¤§èƒ†ï¼ç«Ÿæƒ³è°‹å®³å·«å¸ˆï¼\n");
+	if( strsrch(file_name(where), "/d/") != 0 ||  undefinedp(region = region_names[explode(file_name(where), "/")[1]]) ) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨é‚£é‡Œè€¶...\n");
 	env = environment(me);
 	diff = (int)(me->query("combat_exp")/ob->query("combat_exp"));
 	if( lvl > 120 && !ob->query_temp("apply/name") && random(lvl / 10 + me->query_int() + diff) > ob->query_kar()/2 )
 	{ 
 		me->add("jing", -random(200-lvl));
-		printf("%s(%s)ÏÖÔÚÔÚ%s%s¡£\n", (string)ob->name(), (string)ob->query("id"), region, (string)where->query("short"));
+		printf("%s(%s)ç°åœ¨åœ¨%s%sã€‚\n", (string)ob->name(), (string)ob->query("id"), region, (string)where->query("short"));
 		if( me->query("combat_exp") < me->query("int") * 5000 )
 		{
 			me->add("combat_exp", busy_time/2+1);
@@ -94,23 +94,23 @@ int do_divine(string arg)
 		{
 			do_route(file_name(where), me);
 		}
-		if( (random(lvl/2)+diff) < ob->query("kar") ) tell_object(ob, HIB"Äã¸Ğ¾õĞÄÉñ²»¶¨£¬ËÆºõÓĞÈËÔÚ°µÖĞ¿úÊÓ×ÅÄã......\n"NOR);
+		if( (random(lvl/2)+diff) < ob->query("kar") ) tell_object(ob, HIB"ä½ æ„Ÿè§‰å¿ƒç¥ä¸å®šï¼Œä¼¼ä¹æœ‰äººåœ¨æš—ä¸­çª¥è§†ç€ä½ ......\n"NOR);
 	}
 	else if( me->query_int() > random(ob->query_kar()) )
 	{
 		me->add("jing", -random(200-lvl));
-		printf("%s(%s)ÏÖÔÚÔÚ%sÒ»´ø¡£\n", (string)ob->name(), (string)ob->query("id"), region);
+		printf("%s(%s)ç°åœ¨åœ¨%sä¸€å¸¦ã€‚\n", (string)ob->name(), (string)ob->query("id"), region);
 		if( me->query("combat_exp") < me->query("int") * 5000 )
 		{
 			me->add("combat_exp", busy_time/3+2);
 			if (me->query("potential")<me->query("max_potential")) me->add("potential",busy_time/4+1);
 		}
 		me->add_temp("apply/karma",random(2));
-	 	if( (random(lvl/2)+diff) < ob->query("kar")/2 ) tell_object(ob, HIB"Äã¸Ğ¾õĞÄÉñ²»¶¨£¬ËÆºõÓĞÈËÔÚ°µÖĞ¿úÊÓ×ÅÄã......\n"NOR);
+	 	if( (random(lvl/2)+diff) < ob->query("kar")/2 ) tell_object(ob, HIB"ä½ æ„Ÿè§‰å¿ƒç¥ä¸å®šï¼Œä¼¼ä¹æœ‰äººåœ¨æš—ä¸­çª¥è§†ç€ä½ ......\n"NOR);
 	}
 	else
 	{
-		write("Äãéé¾«½ßÂÇÍÆËãÁË°ëÉÎ£¬È´·¢ÏÖÒ»ÎŞËùµÃ¡­¡­ \n");
+		write("ä½ æ®šç²¾ç«­è™‘æ¨ç®—äº†åŠæ™Œï¼Œå´å‘ç°ä¸€æ— æ‰€å¾—â€¦â€¦ \n");
 		me->set("jing", 1);
 		me->improve_skill("qimen-dunjia",random((int)me->query_int()));
 	}
@@ -124,27 +124,27 @@ int do_chuzhen(string arg)
 	string dest;
 	mapping exit;
 
-	if(!arg) return notify_fail("ÄãÒª´ÓÄÄ¸ö·½Ïò³öÕó£¿\n");
+	if(!arg) return notify_fail("ä½ è¦ä»å“ªä¸ªæ–¹å‘å‡ºé˜µï¼Ÿ\n");
 	me = this_player();
-	if (me->is_busy() || me->query_temp("pending/exercising") || me->query_temp("exit_blocked")) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+	if (me->is_busy() || me->query_temp("pending/exercising") || me->query_temp("exit_blocked")) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 	env = environment(me);	
-	if( !env->query("th_buzhen") ) return notify_fail("ÕâÀï²¢ÎŞ²¼ÓĞÆæÃÅÕó·¨¡£\n");
-	if( me->query_skill("qimen-dunjia", 1) < 60 ) return notify_fail("ÄãµÄÆæÃÅ¶İ¼×ĞŞÎª²»¹»£¬ÎŞ·¨¿´³öÕó·¨ÃØ°Â¡£\n");	
+	if( !env->query("th_buzhen") ) return notify_fail("è¿™é‡Œå¹¶æ— å¸ƒæœ‰å¥‡é—¨é˜µæ³•ã€‚\n");
+	if( me->query_skill("qimen-dunjia", 1) < 60 ) return notify_fail("ä½ çš„å¥‡é—¨éç”²ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•çœ‹å‡ºé˜µæ³•ç§˜å¥¥ã€‚\n");	
 	if( me->query_skill("qimen-dunjia",1) < env->query("th_pozhen")/3)
 	{
-		message_vision(CYN"$N×øÔÚµØÉÏÚ¤Ë¼¿àÏë£¬Í»È»Á³É«´ó±ä£¬¿ÚÍÂÏÊÑª£¡\n"NOR,me);
+		message_vision(CYN"$Nååœ¨åœ°ä¸Šå†¥æ€è‹¦æƒ³ï¼Œçªç„¶è„¸è‰²å¤§å˜ï¼Œå£åé²œè¡€ï¼\n"NOR,me);
 		me->unconcious();
 		return notify_fail("");
 	}
 	exit = env->query("org_exits");
 	dest = exit[arg];
-	if(undefinedp(exit[arg])) return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞ³öÂ·¡£\n");
+	if(undefinedp(exit[arg])) return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
 	if( !(obj = find_object(dest)) ) call_other(dest, "???");
-	if( !(obj = find_object(dest)) ) return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞ³öÂ·¡£\n");
-	message_vision(CYN"$NÄıË¼Æ¬¿Ì£¬ÉíĞÎ×óÒ»×ª£¬ÓÒÒ»Ğı£¬ºöÈ»ÏûÊ§µÃÎŞÓ°ÎŞ×Ù¡£\n"NOR,me);	
+	if( !(obj = find_object(dest)) ) return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
+	message_vision(CYN"$Nå‡æ€ç‰‡åˆ»ï¼Œèº«å½¢å·¦ä¸€è½¬ï¼Œå³ä¸€æ—‹ï¼Œå¿½ç„¶æ¶ˆå¤±å¾—æ— å½±æ— è¸ªã€‚\n"NOR,me);	
 	if( me->move(obj) )
 	{
-		message( "vision", me->name()+"¿ì²½×ßÁË¹ıÀ´¡£\n"NOR, 
+		message( "vision", me->name()+"å¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n"NOR, 
 		environment(me), ({me}) );
 		return 1;
 	}
@@ -176,20 +176,20 @@ int do_route(string arg, object me)
 {
 	int ready;
 
-	if (status == 1) return notify_fail("ÕıÔÚËÑË÷Â·Í¾. ÓÃ printroute À´ÏÔÊ¾½á¹û¡£\n");
+	if (status == 1) return notify_fail("æ­£åœ¨æœç´¢è·¯é€”. ç”¨ printroute æ¥æ˜¾ç¤ºç»“æœã€‚\n");
 	if (objectp(route_finder)) destruct(route_finder);
 	route_finder = new (ROUTER);
 	if (! objectp(route_finder))
 	{
 		target_room = 0;
-		return notify_fail("Ææ¹Ö,²»ÄÜÔì³ö "+ROUTER+"?\n");
+		return notify_fail("å¥‡æ€ª,ä¸èƒ½é€ å‡º "+ROUTER+"?\n");
 	}
 	status = 1;
 	target_room = find_object(arg);
 	if (! target_room)  target_room = load_object(arg);
 	if (! objectp(target_room))
 	{
-	    // return notify_fail("Ä¿±ê·¿¼ä "+arg+" ²»´æÔÚ.\n");
+	    // return notify_fail("ç›®æ ‡æˆ¿é—´ "+arg+" ä¸å­˜åœ¨.\n");
 	    // assume arg is a short name, not file path
 	    ready = route_finder->traverse(base_name(environment(me)), (: visit_room :), arg);
 	}
@@ -198,7 +198,7 @@ int do_route(string arg, object me)
 		ready = route_finder->find_route(base_name(environment(me)), base_name(target_room));
 	}
 	if (ready)  return do_printroute(me);
-	return notify_fail("ÒÑ¾­¿ªÊ¼ËÑË÷Â·Í¾£¬ÓÃ printroute À´ÏÔÊ¾½á¹û.\n");
+	return notify_fail("å·²ç»å¼€å§‹æœç´¢è·¯é€”ï¼Œç”¨ printroute æ¥æ˜¾ç¤ºç»“æœ.\n");
 }
 
 int do_printroute(object me)
@@ -210,17 +210,17 @@ int do_printroute(object me)
 	string  room_file, room_short;
 
 	lvl = me->query_skill("qimen-dunjia",1);
-	if (status == 0) return notify_fail("ÇëÏÈÓÃ route À´²éÂ·Í¾.\n");
+	if (status == 0) return notify_fail("è¯·å…ˆç”¨ route æ¥æŸ¥è·¯é€”.\n");
 	if (! objectp(route_finder))
 	{
 		status = 0;
 		target_room = 0;
 		route_finder = 0;
-		return notify_fail("Ææ¹Ö£¬object maproute ²»¼ûÁË.\n");
+		return notify_fail("å¥‡æ€ªï¼Œobject maproute ä¸è§äº†.\n");
 	}
 	if (! route_finder->traverse_finish())
 	{
-		return notify_fail("»¹Ã»ÕÒµ½£¬ÇëµÈµÈÔÙÀ´²é.\n");
+		return notify_fail("è¿˜æ²¡æ‰¾åˆ°ï¼Œè¯·ç­‰ç­‰å†æ¥æŸ¥.\n");
 	}
 	status = 0;
 	if (target_room)
@@ -237,18 +237,18 @@ int do_printroute(object me)
 
 	if (status == 2)
 	{
-		return notify_fail("Ã»ÓĞÕâ¸ö·¿¼ä.\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªæˆ¿é—´.\n");
 		status = 0;
 	}
 	if ((int)route == 1)
 	{
-		return notify_fail("Ã»ÓĞÈ¥´Ë·¿¼äµÄµÀÂ·.\n");
+		return notify_fail("æ²¡æœ‰å»æ­¤æˆ¿é—´çš„é“è·¯.\n");
 	}
 	if (sizeof(route) <= 1)
 	{
-		return notify_fail("Äã²»¾ÍÔÚÕâ¶ùÂğ£¿\n");
+		return notify_fail("ä½ ä¸å°±åœ¨è¿™å„¿å—ï¼Ÿ\n");
 	}
-	printf("ÕÒµ½ÁËµÀÂ·£¬´ÓÕâÀï¿ªÊ¼£º\n");
+	printf("æ‰¾åˆ°äº†é“è·¯ï¼Œä»è¿™é‡Œå¼€å§‹ï¼š\n");
 	n = sizeof(route);
 	if(n > lvl/20) n = lvl/20;
 	wizp = wizardp(me);
@@ -263,24 +263,24 @@ int do_printroute(object me)
 		}
 		else
 		{
-			room_short="²»ÖªµÀÄÄ¶ù";
+			room_short="ä¸çŸ¥é“å“ªå„¿";
 	    }
 	    info = route[i][room_file];
 	    if (info["dir"] == "cross_river")
 		{
-			printf("°Ú¶É¹ı"+room->query("name"));
+			printf("æ‘†æ¸¡è¿‡"+room->query("name"));
 		}
 		else if (strsrch(info["dir"], "out_sea")==0)
 		{
-			printf("×ø´¬¶Éº£");
+			printf("åèˆ¹æ¸¡æµ·");
 		}
 		else
 		{
-			printf("Íù %s ", info["dir"]);
+			printf("å¾€ %s ", info["dir"]);
 		}
-		printf("µ½ %s %s, ¾àÀë %s²½\n", room_short, wizp?"("+room_file+")":"", chinese_number(info["dist"]));
+		printf("åˆ° %s %s, è·ç¦» %sæ­¥\n", room_short, wizp?"("+room_file+")":"", chinese_number(info["dist"]));
 	}
-	if(n < sizeof(route)) printf("......²»ÖªµÀÄÄ¶ù.\n");
+	if(n < sizeof(route)) printf("......ä¸çŸ¥é“å“ªå„¿.\n");
 	return 1;
 }
 
@@ -288,10 +288,10 @@ int do_taohua(string arg)
 {
 	object me, obj;
 	me = this_player();
-	if (me->query("family/family_name") != "ÌÒ»¨µº") return 0;
+	if (me->query("family/family_name") != "æ¡ƒèŠ±å²›") return 0;
 
 	if(arg) return 0;
-	write("ÄãÄ¿Ç°ÓĞÌÒ»¨¾­Ñé"+me->query("th_exp")+"µã£¬ÌÒ»¨Ç±ÄÜ"+me->query("th_pot")+"µã¡£\n");
+	write("ä½ ç›®å‰æœ‰æ¡ƒèŠ±ç»éªŒ"+me->query("th_exp")+"ç‚¹ï¼Œæ¡ƒèŠ±æ½œèƒ½"+me->query("th_pot")+"ç‚¹ã€‚\n");
 	return 1;
 }
 
@@ -308,26 +308,26 @@ int do_convert(string arg)
 	th_pot = me->query("th_pot");
 	use_pot = max_pot-pot;
 	if(use_pot > th_pot) use_pot = th_pot;
-	if (me->query("family/family_name") != "ÌÒ»¨µº") return 0;
-	if(!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºconvert || huan [ exp || pot ] \n");
+	if (me->query("family/family_name") != "æ¡ƒèŠ±å²›") return 0;
+	if(!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconvert || huan [ exp || pot ] \n");
 	if(arg == "exp")
 	{
 		if(th_exp == 0)
-		return notify_fail("ÄãÏÖÔÚÃ»ÓĞÌÒ»¨¾­Ñé¡£\n");
-		write("Äã½«"+th_exp+"µãÌÒ»¨¾­ÑéÈ«²¿×ª»»ÎªÊµ¼Ê¾­Ñé¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ²¡æœ‰æ¡ƒèŠ±ç»éªŒã€‚\n");
+		write("ä½ å°†"+th_exp+"ç‚¹æ¡ƒèŠ±ç»éªŒå…¨éƒ¨è½¬æ¢ä¸ºå®é™…ç»éªŒã€‚\n");
 		me->add("combat_exp",th_exp);
 		me->delete("th_exp");
 	}
 	else if(arg == "pot")
 	{
 		if(th_pot == 0)
-		return notify_fail("ÄãÏÖÔÚÃ»ÓĞÌÒ»¨Ç±ÄÜ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ²¡æœ‰æ¡ƒèŠ±æ½œèƒ½ã€‚\n");
 		if(pot >= max_pot)
-		return notify_fail("ÄãµÄÇ±ÄÜÒÑ¾­ÂúÁË£¬ÎŞ·¨×ª»»ÌÒ»¨Ç±ÄÜ¡£\n");
-		write("Äã½«"+use_pot+"µãÌÒ»¨Ç±ÄÜ×ª»»ÎªÊµ¼ÊÇ±ÄÜ£¬»¹Ê£ÏÂ"+(th_pot-use_pot)+"µã¡£\n");
+		return notify_fail("ä½ çš„æ½œèƒ½å·²ç»æ»¡äº†ï¼Œæ— æ³•è½¬æ¢æ¡ƒèŠ±æ½œèƒ½ã€‚\n");
+		write("ä½ å°†"+use_pot+"ç‚¹æ¡ƒèŠ±æ½œèƒ½è½¬æ¢ä¸ºå®é™…æ½œèƒ½ï¼Œè¿˜å‰©ä¸‹"+(th_pot-use_pot)+"ç‚¹ã€‚\n");
 		me->add("potential",use_pot);
 		me->add("th_pot", -use_pot);
 	}
-	else return notify_fail("Ö¸Áî¸ñÊ½£ºconvert || huan [ exp || pot ] \n");
+	else return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconvert || huan [ exp || pot ] \n");
 	return 1;
 }

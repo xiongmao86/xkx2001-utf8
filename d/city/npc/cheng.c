@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cheng.c ³ÌÒ©·¢
+// cheng.c ç¨‹è¯å‘
 
 #include <ansi.h>
 inherit NPC;
@@ -7,14 +7,14 @@ inherit F_SKILL;
 
 void create()
 {
-	set_name("³ÌÒ©·¢", ({ "cheng yaofa", "cheng" }));
+	set_name("ç¨‹è¯å‘", ({ "cheng yaofa", "cheng" }));
         set_color("$YEL$");
-	set("title", "ÑïÖİÖª¸®");
-	set("gender", "ÄĞĞÔ");
+	set("title", "æ‰¬å·çŸ¥åºœ");
+	set("gender", "ç”·æ€§");
 	set("age", 43);
 	set("str", 20);
 	set("dex", 20);
-	set("long", "Ëû¾ÍÊÇ³ÌÒ©·¢£¬ÑïÖİÏÖÈÎÖª¸®¡£\n");
+	set("long", "ä»–å°±æ˜¯ç¨‹è¯å‘ï¼Œæ‰¬å·ç°ä»»çŸ¥åºœã€‚\n");
 	set("combat_exp", 30000);
 	set("shen_type", 0);
 	set("attitude", "heroism");
@@ -39,7 +39,7 @@ void create()
 
 int accept_kill(object me)
 {
-        command("say À´ÈË°¡£¬ÓĞ´Ì¿Í£¡\n");
+        command("say æ¥äººå•Šï¼Œæœ‰åˆºå®¢ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;
@@ -47,7 +47,7 @@ int accept_kill(object me)
 
 int accept_fight(object me)
 {
-        command("say ±¾¹ÙÕâµãÈı½ÅÃ¨ÊÖÒÕÔõ¸Ò¸úÈË¹ıÕĞ£¿");
+        command("say æœ¬å®˜è¿™ç‚¹ä¸‰è„šçŒ«æ‰‹è‰ºæ€æ•¢è·Ÿäººè¿‡æ‹›ï¼Ÿ");
         return 0;
 }
 

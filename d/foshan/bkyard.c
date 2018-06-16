@@ -7,17 +7,17 @@ int do_jiaofen(string);
 
 void create()
 {
-        set("short", "ÆÝ¼ÒºóÔº");
+        set("short", "æˆšå®¶åŽé™¢");
         set("long", @LONG
-ÕâÀïÊÇ¸öÐ¡²ËÔ°£¬ÔºÖÐÖÖÁËºÃ¶àÊß²Ë¡£ÔÚÔ°×ÓµÄÒ»½ÇÓÐ¸ö·à³Ø(chi)£¬
-ÒþÒþÆ®À´Ð©·à±ãµÄÎ¶µÀ¡£
+è¿™é‡Œæ˜¯ä¸ªå°èœå›­ï¼Œé™¢ä¸­ç§äº†å¥½å¤šè”¬èœã€‚åœ¨å›­å­çš„ä¸€è§’æœ‰ä¸ªç²ªæ± (chi)ï¼Œ
+éšéšé£˜æ¥äº›ç²ªä¾¿çš„å‘³é“ã€‚
 LONG
         );
         set("exits", ([
 		"east" : __DIR__"yard",
 	]));
 	set("item_desc", ([
-		"chi" : "·à³ØÅÔÓÐ¸ö·àÉ×£¬¿ÉÒÔÓÃÀ´½½·à(jiaofen)¡£\n",
+		"chi" : "ç²ªæ± æ—æœ‰ä¸ªç²ªå‹ºï¼Œå¯ä»¥ç”¨æ¥æµ‡ç²ª(jiaofen)ã€‚\n",
 	]));
 	set("objects", ([
 		__DIR__"obj/kongxin" : 2,
@@ -38,11 +38,11 @@ int do_jiaofen(string arg)
         object me;
         me = this_player();
 
-	me->receive_damage("qi",10, "¸ÉÅ©»îÀÛËÀÁË");
+	me->receive_damage("qi",10, "å¹²å†œæ´»ç´¯æ­»äº†");
 	me->add_temp("qi/work",1);
-	message_vision("$NÒ»É×ÓÖÒ»É×µØ½½·à£¬ÀÛµÃÑüËáÍÈÌÛ¡£\n", me);
+	message_vision("$Nä¸€å‹ºåˆä¸€å‹ºåœ°æµ‡ç²ªï¼Œç´¯å¾—è…°é…¸è…¿ç–¼ã€‚\n", me);
 	if (me->query("qi")<40)
-		tell_object(me, "ÄãÒÑ¾­ÀÛµÃÖ±²»ÆðÑüÁË¡£\n", me);
+		tell_object(me, "ä½ å·²ç»ç´¯å¾—ç›´ä¸èµ·è…°äº†ã€‚\n", me);
 	return 1;
 }
 

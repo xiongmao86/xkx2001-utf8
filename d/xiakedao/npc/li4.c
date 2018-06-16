@@ -1,5 +1,5 @@
 //Cracked by Roath
-// li4.c ÏÀ¿ÍµºÀîËÄ
+// li4.c ä¾ å®¢å²›æå››
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -11,10 +11,10 @@ void greeting(object);
 
 void create()
 {
-	set_name("ÀîËÄ", ({ "li si", "li"}));
-	set("long", "ËûÉíĞÎÉõ¸ß£¬µ«Ê®·ÖÊİÏ÷£¬ÁôÒ»Æ²ÊóÎ²Ğë£¬Á³É«Òõ³Á¡£\n");
-	set("nickname", "·£¶ñÊ¹");
-	set("gender", "ÄĞĞÔ");
+	set_name("æå››", ({ "li si", "li"}));
+	set("long", "ä»–èº«å½¢ç”šé«˜ï¼Œä½†ååˆ†ç˜¦å‰Šï¼Œç•™ä¸€æ’‡é¼ å°¾é¡»ï¼Œè„¸è‰²é˜´æ²‰ã€‚\n");
+	set("nickname", "ç½šæ¶ä½¿");
+	set("gender", "ç”·æ€§");
 	set("age", random(50) + 30);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -22,7 +22,7 @@ void create()
 	set("int", 25);
 	set("con", 25);
 	set("dex", 25);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 1500);
 	set("eff_qi", 1500);
 	set("qi", 1500);

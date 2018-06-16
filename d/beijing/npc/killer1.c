@@ -9,15 +9,15 @@ int do_move();
 
 void create()
 {
-    set_name("×³ºº", ({
+    set_name("å£®æ±‰", ({
 	    "zhuang han", "han",
     }));
     set("long",
-	"ÕâÊÇÒ»¸öÂúÁ³ºáÈâµÄÏçÏÂºº×Ó¡£\n"
+	"è¿™æ˜¯ä¸€ä¸ªæ»¡è„¸æ¨ªè‚‰çš„ä¹¡ä¸‹æ±‰å­ã€‚\n"
     );
 
 
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("attitude", "heroism");
 
     set("age", 25);
@@ -79,7 +79,7 @@ void do_move()
 	    command("go "+env->query("enter_dir"));
 	call_out("do_move", 10);
     } else {
-	message_vision("$N×ß½øÁËÈËÈº£¬Ò»»á¶ù¾Í²»¼ûÁË¡£\n", me);
+	message_vision("$Nèµ°è¿›äº†äººç¾¤ï¼Œä¸€ä¼šå„¿å°±ä¸è§äº†ã€‚\n", me);
 	destruct(me);
     }
 }
@@ -98,7 +98,7 @@ void die()
 		SHIWEI_LEVEL(inv[i]) == query("shiwei_level") &&
 		is_fighting(inv[i]) && 
 		inv[i]->query_temp("can_allow") ) {
-		message_vision("\n$NÌßÁËÒ»½Å$nµÄÊ¬Ìå£¬µÃÒâµØĞ¦ÁËĞ¦¡£\n",
+		message_vision("\n$Nè¸¢äº†ä¸€è„š$nçš„å°¸ä½“ï¼Œå¾—æ„åœ°ç¬‘äº†ç¬‘ã€‚\n",
 		    inv[i], me);
 		player = inv[i];
 		if (env->query("is_outer_gate")){
@@ -110,7 +110,7 @@ void die()
 	}
     }
     if (! found_shiwei) {
-	message_vision("\n$Nµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n", me);
+	message_vision("\n$Nå€’åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰äº†å‡ ä¸‹å°±æ­»äº†ã€‚\n", me);
     }
 
 

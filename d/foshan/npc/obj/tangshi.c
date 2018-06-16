@@ -10,13 +10,13 @@ void init()
 
 void create()
 {
-	set_name("ÌÆÊ«Ñ¡¼­", ({ "tangshi xuanji", "xuanji", "poem", "tangshi" }));
+	set_name("å”è¯—é€‰è¾‘", ({ "tangshi xuanji", "xuanji", "poem", "tangshi" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»±¾Ïß×°Êé£¬ÀïÃæÓĞºÃ¶àÓĞÃûµÄÌÆÊ«¡£\n");
+		set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€æœ¬çº¿è£…ä¹¦ï¼Œé‡Œé¢æœ‰å¥½å¤šæœ‰åçš„å”è¯—ã€‚\n");
 		set("value", 200);
 		set("material", "paper");
 		set("skill", ([
@@ -33,9 +33,9 @@ int do_tear(string arg)
 {
 	object me = this_player();
         if (!id(arg))
-		return notify_fail("ÄãÒªËºÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦æ’•ä»€ä¹ˆï¼Ÿ\n");
 
-        message_vision("$N°ÑÌÆÊ«Ñ¡¼­ËºµÃ·ÛËé¡£\n", me);
+        message_vision("$NæŠŠå”è¯—é€‰è¾‘æ’•å¾—ç²‰ç¢ã€‚\n", me);
 
         destruct(this_object());
         return 1;

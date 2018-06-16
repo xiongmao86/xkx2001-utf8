@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Сɽ��");
+	set("short", "小山崖");
 	set("long", @LONG
-����������ľ���²��ߣ����е������ѰѴ˴��޵ÿ���ͨ�ˣ�·�䲻̫��
-�ߣ��ɶԶ���һ������Ľ��е�����˵���಻��Щʲô��
+崖上生满草木。崖不高，教中弟子早已把此处修得可以通人，路虽不太好
+走，可对都有一身功夫的教中弟子来说，亦不算些什么。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

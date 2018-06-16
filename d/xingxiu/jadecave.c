@@ -1,5 +1,5 @@
 //Cracked by Roath
-// °×Óñ·å
+// ç™½ç‰å³°
 // maco
 #include <ansi.h>
 
@@ -8,10 +8,10 @@ string look_stone();
 
 void create()
 {
-	set("short", "°×Óñ·åÉ½±Ú");
+	set("short", "ç™½ç‰å³°å±±å£");
 	set("long", @LONG
-ÕâÊÇ°×Óñ·å±ÚÉÏµÄÉ½¶´£¬ÏòÄÚÏÂÈ¥µ½µØÓĞÊ®Æß°ËÕÉ¸ß£¬·åÄÚ
-µØÃæÔ¶±ÈÍâÃæµÄÎªµÍ¡£¶´ÅÔÓĞĞí¶à°¼Í¹²»Æ½µÄÉ½ÑÒ(stone)¡£
+è¿™æ˜¯ç™½ç‰å³°å£ä¸Šçš„å±±æ´ï¼Œå‘å†…ä¸‹å»åˆ°åœ°æœ‰åä¸ƒå…«ä¸ˆé«˜ï¼Œå³°å†…
+åœ°é¢è¿œæ¯”å¤–é¢çš„ä¸ºä½ã€‚æ´æ—æœ‰è®¸å¤šå‡¹å‡¸ä¸å¹³çš„å±±å²©(stone)ã€‚
 LONG
 	);
 
@@ -44,25 +44,25 @@ int do_climb(string arg)
 	if( !arg || arg=="" ) return 0;
 
 	if( arg == "up")
-		return notify_fail("Éş×ÓÍùÏÂ´¹£¬ÄãÈ´ÏëÍùÉÏÅÀ£¬ÄÜÕâ÷áÏëÒ²ËãÊÇ¸öÌì²Å¡£\n");
+		return notify_fail("ç»³å­å¾€ä¸‹å‚ï¼Œä½ å´æƒ³å¾€ä¸Šçˆ¬ï¼Œèƒ½è¿™éº½æƒ³ä¹Ÿç®—æ˜¯ä¸ªå¤©æ‰ã€‚\n");
 	if( arg == "down" )
 	{
 
 		if (me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 		if(me->query("rided"))
-		return notify_fail("ÄãÆï×ÅÂí£¬²»ÄÜÕâ÷á¸É£¡\n");
+		return notify_fail("ä½ éª‘ç€é©¬ï¼Œä¸èƒ½è¿™éº½å¹²ï¼\n");
 
-		message_vision("$NÑØ×ÅÉş×ÓÁïÁËÏÂÈ¥¡£\n", me);
-		tell_object(room, me->name()+"ÑØ×ÅÉş×ÓÁïÁËÏÂÀ´¡£\n" );
+		message_vision("$Næ²¿ç€ç»³å­æºœäº†ä¸‹å»ã€‚\n", me);
+		tell_object(room, me->name()+"æ²¿ç€ç»³å­æºœäº†ä¸‹æ¥ã€‚\n" );
 		me->move(room);
 
 		me->start_busy(1);
 		return 1;
 
 	}
-	else return notify_fail("ÄãÒªÍùÄÄÀïÅÀ£¿\n");
+	else return notify_fail("ä½ è¦å¾€å“ªé‡Œçˆ¬ï¼Ÿ\n");
 }	
 
 int valid_leave(object me, string dir)
@@ -70,7 +70,7 @@ int valid_leave(object me, string dir)
 	object room;
 	room = find_object("/d/xingxiu/jaderoom1");
 	
-	if(dir == "down") return notify_fail("ÕâÀïÀëµØÌ«¸ß£¬Ö±½ÓÌøÏÂÈ¥¸úÕÒËÀÃ»Á½Ñù£¬ÕÒÌõÉş×ÓÊ²÷áµÄÅÊÏÂÈ¥°É¡£\n");
+	if(dir == "down") return notify_fail("è¿™é‡Œç¦»åœ°å¤ªé«˜ï¼Œç›´æ¥è·³ä¸‹å»è·Ÿæ‰¾æ­»æ²¡ä¸¤æ ·ï¼Œæ‰¾æ¡ç»³å­ä»€éº½çš„æ”€ä¸‹å»å§ã€‚\n");
 	return ::valid_leave(me, dir);
 }
 
@@ -84,7 +84,7 @@ int do_tie(string arg)
 	if ( !objectp(ob = present("sheng zi", me)) ) return 0;
 
 	if ( arg == "stone" ) {
-		message_vision("$N°ÑÉş×ÓÒ»¶ËÔÚÉ½Ê¯ÉÏ¸¿ÀÎ¡£\n", me);
+		message_vision("$NæŠŠç»³å­ä¸€ç«¯åœ¨å±±çŸ³ä¸Šç¼šç‰¢ã€‚\n", me);
 		set("tied_stone", 1);
 		destruct(ob);
 		}
@@ -94,6 +94,6 @@ int do_tie(string arg)
 
 string look_stone()
 {
-	if( !this_object()->query("tied_stone") ) return "°¼Í¹²»Æ½µÄÉ½ÑÒ£¬ÉÏÃæ¹âÍºÍºµÄÊ²÷áÒ²Ã»ÓĞ¡£\n";
-	else return "°¼Í¹²»Æ½µÄÉ½ÑÒ£¬ÉÏÃæ°óÁËÒ»ÌõÉş×Ó£¬Ò²Ğí¿ÉÒÔÀûÓÃËüÅÀÏÂ(climb)É½±Ú¡£\n";
+	if( !this_object()->query("tied_stone") ) return "å‡¹å‡¸ä¸å¹³çš„å±±å²©ï¼Œä¸Šé¢å…‰ç§ƒç§ƒçš„ä»€éº½ä¹Ÿæ²¡æœ‰ã€‚\n";
+	else return "å‡¹å‡¸ä¸å¹³çš„å±±å²©ï¼Œä¸Šé¢ç»‘äº†ä¸€æ¡ç»³å­ï¼Œä¹Ÿè®¸å¯ä»¥åˆ©ç”¨å®ƒçˆ¬ä¸‹(climb)å±±å£ã€‚\n";
 }

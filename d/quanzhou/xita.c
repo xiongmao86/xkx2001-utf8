@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xita.c Î÷Ëþ
+// xita.c è¥¿å¡”
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷Ëþ");
+        set("short", "è¥¿å¡”");
 	set("long", @LONG
-Î÷ËþÓÖÃûÈÊÊÙËþ£¬ËüÓë¶«Ëþ³ý¾Ö²¿ÂÔÓÐÇø±ðÍâ£¬½¨Öþ¹æÔò»ù±¾ÏàÍ¬£¬Ç¡ËÆ
-Ò»¶ÔÂÎÉúæ¢ÃÃ¡£Î÷ËþÐëÃÖ×ùÊøÑü²¿·ÖÔòµñ¿Ì×Å¸÷ÖÖ»¨¡¢Äñ¡¢³æ¡¢ÊÞºÍ×°ÊÎÍ¼°¸£¬
-Ò²¶¼ÏßÌõÇåÎú£¬ÐÎÌ¬±ÆÕæ£¬¸øÈËÒ»ÖÖÐÀÔÃ¡¢Êæ³©µÄÃÀ¸Ð¡£
+è¥¿å¡”åˆåä»å¯¿å¡”ï¼Œå®ƒä¸Žä¸œå¡”é™¤å±€éƒ¨ç•¥æœ‰åŒºåˆ«å¤–ï¼Œå»ºç­‘è§„åˆ™åŸºæœ¬ç›¸åŒï¼Œæ°ä¼¼
+ä¸€å¯¹æŒ›ç”Ÿå§Šå¦¹ã€‚è¥¿å¡”é¡»å¼¥åº§æŸè…°éƒ¨åˆ†åˆ™é›•åˆ»ç€å„ç§èŠ±ã€é¸Ÿã€è™«ã€å…½å’Œè£…é¥°å›¾æ¡ˆï¼Œ
+ä¹Ÿéƒ½çº¿æ¡æ¸…æ™°ï¼Œå½¢æ€é€¼çœŸï¼Œç»™äººä¸€ç§æ¬£æ‚¦ã€èˆ’ç•…çš„ç¾Žæ„Ÿã€‚
 LONG
         );
 

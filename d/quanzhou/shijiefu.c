@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shijiefu.c �в�˾
+// shijiefu.c 市舶司
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�в�˾");
+        set("short", "市舶司");
 	set("long", @LONG
-���Ǹ���Ӵ�����ʹ�ڼ��ﱸ���������Ҫ�����ĵط����ſ��������߸�
-��һ����ʯʨ�ӣ���̬�ý�������ߺ�������ͨ��˳���ţ����ϱ�ͨ���ۿ�
-·�����ߵĽֵ���ͷ����Ϳ�ż���
+这是负责接待海外使节及筹备出海西洋必要手续的地方。门口左右两边各
+有一个青石狮子，形态矫健，仰天高吼。西北边通往顺济桥，西南边通往港口
+路，北边的街道尽头则是涂门集。
 LONG
         );
 

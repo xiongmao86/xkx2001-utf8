@@ -6,9 +6,9 @@ inherit NPC;
 int accept_object(object me, object obj);
 void create()
 {
-	set_name("¼Ò¶¡", ({ "jia ding", "ding" }));
-	set("long", "Ò»¸ö¶şÊ®³öÍ·µÄĞ¡»ï×Ó£¬Éí°å½áÊµ£¬Ë«Ä¿ÓĞÉñ£¬ËÆºõÁ·¹ı¼¸Äê¹¦·ò¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("å®¶ä¸", ({ "jia ding", "ding" }));
+	set("long", "ä¸€ä¸ªäºŒåå‡ºå¤´çš„å°ä¼™å­ï¼Œèº«æ¿ç»“å®ï¼ŒåŒç›®æœ‰ç¥ï¼Œä¼¼ä¹ç»ƒè¿‡å‡ å¹´åŠŸå¤«ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 
 	set_skill("unarmed", 30);
@@ -45,9 +45,9 @@ void create()
 
 int accept_object(object me, object obj)
 {
-      if((string)obj->query("name") == "ÊéĞÅ") {
+      if((string)obj->query("name") == "ä¹¦ä¿¡") {
 		command("bow "+me->query("id"));
-		message_vision("¼Ò¶¡ËµµÀ£º"+RANK_D->query_respect(me)+"Ô­À´ÊÇÉÙ×¯Ö÷µÄÅóÓÑ£¬¿ì¿ìÇë½ø\n",me);
+		message_vision("å®¶ä¸è¯´é“ï¼š"+RANK_D->query_respect(me)+"åŸæ¥æ˜¯å°‘åº„ä¸»çš„æœ‹å‹ï¼Œå¿«å¿«è¯·è¿›\n",me);
 		me->set_temp("guiyun",1);
 	}
 	return 0;

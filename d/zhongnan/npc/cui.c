@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/cui.c
-// cui.c  ´ŞÖ¾·½
+// cui.c  å´”å¿—æ–¹
 // sdong 08/01/98
 
 inherit NPC;
@@ -11,11 +11,11 @@ int auto_perform();
 
 void create()
 {
-	set_name("´ŞÖ¾·½", ({ "cui zhifang", "cui" }));
+	set_name("å´”å¿—æ–¹", ({ "cui zhifang", "cui" }));
 	set("long",
-		"Ëû¾ÍÊÇÍõ´¦Ò»µÄ¶şµÜ×Ó´ŞÖ¾·½¡£\n"
+		"ä»–å°±æ˜¯ç‹å¤„ä¸€çš„äºŒå¼Ÿå­å´”å¿—æ–¹ã€‚\n"
 		);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 48);
 	set("attitude", "heroic");
 	set("shen_type", 1);
@@ -58,7 +58,7 @@ void create()
 	prepare_skill("cuff", "chunyang-quan");
 	prepare_skill("strike", "sanhua-juding");
 
-	create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+	create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
 	set("chat_chance_combat", 50);
 	set("chat_msg_combat", ({
@@ -85,14 +85,14 @@ int do_kill_sb(string arg)
 
 		  if ( !ob=present(arg, environment(me)) ) return 0;
 
-		  if ( ob->query("family/family_name") == "È«Õæ½Ì"  ) {
-			  message_vision("$n¶ÔÖø$NºÈµÀ£º¡¸"+RANK_D->query_rude(ob)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n", ob, me);
-				message_vision("$NÒ»ÉùÀäĞ¦£º´óµ¨¿ñÍ½£¡¾¹¸Òµ±×ÅÎÒÃæĞĞĞ×É±ÈË£¬µ±ÎÒÈ«Õæ½ÌºÃÆÛ¸ºÃ´£¿\n", ob1);
+		  if ( ob->query("family/family_name") == "å…¨çœŸæ•™"  ) {
+			  message_vision("$nå¯¹è‘—$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(ob)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n", ob, me);
+				message_vision("$Nä¸€å£°å†·ç¬‘ï¼šå¤§èƒ†ç‹‚å¾’ï¼ç«Ÿæ•¢å½“ç€æˆ‘é¢è¡Œå‡¶æ€äººï¼Œå½“æˆ‘å…¨çœŸæ•™å¥½æ¬ºè´Ÿä¹ˆï¼Ÿ\n", ob1);
 				ob1->kill_ob(me);
 				return 1;
 		  }
 
-		  message_vision("$n¶ÔÖø$NºÈµÀ£º¡¸"+RANK_D->query_rude(ob)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n", ob, me);
+		  message_vision("$nå¯¹è‘—$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(ob)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n", ob, me);
 		  return 0;
 }
 

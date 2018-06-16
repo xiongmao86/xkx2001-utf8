@@ -1,24 +1,24 @@
 //Cracked by Roath
-// Áú¾®²è
+// é¾™äº•èŒ¶
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("Áú¾®²è±­", ({"longjing chabei", "bei", "cup"}));
+        set_name("é¾™äº•èŒ¶æ¯", ({"longjing chabei", "bei", "cup"}));
         set_weight(70);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÆÕÍ¨µÄ²è±­¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªæ™®é€šçš„èŒ¶æ¯ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 30);
 		set("max_liquid", 4);
 		set("worthless", 1);
 		set("liquid", ([
         		"type": "tea",
-			"name": "Áú¾®²è",
+			"name": "é¾™äº•èŒ¶",
 			"remaining": 4,
 			"drunk_supply": 0,
     		]));

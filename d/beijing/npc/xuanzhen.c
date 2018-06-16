@@ -7,18 +7,18 @@ inherit NPC;
 
 void create()
 {
-	set_name("ĞşÕêµÀ³¤", ({
+	set_name("ç„è´é“é•¿", ({
 		"xuanzhen daozhang",
 		"daozhang",
 		"xuanzhen",
 	}));
-	set("title", "ÇàÄ¾ÌÃ»áÖÚ");
+	set("title", "é’æœ¨å ‚ä¼šä¼—");
 	set("long",
-		"Ëû¼¸ÂÆ³¤÷×£¬Ò»ÉíµÀÊ¿´ò°ç£¬µ«ÉñÇé±ëº¸£¬¿´ÆğÀ´Æ¢ÆøÉõÎª±©Ôê¡£\n"
+		"ä»–å‡ ç¼•é•¿é«¯ï¼Œä¸€èº«é“å£«æ‰“æ‰®ï¼Œä½†ç¥æƒ…å½ªç„Šï¼Œçœ‹èµ·æ¥è„¾æ°”ç”šä¸ºæš´èºã€‚\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "heroism");
 	set("class", "taoist");
 

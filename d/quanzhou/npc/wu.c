@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wu.c ÎâÀÏ°å
+// wu.c å´è€æ¿
 
 #include <ansi.h>
 #include <dbase.h>
@@ -11,15 +11,15 @@ string ask_me();
 
 void create()
 {
-	set_name("ÎâÀÏ°å", ({ "wu laoban", "wu" }));
+	set_name("å´è€æ¿", ({ "wu laoban", "wu" }));
         set_color("$YEL$");
-	set("title", "Íò¹úÑÌÓêÂ¥ÀÏ°å");
+	set("title", "ä¸‡å›½çƒŸé›¨æ¥¼è€æ¿");
 	set("shen_type", 1);
 
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
-	set("long", "ÎâÀÏ°åÒ»ÊÖ¿ª´´µÄÍò¹úÑÌÓêÂ¥³ÛÃûÈªÖİ¡£\n");
+	set("long", "å´è€æ¿ä¸€æ‰‹å¼€åˆ›çš„ä¸‡å›½çƒŸé›¨æ¥¼é©°åæ³‰å·ã€‚\n");
 	set("combat_exp", 60000);
         set("qi", 300);
         set("max_qi", 300);
@@ -47,7 +47,7 @@ void init()
 
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

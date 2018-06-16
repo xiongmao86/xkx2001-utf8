@@ -1,15 +1,15 @@
 //Cracked by Roath
-// byshanren1.c °ÚÒÄÉ½ÈË
+// byshanren1.c æ‘†å¤·å±±äºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("¿³ÖñÈË", ({ "kanzhu ren", "ren", "man" }) );
-	set("long", "Ò»¸ö×³Äê´åÃñ£¬×¡ÔÚÉ½ÏÂµÄ´åÂäÀï£¬ÊÇÉÏÉ½À´¿³·¥Öñ×ÓµÄ¡£\n");
+	set_name("ç ç«¹äºº", ({ "kanzhu ren", "ren", "man" }) );
+	set("long", "ä¸€ä¸ªå£®å¹´æ‘æ°‘ï¼Œä½åœ¨å±±ä¸‹çš„æ‘è½é‡Œï¼Œæ˜¯ä¸Šå±±æ¥ç ä¼ç«¹å­çš„ã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 25);

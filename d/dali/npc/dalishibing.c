@@ -1,15 +1,15 @@
 //Cracked by Roath
-// dalishibing.c Ê¿±ø
+// dalishibing.c å£«å…µ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("Ê¿±ø", ({ "shi bing", "shi", "bing" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("å£«å…µ", ({ "shi bing", "shi", "bing" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "¡¡¡¡ÕâÊÇÒ»¸ö´óÀí¹ú½ûÎÀ¾üÊ¿±ø£¬Éí×Å½õÒÂ£¬ÊÖÖ´¸Öµ¶£¬Ë«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØ\nÑ²ÊÓ×ÅËÄÖÜµÄÇéÐÎ¡£\n");
+	set("long", "ã€€ã€€è¿™æ˜¯ä¸€ä¸ªå¤§ç†å›½ç¦å«å†›å£«å…µï¼Œèº«ç€é”¦è¡£ï¼Œæ‰‹æ‰§é’¢åˆ€ï¼ŒåŒç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°\nå·¡è§†ç€å››å‘¨çš„æƒ…å½¢ã€‚\n");
 	set("combat_exp", 50000);
 	set("shen_type", 1);
 	set("attitude", "heroism");
@@ -34,7 +34,7 @@ void create()
 	set_skill("unarmed", 80);
 	set_skill("parry", 60);
 	set_skill("dodge", 60);
-	set("no_get", "Äã¿¸²»¶¯");
+	set("no_get", "ä½ æ‰›ä¸åŠ¨");
 	setup();
 	carry_object("/d/city/obj/gangdao")->wield();
 	carry_object("/d/dali/obj/ycloth")->wear();

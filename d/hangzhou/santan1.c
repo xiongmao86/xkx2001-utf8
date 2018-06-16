@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ��̶ӳ��
+// 三潭映月
 // Dong  11/03/1996.
 // Need to add connection to boat.
 
@@ -8,12 +8,12 @@
 inherit ROOM;
 
 void create()
-{   set("short", "������ӡͤ");
+{   set("short", "我心相印亭");
     set("long", @LONG
-�߽�ͤ������һ������ɿ����Ϻ����е�����ʯ���������в���
-�գ����������СԲ����ÿ����µ��գ��ο��Ƿ׷������˴�������
-���¹�ӳ̶��Ӱ��Ϊ��������̶ӳ�¡��������������߶���һ��
-�غ�ʯ·��������һ������ʯ�š�
+走进亭内往南一望，便可看见南湖面中的三个石塔。塔的中部中
+空，塔面有五个小圆洞。每逢皓月当空，游客们纷纷来到此处观赏那
+“月光映潭，影分为三”的三潭映月。东北和西北两边都有一条
+沿湖石路。往北是一座九曲石桥。
 LONG);
 
     set("exits", ([ /* sizeof() == 3 */ 

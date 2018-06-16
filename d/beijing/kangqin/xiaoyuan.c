@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "СԺ");
+	set("short", "小院");
 	set("long", @LONG
-����һ��Ƨ����СԺ�ӣ��м�����һ���ϻ�����������һ�ھ���
-��Χ����ƽ������ʱ����ߺ��֮����
+这是一个僻静的小院子，中间种着一棵老槐树，树下有一口井。
+周围都是平房，不时传来吆喝之声。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */

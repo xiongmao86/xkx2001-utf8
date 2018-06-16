@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiuyang-shengong ¾ÅÑôÉñ¹¦
+// jiuyang-shengong ä¹é˜³ç¥åŠŸ
 // by wsky
 
 
@@ -18,24 +18,24 @@ int valid_learn(object me)
 
         if ((int)me->query_skill("force", 1) < 10
           ||(int)me->query_skill("force", 1)/2 < i/3 )
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò²»×ã£¬²»ÄÜÑ§Ï°¾ÅÑôÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™ä¸è¶³ï¼Œä¸èƒ½å­¦ä¹ ä¹é˜³ç¥åŠŸã€‚\n");
 
         if ( me->query_skill("buddhism",1) || me->query_skill("taoism",1)
           || me->query_skill("mahayana",1) || me->query_skill("lamaism", 1))
-                return notify_fail("ÄãÁ·ÁËÍºÂ¿Å£±Ç×ÓÃÇµÄĞÄ·¨£¬»¹Ñ§»¯¹¦´ó·¨×öÊ²Æİ£¡\n");
+                return notify_fail("ä½ ç»ƒäº†ç§ƒé©´ç‰›é¼»å­ä»¬çš„å¿ƒæ³•ï¼Œè¿˜å­¦åŒ–åŠŸå¤§æ³•åšä»€æˆšï¼\n");
 
         if ( me->query_skill("hunyuan-yiqi",1) || me->query_skill("linji-zhuang", 1)
         || me->query_skill("huntian-qigong",1) || me->query_skill("longxiang-banruo", 1)
         || me->query_skill("taiji-shengong",1) || me->query_skill("zixia-gong",1)    
         || me->query_skill("dulong-dafa", 1) || me->query_skill("kurong-changong", 1)
         || me->query_skill("bitao-xuangong", 1) || me->query_skill("hamagong", 1) )
-                return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§»¯¹¦´ó·¨£¿£¡\n");
+                return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦åŒ–åŠŸå¤§æ³•ï¼Ÿï¼\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("¾ÅÑôÉñ¹¦Ö»ÄÜ¿¿ÁìÎò¡¶¾ÅÑôÕæ¾­¡·À´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("ä¹é˜³ç¥åŠŸåªèƒ½é é¢†æ‚Ÿã€Šä¹é˜³çœŸç»ã€‹æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 
@@ -60,10 +60,10 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
                         if (damage + damage_bonus > 0)
                         {                 
                                 damage_bonus=-random(4000);
-                                result = HIM"$nÉí×ÓÒ»²à£¬½«$N±øÈĞÉÏµÄÁ¦µÀĞ¶È¥´ó°ë¡£\n"NOR;
+                                result = HIM"$nèº«å­ä¸€ä¾§ï¼Œå°†$Nå…µåˆƒä¸Šçš„åŠ›é“å¸å»å¤§åŠã€‚\n"NOR;
                         }
                         else {
-                                result = MAG"$nÉí×ÓÒ»²à£¬½«$N±øÈĞÉÏµÄÁ¦µÀĞ¶È¥´ó°ë¡£\n"NOR;
+                                result = MAG"$nèº«å­ä¸€ä¾§ï¼Œå°†$Nå…µåˆƒä¸Šçš„åŠ›é“å¸å»å¤§åŠã€‚\n"NOR;
                                 damage_bonus=-random(4000);
                         }
                 }
@@ -71,10 +71,10 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
                         if (damage + damage_bonus > 0)
                         {
                                 damage_bonus=-random(4000);
-                                result = HIG"$n¾ÅÑôÉñ¹¦×ÔÈ»¶øÈ»·¢³ö¿¹Á¦£¬½«$NµÄÁ¦µÀÒ»µ²¡£\n"NOR;                      
+                                result = HIG"$nä¹é˜³ç¥åŠŸè‡ªç„¶è€Œç„¶å‘å‡ºæŠ—åŠ›ï¼Œå°†$Nçš„åŠ›é“ä¸€æŒ¡ã€‚\n"NOR;                      
                         }
                         else {
-                                result = MAG"$n¾ÅÑôÉñ¹¦×ÔÈ»¶øÈ»·¢³ö¿¹Á¦£¬½«$NµÄÁ¦µÀÒ»µ²¡£\n"NOR;
+                                result = MAG"$nä¹é˜³ç¥åŠŸè‡ªç„¶è€Œç„¶å‘å‡ºæŠ—åŠ›ï¼Œå°†$Nçš„åŠ›é“ä¸€æŒ¡ã€‚\n"NOR;
                                 damage_bonus=-random(4000);
                         }
                 }       
@@ -98,7 +98,7 @@ string exert_function_file(string func)
                 k++;
         }
         if ( k >=2 && this_player()->query("id")!="wsky"){
-        tell_object(this_player(), "ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÊ©Õ¹¾ÅÑôÉñ¹¦¡£\n");
+        tell_object(this_player(), "ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥æ–½å±•ä¹é˜³ç¥åŠŸã€‚\n");
         return 0;
         }
 

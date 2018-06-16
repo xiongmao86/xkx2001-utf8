@@ -2,12 +2,12 @@
 // Room: /d/beijing/fuchengmen.c
 inherit ROOM;
 
-string GATE_DESC_SHORT="������";
+string GATE_DESC_SHORT="阜成门";
 
 string GATE_DESC_LONG=@LONG
-���Ǿ�������ĸ����š���ǽ������������䣬
-ȫ����ש�������ɣ����Ŷ�ҲΪש��Ͳ�ǣ�ʮ�ּ�
-�����ۡ��ſ����Ÿ�ʾ(gaoshi)��
+这是京城西面的阜成门。城墙建于明永乐年间，
+全部用砖包砌而成，城门洞也为砖砌筒壳，十分坚
+固美观。门口有张告示(gaoshi)。
 LONG;
 
 mapping GATE_EXITS=([

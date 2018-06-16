@@ -11,14 +11,14 @@ int do_study(string arg);
 
 void create()
 {
-                  set("short",HIC"ĞüÑÂ"NOR);
+                  set("short",HIC"æ‚¬å´–"NOR);
 
                   set("long",@LONG
-ÄãÅÊÔÚĞüÑÂÉÏ£¬ÕâĞüÑÂ¸ß´ïÊıÊ®ÕÉ£¬¸ßËÊ½ÓÔÆ£¬ÓĞĞ©µØ·½Ö±ÈçÇ½±ÚÒ»°ã¶¸ÇÍ£¬
-ĞüÑÂËÄÃæ¶¼ÊÇÏÕÑÒ¹ÖÊ¯£¬Ô½ÍùÉÏ¾ÍÔ½ÄÑÅÊ£¬ËÄÃæ¹âÁïÁïµÄÑÂ¶¸Èç±Ú£¬´ç²İ²»Éú¡£
-ÍûÏÂÒ»ÇÆ£¬Ö»ÏÅµÃ»ê·ÉÆÇÉ¢¡£Ô­À´ÉÏÀ´Ê±Ò»²½²½µÄÓ²Í¦£¬Ïë´ÓÔ­Â·ÏÂÈ¥Ê±£¬±¾À´
-µÄÂä½ÅÖ®µãÒÑ¸øÍ¹³öµÄÑÒÊ¯µ²×¡£¬ÔÙÒ²ÃşË÷²»µ½£¬ÈôÊÇÓ¿ÉíÏòÏÂÒ»Ìø£¬ÊÆ±ØÅöÔÚ
-É½Ê¯ÉÏ×²ËÀ¡£¼¸Ö»¾Ş´óµÄºÚµñÅÌĞıÔÚ¿ÕÖĞ¡£
+ä½ æ”€åœ¨æ‚¬å´–ä¸Šï¼Œè¿™æ‚¬å´–é«˜è¾¾æ•°åä¸ˆï¼Œé«˜è€¸æ¥äº‘ï¼Œæœ‰äº›åœ°æ–¹ç›´å¦‚å¢™å£ä¸€èˆ¬é™¡å³­ï¼Œ
+æ‚¬å´–å››é¢éƒ½æ˜¯é™©å²©æ€ªçŸ³ï¼Œè¶Šå¾€ä¸Šå°±è¶Šéš¾æ”€ï¼Œå››é¢å…‰æºœæºœçš„å´–é™¡å¦‚å£ï¼Œå¯¸è‰ä¸ç”Ÿã€‚
+æœ›ä¸‹ä¸€ç§ï¼Œåªå“å¾—é­‚é£é­„æ•£ã€‚åŸæ¥ä¸Šæ¥æ—¶ä¸€æ­¥æ­¥çš„ç¡¬æŒºï¼Œæƒ³ä»åŸè·¯ä¸‹å»æ—¶ï¼Œæœ¬æ¥
+çš„è½è„šä¹‹ç‚¹å·²ç»™å‡¸å‡ºçš„å²©çŸ³æŒ¡ä½ï¼Œå†ä¹Ÿæ‘¸ç´¢ä¸åˆ°ï¼Œè‹¥æ˜¯æ¶Œèº«å‘ä¸‹ä¸€è·³ï¼ŒåŠ¿å¿…ç¢°åœ¨
+å±±çŸ³ä¸Šæ’æ­»ã€‚å‡ åªå·¨å¤§çš„é»‘é›•ç›˜æ—‹åœ¨ç©ºä¸­ã€‚
 LONG);
 
           set("cost",4);
@@ -42,21 +42,21 @@ void init()
 int do_exercise(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÄãÅÀÔÚĞüÑÂÉÏ£¬ÊÖ½Å²¢ÓÃ£¬¶¼¾õµÃ³ÔÁ¦£¬ÄÄÄÜÌÚ³öÊÖÀ´Á·¹¦°¡£¿\n");
+                  tell_object(me, "ä½ çˆ¬åœ¨æ‚¬å´–ä¸Šï¼Œæ‰‹è„šå¹¶ç”¨ï¼Œéƒ½è§‰å¾—åƒåŠ›ï¼Œå“ªèƒ½è…¾å‡ºæ‰‹æ¥ç»ƒåŠŸå•Šï¼Ÿ\n");
                   return 1;
 }
 
 int do_practice(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÄãÅÀÔÚĞüÑÂÉÏ£¬ÊÖ½Å²¢ÓÃ£¬¶¼¾õµÃ³ÔÁ¦£¬ÄÄÄÜÌÚ³öÊÖÀ´Á·¹¦°¡£¿\n");
+                  tell_object(me, "ä½ çˆ¬åœ¨æ‚¬å´–ä¸Šï¼Œæ‰‹è„šå¹¶ç”¨ï¼Œéƒ½è§‰å¾—åƒåŠ›ï¼Œå“ªèƒ½è…¾å‡ºæ‰‹æ¥ç»ƒåŠŸå•Šï¼Ÿ\n");
                   return 1;
 }
 
 int do_study(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÄãÅÀÔÚĞüÑÂÉÏ£¬ÊÖ½Å²¢ÓÃ£¬¶¼¾õµÃ³ÔÁ¦£¬ÄÄÄÜÌÚ³öÊÖÀ´¶ÁÊé°¡£¿\n");
+                  tell_object(me, "ä½ çˆ¬åœ¨æ‚¬å´–ä¸Šï¼Œæ‰‹è„šå¹¶ç”¨ï¼Œéƒ½è§‰å¾—åƒåŠ›ï¼Œå“ªèƒ½è…¾å‡ºæ‰‹æ¥è¯»ä¹¦å•Šï¼Ÿ\n");
                   return 1;
 }
 
@@ -66,21 +66,21 @@ int do_climb(string arg)
         int gain,cost;
 
         if(me->is_busy())
-                return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ã€‚\n");
 
         if(me->query_skill("dodge") < 45 && arg == "up" )
-                return notify_fail("ËÄÃæ¹âÁïÁïµÄÑÂ¶¸Èç±Ú£¬ÄãÇá¹¦²»¹»£¬ÔõÃ´Ò²ÅÀ²»ÉÏÈ¥¡£\n");
+                return notify_fail("å››é¢å…‰æºœæºœçš„å´–é™¡å¦‚å£ï¼Œä½ è½»åŠŸä¸å¤Ÿï¼Œæ€ä¹ˆä¹Ÿçˆ¬ä¸ä¸Šå»ã€‚\n");
 
         cost = ( 300-me->query_dex()*me->query_skill("dodge")/20 )/10;
         if ( cost<10 )cost = 10;
 
         if( me->query("jingli") < 30)
-                return notify_fail("ÄãÀÛµÄÊµÔÚÅÀ²»¶¯ÁË¡£\n");
+                return notify_fail("ä½ ç´¯çš„å®åœ¨çˆ¬ä¸åŠ¨äº†ã€‚\n");
 
         me->add("jingli",-cost);
 
         if( arg != "up" && arg != "down" )
-                return notify_fail("ÄÇ¸ö·½ÏòÃ»·¨ÅÀ¡£\n");
+                return notify_fail("é‚£ä¸ªæ–¹å‘æ²¡æ³•çˆ¬ã€‚\n");
 
         gain = me->query("con",1)*2;
 
@@ -93,9 +93,9 @@ int do_climb(string arg)
 
         if(arg == "up" )
         {
-                message_vision( HIY"\n$NÔÚĞüÑÂÉÏÅÊÌÙ¸½¸ğ£¬Ò»²½²½µØÅÀÉÏÈ¥¡£\n"NOR, me);
+                message_vision( HIY"\n$Nåœ¨æ‚¬å´–ä¸Šæ”€è—¤é™„è‘›ï¼Œä¸€æ­¥æ­¥åœ°çˆ¬ä¸Šå»ã€‚\n"NOR, me);
                 me->move("/d/zhongnan/xuanya2");
-                message_vision( HIY"\n$NÅÀÁËÉÏÀ´¡£\n"NOR, me);
+                message_vision( HIY"\n$Nçˆ¬äº†ä¸Šæ¥ã€‚\n"NOR, me);
                 me->improve_skill( "dodge",(gain+random( gain ))/2 );
                 me->add("jingli",-cost);
                 me->start_busy( 1 );
@@ -103,11 +103,11 @@ int do_climb(string arg)
         }
         else if(arg == "down" )
         {
-                message_vision( HIY"\n$NÔÚĞüÑÂÉÏÅÊÌÙ¸½¸ğ£¬Ğ¡ĞÄ½÷É÷µØÅÀÏÂÈ¥¡£\n"NOR, me);
+                message_vision( HIY"\n$Nåœ¨æ‚¬å´–ä¸Šæ”€è—¤é™„è‘›ï¼Œå°å¿ƒè°¨æ…åœ°çˆ¬ä¸‹å»ã€‚\n"NOR, me);
                 me->move("/d/zhongnan/shanlu30");
-                message_vision( HIY"\n$NÅÀÁËÏÂÀ´¡£\n"NOR, me);
+                message_vision( HIY"\n$Nçˆ¬äº†ä¸‹æ¥ã€‚\n"NOR, me);
                 return 1;
         }
 
-        return notify_fail("ÄÇ¸ö·½ÏòÃ»·¨ÅÀ¡£\n");
+        return notify_fail("é‚£ä¸ªæ–¹å‘æ²¡æ³•çˆ¬ã€‚\n");
 }

@@ -1,16 +1,16 @@
 //Cracked by Roath
-///d/zhongnan/guangchang2.c �㳡
+///d/zhongnan/guangchang2.c 广场
 // sdong: 07/23/98
 
 inherit ROOM;
 
 void create()
 {
-		  set("short", "�㳡");
+		  set("short", "广场");
 		  set("long", @LONG
-��������������Ĺ㳡������������ש����ǰ����һ��̨�ף�ͨ��������
-�������ǰ�и������ߵĴ���¯����¯ǰ����̨�ϣ�������գ�����Ʈ�ơ���
-�����м���С��ʿ���������������ǹ����
+这里是三清殿后面的广场，地上铺着青砖。正前方有一道台阶，通往重阳宫
+广宁殿。殿前有个丈许高的大香炉，香炉前的香台上，红烛高烧，香烟飘绕。广
+场上有几个小道士正在练功。往北是广宁殿。
 LONG
 		  );
 		  set("exits", ([

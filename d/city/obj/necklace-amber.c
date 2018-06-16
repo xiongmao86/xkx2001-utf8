@@ -6,14 +6,14 @@ inherit NECK;
 
 void create()
 {
-        set_name("çúçêÏîÁ´", ({ "amber necklace", "necklace", "lace" }));
+        set_name("ç¥ç€é¡¹é“¾", ({ "amber necklace", "necklace", "lace" }));
         set_color("$YEL$");
         set("weight", 500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´®ÒÔçúçê×ö³ÉµÄÏîÁ´£¬çúçêÊÇÊ÷Ö­µÄ½á¾§£¬ÈÃÈË¸Ğ¾õËüÔÌ²Ø×ÅÉñÃØµÄÁ¦Á¿¡£\n");
-                set("unit", "´®");
+                set("long", "ä¸€ä¸²ä»¥ç¥ç€åšæˆçš„é¡¹é“¾ï¼Œç¥ç€æ˜¯æ ‘æ±çš„ç»“æ™¶ï¼Œè®©äººæ„Ÿè§‰å®ƒè•´è—ç€ç¥ç§˜çš„åŠ›é‡ã€‚\n");
+                set("unit", "ä¸²");
                 set("value", 5000);
                 set("material", "amber");
                 set("armor_prop/armor", 3);

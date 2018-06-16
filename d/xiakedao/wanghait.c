@@ -9,11 +9,11 @@ int halt_fishing(object me);
 
 void create()
 {
-        set("short", "Íûº£Í¤");
+        set("short", "æœ›æµ·äº­");
         set("long", @LONG
-Ò»×ùµäÑÅ¹ÅÆÓµÄĞ¡Í¤×Ó£¬Í¤×óÊÇÒ»µÀÉî½§(stream)£¬½§Ë®ÍÄ¼±£¬
-¼¤Ê¯ÓĞÉù¡£Ï¸ËéµÄË®ÖéĞÎ³ÉÒ»Æ¬ÎíÆø£¬Õû¸öÍ¤×ÓÏÔµÃÑÌÓêëüëü¡£Í¤ÅÔ
-µÄ´óÊ¯(stone)ááºÃÏóÓĞÊ²÷á¶«Î÷¡£±±±ßÒşÔ¼´«À´Â¡Â¡µÄÏìÉù¡£
+ä¸€åº§å…¸é›…å¤æœ´çš„å°äº­å­ï¼Œäº­å·¦æ˜¯ä¸€é“æ·±æ¶§(stream)ï¼Œæ¶§æ°´æ¹æ€¥ï¼Œ
+æ¿€çŸ³æœ‰å£°ã€‚ç»†ç¢çš„æ°´ç å½¢æˆä¸€ç‰‡é›¾æ°”ï¼Œæ•´ä¸ªäº­å­æ˜¾å¾—çƒŸé›¨æœ¦æœ¦ã€‚äº­æ—
+çš„å¤§çŸ³(stone)å¾Œå¥½è±¡æœ‰ä»€éº½ä¸œè¥¿ã€‚åŒ—è¾¹éšçº¦ä¼ æ¥éš†éš†çš„å“å£°ã€‚
 LONG );
 
       set("exits", ([
@@ -23,10 +23,10 @@ LONG );
       ]));
 
 	set("item_desc",([
-	    "stream" : "½§Ë®Çå³º£¬²»Ê±ÓĞÓã¶ù(fish)Ô¾³öË®Ãæ¡£\n",
-	    "fish" : "Í¸¹ıÇå³ºµÄ½§Ë®£¬¿ÉÒÔ¿´µ½²»ÉÙÓã¶ùÔÚË®Àï×ÔÓÉ×ÔÔÚµØÓÎÀ´ÓÎÈ¥¡£\n",
-	    "stone" : "ÕâÊÇÒ»¿é´óÉ½Ê¯£¬Ê¯Í·ááÃæºÃÏó²Ø×ÅÊ²÷á¡£Ïë¿´¿´ááÃæÊÇÊ²÷á£¬¾Í
-Òª°Ñ´óÊ¯ÒÆ¿ª(move)¡£\n",
+	    "stream" : "æ¶§æ°´æ¸…æ¾ˆï¼Œä¸æ—¶æœ‰é±¼å„¿(fish)è·ƒå‡ºæ°´é¢ã€‚\n",
+	    "fish" : "é€è¿‡æ¸…æ¾ˆçš„æ¶§æ°´ï¼Œå¯ä»¥çœ‹åˆ°ä¸å°‘é±¼å„¿åœ¨æ°´é‡Œè‡ªç”±è‡ªåœ¨åœ°æ¸¸æ¥æ¸¸å»ã€‚\n",
+	    "stone" : "è¿™æ˜¯ä¸€å—å¤§å±±çŸ³ï¼ŒçŸ³å¤´å¾Œé¢å¥½è±¡è—ç€ä»€éº½ã€‚æƒ³çœ‹çœ‹å¾Œé¢æ˜¯ä»€éº½ï¼Œå°±
+è¦æŠŠå¤§çŸ³ç§»å¼€(move)ã€‚\n",
 	]));
 
 	set("outdoors", "xiakedao" );
@@ -54,22 +54,22 @@ int do_move(string arg)
 {	object pole, me = this_player();
 
 	if ( !arg )
-		return notify_fail( "ÄãÒªÒÆÊ²Ã´£¿\n");
+		return notify_fail( "ä½ è¦ç§»ä»€ä¹ˆï¼Ÿ\n");
 	if ( arg != "stone" )
-		return notify_fail( "Ê²Ã´£¿\n");
+		return notify_fail( "ä»€ä¹ˆï¼Ÿ\n");
 
 	if (query("pole_count") < 1)
-	{	message_vision("$NÊ¹¾¢°Ñ´óÊ¯ÒÆ¿ª£¬È´Ã»ÓĞ·¢ÏÖÊ²÷á¶«Î÷¡£\n", me);
+	{	message_vision("$Nä½¿åŠ²æŠŠå¤§çŸ³ç§»å¼€ï¼Œå´æ²¡æœ‰å‘ç°ä»€éº½ä¸œè¥¿ã€‚\n", me);
 		return 1;
 	}
 	if (!(present("fishing pole", me)))
-	{	message_vision("$NÊ¹¾¢°Ñ´óÊ¯ÒÆ¿ª£¬·¢ÏÖÒ»¸ùÓã¸Ë£¬¿ÉÒÔÓÃÀ´µöÓã(fishing)¡£\n", me);
+	{	message_vision("$Nä½¿åŠ²æŠŠå¤§çŸ³ç§»å¼€ï¼Œå‘ç°ä¸€æ ¹é±¼æ†ï¼Œå¯ä»¥ç”¨æ¥é’“é±¼(fishing)ã€‚\n", me);
 		pole = new(__DIR__+ "obj/pole.c");
 		pole->move(me);
 		add("pole_count", -1);
 	}
 	else
-		message_vision("$NÊ¹¾¢°Ñ´óÊ¯ÒÆ¿ª£¬È´Ã»ÓĞ·¢ÏÖÊ²÷á¶«Î÷¡£\n", me);
+		message_vision("$Nä½¿åŠ²æŠŠå¤§çŸ³ç§»å¼€ï¼Œå´æ²¡æœ‰å‘ç°ä»€éº½ä¸œè¥¿ã€‚\n", me);
 
 	add_action("do_fish", "fishing");
 	return 1;
@@ -77,11 +77,11 @@ int do_move(string arg)
 int do_fish()
 {	object me = this_player();
 	if (  !(present("fishing pole", me)) )
-		return notify_fail( "Ã»Óã¸ËµöÊ²÷áÓã£¿\n");
+		return notify_fail( "æ²¡é±¼æ†é’“ä»€éº½é±¼ï¼Ÿ\n");
 	if (me->is_busy())
-		return notify_fail( "ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail( "ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-	message_vision("$NÅÀÉÏÉ½½§±ßµÄÒ»¿é´óÊ¯¡£ÌÍ³öÓã¸Ë£¬ÉÏÁËĞ©Óã¶ü£¬¿ªÊ¼µöÆğÓãÀ´¡£\n", me);
+	message_vision("$Nçˆ¬ä¸Šå±±æ¶§è¾¹çš„ä¸€å—å¤§çŸ³ã€‚æå‡ºé±¼æ†ï¼Œä¸Šäº†äº›é±¼é¥µï¼Œå¼€å§‹é’“èµ·é±¼æ¥ã€‚\n", me);
 	me->set_temp("fishing_time", 20);
 	me->set_temp("learn_time", 0);
 	me->set_temp("fish_caught", 0);
@@ -95,15 +95,15 @@ int fishing(object me)
 	object fish;
 	if (timeleft < 1)
 	{	if (learned > 0)
-		{	write("¿´×ÅÓã¶ùÔÚË®ÀïÉÏÏÂÓÎ¶¯µÄÑù×Ó£¬ÄãÍ»È»ÁìÎòÁËÕĞ¼Ü·½ÃæµÄ¼¸¸öÒÉÄÑ¡£\n");
+		{	write("çœ‹ç€é±¼å„¿åœ¨æ°´é‡Œä¸Šä¸‹æ¸¸åŠ¨çš„æ ·å­ï¼Œä½ çªç„¶é¢†æ‚Ÿäº†æ‹›æ¶æ–¹é¢çš„å‡ ä¸ªç–‘éš¾ã€‚\n");
 			me->improve_skill("parry", me->query("int") * (int) learned);
-			message_vision("$NÂıÂıµØÕ¾ÆğÀ´£¬Á³ÉÏ´ø×Å¿ªĞÄµÄĞ¦Èİ¡£\n", me);
+			message_vision("$Næ…¢æ…¢åœ°ç«™èµ·æ¥ï¼Œè„¸ä¸Šå¸¦ç€å¼€å¿ƒçš„ç¬‘å®¹ã€‚\n", me);
 		}
 		else if ( (int)me->query_temp("fish_caught") > 0)
-		{	message_vision("$N¿´×ÅÊÖÖĞµÄÓã¶ù£¬ÂúÒâµØÕ¾ÁËÆğÀ´\n", me);
+		{	message_vision("$Nçœ‹ç€æ‰‹ä¸­çš„é±¼å„¿ï¼Œæ»¡æ„åœ°ç«™äº†èµ·æ¥\n", me);
 		}
 		else
-		{	message_vision("$NÎŞÁÄµØÕ¾ÁËÆğÀ´£¬à«à«µØÂîµÀ£º½ñÌìÔËÆøÔõ÷áÕâ÷áÀÃ¡£\n", me);
+		{	message_vision("$Næ— èŠåœ°ç«™äº†èµ·æ¥ï¼Œå–ƒå–ƒåœ°éª‚é“ï¼šä»Šå¤©è¿æ°”æ€éº½è¿™éº½çƒ‚ã€‚\n", me);
 		}
 		me->delete_temp("fishing_time");
 		me->delete_temp("learn_time");
@@ -118,7 +118,7 @@ int fishing(object me)
 		else
 			fish = new(__DIR__ + "obj/fish");
 
-		message_vision("$NÊÖÖĞµÄÓã¸ËÍ»È»¶¯ÁËÆğÀ´¡£$Nµöµ½ÁËÒ»Ìõ´óÓã¡£\n", me);
+		message_vision("$Næ‰‹ä¸­çš„é±¼æ†çªç„¶åŠ¨äº†èµ·æ¥ã€‚$Né’“åˆ°äº†ä¸€æ¡å¤§é±¼ã€‚\n", me);
 		fish->move(me);
 		me->set_temp("fishing_time", 0);
 		me->set_temp("fish_caught", 1);
@@ -135,7 +135,7 @@ int fishing(object me)
 	return 1;
 }
 int halt_fishing(object me)
-{	message_vision("$NÎŞÁÄµØÕ¾ÁËÆğÀ´£¬à«à«µØÂîµÀ£º½ñÌìÔËÆøÕâ÷áÀÃ£¬²»µöÁË¡£\n", me);
+{	message_vision("$Næ— èŠåœ°ç«™äº†èµ·æ¥ï¼Œå–ƒå–ƒåœ°éª‚é“ï¼šä»Šå¤©è¿æ°”è¿™éº½çƒ‚ï¼Œä¸é’“äº†ã€‚\n", me);
 	return 1;
 }
 int valid_leave(object me, string dir)

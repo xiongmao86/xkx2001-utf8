@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: zoulang.c ×ßÀÈ
+// Room: zoulang.c èµ°å»Š
 // qfy July 7, 1996.
 
 #include <room.h>
@@ -9,10 +9,10 @@ void reset();
 
 void create()
 {
-    set("short", "×ßÀÈ");
+    set("short", "èµ°å»Š");
     set("long", @LONG
-×ßÀÈ¶«±ßÄ¾ÃÅºóÁ¬×Å»ªÉ½ÄÐµÜ×ÓµÄÐÝÏ¢ÊÒ£¬Î÷±ßÃÅºóÊÇÅ®µÜ×ÓµÄÐÝÏ¢
-ÊÒ¡£ÄÏ±ßÊÇ»ªÉ½ÕÆÃÅµÄÇÞÊÒ£¬µÜ×Ó½Ô²»×¼½øÈ¥¡£±±±ßÔòÊÇ¿ÍÌü¡£
+èµ°å»Šä¸œè¾¹æœ¨é—¨åŽè¿žç€åŽå±±ç”·å¼Ÿå­çš„ä¼‘æ¯å®¤ï¼Œè¥¿è¾¹é—¨åŽæ˜¯å¥³å¼Ÿå­çš„ä¼‘æ¯
+å®¤ã€‚å—è¾¹æ˜¯åŽå±±æŽŒé—¨çš„å¯å®¤ï¼Œå¼Ÿå­çš†ä¸å‡†è¿›åŽ»ã€‚åŒ—è¾¹åˆ™æ˜¯å®¢åŽ…ã€‚
 LONG
     );
 
@@ -27,8 +27,8 @@ LONG
         CLASS_D("huashan") + "/dayou" : 1,
     ]));
 
-    create_door("east", "Ä¾ÃÅ", "west", DOOR_CLOSED);
-    create_door("west", "Ä¾ÃÅ", "east", DOOR_CLOSED);	
+    create_door("east", "æœ¨é—¨", "west", DOOR_CLOSED);
+    create_door("west", "æœ¨é—¨", "east", DOOR_CLOSED);	
 
     set("no_clean_up", 0);
 
@@ -42,22 +42,22 @@ int valid_leave(object me, string dir)
     mapping myfam;
     myfam = (mapping)me->query("family");
 
-    if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir != "south" ) {
-	if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir != "north" )
-	   return notify_fail("»ªÉ½²»ÁôÍâ¿Í£¬Äã²»ÄÜ×¡ÔÚÕâÀï£¡\n");
+    if ( (!myfam || myfam["family_name"] != "åŽå±±æ´¾") && dir != "south" ) {
+	if ( (!myfam || myfam["family_name"] != "åŽå±±æ´¾") && dir != "north" )
+	   return notify_fail("åŽå±±ä¸ç•™å¤–å®¢ï¼Œä½ ä¸èƒ½ä½åœ¨è¿™é‡Œï¼\n");
     }
 
-    if ( me->query("gender") == "ÄÐÐÔ" && dir == "west" && !wizardp(me) )
-	return notify_fail("¿´Çå³þµã£¬ÄÐµÜ×ÓÐÝÏ¢ÊÒÔÚ¶«±ß£¡\n");
+    if ( me->query("gender") == "ç”·æ€§" && dir == "west" && !wizardp(me) )
+	return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œç”·å¼Ÿå­ä¼‘æ¯å®¤åœ¨ä¸œè¾¹ï¼\n");
 
-    if ( me->query("gender") == "Å®ÐÔ" && dir == "east" && !wizardp(me) )
-	return notify_fail("¿´Çå³þµã£¬Å®µÜ×ÓÐÝÏ¢ÊÒÔÚÎ÷±ß£¡\n");
+    if ( me->query("gender") == "å¥³æ€§" && dir == "east" && !wizardp(me) )
+	return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œå¥³å¼Ÿå­ä¼‘æ¯å®¤åœ¨è¥¿è¾¹ï¼\n");
 
-    if ( me->query("gender") == "ÎÞÐÔ" && (dir=="east" || dir=="west") )
-	return notify_fail("Äã²»ÄÜ×¡ÔÚÕâÀï£¡\n");
+    if ( me->query("gender") == "æ— æ€§" && (dir=="east" || dir=="west") )
+	return notify_fail("ä½ ä¸èƒ½ä½åœ¨è¿™é‡Œï¼\n");
 
     if (dir == "south" && objectp(present("lu dayou", environment(me))))
-	return notify_fail("Â½´óÓÐºÈµÀ£ººóÃæÊÇÊ¦¸¸µÄÇÞÊÒ£¬ÕâÎ»"+RANK_D->query_respect(me)+"ÇëÖ¹²½¡£\n");
+	return notify_fail("é™†å¤§æœ‰å–é“ï¼šåŽé¢æ˜¯å¸ˆçˆ¶çš„å¯å®¤ï¼Œè¿™ä½"+RANK_D->query_respect(me)+"è¯·æ­¢æ­¥ã€‚\n");
 
     return ::valid_leave(me, dir);
 }

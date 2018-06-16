@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Î÷ÏÄ±ø", ({ "xixia bing", "bing" }));
+	set_name("è¥¿å¤å…µ", ({ "xixia bing", "bing" }));
         set_color("$YEL$");
 	set("age", 22);
-	set("gender", "ÄÐÐÔ");
-	set("long", "Ò»¸ö¿ýÎäµÄÎ÷ÏÄÊ¿±ø¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "ä¸€ä¸ªé­æ­¦çš„è¥¿å¤å£«å…µã€‚\n");
 	set("attitude", "heroism");
 
 	set("str", 24);
@@ -28,8 +28,8 @@ void create()
 	set_temp("apply/armor", 40);
 
 	set("chat_msg_combat", ({
-		"Î÷ÏÄ±øºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÔì·´²»³É£¿\n",
-		"Î÷ÏÄ±øºÈµÀ£ºÅÜµÃÁËºÍÉÐÅÜ²»ÁËÃí£¬Äã»¹ÊÇ¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+		"è¥¿å¤å…µå–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
+		"è¥¿å¤å…µå–é“ï¼šè·‘å¾—äº†å’Œå°šè·‘ä¸äº†åº™ï¼Œä½ è¿˜æ˜¯å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
 	}));
 	setup();
 	carry_object("/clone/weapon/qiang")->wield();
@@ -49,7 +49,7 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 	me->apply_condition("xakiller", 100);
 	kill_ob(me);
 	return 1;
@@ -57,7 +57,7 @@ int accept_fight(object me)
 
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("xakiller", 100);
         kill_ob(me);
         return 1;

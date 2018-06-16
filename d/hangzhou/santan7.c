@@ -1,15 +1,15 @@
 //Cracked by Roath
-// ��̶ӳ��
+// 三潭映月
 // Dong  11/03/1996.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 
 void create()
-{   set("short", "�ص�ʯ·");
+{   set("short", "沿堤石路");
     set("long", @LONG
-ʯ���Դ����������������沨�����ԣ�ɽɫ�����������οͶ���
-��ͣ��СЪ��ʯ·�������ϺͶ������ߡ�
+石堤旁处处垂柳拂波，湖面波光粼粼，山色空朦。不少游客都在
+此停步小歇。石路沿伸向东南和东北两边。
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */ 

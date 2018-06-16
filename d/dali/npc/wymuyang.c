@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wymuyang.c ÎÚÒÄÄÁÑòÅ®
+// wymuyang.c ä¹Œå¤·ç‰§ç¾Šå¥³
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÄÁÑòÅ®", ({ "muyang nu", "nu", "woman" }) );
-	set("long", "Ò»Î»ÎÚÒÄ×åµÄÄÁÑòÅ®¡£\n");
+	set_name("ç‰§ç¾Šå¥³", ({ "muyang nu", "nu", "woman" }) );
+	set("long", "ä¸€ä½ä¹Œå¤·æ—çš„ç‰§ç¾Šå¥³ã€‚\n");
 
 	set("age", 25);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

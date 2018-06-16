@@ -12,18 +12,18 @@ void create()
 {
 		object suyou;
 
-        set_name(HIY "±éÕÕÑ©º£" NOR, ({"tong gang", "gang"}));
+        set_name(HIY "éç…§é›ªæµ·" NOR, ({"tong gang", "gang"}));
         set_max_encumbrance(600000);
         set_weight(300000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ð");
+                set("unit", "å°Š");
                 set("long", 
-                "Ò»×ðÍ¨Ìå¶Æ½ðµÄÍ­¸×¡£¸×ÉÏµñ¿Ì×Å¡¼±éÕÕÑ©º£·ð¡½Ïñ¡£Ïà´«\n"
-                "Õâ×ðµñÏñÊÇ·ðµÄÊÜÓÃÉí£¬ÊÜÌìÏÂÐÅÍ½³ç°Ý¡£·ðÉíÉÏÏâÇ¶×ÅÎå\n"
-                "ÖÖÌìÉÏµÄÖé±¦£¬ÎåÖÖµØÉÏµÄÖé±¦ºÍÎå°ÙÁãÒ»ÖÖ²»Í¬µÄË®¾§Ê¯¡£\n"
-                "À®ÂïÃÇºÍÐÅÍ½ÃÇ¾´·îµÄËÖÓÍ¶¼´¢´æÔÚÕâÀï¡£\n");
+                "ä¸€å°Šé€šä½“é•€é‡‘çš„é“œç¼¸ã€‚ç¼¸ä¸Šé›•åˆ»ç€ã€–éç…§é›ªæµ·ä½›ã€—åƒã€‚ç›¸ä¼ \n"
+                "è¿™å°Šé›•åƒæ˜¯ä½›çš„å—ç”¨èº«ï¼Œå—å¤©ä¸‹ä¿¡å¾’å´‡æ‹œã€‚ä½›èº«ä¸Šé•¶åµŒç€äº”\n"
+                "ç§å¤©ä¸Šçš„ç å®ï¼Œäº”ç§åœ°ä¸Šçš„ç å®å’Œäº”ç™¾é›¶ä¸€ç§ä¸åŒçš„æ°´æ™¶çŸ³ã€‚\n"
+                "å–‡å˜›ä»¬å’Œä¿¡å¾’ä»¬æ•¬å¥‰çš„é…¥æ²¹éƒ½å‚¨å­˜åœ¨è¿™é‡Œã€‚\n");
                 set("value", 10000);
 				set("material","bronze");
 				set("no_get",1);

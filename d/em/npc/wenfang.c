@@ -1,17 +1,17 @@
 //Cracked by Roath
-// d/emei/npc/wenfang.c ÎÄ·½Ğ¡Ê¦Ì«
+// d/emei/npc/wenfang.c æ–‡æ–¹å°å¸ˆå¤ª
 // Shan 96/07/09
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÎÄ·½Ğ¡Ê¦Ì«", ({"wenfang", "wen fang"}) );
-	set("rank_info/respect", "Ğ¡Ê¦Ì«");
-	set("gender", "Å®ĞÔ" );
+	set_name("æ–‡æ–¹å°å¸ˆå¤ª", ({"wenfang", "wen fang"}) );
+	set("rank_info/respect", "å°å¸ˆå¤ª");
+	set("gender", "å¥³æ€§" );
 	set("age", 12+random(6));
 	set("long",
-	  "ÕâÊÇ¸öÄêÁä²»´ó£¬Ã¼ÇåÄ¿ĞãµÄĞ¡Ê¦Ì«¡£\n");
+	  "è¿™æ˜¯ä¸ªå¹´é¾„ä¸å¤§ï¼Œçœ‰æ¸…ç›®ç§€çš„å°å¸ˆå¤ªã€‚\n");
 	set("attitude", "friendly");
     	set("shen_type", 1);
         set("class", "bonze");
@@ -37,10 +37,10 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 3);
 
-        create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
         set("inquiry", ([
-            "³ö¼Ò" : "ÄúÈ¥ÎÊÄÇ±ßµÄ¾²¿ÕÊ¦¸¸°É¡£\n",
+            "å‡ºå®¶" : "æ‚¨å»é—®é‚£è¾¹çš„é™ç©ºå¸ˆçˆ¶å§ã€‚\n",
         ]));
 
         setup();

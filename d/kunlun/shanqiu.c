@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Сɽ��");
+	set("short", "小山丘");
 	set("long", @LONG
-��ͺͺ��ɽ��������Ҳ�Ѽ�һֻ��ʱ�к������µ���·����������
-�ʼ�Ӳ����û����ˮ��ȥ���١�
+光秃秃的山丘，连飞鸟也难见一只。时有厚土旗下弟子路过。由于土
+质坚硬，倒没被雨水冲去多少。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

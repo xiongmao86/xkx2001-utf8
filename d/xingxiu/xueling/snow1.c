@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"Ñ©Áë"NOR);
+        set("short", HIW"é›ªå²­"NOR);
         set("long", @LONG
-º®·çºôÏø£¬Äã¼«Ä¿ÍûÈ¥£¬Î¨ÓĞÒ»Æ¬°×Ã£Ã£µÄ´óÑ©£¬Äã²»½ûÆğÁËÒ»
-Ë¿º®Òâ¡£    
+å¯’é£å‘¼å“®ï¼Œä½ æç›®æœ›å»ï¼Œå”¯æœ‰ä¸€ç‰‡ç™½èŒ«èŒ«çš„å¤§é›ªï¼Œä½ ä¸ç¦èµ·äº†ä¸€
+ä¸å¯’æ„ã€‚    
 LONG
         );
         set("exits", ([
@@ -25,7 +25,7 @@ int valid_leave(object me, string dir)
         if (dir == "northup") {
                 me->add("jing", -30);
                 me->add("jingli", -30);
-		message_vision(HIR"$N¶¥·çÃ°Ñ©£¬Å¬Á¦ÍùÉÏÅÊµÇ¡£\n"NOR, me);
+		message_vision(HIR"$Né¡¶é£å†’é›ªï¼ŒåŠªåŠ›å¾€ä¸Šæ”€ç™»ã€‚\n"NOR, me);
 
         }
         return 1;

@@ -6,14 +6,14 @@
 inherit F_CLEAN_UP;
 
 mapping *sgjobs = ({
-        ([      "sgjob":          "Â–“£»˝–¶…¢",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÈÄçÈÅ•‰∏âÁ¨ëÊï£",
+                "sgjob_type":           "ÂØª",
                 "exp_bonus":             100,
                 "score":                 2,
         ]),
 
-        ([      "sgjob":          "Ã˙«Ú",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÈìÅÁêÉ",
+                "sgjob_type":           "ÂØª",
                 "exp_bonus":             200,
                 "score":                 3,
         ]),

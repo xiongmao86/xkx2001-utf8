@@ -9,14 +9,14 @@ int do_hang(string);
 
 void create()
 {
-		set_name("Éþ×Ó", ({"sheng zi", "sheng", "rope" }));
+		set_name("ç»³å­", ({"sheng zi", "sheng", "rope" }));
 		set_weight(200);
 		if( clonep() )
 				set_default_object(__FILE__);
 		else {
 		set("value", 30);
-				set("unit", "À¦");
-				set("long", "Ò»À¦ÓÐ¼¸Ê®ÕÉ³¤µÄÉþË÷¡£\n");
+				set("unit", "æ†");
+				set("long", "ä¸€æ†æœ‰å‡ åä¸ˆé•¿çš„ç»³ç´¢ã€‚\n");
 				set("material", "cloth");
 		}
 	setup();
@@ -34,26 +34,26 @@ int do_hang(string arg)
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "Éþ×Ó" || arg == "rope" || arg == "sheng zi" || arg == "sheng") {
-		tell_object(me, "ÄãÄÃ³öÒ»À¦Éþ×ÓÀ´£¬¹ÒÔÚÊ÷Ö¦ÉÏ£¬´òÁËÒ»¸ö½á£¬°Ñ²±×ÓÌ×ÁËÉÏÈ¥¡£\n");
-		message("vision", me->name()+"ÄÃ³öÒ»À¦Éþ×ÓÀ´£¬¹ÒÔÚÊ÷Ö¦ÉÏ£¬´òÁËÒ»¸ö½á£¬°Ñ²±×ÓÌ×ÁËÉÏÈ¥¡£\n", 
+	if ( arg == "ç»³å­" || arg == "rope" || arg == "sheng zi" || arg == "sheng") {
+		tell_object(me, "ä½ æ‹¿å‡ºä¸€æ†ç»³å­æ¥ï¼ŒæŒ‚åœ¨æ ‘æžä¸Šï¼Œæ‰“äº†ä¸€ä¸ªç»“ï¼ŒæŠŠè„–å­å¥—äº†ä¸ŠåŽ»ã€‚\n");
+		message("vision", me->name()+"æ‹¿å‡ºä¸€æ†ç»³å­æ¥ï¼ŒæŒ‚åœ¨æ ‘æžä¸Šï¼Œæ‰“äº†ä¸€ä¸ªç»“ï¼ŒæŠŠè„–å­å¥—äº†ä¸ŠåŽ»ã€‚\n", 
 			environment(me), ({me}));
 
    		if ( random((int)me->query("food")) > 200 ) {
-			tell_object(me, "Éþ×Ó¡¸Å¾£¡¡¹µÄÒ»Éù¶ÏÁË£¬ÄãÖØÖØµØË¤µ½µØÉÏ¡£\n");
-			message("vision", "Éþ×Ó¡¸Å¾£¡¡¹µÄÒ»Éù¶ÏÁË£¬"+me->name()+"ÖØÖØµØË¤µ½µØÉÏ¡£\n", 
+			tell_object(me, "ç»³å­ã€Œå•ªï¼ã€çš„ä¸€å£°æ–­äº†ï¼Œä½ é‡é‡åœ°æ‘”åˆ°åœ°ä¸Šã€‚\n");
+			message("vision", "ç»³å­ã€Œå•ªï¼ã€çš„ä¸€å£°æ–­äº†ï¼Œ"+me->name()+"é‡é‡åœ°æ‘”åˆ°åœ°ä¸Šã€‚\n", 
 				environment(me), ({me}));
-			me->receive_damage("jing", (int)me->query("food"), "ÉÏµõÎ´Ëì£¬Ë¤ËÀÁË");
-			me->receive_damage("qi", (int)me->query("food"), "ÉÏµõÎ´Ëì£¬Ë¤ËÀÁË");
+			me->receive_damage("jing", (int)me->query("food"), "ä¸ŠåŠæœªé‚ï¼Œæ‘”æ­»äº†");
+			me->receive_damage("qi", (int)me->query("food"), "ä¸ŠåŠæœªé‚ï¼Œæ‘”æ­»äº†");
 		}
 		else if ( random((int)me->query("food")) > 100 ) {
-			tell_object(me, "Éþ×ÓÒ¡Ò¡»Î»Î£¬ÄãÏÅµÄÔÎÁË¹ýÈ¥¡£\n");
-			message("vision", "Éþ×ÓÒ¡Ò¡»Î»Î£¬"+me->name()+"ÏÅµÄÔÎÁË¹ýÈ¥¡£¡£\n", 
+			tell_object(me, "ç»³å­æ‘‡æ‘‡æ™ƒæ™ƒï¼Œä½ å“çš„æ™•äº†è¿‡åŽ»ã€‚\n");
+			message("vision", "ç»³å­æ‘‡æ‘‡æ™ƒæ™ƒï¼Œ"+me->name()+"å“çš„æ™•äº†è¿‡åŽ»ã€‚ã€‚\n", 
 				environment(me), ({me}));
 			me->unconcious();
 		}
 		else {
-			me->set_temp("last_damage_from", "ÉÏµõ×Ô¾¡ÁË");
+			me->set_temp("last_damage_from", "ä¸ŠåŠè‡ªå°½äº†");
 			me->die();
 		}
 	}

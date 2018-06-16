@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "静室");
+        set("short", "闈欏");
         set("long", 
-"这是恒山弟子打坐，练功，修习之所，几个女弟子正坐在蒲
-团上闭目修行。\n"
+"杩欐槸鎭掑北寮熷瓙鎵撳潗锛岀粌鍔燂紝淇範涔嬫墍锛屽嚑涓コ寮熷瓙姝ｅ潗鍦ㄨ挷
+鍥笂闂洰淇銆俓n"
         );
         set("exits", ([
                 "east"  : __DIR__"wusean",

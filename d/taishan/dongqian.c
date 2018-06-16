@@ -1,16 +1,16 @@
 //Cracked by Roath
-// dongqian.c ¶À¹ÂÇó°ÜÂñ¹ÇÉ½¶´¶´Ç°Æ½µØ
+// dongqian.c ç‹¬å­¤æ±‚è´¥åŸ‹éª¨å±±æ´æ´å‰å¹³åœ°
 // qfy July 10, 1996
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¶´Ç°Æ½µØ");
+        set("short", "æ´å‰å¹³åœ°");
         set("long", @LONG
-×ß¹ıÁËÃÜ¾¶£¬µØÊÆ»íÈ»¿ªÀÊ£¬Ô­À´ÒÑµ½ÁËÒ»¸öÉî¹ÈÖ®ÖĞ¡£Ç°ÃæÓĞ¸öºÚ
-÷î÷îµÄ´óÉ½¶´(cave)¡£¶´ÍâºÕÈ»ÓĞÒ»Í·´óµñ£¬ºÃÏóÔÚÊØÎÀ×ÅÉ½¶´¡£¶´ºóÊ÷
-Ä¾²Ô´ä£¬É½Æø¼«¼Ñ¡£
+èµ°è¿‡äº†å¯†å¾„ï¼Œåœ°åŠ¿è±ç„¶å¼€æœ—ï¼ŒåŸæ¥å·²åˆ°äº†ä¸€ä¸ªæ·±è°·ä¹‹ä¸­ã€‚å‰é¢æœ‰ä¸ªé»‘
+é»é»çš„å¤§å±±æ´(cave)ã€‚æ´å¤–èµ«ç„¶æœ‰ä¸€å¤´å¤§é›•ï¼Œå¥½è±¡åœ¨å®ˆå«ç€å±±æ´ã€‚æ´åæ ‘
+æœ¨è‹ç¿ ï¼Œå±±æ°”æä½³ã€‚
 LONG
         );
 
@@ -24,7 +24,7 @@ LONG
 	]));
 
 	set("item_desc",([
-	    "cave" : "Ò»¸öºÚ÷î÷îµÄ´óÉ½¶´£¬²»ÖªÀïÃæÓĞĞ©Ê²Ã´¶«Î÷¡£\n"
+	    "cave" : "ä¸€ä¸ªé»‘é»é»çš„å¤§å±±æ´ï¼Œä¸çŸ¥é‡Œé¢æœ‰äº›ä»€ä¹ˆä¸œè¥¿ã€‚\n"
 	]));
 
 	//set("no_fight", 1);
@@ -37,13 +37,13 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if ( !me->query_temp("marks/¹ò") && dir == "enter" 
+	if ( !me->query_temp("marks/è·ª") && dir == "enter" 
 	&& objectp(present("shen diao", environment(me))))
-	   return notify_fail("Í»È»Ò»¹É¾¢·çÆËÃæ£¬Éñµñµ²ÔÚÄãÉíÇ°£¬Âúº¬µĞÒâµØµÉÊÓ×ÅÄã¡£\n");
+	   return notify_fail("çªç„¶ä¸€è‚¡åŠ²é£æ‰‘é¢ï¼Œç¥é›•æŒ¡åœ¨ä½ èº«å‰ï¼Œæ»¡å«æ•Œæ„åœ°çªè§†ç€ä½ ã€‚\n");
 
-	if ( !(me->query_temp("marks/Ä¹")==1 && me->query_temp("marks/¹ò")==1 
-	&& me->query_temp("marks/Ç½") ) && dir == "west" )
-	   return notify_fail("Ö»ÌıµÃ¡°ßÉ¡±µÄÒ»ÉùµñÌä£¬ÉñµñÓÒ³á¼²Õ¹£¬Á¦µÀÆæÃÍµØÏòÄãÒ»ÅÄ£¬²»ÈÃÄã¹ıÈ¥¡£\n"); 
+	if ( !(me->query_temp("marks/å¢“")==1 && me->query_temp("marks/è·ª")==1 
+	&& me->query_temp("marks/å¢™") ) && dir == "west" )
+	   return notify_fail("åªå¬å¾—â€œå‘±â€çš„ä¸€å£°é›•å•¼ï¼Œç¥é›•å³ç¿…ç–¾å±•ï¼ŒåŠ›é“å¥‡çŒ›åœ°å‘ä½ ä¸€æ‹ï¼Œä¸è®©ä½ è¿‡å»ã€‚\n"); 
 
  	return ::valid_leave(me, dir);
 }
@@ -52,10 +52,10 @@ void init()
 {
 	object me = this_player();
 
-	if ( me->query_temp("marks/Ä¹") == 1 && me->query_temp("marks/¹ò") == 1
-	&& me->query_temp("marks/Ç½") == 1 && objectp(present("shen diao", environment(me)))) {
-	   if ( !me->query_temp("marks/Ğ¡") ) {
-	      message_vision("ÉñµñÏò$NÂúÒâµØµãÍ·£¬Éì³áÖ¸ÏòÎ÷±ß¡£Ô­À´ÄÇÀïÓĞÌõÒşÃÜÖ®¼«µÄĞ¡¾¶¡£\n", me);
+	if ( me->query_temp("marks/å¢“") == 1 && me->query_temp("marks/è·ª") == 1
+	&& me->query_temp("marks/å¢™") == 1 && objectp(present("shen diao", environment(me)))) {
+	   if ( !me->query_temp("marks/å°") ) {
+	      message_vision("ç¥é›•å‘$Næ»¡æ„åœ°ç‚¹å¤´ï¼Œä¼¸ç¿…æŒ‡å‘è¥¿è¾¹ã€‚åŸæ¥é‚£é‡Œæœ‰æ¡éšå¯†ä¹‹æçš„å°å¾„ã€‚\n", me);
 	   }
 	   set("exits/west",__DIR__"xiaojing");
 	   remove_call_out("close_up");
@@ -69,13 +69,13 @@ int do_kneel(string arg)
 	object me = this_player();
 
 	if( !arg || arg != "cave" ) 
-	   return notify_fail( "Ê²Ã´£¿\n" );
+	   return notify_fail( "ä»€ä¹ˆï¼Ÿ\n" );
 
-	me->set_temp("marks/¹ò", 1);
-	message_vision("$NÔÚ¶´Ç°¹òµ¹£¬°İÁË¼¸°İ¡£\n", me);
+	me->set_temp("marks/è·ª", 1);
+	message_vision("$Nåœ¨æ´å‰è·ªå€’ï¼Œæ‹œäº†å‡ æ‹œã€‚\n", me);
 
 	if ( objectp(present("shen diao", environment(me))) ) {
-	   message_vision("Éñµñ¶Ô×Å$NµãÁËµãÍ·£¬Ê®·ÖÂúÒâ$NµÄ±íÏÖ¡£\n", me);
+	   message_vision("ç¥é›•å¯¹ç€$Nç‚¹äº†ç‚¹å¤´ï¼Œååˆ†æ»¡æ„$Nçš„è¡¨ç°ã€‚\n", me);
 	}
 
 	return 1;
@@ -83,7 +83,7 @@ int do_kneel(string arg)
 
 int close_up(object me)
 {
-//	message_vision("$NµÍÍ·³ÁË¼ÓÌÒÉ²»¾öÁËºÃÒ»»á¶ù£¬ÃÍÈ»Ì§Í·Ê±È´ÍüÁËĞ¡¾¶µÄ·½Ïò¡£\n", me);
+//	message_vision("$Nä½å¤´æ²‰æ€çŠ¹ç–‘ä¸å†³äº†å¥½ä¸€ä¼šå„¿ï¼ŒçŒ›ç„¶æŠ¬å¤´æ—¶å´å¿˜äº†å°å¾„çš„æ–¹å‘ã€‚\n", me);
 	delete("exits/west");
 	return 1;
 }

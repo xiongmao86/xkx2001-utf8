@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yijing.c  ¡ºËïË¼åãÇ§½ğ·½¡»
+// yijing.c  ã€å­™æ€é‚ˆåƒé‡‘æ–¹ã€
 // by aln oct / 97
 
 inherit ITEM;
@@ -8,13 +8,13 @@ void setup()
 
 void create()
 {
-	set_name("ËïË¼åãÇ§½ğ·½", ({ "yijing", "book" }));
+	set_name("å­™æ€é‚ˆåƒé‡‘æ–¹", ({ "yijing", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»±¾Ïß×°Êé£¬ÀïÃæÃÜÃÜÂéÂéµÄĞ´ÂúÁËÎÄ×Ö¡£\n");
+                set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€æœ¬çº¿è£…ä¹¦ï¼Œé‡Œé¢å¯†å¯†éº»éº»çš„å†™æ»¡äº†æ–‡å­—ã€‚\n");
 		set("value", 300);
                 set("material", "paper");
 	}
@@ -37,46 +37,46 @@ int do_study(string arg)
         return 0;
 
         if (where->query("pigging")){
-                write("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                write("ä½ è¿˜æ˜¯ä¸“å¿ƒæ‹±çŒªå§ï¼\n");
                 return 1;
         }
         if (me->is_busy()) {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
                 return 1;
         }
 
         if( me->is_fighting() ) {
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ï¼\n");
                 return 1;
         }
 
 /*      if(!arg || !objectp(ob = present(arg, me)) ){
-                write("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                write("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
                 return 1;
         }
 */
         if (!id(arg)) {
-                write("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                write("ä½ è¦è¯»ä»€ä¹ˆï¼Ÿ\n");
                 return 1;
         }
 
         if( (int)me->query_skill("literate", 1) < 20 ) {
-                write("ÄãÊ¶µÄ×Ö²»¶à£¬¶Á²»¶®ÊéÖĞµÄ½²½â¡£\n");
+                write("ä½ è¯†çš„å­—ä¸å¤šï¼Œè¯»ä¸æ‡‚ä¹¦ä¸­çš„è®²è§£ã€‚\n");
                 return 1;
 	}
 
         if( (int)me->query_skill("medicine", 1) < 60 ) {
-                write("Äã»¹ÊÇÏÈÈ¥¶ÁÒ»¶Á¡ºÊ®ËÄ¾­·¢»Ó¡»°É¡£\n");
+                write("ä½ è¿˜æ˜¯å…ˆå»è¯»ä¸€è¯»ã€åå››ç»å‘æŒ¥ã€å§ã€‚\n");
                 return 1;
 	}
 
         if( (int)me->query_skill("medicine", 1) > 89 ) {
-                write("¸óÏÂÒÑÊìÖª¸÷ÀàÉËÍ´ÖÎÁÆ·½·¨ºÍÒ©ÎïÅäÖÆ£¬²»±ØÔÙ¶Á¡ºËïË¼åãÇ§½ğ·½¡»¡£\n");
+                write("é˜ä¸‹å·²ç†ŸçŸ¥å„ç±»ä¼¤ç—›æ²»ç–—æ–¹æ³•å’Œè¯ç‰©é…åˆ¶ï¼Œä¸å¿…å†è¯»ã€å­™æ€é‚ˆåƒé‡‘æ–¹ã€ã€‚\n");
                 return 1;
 	}
 
         if ( me->query("jing") < 150 ) {
-                write("ÄãµÄ¾«ÉñÇ·¼Ñ£¬Åõ×ÅÒ½¾­Á¬´òºÇÇ·¡£\n");
+                write("ä½ çš„ç²¾ç¥æ¬ ä½³ï¼Œæ§ç€åŒ»ç»è¿æ‰“å‘µæ¬ ã€‚\n");
                 return 1;
 	}
 
@@ -85,8 +85,8 @@ int do_study(string arg)
         cost += random(cost / 2);
 
         me->improve_skill("medicine", random(2 * me->query_int()));
-        me->receive_damage("jing", cost, "ĞÄÁ¦½Ê´áËÀÁË");
-        message_vision("$NÒ»»á¶ù·­ÔÄ×Å¡ºËïË¼åãÇ§½ğ·½¡»£¬Ò»»á¶ù¿àË¼Ú¤Ïë¡£\n", me);
+        me->receive_damage("jing", cost, "å¿ƒåŠ›ç»ç˜æ­»äº†");
+        message_vision("$Nä¸€ä¼šå„¿ç¿»é˜…ç€ã€å­™æ€é‚ˆåƒé‡‘æ–¹ã€ï¼Œä¸€ä¼šå„¿è‹¦æ€å†¥æƒ³ã€‚\n", me);
 
         return 1;
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ string look_crack();
 
 void create()
 {
-	set("short", "�߹�����");
+	set("short", "蛇谷树林");
 	set("long", @LONG
-���ǰ���ɽ�߹��е�һ�����֣��Ӳݴ�������ľ֦��ï�ܣ��İ�
-��ɭ����ľ�̸����ڣ���Щ��������ѷ�(crack)������ϸ���������
+这是白驼山蛇谷中的一处密林，杂草丛生，树木枝桠茂密，幽暗
+阴森，古木盘根错节，有些树根间的裂缝(crack)中响着细碎的声音。
 LONG
 	);
 

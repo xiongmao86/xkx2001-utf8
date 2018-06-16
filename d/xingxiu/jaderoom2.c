@@ -1,5 +1,5 @@
 //Cracked by Roath
-// °×Óñ·å
+// ç™½ç‰å³°
 // maco
 #include "localtime.h"
 #include <ansi.h>
@@ -15,13 +15,13 @@ string day_event(){ return NATURE_D->outdoor_room_event();}
 
 void create()
 {
-	set("short", "ÓñÊÒ");
+	set("short", "ç‰å®¤");
 	set("long", @LONG
-ÕâÊÇÒ»¼äÓñÊÒ£¬Ò»µÀ¹âÏß´ÓÉÏÃæÊıÊ®ÕÉ¸ß´¦µÄ±Ú·ìÀïÕÕÉä½ø
-À´£¬µ±Äê½¨ÔìÕßÒÀ×ÅÕâµÀÌìÈ»¹âÏß£¬ÔÚ·åÖĞ¶È×¼Î»ÖÃ£¬¿ªÔä¶ø³É
-¡£Ê¯ÊÒÖĞÓĞÓñ´²(bed)¡¢Óñ×À(table)¡¢ÓñÒÎ(chair)£¬¶¼µñ¿ÌµÃ
-ÉõÊÇ¾«ÖÂ£¬´²ÉÏĞ±ÒĞ×ÅÒ»¾ßº¡¹Ç¡£Ê¯ÊÒÒ»½Ç£¬ÓÖÓĞÒ»´óÒ»Ğ¡µÄÁ½
-¾ßº¡¹Ç¡£
+è¿™æ˜¯ä¸€é—´ç‰å®¤ï¼Œä¸€é“å…‰çº¿ä»ä¸Šé¢æ•°åä¸ˆé«˜å¤„çš„å£ç¼é‡Œç…§å°„è¿›
+æ¥ï¼Œå½“å¹´å»ºé€ è€…ä¾ç€è¿™é“å¤©ç„¶å…‰çº¿ï¼Œåœ¨å³°ä¸­åº¦å‡†ä½ç½®ï¼Œå¼€å‡¿è€Œæˆ
+ã€‚çŸ³å®¤ä¸­æœ‰ç‰åºŠ(bed)ã€ç‰æ¡Œ(table)ã€ç‰æ¤…(chair)ï¼Œéƒ½é›•åˆ»å¾—
+ç”šæ˜¯ç²¾è‡´ï¼ŒåºŠä¸Šæ–œå€šç€ä¸€å…·éª¸éª¨ã€‚çŸ³å®¤ä¸€è§’ï¼Œåˆæœ‰ä¸€å¤§ä¸€å°çš„ä¸¤
+å…·éª¸éª¨ã€‚
 LONG
 	);
 
@@ -31,7 +31,7 @@ LONG
 	set("item_desc", ([
 	"bed" : (: look_bed :),
 	"table" : (: look_table :),
-	"chair" : "¼¸ÕÅÓÉ°×ÓñÔì³ÉµÄÒÎ×Ó¡£\n",
+	"chair" : "å‡ å¼ ç”±ç™½ç‰é€ æˆçš„æ¤…å­ã€‚\n",
 	]));
 	set("sleep_room", 1);
 	set("outdoors","xingxiu");
@@ -53,8 +53,8 @@ void init()
 string look_bed()
 {
 	string desc;
-	if(!query("exits/down")) desc = "Ò»ÕÅ°×ÓñÔì³ÉµÄ´²£¬´²ÉÏĞ±ÒĞ×ÅÒ»¾ßº¡¹Ç¡£\n";
-	else desc = "Ò»ÕÅ°×ÓñÔì³ÉµÄ´²£¬´²ÉÏÓĞÒ»¸ö´ó¶´£¬ÏÂÃæÊÇÒ»µÀÌİ¼¶£¬ÅÔ±ßĞ±ÒĞ×ÅÒ»¾ßº¡¹Ç¡£\n";	
+	if(!query("exits/down")) desc = "ä¸€å¼ ç™½ç‰é€ æˆçš„åºŠï¼ŒåºŠä¸Šæ–œå€šç€ä¸€å…·éª¸éª¨ã€‚\n";
+	else desc = "ä¸€å¼ ç™½ç‰é€ æˆçš„åºŠï¼ŒåºŠä¸Šæœ‰ä¸€ä¸ªå¤§æ´ï¼Œä¸‹é¢æ˜¯ä¸€é“æ¢¯çº§ï¼Œæ—è¾¹æ–œå€šç€ä¸€å…·éª¸éª¨ã€‚\n";	
 	return desc;
 }
 
@@ -63,20 +63,20 @@ string look_table()
 	string desc, msg;
 	int w;
 	w = query("table_wrong");
-	if(w >= 10) msg = "Ò»³ß";
-	else if(w > 0) msg = chinese_number(w)+"´ç";
+	if(w >= 10) msg = "ä¸€å°º";
+	else if(w > 0) msg = chinese_number(w)+"å¯¸";
 
-	if(wizardp(this_player())) tell_object(this_player(),"ÏÖÔÚÊÇ"+day_event()+"¡£\n");
+	if(wizardp(this_player())) tell_object(this_player(),"ç°åœ¨æ˜¯"+day_event()+"ã€‚\n");
 	if (day_event() == "event_morning" || day_event() == "event_afternoon") {
 	this_player()->set_temp("checkd_table",1);
-	desc = "´ËÊ±ÈÕ¹â¶ÔÕıÁËÓñ×À£¬Äã×ß½üÏ¸¿´£¬¼ûÓñ×À¿Ì×ÅÒ»Èº±³ÉÏÉú³áµÄ·ÉÂæÍÕ£¬»¨ÎÆ¼«Ï¸£¬\nÈÕ¹â²»ÕıÉäÊ±È«È»ÇÆ²»³öÀ´£¬¿Ì¹¤ÉõÊÇ¾«ÖÂ¡£\n";
+	desc = "æ­¤æ—¶æ—¥å…‰å¯¹æ­£äº†ç‰æ¡Œï¼Œä½ èµ°è¿‘ç»†çœ‹ï¼Œè§ç‰æ¡Œåˆ»ç€ä¸€ç¾¤èƒŒä¸Šç”Ÿç¿…çš„é£éª†é©¼ï¼ŒèŠ±çº¹æç»†ï¼Œ\næ—¥å…‰ä¸æ­£å°„æ—¶å…¨ç„¶ç§ä¸å‡ºæ¥ï¼Œåˆ»å·¥ç”šæ˜¯ç²¾è‡´ã€‚\n";
 		if(w > 0)
-		desc += "È»¶øÂæÍÕµÄÍ·ºÍÉí×ÓÈ´²¢²»Á¬ÔÚÒ»Æğ£¬¸÷×ÔÀë¿ªÁË"+msg+"¶àÎ»ÖÃ¡£\n";
+		desc += "ç„¶è€Œéª†é©¼çš„å¤´å’Œèº«å­å´å¹¶ä¸è¿åœ¨ä¸€èµ·ï¼Œå„è‡ªç¦»å¼€äº†"+msg+"å¤šä½ç½®ã€‚\n";
 	}
 	else {
 	remove_call_out("sun_light");
 	call_out("sun_light", 1);
-	desc = "Õâ°×ÓñÔ²×ÀÊÇÕû¿é´ÓÓñÊ¯ÖĞµñ¿Ì³öÀ´µÄ£¬Á¬ÔÚµØÉÏ£¬´ËÍâÎŞÌØÒìÖ®´¦¡£\n";
+	desc = "è¿™ç™½ç‰åœ†æ¡Œæ˜¯æ•´å—ä»ç‰çŸ³ä¸­é›•åˆ»å‡ºæ¥çš„ï¼Œè¿åœ¨åœ°ä¸Šï¼Œæ­¤å¤–æ— ç‰¹å¼‚ä¹‹å¤„ã€‚\n";
 	}
 	return desc;
 }
@@ -85,7 +85,7 @@ void sun_light()
 	object room = this_object();
 
 	if(day_event() == "event_morning") {
-	message("vision", HIW"¹ıÁË´ó°ë¸öÊ±³½£¬ÈÕ¹â½¥Õı£¬Éäµ½ÁËÔ²×À×ÀÃæ¡£\n"NOR, room );
+	message("vision", HIW"è¿‡äº†å¤§åŠä¸ªæ—¶è¾°ï¼Œæ—¥å…‰æ¸æ­£ï¼Œå°„åˆ°äº†åœ†æ¡Œæ¡Œé¢ã€‚\n"NOR, room );
 	remove_call_out("sun_light");
 	}
 	else {
@@ -103,32 +103,32 @@ int do_turn(string arg)
 	if( !arg || arg=="" ) return 0;
 
 	if( arg=="table") {
-		write("ÄãÒª°Ñ°×ÓñÔ²×ÀÍùÊ²÷á·½Ïò×ª¶¯£¿\n");
+		write("ä½ è¦æŠŠç™½ç‰åœ†æ¡Œå¾€ä»€éº½æ–¹å‘è½¬åŠ¨ï¼Ÿ\n");
 		return 1;
 	}
 
 	if( sscanf(arg, "table %s", dir)==1 ) {
 		if (me->is_busy() || me->query_temp("pending/exercising"))
-			return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+			return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 		if(me->query_str() < 30)
-			return notify_fail("ÄãµÄ±ÛÁ¦Ì«Ğ¡£¬°â²»¶¯Ê¯×À¡£\n");
+			return notify_fail("ä½ çš„è‡‚åŠ›å¤ªå°ï¼Œæ‰³ä¸åŠ¨çŸ³æ¡Œã€‚\n");
 
 		if( dir=="left" ) {
-			message_vision("$NÄÃ×¡Ô²×À±ßÔµ£¬×ÔÓÒÖÁ×óÒ»°â£¬",me);
+			message_vision("$Næ‹¿ä½åœ†æ¡Œè¾¹ç¼˜ï¼Œè‡ªå³è‡³å·¦ä¸€æ‰³ï¼Œ",me);
 			add("table_wrong", 1);
 			check_turn();
 			me->start_busy(random(2));
 			return 1;
 		}
 		if( dir=="right" ) {
-			message_vision("$NÄÃ×¡Ô²×À±ßÔµ£¬×Ô×óÖÁÓÒÒ»°â£¬",me);
+			message_vision("$Næ‹¿ä½åœ†æ¡Œè¾¹ç¼˜ï¼Œè‡ªå·¦è‡³å³ä¸€æ‰³ï¼Œ",me);
 			add("table_wrong", -1);
 			check_turn();
 			me->start_busy(random(2));
 			return 1;
 		} else {
-			write("ÄãÒªÔõ÷á×ª¶¯°×ÓñÔ²×À£¿\n");
+			write("ä½ è¦æ€éº½è½¬åŠ¨ç™½ç‰åœ†æ¡Œï¼Ÿ\n");
 			return 1;
 		}
 	}
@@ -142,42 +142,42 @@ void check_turn()
 	me = this_player();
 
 	if( w > 0 && query("exits/down")) {
-		message_vision("Ö»ÌıÔşÔşÁ¬Éù£¬Óñ´²ÉÏµÄµØµÀ¶´¿ÚÓÖºÏÉÏÁË¡£\n",me);
+		message_vision("åªå¬è½§è½§è¿å£°ï¼Œç‰åºŠä¸Šçš„åœ°é“æ´å£åˆåˆä¸Šäº†ã€‚\n",me);
 		delete("exits/down");
 		if( room = find_object(__DIR__"jaderoad7") ) {
 			room->delete("exits/up");
-			message("vision", "Ö»ÌıÔşÔşÁ¬Éù£¬Í·¶¥ÉÏµÄÊ¯°åÓÖ¹ØÉÏÁË¡£\n",room );
+			message("vision", "åªå¬è½§è½§è¿å£°ï¼Œå¤´é¡¶ä¸Šçš„çŸ³æ¿åˆå…³ä¸Šäº†ã€‚\n",room );
 		}
 		return;
 	}
 
 	if( w >= 10) {
-		message_vision("ÉÔÉÔ¿ÉÒÔÒÆ¶¯£¬µ«°âµÃ´çĞí±ã²»¶¯ÁË¡£\n", me );
+		message_vision("ç¨ç¨å¯ä»¥ç§»åŠ¨ï¼Œä½†æ‰³å¾—å¯¸è®¸ä¾¿ä¸åŠ¨äº†ã€‚\n", me );
 		set("table_wrong",10);
 		return;
 	}
 	
 	if( w < 0 ) {
-		message_vision("ÉÔÉÔ¿ÉÒÔÒÆ¶¯£¬µ«°âµÃ´çĞí±ã²»¶¯ÁË¡£\n", me );
+		message_vision("ç¨ç¨å¯ä»¥ç§»åŠ¨ï¼Œä½†æ‰³å¾—å¯¸è®¸ä¾¿ä¸åŠ¨äº†ã€‚\n", me );
 		delete("table_wrong");
 		return;
 	}
 
 	if( w < 1) {
 		set("exits/down", __DIR__"jaderoad7");
-		message_vision("ÉÔÉÔ¿ÉÒÔÒÆ¶¯¡£\n",me);
-		message_vision(HIW"$NÊ¹Á¦ÂıÂı°Ñ±ßÔµ°â½«¹ıÈ¥£¬Ê¹µÃ¿ÌÔÚ×ÀÔµÒ»È¦µÄÂæÍÕÍ·Óë¿ÌÔÚ×ÀĞÄµÄÂæÍÕÉí×ÓÁ¬³ÉÒ»Ìå¡£\n"
-		"¸Õ¸Õ´ÕºÏ£¬Ö»ÌıÔşÔşÁ¬Éù£¬Óñ´²ÉÏ³öÏÖÁËÒ»¸ö´ó¶´£¬ÏÂÃæÊÇÒ»µÀÌİ¼¶¡£\n"NOR,me);
+		message_vision("ç¨ç¨å¯ä»¥ç§»åŠ¨ã€‚\n",me);
+		message_vision(HIW"$Nä½¿åŠ›æ…¢æ…¢æŠŠè¾¹ç¼˜æ‰³å°†è¿‡å»ï¼Œä½¿å¾—åˆ»åœ¨æ¡Œç¼˜ä¸€åœˆçš„éª†é©¼å¤´ä¸åˆ»åœ¨æ¡Œå¿ƒçš„éª†é©¼èº«å­è¿æˆä¸€ä½“ã€‚\n"
+		"åˆšåˆšå‡‘åˆï¼Œåªå¬è½§è½§è¿å£°ï¼Œç‰åºŠä¸Šå‡ºç°äº†ä¸€ä¸ªå¤§æ´ï¼Œä¸‹é¢æ˜¯ä¸€é“æ¢¯çº§ã€‚\n"NOR,me);
 		delete("table_wrong");
 		if( room = find_object(__DIR__"jaderoad7") ) {
 			room->set("exits/up", __FILE__);
-			message("vision", "Ö»ÌıÔşÔşÁ¬Éù£¬Í·¶¥ÉÏµÄÊ¯°åÂıÂı´ò¿ªÁË¡£\n",room );
+			message("vision", "åªå¬è½§è½§è¿å£°ï¼Œå¤´é¡¶ä¸Šçš„çŸ³æ¿æ…¢æ…¢æ‰“å¼€äº†ã€‚\n",room );
 		}
 		remove_call_out("close_bed");
 		call_out("close_bed", 10);
 
 	}
-	else message_vision("ÉÔÉÔ¿ÉÒÔÒÆ¶¯¡£\n",me);
+	else message_vision("ç¨ç¨å¯ä»¥ç§»åŠ¨ã€‚\n",me);
 
 	return;
 }
@@ -187,12 +187,12 @@ void close_bed()
 	object room;
 
 	if( !query("exits/down") ) return;
-	message("vision", "ìóÌıµÃºäÂ¡Ö»ÌıÔşÔşÁ¬Éù£¬Óñ´²ÉÏµÄµØµÀ¶´¿ÚÓÖºÏÉÏÁË¡£\n", this_object() );
+	message("vision", "ç¥—å¬å¾—è½°éš†åªå¬è½§è½§è¿å£°ï¼Œç‰åºŠä¸Šçš„åœ°é“æ´å£åˆåˆä¸Šäº†ã€‚\n", this_object() );
 	delete("exits/down");
 	set("table_wrong",5+random(6));
 	if( room = find_object(__DIR__"jaderoad7") ) {
 		room->delete("exits/up");
-		message("vision", "Ö»ÌıÔşÔşÁ¬Éù£¬Í·¶¥ÉÏµÄÊ¯°åÓÖ¹ØÉÏÁË¡£\n", room );
+		message("vision", "åªå¬è½§è½§è¿å£°ï¼Œå¤´é¡¶ä¸Šçš„çŸ³æ¿åˆå…³ä¸Šäº†ã€‚\n", room );
 	}
 }
 
@@ -204,7 +204,7 @@ int do_move(string arg)
 	if( !arg || arg=="" ) return 0;
 
 	if( arg == "table") {
-	message_vision("$NÉìÊÖÔÚÔ²×À×ÀÃæÏÂÓÃÁ¦Ò»Ì§£¬Ê¯×ÀÎÆË¿²»¶¯¡£²»ÂÛºáÍÆÖ±À­£¬×À½ÅÊ¼ÖÕ±ãÈç¶¤ÀÎÔÚµØÏÂÒ»°ã¡£\n",me);
+	message_vision("$Nä¼¸æ‰‹åœ¨åœ†æ¡Œæ¡Œé¢ä¸‹ç”¨åŠ›ä¸€æŠ¬ï¼ŒçŸ³æ¡Œçº¹ä¸ä¸åŠ¨ã€‚ä¸è®ºæ¨ªæ¨ç›´æ‹‰ï¼Œæ¡Œè„šå§‹ç»ˆä¾¿å¦‚é’‰ç‰¢åœ¨åœ°ä¸‹ä¸€èˆ¬ã€‚\n",me);
 	return 1;
 	}
 	return 0;
@@ -221,7 +221,7 @@ int do_pick(string arg)
 	return 0;
 
 	if(arg != "skeleton") {
-	write("ÄãÒª¼ñÊ²÷á£¿\n");
+	write("ä½ è¦æ¡ä»€éº½ï¼Ÿ\n");
 	return 1;
 	}
 
@@ -229,9 +229,9 @@ int do_pick(string arg)
 
 	if(!book) return 0;
 
-	message_vision("$N¼ñÆğº¡¹Ç£¬Ö»¼ûº¡¹ÇÅÔÓĞÒ»À¦Öñ¼ò¡£\n"
-	"$NÌáÁËÆğÀ´£¬´©Öñ¼òµÄÆ¤´øÒÑ¾­ÀÃ¶Ï£¬Öñ¼òÒ»Ìá¾ÍÉ¢³ÉÆ¬Æ¬¡£\n",me);
-	CHANNEL_D->do_channel(me, "rumor", sprintf("%sÅªµ½ÁËÒ»À¦×¯×ÓÖñ¼ò¡£", me->query("name")));
+	message_vision("$Næ¡èµ·éª¸éª¨ï¼Œåªè§éª¸éª¨æ—æœ‰ä¸€æ†ç«¹ç®€ã€‚\n"
+	"$Næäº†èµ·æ¥ï¼Œç©¿ç«¹ç®€çš„çš®å¸¦å·²ç»çƒ‚æ–­ï¼Œç«¹ç®€ä¸€æå°±æ•£æˆç‰‡ç‰‡ã€‚\n",me);
+	CHANNEL_D->do_channel(me, "rumor", sprintf("%så¼„åˆ°äº†ä¸€æ†åº„å­ç«¹ç®€ã€‚", me->query("name")));
 	delete("bamboo");
 	book->move(me);
 	return 1;

@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/bwdh/kantai.h
-// ³à»ğÁúÌ³
+// èµ¤ç«é¾™å›
 // by sdong 09/25/98
 
 #include <ansi.h>
@@ -13,7 +13,7 @@ int do_plant(string arg);
 
 void create()
 {
-	set("short", HIR"³à»ğÁúÌ³"NOR);
+	set("short", HIR"èµ¤ç«é¾™å›"NOR);
 
 	set( "long", (: long_desc :) );
 
@@ -45,9 +45,9 @@ string long_desc()
 	  	desc  = HIY"
 
 		           /I______________I\\               "+HIC"|"+HIR"=====|"+HIY"
-		         //||||||||||||||||||\\\\             "+HIC"|"+HIR" Îä   |"+HIY"
+		         //||||||||||||||||||\\\\             "+HIC"|"+HIR" æ­¦   |"+HIY"
 		     T\\//IIIIIIIIIIIIIIIIIIIIII\\\\/T         "+HIC"|"+HIR"=====|"+HIY"
-	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIR"¡¾³à»ğÁúÌ³¡¿"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIC"|"+HIY"
+	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIR"ã€èµ¤ç«é¾™å›ã€‘"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIC"|"+HIY"
 		         "+HIG"||"NOR+HIY"__________________"+HIG"||"NOR+HIY"             "+HIC"|"+HIY"
 			/||||||||||||||||||||||\\            "+HIC"|"+HIY"
 		    T\\//IIIIIIIIIIIIIIIIIIIIIIII\\\\/T        "+HIC"|"+HIY"
@@ -63,7 +63,7 @@ string long_desc()
 		           /I______________I\\               
 		         //||||||||||||||||||\\\\            
 		     T\\//IIIIIIIIIIIIIIIIIIIIII\\\\/T       
-	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIR"¡¾³à»ğÁúÌ³¡¿"NOR+HIY"^^^"+HIG"||"+HIY"^^^^
+	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIR"ã€èµ¤ç«é¾™å›ã€‘"NOR+HIY"^^^"+HIG"||"+HIY"^^^^
 		         "+HIG"||"NOR+HIY"__________________"+HIG"||"NOR+HIY"
 			/||||||||||||||||||||||\\            
 		    T\\//IIIIIIIIIIIIIIIIIIIIIIII\\\\/T
@@ -86,10 +86,10 @@ int do_withdraw(string arg) {
     if(me->is_busy()) return 0;
     if ( arg != "flag" && arg != "qi") return 0;
 
-	if ( query("flag") <= 0 ) return notify_fail("Ã»Æì¿É°Î¡£\n");
-	if ( me->query("sjsz/red") > 0 ) return notify_fail("Íµ×Ô¼ºµÄÆì£¿\n");
+	if ( query("flag") <= 0 ) return notify_fail("æ²¡æ——å¯æ‹”ã€‚\n");
+	if ( me->query("sjsz/red") > 0 ) return notify_fail("å·è‡ªå·±çš„æ——ï¼Ÿ\n");
 	
-	message_vision(HIY"$NÏòÆì¸ËÔ¾Æğ£¬ÏëÒ»°Ñ°ÎÏÂÆì×Ó¡£\n"NOR, me);
+	message_vision(HIY"$Nå‘æ——æ†è·ƒèµ·ï¼Œæƒ³ä¸€æŠŠæ‹”ä¸‹æ——å­ã€‚\n"NOR, me);
 
 	obj = all_inventory(environment(me));
 	for(i=0;i<sizeof(obj);i++)	 {
@@ -99,7 +99,7 @@ int do_withdraw(string arg) {
 				)
 			{
 				obj[i]->kill_ob(me);
-				message_vision(HIR"$N¼±¶Ô$nºÈµÀ£º¡°$n¾¹¸ÒÍµÆì£¬¿´ÕĞ£¡¡±\n"NOR, obj[i],me,me);
+				message_vision(HIR"$Næ€¥å¯¹$nå–é“ï¼šâ€œ$nç«Ÿæ•¢å·æ——ï¼Œçœ‹æ‹›ï¼â€\n"NOR, obj[i],me,me);
 				me->kill_ob(obj[i]);
 				bGuarded = 1;
 			}
@@ -108,15 +108,15 @@ int do_withdraw(string arg) {
 	 if( !bGuarded )
 	 {
 	    flag = new("/d/bwdh/sjsz/obj/flag");
-	    flag->set_name(query("team_name")+"´óÆì", ({ "flag" }) );
+	    flag->set_name(query("team_name")+"å¤§æ——", ({ "flag" }) );
 	    if(flag->move(me)) {
-        	message_vision(HIG"$NÒ»°Ñ³¶ÏÂÁË´óÆì£¬¸ß¸ß¾ÙÆğ¡£\n"NOR, me);
+        	message_vision(HIG"$Nä¸€æŠŠæ‰¯ä¸‹äº†å¤§æ——ï¼Œé«˜é«˜ä¸¾èµ·ã€‚\n"NOR, me);
 		set("flag",0);
 	    } else {
         	destruct(flag);
 	    }
 	   CHANNEL_D->do_channel(this_object(), "rumor",
-		"ÌıËµ"+me->name()+"¶á×ßÁË"+query("team_name")+"µÄ´óÆì£¡" );		
+		"å¬è¯´"+me->name()+"å¤ºèµ°äº†"+query("team_name")+"çš„å¤§æ——ï¼" );		
 
 	}
 	
@@ -136,12 +136,12 @@ int do_plant(string arg) {
 	 if (!objectp(board)) {
 		  board = load_object(BOARD);
 		  if (!objectp(board))
-				return notify_fail("ÕÒ²»µ½ÍÅÌåÈü³É¼¨°æ¡£\n");
+				return notify_fail("æ‰¾ä¸åˆ°å›¢ä½“èµ›æˆç»©ç‰ˆã€‚\n");
 	 }
 	 entryA = board->query("team/" + board->query("east"));
 	 entryB = board->query("team/" + board->query("west"));
 
-	 if(!entryA || !entryB )return notify_fail("ÏÖÔÚÃ»ÓĞ±ÈÈü¡£\n");
+	 if(!entryA || !entryB )return notify_fail("ç°åœ¨æ²¡æœ‰æ¯”èµ›ã€‚\n");
 
 	 scoreA = entryA["this_score"];
 	 scoreB = entryB["this_score"];
@@ -150,24 +150,24 @@ int do_plant(string arg) {
     if(me->is_busy()) return 0;
     if ( arg != "flag" && arg != "qi") return 0;
 
-	if ( query("flag") > 0 ) return notify_fail("Æì¸ËÉÏÒÑÓĞÆìÁË¡£\n");
-	if ( !me->query("sjsz/red") ) return notify_fail("Õâ¿É²»ÊÇÄãµÄ´ó±¾Óª¡£\n");
+	if ( query("flag") > 0 ) return notify_fail("æ——æ†ä¸Šå·²æœ‰æ——äº†ã€‚\n");
+	if ( !me->query("sjsz/red") ) return notify_fail("è¿™å¯ä¸æ˜¯ä½ çš„å¤§æœ¬è¥ã€‚\n");
 
 	flag= present("flag",me );
-	if(!flag)return notify_fail("ÄãÊÖÖĞÃ»Æì¿ÉÒÔ²å¡£\n");
+	if(!flag)return notify_fail("ä½ æ‰‹ä¸­æ²¡æ——å¯ä»¥æ’ã€‚\n");
 
-	if( flag->query("name") != query("team_name")+"´óÆì"  ) 
-		return notify_fail("×Ô¼ºµÄ´ó±¾ÓªÔõÃ´ÄÜ²åÈË¼ÒµÄÆì£¿\n");
+	if( flag->query("name") != query("team_name")+"å¤§æ——"  ) 
+		return notify_fail("è‡ªå·±çš„å¤§æœ¬è¥æ€ä¹ˆèƒ½æ’äººå®¶çš„æ——ï¼Ÿ\n");
 
 	
-	message_vision(HIY"$N°Ñ´óÆì»©À²À²Õ¹¿ª£¬²åÉÏÁËÆì¸Ë¡£\n"NOR, me);
+	message_vision(HIY"$NæŠŠå¤§æ——å“—å•¦å•¦å±•å¼€ï¼Œæ’ä¸Šäº†æ——æ†ã€‚\n"NOR, me);
 
 	destruct(flag);
 
 	set("flag",1);
 
 	CHANNEL_D->do_channel(this_object(), "rumor",
-		"ÌıËµ"+me->name()+"½«´óÆì²å»ØÁË´ó±¾Óª£¡" );		
+		"å¬è¯´"+me->name()+"å°†å¤§æ——æ’å›äº†å¤§æœ¬è¥ï¼" );		
 
 	me->add("sjsz/flag",1);
 	me->add("sjsz/bw_score",1000);

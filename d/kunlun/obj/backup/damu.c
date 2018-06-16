@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"´óÄ¾¸Ë"NOR,({ "bole" }));
+        set_name(HIR"å¤§æœ¨æ†"NOR,({ "bole" }));
         set_weight(70000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ù´óÄ¾¸É£¬Ä¾ÉÏ×°ÓĞÌú¹³¡£\n");
-                set("unit", "¸ù");
+                set("long", "è¿™æ˜¯ä¸€æ ¹å¤§æœ¨å¹²ï¼Œæœ¨ä¸Šè£…æœ‰é“é’©ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 100);
                 set("material", "wood");
                 set("self_destruct", 1);

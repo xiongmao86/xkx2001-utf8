@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-		  set("short","ɽ·");
+		  set("short","山路");
 
 		  set("long",@LONG
-�˶�ɽ·�������ͱڶ���������ģ��ر�������С���������ͨ��
-ɽ�ţ�����ͨ���嶥��
+此段山路是沿着峭壁而开凿出来的，特别崎岖难行。往西向下通往
+山脚，东上通往峰顶。
 LONG);
 
 		  set("exits",([ "westdown" : __DIR__"shanlu23",

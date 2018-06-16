@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("ÏãÀæ", ({"xiang li", "li"}));
+	set_name("é¦™æ¢¨", ({"xiang li", "li"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "¿â¶ûÀÕ³ö²úµÄÏãÀæ£¬ÒÔÖÊµØËÖ´à¡¢Ö­¶à¹ûÏã¡¢ÈâÏ¸Î¶Ìğ¶øÎÅÃû¡£\n");
-		set("unit", "¸ö");
+		set("long", "åº“å°”å‹’å‡ºäº§çš„é¦™æ¢¨ï¼Œä»¥è´¨åœ°é…¥è„†ã€æ±å¤šæœé¦™ã€è‚‰ç»†å‘³ç”œè€Œé—»åã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 30);
 		set("food_remaining", 3);
 		set("food_supply", 15);

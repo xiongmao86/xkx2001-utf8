@@ -1,16 +1,16 @@
 //Cracked by Roath
-// tbhuoji. Ìì±¦¸ó»ï¼Æ
+// tbhuoji. å¤©å®é˜ä¼™è®¡
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("Ìì±¦¸ó»ï¼Æ", ({ "huoji", "keeper" }));
+	set_name("å¤©å®é˜ä¼™è®¡", ({ "huoji", "keeper" }));
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
-	set("long", "ËûÊÇ¸öÇÚÀÍµÄ»ï¼Æ£¬¶Ç×ÓÀïÒ²ÓĞĞ©Ä«Ë®¡£\n");
+	set("long", "ä»–æ˜¯ä¸ªå‹¤åŠ³çš„ä¼™è®¡ï¼Œè‚šå­é‡Œä¹Ÿæœ‰äº›å¢¨æ°´ã€‚\n");
 	set("combat_exp", 2500);
 	set("attitude", "friendly");
 

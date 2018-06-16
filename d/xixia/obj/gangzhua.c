@@ -6,17 +6,17 @@ inherit PIKE;
 
 void create()
 {
-        set_name("¸Ö×¦", ({ "gang zhua", "zhua" }) );
+        set_name("é’¢çˆª", ({ "gang zhua", "zhua" }) );
         set_weight(14000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÆæĞÎ±øÈĞ£¬±ú³¤Èı³ß£¬¼â¶ËÊÇÒ»Ö§ÎåÖ¸¸Ö×¦¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠå¥‡å½¢å…µåˆƒï¼ŒæŸ„é•¿ä¸‰å°ºï¼Œå°–ç«¯æ˜¯ä¸€æ”¯äº”æŒ‡é’¢çˆªã€‚\n");
                 set("value", 200);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_pike(50);
         setup();

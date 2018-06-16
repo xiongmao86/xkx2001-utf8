@@ -8,10 +8,10 @@ int snake_attspeed(object);
 
 void create()
 {
-        set_name("蟒蛇", ({ "snake", "mangshe", "she", "mang"}) );
-        set("race", "蛇类");
+        set_name("锜掕泧", ({ "snake", "mangshe", "she", "mang"}) );
+        set("race", "铔囩被");
         set("age", 100);
-        set("long", "一条碗口粗细的三角头巨蟒，有两丈多长。\n");
+        set("long", "涓�鏉＄鍙ｇ矖缁嗙殑涓夎澶村法锜掞紝鏈変袱涓堝闀裤�俓n");
         set("attitude", "peaceful");
 
         set("str", 32);

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���ɴ���");
+	set("short", "乌蒙村落");
 	set("long", @LONG
-������ɽ�Ļ��£������˰�ʯȥ�����������޳�һ��һ�����״��ƽ̨����
-�ӷֱ��ڸ���ƽ̨�ϣ��������ӣ�������ʯ��Χǽ�����е�·Ҳ��ʯͷ�̳ɡ�
+这里是山的缓坡，乌夷人搬石去土，把这里修成一层一层阶梯状的平台，民
+居分别建在各处平台上，互不连接，各自有石砌围墙，村中道路也由石头铺成。
 LONG);
 	set("exits", ([
 		"north" : __DIR__"minov92",
@@ -17,7 +17,7 @@ LONG);
 		"westdown" : __DIR__"minov89",
 		"eastup" : __DIR__"minov94",
 		]));
-	set("area", "��Ū��");
+	set("area", "乌弄城");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	set("outdoors","dali");

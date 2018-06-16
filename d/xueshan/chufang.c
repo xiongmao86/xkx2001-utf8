@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³ø·¿");
+        set("short", "å¨æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇ¹©Ó¦È«ËÂÉÅÊ³µÄËùÔÚ£¬¼¸¸öÓÍ¹âÂúÃæµÄÀ®ÂïÕıÔÚÃ¦Âµ£¬ÅÔ±ßÓĞ¼¸¸ö¸½
-½üÇëÀ´°ïÊÖµÄ¾ÓÃñ¡£
+è¿™é‡Œæ˜¯ä¾›åº”å…¨å¯ºè†³é£Ÿçš„æ‰€åœ¨ï¼Œå‡ ä¸ªæ²¹å…‰æ»¡é¢çš„å–‡å˜›æ­£åœ¨å¿™ç¢Œï¼Œæ—è¾¹æœ‰å‡ ä¸ªé™„
+è¿‘è¯·æ¥å¸®æ‰‹çš„å±…æ°‘ã€‚
 LONG
         );
         set("exits", ([
@@ -30,7 +30,7 @@ int valid_leave(object me, string dir)
 
         if( dir == "west" && present("tea", me) )
         {
-                return notify_fail("±ğ×Å¼±£¬ºÈÍê²èÔÙ×ß !\n");
+                return notify_fail("åˆ«ç€æ€¥ï¼Œå–å®ŒèŒ¶å†èµ° !\n");
         }
         return ::valid_leave(me, dir);
 }

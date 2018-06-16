@@ -6,15 +6,15 @@ inherit HAMMER;
 
 void create()
 {
-    set_name("ÆåèÒ", ({"qiping"}));
+    set_name("æ£‹æ°", ({"qiping"}));
     set_weight(3000); 
     if( clonep() )
       set_default_object(__FILE__);
     else {
-      set("long", "ÕâÊÇ¿éÌúÖıµÄÆåèÒ£¬ÉÏÃæ¿Ì×ÅÊ®¾ÅÂ·ÆåµÀ¡£\n");
-	set("unit","¿é");
-	set("wield_msg","$N³é³öÒ»¿é·½ĞÎÆåèÒ£¬×¥×¡ÆåèÒÒ»½Ç¡£\n");
-	set("unwield_msg","$N°ÑÆåèÒÊÕÈë»³ÖĞ¡£\n");
+      set("long", "è¿™æ˜¯å—é“é“¸çš„æ£‹æ°ï¼Œä¸Šé¢åˆ»ç€åä¹è·¯æ£‹é“ã€‚\n");
+	set("unit","å—");
+	set("wield_msg","$NæŠ½å‡ºä¸€å—æ–¹å½¢æ£‹æ°ï¼ŒæŠ“ä½æ£‹æ°ä¸€è§’ã€‚\n");
+	set("unwield_msg","$NæŠŠæ£‹æ°æ”¶å…¥æ€€ä¸­ã€‚\n");
 	set("material", "steel");
     }
     init_hammer(30);

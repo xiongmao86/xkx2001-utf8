@@ -1,15 +1,15 @@
 //Cracked by Roath
-// º£µÁÎÑ±ß
+// æµ·ç›—çªè¾¹
 // Ssy
 
 inherit __DIR__"no_pk_room";
 
 void create()
 {
-    	set("short", "º£µÁÎÑ±ß");
+    	set("short", "æµ·ç›—çªè¾¹");
     	set("long", @LONG
-ÕâÀïÊ÷Ä¾Ã¯Ê¢£¬²»¼ûÌìÈÕ¡£ÁÖÖÐÓÐÒ»¸öÐ¡Ð¡µÄ²ÝÅï£¬¿´ÉÏÈ¥ºÜÊÇ
-ÆÆÀÃ£¬Å¼¶û´ÓÖÐ´«³öÒ»Á½ÉùÉëÒ÷£¬ËÆºõÓÐÈËÔÚÀï±ß¡£
+è¿™é‡Œæ ‘æœ¨èŒ‚ç››ï¼Œä¸è§å¤©æ—¥ã€‚æž—ä¸­æœ‰ä¸€ä¸ªå°å°çš„è‰æ£šï¼Œçœ‹ä¸ŠåŽ»å¾ˆæ˜¯
+ç ´çƒ‚ï¼Œå¶å°”ä»Žä¸­ä¼ å‡ºä¸€ä¸¤å£°å‘»åŸï¼Œä¼¼ä¹Žæœ‰äººåœ¨é‡Œè¾¹ã€‚
 LONG
     	);
 

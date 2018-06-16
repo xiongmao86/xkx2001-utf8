@@ -5,13 +5,13 @@ inherit  ITEM;
 
 void  create()
 {
-	set_name(RED"Âé½«×À"NOR,  ({  "table"  }));
+	set_name(RED"éº»å°†æ¡Œ"NOR,  ({  "table"  }));
         set_weight(200000);
-        set("long",  "ÕâÊÇÕÅºìÄ¾µñÖÆ³ÉµÄÂé½«×À¡£\n"  );
+        set("long",  "è¿™æ˜¯å¼ çº¢æœ¨é›•åˆ¶æˆçš„éº»å°†æ¡Œã€‚\n"  );
         if(  clonep()  )
         set_default_object(__FILE__);
         else  {
-        set("unit",  "ÕÅ");
+        set("unit",  "å¼ ");
         set("material",  "wood");
         set("value",  2000);
         set("no_get",  1);

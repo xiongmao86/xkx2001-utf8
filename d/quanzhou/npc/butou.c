@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xunbu.c ²¶Í·
+// xunbu.c æ•å¤´
 // Fang 8/21/96
 // Modified by Zhuang@XKX 960903 - disable hatred autofight
 
@@ -8,11 +8,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("²¶Í·", ({ "bu tou", "tou" }));
+	set_name("æ•å¤´", ({ "bu tou", "tou" }));
         set_color("$YEL$");
 	set("age", 42);
-	set("gender", "ÄÐÐÔ");
-	set("long", "ËûÊÇÔ¶½üÎÅÃûµÄÑïÖÝµÚÒ»²¶Í·£¬Ò»ÉúÕìÆÆÎÞÊýÒÉ°¸¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "ä»–æ˜¯è¿œè¿‘é—»åçš„æ‰¬å·žç¬¬ä¸€æ•å¤´ï¼Œä¸€ç”Ÿä¾¦ç ´æ— æ•°ç–‘æ¡ˆã€‚\n");
 	set("attitude", "heroism");
 //	set("vendetta_mark", "authority");
         set("pursuer", 1);
@@ -35,13 +35,13 @@ void create()
 	set_temp("apply/armor", 50);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "²¶Í·´óº°: ÉÁ¿ª£¡\n",
+                "æ•å¤´å¤§å–Š: é—ªå¼€ï¼\n",
                 (: random_move :)
         }) );
 
         set("chat_chance_combat", 10);
 	set("chat_msg_combat", ({
-		"²¶Í·ºÈµÀ£º´óµ¨µóÃñ£¬»¹²»¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+		"æ•å¤´å–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œè¿˜ä¸å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
 	}));
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();
@@ -51,9 +51,9 @@ void create()
 void init()
 {
         if( strsrch(file_name(environment()), "/d/quanzhou/") == -1 ) {
-                message_vision("$N¿ì²½×ßÁË¹ýÀ´¡£\n$NÉñÉ«»ÅÕÅµØÀë¿ªÁË¡£\n", this_object());
+                message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n$Nç¥žè‰²æ…Œå¼ åœ°ç¦»å¼€äº†ã€‚\n", this_object());
                 this_object()->move("/d/quanzhou/zhongxin");
-                message_vision("$N¿ì²½×ßÁË¹ýÀ´¡£\n", this_object());
+                message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", this_object());
         } else if( interactive(this_player())
 	&& (int)this_player()->query_condition("killer")) {
 		remove_call_out("kill_ob");
@@ -64,13 +64,13 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say Ð¡µÄÓÐ¹«ÎñÔÚÉí£¬²»ÄÜÓëÄã¹ýÕÐ¡£\n");
+	command("say å°çš„æœ‰å…¬åŠ¡åœ¨èº«ï¼Œä¸èƒ½ä¸Žä½ è¿‡æ‹›ã€‚\n");
 	return 0;
 }
 
 int accept_kill(object me)
 {
-        command("say ÄãÕâÊÇÌ«ËêÍ·ÉÏ¶¯ÍÁ£¬»îµÃ²»ÄÍ·³ÁË£¡Ã÷Äê´ËÊ±¾ÍÊÇÄãµÄ¼ÉÈÕ£¡\n");
+        command("say ä½ è¿™æ˜¯å¤ªå²å¤´ä¸ŠåŠ¨åœŸï¼Œæ´»å¾—ä¸è€çƒ¦äº†ï¼æ˜Žå¹´æ­¤æ—¶å°±æ˜¯ä½ çš„å¿Œæ—¥ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

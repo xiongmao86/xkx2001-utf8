@@ -6,11 +6,11 @@ inherit F_SSERVER;
 
 void create()
 {
-	set("short", "Æ«Ìü");
+	set("short", "ååŽ…");
 	set("long", @LONG
-Æ«ÌüÀï¹©·î×Å»ªÉ½Àú´ú×æÊ¦µÄÉñÎ»¡£ÕýÖÐÉñ°¸µÄÇ½ÉÏÊÇ»ªÉ½ÅÉ¿ªÉ½×æ
-Ê¦·ç×æÊ¦µÄ»­Ïó¡£»­ÏóÉñÇéÇåöÁ£¬·Ç³£´«Éñ¡£Éñ°¸ÉÏÏãÂ¯Àï²å×ÅÈýÖùÇåÏã£¬
-ÏãÑÌôÁôÁÉÏÉý£¬É¢·¢×ÅÒ»¹ÉÌ´ÏãÎ¶¡£ÄÏÃæÓÐÉÈÃÅÍ¨ÍùÍâÃæµÄ×ßÀÈ¡£
+ååŽ…é‡Œä¾›å¥‰ç€åŽå±±åŽ†ä»£ç¥–å¸ˆçš„ç¥žä½ã€‚æ­£ä¸­ç¥žæ¡ˆçš„å¢™ä¸Šæ˜¯åŽå±±æ´¾å¼€å±±ç¥–
+å¸ˆé£Žç¥–å¸ˆçš„ç”»è±¡ã€‚ç”»è±¡ç¥žæƒ…æ¸…éš½ï¼Œéžå¸¸ä¼ ç¥žã€‚ç¥žæ¡ˆä¸Šé¦™ç‚‰é‡Œæ’ç€ä¸‰æŸ±æ¸…é¦™ï¼Œ
+é¦™çƒŸè¢…è¢…ä¸Šå‡ï¼Œæ•£å‘ç€ä¸€è‚¡æª€é¦™å‘³ã€‚å—é¢æœ‰æ‰‡é—¨é€šå¾€å¤–é¢çš„èµ°å»Šã€‚
 LONG
 	);
 
@@ -20,8 +20,8 @@ LONG
 	]));
 
 	set("item_desc", ([
-      		"picture" : "Ò»¸öÉñÇéÇåöÁµÄÖÐÄêÊéÉú£¬Ñü¼äÅä×ÅÒ»°Ñ³¤½£¡£\n",
-		"»­Ïó" : "Ò»¸öÉñÇéÇåöÁµÄÖÐÄêÊéÉú£¬Ñü¼äÅä×ÅÒ»°Ñ³¤½£¡£\n",
+      		"picture" : "ä¸€ä¸ªç¥žæƒ…æ¸…éš½çš„ä¸­å¹´ä¹¦ç”Ÿï¼Œè…°é—´é…ç€ä¸€æŠŠé•¿å‰‘ã€‚\n",
+		"ç”»è±¡" : "ä¸€ä¸ªç¥žæƒ…æ¸…éš½çš„ä¸­å¹´ä¹¦ç”Ÿï¼Œè…°é—´é…ç€ä¸€æŠŠé•¿å‰‘ã€‚\n",
 	]));
 
 	set("paper_count", 1);
@@ -43,16 +43,16 @@ int do_ketou(string arg)
    	object paper, me = this_player();
 	int level1, level2, level3;
 	
-	message_vision("$N¹§¹§¾´¾´µØÔÚÉñ°¸Ç°µÄÍÅÆÑÉÏ¹òÁËÏÂÀ´£¬¶Ô×ÅÉñÎ»¿ÄÁËÈý¸öÏìÍ·¡£\n", me);
-	me->receive_damage("qi", 5, "Á¦¾¡Æø¾ø¶øËÀ");
+	message_vision("$Næ­æ­æ•¬æ•¬åœ°åœ¨ç¥žæ¡ˆå‰çš„å›¢è’²ä¸Šè·ªäº†ä¸‹æ¥ï¼Œå¯¹ç€ç¥žä½ç£•äº†ä¸‰ä¸ªå“å¤´ã€‚\n", me);
+	me->receive_damage("qi", 5, "åŠ›å°½æ°”ç»è€Œæ­»");
 	me->start_busy(1);
 
 	if ( me->query("qi") <= 50 )
-		write("ÄãÖ»¾õµÃÄÔ×ÓÓÐÐ©»è»è³Á³ÁµÄ¡£\n");
+		write("ä½ åªè§‰å¾—è„‘å­æœ‰äº›æ˜æ˜æ²‰æ²‰çš„ã€‚\n");
 	if ( me->query("qi") <= 20 )
-		write("Äã¾õµÃÌìÐýµØ×ª£¬ËÆºõÂíÉÏ±ãÒªÔÎÈ¥¡£\n");
+		write("ä½ è§‰å¾—å¤©æ—‹åœ°è½¬ï¼Œä¼¼ä¹Žé©¬ä¸Šä¾¿è¦æ™•åŽ»ã€‚\n");
 
-	if ( !(me->query("family/family_name")=="»ªÉ½ÅÉ") ) return 1;
+	if ( !(me->query("family/family_name")=="åŽå±±æ´¾") ) return 1;
  
 	if ( !me->query("huashan/yin-jue") && me->query("huashan/yinjue") < 500 ) {
 		me->add("huashan/yinjue", 1);
@@ -72,11 +72,11 @@ int do_ketou(string arg)
 		me->set("huashan/yin-jue", 1);
 		me->delete("huashan/yinjue");
 
-		write("ÄãÔÚÍÅÆÑÉÏÖØÖØµØÒ»¿Ä£¬ÍÅÆÑµÄ±ßÉÏºöÈ»ÁÑÁË¿ªÀ´£¬Â¶³öÒ»Ð¡¶ÎÖ½¼ã¡£\n");
-		write("Äã×ÐÏ¸µÄ½«Ö½¼ã³é³öÒ»¿´£¬ÉÏÃæÃÜÃÜÂéÂéµÄ¼ÇÔØÁËÁ·¹¦ÐÄ·¨£¬ËÆºõÓë×ÏÏ¼\n");
-		write("¹¦Ò»ÂöÏà³Ð£¬µ«È´¸ü¼ÓÉî°Â¡£\n");
-		write("ÄãÏ¸¶ÁÁ¼¾Ã£¬Í»È»»ÎÈ»´óÎò£¬Ô­À´Õâ±ãÊÇ×ÏÏ¼ÃÜóÅÊ§´«¶àÊ±µÄ×îááÒ»Ò³£¡\n");
-		write("ÄãÁ¬Ã¦ÃÜóÅÊÕºÃ¡£\n");
+		write("ä½ åœ¨å›¢è’²ä¸Šé‡é‡åœ°ä¸€ç£•ï¼Œå›¢è’²çš„è¾¹ä¸Šå¿½ç„¶è£‚äº†å¼€æ¥ï¼Œéœ²å‡ºä¸€å°æ®µçº¸ç¬ºã€‚\n");
+		write("ä½ ä»”ç»†çš„å°†çº¸ç¬ºæŠ½å‡ºä¸€çœ‹ï¼Œä¸Šé¢å¯†å¯†éº»éº»çš„è®°è½½äº†ç»ƒåŠŸå¿ƒæ³•ï¼Œä¼¼ä¹Žä¸Žç´«éœž\n");
+		write("åŠŸä¸€è„‰ç›¸æ‰¿ï¼Œä½†å´æ›´åŠ æ·±å¥¥ã€‚\n");
+		write("ä½ ç»†è¯»è‰¯ä¹…ï¼Œçªç„¶æ™ƒç„¶å¤§æ‚Ÿï¼ŒåŽŸæ¥è¿™ä¾¿æ˜¯ç´«éœžå¯†ç¬ˆå¤±ä¼ å¤šæ—¶çš„æœ€å¾Œä¸€é¡µï¼\n");
+		write("ä½ è¿žå¿™å¯†ç¬ˆæ”¶å¥½ã€‚\n");
 	}
 
 	return 1;

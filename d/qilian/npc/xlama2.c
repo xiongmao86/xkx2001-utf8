@@ -5,11 +5,11 @@ inherit NPC;
 int ask_tea();
 void create()
 {
-	set_name("Ğ¡À®Âï", ({ "xiao lama", "xiao", "lama" }));
+	set_name("å°å–‡å˜›", ({ "xiao lama", "xiao", "lama" }));
 	set("long", 
-"ÕâÊÇÉÕ²èµÄĞ¡À®Âï£¬ËûÉí´©»ÆÉ«ôÂôÄ£¬×óÊÖÄÃ×Å¸ö´ó²èÉ×£¬ \n"
-"Õıº¹Á÷ÂúÃæµØ¸ú²è¹øÇ°Ã¦ºõ¡£\n");
-	set("gender", "ÄĞĞÔ");
+"è¿™æ˜¯çƒ§èŒ¶çš„å°å–‡å˜›ï¼Œä»–èº«ç©¿é»„è‰²è¢ˆè£Ÿï¼Œå·¦æ‰‹æ‹¿ç€ä¸ªå¤§èŒ¶å‹ºï¼Œ \n"
+"æ­£æ±—æµæ»¡é¢åœ°è·ŸèŒ¶é”…å‰å¿™ä¹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("attitude", "peaceful");
 	set("class","bonze");
@@ -31,7 +31,7 @@ void create()
 	set_skill("parry", 20);
 	set_skill("strike", 20);
 	set("inquiry", ([
-                "ËÖÓÍ²è" : (: ask_tea :),
+                "é…¥æ²¹èŒ¶" : (: ask_tea :),
 	]));
 
 	setup();
@@ -39,20 +39,20 @@ void create()
 }
 int ask_tea()
 {
-	say("Ğ¡À®ÂïÒ»Á³²»ÄÍ·³£ºËÖÓÍÄÇ÷á¹ó£¬ÏëºÈ²èÄÇÄÜËµÓĞ¾ÍÓĞ£¬µÈ×Å£¡ \n");
-	this_player()->set_temp("marks/²è", 1);
+	say("å°å–‡å˜›ä¸€è„¸ä¸è€çƒ¦ï¼šé…¥æ²¹é‚£éº½è´µï¼Œæƒ³å–èŒ¶é‚£èƒ½è¯´æœ‰å°±æœ‰ï¼Œç­‰ç€ï¼ \n");
+	this_player()->set_temp("marks/èŒ¶", 1);
 	return 1;
 }
 int accept_object(object who, object ob)
 {
 	object tea; 
-	if (ob->name()!="ËÖÓÍ") {
-	write("Ğ¡À®ÂïĞ¦µÃºÏ²»Â£×ì£º·ğÖ÷±£ÓÓ" + RANK_D->query_respect(who)+ "¡£\n");
+	if (ob->name()!="é…¥æ²¹") {
+	write("å°å–‡å˜›ç¬‘å¾—åˆä¸æ‹¢å˜´ï¼šä½›ä¸»ä¿ä½‘" + RANK_D->query_respect(who)+ "ã€‚\n");
         return 1;
         }
                         write(
-"Ğ¡À®ÂïµãÍ·¹şÑü£º·ğÖ÷±£ÓÓ" + RANK_D->query_respect(who)+" £¬ÇëÓÃ²è¡£\n");
-        who->delete_temp("marks/²è");
+"å°å–‡å˜›ç‚¹å¤´å“ˆè…°ï¼šä½›ä¸»ä¿ä½‘" + RANK_D->query_respect(who)+" ï¼Œè¯·ç”¨èŒ¶ã€‚\n");
+        who->delete_temp("marks/èŒ¶");
         tea=new("/d/qilian/obj/buttertea");
 	tea->move("/d/qilian/chufang");
 	tea=new("/d/qilian/obj/buttertea");

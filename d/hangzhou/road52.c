@@ -1,5 +1,5 @@
 //Cracked by Roath
-// �غ����
+// 沿湖大道
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -9,10 +9,10 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "�غ����");
+   set("short", "沿湖大道");
    set("long", @LONG
-һ�������Ĵ����ȴ����ϡ�١�ԭ��������·ס�ŵĶ��Ǵ�ٹ�
-�ˡ������羰����֮����ȴ�Ե�һƬ��ɪ����������Ϻͱ����졣
+一条宽敞的大道上却游人稀少。原来这里沿路住着的都是达官贵
+人。本来风景秀丽之处，却显的一片萧瑟。大道向西南和北延伸。
 LONG
       );
 

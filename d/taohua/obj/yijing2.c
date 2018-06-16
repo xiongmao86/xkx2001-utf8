@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name( "Ò×¾­¡¶ËµØÔÆª¡·", ({ "jing", "yi jing" }));
+	set_name( "æ˜“ç»ã€Šè¯´å¦ç¯‡ã€‹", ({ "jing", "yi jing" }));
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»²áÒ×¾­¡£ÉÏÃæÐ´×Å£º\n
-¡¡¡¡ÎôÕß£¬Ê¥ÈËÖ®×÷Ò×Ò²£¬ÓÄÔÞÉñÃ÷¶øÉúÝé¡£
-¡¡¡¡¹Û±äì¶ÒõÑô£¬¶øÁ¢ØÔ£»·¢»Óì¶¸ÕÈá£¬¶øÉúØ³£»ºÍË³ì¶µÀµÂ£¬¶øÀíì¶
-Òå£»ÇîÀí¾¡ÐÔ£¬ÒÔÖÁì¶Ãü¡£
+		set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€å†Œæ˜“ç»ã€‚ä¸Šé¢å†™ç€ï¼š\n
+ã€€ã€€æ˜”è€…ï¼Œåœ£äººä¹‹ä½œæ˜“ä¹Ÿï¼Œå¹½èµžç¥žæ˜Žè€Œç”Ÿè“ã€‚
+ã€€ã€€è§‚å˜æ–¼é˜´é˜³ï¼Œè€Œç«‹å¦ï¼›å‘æŒ¥æ–¼åˆšæŸ”ï¼Œè€Œç”Ÿçˆ»ï¼›å’Œé¡ºæ–¼é“å¾·ï¼Œè€Œç†æ–¼
+ä¹‰ï¼›ç©·ç†å°½æ€§ï¼Œä»¥è‡³æ–¼å‘½ã€‚
 \n");
 		set("value", 200);
 		set("material", "paper");

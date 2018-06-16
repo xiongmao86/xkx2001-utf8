@@ -1,5 +1,5 @@
 //Cracked by Roath
-// citong_x1.c ��ͩ��·
+// citong_x1.c 刺桐西路
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͩ��·");
+        set("short", "刺桐西路");
 	set("long", @LONG
-����Ȫ�ݵ���Ҫ�ɵ�����ֱ���㣬��ˮ���������ַǷ��������ǿ�Ԫ�£�
-�ϱ��Ǽ������ϵ꣬�����������ŵ��š�
+这是泉州的主要干道，笔直宽广，车水马龙，热闹非凡。北边是开元寺，
+南边是济世堂老店，西边则是西门吊桥。
 LONG
         );
 

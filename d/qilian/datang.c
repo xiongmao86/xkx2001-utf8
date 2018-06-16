@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÌÃ");
+        set("short", "å¤§å ‚");
         set("long", @LONG
-ÄãËùÔÚµÄÊÇÒ»¸ö½ð±Ú»Ô»ÍµÄ´óÌü£¬ÕâÊÇÈÕÔÂÉñ½ÌÒéÊÂµÄ³¡Ëù¡£
-µØÉÏÆÌ×ÅºìÉ«µØÌº£¬Ç½±ÚÉÏ¹Ò×ÅÒ»¸ö´óØÒ£¬ÉÏÃæÐ´×ÅÈý¸ö½ðÉ«µÄ´ó
-×Ö¡°ÈÕÔÂÉñ½Ì¡±£¬ÕýÇ°·½Á¢×ÅÒ»ÃæÆÁ·ç£¬ÉÏ»æÒ»Ìõ¾ÞÁú£¬Í¨ÌåºÚÉ«£¬
-ÕÅÑÀÎè×¦ËÆÓûÆË³ö¡£
+ä½ æ‰€åœ¨çš„æ˜¯ä¸€ä¸ªé‡‘å£è¾‰ç…Œçš„å¤§åŽ…ï¼Œè¿™æ˜¯æ—¥æœˆç¥žæ•™è®®äº‹çš„åœºæ‰€ã€‚
+åœ°ä¸Šé“ºç€çº¢è‰²åœ°æ¯¯ï¼Œå¢™å£ä¸ŠæŒ‚ç€ä¸€ä¸ªå¤§åŒ¾ï¼Œä¸Šé¢å†™ç€ä¸‰ä¸ªé‡‘è‰²çš„å¤§
+å­—â€œæ—¥æœˆç¥žæ•™â€ï¼Œæ­£å‰æ–¹ç«‹ç€ä¸€é¢å±é£Žï¼Œä¸Šç»˜ä¸€æ¡å·¨é¾™ï¼Œé€šä½“é»‘è‰²ï¼Œ
+å¼ ç‰™èˆžçˆªä¼¼æ¬²æ‰‘å‡ºã€‚
 LONG
         );
         set("exits", ([
@@ -42,7 +42,7 @@ void init()
 			}
                 }
 
-		if ( j ) message_vision("ÎÀÊ¿´óÉù¶Ô$NºÈµÀ£ºÀ´ÕßºÎÈË£¿µ¨¸ÒË½´³Éñ½Ì·Ö¶æ£¡ÄÉÃüÀ´£¡\n", me);
+		if ( j ) message_vision("å«å£«å¤§å£°å¯¹$Nå–é“ï¼šæ¥è€…ä½•äººï¼Ÿèƒ†æ•¢ç§é—¯ç¥žæ•™åˆ†èˆµï¼çº³å‘½æ¥ï¼\n", me);
 	}
 }
 	
@@ -62,7 +62,7 @@ int valid_leave(object me, string dir)
 			}
 		}
 
-		if ( j ) return notify_fail("ÎÀÊ¿¶ÔÄãºÈµÀ£º¿´ÕÐ£¡±ðÍýÏë´³Èë±¾½ÌÖØµØ£¡\n");
+		if ( j ) return notify_fail("å«å£«å¯¹ä½ å–é“ï¼šçœ‹æ‹›ï¼åˆ«å¦„æƒ³é—¯å…¥æœ¬æ•™é‡åœ°ï¼\n");
         }
 
         return ::valid_leave(me, dir);

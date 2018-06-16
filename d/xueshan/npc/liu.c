@@ -7,17 +7,17 @@ inherit NPC;
 
 void create()
 {
-	set_name("���з�", ({ "liu chengfeng","liu" }) );
-	set("nickname","���ƽ�");
-	set("gender", "����");
+	set_name("刘承风", ({ "liu chengfeng","liu" }) );
+	set("nickname","柔云剑");
+	set("gender", "男性");
 	set("age", 45);
 	set("con", 30);
 	set("str", 24);
 	set("dex", 25);
 	set("long",
 
-"����λ̫���ŵĸ��֣��米�����������Ľ������Ʈ������ƺ��������ա�\n");
-//	set("title","�仨��ˮ����");
+"这是位太极门的高手，肩背长剑，长长的剑穗随风飘扬，看来似乎身怀绝艺。\n");
+//	set("title","落花流水老四");
 	set("combat_exp", 550000);
         set("shen_type", 1);
 	set("attitude", "heroism");
@@ -26,8 +26,8 @@ void create()
 	set("neili", 3000);
 	set("chat_chance", 3);
 	set("chat_msg", ({
-//		"���з�޺޵�˵����Ѫ�����������������֪����ʲ��ط����ҵ����ǰ�����ʬ��Σ�\n",
-	"���з糤���е����仨������ˮ�⣬������ˮ�仨��\n",
+//		"刘承风恨恨地说道：血刀老祖这个老贼，不知藏在什麽地方。找到他非把他碎尸万段！\n",
+	"刘承风长声叫道：落花流──水兮，流──水落花！\n",
         }) );
 	/*
 	set("chat_combat_chance", 100);
@@ -77,7 +77,7 @@ void die()
 (int)(killer->query_skill("blade", 1)+1) * 40);
                 killer->add("shen", -30000);
 
-tell_object(killer,HIR"��ֻ����ɲ�Ǽ�����һ��ɱ����ӿ��������Ѫ����Ϊһ�壡\n",NOR);
+tell_object(killer,HIR"你只觉得刹那间心中一股杀气上涌，似是与血刀融为一体！\n",NOR);
 
                 }
         }

@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÊŞ½Ç", ({"shou jiao", "jiao", "unicorn"}));
+	set_name("å…½è§’", ({"shou jiao", "jiao", "unicorn"}));
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Õâ¾ÍÊÇ±ÌË®½ğ¾¦ÊŞµÄÊŞ½Ç£¬Ïà´«ÓÃÆäÖÆ³ÉµÄ®ÙË®Öé¹¦ÄÜ®ÙË®£¬ÇÒº®¶¾²»ÇÖ¡£\n");
-		set("unit", "Ö§");
+		set("long", "è¿™å°±æ˜¯ç¢§æ°´é‡‘ç›å…½çš„å…½è§’ï¼Œç›¸ä¼ ç”¨å…¶åˆ¶æˆçš„î†°æ°´ç åŠŸèƒ½î†°æ°´ï¼Œä¸”å¯’æ¯’ä¸ä¾µã€‚\n");
+		set("unit", "æ”¯");
 		set("material", "leather");
 	}
 	setup();

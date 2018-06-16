@@ -6,25 +6,25 @@
 inherit NPC;
 
 string *death_msg = ({
-	HIB "Óü×äËµµÀ£ºÎ¹£¡ÐÂÀ´µÄ£¬Äã½ÐÊ²Ã´Ãû×Ö£¿\n\n" NOR,
-	HIB "Óü×äÓÃÆæÒìµÄÑÛ¹â¶¢ÖøÄã£¬ºÃÏñÒª¿´´©ÄãµÄÒ»ÇÐËÆµÄ¡£\n\n" NOR,
-	HIB "Óü×ä¡¸ºß¡¹µÄÒ»Éù£¬´ÓÐäÖÐÌÍ³öÒ»±¾ÏñÕÊ²áµÄ¶«Î÷·­¿´Öø¡£\n\n" NOR,
-	HIB "Óü×äºÏÉÏ²á×Ó£¬ËµµÀ£ºÄã£¡ÊÕÉáÊÕÉá£¬¿ìÐÌÂúÁË°¡¡£\n\n" NOR,
-	HIB "Óü×äËµµÀ£ºÄã»¹ÔÚÕâÀï¸ÉÊ²Ã´£¬¿ì¹ö£¬¸øÎÒ¹ö³öÉÙÁÖ£¡\n\n"
-		"Ò»¹ÉÒõÀäµÄÅ¨ÎíÍ»È»³öÏÖ£¬ºÜ¿ìµØ°üÎ§ÁËÄã¡£\n\n" NOR,
+	HIB "ç‹±å’è¯´é“ï¼šå–‚ï¼æ–°æ¥çš„ï¼Œä½ å«ä»€ä¹ˆåå­—ï¼Ÿ\n\n" NOR,
+	HIB "ç‹±å’ç”¨å¥‡å¼‚çš„çœ¼å…‰ç›¯è‘—ä½ ï¼Œå¥½åƒè¦çœ‹ç©¿ä½ çš„ä¸€åˆ‡ä¼¼çš„ã€‚\n\n" NOR,
+	HIB "ç‹±å’ã€Œå“¼ã€çš„ä¸€å£°ï¼Œä»Žè¢–ä¸­æŽå‡ºä¸€æœ¬åƒå¸å†Œçš„ä¸œè¥¿ç¿»çœ‹è‘—ã€‚\n\n" NOR,
+	HIB "ç‹±å’åˆä¸Šå†Œå­ï¼Œè¯´é“ï¼šä½ ï¼æ”¶èˆæ”¶èˆï¼Œå¿«åˆ‘æ»¡äº†å•Šã€‚\n\n" NOR,
+	HIB "ç‹±å’è¯´é“ï¼šä½ è¿˜åœ¨è¿™é‡Œå¹²ä»€ä¹ˆï¼Œå¿«æ»šï¼Œç»™æˆ‘æ»šå‡ºå°‘æž—ï¼\n\n"
+		"ä¸€è‚¡é˜´å†·çš„æµ“é›¾çªç„¶å‡ºçŽ°ï¼Œå¾ˆå¿«åœ°åŒ…å›´äº†ä½ ã€‚\n\n" NOR,
 });
 
 void create()
 {
-	set_name("Óü×ä", ({ "yu zu", "zu" }) );
+	set_name("ç‹±å’", ({ "yu zu", "zu" }) );
 	set("long",
-		"Óü×äÉìÖø³¤³¤µÄÉàÍ·µÉÖøÄã£¬÷îºÚµÄÁ³ÉÏ¿´²»³öÈÎºÎÏ²Å­°§ÀÖ¡£\n");
+		"ç‹±å’ä¼¸è‘—é•¿é•¿çš„èˆŒå¤´çžªè‘—ä½ ï¼Œé»é»‘çš„è„¸ä¸Šçœ‹ä¸å‡ºä»»ä½•å–œæ€’å“€ä¹ã€‚\n");
 	set("attitude", "peaceful");
 	set("chat_chance", 15);
 	set("chat_msg", ({
 //		(: random_move :),
-		"Óü×ä·¢³öÒ»ÕóÏñÉëÒ÷µÄÉùÒô£¬µ±Ëû·¢ÏÖÄãÕý×¢ÊÓÖøËûµÄÊ±ºò£¬µÉÁËÄãÒ»ÑÛ¡£\n",
-		"Óü×ä°Ñ³¤³¤µÄÉàÍ·Éì³öÀ´£¬»º»ºµØÌòÁËÌò×Ô¼ºÓÖºÚÓÖ³¤µÄÊÖÖ¸¡£\n"
+		"ç‹±å’å‘å‡ºä¸€é˜µåƒå‘»åŸçš„å£°éŸ³ï¼Œå½“ä»–å‘çŽ°ä½ æ­£æ³¨è§†è‘—ä»–çš„æ—¶å€™ï¼Œçžªäº†ä½ ä¸€çœ¼ã€‚\n",
+		"ç‹±å’æŠŠé•¿é•¿çš„èˆŒå¤´ä¼¸å‡ºæ¥ï¼Œç¼“ç¼“åœ°èˆ”äº†èˆ”è‡ªå·±åˆé»‘åˆé•¿çš„æ‰‹æŒ‡ã€‚\n"
 	}) );
 	set("age", 50);
 	set("combat_exp", 20000);
@@ -51,7 +51,7 @@ void death_stage(object ob, int stage)
 	if( !ob || !present(ob) ) return;
 
 //	if( !ob->is_ghost() ) {
-//		command("say Î¹£¡ÑôÈËÀ´Òõ¼ä×öÊ²Ã´£¿");
+//		command("say å–‚ï¼é˜³äººæ¥é˜´é—´åšä»€ä¹ˆï¼Ÿ");
 //		kill_ob(ob);
 //		ob->fight_ob(this_object());
 //		return;
@@ -67,6 +67,6 @@ void death_stage(object ob, int stage)
 
 	ob->move("/d/shaolin/woshi1");
 	message("vision",
-		"ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°£¬²»¹ýÄÇÈËÓ°ÓÖºÃÏñÒÑ¾­ÔÚÄÇÀï\n"
-		"ºÜ¾ÃÁË£¬Ö»ÊÇÄãÒ»Ö±Ã»·¢¾õ¡£\n", environment(ob), ob);
+		"ä½ å¿½ç„¶å‘çŽ°å‰é¢å¤šäº†ä¸€ä¸ªäººå½±ï¼Œä¸è¿‡é‚£äººå½±åˆå¥½åƒå·²ç»åœ¨é‚£é‡Œ\n"
+		"å¾ˆä¹…äº†ï¼Œåªæ˜¯ä½ ä¸€ç›´æ²¡å‘è§‰ã€‚\n", environment(ob), ob);
 }

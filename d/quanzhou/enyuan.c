@@ -1,5 +1,5 @@
 //Cracked by Roath
-// enyuan ¶÷Ô¹Ïï
+// enyuan æ©æ€¨å··
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶÷Ô¹Ïï");
+        set("short", "æ©æ€¨å··");
 	set("long", @LONG
-×ß½øÏïÖÐ£¬¾Í¸Ðµ½Ò»¹ÉËàÉ±Ö®ÆøÃÖÂþËÄÖÜ¡£ÏïÅÔÒ»±®ËÊÁ¢£¬ÉÏÊé¡¸¶÷Ô¹·Ö
-Ã÷¡¹ËÄ¸ö´ó×Ö£¬×ÐÏ¸Ò»¿´£¬ÄËÓÃÖ¸Á¦¿Ì»®¶ø³É£¡±±Ãæ¾ÍÊÇÎÅÃûÌìÏÂµÄÀÞÌ¨ÁË¡£
+èµ°è¿›å··ä¸­ï¼Œå°±æ„Ÿåˆ°ä¸€è‚¡è‚ƒæ€ä¹‹æ°”å¼¥æ¼«å››å‘¨ã€‚å··æ—ä¸€ç¢‘è€¸ç«‹ï¼Œä¸Šä¹¦ã€Œæ©æ€¨åˆ†
+æ˜Žã€å››ä¸ªå¤§å­—ï¼Œä»”ç»†ä¸€çœ‹ï¼Œä¹ƒç”¨æŒ‡åŠ›åˆ»åˆ’è€Œæˆï¼åŒ—é¢å°±æ˜¯é—»åå¤©ä¸‹çš„æ“‚å°äº†ã€‚
 LONG
         );
 

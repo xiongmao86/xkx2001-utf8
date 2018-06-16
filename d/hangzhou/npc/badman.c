@@ -1,16 +1,16 @@
 //Cracked by Roath
-///d/hangzhou/badman.c ÃÉÃæÈË
+///d/hangzhou/badman.c è’™é¢äºº
 // sdong 07/98
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÃÜ×ÚµÜ×Ó", ({ "mengmian ren","ren","mengmian" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("å¯†å®—å¼Ÿå­", ({ "mengmian ren","ren","mengmian" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 25+random(25));
 	set("long",
-		"Õâ¼Ò»ïºÚ½íÃÉÃæ£¬Ë«íø¾ùÓÐÉ±Æø£¬Ê±²»Ê±µÍ³ÁµØÒõÐ¦¡£\n");
+		"è¿™å®¶ä¼™é»‘å·¾è’™é¢ï¼ŒåŒçœ¸å‡æœ‰æ€æ°”ï¼Œæ—¶ä¸æ—¶ä½Žæ²‰åœ°é˜´ç¬‘ã€‚\n");
 	set("combat_exp", 5000);
 	set("shen_type", -1);
 	set("attitude", "heroism");
@@ -53,7 +53,7 @@ void init()
 		switch( random(4) )
 		{
 			case 0:
-				set_name("Ñ©É½µÜ×Ó", ({ "xueshan dizi","dizi" }) );
+				set_name("é›ªå±±å¼Ÿå­", ({ "xueshan dizi","dizi" }) );
 				me->set_skill("cuff", max1);
 				me->set_skill("yujiamu-quan", max1);
 				me->map_skill("cuff", "yujiamu-quan");
@@ -84,7 +84,7 @@ void init()
 				}
 				break;
 			case 1:
-				set_name("ÐÇËÞµÜ×Ó", ({ "xingxiu dizi","dizi" }) );
+				set_name("æ˜Ÿå®¿å¼Ÿå­", ({ "xingxiu dizi","dizi" }) );
 				me->set_skill("strike", max1);
 				me->set_skill("chousui-zhang", max1);
 				me->map_skill("strike", "xingxiu-duzhang");
@@ -104,7 +104,7 @@ void init()
 				me->carry_object("/clone/weapon/tiezhang")->wield();
 				break;
 			case 2:
-				set_name("ÉñÁúµÜ×Ó", ({ "shenlong dizi","dizi" }) );
+				set_name("ç¥žé¾™å¼Ÿå­", ({ "shenlong dizi","dizi" }) );
 				me->set_skill("strike", max1);
 				me->set_skill("lingshe-shenfa", max1);
 				me->map_skill("dodge", "lingshe-shenfa");
@@ -123,7 +123,7 @@ void init()
 				me->carry_object("/clone/weapon/hook")->wield();
 				break;
 			case 3: 
-				set_name("°×ÍÕÉ½µÜ×Ó", ({ "baituo dizi","dizi" }) );
+				set_name("ç™½é©¼å±±å¼Ÿå­", ({ "baituo dizi","dizi" }) );
 				me->set_skill("strike", max1);
 				me->set_skill("hamagong", max1);
 				me->set_skill("hand", max1);
@@ -175,19 +175,19 @@ void init()
 	     {
 		case 0:
 			command( "grin" );
-			command( "say ¾ÍÆ¾ÄãÍºÂ¿µÄÈý½ÅÃ¨¹¦·ò£¬Ò²ÅäÔÚÕâÀïÖ¸½ÌÈË¼Ò£¬ÈÃÀÏ×ÓÀ´½ÌÑµ½ÌÑµÄã£¬¿´ÕÐ£¡" );
+			command( "say å°±å‡­ä½ ç§ƒé©´çš„ä¸‰è„šçŒ«åŠŸå¤«ï¼Œä¹Ÿé…åœ¨è¿™é‡ŒæŒ‡æ•™äººå®¶ï¼Œè®©è€å­æ¥æ•™è®­æ•™è®­ä½ ï¼Œçœ‹æ‹›ï¼" );
 			break;
 		case 1:
 			command( "hehe" );
-			command( "say ÌýËµÕâ¸öïÚ¾ÖÓÍË®ºÜ¶à£¬ÀÏ×ÓÇ§ÀïÌöÌö¸ÏÀ´¡£ÍºÔô£¬Äã¾ÍÈÏÃü°É£¡" );
+			command( "say å¬è¯´è¿™ä¸ªé•–å±€æ²¹æ°´å¾ˆå¤šï¼Œè€å­åƒé‡Œè¿¢è¿¢èµ¶æ¥ã€‚ç§ƒè´¼ï¼Œä½ å°±è®¤å‘½å§ï¼" );
 			break;
 		case 2:
 			command( "hehe" );
-			command( "say È¥Äê°³ÐÖµÜËÀÔÚÄãÕâÍºÔôµÄÊÖÀï£¬´óÒ¯ÎÒÎªÐÖµÜ±¨³ðÀ´ÁË¡£ÍºÔô£¬Äã¾ÍÈÏÃü°É£¡" );
+			command( "say åŽ»å¹´ä¿ºå…„å¼Ÿæ­»åœ¨ä½ è¿™ç§ƒè´¼çš„æ‰‹é‡Œï¼Œå¤§çˆ·æˆ‘ä¸ºå…„å¼ŸæŠ¥ä»‡æ¥äº†ã€‚ç§ƒè´¼ï¼Œä½ å°±è®¤å‘½å§ï¼" );
 			break;
 		default:
 			command( "hehe" );
-			command( "say ´óÒ¯ÎÒ·îÃüÀ´É¨Æ½Õâ¸öïÚ¾Ö¡£ÍºÔô£¬Äã¾ÍÈÏÃü°É£¡" );
+			command( "say å¤§çˆ·æˆ‘å¥‰å‘½æ¥æ‰«å¹³è¿™ä¸ªé•–å±€ã€‚ç§ƒè´¼ï¼Œä½ å°±è®¤å‘½å§ï¼" );
 			break;
 	     }
 		  me->set_temp("said", 1);
@@ -197,7 +197,7 @@ void init()
 	if ( !me->query_temp("victim") ) {
 		me->set_temp("victim", victim->query("id"));
 		me->set_temp("fought", 1);
-		message_vision( "$n¶Ô×Å$NÄüÐ¦µÀ£ºÃ÷ÄêµÄ½ñÌì¾ÍÊÇÄãµÄ¼ÉÈÕ£¡\n", victim, me );
+		message_vision( "$nå¯¹ç€$Nç‹žç¬‘é“ï¼šæ˜Žå¹´çš„ä»Šå¤©å°±æ˜¯ä½ çš„å¿Œæ—¥ï¼\n", victim, me );
 		me->kill_ob(victim);
 		victim->kill_ob(me);
 
@@ -207,7 +207,7 @@ void init()
 	else if( present(me->query_temp("victim"),environment(me))
 	&& !me->is_fighting() && me->query_temp("copied") ) {
 		me->kill_ob(victim);
-		message_vision( "$n¶Ô×Å$N´óºð£ºÃ÷ÄêµÄ½ñÌì¾ÍÊÇÄãµÄ¼ÉÈÕ£¡\n", victim, me );
+		message_vision( "$nå¯¹ç€$Nå¤§å¼ï¼šæ˜Žå¹´çš„ä»Šå¤©å°±æ˜¯ä½ çš„å¿Œæ—¥ï¼\n", victim, me );
 		
 		remove_call_out("checking");
 		call_out("checking", 1, me, victim,0);
@@ -219,7 +219,7 @@ void init()
 			if( victim->query("id") == query_temp("victim") )
 			{
 				me->kill_ob(victim);
-				message_vision( "$n¶Ô×Å$N´óºð£ºÃ÷ÄêµÄ½ñÌì¾ÍÊÇÄãµÄ¼ÉÈÕ£¡\n", victim, me );
+				message_vision( "$nå¯¹ç€$Nå¤§å¼ï¼šæ˜Žå¹´çš„ä»Šå¤©å°±æ˜¯ä½ çš„å¿Œæ—¥ï¼\n", victim, me );
 				remove_call_out("checking");
 				call_out( "checking", 1, me, victim,me->query_temp("bonus",1) );
 			}
@@ -230,7 +230,7 @@ void init()
 void destruct_me(object me)
 {
 	if(me) {
-		message_vision("$N´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n\n", me);
+		message_vision("$NåŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n\n", me);
 		destruct(me);
 	}
 }
@@ -255,7 +255,7 @@ int checking(object me, object victim,int bonus)
 	
 	if ( victim->is_ghost() ) {
 		command("grin");
-		command("say ×ÜËã´ó¹¦¸æ³ÉÁË£¡¹þ¹þ¹þ£¡");
+		command("say æ€»ç®—å¤§åŠŸå‘Šæˆäº†ï¼å“ˆå“ˆå“ˆï¼");
 
 		remove_call_out("destruct_me");
 		call_out("destruct_me", 1, me);
@@ -264,7 +264,7 @@ int checking(object me, object victim,int bonus)
 
 	if ( !me->is_fighting() && present(victim, environment(me)) && me->query("qi",1)>0 ) {
 		me->kill_ob(victim);
-		message_vision( "$n¶Ô×Å$N´óºð£º´óÒ¯ÎÒÉ±ÁËÄã£¡\n", victim, me );
+		message_vision( "$nå¯¹ç€$Nå¤§å¼ï¼šå¤§çˆ·æˆ‘æ€äº†ä½ ï¼\n", victim, me );
 		
 		remove_call_out("checking");
 		call_out("checking", 1, me, victim,bonus+random(2) );
@@ -281,7 +281,7 @@ int accept_fight(object victim)
 {
 	object me = this_object();
 
-	command( "say Äã³ÔÁËÀÇÐÄ±ª×Óµ¨À²£¬¾¹¸Ò·´¿¹£¡" );
+	command( "say ä½ åƒäº†ç‹¼å¿ƒè±¹å­èƒ†å•¦ï¼Œç«Ÿæ•¢åæŠ—ï¼" );
 	me->set_temp("fought", 1);
 	me->kill_ob(victim);
 
@@ -294,7 +294,7 @@ int accept_kill(object victim)
 {
 	object me = this_object();
 
-	command( "say ²»ÖªËÀ»îµÄ¶«Î÷£¬ÈÃ´óÒ¯ÎÒ³¬¶ÉÄã°É£¡" );
+	command( "say ä¸çŸ¥æ­»æ´»çš„ä¸œè¥¿ï¼Œè®©å¤§çˆ·æˆ‘è¶…æ¸¡ä½ å§ï¼" );
 	me->kill_ob(victim);
 
 	remove_call_out("checking");
@@ -309,10 +309,10 @@ void unconcious()
 
 	if( random(20) == 10)
 	{
-		message_vision("\n$NºÞºÞµØËµµÀ£ºÃ»Ïëµ½ÄãÕâÐ¡×Ó×¦×ÓÕâÃ´Ó²£¬ÏÂ´ÎÔÙÕÒÄãÂé·³¡£\n", this_object());
-		message_vision("$NÍùÇ½ÉÏÒ»Ìø£¬´Ò´ÒÃ¦Ã¦Àë¿ªÁË¡£\n", this_object());
+		message_vision("\n$Næ¨æ¨åœ°è¯´é“ï¼šæ²¡æƒ³åˆ°ä½ è¿™å°å­çˆªå­è¿™ä¹ˆç¡¬ï¼Œä¸‹æ¬¡å†æ‰¾ä½ éº»çƒ¦ã€‚\n", this_object());
+		message_vision("$Nå¾€å¢™ä¸Šä¸€è·³ï¼ŒåŒ†åŒ†å¿™å¿™ç¦»å¼€äº†ã€‚\n", this_object());
 		destruct(me);
-		tell_object(ob,"\nÄãµÄÇ±ÄÜºÃÏóÔö¼ÓÁË£¡\n");
+		tell_object(ob,"\nä½ çš„æ½œèƒ½å¥½è±¡å¢žåŠ äº†ï¼\n");
 		ob->add("potential", me->query_temp("bonus",1)/10);
 		if(ob->query("potential",1)>ob->query("max_potential",1) )
 			ob->set("potential",ob->query("max_potential",1));
@@ -341,14 +341,14 @@ void die()
 		ob->add("potential", pot/4);
 		if ( ob->query("potential") > ob->query("max_potential") )
 			ob->set("potential", ob->query("max_potential"));
-		tell_object(ob,"\nÄãµÄ¾­ÑéºÍÇ±ÄÜºÃÏó½ø²½ÁË£¡\n");
+		tell_object(ob,"\nä½ çš„ç»éªŒå’Œæ½œèƒ½å¥½è±¡è¿›æ­¥äº†ï¼\n");
 		::die();
 	}
 	else
 	{	
-		message_vision("\nÇ½ÉÏºöÈ»ÓÐÈËÌøÏÂÀ´£¬°Ñ$NÒ»°Ñ±§Æð£¬ºÈµÀ£ºÍºÔô£¬ÐÝÉËÎÒµÄÐÖµÜ¡£\n", this_object());
-		message_vision("ÃÉÃæÈË´ø×Å$NÍùÇ½ÉÏÒ»Ìø£¬´Ò´ÒÃ¦Ã¦Àë¿ªÁË¡£\n", this_object());
-		tell_object(ob,"\nÄãµÄÇ±ÄÜºÃÏóÔö¼ÓÁË£¡\n");
+		message_vision("\nå¢™ä¸Šå¿½ç„¶æœ‰äººè·³ä¸‹æ¥ï¼ŒæŠŠ$Nä¸€æŠŠæŠ±èµ·ï¼Œå–é“ï¼šç§ƒè´¼ï¼Œä¼‘ä¼¤æˆ‘çš„å…„å¼Ÿã€‚\n", this_object());
+		message_vision("è’™é¢äººå¸¦ç€$Nå¾€å¢™ä¸Šä¸€è·³ï¼ŒåŒ†åŒ†å¿™å¿™ç¦»å¼€äº†ã€‚\n", this_object());
+		tell_object(ob,"\nä½ çš„æ½œèƒ½å¥½è±¡å¢žåŠ äº†ï¼\n");
 		ob->add("potential",me->query_temp("bonus",1)*2 );
 		if(ob->query("potential",1)>ob->query("max_potential",1) )
 			ob->set("potential",ob->query("max_potential",1));

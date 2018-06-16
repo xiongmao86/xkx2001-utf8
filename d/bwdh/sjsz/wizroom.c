@@ -7,11 +7,11 @@ inherit ROOM;
 string look_note();
 
 void create() {
-    set("short", "ÊÔ½£É½×¯ÁèÏö¸ó");
+    set("short", "è¯•å‰‘å±±åº„å‡Œéœ„é˜");
     set("long", @LONG
-ÕâÀïÊÇÊÔ½£É½×¯µÄÖ÷ÈË¾Ó×¡µÄµØ·½¡£´ÓÕâÀïÒ²¿ÉÒÔ¸©î«
-Õû¸öÊÔ½£É½×¯¡£Ç½ÉÏ¹Ò×ÅÒ»·ù×Ö(note)£¬ºÜÒıÈË×¢Òâ¡£²»¹ı
-ÎİÀïµÄ¶«Î÷µ¹ÊÇ¸üÈÃÈË³Ô¾ª¡£
+è¿™é‡Œæ˜¯è¯•å‰‘å±±åº„çš„ä¸»äººå±…ä½çš„åœ°æ–¹ã€‚ä»è¿™é‡Œä¹Ÿå¯ä»¥ä¿¯ç°
+æ•´ä¸ªè¯•å‰‘å±±åº„ã€‚å¢™ä¸ŠæŒ‚ç€ä¸€å¹…å­—(note)ï¼Œå¾ˆå¼•äººæ³¨æ„ã€‚ä¸è¿‡
+å±‹é‡Œçš„ä¸œè¥¿å€’æ˜¯æ›´è®©äººåƒæƒŠã€‚
 LONG
     );
     set("exits", ([
@@ -44,7 +44,7 @@ string look_note() {
     string msg;
 
     msg = "
-Ò»³¡±ÈÎäµÄ²Ù×÷³ÌĞò£º
+ä¸€åœºæ¯”æ­¦çš„æ“ä½œç¨‹åºï¼š
   1. assign group entrance (assign n east/west)
 <after they all enter>
   2. duet init (need dispatch camera team here, so be sure all ppl entered)
@@ -56,7 +56,7 @@ string look_note() {
   8. casino east/west/ 0 (set winner)
   9. casino pay
  10. casino stop
-ÆäËû²Î¿¼Ïà¹ØÃüÁî¡£\n";
+å…¶ä»–å‚è€ƒç›¸å…³å‘½ä»¤ã€‚\n";
 
     return msg;
 }

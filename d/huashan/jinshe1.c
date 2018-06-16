@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ½ðÉßÍ¨µÀ
+// é‡‘è›‡é€šé“
 // qfy 16/10/1996
 
 #include <room.h>
@@ -10,10 +10,10 @@ int do_strike();
 
 void create()
 {
-        set("short", "ð®µÀ");
+        set("short", "ç”¬é“");
 	set("long", @LONG
-ÕâÊÇð®µÀºó·½¡£Á½ÈýÕÉÔ¶´¦£¬µØÊÆ»íÈ»¿ÕÀ«£¬³öÏÖÒ»¸ö¶´Ñ¨£¬±ãÈçÊÇ
-×ùÊ¯ÊÒ¡£
+è¿™æ˜¯ç”¬é“åŽæ–¹ã€‚ä¸¤ä¸‰ä¸ˆè¿œå¤„ï¼Œåœ°åŠ¿è±ç„¶ç©ºé˜”ï¼Œå‡ºçŽ°ä¸€ä¸ªæ´žç©´ï¼Œä¾¿å¦‚æ˜¯
+åº§çŸ³å®¤ã€‚
 LONG
         );
 

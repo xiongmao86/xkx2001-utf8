@@ -7,12 +7,12 @@ inherit ROOM;
 #include "sjsz_room.h"
 
 void create() {
-	 set("short", HIB"������"NOR);
+	 set("short", HIB"地下室"NOR);
 	 set("long", @LONG
-������ҹ��߰���������ʯ����Ѫ���߰ߣ������ǵ���
-���Ŀ��ۡ��еĵط����н�ӡ����Ȼ���ڹ��������ӡ��
-�ġ���������͸��Ѫ�����͸�ʬζ��ʹ���ܵ��쳣�Ĵ̼���
-����סѪ�����š�
+这地下室光线暗淡，花岗石地上血迹斑斑，到处是刀、
+剑的砍痕。有的地方还有脚印，显然是内功极深的人印上
+的。空气中渗透着血腥气和腐尸味，使你受到异常的刺激，
+禁不住血脉忿张。
 LONG
 	 );
 	 set("exits", ([

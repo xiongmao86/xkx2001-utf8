@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ĞÌÌÃ");
+        set("short", "åˆ‘å ‚");
         set("long", @LONG
-Äã¸Õ½øÈëÕâÀï£¬¾Í¾õµÃÒ»¹ÉÈÈÀËÓ­ÃæÆËÀ´£¬¶«ÃæÓĞÒ»¸öÁ½ÕÉ¶à¸ßµÄ»ğ
-Â¯£¬ÀïÃæ²å×ÅÒ»Ğ©ÉÕºìµÄÌú²ù£¬Ìú¹³£¬ÁîÈË´¥Ä¿¾ªĞÄ£¬Ê¹ÈË¸Ğµ½ÈÕÔÂÉñ½Ì
-µÄÓÃĞÌÖ®µÀÈ·ÊÇ²©´ó¾«Éî¡£ĞÌÌÃµØÉÏÓĞ¸öĞ¡ÃÅ(door)Í¨ÍùÀÎ·¿¡£
+ä½ åˆšè¿›å…¥è¿™é‡Œï¼Œå°±è§‰å¾—ä¸€è‚¡çƒ­æµªè¿é¢æ‰‘æ¥ï¼Œä¸œé¢æœ‰ä¸€ä¸ªä¸¤ä¸ˆå¤šé«˜çš„ç«
+ç‚‰ï¼Œé‡Œé¢æ’ç€ä¸€äº›çƒ§çº¢çš„é“é“²ï¼Œé“é’©ï¼Œä»¤äººè§¦ç›®æƒŠå¿ƒï¼Œä½¿äººæ„Ÿåˆ°æ—¥æœˆç¥æ•™
+çš„ç”¨åˆ‘ä¹‹é“ç¡®æ˜¯åšå¤§ç²¾æ·±ã€‚åˆ‘å ‚åœ°ä¸Šæœ‰ä¸ªå°é—¨(door)é€šå¾€ç‰¢æˆ¿ã€‚
 LONG
         );
 
@@ -43,7 +43,7 @@ void init()
                         }
                 }
 
-                if ( j ) message_vision("ÎÀÊ¿´óÉù¶Ô$NºÈµÀ£ºµ¨¸ÒÉÃ´³Éñ½ÌÒâÍ¼¾ÈÈË£¡ÄÉÃüÀ´£¡\n", me);
+                if ( j ) message_vision("å«å£«å¤§å£°å¯¹$Nå–é“ï¼šèƒ†æ•¢æ“…é—¯ç¥æ•™æ„å›¾æ•‘äººï¼çº³å‘½æ¥ï¼\n", me);
 	}
 
 	add_action("do_open", "open");
@@ -54,7 +54,7 @@ int do_open(string arg)
 	object *guard, room, me=this_player();
 	int i, j;
 
-	if ( !arg || arg=="" ) return notify_fail("Ê²Ã´£¿\n");
+	if ( !arg || arg=="" ) return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 	if ( !( room = find_object(__DIR__"dilao")) )
                 room = load_object(__DIR__"dilao");
@@ -70,14 +70,14 @@ int do_open(string arg)
            }
 
 	   if ( j ) {
-		message_vision("ÎÀÊ¿¶Ô×Å$NºÈµÀ£º¿´ÕĞ£¡±ğÍıÏëÔÚ±¾´óÒ¯ÊÖÏÂ¾ÈÈË£¡\n", me);
+		message_vision("å«å£«å¯¹ç€$Nå–é“ï¼šçœ‹æ‹›ï¼åˆ«å¦„æƒ³åœ¨æœ¬å¤§çˆ·æ‰‹ä¸‹æ•‘äººï¼\n", me);
 		return 1;
 	   }
 	   else {
-		message_vision("$NÔÚÇ½ÉÏÒ»Õó¸§Ä¦£¬·¢ÏÖÁË»ú¹ØÊàÅ¥¡£ÍùÏÂÒ»°´£¬ÀÎÃÅ±ã×Ô¶¯¿ªÆôÁË¡£\n", me);
+		message_vision("$Nåœ¨å¢™ä¸Šä¸€é˜µæŠšæ‘©ï¼Œå‘ç°äº†æœºå…³æ¢é’®ã€‚å¾€ä¸‹ä¸€æŒ‰ï¼Œç‰¢é—¨ä¾¿è‡ªåŠ¨å¼€å¯äº†ã€‚\n", me);
 		set("exits/down", __DIR__"dilao");
 		room->set("exits/up", __DIR__"xingtang");
-		message("info", "ÀÎÃÅ»º»ºµØ¿ªÆôÁË£®£®£®\n", room);
+		message("info", "ç‰¢é—¨ç¼“ç¼“åœ°å¼€å¯äº†ï¼ï¼ï¼\n", room);
 		remove_call_out("close_door");
 		call_out("close_door", 10, room);
 	   }
@@ -94,7 +94,7 @@ int close_door(object room)
 
 	delete("exits/down");
         room->delete("exits/up");
-	message("info", "ÀÎÃÅÓÖ»º»ºµØ×Ô¶¯¹ØÉÏÁË£®£®£®\n", rooms);
+	message("info", "ç‰¢é—¨åˆç¼“ç¼“åœ°è‡ªåŠ¨å…³ä¸Šäº†ï¼ï¼ï¼\n", rooms);
 
 	return 1;
 }

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����Ϫ�ذ�");
+	set("short", "绿玉溪沿岸");
 	set("long", @LONG
-һ���Ŀ�������·��������Ϫ�ϰ���ᶫ����һ������Ϫ���̲���������
-һ������ɽ�����������де���ľ���������Ŷ�Ϫͨ����������ţ���ȥ��Զ��
-���廪¥�ˡ�
+一条颇宽敞的土路沿着绿玉溪南岸横贯东西，一边是涓涓溪流碧波荡漾，另
+一边是青山翠柳，郁郁葱葱的林木。东面有桥渡溪通向大理城南门，西去不远就
+是五华楼了。
 LONG);
 	set("exits", ([
 		"west" : __DIR__"shanlu3.c",

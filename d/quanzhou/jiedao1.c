@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiedao1.c �ֵ�
+// jiedao1.c 街道
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ֵ�");
+        set("short", "街道");
 	set("long", @LONG
-����Ȫ�����涫�����һ���ɵ�����ģ������ȥ�ɴﺣ�⽻ͨʹ�ڸ���
-������һ�����ׯ��
+这是泉州南面东西向的一条干道，规模不大。南去可达海外交通使节府，
+东面是一所绸缎庄。
 LONG
         );
 

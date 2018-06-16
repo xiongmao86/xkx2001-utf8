@@ -10,10 +10,10 @@ int do_say(string arg);
 
 void create()
 {
-	set_name("¸É¹âºÀ", ({ "Gan guanghao","gan" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å¹²å…‰è±ª", ({ "Gan guanghao","gan" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 30);
-	set("long", "ÕâÎ»ÊÇÎŞÁ¿½£¶«×ÚÕÆÃÅ×ó×ÓÄÂµÄµÜ×Ó£¬Ãû½Ğ¸É¹âºÀ¡£\n");
+	set("long", "è¿™ä½æ˜¯æ— é‡å‰‘ä¸œå®—æŒé—¨å·¦å­ç©†çš„å¼Ÿå­ï¼Œåå«å¹²å…‰è±ªã€‚\n");
 	set("combat_exp", 35000);
 	set("shen_type", -1);
 	set("attitude", "heroism");
@@ -43,9 +43,9 @@ int do_say(string arg)
 	object me;
 	me = this_player();
 
-	if( arg=="¹§Ï²" && present("Ge guangpei", environment(me))) {
-		message_vision("$NÒ»¹°ÊÖ£¬Ğ¡ÉùµÀ£º¡°¹§Ï²¶şÎ»¡£×£Á½Î»°×Í·ÙÉÀÏ¡£ºÇºÇ¡£¡±\n"
-			"¸ğ¹âÅåµÄÁ³à§µÄÒ»ÏÂºìÁË¡£¸É¹âºÀ¡°ÎûÎûÎû¡±µØÉµĞ¦ÁË¼¸Éù¡£\n", me);
+	if( arg=="æ­å–œ" && present("Ge guangpei", environment(me))) {
+		message_vision("$Nä¸€æ‹±æ‰‹ï¼Œå°å£°é“ï¼šâ€œæ­å–œäºŒä½ã€‚ç¥ä¸¤ä½ç™½å¤´å•è€ã€‚å‘µå‘µã€‚â€\n"
+			"è‘›å…‰ä½©çš„è„¸å”°çš„ä¸€ä¸‹çº¢äº†ã€‚å¹²å…‰è±ªâ€œå˜»å˜»å˜»â€åœ°å‚»ç¬‘äº†å‡ å£°ã€‚\n", me);
 		"/d/dali/yubi"->set("exits/west", "/d/dali/xuanya");
 		return 1; }
 	return 0;

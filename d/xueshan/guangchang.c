@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��㳡");
+        set("short", "大广场");
         set("long", @LONG
-������Ժǰ�Ĵ�㳡���Ǿ���ȫ���Ի�ĳ�����ÿ��һ�ȵı羭
-����������ٰ졣������ǰԺ��������ɽ�š�
+这里是院前的大广场，是举行全寺性活动的场所，每年一度的辩经
+大会就在这里举办。北面是前院，向南是山门。
 LONG
         );
         set("exits", ([

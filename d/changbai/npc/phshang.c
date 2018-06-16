@@ -20,11 +20,11 @@ string *walkrooms = ({
 
 void create()
 {
-	set_name("Æ¤»õÉÌ", ({ "pihuo shang", "seller", "shang" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("çš®è´§å•†", ({ "pihuo shang", "seller", "shang" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 40);
 	set("long",
-		"ÕâÊÇ¸ö··ÂôÆ¤»õµÄÉÌÈË¡£\n");
+		"è¿™æ˜¯ä¸ªè´©å–çš®è´§çš„å•†äººã€‚\n");
 
 	set("combat_exp", 3000);
         set("str", 17);
@@ -61,7 +61,7 @@ int random_walk()
         string *dirs, dir;
 
         if( member_array(base_name(environment()), walkrooms) == -1 ) {
-                message_vision("$NÒ»ÁïÑÌÅÜµôÁË¡£\n", this_object());
+                message_vision("$Nä¸€æºœçƒŸè·‘æ‰äº†ã€‚\n", this_object());
                 destruct(this_object());
         }
 
@@ -74,7 +74,7 @@ int random_walk()
         if( member_array(exits[dir], walkrooms) == -1 ) return 0;
 
         if( !random(3) )
-                say("Æ¤»õÉÌ´ÕÉÏÀ´¶ÔÄãËµµÀ£º¡°ÕâÎ»" + RANK_D->query_respect(this_player()) + "ÊÇÒª½øÉ½Ã´£¿¿ìÂòÒ»¼şÆ¤ôÃ°É£¬²»È»³öÁË³Ç¾Í»á±»¶³ËÀµÄ£¡\n");
+                say("çš®è´§å•†å‡‘ä¸Šæ¥å¯¹ä½ è¯´é“ï¼šâ€œè¿™ä½" + RANK_D->query_respect(this_player()) + "æ˜¯è¦è¿›å±±ä¹ˆï¼Ÿå¿«ä¹°ä¸€ä»¶çš®è£˜å§ï¼Œä¸ç„¶å‡ºäº†åŸå°±ä¼šè¢«å†»æ­»çš„ï¼\n");
 
         command("go " + dir);
         return 1;

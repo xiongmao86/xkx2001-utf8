@@ -1,5 +1,5 @@
 //Cracked by Roath
-// meng-mian.c ÃÉÃæÈË
+// meng-mian.c è’™é¢äºº
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÃÉÃæÈË", ({ "mengmian ren", "mengmian", "figure" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è’™é¢äºº", ({ "mengmian ren", "mengmian", "figure" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 40);
 	set("long",
-		"Ò»¸öºÚ²¼ÃÉÃæ£¬ÉñÃØÙâÙâµÄ¼Ò»ï¡£\n");
+		"ä¸€ä¸ªé»‘å¸ƒè’™é¢ï¼Œç¥ç§˜å…®å…®çš„å®¶ä¼™ã€‚\n");
 	set("combat_exp", 200000 + random(100000));
         set("shen_type", -1);
 	set("attitude", "heroism");
@@ -93,23 +93,23 @@ void init()
         if( this_object()->is_killing(this_player()) ) return;
 
 	if( this_player()->query("id") == mengzhu ) {
-		message_vision(HIR "ÃÉÃæÈË¶ñºİºİµØËµµÀ£ºÀÏ×Ó¿àÁ·¼¸Ê®Äê£¬Æ¾ÄãÒ²µ±ÁËÎäÁÖÃËÖ÷È¥£¡ ÎÒÔ×ÁËÄã£¡\n" NOR, 
+		message_vision(HIR "è’™é¢äººæ¶ç‹ ç‹ åœ°è¯´é“ï¼šè€å­è‹¦ç»ƒå‡ åå¹´ï¼Œå‡­ä½ ä¹Ÿå½“äº†æ­¦æ—ç›Ÿä¸»å»ï¼ æˆ‘å®°äº†ä½ ï¼\n" NOR, 
 		this_player());
 		this_object()->kill_ob(this_player());
 	}	
 	else if( this_player()->query("id") == shangshan ) {
-		message_vision(HIR "ÃÉÃæÈËÀäĞ¦¼¸Éù£¬ËµµÀ£ºÄãÊÇÉÍÉÆÊ¹Õß£¬ÔõÃ´´Ó²»¸øÀÏ×ÓÉÏ¹©£¡ ·ÖÃ÷ÊÇ¸öÊÆÁ¦ÑÛ£¡ ¿´ÕĞ£¡\n" NOR, 
+		message_vision(HIR "è’™é¢äººå†·ç¬‘å‡ å£°ï¼Œè¯´é“ï¼šä½ æ˜¯èµå–„ä½¿è€…ï¼Œæ€ä¹ˆä»ä¸ç»™è€å­ä¸Šä¾›ï¼ åˆ†æ˜æ˜¯ä¸ªåŠ¿åŠ›çœ¼ï¼ çœ‹æ‹›ï¼\n" NOR, 
 		this_player());
 		this_object()->kill_ob(this_player());
 	}	
 	else if( this_player()->query("id") == fae ) {
-		message_vision(HIY "ÃÉÃæÈËËÀËÀµÉ×Å$NÇÆÁË»á£¬¼éĞ¦µÀ£ºÀÏ×ÓÊÇÌìÏÂµÚÒ»´ó¶ñÈË£¬Äã·£¶ñÊ¹Õß¸Ò¶Ô¸¶ÎÒÂğ£¿£¡\n" NOR, 
+		message_vision(HIY "è’™é¢äººæ­»æ­»çªç€$Nç§äº†ä¼šï¼Œå¥¸ç¬‘é“ï¼šè€å­æ˜¯å¤©ä¸‹ç¬¬ä¸€å¤§æ¶äººï¼Œä½ ç½šæ¶ä½¿è€…æ•¢å¯¹ä»˜æˆ‘å—ï¼Ÿï¼\n" NOR, 
 		this_player());
 		this_object()->kill_ob(this_player());
 	}
 	else if( this_player()->query("combat_exp") < 100000 && random(10) == 0 ) {
-		this_player()->tell_object("ÃÉÃæÈËÕı¶¢ÖøÄã¿´£¬²»ÖªµÀ´òÊ²Ã´Ö÷Òâ¡£\n");
-		say("ÏóÄãÕâ÷áÈı½ÅÃ¨µÄ¹¦·ò£¬Ò²¸ÒÔÚÀÏ×ÓÃæÇ°ÕĞÒ¡£¬»¹²»¸øÎÒ¹öÒ»±ßÈ¥£¡\n");	
+		this_player()->tell_object("è’™é¢äººæ­£ç›¯è‘—ä½ çœ‹ï¼Œä¸çŸ¥é“æ‰“ä»€ä¹ˆä¸»æ„ã€‚\n");
+		say("è±¡ä½ è¿™éº½ä¸‰è„šçŒ«çš„åŠŸå¤«ï¼Œä¹Ÿæ•¢åœ¨è€å­é¢å‰æ‹›æ‘‡ï¼Œè¿˜ä¸ç»™æˆ‘æ»šä¸€è¾¹å»ï¼\n");	
 	}
 
 }

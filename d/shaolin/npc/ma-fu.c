@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ma-fu.c Âí·ò
+// ma-fu.c é©¬å¤«
 // cleansword 12/25/96
 
 inherit NPC;
@@ -12,20 +12,20 @@ string ask_me_rent();
 
 void create()
 {
-	set_name("Âí·ò", ({ "ma fu", "fu", "pawn" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é©¬å¤«", ({ "ma fu", "fu", "pawn" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 20+random(20));
 	set("long",
-		"ÕâÊÇÎ»ÀÏÊµ°Í½»µÄÂí·ò£¬ÂúÍ·´óº¹£¬Á³ÉÏÉíÉÏÕ´ÂúÁË²İÁÏĞ¼£¬ÊÖÀïÄÃ×Å°Ñ·æÀûµÄÕ¡µ¶¡£\n");
+		"è¿™æ˜¯ä½è€å®å·´äº¤çš„é©¬å¤«ï¼Œæ»¡å¤´å¤§æ±—ï¼Œè„¸ä¸Šèº«ä¸Šæ²¾æ»¡äº†è‰æ–™å±‘ï¼Œæ‰‹é‡Œæ‹¿ç€æŠŠé”‹åˆ©çš„é“¡åˆ€ã€‚\n");
 	set("combat_exp", random(5000));
 	set("attitude", "friendly");
 	set("no_get", 1);
 
 	set("inquiry", ([
-		"ÂòÂí" : (: ask_me_buy  :),
-		"ÂôÂí" : (: ask_me_sell :),
-		"Î¹Âí" : (: ask_me_feed :),
-		"×âÂí" : (: ask_me_rent :),
+		"ä¹°é©¬" : (: ask_me_buy  :),
+		"å–é©¬" : (: ask_me_sell :),
+		"å–‚é©¬" : (: ask_me_feed :),
+		"ç§Ÿé©¬" : (: ask_me_rent :),
 	]));
 
 	set("vendor_goods", ({
@@ -48,24 +48,24 @@ void init()
 	env = environment(me);
 	inv = all_inventory(env);
 
-	if( ob->query("race") == "Ò°ÊŞ"
+	if( ob->query("race") == "é‡å…½"
 	&& mapp(exits = environment()->query("exits")) 
 	&& query("jingli") < query("max_jingli") / 2 ) {
 //		dirs = keys(exits);
-//		message_vision("Âí·òÒ»¼ûÇéÊÆ²»Ãî£¬¼±Ã¦ÁïÁË³öÈ¥¡£\n", ob);
-        message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉí°Î¿ªÒ»¶Ñ²İÁÏ£¬ÏÂÃæÂ¶³öÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï±ß°ÑÃÅËøÉÏÁË¡£\n",
+//		message_vision("é©¬å¤«ä¸€è§æƒ…åŠ¿ä¸å¦™ï¼Œæ€¥å¿™æºœäº†å‡ºå»ã€‚\n", ob);
+        message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹”å¼€ä¸€å †è‰æ–™ï¼Œä¸‹é¢éœ²å‡ºä¸€é“æš—é—¨ï¼Œé’»äº†è¿›å»ï¼Œå’”åš“ä»é‡Œè¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
 		this_object());
 		destruct(this_object());
 //		command("go " + dirs[random(sizeof(dirs))]);
 	}
 
 	for( i=0; i<sizeof(inv); i++ ) {
-		if( inv[i]->query("race") == "¼ÒĞó" && inv[i]->query_lord() == ob ) {
+		if( inv[i]->query("race") == "å®¶ç•œ" && inv[i]->query_lord() == ob ) {
 			if( !living(inv[i]) ) {
-				command("say ¿Í¹Ù£¬ÄúµÄÂíÔÎ¹ıÈ¥ÁË£¬ÈÃÎÒÀ´ÅªĞÑËü£¡");
-				message_vision("Âí·òµ¹ÁËÒ»Í°Ë®ÆÃÔÚÂíÉíÉÏ£¬\n", ob);
+				command("say å®¢å®˜ï¼Œæ‚¨çš„é©¬æ™•è¿‡å»äº†ï¼Œè®©æˆ‘æ¥å¼„é†’å®ƒï¼");
+				message_vision("é©¬å¤«å€’äº†ä¸€æ¡¶æ°´æ³¼åœ¨é©¬èº«ä¸Šï¼Œ\n", ob);
 				inv[i]->revive();
-			} else command("say ¿Í¹Ù£¬ÄúµÄÂí¾ÍÔÚÕâÀï£¬ÎÒÕâ¾Í°ÑËüÇ£¹ıÀ´£¡");	
+			} else command("say å®¢å®˜ï¼Œæ‚¨çš„é©¬å°±åœ¨è¿™é‡Œï¼Œæˆ‘è¿™å°±æŠŠå®ƒç‰µè¿‡æ¥ï¼");	
 
 			inv[i]->set_leader(ob);
 			if( !ob->query("rided") ) {
@@ -81,14 +81,14 @@ void init()
 	}
 
 	if( ob->query_temp("horse_guest") ) {
-		say("Âí·ò¿àÉ¥ÖøÁ³µÀ£º¿Í¹Ù£¬ÊµÔÚ¶Ô²»Æğ£¬ÎÒÕÒ²»¼ûÄúµÄÂíÁË ... \n");
-		command("say Äú¿´ÊÇ²»ÊÇÁíÂòÒ»Æ¥Æï³Ë£¿ ÎÒÕâÀï¸øÄú´ò°ëÕÛ£¡");
+		say("é©¬å¤«è‹¦ä¸§è‘—è„¸é“ï¼šå®¢å®˜ï¼Œå®åœ¨å¯¹ä¸èµ·ï¼Œæˆ‘æ‰¾ä¸è§æ‚¨çš„é©¬äº† ... \n");
+		command("say æ‚¨çœ‹æ˜¯ä¸æ˜¯å¦ä¹°ä¸€åŒ¹éª‘ä¹˜ï¼Ÿ æˆ‘è¿™é‡Œç»™æ‚¨æ‰“åŠæŠ˜ï¼");
 		ob->delete_temp("horse_guest");
 		ob->set_temp("horse_loser", 1);
 		return;
 	}
 
-	if( interactive(ob) && ob->query("race") == "ÈËÀà" && !is_fighting()) {
+	if( interactive(ob) && ob->query("race") == "äººç±»" && !is_fighting()) {
 		remove_call_out("greeting");
 		call_out("greeting", 1, ob);
 	}
@@ -106,22 +106,22 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 
 	if( objectp(animal = ob->query("rided")) && environment(animal) == environment() ) {
-		if( animal->query("race") == "Ò°ÊŞ"
+		if( animal->query("race") == "é‡å…½"
 		&& mapp(exits = environment()->query("exits")) ) {
 //			dirs = keys(exits);
-//			message_vision("Âí·òÒ»¼ûÇéÊÆ²»Ãî£¬¼±Ã¦ÁïÁË³öÈ¥¡£\n", ob);
-        message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉí°Î¿ªÒ»¶Ñ²İÁÏ£¬ÏÂÃæÂ¶³öÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï±ß°ÑÃÅËøÉÏÁË¡£\n",
+//			message_vision("é©¬å¤«ä¸€è§æƒ…åŠ¿ä¸å¦™ï¼Œæ€¥å¿™æºœäº†å‡ºå»ã€‚\n", ob);
+        message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹”å¼€ä¸€å †è‰æ–™ï¼Œä¸‹é¢éœ²å‡ºä¸€é“æš—é—¨ï¼Œé’»äº†è¿›å»ï¼Œå’”åš“ä»é‡Œè¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
 		this_object());
 		 	destruct(this_object());	
 //			command("go " + dirs[random(sizeof(dirs))]);		
-		} else say("Âí·òĞ¡²½ÅÜÁË¹ıÀ´£¬Ğ¦µÀ£º¿Í¹Ù¿ÉÊÇÒªÎÒÌæÄúÎ¹Éü¿Ú£¿Çë¾¡¹Ü·Ô¸À£¡\n");
+		} else say("é©¬å¤«å°æ­¥è·‘äº†è¿‡æ¥ï¼Œç¬‘é“ï¼šå®¢å®˜å¯æ˜¯è¦æˆ‘æ›¿æ‚¨å–‚ç‰²å£ï¼Ÿè¯·å°½ç®¡å©å’ï¼\n");
 	} else {
 		switch( random(2) ) {
 		case 0:
-			say( "Âí·òµãÍ·¹şÑüµØËµµÀ£ºÕâÎ»¿Í¹Ù£¬ÊÇÏëµ½ÕâÀïÌôÒ»Æ¥ºÃÂí°É£¿\n");
+			say( "é©¬å¤«ç‚¹å¤´å“ˆè…°åœ°è¯´é“ï¼šè¿™ä½å®¢å®˜ï¼Œæ˜¯æƒ³åˆ°è¿™é‡ŒæŒ‘ä¸€åŒ¹å¥½é©¬å§ï¼Ÿ\n");
 			break;
 		case 1:
-			say( "Âí·òĞ¦ßäßäËµµÀ£ºÕâÎ»¿Í¹ÙÁô²½£¬ÎÒÃÇÕâÀï¶àµÄÊÇ¸÷µØÁ¼Âí£¬Äú²»·ÁÇÆÇÆ¡£\n");
+			say( "é©¬å¤«ç¬‘å’ªå’ªè¯´é“ï¼šè¿™ä½å®¢å®˜ç•™æ­¥ï¼Œæˆ‘ä»¬è¿™é‡Œå¤šçš„æ˜¯å„åœ°è‰¯é©¬ï¼Œæ‚¨ä¸å¦¨ç§ç§ã€‚\n");
 			break;
 		}
 	}
@@ -130,8 +130,8 @@ void greeting(object ob)
 void byebying(object ob, object horse)
 {
 	if( !ob || environment(ob) != environment() || !horse) return;
-	message_vision("\nÂí·òÀûÂäµØ°Ñ$NÇ£ÁË¹ıÀ´£¬·öÖø$nÆïÁËÉÏÈ¥¡£\n\n", horse, ob);
-	say("Âí·ò»ÓÊÖµÀ£º¿Í¹ÙÂı×ß£¬ÏÂ´ÎÔÙÀ´Ñ½£¡\n");
+	message_vision("\né©¬å¤«åˆ©è½åœ°æŠŠ$Nç‰µäº†è¿‡æ¥ï¼Œæ‰¶è‘—$néª‘äº†ä¸Šå»ã€‚\n\n", horse, ob);
+	say("é©¬å¤«æŒ¥æ‰‹é“ï¼šå®¢å®˜æ…¢èµ°ï¼Œä¸‹æ¬¡å†æ¥å‘€ï¼\n");
 }
 
 int accept_object(object ob, object money)
@@ -145,17 +145,17 @@ int accept_object(object ob, object money)
 	inv = all_inventory(env);
 
 	if(!money->query("money_id")) {
-		say("Âí·ò°ÚÊÖµÀ£º¶Ô²»Æğ£¬Ğ¡µÄ²»ÄÜÂÒÊÕ¶«Î÷£¡\n");
+		say("é©¬å¤«æ‘†æ‰‹é“ï¼šå¯¹ä¸èµ·ï¼Œå°çš„ä¸èƒ½ä¹±æ”¶ä¸œè¥¿ï¼\n");
 		return 0;
 	}
 
 	if( ob->query_temp("horse_guest") && !ob->query_temp("horse_loser") ) {	
 		if( money->value() >= 100 + random(500) ) {
-			say("Âí·ò¹şÑüËµµÀ£º¶àĞ»£¬¿Í¹ÙÇë·ÅĞÄ£¬ÄúµÄÂíÎÒ»áÕÕÁÏºÃµÄ£¡\n");
+			say("é©¬å¤«å“ˆè…°è¯´é“ï¼šå¤šè°¢ï¼Œå®¢å®˜è¯·æ”¾å¿ƒï¼Œæ‚¨çš„é©¬æˆ‘ä¼šç…§æ–™å¥½çš„ï¼\n");
 			for( i=0; i<sizeof(inv); i++ ) {
-				if( inv[i]->query("race") == "¼ÒĞó" && inv[i]->query_lord() == ob ) {
+				if( inv[i]->query("race") == "å®¶ç•œ" && inv[i]->query_lord() == ob ) {
 					if( !living(inv[i]) ) inv[i]->revive();
-					message_vision("Âí·òµ±ÏÂ¾Í°ÑÂíÇ£µ½Âí²Û±ßÎ¹Âí¡£\n", ob);
+					message_vision("é©¬å¤«å½“ä¸‹å°±æŠŠé©¬ç‰µåˆ°é©¬æ§½è¾¹å–‚é©¬ã€‚\n", ob);
 
 					inv[i]->set("water", inv[i]->max_water_capacity() * 8 /10 );
 					inv[i]->set("food", inv[i]->max_food_capacity() * 8 /10 );
@@ -164,7 +164,7 @@ int accept_object(object ob, object money)
 				}
 			}
 		} else {
-			say("Âí·òµãÍ·Ğ¦µÀ£ºĞ¡µÄ¶àĞ»¿Í¹ÙÁË£¡ÎûÎû£¡\n");
+			say("é©¬å¤«ç‚¹å¤´ç¬‘é“ï¼šå°çš„å¤šè°¢å®¢å®˜äº†ï¼å˜»å˜»ï¼\n");
 			command("bow " + ob->id());
 			return 1;
 		}
@@ -175,8 +175,8 @@ int accept_object(object ob, object money)
 			else	value = horse->query("value") * 100;
 
 			if( money->value() >= value ) {
-				say("Âí·òÒ»µüÉùµØµãÍ·µÀ£º¹»ÁË¹»ÁË£¬ÎÒÕâ¾Í°Ñ" +
-			horse->query("name") +"Ç£¹ıÀ´¸øÄú£¡\n");	
+				say("é©¬å¤«ä¸€è¿­å£°åœ°ç‚¹å¤´é“ï¼šå¤Ÿäº†å¤Ÿäº†ï¼Œæˆ‘è¿™å°±æŠŠ" +
+			horse->query("name") +"ç‰µè¿‡æ¥ç»™æ‚¨ï¼\n");	
 
 				horse->set_lord(ob);
 				horse->set_leader(ob);
@@ -190,11 +190,11 @@ int accept_object(object ob, object money)
 				}
 				return 1;
 			} else {
-				say("Âí·òµ²×¡ÄãµÄÊÖ£¬Ò¡Í·µÀ£º¶Ô²»Æğ£¬¿Í¹Ù¡£ÄãµÄÇ®²»¹»£¡\n");
+				say("é©¬å¤«æŒ¡ä½ä½ çš„æ‰‹ï¼Œæ‘‡å¤´é“ï¼šå¯¹ä¸èµ·ï¼Œå®¢å®˜ã€‚ä½ çš„é’±ä¸å¤Ÿï¼\n");
 				return 0;
 			}
 		} else {
-			say("Âí·òÒ¡Í·µÀ£º¿Í¹Ù¸øĞ¡µÄÒø×Ó×÷Éõ£¿Äú¿ÉÊÇÏëÔÚ´ËÌôÆ¥ºÃÂí£¿\n");
+			say("é©¬å¤«æ‘‡å¤´é“ï¼šå®¢å®˜ç»™å°çš„é“¶å­ä½œç”šï¼Ÿæ‚¨å¯æ˜¯æƒ³åœ¨æ­¤æŒ‘åŒ¹å¥½é©¬ï¼Ÿ\n");
 			return 0;
 		}
 	}
@@ -210,18 +210,18 @@ int do_train(string arg)
 	ob = this_player();
 
 	if(ob->is_fighting()){
-		say("ÄãÕıÃ¦×ÅÄØ£¡\n");
+		say("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 	return 1;
 	}
 	if( stringp(arg) && arg != 0 
 	&& objectp(animal = present(arg, environment())) 
-	&& animal->query("race") == "¼ÒĞó" 
+	&& animal->query("race") == "å®¶ç•œ" 
 	&& !me->is_fighting() ) {
-		message_vision("Âí·ò´óº°Ò»Éù£ºÔô¹ÇÍ·£¬ÏëÍµÂí£¡Ëµ°Õ³¯Öø$N¾Í³åÁË¹ıÀ´£¡\n", ob);
-//		command("chat À´ÈËÀ²£¡" + ob->query("name") + "Õâ¸ö"
-//		+  RANK_D->query_rude(ob) + "ÏëÍµÂí£¡");
+		message_vision("é©¬å¤«å¤§å–Šä¸€å£°ï¼šè´¼éª¨å¤´ï¼Œæƒ³å·é©¬ï¼è¯´ç½¢æœè‘—$Nå°±å†²äº†è¿‡æ¥ï¼\n", ob);
+//		command("chat æ¥äººå•¦ï¼" + ob->query("name") + "è¿™ä¸ª"
+//		+  RANK_D->query_rude(ob) + "æƒ³å·é©¬ï¼");
 //		me->kill_ob(ob);
-//		message_vision("²¶Í·´ø×ÅÁ½Î»Ñ²²¶¼±¼±Ã¦Ã¦³åÁË½øÀ´£¡\n", ob);
+//		message_vision("æ•å¤´å¸¦ç€ä¸¤ä½å·¡æ•æ€¥æ€¥å¿™å¿™å†²äº†è¿›æ¥ï¼\n", ob);
 		ob->apply_condition("killer", 100);
 /*		xunbu1=new("/d/city/npc/xunbu");
 		xunbu1->move(environment(ob));
@@ -252,16 +252,16 @@ int do_say(string arg)
 	inv = all_inventory(environment());
 
 	if( objectp(horse = ob->query_temp("horse_asked")) ) {
-		if( arg == "ÖĞÒâ" )
-			say("Âí·òĞ¦µÀ£ººÇºÇºÇ£¬ÄÇ¾Í¸øÇ®°É£¬¿Í¹Ù£¡\n");
-		if( arg == "²»ÖĞÒâ" )
-			say("Âí·òĞ¦µÀ£ºÃ»¹ØÏµ£¬¿Í¹ÙÄú¾ÍÔÙÌôÒ»Æ¥°É£¡\n");
+		if( arg == "ä¸­æ„" )
+			say("é©¬å¤«ç¬‘é“ï¼šå‘µå‘µå‘µï¼Œé‚£å°±ç»™é’±å§ï¼Œå®¢å®˜ï¼\n");
+		if( arg == "ä¸ä¸­æ„" )
+			say("é©¬å¤«ç¬‘é“ï¼šæ²¡å…³ç³»ï¼Œå®¢å®˜æ‚¨å°±å†æŒ‘ä¸€åŒ¹å§ï¼\n");
 		return 1;
 	}
 
 	if( stringp(arg) && arg != 0 ) {
 		for( i=0; i<sizeof(inv); i++ ) {
-			if( inv[i]->query("race") == "¼ÒĞó" && inv[i]->query("name") == arg ) {
+			if( inv[i]->query("race") == "å®¶ç•œ" && inv[i]->query("name") == arg ) {
 				if( inv[i]->query_lord() )
 					ob->set_temp("horse_else", inv[i]);
 				else	ob->set_temp("horse_asked", inv[i]);
@@ -269,13 +269,13 @@ int do_say(string arg)
 		}
 		
 		if( objectp(horse = ob->query_temp("horse_asked")) && horse->name() == arg ) {
-			say("Âí·òµÀ£º¿Í¹ÙºÃÑÛÁ¦£¬ÕâÆ¥" + horse->name() + "Ö»Òª" 
-			+ chinese_number(horse->query("value")) + "Á½Òø×Ó£¬ÄúÖĞÒâ²»£¿\n");
+			say("é©¬å¤«é“ï¼šå®¢å®˜å¥½çœ¼åŠ›ï¼Œè¿™åŒ¹" + horse->name() + "åªè¦" 
+			+ chinese_number(horse->query("value")) + "ä¸¤é“¶å­ï¼Œæ‚¨ä¸­æ„ä¸ï¼Ÿ\n");
 			return 1;
 		}
 
 		if( objectp(horse = ob->query_temp("horse_else")) && horse->name() == arg ) {
-			say("Âí·òµÀ£º¿Í¹Ù£¬ÕâÆ¥ÂíÊÇ±ğÈË¼ÄÔÚÕâ¶ùµÄ£¬²»ÄÜÂô£¡\n");
+			say("é©¬å¤«é“ï¼šå®¢å®˜ï¼Œè¿™åŒ¹é©¬æ˜¯åˆ«äººå¯„åœ¨è¿™å„¿çš„ï¼Œä¸èƒ½å–ï¼\n");
 			ob->delete_temp("horse_else");
 			return 1;
 		}		
@@ -294,20 +294,20 @@ string ask_me_buy()
 	inv = all_inventory(environment());
 
 	if( sizeof(inv) < 1 )
-	return "°¦£¬×î½ü¹â¹ËµÄ¿ÍÈËÌ«¶à£¬ÎÒÃÇÕâÀïÒÑ¾­Ã»Âí¿ÉÂôÁË£¡";
+	return "å”‰ï¼Œæœ€è¿‘å…‰é¡¾çš„å®¢äººå¤ªå¤šï¼Œæˆ‘ä»¬è¿™é‡Œå·²ç»æ²¡é©¬å¯å–äº†ï¼";
 
-	say("Âí·òËµµÀ£ºÄúÇÆ£¬\n");
+	say("é©¬å¤«è¯´é“ï¼šæ‚¨ç§ï¼Œ\n");
 	for( i=0; i<sizeof(inv); i++ ) {
-		if( inv[i]->query("race") == "¼ÒĞó" ) {
+		if( inv[i]->query("race") == "å®¶ç•œ" ) {
 			j++;
-			if( objectp(inv[i]->query_lord()) ) word = "ÓĞÖ÷¶ùÁË¡£\n";
-			else word = "Öµ" + chinese_number(inv[i]->query("value")) + "Á½Òø×Ó¡£\n";
-			say("	µÚ" + chinese_number(j) + "Æ¥" + inv[i]->name() + word);
+			if( objectp(inv[i]->query_lord()) ) word = "æœ‰ä¸»å„¿äº†ã€‚\n";
+			else word = "å€¼" + chinese_number(inv[i]->query("value")) + "ä¸¤é“¶å­ã€‚\n";
+			say("	ç¬¬" + chinese_number(j) + "åŒ¹" + inv[i]->name() + word);
 		}
 	}
 
 	add_action("do_say", "say");
-	return "ÎÒÃÇÕâÀïÓĞµÄÊÇºÃÂí£¬ÄúËµÒªÄÄÒ»Æ¥°É£¡";
+	return "æˆ‘ä»¬è¿™é‡Œæœ‰çš„æ˜¯å¥½é©¬ï¼Œæ‚¨è¯´è¦å“ªä¸€åŒ¹å§ï¼";
 }
 
 string ask_me_sell()
@@ -321,9 +321,9 @@ string ask_me_sell()
 		if( horse->query("qi") <= horse->query("max_qi")/10 
 		||  horse->query("jing") <= horse->query("max_jing")/10 
 		||  horse->query("jingli") <= horse->query("max_jingli")/10 )
-			return "ÕâÂí¶¼¿ìËÀÁË£¬»¹À´Âô£¡¹ö¿ª£¡";
+			return "è¿™é©¬éƒ½å¿«æ­»äº†ï¼Œè¿˜æ¥å–ï¼æ»šå¼€ï¼";
 		if( horse->query("baituo"))
-			return "Ğ¡µÄÖ»ÓĞÒ»¸öÄÔ´ü£¬°×ÍÕÉ½Ö÷ÈËµÄ×ùÆï¿É²»¸ÒÂòµÄ¡£";
+			return "å°çš„åªæœ‰ä¸€ä¸ªè„‘è¢‹ï¼Œç™½é©¼å±±ä¸»äººçš„åº§éª‘å¯ä¸æ•¢ä¹°çš„ã€‚";
 		else {
 			value = horse->query("value")/2;
 
@@ -336,12 +336,12 @@ string ask_me_sell()
 			silver->set_amount(value);
 			silver->move(ob);
 
-			message_vision("Âí·òµãµãÍ·£¬ÈÓ¸ø$N¼¸¶§Òø×Ó¡£½ÓÖøÇ£¹ı½®Éş£¬°ÑÂíÀ­µ½Ò»ÅÔ¡£\n", ob);
+			message_vision("é©¬å¤«ç‚¹ç‚¹å¤´ï¼Œæ‰”ç»™$Nå‡ é”­é“¶å­ã€‚æ¥è‘—ç‰µè¿‡ç–†ç»³ï¼ŒæŠŠé©¬æ‹‰åˆ°ä¸€æ—ã€‚\n", ob);
 
-			return "ÕâÆ¥ÂíÓÖÀÏÓÖ³ó£¬Ö»ÄÜÓÃÀ´À­Ä¥£¡Ëã" 
-			+ chinese_number(value) + "Á½Òø×Ó°É£¡";
+			return "è¿™åŒ¹é©¬åˆè€åˆä¸‘ï¼Œåªèƒ½ç”¨æ¥æ‹‰ç£¨ï¼ç®—" 
+			+ chinese_number(value) + "ä¸¤é“¶å­å§ï¼";
 		}
-	} else return "ÂíÄØ£¿";
+	} else return "é©¬å‘¢ï¼Ÿ";
 }
 
 string ask_me_feed()
@@ -355,29 +355,29 @@ string ask_me_feed()
 		ob->delete("rided");
 		ob->set_temp("horse_guest", 1);
 
-		message_vision("Âí·òÇ£Öø½®Éş£¬°ÑÂíÀ­µ½Ò»ÅÔ¡£\n", ob);
-		return "¿Í¹Ù·ÅĞÄ£¬ÄúµÄÂíÎÒ»áÕÕ¿´ºÃµÄ¡£";
+		message_vision("é©¬å¤«ç‰µè‘—ç–†ç»³ï¼ŒæŠŠé©¬æ‹‰åˆ°ä¸€æ—ã€‚\n", ob);
+		return "å®¢å®˜æ”¾å¿ƒï¼Œæ‚¨çš„é©¬æˆ‘ä¼šç…§çœ‹å¥½çš„ã€‚";
 	} 
-	else 	return "ÂíÄØ£¿";
+	else 	return "é©¬å‘¢ï¼Ÿ";
 }
 
 string ask_me_rent()
 {
-	return "ÏÖÔÚÎÒÃÇÕâÀïÃ»Âí¿É×â£¡";
+	return "ç°åœ¨æˆ‘ä»¬è¿™é‡Œæ²¡é©¬å¯ç§Ÿï¼";
 }
 int accept_kill(object me)
 {
 	object xunbu1, xunbu2, butou;
 	if (!this_object()->is_fightin()){
-	command("chat À´ÈËÀ²£¡" + me->query("name") + "Õâ¸ö"
-	+  RANK_D->query_rude(me) + "ÏëÍµÂí£¡");
+	command("chat æ¥äººå•¦ï¼" + me->query("name") + "è¿™ä¸ª"
+	+  RANK_D->query_rude(me) + "æƒ³å·é©¬ï¼");
         me->apply_condition("killer", 100);
         return 1;
 	}
 }
 void unconcious()
 {
-        message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉí°Î¿ªÒ»¶Ñ²İÁÏ£¬ÏÂÃæÂ¶³öÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï±ß°ÑÃÅËøÉÏÁË¡£\n",
+        message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹”å¼€ä¸€å †è‰æ–™ï¼Œä¸‹é¢éœ²å‡ºä¸€é“æš—é—¨ï¼Œé’»äº†è¿›å»ï¼Œå’”åš“ä»é‡Œè¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
                 this_object());
         destruct(this_object());
 }

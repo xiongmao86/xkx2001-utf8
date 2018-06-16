@@ -6,13 +6,13 @@ void create()
 {
 	seteuid(getuid());
 
-	set_name("ÁúĞ¥Ìì", ({"long xiaotian",
+	set_name("é¾™å•¸å¤©", ({"long xiaotian",
 			     "long",
 			     "xiaotian",
 			     "zongguan"}));
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 40);
-	set("long", "´øµ¶ÊÌÎÀ¸±Í³Áì");
+	set("long", "å¸¦åˆ€ä¾å«å‰¯ç»Ÿé¢†");
 	set("attitude","heroism");
 	set("generation",0);
 	set("winner","none");

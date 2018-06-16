@@ -1,16 +1,16 @@
 //Cracked by Roath
-// wanxing.c ������
+// wanxing.c 万行庵
 // Shan: 96/06/22
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "万行庵");
 	set("long", @LONG
-̫��ƺ�������ǹ�����ʦ�����ġ�������ɽ����ɯ须��������źϳ�һ�䣬
-Ҷ�Ӱ��ڻ��⣬��������������׶�ʢ��֮�����������Ժ�֮�߹�Ʒ�ʡ��ɴ�
-�����ϱ����𶥣����������
+太子坪万行庵是古智禅师创建的。庵外满山长满莎椤花，花数芭合成一朵，
+叶子包在花外，古人以其根坚难易而盛赞之，以喻洁身自好之高贵品质。由此
+向南上便至金顶，下至接引殿。
 LONG
 	);
 	set("exits", ([

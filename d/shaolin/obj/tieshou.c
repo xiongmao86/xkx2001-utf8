@@ -7,13 +7,13 @@ inherit HANDS;
 
 void create()
 {
-	set_name( "ÌúÊÖÕÆ", ({ "iron hand", "hand" }) );
+	set_name( "é“æ‰‹æŒ", ({ "iron hand", "hand" }) );
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "steel");
-		set("unit", "¿é");
+		set("unit", "å—");
 		set("value", 50);
 		set("armor_prop/armor", 1 );
 	}

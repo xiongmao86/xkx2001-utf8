@@ -8,10 +8,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ð¡Éß", ({ "snake" }) );
-	set("long", "ÓÉ°×ÍÕÉ½×¯ÅàÑø³öÀ´µÄÐÂÉúÐ¡Éß£¬µ½µ×»áÊÇÊ²÷áÉß£¬¾­¹ýcode²ÅÖªµÀ¡£\n");
-	set("race", "ÉßÀà");
-	set("unit", "Ìõ");
+	set_name("å°è›‡", ({ "snake" }) );
+	set("long", "ç”±ç™½é©¼å±±åº„åŸ¹å…»å‡ºæ¥çš„æ–°ç”Ÿå°è›‡ï¼Œåˆ°åº•ä¼šæ˜¯ä»€éº½è›‡ï¼Œç»è¿‡codeæ‰çŸ¥é“ã€‚\n");
+	set("race", "è›‡ç±»");
+	set("unit", "æ¡");
 	set("age", 1);
 	set("attitude", "peaceful");
 
@@ -43,7 +43,7 @@ void init()
 
 mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 {
-	if(me->query("name") == "¹ÖÉß" )
+	if(me->query("name") == "æ€ªè›‡" )
 	victim->apply_condition("bt_poison", 10 + me->query("snake_poison")/5 +
 		victim->query_condition("bt_poison"));
 
@@ -57,8 +57,8 @@ int convert(string arg)
 	object ob;
 
 	if (arg!="snake" && arg!="she") return 0;
-	if (me->query("family/family_name") != "°×ÍÕÉ½") 
-		return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+	if (me->query("family/family_name") != "ç™½é©¼å±±") 
+		return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ä¸ºæ–ã€‚\n");
 
-	return notify_fail(this_object()->name()+"³öÉú²»¾Ã£¬Éí×ÓÌ«Ð¡£¬»¹²»ÄÜ»¯ÎªÉßÕÈ¡£\n");
+	return notify_fail(this_object()->name()+"å‡ºç”Ÿä¸ä¹…ï¼Œèº«å­å¤ªå°ï¼Œè¿˜ä¸èƒ½åŒ–ä¸ºè›‡æ–ã€‚\n");
 }

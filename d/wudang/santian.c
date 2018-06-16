@@ -1,14 +1,14 @@
 //Cracked by Roath
-// santian.c ÈıÌìÃÅ 
+// santian.c ä¸‰å¤©é—¨ 
 // by Fang 8/20/96
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ÈıÌìÃÅ");
+	set("short", "ä¸‰å¤©é—¨");
 	set("long", @LONG
-ÕâÀïÊÇµÇÉ½Ê¯½×µÄ¾¡Í·¡°ÈıÌìÃÅ¡±£¬ÔÙÍùÉÏ×ß¾ÍÊÇÎäµ±¾ø¶¥ÁË¡£
+è¿™é‡Œæ˜¯ç™»å±±çŸ³é˜¶çš„å°½å¤´â€œä¸‰å¤©é—¨â€ï¼Œå†å¾€ä¸Šèµ°å°±æ˜¯æ­¦å½“ç»é¡¶äº†ã€‚
 LONG
 	);
         set("outdoors", "wudang");

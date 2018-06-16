@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ǰԺ");
+	set("short", "前院");
 	set("long", @LONG
-�տյ�����ͥԺ��ֻ�м�ֻС���������Ľ��ţ�����������
-�Կ�������ɮ�������ּ����֡�
+空空荡荡的庭院里只有几只小鸟“喳喳”的叫着，南面隐隐可
+以看到几间僧舍在松林间隐现。
 LONG
 	);
 	set("cost", 4);

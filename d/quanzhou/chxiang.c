@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chxiang.c ³ÇÚòÏï
+// chxiang.c åŸéšå··
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³ÇÚòÏï");
+        set("short", "åŸéšå··");
 	set("long", @LONG
-Ò»ÌõÍäÇúÏÁÕ­µÄËéÊ¯Ğ¡Â·£¬Á½ÅÔÊ÷Ä¾²Î²î£¬Òõ°µÉ­Àä¡£
+ä¸€æ¡å¼¯æ›²ç‹­çª„çš„ç¢çŸ³å°è·¯ï¼Œä¸¤æ—æ ‘æœ¨å‚å·®ï¼Œé˜´æš—æ£®å†·ã€‚
 LONG
         );
 

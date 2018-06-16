@@ -5,13 +5,13 @@ inherit  ITEM;
 
 void  create()
 {
-	set_name(YEL"Âé½«×À"NOR,  ({  "table"  }));
+	set_name(YEL"éº»å°†æ¡Œ"NOR,  ({  "table"  }));
         set_weight(200000);
-        set("long",  "ÕâÊÇÕÅÒÔµ­»ÆÉ«µÄ´óÀíÖÆ³ÉµÄÂé½«×À¡£\n"  );
+        set("long",  "è¿™æ˜¯å¼ ä»¥æ·¡é»„è‰²çš„å¤§ç†åˆ¶æˆçš„éº»å°†æ¡Œã€‚\n"  );
         if(  clonep()  )
         set_default_object(__FILE__);
         else  {
-        set("unit",  "ÕÅ");
+        set("unit",  "å¼ ");
         set("material",  "stone");
         set("value",  2000);
         set("no_get",  1);

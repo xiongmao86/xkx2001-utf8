@@ -5,11 +5,11 @@ inherit ITEM;
 int throw_ob(object me, object victim);
 void create()
 {
-   set_name(BLU"åÐÒ£ÈýÐ¦É¢"NOR, ({"sanxiao san", "san", "sanxiao", "zhuihun"}));
+   set_name(BLU"é€é¥ä¸‰ç¬‘æ•£"NOR, ({"sanxiao san", "san", "sanxiao", "zhuihun"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "°ü");
+      set("unit", "åŒ…");
       set("value", 10);
       set("skill", "feixing-shu");
    }
@@ -29,44 +29,44 @@ int throw_ob(object me, object victim)
    mapping myfam, vfam;
    
    
-   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "ÐÇËÞÅÉ"))
-                  return notify_fail("Ö»ÓÐÐÇËÞµÜ×ÓÀûÓÃ±¾ÃÅÃØ´«ÄÚ¹¦·½ÄÜÊ¹ÓÃÈýÐ¦É¢¡£\n"); 
+   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "æ˜Ÿå®¿æ´¾"))
+                  return notify_fail("åªæœ‰æ˜Ÿå®¿å¼Ÿå­åˆ©ç”¨æœ¬é—¨ç§˜ä¼ å†…åŠŸæ–¹èƒ½ä½¿ç”¨ä¸‰ç¬‘æ•£ã€‚\n"); 
 
    if (me->is_fighting())
-   	return notify_fail("ÄãÕýÃ¦×Å´ò¼ÜÄØ£¬ÌÚ²»³öÊÖÀ´£¡\n");	
+   	return notify_fail("ä½ æ­£å¿™ç€æ‰“æž¶å‘¢ï¼Œè…¾ä¸å‡ºæ‰‹æ¥ï¼\n");	
 
    if( me->query("neili") <= 5000 ){
-        write("ÄãµÄÄÚÁ¦²»¹»´ÝÆÈåÐÒ£ÈýÐ¦É¢¶¾£¡\n");
+        write("ä½ çš„å†…åŠ›ä¸å¤Ÿæ‘§è¿«é€é¥ä¸‰ç¬‘æ•£æ¯’ï¼\n");
         return 1;
    }
 
    if (me->query_skill("poison", 1) < 100){
-        write("µ±ÐÄ¶¾ËÀÄã×Ô¼º£¡\n");
+        write("å½“å¿ƒæ¯’æ­»ä½ è‡ªå·±ï¼\n");
         return 1;
    }
 
-   if( environment(me)->query("no_fight") ) return notify_fail("²»ÐÐ!\n");
+   if( environment(me)->query("no_fight") ) return notify_fail("ä¸è¡Œ!\n");
 	
-   if( me->is_busy() ) return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÊ©ÓÃÍâ¹¦¡£)\n");
+   if( me->is_busy() ) return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½ç”¨å¤–åŠŸã€‚)\n");
 	
 
    if (victim->query_condition("sxs_poison")){  
-        write("´ËÈËÒÑÖÐÁËÈýÐ¦×·»êÉ¢£¬Ãü²»¾ÃÒÓ£¡\n");
+        write("æ­¤äººå·²ä¸­äº†ä¸‰ç¬‘è¿½é­‚æ•£ï¼Œå‘½ä¸ä¹…çŸ£ï¼\n");
         return 1;
    }
 
    if (me->query_condition("pker") > 240 && userp(victim)){
-        write("Äã¸Ðµ½Ò»Ë¿ÄÚ¾Î£¬ÊÖÍ»È»ÈíÁËÏÂÀ´¡£\n");
+        write("ä½ æ„Ÿåˆ°ä¸€ä¸å†…ç–šï¼Œæ‰‹çªç„¶è½¯äº†ä¸‹æ¥ã€‚\n");
         return 1;
    }
    
-   tell_object(me, BLU"ÄãÇáÇáÒ»µ¯Ö¸£¬½«åÐÒ£ÈýÐ¦É¢Íù"+victim->query("name")+"ÉíÉÏµ¯È¥¡£\n"NOR);
+   tell_object(me, BLU"ä½ è½»è½»ä¸€å¼¹æŒ‡ï¼Œå°†é€é¥ä¸‰ç¬‘æ•£å¾€"+victim->query("name")+"èº«ä¸Šå¼¹åŽ»ã€‚\n"NOR);
    	
 
    if (me->query_skill("poison", 1) < 100){
            this_object()->set_temp("used", 1);
            me->apply_condition("sxs_poison",4); 
-           tell_object(me, "Äã¶¾Á¶µÃ»ðºî²»¹»£¬¶¾×Å×Ô¼ºÁË£¡\n");
+           tell_object(me, "ä½ æ¯’ç‚¼å¾—ç«ä¾¯ä¸å¤Ÿï¼Œæ¯’ç€è‡ªå·±äº†ï¼\n");
            destruct(this_object());
         return 1;
    }
@@ -115,13 +115,13 @@ int throw_ob(object me, object victim)
         destruct(this_object());
         return 1;
    } else if (skill>skill2){
-   	message_vision(HIY"$nÍ»È»¾õµÃÒ»ÕóÀä·çÏ®À´£¬Ã¦ÏòºóÒ»Ô¾£¬ÉÁÁË¿ªÈ¥¡£\n"NOR, me, victim);
+   	message_vision(HIY"$nçªç„¶è§‰å¾—ä¸€é˜µå†·é£Žè¢­æ¥ï¼Œå¿™å‘åŽä¸€è·ƒï¼Œé—ªäº†å¼€åŽ»ã€‚\n"NOR, me, victim);
    	this_object()->set_temp("used", 1);
         this_object()->set("value", 10);
         if( !victim->is_killing(me) ) victim->kill_ob(me);
         me->start_busy(random(3)+1);
    } else {
-        message_vision(HIR"$nÅÛÐäÒ»·÷£¬Ò»¹ÉÄÚ¾¢·¢³ö£¬½«ÄÇÈýÐ¦É¢¾¡Êý³¯$N·÷½«»ØÈ¥¡£\n" NOR, me, victim);
+        message_vision(HIR"$nè¢è¢–ä¸€æ‹‚ï¼Œä¸€è‚¡å†…åŠ²å‘å‡ºï¼Œå°†é‚£ä¸‰ç¬‘æ•£å°½æ•°æœ$Næ‹‚å°†å›žåŽ»ã€‚\n" NOR, me, victim);
         this_object()->set_temp("used", 1);
         this_object()->set("value", 10);
         me->apply_condition("sxs_poison",4);

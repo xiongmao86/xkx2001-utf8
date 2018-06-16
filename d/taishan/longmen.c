@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "аЗце");
+	set("short", "И╬≥И≈╗");
 	set("long", @LONG
-уБюО╠Цйгл╘и╫й╝╟кел╣дфП╣Ц║ё╢к╢╕и╫йф╤╦гмё╛╣ги╫╣дхкр╩╦Ж╡╩
-п║пд╨эхщрв╠Ц╩А╣Ь╤И╣╫яб╧хж╝жп║ё
+Х©≥И┤▄Д╬©Ф≤╞ФЁ╟Е╠╠Е█│Е┘╚Г⌡≤Г └Х╣╥Г┌╧Ц─┌Ф╜╓Е╓└Е╠╠Е┼©И≥║ЕЁ╜О╪▄Г≥╩Е╠╠Г └Д╨╨Д╦─Д╦╙Д╦█
+Е╟▐Е©┐Е╬┬Е╝╧Ф≤⌠Д╬©Д╪ Х╥▄Е═∙Е┬╟Е╢√Х╟╥Д╧▀Д╦╜Ц─┌
 LONG
 	);
 
@@ -30,12 +30,12 @@ int valid_leave(object me, string dir)
 	
 	if( random((int)me->query_skill("dodge")) <= 10) 
 	{
-		me->receive_damage("qi", 50, "╢си╫ио╧Жакобю╢к╓кюак");
-		me->receive_wound("qi",  50, "╢си╫ио╧Жакобю╢к╓кюак");
-		message_vision(HIR"$Nр╩╡╩п║пд╫еобл╓ак╦Ж©уё╛... ╟║...ё║\n"NOR, me);
+		me->receive_damage("qi", 50, "Д╩▌Е╠╠Д╦┼Ф╩ Д╨├Д╦▀Ф²╔Ф▒■Ф╜╩Д╨├");
+		me->receive_wound("qi",  50, "Д╩▌Е╠╠Д╦┼Ф╩ Д╨├Д╦▀Ф²╔Ф▒■Ф╜╩Д╨├");
+		message_vision(HIR"$NД╦─Д╦█Е╟▐Е©┐Х└ Д╦▀Х╦▐Д╨├Д╦╙Г╘╨О╪▄... Е∙┼...О╪│\n"NOR, me);
 		me->move(__DIR__"daizong");
-		message("vision", HIR"ж╩╪Ш" + me->query("name") + "╢си╫ио╧гб╣б╣╣ь╧Жакобю╢ё╛литз╣ьио╟КлЛею╡╩фПю╢ё║\n"NOR, environment(me), me);
-	return notify_fail(HIR"дЦ╢си╫ио╧Жакобю╢ё╛ж╩╬У╣ц╩КиМнч╢╕╡╩лшё╛╩╧йэак╪╦╢╕ик║ё\n"NOR);
+		message("vision", HIR"Е▐╙Х╖│" + me->query("name") + "Д╩▌Е╠╠Д╦┼И╙╗Г╒▄Г╒▄Е°╟Ф╩ Д╨├Д╦▀Ф²╔О╪▄Х╨╨Е°╗Е°╟Д╦┼Е█┼Е╓╘Г┬╛Д╦█Х╣╥Ф²╔О╪│\n"NOR, environment(me), me);
+	return notify_fail(HIR"Д╫═Д╩▌Е╠╠Д╦┼Ф╩ Д╨├Д╦▀Ф²╔О╪▄Е▐╙Х╖┴Е╬≈Ф╣▒Х╨╚Ф≈═Е╓└Д╦█Г√╪О╪▄Х©≤Е▐≈Д╨├Е┤═Е╓└Д╪╓Ц─┌\n"NOR);
 	}
 	return ::valid_leave(me, dir);
 }

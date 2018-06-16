@@ -7,11 +7,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "²ÝµØ");
+        set("short", "è‰åœ°");
         set("long", @LONG
-ÕâÀï³¤×ÅÆëÑüÉîµÄÔÓ²Ý (grass)£¬½ÅÏÂµÄÐ¡Â·¼¸ºõÎÞ·¨±æÈÏ¡£ºö
-¶øÒ»Õó·ç´µÀ´£¬ÄÇ²ÝËæ·ç»Î¶¯£¬´ÓÄãÉíÉÏ·÷¹ý¡£Å¼¶û»ØÍ·Ò»Æ³£¬·¢¾õ
-²Ý´ÔÖÐºÃÏó²Ø×ÅÊ²÷á¶«Î÷¡£
+è¿™é‡Œé•¿ç€é½è…°æ·±çš„æ‚è‰ (grass)ï¼Œè„šä¸‹çš„å°è·¯å‡ ä¹Žæ— æ³•è¾¨è®¤ã€‚å¿½
+è€Œä¸€é˜µé£Žå¹æ¥ï¼Œé‚£è‰éšé£Žæ™ƒåŠ¨ï¼Œä»Žä½ èº«ä¸Šæ‹‚è¿‡ã€‚å¶å°”å›žå¤´ä¸€çž¥ï¼Œå‘è§‰
+è‰ä¸›ä¸­å¥½è±¡è—ç€ä»€éº½ä¸œè¥¿ã€‚
 LONG );
 
       set("exits", ([
@@ -19,7 +19,7 @@ LONG );
 		"west" : __DIR__"tulu",
       ]));
 	set("item_desc",([
-	    "grass" : "ÕâÆ¬ÔÓ²Ý×ãÓÐÆëÑüÉî¡£\n",
+	    "grass" : "è¿™ç‰‡æ‚è‰è¶³æœ‰é½è…°æ·±ã€‚\n",
 	]));
 
 	set("outdoors", "xiakedao" );
@@ -37,20 +37,20 @@ void init()
 int do_push(string arg)
 {	object begger, me = this_player();
 	if ( !arg )
-		return notify_fail( "ÄãÒªÍÆÊ²Ã´£¿\n");
+		return notify_fail( "ä½ è¦æŽ¨ä»€ä¹ˆï¼Ÿ\n");
 	if ( arg != "grass" )
-		return notify_fail( "Ê²÷á£¿\n");
+		return notify_fail( "ä»€éº½ï¼Ÿ\n");
 	if (present("begger", environment(me)) || (int)query("begger_count") == 0)
 	{	if (! present("ye tu", environment(me)))
-		{	message_vision("$N²¦¿ªÔÓ²Ý£¬Ò»Ö»Ò°ÍÃÌøÁË³öÀ´¡£\n", me);
+		{	message_vision("$Næ‹¨å¼€æ‚è‰ï¼Œä¸€åªé‡Žå…”è·³äº†å‡ºæ¥ã€‚\n", me);
 			begger = new("/d/wudang/npc/yetu.c");
 			begger->move(environment(me));
 		}
 		else
-		{	write("Äã²¦¿ªÔÓ²Ý£¬Ã»·¢ÏÖÊ²÷á¡£\n");	}
+		{	write("ä½ æ‹¨å¼€æ‚è‰ï¼Œæ²¡å‘çŽ°ä»€éº½ã€‚\n");	}
 		return 1;	
 	}	
-	message_vision("$N²¦¿ªÔÓ²Ý£¬Ò»¸öÈËÓ°ÌøÁË³öÀ´£¬ÏÅÁËÄãÒ»´óÌø¡£\n", me);
+	message_vision("$Næ‹¨å¼€æ‚è‰ï¼Œä¸€ä¸ªäººå½±è·³äº†å‡ºæ¥ï¼Œå“äº†ä½ ä¸€å¤§è·³ã€‚\n", me);
 	begger = new(__DIR__ + "npc/xuedao");
 	begger->move(environment(me));
 	set("begger_count", 0);

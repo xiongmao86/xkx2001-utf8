@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÀÏµÀÊ¿", ({ "lao daoshi", "lao", "daoshi" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è€é“å£«", ({ "lao daoshi", "lao", "daoshi" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 	set("class", "taoist");
 	set("long",
-		"ÕâÊÇÒ»¸ö¾«×³ÀÏµÀÊ¿¡£\n");
+		"è¿™æ˜¯ä¸€ä¸ªç²¾å£®è€é“å£«ã€‚\n");
 	set("combat_exp", 5000);
         set("shen_type", 0);
 	set("attitude", "peaceful");

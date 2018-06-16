@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ӻ���");
+	set("short", "杂货铺");
 	set("long", @LONG
-������һ��ר��Ů���õĶ�����С���ӡ�
+这里是一家专卖女人用的东西的小铺子。
 LONG
 	);
 

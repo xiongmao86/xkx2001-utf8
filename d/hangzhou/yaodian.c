@@ -1,9 +1,9 @@
 //Cracked by Roath
-// ºúÇìÓàÌÃ
+// èƒ¡åº†ä½™å ‚
 // Dong  11/03/1996.
 // Buying medicine code needed here. !!!
 
-// NTD:  NPC and object. ºúÇìÓà£¬»ï¼Æ¡£
+// NTD:  NPC and object. èƒ¡åº†ä½™ï¼Œä¼™è®¡ã€‚
 
 #include <room.h>
 #include <ansi.h>
@@ -11,11 +11,11 @@
 inherit ROOM;
 
 void create()
-{   set("short", "ºúÇìÓàÌÃ");
+{   set("short", "èƒ¡åº†ä½™å ‚");
     set("long", @LONG
-ÕâÊÇÒ»¼ÒÃ÷¾»¿í³¨µÄÒ©ÌÃ£¬ááÇ½ÉÏÊÇÒ»¸ö´óÒ©¹ñ¡£¼¸¸ö»ï¼ÆÕýÃ¦
-×ÅÅÀÉÏÅÀÏÂµØ´ÓÐ¡³éÌëÀï×¥Ò©¡£Ò©¹ñÇ°°Ú×ÅÒ»ÕÅ×À×Ó£¬×ÀÅÔÒ»Î»ÀÏÕß
-ÕýÔÚÎªÈË°ÑÂö¡£Ëû¾ÍÊÇÃûÒ½ºúÇìÓà¡£
+è¿™æ˜¯ä¸€å®¶æ˜Žå‡€å®½æ•žçš„è¯å ‚ï¼Œå¾Œå¢™ä¸Šæ˜¯ä¸€ä¸ªå¤§è¯æŸœã€‚å‡ ä¸ªä¼™è®¡æ­£å¿™
+ç€çˆ¬ä¸Šçˆ¬ä¸‹åœ°ä»Žå°æŠ½å±‰é‡ŒæŠ“è¯ã€‚è¯æŸœå‰æ‘†ç€ä¸€å¼ æ¡Œå­ï¼Œæ¡Œæ—ä¸€ä½è€è€…
+æ­£åœ¨ä¸ºäººæŠŠè„‰ã€‚ä»–å°±æ˜¯ååŒ»èƒ¡åº†ä½™ã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 1 */ 

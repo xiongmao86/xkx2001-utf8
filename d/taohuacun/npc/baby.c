@@ -6,11 +6,11 @@ void try_move();
 
 void create()
 {
-        set_name("±¦±¦", ({"xiao baobao","baby"}) );
-        set("gender", "Å®ĞÔ");
+        set_name("å®å®", ({"xiao baobao","baby"}) );
+        set("gender", "å¥³æ€§");
         set("age", 1);
         set("attitude", "friendly");
-        set("long","¹Ô±¦±¦¡£\n");
+        set("long","ä¹–å®å®ã€‚\n");
         set("combat_exp", 1);
         set("str",3);
         set("parents",({"dad","mom"}));
@@ -60,7 +60,7 @@ int do_drop(string arg)
       if(present(arg,who)!=me) return 0;
       if(me->move(env))
       {
-             message_vision("$N°Ñ$n´Ó»³Àï·ÅÁËÏÂÀ´¡£\n",who,me);
+             message_vision("$NæŠŠ$nä»æ€€é‡Œæ”¾äº†ä¸‹æ¥ã€‚\n",who,me);
              return 1;
       }
       return 0;
@@ -78,16 +78,16 @@ int do_get(string arg)
       {
              if(me->move(who))
              {
-                   message_vision("$NÍäÏÂÑü°Ñ$n±§ÁËÆğÀ´£¬Â§ÔÚ»³Àï¡£\n",who,me);
+                   message_vision("$Nå¼¯ä¸‹è…°æŠŠ$næŠ±äº†èµ·æ¥ï¼Œæ‚åœ¨æ€€é‡Œã€‚\n",who,me);
              }
              else
              {
-                   message_vision("$NÍäÏÂÑüÒ»±§È´Ã»°Ñ$n±§ÆğÀ´£¬Ğ¡¼Ò»ïºÃ³ÁÄÄ£¡\n",who,me);
+                   message_vision("$Nå¼¯ä¸‹è…°ä¸€æŠ±å´æ²¡æŠŠ$næŠ±èµ·æ¥ï¼Œå°å®¶ä¼™å¥½æ²‰å“ªï¼\n",who,me);
              }
       }
       else
       {
-             message_vision("$N¶×ÏÂÉí³¯$nÉì¿ªË«ÊÖ£¬$nÈ´Ò»ÏÂ×ÓÉÁ¿ªÁË£®£®£®\n",who,me);
+             message_vision("$Nè¹²ä¸‹èº«æœ$nä¼¸å¼€åŒæ‰‹ï¼Œ$nå´ä¸€ä¸‹å­é—ªå¼€äº†ï¼ï¼ï¼\n",who,me);
       }
       return 1;
 }
@@ -117,32 +117,32 @@ int do_kill(string arg)
                     case "kill":
 //         command("chat* "+
                          tell_object(environment(this_object()),
-                         who->query("name")+"Æ´ÃüµØ¿ŞÁËÆğÀ´£ºµù¡«¡«£¬Äï¡«¡«£¬"+
-                             me->query("name")+"ÒªÉ±ÎÒ£®£®£®¿ì»ØÀ´Ñ½£¡\n");
+                         who->query("name")+"æ‹¼å‘½åœ°å“­äº†èµ·æ¥ï¼šçˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"+
+                             me->query("name")+"è¦æ€æˆ‘ï¼ï¼ï¼å¿«å›æ¥å‘€ï¼\n");
                          break;
                     case "hit":
 //         command("chat* "+
                          tell_object(environment(this_object()),
-                         who->query("name")+"´ó¿ŞÁËÆğÀ´£ºµù¡«¡«£¬Äï¡«¡«£¬"+
-                             me->query("name")+"ÆÛ¸ºÎÒ£®£®£®¿ì»ØÀ´Ñ½£¡\n");
+                         who->query("name")+"å¤§å“­äº†èµ·æ¥ï¼šçˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"+
+                             me->query("name")+"æ¬ºè´Ÿæˆ‘ï¼ï¼ï¼å¿«å›æ¥å‘€ï¼\n");
                          break;
                     case "fight":
 //         command("chat* "+
                          tell_object(environment(this_object()),
-                         who->query("name")+"¿ŞÁËÆğÀ´£ºµù¡«¡«£¬Äï¡«¡«£¬"+
-                             me->query("name")+"ÒªÇÀÎÒµÄÌÇ³Ô£®£®£®¿ì»ØÀ´Ñ½£¡\n");
+                         who->query("name")+"å“­äº†èµ·æ¥ï¼šçˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"+
+                             me->query("name")+"è¦æŠ¢æˆ‘çš„ç³–åƒï¼ï¼ï¼å¿«å›æ¥å‘€ï¼\n");
                          break;
                     case "steal":
 //         command("chat* "+
                          tell_object(environment(this_object()),
-                         who->query("name")+"¿ŞÁËÆğÀ´£ºµù¡«¡«£¬Äï¡«¡«£¬"+
-                             me->query("name")+"ÒªÍµ³ÔÎÒµÄÌÇ£¡\n");
+                         who->query("name")+"å“­äº†èµ·æ¥ï¼šçˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"+
+                             me->query("name")+"è¦å·åƒæˆ‘çš„ç³–ï¼\n");
                          break;
                     case "beg":
 //         command("chat* "+
                          tell_object(environment(this_object()),
-                         who->query("name")+"Ğ¡×ìÒ»Íá¿ŞÁËÆğÀ´£ºµù¡«¡«£¬Äï¡«¡«£¬"+
-                             me->query("name")+"ÒªÆ­ÎÒµÄÌÇ³Ô£¡\n");
+                         who->query("name")+"å°å˜´ä¸€æ­ªå“­äº†èµ·æ¥ï¼šçˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"+
+                             me->query("name")+"è¦éª—æˆ‘çš„ç³–åƒï¼\n");
                          break;
              }
       }
@@ -157,12 +157,12 @@ void relay_emote(object ob, string verb)
       switch(verb)
       {
             case "kick":
-                 command("say µù¡«¡«£¬Äï¡«¡«£¬"  + ob->query("name") + "ÌßÎÒÒ®£¡");
+                 command("say çˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"  + ob->query("name") + "è¸¢æˆ‘è€¶ï¼");
                  command("kick " + ob->query("id"));
                  break;
             case "slap":
-                 command("say µù¡«¡«£¬Äï¡«¡«£¬"  + ob->query("name") +
-                 "´òÎÒÒ®£¬ºÃÍ´°¡¡«¡«¡«¡«");
+                 command("say çˆ¹ï½ï½ï¼Œå¨˜ï½ï½ï¼Œ"  + ob->query("name") +
+                 "æ‰“æˆ‘è€¶ï¼Œå¥½ç—›å•Šï½ï½ï½ï½");
                  command("slap " + ob->query("id"));
                  break;
             case "hit":
@@ -182,7 +182,7 @@ void relay_whisper(object me, string msg)
       if (member_array(me->query("id"),query("parents"))==-1)
       {
             message_vision((string)this_object()->query("name")
-                        + "ÒÉ»óµØ¿´×Å$N¡£\n", me);
+                        + "ç–‘æƒ‘åœ°çœ‹ç€$Nã€‚\n", me);
             return;
       }
 

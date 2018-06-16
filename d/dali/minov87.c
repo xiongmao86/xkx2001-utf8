@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "½£´¨É½¿Ú");
+	set("short", "å‰‘å·å±±å£");
 	set("long", @LONG
-ÕâÊÇ²ÔÉ½±±Â´µÄÒ»¸öÎÚÒÄ³ÇÕò¡£´ËµØÕý´¦É½¿Ú£¬Á½±ß³çÉ½¾þÁëËÊÁ¢£¬¼¸ºõÎÞ
-Â·¿ÉÐÐ£¬Î¨ÓÐ´©´ËÕò¿ÉÈë²ÔÉ½£¬Òò´ËÊÇ´ÓÊñÖÐÖÁ´óÀíµÄ¾üÊÂÒª³å£¬´óÀí¹úÔÚ´ËÐÞ
-ÓÐµóÂ¥¼ýËþ£¬³£Äê×¤¾ü¡£ÓÐ¹Ù±øÔÚÕò¿ÚÕ¾¸ÚÑ²Âß£¬ÅÌ²ì¹ýÍùÐÐÈË¡£
+è¿™æ˜¯è‹å±±åŒ—éº“çš„ä¸€ä¸ªä¹Œå¤·åŸŽé•‡ã€‚æ­¤åœ°æ­£å¤„å±±å£ï¼Œä¸¤è¾¹å´‡å±±å³»å²­è€¸ç«‹ï¼Œå‡ ä¹Žæ— 
+è·¯å¯è¡Œï¼Œå”¯æœ‰ç©¿æ­¤é•‡å¯å…¥è‹å±±ï¼Œå› æ­¤æ˜¯ä»Žèœ€ä¸­è‡³å¤§ç†çš„å†›äº‹è¦å†²ï¼Œå¤§ç†å›½åœ¨æ­¤ä¿®
+æœ‰åˆæ¥¼ç®­å¡”ï¼Œå¸¸å¹´é©»å†›ã€‚æœ‰å®˜å…µåœ¨é•‡å£ç«™å²—å·¡é€»ï¼Œç›˜å¯Ÿè¿‡å¾€è¡Œäººã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/dalishibing" : 3,
@@ -20,7 +20,7 @@ LONG);
 		"northup" : __DIR__"minov88",
 		"south" : __DIR__"minov86",
 		]));
-	set("area", "½£´¨Õò");
+	set("area", "å‰‘å·é•‡");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	set("outdoors","dali");

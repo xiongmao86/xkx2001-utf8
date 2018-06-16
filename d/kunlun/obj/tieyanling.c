@@ -4,22 +4,22 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name(YEL"ÌúÑæÁî"NOR, ({ "tieyan ling","ling"}));
+        set_name(YEL"é“ç„°ä»¤"NOR, ({ "tieyan ling","ling"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Áî");
+                set("unit", "ä»¤");
                 set("long",
-                        "ÕâÊÇÃ÷½ÌĞÅÎï<ÌúÑæÁî>£¬Ã÷½ÌµÜ×Ó±ØĞëËæÉíĞ¯´ø£¬ÍòÍò²»¿É¶ªÊ§£¬·ñÔòºó¹û²»¿°ÉèÏë¡£\n"
-						"Æ¾Õâ¿éÌúÑæÁîÄÜ£º\n"
-						"ÏòÃ÷½ÌÖĞÓĞÍşÍûµÄĞÖµÜÇë½ÌÎä¹¦(qingjiao <Ä³ÈË> <¼¼ÄÜ>)¡£\n");
+                        "è¿™æ˜¯æ˜æ•™ä¿¡ç‰©<é“ç„°ä»¤>ï¼Œæ˜æ•™å¼Ÿå­å¿…é¡»éšèº«æºå¸¦ï¼Œä¸‡ä¸‡ä¸å¯ä¸¢å¤±ï¼Œå¦åˆ™åæœä¸å ªè®¾æƒ³ã€‚\n"
+						"å‡­è¿™å—é“ç„°ä»¤èƒ½ï¼š\n"
+						"å‘æ˜æ•™ä¸­æœ‰å¨æœ›çš„å…„å¼Ÿè¯·æ•™æ­¦åŠŸ(qingjiao <æŸäºº> <æŠ€èƒ½>)ã€‚\n");
                 set("value", 0);
                 set("material", "iron");
 				set("no_get",1);
-				set("no_drop","ÕâÊÇÃ÷½ÌĞÅÎï£¬ÆñÄÜ¶ªÆú¡£\n");
+				set("no_drop","è¿™æ˜¯æ˜æ•™ä¿¡ç‰©ï¼Œå²‚èƒ½ä¸¢å¼ƒã€‚\n");
 				
-				set("no_give","ÕâÊÇÃ÷½ÌĞÅÎï£¬ÆñÄÜ¸øÈË¡£");
+				set("no_give","è¿™æ˜¯æ˜æ•™ä¿¡ç‰©ï¼Œå²‚èƒ½ç»™äººã€‚");
 				set("no_insert", 1);
          }
 	setup();
@@ -48,44 +48,44 @@ int do_qingjiao(string arg)
 	mapping fam = me->query("family");
 	mapping fam_ob;
     if (me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
     if(!arg)
-		return notify_fail("Ö¸Áî¸ñÊ½£ºqingjiao <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šqingjiao <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]\n");
 
     if (sscanf(arg, "%s %s %d", teacher, skill, learn_times)!=3 ) {
 		learn_times = 1;
         if (sscanf(arg, "%s %s", teacher, skill)!=2 )
-			return notify_fail("Ö¸Áî¸ñÊ½£ºqingjiao <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]\n");
+			return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šqingjiao <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]\n");
         }
 	if (learn_times < 1) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºqingjiao <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šqingjiao <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]\n");
     if( me->is_fighting() )
-		return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
+		return notify_fail("ä¸´é˜µç£¨æªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
 
     if( !(ob = present(teacher, environment(me))) || !ob->is_character())
-		return notify_fail("ÄãÒªÏòË­Çó½Ì£¿\n");
+		return notify_fail("ä½ è¦å‘è°æ±‚æ•™ï¼Ÿ\n");
 
    if( !living(ob) )
-	   return notify_fail("àÅ....ÄãµÃÏÈ°Ñ" + ob->name() + "ÅªĞÑÔÙËµ¡£\n");
+	   return notify_fail("å—¯....ä½ å¾—å…ˆæŠŠ" + ob->name() + "å¼„é†’å†è¯´ã€‚\n");
    fam_ob = ob->query("family");	
-   if (fam_ob["family_name"] != "Ã÷½Ì")
-	   return notify_fail("ÄãÖ»ÄÜÏòÃ÷½ÌÖĞµÄĞÖµÜÇë½ÌÎä¹¦¡£\n");
+   if (fam_ob["family_name"] != "æ˜æ•™")
+	   return notify_fail("ä½ åªèƒ½å‘æ˜æ•™ä¸­çš„å…„å¼Ÿè¯·æ•™æ­¦åŠŸã€‚\n");
 
 
    if( (int)me->query("potential") < learn_times )
-       return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬Ã»ÓĞ°ì·¨ÔÙ³É³¤ÁË¡£\n");
+       return notify_fail("ä½ çš„æ½œèƒ½ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•å†æˆé•¿äº†ã€‚\n");
 
 	if(ob==me)
-		return notify_fail("×Ô¼ºÏò×Ô¼ºÇë½Ì£¿\n");
-	if (fam["family_name"] != "Ã÷½Ì")
-		return notify_fail("Äã·ÇÎÒÃ÷½ÌĞÖµÜ£¬ÈçºÎ¸ãµÃÕâÌúÑæÁî,¾ÓÈ»»¹À´ÏòÎÒÌÖ½Ì¹¦·ò£¿¿ìÏòwzfeng»ã±¨ÄãµÃµ½ÌúÑæÁîµÄ·½·¨¡£\n");
+		return notify_fail("è‡ªå·±å‘è‡ªå·±è¯·æ•™ï¼Ÿ\n");
+	if (fam["family_name"] != "æ˜æ•™")
+		return notify_fail("ä½ éæˆ‘æ˜æ•™å…„å¼Ÿï¼Œå¦‚ä½•æå¾—è¿™é“ç„°ä»¤,å±…ç„¶è¿˜æ¥å‘æˆ‘è®¨æ•™åŠŸå¤«ï¼Ÿå¿«å‘wzfengæ±‡æŠ¥ä½ å¾—åˆ°é“ç„°ä»¤çš„æ–¹æ³•ã€‚\n");
 
 	if(!master_allskill=ob->query("teach_skillsname"))
-		return notify_fail(ob->name()+"Ã»Ê²Ã´¿ÉÒÔÇë½ÌµÄÎä¹¦¡£\n");
+		return notify_fail(ob->name()+"æ²¡ä»€ä¹ˆå¯ä»¥è¯·æ•™çš„æ­¦åŠŸã€‚\n");
 		if(skill=="literate")
 	{
-		return notify_fail(ob->name()+"ËµµÀ£º¶ÁÊéĞ´×ÖÖ»ÄÜ¿¿ÄãÆ½Ê±×Ô¼ºÔÚÊéÔºÑ§Ï°£¬ÎÒ²»ÄÜ´«ÊÚÄã¡£\n");
+		return notify_fail(ob->name()+"è¯´é“ï¼šè¯»ä¹¦å†™å­—åªèƒ½é ä½ å¹³æ—¶è‡ªå·±åœ¨ä¹¦é™¢å­¦ä¹ ï¼Œæˆ‘ä¸èƒ½ä¼ æˆä½ ã€‚\n");
 
 	}
 
@@ -95,7 +95,7 @@ int do_qingjiao(string arg)
 			if(master_allskill[i]==skill)
 				teach_falg=1;
 	if(!teach_falg)
-		return notify_fail(ob->name()+"²»ÄÜ´«ÊÚÄãÕâÏîÎä¹¦¡£\n");
+		return notify_fail(ob->name()+"ä¸èƒ½ä¼ æˆä½ è¿™é¡¹æ­¦åŠŸã€‚\n");
 		
 	if( ob->prevent_learn(me, skill) )
 		return 1;
@@ -103,7 +103,7 @@ int do_qingjiao(string arg)
 	my_skill = me->query_skill(skill, 1);
 	master_skill = ob->query_skill(skill, 1);
 	if( my_skill >= master_skill )
-		return notify_fail(ob->name()+"ºÇºÇÒ»Ğ¦£ºÕâÏî¼¼ÄÜÄãÒÑ¾­²»ÊäÓëÎÒ£¬ÎÒÄÇÀï»¹¸Ò½Ì¸óÏÂÊ²Ã´£¿\n");
+		return notify_fail(ob->name()+"å‘µå‘µä¸€ç¬‘ï¼šè¿™é¡¹æŠ€èƒ½ä½ å·²ç»ä¸è¾“ä¸æˆ‘ï¼Œæˆ‘é‚£é‡Œè¿˜æ•¢æ•™é˜ä¸‹ä»€ä¹ˆï¼Ÿ\n");
 
 	
 	if( !SKILL_D(skill)->valid_learn(me) ) return 0;
@@ -118,18 +118,18 @@ int do_qingjiao(string arg)
 		gin_cost *= 2;
         me->set_skill(skill,0);
     }
-     printf("ÄãÏò%sÇë½ÌÓĞ¹Ø¡¸%s¡¹µÄÒÉÎÊ¡£\n", ob->name(), to_chinese(skill));
+     printf("ä½ å‘%sè¯·æ•™æœ‰å…³ã€Œ%sã€çš„ç–‘é—®ã€‚\n", ob->name(), to_chinese(skill));
 
      if( ob->query("env/no_teach") )
-		 return notify_fail("µ«ÊÇ" + ob->name() + "ÏÖÔÚ²¢²»×¼±¸»Ø´ğÄãÊ²Ã´¡£\n");
+		 return notify_fail("ä½†æ˜¯" + ob->name() + "ç°åœ¨å¹¶ä¸å‡†å¤‡å›ç­”ä½ ä»€ä¹ˆã€‚\n");
 
-	 tell_object(ob, sprintf("%sÏòÄãÇë½ÌÓĞ¹Ø¡¸%s¡¹µÄÎÊÌâ¡£\n", me->name(), to_chinese(skill)));
+	 tell_object(ob, sprintf("%så‘ä½ è¯·æ•™æœ‰å…³ã€Œ%sã€çš„é—®é¢˜ã€‚\n", me->name(), to_chinese(skill)));
 
     if( (int)ob->query("jing") > learn_times*gin_cost/5 + 1 ) {
             if( userp(ob) ) ob->receive_damage("jing", learn_times*gin_cost/5 + 1);
     } else {
-            write("µ«ÊÇ" + ob->name() + "ÏÔÈ»Ì«ÀÛÁË£¬Ã»ÓĞ°ì·¨½ÌÄãÊ²Ã´¡£\n");
-            tell_object(ob, "µ«ÊÇÄãÌ«ÀÛÁË£¬Ã»ÓĞ°ì·¨½Ì" + me->name() + "¡£\n");
+            write("ä½†æ˜¯" + ob->name() + "æ˜¾ç„¶å¤ªç´¯äº†ï¼Œæ²¡æœ‰åŠæ³•æ•™ä½ ä»€ä¹ˆã€‚\n");
+            tell_object(ob, "ä½†æ˜¯ä½ å¤ªç´¯äº†ï¼Œæ²¡æœ‰åŠæ³•æ•™" + me->name() + "ã€‚\n");
             return 1;
     }
 
@@ -138,14 +138,14 @@ int do_qingjiao(string arg)
         if( (int)me->query("jing") > gin_cost ) {
                 if( (string)SKILL_D(skill)->type()=="martial"
                 &&      my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) {
-                        printf("Ò²ĞíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬Äã¶Ô%sµÄ»Ø´ğ×ÜÊÇÎŞ·¨Áì»á¡£\n", ob->name() );
+                        printf("ä¹Ÿè®¸æ˜¯ç¼ºä¹å®æˆ˜ç»éªŒï¼Œä½ å¯¹%sçš„å›ç­”æ€»æ˜¯æ— æ³•é¢†ä¼šã€‚\n", ob->name() );
                 } else {
                     if(skill_name = SKILL_D(skill)->query_skill_name(my_skill)) {
-                            printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬%s¶Ô¡¸%s¡¹ÕâÒ»ÕĞËÆºõÓĞĞ©ĞÄµÃ¡£\n", 
+                            printf("ä½ å¬äº†%sçš„æŒ‡å¯¼ï¼Œ%så¯¹ã€Œ%sã€è¿™ä¸€æ‹›ä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n", 
                                     ob->name(), slow_msg, skill_name);
                     }
                     else
-                        printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬%sËÆºõÓĞĞ©ĞÄµÃ¡£\n", ob->name(), slow_msg);
+                        printf("ä½ å¬äº†%sçš„æŒ‡å¯¼ï¼Œ%sä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n", ob->name(), slow_msg);
 
                     me->add("potential", -learn_times);
 
@@ -157,7 +157,7 @@ int do_qingjiao(string arg)
                 }
         } else {
                 gin_cost = me->query("jing") > 0 ? (int)me->query("jing") : 0;
-                write("ÄãÏÖÔÚ¾«Éñ²»¹»£¬ÎŞ·¨Ïò"+ob->name()+"Çë½Ì"+to_chinese(skill)+"¡£\n");
+                write("ä½ ç°åœ¨ç²¾ç¥ä¸å¤Ÿï¼Œæ— æ³•å‘"+ob->name()+"è¯·æ•™"+to_chinese(skill)+"ã€‚\n");
 				return 1;
         }
 

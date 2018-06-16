@@ -9,12 +9,12 @@ void serve_tea(object);
 
 void create()
 {
-	set_name("ÎÄÇåĞ¡Ê¦Ì«", ({"wenqing", "wen qing"}) );
-	set("rank_info/respect", "Ğ¡Ê¦Ì«");
-	set("gender", "Å®ĞÔ" );
+	set_name("æ–‡æ¸…å°å¸ˆå¤ª", ({"wenqing", "wen qing"}) );
+	set("rank_info/respect", "å°å¸ˆå¤ª");
+	set("gender", "å¥³æ€§" );
 	set("age", 12+random(6));
 	set("long",
-	  "ÕâÊÇ¸öÄêÁä²»´ó£¬Ã¼ÇåÄ¿ĞãµÄĞ¡Ê¦Ì«¡£ËıÒ»¼ûÓĞÈËÂä×ù£¬±ãĞ¦×Å¹ıÈ¥ÕĞ´ı¡£\n");
+	  "è¿™æ˜¯ä¸ªå¹´é¾„ä¸å¤§ï¼Œçœ‰æ¸…ç›®ç§€çš„å°å¸ˆå¤ªã€‚å¥¹ä¸€è§æœ‰äººè½åº§ï¼Œä¾¿ç¬‘ç€è¿‡å»æ‹›å¾…ã€‚\n");
 	set("attitude", "friendly");
 	set("shen_type", 1);
         set("class", "bonze");
@@ -41,10 +41,10 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 3);
 
-        create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
         set("inquiry", ([
-            "³ö¼Ò" : "ÄúÈ¥ÎÊÄÇ±ßµÄ¾²ĞÄÊ¦Êå°É¡£\n",
+            "å‡ºå®¶" : "æ‚¨å»é—®é‚£è¾¹çš„é™å¿ƒå¸ˆå”å§ã€‚\n",
         ]));
 
         setup();
@@ -69,7 +69,7 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 
-	say("ÎÄÇåĞ¡Ê¦Ì«ËµµÀ£ºÕâÎ»Ê©Ö÷ÇëÏÈÈë×ù£¬ÎÒÕâ¾Í¸øÄúÉÏ²èµã¡£\n");
+	say("æ–‡æ¸…å°å¸ˆå¤ªè¯´é“ï¼šè¿™ä½æ–½ä¸»è¯·å…ˆå…¥åº§ï¼Œæˆ‘è¿™å°±ç»™æ‚¨ä¸ŠèŒ¶ç‚¹ã€‚\n");
 }
 
 void serve_tea(object who)
@@ -83,12 +83,12 @@ void serve_tea(object who)
 	
 	if( !objectp(room = environment()) ) return;
 
-	message_vision("ÎÄÇåÄÃ³öÒ»µúĞÂÏÊµÄË®ÃÛÌÒ£¬ÓÖÆãÁË±­Ïã²è¸ø$N¡£\n", who);
+	message_vision("æ–‡æ¸…æ‹¿å‡ºä¸€ç¢Ÿæ–°é²œçš„æ°´èœœæ¡ƒï¼Œåˆæ²äº†æ¯é¦™èŒ¶ç»™$Nã€‚\n", who);
 	ob = new("d/wudang/obj/xiangcha");
 	ob->move(this_player());
  	ob = new("d/wudang/obj/mitao");
 	ob->move(this_player());
-	message_vision("ÎÄÇåÏò$NÒ»Ğ¦£¬ÓÖÃ¦×ÅÕĞºôÆäËû¿ÍÈËÈ¥ÁË¡£\n", who);
+	message_vision("æ–‡æ¸…å‘$Nä¸€ç¬‘ï¼Œåˆå¿™ç€æ‹›å‘¼å…¶ä»–å®¢äººå»äº†ã€‚\n", who);
 	
 	return;
 }

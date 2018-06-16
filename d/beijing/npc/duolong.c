@@ -12,17 +12,17 @@ void set_shiwei_status(int);
 
 void create()
 {
-    set_name("¶àÂ¡", ({
+    set_name("å¤šéš†", ({
 	    "duolong", "duo",
     }));
-    set("title", "ÊÌÎÀ×Ü¹Ü");
+    set("title", "ä¾å«æ€»ç®¡");
     set("long",
-	"×÷ÎªÊÌÎÀ×Ü¹Ü£¬¶àÂ¡ÉîÊÜ»ÊÉÏÆ÷ÖØ¡£\n"
-	"ÓùÁÖ¾üµÄÈÎÎñ¶¼´ÓËûÕâÀï·ÖÅÉ¡£\n"
+	"ä½œä¸ºä¾å«æ€»ç®¡ï¼Œå¤šéš†æ·±å—çš‡ä¸Šå™¨é‡ã€‚\n"
+	"å¾¡æ—å†›çš„ä»»åŠ¡éƒ½ä»ä»–è¿™é‡Œåˆ†æ´¾ã€‚\n"
     );
 
 
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("age", 35);
     setup();
 
@@ -30,14 +30,14 @@ void create()
 
     set("inquiry", ([
 	"job" : (: ask_job :),
-	"ÈÎÎñ" : (: ask_job :),
-	"½úÉı" : "Õâ¸öÄãµ½±ø²¿È¥ÎÊÃ×ÉĞÊé°É¡£",
-	"promote" : "Õâ¸öÄãµ½±ø²¿È¥ÎÊÃ×ÉĞÊé°É¡£",
-	"Éı¹Ù" : "Õâ¸öÄãµ½±ø²¿È¥ÎÊÃ×ÉĞÊé°É¡£",
-	"Ëæ´Ó" : (: ask_suicong :),
+	"ä»»åŠ¡" : (: ask_job :),
+	"æ™‹å‡" : "è¿™ä¸ªä½ åˆ°å…µéƒ¨å»é—®ç±³å°šä¹¦å§ã€‚",
+	"promote" : "è¿™ä¸ªä½ åˆ°å…µéƒ¨å»é—®ç±³å°šä¹¦å§ã€‚",
+	"å‡å®˜" : "è¿™ä¸ªä½ åˆ°å…µéƒ¨å»é—®ç±³å°šä¹¦å§ã€‚",
+	"éšä»" : (: ask_suicong :),
 	"suicong" : (: ask_suicong :),
-	"here" : "ÕâÀïÊÇÊÌÎÀÓª¡£²»µÃĞú»©¡£",
-	"ÑüÅÆ" : (: ask_yaopai :),
+	"here" : "è¿™é‡Œæ˜¯ä¾å«è¥ã€‚ä¸å¾—å–§å“—ã€‚",
+	"è…°ç‰Œ" : (: ask_yaopai :),
 	"yaopai" : (: ask_yaopai :),
     ]));
 }
@@ -54,7 +54,7 @@ int sync_mizheng(object player)
     // fix test players
     mizheng = HELPER->find_mizheng();
     if (mizheng->player_rank(player->query("id")) == -1) {
-	message_vision("$NÒÉ»óµÄ¿´ÁË$nÒ»ÑÛ£¬ÄãÔõÃ´»áÓĞÊÌÎÀÍ·ÏÎµÄ£¿\n",
+	message_vision("$Nç–‘æƒ‘çš„çœ‹äº†$nä¸€çœ¼ï¼Œä½ æ€ä¹ˆä¼šæœ‰ä¾å«å¤´è¡”çš„ï¼Ÿ\n",
 	    this_object(), player);
 	mizheng->normalize(player);
         return 1;
@@ -69,19 +69,19 @@ string ask_yaopai ()
     int i;
 
     if (! IS_SHIWEI(player)) 
-	return "ÄãÓÖ²»ÊÇÊÌÎÀ£¬ÒªÊ²Ã´ÑüÅÆ£¿";
+	return "ä½ åˆä¸æ˜¯ä¾å«ï¼Œè¦ä»€ä¹ˆè…°ç‰Œï¼Ÿ";
 
-    if (sync_mizheng(player)) return "ÄãÖØĞÂµ½Ã×ÉĞÊéÄÇ¶ùÈ¥µÇ¼Ç°É¡£";
+    if (sync_mizheng(player)) return "ä½ é‡æ–°åˆ°ç±³å°šä¹¦é‚£å„¿å»ç™»è®°å§ã€‚";
 
     inv = all_inventory(player);
     for (i=0; i<sizeof(inv)-1; i++){
 	if (base_name(inv[i]) == "/d/beijing/obj/yaopai") 
-	    return "Äã²»ÊÇÓĞÑüÅÆÁËÂğ£¿";
+	    return "ä½ ä¸æ˜¯æœ‰è…°ç‰Œäº†å—ï¼Ÿ";
     }
     yaopai = new ("/d/beijing/obj/yaopai");
     yaopai->move(player);
-    message_vision("$N¸ø$nÒ»ÃæÊÌÎÀÑüÅÆ¡£\n", me, player);
-    return "Ğ¡ĞÄµã£¬±ğÀÏ¸ã¶ªÁË¡£";
+    message_vision("$Nç»™$nä¸€é¢ä¾å«è…°ç‰Œã€‚\n", me, player);
+    return "å°å¿ƒç‚¹ï¼Œåˆ«è€æä¸¢äº†ã€‚";
 }
 
 string ask_job()
@@ -90,59 +90,59 @@ string ask_job()
     int i, shichen=HELPER->shichen();
 
     if (!IS_SHIWEI(player)) 
-        return "ÄãÏÈµ½±ø²¿Í¶¾ü°É¡£";
-    if (sync_mizheng(player)) return "ÄãÖØĞÂµ½Ã×ÉĞÊéÄÇ¶ùÈ¥µÇ¼Ç°É¡£";
+        return "ä½ å…ˆåˆ°å…µéƒ¨æŠ•å†›å§ã€‚";
+    if (sync_mizheng(player)) return "ä½ é‡æ–°åˆ°ç±³å°šä¹¦é‚£å„¿å»ç™»è®°å§ã€‚";
 
     if (player->query_temp("current_job")) {
 	if (SHIWEI_LEVEL(player)<4) {
-	    return "ÎÒ²»ÊÇ¸æËßÄãÁËÂğ£¿È¥"+
-		    player->query_temp("current_job")+"ÊØÃÅ°É¡£";
+	    return "æˆ‘ä¸æ˜¯å‘Šè¯‰ä½ äº†å—ï¼Ÿå»"+
+		    player->query_temp("current_job")+"å®ˆé—¨å§ã€‚";
 	}
-  	return "ÎÒ²»ÊÇ¸æËßÄãÁËÂğ?";
+  	return "æˆ‘ä¸æ˜¯å‘Šè¯‰ä½ äº†å—?";
     }
 
     switch (SHIWEI_LEVEL(player)) {
     case 0:	// first level
 	if (HELPER->is_sunrise() < 0) 
-	    return "ÏÖÔÚ»¹Ã»µ½Äãµ±°àµÄÊ±¼äÄØ¡£";
+	    return "ç°åœ¨è¿˜æ²¡åˆ°ä½ å½“ç­çš„æ—¶é—´å‘¢ã€‚";
 	if (HELPER->is_sunrise() > 0) 
-	    return "µãÃû¹ıÃ®µÄÊ±¼äÒÑ¾­¹ıÁË£¬ÄãÃ÷ÌìÔÙÀ´°É¡£";
+	    return "ç‚¹åè¿‡å¯çš„æ—¶é—´å·²ç»è¿‡äº†ï¼Œä½ æ˜å¤©å†æ¥å§ã€‚";
 	i = random(sizeof(outer_gate_name));
 	player->set_temp("current_job", outer_gate_name[i]);
-	return "Äã¿ìÈ¥"+outer_gate_name[i]+"ÊØÃÅ (guard) °É¡£";
+	return "ä½ å¿«å»"+outer_gate_name[i]+"å®ˆé—¨ (guard) å§ã€‚";
     case 1:	// second level
 	if (HELPER->is_sunset() < 0) 
-	    return "Ìì»¹ÁÁ×ÅÄØ£¬µÈ»á¶ù¾ÍÓĞÄãµÄÏ·À²¡£";
+	    return "å¤©è¿˜äº®ç€å‘¢ï¼Œç­‰ä¼šå„¿å°±æœ‰ä½ çš„æˆå•¦ã€‚";
 	if (HELPER->is_sunset() > 0) 
-	    return "Ìì¶¼ºÚÁËÄã²ÅÀ´£¬Ã÷ÌìÔÙËµ°É¡£";
+	    return "å¤©éƒ½é»‘äº†ä½ æ‰æ¥ï¼Œæ˜å¤©å†è¯´å§ã€‚";
 	i = random(sizeof(outer_gate_name));
 	player->set_temp("current_job", outer_gate_name[i]);
-	return "Äã¿ìÈ¥"+outer_gate_name[i]+"ÊØÃÅ (guard) °É¡£";
+	return "ä½ å¿«å»"+outer_gate_name[i]+"å®ˆé—¨ (guard) å§ã€‚";
     case 2:	// third level
 	if (HELPER->is_sunrise() < 0) 
-	return "ÏÖÔÚ»¹Ã»µ½Äãµ±°àµÄÊ±¼äÄØ¡£";
+	return "ç°åœ¨è¿˜æ²¡åˆ°ä½ å½“ç­çš„æ—¶é—´å‘¢ã€‚";
 	if (HELPER->is_sunrise() > 0) 
-	    return "µãÃû¹ıÃ®µÄÊ±¼äÒÑ¾­¹ıÁË£¬ÄãÃ÷ÌìÔÙÀ´°É¡£";
+	    return "ç‚¹åè¿‡å¯çš„æ—¶é—´å·²ç»è¿‡äº†ï¼Œä½ æ˜å¤©å†æ¥å§ã€‚";
 	i = random(sizeof(inner_gate_name));
 	player->set_temp("current_job", inner_gate_name[i]);
-	return "Äã¿ìÈ¥"+inner_gate_name[i]+"ÊØÃÅ (guard) °É¡£";
+	return "ä½ å¿«å»"+inner_gate_name[i]+"å®ˆé—¨ (guard) å§ã€‚";
     case 3:	// fourth level
 	if (HELPER->is_sunset() < 0) 
-	    return "Ìì»¹ÁÁ×ÅÄØ£¬µÈ»á¶ù¾ÍÓĞÄãµÄÏ·À²¡£";
+	    return "å¤©è¿˜äº®ç€å‘¢ï¼Œç­‰ä¼šå„¿å°±æœ‰ä½ çš„æˆå•¦ã€‚";
 	if (HELPER->is_sunset() > 0) 
-	    return "Ìì¶¼ºÚÁËÄã²ÅÀ´£¬Ã÷ÌìÔÙËµ°É¡£";
+	    return "å¤©éƒ½é»‘äº†ä½ æ‰æ¥ï¼Œæ˜å¤©å†è¯´å§ã€‚";
 	i = random(sizeof(inner_gate_name));
 	player->set_temp("current_job", inner_gate_name[i]);
-	return "Äã¿ìÈ¥"+inner_gate_name[i]+"ÊØÃÅ (guard) °É¡£";
+	return "ä½ å¿«å»"+inner_gate_name[i]+"å®ˆé—¨ (guard) å§ã€‚";
     default:
-	return "ÏÖÔÚÃ»ÓĞÄãµÄÈÎÎñ¡£";
+	return "ç°åœ¨æ²¡æœ‰ä½ çš„ä»»åŠ¡ã€‚";
     }
 }
 
 string ask_suicong()
 {
-    return "Ëæ´ÓÖ»ÓĞ"+HELPER->rank_name(3)+"ÒÔÉÏµÄÊÌÎÀ²ÅÓĞ¡£\n"+
-	"ÒªÏëÁì(ling)Ëæ´ÓÄØ£¬¾ÍÔÚÎÒÕâÀï¡£¸÷¸öÃÅÅÉµÄ¶¼ÓĞ£¬Äã×Ô¼ºÌô°É¡£\n";
+    return "éšä»åªæœ‰"+HELPER->rank_name(3)+"ä»¥ä¸Šçš„ä¾å«æ‰æœ‰ã€‚\n"+
+	"è¦æƒ³é¢†(ling)éšä»å‘¢ï¼Œå°±åœ¨æˆ‘è¿™é‡Œã€‚å„ä¸ªé—¨æ´¾çš„éƒ½æœ‰ï¼Œä½ è‡ªå·±æŒ‘å§ã€‚\n";
 }
 
 int do_ling(string menpai)
@@ -154,95 +154,95 @@ int do_ling(string menpai)
     string cmenpai;
 
     if (! IS_SHIWEI(player))
-	return notify_fail("ÄãÏÈÈ¥±ø²¿Í¶¾ü°É¡£\n");
+	return notify_fail("ä½ å…ˆå»å…µéƒ¨æŠ•å†›å§ã€‚\n");
     if (sync_mizheng(player)) 
-	return notify_fail("ÄãÖØĞÂµ½Ã×ÉĞÊéÄÇ¶ùÈ¥µÇ¼Ç°É¡£\n");
+	return notify_fail("ä½ é‡æ–°åˆ°ç±³å°šä¹¦é‚£å„¿å»ç™»è®°å§ã€‚\n");
     if (HELPER->suicong_max(rank) == 0) 
-	return notify_fail("ÄãµÄ¼¶±ğ²»¹»ÁìËæ´ÓµÄ¡£\n");
+	return notify_fail("ä½ çš„çº§åˆ«ä¸å¤Ÿé¢†éšä»çš„ã€‚\n");
     if (suicong_num >= HELPER->suicong_max(rank)) 
-	return notify_fail("ÄãÒÑ¾­ÓĞ"+CHINESE_D->chinese_number(suicong_num)+
-		"ÃûËæ´ÓÁË¡£\n");
+	return notify_fail("ä½ å·²ç»æœ‰"+CHINESE_D->chinese_number(suicong_num)+
+		"åéšä»äº†ã€‚\n");
 
     if (! menpai || menpai == "")
-	return notify_fail("ÄãÒªÁìÊ²Ã´ÃÅÅÉµÄËæ´Ó£¿\n");
+	return notify_fail("ä½ è¦é¢†ä»€ä¹ˆé—¨æ´¾çš„éšä»ï¼Ÿ\n");
 
     switch (menpai) {
-        case "»ªÉ½ÅÉ":
-	case "»ªÉ½":
+        case "åå±±æ´¾":
+	case "åå±±":
 	    menpai = "huashan";
         case "huashan":
-	    cmenpai =  "»ªÉ½ÅÉ";
+	    cmenpai =  "åå±±æ´¾";
 	    break;
 
-        case "¶ëáÒ":
-	case "¶ëáÒÅÉ":
+        case "å³¨åµ‹":
+	case "å³¨åµ‹æ´¾":
 	    menpai = "emei";
         case "emei":
-	    cmenpai =  "¶ëáÒÅÉ";
+	    cmenpai =  "å³¨åµ‹æ´¾";
 	    break;
 
- 	case "Îäµ±":
-	case "Îäµ±ÅÉ":
+ 	case "æ­¦å½“":
+	case "æ­¦å½“æ´¾":
 	    menpai = "wudang";
         case "wudang":
-	    cmenpai =  "Îäµ±ÅÉ";
+	    cmenpai =  "æ­¦å½“æ´¾";
 	    break;
 
-	case "ÉÙÁÖ":
-	case "ÉÙÁÖÅÉ":
+	case "å°‘æ—":
+	case "å°‘æ—æ´¾":
 	    menpai = "shaolin";
         case "shaolin":
-	    cmenpai =  "ÉÙÁÖÅÉ";
+	    cmenpai =  "å°‘æ—æ´¾";
 	    break;
 
-	case "Ø¤°ï":
+	case "ä¸å¸®":
 	    menpai = "gaibang";
         case "gaibang":
-	    cmenpai =  "Ø¤°ï";
+	    cmenpai =  "ä¸å¸®";
 	    break;
 
-	case "ĞÇËŞ":
-	case "ĞÇËŞÅÉ":
+	case "æ˜Ÿå®¿":
+	case "æ˜Ÿå®¿æ´¾":
 	    menpai = "xingxiu";
         case "xingxiu":
-	    cmenpai =  "ĞÇËŞ";
+	    cmenpai =  "æ˜Ÿå®¿";
 	    break;
 
-	case "Ñ©É½":
-	case "Ñ©É½ÅÉ":
-	case "Ñªµ¶":
-	case "Ñªµ¶ÃÅ":
+	case "é›ªå±±":
+	case "é›ªå±±æ´¾":
+	case "è¡€åˆ€":
+	case "è¡€åˆ€é—¨":
 	    menpai = "xueshan";
         case "xueshan":
-	    cmenpai =  "Ñ©É½ÅÉ";
+	    cmenpai =  "é›ªå±±æ´¾";
 	    break;
 
-  	case "ÌÒ»¨":
-	case "ÌÒ»¨µº":
+  	case "æ¡ƒèŠ±":
+	case "æ¡ƒèŠ±å²›":
 	    menpai = "taohua";
         case "taohua":
-	    cmenpai =  "ÌÒ»¨µº";
+	    cmenpai =  "æ¡ƒèŠ±å²›";
 	    break;
 
-	case "°×ÍÕ":
-	case "°×ÍÕÉ½×¯":
+	case "ç™½é©¼":
+	case "ç™½é©¼å±±åº„":
 	    menpai = "baituo";
         case "baituo":
-	    cmenpai =  "°×ÍÕÉ½×¯";
+	    cmenpai =  "ç™½é©¼å±±åº„";
 	    break;
 
-        case "´óÀí":
-	case "´óÀí¶ÎÊÏ":
+        case "å¤§ç†":
+	case "å¤§ç†æ®µæ°":
 	case "dali":
-	    return notify_fail("´óÀí¶ÎÊÏµÄ¼Ò³¼ÔõÃ´»áÀ´¾©³Çµ±Ëæ´ÓÄØ£¿\n");
+	    return notify_fail("å¤§ç†æ®µæ°çš„å®¶è‡£æ€ä¹ˆä¼šæ¥äº¬åŸå½“éšä»å‘¢ï¼Ÿ\n");
 
-  	case "ÉñÁú":
-	case "ÉñÁú½Ì":
+  	case "ç¥é¾™":
+	case "ç¥é¾™æ•™":
 	case "shenlong":
-	    return notify_fail("ÉñÁú½ÌÖÚ¹Ù¸®¼ûÁË¾Í×½ÄÃ¡£ÄãÃ»¸ã´í°É£¿\n");
+	    return notify_fail("ç¥é¾™æ•™ä¼—å®˜åºœè§äº†å°±æ‰æ‹¿ã€‚ä½ æ²¡æé”™å§ï¼Ÿ\n");
 
         default:
-                return notify_fail("ÄãÒªÁìÊ²Ã´ÃÅÅÉµÄËæ´ÓÊÌÎÀ£¿\n");
+                return notify_fail("ä½ è¦é¢†ä»€ä¹ˆé—¨æ´¾çš„éšä»ä¾å«ï¼Ÿ\n");
                 break;
         }
     suicong_num ++;
@@ -252,11 +252,11 @@ int do_ling(string menpai)
     suicong->move(environment(player));
     suicong->set_leader(player);
     player->save();
-    message_vision("$N¶Ô$nËµµÀ£¬ÏÂ¹ÙÏëÒªÒ»Ãû"+cmenpai+"µÄËæ´Ó¡£\n",
+    message_vision("$Nå¯¹$nè¯´é“ï¼Œä¸‹å®˜æƒ³è¦ä¸€å"+cmenpai+"çš„éšä»ã€‚\n",
 		player, me);
-    message_vision("$NÅÄÁËÅÄ$nµÄ¼ç°ò£¬Ğ¦µÀ£¬ºÃºÃ£¬Ã»ÎÊÌâ£¬À´ÈË°¡¡£\n", 
+    message_vision("$Næ‹äº†æ‹$nçš„è‚©è†€ï¼Œç¬‘é“ï¼Œå¥½å¥½ï¼Œæ²¡é—®é¢˜ï¼Œæ¥äººå•Šã€‚\n", 
 		me, player);
-    message_vision("$N¿ì²½×ßÁË¹ıÀ´£¬Ïò$nĞĞÀñµÀ£ºÀÏÒ¯½ğ°²¡£\n",
+    message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ï¼Œå‘$nè¡Œç¤¼é“ï¼šè€çˆ·é‡‘å®‰ã€‚\n",
 		suicong, player);
     return 1;
 }

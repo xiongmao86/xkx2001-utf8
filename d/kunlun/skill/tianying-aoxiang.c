@@ -1,10 +1,10 @@
 //Cracked by Roath
-// tianying-aoxiang.c ÌìÓ¥°¿Ïè
+// tianying-aoxiang.c å¤©é¹°ç¿±ç¿”
 
 inherit SKILL;
 
 string *dodge_msg = ({
-        "Ö»¼û$nÊ¹³öÌìÓ¥°¿Ïè£¬¶ã¹ýÁË$NÕâÒ»ÕÐ¡£\n",
+        "åªè§$nä½¿å‡ºå¤©é¹°ç¿±ç¿”ï¼Œèº²è¿‡äº†$Nè¿™ä¸€æ‹›ã€‚\n",
 });
 
 int valid_enable(string usage) 
@@ -25,7 +25,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( (int)me->query("jingli") < 40 )
-                return notify_fail("ÄãµÄ¾«Á¦Ì«²îÁË£¬²»ÄÜÁ·ÌìÓ¥°¿Ïè¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç»ƒå¤©é¹°ç¿±ç¿”ã€‚\n");
         me->receive_damage("jingli", 30);
         return 1;
 }

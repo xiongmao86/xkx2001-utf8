@@ -1,15 +1,15 @@
 //Cracked by Roath
-// ��ɽС��
+// 华山小径
 // qfy 22/7/1996
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽС��");
+        set("short", "后山小径");
 	set("long", @LONG
-���ǻ�ɽ��ɽ��һ��С�����˼�����������Ұ�������������飬Ҫ��
-�����˴��죬˭Ҳ�벻�����ﾹȻ����С����
+这是华山后山的一条小径，人迹鲜至。两旁野草生得密密麻麻，要不
+是有人带领，谁也想不到这里竟然有条小径。
 LONG
         );
 

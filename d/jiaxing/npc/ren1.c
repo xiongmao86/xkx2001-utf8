@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÈÎÎÒĞĞ",({ "ren woxing","ren" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ä»»æˆ‘è¡Œ",({ "ren woxing","ren" }) );
+        set("gender", "ç”·æ€§");
         set("age", 55);
 	set("long",
-		"Ëû»¨°×³¤Ğë´¹ÔÚĞØÇ°£¬ºú×ÓÂúÁ³£¬¿´²»ÇåËûµÄ±¾À´ÃæÈİ¡£\n");
+		"ä»–èŠ±ç™½é•¿é¡»å‚åœ¨èƒ¸å‰ï¼Œèƒ¡å­æ»¡è„¸ï¼Œçœ‹ä¸æ¸…ä»–çš„æœ¬æ¥é¢å®¹ã€‚\n");
       //  set("nickname","");
-        set("title","ÈÕÔÂÉñ½ÌÇ°½ÌÖ÷");
+        set("title","æ—¥æœˆç¥æ•™å‰æ•™ä¸»");
         set("combat_exp", 180000);
         set("shen_type", 0);
         set("attitude", "peaceful");
@@ -41,12 +41,12 @@ int accept_fight()
         ob = this_player();
 
         if(!ob->query_temp("renqiu")) {
-		command("say ÎÒÊ®¶àÄê²»¶¯½££¬½£·¨ÔçÒÑÍüµÃ¸É¸É¾»¾»ÁË£¬"
-			"²ÙÄãÄÌÄÌµÄÍõ°Ë¸á×Ó£¬¿ì¸øÎÒ¼Ğ×ÅÎ²°Í¹ö°É¡£");
+		command("say æˆ‘åå¤šå¹´ä¸åŠ¨å‰‘ï¼Œå‰‘æ³•æ—©å·²å¿˜å¾—å¹²å¹²å‡€å‡€äº†ï¼Œ"
+			"æ“ä½ å¥¶å¥¶çš„ç‹å…«ç¾”å­ï¼Œå¿«ç»™æˆ‘å¤¹ç€å°¾å·´æ»šå§ã€‚");
 		return 0;
 	}
-	command("say ÀÏ·òÊ®ÓàÄê²»¶¯±øÈĞ£¬²»Öªµ±ÄêËùÑ§µÄ½£·¨»¹¼Ç²»¼ÇµÃ¡£");
-	command("say ¾Í¸úÄã±ÈÁ½ÕĞ°É¡£");
+	command("say è€å¤«åä½™å¹´ä¸åŠ¨å…µåˆƒï¼Œä¸çŸ¥å½“å¹´æ‰€å­¦çš„å‰‘æ³•è¿˜è®°ä¸è®°å¾—ã€‚");
+	command("say å°±è·Ÿä½ æ¯”ä¸¤æ‹›å§ã€‚");
 	remove_call_out("bijian");
 	call_out("bijian",1,me,ob);
 	return 1;
@@ -59,19 +59,19 @@ void bijian(object ren, object player)
 	int i;
 
         message_vision(
-                HIY "\nºöÈ»¼ä£¬$NÉîÉîµØÎüÒ»àíÆø£¬Ê¯ÆÆÌì¾ª°ãÒ»Éù¿ñĞ¥¡£\n" NOR,
+                HIY "\nå¿½ç„¶é—´ï¼Œ$Næ·±æ·±åœ°å¸ä¸€å›—æ°”ï¼ŒçŸ³ç ´å¤©æƒŠèˆ¬ä¸€å£°ç‹‚å•¸ã€‚\n" NOR,
                  ren);
 
         ob = all_inventory(environment(ren));
         for(i=0; i<sizeof(ob); i++) {
                 if( !living(ob[i]) || ob[i]==ren || ob[i]==player ) continue;
-        tell_object(ob[i], "Äã¶úÖĞÎËµÄÒ»Éù£¬¶ú¹Ç¶¼ËÆ±»ËûÕğÆÆÁË£¬ÄÔÖĞÒ»ÕóÔÎÑ£¡£\n");
+        tell_object(ob[i], "ä½ è€³ä¸­å—¡çš„ä¸€å£°ï¼Œè€³éª¨éƒ½ä¼¼è¢«ä»–éœ‡ç ´äº†ï¼Œè„‘ä¸­ä¸€é˜µæ™•çœ©ã€‚\n");
 
 		ob[i]->unconcious();
 	}
 
 
-        tell_object(player, "Äã¶úÖĞÎËµÄÒ»Éù£¬¶ú¹Ç¶¼ËÆ±»ËûÕğÆÆÁË£¬ÄÔÖĞÒ»ÕóÔÎÑ£¡£\n");
+        tell_object(player, "ä½ è€³ä¸­å—¡çš„ä¸€å£°ï¼Œè€³éª¨éƒ½ä¼¼è¢«ä»–éœ‡ç ´äº†ï¼Œè„‘ä¸­ä¸€é˜µæ™•çœ©ã€‚\n");
 
 	ren->remove_all_enemy();
 	player->remove_all_enemy();
@@ -88,7 +88,7 @@ void bijian(object ren, object player)
 	player->move("/d/jiaxing/dilao");
 //	call_out("zhenyun",1,player);
 //        player->unconcious();
-//        message_vision("µÈÄãÇåĞÑ¹ıÀ´£¬ÈÎÎÒĞĞºÍ"+player->name()+"ÒÑÎŞÓ°ÎŞ×ÛÁË¡£\n",
+//        message_vision("ç­‰ä½ æ¸…é†’è¿‡æ¥ï¼Œä»»æˆ‘è¡Œå’Œ"+player->name()+"å·²æ— å½±æ— ç»¼äº†ã€‚\n",
 //		ren);
 	destruct(ren);
 	return;
@@ -101,11 +101,11 @@ void bijian(object ren, object player)
 
 int accept_object(object me, object obj)
 {
-        if ((string)obj->query("name")=="ÌúÇò") {
-        message("vision",me->name()+"¸øÈÎÎÒĞĞÒ»Ö»ÌúÇò¡£\n",environment(me),
+        if ((string)obj->query("name")=="é“çƒ") {
+        message("vision",me->name()+"ç»™ä»»æˆ‘è¡Œä¸€åªé“çƒã€‚\n",environment(me),
             ({me}));
-	write("Äã¿´µ½ÈÎÎÒĞĞ×ª¹ıÉíÈ¥¿´ÁË¼¸ÑÛÌúÇò£¬È»áá×ª»ØÉíÀ´¡£\n");
-	command("say ¶àĞ»ÄãÀ´¸øÀÏ·ò½âÃÆ¡£ÔÛÃÇ¾Í¹ı¼¸ÕĞ°É¡£");
+	write("ä½ çœ‹åˆ°ä»»æˆ‘è¡Œè½¬è¿‡èº«å»çœ‹äº†å‡ çœ¼é“çƒï¼Œç„¶å¾Œè½¬å›èº«æ¥ã€‚\n");
+	command("say å¤šè°¢ä½ æ¥ç»™è€å¤«è§£é—·ã€‚å’±ä»¬å°±è¿‡å‡ æ‹›å§ã€‚");
 	me->set_temp("renqiu",1);
 	return 1;
 	}

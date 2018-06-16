@@ -6,14 +6,14 @@ inherit FINGER;
 
 void create()
 {
-        set_name("±ÌÓñ½äÖ¸", ({ "jade ring", "ring" }));
+        set_name("ç¢§ç‰æˆ’æŒ‡", ({ "jade ring", "ring" }));
         set_color("$HIG$");
         set("weight", 400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö±ÌÓñ½äÖ¸£¬²ÄÖÊÊÇÔÚÄ³Ğ©µØ·½²ÅÓĞ²úµÄÆæÓñ£¬Òì³£¹óÖØ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªç¢§ç‰æˆ’æŒ‡ï¼Œæè´¨æ˜¯åœ¨æŸäº›åœ°æ–¹æ‰æœ‰äº§çš„å¥‡ç‰ï¼Œå¼‚å¸¸è´µé‡ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 6500);
                 set("material", "jade");
                 set("armor_prop/armor", 4);

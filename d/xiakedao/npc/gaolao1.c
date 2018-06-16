@@ -1,16 +1,16 @@
 //Cracked by Roath
-// gaolao.c ¸ßÀÏÕß
+// gaolao.c é«˜è€è€…
 // qfy Sept 8, 1996.
 
 inherit NPC;
 
 void create()
 {
-        set_name("¸ßÀÏÕß", ({ "gao lao", "gao", "lao" }));
+        set_name("é«˜è€è€…", ({ "gao lao", "gao", "lao" }));
         set("long", 
-"ËûÉíÐÎ¸ß´óË¶×´£¬ÂúÃæºì¹â¡£¾ÙÖ¹»¬»ü£¬´øµãÉµÆø£¬Îä¹¦È´ÊÇ¼«¸ß¡£\n"
-"ËûÒò²»³£ÔÚ½­ºþÉÏÂ¶Ãæ£¬ÊÇÒÔ²¢·ÇÌ«¶àÈËÖªÎÅÆäÃû¡£\n");
-        set("gender", "ÄÐÐÔ");
+"ä»–èº«å½¢é«˜å¤§ç¡•çŠ¶ï¼Œæ»¡é¢çº¢å…‰ã€‚ä¸¾æ­¢æ»‘ç¨½ï¼Œå¸¦ç‚¹å‚»æ°”ï¼Œæ­¦åŠŸå´æ˜¯æžé«˜ã€‚\n"
+"ä»–å› ä¸å¸¸åœ¨æ±Ÿæ¹–ä¸Šéœ²é¢ï¼Œæ˜¯ä»¥å¹¶éžå¤ªå¤šäººçŸ¥é—»å…¶åã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 73);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -54,7 +54,7 @@ void create()
         prepare_skill("strike", "hunyuan-zhang");
         prepare_skill("cuff", "pishi-poyu");
 
-        create_family("»ªÉ½ÅÉ", 12, "³¤ÀÏ");
+        create_family("åŽå±±æ´¾", 12, "é•¿è€");
 
         setup();
         carry_object("/clone/weapon/gangdao")->wield();
@@ -93,7 +93,7 @@ void greeting(object me)
                 	{	obj->set("jingli", maxjingli);
 				obj->set("eff_qi", maxqi);
 				obj->set("qi", maxqi);
-				command("say ÈÃÎÒÃÇÐÖµÜÁ©Áì½ÏÉÙÁÖÈýÉ®µÄ½ð¸Õ·þÄ§È¦°É¡£");
+				command("say è®©æˆ‘ä»¬å…„å¼Ÿä¿©é¢†è¾ƒå°‘æž—ä¸‰åƒ§çš„é‡‘åˆšæœé­”åœˆå§ã€‚");
 				obj->fight_obj(sl1);
 				obj->fight_obj(sl2);
 				obj->fight_obj(sl3);

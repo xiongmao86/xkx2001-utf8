@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�챾��");
+	set("short", "红本库");
 	set("long",  @LONG
-���Ǹ���ǰ������Ϣʹ�õġ���ǽ�Ǽ��Ŵ󴲣����������ڹ���
-����ֵ��ʱ������������Ϣһ�¡�
+这是给御前侍卫休息使用的。靠墙是几张大床，当侍卫们在宫中
+连续值班时，就来这里休息一下。
 LONG
 	);
 

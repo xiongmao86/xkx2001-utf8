@@ -8,10 +8,10 @@ int do_bocao(string);
 
 void create()
 { 
-       set("short","É½Çğ");
+       set("short","å±±ä¸˜");
        set("long", @LONG
-ÕâÀïÊÇ´åÍâµÄÒ»¸öĞ¡É½Çğ¡£µ½´¦ÊÇ»Ä²İÃ»Ã»¡£Çï·ç´µ¹ı£¬
-·¢³öìªìªÖ®Éù¡£
+è¿™é‡Œæ˜¯æ‘å¤–çš„ä¸€ä¸ªå°å±±ä¸˜ã€‚åˆ°å¤„æ˜¯è’è‰æ²¡æ²¡ã€‚ç§‹é£å¹è¿‡ï¼Œ
+å‘å‡ºé£’é£’ä¹‹å£°ã€‚
 LONG
      );
         set("exits", ([
@@ -36,7 +36,7 @@ int do_bocao(string arg)
 {
 	object me = this_player();
 	if (me->query_temp("qi/bocao")) {
-        message_vision("$N²¦¿ª»Ä²İ£¬²İºóÂ¶³öÒ»¸öÉ½¶´¡£\n", me);
+        message_vision("$Næ‹¨å¼€è’è‰ï¼Œè‰åéœ²å‡ºä¸€ä¸ªå±±æ´ã€‚\n", me);
         set("exits/enter", __DIR__"cave");
         remove_call_out("close");
         call_out("close", 5, this_object());
@@ -47,7 +47,7 @@ int do_bocao(string arg)
 
 void close(object room)
 {
-        message("vision","Ò»ÕóÇï·ç´µ¹ı£¬¶´¿ÚÓÖ¿´²»µ½ÁË¡£\n", room);
+        message("vision","ä¸€é˜µç§‹é£å¹è¿‡ï¼Œæ´å£åˆçœ‹ä¸åˆ°äº†ã€‚\n", room);
         room->delete("exits/enter");
 }
  

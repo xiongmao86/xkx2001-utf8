@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaoyuan.c ºóÉ½Ğ¡Ôº
+// xiaoyuan.c åå±±å°é™¢
 // by Xiang
 // Modified by xQin 11/00
 
@@ -7,11 +7,11 @@ inherit ROOM;
 #include <room.h>
 void create()
 {
-	set("short", "ºóÉ½Ğ¡Ôº");
+	set("short", "åå±±å°é™¢");
 	set("long", @LONG
-ÕâÊÇºóÉ½µÄÒ»×ùĞ¡Ôº£¬²¼ÖÃ¼ò¼òµ¥µ¥£¬³ıÁËÒ»´²¡¢Ò»×À¡¢Ò»ÒÎ¡¢Ò»ÆÑÍÅ
-£¬ÔÙÒ²Ã»ÓĞ±ğµÄÊ²Îï¡£±È½ÏÒıÈË×¢Ä¿µÄÊÇÇ½ÉÏ¹Ò×ÅÒ»°Ñ½£¡£ÕâÀï¾ÍÊÇÎäµ±¿ª
-É½×æÊ¦ÕÅÈı·áµÄÁ·¹¦ËùÔÚ¡£
+è¿™æ˜¯åå±±çš„ä¸€åº§å°é™¢ï¼Œå¸ƒç½®ç®€ç®€å•å•ï¼Œé™¤äº†ä¸€åºŠã€ä¸€æ¡Œã€ä¸€æ¤…ã€ä¸€è’²å›¢
+ï¼Œå†ä¹Ÿæ²¡æœ‰åˆ«çš„ä»€ç‰©ã€‚æ¯”è¾ƒå¼•äººæ³¨ç›®çš„æ˜¯å¢™ä¸ŠæŒ‚ç€ä¸€æŠŠå‰‘ã€‚è¿™é‡Œå°±æ˜¯æ­¦å½“å¼€
+å±±ç¥–å¸ˆå¼ ä¸‰ä¸°çš„ç»ƒåŠŸæ‰€åœ¨ã€‚
 LONG
 	);
 
@@ -20,7 +20,7 @@ LONG
 	]));
 	set("objects", ([
 		CLASS_D("wudang") + "/zhang" : 1 ]));
-	create_door("north", "ÖñÃÅ", "south", DOOR_CLOSED);
+	create_door("north", "ç«¹é—¨", "south", DOOR_CLOSED);
 	set("cost", 1);
 	setup();
 }
@@ -37,8 +37,8 @@ int do_kill(string arg)
         if ( !ob=present(arg, environment(me)) ) return 0;
         if ( !ob1=present("zhang sanfeng", environment(me)) ) return 0;
 	if ( ob1 == ob ) return 0;
-        if ( ob->query("family/family_name") == "Îäµ±ÅÉ" ) {
-                message_vision("$NÒ»ÉùÀäĞ¦£º´óµ¨¿ñÍ½£¡ÄãÒ²Ì«Ğ¡¿´ÀÏÍ·×ÓÎÒÁË°É£¡\n ", ob1);
+        if ( ob->query("family/family_name") == "æ­¦å½“æ´¾" ) {
+                message_vision("$Nä¸€å£°å†·ç¬‘ï¼šå¤§èƒ†ç‹‚å¾’ï¼ä½ ä¹Ÿå¤ªå°çœ‹è€å¤´å­æˆ‘äº†å§ï¼\n ", ob1);
                 ob1->kill_ob(me);
 	}
 	return 0;

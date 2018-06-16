@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹şÈø¿Ë", ({ "hazakh","hasake"}) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å“ˆè¨å…‹", ({ "hazakh","hasake"}) );
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("long",
-		"ÕâÊÇ¸ö¹şÈø¿ËÄÁÃñ£¬ÕıÓÆÏĞ×ÔÔÚµØºß×ÅÄÁ¸è¡£\n");
+		"è¿™æ˜¯ä¸ªå“ˆè¨å…‹ç‰§æ°‘ï¼Œæ­£æ‚ é—²è‡ªåœ¨åœ°å“¼ç€ç‰§æ­Œã€‚\n");
 	set("combat_exp", 35000);
         set("shen_type", 1);
 	set("attitude", "heroism");

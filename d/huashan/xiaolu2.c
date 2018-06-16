@@ -1,16 +1,16 @@
 //Cracked by Roath
-// xiaolu2.c »ªÉ½ºóÉ½Ğ¡Â·
+// xiaolu2.c åå±±åå±±å°è·¯
 // qfy 7/9/1996
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡É½Â·");
+        set("short", "å°å±±è·¯");
 	set("long", @LONG
-Ğ¡Â·Ë³×ÅÉ½¼¹Ò»Â·ÍğÑÓ¶øÏÂÖÁ»ªÉ½ºóÉ½Àï¡£´Ë´¦ÊÇ»ªÉ½Ç°±²±ÜÊÀÖ®´¦
-£¬ÇáÒ×¼û²»µÃÈË¼£¡£¾ÍÁ¬»ªÉ½µÜ×ÓÈôÊÇ²»µÃ´«ÕĞ£¬Ò²²»ÄÜÀ´´Ë¡£ÄÏ·½µÄ¼¸
-¶°Ğ¡Îİ£¬±ãÊÇ»ªÉ½Ç°±²µÄ¾ÓËù¡£
+å°è·¯é¡ºç€å±±è„Šä¸€è·¯å®›å»¶è€Œä¸‹è‡³åå±±åå±±é‡Œã€‚æ­¤å¤„æ˜¯åå±±å‰è¾ˆé¿ä¸–ä¹‹å¤„
+ï¼Œè½»æ˜“è§ä¸å¾—äººè¿¹ã€‚å°±è¿åå±±å¼Ÿå­è‹¥æ˜¯ä¸å¾—ä¼ æ‹›ï¼Œä¹Ÿä¸èƒ½æ¥æ­¤ã€‚å—æ–¹çš„å‡ 
+æ ‹å°å±‹ï¼Œä¾¿æ˜¯åå±±å‰è¾ˆçš„å±…æ‰€ã€‚
 LONG
         );
 
@@ -34,9 +34,9 @@ int valid_leave(object me, string dir)
     mapping myfam;
     myfam = (mapping)me->query("family");
 
-    if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir == "west" 
+    if ( (!myfam || myfam["family_name"] != "åå±±æ´¾") && dir == "west" 
     && objectp(present("shi daizi", environment(me))) )
-           return notify_fail("Ê©´÷×ÓÀ¹×¡ÄãËµ£ºÁ½Î»Ê¦Êå×æ²»Óû¼û¿Í£¬Çë»Ø°É¡£\n");
+           return notify_fail("æ–½æˆ´å­æ‹¦ä½ä½ è¯´ï¼šä¸¤ä½å¸ˆå”ç¥–ä¸æ¬²è§å®¢ï¼Œè¯·å›å§ã€‚\n");
 
     return ::valid_leave(me, dir);
 }

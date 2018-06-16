@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÓÎÈË", ({ "you ren", "ren" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ¸¸äºº", ({ "you ren", "ren" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22+random(30));
         set("int", 28);
         set("long",
-                "ÕâÊÇÍâ³öÓÎÀÀµÄÆÕÍ¨°ÙĞÕ¡£\n");
+                "è¿™æ˜¯å¤–å‡ºæ¸¸è§ˆçš„æ™®é€šç™¾å§“ã€‚\n");
 
         set("attitude", "peaceful");
         set("combat_exp", 400+random(2200));

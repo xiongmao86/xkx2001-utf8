@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ɽ·");
+	set("short", "武夷山路");
 	set("long", @LONG
-�����ڶ��ϵ�һɽ������ɽ�ϡ�����Ӷ��洵�������ż��ֺ��⡣
-�ϱ߾��������ĺ���Ȫ���ˡ�
+你走在东南第一山脉武夷山上。海风从东面吹来，带着几分寒意。
+南边就是著名的海港泉州了。
 LONG
 	);
 

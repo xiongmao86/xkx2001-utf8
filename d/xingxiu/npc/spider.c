@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶¾Ö©Öë", ({ "du zhizhu", "spider", "zhizhu" }) );
+        set_name("æ¯’èœ˜è››", ({ "du zhizhu", "spider", "zhizhu" }) );
 	set_color("$HIB$");
-        set("race", "À¥³æ");
-        set("subrace", "ÅÀ³æ");
+        set("race", "æ˜†è™«");
+        set("subrace", "çˆ¬è™«");
         set("age", 3);
-        set("long", "Ò»Ö»ºÚÉ«µÄ´óÖ©Öë£¬¶Ç×ÓÉÏÓÐºìÀ¶Ïà¼äµÄ»·ÎÆ¡£\n");
+        set("long", "ä¸€åªé»‘è‰²çš„å¤§èœ˜è››ï¼Œè‚šå­ä¸Šæœ‰çº¢è“ç›¸é—´çš„çŽ¯çº¹ã€‚\n");
         set("attitude", "peaceful");
 
-//      set("limbs", ({ "Í·²¿", "ÉíÌå", "´¥½Ç", "Ç°òü" }) );
+//      set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è§¦è§’", "å‰èž¯" }) );
 
         set("combat_exp", 900);
 	set("qianzhu-wandu/spider", 10);
@@ -39,7 +39,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("\n$N°ËÌõÍÈÊÕÂ££¬ÍÂ³öÒ»ÍÅË¿£¬ËÀÁË¡£\n", this_object());
+        message_vision("\n$Nå…«æ¡è…¿æ”¶æ‹¢ï¼Œåå‡ºä¸€å›¢ä¸ï¼Œæ­»äº†ã€‚\n", this_object());
         ob = new(__DIR__"zhusi");
         ob->move(environment(this_object()));
         destruct(this_object());

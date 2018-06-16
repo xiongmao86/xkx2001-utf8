@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-  set_name("ÇàÌúÁî", ({ "qingtie ling", "ling" }) );
+  set_name("é’é“ä»¤", ({ "qingtie ling", "ling" }) );
   set_weight(100);
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("unit", "¿é");
-    set("long", "ÕâÊÇÎ÷ÏÄ¹úÒ»Æ·ÌÃÌÃÖ÷Áî¡£\n");
+    set("unit", "å—");
+    set("long", "è¿™æ˜¯è¥¿å¤å›½ä¸€å“å ‚å ‚ä¸»ä»¤ã€‚\n");
     set("value", 0);
     set("material", "steel");
   }
@@ -73,22 +73,22 @@ void decay(int phase)
   switch (phase) {
   case 1:
   case 2:
-    msg="ÇàÌúÁîÉÏµÄÏÊÑªÂýÂýµØÄý¹Ì£¬½á³ÉÁËÑª¿é£®";
+    msg="é’é“ä»¤ä¸Šçš„é²œè¡€æ…¢æ…¢åœ°å‡å›ºï¼Œç»“æˆäº†è¡€å—ï¼Ž";
     break;
   case 3:
   case 4:
-    msg="ÇàÌúÁîÉÏµÄÑª¿é¿ªÊ¼·¢³öÒ»ÕóÕóµÄ¶ñ³ô£®";
+    msg="é’é“ä»¤ä¸Šçš„è¡€å—å¼€å§‹å‘å‡ºä¸€é˜µé˜µçš„æ¶è‡­ï¼Ž";
     break;
   case 5:
   case 6:
-    msg="¸¯Èâ³ôÑª½¥½¥µØ°ÑÇàÌúÁîÉÏµÄ×Ö¼£Ä£ºýÁË£®";
+    msg="è…è‚‰è‡­è¡€æ¸æ¸åœ°æŠŠé’é“ä»¤ä¸Šçš„å­—è¿¹æ¨¡ç³Šäº†ï¼Ž";
     break;
   case 7:
   case 8:
-    msg="ÇàÌúÁîÉÏµÄ×Ö¼£ÒÑ¾­¼¸ºõ²»¿É±æÈÏÁË£®";
+    msg="é’é“ä»¤ä¸Šçš„å­—è¿¹å·²ç»å‡ ä¹Žä¸å¯è¾¨è®¤äº†ï¼Ž";
     break;
   default:
-    msg="Äã¿´ÁË¿´ÀÃµÃ²»¿É±æÈÏµÄÇàÌúÁî£¬Ì¾ÁË¿ÚÆø£¬°ÑËüÈÓÁË£®";
+    msg="ä½ çœ‹äº†çœ‹çƒ‚å¾—ä¸å¯è¾¨è®¤çš„é’é“ä»¤ï¼Œå¹äº†å£æ°”ï¼ŒæŠŠå®ƒæ‰”äº†ï¼Ž";
     break;
   }
   message_vision(msg+"\n", environment());
@@ -109,9 +109,9 @@ int do_behead(string arg)
   
   if (obj->query("beheaded", 1)) return 0;
 
-  message_vision("$NÓÃÇàÌúÁî°Ñ"+obj->query("name")+
-		 "Í·¸îÁËÏÂÀ´£¬ÁàÔÚÊÖÀï¡£\n", me);
-  ob->set("name", obj->query("victim_name")+"µÄÍ·");
+  message_vision("$Nç”¨é’é“ä»¤æŠŠ"+obj->query("name")+
+		 "å¤´å‰²äº†ä¸‹æ¥ï¼Œæ‹Žåœ¨æ‰‹é‡Œã€‚\n", me);
+  ob->set("name", obj->query("victim_name")+"çš„å¤´");
   ob->set("victim_name", obj->query("victim_name"));
   if (query("victim") == obj->query("victim_name")
       && query("owner") == obj->query("my_killer")) {
@@ -120,7 +120,7 @@ int do_behead(string arg)
     ob->set("owner", me->query("id"));
   }
   ob->move(me);
-  obj->set("name", "Ò»¾ßÎÞÍ·Ê¬Ìå");
+  obj->set("name", "ä¸€å…·æ— å¤´å°¸ä½“");
   obj->set("beheaded", 1);
 
   remove_call_out("decay");

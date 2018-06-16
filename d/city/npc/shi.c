@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shi.c Ê·ÇàÉ½
+// shi.c å²é’å±±
 
 #include <ansi.h>
 inherit NPC;
@@ -7,20 +7,20 @@ inherit F_SKILL;
 
 void create()
 {
-	set_name("ÕÔÁ¼¶°", ({ "zhao liangdong", "zhao" }));
+	set_name("èµµè‰¯æ ‹", ({ "zhao liangdong", "zhao" }));
         set_color("$YEL$");
-	set("title", HIY"ÑïÖİÊØ½«"NOR);
-	set("gender", "ÄĞĞÔ");
+	set("title", HIY"æ‰¬å·å®ˆå°†"NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 33);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "ÕÔÁ¼¶°ÒòÎªÁ¬ÄêÕ÷Õ½ÓĞ¹¦£¬ĞÂ½ü±»Éı¹Ùµ÷ÈÎÑïÖİ¡£ËûÉúµÃÒ»Á³ÂçÈùºú×Ó£¬ºÜÊÇæçÓÂ¡£\n");
+	set("long", "èµµè‰¯æ ‹å› ä¸ºè¿å¹´å¾æˆ˜æœ‰åŠŸï¼Œæ–°è¿‘è¢«å‡å®˜è°ƒä»»æ‰¬å·ã€‚ä»–ç”Ÿå¾—ä¸€è„¸ç»œè…®èƒ¡å­ï¼Œå¾ˆæ˜¯éªå‹‡ã€‚\n");
 	set("combat_exp", 400000);
 	set("shen_type", 0);
 	set("attitude", "heroism");
         set("inquiry", ([
-		"Î¤Ğ¡±¦" : "¶à¿÷Î¤¾ôÒ¯¸øÏÂ¹ÙÌáĞ¯£¬ÏÂ¹Ù¸Ğ¼¤²»¾¡¡£\n",
-		"Î¤¾ôÒ¯" : "¶à¿÷Î¤¾ôÒ¯¸øÏÂ¹ÙÌáĞ¯£¬ÏÂ¹Ù¸Ğ¼¤²»¾¡¡£\n",
+		"éŸ¦å°å®" : "å¤šäºéŸ¦çˆµçˆ·ç»™ä¸‹å®˜ææºï¼Œä¸‹å®˜æ„Ÿæ¿€ä¸å°½ã€‚\n",
+		"éŸ¦çˆµçˆ·" : "å¤šäºéŸ¦çˆµçˆ·ç»™ä¸‹å®˜ææºï¼Œä¸‹å®˜æ„Ÿæ¿€ä¸å°½ã€‚\n",
 	]));
 
 	set_skill("unarmed", 100);
@@ -50,14 +50,14 @@ void create()
 
 int accept_fight(object me)
 {
-	command("say ÀÏ·ò¾ÃÎ´ºÍ½­ºşÈË¶¯ÊÖ¹ıÕĞÁË£¬½ñÈÕÒ²²»ÏëÆÆÀı¡£");
+	command("say è€å¤«ä¹…æœªå’Œæ±Ÿæ¹–äººåŠ¨æ‰‹è¿‡æ‹›äº†ï¼Œä»Šæ—¥ä¹Ÿä¸æƒ³ç ´ä¾‹ã€‚");
 	return 0;
 }
 
 
 int accept_kill(object me)
 {
-        command("say ´óµ¨µóÃñ£¬¾¹¸ÒÄ±É±±¾¹Ù£¡\n");
+        command("say å¤§èƒ†åˆæ°‘ï¼Œç«Ÿæ•¢è°‹æ€æœ¬å®˜ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

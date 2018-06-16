@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¸ßÀèÉ½ÃÜÁÖ");
+	set("short", "é«˜é»Žå±±å¯†æž—");
 	set("long", @LONG
-¸ßÀèÉ½ÉÏµØÊÆÏÕ¶ñ¡¢Ê÷´óÁÖÉî£¬¸½½ü¼¸ºõºÁÎÞÈËÑÌ¡£µØ´¦¸ßÉ½ËÄ¼¾½Ôº®£¬ÐÜ
-»¢µÈÃÍÊÞÊ±³£³öÃ»£¬Ö»ÓÐÓÂ¸ÒµÄÁÔÈË²Å¸ÒÉÏÕâÀïÀ´¡£¶«ÃæÏÂÉ½¼´ÊÇãòË®¹ÈµØ¡£
+é«˜é»Žå±±ä¸Šåœ°åŠ¿é™©æ¶ã€æ ‘å¤§æž—æ·±ï¼Œé™„è¿‘å‡ ä¹Žæ¯«æ— äººçƒŸã€‚åœ°å¤„é«˜å±±å››å­£çš†å¯’ï¼Œç†Š
+è™Žç­‰çŒ›å…½æ—¶å¸¸å‡ºæ²¡ï¼Œåªæœ‰å‹‡æ•¢çš„çŒŽäººæ‰æ•¢ä¸Šè¿™é‡Œæ¥ã€‚ä¸œé¢ä¸‹å±±å³æ˜¯æ³¸æ°´è°·åœ°ã€‚
 LONG);
 	set("objects", ([
 		BEAST_D("laohu") : 1
@@ -17,7 +17,7 @@ LONG);
 	set("exits", ([
 		"east" : __DIR__"minov50",
 		]));
-	set("area", "ãòË®ÑØ°¶");
+	set("area", "æ³¸æ°´æ²¿å²¸");
 	set("cost", 5);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

@@ -1,17 +1,17 @@
 //Cracked by Roath
-// jiuyin-jing2.c ¾ÅÒõÕæ¾­ÏÂ¾í
+// jiuyin-jing2.c ä¹é˜´çœŸç»ä¸‹å·
 
 inherit ITEM;
 
 void create()
 {
-	set_name("¾ÅÒõÕæ¾­", ({ "jing", "jiuyin-zhenjing" }));
+	set_name("ä¹é˜´çœŸç»", ({ "jing", "jiuyin-zhenjing" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»±¾ÊÖ³­Ğ¡Êé£¬·âÃæÉÏĞ´×Å¡¸¾ÅÒõÕæ¾­¡ª¡ªÏÂ²á¡¹¼¸¸ö×Ö£¬ÀïÃæÃÜÃÜÂéÂéĞ´ÁËĞí¶àĞ¡×Ö¡£\n");
+		set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€æœ¬æ‰‹æŠ„å°ä¹¦ï¼Œå°é¢ä¸Šå†™ç€ã€Œä¹é˜´çœŸç»â€”â€”ä¸‹å†Œã€å‡ ä¸ªå­—ï¼Œé‡Œé¢å¯†å¯†éº»éº»å†™äº†è®¸å¤šå°å­—ã€‚\n");
 		set("value", 500);
 		set("material", "paper");
 		set("skill", ([

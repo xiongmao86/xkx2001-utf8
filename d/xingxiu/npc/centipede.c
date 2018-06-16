@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("���", ({ "wu gong", "centipede" }) );
+        set_name("蜈蚣", ({ "wu gong", "centipede" }) );
 	set_color("$RED$");
-        set("race", "����");
-        set("subrace", "����");
+        set("race", "昆虫");
+        set("subrace", "爬虫");
         set("age", 3);
-        set("long", "һֻ�ֺ�ɫ�ľ޴����򼣬����һ�����ȣ�ȫ�����⣬ͷ��͹��һ��С������Ѱ��������ͬ��\n");
+        set("long", "一只褐红色的巨大的蜈蚣，长着一百条腿，全身闪光，头上凸起一个小瘤，与寻常蜈蚣大不相同。\n");
         set("attitude", "peaceful");
 
-//        set("limbs", ({ "ͷ��", "����", "����", "ǰ��", "β��" }) );
+//        set("limbs", ({ "头部", "身体", "触角", "前螯", "尾巴" }) );
 //        set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 900);
@@ -37,7 +37,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("\n$N����һ�������ˡ�\n", this_object());
+        message_vision("\n$N身子一僵，死了。\n", this_object());
         ob = new(__DIR__"wg_shell");
         ob->move(environment(this_object()));
         destruct(this_object());

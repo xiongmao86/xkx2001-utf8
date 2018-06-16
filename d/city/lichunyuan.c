@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"Àö´ºÔº"NOR);
+	set("short", GRN"ä¸½æ˜¥é™¢"NOR);
 	set("long", @LONG
-ÄãÒ»×ß½øÀ´£¬Ò»ÑÛ¾Í¿´µ½´óÌüµÄÇ½ÉÏ¹Ò×ÅÒ»·ù·ù´º¹¬Í¼(tu)£¬Ò»ÏÂ×Ó¾ÍÃ÷°×
-ÁËÕâÊÇÊ²Ã´µØ·½¡£ÌüÄÚµ½´¦ÕÅµÆ½á²Ê£¬ÏãÆøÆË±Ç¡£¼¸Ãû´ò°çµÃÑýÀïÑýÆøµÄÅ®ÈË·Ö
-Õ¾Á½ÅÔ¶ÔÄã·¢³öÃÄÐ¦¡£Ö÷ÈËÎ¤´º·¼ÉÏÉÏÏÂÏÂ¡¢Ç°Ç°ºóºóÕÐºô×Å¿ÍÈË¡£´ÓÂ¥ÉÏ´«À´
-ÁËÕóÕó´òÇéÂîÇÎµÄÉùÒô¡£
+ä½ ä¸€èµ°è¿›æ¥ï¼Œä¸€çœ¼å°±çœ‹åˆ°å¤§åŽ…çš„å¢™ä¸ŠæŒ‚ç€ä¸€å¹…å¹…æ˜¥å®«å›¾(tu)ï¼Œä¸€ä¸‹å­å°±æ˜Žç™½
+äº†è¿™æ˜¯ä»€ä¹ˆåœ°æ–¹ã€‚åŽ…å†…åˆ°å¤„å¼ ç¯ç»“å½©ï¼Œé¦™æ°”æ‰‘é¼»ã€‚å‡ åæ‰“æ‰®å¾—å¦–é‡Œå¦–æ°”çš„å¥³äººåˆ†
+ç«™ä¸¤æ—å¯¹ä½ å‘å‡ºåªšç¬‘ã€‚ä¸»äººéŸ¦æ˜¥èŠ³ä¸Šä¸Šä¸‹ä¸‹ã€å‰å‰åŽåŽæ‹›å‘¼ç€å®¢äººã€‚ä»Žæ¥¼ä¸Šä¼ æ¥
+äº†é˜µé˜µæ‰“æƒ…éª‚ä¿çš„å£°éŸ³ã€‚
 LONG
 	);
 
@@ -25,16 +25,16 @@ LONG
 
 	set("item_desc", ([
 		"tu" :
-"                                      ¦¯        ¦¯          ¦¯             
-                                    ©°©¦        ©¦          ©¦
-      ©°¡ª¦¯©°¡ª  ¡ª©Ð¡ª¡ª¦¯        ©¦©È      ©°©¼          ©¸©´
-    ¡ª©¼¦¯¡ª©¼    ¡ª¡ª¡ª¡ª¦¯  ¦¯¡ª¡ª©¼©¦  ¦¯¡ª©à©Ø¡ª  ¦¯¡ª¡ª©Ø©à
+"                                      ÎŸ        ÎŸ          ÎŸ             
+                                    â”Œâ”‚        â”‚          â”‚
+      â”Œâ€”ÎŸâ”Œâ€”  â€”â”¬â€”â€”ÎŸ        â”‚â”¤      â”Œâ”˜          â””â”
+    â€”â”˜ÎŸâ€”â”˜    â€”â€”â€”â€”ÎŸ  ÎŸâ€”â€”â”˜â”‚  ÎŸâ€”â”¼â”´â€”  ÎŸâ€”â€”â”´â”¼
 
 
-   ¦¯       ¦¯    ¦¯¦¯¦¯                 ¦¯                  ¡ð
-   ©¦       ©¦    ©¦©À©à       ©°¡ª¦¯  ©°©à                  ©¦
-   ©À ¦¯©Ð©´©È    ©À©¸©à©´   ¡ª©¼¦¯¡ª¡ª©¼©È          ¡ð©Ð¡ª©´©È
-   ©¦   ©¼©¸©¦    ©¦  ©¦                 ©¸            ©¦  ©¦©¦
+   ÎŸ       ÎŸ    ÎŸÎŸÎŸ                 ÎŸ                  â—‹
+   â”‚       â”‚    â”‚â”œâ”¼       â”Œâ€”ÎŸ  â”Œâ”¼                  â”‚
+   â”œ ÎŸâ”¬â”â”¤    â”œâ””â”¼â”   â€”â”˜ÎŸâ€”â€”â”˜â”¤          â—‹â”¬â€”â”â”¤
+   â”‚   â”˜â””â”‚    â”‚  â”‚                 â””            â”‚  â”‚â”‚
 	\n"]));
 
 	set("exits", ([
@@ -60,44 +60,44 @@ int do_order(string arg)
         string arg1, arg2, arg3, msg;
 
         if (!arg)
-                return notify_fail("ÄãÒªÃüÁîÊ²Ã´ÈË£¿\n");
+                return notify_fail("ä½ è¦å‘½ä»¤ä»€ä¹ˆäººï¼Ÿ\n");
 /*
         if( sscanf(arg, "%s %s %s", arg1, arg2, arg3) < 2 )
-                return notify_fail("Ö¸Áî´íÎó£¡\n");
+                return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼\n");
 */
         sscanf(arg, "%s %s %s", arg1, arg2, arg3);
         victim = present(arg1,environment(me));
 
         if (!victim)
-                return notify_fail("ÕâÀï²¢ÎÞ´ËÈË£¡\n");
+                return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
         if (!living(victim))
-                return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
+                return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
 
-        if (victim == me) return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+        if (victim == me) return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
 
 	if (!victim->query("hooker") )
-		return notify_fail("Ëý²»ÊÇÔº×ÓÀïµÄ¹ÃÄï£¬ÏÈÂôÁËËýÔÙËµ°É¡£\n");
+		return notify_fail("å¥¹ä¸æ˜¯é™¢å­é‡Œçš„å§‘å¨˜ï¼Œå…ˆå–äº†å¥¹å†è¯´å§ã€‚\n");
 
 	if (!me->query_temp("money_given"))
-		return notify_fail("´óÒ¯Äú»¹Ã»¸¶Ç®ÄØ£¡\n");
+		return notify_fail("å¤§çˆ·æ‚¨è¿˜æ²¡ä»˜é’±å‘¢ï¼\n");
 
 	if (!arg2) 
-		return notify_fail("ÄãÒªÃüÁîËý×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å‘½ä»¤å¥¹åšä»€ä¹ˆï¼Ÿ\n");
 
 	switch(random(3)) {
 	case 0:
-		msg = "$NºÙºÙÒùÐ¦ÁË¼¸Éù£¬æÒÆ¤Ð¦Á³µÄ¶Ô$nËµ£º";
+		msg = "$Nå˜¿å˜¿æ·«ç¬‘äº†å‡ å£°ï¼Œå¬‰çš®ç¬‘è„¸çš„å¯¹$nè¯´ï¼š";
 		break;
 	case 1:
-		msg = "$N¹þ¹þ´óÐ¦ÁË¼¸Éù£¬Ð×°Í°ÍµÄ¶Ô$nËµ£º";
+		msg = "$Nå“ˆå“ˆå¤§ç¬‘äº†å‡ å£°ï¼Œå‡¶å·´å·´çš„å¯¹$nè¯´ï¼š";
 		break;
 	case 2:
-		msg = "$NºÇºÇÐ¦ÁË¼¸Éù£¬ÇáÇáµÄ´Õ½ü$nËµ£º";
+		msg = "$Nå‘µå‘µç¬‘äº†å‡ å£°ï¼Œè½»è½»çš„å‡‘è¿‘$nè¯´ï¼š";
 		break;
 	}
 
-        message_vision(CYN+msg + arg2 + " " + arg3+"°É¡£\n"NOR, me, victim);
+        message_vision(CYN+msg + arg2 + " " + arg3+"å§ã€‚\n"NOR, me, victim);
         
 	if( !arg3 )
                 EMOTE_D->do_emote(victim, arg2);
@@ -111,7 +111,7 @@ int valid_leave(object me, string dir)
 {
     if (present("guinu",environment(me)) && 
                 me->query("hooker")) {
-       message_vision("¹êÅ«Ò»°Ñ¾¾×¡$NµÄÈ¹±ß£ºÄãÒÑ¾­ÊÇÀö´ºÔºµÄÈËÁË£¬²»½Ó¿Í±ðÏëåÞ£¡\n",
+       message_vision("é¾Ÿå¥´ä¸€æŠŠæªä½$Nçš„è£™è¾¹ï¼šä½ å·²ç»æ˜¯ä¸½æ˜¥é™¢çš„äººäº†ï¼Œä¸æŽ¥å®¢åˆ«æƒ³é›ï¼\n",
                 me);
        return notify_fail("\n");
     }

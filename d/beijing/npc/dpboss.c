@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dpboss µ±ÆÌÀÏ°å 
+// dpboss å½“é“ºè€æ¿ 
 // Ssy
 
 #include <ansi.h>
@@ -8,15 +8,15 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("µ±ÆÌÀÏ°å", ({ "dangpu boss", "boss" }));
+	set_name("å½“é“ºè€æ¿", ({ "dangpu boss", "boss" }));
         set_color("$YEL$");
 	set("shen_type", 0);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set_max_encumbrance(100000000);
 	set("age", 35);
 	set("long",
-		"Ò»¸ö·ÊÅÖºº×Ó¡£\n");
+		"ä¸€ä¸ªè‚¥èƒ–æ±‰å­ã€‚\n");
 	set("no_get_from", 1);
 
 	set_skill("unarmed", 60);
@@ -44,7 +44,7 @@ void init()
 
 void unconcious()
 {
-	message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉíÀ­¿ª¹ñÌ¨ÏÂÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï±ß°ÑÃÅËøÉÏÁË¡£\n",
+	message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹‰å¼€æŸœå°ä¸‹ä¸€é“æš—é—¨ï¼Œé’»äº†è¿›å»ï¼Œå’”åš“ä»é‡Œè¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
 		this_object());
 	destruct(this_object());
 }

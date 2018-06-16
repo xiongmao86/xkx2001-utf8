@@ -4,11 +4,11 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ë½·¿Ô¿³×", ({"key", "yaoshi"}));
+	set_name("ç§æˆ¿é’¥åŒ™", ({"key", "yaoshi"}));
 	set("long",
-		"ÕâÊÇÒ»°ÑÌÒ»¨´åË½ÈË×¡Õ¬µÄÔ¿³×¡£
-¿ÉÒÔÓÃÀ´¿ªÃÅ(unlock)ºÍ¹ØÃÅ(lock)¡£\n");
-	set("unit", "°Ñ");
+		"è¿™æ˜¯ä¸€æŠŠæ¡ƒèŠ±æ‘ç§äººä½å®…çš„é’¥åŒ™ã€‚
+å¯ä»¥ç”¨æ¥å¼€é—¨(unlock)å’Œå…³é—¨(lock)ã€‚\n");
+	set("unit", "æŠŠ");
 	set("weight", 10);
 	set("no_put",1);
 	set("no_get",1);
@@ -28,9 +28,9 @@ int do_unlock()
 	object table, bottle, rose, room, here, me = this_player();
 
 	if (!me->query("home"))
-		return notify_fail("ÄãÃ»Ë½Õ¬Ñ½£¬ÔÚÕâ¿ªÊ²Ã´¿ª£¡\n");
-	if ((string)environment(me)->query("short")!="ÌÒ»¨Æº")
-		return notify_fail("ÄãµÄË½Õ¬ÔÚÌÒ»¨¹ÈÀïÌÒ»¨ÆºÉÏ£¡\n");
+		return notify_fail("ä½ æ²¡ç§å®…å‘€ï¼Œåœ¨è¿™å¼€ä»€ä¹ˆå¼€ï¼\n");
+	if ((string)environment(me)->query("short")!="æ¡ƒèŠ±åª")
+		return notify_fail("ä½ çš„ç§å®…åœ¨æ¡ƒèŠ±è°·é‡Œæ¡ƒèŠ±åªä¸Šï¼\n");
 	room = new("/d/taohuacun/obj/player");
 	room -> set("short", me->query("home/home_name"));
 	room -> set("long", me->query("home/home_desc")+"\n");
@@ -46,7 +46,7 @@ int do_unlock()
 	table -> move(room);
         set("sleep_room", "1");
 	room->set("sleep_room","1");
-	message_vision(HIG "$NÌÍ³öÔ¿³×£¬ÇáÇáÒ»Ğı£¬¾ÙÊÖÍÆ¿ª·¿ÃÅ¡£\n" NOR,me);
+	message_vision(HIG "$Næå‡ºé’¥åŒ™ï¼Œè½»è½»ä¸€æ—‹ï¼Œä¸¾æ‰‹æ¨å¼€æˆ¿é—¨ã€‚\n" NOR,me);
 	return 1;
 }
 int do_lock()
@@ -55,6 +55,6 @@ int do_lock()
 	if(!( here = find_object("/d/taohuacun/taohua5")) )
 		here = load_object("/d/taohuacun/taohua5");
 	here->delete("exits/enter");
-	message_vision(HIG "Ö»ÌıµÃÅöµÄÒ»ÉùÏì£¬$N°Ñ·¿ÃÅ¹ØÉÏÁË¡£\n" NOR, this_player());
+	message_vision(HIG "åªå¬å¾—ç¢°çš„ä¸€å£°å“ï¼Œ$NæŠŠæˆ¿é—¨å…³ä¸Šäº†ã€‚\n" NOR, this_player());
 	return 1;
 }

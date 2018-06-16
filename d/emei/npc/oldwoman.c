@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏ´óÄï", ({ "old woman", "woman" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("è€å¤§å¨˜", ({ "old woman", "woman" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 63);
-        set("long", "Ò»¸öÂúÁ³·çËªÖ®É«µÄÀÏÆÅÆÅ¡£\n");
+        set("long", "ä¸€ä¸ªæ»¡è„¸é£éœœä¹‹è‰²çš„è€å©†å©†ã€‚\n");
 //	set("shen", 1000);
 	set("shen_type", 1);
 	set("combat_exp", 150);

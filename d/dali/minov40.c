@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¸ËÀ¸ÖÐ²ã");
+	set("short", "æ†æ ä¸­å±‚");
 	set("long", @LONG
-ÕâÀïÊÇ¸ËÀ¸µÄÖÐ²ã£¬´ÓÂ¥ÌÝÒ»ÉÏÀ´¾ÍÊÇ¼ÀËù¡£ÄÏÚ¯ÂùÒÄ´ó¶àÐÅ·î×Ô¼º²¿×åÌØ
-ÓÐµÄÉñÃ÷£¬¼Ò¼Ò»§»§¶¼¾ÓÖÐÊÒÉè°¸¹©·î¡£ÖÐ²ãµÄÆäÓà·¿¼äÔòÎªÇÞËù¡£´ËÎÝ¿¿´°°Ú
-ÁËÒ»²¿·ÄÉ´»ú¡£
+è¿™é‡Œæ˜¯æ†æ çš„ä¸­å±‚ï¼Œä»Žæ¥¼æ¢¯ä¸€ä¸Šæ¥å°±æ˜¯ç¥­æ‰€ã€‚å—è¯è›®å¤·å¤§å¤šä¿¡å¥‰è‡ªå·±éƒ¨æ—ç‰¹
+æœ‰çš„ç¥žæ˜Žï¼Œå®¶å®¶æˆ·æˆ·éƒ½å±…ä¸­å®¤è®¾æ¡ˆä¾›å¥‰ã€‚ä¸­å±‚çš„å…¶ä½™æˆ¿é—´åˆ™ä¸ºå¯æ‰€ã€‚æ­¤å±‹é çª—æ‘†
+äº†ä¸€éƒ¨çººçº±æœºã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/byfangsha.c" : 1,
@@ -19,7 +19,7 @@ LONG);
 	set("exits", ([
 		"down" : __DIR__"minov39",
 		]));
-	set("area", "²½ÐÛ²¿");
+	set("area", "æ­¥é›„éƒ¨");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	setup();

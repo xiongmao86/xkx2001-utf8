@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dianxin.c µãĞÄ
+// dianxin.c ç‚¹å¿ƒ
 // Shan 96/06/29
 
 inherit ITEM;
@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("µãĞÄ", ({"dian xin", "dianxin", "dimsum"}));
+	set_name("ç‚¹å¿ƒ", ({"dian xin", "dianxin", "dimsum"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»µúÖÆ×÷¾«ÃÀµÄĞ¡µãĞÄ¡£\n");
-		set("unit", "µú");
+		set("long", "ä¸€ç¢Ÿåˆ¶ä½œç²¾ç¾çš„å°ç‚¹å¿ƒã€‚\n");
+		set("unit", "ç¢Ÿ");
 		set("value", 100);
 		set("food_remaining", 4);
 		set("food_supply", 30);

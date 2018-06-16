@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("����ƽ", ({ "lu zhengping", "lu" }));
-        set("title", "�쵶��������");
+        set_name("吕正平", ({ "lu zhengping", "lu" }));
+        set("title", "快刀门掌门人");
         set("long", 
-"ֻ����һ�Ź��ַ���������һ����ף��������������û�ˡ�\n");
-        set("gender", "����");
+"只见他一张国字方脸，腮上一部虬髯，将大半张脸都遮没了。\n");
+        set("gender", "男性");
         set("age", 40);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -48,14 +48,14 @@ void create()
 
         set("chat_chance", 8);
         set("chat_msg", ({
-        "����ƽ˵�������ְ��˾ͽ����밳���й����Ľ��飬����ȥ�ݷ������˼ҡ�\n",
+        "吕正平说道：长乐帮的司徒大哥与俺们有过命的交情，真想去拜访他老人家。\n",
         }) );
 
         set("inquiry",([
-                "������" : "�´���������������������ȫ������ʮ������",
-                "���ְ�" : "��Ҳ��Ҫ�����ְ��ɽ��",
-                "˾ͽ���" : "˾ͽ�����¾����ֵ��ҵ��¡�",
-                "˾ͽ��" : "��˵���ְ�ļ������ҷ��Ϻ���������",
+                "丁不四" : "下次再遇到这老贼，定在他全身剁上十几刀。",
+                "长乐帮" : "我也正要到长乐帮拜山。",
+                "司徒大哥" : "司徒大哥的事就是兄弟我的事。",
+                "司徒横" : "听说长乐帮的奸贼作乱饭上害死了他。",
         ]));
 
         setup();

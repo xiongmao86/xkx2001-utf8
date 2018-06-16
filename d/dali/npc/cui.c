@@ -7,12 +7,12 @@ string ask_me();
 
 void create()
 {
-	set_name("´Ş°ÙÈª", ({"cui baiquan", "cui", "baiquan"}));
-	set("nickname", "½ğËãÅÌ");
-	set("long","ÕâÊÇÒ»¸ö¿´ÉÏÈ¥â«â«ËîËîµÄÒ»¸öÖĞÄêÈË£¬ÃæÉ«·¢»Æ¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("å´”ç™¾æ³‰", ({"cui baiquan", "cui", "baiquan"}));
+	set("nickname", "é‡‘ç®—ç›˜");
+	set("long","è¿™æ˜¯ä¸€ä¸ªçœ‹ä¸Šå»çŒ¥çŒ¥ç¥Ÿç¥Ÿçš„ä¸€ä¸ªä¸­å¹´äººï¼Œé¢è‰²å‘é»„ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
-	set("title", "Æ½ÄÏÍõ¸®¹Ü¼Ò");
+	set("title", "å¹³å—ç‹åºœç®¡å®¶");
 	set("str", 28);
 	set("int", 24);
 	set("dex", 28);
@@ -35,10 +35,10 @@ void create()
 	prepare_skill("cuff", "jinyu-quan");
 
 	set("inquiry", ([
-		"¹¤Ç®" : (: ask_me :),
+		"å·¥é’±" : (: ask_me :),
 		]));
 
-	create_family("´óÀí¶Î¼Ò",17,"µÜ×Ó");
+	create_family("å¤§ç†æ®µå®¶",17,"å¼Ÿå­");
 	setup();
 	add_money("coin", 188);
 	add_money("silver", 88);
@@ -54,8 +54,8 @@ void enough_rest()
 
 /*void unconcious()
 {
-        message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉíÀ­¿ª¹ñÌ¨ÏÂÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï
-±ß°ÑÃÅËøÉÏÁË¡£\n",
+        message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹‰å¼€æŸœå°ä¸‹ä¸€é“æš—é—¨ï¼Œé’»äº†è¿›å»ï¼Œå’”åš“ä»é‡Œ
+è¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
                 this_object());
         destruct(this_object());
 }
@@ -63,7 +63,7 @@ void enough_rest()
 void attempt_apprentice(object ob)
 {
 	command("haha");
-	command("say ËûÄÌÄÌµÄ£¬ÀÏ×ÓÒ»µ½ÒõÌì¾ÍÑüËáÍÈÌÛ£¬½Ì²»ÁËÄãÊ²Ã´¡£");
+	command("say ä»–å¥¶å¥¶çš„ï¼Œè€å­ä¸€åˆ°é˜´å¤©å°±è…°é…¸è…¿ç–¼ï¼Œæ•™ä¸äº†ä½ ä»€ä¹ˆã€‚");
 	return;
 }
 
@@ -71,45 +71,45 @@ string ask_me()
 {
 	int wage;
 	object ob = this_player();
-	if (ob->query("family/family_name")!="´óÀí¶Î¼Ò") {
-		command("say ÄãÊÇÄÄÀïÀ´µÄ" + RANK_D->query_rude(ob) +
-				"ÆÛ¸º´óÀíÈËÀÏÊµÄãÏë¸ãÕ©Æ­°¡£¿¿ì¸øÎÒ¹ö£¡");
+	if (ob->query("family/family_name")!="å¤§ç†æ®µå®¶") {
+		command("say ä½ æ˜¯å“ªé‡Œæ¥çš„" + RANK_D->query_rude(ob) +
+				"æ¬ºè´Ÿå¤§ç†äººè€å®ä½ æƒ³æè¯ˆéª—å•Šï¼Ÿå¿«ç»™æˆ‘æ»šï¼");
 		command("slap " + ob->query("id"));
-		return ("Ğ¡ĞÄÎÒÔ×ÁËÄã£¡");
+		return ("å°å¿ƒæˆ‘å®°äº†ä½ ï¼");
 	}
-	if (ob->query("title")=="´óÀí¹úºîÒ¯") 
-		return ("ºîÒ¯£¬Ó¦¸ÃÊÇÄã¸øĞ¡µÄÎÒ·¢¹¤Ç®Ñ½¡£");
+	if (ob->query("title")=="å¤§ç†å›½ä¾¯çˆ·") 
+		return ("ä¾¯çˆ·ï¼Œåº”è¯¥æ˜¯ä½ ç»™å°çš„æˆ‘å‘å·¥é’±å‘€ã€‚");
 
-	if (ob->query("title")=="´óÀí¹úÆ½ÄÏÍõ¸®¼Ò¶¡" ||
-		ob->query("title")=="´óÀí¹úÆ½ÄÏÍõ¸®æ¾Å®" )
-		return ("ÍõÒ¯ÉÍÄã¿Ú·¹³Ô¾Í²»´íÁË£¬»¹ÏëÒª¹¤Ç®¡£");
+	if (ob->query("title")=="å¤§ç†å›½å¹³å—ç‹åºœå®¶ä¸" ||
+		ob->query("title")=="å¤§ç†å›½å¹³å—ç‹åºœå©¢å¥³" )
+		return ("ç‹çˆ·èµä½ å£é¥­åƒå°±ä¸é”™äº†ï¼Œè¿˜æƒ³è¦å·¥é’±ã€‚");
 
-	if (ob->query("title")=="´óÀí¹úÆ½ÄÏÍõ¸®ÎäÊ¿")  
-		return ("ÄãÉíÎªÎäÊ¿£¬Ó¦¸Ã×¨ĞÄÁ·¹¦²ÅÊÇ£¬¸øÄãÇ®»á·ÖÄãĞÄµÄ¡£");
+	if (ob->query("title")=="å¤§ç†å›½å¹³å—ç‹åºœæ­¦å£«")  
+		return ("ä½ èº«ä¸ºæ­¦å£«ï¼Œåº”è¯¥ä¸“å¿ƒç»ƒåŠŸæ‰æ˜¯ï¼Œç»™ä½ é’±ä¼šåˆ†ä½ å¿ƒçš„ã€‚");
 	
 	if (!ob->query("dali/jobdone"))
-		return ("ÄãÒª²»ÒªÁ³£¬Ïë°×³Ô·¹°¡£¿ÏÈ¸ÉµãÊ²Ã´ÔÙÁìÇ®¡£");
+		return ("ä½ è¦ä¸è¦è„¸ï¼Œæƒ³ç™½åƒé¥­å•Šï¼Ÿå…ˆå¹²ç‚¹ä»€ä¹ˆå†é¢†é’±ã€‚");
 
 	else {
 		if (ob->query("lastcheck") < ob->query("dali/jobdone") ) {
 		if (ob->query("combat_exp")<30000) {
 		wage = (ob->query("dali/jobdone")-ob->query("lastcheck"))*500;
 	ob->set("lastcheck",ob->query("dali/jobdone"));
-	command("say ÕâÊÇÄã´òÔÓµÄ³êÀÍ£¬ºÃºÃ¸É£¡");
-	command("say ²»¹ıÎÒ¿´Äã±¿ÊÖ±¿½ÅµÄ£¬¸øÄãÇ®Ò²ÊÕ²»ÀÎ£¬¸É´àÎÒ°ïÄã´æÏÂ°É£¡");
+	command("say è¿™æ˜¯ä½ æ‰“æ‚çš„é…¬åŠ³ï¼Œå¥½å¥½å¹²ï¼");
+	command("say ä¸è¿‡æˆ‘çœ‹ä½ ç¬¨æ‰‹ç¬¨è„šçš„ï¼Œç»™ä½ é’±ä¹Ÿæ”¶ä¸ç‰¢ï¼Œå¹²è„†æˆ‘å¸®ä½ å­˜ä¸‹å§ï¼");
 	ob->add("balance", wage);
-	return ("¼ÓÓÍ¼ÌĞø¸É£¡");
+	return ("åŠ æ²¹ç»§ç»­å¹²ï¼");
 }
 	else { 
 	wage=(ob->query("dali/jobdone")-ob->query("lastcheck"))*ob->query("combat_exp")/70;
 	ob->set("lastcheck",ob->query("dali/jobdone"));
-	command("say ÕâÊÇÄã´òÔÓµÄ³êÀÍ£¬ºÃºÃ¸É£¡");
-	command("say ²»¹ıÎÒ¿´Äã±¿ÊÖ±¿½ÅµÄ£¬¸øÄãÇ®Ò²ÊÕ²»ÀÎ£¬¸É´àÎÒ°ïÄã´æÏÂ°É£¡");
+	command("say è¿™æ˜¯ä½ æ‰“æ‚çš„é…¬åŠ³ï¼Œå¥½å¥½å¹²ï¼");
+	command("say ä¸è¿‡æˆ‘çœ‹ä½ ç¬¨æ‰‹ç¬¨è„šçš„ï¼Œç»™ä½ é’±ä¹Ÿæ”¶ä¸ç‰¢ï¼Œå¹²è„†æˆ‘å¸®ä½ å­˜ä¸‹å§ï¼");
 	ob->add("balance", wage);
-	return ("¼ÓÓÍ¼ÌĞø¸É£¡");       
+	return ("åŠ æ²¹ç»§ç»­å¹²ï¼");       
 }
 }
 else
-	return("´ÓÉÏ´ÎÁìĞ½Ë®µ½ÏÖÔÚÄã¹â³Ô·¹²»¸É»î¶ù£¬Ã»ÄãµÄ¹¤Ç®£¡");
+	return("ä»ä¸Šæ¬¡é¢†è–ªæ°´åˆ°ç°åœ¨ä½ å…‰åƒé¥­ä¸å¹²æ´»å„¿ï¼Œæ²¡ä½ çš„å·¥é’±ï¼");
 }
 }

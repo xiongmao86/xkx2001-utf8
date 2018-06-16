@@ -8,18 +8,18 @@ int do_pour(string);
 
 void create()
 {
-        set("short", "ÉáÀû±¦Ëþ");
+        set("short", "èˆåˆ©å®å¡”");
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¹±·îÀú´ú¼ÎÄ¾»î·ðÉáÀûµÄµØ·½£¬±¦ËþÇ°ÓÐÒ»¸öÄ¾°¸(muan)£¬
-ËþÉíÉÏ¿ÌµÄÓÐÃÖÀÕ·ðºÍ°Ë´óÆÐÈø£¬Ëþ¶¥¸²ÒÔöÌ½ðÍ­Íß£¬ÐÎÊ½±ðÖÁÐ¡ÇÉ¡£
+è¿™é‡Œå°±æ˜¯è´¡å¥‰åŽ†ä»£å˜‰æœ¨æ´»ä½›èˆåˆ©çš„åœ°æ–¹ï¼Œå®å¡”å‰æœ‰ä¸€ä¸ªæœ¨æ¡ˆ(muan)ï¼Œ
+å¡”èº«ä¸Šåˆ»çš„æœ‰å¼¥å‹’ä½›å’Œå…«å¤§è©è¨ï¼Œå¡”é¡¶è¦†ä»¥éŽé‡‘é“œç“¦ï¼Œå½¢å¼åˆ«è‡³å°å·§ã€‚
 LONG
         );
         set("exits", ([
                 "west" : __DIR__"frontyard",
         ]));
 	set("item_desc", ([
-                "muan" : "Ä¾°¸ÉÏ·ÅÖÃÁËºÏÖÖ¾«ÇÉ±ðÖÂµÄ¼ªÏéÒø¼ø£¬¾»Ë®Òø±­¡¢ËÖÓÍµÆ¡¢Í­
-Åè¡¢Í­ÕµµÈ¹©Æ÷¡£\n",
+                "muan" : "æœ¨æ¡ˆä¸Šæ”¾ç½®äº†åˆç§ç²¾å·§åˆ«è‡´çš„å‰ç¥¥é“¶é‰´ï¼Œå‡€æ°´é“¶æ¯ã€é…¥æ²¹ç¯ã€é“œ
+ç›†ã€é“œç›ç­‰ä¾›å™¨ã€‚\n",
         ]));
 	set("objects", ([
                 "/d/xueshan/npc/xiangke" : 1,
@@ -39,13 +39,13 @@ int do_pray()
     object ob, me = this_player();
     int check, wait_time = 0;
     remove_call_out("open_up");
-    message_vision("$NÐÄ³ÏÒâÕæµØ¹òÏÂÀ´Ä¬Ä¬Æíµ»¡£\n", me);
+    message_vision("$Nå¿ƒè¯šæ„çœŸåœ°è·ªä¸‹æ¥é»˜é»˜ç¥ˆç¥·ã€‚\n", me);
  
-    if ( me->query_temp("marks/ÓÍ")) { 
-    me->set_temp("marks/Æí", 1);
-    me->delete_temp("marks/ÓÍ");
+    if ( me->query_temp("marks/æ²¹")) { 
+    me->set_temp("marks/ç¥ˆ", 1);
+    me->delete_temp("marks/æ²¹");
 	}
-    if ( me->query_temp("marks/Æí") && interactive(me) && !me->is_fighting()) {
+    if ( me->query_temp("marks/ç¥ˆ") && interactive(me) && !me->is_fighting()) {
            call_out("open_up", random(300)+300, me);
 	}
     return 1;
@@ -57,8 +57,8 @@ int open_up(object me)
 	    /* make sure that only when lamp is lighted, the door opens */
 		if ( objectp(lamp = present("lamp", this_object())) ) {
 		   if (lamp->query("burning")) {
-              message_vision("$NÐÄ³ÏÒâÕæµØÆíµ»ÁËÁ¼¾Ã£¬Í»È»ÉáÀûËþµ×´ò¿ªÁËÒ»µÀÐ¡ÃÅ¡£\n", me);
-              me->set_temp("marks/µÈ", 1);
+              message_vision("$Nå¿ƒè¯šæ„çœŸåœ°ç¥ˆç¥·äº†è‰¯ä¹…ï¼Œçªç„¶èˆåˆ©å¡”åº•æ‰“å¼€äº†ä¸€é“å°é—¨ã€‚\n", me);
+              me->set_temp("marks/ç­‰", 1);
               set("exits/enter", __DIR__"tadi");
               call_out("close_up", 8, me);
 		   }
@@ -68,18 +68,18 @@ int open_up(object me)
 
 int close_up(object me)
 {
-        message_vision("Ð¡ÃÅÓÖÇáÇáµØºÏÉÏÁË¡£\n", me);
+        message_vision("å°é—¨åˆè½»è½»åœ°åˆä¸Šäº†ã€‚\n", me);
         delete("exits/enter");
-        me->delete_temp("marks/µÈ");
+        me->delete_temp("marks/ç­‰");
         return 1;
 }
 
 int valid_leave(object me, string dir)
 {
-        if ( !me->query_temp("marks/µÈ")
-        && !me->query_temp("marks/Æí")  && dir == "enter" )
-           return notify_fail("ÄãÐÄÒâ²»³Ï£¬²»ÄÜ½øÈë±¦Ëþ¡£\n");
-        else if ( me->query_temp("marks/Æí") && dir == "west" ) {
+        if ( !me->query_temp("marks/ç­‰")
+        && !me->query_temp("marks/ç¥ˆ")  && dir == "enter" )
+           return notify_fail("ä½ å¿ƒæ„ä¸è¯šï¼Œä¸èƒ½è¿›å…¥å®å¡”ã€‚\n");
+        else if ( me->query_temp("marks/ç¥ˆ") && dir == "west" ) {
            remove_call_out("open_up");
         }
 

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ìú½³ÆÌ");
+        set("short", "é“åŒ é“º");
         set("long", @LONG
-ÕâÊÇÒ»¼äÉõÊÇ¼òÂªµÄÌú½³ÆÌ£¬ÃÅ¿Ú¹Ò×ÅÒ»¿é´óÅÆ×Ó(paizi)£¬ÈëÃÅÕýÖÐÊÇ¸ö´óÌú
-Õè£¬ÂúµØÃºÔüËéÌú£¬Ç½ÉÏ¹Ò×Å¼¸ÕÅÀçÍ·£¬ÎÝ×ÓµÄ½ÇÂäÀï¶Ñ×Å¼¸°ÑÆÆ³úÍ·¡¢Á­µ¶£¬¿¿
-Ç½·Å×Å¼¸°ÑÐÂ³öÂ¯µÄÌú´¸¡£¶«ÃæÓÐÒ»¸öÐ¡ÃÅ£¬ÃÅÉÏ¹ÒÖø¸öÆÆ²¼Á±¡£
+è¿™æ˜¯ä¸€é—´ç”šæ˜¯ç®€é™‹çš„é“åŒ é“ºï¼Œé—¨å£æŒ‚ç€ä¸€å—å¤§ç‰Œå­(paizi)ï¼Œå…¥é—¨æ­£ä¸­æ˜¯ä¸ªå¤§é“
+ç §ï¼Œæ»¡åœ°ç…¤æ¸£ç¢Žé“ï¼Œå¢™ä¸ŠæŒ‚ç€å‡ å¼ çŠå¤´ï¼Œå±‹å­çš„è§’è½é‡Œå †ç€å‡ æŠŠç ´é”„å¤´ã€é•°åˆ€ï¼Œé 
+å¢™æ”¾ç€å‡ æŠŠæ–°å‡ºç‚‰çš„é“é”¤ã€‚ä¸œé¢æœ‰ä¸€ä¸ªå°é—¨ï¼Œé—¨ä¸ŠæŒ‚è‘—ä¸ªç ´å¸ƒå¸˜ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
@@ -17,7 +17,7 @@ LONG
   "north" : __DIR__"eroad3",
 ]));
          set("item_desc", ([
-                "paizi" : "±¾ÆÌÊÕ¹º·ÏÌú\n",
+                "paizi" : "æœ¬é“ºæ”¶è´­åºŸé“\n",
         ]));
         set("no_clean_up", 0);
         set("objects", ([

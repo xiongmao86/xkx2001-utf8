@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sun. ËïÀÏ°å
+// sun. å­™è€æ¿
 
 #include <ansi.h>
 #include <dbase.h>
@@ -11,15 +11,15 @@ string ask_me();
 
 void create()
 {
-	set_name("ËïÀÏ°å", ({ "sun laoban", "sun" }));
+	set_name("å­™è€æ¿", ({ "sun laoban", "sun" }));
         set_color("$YEL$");
-	set("title", "Ìì±¦¸óÀÏ°å");
+	set("title", "å¤©å®é˜è€æ¿");
 	set("shen_type", 1);
 
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
-	set("long", "ËïÀÏ°åÒ»ÊÖ´´°ìµÄÌì±¦¸óÔÚÑïÖİ¿ÉÊÇ´ó´óµÄ³öÃû¡£\n");
+	set("long", "å­™è€æ¿ä¸€æ‰‹åˆ›åŠçš„å¤©å®é˜åœ¨æ‰¬å·å¯æ˜¯å¤§å¤§çš„å‡ºåã€‚\n");
 	set("combat_exp", 10000);
         set("qi", 300);
         set("max_qi", 300);
@@ -55,12 +55,12 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        command("say »¶Ó­¹âÁÙ£¬ÕâÎ»"+RANK_D->query_respect(ob)+"ÇëËæ±ã²Î¹Û¡£");
+        command("say æ¬¢è¿å…‰ä¸´ï¼Œè¿™ä½"+RANK_D->query_respect(ob)+"è¯·éšä¾¿å‚è§‚ã€‚");
 }
 
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

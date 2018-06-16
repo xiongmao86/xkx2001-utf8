@@ -1,5 +1,5 @@
 //Cracked by Roath
-// baixian-wan.c °ÙÏÑÍè
+// baixian-wan.c ç™¾æ¶Žä¸¸
 // ywz 08/31/96
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-	set_name(HIW "°ÙÏÑÍè" NOR, ({"baixian-wan", "wan"}));
+	set_name(HIW "ç™¾æ¶Žä¸¸" NOR, ({"baixian-wan", "wan"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-		set("unit", "Á£");
-		set("long", "ÕâÊÇÒ»Á£°ÙÏÑÍè£¬¿´ÉÏÈ¥°×ÎõÎõµÄ£¬»¹Í¸×ÅÁÁ¹â£¬²»ÖªµÀ³ÔÁË»á...\n");
+		set("unit", "ç²’");
+		set("long", "è¿™æ˜¯ä¸€ç²’ç™¾æ¶Žä¸¸ï¼Œçœ‹ä¸ŠåŽ»ç™½ç†™ç†™çš„ï¼Œè¿˜é€ç€äº®å…‰ï¼Œä¸çŸ¥é“åƒäº†ä¼š...\n");
 		set("medicine", 1);
 		set("value", 10000);
         }
@@ -25,7 +25,7 @@ void create()
 
 int cure_ob(object me)
 {
-	message_vision(HIG "$N³ÔÏÂÒ»Á£°ÙÏÑÍè£¬Ö»¾õµÃÐØÄÚÆøÑª·­ÌÚ£¬°¡...£¡³Ô´íÒ©ÁË!!! \n" NOR, me);
+	message_vision(HIG "$Nåƒä¸‹ä¸€ç²’ç™¾æ¶Žä¸¸ï¼Œåªè§‰å¾—èƒ¸å†…æ°”è¡€ç¿»è…¾ï¼Œå•Š...ï¼åƒé”™è¯äº†!!! \n" NOR, me);
 
 //	me->set("eff_jing", (int)me->query("min_jing"));
 	me->set("jing", (int)me->query("min_jing"));

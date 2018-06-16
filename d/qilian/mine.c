@@ -6,10 +6,10 @@ inherit ROOM;
 int do_dig();
 void create()
 {
-        set("short", "µ¤·ï¶´");
+        set("short", "ä¸¹å‡¤æ´");
         set("long", @LONG
-Ò»¸ö¿Õµ´µ´µÄ´óÉ½¶´£¬ËÄ±ÚºÜ¹â»¬¡£Äã¿´¼û¶´½Å±ßÉÏºÃÏëÓĞÊ²÷á¶«
-Î÷ÔÚÉÁÉÁ·¢¹â¡£
+ä¸€ä¸ªç©ºè¡è¡çš„å¤§å±±æ´ï¼Œå››å£å¾ˆå…‰æ»‘ã€‚ä½ çœ‹è§æ´è„šè¾¹ä¸Šå¥½æƒ³æœ‰ä»€éº½ä¸œ
+è¥¿åœ¨é—ªé—ªå‘å…‰ã€‚
 LONG
         );
         set("exits", ([
@@ -30,21 +30,21 @@ int do_dig()
     object ob, me = this_player();
 
     if (present("tie qiao", me))  
-    { message_vision("$N¾ÙÆğÊÖÖĞÌúÇÂÕÕ×ÅÄàµØÉÏ£ºï¬£¡ï¬£¡ Ò»Í¨ÂÒÍÚ¡£\n", me);
+    { message_vision("$Nä¸¾èµ·æ‰‹ä¸­é“é”¹ç…§ç€æ³¥åœ°ä¸Šï¼šé“¿ï¼é“¿ï¼ ä¸€é€šä¹±æŒ–ã€‚\n", me);
    
 	if ( random(10) == 5 && query("gold_count") >= 1) {
-      write("Ò»¿éÁÁ¾§¾§µÄ¶«Î÷Ò»ÉÁ£¬¹ş¹ş¡£¡£¡££¡ÄãÍÚµ½Ò»¶§½ğÔª±¦¡£\n");
+      write("ä¸€å—äº®æ™¶æ™¶çš„ä¸œè¥¿ä¸€é—ªï¼Œå“ˆå“ˆã€‚ã€‚ã€‚ï¼ä½ æŒ–åˆ°ä¸€é”­é‡‘å…ƒå®ã€‚\n");
 	   me->add("jingli", -10);
            ob = new("clone/money/yuanbao");
            ob->move("/d/qilian/mine");
 	   add("gold_count", -1);
 	if (query("gold_count") < 1)
-	log_file("MONEY", sprintf("%s(%s)ÓÚ%sÔÚµ¤·ï¶´ÍÚÁËÈı°ÙÁ½»Æ½ğ¡£\n",
+	log_file("MONEY", sprintf("%s(%s)äº%såœ¨ä¸¹å‡¤æ´æŒ–äº†ä¸‰ç™¾ä¸¤é»„é‡‘ã€‚\n",
 		me->query("name"), getuid(me), ctime(time())));
          }    
    }
       else {
-		write("Ã»ÓĞºÏÊÊµÄ¼Ò»ï£¬ÍÚ²»¿ª°É£¡");
+		write("æ²¡æœ‰åˆé€‚çš„å®¶ä¼™ï¼ŒæŒ–ä¸å¼€å§ï¼");
         }
  	return 1;
 }

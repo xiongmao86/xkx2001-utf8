@@ -7,26 +7,26 @@ inherit F_LIQUID;
 inherit HAMMER;
 void create()
 {
-	set_name( BLU "Â­²§" NOR, ({"lubo"}));
+	set_name( BLU "é¢…é’µ" NOR, ({"lubo"}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÂ­¹ÇÖÆ³ÉµÄ²§¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨é¢…éª¨åˆ¶æˆçš„é’µã€‚\n");
+		set("unit", "ä¸ª");
 		set("no_sell",1);
 		set("value", 100);
 		set("max_liquid", 10);
 		set("regidity", 1000);
-		set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»¸ö$n£¬¶ËÔÚÊÖÀï¡£\n");
-                set("unequip_msg", "$N½«$nÊÕÆğÀ´£¬¹Ò»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Nä»è…°é—´æŠ½å‡ºä¸€ä¸ª$nï¼Œç«¯åœ¨æ‰‹é‡Œã€‚\n");
+                set("unequip_msg", "$Nå°†$næ”¶èµ·æ¥ï¼ŒæŒ‚å›è…°é—´ã€‚\n");
 	}
 
 	// because a container can contain different liquid
 	// we set it to contain water at the beginning
 	set("liquid", ([
 		"type": "water",
-		"name": "ÇåË®",
+		"name": "æ¸…æ°´",
 		"remaining": 10,
 		"drunk_supply": 10,
 	]));

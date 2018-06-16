@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�հ���");
+	set("short", "钦安殿");
 	set("long", @LONG
-���ڹ�������,�ǹ��о��е��̻����Ҫ����,ÿ���ش��
-��,�ʵ��ڴ˵���������
+殿内供玄武大帝,是宫中举行道教活动的重要常所,每逢重大祭
+礼活动,皇帝在此殿拈香行礼。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

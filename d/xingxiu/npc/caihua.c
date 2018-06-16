@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("²É»¨×Ó", ({ "caihua zi", "caihua" }) );
-        set("gender", "ÄĞĞÔ" );
-//	set("title", "ĞÇËŞÒùÔô");
-	set("nickname", "ÈüÀ¥ÂØ");
+        set_name("é‡‡èŠ±å­", ({ "caihua zi", "caihua" }) );
+        set("gender", "ç”·æ€§" );
+//	set("title", "æ˜Ÿå®¿æ·«è´¼");
+	set("nickname", "èµ›æ˜†ä»‘");
         set("age", 38);
         set("long", 
-             "²É»¨×ÓÊÇĞÇËŞÅÉµÄÒ»¸öĞ¡à¶ÂŞ£¬Îä¹¦Ëä²»ºÃ£¬µ«ÉúĞÔÒùĞ°£¬"
-	     "¾­³£¼éÒùÁ¼¼Ò¸¾Å®£¬ÊÇ¹Ù¸®Í¨¼©µÄ·¸ÈË£¬¹Ê¶øĞÇËŞÅÉÃûÒåÉÏ"
-	     "Ò²²»³ĞÈÏÓĞÕâ¸öµÜ×Ó¡£\n");
+             "é‡‡èŠ±å­æ˜¯æ˜Ÿå®¿æ´¾çš„ä¸€ä¸ªå°å–½ç½—ï¼Œæ­¦åŠŸè™½ä¸å¥½ï¼Œä½†ç”Ÿæ€§æ·«é‚ªï¼Œ"
+	     "ç»å¸¸å¥¸æ·«è‰¯å®¶å¦‡å¥³ï¼Œæ˜¯å®˜åºœé€šç¼‰çš„çŠ¯äººï¼Œæ•…è€Œæ˜Ÿå®¿æ´¾åä¹‰ä¸Š"
+	     "ä¹Ÿä¸æ‰¿è®¤æœ‰è¿™ä¸ªå¼Ÿå­ã€‚\n");
         set("str", 25);
         set("dex", 30);
         set("con", 17);
@@ -34,12 +34,12 @@ void create()
         set("neili", 500);
         set("max_neili", 500);
 
-        create_family("ĞÇËŞÅÉ", 5, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 5, "å¼Ÿå­");
 
         set("attitude", "peaceful");
         set("inquiry", ([
-            "name" : "ÎÒÒ²¼Ç²»ÇåÎÒĞÕÉõÃûË­ÁË£¬½­ºşÅóÓÑËÍÎÒÑÅºÅ²É»¨×Ó¡£",
-            "²É»¨" : "ÄÇ¿ÉÊÇÑ§ÎÊ£¬ÎÒ²»ÄÜËæ±ã½Ì¡£",
+            "name" : "æˆ‘ä¹Ÿè®°ä¸æ¸…æˆ‘å§“ç”šåè°äº†ï¼Œæ±Ÿæ¹–æœ‹å‹é€æˆ‘é›…å·é‡‡èŠ±å­ã€‚",
+            "é‡‡èŠ±" : "é‚£å¯æ˜¯å­¦é—®ï¼Œæˆ‘ä¸èƒ½éšä¾¿æ•™ã€‚",
        ]) );
 
         setup();
@@ -62,10 +62,10 @@ void greeting(object me)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if (myfam && myfam["family_name"] == "ĞÇËŞÅÉ") 
-          command("say ÎÒ×òÌì´ÓÉ½ÏÂ×½ÁË¸öĞ¡æ¤À´£¬Ë®Áé¼«ÁË£¬¾Í¹ØÔÚÎÒµÄåĞÒ£¶´Àï"
-		+"£¬ÄãÒª²»Òª½øÈ¥ÊÔÊÔ£¿");
-	me->set_temp("marks/»¨",0);
+        if (myfam && myfam["family_name"] == "æ˜Ÿå®¿æ´¾") 
+          command("say æˆ‘æ˜¨å¤©ä»å±±ä¸‹æ‰äº†ä¸ªå°å¦æ¥ï¼Œæ°´çµæäº†ï¼Œå°±å…³åœ¨æˆ‘çš„é€é¥æ´é‡Œ"
+		+"ï¼Œä½ è¦ä¸è¦è¿›å»è¯•è¯•ï¼Ÿ");
+	me->set_temp("marks/èŠ±",0);
 
 }
 
@@ -73,7 +73,7 @@ void greeting(object me)
 void attempt_apprentice(object ob)
 {
 	command("hehe");
-	command("say ÏëÑ§ÎÒµÄ²É»¨Éñ¼¼£¿Ã»ÃÅ¶ù£¡");
+	command("say æƒ³å­¦æˆ‘çš„é‡‡èŠ±ç¥æŠ€ï¼Ÿæ²¡é—¨å„¿ï¼");
 	return;
 }
 
@@ -82,26 +82,26 @@ int accept_object(object me, object obj)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if (!myfam || myfam["family_name"] != "ĞÇËŞÅÉ") 
-	  command("say ÉÙ¸úÎÒÌ×½üºõ¡£");
+        if (!myfam || myfam["family_name"] != "æ˜Ÿå®¿æ´¾") 
+	  command("say å°‘è·Ÿæˆ‘å¥—è¿‘ä¹ã€‚");
 	else {
 	  if (!obj->query("money_id")) {
- 	    if (me->query("gender")=="Å®ĞÔ") {
+ 	    if (me->query("gender")=="å¥³æ€§") {
 	  	command("kiss " + me->query("id"));
-		command("say Ïë²»µ½Ê¦½ãÒ²ÓĞÕâ¸ö°®ºÃ¡£");
+		command("say æƒ³ä¸åˆ°å¸ˆå§ä¹Ÿæœ‰è¿™ä¸ªçˆ±å¥½ã€‚");
 	    }
 	    else {
 		command("bow " + me->query("id"));
-                command("say ¶àĞ»Ê¦ĞÖ¡£");
+                command("say å¤šè°¢å¸ˆå…„ã€‚");
 		call_out("destroy_it", 1, obj);
             }
-            command("say ¶Ô²»Æğ£¬ÄÇĞ¡æ¤×òÌìÍíÉÏ±»²»ÖªµÀÄÄ¸ö»ìµ°¾È×ßÁË£¬²»¹ı"
-			+ "Äã¿ÉÒÔ½ø¶´Ë¯Ò»¾õ¡£");
-	    me->set_temp("marks/»¨", 1);
+            command("say å¯¹ä¸èµ·ï¼Œé‚£å°å¦æ˜¨å¤©æ™šä¸Šè¢«ä¸çŸ¥é“å“ªä¸ªæ··è›‹æ•‘èµ°äº†ï¼Œä¸è¿‡"
+			+ "ä½ å¯ä»¥è¿›æ´ç¡ä¸€è§‰ã€‚");
+	    me->set_temp("marks/èŠ±", 1);
           }
           else {
 		command("thank " + me->query("id"));
-		command("say Ç®ÎÒÓĞµÄÊÇ£¬Äã»¹ÊÇ¸øÎÒµã±ğµÄÊ²Ã´°É¡£");
+		command("say é’±æˆ‘æœ‰çš„æ˜¯ï¼Œä½ è¿˜æ˜¯ç»™æˆ‘ç‚¹åˆ«çš„ä»€ä¹ˆå§ã€‚");
           }
         }
 	call_out("destroy_it", 1, obj);

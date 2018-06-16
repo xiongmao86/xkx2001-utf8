@@ -1,16 +1,16 @@
 //Cracked by Roath
-// shen.c ÉòÇà¸Õ
+// shen.c æ²ˆé’åˆš
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÉòÇà¸Õ", ({ "shen qinggang", "shen" }));
-	set("nickname", "¶Ï»êµ¶");
+	set_name("æ²ˆé’åˆš", ({ "shen qinggang", "shen" }));
+	set("nickname", "æ–­é­‚åˆ€");
 	set("long", 
-"ÉòÇà¸ÕÊÇ»ÆºÓËÄ¹íµÄÀÏ´ó£¬ÊÇ¹íÃÅÁúÍõÉ³Í¨ÌìµÄ´óµÜ×Ó£¬ÉÃÊ¹µ¥µ¶¡£\n");
-	set("title", "»ÆºÓËÄ¹íÀÏ´ó");
-	set("gender", "ÄĞĞÔ");
+"æ²ˆé’åˆšæ˜¯é»„æ²³å››é¬¼çš„è€å¤§ï¼Œæ˜¯é¬¼é—¨é¾™ç‹æ²™é€šå¤©çš„å¤§å¼Ÿå­ï¼Œæ“…ä½¿å•åˆ€ã€‚\n");
+	set("title", "é»„æ²³å››é¬¼è€å¤§");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen_type", -1);

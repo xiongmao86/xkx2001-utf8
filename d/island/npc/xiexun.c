@@ -1,5 +1,5 @@
 //Cracked by Roath
-//Npc: Ğ»Ñ·
+//Npc: è°¢é€Š
 //Date: 17/3/98, kane
 
 #include <ansi.h>
@@ -10,25 +10,25 @@ int ask_for_book();
 
 void create()
 {
-        set_name("Ğ»Ñ·", ({ "xie xun", "xie", "xun" }));
+        set_name("è°¢é€Š", ({ "xie xun", "xie", "xun" }));
         set("long", 
-"Ëû¾ÍÊÇÃ÷½ÌËÄ´ó»¤½Ì·¨ÍõÖ®Ò»µÄ£¢½ğÃ«Ê¨Íõ£¢¡£\n"
-"ËûÉí²Ä¿ıÎ°Òì³££¬ÂúÍ·»Æ·¢£¬É¢Åû¼çÍ·£¬ÑÛ¾¦±ÌÓÍÓÍµÄ·¢¹â£¬\n"
-"Íş·çÁİÁİ£¬ÕæÈçÌìÉñÌì½«Ò»°ã¡£\n");
+"ä»–å°±æ˜¯æ˜æ•™å››å¤§æŠ¤æ•™æ³•ç‹ä¹‹ä¸€çš„ï¼‚é‡‘æ¯›ç‹®ç‹ï¼‚ã€‚\n"
+"ä»–èº«æé­ä¼Ÿå¼‚å¸¸ï¼Œæ»¡å¤´é»„å‘ï¼Œæ•£æŠ«è‚©å¤´ï¼Œçœ¼ç›ç¢§æ²¹æ²¹çš„å‘å…‰ï¼Œ\n"
+"å¨é£å‡›å‡›ï¼ŒçœŸå¦‚å¤©ç¥å¤©å°†ä¸€èˆ¬ã€‚\n");
 
-	set("nickname", HIY"½ğÃ«Ê¨Íõ"NOR);
-	set("gender", "ÄĞĞÔ");
+	set("nickname", HIY"é‡‘æ¯›ç‹®ç‹"NOR);
+	set("gender", "ç”·æ€§");
 	set("attitude", "heroism");
 
         set("inquiry",([
-                "ÍÀÁúµ¶"  : (: ask_for_dao :),
-		"ÆßÉËÈ­"  : (: ask_for_book :),
+                "å± é¾™åˆ€"  : (: ask_for_dao :),
+		"ä¸ƒä¼¤æ‹³"  : (: ask_for_book :),
 		"qs-jing" : (: ask_for_book :),
-		"ÆßÉËÈ­¾­"  : (: ask_for_book :),
-		"ÆßÉËÈ­Æ×"  : (: ask_for_book :),
-		"³ÉÀ¥" :"´ËÈËÓëÎÒÓĞÑªº£Éî³ğ£¬ÈçÄÜµÃËûÊ×¼¶£¬Ğ»Ñ·ËÀ¶øÎŞº¶¡£",
-		"ÕÅÎŞ¼É" : "°¡£¿£¡ÄãÄÑµÀÖªµÀÎÒÄÇÎŞ¼Éº¢¶ùµÄÏÂÂä£¿£¡",
-		"Ã÷½Ì" : "Õâ¶¼ÊÇ¹ıÈ¥µÄÊÂÁË£¬ÌáËü×÷Éõ£¿",
+		"ä¸ƒä¼¤æ‹³ç»"  : (: ask_for_book :),
+		"ä¸ƒä¼¤æ‹³è°±"  : (: ask_for_book :),
+		"æˆæ˜†" :"æ­¤äººä¸æˆ‘æœ‰è¡€æµ·æ·±ä»‡ï¼Œå¦‚èƒ½å¾—ä»–é¦–çº§ï¼Œè°¢é€Šæ­»è€Œæ— æ†¾ã€‚",
+		"å¼ æ— å¿Œ" : "å•Šï¼Ÿï¼ä½ éš¾é“çŸ¥é“æˆ‘é‚£æ— å¿Œå­©å„¿çš„ä¸‹è½ï¼Ÿï¼",
+		"æ˜æ•™" : "è¿™éƒ½æ˜¯è¿‡å»çš„äº‹äº†ï¼Œæå®ƒä½œç”šï¼Ÿ",
         ]));
 
 	set("age", 45);
@@ -90,7 +90,7 @@ int ask_for_dao()
 	object  me = this_player();
 	command("shout");
 	command("stare "+me->name());
-	command("say "+RANK_D->query_rude(me)+"¼ÈÈ»ÒÑÖªµÀÍÀÁúµ¶ÔÚÎÒÊÖÖĞ£¬¹Ô¹ÔÊÜËÀ°É£¡\n");
+	command("say "+RANK_D->query_rude(me)+"æ—¢ç„¶å·²çŸ¥é“å± é¾™åˆ€åœ¨æˆ‘æ‰‹ä¸­ï¼Œä¹–ä¹–å—æ­»å§ï¼\n");
 
         if (present("tulong dao", this_object())){
         command("wield tulong dao");
@@ -109,19 +109,19 @@ int ask_for_book()
 	if( !me->query_temp("xiexun_thank") ) {
         	command("grin "+me->name());
         	command("stare "+me->name());
-        	command("say "+RANK_D->query_rude(me)+"¼ÈÈ»ÒÑÖªµÀÆßÉËÈ­¾­ÔÚÎÒÊÖÖĞ£¬¾Í³¢³¢ÆßÉËÈ­µÄÀ÷º¦°É£¡");
+        	command("say "+RANK_D->query_rude(me)+"æ—¢ç„¶å·²çŸ¥é“ä¸ƒä¼¤æ‹³ç»åœ¨æˆ‘æ‰‹ä¸­ï¼Œå°±å°å°ä¸ƒä¼¤æ‹³çš„å‰å®³å§ï¼");
         	set_leader(me);
         	kill_ob(me);
 	} 
 	else if (book) {
 		book->move(me);
-		command("say Ğ»Ä³´ó³ğÒÑ±¨£¬´ËÉúÒÑÔÙÎŞÇ£¹Ò£¬Õâ±¾ÆßÉËÈ­¾­¶ÔÎÒÒÑÎŞ´óÓÃ£¬"+RANK_D->query_respect(me)+"Èô¿´µÃÆğ£¬¾¡¹ÜÈ¡È¥ÎŞ·Á£¡");
-		message_vision("Ğ»Ñ·¸ø$NÒ»±¾" + book->query("name") +"¡£\n", me);
-		log_file("Xiexun",sprintf("%s(%s)µÃµ½ÆßÉËÈ­¾­ on %s£®\n",
+		command("say è°¢æŸå¤§ä»‡å·²æŠ¥ï¼Œæ­¤ç”Ÿå·²å†æ— ç‰µæŒ‚ï¼Œè¿™æœ¬ä¸ƒä¼¤æ‹³ç»å¯¹æˆ‘å·²æ— å¤§ç”¨ï¼Œ"+RANK_D->query_respect(me)+"è‹¥çœ‹å¾—èµ·ï¼Œå°½ç®¡å–å»æ— å¦¨ï¼");
+		message_vision("è°¢é€Šç»™$Nä¸€æœ¬" + book->query("name") +"ã€‚\n", me);
+		log_file("Xiexun",sprintf("%s(%s)å¾—åˆ°ä¸ƒä¼¤æ‹³ç» on %sï¼\n",
                 me->name(), getuid(me)), ctime(time()));
 	} 
 	else { 
-	command("say ÊµÔÚ¶Ô²»×¡£¬ÆßÉËÈ­¾­ÒÑ¾­²»ÔÚÎÒÕâÀïÁË£¡");
+	command("say å®åœ¨å¯¹ä¸ä½ï¼Œä¸ƒä¼¤æ‹³ç»å·²ç»ä¸åœ¨æˆ‘è¿™é‡Œäº†ï¼");
 	}
 	return 1;
 }
@@ -139,20 +139,20 @@ int accept_kill(object me)
 
 int accept_object(object me, object obj)
 {      
-	if((string)obj->query("name") == "³ÉÀ¥µÄÍ·"
+	if((string)obj->query("name") == "æˆæ˜†çš„å¤´"
 	&& me->query_temp("kill_chengkun") ) {
                 command("ah");
 		command("shout");
-		command("say "+RANK_D->query_respect(me)+"Îä¹¦¹ûÈ»¸ßÃ÷£¬Ê¹Ğ»Ä³±¨´ËÑªº£Éî³ğ£¬ÈôÓĞËùÇó£¬Ğ»Ä³¸ÎÄÔÍ¿µØ£¬ÔÚËù²»´Ç£¡\n");
+		command("say "+RANK_D->query_respect(me)+"æ­¦åŠŸæœç„¶é«˜æ˜ï¼Œä½¿è°¢æŸæŠ¥æ­¤è¡€æµ·æ·±ä»‡ï¼Œè‹¥æœ‰æ‰€æ±‚ï¼Œè°¢æŸè‚è„‘æ¶‚åœ°ï¼Œåœ¨æ‰€ä¸è¾ï¼\n");
         	me->set_temp("xiexun_thank",1);
-	        log_file("Xiexun",sprintf("%s(%s)°Ñ³ÉÀ¥µÄÍ·½»¸øĞ»Ñ· on %s£®\n",
+	        log_file("Xiexun",sprintf("%s(%s)æŠŠæˆæ˜†çš„å¤´äº¤ç»™è°¢é€Š on %sï¼\n",
                 me->name(), getuid(me)), ctime(time()));
 		return 1;
 	}
-	else if((string)obj->query("name") == "³ÉÀ¥µÄÍ·"
+	else if((string)obj->query("name") == "æˆæ˜†çš„å¤´"
 	&& !me->query_temp("kill_chengkun") ) {	
 		command("slapsb "+me->query("id"));
-		command("say ÀÏ·òÑÛËäÃ¤ÁË£¬ĞÄÈ´ÊÇ²»Ã¤£¡");
+		command("say è€å¤«çœ¼è™½ç›²äº†ï¼Œå¿ƒå´æ˜¯ä¸ç›²ï¼");
 		if (present("tulong dao", this_object())){
         	command("wield tulong dao");
         	}

@@ -5,11 +5,11 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-   set_name("ÉßÒ©", ({"she yao", "yao"}));
+   set_name("è›‡è¯", ({"she yao", "yao"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "°ü");
+      set("unit", "åŒ…");
       set("value", 2000);
    }
    setup();
@@ -18,7 +18,7 @@ void create()
 
 int cure_ob(object me)
 {
-   message_vision("$N³ÔÏÂÒ»°ü" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€åŒ…" + name() + "ã€‚\n", me);
    if ((int)me->query_condition("snake_poison") > 7) {
       me->apply_condition("snake_poison", (int)me->query_condition("snake_poison") - 5);
    }

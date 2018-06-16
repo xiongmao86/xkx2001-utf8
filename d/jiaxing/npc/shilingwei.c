@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ê©ÁîÍş",({ "shi lingwei","shi" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("æ–½ä»¤å¨",({ "shi lingwei","shi" }) );
+        set("gender", "ç”·æ€§");
         set("age", 55);
 	set("long",
-		"ËûÄ¿¹â¾¼¾¼£¬²½ÂÄÎÈÖØ£¬ÏÔÊÇÎä¹¦²»µÍ¡£\n");
-        set("nickname","ÎåÂ·Éñ");
-        set("title","Ã·×¯¼ÒÈË");
+		"ä»–ç›®å…‰ç‚¯ç‚¯ï¼Œæ­¥å±¥ç¨³é‡ï¼Œæ˜¾æ˜¯æ­¦åŠŸä¸ä½ã€‚\n");
+        set("nickname","äº”è·¯ç¥");
+        set("title","æ¢…åº„å®¶äºº");
         set("combat_exp", 45000);
         set("shen_type", 0);
         set("attitude", "heroism");

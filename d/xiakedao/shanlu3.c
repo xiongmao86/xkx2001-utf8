@@ -6,11 +6,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "É½Â·");
+        set("short", "å±±è·¯");
         set("long", @LONG
-Ð¡Â·ÇúÇúÕÛÕÛµØÍ¨ÏòÉ½¶¥£¬½Å²½Éù¾ªÆðÒ»Èº·ÉÄñ£¬ÆËóùóùµØÏûÊ§
-ÔÚ¿ÕÖÐ¡£¿ÕÆøÖÐÈ´ÓÐÐ©ÐÈÆø£¬Â·±ß²Ý´Ô (grass)¼ä²»Ê±´«À´É³É³µÄÇá
-Ïì£¬¿ÉÄÜÊÇ¶¾Éß£¬»¹ÊÇ¿ìµãÀë¿ªµÄºÃ¡£
+å°è·¯æ›²æ›²æŠ˜æŠ˜åœ°é€šå‘å±±é¡¶ï¼Œè„šæ­¥å£°æƒŠèµ·ä¸€ç¾¤é£žé¸Ÿï¼Œæ‰‘ç°Œç°Œåœ°æ¶ˆå¤±
+åœ¨ç©ºä¸­ã€‚ç©ºæ°”ä¸­å´æœ‰äº›è…¥æ°”ï¼Œè·¯è¾¹è‰ä¸› (grass)é—´ä¸æ—¶ä¼ æ¥æ²™æ²™çš„è½»
+å“ï¼Œå¯èƒ½æ˜¯æ¯’è›‡ï¼Œè¿˜æ˜¯å¿«ç‚¹ç¦»å¼€çš„å¥½ã€‚
 LONG );
 
       set("exits", ([
@@ -18,7 +18,7 @@ LONG );
 		     "westdown"  : __DIR__"xiaolu2",
       ]));
 	set("item_desc",([
-	    "grass" : "ÂÒ²Ý´ÔÖÐ³¤×Å¼¸¶ä²»ÆðÑÛµÄÐ¡»¨¡£\n",
+	    "grass" : "ä¹±è‰ä¸›ä¸­é•¿ç€å‡ æœµä¸èµ·çœ¼çš„å°èŠ±ã€‚\n",
 	]));
 	set("objects", ([ 
             "/d/city/npc/maque.c" : 3,
@@ -43,18 +43,18 @@ int do_push(string arg)
 	object snake, me = this_player();
 
 	if ( !arg )
-		return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦æŽ¨ä»€ä¹ˆï¼Ÿ\n");
 
 	if ( arg != "grass" )
-		return notify_fail("Ê²÷á£¿\n");
+		return notify_fail("ä»€éº½ï¼Ÿ\n");
 
 	if (present("snake",environment(me)))
-                return notify_fail("ÀÏÉßÒªÒ§ËÀÄãÁË£¬Äã»¹ÓÐÏÐÇéÍæ£¿¿éÅÜ°É¡£\n");
+                return notify_fail("è€è›‡è¦å’¬æ­»ä½ äº†ï¼Œä½ è¿˜æœ‰é—²æƒ…çŽ©ï¼Ÿå—è·‘å§ã€‚\n");
 
         if( objectp(query("mysnake")) )
-                return notify_fail( "ÄãËÄ´¦°ÎÅªÁËÒ»ÏÂ£¬½á¹ûÊ²Ã´¶¼Ã»·¢ÏÖ¡£\n");
+                return notify_fail( "ä½ å››å¤„æ‹”å¼„äº†ä¸€ä¸‹ï¼Œç»“æžœä»€ä¹ˆéƒ½æ²¡å‘çŽ°ã€‚\n");
 
-	message_vision("$N²¦¿ªÔÓ²Ý£¬¾ªÐÑÁËÒ»Ö»¶¾Éß¡£¿ìÀë¿ª°É¡£\n", me);
+	message_vision("$Næ‹¨å¼€æ‚è‰ï¼ŒæƒŠé†’äº†ä¸€åªæ¯’è›‡ã€‚å¿«ç¦»å¼€å§ã€‚\n", me);
 	snake = new("/clone/beast/snake.c");
 	snake->move(this_object());
         set("mysnake", snake);
@@ -73,7 +73,7 @@ void do_destroy(object snake)
                 return;
         }
 
-        message_vision("$N·É¿ìµØÓÎ×ßÁË¡£\n", snake);
+        message_vision("$Né£žå¿«åœ°æ¸¸èµ°äº†ã€‚\n", snake);
         destruct(snake);
         delete("mysnake");
 }

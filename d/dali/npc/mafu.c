@@ -11,11 +11,11 @@ int djobid = 1;
 
 void create()
 {
-        set_name("Âí·ò", ({ "ma fu", "ma", "fu" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("é©¬å¤«", ({ "ma fu", "ma", "fu" }) );
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("long",
-"ÕâÊÇÒ»¸ö¿´ÆğÀ´ÀÏÀÏÊµÊµµÄÂí·ò£¬Ëû×¨ÃÅ¸ºÔğ¸øÍõÒ¯ÑøÂí¡£\n");
+"è¿™æ˜¯ä¸€ä¸ªçœ‹èµ·æ¥è€è€å®å®çš„é©¬å¤«ï¼Œä»–ä¸“é—¨è´Ÿè´£ç»™ç‹çˆ·å…»é©¬ã€‚\n");
  
         set("str", 30);
         set("int", 35);
@@ -23,16 +23,16 @@ void create()
         set("dex", 35);
         set("attitude", "peaceful");
         set("combat_exp", 4000);
-        set("title", "Æ½ÄÏÍõ¸®Âí·ò");
+        set("title", "å¹³å—ç‹åºœé©¬å¤«");
         set("inquiry", ([
-               "name" : "ÎÒÊÇÍõÒ¯µÄÂí·ò£¬×¨ÃÅ¸ºÔğÑøÂí¡£",
-                "here" : "ÕâÀïÊÇÂí³¡",
-		"¹¤×÷" : "ºÃµÄºÜ£¬ÎÒÕâÀïÕıÈ±ÈËÊÖÄØ£¬ÎÒÕâÀïÓĞÁ½ÖÖ»î£¬Ò»ÖÖÊÇ\n"
-			 "ÁïÂí(walkhorse)£¬ÄãÖ»Òª»¨ÉÏÒ»ÌìÇ£×ÅÂíµ½´¦¹ä¹ä¾ÍÊÇÁË¡£	\n"
-			 "ÁíÒ»ÖÖÊÇÑµÂí(trainhorse)£¬Ã»Á©°ÑË¢×ÓÄã»¹ÊÇ±ğÉÏ¡£ \n",      
+               "name" : "æˆ‘æ˜¯ç‹çˆ·çš„é©¬å¤«ï¼Œä¸“é—¨è´Ÿè´£å…»é©¬ã€‚",
+                "here" : "è¿™é‡Œæ˜¯é©¬åœº",
+		"å·¥ä½œ" : "å¥½çš„å¾ˆï¼Œæˆ‘è¿™é‡Œæ­£ç¼ºäººæ‰‹å‘¢ï¼Œæˆ‘è¿™é‡Œæœ‰ä¸¤ç§æ´»ï¼Œä¸€ç§æ˜¯\n"
+			 "æºœé©¬(walkhorse)ï¼Œä½ åªè¦èŠ±ä¸Šä¸€å¤©ç‰µç€é©¬åˆ°å¤„é€›é€›å°±æ˜¯äº†ã€‚	\n"
+			 "å¦ä¸€ç§æ˜¯è®­é©¬(trainhorse)ï¼Œæ²¡ä¿©æŠŠåˆ·å­ä½ è¿˜æ˜¯åˆ«ä¸Šã€‚ \n",      
         ]));
 
-        set("wanted", ({ "´óÀíÆ½ÄÏÍõ¸®Âí·ò" }));
+        set("wanted", ({ "å¤§ç†å¹³å—ç‹åºœé©¬å¤«" }));
 
         setup();
         }
@@ -61,12 +61,12 @@ void greeting(object me)
 
         if( !me || environment(me) != environment() ) return;
 
-        if ( myfam && myfam["family_name"] == "´óÀí¶Î¼Ò" )
-	command("say ÕâÎ»" + RANK_D->query_respect(me)+ 
-"ÇëÁË£¬»¶Ó­À´µ½ÑøÂí³¡£¡\n");
+        if ( myfam && myfam["family_name"] == "å¤§ç†æ®µå®¶" )
+	command("say è¿™ä½" + RANK_D->query_respect(me)+ 
+"è¯·äº†ï¼Œæ¬¢è¿æ¥åˆ°å…»é©¬åœºï¼\n");
         else 
               
-  command("say ÄãÊÇÊ²Ã´ÈË£¬Ë½´³»Ê¼ÒÖ®µØ£¬ÄãÏëÍµÂí²»³É£¡");
+  command("say ä½ æ˜¯ä»€ä¹ˆäººï¼Œç§é—¯çš‡å®¶ä¹‹åœ°ï¼Œä½ æƒ³å·é©¬ä¸æˆï¼");
 }
 
 
@@ -81,31 +81,31 @@ int do_walkhorse()
         ob = this_player();
         myfam = (mapping)ob->query("family");
 
-	if ( myfam && myfam["family_name"] != "´óÀí¶Î¼Ò" )
+	if ( myfam && myfam["family_name"] != "å¤§ç†æ®µå®¶" )
            {
-     command("say ÕâĞ©¶¼ÊÇÍõÒ¯µÄ°®Âí£¬ÎÒ¿É²»·ÅĞÄ½Ì¸øÍâÈË£¡");
+     command("say è¿™äº›éƒ½æ˜¯ç‹çˆ·çš„çˆ±é©¬ï¼Œæˆ‘å¯ä¸æ”¾å¿ƒæ•™ç»™å¤–äººï¼");
  return 1;
         }
 
         if ( ob->is_busy() || ob->is_fighting() )
         {
-                tell_object(ob, "ÄãÏÖÔÚÕıÃ¦×Å£¡\n");
+                tell_object(ob, "ä½ ç°åœ¨æ­£å¿™ç€ï¼\n");
                 return 1;
         }               
         if ( ob->query("djob/supervisor") )
 
-        message_vision("$NÏë¸øÂí·òÁïÂí¡£\n", ob);
+        message_vision("$Næƒ³ç»™é©¬å¤«æºœé©¬ã€‚\n", ob);
 
         if ( ob->query("djob/supervisor") )
         {
-                command("say ÄÄÂí»¹ÂúÉíÔô±ìÄØ£¬Äã¾ÍÏë½»²î£¿");
+                command("say å“ªé©¬è¿˜æ»¡èº«è´¼è†˜å‘¢ï¼Œä½ å°±æƒ³äº¤å·®ï¼Ÿ");
 
-                if ( ob->query("djob/supervisor") == "Âí·ò") 
+                if ( ob->query("djob/supervisor") == "é©¬å¤«") 
                 {
                         add_action("do_say", "say");
-                        command("say Èç¹ûÄã¼±×ÅÈ¥Á·¹¦£¬Äã¿ÉÒÔ¸úÎÒËµÏëÏÈ×ß¡£");
+                        command("say å¦‚æœä½ æ€¥ç€å»ç»ƒåŠŸï¼Œä½ å¯ä»¥è·Ÿæˆ‘è¯´æƒ³å…ˆèµ°ã€‚");
                 } else  
-                        command("say Èç¹ûÄãÏëÏÈ×ß£¬¿ÉÒÔÖ±½ÓÈ¥¸æËß"+ob->query("djob/supervisor"));        
+                        command("say å¦‚æœä½ æƒ³å…ˆèµ°ï¼Œå¯ä»¥ç›´æ¥å»å‘Šè¯‰"+ob->query("djob/supervisor"));        
                 
                 return 1;
         }
@@ -113,7 +113,7 @@ int do_walkhorse()
 	 if (query_temp("aaa") > 1)
         
         {
-                command("say ×î½üÂí¶¼Í¦ºÃ£¬ÔÙÁï¾ÍµÃµô±ìÁË¡£");
+                command("say æœ€è¿‘é©¬éƒ½æŒºå¥½ï¼Œå†æºœå°±å¾—æ‰è†˜äº†ã€‚");
                 return 1;
         }
 
@@ -122,16 +122,16 @@ int do_walkhorse()
         wanted = query("wanted");
         what = wanted[random(sizeof(wanted))];
 
-        ob->set("djob/supervisor", "Âí·ò");
+        ob->set("djob/supervisor", "é©¬å¤«");
         ob->set("djob/object", what);
         ob->set("djob/description", what);
         ob->set("djob/id", djobid);
         ob->set_temp("apply/short", 
-                ({ HIW" ´óÀíÆ½ÄÏÍõ¸®Âí·ò"NOR+ob->query("name")+"("+capitalize(ob->query("id"))+")"}));
+                ({ HIW" å¤§ç†å¹³å—ç‹åºœé©¬å¤«"NOR+ob->query("name")+"("+capitalize(ob->query("id"))+")"}));
         
-message_vision("Âí·ò¸ßĞË¶Ô$NËµµÀ£ºÀ´µÃÕıºÃ£¬ÕâÀïÕıÈ±ÈËÊÖ¡£\n", ob);
+message_vision("é©¬å¤«é«˜å…´å¯¹$Nè¯´é“ï¼šæ¥å¾—æ­£å¥½ï¼Œè¿™é‡Œæ­£ç¼ºäººæ‰‹ã€‚\n", ob);
         command("say 
-Äã¾ÍÔÚÕâÀïºÃºÃ°ïÎÒÃ¦°É£¡");
+ä½ å°±åœ¨è¿™é‡Œå¥½å¥½å¸®æˆ‘å¿™å§ï¼");
 
         call_out("end_walkhorse", 300, ob, djobid);
         djobid++;
@@ -144,12 +144,12 @@ void end_walkhorse(object who, int jobid)
         int i; 
         if ( !objectp(who) || !present(who, environment(this_object())) 
                 || (string)who->query("djob/description") != 
-"´óÀíÆ½ÄÏÍõ¸®Âí·ò"  
+"å¤§ç†å¹³å—ç‹åºœé©¬å¤«"  
                 || (int)who->query("djob/id") != djobid )
                 return;
 
         
-message_vision("Âí·ò¶Ô$NËµµÀ£ººÃ£¬ºÃ£¬Âí¿´À´ÓĞ¾«Éñ¶àÁË£¬Äã¿ÉÒÔ×ßÁË£¡\n", 
+message_vision("é©¬å¤«å¯¹$Nè¯´é“ï¼šå¥½ï¼Œå¥½ï¼Œé©¬çœ‹æ¥æœ‰ç²¾ç¥å¤šäº†ï¼Œä½ å¯ä»¥èµ°äº†ï¼\n", 
 who);
         command("goodkid " + who->query("id"));
         
@@ -172,13 +172,13 @@ int do_say(string arg)
     who = this_player();
     ob = this_object();
 
-        if ( arg != "ÎÒÏëÏÈ×ß") return 0;
+        if ( arg != "æˆ‘æƒ³å…ˆèµ°") return 0;
 
     if ( who->query("djob/supervisor") != ob->query("name")) return 0;
 
-    message_vision("$NµÍÉùËµµÀ£ ÎÒÏëÎÒ»¹ÊÇÏÈÈ¥Á·Á·¹¦°É¡­\n", who);
+    message_vision("$Nä½å£°è¯´é“ï¼šæˆ‘æƒ³æˆ‘è¿˜æ˜¯å…ˆå»ç»ƒç»ƒåŠŸå§â€¦\n", who);
     command("disapp "+ who->query("id"));
-    command("say ÄãÕâÃ»³öÏ¢µÄ¶«Î÷£¬ÎÒ¿´ÄãÁ·¹¦Ò²Á·²»³öÊ²Ã´ÃûÌÃÀ´£¡");
+    command("say ä½ è¿™æ²¡å‡ºæ¯çš„ä¸œè¥¿ï¼Œæˆ‘çœ‹ä½ ç»ƒåŠŸä¹Ÿç»ƒä¸å‡ºä»€ä¹ˆåå ‚æ¥ï¼");
 
         who->delete_temp("apply/short");
 
@@ -199,16 +199,16 @@ int do_train(string arg)
        	int a,b,c,d,reward;
 	me=this_player();
         if ( !arg || arg != "horse" )
-             return notify_fail( "Ñ±Ê²Ã´£¿\n");
+             return notify_fail( "é©¯ä»€ä¹ˆï¼Ÿ\n");
 
         if (me->query_temp("trainhorse")) {
                 if (me->is_busy())
-                        return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                        return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
         if ( me->query("djob/supervisor") )
-                return notify_fail(" ÏÈÁïÍêÂíÔÙËµÑ±ÂíµÄÊÂ¡£");
+                return notify_fail(" å…ˆæºœå®Œé©¬å†è¯´é©¯é©¬çš„äº‹ã€‚");
         
-                tell_object(me, "Äã¿ªÊ¼Õ½Õ½¾ª¾ªµÄÑ±ÂíÁË¡£\n");
+                tell_object(me, "ä½ å¼€å§‹æˆ˜æˆ˜æƒŠæƒŠçš„é©¯é©¬äº†ã€‚\n");
   a = me->query_skill("force");
   b = me->query_skill("dodge");
   c = me->query_skill("finger");
@@ -216,14 +216,14 @@ int do_train(string arg)
   reward = random(3);	
 if  (random(a+b+c+d) < 40)
 {
-message_vision("$N¸ÕÒ»¿¿½ü£¬ÓñæõÂíÁÌÆğÒ»õê×Ó°Ñ$NÌßÁËÒ»¸ö¸ú¶·£¬ÌÉÔÚµØÉÏ°ëÌìºßºßß´ß´ÅÀ²»ÆğÀ´¡£\n", me);
+message_vision("$Nåˆšä¸€é è¿‘ï¼Œç‰éª¢é©¬æ’‚èµ·ä¸€è¹¶å­æŠŠ$Nè¸¢äº†ä¸€ä¸ªè·Ÿæ–—ï¼Œèººåœ¨åœ°ä¸ŠåŠå¤©å“¼å“¼å½å½çˆ¬ä¸èµ·æ¥ã€‚\n", me);
 	        me->receive_damage("qi", 50);
 		me->start_busy(25);
 		me->delete_temp("trainhorse");
 return 1;
 }
 if (random(a+b+c+d) > 40 && random(a+b+c+d) < 70){
-message_vision("$NĞ¡ĞÄÒíÒíµÄÅÀÉÏÂí±³£¬È´±»ÓñæõÂíºöµÄÒ»¸öÈËÁ¢£¬Ë¤ÔÚµØÉÏ°ëÌìºßºßß´ß´ÅÀ²»ÆğÀ´¡£\n", me);
+message_vision("$Nå°å¿ƒç¿¼ç¿¼çš„çˆ¬ä¸Šé©¬èƒŒï¼Œå´è¢«ç‰éª¢é©¬å¿½çš„ä¸€ä¸ªäººç«‹ï¼Œæ‘”åœ¨åœ°ä¸ŠåŠå¤©å“¼å“¼å½å½çˆ¬ä¸èµ·æ¥ã€‚\n", me);
                 me->receive_damage("qi", 50);
                 me->start_busy(120);
 		me->delete_temp("trainhorse");
@@ -231,8 +231,8 @@ return 1;
 }
 else
  {
-message_vision("$NÓÃÁ³ÇáÇáµÄ²Á×ÅÓñæõÂí£¬µÍÉùËµµÀ£ºÄãºÃ¿É°®ßÏ¡£\n", me);
- tell_object(me, "¹±Ï²ÄãÑ±Âí³É¹¦¡£\n");
+message_vision("$Nç”¨è„¸è½»è½»çš„æ“¦ç€ç‰éª¢é©¬ï¼Œä½å£°è¯´é“ï¼šä½ å¥½å¯çˆ±å‘¦ã€‚\n", me);
+ tell_object(me, "è´¡å–œä½ é©¯é©¬æˆåŠŸã€‚\n");
 
  me->add("max_jingli", reward);
 me->start_busy(120);

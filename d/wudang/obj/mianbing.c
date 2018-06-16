@@ -1,18 +1,18 @@
 //Cracked by Roath
-// mianbing.c Ãæ±ı
+// mianbing.c é¢é¥¼
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Ãæ±ı", ({"mian bing", "bing"}));
+	set_name("é¢é¥¼", ({"mian bing", "bing"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿éÏãÅçÅçµÄ¿¾Ãæ±ı¡£\n");
-		set("unit", "¿é");
+		set("long", "ä¸€å—é¦™å–·å–·çš„çƒ¤é¢é¥¼ã€‚\n");
+		set("unit", "å—");
 		set("value", 60);
 		set("food_remaining", 3);
 		set("food_supply", 40);

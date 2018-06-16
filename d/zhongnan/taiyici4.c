@@ -13,11 +13,11 @@ int do_exercise(string arg);
 
 void create()
 {
-		  set("short",HIC"Ì«ÒÒ³Ø"NOR);
+		  set("short",HIC"å¤ªä¹™æ± "NOR);
 		  set("long",@LONG
-ÄãÉíÔÚºşË®Àï£¬Ö»¾õµÃºşË®±ùÁ¹Í¸¹Ç¡£µ«¼ûËÄÖÜ¸ß·å»·ÁĞ£¬³ØÃæ±Ì²¨µ´Ñú£¬
-É½¹âË®Ó°£¬·ç¾°êİÈË¡£¶«±ßµÄ°¶ÉÏÓĞÌõĞ¡Â·¿ÉÒÔÉÏÉ½¡£ÍùÎ÷ÍûÈ¥£¬Î÷±ßµÄÉ½·å
-Ö®¼äËÆºõÓĞÒ»¸ö´ó¶´¡£
+ä½ èº«åœ¨æ¹–æ°´é‡Œï¼Œåªè§‰å¾—æ¹–æ°´å†°å‡‰é€éª¨ã€‚ä½†è§å››å‘¨é«˜å³°ç¯åˆ—ï¼Œæ± é¢ç¢§æ³¢è¡æ¼¾ï¼Œ
+å±±å…‰æ°´å½±ï¼Œé£æ™¯è´»äººã€‚ä¸œè¾¹çš„å²¸ä¸Šæœ‰æ¡å°è·¯å¯ä»¥ä¸Šå±±ã€‚å¾€è¥¿æœ›å»ï¼Œè¥¿è¾¹çš„å±±å³°
+ä¹‹é—´ä¼¼ä¹æœ‰ä¸€ä¸ªå¤§æ´ã€‚
 LONG);
 
 
@@ -47,21 +47,21 @@ void init()
 int do_exercise(string arg)
 {
 		  object me = this_player();
-		  tell_object(me, "ÕâÃ´ÉîµÄË®£¬²È¶¼²È²»µ½µ×£¬ÔõÃ´Á·¹¦°¡£¿\n");
+		  tell_object(me, "è¿™ä¹ˆæ·±çš„æ°´ï¼Œè¸©éƒ½è¸©ä¸åˆ°åº•ï¼Œæ€ä¹ˆç»ƒåŠŸå•Šï¼Ÿ\n");
 		  return 1;
 }
 
 int do_practice(string arg)
 {
 		  object me = this_player();
-		  tell_object(me, "ÕâÃ´ÉîµÄË®£¬²È¶¼²È²»µ½µ×£¬ÔõÃ´Á·¹¦°¡£¿\n");
+		  tell_object(me, "è¿™ä¹ˆæ·±çš„æ°´ï¼Œè¸©éƒ½è¸©ä¸åˆ°åº•ï¼Œæ€ä¹ˆç»ƒåŠŸå•Šï¼Ÿ\n");
 		  return 1;
 }
 
 int do_study(string arg)
 {
 		  object me = this_player();
-		  tell_object(me, "ÕâÃ´ÉîµÄË®£¬²È¶¼²È²»µ½µ×£¬ÔõÃ´¶ÁÊé°¡£¿\n");
+		  tell_object(me, "è¿™ä¹ˆæ·±çš„æ°´ï¼Œè¸©éƒ½è¸©ä¸åˆ°åº•ï¼Œæ€ä¹ˆè¯»ä¹¦å•Šï¼Ÿ\n");
 		  return 1;
 }
 
@@ -72,7 +72,7 @@ int do_swim(string arg)
 	int cost;
 
 	if(me->is_busy())
-		return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ã€‚\n");
 	cost = (200-me->query_skill("swimming",1))/10;
 	if ( cost<3 )cost = 3;
 	me->add("jingli",-cost);
@@ -81,11 +81,11 @@ int do_swim(string arg)
 
 	if (arg == "west")
 	{
-		message_vision( HIY"\n$NÔÚÌ«ÒÒ³ØÖĞ»®ÁË»®Ë®£¬ÍùÎ÷ÓÎÁËÆğÀ´¡£\n"NOR, me);
+		message_vision( HIY"\n$Nåœ¨å¤ªä¹™æ± ä¸­åˆ’äº†åˆ’æ°´ï¼Œå¾€è¥¿æ¸¸äº†èµ·æ¥ã€‚\n"NOR, me);
 		if(me->query_temp("tyc/east") <= 0)
 		{
 			me->move("/d/zhongnan/taiyici1");
-			message_vision( HIY"\n$NÓÎÁË¹ıÀ´¡£\n"NOR, me);
+			message_vision( HIY"\n$Næ¸¸äº†è¿‡æ¥ã€‚\n"NOR, me);
 			return 1;
 		}
 		me->add_temp("tyc/east",-1);
@@ -93,17 +93,17 @@ int do_swim(string arg)
 	}
 	else if (arg == "east")
 	{
-		message_vision( HIY"\n$NÔÚÌ«ÒÒ³ØÖĞ»®ÁË»®Ë®£¬Íù¶«ÓÎÁËÆğÀ´¡£\n"NOR, me);
+		message_vision( HIY"\n$Nåœ¨å¤ªä¹™æ± ä¸­åˆ’äº†åˆ’æ°´ï¼Œå¾€ä¸œæ¸¸äº†èµ·æ¥ã€‚\n"NOR, me);
 		if(me->query_temp("tyc/east") >= 5)
 		{
 			me->move("/d/zhongnan/taiyici3");
-			message_vision( HIY"\n$NÓÎÁË¹ıÀ´¡£\n"NOR, me);
+			message_vision( HIY"\n$Næ¸¸äº†è¿‡æ¥ã€‚\n"NOR, me);
 			return 1;
 		}
 		me->add_temp("tyc/east",1);
 		return 1;
 	}
 
-	message_vision( HIY"\n$NÔÚÌ«ÒÒ³ØÖĞ»®ÁË»®Ë®£¬ÓÃÁ¦ÓÎÁËÆğÀ´¡£\n"NOR, me);
+	message_vision( HIY"\n$Nåœ¨å¤ªä¹™æ± ä¸­åˆ’äº†åˆ’æ°´ï¼Œç”¨åŠ›æ¸¸äº†èµ·æ¥ã€‚\n"NOR, me);
 	return 1;
 }

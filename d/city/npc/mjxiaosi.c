@@ -30,30 +30,30 @@ string do_delete_Mj(string datastr,string str,int amount);
 string show_mj(string str,int flag);
 string sort_data(string str);
 mixed do_check_num(string str,int flag);
-//ÅÆÖ»×ÊÁÏ
+//ç‰Œåªèµ„æ–™
 string MjE= "1w2w3w4w5w6w7w8w9w1t2t3t4t5t6t7t8t9t1s2s3s4s5s6s7s8s9seasowenojofabaf1f2f3f4f5f6f7f8";
 string *MjC = ({"",
-				"Ò»Íò","¶þÍò","ÈýÍò","ËÄÍò","ÎéÍò","ÁùÍò","ÆßÍò","°ËÍò","¾ÅÍò",
-				"Ò»Í²","¶þÍ²","ÈýÍ²","ËÄÍ²","ÎéÍ²","ÁùÍ²","ÆßÍ²","°ËÍ²","¾ÅÍ²",
-				"Ò»Ë÷","¶þË÷","ÈýË÷","ËÄË÷","ÎéË÷","ÁùË÷","ÆßË÷","°ËË÷","¾ÅË÷",
-				"¶«·ç","ÄÏ·ç","Î÷·ç","±±·ç","ºìÖÐ","Çà·¢","°×°å",
-				"1 ´º","2 ÏÄ","3 Çï","4 ¶¬","1 Ã·","2 À¼","3 Öñ","4 ¾Õ","°µ¸Ü"
+				"ä¸€ä¸‡","äºŒä¸‡","ä¸‰ä¸‡","å››ä¸‡","ä¼ä¸‡","å…­ä¸‡","ä¸ƒä¸‡","å…«ä¸‡","ä¹ä¸‡",
+				"ä¸€ç­’","äºŒç­’","ä¸‰ç­’","å››ç­’","ä¼ç­’","å…­ç­’","ä¸ƒç­’","å…«ç­’","ä¹ç­’",
+				"ä¸€ç´¢","äºŒç´¢","ä¸‰ç´¢","å››ç´¢","ä¼ç´¢","å…­ç´¢","ä¸ƒç´¢","å…«ç´¢","ä¹ç´¢",
+				"ä¸œé£Ž","å—é£Ž","è¥¿é£Ž","åŒ—é£Ž","çº¢ä¸­","é’å‘","ç™½æ¿",
+				"1 æ˜¥","2 å¤","3 ç§‹","4 å†¬","1 æ¢…","2 å…°","3 ç«¹","4 èŠ","æš—æ "
 				});
 string* TossPic = ({
-"¡¡¡¡"HBWHT BLK"¨q©¥©¥©¥¨r"NOR,"¡¡¡¡"HBWHT BLK"¨q©¥©¥©¥¨r"NOR,"¡¡¡¡"HBWHT BLK"¨q©¥©¥©¥¨r"NOR,
-"¡¡¡¡"HBWHT BLK"¨t©¥©¥©¥¨s"NOR,"¡¡¡¡"HBWHT BLK"¨t©¥©¥©¥¨s"NOR,"¡¡¡¡"HBWHT BLK"¨t©¥©¥©¥¨s"NOR,
-"¡¡",
-"¡¡¡¡"HBWHT BLK"©§¡¡¡¡¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡"HIR"¡ñ¡¡"BLK"©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡¡¡¡©§"NOR,
-"¡¡¡¡"HBWHT BLK"©§¡¡¡ñ¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡¡¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡ñ¡¡©§"NOR,
-"¡¡¡¡"HBWHT BLK"©§¡ñ¡¡¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡ñ¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡¡¡ñ©§"NOR,
-"¡¡¡¡"HBWHT BLK"©§"HIR"¡ñ¡¡¡ñ"BLK"©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡¡¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§"HIR"¡ñ¡¡¡ñ"BLK"©§"NOR,
-"¡¡¡¡"HBWHT BLK"©§¡ñ¡¡¡ñ©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡¡¡ñ¡¡©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡ñ¡¡¡ñ©§"NOR,
-"¡¡¡¡"HBWHT BLK"©§¡ñ¡¡¡ñ©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡ñ¡¡¡ñ©§"NOR,"¡¡¡¡"HBWHT BLK"©§¡ñ¡¡¡ñ©§"NOR,
+"ã€€ã€€"HBWHT BLK"â•­â”â”â”â•®"NOR,"ã€€ã€€"HBWHT BLK"â•­â”â”â”â•®"NOR,"ã€€ã€€"HBWHT BLK"â•­â”â”â”â•®"NOR,
+"ã€€ã€€"HBWHT BLK"â•°â”â”â”â•¯"NOR,"ã€€ã€€"HBWHT BLK"â•°â”â”â”â•¯"NOR,"ã€€ã€€"HBWHT BLK"â•°â”â”â”â•¯"NOR,
+"ã€€",
+"ã€€ã€€"HBWHT BLK"â”ƒã€€ã€€ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€"HIR"â—ã€€"BLK"â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€ã€€ã€€â”ƒ"NOR,
+"ã€€ã€€"HBWHT BLK"â”ƒã€€â—ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€ã€€ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€â—ã€€â”ƒ"NOR,
+"ã€€ã€€"HBWHT BLK"â”ƒâ—ã€€ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€â—ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€ã€€â—â”ƒ"NOR,
+"ã€€ã€€"HBWHT BLK"â”ƒ"HIR"â—ã€€â—"BLK"â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€ã€€ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒ"HIR"â—ã€€â—"BLK"â”ƒ"NOR,
+"ã€€ã€€"HBWHT BLK"â”ƒâ—ã€€â—â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒã€€â—ã€€â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒâ—ã€€â—â”ƒ"NOR,
+"ã€€ã€€"HBWHT BLK"â”ƒâ—ã€€â—â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒâ—ã€€â—â”ƒ"NOR,"ã€€ã€€"HBWHT BLK"â”ƒâ—ã€€â—â”ƒ"NOR,
 	});
 
 int K;
 string Tc = "";
-//×ÊÁÏ
+//èµ„æ–™
 int Auto;
 int Auto_Ting;
 int Auto_Gang;
@@ -98,18 +98,18 @@ mapping P4Data = ([
                ]);
 void create()
 {
-	set_name(MAG"Ð¡ØË"NOR,({"xiao si" , "xiaosi"}));
-	set("gender", "ÄÐÐÔ");
+	set_name(MAG"å°åŽ®"NOR,({"xiao si" , "xiaosi"}));
+	set("gender", "ç”·æ€§");
 	set("age", 18);
 	set_weight(1);
-	set("long", "ËûÊÇÂé½«¹Ý´òÔÓµÄÐ¡ØË£¬Èç¹ûÄã¶ÔÂé½«µÄÍæ·¨»¹²»ÊìÏ¤µÄ»°£¬\n¿ÉÒÔÊÔ×ÅÎÊÎÊËûÍæ·¨Óë¹æÔò¡£\n");
+	set("long", "ä»–æ˜¯éº»å°†é¦†æ‰“æ‚çš„å°åŽ®ï¼Œå¦‚æžœä½ å¯¹éº»å°†çš„çŽ©æ³•è¿˜ä¸ç†Ÿæ‚‰çš„è¯ï¼Œ\nå¯ä»¥è¯•ç€é—®é—®ä»–çŽ©æ³•ä¸Žè§„åˆ™ã€‚\n");
 	set("inquiry",([
-		"¶ÎÕý´¾": "ÎÒ¼ÒÍõÒ¯ÉúÐÔ·çÁ÷¡£",
-		"mj": "ÇëÓÃhelp mjÀ´ÁË½âÂé½«µÄÀúÊ·",
-		"Âé½«": "ÇëÓÃhelp mjÀ´ÁË½âÂé½«µÄÀúÊ·",
-		"Íæ·¨": "ÇëÓÃhelp playmjÀ´ÁË½âÈçºÎÔËÓÃÖ¸Áî",
-		"play": "ÇëÓÃhelp playmjÀ´ÁË½âÈçºÎÔËÓÃÖ¸Áî",
-		"¹æÔò": (: to_say_rule :),
+		"æ®µæ­£æ·³": "æˆ‘å®¶çŽ‹çˆ·ç”Ÿæ€§é£Žæµã€‚",
+		"mj": "è¯·ç”¨help mjæ¥äº†è§£éº»å°†çš„åŽ†å²",
+		"éº»å°†": "è¯·ç”¨help mjæ¥äº†è§£éº»å°†çš„åŽ†å²",
+		"çŽ©æ³•": "è¯·ç”¨help playmjæ¥äº†è§£å¦‚ä½•è¿ç”¨æŒ‡ä»¤",
+		"play": "è¯·ç”¨help playmjæ¥äº†è§£å¦‚ä½•è¿ç”¨æŒ‡ä»¤",
+		"è§„åˆ™": (: to_say_rule :),
 		"rule": (: to_say_rule :),
 	]));
 	setup();
@@ -144,17 +144,17 @@ int do_addin()
 		||  me->query("id")==P3Data["Id"]
 		||  me->query("id")==P4Data["Id"])
 	{
-		if (!Playing) message_vision(HIY"$NÇÃ×ÅÂé½«×ÀÐÄÏë¡¸ÔõÃ´»¹²»¿ªÊ¼ÄØ¡£¡¹\n"NOR,me);
+		if (!Playing) message_vision(HIY"$Næ•²ç€éº»å°†æ¡Œå¿ƒæƒ³ã€Œæ€Žä¹ˆè¿˜ä¸å¼€å§‹å‘¢ã€‚ã€\n"NOR,me);
 		else switch (random(6))
 		{
-			case 0: message_vision("\n$N¶Ô×Å´ó¼ÒËµ£º¡¸½ñÌìÈÃÎÒ×ÔÃþ"+chinese_number(random(12)+1)+"´Î¾ÍºÃ¡£¡¹\n",me); break;
-			case 1: message_vision("\n$NÆþÖ¸Ò»Ëã¼éÐ¦×ÅËµ£º¡¸ºÙ¡«ºÙ¡«ºÙ¡«ÎÒËãµ½½ñÌìÎÒ»áÁ¬×¯"+chinese_number(random(7)+5)+"´Î¡£¡¹\n",me);
-					message_vision(HIY"Í»È»$NÐÑÎòµ½×¯Á¬Ô½¶à´Î·ÅÅÚÊäµÄÒ²Ô½........ÎØ¡«ÎØ¡«ÎØ¡«ÎØ¡«¡«¡«¡«\n"NOR,me); break;
-			case 2: message_vision("\n$N¶Ô×Å"+NowPlayerName[NowPlayer]+"Ëµ£º¡¸´ò³öÀ´·ÅÅÚÀ²£¬ÕâÃ´Âý£¡¡¹\n",this_object()); break;
-			case 3: message_vision(HIY"\n$NÏë×Å¡¸Ëæ±ãºú¸ö´óÈýÔª£¬´óËÄÏ²£¬»ìÒ»É«£¬Îå°µ¿Ì£¬ÅöÅöºú£¬¼ÓÒ»¼Ó¾ÍÃ¿ÈËÊäÎÒ"+chinese_number(40)+"Ì¨¡£¡¹\n"NOR,me); break;
-			case 4: message_vision("\n$N¶Ô×Å"+NowPlayerName[NowPlayer]+"ËµµÀ£º¡¸ÄãÊÇÔÚÃþÅÆ»¹ÊÇÔÚÃþÓã£¿¡¹\n",me); break;
-			case 5: message_vision("\n$N¶Ô×Å´ó¼Ò°§ÇóµÀ£º¡¸ÎÒÉÏÓÐ°ËÊ®ÀÏÄ¸£¬ÏÂÓÐ¶ùÅ®³ÉÈº£¬ÇóÄãÃÇÈÃÎÒÓ®¡£¡¹\n",me); break;
-			case 6: message_vision("\n$NÐÄµØËµ£º¡¸³ÔÁËÉÏ¼ÒÎ¹ÏÂ¼Ò£¬ÏëÒªºúÅÆ¾ÍÏà¹«£¬×î²Ò»¹ÊÇÎÒÒ»¼Ò¿¾ÈâÈý¼ÒÏã¡£¡¹\n",me); break;
+			case 0: message_vision("\n$Nå¯¹ç€å¤§å®¶è¯´ï¼šã€Œä»Šå¤©è®©æˆ‘è‡ªæ‘¸"+chinese_number(random(12)+1)+"æ¬¡å°±å¥½ã€‚ã€\n",me); break;
+			case 1: message_vision("\n$NæŽæŒ‡ä¸€ç®—å¥¸ç¬‘ç€è¯´ï¼šã€Œå˜¿ï½žå˜¿ï½žå˜¿ï½žæˆ‘ç®—åˆ°ä»Šå¤©æˆ‘ä¼šè¿žåº„"+chinese_number(random(7)+5)+"æ¬¡ã€‚ã€\n",me);
+					message_vision(HIY"çªç„¶$Né†’æ‚Ÿåˆ°åº„è¿žè¶Šå¤šæ¬¡æ”¾ç‚®è¾“çš„ä¹Ÿè¶Š........å‘œï½žå‘œï½žå‘œï½žå‘œï½žï½žï½žï½ž\n"NOR,me); break;
+			case 2: message_vision("\n$Nå¯¹ç€"+NowPlayerName[NowPlayer]+"è¯´ï¼šã€Œæ‰“å‡ºæ¥æ”¾ç‚®å•¦ï¼Œè¿™ä¹ˆæ…¢ï¼ã€\n",this_object()); break;
+			case 3: message_vision(HIY"\n$Næƒ³ç€ã€Œéšä¾¿èƒ¡ä¸ªå¤§ä¸‰å…ƒï¼Œå¤§å››å–œï¼Œæ··ä¸€è‰²ï¼Œäº”æš—åˆ»ï¼Œç¢°ç¢°èƒ¡ï¼ŒåŠ ä¸€åŠ å°±æ¯äººè¾“æˆ‘"+chinese_number(40)+"å°ã€‚ã€\n"NOR,me); break;
+			case 4: message_vision("\n$Nå¯¹ç€"+NowPlayerName[NowPlayer]+"è¯´é“ï¼šã€Œä½ æ˜¯åœ¨æ‘¸ç‰Œè¿˜æ˜¯åœ¨æ‘¸é±¼ï¼Ÿã€\n",me); break;
+			case 5: message_vision("\n$Nå¯¹ç€å¤§å®¶å“€æ±‚é“ï¼šã€Œæˆ‘ä¸Šæœ‰å…«åè€æ¯ï¼Œä¸‹æœ‰å„¿å¥³æˆç¾¤ï¼Œæ±‚ä½ ä»¬è®©æˆ‘èµ¢ã€‚ã€\n",me); break;
+			case 6: message_vision("\n$Nå¿ƒåœ°è¯´ï¼šã€Œåƒäº†ä¸Šå®¶å–‚ä¸‹å®¶ï¼Œæƒ³è¦èƒ¡ç‰Œå°±ç›¸å…¬ï¼Œæœ€æƒ¨è¿˜æ˜¯æˆ‘ä¸€å®¶çƒ¤è‚‰ä¸‰å®¶é¦™ã€‚ã€\n",me); break;
 		}
 		return 1;
 	}
@@ -162,12 +162,12 @@ int do_addin()
 	{
 		switch (random(5))
 		{
-			case 0: message_vision("\n$N¿Þ¿ÞÌäÌäµÄËµ£º¡¸ÎÒÒ²ÒªÍæÀ².....¡£¡¹\n",me); break;
-			case 1: message_vision("\n$N´ó¼Ò·ß·ßµÄËµ£º¡¸²»ÈÃÎÒÍæÎÒ¾Í¡«¡«¡«¡«ÎÒ¾Í¡«¡«¡«¡«ÎÒ¾ÍËÀ¸øÄãÃÇ¿´£¡¡¹\n"NOR,me); break;
-			case 2: message_vision("\n$N¶Ô×Å$nËµ£º¡¸ÄãÏÈ³öÈ¥×ª¸ö¼¸È¦ÔÙÀ´°É¡£¡¹\n",this_object(),me); break;
-			case 3: message_vision("\n$NËµ£º¡¸ÎÒÒ»Ìì²»ÃþÂé½«¾Í»ëÉí²»Êæ·þ¡£¡¹\n",me); break;
-			case 4: message_vision("\n$N¶Ô×Å$nËµµÀ£º¡¸ÅÆ¾ÖÕýÔÚ½øÐÐÖÐ£¬Çëµ½ÅÔ±ß×øÒ»ÏÂ¡£¡¹\n",this_object(),me); break;
-			case 5: message_vision("\n$N¶Ô×Å´ó¼ÒËµ£º¡¸ÄãÃÇÒª³ÔÊ²Ã´£¿ÎÒ¸øÄãÃÇÂòÈ¥¡£¡¹\n",me); break;
+			case 0: message_vision("\n$Nå“­å“­å•¼å•¼çš„è¯´ï¼šã€Œæˆ‘ä¹Ÿè¦çŽ©å•¦.....ã€‚ã€\n",me); break;
+			case 1: message_vision("\n$Nå¤§å®¶æ„¤æ„¤çš„è¯´ï¼šã€Œä¸è®©æˆ‘çŽ©æˆ‘å°±ï½žï½žï½žï½žæˆ‘å°±ï½žï½žï½žï½žæˆ‘å°±æ­»ç»™ä½ ä»¬çœ‹ï¼ã€\n"NOR,me); break;
+			case 2: message_vision("\n$Nå¯¹ç€$nè¯´ï¼šã€Œä½ å…ˆå‡ºåŽ»è½¬ä¸ªå‡ åœˆå†æ¥å§ã€‚ã€\n",this_object(),me); break;
+			case 3: message_vision("\n$Nè¯´ï¼šã€Œæˆ‘ä¸€å¤©ä¸æ‘¸éº»å°†å°±æµ‘èº«ä¸èˆ’æœã€‚ã€\n",me); break;
+			case 4: message_vision("\n$Nå¯¹ç€$nè¯´é“ï¼šã€Œç‰Œå±€æ­£åœ¨è¿›è¡Œä¸­ï¼Œè¯·åˆ°æ—è¾¹åä¸€ä¸‹ã€‚ã€\n",this_object(),me); break;
+			case 5: message_vision("\n$Nå¯¹ç€å¤§å®¶è¯´ï¼šã€Œä½ ä»¬è¦åƒä»€ä¹ˆï¼Ÿæˆ‘ç»™ä½ ä»¬ä¹°åŽ»ã€‚ã€\n",me); break;
 		}
 		return 1;
 	}
@@ -177,62 +177,62 @@ int do_addin()
 		P1Data["Name"]=me->query("name");
 		NowPlayerId[Play]=me->query("id");
 		NowPlayerName[Play]=me->query("name");
-		message_vision("\n¡¸$N¡¹¼ÓÈëÁËÕâ³¡ÅÆ¾Ö¡£\n",me);
+		message_vision("\nã€Œ$Nã€åŠ å…¥äº†è¿™åœºç‰Œå±€ã€‚\n",me);
 		if (me->query_temp("apply/short")) me->set_temp("mj/short", me->query_temp("apply/short"));
-		me->set_temp("apply/short", ({"´òÂé½«ÖÐµÄ"+me->query("name")+"("+me->query("id")+")"}));
-		me->set_temp("´òÂé½«ÖÐ", 1);
+		me->set_temp("apply/short", ({"æ‰“éº»å°†ä¸­çš„"+me->query("name")+"("+me->query("id")+")"}));
+		me->set_temp("æ‰“éº»å°†ä¸­", 1);
 		Play++;
 		Times=0;
-		LookP+="ÔÚÇ°ÃæÓÐ"+me->name()+"£¬";
+		LookP+="åœ¨å‰é¢æœ‰"+me->name()+"ï¼Œ";
 		return 1;
 	}
 	else if (!P2Data["Id"] || P2Data["Id"]=="")
 	{
 		P2Data["Id"]=me->query("id");
 		P2Data["Name"]=me->query("name");
-		message_vision("\n¡¸$N¡¹¼ÓÈëÁËÕâ³¡ÅÆ¾Ö¡£\n",me);
+		message_vision("\nã€Œ$Nã€åŠ å…¥äº†è¿™åœºç‰Œå±€ã€‚\n",me);
 		NowPlayerId[Play]=me->query("id");
 		NowPlayerName[Play]=me->query("name");
 		if (me->query_temp("apply/short")) me->set_temp("mj/short", me->query_temp("apply/short"));
-		me->set_temp("apply/short", ({"´òÂé½«ÖÐµÄ"+me->query("name")+"("+me->query("id")+")"}));
-		me->set_temp("´òÂé½«ÖÐ", 1);
+		me->set_temp("apply/short", ({"æ‰“éº»å°†ä¸­çš„"+me->query("name")+"("+me->query("id")+")"}));
+		me->set_temp("æ‰“éº»å°†ä¸­", 1);
 		Play++;
 		Times=0;
-		LookP+=me->name()+"£¬";
+		LookP+=me->name()+"ï¼Œ";
 		return 1;
 	}
 	else if (!P3Data["Id"] || P3Data["Id"]=="")
 	{
 		P3Data["Id"]=me->query("id");
 		P3Data["Name"]=me->query("name");
-		message_vision("\n¡¸$N¡¹¼ÓÈëÁËÕâ³¡ÅÆ¾Ö¡£\n",me);
+		message_vision("\nã€Œ$Nã€åŠ å…¥äº†è¿™åœºç‰Œå±€ã€‚\n",me);
 		NowPlayerId[Play]=me->query("id");
 		NowPlayerName[Play]=me->query("name");
 		if (me->query_temp("apply/short")) me->set_temp("mj/short", me->query_temp("apply/short"));
-		me->set_temp("apply/short", ({"´òÂé½«ÖÐµÄ"+me->query("name")+"("+me->query("id")+")"}));
-		me->set_temp("´òÂé½«ÖÐ", 1);
+		me->set_temp("apply/short", ({"æ‰“éº»å°†ä¸­çš„"+me->query("name")+"("+me->query("id")+")"}));
+		me->set_temp("æ‰“éº»å°†ä¸­", 1);
 		Play++;
 		Times=0;
-		LookP+=me->name()+"£¬";
+		LookP+=me->name()+"ï¼Œ";
 		return 1;
 	}
 	else if (!P4Data["Id"] || P4Data["Id"]=="")
 	{
 		P4Data["Id"]=me->query("id");
 		P4Data["Name"]=me->query("name");
-		message_vision("\n¡¸$N¡¹¼ÓÈëÁËÕâ³¡ÅÆ¾Ö¡£\n",me);
+		message_vision("\nã€Œ$Nã€åŠ å…¥äº†è¿™åœºç‰Œå±€ã€‚\n",me);
 		NowPlayerId[Play]=me->query("id");
 		NowPlayerName[Play]=me->query("name");
 		if (me->query_temp("apply/short")) me->set_temp("mj/short", me->query_temp("apply/short"));
-		me->set_temp("apply/short", ({"´òÂé½«ÖÐµÄ"+me->query("name")+"("+me->query("id")+")"}));
-		me->set_temp("´òÂé½«ÖÐ", 1);
+		me->set_temp("apply/short", ({"æ‰“éº»å°†ä¸­çš„"+me->query("name")+"("+me->query("id")+")"}));
+		me->set_temp("æ‰“éº»å°†ä¸­", 1);
 		Play++;
 		Times=0;
 		LookP+=me->name();
-		message_vision("\n\n$N"CYN"ËµµÀ£º¡¸ÈËÊýÒÑ×ã£¬ÇëÏ´ÅÆ"NOR RED"<wash>"NOR CYN"¡£¡¹\n"NOR,this_object());
+		message_vision("\n\n$N"CYN"è¯´é“ï¼šã€Œäººæ•°å·²è¶³ï¼Œè¯·æ´—ç‰Œ"NOR RED"<wash>"NOR CYN"ã€‚ã€\n"NOR,this_object());
 		return 1;
 	}
-	return notify_fail(HIW"ÈËÊýÒÑ×ã¡£\n"NOR);
+	return notify_fail(HIW"äººæ•°å·²è¶³ã€‚\n"NOR);
 }
 int do_autodump(string str,object me)
 {
@@ -244,7 +244,7 @@ int do_autodump(string str,object me)
  
 	if (Ganged==5)
 	{
-		message_vision("\n¡¸"HIR"Îå¸ÜºÏÅÆ"NOR"¡¹£¬ÇëÔÙÖØÐÂ¿ªÊ¼"RED"<start>"NOR"¡£\n",this_object());
+		message_vision("\nã€Œ"HIR"äº”æ åˆç‰Œ"NOR"ã€ï¼Œè¯·å†é‡æ–°å¼€å§‹"RED"<start>"NOR"ã€‚\n",this_object());
 		Playing=0;
 		Count++;
 		if (Play==4)
@@ -272,10 +272,10 @@ int do_autodump(string str,object me)
 	else if (me->query("id")==P3Data["Id"]) who=P3Data;
 	else if (me->query("id")==P4Data["Id"]) who=P4Data;
 	check=do_check_Mj(MjE,str);
-	if (check==0) return notify_fail(HIW"Ã»ÓÐ¡¸"NOR HIY+str+NOR HIW"¡¹ÕâÖÖ´úÂë¡£\n"NOR);
+	if (check==0) return notify_fail(HIW"æ²¡æœ‰ã€Œ"NOR HIY+str+NOR HIW"ã€è¿™ç§ä»£ç ã€‚\n"NOR);
 	check=do_check_Mj(who["Mj"],str);
-	if (check==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(str,0)+NOR HIW"¡¹ÕâÕÅÅÆ¡£\n"NOR);
-	message_vision("\n$NËµµÀ£º¡¸"MAG+do_check_num(str,0)+NOR"¡¹\n",me);
+	if (check==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(str,0)+NOR HIW"ã€è¿™å¼ ç‰Œã€‚\n"NOR);
+	message_vision("\n$Nè¯´é“ï¼šã€Œ"MAG+do_check_num(str,0)+NOR"ã€\n",me);
 	who["Mj"]=do_delete_Mj(who["Mj"],str,1);
 	LastDump=str;
 	who["Dump"]+=str;
@@ -284,7 +284,7 @@ int do_autodump(string str,object me)
 	Touched=0;
 	NowPlayer++;
 	NowPlayer%=Play;
-	message_vision("\nÏÖÔÚÂÖµ½¡¸"HIY+NowPlayerName[NowPlayer]+NOR"¡¹ÃþÅÆ¡£\n",this_object());
+	message_vision("\nçŽ°åœ¨è½®åˆ°ã€Œ"HIY+NowPlayerName[NowPlayer]+NOR"ã€æ‘¸ç‰Œã€‚\n",this_object());
 	if (Auto_Ting)
 	{
 		pengid=check_id(str,"ting");
@@ -322,8 +322,8 @@ int do_autodump(string str,object me)
 	{
 		Playing=0;
 		Count++;
-		message_vision("\n¡¸"RED"Á÷¾Ö"NOR"¡¹ÇëÔÙÖØÐÂ¿ªÊ¼ "HIR"<start>"NOR" ¡£\n",this_object());
-		str="ËùÊ£ÏÂµÄÅÆÖ»ÓÐ£º¡¸"+show_mj(List[count..end],2)+"¡¹\n";
+		message_vision("\nã€Œ"RED"æµå±€"NOR"ã€è¯·å†é‡æ–°å¼€å§‹ "HIR"<start>"NOR" ã€‚\n",this_object());
+		str="æ‰€å‰©ä¸‹çš„ç‰Œåªæœ‰ï¼šã€Œ"+show_mj(List[count..end],2)+"ã€\n";
 		tell_room(environment(this_object()),str);
 		if (Play==4)
 		{
@@ -368,18 +368,18 @@ int do_dump(string str,object me)
  
 	if (!me) me=this_player();
 	if (check_id(me->query("id"),"player")!="");
-	else return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
-	if (!Playing) return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
-	if (!str) return notify_fail(HIW"Ö¸Áî£ºda <´úÂë>\n"NOR);
+	else return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
+	if (!Playing) return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
+	if (!str) return notify_fail(HIW"æŒ‡ä»¤ï¼šda <ä»£ç >\n"NOR);
 	if (me->query("id")!=NowPlayerId[NowPlayer])
 	{
-		message_vision("ÏÖÔÚÊÇÂÖµ½¡¸"HIY+NowPlayerName[NowPlayer]+NOR"¡¹\n",me);
-		return notify_fail(HIW"×÷±×°¡£¿ÏÖÔÚÊÇÂÖµ½¡¸"NOR HIY+NowPlayerName[NowPlayer]+NOR HIW"¡¹²»ÊÇÄã£¬ÏëÍµ´òÅÆ£¡£¡\n"NOR);
+		message_vision("çŽ°åœ¨æ˜¯è½®åˆ°ã€Œ"HIY+NowPlayerName[NowPlayer]+NOR"ã€\n",me);
+		return notify_fail(HIW"ä½œå¼Šå•Šï¼ŸçŽ°åœ¨æ˜¯è½®åˆ°ã€Œ"NOR HIY+NowPlayerName[NowPlayer]+NOR HIW"ã€ä¸æ˜¯ä½ ï¼Œæƒ³å·æ‰“ç‰Œï¼ï¼\n"NOR);
 	}
-	if (!Touched) return notify_fail(HIW"Äã»¹Ã»ÃþÅÆ£¡£¡\n"NOR);
+	if (!Touched) return notify_fail(HIW"ä½ è¿˜æ²¡æ‘¸ç‰Œï¼ï¼\n"NOR);
 	if (Ganged==5)
 	{
-		message_vision("\n¡¸"HIR"Îå¸ÜºÏÅÆ"NOR"¡¹£¬ÇëÔÙÖØÐÂ¿ªÊ¼"RED"<start>"NOR"¡£\n",this_object());
+		message_vision("\nã€Œ"HIR"äº”æ åˆç‰Œ"NOR"ã€ï¼Œè¯·å†é‡æ–°å¼€å§‹"RED"<start>"NOR"ã€‚\n",this_object());
 		Playing=0;
 		Count++;
 		if (Play==4)
@@ -406,13 +406,13 @@ int do_dump(string str,object me)
 	else if (me->query("id")==P2Data["Id"]) who=P2Data;
 	else if (me->query("id")==P3Data["Id"]) who=P3Data;
 	else if (me->query("id")==P4Data["Id"]) who=P4Data;
-	if (who["Auto"]=="auto") return notify_fail(HIW"ÌýÅÆáá£¬²»¿É×Ô¼º´òÅÆ¡£\n"NOR);
+	if (who["Auto"]=="auto") return notify_fail(HIW"å¬ç‰Œå¾Œï¼Œä¸å¯è‡ªå·±æ‰“ç‰Œã€‚\n"NOR);
 	if (who["Auto"]=="dump") who["Auto"]="auto";
 	check=do_check_Mj(MjE,str);
-	if (check==0) return notify_fail(HIW"Ã»ÓÐ¡¸"NOR HIY+str+NOR HIW"¡¹ÕâÖÖ´úÂë¡£\n"NOR);
+	if (check==0) return notify_fail(HIW"æ²¡æœ‰ã€Œ"NOR HIY+str+NOR HIW"ã€è¿™ç§ä»£ç ã€‚\n"NOR);
 	check=do_check_Mj(who["Mj"],str);
-	if (check==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(str,0)+NOR HIW"¡¹ÕâÕÅÅÆ¡£\n"NOR);
-	message_vision("\n$NËµµÀ£º¡¸"MAG+do_check_num(str,0)+NOR"¡¹\n",me);
+	if (check==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(str,0)+NOR HIW"ã€è¿™å¼ ç‰Œã€‚\n"NOR);
+	message_vision("\n$Nè¯´é“ï¼šã€Œ"MAG+do_check_num(str,0)+NOR"ã€\n",me);
 	who["Mj"]=do_delete_Mj(who["Mj"],str,1);
 	LastDump=str;
 	who["Dump"]+=str;
@@ -421,7 +421,7 @@ int do_dump(string str,object me)
 	Touched=0;
 	NowPlayer++;
 	NowPlayer%=Play;
-	message_vision("\nÏÖÔÚÂÖµ½¡¸"HIY+NowPlayerName[NowPlayer]+NOR"¡¹ÃþÅÆ¡£\n",this_object());
+	message_vision("\nçŽ°åœ¨è½®åˆ°ã€Œ"HIY+NowPlayerName[NowPlayer]+NOR"ã€æ‘¸ç‰Œã€‚\n",this_object());
 	if (Auto_Ting)
 	{
 		pengid=check_id(str,"ting");
@@ -459,8 +459,8 @@ int do_dump(string str,object me)
 	{
 		Playing=0;
 		Count++;
-		message_vision("\n¡¸"RED"Á÷¾Ö"NOR"¡¹ÇëÔÙÖØÐÂ¿ªÊ¼ "HIR"<start>"NOR" ¡£\n",this_object());
-		str="ËùÊ£ÏÂµÄÅÆÖ»ÓÐ£º¡¸"+show_mj(List[count..end],2)+"¡¹\n";
+		message_vision("\nã€Œ"RED"æµå±€"NOR"ã€è¯·å†é‡æ–°å¼€å§‹ "HIR"<start>"NOR" ã€‚\n",this_object());
+		str="æ‰€å‰©ä¸‹çš„ç‰Œåªæœ‰ï¼šã€Œ"+show_mj(List[count..end],2)+"ã€\n";
 		tell_room(environment(this_object()),str);
 		if (Play==4)
 		{
@@ -506,37 +506,37 @@ int do_eat(string str)
 	if (check_id(me->query("id"),"player")!="");
 	else
 	{
-		tell_object(me,HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
+		tell_object(me,HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
 		return 1;
 	}
 	if (!Playing)
 	{
-		tell_object(me,HIW"ÅÆ¾Ö»¹Ã»¿ªÊ¼¡£\n"NOR);
+		tell_object(me,HIW"ç‰Œå±€è¿˜æ²¡å¼€å§‹ã€‚\n"NOR);
 		return 1;
 	}
 	if (me->query("id")!=NowPlayerId[NowPlayer])
 	{
-		tell_object(me,HIW"»¹Ã»ÂÖµ½Äã£¡ÏÖÔÚÊÇÂÖµ½¡¸"NOR HIY+NowPlayerName[NowPlayer]+NOR HIW"¡¹¡£\n"NOR);
+		tell_object(me,HIW"è¿˜æ²¡è½®åˆ°ä½ ï¼çŽ°åœ¨æ˜¯è½®åˆ°ã€Œ"NOR HIY+NowPlayerName[NowPlayer]+NOR HIW"ã€ã€‚\n"NOR);
 		return 1;
 	}
 	if (!LastDump || LastDump=="")
 	{
-		tell_object(me,HIW"ÃþÅÆ°É¡£\n"NOR);
+		tell_object(me,HIW"æ‘¸ç‰Œå§ã€‚\n"NOR);
 		return 1;
 	}
 	if (Touched)
 	{
-		tell_object(me,HIW"´òÅÆÀ²£¡£¡\n"NOR);
+		tell_object(me,HIW"æ‰“ç‰Œå•¦ï¼ï¼\n"NOR);
 		return 1;
 	}
 	if (do_check_eat(num1,num2,LastDump)==0)
 	{
-		tell_object(me,HIW"ÄãÑÛ¾¦»¨ÁË°¡£¡£¡ÕâÑùÒ²ÄÜ³Ô¡£\n"NOR);
+		tell_object(me,HIW"ä½ çœ¼ç›èŠ±äº†å•Šï¼ï¼è¿™æ ·ä¹Ÿèƒ½åƒã€‚\n"NOR);
 		return 1;
 	}
 	if (num1==num2)
 	{
-		tell_object(me,HIW"ÏàÍ¬µÄÅÆ²»ÄÜ³Ô¡£\n"NOR);
+		tell_object(me,HIW"ç›¸åŒçš„ç‰Œä¸èƒ½åƒã€‚\n"NOR);
 		return 1;
 	}	
 	if (me->query("id")==P1Data["Id"]) who=P1Data;
@@ -544,14 +544,14 @@ int do_eat(string str)
 	else if (me->query("id")==P3Data["Id"]) who=P3Data;
 	else if (me->query("id")==P4Data["Id"]) who=P4Data;
 	LastDumpMan=do_check_Mj(MjE,num1);
-	if (LastDumpMan==0) return notify_fail(HIW"Ã»ÓÐ¡¸"NOR HIY+num1+NOR HIW"¡¹ÕâÖÖ´úÂë¡£\n"NOR);
+	if (LastDumpMan==0) return notify_fail(HIW"æ²¡æœ‰ã€Œ"NOR HIY+num1+NOR HIW"ã€è¿™ç§ä»£ç ã€‚\n"NOR);
 	LastDumpMan=do_check_Mj(MjE,num2);
-	if (LastDumpMan==0) return notify_fail(HIW"Ã»ÓÐ¡¸"NOR HIY+num2+NOR HIW"¡¹ÕâÖÖ´úÂë¡£\n"NOR);
+	if (LastDumpMan==0) return notify_fail(HIW"æ²¡æœ‰ã€Œ"NOR HIY+num2+NOR HIW"ã€è¿™ç§ä»£ç ã€‚\n"NOR);
 	LastDumpMan=do_check_Mj(who["Mj"],num1);
-	if (LastDumpMan==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(num1,0)+NOR HIW"¡¹ÕâÕÅÅÆ¡£\n"NOR);
+	if (LastDumpMan==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(num1,0)+NOR HIW"ã€è¿™å¼ ç‰Œã€‚\n"NOR);
 	LastDumpMan=do_check_Mj(who["Mj"],num2);
-	if (LastDumpMan==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(num2,0)+NOR HIW"¡¹ÕâÕÅÅÆ¡£\n"NOR);
-	message_vision("\n$NÄÃ³öÁËÒ»ÕÅ¡¸"YEL+do_check_num(num1,0)+NOR"¡¹ÓëÒ»ÕÅ¡¸"HIY+do_check_num(num2,0)+NOR"¡¹³ÔÏÂÁË¡¸"HIR+do_check_num(LastDump,0)+NOR"¡¹¡£\n\n",me);
+	if (LastDumpMan==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(num2,0)+NOR HIW"ã€è¿™å¼ ç‰Œã€‚\n"NOR);
+	message_vision("\n$Næ‹¿å‡ºäº†ä¸€å¼ ã€Œ"YEL+do_check_num(num1,0)+NOR"ã€ä¸Žä¸€å¼ ã€Œ"HIY+do_check_num(num2,0)+NOR"ã€åƒä¸‹äº†ã€Œ"HIR+do_check_num(LastDump,0)+NOR"ã€ã€‚\n\n",me);
 	who["Out"]+=num2;
 	who["Out"]+=LastDump;
 	who["Out"]+=num1;
@@ -561,7 +561,7 @@ int do_eat(string str)
 	NO_HU=1;
 	NO_GON=1;
 	i=0;
-	if (who["Show"]=="´úÂë") i=3;
+	if (who["Show"]=="ä»£ç ") i=3;
 	if (who["Show"]=="color") i=5;
 	tell_object(me,show_mj(who["Mj"],i));
 	return delete_last_dump(who["Id"]);
@@ -573,10 +573,10 @@ int do_gang(string str,object me)
  
 	if (!me) me=this_player();
 	if (check_id(me->query("id"),"player")!="");
-	else return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
-	if (!Playing) return notify_fail(HIW"ÅÆ¾Ö»¹Ã»¿ªÊ¼£¡£¡\n"NOR);
-	if (LastDumpId==me->query("id")) return notify_fail(HIW"ÄÇÕÅÅÆÊÇÄã×Ô¼º´òµÄ£¡\n"NOR);
-	if (Touched && NowPlayerId[NowPlayer]!=me->query("id")) return notify_fail(HIW"±ðÈËÃ»´òÅÆÄãÔõ÷á¸Ü£¿\n"NOR);
+	else return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
+	if (!Playing) return notify_fail(HIW"ç‰Œå±€è¿˜æ²¡å¼€å§‹ï¼ï¼\n"NOR);
+	if (LastDumpId==me->query("id")) return notify_fail(HIW"é‚£å¼ ç‰Œæ˜¯ä½ è‡ªå·±æ‰“çš„ï¼\n"NOR);
+	if (Touched && NowPlayerId[NowPlayer]!=me->query("id")) return notify_fail(HIW"åˆ«äººæ²¡æ‰“ç‰Œä½ æ€Žéº½æ ï¼Ÿ\n"NOR);
 	
 	if (!str) str=LastDump;
  	if (me->query("id")==P1Data["Id"]) who=P1Data;
@@ -587,28 +587,28 @@ int do_gang(string str,object me)
 	i=do_check_Mj(who["Mj"],str);
 	if (i==1)
 	{
-		if (!Touched) return notify_fail(HIW"Äã»¹Ã»ÃþÅÆ¡£\n"NOR);
+		if (!Touched) return notify_fail(HIW"ä½ è¿˜æ²¡æ‘¸ç‰Œã€‚\n"NOR);
 		i=do_check_Mj(who["OutPeng"],str);
-		if (!i) return notify_fail(HIW"ÄãÖ»ÓÐÒ»ÕÅ²»ÄÜ¸Ü¡£\n"NOR);
-		if (NO_GON) return notify_fail(HIW"ÕâÑùÎÞ·¨¸ÜÅÆ¡£\n"NOR);
+		if (!i) return notify_fail(HIW"ä½ åªæœ‰ä¸€å¼ ä¸èƒ½æ ã€‚\n"NOR);
+		if (NO_GON) return notify_fail(HIW"è¿™æ ·æ— æ³•æ ç‰Œã€‚\n"NOR);
 		switch (random(5))
 		{
-			case 0: message_vision("\n$N´ó½Ð£º¡¸"HIB"Ä¾¹¤"NOR WHT"¡«¡«¡«¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 1: message_vision("\n$N´ó½Ð£º¡¸"HIB"Ä¾¹±"NOR WHT"¡«¡«¡«¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 2: message_vision("\n$NÏ²µÀ£º¡¸ÕâÖÖÅÆÒ²¸øÎÒÃþµ½£¬"WHT"¿Ú¹ç¿ÚÁÐ¡«¡«¡«"NOR HIB"Ä¾¹¤£¡£¡£¡"NOR"¡¹\n\n",me); break;
-			case 3: message_vision("\n$NÏ²µÀ£º¡¸ÕâÖÖÅÆÒ²¸øÎÒÃþµ½£¬"WHT"¿Ú¹ç¿ÚÁÐ¡«¡«¡«"NOR HIB"Ä¾¹±£¡£¡£¡"NOR"¡¹\n\n",me); break;
-			case 4: message_vision("\n$N¼éÐ¦µÀ£º¡¸"HIB"Ä¾¹¤"NOR WHT"¡«¡«¡«¡«¡«¡«"NOR"¿´ÎÒ¸ÜÉÏ¿ª»¨¡¹\n\n",me); break;
-			case 5: message_vision("\n$N¼éÐ¦µÀ£º¡¸"HIB"Ä¾¹±"NOR WHT"¡«¡«¡«¡«¡«¡«"NOR"¿´ÎÒ¸ÜÉÏ¿ª»¨¡¹\n\n",me); break;
+			case 0: message_vision("\n$Nå¤§å«ï¼šã€Œ"HIB"æœ¨å·¥"NOR WHT"ï½žï½žï½žï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 1: message_vision("\n$Nå¤§å«ï¼šã€Œ"HIB"æœ¨è´¡"NOR WHT"ï½žï½žï½žï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 2: message_vision("\n$Nå–œé“ï¼šã€Œè¿™ç§ç‰Œä¹Ÿç»™æˆ‘æ‘¸åˆ°ï¼Œ"WHT"å£åœ­å£åˆ—ï½žï½žï½ž"NOR HIB"æœ¨å·¥ï¼ï¼ï¼"NOR"ã€\n\n",me); break;
+			case 3: message_vision("\n$Nå–œé“ï¼šã€Œè¿™ç§ç‰Œä¹Ÿç»™æˆ‘æ‘¸åˆ°ï¼Œ"WHT"å£åœ­å£åˆ—ï½žï½žï½ž"NOR HIB"æœ¨è´¡ï¼ï¼ï¼"NOR"ã€\n\n",me); break;
+			case 4: message_vision("\n$Nå¥¸ç¬‘é“ï¼šã€Œ"HIB"æœ¨å·¥"NOR WHT"ï½žï½žï½žï½žï½žï½ž"NOR"çœ‹æˆ‘æ ä¸Šå¼€èŠ±ã€\n\n",me); break;
+			case 5: message_vision("\n$Nå¥¸ç¬‘é“ï¼šã€Œ"HIB"æœ¨è´¡"NOR WHT"ï½žï½žï½žï½žï½žï½ž"NOR"çœ‹æˆ‘æ ä¸Šå¼€èŠ±ã€\n\n",me); break;
 		}
 		who["Mj"]=do_delete_Mj(who["Mj"],str,1);
 		sort_data(who["OutPeng"]+=str);
 		str=List[end..end+1];
 		end-=2;
 		Ganged++;
-		message_vision("\n$N´ÓááÃæ²¹ÁËÒ»ÕÅÅÆ¡£\n\n",me);
-		tell_object(me,"Äã²¹µ½Ò»ÕÅ¡¸"HIY+do_check_num(str,0)+NOR"¡¹\n");
+		message_vision("\n$Nä»Žå¾Œé¢è¡¥äº†ä¸€å¼ ç‰Œã€‚\n\n",me);
+		tell_object(me,"ä½ è¡¥åˆ°ä¸€å¼ ã€Œ"HIY+do_check_num(str,0)+NOR"ã€\n");
 		i=0;
-		if (who["Show"]=="´úÂë") i=3;
+		if (who["Show"]=="ä»£ç ") i=3;
 		if (who["Show"]=="color") i=5;
 		who["Mj"]+=str;
 		check_flower(who);
@@ -616,12 +616,12 @@ int do_gang(string str,object me)
 		Touched=1;
 		return 1;
 	}
-	if (i < 3) return notify_fail(HIW"ÄãÊÖÖÐÒªÓÐÈýÕÅ¡¸"NOR HIY+do_check_num(str,0)+NOR HIW"¡¹²ÅÄÜ¸Ü¡£\n"NOR);
+	if (i < 3) return notify_fail(HIW"ä½ æ‰‹ä¸­è¦æœ‰ä¸‰å¼ ã€Œ"NOR HIY+do_check_num(str,0)+NOR HIW"ã€æ‰èƒ½æ ã€‚\n"NOR);
 	if (!Touched)
 	{
-		if (str!=LastDump) return notify_fail("ÕâÑùÎÞ·¨¸Ü¡£\n");
+		if (str!=LastDump) return notify_fail("è¿™æ ·æ— æ³•æ ã€‚\n");
 	}
-	else if (i < 4) return notify_fail(HIW"ÄãÊÖÖÐÒªÓÐËÄÕÅ¡¸"NOR HIY+do_check_num(str,0)+NOR HIW"¡¹²ÅÄÜ°µ¸Ü¡£\n"NOR);
+	else if (i < 4) return notify_fail(HIW"ä½ æ‰‹ä¸­è¦æœ‰å››å¼ ã€Œ"NOR HIY+do_check_num(str,0)+NOR HIW"ã€æ‰èƒ½æš—æ ã€‚\n"NOR);
 	for (i=0;i<Play;i++)
 	{
 		if (NowPlayerId[NowPlayer]==me->query("id")) break;
@@ -634,12 +634,12 @@ int do_gang(string str,object me)
 		NO_HU=0;
 		switch (random(5))
 		{
-			case 0: message_vision("\n$NÁ³ÉÏÂ¶³öÐ°¶ñµÄÐ¦ÈÝËµµÀ£º¡¸"HIR"ÈÕÒôÄ¾¹±¡«¡«"NOR HIC"¡¡¿ÚºÚ¿ÚºÚ¡«¡«"NOR"¡¹\n\n",me); break;
-			case 1: message_vision("\n$NÁ³ÉÏÂ¶³öÐ°¶ñµÄÐ¦ÈÝËµµÀ£º¡¸"HIR"ÈÕÒôÄ¾¹¤¡«¡«"NOR HIC"¡¡¿ÚºÚ¿ÚºÚ¡«¡«"NOR"¡¹\n\n",me); break;
-			case 2: message_vision("\n$NÄÚ¾ÎµÄËµµÀ£º¡¸Ï£ÍûÄãÃÇÌýµÄ²»ÊÇÕâÒ»Ö»£¬ÎÒ¡¡"HIR"ÈÕÒôÄ¾¹±¡«¡«"NOR"¡¹\n\n",me); break;
-			case 3: message_vision("\n$NÄÚ¾ÎµÄËµµÀ£º¡¸Ï£ÍûÄãÃÇÌýµÄ²»ÊÇÕâÒ»Ö»£¬ÎÒ¡¡"HIR"ÈÕÒôÄ¾¹¤¡«¡«"NOR"¡¹\n\n",me); break;
-			case 4: message_vision("\n$N¾ªÑÈµÄ½ÐµÀ£º¡¸"MAG"¿Ú¹ç¿ÚºÏ£¡"NOR"ÎÒ¶àÒ»Ì¨£¡"HIR"¡¡ÈÕÒôÄ¾¹±¡«¡«"NOR"¡¹\n\n",me); break;
-			case 5: message_vision("\n$N¾ªÑÈµÄ½ÐµÀ£º¡¸"MAG"¿Ú¹ç¿ÚºÏ£¡"NOR"ÎÒ¶àÒ»Ì¨£¡"HIR"¡¡ÈÕÒôÄ¾¹¤¡«¡«"NOR"¡¹\n\n",me); break;
+			case 0: message_vision("\n$Nè„¸ä¸Šéœ²å‡ºé‚ªæ¶çš„ç¬‘å®¹è¯´é“ï¼šã€Œ"HIR"æ—¥éŸ³æœ¨è´¡ï½žï½ž"NOR HIC"ã€€å£é»‘å£é»‘ï½žï½ž"NOR"ã€\n\n",me); break;
+			case 1: message_vision("\n$Nè„¸ä¸Šéœ²å‡ºé‚ªæ¶çš„ç¬‘å®¹è¯´é“ï¼šã€Œ"HIR"æ—¥éŸ³æœ¨å·¥ï½žï½ž"NOR HIC"ã€€å£é»‘å£é»‘ï½žï½ž"NOR"ã€\n\n",me); break;
+			case 2: message_vision("\n$Nå†…ç–šçš„è¯´é“ï¼šã€Œå¸Œæœ›ä½ ä»¬å¬çš„ä¸æ˜¯è¿™ä¸€åªï¼Œæˆ‘ã€€"HIR"æ—¥éŸ³æœ¨è´¡ï½žï½ž"NOR"ã€\n\n",me); break;
+			case 3: message_vision("\n$Nå†…ç–šçš„è¯´é“ï¼šã€Œå¸Œæœ›ä½ ä»¬å¬çš„ä¸æ˜¯è¿™ä¸€åªï¼Œæˆ‘ã€€"HIR"æ—¥éŸ³æœ¨å·¥ï½žï½ž"NOR"ã€\n\n",me); break;
+			case 4: message_vision("\n$NæƒŠè®¶çš„å«é“ï¼šã€Œ"MAG"å£åœ­å£åˆï¼"NOR"æˆ‘å¤šä¸€å°ï¼"HIR"ã€€æ—¥éŸ³æœ¨è´¡ï½žï½ž"NOR"ã€\n\n",me); break;
+			case 5: message_vision("\n$NæƒŠè®¶çš„å«é“ï¼šã€Œ"MAG"å£åœ­å£åˆï¼"NOR"æˆ‘å¤šä¸€å°ï¼"HIR"ã€€æ—¥éŸ³æœ¨å·¥ï½žï½ž"NOR"ã€\n\n",me); break;
 		}
 		who["Mj"]=do_delete_Mj(who["Mj"],str,1);
 		for (i=0;i<4;i++) who["Out"]+="xx";
@@ -650,24 +650,24 @@ int do_gang(string str,object me)
 		NO_HU=1;
 		switch (random(5))
 		{
-			case 0: message_vision("\n$NºÜ´óÉùµÄËµµÀ£º¡¸"GRN+do_check_num(str,0)+"£¡£¡"NOR HIW+"¡¡Ä¾¹±¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 1: message_vision("\n$NºÜ´óÉùµÄËµµÀ£º¡¸"GRN+do_check_num(str,0)+"£¡£¡"NOR HIW+"¡¡Ä¾¹¤¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 2: message_vision("\n$N½ÐµÀ£º¡¸"WHT"¿Ú¹ç¿ÚÁÐ¡«¡«¡«"NOR GRN+do_check_num(str,0)+NOR"£¡£¡"HIW+"¡¡Ä¾¹±¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 3: message_vision("\n$N½ÐµÀ£º¡¸"WHT"¿Ú¹ç¿ÚÁÐ¡«¡«¡«"NOR GRN+do_check_num(str,0)+NOR"£¡£¡"HIW+"¡¡Ä¾¹¤¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 4: message_vision("\n$N¼±µÀ£º¡¸"GRN+do_check_num(str,0)+NOR"ÎÒ¡¡"HIW+"Ä¾¹±¡«¡«¡«"NOR"¡¹\n\n",me); break;
-			case 5: message_vision("\n$N¼±µÀ£º¡¸"GRN+do_check_num(str,0)+NOR"ÎÒ¡¡"HIW+"Ä¾¹¤¡«¡«¡«"NOR"¡¹\n\n",me); break;
+			case 0: message_vision("\n$Nå¾ˆå¤§å£°çš„è¯´é“ï¼šã€Œ"GRN+do_check_num(str,0)+"ï¼ï¼"NOR HIW+"ã€€æœ¨è´¡ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 1: message_vision("\n$Nå¾ˆå¤§å£°çš„è¯´é“ï¼šã€Œ"GRN+do_check_num(str,0)+"ï¼ï¼"NOR HIW+"ã€€æœ¨å·¥ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 2: message_vision("\n$Nå«é“ï¼šã€Œ"WHT"å£åœ­å£åˆ—ï½žï½žï½ž"NOR GRN+do_check_num(str,0)+NOR"ï¼ï¼"HIW+"ã€€æœ¨è´¡ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 3: message_vision("\n$Nå«é“ï¼šã€Œ"WHT"å£åœ­å£åˆ—ï½žï½žï½ž"NOR GRN+do_check_num(str,0)+NOR"ï¼ï¼"HIW+"ã€€æœ¨å·¥ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 4: message_vision("\n$Næ€¥é“ï¼šã€Œ"GRN+do_check_num(str,0)+NOR"æˆ‘ã€€"HIW+"æœ¨è´¡ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+			case 5: message_vision("\n$Næ€¥é“ï¼šã€Œ"GRN+do_check_num(str,0)+NOR"æˆ‘ã€€"HIW+"æœ¨å·¥ï½žï½žï½ž"NOR"ã€\n\n",me); break;
 		}
 		for (i=0;i<4;i++) who["Out"]+=str;
 	}
 	str=List[end..end+1];
 	end-=2;
 	Ganged++;
-	message_vision("$N´ÓááÃæ²¹ÁËÒ»ÕÅÅÆ¡£\n",me);
-	tell_object(me,"Äã²¹µ½Ò»ÕÅ¡¸"HIY+do_check_num(str,0)+NOR"¡¹\n");
+	message_vision("$Nä»Žå¾Œé¢è¡¥äº†ä¸€å¼ ç‰Œã€‚\n",me);
+	tell_object(me,"ä½ è¡¥åˆ°ä¸€å¼ ã€Œ"HIY+do_check_num(str,0)+NOR"ã€\n");
 	who["Mj"]+=str;
 	check_flower(who);
 	i=0;
-	if (who["Show"]=="´úÂë") i=3;
+	if (who["Show"]=="ä»£ç ") i=3;
 	if (who["Show"]=="color") i=5;
 	tell_object(me,show_mj(who["Mj"],i));
 	if (Touched) return 1;
@@ -684,14 +684,14 @@ varargs int do_win(string str,object me)
 
 	if (!me) me=this_player();
 	if (check_id(me->query("id"),"player")!="");
-	else return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
-	if (!Playing) return notify_fail(HIW"ÅÆ¾Ö»¹Ã»¿ªÊ¼£¡£¡\n"NOR);
-	if (NO_HU || LastDumpId==me->query("id")) return notify_fail(HIW"ÕâÑù²»ÄÜºúÅÆ¡£\n"NOR);
-	if (LastDump==""&&Touched) message_vision("\n$N´ó½Ð£º¡¸"WHT"Ìì¡«¡«¡«¡«¡«¡«ºú¡«¡«¡«¡«¡«¡«"NOR"¡¹\n\n",me);
-	else message_vision("$N´ó½Ð£º¡¸"WHT"ÎÒ¡«¡«¡«¡«ºú¡«¡«¡«¡«À²¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«"NOR"¡¹\n\n",me);
+	else return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
+	if (!Playing) return notify_fail(HIW"ç‰Œå±€è¿˜æ²¡å¼€å§‹ï¼ï¼\n"NOR);
+	if (NO_HU || LastDumpId==me->query("id")) return notify_fail(HIW"è¿™æ ·ä¸èƒ½èƒ¡ç‰Œã€‚\n"NOR);
+	if (LastDump==""&&Touched) message_vision("\n$Nå¤§å«ï¼šã€Œ"WHT"å¤©ï½žï½žï½žï½žï½žï½žèƒ¡ï½žï½žï½žï½žï½žï½ž"NOR"ã€\n\n",me);
+	else message_vision("$Nå¤§å«ï¼šã€Œ"WHT"æˆ‘ï½žï½žï½žï½žèƒ¡ï½žï½žï½žï½žå•¦ï½žï½žï½žï½žï½žï½žï½žï½žï½žï½ž"NOR"ã€\n\n",me);
 	if (Touched&&NowPlayerId[NowPlayer]==me->query("id"))
-	message_vision("$NËµµÀ£º¡¸ºú¼Ò"+me->name()+HIM"×ÔÃþ"NOR"¡«¡«¡«¡«¡«¡«¡«¡¹\n",this_object());
-	else command("say "+me->name()+"ºúÁË");
+	message_vision("$Nè¯´é“ï¼šã€Œèƒ¡å®¶"+me->name()+HIM"è‡ªæ‘¸"NOR"ï½žï½žï½žï½žï½žï½žï½žã€\n",this_object());
+	else command("say "+me->name()+"èƒ¡äº†");
 	if (me->query("id")==P1Data["Id"]) who=P1Data;
 	else if (me->query("id")==P2Data["Id"]) who=P2Data;
 	else if (me->query("id")==P3Data["Id"]) who=P3Data;
@@ -701,39 +701,39 @@ varargs int do_win(string str,object me)
 	if (!HU_F) i=0;
 	if (i)
 	{
-		Mj+="ºú¼ÒµÄ»¨ÅÆÊÇ£º\n";
+		Mj+="èƒ¡å®¶çš„èŠ±ç‰Œæ˜¯ï¼š\n";
 		Mj+=show_mj(who["OutFlower"],1);
-		if (NowPlayerId[NowPlayer]==who["Id"]) Mj+="ºú¼Ò»¨ºú×ÔÃþ\n";
+		if (NowPlayerId[NowPlayer]==who["Id"]) Mj+="èƒ¡å®¶èŠ±èƒ¡è‡ªæ‘¸\n";
 		else
 		{
 			if (sizeof(P1Data["OutFlower"])==2) LastDumpId=P1Data["Id"];
 			else if (sizeof(P2Data["OutFlower"])==2) LastDumpId=P2Data["Id"];
 			else if (sizeof(P3Data["OutFlower"])==2) LastDumpId=P3Data["Id"];
 			else if (sizeof(P4Data["OutFlower"])==2) LastDumpId=P4Data["Id"];
-			Mj+="\n»¨ÅÆ·ÅÇ¹Õß£º¡¸"HIB+LastDumpName+NOR"¡¹\n";
+			Mj+="\nèŠ±ç‰Œæ”¾æžªè€…ï¼šã€Œ"HIB+LastDumpName+NOR"ã€\n";
 		}
 	}
 	else
 	{
-		Mj+="ºú¼ÒµÄÅÆÊÇ£º\n";
+		Mj+="èƒ¡å®¶çš„ç‰Œæ˜¯ï¼š\n";
 		if (who["OutGang"]!="")
 		{
-			Mj+="°µ¸ÜµÄÓÐ£º\n";
+			Mj+="æš—æ çš„æœ‰ï¼š\n";
 			Mj+=show_mj(who["OutGang"],0);
 		}
-		Mj+=who["Id"]+"£ºÊÖÖÐµÄÅÆÓÐ£º\n";
+		Mj+=who["Id"]+"ï¼šæ‰‹ä¸­çš„ç‰Œæœ‰ï¼š\n";
 		if (!Touched)
 		{
 			who["Mj"]+=LastDump;
 			who["Mj"]=sort_data(who["Mj"]);
 			Mj+=show_mj(who["Mj"],0);
-			Mj+="ËùºúµÄÅÆÊÇ£º¡¸"HIR+do_check_num(LastDump,0)+NOR"¡¹";
-			Mj+="\n·ÅÇ¹Õß£º¡¸"HIB+LastDumpName+NOR"¡¹\n";
+			Mj+="æ‰€èƒ¡çš„ç‰Œæ˜¯ï¼šã€Œ"HIR+do_check_num(LastDump,0)+NOR"ã€";
+			Mj+="\næ”¾æžªè€…ï¼šã€Œ"HIB+LastDumpName+NOR"ã€\n";
 		}
 		else
 		{
 			Mj+=show_mj(who["Mj"],0);
-			if (str) Mj+="Ëù×ÔÃþµÄÅÆÊÇ£º¡¸"HIR+do_check_num(str,0)+NOR"¡¹\n";
+			if (str) Mj+="æ‰€è‡ªæ‘¸çš„ç‰Œæ˜¯ï¼šã€Œ"HIR+do_check_num(str,0)+NOR"ã€\n";
 		}
 	}
 	Playing=0;
@@ -741,36 +741,36 @@ varargs int do_win(string str,object me)
 	Tc="";
 	if (do_check_win(who["Mj"])==1||i==1)
 	{
-//ËãÌ¨///////////////////////////////////
+//ç®—å°///////////////////////////////////
 	mixed MjT = ([
-	"@1" : ({ "×¯¼Ò", 1 }),	"@2" : ({ "×ÔÃþ", 1 }),	"@3" : ({ "»¨ÅÆ", 1 }),	"@4" : ({ "ÃÅÇå", 1 }),
-	"@5" : ({ "¶«·ç", 1 }),	"@6" : ({ "ÄÏ·ç", 1 }),	"@7" : ({ "Î÷·ç", 1 }),	"@8" : ({ "±±·ç", 1 }),
-	"@9" : ({ "ºìÖÐ", 1 }),	"@0" : ({ "Çà·¢", 1 }),	"@a" : ({ "°×°å", 1 }),	"@G" : ({ "Ò»Ø§¿Ú", 1 }),
-	"@b" : ({ "º£µ×ÀÌÔÂ", 1 }),	"@c" : ({ "º£µ×", 1 }),	"@d" : ({ "Æ½ºú", 2 }),	"@e" : ({ "¶«·ç¶«", 2 }),
-	"@f" : ({ "ÄÏ·çÄÏ", 2 }),	"@g" : ({ "Î÷·çÎ÷", 2 }),	"@h" : ({ "±±·ç±±", 2 }),	"@i" : ({ "È«ÇóÈË", 2 }),
-	"@j" : ({ "Èý°µ¿Ì", 2 }),	"@H" : ({ "¶þØ§¿Ú", 2 }),	"@k" : ({ "Èý¸Ü×Ó", 2 }),	"@B" : ({ "´ºÏÄÇï¶¬", 2 }),
-	"@C" : ({ "Ã·À¼¾ÕÖñ", 2 }),	"@l" : ({ "ÃÅÇå×ÔÃþ", 3 }),	"@m" : ({ "ÅöÅöºú", 4 }),	"@n" : ({ "»ìÒ»É«", 4 }),
-	"@o" : ({ "Ð¡ÈýÔª", 4 }),	"@p" : ({ "ËÄ°µ¿Ì", 5 }),	"@q" : ({ "ÇåÒ»É«", 8 }),	"@r" : ({ "×ÖÒ»É«", 8 }),
-	"@s" : ({ "Æß¶Ô×Ó", 8 }),	"@t" : ({ "´óÈýÔª", 8 }),	"@u" : ({ "Îå°µ¿Ì", 8 }),	"@F" : ({ "Ð¡ËÄÏ²", 8 }),
-	"@D" : ({ "ÆßÇÀÒ»", 8 }),	"@E" : ({ "ÂÌÒ»É«", 8 }),	"@v" : ({ "´óËÄÏ²", 16 }),	"@w" : ({ "Ììºú", 16 }),
-	"@x" : ({ "µØºú", 16 }),	"@y" : ({ "ÈËºú", 16 }),	"@z" : ({ "¹úÊ¿ÎÞË«", 16 }),
-	"@A" : ({ "°ËÏÉ¹ýº£", 8 }),	"@J" : ({ "ÇåÀÏÍ·", 8 }),	"@I" : ({ "»ìÀÏÍ·", 4 }),
+	"@1" : ({ "åº„å®¶", 1 }),	"@2" : ({ "è‡ªæ‘¸", 1 }),	"@3" : ({ "èŠ±ç‰Œ", 1 }),	"@4" : ({ "é—¨æ¸…", 1 }),
+	"@5" : ({ "ä¸œé£Ž", 1 }),	"@6" : ({ "å—é£Ž", 1 }),	"@7" : ({ "è¥¿é£Ž", 1 }),	"@8" : ({ "åŒ—é£Ž", 1 }),
+	"@9" : ({ "çº¢ä¸­", 1 }),	"@0" : ({ "é’å‘", 1 }),	"@a" : ({ "ç™½æ¿", 1 }),	"@G" : ({ "ä¸€ä¸•å£", 1 }),
+	"@b" : ({ "æµ·åº•æžæœˆ", 1 }),	"@c" : ({ "æµ·åº•", 1 }),	"@d" : ({ "å¹³èƒ¡", 2 }),	"@e" : ({ "ä¸œé£Žä¸œ", 2 }),
+	"@f" : ({ "å—é£Žå—", 2 }),	"@g" : ({ "è¥¿é£Žè¥¿", 2 }),	"@h" : ({ "åŒ—é£ŽåŒ—", 2 }),	"@i" : ({ "å…¨æ±‚äºº", 2 }),
+	"@j" : ({ "ä¸‰æš—åˆ»", 2 }),	"@H" : ({ "äºŒä¸•å£", 2 }),	"@k" : ({ "ä¸‰æ å­", 2 }),	"@B" : ({ "æ˜¥å¤ç§‹å†¬", 2 }),
+	"@C" : ({ "æ¢…å…°èŠç«¹", 2 }),	"@l" : ({ "é—¨æ¸…è‡ªæ‘¸", 3 }),	"@m" : ({ "ç¢°ç¢°èƒ¡", 4 }),	"@n" : ({ "æ··ä¸€è‰²", 4 }),
+	"@o" : ({ "å°ä¸‰å…ƒ", 4 }),	"@p" : ({ "å››æš—åˆ»", 5 }),	"@q" : ({ "æ¸…ä¸€è‰²", 8 }),	"@r" : ({ "å­—ä¸€è‰²", 8 }),
+	"@s" : ({ "ä¸ƒå¯¹å­", 8 }),	"@t" : ({ "å¤§ä¸‰å…ƒ", 8 }),	"@u" : ({ "äº”æš—åˆ»", 8 }),	"@F" : ({ "å°å››å–œ", 8 }),
+	"@D" : ({ "ä¸ƒæŠ¢ä¸€", 8 }),	"@E" : ({ "ç»¿ä¸€è‰²", 8 }),	"@v" : ({ "å¤§å››å–œ", 16 }),	"@w" : ({ "å¤©èƒ¡", 16 }),
+	"@x" : ({ "åœ°èƒ¡", 16 }),	"@y" : ({ "äººèƒ¡", 16 }),	"@z" : ({ "å›½å£«æ— åŒ", 16 }),
+	"@A" : ({ "å…«ä»™è¿‡æµ·", 8 }),	"@J" : ({ "æ¸…è€å¤´", 8 }),	"@I" : ({ "æ··è€å¤´", 4 }),
 	]);//H
 	get_tc(who);
 ////////////////
-		str="\t\t\t¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô\n";
+		str="\t\t\tâ‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡\n";
 		for (i=0;i<sizeof(Tc);i+=2)
 		{
-			str+=sprintf("\t\t\t%-12s%8s Ì¨\n",MjT[Tc[i..i+1]][0],chinese_number(MjT[Tc[i..i+1]][1]));
+			str+=sprintf("\t\t\t%-12s%8s å°\n",MjT[Tc[i..i+1]][0],chinese_number(MjT[Tc[i..i+1]][1]));
 			j+=MjT[Tc[i..i+1]][1];
 		}
 		if (Count)
 		{
-			str+=sprintf("\t\t\t%-12s%8s Ì¨\n","Á¬"+chinese_number(Count)+"À­"+chinese_number(Count),chinese_number(Count*2));
+			str+=sprintf("\t\t\t%-12s%8s å°\n","è¿ž"+chinese_number(Count)+"æ‹‰"+chinese_number(Count),chinese_number(Count*2));
 			j+=Count*2;
 		}
-		str+=sprintf("\t\t\t%20s\n","×ÜÌ¨Êý£º"+chinese_number(j+5)+" Ì¨");
-		str+="\t\t\t¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô\n";
+		str+=sprintf("\t\t\t%20s\n","æ€»å°æ•°ï¼š"+chinese_number(j+5)+" å°");
+		str+="\t\t\tâ‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡\n";
 		tell_room(environment(this_player()),str);
 /////////////
 		if (!Touched)
@@ -786,8 +786,8 @@ varargs int do_win(string str,object me)
 				else
 				{
 					if (!winner=get_mjdata(LastDumpId)) winner=({0,0,0,0});
-					winner[1]-=j;//Õ½¼¨
-					winner[3]++;//·ÅÇ¹
+					winner[1]-=j;//æˆ˜ç»©
+					winner[3]++;//æ”¾æžª
 					set_mjdata(met,winner);
 				}
 				for (i=0;i<Play;i++)
@@ -798,7 +798,7 @@ varargs int do_win(string str,object me)
 					else
 					{
 						if (!winner=get_mjdata(NowPlayerId[i])) winner=({0,0,0,0});
-						winner[0]++;//¾ÖÊý
+						winner[0]++;//å±€æ•°
 						set_mjdata(met,winner);
 					}
 				}
@@ -839,7 +839,7 @@ varargs int do_win(string str,object me)
 	else
 	{
 		command("sigh "+who["Id"]);
-		message_vision(CYN"$NËµµÀ£º¡¸Íæ¼Ò ["NOR HIR+who["Id"]+NOR CYN"]¡¡¡¡ÑÔÕ§¡« ¹ÅÔÂ¡«¡«¡«¡£¡¹\n"NOR,this_object());
+		message_vision(CYN"$Nè¯´é“ï¼šã€ŒçŽ©å®¶ ["NOR HIR+who["Id"]+NOR CYN"]ã€€ã€€è¨€ä¹ï½ž å¤æœˆï½žï½žï½žã€‚ã€\n"NOR,this_object());
 		Times++;
 		Count=0;
 		if (Play==4)
@@ -872,10 +872,10 @@ varargs int do_win(string str,object me)
 				}
 			}
 ////////////////
-			str="\t\t\t¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô\n";
-			str+=sprintf("\t\t\t%-12s%8s Ì¨\n","Õ©ºú",chinese_number(j));
-			str+=sprintf("\t\t\t%20s\n","×ÜÌ¨Êý£º"+chinese_number((j+5)*3)+" Ì¨");
-			str+="\t\t\t¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô¡Ô\n";
+			str="\t\t\tâ‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡\n";
+			str+=sprintf("\t\t\t%-12s%8s å°\n","è¯ˆèƒ¡",chinese_number(j));
+			str+=sprintf("\t\t\t%20s\n","æ€»å°æ•°ï¼š"+chinese_number((j+5)*3)+" å°");
+			str+="\t\t\tâ‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡â‰¡\n";
 			tell_room(environment(this_player()),str);
 /////////////
 			set_mjdata(me,winner);
@@ -896,19 +896,19 @@ varargs int do_win(string str,object me)
 	Mj="\n  ";
 	for (i=0; i<26; i++) Mj+="  ";
 	Mj+="  \n";
-	Mj+="¡¡¡¡¡¡¡¡"HIW"ÖÐÎÄÃû×Ö¡¡ÒÑÍæ¾ÖÊý¡¡×ÜÕ½¼£¡¡×ÔÃþ´ÎÊý¡¡·ÅÇ¹´ÎÊý¡¡\n";
+	Mj+="ã€€ã€€ã€€ã€€"HIW"ä¸­æ–‡åå­—ã€€å·²çŽ©å±€æ•°ã€€æ€»æˆ˜è¿¹ã€€è‡ªæ‘¸æ¬¡æ•°ã€€æ”¾æžªæ¬¡æ•°ã€€\n";
 	for (i=0;i<Play;i++)
 	{
 		if (Play==4) winner=get_mjdata(NowPlayerId[i]);
-		Mj+=sprintf("¡¡¡¡%12s¡¡%8d¡¡%6d¡¡%8d¡¡%8d  \n",
+		Mj+=sprintf("ã€€ã€€%12sã€€%8dã€€%6dã€€%8dã€€%8d  \n",
 		NowPlayerId[i],winner[0],winner[1],winner[2],winner[3]);
 	}
 	Mj+="  ";
 	for (i=0; i<26; i++) Mj+="  ";
-	Mj+="£Ü\n";
+	Mj+="ï¼¼\n";
 	if (Play==4) tell_room(environment(this_object()),Mj);
 	room->delete_temp("mjstart", 1);
-	message_vision("\n$N"CYN"ËµµÀ£º¡¸ÅÆ¾Ö½áÊø£¬ÇëÏ´ÅÆ"NOR RED"<wash>"NOR CYN"½øÐÐÏÂÒ»¾Ö¡£¡¹\n"NOR,this_object());
+	message_vision("\n$N"CYN"è¯´é“ï¼šã€Œç‰Œå±€ç»“æŸï¼Œè¯·æ´—ç‰Œ"NOR RED"<wash>"NOR CYN"è¿›è¡Œä¸‹ä¸€å±€ã€‚ã€\n"NOR,this_object());
 	return 1;
 }
 int do_check_win(string str)
@@ -925,14 +925,14 @@ int do_check_win(string str)
 			do_check_Mj(str,"jo")&&do_check_Mj(str,"fa")&&do_check_Mj(str,"ba")&&do_check_Mj(str,"1w")&&
 			do_check_Mj(str,"9w")&&do_check_Mj(str,"1s")&&do_check_Mj(str,"9s")&&do_check_Mj(str,"1t")&&
 			do_check_Mj(str,"9t"))
-		{//ÏÈÉ¾µô13Ö»
+		{//å…ˆåˆ æŽ‰13åª
 			for (i=0;i<sizeof(Special);i+=2)
 			{
 				if (do_check_Mj(str,Special[i..i+1]))
 				{
 					str=do_delete_Mj(str,Special[i..i+1],1);
 				}
-			}//²é»¹ÓÐÃ»13Ã´ÖÐµÄÅÆÖ»
+			}//æŸ¥è¿˜æœ‰æ²¡13ä¹ˆä¸­çš„ç‰Œåª
 			for (i=0;i<sizeof(Special);i+=2)
 			{
 				if (do_check_Mj(str,Special[i..i+1]))
@@ -948,7 +948,7 @@ int do_check_win(string str)
 					{
 						str=do_delete_Mj(str,Special[i..i+1],1);
 						t++;
-						Tc+="@z";//13Ã´
+						Tc+="@z";//13ä¹ˆ
 					}
 				}
 			}
@@ -1003,7 +1003,7 @@ int do_check_win(string str)
 					else if (do_check_Mj(str,str[i..i+1])==3) t++;
 				}
 				t=1;
-				Tc+="@s";//7¶Ô×Ó
+				Tc+="@s";//7å¯¹å­
 			}
 		}
 	}
@@ -1038,9 +1038,9 @@ int do_check_win(string str)
 	if (tempW!="") W=check_hu(tempW);
 	if (tempT!="") T=check_hu(tempT);
 	if (tempS!="") S=check_hu(tempS);
-	if (K==3) Tc+="@j";//Èý°µ¿Ì
-	else if (K==4) Tc+="@p";//ËÄ°µ¿Ì
-	else if (K==5) Tc+="@u";//Îå°µ¿Ì
+	if (K==3) Tc+="@j";//ä¸‰æš—åˆ»
+	else if (K==4) Tc+="@p";//å››æš—åˆ»
+	else if (K==5) Tc+="@u";//äº”æš—åˆ»
 	if (W+T+S+t==1) return 1;
 	return 0;
 }
@@ -1050,7 +1050,7 @@ int check_hu(string strW)
 	int k,t;
 	int A,B,C,D,E,F;
 	for (i=0;i<sizeof(strW);i+=2)
-	{//ÔÙ°ÑË³×ÓÉ¾µô
+	{//å†æŠŠé¡ºå­åˆ æŽ‰
 		A=do_check_num(strW[i..i+1],2);
 		B=do_check_num(strW[i+2..i+3],2);
 		C=do_check_num(strW[i+4..i+5],2);
@@ -1070,7 +1070,7 @@ int check_hu(string strW)
 				else Tc+="@G";
 			}
 			for (j=0;j<6;j++)
-			{//É¾µôË³×Ó1 22 33 4 && 22 33 44
+			{//åˆ æŽ‰é¡ºå­1 22 33 4 && 22 33 44
 				strW=do_delete_Mj(strW,strW[i..i+1],1);
 			}
 			i=-2;
@@ -1078,14 +1078,14 @@ int check_hu(string strW)
 		else if (A+1==B&&B==C&&C==D&&D==E&&E+1==F)
 		{
 			for (j=0;j<2;j++)
-			{//É¾µôË³×Ó1 2 2 2 2 3
+			{//åˆ æŽ‰é¡ºå­1 2 2 2 2 3
 				strW=do_delete_Mj(strW,strW[i..i+1],1);
 			}
 			strW=do_delete_Mj(strW,strW[i+6..i+7],1);
 			i=-2;
 		}
 		else if (sizeof(strW) > 9 && A+1==B&&B==C&&C==D&&D+1==E)
-		{//É¾µôË³×Ó12223ÖÐµÄ1 2 3
+		{//åˆ æŽ‰é¡ºå­12223ä¸­çš„1 2 3
 			strW=do_delete_Mj(strW,strW[i..i+1],1);
 			strW=do_delete_Mj(strW,strW[i..i+1],1);
 			strW=do_delete_Mj(strW,strW[i+4..i+5],1);
@@ -1094,7 +1094,7 @@ int check_hu(string strW)
 		else if (sizeof(strW) > 9 && A==B&&B+1==C&&C+1==D&&D+1==E)
 		{
 			for (j=0;j<3;j++)
-			{//É¾µôË³×Ó11234ÖÐµÄ2 3 4
+			{//åˆ æŽ‰é¡ºå­11234ä¸­çš„2 3 4
 				strW=do_delete_Mj(strW,strW[i+4..i+5],1);
 			}
 			i=-2;
@@ -1102,7 +1102,7 @@ int check_hu(string strW)
 		else if (sizeof(strW) > 5 && A+1==B&&B+1==C)
 		{
 			for (j=0;j<3;j++)
-			{//É¾µôË³×Ó123ÖÐµÄ1 2 3
+			{//åˆ æŽ‰é¡ºå­123ä¸­çš„1 2 3
 				strW=do_delete_Mj(strW,strW[i..i+1],1);
 			}
 			i=-2;
@@ -1111,7 +1111,7 @@ int check_hu(string strW)
 	if (sizeof(strW) > 5)
 	{
 		for (i=0;i<sizeof(strW);i+=2)
-		{//ÔÙ°Ñ¿ÌÉ¾µô
+		{//å†æŠŠåˆ»åˆ æŽ‰
 			check=do_check_Mj(strW,strW[i..i+1]);
 			if (check==3)
 			{
@@ -1122,7 +1122,7 @@ int check_hu(string strW)
 		}
 	}
 	for (i=0;i<sizeof(strW);i+=2)
-	{//ÔÙ°Ñ¶ÔÉ¾µô
+	{//å†æŠŠå¯¹åˆ æŽ‰
 		check=do_check_Mj(strW,strW[i..i+1]);
 		if (check==2)
 		{
@@ -1142,14 +1142,14 @@ int do_touch(string str,object me)
 
 	if (!me) me=this_player();
 	if (check_id(me->query("id"),"player")!="");
-	else return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
-	if (!Playing) return notify_fail(HIW"ÅÆ¾Ö»¹Ã»¿ªÊ¼ÄãÒªÃþÅÆÈ¥²ØÆðÀ´°¡£¿\n"NOR);	
+	else return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
+	if (!Playing) return notify_fail(HIW"ç‰Œå±€è¿˜æ²¡å¼€å§‹ä½ è¦æ‘¸ç‰ŒåŽ»è—èµ·æ¥å•Šï¼Ÿ\n"NOR);	
 	if (me->query("id")!=NowPlayerId[NowPlayer])
 	{
-		message_vision("ÏÖÔÚÊÇÂÖµ½¡¸"HIY+NowPlayerName[NowPlayer]+NOR"¡¹\n",me);
-		return notify_fail(HIW"ÏëÍµÅÆ£¿Ã»ÄÇ÷áÈÝÒ×£¡£¡ÏÖÔÚÊÇÂÖµ½¡¸"NOR HIY+NowPlayerName[NowPlayer]+NOR HIW"¡¹²»ÊÇÄã¡£\n"NOR);
+		message_vision("çŽ°åœ¨æ˜¯è½®åˆ°ã€Œ"HIY+NowPlayerName[NowPlayer]+NOR"ã€\n",me);
+		return notify_fail(HIW"æƒ³å·ç‰Œï¼Ÿæ²¡é‚£éº½å®¹æ˜“ï¼ï¼çŽ°åœ¨æ˜¯è½®åˆ°ã€Œ"NOR HIY+NowPlayerName[NowPlayer]+NOR HIW"ã€ä¸æ˜¯ä½ ã€‚\n"NOR);
 	}
-	if (Touched) return notify_fail(HIW"´òÅÆÀ²£¡£¡\n"NOR);	
+	if (Touched) return notify_fail(HIW"æ‰“ç‰Œå•¦ï¼ï¼\n"NOR);	
 
 	NO_HU=0;
 	NO_GON=0;
@@ -1162,15 +1162,15 @@ int do_touch(string str,object me)
 		if (str=="AUTO");
 		else
 		{
-			write(HIW"\nÌýÅÆáá£¬²»¿É×Ô¼ºÃþÅÆ¡£\n"NOR);
+			write(HIW"\nå¬ç‰Œå¾Œï¼Œä¸å¯è‡ªå·±æ‘¸ç‰Œã€‚\n"NOR);
 			return 1;
 		}
 	}
 	Touched=1;
 	str=List[count..count+1];
 	count+=2;
-	message_vision("\n$NÃþÁËÒ»ÕÅÅÆ¡£\n\n",me);
-	tell_object(me,"ÄãÃþµ½Ò»ÕÅ¡¸"HIY+do_check_num(str,0)+NOR"¡¹\n");
+	message_vision("\n$Næ‘¸äº†ä¸€å¼ ç‰Œã€‚\n\n",me);
+	tell_object(me,"ä½ æ‘¸åˆ°ä¸€å¼ ã€Œ"HIY+do_check_num(str,0)+NOR"ã€\n");
 	if (who["Auto"]=="auto")
 	{
 		if (do_check_num(str,1) > 34)
@@ -1179,10 +1179,10 @@ int do_touch(string str,object me)
 			{
 				who["OutFlower"]+=str;
 				HU_F=1;
-				message_vision("\n$NËµµÀ£º¡¸"WHT"»¨ÅÆ"NOR"¡¡²¹»¨£¡£¡\n\n$NÍùááÃæ²¹ÁËÒ»ÕÅÅÆ¡£\n\n",me);
+				message_vision("\n$Nè¯´é“ï¼šã€Œ"WHT"èŠ±ç‰Œ"NOR"ã€€è¡¥èŠ±ï¼ï¼\n\n$Nå¾€å¾Œé¢è¡¥äº†ä¸€å¼ ç‰Œã€‚\n\n",me);
 				str=List[end..end+1];
 				end-=2;
-				tell_object(me,"Äã²¹µ½Ò»ÕÅ¡¸"HIY+do_check_num(str,0)+NOR"¡¹\n");
+				tell_object(me,"ä½ è¡¥åˆ°ä¸€å¼ ã€Œ"HIY+do_check_num(str,0)+NOR"ã€\n");
 				if (do_check_num(str,1) > 34) i--;
 			}
 		}
@@ -1209,7 +1209,7 @@ int do_touch(string str,object me)
 	who["Mj"]+=str;
 	check_flower(who);
 	i=0;
-	if (who["Show"]=="´úÂë") i=3;
+	if (who["Show"]=="ä»£ç ") i=3;
 	if (who["Show"]=="color") i=5;
 	tell_object(me,show_mj(who["Mj"],i));
 	return 1;
@@ -1221,26 +1221,26 @@ int do_peng(string str,object me)
  
 	if (!me) me=this_player();
 	if (check_id(me->query("id"),"player")!="");
-	else return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
-	if (!Playing) return notify_fail(HIW"ÅÆ¾Ö»¹Ã»¿ªÊ¼£¡£¡ÅöÄãµÄÍ·À²£¡£¡\n"NOR);	
-	if (Touched) return notify_fail(HIW"±ðÈËÃ»´òÅÆÄãÔõ÷áÅö¡£\n"NOR);
-	if (LastDumpId==me->query("id")) return notify_fail(HIW"ÄÇÕÅÅÆÊÇÄã×Ô¼º´òµÄ£¡\n"NOR);
+	else return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
+	if (!Playing) return notify_fail(HIW"ç‰Œå±€è¿˜æ²¡å¼€å§‹ï¼ï¼ç¢°ä½ çš„å¤´å•¦ï¼ï¼\n"NOR);	
+	if (Touched) return notify_fail(HIW"åˆ«äººæ²¡æ‰“ç‰Œä½ æ€Žéº½ç¢°ã€‚\n"NOR);
+	if (LastDumpId==me->query("id")) return notify_fail(HIW"é‚£å¼ ç‰Œæ˜¯ä½ è‡ªå·±æ‰“çš„ï¼\n"NOR);
 
 	if (!str) str=LastDump;
-	else if (str!=LastDump) return notify_fail(HIW"ÄÇÕÅ¡¸"NOR HIY+do_check_num(str,0)+HIW"¡¹ÒÑ¾­¹ýÆÚÁË¡£\n"NOR);
+	else if (str!=LastDump) return notify_fail(HIW"é‚£å¼ ã€Œ"NOR HIY+do_check_num(str,0)+HIW"ã€å·²ç»è¿‡æœŸäº†ã€‚\n"NOR);
 	if (me->query("id")==P1Data["Id"]) who=P1Data;
 	else if (me->query("id")==P2Data["Id"]) who=P2Data;
 	else if (me->query("id")==P3Data["Id"]) who=P3Data;
 	else if (me->query("id")==P4Data["Id"]) who=P4Data;
 	if (who["Auto"]=="auto") return 1;
 	i=do_check_Mj(who["Mj"],str);
-	if (i==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(str,0)+NOR HIW"¡¹ÕâÕÅÅÆÒªÔõ÷áÅö¡£\n"NOR);
-	if (i < 2) return notify_fail(HIW"ÄãÊÖÖÐÒªÓÐÁ½ÕÅ¡¸"NOR HIY+do_check_num(str,0)+NOR HIW"¡¹²ÅÄÜÅö¡£\n"NOR);
+	if (i==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(str,0)+NOR HIW"ã€è¿™å¼ ç‰Œè¦æ€Žéº½ç¢°ã€‚\n"NOR);
+	if (i < 2) return notify_fail(HIW"ä½ æ‰‹ä¸­è¦æœ‰ä¸¤å¼ ã€Œ"NOR HIY+do_check_num(str,0)+NOR HIW"ã€æ‰èƒ½ç¢°ã€‚\n"NOR);
 	switch (random(2))
 	{
-		case 0: message_vision("\n$N´ó½Ð£º¡¸"HIM+do_check_num(str,0)+"¡«¡«"NOR HIW"Ê¯²¢¡«¡«¡«"NOR"¡¹\n\n",me); break;
-		case 1: message_vision("\n$N¼±µÀ£º¡¸µÈ...µÈ...µÈÒ»ÏÂ¡«¡«¡«ÎÒ...ÎÒ...ÎÒÒª¡¡"HIW"Ê¯²¢¡¡"NOR HIM+do_check_num(str,0)+"¡«¡«¡«"NOR"¡¹\n\n",me); break;
-		case 2: message_vision("\n¾Í¿´$N¿ìÊÖµÄ°Ñ"HIM+do_check_num(str,0)+NOR"×¥µ½¸úÇ°È»ºóµÃÒâµÄËµ£º¡¸"HIW"Ê¯²¢¡«¡«¡«"NOR"¡¹\n\n",me); break;
+		case 0: message_vision("\n$Nå¤§å«ï¼šã€Œ"HIM+do_check_num(str,0)+"ï½žï½ž"NOR HIW"çŸ³å¹¶ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+		case 1: message_vision("\n$Næ€¥é“ï¼šã€Œç­‰...ç­‰...ç­‰ä¸€ä¸‹ï½žï½žï½žæˆ‘...æˆ‘...æˆ‘è¦ã€€"HIW"çŸ³å¹¶ã€€"NOR HIM+do_check_num(str,0)+"ï½žï½žï½ž"NOR"ã€\n\n",me); break;
+		case 2: message_vision("\nå°±çœ‹$Nå¿«æ‰‹çš„æŠŠ"HIM+do_check_num(str,0)+NOR"æŠ“åˆ°è·Ÿå‰ç„¶åŽå¾—æ„çš„è¯´ï¼šã€Œ"HIW"çŸ³å¹¶ï½žï½žï½ž"NOR"ã€\n\n",me); break;
 	}
 	for (i=0;i<Play;i++)
 	{
@@ -1255,7 +1255,7 @@ int do_peng(string str,object me)
 	NO_GON=1;
 	Touched=1;
 	i=0;
-	if (who["Show"]=="´úÂë") i=3;
+	if (who["Show"]=="ä»£ç ") i=3;
 	if (who["Show"]=="color") i=5;
 	tell_object(me,show_mj(who["Mj"],i));
 	return delete_last_dump(who["Id"]);
@@ -1268,42 +1268,42 @@ int do_restart(string str)
 	if (str!="mj"||str=="mj")
 	{
 		if (check_id(me->query("id"),"player")!="");
-		else return notify_fail(HIW"ÕâÅÆ¾Ö¸úÄãÃ»¹ØÏµ¡£\n"NOR);
+		else return notify_fail(HIW"è¿™ç‰Œå±€è·Ÿä½ æ²¡å…³ç³»ã€‚\n"NOR);
 	}
-	if (Times >= 1 && Times <= 3) return notify_fail(HIW"Ò»È¦¶¼Ã»´òÍê¾ÍÏëÖØÀ´£¿\n"NOR);
-	if (Times >= 12 && Times <=15) return notify_fail(HIW"¶¼±±·çÈ¦ÁË£¬´òÍêËü°É¡£\n"NOR);
+	if (Times >= 1 && Times <= 3) return notify_fail(HIW"ä¸€åœˆéƒ½æ²¡æ‰“å®Œå°±æƒ³é‡æ¥ï¼Ÿ\n"NOR);
+	if (Times >= 12 && Times <=15) return notify_fail(HIW"éƒ½åŒ—é£Žåœˆäº†ï¼Œæ‰“å®Œå®ƒå§ã€‚\n"NOR);
 
 	if (P1Data["Id"]!="")
 	{
 		who = present(P1Data["Id"], environment(this_object()));
-		who->delete_temp("´òÂé½«ÖÐ");
+		who->delete_temp("æ‰“éº»å°†ä¸­");
 		who->delete_temp("apply/short");
 		if (who->query_temp("mj/short")) me->set_temp("apply/short", me->query_temp("mj/short"));
 	}
 	if (P2Data["Id"]!="")
 	{
 		who = present(P2Data["Id"], environment(this_object()));
-		who->delete_temp("´òÂé½«ÖÐ");
+		who->delete_temp("æ‰“éº»å°†ä¸­");
 		who->delete_temp("apply/short");
 		if (who->query_temp("mj/short")) me->set_temp("apply/short", me->query_temp("mj/short"));
 	}
 	if (P3Data["Id"]!="")
 	{
 		who = present(P3Data["Id"], environment(this_object()));
-		who->delete_temp("´òÂé½«ÖÐ");
+		who->delete_temp("æ‰“éº»å°†ä¸­");
 		who->delete_temp("apply/short");
 		if (who->query_temp("mj/short")) me->set_temp("apply/short", me->query_temp("mj/short"));
 	}
 	if (P4Data["Id"]!="")
 	{
 		who = present(P4Data["Id"], environment(this_object()));
-		who->delete_temp("´òÂé½«ÖÐ");
+		who->delete_temp("æ‰“éº»å°†ä¸­");
 		who->delete_temp("apply/short");
 		if (who->query_temp("mj/short")) me->set_temp("apply/short", me->query_temp("mj/short"));
 	}
 	room->delete_temp("mjstart", 1);
-	message_vision("$N°ÑÅÆ¾ÖÖØÐÂÉè¶¨¡£\n",me);
-	message_vision("$N"CYN"ËµµÀ£ºÅÆ¾ÖÖØÐÂÉè¶¨ÇëÓÃ"NOR HIR"<jiaru>"NOR CYN"¼ÓÈëÅÆ¾Ö¡£\n"NOR,this_object());
+	message_vision("$NæŠŠç‰Œå±€é‡æ–°è®¾å®šã€‚\n",me);
+	message_vision("$N"CYN"è¯´é“ï¼šç‰Œå±€é‡æ–°è®¾å®šè¯·ç”¨"NOR HIR"<jiaru>"NOR CYN"åŠ å…¥ç‰Œå±€ã€‚\n"NOR,this_object());
 	NowPlayerId[0]="";
 	NowPlayerId[1]="";
 	NowPlayerId[2]="";
@@ -1341,20 +1341,20 @@ int wash_mj(int amount)
 	"ea" : 0,"so" : 0,"we" : 0,"no" : 0,"jo" : 0,"fa" : 0,"ba" : 0,
 	"f1" : 0,"f2" : 0,"f3" : 0,"f4" : 0,"f5" : 0,"f6" : 0,"f7" : 0,"f8" : 0
 	]);
-	if (!Play) return notify_fail(HIW"Ã»ÓÐÍæ¼ÒÎÞ·¨¿ª¾Ö»¹£¡£¡\n"NOR);	
-	if (Playing) return notify_fail(HIW"ÅÆ¾ÖÕýÔÚ½øÐÐÖÐ£¬±ðÏë»Ù¾Ö£¡£¡\n"NOR);	
-	if (Play==1) return notify_fail(HIW"Ò»¸öÈË×Ô¼º´ò£¿²»Ì«ºÃ°É¡£\n"NOR);
+	if (!Play) return notify_fail(HIW"æ²¡æœ‰çŽ©å®¶æ— æ³•å¼€å±€è¿˜ï¼ï¼\n"NOR);	
+	if (Playing) return notify_fail(HIW"ç‰Œå±€æ­£åœ¨è¿›è¡Œä¸­ï¼Œåˆ«æƒ³æ¯å±€ï¼ï¼\n"NOR);	
+	if (Play==1) return notify_fail(HIW"ä¸€ä¸ªäººè‡ªå·±æ‰“ï¼Ÿä¸å¤ªå¥½å§ã€‚\n"NOR);
 	if (Play==3)
 	{
-		command("say ÈýÈ±Ò»£¬ÔÙÕÒÒ»¸öÈËÀ´´ÕÊý°É¡£");
+		command("say ä¸‰ç¼ºä¸€ï¼Œå†æ‰¾ä¸€ä¸ªäººæ¥å‡‘æ•°å§ã€‚");
 		return 1;
 	}
 	if (Times/Play == 4)
 	{
-		command("say ËÄÈ¦ÒÑ¾­´òÍê£¬ÇëÓÃ"RED"<restart>"NOR CYN"ÆðÐÂµÄÅÆ¾Ö¡£");
+		command("say å››åœˆå·²ç»æ‰“å®Œï¼Œè¯·ç”¨"RED"<restart>"NOR CYN"èµ·æ–°çš„ç‰Œå±€ã€‚");
 		return 1;
 	}
-	if (Play==2) message_vision("Á½ÈËÍæËùÒÔ²»¼Æ·Ö¡£\n",this_object());
+	if (Play==2) message_vision("ä¸¤äººçŽ©æ‰€ä»¥ä¸è®¡åˆ†ã€‚\n",this_object());
 	P1Data["Mj"]="";
 	P1Data["OutGang"]="";
 	P1Data["Out"]="";
@@ -1442,7 +1442,7 @@ int wash_mj(int amount)
 	}
 	
 //	for (i=0;i<sizeof(X);i++) printf("%s=%d ",X[i],MjE_Data[X[i]]);
-	if (Count) countstr="[Á¬×¯"+chinese_number(Count)+"]";
+	if (Count) countstr="[è¿žåº„"+chinese_number(Count)+"]";
 	if (!Times);
 	else
 	{
@@ -1462,10 +1462,10 @@ int wash_mj(int amount)
 		}
 	}
 //	if (Times/Play == 4) Times=0;
-	if (Times/Play == 3) str=HIW+"±±·ç"+NOR;
-	if (Times/Play == 2) str=HIY+"Î÷·ç"+NOR;
-	if (Times/Play == 1) str=HIR+"ÄÏ·ç"+NOR;
-	if (Times/Play == 0) str=HIG+"¶«·ç"+NOR;
+	if (Times/Play == 3) str=HIW+"åŒ—é£Ž"+NOR;
+	if (Times/Play == 2) str=HIY+"è¥¿é£Ž"+NOR;
+	if (Times/Play == 1) str=HIR+"å—é£Ž"+NOR;
+	if (Times/Play == 0) str=HIG+"ä¸œé£Ž"+NOR;
 	i=Times;
 	i%=Play;
 	i++;
@@ -1494,47 +1494,47 @@ int wash_mj(int amount)
 	if (num1 == 6) num1 = 22;
 	if (num2 == 6) num2 = 22;
 	if (num3 == 6) num3 = 22;
-	toss = "["+str+chinese_number(i)+"]ÅÆ¾Ö¿ªÊ¼£º×¯¼Ò"HIY+NowPlayerName[0]+HIR+countstr+NOR"ÖÀ³ö÷»×Ó\n";
+	toss = "["+str+chinese_number(i)+"]ç‰Œå±€å¼€å§‹ï¼šåº„å®¶"HIY+NowPlayerName[0]+HIR+countstr+NOR"æŽ·å‡ºéª°å­\n";
 	toss +=	TossPic[0]+"\n"+TossPic[num1]+"\n"+TossPic[num1+1]+TossPic[1]+"\n"+TossPic[num1+2]+TossPic[num2]+"\n"
-			+TossPic[3]+TossPic[num2+1]+TossPic[2]+"\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+TossPic[num2+2]+TossPic[num3]+"\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡"
-			+TossPic[4]+TossPic[num3+1]+"\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"
-			+TossPic[num3+2]+"\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"+TossPic[5];
-	toss += "\n¡¸"WHT+chinese_number(i=num)+NOR "¡¹µã£¬";
+			+TossPic[3]+TossPic[num2+1]+TossPic[2]+"\nã€€ã€€ã€€ã€€ã€€ã€€ã€€"+TossPic[num2+2]+TossPic[num3]+"\nã€€ã€€ã€€ã€€ã€€ã€€ã€€"
+			+TossPic[4]+TossPic[num3+1]+"\nã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"
+			+TossPic[num3+2]+"\nã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"+TossPic[5];
+	toss += "\nã€Œ"WHT+chinese_number(i=num)+NOR "ã€ç‚¹ï¼Œ";
 	if (num == 3 || num == 7 || num == 11 || num == 15)
 	{
-		if (num == 3) toss += "¶Ô¼Ò¿ªÃÅ£¬ÊýÈý×¥¶þ¡£\n";
-		if (num == 7) toss += "¶Ô¼Ò¿ªÃÅ£¬ÊýÆß×¥¶þ¡£\n";
-		if (num == 11) toss += "¶Ô¼Ò¿ªÃÅ£¬×¥¶þÊ£Îå¡£\n";
-		if (num == 15) toss += "¶Ô¼Ò¿ªÃÅ£¬×¥¶þÊ£Ò»¡£\n";
+		if (num == 3) toss += "å¯¹å®¶å¼€é—¨ï¼Œæ•°ä¸‰æŠ“äºŒã€‚\n";
+		if (num == 7) toss += "å¯¹å®¶å¼€é—¨ï¼Œæ•°ä¸ƒæŠ“äºŒã€‚\n";
+		if (num == 11) toss += "å¯¹å®¶å¼€é—¨ï¼ŒæŠ“äºŒå‰©äº”ã€‚\n";
+		if (num == 15) toss += "å¯¹å®¶å¼€é—¨ï¼ŒæŠ“äºŒå‰©ä¸€ã€‚\n";
 		KaiMen="";
 	}
 	if (num == 4 || num == 8 || num == 12 || num == 16)
 	{
-		if (num == 4) toss += "ÉÏ¼Ò¿ªÃÅ£¬ÊýËÄ×¥¶þ¡£\n";
-		if (num == 8) toss += "ÉÏ¼Ò¿ªÃÅ£¬ÕýÖÐ×¥¶þ¡£\n";
-		if (num == 12) toss += "ÉÏ¼Ò¿ªÃÅ£¬×¥¶þÊ£ËÄ¡£\n";
-		if (num == 16) toss += "ÉÏ¼Ò¿ªÃÅ£¬×¥Î²¶þ¡£\n";
+		if (num == 4) toss += "ä¸Šå®¶å¼€é—¨ï¼Œæ•°å››æŠ“äºŒã€‚\n";
+		if (num == 8) toss += "ä¸Šå®¶å¼€é—¨ï¼Œæ­£ä¸­æŠ“äºŒã€‚\n";
+		if (num == 12) toss += "ä¸Šå®¶å¼€é—¨ï¼ŒæŠ“äºŒå‰©å››ã€‚\n";
+		if (num == 16) toss += "ä¸Šå®¶å¼€é—¨ï¼ŒæŠ“å°¾äºŒã€‚\n";
 		KaiMen="";
 	}
 	if (num == 5 || num == 9 || num == 13 || num == 17)
 	{
-		if (num == 5) toss += "×¯¼ÒÃÅÇ°¿ª£¬ÊýÎå×¥¶þ¡£\n";
-		if (num == 9) toss += "×¯¼ÒÃÅÇ°¿ª£¬×¥¶þÊ£Æß¡£\n";
-		if (num == 13) toss += "×¯¼ÒÃÅÇ°¿ª£¬×¥¶þÊ£Èý¡£\n";
-		if (num == 17) toss += "×¯¼ÒÃÅÇ°¿ª£¬×¥Î²Ò»ÉÏ¼ÒÍ·Ò»¡£\n";
+		if (num == 5) toss += "åº„å®¶é—¨å‰å¼€ï¼Œæ•°äº”æŠ“äºŒã€‚\n";
+		if (num == 9) toss += "åº„å®¶é—¨å‰å¼€ï¼ŒæŠ“äºŒå‰©ä¸ƒã€‚\n";
+		if (num == 13) toss += "åº„å®¶é—¨å‰å¼€ï¼ŒæŠ“äºŒå‰©ä¸‰ã€‚\n";
+		if (num == 17) toss += "åº„å®¶é—¨å‰å¼€ï¼ŒæŠ“å°¾ä¸€ä¸Šå®¶å¤´ä¸€ã€‚\n";
 		KaiMen="";
 	}
 	if (num == 6 || num == 10 || num == 14 || num == 18)
 	{
-		if (num == 6) toss += "ÏÂ¼Ò¿ªÃÅ£¬ÊýÁù×¥¶þ¡£\n";
-		if (num == 10) toss += "ÏÂ¼Ò¿ªÃÅ£¬×¥¶þÊ£Áù¡£\n";
-		if (num == 14) toss += "ÏÂ¼Ò¿ªÃÅ£¬×¥¶þÊ£¶þ¡£\n";
-		if (num == 18) toss += "ÏÂ¼Ò¿ªÃÅ£¬×¥×Ô¼ÒÃÅÇ°Í·¶þ¡£\n";
+		if (num == 6) toss += "ä¸‹å®¶å¼€é—¨ï¼Œæ•°å…­æŠ“äºŒã€‚\n";
+		if (num == 10) toss += "ä¸‹å®¶å¼€é—¨ï¼ŒæŠ“äºŒå‰©å…­ã€‚\n";
+		if (num == 14) toss += "ä¸‹å®¶å¼€é—¨ï¼ŒæŠ“äºŒå‰©äºŒã€‚\n";
+		if (num == 18) toss += "ä¸‹å®¶å¼€é—¨ï¼ŒæŠ“è‡ªå®¶é—¨å‰å¤´äºŒã€‚\n";
 		KaiMen="";
 	}
 	message_vision("\n"+toss+"\n",this_object());
 
-//Íæ¼ÒÈ¡ÅÆÒ»´ÎÈ¡16Ö»£ºQ
+//çŽ©å®¶å–ç‰Œä¸€æ¬¡å–16åªï¼šQ
 	if (Play>0) P1Data["Mj"]=List[0..31];
 	if (Play>1) P2Data["Mj"]=List[32..63];
 	if (Play>2) P3Data["Mj"]=List[64..95];
@@ -1546,7 +1546,7 @@ int wash_mj(int amount)
 	if (Play>3) check_flower(P4Data);
 	Playing=1;
 	room->set_temp("mjstart", 1);
-	message_vision("$N"CYN"ËµµÀ£º×¯¼Ò"NOR HIY+NowPlayerName[0]+NOR CYN"Çë×¥ÃÅÅÆ¡£\n"NOR,this_object());
+	message_vision("$N"CYN"è¯´é“ï¼šåº„å®¶"NOR HIY+NowPlayerName[0]+NOR CYN"è¯·æŠ“é—¨ç‰Œã€‚\n"NOR,this_object());
 	return 1;
 }
 int do_setmj(string str)
@@ -1563,39 +1563,39 @@ int do_setmj(string str)
 	else return 1;
 	if (!str)
 	{
-		numstr = "ÄãÉè¶¨µÄÓÐ£º\n";
-		numstr += HIM"©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·\n"NOR;
-		if (who["AutoTing"]!="") numstr += sprintf("%s©§%sÓöµ½¡¸%s%18s%s¡¹Ê±»á×Ô¶¯%s¡¸ºúÅÆ¡¹%s¡£¡¡¡¡¡¡¡¡¡¡%s©§%s\n",HIM,NOR,HIB,show_mj(who["AutoTing"],2),NOR,HIB,NOR,HIM,NOR);
-		if (who["AutoGang"]!="") numstr += sprintf("%s©§%sÓöµ½¡¸%s%18s%s¡¹Ê±»á×Ô¶¯%s¡¸¸ÜÅÆ¡¹%s¡£¡¡¡¡¡¡¡¡¡¡%s©§%s\n",HIM,NOR,HIY,show_mj(who["AutoGang"],2),NOR,HIY,NOR,HIM,NOR);
-		if (who["AutoPeng"]!="") numstr += sprintf("%s©§%sÓöµ½¡¸%s%18s%s¡¹Ê±»á×Ô¶¯%s¡¸ÅöÅÆ¡¹%s¡£¡¡¡¡¡¡¡¡¡¡%s©§%s\n",HIM,NOR,HIG,show_mj(who["AutoPeng"],2),NOR,HIG,NOR,HIM,NOR);
-		if (who["Show"]=="´úÂë") numstr += HIM"©§"NOR"ÏÔÊ¾·½Ê½Îª"HIY"¡¸´úÂë¡¹"NOR"·½Ê½¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§\n"NOR;
-		if (who["Show"]=="color") numstr += HIM"©§"NOR"ÏÔÊ¾·½Ê½Îª"HIG"¡¸²ÊÉ«¡¹"NOR"¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§\n"NOR;
-		if (who["Auto"]=="auto") numstr += HIM"©§"NOR"ÄãÉè¶¨"HIR"¡¸×Ô¶¯ÌýÅÆ¡¹"NOR"¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§\n"NOR;
-		if (who["AutoTing"]==""&&who["AutoGang"]==""&&who["AutoPeng"]==""&&who["Show"]==""&&who["Auto"]=="") numstr += HIM"©§"NOR"ÄãÃ»ÓÐÈÎºÎÉè¶¨¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§\n"NOR;
-		numstr += HIM"©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n"NOR;
+		numstr = "ä½ è®¾å®šçš„æœ‰ï¼š\n";
+		numstr += HIM"â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“\n"NOR;
+		if (who["AutoTing"]!="") numstr += sprintf("%sâ”ƒ%sé‡åˆ°ã€Œ%s%18s%sã€æ—¶ä¼šè‡ªåŠ¨%sã€Œèƒ¡ç‰Œã€%sã€‚ã€€ã€€ã€€ã€€ã€€%sâ”ƒ%s\n",HIM,NOR,HIB,show_mj(who["AutoTing"],2),NOR,HIB,NOR,HIM,NOR);
+		if (who["AutoGang"]!="") numstr += sprintf("%sâ”ƒ%sé‡åˆ°ã€Œ%s%18s%sã€æ—¶ä¼šè‡ªåŠ¨%sã€Œæ ç‰Œã€%sã€‚ã€€ã€€ã€€ã€€ã€€%sâ”ƒ%s\n",HIM,NOR,HIY,show_mj(who["AutoGang"],2),NOR,HIY,NOR,HIM,NOR);
+		if (who["AutoPeng"]!="") numstr += sprintf("%sâ”ƒ%sé‡åˆ°ã€Œ%s%18s%sã€æ—¶ä¼šè‡ªåŠ¨%sã€Œç¢°ç‰Œã€%sã€‚ã€€ã€€ã€€ã€€ã€€%sâ”ƒ%s\n",HIM,NOR,HIG,show_mj(who["AutoPeng"],2),NOR,HIG,NOR,HIM,NOR);
+		if (who["Show"]=="ä»£ç ") numstr += HIM"â”ƒ"NOR"æ˜¾ç¤ºæ–¹å¼ä¸º"HIY"ã€Œä»£ç ã€"NOR"æ–¹å¼ã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ\n"NOR;
+		if (who["Show"]=="color") numstr += HIM"â”ƒ"NOR"æ˜¾ç¤ºæ–¹å¼ä¸º"HIG"ã€Œå½©è‰²ã€"NOR"ã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ\n"NOR;
+		if (who["Auto"]=="auto") numstr += HIM"â”ƒ"NOR"ä½ è®¾å®š"HIR"ã€Œè‡ªåŠ¨å¬ç‰Œã€"NOR"ã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ\n"NOR;
+		if (who["AutoTing"]==""&&who["AutoGang"]==""&&who["AutoPeng"]==""&&who["Show"]==""&&who["Auto"]=="") numstr += HIM"â”ƒ"NOR"ä½ æ²¡æœ‰ä»»ä½•è®¾å®šã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ\n"NOR;
+		numstr += HIM"â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›\n"NOR;
 		tell_object(me,numstr);
 		return 1;
 	}
-	if (sscanf(str,"%s %s",str,numstr)!=2) return notify_fail(HIW"Ö¸Áî£ºsetmj <ting>&<gang>&<peng> <´úÂë>\n"NOR);
+	if (sscanf(str,"%s %s",str,numstr)!=2) return notify_fail(HIW"æŒ‡ä»¤ï¼šsetmj <ting>&<gang>&<peng> <ä»£ç >\n"NOR);
 	if (str=="ting")
 	{
-		if (who["Auto"]=="auto") return notify_fail(HIW"ÌýÅÆáá£¬ÎÞ·¨¸ü¸Ä»òÈ¡Ïû×Ô¶¯ºúÅÆÉè¶¨¡£\n"NOR);
+		if (who["Auto"]=="auto") return notify_fail(HIW"å¬ç‰Œå¾Œï¼Œæ— æ³•æ›´æ”¹æˆ–å–æ¶ˆè‡ªåŠ¨èƒ¡ç‰Œè®¾å®šã€‚\n"NOR);
 		if (numstr=="none")
 		{
 			who["AutoTing"]="";
-			return notify_fail(HIW"ÄãÈ¡Ïû×Ô¶¯ºúÅÆÉè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ å–æ¶ˆè‡ªåŠ¨èƒ¡ç‰Œè®¾å®šã€‚\n"NOR);
 		}
 		check=do_check_Mj(MjE,numstr);
-		if (check!=1) return notify_fail(HIW"Ã»ÓÐ¡¸"NOR HIY+numstr+NOR HIW"¡¹ÕâÖÖÅÆ¡£\n"NOR);
+		if (check!=1) return notify_fail(HIW"æ²¡æœ‰ã€Œ"NOR HIY+numstr+NOR HIW"ã€è¿™ç§ç‰Œã€‚\n"NOR);
 		check=do_check_Mj(who["AutoTing"],numstr);
 		if (check)
 		{
 			who["AutoTing"]=do_delete_Mj(who["AutoTing"],numstr,1);
-			return notify_fail(HIW"Äã"NOR HIR"É¾µôÁË"NOR HIW"Óöµ½¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹»á×Ô¶¯ºúÅÆµÄÉè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ "NOR HIR"åˆ æŽ‰äº†"NOR HIW"é‡åˆ°ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€ä¼šè‡ªåŠ¨èƒ¡ç‰Œçš„è®¾å®šã€‚\n"NOR);
 		}
 		who["AutoTing"]+=numstr;
 		Auto_Ting=1;
-		write(HIM"ÄãÉè¶¨Óöµ½¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIM"¡¹Ê±»á×Ô¶¯ºúÅÆ¡£\n"NOR);
+		write(HIM"ä½ è®¾å®šé‡åˆ°ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIM"ã€æ—¶ä¼šè‡ªåŠ¨èƒ¡ç‰Œã€‚\n"NOR);
 		return 1;
 	}
 	else if (str=="gang")
@@ -1603,20 +1603,20 @@ int do_setmj(string str)
 		if (numstr=="none")
 		{
 			who["AutoGang"]="";
-			return notify_fail(HIW"ÄãÈ¡Ïû×Ô¶¯¸ÜÅÆÉè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ å–æ¶ˆè‡ªåŠ¨æ ç‰Œè®¾å®šã€‚\n"NOR);
 		}
 		check=do_check_Mj(who["Mj"],numstr);
-		if (check==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹ÕâÕÅÅÆ¡£\n"NOR);
-		if (check < 3) return notify_fail(HIW"ÄãÊÖÖÐÒªÓÐÈýÕÅ¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹²ÅÄÜÉè¶¨¸Ü´ËÅÆ¡£\n"NOR);
+		if (check==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€è¿™å¼ ç‰Œã€‚\n"NOR);
+		if (check < 3) return notify_fail(HIW"ä½ æ‰‹ä¸­è¦æœ‰ä¸‰å¼ ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€æ‰èƒ½è®¾å®šæ æ­¤ç‰Œã€‚\n"NOR);
 		check=do_check_Mj(who["AutoGang"],numstr);
 		if (check)
 		{
 			who["AutoGang"]=do_delete_Mj(who["AutoGang"],numstr,1);
-			return notify_fail(HIW"Äã"NOR HIR"É¾µôÁË"NOR HIW"Óöµ½¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹»á×Ô¶¯¸ÜÅÆµÄÉè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ "NOR HIR"åˆ æŽ‰äº†"NOR HIW"é‡åˆ°ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€ä¼šè‡ªåŠ¨æ ç‰Œçš„è®¾å®šã€‚\n"NOR);
 		}
 		who["AutoGang"]+=numstr;
 		Auto_Gang=1;
-		write(HIM"ÄãÉè¶¨Óöµ½¡¸"NOR HIM+do_check_num(numstr,0)+NOR HIM"¡¹Ê±»á×Ô¶¯¸ÜÅÆ¡£\n"NOR);
+		write(HIM"ä½ è®¾å®šé‡åˆ°ã€Œ"NOR HIM+do_check_num(numstr,0)+NOR HIM"ã€æ—¶ä¼šè‡ªåŠ¨æ ç‰Œã€‚\n"NOR);
 		return 1;
 	}
 	else if (str=="peng")
@@ -1624,21 +1624,21 @@ int do_setmj(string str)
 		if (numstr=="none")
 		{
 			who["AutoPeng"]="";
-			return notify_fail(HIW"ÄãÈ¡Ïû×Ô¶¯ÅöÅÆÉè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ å–æ¶ˆè‡ªåŠ¨ç¢°ç‰Œè®¾å®šã€‚\n"NOR);
 		}
-		if (who["Auto"]=="auto") return notify_fail(HIW"ÌýÅÆáá£¬ÎÞ·¨ÔÙÉè¶¨×Ô¶¯ÅöÅÆ¡£\n"NOR);
+		if (who["Auto"]=="auto") return notify_fail(HIW"å¬ç‰Œå¾Œï¼Œæ— æ³•å†è®¾å®šè‡ªåŠ¨ç¢°ç‰Œã€‚\n"NOR);
 		check=do_check_Mj(who["Mj"],numstr);
-		if (check==0) return notify_fail(HIW"ÄãÃ»¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹ÕâÕÅÅÆ¡£\n"NOR);
-		if (check < 2) return notify_fail(HIW"ÄãÊÖÖÐÒªÓÐÁ½ÕÅ¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹²ÅÄÜÉè¶¨Åö´ËÅÆ¡£\n"NOR);
+		if (check==0) return notify_fail(HIW"ä½ æ²¡ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€è¿™å¼ ç‰Œã€‚\n"NOR);
+		if (check < 2) return notify_fail(HIW"ä½ æ‰‹ä¸­è¦æœ‰ä¸¤å¼ ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€æ‰èƒ½è®¾å®šç¢°æ­¤ç‰Œã€‚\n"NOR);
 		check=do_check_Mj(who["AutoPeng"],numstr);
 		if (check)
 		{
 			who["AutoPeng"]=do_delete_Mj(who["AutoPeng"],numstr,1);
-			return notify_fail(HIW"Äã"NOR HIR"É¾µôÁË"NOR HIW"Óöµ½¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIW"¡¹»á×Ô¶¯ÅöÅÆµÄÉè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ "NOR HIR"åˆ æŽ‰äº†"NOR HIW"é‡åˆ°ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIW"ã€ä¼šè‡ªåŠ¨ç¢°ç‰Œçš„è®¾å®šã€‚\n"NOR);
 		}
 		who["AutoPeng"]+=numstr;
 		Auto_Peng=1;
-		write(HIM"ÄãÉè¶¨Óöµ½¡¸"NOR HIY+do_check_num(numstr,0)+NOR HIM"¡¹Ê±»á×Ô¶¯ÅöÅÆ¡£\n"NOR);
+		write(HIM"ä½ è®¾å®šé‡åˆ°ã€Œ"NOR HIY+do_check_num(numstr,0)+NOR HIM"ã€æ—¶ä¼šè‡ªåŠ¨ç¢°ç‰Œã€‚\n"NOR);
 		return 1;
 	}
 	else if (str=="show")
@@ -1646,17 +1646,17 @@ int do_setmj(string str)
 		if (numstr=="none"||numstr=="1")
 		{
 			who["Show"]="";
-			return notify_fail(HIW"ÄãÈ¡ÏûÏÔÊ¾Éè¶¨¡£\n"NOR);
+			return notify_fail(HIW"ä½ å–æ¶ˆæ˜¾ç¤ºè®¾å®šã€‚\n"NOR);
 		}
-		if (numstr=="´úÂë"||numstr=="3")
+		if (numstr=="ä»£ç "||numstr=="3")
 		{
-			numstr="´úÂë";
-			write(HIM"ÄãÉè¶¨Ö»ÏÔÊ¾´úÂë¡£\n"NOR);
+			numstr="ä»£ç ";
+			write(HIM"ä½ è®¾å®šåªæ˜¾ç¤ºä»£ç ã€‚\n"NOR);
 		}
 		else if (numstr=="color"||numstr=="2")
 		{
 			numstr="color";
-			write(HIM"ÄãÉè¶¨²ÊÉ«ÏÔÊ¾¡£\n"NOR);
+			write(HIM"ä½ è®¾å®šå½©è‰²æ˜¾ç¤ºã€‚\n"NOR);
 		}
 		else return 1;
 		who["Show"]=numstr;
@@ -1664,19 +1664,19 @@ int do_setmj(string str)
 	}
 	else if (str=="auto")
 	{
-		if (who["Id"]!=NowPlayerId[NowPlayer]) return notify_fail(HIW"»¹Ã»ÂÖµ½Äã£¬²»ÄÜ×÷´ËÉè¶¨¡£\n"NOR);
-		if (numstr=="none")	return notify_fail(HIW"²»ÄÜÈ¡Ïû×Ô¶¯ÌýÅÆ£¬ÒªÊÇÉè¶¨´íÎóµÈ×ÅÕ©ºú°É£¡£¡¡£\n"NOR);
-		if (who["AutoTing"]=="") return notify_fail(HIW"ÇëÏÈÉè¶¨ÒªÌýµÄÅÆ¡£\n"NOR);
-		if (!Touched) return notify_fail(HIW"ÇëÏÈÃþÅÆÔÙ×÷´ËÉè¶¨¡£\n"NOR);
-		if (numstr=="ting") write(HIW"ÄãÉè¶¨×Ô¶¯ÌýÅÆ¡£\n"NOR);
+		if (who["Id"]!=NowPlayerId[NowPlayer]) return notify_fail(HIW"è¿˜æ²¡è½®åˆ°ä½ ï¼Œä¸èƒ½ä½œæ­¤è®¾å®šã€‚\n"NOR);
+		if (numstr=="none")	return notify_fail(HIW"ä¸èƒ½å–æ¶ˆè‡ªåŠ¨å¬ç‰Œï¼Œè¦æ˜¯è®¾å®šé”™è¯¯ç­‰ç€è¯ˆèƒ¡å§ï¼ï¼ã€‚\n"NOR);
+		if (who["AutoTing"]=="") return notify_fail(HIW"è¯·å…ˆè®¾å®šè¦å¬çš„ç‰Œã€‚\n"NOR);
+		if (!Touched) return notify_fail(HIW"è¯·å…ˆæ‘¸ç‰Œå†ä½œæ­¤è®¾å®šã€‚\n"NOR);
+		if (numstr=="ting") write(HIW"ä½ è®¾å®šè‡ªåŠ¨å¬ç‰Œã€‚\n"NOR);
 		else return 1;
-		message_vision("\n$N´ó½ÐÒ»Éù£º¡¸"WHT"ÎÒ¡¡¡¡¿Ú½ï¡¡¡¡À²¡«¡«¡«"NOR"¡¹\n\n",me);
+		message_vision("\n$Nå¤§å«ä¸€å£°ï¼šã€Œ"WHT"æˆ‘ã€€ã€€å£æ–¤ã€€ã€€å•¦ï½žï½žï½ž"NOR"ã€\n\n",me);
 		Auto=1;
 		who["AutoPeng"]="";
 		who["Auto"]="dump";
 		return 1;
 	}
-	else return notify_fail(HIW"Ã»ÓÐÕâÖÖÉè¶¨¡£\n"NOR);
+	else return notify_fail(HIW"æ²¡æœ‰è¿™ç§è®¾å®šã€‚\n"NOR);
 }
 int do_check_eat(string num1,string num2,string LastDump)
 {
@@ -1741,73 +1741,73 @@ string show_mj(string str,int flag)
 		else
 		{
 			size=strlen(Mj);
-			Mj1="©³";
+			Mj1="â”";
 			for (a=0;a<(size/2)-1;a++)
 			{
-				if (a%2==0) Mj1+="©¥";
-				else Mj1+="©×";
+				if (a%2==0) Mj1+="â”";
+				else Mj1+="â”³";
 			}
-			Mj1+="©·\n©§";
+			Mj1+="â”“\nâ”ƒ";
 			for (a=0;a<size-1;a++)
 			{
 				if (flag==5 || flag==6)
 				{
-					if (Mj[a+2..a+3]=="Íò") Mj1+=HIR;
-					else if (Mj[a+2..a+3]=="Í²") Mj1+=HIC;
-					else if (Mj[a+2..a+3]=="Ë÷") Mj1+=HIG;
-					else if (Mj[a+2..a+3]=="·ç") Mj1+=HIM;
-					else if (Mj[a+2..a+3]=="ÖÐ") Mj1+=HIR;
-					else if (Mj[a+2..a+3]=="·¢") Mj1+=HIG;
-					else if (Mj[a+2..a+3]=="°å") Mj1+=HIW;
-					else if (Mj[a+2..a+3]=="´º"
-							||  Mj[a+2..a+3]=="ÏÄ"
-							||  Mj[a+2..a+3]=="Çï"
-							||  Mj[a+2..a+3]=="¶¬") Mj1+=HIR;
-					else if (Mj[a+2..a+3]=="Ã·"
-							||  Mj[a+2..a+3]=="À¼"
-							||  Mj[a+2..a+3]=="Öñ"
-							||  Mj[a+2..a+3]=="¾Õ") Mj1+="";
+					if (Mj[a+2..a+3]=="ä¸‡") Mj1+=HIR;
+					else if (Mj[a+2..a+3]=="ç­’") Mj1+=HIC;
+					else if (Mj[a+2..a+3]=="ç´¢") Mj1+=HIG;
+					else if (Mj[a+2..a+3]=="é£Ž") Mj1+=HIM;
+					else if (Mj[a+2..a+3]=="ä¸­") Mj1+=HIR;
+					else if (Mj[a+2..a+3]=="å‘") Mj1+=HIG;
+					else if (Mj[a+2..a+3]=="æ¿") Mj1+=HIW;
+					else if (Mj[a+2..a+3]=="æ˜¥"
+							||  Mj[a+2..a+3]=="å¤"
+							||  Mj[a+2..a+3]=="ç§‹"
+							||  Mj[a+2..a+3]=="å†¬") Mj1+=HIR;
+					else if (Mj[a+2..a+3]=="æ¢…"
+							||  Mj[a+2..a+3]=="å…°"
+							||  Mj[a+2..a+3]=="ç«¹"
+							||  Mj[a+2..a+3]=="èŠ") Mj1+="";
 				}
 				Mj1+=Mj[a..a+1];
 				a++;a++;a++;
-				Mj1+=NOR+"©§";
+				Mj1+=NOR+"â”ƒ";
 			}
-			Mj1+="\n©§";
+			Mj1+="\nâ”ƒ";
 			for (a=2;a<size;a++)
 			{
 				if (flag==5 || flag==6)
 				{
-					if (Mj[a..a+1]=="Íò") Mj1+=RED;
-					else if (Mj[a..a+1]=="Ë÷") Mj1+=GRN;
-					else if (Mj[a..a+1]=="Í²") Mj1+=CYN;
-					else if (Mj[a..a+1]=="·ç") Mj1+=MAG;
-					else if (Mj[a..a+1]=="ÖÐ") Mj1+=HIR;
-					else if (Mj[a..a+1]=="·¢") Mj1+=HIG;
-					else if (Mj[a..a+1]=="°×") Mj1+=HIW;
-					else if (Mj[a..a+1]=="´º") Mj1+=HIG;
-					else if (Mj[a..a+1]=="ÏÄ") Mj1+=HIB;
-					else if (Mj[a..a+1]=="Çï") Mj1+=HIY;
-					else if (Mj[a..a+1]=="¶¬") Mj1+=HIW;
-					else if (Mj[a..a+1]=="Ã·") Mj1+=HIW;
-					else if (Mj[a..a+1]=="À¼") Mj1+=HIR;
-					else if (Mj[a..a+1]=="Öñ") Mj1+=HIG;
-					else if (Mj[a..a+1]=="¾Õ") Mj1+=HIY;
+					if (Mj[a..a+1]=="ä¸‡") Mj1+=RED;
+					else if (Mj[a..a+1]=="ç´¢") Mj1+=GRN;
+					else if (Mj[a..a+1]=="ç­’") Mj1+=CYN;
+					else if (Mj[a..a+1]=="é£Ž") Mj1+=MAG;
+					else if (Mj[a..a+1]=="ä¸­") Mj1+=HIR;
+					else if (Mj[a..a+1]=="å‘") Mj1+=HIG;
+					else if (Mj[a..a+1]=="ç™½") Mj1+=HIW;
+					else if (Mj[a..a+1]=="æ˜¥") Mj1+=HIG;
+					else if (Mj[a..a+1]=="å¤") Mj1+=HIB;
+					else if (Mj[a..a+1]=="ç§‹") Mj1+=HIY;
+					else if (Mj[a..a+1]=="å†¬") Mj1+=HIW;
+					else if (Mj[a..a+1]=="æ¢…") Mj1+=HIW;
+					else if (Mj[a..a+1]=="å…°") Mj1+=HIR;
+					else if (Mj[a..a+1]=="ç«¹") Mj1+=HIG;
+					else if (Mj[a..a+1]=="èŠ") Mj1+=HIY;
 				}
 				Mj1+=Mj[a..a+1];
 				a++;a++;a++;
-				Mj1+=NOR+"©§";
+				Mj1+=NOR+"â”ƒ";
 			}
-			Mj1+="\n©»";
+			Mj1+="\nâ”—";
 			for (a=(size/2)-1;a>0;a--)
 			{
 				if (a%2!=0)
 				{
 					if (flag==0 || flag==5) Mj1+=str[a-1..a];
-					else Mj1+="©¥";
+					else Mj1+="â”";
 				}
-				else Mj1+="©ß";
+				else Mj1+="â”»";
 			}
-			Mj1+="©¿\n";
+			Mj1+="â”›\n";
 		}
 		return Mj1;
 	}
@@ -1925,7 +1925,7 @@ int delete_last_dump(string whoId)
 	if (who["Dump"]!="") who["Dump"]=do_delete_Mj(who["Dump"],LastDump,1);
 	return 1;
 }
-//°ÑÓ¢ÎÄ×Ö×ªÎª´úÂë or ÖÐÎÄ flag 1 ¾ÍÊÇ×ªÎª´úÂë flag 2 ×ªÎª1..9
+//æŠŠè‹±æ–‡å­—è½¬ä¸ºä»£ç  or ä¸­æ–‡ flag 1 å°±æ˜¯è½¬ä¸ºä»£ç  flag 2 è½¬ä¸º1..9
 mixed do_check_num(string str,int flag)
 {
 	int number;
@@ -1978,8 +1978,8 @@ void check_flower(mapping who)
 		{
 			if (Playing)
 			{
-				message_vision("\n$NËµµÀ£º¡¸"WHT"»¨ÅÆ"NOR"¡¡²¹»¨£¡£¡\n\n$NÍùááÃæ²¹ÁËÒ»ÕÅÅÆ¡£\n\n",this_player());
-				tell_object(this_player(),"ÄãÃþµ½ÁËÒ»ÕÅ¡¸"HIY+do_check_num(List[end..end+1],0)+NOR"¡¹\n");
+				message_vision("\n$Nè¯´é“ï¼šã€Œ"WHT"èŠ±ç‰Œ"NOR"ã€€è¡¥èŠ±ï¼ï¼\n\n$Nå¾€å¾Œé¢è¡¥äº†ä¸€å¼ ç‰Œã€‚\n\n",this_player());
+				tell_object(this_player(),"ä½ æ‘¸åˆ°äº†ä¸€å¼ ã€Œ"HIY+do_check_num(List[end..end+1],0)+NOR"ã€\n");
 			}
 			HU_F=1;
 			who["OutFlower"]+=temp;
@@ -2002,7 +2002,7 @@ int do_check_Mj(string datastr,string str)
 	}
 	return check;
 }
-string do_delete_Mj(string datastr,string str,int amount)//°ÑÄ³ÅÆÈ¥µô
+string do_delete_Mj(string datastr,string str,int amount)//æŠŠæŸç‰ŒåŽ»æŽ‰
 {
 	int size=strlen(datastr),check;
 	string temp="";
@@ -2055,22 +2055,22 @@ int do_look(string arg)
 	else return 0;
 	if (arg=="table")
 	{
-		Mj = HIM"Ò»ÕÅÂé½«×À¡£\n\n"NOR;
+		Mj = HIM"ä¸€å¼ éº»å°†æ¡Œã€‚\n\n"NOR;
 		if (Playing)
 		{
-			Mj += LookP+"ÕýÈÏÕæµÄ×øÔÚÄÇ´òÅÆ\n";
-			Mj += "»¹Ê£ÏÂ"+sprintf("¡¸%s¡¹",chinese_number((end-count-16-Ganged)/2))+"Ö»ÅÆ¾ÍÁ÷¾ÖÁË¡£\n";
-			if (LastDump!="") Mj += LastDumpName+"¸Õ¸Õ´ò³öÁË"+show_mj(LastDump,2)+"\n";
-			if (Count) Mj += NowPlayerId[0]+"£ºÁ¬×¯"+chinese_number(Count)+"\n";
-			if (P1Data["Out"]=="" && P1Data["OutPeng"]=="") p1o=HIY+"ÃÅÇå"+NOR;
-			if (P2Data["Out"]=="" && P2Data["OutPeng"]=="") p2o=HIY+"ÃÅÇå"+NOR;
-			if (P3Data["Out"]=="" && P3Data["OutPeng"]=="") p3o=HIY+"ÃÅÇå"+NOR;
-			if (P4Data["Out"]=="" && P4Data["OutPeng"]=="") p4o=HIY+"ÃÅÇå"+NOR;
-			Mj += "1.¶«¼ÒÊÇ£º"+NowPlayerName[0]+p1o+"\n2.ÄÏ¼ÒÊÇ£º"+NowPlayerName[1]+p2o+"\n";
-			Mj += "3.Î÷¼ÒÊÇ£º"+NowPlayerName[2]+p3o+"\n4.±±¼ÒÊÇ£º"+NowPlayerName[3]+p4o+"\n";
+			Mj += LookP+"æ­£è®¤çœŸçš„ååœ¨é‚£æ‰“ç‰Œ\n";
+			Mj += "è¿˜å‰©ä¸‹"+sprintf("ã€Œ%sã€",chinese_number((end-count-16-Ganged)/2))+"åªç‰Œå°±æµå±€äº†ã€‚\n";
+			if (LastDump!="") Mj += LastDumpName+"åˆšåˆšæ‰“å‡ºäº†"+show_mj(LastDump,2)+"\n";
+			if (Count) Mj += NowPlayerId[0]+"ï¼šè¿žåº„"+chinese_number(Count)+"\n";
+			if (P1Data["Out"]=="" && P1Data["OutPeng"]=="") p1o=HIY+"é—¨æ¸…"+NOR;
+			if (P2Data["Out"]=="" && P2Data["OutPeng"]=="") p2o=HIY+"é—¨æ¸…"+NOR;
+			if (P3Data["Out"]=="" && P3Data["OutPeng"]=="") p3o=HIY+"é—¨æ¸…"+NOR;
+			if (P4Data["Out"]=="" && P4Data["OutPeng"]=="") p4o=HIY+"é—¨æ¸…"+NOR;
+			Mj += "1.ä¸œå®¶æ˜¯ï¼š"+NowPlayerName[0]+p1o+"\n2.å—å®¶æ˜¯ï¼š"+NowPlayerName[1]+p2o+"\n";
+			Mj += "3.è¥¿å®¶æ˜¯ï¼š"+NowPlayerName[2]+p3o+"\n4.åŒ—å®¶æ˜¯ï¼š"+NowPlayerName[3]+p4o+"\n";
 		}
-		else if (NowPlayerId[0]!="") Mj += LookP+"ÕýÔÚµÈÈË´òÅÆ\n";
-		else Mj += "×ÀÇ°¿Õµ´µ´µÄ£¬Äã¿ÉÒÔ¼ÓÈë(jiaru)ÅÆ¾Ö¡£\n";
+		else if (NowPlayerId[0]!="") Mj += LookP+"æ­£åœ¨ç­‰äººæ‰“ç‰Œ\n";
+		else Mj += "æ¡Œå‰ç©ºè¡è¡çš„ï¼Œä½ å¯ä»¥åŠ å…¥(jiaru)ç‰Œå±€ã€‚\n";
 		printf("%s\n",Mj);
 		return 1;
 	}
@@ -2079,27 +2079,27 @@ int do_look(string arg)
 		if (Playing)
 		{
 			i=5;
-			Mj+=P1Data["Name"]+"£º°Ú\ÔÚÍâÃæµÄÅÆÓÐ£º\n";
+			Mj+=P1Data["Name"]+"ï¼šæ‘†\åœ¨å¤–é¢çš„ç‰Œæœ‰ï¼š\n";
 			Mj+=show_mj(P1Data["Out"]+P1Data["OutPeng"]+P1Data["OutFlower"],i+1);
-			Mj+=P1Data["Name"]+"£º´ò¹ýµÄÅÆÓÐ£º\n";
+			Mj+=P1Data["Name"]+"ï¼šæ‰“è¿‡çš„ç‰Œæœ‰ï¼š\n";
 			Mj+=show_mj(P1Data["Dump"],2)+"\n";
-			Mj+=P2Data["Name"]+"£º°Ú\ÔÚÍâÃæµÄÅÆÓÐ£º\n";
+			Mj+=P2Data["Name"]+"ï¼šæ‘†\åœ¨å¤–é¢çš„ç‰Œæœ‰ï¼š\n";
 			Mj+=show_mj(P2Data["Out"]+P2Data["OutPeng"]+P2Data["OutFlower"],i+1);
-			Mj+=P2Data["Name"]+"£º´ò¹ýµÄÅÆÓÐ£º\n";
+			Mj+=P2Data["Name"]+"ï¼šæ‰“è¿‡çš„ç‰Œæœ‰ï¼š\n";
 			Mj+=show_mj(P2Data["Dump"],2)+"\n";
 			if (Play==4)
 			{
-				Mj+=P3Data["Name"]+"£º°Ú\ÔÚÍâÃæµÄÅÆÓÐ£º\n";
+				Mj+=P3Data["Name"]+"ï¼šæ‘†\åœ¨å¤–é¢çš„ç‰Œæœ‰ï¼š\n";
 				Mj+=show_mj(P3Data["Out"]+P3Data["OutPeng"]+P3Data["OutFlower"],i+1);
-				Mj+=P3Data["Name"]+"£º´ò¹ýµÄÅÆÓÐ£º\n";
+				Mj+=P3Data["Name"]+"ï¼šæ‰“è¿‡çš„ç‰Œæœ‰ï¼š\n";
 				Mj+=show_mj(P3Data["Dump"],2)+"\n";
-				Mj+=P4Data["Name"]+"£º°Ú\ÔÚÍâÃæµÄÅÆÓÐ£º\n";
+				Mj+=P4Data["Name"]+"ï¼šæ‘†\åœ¨å¤–é¢çš„ç‰Œæœ‰ï¼š\n";
 				Mj+=show_mj(P4Data["Out"]+P4Data["OutPeng"]+P4Data["OutFlower"],i+1);
-				Mj+=P4Data["Name"]+"£º´ò¹ýµÄÅÆÓÐ£º\n";
+				Mj+=P4Data["Name"]+"ï¼šæ‰“è¿‡çš„ç‰Œæœ‰ï¼š\n";
 				Mj+=show_mj(P4Data["Dump"],2)+"\n";
 			}
 		}
-		else Mj = "¶Ô²»ÆðÓÎÏ·»¹Ã»¿ªÊ¼¡£";
+		else Mj = "å¯¹ä¸èµ·æ¸¸æˆè¿˜æ²¡å¼€å§‹ã€‚";
 		printf("%s\n",Mj);
 		return 1;
 	}
@@ -2107,9 +2107,9 @@ int do_look(string arg)
 	{
 		if (Playing)
 		{
-			Mj="»¹ÓÐ¡¸"+chinese_number((end-count-16-Ganged)/2)+"¡¹Ö»ÅÆ¾ÍÁ÷¾ÖÁË\n";
+			Mj="è¿˜æœ‰ã€Œ"+chinese_number((end-count-16-Ganged)/2)+"ã€åªç‰Œå°±æµå±€äº†\n";
 		}
-		else Mj = "¶Ô²»ÆðÓÎÏ·»¹Ã»¿ªÊ¼¡£";
+		else Mj = "å¯¹ä¸èµ·æ¸¸æˆè¿˜æ²¡å¼€å§‹ã€‚";
 		printf("%s\n",Mj);
 		return 1;
 	}
@@ -2117,9 +2117,9 @@ int do_look(string arg)
 	{
 		if (Playing)
 		{
-			Mj = LastDumpName+"¸Õ¸Õ´ò³öÁË¡¸"+show_mj(LastDump,2)+"¡¹\n";
+			Mj = LastDumpName+"åˆšåˆšæ‰“å‡ºäº†ã€Œ"+show_mj(LastDump,2)+"ã€\n";
 		}
-		else Mj = "¶Ô²»ÆðÓÎÏ·»¹Ã»¿ªÊ¼¡£";
+		else Mj = "å¯¹ä¸èµ·æ¸¸æˆè¿˜æ²¡å¼€å§‹ã€‚";
 		printf("%s\n",Mj);
 		return 1;
 	}
@@ -2136,21 +2136,21 @@ int do_look(string arg)
 	if (arg=="player1"||arg=="player2"||arg=="player3"||arg=="player4")
 	{
 		i=0;
-		if (who["Show"]=="´úÂë") i=3;
+		if (who["Show"]=="ä»£ç ") i=3;
 		if (who["Show"]=="color") i=5;
 		if (!Playing||check_id(me->query("id"),"player")==""||l==1)
 		{
 			if (who["OutGang"]!="")
 			{
-				Mj+=who["Name"]+"£º°µ¸ÜµÄÅÆÓÐ£º\n";
+				Mj+=who["Name"]+"ï¼šæš—æ çš„ç‰Œæœ‰ï¼š\n";
 				Mj+=show_mj(who["OutGang"],i+1);
 			}
-			Mj+=who["Name"]+"£ºÊÖÖÐµÄÅÆÓÐ£º\n";
+			Mj+=who["Name"]+"ï¼šæ‰‹ä¸­çš„ç‰Œæœ‰ï¼š\n";
 			Mj+=show_mj(who["Mj"],i);
 		}
-		Mj+=who["Name"]+"£º°Ú\ÔÚÍâÃæµÄÅÆÓÐ£º\n";
+		Mj+=who["Name"]+"ï¼šæ‘†\åœ¨å¤–é¢çš„ç‰Œæœ‰ï¼š\n";
 		Mj+=show_mj(who["Out"]+who["OutPeng"]+who["OutFlower"],i+1);
-		Mj+=who["Name"]+"£º´ò¹ýµÄÅÆ£º\n";
+		Mj+=who["Name"]+"ï¼šæ‰“è¿‡çš„ç‰Œï¼š\n";
 		Mj+=show_mj(who["Dump"],2);
 	}
 	else if (arg=="mj")
@@ -2158,23 +2158,23 @@ int do_look(string arg)
 		if (!Playing) return 0;
 		if (who["OutGang"]!="")
 		{
-			Mj+="ÄãµÄ°µ¸ÜµÄÅÆÓÐ£º\n";
+			Mj+="ä½ çš„æš—æ çš„ç‰Œæœ‰ï¼š\n";
 			Mj+=show_mj(who["OutGang"],1);
 		}
-		if (who["Show"]=="´úÂë") i=3;
+		if (who["Show"]=="ä»£ç ") i=3;
 		if (who["Show"]=="color") i=5;
-		Mj+="Äã°Ú\ÔÚÍâÃæµÄÅÆÓÐ£º\n";
+		Mj+="ä½ æ‘†\åœ¨å¤–é¢çš„ç‰Œæœ‰ï¼š\n";
 		Mj+=show_mj(who["Out"]+who["OutPeng"]+who["OutFlower"],i+1);
-		Mj+="ÄãÊÖÖÐµÄÅÆÓÐ£º\n";
+		Mj+="ä½ æ‰‹ä¸­çš„ç‰Œæœ‰ï¼š\n";
 		Mj+=show_mj(who["Mj"],i);
-		Mj+="ÄãµÄÉè¶¨ÓÐ£º";
-		if (who["AutoTing"]!="") Mj+="Óöµ½¡¸"+show_mj(who["AutoTing"],2)+"¡¹»á×Ô¶¯ºúÅÆ¡¢";
-		if (who["AutoGang"]!="") Mj+="Óöµ½¡¸"+show_mj(who["AutoGang"],2)+"¡¹»á×Ô¶¯¸ÜÅÆ¡¢";
-		if (who["AutoPeng"]!="") Mj+="Óöµ½¡¸"+show_mj(who["AutoPeng"],2)+"¡¹»á×Ô¶¯ÅöÅÆ¡£";
-		if (who["Show"]=="´úÂë") Mj+="ÏÔÊ¾·½Ê½Îª´úÂë·½Ê½¡£";
-		if (who["Show"]=="color") Mj+="ÏÔÊ¾·½Ê½Îª²ÊÉ«¡£";
-		if (who["Auto"]=="auto") Mj+="ÄãÉè¶¨×Ô¶¯ÌýÅÆ¡£";
-		if (who["AutoTing"]==""&&who["AutoGang"]==""&&who["AutoPeng"]==""&&who["Show"]==""&&who["Auto"]=="") Mj+="ÄãÃ»ÓÐÈÎºÎÉè¶¨¡£\n";
+		Mj+="ä½ çš„è®¾å®šæœ‰ï¼š";
+		if (who["AutoTing"]!="") Mj+="é‡åˆ°ã€Œ"+show_mj(who["AutoTing"],2)+"ã€ä¼šè‡ªåŠ¨èƒ¡ç‰Œã€";
+		if (who["AutoGang"]!="") Mj+="é‡åˆ°ã€Œ"+show_mj(who["AutoGang"],2)+"ã€ä¼šè‡ªåŠ¨æ ç‰Œã€";
+		if (who["AutoPeng"]!="") Mj+="é‡åˆ°ã€Œ"+show_mj(who["AutoPeng"],2)+"ã€ä¼šè‡ªåŠ¨ç¢°ç‰Œã€‚";
+		if (who["Show"]=="ä»£ç ") Mj+="æ˜¾ç¤ºæ–¹å¼ä¸ºä»£ç æ–¹å¼ã€‚";
+		if (who["Show"]=="color") Mj+="æ˜¾ç¤ºæ–¹å¼ä¸ºå½©è‰²ã€‚";
+		if (who["Auto"]=="auto") Mj+="ä½ è®¾å®šè‡ªåŠ¨å¬ç‰Œã€‚";
+		if (who["AutoTing"]==""&&who["AutoGang"]==""&&who["AutoPeng"]==""&&who["Show"]==""&&who["Auto"]=="") Mj+="ä½ æ²¡æœ‰ä»»ä½•è®¾å®šã€‚\n";
 	}
 	else return 0;
 	printf("%s\n",Mj);
@@ -2185,91 +2185,91 @@ int do_help(string str)
 	if (str=="mj")
 	{
 write(
-"\n\nÖÐ¹úµÄ¹ú´â - Âé½«"
+"\n\nä¸­å›½çš„å›½ç²¹ - éº»å°†"
 
-"\nÂé½«£¬ÊÇÖÐ¹úÈË×îÏ²»¶ÍæµÄÒ»ÖÖÅÆÏ·¡£¹Øì¶Âé½«µÄÆðÔ´£¬ÀúÊ·²¢Ã»ÓÐÃ÷È·µÄ"
-"\n¼ÇÔØ¡£ÓÐÈËÈÏÎªÊÇÔÚ´ºÇïÕ½¹úÊ±´ú£¬Ò²ÓÐÈËÈÏÎªÊÇÃ÷³¯ÍòÀúÄê¼ä£¬¸üÓÐÈËËµ"
-"\nÂé½«ÆäÊµÊÇËÎ³¯Ë¾Âí¹â·¢Ã÷µÄ£¬¿ÉÊÇÒ²Ã»ÓÐÈ·ÊµµÄ¸ù¾Ý¡£ÆäÊµ£¬Ò»ÖÖÓÎÏ·Á÷"
-"\n´«µÄÊ±¼ä¾ÃÁË£¬Ò»¶¨¾­¹ýÁËÈô¸É³Ì¶ÈµÄ¸Ä½ø£¬ÐÞÕýÓë±ä»¯£¬ÏÊÉÙÊÇÓÉÄ³Ò»ÈË"
-"\nÒ»¿ªÊ¼¾Í·¢Ã÷³öÄ³ÖÖÓÎÏ·¡£Âé½«Ô­³Æ¡¸ÂéÈ¸¡¹£¬Ãñ¹ú³õÄêÓÉ´óÂ½´«ÈëÌ¨Íå£¬"
-"\nÂýÂýµØ´Ó¹ã¶«µÄÊ®ÈýÕÅ£¬ÑÝ±ä³ÉÌ¨ÍåµÄÊ®ÁùÕÅÍæ·¨¡£"
-"\n\nËäÈ»´òÂé½«»áÊ¹ÈËÓë¶Ä²©²úÉúÁªÏë£¬Ê²÷á¡ºÍæÎïÉ¥Ö¾¡»£¬¡ºÇã¼Òµ´²ú¡»²»ºÃ"
-"\nµÄ×ÖÑÛ£¬Ïà°é¶øÉú¡£µ«ÊÇÃæ¶ÔÈ«ÇòÊ±ÏÂ½«½üÊ®¶þÒÚÖÐ¹úÈË£¬Õâ¸öÖÐ¹úÈËÓÆ¾Ã"
-"\nµÄ´«Í³ÓéÀÖ£¬ÊµÔÚÓ¦¸ÃÌ¹È»Ãæ¶ÔÑô¹â£¬Ê¹ÓÐÐÄÈËÊ¿ÄÜ¹»ÕýÊÓËû¡£Âé½«×îÄÜ±í"
-"\nÏÖÖÐ¹úÈËµÄÖÇ»ÛµÄÒ»ÖÖÓéÀÖ£¬µÄÈ·£¬Âé½«µÄÈ·ÊÇÒ»ÖÖ¸ßÉîÄª²âµÄÑ§ÎÊ£¬±ÈÆð"
-"\nÞØÅÆ£¬Ê®ÈýÕÅ£¬÷»×ÓÀ²£¬ÒªÓÐÈ¤µÄ¶àÁË£¬Ö»ÊÇ±»Ò»Ð©²»Ð¤µÄÈËÄÃÀ´µ±³ÉÁ²²Æ"
-"\nµÄ¹¤¾ß¡£"
-"\n\nÊÔÏë£¬Ò»°ÙËÄÊ®ËÄÕÅËù·ÖÅä³öÀ´µÄÅÆ¾Ö£¬¼¸ºõÃ»ÓÐÒ»°ÑÊÇÏàÍ¬µÄ£¬ÍæÕß±ØÐë"
-"\nÔË³ïá¡á¢£¬²ÅÄÜÙùµÃ×îááµÄÊ¤Àû£¬Ò»°ã¶øÑÔ£¬ËÄÈË´òÍêÈý½«£¨£±£²È¦£©£¬¼¼"
-"\nÊõÓëÔËÆø±ÈÀýÓ¦¸ÃÊÇÈýÊ®Îå±ÈÁùÊ®Îå£¬µ«ÊÇ±ð¿´ÕâÐ¡Ð¡µÄÈýÊ®Îå£¬µ±ÔËÆø²î"
-"\n²»¶àÊ±£¬ËüÍùÍùÊÇ»ñµÃ´óÊ¤µÄ¹Ø¼ü¡£²»¹ýÒªÇÐ¼Ç£¬Ð¡¶Ä¿ÉÒÔâùÐÄÑøÉñ£¬´ó¶Ä"
-"\n»áÇã¼Òµ´²ú£¬Âé½«¿ÍÇÐÎðÁôÁ¬ì¶·½³ÇÖ®Õ½£¬¶øºöÂÔÁËÕýµ±µÄÖ°Òµ£¬²ÅÊÇÃ÷ÖÇ"
-"\nÖ®¾Ù£¬Ò²²»¹¼¸ºÁË´ËÖÖÃÀºÃµÄÅÆÏ·¡£"
-"\n\nÈç¹û´òÅÆÖÐÄã·¢ÏÖÂé½«µÄ¸ñÊ½³öÁËÎÊÌâ£¬¶øÏßÌõ»ò×ÖÌå²¢Î´¶ÔÆë£¬Çë°Ñzmud"
-"\n×ÖÐÍÉèÖÃÎªcourier£¬´óÐ¡ÉèÖÃÎªÊ®¶þ£¬½«ÄÜ½â¾öÎÊÌâ¡£"
-"\n\nÇë²ÎÔÄÏà¹Ø°ïÖúµµ°¸help playmj£¬help setmj¡£\n\n"
+"\néº»å°†ï¼Œæ˜¯ä¸­å›½äººæœ€å–œæ¬¢çŽ©çš„ä¸€ç§ç‰Œæˆã€‚å…³æ–¼éº»å°†çš„èµ·æºï¼ŒåŽ†å²å¹¶æ²¡æœ‰æ˜Žç¡®çš„"
+"\nè®°è½½ã€‚æœ‰äººè®¤ä¸ºæ˜¯åœ¨æ˜¥ç§‹æˆ˜å›½æ—¶ä»£ï¼Œä¹Ÿæœ‰äººè®¤ä¸ºæ˜¯æ˜Žæœä¸‡åŽ†å¹´é—´ï¼Œæ›´æœ‰äººè¯´"
+"\néº»å°†å…¶å®žæ˜¯å®‹æœå¸é©¬å…‰å‘æ˜Žçš„ï¼Œå¯æ˜¯ä¹Ÿæ²¡æœ‰ç¡®å®žçš„æ ¹æ®ã€‚å…¶å®žï¼Œä¸€ç§æ¸¸æˆæµ"
+"\nä¼ çš„æ—¶é—´ä¹…äº†ï¼Œä¸€å®šç»è¿‡äº†è‹¥å¹²ç¨‹åº¦çš„æ”¹è¿›ï¼Œä¿®æ­£ä¸Žå˜åŒ–ï¼Œé²œå°‘æ˜¯ç”±æŸä¸€äºº"
+"\nä¸€å¼€å§‹å°±å‘æ˜Žå‡ºæŸç§æ¸¸æˆã€‚éº»å°†åŽŸç§°ã€Œéº»é›€ã€ï¼Œæ°‘å›½åˆå¹´ç”±å¤§é™†ä¼ å…¥å°æ¹¾ï¼Œ"
+"\næ…¢æ…¢åœ°ä»Žå¹¿ä¸œçš„åä¸‰å¼ ï¼Œæ¼”å˜æˆå°æ¹¾çš„åå…­å¼ çŽ©æ³•ã€‚"
+"\n\nè™½ç„¶æ‰“éº»å°†ä¼šä½¿äººä¸ŽèµŒåšäº§ç”Ÿè”æƒ³ï¼Œä»€éº½ã€ŽçŽ©ç‰©ä¸§å¿—ã€ï¼Œã€Žå€¾å®¶è¡äº§ã€ä¸å¥½"
+"\nçš„å­—çœ¼ï¼Œç›¸ä¼´è€Œç”Ÿã€‚ä½†æ˜¯é¢å¯¹å…¨çƒæ—¶ä¸‹å°†è¿‘åäºŒäº¿ä¸­å›½äººï¼Œè¿™ä¸ªä¸­å›½äººæ‚ ä¹…"
+"\nçš„ä¼ ç»Ÿå¨±ä¹ï¼Œå®žåœ¨åº”è¯¥å¦ç„¶é¢å¯¹é˜³å…‰ï¼Œä½¿æœ‰å¿ƒäººå£«èƒ½å¤Ÿæ­£è§†ä»–ã€‚éº»å°†æœ€èƒ½è¡¨"
+"\nçŽ°ä¸­å›½äººçš„æ™ºæ…§çš„ä¸€ç§å¨±ä¹ï¼Œçš„ç¡®ï¼Œéº»å°†çš„ç¡®æ˜¯ä¸€ç§é«˜æ·±èŽ«æµ‹çš„å­¦é—®ï¼Œæ¯”èµ·"
+"\næŒ¢ç‰Œï¼Œåä¸‰å¼ ï¼Œéª°å­å•¦ï¼Œè¦æœ‰è¶£çš„å¤šäº†ï¼Œåªæ˜¯è¢«ä¸€äº›ä¸è‚–çš„äººæ‹¿æ¥å½“æˆæ•›è´¢"
+"\nçš„å·¥å…·ã€‚"
+"\n\nè¯•æƒ³ï¼Œä¸€ç™¾å››åå››å¼ æ‰€åˆ†é…å‡ºæ¥çš„ç‰Œå±€ï¼Œå‡ ä¹Žæ²¡æœ‰ä¸€æŠŠæ˜¯ç›¸åŒçš„ï¼ŒçŽ©è€…å¿…é¡»"
+"\nè¿ç­¹å¸·å¹„ï¼Œæ‰èƒ½è ƒå¾—æœ€å¾Œçš„èƒœåˆ©ï¼Œä¸€èˆ¬è€Œè¨€ï¼Œå››äººæ‰“å®Œä¸‰å°†ï¼ˆï¼‘ï¼’åœˆï¼‰ï¼ŒæŠ€"
+"\næœ¯ä¸Žè¿æ°”æ¯”ä¾‹åº”è¯¥æ˜¯ä¸‰åäº”æ¯”å…­åäº”ï¼Œä½†æ˜¯åˆ«çœ‹è¿™å°å°çš„ä¸‰åäº”ï¼Œå½“è¿æ°”å·®"
+"\nä¸å¤šæ—¶ï¼Œå®ƒå¾€å¾€æ˜¯èŽ·å¾—å¤§èƒœçš„å…³é”®ã€‚ä¸è¿‡è¦åˆ‡è®°ï¼Œå°èµŒå¯ä»¥æ€¡å¿ƒå…»ç¥žï¼Œå¤§èµŒ"
+"\nä¼šå€¾å®¶è¡äº§ï¼Œéº»å°†å®¢åˆ‡å‹¿ç•™è¿žæ–¼æ–¹åŸŽä¹‹æˆ˜ï¼Œè€Œå¿½ç•¥äº†æ­£å½“çš„èŒä¸šï¼Œæ‰æ˜¯æ˜Žæ™º"
+"\nä¹‹ä¸¾ï¼Œä¹Ÿä¸è¾œè´Ÿäº†æ­¤ç§ç¾Žå¥½çš„ç‰Œæˆã€‚"
+"\n\nå¦‚æžœæ‰“ç‰Œä¸­ä½ å‘çŽ°éº»å°†çš„æ ¼å¼å‡ºäº†é—®é¢˜ï¼Œè€Œçº¿æ¡æˆ–å­—ä½“å¹¶æœªå¯¹é½ï¼Œè¯·æŠŠzmud"
+"\nå­—åž‹è®¾ç½®ä¸ºcourierï¼Œå¤§å°è®¾ç½®ä¸ºåäºŒï¼Œå°†èƒ½è§£å†³é—®é¢˜ã€‚"
+"\n\nè¯·å‚é˜…ç›¸å…³å¸®åŠ©æ¡£æ¡ˆhelp playmjï¼Œhelp setmjã€‚\n\n"
 );
 	return 1;
 	}
 	if (str=="playmj")
 	{
 write(
-"\n\n¡¡¡¡¡¡"WHT"Ö¸¡¡¡¡¡¡Áî"NOR"¡¡¡¡¡¡¡¡¡¡¡¡¡¡"GRN"Àý¡¡¡¡¡¡¡¡¡¡¡¡×Ó"NOR"¡¡¡¡¡¡¡¡¡¡¡¡"WHT"Ëµ¡¡¡¡Ã÷"NOR
-"\n¡¡¡¡"HIM"©³©¥©¥©¥©¥©¥©×©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©×©¥©¥©¥©¥©·"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡jiaru¡¡ "HIM"©§"NOR" ------------------------------------ "HIM"©§"NOR"¼ÓÈëÅÆ¾Ö"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡look¡¡¡¡"HIM"©§"NOR" l mj¿´×Ô¼ºÅÆ£¬l all¿´ÔÚ×ÀÃæÉÏµÄÅÆ£¬¡¡"HIM"©§"NOR" ¡¡¡¡¡¡ "HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR" l end¿´Ê£ÏÂµÄÅÆÊý£¬¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR" l dumpÉÏÒ»ÕÅ±»´ò³öÈ¥µÄÅÆ¡£¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR"¡¡¡¡¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR" l player1¿´1ºÅÍæ¼Ò´ò¹ýµÄÅÆ¼°·­¿ªµÄÅÆ "HIM"©§"NOR"¡¡¡¡¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR" (ÔÚÐû²¼ÌýÅÆºóÄÜ¿´ÆäÍæ¼ÒÊÖÖÐÓµÓÐµÄÅÆ) "HIM"©§"NOR"¿´ÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡mo¡¡¡¡¡¡"HIM"©§"NOR" ------------------------------------ "HIM"©§"NOR"ÃþÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡da¡¡¡¡¡¡"HIM"©§"NOR" da <´úÂë> »ò dump <´úÂë>¡£¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR"´òÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡chi¡¡¡¡ "HIM"©§"NOR" chi <´úÂë1> <´úÂë2> »ò eat¡£¡¡¡¡¡¡¡¡ "HIM"©§"NOR"³ÔÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR" (ÒÔ´úÂë1ºÍ´úÂë2³ÔÉÏ¼ÒËù´òµÄÅÆ)¡¡¡¡¡¡ "HIM"©§"NOR"³ÔÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡peng¡¡¡¡"HIM"©§"NOR" peng »ò p ¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR"ÅöÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡gang¡¡¡¡"HIM"©§"NOR" gang »ò g£¬gang <´úÂë>(°µ¸ÜÓÃ)¡£¡¡¡¡ "HIM"©§"NOR"¸ÜÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡hu¡¡¡¡¡¡"HIM"©§"NOR" ------------------------------------ "HIM"©§"NOR"ºúÅÆ¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡setmj¡¡ "HIM"©§"NOR" Çë¶ÁÏàÓ¦ËµÃ÷µµ help setmj¡£¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"Éè¶¨²ÎÊý"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡wash¡¡¡¡"HIM"©§"NOR" ------------------------------------ "HIM"©§"NOR"ÅÆ¾Ö¿ªÊ¼"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡restart "HIM"©§"NOR" restart »ò restart mj¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR" (½øÐÐÍêÒ»¾ÖÅÆ¾Öºó×îÉÙÐèÒª´òÍêÒ»È¦)¡¡ "HIM"©§"NOR"ÖØÐÂ¿ªÊ¼"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR"¡¡¡¡¡¡¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©Ç©¥©¥©¥©¥©¥©ß©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©ß©¥©¥©¥©¥©Ï"NOR
-"\n¡¡¡¡"HIM"©§"NOR" Èç¹û´òÅÆÖÐÄã·¢ÏÖÂé½«µÄ¸ñÊ½³öÁËÎÊÌâ£¬¶øÏßÌõ»ò×ÖÌå²¢Î´¶ÔÆë£¬ "HIM"©§"NOR
-"\n¡¡¡¡"HIM"©§"NOR" Çë°Ñzmud×ÖÐÍÉèÖÃÎªcourier£¬´óÐ¡ÉèÖÃÎªÊ®¶þ£¬½«ÄÜ½â¾öÎÊÌâ¡£¡¡"HIM"©§"NOR
-"\n¡¡¡¡"HIM"©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n\n"NOR
+"\n\nã€€ã€€ã€€"WHT"æŒ‡ã€€ã€€ã€€ä»¤"NOR"ã€€ã€€ã€€ã€€ã€€ã€€ã€€"GRN"ä¾‹ã€€ã€€ã€€ã€€ã€€ã€€å­"NOR"ã€€ã€€ã€€ã€€ã€€ã€€"WHT"è¯´ã€€ã€€æ˜Ž"NOR
+"\nã€€ã€€"HIM"â”â”â”â”â”â”â”³â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”³â”â”â”â”â”“"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€jiaruã€€ "HIM"â”ƒ"NOR" ------------------------------------ "HIM"â”ƒ"NOR"åŠ å…¥ç‰Œå±€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€lookã€€ã€€"HIM"â”ƒ"NOR" l mjçœ‹è‡ªå·±ç‰Œï¼Œl allçœ‹åœ¨æ¡Œé¢ä¸Šçš„ç‰Œï¼Œã€€"HIM"â”ƒ"NOR" ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR" l endçœ‹å‰©ä¸‹çš„ç‰Œæ•°ï¼Œã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR" l dumpä¸Šä¸€å¼ è¢«æ‰“å‡ºåŽ»çš„ç‰Œã€‚ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR" l player1çœ‹1å·çŽ©å®¶æ‰“è¿‡çš„ç‰ŒåŠç¿»å¼€çš„ç‰Œ "HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR" (åœ¨å®£å¸ƒå¬ç‰ŒåŽèƒ½çœ‹å…¶çŽ©å®¶æ‰‹ä¸­æ‹¥æœ‰çš„ç‰Œ) "HIM"â”ƒ"NOR"çœ‹ç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€moã€€ã€€ã€€"HIM"â”ƒ"NOR" ------------------------------------ "HIM"â”ƒ"NOR"æ‘¸ç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€daã€€ã€€ã€€"HIM"â”ƒ"NOR" da <ä»£ç > æˆ– dump <ä»£ç >ã€‚ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR"æ‰“ç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€chiã€€ã€€ "HIM"â”ƒ"NOR" chi <ä»£ç 1> <ä»£ç 2> æˆ– eatã€‚ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR"åƒç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR" (ä»¥ä»£ç 1å’Œä»£ç 2åƒä¸Šå®¶æ‰€æ‰“çš„ç‰Œ)ã€€ã€€ã€€ "HIM"â”ƒ"NOR"åƒç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€pengã€€ã€€"HIM"â”ƒ"NOR" peng æˆ– p ã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR"ç¢°ç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€gangã€€ã€€"HIM"â”ƒ"NOR" gang æˆ– gï¼Œgang <ä»£ç >(æš—æ ç”¨)ã€‚ã€€ã€€ "HIM"â”ƒ"NOR"æ ç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€huã€€ã€€ã€€"HIM"â”ƒ"NOR" ------------------------------------ "HIM"â”ƒ"NOR"èƒ¡ç‰Œã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€setmjã€€ "HIM"â”ƒ"NOR" è¯·è¯»ç›¸åº”è¯´æ˜Žæ¡£ help setmjã€‚ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"è®¾å®šå‚æ•°"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€washã€€ã€€"HIM"â”ƒ"NOR" ------------------------------------ "HIM"â”ƒ"NOR"ç‰Œå±€å¼€å§‹"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€restart "HIM"â”ƒ"NOR" restart æˆ– restart mjã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR" (è¿›è¡Œå®Œä¸€å±€ç‰Œå±€åŽæœ€å°‘éœ€è¦æ‰“å®Œä¸€åœˆ)ã€€ "HIM"â”ƒ"NOR"é‡æ–°å¼€å§‹"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR"ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”£â”â”â”â”â”â”»â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”»â”â”â”â”â”«"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR" å¦‚æžœæ‰“ç‰Œä¸­ä½ å‘çŽ°éº»å°†çš„æ ¼å¼å‡ºäº†é—®é¢˜ï¼Œè€Œçº¿æ¡æˆ–å­—ä½“å¹¶æœªå¯¹é½ï¼Œ "HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”ƒ"NOR" è¯·æŠŠzmudå­—åž‹è®¾ç½®ä¸ºcourierï¼Œå¤§å°è®¾ç½®ä¸ºåäºŒï¼Œå°†èƒ½è§£å†³é—®é¢˜ã€‚ã€€"HIM"â”ƒ"NOR
+"\nã€€ã€€"HIM"â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›\n\n"NOR
 );
 	return 1;
 	}
 	if (str=="setmj")
 	{
 write(
-"\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"GRN"»ù  ±¾  Éè  ¶¨"NOR
-"\n ¡¡¡¡¡¡"WHT"setmj ¿ÉÓÃµÄÓÐ×Ô¶¯ºú¡¢¸Ü¡¢Åö¡¢Ìý¡¢ÏÔÊ½·½·¨¡£"NOR
-HIM"\n©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·"NOR
-HIM"\n©§"NOR"¡¡setmj peng <´úÂë>¡¡¡¡¡¡Éè¶¨×Ô¶¯ÅöÅÆ¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj peng none¡¡¡¡¡¡¡¡È¡Ïû»á×Ô¶¯ÅöÅÆÉè¶¨¡£¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï"NOR
-HIM"\n©§"NOR"¡¡setmj gang <´úÂë>¡¡¡¡¡¡Éè¶¨×Ô¶¯¸ÜÅÆ¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj gang none¡¡¡¡¡¡¡¡È¡Ïû»á×Ô¶¯¸ÜÅÆÉè¶¨¡£¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï"NOR
-HIM"\n©§"NOR"¡¡setmj ting <´úÂë>¡¡¡¡¡¡Éè¶¨»á×Ô¶¯ºúÅÆ¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj ting none¡¡¡¡¡¡¡¡È¡Ïû»á×Ô¶¯ºúÅÆÉè¶¨¡£¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï"NOR
-HIM"\n©§"NOR"¡¡setmj show ´úÂë¡¡¡¡¡¡¡¡Éè¶¨ÎªÖ»ÏÔÊ¾´úÂë¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj show color¡¡¡¡¡¡ Éè¶¨Îª²ÊÉ«Í¼ÐÎÏÔÊ¾¡£¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï"NOR
-HIM"\n©§"NOR"¡¡setmj auto ting¡¡¡¡¡¡¡¡Ðû²¼ÌýÅÆ¡£¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "HIM"©§"NOR
-HIM"\n©§¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©§"NOR
-HIM"\n©§"NOR"¡¡µ±Äã×÷³öÌýÅÆÐûÑÔºó¿É¿´ÆäËûÈý¼ÒÊÖÖÐµÄÅÆ¡£Îª·À×÷±×Ò»ÇÐ½«¡¡"HIM"©§"NOR
-HIM"\n©§"NOR"¡¡×Ô¶¯»¯£¬ÃþÅÆ£¬´òÅÆ¡£ÇÒ½«ÎÞ·¨ÔÙ³Ô£¬Åö£¬»ò¸ÜÅÆ¡£¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR
-HIM"\n©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï"NOR
-HIM"\n©§"NOR"¡¡Àý×Ó£º¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡"HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj peng 1w¡¡¡¡¡¡¡¡¡¡µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯ÅöÒ»Íò¡£¡¡ "HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj gang 1w¡¡¡¡¡¡¡¡¡¡µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯¸ÜÒ»Íò¡£¡¡ "HIM"©§"NOR
-HIM"\n©§"NOR"¡¡setmj ting 1w¡¡¡¡¡¡¡¡¡¡µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯ºúÒ»Íò¡£¡¡ "HIM"©§"NOR
-HIM"\n©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n\n"NOR
+"\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"GRN"åŸº  æœ¬  è®¾  å®š"NOR
+"\n ã€€ã€€ã€€"WHT"setmj å¯ç”¨çš„æœ‰è‡ªåŠ¨èƒ¡ã€æ ã€ç¢°ã€å¬ã€æ˜¾å¼æ–¹æ³•ã€‚"NOR
+HIM"\nâ”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj peng <ä»£ç >ã€€ã€€ã€€è®¾å®šè‡ªåŠ¨ç¢°ç‰Œã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj peng noneã€€ã€€ã€€ã€€å–æ¶ˆä¼šè‡ªåŠ¨ç¢°ç‰Œè®¾å®šã€‚ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj gang <ä»£ç >ã€€ã€€ã€€è®¾å®šè‡ªåŠ¨æ ç‰Œã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj gang noneã€€ã€€ã€€ã€€å–æ¶ˆä¼šè‡ªåŠ¨æ ç‰Œè®¾å®šã€‚ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj ting <ä»£ç >ã€€ã€€ã€€è®¾å®šä¼šè‡ªåŠ¨èƒ¡ç‰Œã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj ting noneã€€ã€€ã€€ã€€å–æ¶ˆä¼šè‡ªåŠ¨èƒ¡ç‰Œè®¾å®šã€‚ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj show ä»£ç ã€€ã€€ã€€ã€€è®¾å®šä¸ºåªæ˜¾ç¤ºä»£ç ã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj show colorã€€ã€€ã€€ è®¾å®šä¸ºå½©è‰²å›¾å½¢æ˜¾ç¤ºã€‚ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj auto tingã€€ã€€ã€€ã€€å®£å¸ƒå¬ç‰Œã€‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€å½“ä½ ä½œå‡ºå¬ç‰Œå®£è¨€åŽå¯çœ‹å…¶ä»–ä¸‰å®¶æ‰‹ä¸­çš„ç‰Œã€‚ä¸ºé˜²ä½œå¼Šä¸€åˆ‡å°†ã€€"HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€è‡ªåŠ¨åŒ–ï¼Œæ‘¸ç‰Œï¼Œæ‰“ç‰Œã€‚ä¸”å°†æ— æ³•å†åƒï¼Œç¢°ï¼Œæˆ–æ ç‰Œã€‚ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+HIM"\nâ”£â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”«"NOR
+HIM"\nâ”ƒ"NOR"ã€€ä¾‹å­ï¼šã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€"HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj peng 1wã€€ã€€ã€€ã€€ã€€å½“åˆ«äººæ‰“å‡ºä¸€ä¸‡æ—¶ä¼šè‡ªåŠ¨ç¢°ä¸€ä¸‡ã€‚ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj gang 1wã€€ã€€ã€€ã€€ã€€å½“åˆ«äººæ‰“å‡ºä¸€ä¸‡æ—¶ä¼šè‡ªåŠ¨æ ä¸€ä¸‡ã€‚ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”ƒ"NOR"ã€€setmj ting 1wã€€ã€€ã€€ã€€ã€€å½“åˆ«äººæ‰“å‡ºä¸€ä¸‡æ—¶ä¼šè‡ªåŠ¨èƒ¡ä¸€ä¸‡ã€‚ã€€ "HIM"â”ƒ"NOR
+HIM"\nâ”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›\n\n"NOR
 );
 	return 1;
 	}
@@ -2278,7 +2278,7 @@ HIM"\n©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n\n"NOR
 int to_say_rule()
 {
 write(@HELP
-¡¡¡¡ÓÎÏ·¹æÔòÒÔÌ¨ÍåÊ®ÁùÕÅ´ò·¨Îª»ù´¡¡£
+ã€€ã€€æ¸¸æˆè§„åˆ™ä»¥å°æ¹¾åå…­å¼ æ‰“æ³•ä¸ºåŸºç¡€ã€‚
 HELP);
 	return 1;
 }
@@ -2294,7 +2294,7 @@ int show_score(string str)
 	else if (str=="-lw"||str=="-wl") str="all2";
 	else if (str=="-lh"||str=="-hl") str="all3";
 	else if (str=="-ld"||str=="-dl") str="all4";
-	if (file_size(MJ_DATA)==-1) return notify_fail(HIW"×ÊÁÏµµÃ»Ã»ÓÐÕÒµ½¡£\n"NOR);
+	if (file_size(MJ_DATA)==-1) return notify_fail(HIW"èµ„æ–™æ¡£æ²¡æ²¡æœ‰æ‰¾åˆ°ã€‚\n"NOR);
 	MjData=explode(read_file(MJ_DATA),",");
 	if (str=="all1") e=2;
 	else if (str=="all2") e=3;
@@ -2322,18 +2322,18 @@ int show_score(string str)
 			}
 		}
 	}
-	show=HBBLU"\n¡¡";
-	for (i=0; i<40; i++) show+="¡¡";
-	show+=HBBLU"¡¡\n";
-	show+="¡¡"NOR HBGRN"¡¡"NOR HBGRN BLK"Ó¢ÎÄÃû×Ö¡¡"NOR HBGRN RED"©§¡¡"NOR HBGRN WHT"ÖÐÎÄÃû×Ö¡¡"NOR HBGRN RED"©§¡¡"NOR HBGRN BLK"ÒÑÍæ¾ÖÊý¡¡"NOR HBGRN RED"©§¡¡"NOR HBGRN WHT"×ÜÕ½¼£¡¡"NOR HBGRN RED"©§¡¡"NOR HBGRN BLK"×ÔÃþ´ÎÊý¡¡"NOR HBGRN RED"©§¡¡"NOR HBGRN WHT"·ÅÇ¹´ÎÊý  "NOR HBBLU"¡¡\n";
+	show=HBBLU"\nã€€";
+	for (i=0; i<40; i++) show+="ã€€";
+	show+=HBBLU"ã€€\n";
+	show+="ã€€"NOR HBGRN"ã€€"NOR HBGRN BLK"è‹±æ–‡åå­—ã€€"NOR HBGRN RED"â”ƒã€€"NOR HBGRN WHT"ä¸­æ–‡åå­—ã€€"NOR HBGRN RED"â”ƒã€€"NOR HBGRN BLK"å·²çŽ©å±€æ•°ã€€"NOR HBGRN RED"â”ƒã€€"NOR HBGRN WHT"æ€»æˆ˜è¿¹ã€€"NOR HBGRN RED"â”ƒã€€"NOR HBGRN BLK"è‡ªæ‘¸æ¬¡æ•°ã€€"NOR HBGRN RED"â”ƒã€€"NOR HBGRN WHT"æ”¾æžªæ¬¡æ•°  "NOR HBBLU"ã€€\n";
 	if (str=="all")
 	{
 		for (i=0; i<sizeof(MjData); i+=6)
 		{///
-			show+="¡¡"NOR HBGRN RED;
-			show+=sprintf("%10s¡¡©§%10s¡¡©§%10s¡¡©§%8s¡¡©§%10s¡¡©§%10s  ",
+			show+="ã€€"NOR HBGRN RED;
+			show+=sprintf("%10sã€€â”ƒ%10sã€€â”ƒ%10sã€€â”ƒ%8sã€€â”ƒ%10sã€€â”ƒ%10s  ",
 							MjData[i],MjData[i+1],MjData[i+2],MjData[i+3],MjData[i+4],MjData[i+5]);
-			show+=NOR HBBLU"¡¡\n";
+			show+=NOR HBBLU"ã€€\n";
 		}
 	}
 	else if (str=="-p"||str=="-w"||str=="-h"||str=="-d")
@@ -2342,10 +2342,10 @@ int show_score(string str)
 		else d=60;
 		for (i=0; i<d; i+=6)
 		{///
-		show+="¡¡"NOR HBGRN RED;
-		show+=sprintf("%10s¡¡©§%10s¡¡©§%10s¡¡©§%8s¡¡©§%10s¡¡©§%10s  ",
+		show+="ã€€"NOR HBGRN RED;
+		show+=sprintf("%10sã€€â”ƒ%10sã€€â”ƒ%10sã€€â”ƒ%8sã€€â”ƒ%10sã€€â”ƒ%10s  ",
 						MjData[i],MjData[i+1],MjData[i+2],MjData[i+3],MjData[i+4],MjData[i+5]);
-		show+=NOR HBBLU"¡¡\n";
+		show+=NOR HBBLU"ã€€\n";
 		}
 	}
 	else
@@ -2360,16 +2360,16 @@ int show_score(string str)
 		}
 		if (check==1)
 		{
-			show+="¡¡"NOR HBGRN RED;
-			show+=sprintf("%10s¡¡©§%10s¡¡©§%10s¡¡©§%8s¡¡©§%10s¡¡©§%10s  ",
+			show+="ã€€"NOR HBGRN RED;
+			show+=sprintf("%10sã€€â”ƒ%10sã€€â”ƒ%10sã€€â”ƒ%8sã€€â”ƒ%10sã€€â”ƒ%10s  ",
 							MjData[i],MjData[i+1],MjData[i+2],MjData[i+3],MjData[i+4],MjData[i+5]);
-			show+=NOR HBBLU"¡¡\n";
+			show+=NOR HBBLU"ã€€\n";
 		}
-		else return notify_fail(HIW"Ã»ÓÐÕâ¸öÈËµÄ×ÊÁÏ¡£\n"NOR);
+		else return notify_fail(HIW"æ²¡æœ‰è¿™ä¸ªäººçš„èµ„æ–™ã€‚\n"NOR);
 	}
-	show+=NOR HBBLU"¡¡";
-	for (i=0; i<40; i++) show+="¡¡";
-	show+=HBBLU"¡¡"NOR"\n";
+	show+=NOR HBBLU"ã€€";
+	for (i=0; i<40; i++) show+="ã€€";
+	show+=HBBLU"ã€€"NOR"\n";
 	printf("%s\n",show);
 	return 1;
 }
@@ -2446,13 +2446,13 @@ int get_tc(mapping who)
 	string str,tempW="",tempT="",tempS="",tempB="";
 	str=who["Mj"]+who["Out"]+who["OutPeng"]+who["OutGang"];
     
-	//×¯¼Ò
+	//åº„å®¶
 	if (NowPlayerId[0]==who["Id"]) Tc+="@1";
-	//ÃÅÇå&×ÔÃþ
+	//é—¨æ¸…&è‡ªæ‘¸
 	if (who["Out"]==""&&who["OutPeng"]==""&&Touched) Tc+="@l";
 	else if (who["Out"]==""&&who["OutPeng"]=="") Tc+="@4";
 	else if (Touched) Tc+="@2";
-	//È«ÇóÈË
+	//å…¨æ±‚äºº
 	if (strlen(who["Mj"]) < 5) Tc+="@i";
 	size=strlen(str);
 	while(size--)
@@ -2463,7 +2463,7 @@ int get_tc(mapping who)
 		else if (do_check_num(str[size..size+1],1) < 28) tempS+=str[size..size+1];
 		else tempB+=str[size..size+1];
 	}
-	//·çÅÆ
+	//é£Žç‰Œ
 	if (Times/Play == 0 && NowPlayerId[0]==who["Id"]&&do_check_Mj(tempB,"ea")>2) Tc+="@e";
 	else if (Times/Play == 0 && do_check_Mj(tempB,"ea") > 2
 		||  NowPlayerId[0]==who["Id"]&&do_check_Mj(tempB,"ea")>2) Tc+="@5";
@@ -2476,13 +2476,13 @@ int get_tc(mapping who)
 	if (Times/Play == 3 && NowPlayerId[3]==who["Id"]&&do_check_Mj(tempB,"no")>2) Tc+="@h";
 	else if (Times/Play == 3 && do_check_Mj(tempB,"no") > 2
 		||  NowPlayerId[3]==who["Id"]&&do_check_Mj(tempB,"no")>2) Tc+="@8";
-	//»¨ÅÆ
-	if (sizeof(who["OutFlower"]) ==16) Tc+="@A";//°ËÏÉ¹ýº£
-	else if (sizeof(who["OutFlower"]) ==14&&sizeof(P1Data["OutFlower"]+P2Data["OutFlower"]+P3Data["OutFlower"]+P4Data["OutFlower"])==16) Tc+="@D";//ÆßÇÀÒ»
+	//èŠ±ç‰Œ
+	if (sizeof(who["OutFlower"]) ==16) Tc+="@A";//å…«ä»™è¿‡æµ·
+	else if (sizeof(who["OutFlower"]) ==14&&sizeof(P1Data["OutFlower"]+P2Data["OutFlower"]+P3Data["OutFlower"]+P4Data["OutFlower"])==16) Tc+="@D";//ä¸ƒæŠ¢ä¸€
 	else if (do_check_Mj(who["OutFlower"],"f1")==1&&do_check_Mj(who["OutFlower"],"f2")==1
-		&&  do_check_Mj(who["OutFlower"],"f3")==1&&do_check_Mj(who["OutFlower"],"f4")==1) Tc+="@B";//´ºÏÄÇï¶¬
+		&&  do_check_Mj(who["OutFlower"],"f3")==1&&do_check_Mj(who["OutFlower"],"f4")==1) Tc+="@B";//æ˜¥å¤ç§‹å†¬
 	else if (do_check_Mj(who["OutFlower"],"f5")==1&&do_check_Mj(who["OutFlower"],"f6")==1
-		&&  do_check_Mj(who["OutFlower"],"f7")==1&&do_check_Mj(who["OutFlower"],"f8")==1) Tc+="@C";//Ã·À¼¾ÕÖñ
+		&&  do_check_Mj(who["OutFlower"],"f7")==1&&do_check_Mj(who["OutFlower"],"f8")==1) Tc+="@C";//æ¢…å…°èŠç«¹
 	else if (NowPlayerId[0]==who["Id"]&&do_check_Mj(who["OutFlower"],"f1")==1
 		||  NowPlayerId[0]==who["Id"]&&do_check_Mj(who["OutFlower"],"f5")==1
 		||  NowPlayerId[1]==who["Id"]&&do_check_Mj(who["OutFlower"],"f2")==1
@@ -2491,15 +2491,15 @@ int get_tc(mapping who)
 		||  NowPlayerId[2]==who["Id"]&&do_check_Mj(who["OutFlower"],"f7")==1
 		||  NowPlayerId[3]==who["Id"]&&do_check_Mj(who["OutFlower"],"f4")==1
 		||  NowPlayerId[3]==who["Id"]&&do_check_Mj(who["OutFlower"],"f8")==1) Tc+="@3";
-	//ÇåÒ»É«¸ú×ÖÒ»É«
+	//æ¸…ä¸€è‰²è·Ÿå­—ä¸€è‰²
 	if (tempW!=""&&tempT==""&&tempS==""&&tempB=="") Tc+="@q";
 	else if (tempW==""&&tempT!=""&&tempS==""&&tempB=="") Tc+="@q";
 	else if (tempW==""&&tempT==""&&tempS!=""&&tempB=="") Tc+="@q";
 	else if (tempW==""&&tempT==""&&tempS==""&&tempB!="") Tc+="@r";
-	//»ìÒ»É«
+	//æ··ä¸€è‰²
 	if (tempW!=""&&tempT==""&&tempS==""&&tempB!="") Tc+="@n";
 	else if (tempW==""&&tempT!=""&&tempS==""&&tempB!="") Tc+="@n";
-	//ÂÌÒ»É«
+	//ç»¿ä¸€è‰²
 	else if (tempW==""&&tempT==""&&tempS!=""&&tempB!="")
 	{
 		if (do_check_Mj(tempB,"fa")==3&&sizeof(tempB)==6
@@ -2508,23 +2508,23 @@ int get_tc(mapping who)
 			&& do_check_Mj(tempS,"7s")==0&& do_check_Mj(tempS,"9s")==0) Tc+="@E";
 			else Tc+="@n";
 	}
-	//´óÈýÔª
+	//å¤§ä¸‰å…ƒ
 	if (do_check_Mj(tempB,"jo") > 2
 	&&  do_check_Mj(tempB,"fa") > 2
 	&&  do_check_Mj(tempB,"ba") > 2) Tc+="@t";
-	//Ð¡ÈýÔª
+	//å°ä¸‰å…ƒ
 	else if (do_check_Mj(tempB,"jo") > 1
 	&&  do_check_Mj(tempB,"fa") > 1
 	&&  do_check_Mj(tempB,"ba") > 1) Tc+="@o";
 	else if (do_check_Mj(tempB,"jo") > 2) Tc+="@9";
 	else if (do_check_Mj(tempB,"fa") > 2) Tc+="@0";
 	else if (do_check_Mj(tempB,"ba") > 2) Tc+="@a";
-	//´óËÄÏ²
+	//å¤§å››å–œ
 	if (do_check_Mj(tempB,"ea") > 2
 	&&  do_check_Mj(tempB,"so") > 2
 	&&  do_check_Mj(tempB,"we") > 2
 	&&  do_check_Mj(tempB,"no") > 2) Tc+="@v";
-	//Ð¡ËÄÏ²
+	//å°å››å–œ
 	else if (do_check_Mj(tempB,"ea") > 1
 	&&  do_check_Mj(tempB,"so") > 1
 	&&  do_check_Mj(tempB,"we") > 1
@@ -2536,7 +2536,7 @@ int get_tc(mapping who)
 		if (do_check_Mj(str,str[i..i+1])==3) check++;
 		else if (do_check_Mj(str,str[i..i+1])==4) check++;
 	}
-	//ÅöÅöºú
+	//ç¢°ç¢°èƒ¡
 	if (check>14)
 	{
 		if (who["Out"]==""&&who["OutPeng"]==""&&do_check_Mj(Tc,"@u")==0) Tc+="@m@u";
@@ -2547,17 +2547,17 @@ int get_tc(mapping who)
 	{
 		if (do_check_num(str[i..i+1],1)!=1&&do_check_num(str[i..i+1],1)>8) check++;
 	}
-	if (check=0&&tempB!="") Tc+="@I";//»ìÀÏÍ·
-	else if (check=0&&tempB="") Tc+="@J";//ÇåÀÏÍ·
-	//Æ½ºú
+	if (check=0&&tempB!="") Tc+="@I";//æ··è€å¤´
+	else if (check=0&&tempB="") Tc+="@J";//æ¸…è€å¤´
+	//å¹³èƒ¡
 	if (tempB==""&&who["OutFlower"]==""&&check==0&&sizeof(who["AutoTing"])>3) Tc+="@d";
-	//º£µ×ÀÌÔÂ
+	//æµ·åº•æžæœˆ
 	if (count==((end-16-(Ganged*2))-2)&&Touched) Tc+="@b";
-	//º£µ×
+	//æµ·åº•
 	if (count==((end-16-(Ganged*2))-2)&&!Touched) Tc+="@c";
-	//Ììºú
+	//å¤©èƒ¡
 	if (LastDump==""&&count==(Play*2*16)+2) Tc+="@w";
-	//µØºú&ÈËºú
+	//åœ°èƒ¡&äººèƒ¡
 	printf("%d > %d\n",count,((Play*2*16)+(Play*2)));
 	if (count < ((Play*2*16)+(Play*2))
 		&&P1Data["Out"]==""&&P1Data["PengOut"]==""

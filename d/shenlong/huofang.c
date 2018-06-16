@@ -1,5 +1,5 @@
 //Cracked by Roath
-//�﷿ /d/shenlong/huofang
+//伙房 /d/shenlong/huofang
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�﷿");
+        set("short", "伙房");
         set("long", @LONG
-�����������̵Ļ﷿�����ӵ�һ���Ǹ���¯���Ա���һ����ͷ����������
-�񣬹��ڲ�֪����ʲô������������ζ�Ѿ�������ð��಻ע�ˡ�
+这里是神龙教的伙房，房子的一边是个灶炉，旁边有一个老头在往灶内添
+柴，锅内不知煮着什么东西，不过香味已经让你馋得按捺不注了。
 LONG
         );
 

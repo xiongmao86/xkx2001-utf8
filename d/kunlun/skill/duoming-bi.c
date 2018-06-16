@@ -1,16 +1,16 @@
 //Cracked by Roath
-// duoming-bi.c	¶áÃüÅÐ¹Ù±Ê
+// duoming-bi.c	å¤ºå‘½åˆ¤å®˜ç¬”
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$NÊ¹³ö¶áÃüÅÐ¹Ù±Ê£¬ÊÖÖÐ$w´ó¿ª´óãØÉ¨Ïò$nµÄ$l",
+([      "action": "$Nä½¿å‡ºå¤ºå‘½åˆ¤å®˜ç¬”ï¼Œæ‰‹ä¸­$wå¤§å¼€å¤§é˜–æ‰«å‘$nçš„$l",
         "force" : 180,
         "dodge":  -5,
         "damage": 30,
-        "damage_type": "´ìÉË",
+        "damage_type": "æŒ«ä¼¤",
         "lvl" : 0,
-        "skill_name" : "¶áÃüÅÐ¹Ù±Ê",
+        "skill_name" : "å¤ºå‘½åˆ¤å®˜ç¬”",
 ]),
 	// add more actions
 });
@@ -21,7 +21,7 @@ int valid_enable(string usage) { return (usage == "pike") || (usage == "parry")
 int valid_learn(object me)
 {
         if ((int)me->query("max_neili") < 80)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         return 1;
 }
 
@@ -47,9 +47,9 @@ int practice_skill(object me)
         object weapon;
 
         if (!objectp(weapon = me->query_temp("weapon")))
-                return notify_fail("ÄãÃ»ÓÐÎäÆ÷¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰æ­¦å™¨ã€‚\n");
         if ((int)me->query("jingli") < 50)
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·¶áÃüÅÐ¹Ù±Ê¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒå¤ºå‘½åˆ¤å®˜ç¬”ã€‚\n");
         me->receive_damage("jingli", 25);
         return 1;
 }

@@ -1,17 +1,17 @@
 //Cracked by Roath
-// wuyun.c ¸´Õæ¹ÛÎåÔÆÂ¥
+// wuyun.c å¤çœŸè§‚äº”äº‘æ¥¼
 // xQin 11/00
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "¸´Õæ¹ÛÎåÔÆÂ¥");
+	set("short", "å¤çœŸè§‚äº”äº‘æ¥¼");
 	set("long", @LONG
-¸´Õæ¹ÛÎåÔÆÂ¥¹¹ÔìÆæÌØ£¬Æä¼äÓÐÊ®¶þ¸ùÁºèÊ½»²æÖØµþ£¬ÏÂÃæ½öÓÃÒ»ÖùÖ§
-³Å£¬¼´ÓÐÃûµÄ¡°Ò»ÖùÊ®¶þÁº¡±¡£´«ËµÐþµÛÓ×Ê±ÔÚ´Ë¶ÁÊé£¬¿àÐÞËÄÊ®¶þÄêµÃÆä
-´óµÀ£¬Ô¢Ê¸Ö¾²»Óå£¬ÖÕ³É¶°ÁºÖ®²Å¡£ÔÚÕâÀï¸©î«ÈºÉ½£¬ÑÌÔÆÃÔÀë£¬±»ÓþÎªÖÐ
-¹ú¹Å½¨ÖþµÄÆæ¼£¡£
+å¤çœŸè§‚äº”äº‘æ¥¼æž„é€ å¥‡ç‰¹ï¼Œå…¶é—´æœ‰åäºŒæ ¹æ¢æž‹äº¤å‰é‡å ï¼Œä¸‹é¢ä»…ç”¨ä¸€æŸ±æ”¯
+æ’‘ï¼Œå³æœ‰åçš„â€œä¸€æŸ±åäºŒæ¢â€ã€‚ä¼ è¯´çŽ„å¸å¹¼æ—¶åœ¨æ­¤è¯»ä¹¦ï¼Œè‹¦ä¿®å››åäºŒå¹´å¾—å…¶
+å¤§é“ï¼Œå¯“çŸ¢å¿—ä¸æ¸ï¼Œç»ˆæˆæ ‹æ¢ä¹‹æ‰ã€‚åœ¨è¿™é‡Œä¿¯çž°ç¾¤å±±ï¼ŒçƒŸäº‘è¿·ç¦»ï¼Œè¢«èª‰ä¸ºä¸­
+å›½å¤å»ºç­‘çš„å¥‡è¿¹ã€‚
 LONG
 	);
         set("outdoors", "wudang");

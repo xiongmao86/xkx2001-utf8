@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Å·Ñô·å", ({ "ouyang feng", "ouyang", "feng" }));
-        set("long", "ËûÉíÐÎ¸ß´ó£¬¸ß±ÇÉîÄ¿£¬ÂúÁ³Ñ©°×¶ÌÐë£¬¸ù¸ùËÆÌú¡£\n"
-		"Ëû¼«ÉÆÊ¹¶¾£¬ºÅ³Æ¡°Î÷¶¾¡±¡£\n");
-	set("nickname","ÀÏ¶¾Îï");
-        set("title", "°×ÍÕÉ½×¯Ö÷");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ¬§é˜³å³°", ({ "ouyang feng", "ouyang", "feng" }));
+        set("long", "ä»–èº«å½¢é«˜å¤§ï¼Œé«˜é¼»æ·±ç›®ï¼Œæ»¡è„¸é›ªç™½çŸ­é¡»ï¼Œæ ¹æ ¹ä¼¼é“ã€‚\n"
+		"ä»–æžå–„ä½¿æ¯’ï¼Œå·ç§°â€œè¥¿æ¯’â€ã€‚\n");
+	set("nickname","è€æ¯’ç‰©");
+        set("title", "ç™½é©¼å±±åº„ä¸»");
+        set("gender", "ç”·æ€§");
         set("age", 65);
 
         set_skill("hand", 180);
@@ -54,7 +54,7 @@ void create()
         set("attitude", "peaceful");
         set("shen_type", -1);
 
-        create_family("°×ÍÕÉ½", 1 , "×¯Ö÷");
+        create_family("ç™½é©¼å±±", 1 , "åº„ä¸»");
 	setup();
         carry_object("/d/xingxiu/npc/obj/shezhang")->wield();
 	carry_object("/d/city/obj/cloth")->wear();
@@ -65,28 +65,28 @@ void attempt_apprentice(object ob)
         mapping fam;
 	string son;
 
-        if( !mapp(fam = ob->query("family")) || fam["family_name"] != "°×ÍÕÉ½")
+        if( !mapp(fam = ob->query("family")) || fam["family_name"] != "ç™½é©¼å±±")
 	{
 		command ("say " + RANK_D->query_respect(ob) + 
-			"ÏÈÈ¥±ÖÉ½×¯ÎäÊ¦»òÕË·¿ÏÈÉúÊÖÏÂ´ò´òÔÓ°É¡£");
+			"å…ˆåŽ»æ•å±±åº„æ­¦å¸ˆæˆ–è´¦æˆ¿å…ˆç”Ÿæ‰‹ä¸‹æ‰“æ‰“æ‚å§ã€‚");
 		return;
 	}
 	if ((int)ob->query_skill("hamagong", 1) < 100) {
-                command("say ÎÒÃÇ°×ÍÕÉ½×¯µÄ¾ø¼¼ÊÇÎÒ´´µÄ¸òó¡¹¦¡£"); 
+                command("say æˆ‘ä»¬ç™½é©¼å±±åº„çš„ç»æŠ€æ˜¯æˆ‘åˆ›çš„è›¤èŸ†åŠŸã€‚"); 
                 command("say " + RANK_D->query_respect(ob) + 
-                        "ÊÇ·ñ»¹Ó¦¸ÃÔÚ¸òó¡¹¦ÉÏ¶àÏÂµã¹¦·ò£¿");
+                        "æ˜¯å¦è¿˜åº”è¯¥åœ¨è›¤èŸ†åŠŸä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
                 return;
         }
         if ((int)ob->query_skill("training", 1) < 100) {
-                command("say ÎÒÃÇ°×ÍÕÉ½×¯¾­³£ÒªÑµÔ¦¶¾³æ£¬"); 
+                command("say æˆ‘ä»¬ç™½é©¼å±±åº„ç»å¸¸è¦è®­é©­æ¯’è™«ï¼Œ"); 
                 command("say " + RANK_D->query_respect(ob) + 
-                        "µÄÔ¦ÊÞÊõ»¹²»¹»ºÃ¡£");
+                        "çš„é©­å…½æœ¯è¿˜ä¸å¤Ÿå¥½ã€‚");
                 return;
         }
-	if (ob->query("gender")=="Å®ÐÔ") son = "ÒåÅ®";
-	else son = "Òå×Ó";
-	command("ÎÒ¿´ÄãÌì×Ê´ÏÓ±£¬ÓÐÐÄÈÏÄã×ö"+ son +"¡£ÄãÈô¿Ï°ÝÎÒ×öÒå¸¸£¬¾Í¸øÎÒ"
-		"¿Ä¸öÍ·(ketou)¡£");
+	if (ob->query("gender")=="å¥³æ€§") son = "ä¹‰å¥³";
+	else son = "ä¹‰å­";
+	command("æˆ‘çœ‹ä½ å¤©èµ„èªé¢–ï¼Œæœ‰å¿ƒè®¤ä½ åš"+ son +"ã€‚ä½ è‹¥è‚¯æ‹œæˆ‘åšä¹‰çˆ¶ï¼Œå°±ç»™æˆ‘"
+		"ç£•ä¸ªå¤´(ketou)ã€‚");
 	ob->set_temp("ouyangfeng",1);
 	add_action("do_ketou","ketou");
 	return;
@@ -97,13 +97,13 @@ int ketou(string arg)
 	object ob = this_player();
 	if (!ob->query_temp("ouyangfeng")) return 0;
 	message_vision(
-                "$NË«Ï¥¹òµ¹£¬¶Ô×Å$nËµµÀ£º¡°Òå¸¸ÔÚÉÏ£¬ÇëÊÜº¢¶ùÒ»°Ý£¡¡±\n\n"
-                "$n¸ßÐËµÃÒøÐëÂÒ²ü£¬£¬½«$N´ÓµØÉÏ·öÆð¡£\n\n",
+                "$NåŒè†è·ªå€’ï¼Œå¯¹ç€$nè¯´é“ï¼šâ€œä¹‰çˆ¶åœ¨ä¸Šï¼Œè¯·å—å­©å„¿ä¸€æ‹œï¼â€\n\n"
+                "$né«˜å…´å¾—é“¶é¡»ä¹±é¢¤ï¼Œï¼Œå°†$Nä»Žåœ°ä¸Šæ‰¶èµ·ã€‚\n\n",
                 ob, this_object() );
 
-	command("say º¢×Ó£¬ÄãÒª¸øÎª¸¸Õù¹â¡£");
+	command("say å­©å­ï¼Œä½ è¦ç»™ä¸ºçˆ¶äº‰å…‰ã€‚");
         command("recruit " + ob->query("id"));
-	ob->set("title","°×ÍÕÉ½×¯ÉÙ×¯Ö÷");
+	ob->set("title","ç™½é©¼å±±åº„å°‘åº„ä¸»");
 	return 1;
 }
 void init()
@@ -119,7 +119,7 @@ void init()
 
 void greeting(object me)
 {
-	if (me->query("family/family_name") != "°×ÍÕÉ½")
+	if (me->query("family/family_name") != "ç™½é©¼å±±")
 	me->apply_condition("snake_poison", 2 +
 		me->query_condition("snake_poison"));
 	return;

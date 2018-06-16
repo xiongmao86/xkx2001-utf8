@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¼±ÕïÊÒ");
+        set("short", "æ€¥è¯Šå®¤");
         set("long", @LONG
-ÕâÊÇÓÎÏ·µÄ¼±ÕïÊÒ£¬×¨ÎªÖÎÁÆÒòÓÎÏ·³öÃ«²¡¶øÎŞ¹¼ÊÜº¦µÄÍæ¼Ò
-¡£¼±ÕïÊÒÀïÓĞĞíĞí¶à¶àµÄÒÇÆ÷£¬ÍâĞĞµÄÈË¸ù±¾¿´²»¶®ÓĞºÎÓÃ´¦¡£ÕıÖĞ
-Ñë°Ú×ÅÒ»ÕÅ´ó´²(bed)£¬ÊÖÊõ±ãÔÚ´²ÉÏÊµÊ©¡£Íæ¼ÒÒ»ÌÉ(lay)ÉÏ´²ÊÖÊõ
-±ãÁ¢¿Ì¿ªÊ¼¡£
+è¿™æ˜¯æ¸¸æˆçš„æ€¥è¯Šå®¤ï¼Œä¸“ä¸ºæ²»ç–—å› æ¸¸æˆå‡ºæ¯›ç—…è€Œæ— è¾œå—å®³çš„ç©å®¶
+ã€‚æ€¥è¯Šå®¤é‡Œæœ‰è®¸è®¸å¤šå¤šçš„ä»ªå™¨ï¼Œå¤–è¡Œçš„äººæ ¹æœ¬çœ‹ä¸æ‡‚æœ‰ä½•ç”¨å¤„ã€‚æ­£ä¸­
+å¤®æ‘†ç€ä¸€å¼ å¤§åºŠ(bed)ï¼Œæ‰‹æœ¯ä¾¿åœ¨åºŠä¸Šå®æ–½ã€‚ç©å®¶ä¸€èºº(lay)ä¸ŠåºŠæ‰‹æœ¯
+ä¾¿ç«‹åˆ»å¼€å§‹ã€‚
 LONG
         );
 
@@ -37,13 +37,13 @@ int do_lay(string arg)
 
 	seteuid( geteuid(me) );
 
-	if ( !arg || arg != "bed" ) return notify_fail("ÄãÏëÌÉÔÚÄÇ¶ùÑ½£¿\n");
+	if ( !arg || arg != "bed" ) return notify_fail("ä½ æƒ³èººåœ¨é‚£å„¿å‘€ï¼Ÿ\n");
 	
-	if ( me->query_temp("rec") == 1 ) return notify_fail("ÄãÔõÃ´ÀÏ³öÃ«²¡°¡£¿²»ÄÜÔÙÖÎÁË£¡\n");
+	if ( me->query_temp("rec") == 1 ) return notify_fail("ä½ æ€ä¹ˆè€å‡ºæ¯›ç—…å•Šï¼Ÿä¸èƒ½å†æ²»äº†ï¼\n");
 
-	message_vision("$NÍù´²ÉÏÒ»ÌÉ£¬ÔÚÊÖÊõµÆµÄÕÕÉäÏÂ£¬Ò»»á¶ù±ãÃÔÃÔºıºıµÄÊ§È¥Öª¾õÁË¡£\n", me);
+	message_vision("$Nå¾€åºŠä¸Šä¸€èººï¼Œåœ¨æ‰‹æœ¯ç¯çš„ç…§å°„ä¸‹ï¼Œä¸€ä¼šå„¿ä¾¿è¿·è¿·ç³Šç³Šçš„å¤±å»çŸ¥è§‰äº†ã€‚\n", me);
 
-	me->disable_player("<ÊÖÊõÖĞ>");
+	me->disable_player("<æ‰‹æœ¯ä¸­>");
 	me->set_temp("block_msg/all",1);
 
 	if ( mapp(skill_status = me->query_skills()) ) {
@@ -79,12 +79,12 @@ void wakeup(object me)
 {
 	me->enable_player();
 	me->set_temp("block_msg/all", 0);
-	message_vision("Á¼¾Ã$NĞÑÁË¹ıÀ´£¬·¢ÏÖ×Ô¼ºÒÑÍêÈ«¿µ¸´ÁË£¡\n", me);
+	message_vision("è‰¯ä¹…$Né†’äº†è¿‡æ¥ï¼Œå‘ç°è‡ªå·±å·²å®Œå…¨åº·å¤äº†ï¼\n", me);
 }
 
 int valid_leave(object me, string dir)
 {
         if (!wizardp(me) && dir == "enter")
-                return notify_fail("ÄúÎ´ÊÜÑûÇë£¬²»ÄÜµ½ÄÇ¶ùÈ¥¡£\n");
+                return notify_fail("æ‚¨æœªå—é‚€è¯·ï¼Œä¸èƒ½åˆ°é‚£å„¿å»ã€‚\n");
 	return ::valid_leave(me, dir);
 }

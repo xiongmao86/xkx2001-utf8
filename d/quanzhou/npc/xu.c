@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xu.c ĞíÀÏ°å/d/quanzhou/npc/xu.c
+// xu.c è®¸è€æ¿/d/quanzhou/npc/xu.c
 // modified by aln  2 / 98
 
 #include <ansi.h>
@@ -14,15 +14,15 @@ string ask_me();
 
 void create()
 {
-	set_name("ĞíÀÏ°å", ({ "xu laoban", "xu" }));
+	set_name("è®¸è€æ¿", ({ "xu laoban", "xu" }));
         set_color("$YEL$");
-	set("title", "ºèÏè³ñ¶Ğ×¯ÀÏ°å");
+	set("title", "é¸¿ç¿”ç»¸ç¼åº„è€æ¿");
 	set("shen_type", 1);
 
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
-	set("long", "ºèÏè³ñ¶Ğ×¯ÄËÊÇĞíÀÏ°å×æ´«µÄÉúÒâ£¬µ½ĞíÀÏ°åÒÑÊÇµÚËÄ´úÁË¡£\n");
+	set("long", "é¸¿ç¿”ç»¸ç¼åº„ä¹ƒæ˜¯è®¸è€æ¿ç¥–ä¼ çš„ç”Ÿæ„ï¼Œåˆ°è®¸è€æ¿å·²æ˜¯ç¬¬å››ä»£äº†ã€‚\n");
 	set("combat_exp", 10000);
         set("qi", 300);
         set("max_qi", 300);
@@ -45,7 +45,7 @@ void create()
 	}));
 
         set("inquiry", ([
-               "³ñ¶Ğ" : (: ask_me :),
+               "ç»¸ç¼" : (: ask_me :),
                "silk" : (: ask_me :),
         ]));
 
@@ -63,7 +63,7 @@ void init()
 
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;
@@ -77,16 +77,16 @@ string ask_me()
         int price;
 
         if( !(obj = present("bang ling", me)) )
-                return RANK_D->query_respect(me) + "²»×öÉúÒâ£¬²»±Ø²ÙĞÄ³ñ¼Û¡£";
+                return RANK_D->query_respect(me) + "ä¸åšç”Ÿæ„ï¼Œä¸å¿…æ“å¿ƒç»¸ä»·ã€‚";
 
-        if( (string)obj->query("job/type") != "ÂòÂô" )
-                return RANK_D->query_respect(me) + "²»×öÉúÒâ£¬²»±Ø²ÙĞÄ³ñ¼Û¡£";
+        if( (string)obj->query("job/type") != "ä¹°å–" )
+                return RANK_D->query_respect(me) + "ä¸åšç”Ÿæ„ï¼Œä¸å¿…æ“å¿ƒç»¸ä»·ã€‚";
 
-        if( (string)obj->query("job/name") != CYN"³ñ¶Ğ"NOR )
-                return "ÎÒÖ»ÖªµÀ³ñ¼Û£¬" + RANK_D->query_respect(me) + "»¹ÊÇÈ¥Ïò±ğÈË´òÌı°É¡£";
+        if( (string)obj->query("job/name") != CYN"ç»¸ç¼"NOR )
+                return "æˆ‘åªçŸ¥é“ç»¸ä»·ï¼Œ" + RANK_D->query_respect(me) + "è¿˜æ˜¯å»å‘åˆ«äººæ‰“å¬å§ã€‚";
 
         if( !mapp(prices = obj->query("job/prices")) )
-                return "×î½ü³ñ¼Û»ìÂÒ£¬ÎÒ²»ÊÇÌ«Çå³ş¡£";
+                return "æœ€è¿‘ç»¸ä»·æ··ä¹±ï¼Œæˆ‘ä¸æ˜¯å¤ªæ¸…æ¥šã€‚";
 
         price = 0;
         place = "city";
@@ -98,6 +98,6 @@ string ask_me()
                 }
         }
 
-        return "ÌıËµ" + region_names[place] + "Ò»´ø³ñ¼Û×î¸ß¡£";
+        return "å¬è¯´" + region_names[place] + "ä¸€å¸¦ç»¸ä»·æœ€é«˜ã€‚";
 }
 

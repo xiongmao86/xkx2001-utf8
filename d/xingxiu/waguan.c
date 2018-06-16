@@ -10,14 +10,14 @@ void setup()
 
 void create()
 {
-        set_name("Íß¹Ş", ({"wa guan", "wa", "guan"}));
+        set_name("ç“¦ç½", ({"wa guan", "wa", "guan"}));
         set_weight(15000);
         set_max_encumbrance(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "Ò»Ö»ÖÊµØ¾«Ï¸µÄÍß¹Ş¡£\n");
+                set("unit", "åª");
+                set("long", "ä¸€åªè´¨åœ°ç²¾ç»†çš„ç“¦ç½ã€‚\n");
   		set("no_drop", 1);
         	set("no_get", 1);
 	        set("no_steal", 1);
@@ -40,27 +40,27 @@ int do_hold(string arg)
         object ob, obj=this_object();
 
         if( !arg || sscanf(arg, "%s", what)!=1 )
-                return notify_fail("ÃüÁî¸ñÊ½: kou <ÎïÆ·> ¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: kou <ç‰©å“> ã€‚\n");
 
         ob = present(what, environment(this_player()));
-        if( !ob ) return notify_fail("ÕâÀïÃ»ÓĞ" + what + "ÕâÑù¶«Î÷¡£\n");
+        if( !ob ) return notify_fail("è¿™é‡Œæ²¡æœ‰" + what + "è¿™æ ·ä¸œè¥¿ã€‚\n");
 
-	if (ob->query("id")!="du chong") return notify_fail("Õâ¶«Î÷×îºÃ²»Òª×¥¡£\n");
+	if (ob->query("id")!="du chong") return notify_fail("è¿™ä¸œè¥¿æœ€å¥½ä¸è¦æŠ“ã€‚\n");
 
-        if (this_player()->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+        if (this_player()->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	else {
           	if(random(this_player()->query_skill("poison",1))*5 > (this_player()->query_skill("force")))
                         {    
-                        message_vision("$N¾ÙÆğÊÖÖĞµÄÍß¹ŞÃÍµØ½«¶¾³æ¿Û×¡£¬È»ºóĞ¡ĞÄÒíÒíµØ½«Íß¹Ş·­ÆğÀ´¸Ç×¡¡£\n",this_player());
+                        message_vision("$Nä¸¾èµ·æ‰‹ä¸­çš„ç“¦ç½çŒ›åœ°å°†æ¯’è™«æ‰£ä½ï¼Œç„¶åå°å¿ƒç¿¼ç¿¼åœ°å°†ç“¦ç½ç¿»èµ·æ¥ç›–ä½ã€‚\n",this_player());
 
                         this_player()->add("neili",-50);
 			set("bug_hold",1);
-			set("long", "Ò»Ö»ÖÊµØ¾«Ï¸µÄÍß¹Ş¡£\nÀïÃæÊ¢×ÅÒ»Ö»¶¾³æ¡£\n");
+			set("long", "ä¸€åªè´¨åœ°ç²¾ç»†çš„ç“¦ç½ã€‚\né‡Œé¢ç››ç€ä¸€åªæ¯’è™«ã€‚\n");
 			this_player()->set_temp("bug_hold",1);		
                         destruct(ob);
                         }
-                else message_vision("$NÃÍµÄ³öÊÖÓÃÍß¹Ş¿ÛÏò"+ob->query("name")+",µ«"+ob->query("name")+"»úÁéµÄÌø¿ªÁË¡£\n",this_player());
+                else message_vision("$NçŒ›çš„å‡ºæ‰‹ç”¨ç“¦ç½æ‰£å‘"+ob->query("name")+",ä½†"+ob->query("name")+"æœºçµçš„è·³å¼€äº†ã€‚\n",this_player());
  		
                 this_player()->start_busy(random(1)+1);               
                 return 1;
@@ -69,9 +69,9 @@ int do_hold(string arg)
 
 int do_xiulian()
 {
-        if (query("bug_hold")!=1) return notify_fail("Ã»ÓĞ¶¾³æ£¬ÄãÏëÒªÓÃ¿ÕÆøĞŞĞĞÂğ£¿\n");
-	message_vision(HIR"$NÔËÆğÄÚÁ¦£¬È»ºó±ÕÉÏÑÛ¾¦½«ÊÖÖ¸ÉìÈëÍß¹Ş¡£\n"NOR, this_player());
-        message_vision(HIR"¶¾³æÁ¢¿ÌÒ§×¡$NµÄÊÖÎüÆğÑªÀ´¡£\n"NOR, this_player());
+        if (query("bug_hold")!=1) return notify_fail("æ²¡æœ‰æ¯’è™«ï¼Œä½ æƒ³è¦ç”¨ç©ºæ°”ä¿®è¡Œå—ï¼Ÿ\n");
+	message_vision(HIR"$Nè¿èµ·å†…åŠ›ï¼Œç„¶åé—­ä¸Šçœ¼ç›å°†æ‰‹æŒ‡ä¼¸å…¥ç“¦ç½ã€‚\n"NOR, this_player());
+        message_vision(HIR"æ¯’è™«ç«‹åˆ»å’¬ä½$Nçš„æ‰‹å¸èµ·è¡€æ¥ã€‚\n"NOR, this_player());
 	call_out("do_xiulian2", 8, this_player());
 	this_player()->start_busy(10);
 	return 1;
@@ -81,9 +81,9 @@ void do_xiulian2(object me){
 	object dan;
 	dan=new("/d/xingxiu/obj/dudan");
 	dan->set("player",this_player()->query("id"));
-	message_vision(HIG"¶¾³æ½«ÑªÎüÍê£¬¶Ç×Ó¸ß¸ßÕÇÆğ£¬Å¾µØÒ»Éíµô½ø¹Şµ×£¬ÕõÔúÁË¼¸ÏÂ£¬ËÀÁË¡£\n"NOR, this_player());
-	message_vision("$N½«ËÀ³æ×ÓÄÃ³öÍß¹Ş£¬½«Æä¶Ç×ÓÆÊ¿ª£¬ÄÃ³öÒ»Á£ĞÈÈçÑªµÄµ¤ÍèÀ´¡£\n"NOR, this_player());
-	tell_object(this_player(),"ÄãÖĞ¶¾ÁË£¡\n");
+	message_vision(HIG"æ¯’è™«å°†è¡€å¸å®Œï¼Œè‚šå­é«˜é«˜æ¶¨èµ·ï¼Œå•ªåœ°ä¸€èº«æ‰è¿›ç½åº•ï¼ŒæŒ£æ‰äº†å‡ ä¸‹ï¼Œæ­»äº†ã€‚\n"NOR, this_player());
+	message_vision("$Nå°†æ­»è™«å­æ‹¿å‡ºç“¦ç½ï¼Œå°†å…¶è‚šå­å‰–å¼€ï¼Œæ‹¿å‡ºä¸€ç²’è…¥å¦‚è¡€çš„ä¸¹ä¸¸æ¥ã€‚\n"NOR, this_player());
+	tell_object(this_player(),"ä½ ä¸­æ¯’äº†ï¼\n");
         this_player()->apply_condition("insect_poison", this_player()->query("poison"));
         this_player()->improve_skill("poison", 200);
 	this_player()->set_temp("found",1);

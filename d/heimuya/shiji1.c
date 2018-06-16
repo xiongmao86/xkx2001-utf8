@@ -10,10 +10,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石级");
         set("long", @LONG
-�������µ�ʯ����������һ�����š���բ֮ǰ����
-���½̽��ڰ��أ�������ơ�
+这是上崖的石级，上面有一道铁门。铁闸之前，有
+日月教教众把守，检查腰牌。
 LONG
         );
 

@@ -1,14 +1,14 @@
 //Cracked by Roath
-// shinu.c °×ÍÕÉ½×¯ÊÌ¼§
+// shinu.c ç™½é©¼å±±åº„ä¾å§¬
 #include <ansi.h>
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÊÌ¼§", ({ "shi ji","ji"}));
-        set("long", "°×ÍÕÉ½ÉÙÖ÷µÄÒ»Ãû¼§æª£¬ÌåÌ¬æ¹ÄÈ£¬Ğ¦ÈİÒ±ÑŞ¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("ä¾å§¬", ({ "shi ji","ji"}));
+        set("long", "ç™½é©¼å±±å°‘ä¸»çš„ä¸€åå§¬å¦¾ï¼Œä½“æ€å©€å¨œï¼Œç¬‘å®¹å†¶è‰³ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
 
         set_skill("hand", 40);

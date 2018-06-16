@@ -7,10 +7,10 @@ inherit ROOM;
 void create()
 {
     int i;
-        set("short", "��԰");
+        set("short", "花园");
         set("long", @LONG
-�����ǽ�����������ͼҵ��Ứ԰��԰���滨����鲼���������
-����С��Ĺ뷿���ϱ��Ǵ�����
+这里是晋阳大侠萧半和家的後花园。园内奇花异葩遍布。东面就是
+萧家小姐的闺房。南边是大厅。
 LONG
         );
 

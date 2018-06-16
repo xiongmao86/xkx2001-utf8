@@ -11,27 +11,27 @@ int exert(object me, object target)
                 return notify_fail("only used by lamas.\n");
 
 	if( !target )
-		return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+		return notify_fail("ä½ è¦ç”¨çœŸæ°”ä¸ºè°ç–—ä¼¤ï¼Ÿ\n");
 
 	if( !living(target) )
-                return notify_fail("Ì«³ÙÁË£¬ÄãÒªÖÎÁÆµÄÈËÒÑ¾­ËÀÁË£¡\n");
+                return notify_fail("å¤ªè¿Ÿäº†ï¼Œä½ è¦æ²»ç–—çš„äººå·²ç»æ­»äº†ï¼\n");
 
 	if( me->is_busy() )
 		return notify_fail("you are busy now\n");
 
 	if( (int)me->query("neili") < 150 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)target->query("eff_qi") < (int)target->query("max_qi") / 5 )
 		return notify_fail( target->name() +
-			"ÒÑ¾­ÊÜÉË¹ýÖØ£¬¾­ÊÜ²»ÆðÄãµÄÕæÆøÕðµ´£¡\n");
+			"å·²ç»å—ä¼¤è¿‡é‡ï¼Œç»å—ä¸èµ·ä½ çš„çœŸæ°”éœ‡è¡ï¼\n");
 
         COMMAND_DIR"std/halt"->main(me);
 
 	message_vision(
-		HIY "$NÔËÆðÄÚ¹¦£¬ÊÖÕÆ°´ÔÚ$nºóÐÄÃüÃÅ£¬½«ÕæÆøÊäÈë$nÌåÄÚ....\n"
-		"²»¾Ã£¬$N»ëÉí´óº¹ÁÜÀì£¬ÏÔµÃÊ®·ÖÆ£¾ë¡£\n"
-                "Ö»¼û$nÍÂ³öÒ»¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºìÈó¶àÁË¡£\n" NOR,
+		HIY "$Nè¿èµ·å†…åŠŸï¼Œæ‰‹æŽŒæŒ‰åœ¨$nåŽå¿ƒå‘½é—¨ï¼Œå°†çœŸæ°”è¾“å…¥$nä½“å†…....\n"
+		"ä¸ä¹…ï¼Œ$Næµ‘èº«å¤§æ±—æ·‹æ¼“ï¼Œæ˜¾å¾—ååˆ†ç–²å€¦ã€‚\n"
+                "åªè§$nåå‡ºä¸€å£ç˜€è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥çº¢æ¶¦å¤šäº†ã€‚\n" NOR,
 		me, target );
 
 	target->receive_curing("qi", 200 + random(200));

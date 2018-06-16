@@ -1,22 +1,22 @@
 //Cracked by Roath
-// Npc: ÊÌÎÀ
+// Npc: ä¾å«
 // Ssy 
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÊÌÎÀ", ({
+	set_name("ä¾å«", ({
 		"shi wei",
 		"shiwei",
 		"wei",
 	}));
 	set("long",
-		"ÕâÊÇÒ»¸öÉĞÎ´ÈëµÈ¼¶µÄÓùÇ°ÊÌÎÀ£¬´ó¶àÊÇÂú×å×ÓµÜ£¬ÕıÔÚÎŞÁÄµØÏĞÕ¾×Å¡£\n"
+		"è¿™æ˜¯ä¸€ä¸ªå°šæœªå…¥ç­‰çº§çš„å¾¡å‰ä¾å«ï¼Œå¤§å¤šæ˜¯æ»¡æ—å­å¼Ÿï¼Œæ­£åœ¨æ— èŠåœ°é—²ç«™ç€ã€‚\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "heroism");
 
 	set("age", 20);

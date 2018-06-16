@@ -9,13 +9,13 @@ int in_ask, answer;
 
 void create()
 {
-	set_name("ÉóÅĞ¹Ù", ({ "judge" }) );
-	set("short", "×¨ÃÅ¶Ô¸¶»úÆ÷ÈËµÄ" HIY "ÉóÅĞ¹Ù" NOR "(judge)" );
+	set_name("å®¡åˆ¤å®˜", ({ "judge" }) );
+	set("short", "ä¸“é—¨å¯¹ä»˜æœºå™¨äººçš„" HIY "å®¡åˆ¤å®˜" NOR "(judge)" );
 	set("long",
-		"ÕâÊÇÒ»Î»Éó²éÍæ¼ÒÊÇ·ñÊÇ»úÆ÷ÈËµÄÉóÅĞ¹Ù£¬Äã±ØĞë´ğ¶Ô(da <number>)Èı¸öÎÊÌâ²ÅÄÜ\n"
-		"ÍÑÀëËûµÄÕÆÎÕ¡£\n");
+		"è¿™æ˜¯ä¸€ä½å®¡æŸ¥ç©å®¶æ˜¯å¦æ˜¯æœºå™¨äººçš„å®¡åˆ¤å®˜ï¼Œä½ å¿…é¡»ç­”å¯¹(da <number>)ä¸‰ä¸ªé—®é¢˜æ‰èƒ½\n"
+		"è„±ç¦»ä»–çš„æŒæ¡ã€‚\n");
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 40);
 
 	set("str", 100);
@@ -50,7 +50,7 @@ int block_cmd()
         if( cmd == "da" || cmd == "answer" || cmd == "look" )
                 return 0;
 
-	write("Äã»¹ÊÇÏÈ°ÑÎÊÌâ´ğÍêÔÙÏë±ğµÄ°É! \n");
+	write("ä½ è¿˜æ˜¯å…ˆæŠŠé—®é¢˜ç­”å®Œå†æƒ³åˆ«çš„å§! \n");
         return 1;
 }
 
@@ -67,28 +67,28 @@ void chat()
 	switch(random(5)) {
 		case 0: 
 			answer = a + b;
-			oper = chinese_number(a) + "¼Ó" + chinese_number(b)+ "µÈÓÚ¶àÉÙ£¿";
+			oper = chinese_number(a) + "åŠ " + chinese_number(b)+ "ç­‰äºå¤šå°‘ï¼Ÿ";
 			break;
 		case 1: 
 			if (a < b) { c = b; b = a; a = c;} 
 			answer = a - b;
-			oper = chinese_number(a) + "¼õÈ¥" + chinese_number(b)+ "µÈÓÚ¶àÉÙ£¿";
+			oper = chinese_number(a) + "å‡å»" + chinese_number(b)+ "ç­‰äºå¤šå°‘ï¼Ÿ";
 			break;
 		case 2: 
 			if( a * b < 200 ) {
 				answer = a * b;
-				oper = chinese_number(a) + "³Ë" + chinese_number(b)+ "µÈÓÚ¶àÉÙ£¿";
+				oper = chinese_number(a) + "ä¹˜" + chinese_number(b)+ "ç­‰äºå¤šå°‘ï¼Ÿ";
 			} else {
 				answer = (a * b) % 10;
-				oper = chinese_number(a) + "³Ë" + chinese_number(b)+ "£¬¸öÎ»ÊıµÈì¶¶àÉÙ£¿";
+				oper = chinese_number(a) + "ä¹˜" + chinese_number(b)+ "ï¼Œä¸ªä½æ•°ç­‰æ–¼å¤šå°‘ï¼Ÿ";
 			}
 			break;
 		case 3: 
 			answer = a % b;
-			oper = chinese_number(a) + "³ıÒÔ" + chinese_number(b)+ "µÄÓàÊıÊÇ¶àÉÙ£¿";
+			oper = chinese_number(a) + "é™¤ä»¥" + chinese_number(b)+ "çš„ä½™æ•°æ˜¯å¤šå°‘ï¼Ÿ";
 			break;
 		case 4:
-			oper = chinese_number(a) + "ºÍ" + chinese_number(b)+ "µÄ×î´ó¹«ÒòÊıÊÇ¶àÉÙ£¿";
+			oper = chinese_number(a) + "å’Œ" + chinese_number(b)+ "çš„æœ€å¤§å…¬å› æ•°æ˜¯å¤šå°‘ï¼Ÿ";
 			if( b < a ) { c = b; b = a; a = c; }
 			while( a > 1 && b%a > 1 ) {
 				c = a;
@@ -98,7 +98,7 @@ void chat()
 			answer = b%a == 1 ? 1 : a;
 			break;
 	}
-	command("say " + oper + "£¬ÇëÔÚÈıÊ®ÃëÄÚ×÷´ğ(da <number>))¡£");
+	command("say " + oper + "ï¼Œè¯·åœ¨ä¸‰åç§’å†…ä½œç­”(da <number>))ã€‚");
 	in_ask = 1;
 	call_out("say_answer", 30, ob);
 }
@@ -119,7 +119,7 @@ void say_answer(object me)
         }
 
 
-	command("say ÕâÃ´¼òµ¥¶¼²»»á£¿´ğ°¸µÈÓÚ" + chinese_number(answer) + "¡£");
+	command("say è¿™ä¹ˆç®€å•éƒ½ä¸ä¼šï¼Ÿç­”æ¡ˆç­‰äº" + chinese_number(answer) + "ã€‚");
 	//if (objectp(this_player())) 
 		//this_player()->receive_damage("qi", 50, this_object());
 	in_ask = 0;	
@@ -133,20 +133,20 @@ int do_answer(string arg)
 	string s;
 	int ans;
 
-	if( !in_ask ) return notify_fail("Äã±ØĞëµÈÏÂÒ»Ìâ¡£\n");
-	if( !arg ) return notify_fail("ÇëÄã»Ø´ğÒ»¸öÊı×Ö¡£\n");
+	if( !in_ask ) return notify_fail("ä½ å¿…é¡»ç­‰ä¸‹ä¸€é¢˜ã€‚\n");
+	if( !arg ) return notify_fail("è¯·ä½ å›ç­”ä¸€ä¸ªæ•°å­—ã€‚\n");
 
-	message_vision( CYN "$N´ğµÀ£º" + arg + "\n" NOR, this_player());
+	message_vision( CYN "$Nç­”é“ï¼š" + arg + "\n" NOR, this_player());
 	
 	if( sscanf(arg, "%d", ans)==1 ) {
 		if( ans==answer ) {
 			this_player()->add_temp("robot_check", 1);
-			command("say ´ğ¶ÔÁË£¡");
+			command("say ç­”å¯¹äº†ï¼");
 			command("pat " + this_player()->query("id") );
 			remove_call_out("say_answer");
 			in_ask = 0;
 			if( this_player()->query_temp("robot_check") >= 3 ) {
-				command("say ºÜºÃ£¬Äã¿´ÆğÀ´²»Ïñ»úÆ÷ÈË£¬Äã¿ÉÒÔ×ßÁË¡£\n");
+				command("say å¾ˆå¥½ï¼Œä½ çœ‹èµ·æ¥ä¸åƒæœºå™¨äººï¼Œä½ å¯ä»¥èµ°äº†ã€‚\n");
 				if( stringp(s = this_player()->query_temp("old_startroom")) )
 				{
 					this_player()->set("startroom", s);
@@ -163,12 +163,12 @@ int do_answer(string arg)
 					this_player()->move(START_ROOM);
 			}
 		} else {
-			command("say ´í£¡");
+			command("say é”™ï¼");
 			this_player()->add_temp("robot_check_wrong", 1);
 			add_temp("wrong/" + this_player()->query("id"), 1);
 			call_out("ans_wrong", 0, ob);
 			if( query_temp("wrong/" + this_player()->query("id")) > 3 ) {
-				command("say " + this_player()->name() + "ÄãÔÙ¸øÎÒÂÒ²Â°¡£¬È¥ËÀ°É¡£\n");
+				command("say " + this_player()->name() + "ä½ å†ç»™æˆ‘ä¹±çŒœå•Šï¼Œå»æ­»å§ã€‚\n");
 				this_player()->receive_damage("qi", 100, this_object());
 				this_player()->die();
 			}
@@ -181,7 +181,7 @@ int do_answer(string arg)
 int ans_wrong(object ob)
 {
 	if(ob->query_temp("robot_check_wrong") > 10) {
-		command("say " + ob->query("name") + "ÀÛÁË£¬¸ÃĞİÏ¢ÁË¡£\n");
+		command("say " + ob->query("name") + "ç´¯äº†ï¼Œè¯¥ä¼‘æ¯äº†ã€‚\n");
 		ob->move("/d/death/blkbot");
 		ob->delete_temp("robot_check_wrong");
 	}

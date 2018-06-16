@@ -1,17 +1,17 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/lu.c
-// lu.c  Â¹ÇåóÆ
+// lu.c  é¹¿æ¸…ç¬ƒ
 // sdong 08/01/98
 
 inherit NPC;
 
 void create()
 {
-	set_name("Â¹ÇåóÆ", ({ "lu qingjia", "lu" }));
+	set_name("é¹¿æ¸…ç¬ƒ", ({ "lu qingjia", "lu" }));
 	set("long",
-		  "ËûÊÇÒ»Î»ÅÖ´óµÀÊ¿£¬ÂúÁ³Ğ×Æø¡£\n"
+		  "ä»–æ˜¯ä¸€ä½èƒ–å¤§é“å£«ï¼Œæ»¡è„¸å‡¶æ°”ã€‚\n"
 		);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "heroic");
 	set("shen_type", 1);
@@ -53,7 +53,7 @@ void create()
 	prepare_skill("cuff", "chunyang-quan");
 	prepare_skill("strike", "sanhua-juding");
 
-	create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+	create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
 	set("class", "taoist");
 

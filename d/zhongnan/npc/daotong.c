@@ -1,17 +1,17 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/daotong.c
-//   µÀÍ¯
+//   é“ç«¥
 // sdong 08/01/98
 
 inherit NPC;
 
 void create()
 {
-	set_name("µÀÍ¯", ({ "daotong", "daotong" }));
+	set_name("é“ç«¥", ({ "daotong", "daotong" }));
 	set("long",
-		  "ËûÊÇÒ»Ğ¡µÀÊ¿£¬ÂúÁ³Ğ¦Èİ£¬ºÜ¿É°®µÄÑù×Ó¡£\n"
+		  "ä»–æ˜¯ä¸€å°é“å£«ï¼Œæ»¡è„¸ç¬‘å®¹ï¼Œå¾ˆå¯çˆ±çš„æ ·å­ã€‚\n"
 		);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 12);
 	set("attitude", "heroic");
 	set("shen_type", 1);
@@ -37,7 +37,7 @@ void create()
 	set_skill("literate", 10);
 	set_skill("taoism", 10);
 
-	create_family("È«Õæ½Ì", 5, "µÜ×Ó");
+	create_family("å…¨çœŸæ•™", 5, "å¼Ÿå­");
 
 	set("class", "taoist");
 
@@ -54,12 +54,12 @@ void serve_tea(object who)
 
 		  if( !objectp(room = environment()) ) return;
 
-		  message_vision("Ğ¡µÀÊ¿ÄÃ³öÒ»µúĞÂÏÊµÄË®ÃÛÌÒ£¬ÓÖÆãÁË±­Ïã²è¸ø$N¡£\n", who);
+		  message_vision("å°é“å£«æ‹¿å‡ºä¸€ç¢Ÿæ–°é²œçš„æ°´èœœæ¡ƒï¼Œåˆæ²äº†æ¯é¦™èŒ¶ç»™$Nã€‚\n", who);
 		  ob = new("d/wudang/obj/xiangcha");
 		  ob->move(this_player());
 		  ob = new("d/wudang/obj/mitao");
 		  ob->move(this_player());
-		  message_vision("Ğ¡µÀÊ¿Ïò$NÒ»Ğ¦£¬ÓÖÃ¦×ÅÕĞºôÆäËû¿ÍÈËÈ¥ÁË¡£\n", who);
+		  message_vision("å°é“å£«å‘$Nä¸€ç¬‘ï¼Œåˆå¿™ç€æ‹›å‘¼å…¶ä»–å®¢äººå»äº†ã€‚\n", who);
 
 		  return;
 }

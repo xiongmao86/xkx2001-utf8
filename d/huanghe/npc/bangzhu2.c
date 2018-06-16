@@ -13,11 +13,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("²ÝÉÏ·É", ({ "bangzhu" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("è‰ä¸Šé£ž", ({ "bangzhu" }));
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("long",
-"Ò»¸ö¿ýÎàÖ®¼«µÄ´óºº£¬Á³ÅÓ¼«¾¡²ÔÉ££¬¾«ÉñÈ´ÉõÛÇîå¡£\n");
+"ä¸€ä¸ªé­æ¢§ä¹‹æžçš„å¤§æ±‰ï¼Œè„¸åºžæžå°½è‹æ¡‘ï¼Œç²¾ç¥žå´ç”šçŸé“„ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -45,7 +45,7 @@ void create()
         set_skill("wuxingbu", 80);
         map_skill("dodge", "wuxingbu");
 
-        set("no_get", "°ïÖ÷Ì«ÖØÁË");
+        set("no_get", "å¸®ä¸»å¤ªé‡äº†");
 
         setup();
 
@@ -65,12 +65,12 @@ int do_ask(string arg)
         string dest, topic;
 
         if( !arg || sscanf(arg, "%s about %s", dest, topic) != 2 ) {
-                write("ÄãÒªÎÊË­Ê²Ã´ÊÂ£¿\n");
+                write("ä½ è¦é—®è°ä»€ä¹ˆäº‹ï¼Ÿ\n");
                 return 1;
         }
 
         if( !objectp(ob = present(dest, environment(me))) ) {
-                write("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+                write("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
                 return 1;
         }
 
@@ -80,7 +80,7 @@ int do_ask(string arg)
         if( !living(me) )
                 return 1;
 
-        say(name() + "´óÅ­µÀ£ºÃ»¼ûÀÏ×ÓÉúÁË²¡·³×ÅÄØ£¿¹ö£¡£¡£¡\n");
+        say(name() + "å¤§æ€’é“ï¼šæ²¡è§è€å­ç”Ÿäº†ç—…çƒ¦ç€å‘¢ï¼Ÿæ»šï¼ï¼ï¼\n");
         return 1;
 }
 
@@ -96,15 +96,15 @@ void come_attacker()
         }
 
         if( !(helper = query("helper")) ) {
-                say(name() + "×ÔÑÔ×ÔÓïµÀ£º´ËµØ²»¿É¾ÃÁô£¬ÈýÊ®Áù¼Æ×ßÎªÉÏ£¡\n");
-                say(name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n");
+                say(name() + "è‡ªè¨€è‡ªè¯­é“ï¼šæ­¤åœ°ä¸å¯ä¹…ç•™ï¼Œä¸‰åå…­è®¡èµ°ä¸ºä¸Šï¼\n");
+                say(name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n");
                 destruct(me);
                 return;
         }
 
         if( room != environment(helper) ) {
-                say(name() + "×ÔÑÔ×ÔÓïµÀ£º´ËµØ²»¿É¾ÃÁô£¬ÈýÊ®Áù¼Æ×ßÎªÉÏ£¡\n");
-                say(name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n");
+                say(name() + "è‡ªè¨€è‡ªè¯­é“ï¼šæ­¤åœ°ä¸å¯ä¹…ç•™ï¼Œä¸‰åå…­è®¡èµ°ä¸ºä¸Šï¼\n");
+                say(name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n");
                 destruct(me);
                 return;
         }
@@ -117,13 +117,13 @@ void come_attacker()
                         bonus = bonus * 100000 / ( 100000 + (int)helper->query("combat_exp") );
                         record = bonus/2 + random(bonus);
                         helper->add("combat_exp", record);
-                        log_file("BangJob", sprintf("%sÓÚ%sÊ±Òò»¤¼ÝÓÐ¹¦µÃ%s¾­Ñéµã\n", helper->query("name"), ctime(time()), chinese_number(record)));
+                        log_file("BangJob", sprintf("%säºŽ%sæ—¶å› æŠ¤é©¾æœ‰åŠŸå¾—%sç»éªŒç‚¹\n", helper->query("name"), ctime(time()), chinese_number(record)));
                         bonus /= 4;
                         obj->add("score", bonus);
                         obj->delete("job");
                 }
-                say(name() + "Ë«ÊÖÒ»±§È­µÀ£º°ïÖ÷ÑøÉËÒª»¯Ò»¶ÎÊ±¼ä£¬ÄãºÃ×ÔÎªÖ®°É£¡\n");
-                say(name() + "Ñï³¤¶øÈ¥¡£\n");
+                say(name() + "åŒæ‰‹ä¸€æŠ±æ‹³é“ï¼šå¸®ä¸»å…»ä¼¤è¦åŒ–ä¸€æ®µæ—¶é—´ï¼Œä½ å¥½è‡ªä¸ºä¹‹å§ï¼\n");
+                say(name() + "æ‰¬é•¿è€ŒåŽ»ã€‚\n");
                 destruct(me);
                 return;
         }
@@ -147,10 +147,10 @@ void come_attacker()
 
         ob->move(room);
         message("vision",
-                ob->name() + "×ßÁË¹ýÀ´¡£\n",
+                ob->name() + "èµ°äº†è¿‡æ¥ã€‚\n",
                 room, ({ob}));
         ob->set_leader(me);
-        message_vision("$N¶Ô$nºÈµÀ£º¿´Äã»¹ÍùÄÄÀïÅÜ£¿£¡\n", ob, me);
+        message_vision("$Nå¯¹$nå–é“ï¼šçœ‹ä½ è¿˜å¾€å“ªé‡Œè·‘ï¼Ÿï¼\n", ob, me);
         ob->kill_ob(me);
         command("!!!");
         me->kill_ob(ob);

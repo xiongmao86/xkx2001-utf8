@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´ž");
         set("long", @LONG
-ÄãËÄÖÜµÄ¹âÏß¶ÙÊ±°µµ­ÆðÀ´¡£ÃæÇ°ÊÇÒ»¸öÊ¯±Ú£¬Ê¯±ÚÉÏÁ½±ú»ð
-°ÑºôºôµØÈ¼ÉÕ×Å¡£
+ä½ å››å‘¨çš„å…‰çº¿é¡¿æ—¶æš—æ·¡èµ·æ¥ã€‚é¢å‰æ˜¯ä¸€ä¸ªçŸ³å£ï¼ŒçŸ³å£ä¸Šä¸¤æŸ„ç«
+æŠŠå‘¼å‘¼åœ°ç‡ƒçƒ§ç€ã€‚
 LONG
         );
         set("exits", ([
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
 
         if (dir =="enter" && me->query("xjjt")<1 && me->query("xjjz")<1) { 
             if (present("wei shi", environment(me)))
-                return notify_fail("Ðþ½ÙÎÀÊ¿µ²×¡ÄãµÄÈ¥Â·£º¸óÏÂ·Ç±¾½ÌÖÐÈËÇë»Ø°É£¡\n");
+                return notify_fail("çŽ„åŠ«å«å£«æŒ¡ä½ä½ çš„åŽ»è·¯ï¼šé˜ä¸‹éžæœ¬æ•™ä¸­äººè¯·å›žå§ï¼\n");
 
         return 1;
 }

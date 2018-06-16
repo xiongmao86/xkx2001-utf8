@@ -1,23 +1,23 @@
 //Cracked by Roath
-// jinshe_book1.c ¼Ù½ğÉßÃØóÅ
+// jinshe_book1.c å‡é‡‘è›‡ç§˜ç¬ˆ
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name("½ğÉßÃØóÅ", ({ "jinshe miji", "miji", "book" }));
+	set_name("é‡‘è›‡ç§˜ç¬ˆ", ({ "jinshe miji", "miji", "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long", 
-		"ÕâÊÇ½ğÉßÀÉ¾ıÒÅÏÂµÄ¡¶½ğÉßÃØ¼®¡·¡£ÔØÓĞÎä¹¦¾øÑ§£¬µØÍ¼£¬\n"
-		"±øÈĞºÍ»ú¹ØÍ¼Ñù¡£\n");
+		"è¿™æ˜¯é‡‘è›‡éƒå›é—ä¸‹çš„ã€Šé‡‘è›‡ç§˜ç±ã€‹ã€‚è½½æœ‰æ­¦åŠŸç»å­¦ï¼Œåœ°å›¾ï¼Œ\n"
+		"å…µåˆƒå’Œæœºå…³å›¾æ ·ã€‚\n");
 		set("value", 10000000);
 		set("material", "paper");
-		set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+		set("no_drop","è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 	}
 }
 
@@ -32,10 +32,10 @@ int do_read(string arg)
 	object me = this_player();
 
 	if (!arg || arg=="") 
-                return notify_fail("ÄãÏë¶ÁÄÇÏîÎä¹¦£¿½£·¨(jianfa)£¬×¶·¨(zhuifa)£¬»¹ÊÇÕÆ·¨(zhangfa)£¿\n");
+                return notify_fail("ä½ æƒ³è¯»é‚£é¡¹æ­¦åŠŸï¼Ÿå‰‘æ³•(jianfa)ï¼Œé”¥æ³•(zhuifa)ï¼Œè¿˜æ˜¯æŒæ³•(zhangfa)ï¼Ÿ\n");
 
 	if ( arg == "zhangfa" || arg == "jianfa" || arg == "zhuifa" ) {
-		message_vision("$NÉìÊ³Ö¸ÔÚ¿ÚÖĞÒ»Ìò£¬ÕºÁËĞ©ÍÙÒº·­ÔÄÆğÊéÀ´¡£\n", me);
+		message_vision("$Nä¼¸é£ŸæŒ‡åœ¨å£ä¸­ä¸€èˆ”ï¼Œè˜¸äº†äº›å”¾æ¶²ç¿»é˜…èµ·ä¹¦æ¥ã€‚\n", me);
 
 		if ( !me->query_temp("poison") ) {
 			me->set_temp("poison", 1);
@@ -45,7 +45,7 @@ int do_read(string arg)
 		return 1;
 	}
 
-	write("ÄãÏë¶ÁÄÇÏîÎä¹¦£¿½£·¨(jianfa)£¬×¶·¨(zhuifa)£¬»¹ÊÇÕÆ·¨(zhangfa)£¿\n");
+	write("ä½ æƒ³è¯»é‚£é¡¹æ­¦åŠŸï¼Ÿå‰‘æ³•(jianfa)ï¼Œé”¥æ³•(zhuifa)ï¼Œè¿˜æ˜¯æŒæ³•(zhangfa)ï¼Ÿ\n");
 
         return 1;
 }
@@ -53,9 +53,9 @@ int do_read(string arg)
 int poison(object me)
 {
 	me->delete_temp("poison");
-	tell_object(me, HIR"ÄãÍ»È»¸Ğµ½Ò»ÕóÔÎĞı£¬Ô­À´ÊÇÊéÉÏ¾ç¶¾·¢×÷ÁË£¡\n"NOR);
-	message("vision", me->name()+"½ÅÏÂ¼¸¸öõÔõÄ£¬Ë«½ÅÒ»µÅ±ã²»¶¯ÁË£¬ÑÛ¡¢¶ú¡¢±Ç¡¢¿ÚÖĞ¶¼Á÷³öºÚÑªÀ´£¡\n", environment(me), ({me}) );
-	me->receive_wound("qi", me->query("max_qi")+100, "¾ç¶¾·¢×÷ËÀÁË");
+	tell_object(me, HIR"ä½ çªç„¶æ„Ÿåˆ°ä¸€é˜µæ™•æ—‹ï¼ŒåŸæ¥æ˜¯ä¹¦ä¸Šå‰§æ¯’å‘ä½œäº†ï¼\n"NOR);
+	message("vision", me->name()+"è„šä¸‹å‡ ä¸ªè¸‰è·„ï¼ŒåŒè„šä¸€è¹¬ä¾¿ä¸åŠ¨äº†ï¼Œçœ¼ã€è€³ã€é¼»ã€å£ä¸­éƒ½æµå‡ºé»‘è¡€æ¥ï¼\n", environment(me), ({me}) );
+	me->receive_wound("qi", me->query("max_qi")+100, "å‰§æ¯’å‘ä½œæ­»äº†");
 
 	return 1;
 }

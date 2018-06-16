@@ -1,4 +1,4 @@
-// ping.c ·ä½¬Æ¿
+// ping.c èœ‚æµ†ç“¶
 
 #include <ansi.h>
 inherit ITEM;
@@ -6,16 +6,16 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("·ä½¬Æ¿", ({ "fengjiang ping", "ping" }) );
+        set_name("èœ‚æµ†ç“¶", ({ "fengjiang ping", "ping" }) );
         set_weight(4500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "¸ö");
+        set("unit", "ä¸ª");
         set("value", 0);
-        set("material", "Óñ");
-        set("long", "ÕâÊÇÒ»¸öÓÃÉÏ¹ÅÃÀÓñµñ³ÉµÄĞ¡Æ¿£¬»¹Î´°Î¿ªÆ¿Èû£¬¾Í¿ÉÒÔÎÅµ½\n"
-                    "Ò»¹ÉÅ¨ÓôµÄÏãÎ¶£¬¿ÉÒÔÓÃÀ´Çı·ä¡£\n") ;
+        set("material", "ç‰");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªç”¨ä¸Šå¤ç¾ç‰é›•æˆçš„å°ç“¶ï¼Œè¿˜æœªæ‹”å¼€ç“¶å¡ï¼Œå°±å¯ä»¥é—»åˆ°\n"
+                    "ä¸€è‚¡æµ“éƒçš„é¦™å‘³ï¼Œå¯ä»¥ç”¨æ¥é©±èœ‚ã€‚\n") ;
 	set("max_liquid", 20);
         }
         setup();

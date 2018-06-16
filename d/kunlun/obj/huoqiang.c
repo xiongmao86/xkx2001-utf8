@@ -5,15 +5,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Åç»ğÍ²", ({ "huo qiang", "qiang", "gun" }) );
+        set_name("å–·ç«ç­’", ({ "huo qiang", "qiang", "gun" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°ÑÅç»ğÍ²£¬ÑÕÉ«ºÚÖĞÍ¸×Ï£¬ÊÇÓÃÎÚ½ğÁ¶³öµÄ
-¾«Ìú´òÔì¶ø³É¡£ºó±ß»¹Á¬×ÅÒ»¸öÌúÏä¡£\n"
+                set("long", "è¿™æ˜¯ä¸€æŠŠå–·ç«ç­’ï¼Œé¢œè‰²é»‘ä¸­é€ç´«ï¼Œæ˜¯ç”¨ä¹Œé‡‘ç‚¼å‡ºçš„
+ç²¾é“æ‰“é€ è€Œæˆã€‚åè¾¹è¿˜è¿ç€ä¸€ä¸ªé“ç®±ã€‚\n"
 );
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
 		set("bullet", 5);
 //		set("no_get", 1);
 //		set("no_drop", 1);
@@ -35,15 +35,15 @@ int do_load()
 	object me=this_player();
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if (query_temp("loaded"))
-		return notify_fail("Ê¯ÓÍÒÑ¾­×°ºÃÁË¡£\n");
+		return notify_fail("çŸ³æ²¹å·²ç»è£…å¥½äº†ã€‚\n");
 
 	if (query("bullet") <= 0)
-		return notify_fail("Ê¯ÓÍÒÑ¾­ÓÃ¾¡ÁË¡£\n");
+		return notify_fail("çŸ³æ²¹å·²ç»ç”¨å°½äº†ã€‚\n");
 
-	message_vision("$N¸øÅç»ğÍ²ÀïÉÏÁËÒ»Ğ©Ê¯ÓÍ¡£\n",me);
+	message_vision("$Nç»™å–·ç«ç­’é‡Œä¸Šäº†ä¸€äº›çŸ³æ²¹ã€‚\n",me);
 	set_temp("loaded",1);
 	me->start_busy(3+random(3));
 	
@@ -56,21 +56,21 @@ int do_aim(string target)
 	object me=this_player();
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( !target)
-		return notify_fail("ÄãÏëÉäË­£¿\n");
+		return notify_fail("ä½ æƒ³å°„è°ï¼Ÿ\n");
 
 	if(!objectp(ob = present(target, environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 	if( !ob->is_character() || ob->is_corpse() )
-		return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+		return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
 	if( !query_temp("loaded"))
-		return notify_fail("Äã»¹Ã»×°Ê¯ÓÍÄØ¡£\n");
+		return notify_fail("ä½ è¿˜æ²¡è£…çŸ³æ²¹å‘¢ã€‚\n");
 
-	message_vision(HIW"$N½«Åç»ğÍ²¶Ô×¼ÁË$n¡£\n"NOR,me,ob);
+	message_vision(HIW"$Nå°†å–·ç«ç­’å¯¹å‡†äº†$nã€‚\n"NOR,me,ob);
 
 	set_temp("aimed",target);
 	me->start_busy(3+random(3));
@@ -85,18 +85,18 @@ int do_fire()
 	object me=this_player();
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if (!(target=query_temp("aimed")) )
-		return notify_fail("ÄãÏÈÃé×¼ÁËÔÙ¿ª»ğ¡£\n");
+		return notify_fail("ä½ å…ˆç„å‡†äº†å†å¼€ç«ã€‚\n");
 
 	if (!objectp(ob = present(target,environment(me))))
-		return notify_fail("ÄãµÄÄ¿±êÒÑ¾­Àë¿ªÁË¡£\n");
+		return notify_fail("ä½ çš„ç›®æ ‡å·²ç»ç¦»å¼€äº†ã€‚\n");
 
 	if( !ob->is_character() || ob->is_corpse() )
-		return notify_fail("ÄãµÄÄ¿±êÒÑ¾­ËÀÁË¡£\n");
+		return notify_fail("ä½ çš„ç›®æ ‡å·²ç»æ­»äº†ã€‚\n");
 
-	message_vision(HIY"$NºÙºÙÒ»Éù¼éĞ¦£¬¿Û¶¯»ú¹Ø£¬Ò»Ìõ»ğÑæÏò$nÖ±Åç¹ıÈ¥¡£\n"NOR,me,ob);
+	message_vision(HIY"$Nå˜¿å˜¿ä¸€å£°å¥¸ç¬‘ï¼Œæ‰£åŠ¨æœºå…³ï¼Œä¸€æ¡ç«ç„°å‘$nç›´å–·è¿‡å»ã€‚\n"NOR,me,ob);
 	
 	add("bullet",-1);
 	remove_call_out("shoot_target");
@@ -113,26 +113,26 @@ int shoot_target(object me, string target)
 	int damage;
 
 	if (!objectp(ob = present(target,environment(me))))
-		return notify_fail("Ò»ÕóÅ¨ÑÌ¹ıÈ¥£¬ºÃÏóÊ²Ã´Ò²Ã»´ò×Å¡£\n");
+		return notify_fail("ä¸€é˜µæµ“çƒŸè¿‡å»ï¼Œå¥½è±¡ä»€ä¹ˆä¹Ÿæ²¡æ‰“ç€ã€‚\n");
 
 	if( !ob->is_character() || ob->is_corpse() )
-		return notify_fail(target+"ÒÑ¾­ËÀÁË¡£\n");
+		return notify_fail(target+"å·²ç»æ­»äº†ã€‚\n");
 
 	if (me->query("combat_exp") < random(ob->query("combat_exp")*2) )
 	{
-		message_vision(HIY"$NÖ»¾õÒ»¹ÉÈÈÀËÆËÃæ¶øÀ´£¬Ã¦Ê¹Ò»ÕĞÒ°Â¿´ò¹ö£¬ÀÇ±·Íò·ÖµÄ¶ãÁË¿ªÈ¥£¡\n"NOR,ob);
+		message_vision(HIY"$Nåªè§‰ä¸€è‚¡çƒ­æµªæ‰‘é¢è€Œæ¥ï¼Œå¿™ä½¿ä¸€æ‹›é‡é©´æ‰“æ»šï¼Œç‹¼ç‹ˆä¸‡åˆ†çš„èº²äº†å¼€å»ï¼\n"NOR,ob);
 	}
 	else
 	{
 		limbs=ob->query("limbs");
-		message_vision(HIR"Ò»¹ÉÉÕ½¹µÄÆøÎ¶´«À´£¬Ö»¼û$NµÄ"+
-				limbs[random(sizeof(limbs))]+"ÒÑ±»»ğÑæÅçÖĞ£¬"+
-				"Çê¿Ì¼äÆ¤ÆÆÈâÀÃ£¬±ä³É½¹Ì¿Ä£Ñù¡£"+
-				"$NÁ¢Ê±µøµ¹£¬¿ñ½Ğ±¯ºô¡£\n"NOR,ob);
+		message_vision(HIR"ä¸€è‚¡çƒ§ç„¦çš„æ°”å‘³ä¼ æ¥ï¼Œåªè§$Nçš„"+
+				limbs[random(sizeof(limbs))]+"å·²è¢«ç«ç„°å–·ä¸­ï¼Œ"+
+				"é¡·åˆ»é—´çš®ç ´è‚‰çƒ‚ï¼Œå˜æˆç„¦ç‚­æ¨¡æ ·ã€‚"+
+				"$Nç«‹æ—¶è·Œå€’ï¼Œç‹‚å«æ‚²å‘¼ã€‚\n"NOR,ob);
 		damage=me->query("max_qi")+ob->query("max_qi");
 		damage=random(damage);
 		ob->receive_wound("qi",random(damage));
-		ob->receive_damage("qi",damage,"±»»ğÉÕËÀÁË");
+		ob->receive_damage("qi",damage,"è¢«ç«çƒ§æ­»äº†");
 	}
 
 	ob->kill_ob(me);

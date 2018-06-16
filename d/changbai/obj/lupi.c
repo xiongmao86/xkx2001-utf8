@@ -1,5 +1,5 @@
 //Cracked by Roath
-// lupi.c Â¹Æ¤
+// lupi.c é¹¿çš®
 // ywz 09/05/1996
 
 #include <armor.h>
@@ -9,19 +9,19 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(YEL "Â¹Æ¤" NOR, ({ "hupi", "pi" }) );
+	set_name(YEL "é¹¿çš®" NOR, ({ "hupi", "pi" }) );
 	set_weight(400);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
+		set("unit", "å—");
 		set("value", 3000);
 		set("material", "cloth");
 		set("long",
-		"ÕâÊÇÒ»¿é´Ó¶«±±Ò°Â¹ÉíÉÏÈ¡ÏÂµÄÆ¤£¬´©ÉÏËüÄÜ¹»Óùº®±£Å¯£¬²¢ÄÜÓĞĞ§µÄ¶ã±Ü¹¥»÷¡£\n");
-		set("wear_msg", HIY "$N´©ÉÏ$n£¬ºÇ£¬Å¯ºÍ¼«ÁË£¡\n" NOR);
-		set("remove_msg", HIY "$NÍÑÏÂ$n£¬µşºÃ·ÅÔÚÉí±ß¡£\n" NOR);
-		set("unwear_msg", HIY "$NÍÑÏÂ$n£¬µşºÃ·ÅÔÚÉí±ß¡£\n" NOR);
+		"è¿™æ˜¯ä¸€å—ä»ä¸œåŒ—é‡é¹¿èº«ä¸Šå–ä¸‹çš„çš®ï¼Œç©¿ä¸Šå®ƒèƒ½å¤Ÿå¾¡å¯’ä¿æš–ï¼Œå¹¶èƒ½æœ‰æ•ˆçš„èº²é¿æ”»å‡»ã€‚\n");
+		set("wear_msg", HIY "$Nç©¿ä¸Š$nï¼Œå‘µï¼Œæš–å’Œæäº†ï¼\n" NOR);
+		set("remove_msg", HIY "$Nè„±ä¸‹$nï¼Œå å¥½æ”¾åœ¨èº«è¾¹ã€‚\n" NOR);
+		set("unwear_msg", HIY "$Nè„±ä¸‹$nï¼Œå å¥½æ”¾åœ¨èº«è¾¹ã€‚\n" NOR);
 		set("armor_prop/armor", 28);
 	}
 	setup();

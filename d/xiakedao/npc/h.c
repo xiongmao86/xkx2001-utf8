@@ -1,5 +1,5 @@
 //Cracked by Roath
-// helper.c ÏÀ¿ÍµºµÜ×Ó
+// helper.c ä¾ å®¢å²›å¼Ÿå­
 // Long, 6/13/97
 // This NPC will help newbie with ling once a yeat to steal, or rob
 //      back special items such as yitian-jian,...
@@ -52,51 +52,51 @@ string* items = ({
 });
 
 string* itemnames = ({
-        "ÒĞÌì½£",
-        "ĞşÌú½£",
-        "Óã³¦½£",
-        "Ñªµ¶",
-        "öùÎ²±Ş",
-        "öùÓã¼ô",
-        "½ğÉß½£",
-        "½µÄ§èÆ",
-        "ÓÎÁú½£",
-        "ÓñÖñÕÈ",
-        "Óñóï",
-        "·üÄ§µ¶",
-        "Èíâ«¼×",
-//      "½ğÂÆÒÂ",
-        "½ğ¸ÕÕÖ",
-        "ÎÚ²ÏÒÂ",
-        "×ÏÏ¼ÃØ¼®",
-        "½ğÉßÃØ¼®",
-        "ÉñÕÕ¾­",
+        "å€šå¤©å‰‘",
+        "ç„é“å‰‘",
+        "é±¼è‚ å‰‘",
+        "è¡€åˆ€",
+        "é³„å°¾é­",
+        "é³„é±¼å‰ª",
+        "é‡‘è›‡å‰‘",
+        "é™é­”æµ",
+        "æ¸¸é¾™å‰‘",
+        "ç‰ç«¹æ–",
+        "ç‰ç®«",
+        "ä¼é­”åˆ€",
+        "è½¯çŒ¥ç”²",
+//      "é‡‘ç¼•è¡£",
+        "é‡‘åˆšç½©",
+        "ä¹Œèš•è¡£",
+        "ç´«éœç§˜ç±",
+        "é‡‘è›‡ç§˜ç±",
+        "ç¥ç…§ç»",
 });
 
 void create()
 {	switch (random(3)) 
         {
 		case 0:
-	      	set_name("Óæ·ò", ({ "yu fu", "fu"}));
+	      	set_name("æ¸”å¤«", ({ "yu fu", "fu"}));
       	  	set("long", "
-Ëû¿´¹ıÈ¥Ïñ¸öÆ½Æ½·²·²µÄÓæ·ò£¬Á³ºÍ³àÂãµÄ±Û°ò¶¼É¹µÃºÚºÚµÄ¡£
-µ«Ö»ÒªÄãÁôĞÄ£¬Äã¾Í·¢ÏÖËûÁ½ÑÛÉî³Á£¬¶øÇÒÑü¹ÒÒ»°Ñ³¤½£¡£\n");
+ä»–çœ‹è¿‡å»åƒä¸ªå¹³å¹³å‡¡å‡¡çš„æ¸”å¤«ï¼Œè„¸å’Œèµ¤è£¸çš„è‡‚è†€éƒ½æ™’å¾—é»‘é»‘çš„ã€‚
+ä½†åªè¦ä½ ç•™å¿ƒï¼Œä½ å°±å‘ç°ä»–ä¸¤çœ¼æ·±æ²‰ï¼Œè€Œä¸”è…°æŒ‚ä¸€æŠŠé•¿å‰‘ã€‚\n");
                   break;
 		case 1:
-			set_name("ÉÌÈË", ({ "shang ren", "trader"}));
+			set_name("å•†äºº", ({ "shang ren", "trader"}));
 			set("long", "
-Ëû¿´¹ıÈ¥Ïñ¸öÂúÉíÍ­³ôµÄÉÌÈË£¬Éí²Ä·ÊÅÖ£¬ÂúÉíÖé¹â±¦ÆøµÄ¡£
-µ«Ö»ÒªÄãÁôĞÄ£¬Äã¾Í·¢ÏÖËûÁ½ÑÛÉî³Á£¬¶øÇÒÑü¹ÒÒ»°Ñ³¤½£¡£\n");
+ä»–çœ‹è¿‡å»åƒä¸ªæ»¡èº«é“œè‡­çš„å•†äººï¼Œèº«æè‚¥èƒ–ï¼Œæ»¡èº«ç å…‰å®æ°”çš„ã€‚
+ä½†åªè¦ä½ ç•™å¿ƒï¼Œä½ å°±å‘ç°ä»–ä¸¤çœ¼æ·±æ²‰ï¼Œè€Œä¸”è…°æŒ‚ä¸€æŠŠé•¿å‰‘ã€‚\n");
 	  		break;
 		case 2:
-			set_name("ÊéÉú", ({ "shu sheng", "sheng"}));
+			set_name("ä¹¦ç”Ÿ", ({ "shu sheng", "sheng"}));
 			set("long", "
-Ëû¿´¹ıÈ¥Ïñ¸öÂä²´µÄÊéÉú£¬´ôÍ·´ôÄÔµÄÒ»¸¶Êé´ô×ÓµÄÑù×Ó¡£
-µ«Ö»ÒªÄãÁôĞÄ£¬Äã¾Í·¢ÏÖËûÁ½ÑÛÉî³Á£¬¶øÇÒÑü¹ÒÒ»°Ñ³¤½£¡£\n");
+ä»–çœ‹è¿‡å»åƒä¸ªè½æ³Šçš„ä¹¦ç”Ÿï¼Œå‘†å¤´å‘†è„‘çš„ä¸€ä»˜ä¹¦å‘†å­çš„æ ·å­ã€‚
+ä½†åªè¦ä½ ç•™å¿ƒï¼Œä½ å°±å‘ç°ä»–ä¸¤çœ¼æ·±æ²‰ï¼Œè€Œä¸”è…°æŒ‚ä¸€æŠŠé•¿å‰‘ã€‚\n");
 	  		break;
 	}
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", random(40) + 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -104,7 +104,7 @@ void create()
         set("int", 25);
         set("con", 25);
         set("dex", 25);
-        set("race", "ÈËÀà");    
+        set("race", "äººç±»");    
         set("max_qi", 1500);
         set("eff_qi", 1500);
         set("qi", 1500);
@@ -142,10 +142,10 @@ void create()
 		(: random_move :),
 		}));
         set("inquiry", ([
-                        "ÏÀ¿Íµº"   :  "ÎÒÕıÊÇÏÀ¿ÍµºµÄµÜ×Ó£¬ÄãÓĞÊ²÷áÊÂĞèÒª°ïÖúµÄ£¿",
-                        "ÉÍÉÆÁî"   :  "ÄãÒªÊÇÏëÕÒÊ²÷á¹óÖØµÄ¶«Î÷£¬ÓĞÉÍÉÆÁîµÄ»°ÎÒ¿ÉÒÔ°ï°ïÄã¡£\n",
-                        "·£¶ñÁî"   :  "ÄãÒªÊÇÓĞÊ²÷áÑª³ğÎŞ·¨±¨£¬ÓĞ·£¶ñÁîµÄ»°ÎÒ¿ÉÒÔ°ï°ïÄã¡£\n",
-				"ÕÒÁî"     :  (:ask_ling, ling:),
+                        "ä¾ å®¢å²›"   :  "æˆ‘æ­£æ˜¯ä¾ å®¢å²›çš„å¼Ÿå­ï¼Œä½ æœ‰ä»€éº½äº‹éœ€è¦å¸®åŠ©çš„ï¼Ÿ",
+                        "èµå–„ä»¤"   :  "ä½ è¦æ˜¯æƒ³æ‰¾ä»€éº½è´µé‡çš„ä¸œè¥¿ï¼Œæœ‰èµå–„ä»¤çš„è¯æˆ‘å¯ä»¥å¸®å¸®ä½ ã€‚\n",
+                        "ç½šæ¶ä»¤"   :  "ä½ è¦æ˜¯æœ‰ä»€éº½è¡€ä»‡æ— æ³•æŠ¥ï¼Œæœ‰ç½šæ¶ä»¤çš„è¯æˆ‘å¯ä»¥å¸®å¸®ä½ ã€‚\n",
+				"æ‰¾ä»¤"     :  (:ask_ling, ling:),
                 ]));
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -155,10 +155,10 @@ void create()
 
 void init()
 {
-        add_action("do_find", "ÕÒ");
+        add_action("do_find", "æ‰¾");
         add_action("do_find", "find");  
-        add_action("do_kill", "É±");  
-        add_action("do_kill", "±¨³ğ");  
+        add_action("do_kill", "æ€");  
+        add_action("do_kill", "æŠ¥ä»‡");  
 }
 int ask_ling()
 {	object me = this_player();
@@ -171,7 +171,7 @@ int ask_ling()
 	{	return 0;
 	}
 	if (query_temp("xkd/busy"))
-      {     command("say ÎÒÕıÃ¦×ÅÄØ£¬´ı»á°É¡£");
+      {     command("say æˆ‘æ­£å¿™ç€å‘¢ï¼Œå¾…ä¼šå§ã€‚");
       	return 1;
 	}
 
@@ -188,7 +188,7 @@ int ask_ling()
 					else
 					{	holdee = holder;
 					}
-					command("say ÄãµÄ" + lings[count]->query("name")+"ÔÚ"+holdee->query("name")+"ÄÇ£¬¿ìÈ¥ÄÃ»ØÀ´°É¡£");
+					command("say ä½ çš„" + lings[count]->query("name")+"åœ¨"+holdee->query("name")+"é‚£ï¼Œå¿«å»æ‹¿å›æ¥å§ã€‚");
 					flag = 1;
 				}
 			}
@@ -197,15 +197,15 @@ int ask_ling()
 		{	ling1 = new("/d/xiakedao/obj/shan-ling.c");
 			ling1->move(this_object());
 			ling1->set("long", 
-"ÕâÊÇÒ»¿ìÌúÅÆ£¬ÅÆµÄÒ»ÃæÊÇÒ»¸öĞ¦Á³£¬ÁíÒ»Ãæ¿Ì×Å¡°" + me->query("name") + "¡±\n");
+"è¿™æ˜¯ä¸€å¿«é“ç‰Œï¼Œç‰Œçš„ä¸€é¢æ˜¯ä¸€ä¸ªç¬‘è„¸ï¼Œå¦ä¸€é¢åˆ»ç€â€œ" + me->query("name") + "â€\n");
 			ling1->set("owner", me->query("id"));
-			command("say ºÃ°É£¬ÎÒÔÙ¸øÄãÒ»"+ling1->query("unit") + ling1->query("name")+ ", Õâ´Î¿ÉÒªÊÕºÃà¸");
+			command("say å¥½å§ï¼Œæˆ‘å†ç»™ä½ ä¸€"+ling1->query("unit") + ling1->query("name")+ ", è¿™æ¬¡å¯è¦æ”¶å¥½å–”");
 			command("give "+ ling1->query("id") + " to " + me->query("id"));
 		}
 	}
 	else
 	{	if (!ling1)
-		{	command("say ÄãÒÑ¾­°Ñ" + ling1->query("name") + "¶¼¸øÎÒÁË£¬µ±È»ÕÒ²»µ½ÁË¡£");}
+		{	command("say ä½ å·²ç»æŠŠ" + ling1->query("name") + "éƒ½ç»™æˆ‘äº†ï¼Œå½“ç„¶æ‰¾ä¸åˆ°äº†ã€‚");}
 	}
 	if ((!ling2) && (me->query("xkd/kill") == 0))
 	{	lings = children("fae ling");
@@ -221,7 +221,7 @@ int ask_ling()
 					{	holdee = holder;
 					}
 					flag = 1;
-					command("say ÄãµÄ" + lings[count]->query("name")+"ÔÚ"+holdee->query("name")+"ÄÇ£¬¿ìÈ¥ÄÃ»ØÀ´°É¡£");
+					command("say ä½ çš„" + lings[count]->query("name")+"åœ¨"+holdee->query("name")+"é‚£ï¼Œå¿«å»æ‹¿å›æ¥å§ã€‚");
 				}
 			}
 		}
@@ -229,15 +229,15 @@ int ask_ling()
 		{	ling2 = new("/d/xiakedao/obj/fa-ling.c");
 			ling2->move(this_object());
 			ling2->set("long", 
-"ÕâÊÇÒ»¿ìÌúÅÆ£¬ÅÆµÄÒ»ÃæÊÇÒ»¸ö¿àÁ³£¬ÁíÒ»Ãæ¿Ì×Å¡°" + me->query("name") + "¡±\n");
+"è¿™æ˜¯ä¸€å¿«é“ç‰Œï¼Œç‰Œçš„ä¸€é¢æ˜¯ä¸€ä¸ªè‹¦è„¸ï¼Œå¦ä¸€é¢åˆ»ç€â€œ" + me->query("name") + "â€\n");
 			ling2->set("owner", me->query("id"));
-			command("say ºÃ°É£¬ÎÒÔÙ¸øÄãÒ»" +ling2->query("unit") + ling2->query("name")+ ", Õâ´Î¿ÉÒªÊÕºÃà¸");
+			command("say å¥½å§ï¼Œæˆ‘å†ç»™ä½ ä¸€" +ling2->query("unit") + ling2->query("name")+ ", è¿™æ¬¡å¯è¦æ”¶å¥½å–”");
 			command("give "+ ling2->query("id") + " to " + me->query("id"));
 		}
 	}
 	else
 	{	if (!ling2)
-		{	command("say ÄãÒÑ¾­°Ñ" + ling2->query("name") + "¶¼¸øÎÒÁË£¬µ±È»ÕÒ²»µ½ÁË¡£");}
+		{	command("say ä½ å·²ç»æŠŠ" + ling2->query("name") + "éƒ½ç»™æˆ‘äº†ï¼Œå½“ç„¶æ‰¾ä¸åˆ°äº†ã€‚");}
 	}
 
 	return 1;
@@ -255,21 +255,21 @@ int item_num(string item)
 int accept_object(object who, object ob)
 {       object me = this_object();
         if (query_temp("xkd/busy"))
-        {       command("say ÎÒÕıÃ¦×ÅÄØ£¬´ı»á°É¡£");
+        {       command("say æˆ‘æ­£å¿™ç€å‘¢ï¼Œå¾…ä¼šå§ã€‚");
                 return 0;
         }
         if ((ob->query("id") != "fae ling") && (ob->query("id") != "shangshan ling"))
         {       return 0;       }
         if (ob->query("owner") != who->query("id"))
         {       command("shake " + who->query("id"));
-                command("say Äã²»ÊÇÕâ" + ob->query("name") + "µÄÖ÷ÈË£¬ÎÒ²»ÄÜ°ïÄã¡£");
+                command("say ä½ ä¸æ˜¯è¿™" + ob->query("name") + "çš„ä¸»äººï¼Œæˆ‘ä¸èƒ½å¸®ä½ ã€‚");
                 return 0;
         }
         if ((int)who->query("combat_exp") < 10000)
         {	    if (ob->query("id") == "shangshan ling")
-		    {	   command("say Ğ¡º¢×ÓÕÒÄÇ÷á¹óÖØµÄ¶«Î÷¸ÉÂï£¬Äã´óÒ»µãÔÙÀ´°É¡£");}
+		    {	   command("say å°å­©å­æ‰¾é‚£éº½è´µé‡çš„ä¸œè¥¿å¹²å˜›ï¼Œä½ å¤§ä¸€ç‚¹å†æ¥å§ã€‚");}
 		    else
-		    {	   command("say Ğ¡º¢×ÓÑ§ÈË´ò´òÉ±É±µÄ¸ÉÂï¡£");}
+		    {	   command("say å°å­©å­å­¦äººæ‰“æ‰“æ€æ€çš„å¹²å˜›ã€‚");}
                 return 0;
         }
         ling = ob;
@@ -277,12 +277,12 @@ int accept_object(object who, object ob)
 	  this_object()->set_temp("xkd/busy", 1);
         if (ob->query("id") == "shangshan ling")
         {	who->set_temp("xkd/give", 1);
-		command("say ÄãÏëÕÒÊ²÷áÄØ¡£(find)");
+		command("say ä½ æƒ³æ‰¾ä»€éº½å‘¢ã€‚(find)");
 
         }
         else
         {	who->set_temp("xkd/give2", 1);
-		command("say ÄãÈç¹ûÈ·¶¨Òª±¨³ğ£¬¾Í¸æËßÎÒ°É¡£(±¨³ğ)");
+		command("say ä½ å¦‚æœç¡®å®šè¦æŠ¥ä»‡ï¼Œå°±å‘Šè¯‰æˆ‘å§ã€‚(æŠ¥ä»‡)");
         }
         return 1;
 }

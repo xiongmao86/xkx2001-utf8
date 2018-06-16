@@ -12,7 +12,7 @@ int travel(object player, string target_path, mixed route, int step);
 
 void create()
 {
-    set_name("½Î×Ó", ({"jiao zi", "jiao"}));
+    set_name("è½¿å­", ({"jiao zi", "jiao"}));
     set_weight(3000000);
     set_max_encumbrance(5000000);
     if (clonep())
@@ -20,11 +20,11 @@ void create()
     else {
 	set("long", @LONG
 
-½Î×ÓÀï -
-ÕâÊÇÒ»¶¥Çà²¼Èí½Î£¬½Î×ÓÁ±×Ó´îÀ­×Å£¬ËùÒÔ²»Ì«¿´µÃÇåÍâÃæµÄÇé¿ö¡£
+è½¿å­é‡Œ -
+è¿™æ˜¯ä¸€é¡¶é’å¸ƒè½¯è½¿ï¼Œè½¿å­å¸˜å­æ­æ‹‰ç€ï¼Œæ‰€ä»¥ä¸å¤ªçœ‹å¾—æ¸…å¤–é¢çš„æƒ…å†µã€‚
 LONG
 );
-	set("unit", "¶¥");
+	set("unit", "é¡¶");
 	set("material", "cloth");
 	set("value", 5000000);
 	set("invalid_startroom", 1);
@@ -60,33 +60,33 @@ int do_hire(string arg)
     object env=environment(player);
     object owner;
 
-    if (! stringp(arg)) return notify_fail("ÄãÒª¹ÍÊ²Ã´£¿\n");
+    if (! stringp(arg)) return notify_fail("ä½ è¦é›‡ä»€ä¹ˆï¼Ÿ\n");
     tmp_ob=present(arg, env);
-    if (! objectp(tmp_ob)) return notify_fail("ÄãÒª¹ÍÊ²Ã´£¿\n");
+    if (! objectp(tmp_ob)) return notify_fail("ä½ è¦é›‡ä»€ä¹ˆï¼Ÿ\n");
     if (tmp_ob != me) return 0;
 
     owner = me->query("owner");
     if (objectp(owner)) {
 	if (owner == player) {
-	    return notify_fail("Õâ¶¥½Î×ÓÒÑ¾­±»Äã¹ÍÁË£¬Äã¾ÍËµÒªÍùÄÄ¶ùÈ¥°É¡£\n");
+	    return notify_fail("è¿™é¡¶è½¿å­å·²ç»è¢«ä½ é›‡äº†ï¼Œä½ å°±è¯´è¦å¾€å“ªå„¿å»å§ã€‚\n");
 	}
-	return notify_fail("Õâ¶¥½Î×ÓÒÑ¾­±»"+owner->query("name")+"¹ÍÁË¡£\n");
+	return notify_fail("è¿™é¡¶è½¿å­å·²ç»è¢«"+owner->query("name")+"é›‡äº†ã€‚\n");
     }
 
-    message_vision("$N¶Ô½Î·òËµµÀ£ºÀÍ¼İ£¬ÎÒÏë¹Í½Î×Ó£¡\n", player);
+    message_vision("$Nå¯¹è½¿å¤«è¯´é“ï¼šåŠ³é©¾ï¼Œæˆ‘æƒ³é›‡è½¿å­ï¼\n", player);
     switch (MONEY_D->player_pay(player, 1000)) {
     case 0:
-	write("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+	write("ç©·å…‰è›‹ï¼Œä¸€è¾¹å‘†ç€å»ï¼\n");
 	return 1;
     case 2:
-	write("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+	write("æ‚¨çš„é›¶é’±ä¸å¤Ÿäº†ï¼Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
 	return 1;
     default:
 	break;
     }
 
-    message_vision("$NÌÍ³öÊ®Á½Òø×Ó¸ø½Î·ò¡£½Î·òÄÃÔÚÊÖÀïµàÁËµà£¬¸ßĞËµØÊÕÁËÆğÀ´¡£\n", player);
-    message_vision("½Î·òµØ¶Ô$NµãµãÍ·Ëµ£º¶àĞ»ÄúÀÏ£¡ÄúÏëÒª¹Í³µÈ¥ÄÄÀï£¿\n", player);
+    message_vision("$Næå‡ºåä¸¤é“¶å­ç»™è½¿å¤«ã€‚è½¿å¤«æ‹¿åœ¨æ‰‹é‡Œæ‚äº†æ‚ï¼Œé«˜å…´åœ°æ”¶äº†èµ·æ¥ã€‚\n", player);
+    message_vision("è½¿å¤«åœ°å¯¹$Nç‚¹ç‚¹å¤´è¯´ï¼šå¤šè°¢æ‚¨è€ï¼æ‚¨æƒ³è¦é›‡è½¦å»å“ªé‡Œï¼Ÿ\n", player);
     me->set("owner", player);
     return 1;
 }
@@ -120,9 +120,9 @@ int do_travel(string arg)
 
     router = new(TRAVERSER);
     if (! objectp(router)) 
-	return notify_fail("Çë¸æËßÎ×Ê¦: BUG: /d/beijing/obj/jiaozi.c: can't find router\n");
+	return notify_fail("è¯·å‘Šè¯‰å·«å¸ˆ: BUG: /d/beijing/obj/jiaozi.c: can't find router\n");
 
-    message_vision("$N¶Ô½Î·òËµµÀ£º"+arg+"ÕâµØ·½ÄãÖªµÀ°É£¿\n", player);
+    message_vision("$Nå¯¹è½¿å¤«è¯´é“ï¼š"+arg+"è¿™åœ°æ–¹ä½ çŸ¥é“å§ï¼Ÿ\n", player);
     
     delete("target_room_path");
     delete("target_room_short");
@@ -142,7 +142,7 @@ int check_travel_target(object router, object player)
     object me = this_object();
 
     if (! router->traverse_finish()) {
-	message_vision("½Î·òËµµÀ£º²»ºÃÒâË¼£¬ÕâµØ·½ÎÒ»¹Õæ²»Ì«Çå³ş£¬ÄúÈÃÎÒÔÙÎÊÎÊ±ğÈË¡£\n", 
+	message_vision("è½¿å¤«è¯´é“ï¼šä¸å¥½æ„æ€ï¼Œè¿™åœ°æ–¹æˆ‘è¿˜çœŸä¸å¤ªæ¸…æ¥šï¼Œæ‚¨è®©æˆ‘å†é—®é—®åˆ«äººã€‚\n", 
 			player);
 	call_out("check_travel_target", 3, router, player);
 	return 1;
@@ -154,7 +154,7 @@ int check_travel_target(object router, object player)
     me->delete("target_room_short");
 
     if (! stringp(target_room_path) ) {
- 	message_vision("½Î·òËµµÀ£º¶Ô²»×¡£¬¾©³ÇÀïÃ»ÕâºÅµØ·½¡£\n", player);
+ 	message_vision("è½¿å¤«è¯´é“ï¼šå¯¹ä¸ä½ï¼Œäº¬åŸé‡Œæ²¡è¿™å·åœ°æ–¹ã€‚\n", player);
 	destruct(router);
 	return 1;
     }
@@ -162,12 +162,12 @@ int check_travel_target(object router, object player)
     destruct(router);
 
     if (sizeof(route) <= 1) {
-	message_vision("$N½Î·òĞ¦µÀ£º¿Í¹Ù£¬Äú²»¾ÍÔÚÕâ¶ùÂğ£¿\n", player);
+	message_vision("$Nè½¿å¤«ç¬‘é“ï¼šå®¢å®˜ï¼Œæ‚¨ä¸å°±åœ¨è¿™å„¿å—ï¼Ÿ\n", player);
 	return 1;
     }
 
     // now we have got all the information, let's go
-    message_vision("$N×ê½ø½Î×Ó£¬¶Ô½Î·òËµµÀ£º¿´½Î£¬È¥"+target_room_short+"¡£\n", player);
+    message_vision("$Né’»è¿›è½¿å­ï¼Œå¯¹è½¿å¤«è¯´é“ï¼šçœ‹è½¿ï¼Œå»"+target_room_short+"ã€‚\n", player);
     player->move(me);
     me->set("moving", 1);
     call_out("travel", 3, player, target_room_path, route, 0);
@@ -196,17 +196,17 @@ int travel(object player, string target_path, mixed route, int step)
         return fatal_error(0, room, target_path, route, step);  // maybe player quit
     }
     if (step >= sizeof(route)-1) {
- 	tell_object(player, "Çë¸æËßÎ×Ê¦£ºBUG: /d/beijing/obj/jiaozi.c: step overflow.\n");
+ 	tell_object(player, "è¯·å‘Šè¯‰å·«å¸ˆï¼šBUG: /d/beijing/obj/jiaozi.c: step overflow.\n");
 	return fatal_error(player, room, target_path, route, step);
     }
     info=route[step];
     if (!mapp(info)){
- 	tell_object(player, "Çë¸æËßÎ×Ê¦£ºBUG: /d/beijing/obj/jiaozi.c: info corrupted.\n");
+ 	tell_object(player, "è¯·å‘Šè¯‰å·«å¸ˆï¼šBUG: /d/beijing/obj/jiaozi.c: info corrupted.\n");
 	return fatal_error(player, room, target_path, route, step);
     }
     room_path=keys(info)[0];
     if (room_path != base_name(room)) { // not in the right place
- 	tell_object(player, "Çë¸æËßÎ×Ê¦£ºBUG: /d/beijing/obj/jiaozi.c: position wrong.\n");
+ 	tell_object(player, "è¯·å‘Šè¯‰å·«å¸ˆï¼šBUG: /d/beijing/obj/jiaozi.c: position wrong.\n");
  	tell_object(player, "should be="+room_path+", is="+base_name(room)+"\n");
 	return fatal_error(player, room, target_path, route, step);
     }
@@ -215,7 +215,7 @@ int travel(object player, string target_path, mixed route, int step)
     step++;
     info=route[step];
     if (!mapp(info)) {
- 	tell_object(player, "Çë¸æËßÎ×Ê¦£ºBUG: /d/beijing/obj/jiaozi.c: no new info.\n");
+ 	tell_object(player, "è¯·å‘Šè¯‰å·«å¸ˆï¼šBUG: /d/beijing/obj/jiaozi.c: no new info.\n");
 	return fatal_error(player, room, target_path, route, step);
     }
     room_path=keys(info)[0];
@@ -226,23 +226,23 @@ int travel(object player, string target_path, mixed route, int step)
     }
     if (!objectp(next_room)) {
  	tell_object(player, 
-		"Çë¸æËßÎ×Ê¦£ºBUG: /d/beijing/obj/jiaozi.c: load_object fail.\n");
+		"è¯·å‘Šè¯‰å·«å¸ˆï¼šBUG: /d/beijing/obj/jiaozi.c: load_object fail.\n");
 	return fatal_error(player, room,  target_path, route, step);
     }
 
     // move over
-    message("info", "½Î·òÌ§×Å½Î×ÓÍù"+CHINESE_D->chinese(dir)+"Àë¿ª¡£\n", room, 0);
+    message("info", "è½¿å¤«æŠ¬ç€è½¿å­å¾€"+CHINESE_D->chinese(dir)+"ç¦»å¼€ã€‚\n", room, 0);
     me->move(next_room);
-    message("info", "½Î·òÌ§×Å½Î×Ó¹ıÀ´¡£\n", next_room, 0);
+    message("info", "è½¿å¤«æŠ¬ç€è½¿å­è¿‡æ¥ã€‚\n", next_room, 0);
     // "/cmds/std/go.c"->main(me, dir);
-    tell_object(player, "½Î·òËµµÀ£º¿Í¹Ù£¬ÏÖÔÚÔÛÃÇµ½"+next_room->query("short")+"ÁË¡£\n");
+    tell_object(player, "è½¿å¤«è¯´é“ï¼šå®¢å®˜ï¼Œç°åœ¨å’±ä»¬åˆ°"+next_room->query("short")+"äº†ã€‚\n");
 
     // check arrival
     if (step >= sizeof(route)-1) {	// arrive
         player->move(next_room);
-	message_vision("½Î·ò¶Ô$NËµµÀ£º¿Í¹Ù£¬"+next_room->query("short")+
-			"µ½ÁË¡£\n", player);
-	message_vision("$N´Ó½Î×ÓÀïÏÂÀ´¡£\n", player);
+	message_vision("è½¿å¤«å¯¹$Nè¯´é“ï¼šå®¢å®˜ï¼Œ"+next_room->query("short")+
+			"åˆ°äº†ã€‚\n", player);
+	message_vision("$Nä»è½¿å­é‡Œä¸‹æ¥ã€‚\n", player);
 	me->delete("owner");
 	return 1;
     }

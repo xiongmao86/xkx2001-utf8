@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIG"“ı—Ù≤›"NOR, ({"yinyang cao","cao"}));
+        set_name(HIG"Èò¥Èò≥Ëçâ"NOR, ({"yinyang cao","cao"}));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "ø√");
-                set("long","’‚ «“ªø√“ı—Ù≤›°£\n");
+                set("unit", "Ê£µ");
+                set("long","ËøôÊòØ‰∏ÄÊ£µÈò¥Èò≥Ëçâ„ÄÇ\n");
                 set("value", 0);
                         set("yaocai", 1);
                         set("cure_s",0);

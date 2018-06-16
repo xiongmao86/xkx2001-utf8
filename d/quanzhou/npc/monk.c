@@ -1,22 +1,22 @@
 //Cracked by Roath
-// monk.c É®ÈË
+// monk.c åƒ§äºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("É®ÈË", ({ "seng ren", "seng" }));
+	set_name("åƒ§äºº", ({ "seng ren", "seng" }));
 	set("long",
-		"ÕâÊÇÒ»Î»É®ÈË¡£\n"
+		"è¿™æ˜¯ä¸€ä½åƒ§äººã€‚\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "peaceful");
 	set("class", "bonze");
 
 	set("chat_msg",({
-		"É®ÈË»üÊ×ËµµÀ£ºÕâÎ»Ê©Ö÷ÓĞÇëÁË£¡\n",
+		"åƒ§äººç¨½é¦–è¯´é“ï¼šè¿™ä½æ–½ä¸»æœ‰è¯·äº†ï¼\n",
 	}));
 
 	set("age", 35);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/huanghe/obj/caili.c  ²ÊÀñ
+// /d/huanghe/obj/caili.c  å½©ç¤¼
 // by aln 2 / 98
 
 #define BANGZHONG2 "/d/huanghe/npc/bangzhong2"
@@ -13,17 +13,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(RED"²ÊÀñ"NOR, ({ "caili" }));
+        set_name(RED"å½©ç¤¼"NOR, ({ "caili" }));
         set("weight", 20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long",
-"ÕâÊÇÒ»·İ°ü×°¾«ÖÆµÄ²ÊÀñ£¬ÀïÃæÒ»¶¨×°×Å¹óÖØµÄ¶«Î÷¡£\n");
-                set("unit", "·İ");
+"è¿™æ˜¯ä¸€ä»½åŒ…è£…ç²¾åˆ¶çš„å½©ç¤¼ï¼Œé‡Œé¢ä¸€å®šè£…ç€è´µé‡çš„ä¸œè¥¿ã€‚\n");
+                set("unit", "ä»½");
                 set("value", 30);
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");            
+                set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+                set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");            
         }
 
         setup();
@@ -51,7 +51,7 @@ void do_check()
         if( !living(owner)
         ||  owner->query_leader() 
         ||  owner->query_temp("cursed", 1) ) {
-                tell_object(owner, HIR"\nÄãºöÈ»ÓĞÒ»ÖÖ²»ÏéµÄ¸Ğ¾õ¡£\n"NOR);
+                tell_object(owner, HIR"\nä½ å¿½ç„¶æœ‰ä¸€ç§ä¸ç¥¥çš„æ„Ÿè§‰ã€‚\n"NOR);
                 destruct(this_object());
                 return;
         }
@@ -73,7 +73,7 @@ int do_go(string arg)
         int ap, dp;
 
         if( me->is_busy() ) {
-                write("ÄãÕıÃ¦×Å¡£\n");
+                write("ä½ æ­£å¿™ç€ã€‚\n");
                 return 1;
         } 
 
@@ -88,7 +88,7 @@ int do_go(string arg)
                                 return notify_fail("");
 
                         me->start_busy(1);
-                        message_vision("$N¶Ô$nºÈµÀ£º" + RANK_D->query_rude(me) + "°Ñ¶«Î÷ÁôÏÂ£¡£¡£¡\n", ob, me);
+                        message_vision("$Nå¯¹$nå–é“ï¼š" + RANK_D->query_rude(me) + "æŠŠä¸œè¥¿ç•™ä¸‹ï¼ï¼ï¼\n", ob, me);
                         if( !ob->is_fighting(me) )
                                 ob->kill_ob(me);
                         return 1;
@@ -96,8 +96,8 @@ int do_go(string arg)
         }
 
         if( random(4) ) {
-                me->receive_damage("jingli", 30 + random(30), "Á¦¾¡¶øËÀ");
-                me->receive_damage("qi", 30 + random(30), "Á¦¾¡¶øËÀ");
+                me->receive_damage("jingli", 30 + random(30), "åŠ›å°½è€Œæ­»");
+                me->receive_damage("qi", 30 + random(30), "åŠ›å°½è€Œæ­»");
                 return notify_fail("");
         }
 
@@ -108,9 +108,9 @@ int do_go(string arg)
 
         ob->move(room);
         message("vision",
-                ob->query("title") + ob->name() + "×ßÁË¹ıÀ´¡£\n",
+                ob->query("title") + ob->name() + "èµ°äº†è¿‡æ¥ã€‚\n",
                 environment(ob), ({ob}));
-        message_vision(HIR"\n" + ob->query("title") + ob->name() + "¶Ô$NºÈµÀ£º" + RANK_D->query_rude(me) + "°Ñ¶«Î÷ÁôÏÂ£¡£¡£¡\n"NOR, me);    
+        message_vision(HIR"\n" + ob->query("title") + ob->name() + "å¯¹$Nå–é“ï¼š" + RANK_D->query_rude(me) + "æŠŠä¸œè¥¿ç•™ä¸‹ï¼ï¼ï¼\n"NOR, me);    
         ob->kill_ob(me);
         me->start_busy(1);
         return 1; 
@@ -123,12 +123,12 @@ int do_visit(string arg)
         mapping job;
 
         if( me->is_busy() || me->is_fighting() ) {
-                write("ÄãÕıÃ¦×Å¡£\n");
+                write("ä½ æ­£å¿™ç€ã€‚\n");
                 return 1;
         }
 
         if( !arg ) {
-                write("ÄãÒª°İ·ÃË­£¿\n");
+                write("ä½ è¦æ‹œè®¿è°ï¼Ÿ\n");
                 return 1;
         }
 
@@ -140,42 +140,42 @@ int do_visit(string arg)
    // the following is very important to avoid players cheating
         room = environment(me);
         if( base_name(room) != job["file"] ) {
-                write("Äã»¹Ã»µ½Ä¿µÄµØÄØ¡£\n");
+                write("ä½ è¿˜æ²¡åˆ°ç›®çš„åœ°å‘¢ã€‚\n");
                 return 1;
         }
 
         if( !(ob = present(arg, room)) ) {
-                write("Õâ¶ùÃ»ÓĞÄãÒª°İ·ÃµÄÈË¡£\n");
+                write("è¿™å„¿æ²¡æœ‰ä½ è¦æ‹œè®¿çš„äººã€‚\n");
                 return 1;
         }
 
         if( ob->query("name") != job["name"] ) { 
-                write("Äã°İ·Ã´íÈËÁË¡£\n");
+                write("ä½ æ‹œè®¿é”™äººäº†ã€‚\n");
                 return 1;
         }
 
         if( !living(ob) ) {
-                write("Äã»¹ÊÇµÈ´ËÈËĞÑÀ´ÔÙËµ°É¡£\n");
+                write("ä½ è¿˜æ˜¯ç­‰æ­¤äººé†’æ¥å†è¯´å§ã€‚\n");
                 return 1;
         }
 
         if( ob->is_busy() || ob->is_fighting() ) { 
-                write("´ËÈËÕıÃ¦×Å¡£\n");
+                write("æ­¤äººæ­£å¿™ç€ã€‚\n");
                 return 1;
         }
 
-        message_vision("$NÏò$n¹ªÉí×÷ÁË¸öÒ¾£¬ÀÉÉùËµµÀ£º±×°ï°ïÖ÷²î" + RANK_D->query_self_rude(me) + "ËÍÒ»·İ´óÀñ¸ø" + RANK_D->query_respect(ob) + "¡£\n", me, ob);
-        message_vision("$N½«" + name() + "Ë«ÊÖ·î¸ø$n¡£\n", me, ob);
+        message_vision("$Nå‘$nèº¬èº«ä½œäº†ä¸ªæ–ï¼Œéƒå£°è¯´é“ï¼šå¼Šå¸®å¸®ä¸»å·®" + RANK_D->query_self_rude(me) + "é€ä¸€ä»½å¤§ç¤¼ç»™" + RANK_D->query_respect(ob) + "ã€‚\n", me, ob);
+        message_vision("$Nå°†" + name() + "åŒæ‰‹å¥‰ç»™$nã€‚\n", me, ob);
         move(ob);
         remove_call_out("do_destroy");
         call_out("do_destroy", 1, this_object());
 
-        message_vision("$N»¹ÁËÒ»¸öÀñ£¬ËµµÀ£º" + RANK_D->query_respect(me) + "ĞÁ¿àÁË¡£»ØÈ¥ºó´úÎÒÏòÄã°ïÖ÷ÎÊ¸ö°²¡£\n", ob);
+        message_vision("$Nè¿˜äº†ä¸€ä¸ªç¤¼ï¼Œè¯´é“ï¼š" + RANK_D->query_respect(me) + "è¾›è‹¦äº†ã€‚å›å»åä»£æˆ‘å‘ä½ å¸®ä¸»é—®ä¸ªå®‰ã€‚\n", ob);
 
         bonus = (int)job["bonus"] * 400000 / (200000 + me->query("combat_exp"));
         record = bonus + random(bonus);
         me->add("combat_exp", record);
-        write_file("/log/test/BangJob", sprintf("%sÓÚ%sÊ±ÒòËÍÀñµÃ%s¾­Ñéµã\n", me->query("name"), ctime(time()), chinese_number(record)));
+        write_file("/log/test/BangJob", sprintf("%säº%sæ—¶å› é€ç¤¼å¾—%sç»éªŒç‚¹\n", me->query("name"), ctime(time()), chinese_number(record)));
 
         bonus /= 4;
         me->add("shen", -bonus);
@@ -200,10 +200,10 @@ int do_giveup()
 
         if( ob = present("bang zhong", environment(this_player())) ) {
                 if( base_name(ob) == BANGZHONG2 && living(ob) ) {
-                message_vision("$NÂúº¬Ê§ÍûµØ³¤Ì¾Ò»Éù£¬ËµµÀ£º¼ÈÈ»Èç´Ë£¬Ò²¾Í°ÕÁË£¡\n", this_player());
-                message_vision("$N½«²ÊÀñËÍ¸ø$n¡£\n", this_player(), ob);
+                message_vision("$Næ»¡å«å¤±æœ›åœ°é•¿å¹ä¸€å£°ï¼Œè¯´é“ï¼šæ—¢ç„¶å¦‚æ­¤ï¼Œä¹Ÿå°±ç½¢äº†ï¼\n", this_player());
+                message_vision("$Nå°†å½©ç¤¼é€ç»™$nã€‚\n", this_player(), ob);
                 message("vision",
-                ob->name() + "ËµµÀ£ºËãÄãÊ¶Ê±Îñ£¬ÎÒ¾ÍÈÄÄãÒ»Ãü¡£ËµÍê±ãÑï³¤¶øÈ¥¡£\n",
+                ob->name() + "è¯´é“ï¼šç®—ä½ è¯†æ—¶åŠ¡ï¼Œæˆ‘å°±é¥¶ä½ ä¸€å‘½ã€‚è¯´å®Œä¾¿æ‰¬é•¿è€Œå»ã€‚\n",
                 environment(ob), ({ob}));
                 destruct(ob);
                 destruct(this_object());

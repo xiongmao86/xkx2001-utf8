@@ -9,11 +9,11 @@ int do_dazuo(string arg);
 
 void create()
 {
-        set("short", "Á·¹¦ÊÒ");
+        set("short", "ç»ƒåŠŸå®¤");
         set("long", @LONG
-É½¶´ËÄÖÜÇ½ÉÏµãÂúÁË»ð°Ñ¡£ÕâÀï¼«Îª°²¾²£¬½öÄÜÌýµ½»òÓÆ³¤£¬»ò
-´ÖÖØµÄºôÎüÉù¡£¶´ÀïÁãÁãÂäÂäµØ°Ú×Å¼¸¸öÆÑÍÅ£¬²¢ÎÞÆäËû³ÂÉè¡£¼¸¸ö
-ÈËÕý×øÔÚÉÏÃæ´ò×ø(dazuo)£¬ÍÂÄÉ(tuna)¡£
+å±±æ´žå››å‘¨å¢™ä¸Šç‚¹æ»¡äº†ç«æŠŠã€‚è¿™é‡Œæžä¸ºå®‰é™ï¼Œä»…èƒ½å¬åˆ°æˆ–æ‚ é•¿ï¼Œæˆ–
+ç²—é‡çš„å‘¼å¸å£°ã€‚æ´žé‡Œé›¶é›¶è½è½åœ°æ‘†ç€å‡ ä¸ªè’²å›¢ï¼Œå¹¶æ— å…¶ä»–é™ˆè®¾ã€‚å‡ ä¸ª
+äººæ­£ååœ¨ä¸Šé¢æ‰“å(dazuo)ï¼Œåçº³(tuna)ã€‚
 LONG );
 
         set("exits", ([
@@ -36,18 +36,18 @@ void init()
 
 int do_dazuo(string arg)
 {	if (!arg)
-	{	write("´ò×ø(dazuo)ÊÇÓÃÆøÌá¸ßÄãµÄÄÚÁ¦¡£Ã¿´Î´ò×ø×îÉÙÒª»¨Ê®µãÆø¡£\n");
-		write("Èç¹ûÄã´ò×ø°ÑÄãµÄÄÚÁ¦Ìá¸ßµ½ÄãÓÀ¾ÃÄÚÁ¦µÄÒ»±¶£¬ÄãÓÀ¾ÃÄÚ\n");
-		write("Á¦¾Í»á¼ÓÒ»µã¡£ÄãºÍÈË±ÈÆ´¹¦·òÊ±¿ÉÒÔÔö¼ÓÄÚÁ¦(jiali)ÉË\n");
-		write("ÈË£¬µ«ÄãÖ»ÄÜ¼Óµ½ÄãÄÚ¹¦ÓÐÐ§µÈ¼¶µÄÒ»°ë¡£\n");
+	{	write("æ‰“å(dazuo)æ˜¯ç”¨æ°”æé«˜ä½ çš„å†…åŠ›ã€‚æ¯æ¬¡æ‰“åæœ€å°‘è¦èŠ±åç‚¹æ°”ã€‚\n");
+		write("å¦‚æžœä½ æ‰“åæŠŠä½ çš„å†…åŠ›æé«˜åˆ°ä½ æ°¸ä¹…å†…åŠ›çš„ä¸€å€ï¼Œä½ æ°¸ä¹…å†…\n");
+		write("åŠ›å°±ä¼šåŠ ä¸€ç‚¹ã€‚ä½ å’Œäººæ¯”æ‹¼åŠŸå¤«æ—¶å¯ä»¥å¢žåŠ å†…åŠ›(jiali)ä¼¤\n");
+		write("äººï¼Œä½†ä½ åªèƒ½åŠ åˆ°ä½ å†…åŠŸæœ‰æ•ˆç­‰çº§çš„ä¸€åŠã€‚\n");
 	}
 	return 0;
 }
 int do_tuna(string arg)
 {	if (!arg)
-	{	write("ÍÂÄÉ(tuna)»¯¾«Îª¾«Á¦¡£Ã¿´ÎÍÂÄÉ×îÉÙÒª»¨Ê®µã¾«¡£\n");
-		write("Èç¹ûÄãÍÂÄÉ°ÑÄãµÄ¾«Á¦Ìá¸ßµ½ÄãÓÀ¾Ã¾«Á¦µÄÒ»±¶£¬ÄãÓÀ¾Ã¾«\n");
-		write("Á¦¾Í»á¼ÓÒ»µã¡£\n");
+	{	write("åçº³(tuna)åŒ–ç²¾ä¸ºç²¾åŠ›ã€‚æ¯æ¬¡åçº³æœ€å°‘è¦èŠ±åç‚¹ç²¾ã€‚\n");
+		write("å¦‚æžœä½ åçº³æŠŠä½ çš„ç²¾åŠ›æé«˜åˆ°ä½ æ°¸ä¹…ç²¾åŠ›çš„ä¸€å€ï¼Œä½ æ°¸ä¹…ç²¾\n");
+		write("åŠ›å°±ä¼šåŠ ä¸€ç‚¹ã€‚\n");
 	}
 	return 0;
 }

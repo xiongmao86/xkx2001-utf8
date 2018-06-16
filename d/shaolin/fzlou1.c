@@ -10,12 +10,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "茶室");
 	set("long", @LONG
-�����Ƿ��ɴ��͵ĵط�����ǽ�����������һ��̫ʦ�Ρ���
-��ǽ�Ϲ���һ��������ǽ��һ�������ż���������и��������
-�����ˡ����ݴ�������׭�֣������������ڣ��ƺ��Ǹ�����²衣
-�����Ƿ����ҡ�
+这里是方丈待客的地方，靠墙左右两侧摆着一溜太师椅。北
+面墙上挂了一付对联。墙角一几，放着几个茶壶。有个茶壶壶身
+上题了“碧螺春”三个篆字，壶嘴热气腾腾，似乎是刚沏的新茶。
+往北是方丈室。
 LONG
 	);
 
@@ -41,7 +41,7 @@ int valid_leave(object me, string dir)
 	{
 		if (dir == "north" && present("qingle biqiu", environment(me)))
 		{
-			return notify_fail("���ֱ�����ס��˵�����ʸ񲻹������ܽ��뷽���ҡ�\n");
+			return notify_fail("清乐比丘拦住你说；你资格不够，不能进入方丈室。\n");
 		}
 	}
 	return ::valid_leave(me, dir);

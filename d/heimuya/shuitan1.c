@@ -9,10 +9,10 @@ void create()
 {
         object room;
 
-        set("short", HIC"Ë®Ì²ÄÏ°¶"NOR);
+        set("short", HIC"æ°´æ»©å—å²¸"NOR);
         set("long", @LONG
-Ç°ÃæÊÇÒ»´¦Ë®Ì²£¬Ë®Á÷ÍÄ¼±¡£Ë®Ì²(river)ÏÎ½Ó×Å
-Ê¯µÀµÄ¾¡Í·£¬°¶±ßÍ£·Å×ÅÓĞ¼¸ËÒĞ¡´¬¡£
+å‰é¢æ˜¯ä¸€å¤„æ°´æ»©ï¼Œæ°´æµæ¹æ€¥ã€‚æ°´æ»©(river)è¡”æ¥ç€
+çŸ³é“çš„å°½å¤´ï¼Œå²¸è¾¹åœæ”¾ç€æœ‰å‡ è‰˜å°èˆ¹ã€‚
 LONG
     );
 
@@ -21,14 +21,14 @@ LONG
         ]));
 
         set("item_desc", ([
-                "river" : "Ò²Ğíº°(yell)Ò»Éù£¬Ë®Ì²µÄ´¬¼Ò¾ÍÄÜÌı¼û¡£\n",
+                "river" : "ä¹Ÿè®¸å–Š(yell)ä¸€å£°ï¼Œæ°´æ»©çš„èˆ¹å®¶å°±èƒ½å¬è§ã€‚\n",
         ]));
 
         set("resource/water", 1);
         set("outdoors", "heimuya");
         set("cost", 2);
 
-        set("name", "½­");
+        set("name", "æ±Ÿ");
         set("boat", __DIR__"xiaochuan");
         set("opposite", __DIR__"shuitan2");
     

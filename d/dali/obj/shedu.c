@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Éß¶¾", ({"she du", "du"}));
+        set_name("è›‡æ¯’", ({"she du", "du"}));
         set_weight(180);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-         set("long", "Ò»Æ¿Á¶ÖÆºÃµÄÉß¶¾¡£\n");
-                set("unit", "Æ¿");
+         set("long", "ä¸€ç“¶ç‚¼åˆ¶å¥½çš„è›‡æ¯’ã€‚\n");
+                set("unit", "ç“¶");
                 set("poison_type", "snake_poison");
 		set("poison_applied", 100);
 		set("value", 0);
@@ -32,25 +32,25 @@ int do_coat(string arg)
         function f;
 
         if (!arg || !(ob = present(arg, this_player())))
-                return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
         if ( ob->query("weapon_type") != "arrow" )
-                return notify_fail("Éß¶¾¿É²»ÄÜÏ¹Í¿¡£\n");
+                return notify_fail("è›‡æ¯’å¯ä¸èƒ½çæ¶‚ã€‚\n");
 
         if ( ob->query("poison_applied") > 0)
-                return notify_fail("ÕâÑù¶«Î÷ÉÏÒÑ¾­Î¹ÓĞ¶¾Ò©ÁË¡£\n");
+                return notify_fail("è¿™æ ·ä¸œè¥¿ä¸Šå·²ç»å–‚æœ‰æ¯’è¯äº†ã€‚\n");
 
 /*
         if (this_player()->query_skill("poison", 1) < 100)
-                return notify_fail("Äã»¹Ã»ÓĞÕÆÎÕÔÚÎäÆ÷ÉÏÎ¹¶¾µÄ¼¼ÄÜ¡£\n");
+                return notify_fail("ä½ è¿˜æ²¡æœ‰æŒæ¡åœ¨æ­¦å™¨ä¸Šå–‚æ¯’çš„æŠ€èƒ½ã€‚\n");
 */
 
 	me = this_player();
 	obj = this_object();
-        message_vision(RED"$NĞ¡ĞÄÒíÒíµØ°Ñ"+ob->query("name")+"ÔÚ$nÖĞ½ÁÁËÒ»»á¶ù¡£\n"NOR, me, obj);
+        message_vision(RED"$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠ"+ob->query("name")+"åœ¨$nä¸­æ…äº†ä¸€ä¼šå„¿ã€‚\n"NOR, me, obj);
         
 	if( me->query_skill("poison",1) < random(100) ) {
-		message_vision(HIR"$NÒ»²»Ğ¡ĞÄ½¦ÁËÒ»Ğ©$nÔÚÊÖÉÏ£¡\n"NOR,me,obj);
+		message_vision(HIR"$Nä¸€ä¸å°å¿ƒæº…äº†ä¸€äº›$nåœ¨æ‰‹ä¸Šï¼\n"NOR,me,obj);
 		me->apply_condition(obj->query("poison_type"),
 		obj->query("poison_applied")/2);
 	}
@@ -58,7 +58,7 @@ int do_coat(string arg)
 	ob->set("poison_applied", obj->query("poison_applied"));
         ob->set("poison_type", obj->query("poison_type"));
 	ob->set("no_sell");
-        ob->set("long", ob->query("long") + BLU"ÉÏÃæËÆºõÎ¹ÓĞ¾ç¶¾¡£\n"NOR);
+        ob->set("long", ob->query("long") + BLU"ä¸Šé¢ä¼¼ä¹å–‚æœ‰å‰§æ¯’ã€‚\n"NOR);
         call_out("destroy_it", 1, this_object());
         return 1;
 }

@@ -18,11 +18,11 @@ int is_splama() { return 1; }
 
 void create()
 {
-        set_name("ÃÜ×Ú¶þÀÏ", ({ "erlama" }));
+        set_name("å¯†å®—äºŒè€", ({ "erlama" }));
         set("long",
-"ËûÉí´©»ÆÉ«ôÂôÄ£¬Ä¿¹â¾¼¾¼Ë«È­½ôÎÕ£¬È«Éí¼¡Èâ½ôÔÑµÃ¼¸ºõ¿ìÒª±¬ÁÑ¡£\n"
-"Ëû¹ÂÂª¹ÑÎÅ£¬Ö»ÖªµÀÀ®Âï£¬À­Èø£¬Î÷²ØºÍÃÜ×Ú¡£\n");
-        set("gender", "ÄÐÐÔ");
+"ä»–èº«ç©¿é»„è‰²è¢ˆè£Ÿï¼Œç›®å…‰ç‚¯ç‚¯åŒæ‹³ç´§æ¡ï¼Œå…¨èº«è‚Œè‚‰ç´§åŒå¾—å‡ ä¹Žå¿«è¦çˆ†è£‚ã€‚\n"
+"ä»–å­¤é™‹å¯¡é—»ï¼ŒåªçŸ¥é“å–‡å˜›ï¼Œæ‹‰è¨ï¼Œè¥¿è—å’Œå¯†å®—ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30 + random(20));
         set("attitude", "heroism");
         set("class","bonze");
@@ -79,10 +79,10 @@ void create()
         }) );
 
         set("inquiry",([
-                  "À®Âï" : (: ask_lama, "lama" :),
-                  "À­Èø" : (: ask_lama, "lasa" :),
-                  "Î÷²Ø" : (: ask_lama, "lasa" :),
-                  "ÃÜ×Ú" : (: ask_lama, "flirt" :),
+                  "å–‡å˜›" : (: ask_lama, "lama" :),
+                  "æ‹‰è¨" : (: ask_lama, "lasa" :),
+                  "è¥¿è—" : (: ask_lama, "lasa" :),
+                  "å¯†å®—" : (: ask_lama, "flirt" :),
         ]));
 
         setup();
@@ -105,7 +105,7 @@ int auto_perform()
                 obj = new("/d/qilian/obj/lubo");
                 obj->move(ob);
                 COMMAND_DIR"std/halt"->main(ob);
-                message_vision("$N´ÓôÂôÄÖÐ³é³öÒ»" + obj->query("unit") + obj->name() + "À´¡£\n", ob);
+                message_vision("$Nä»Žè¢ˆè£Ÿä¸­æŠ½å‡ºä¸€" + obj->query("unit") + obj->name() + "æ¥ã€‚\n", ob);
                 "/cmds/std/wield"->do_wield(ob, obj);
                 ob->kill_ob(victim);
         } else if( !obj->query("equipped") ) {
@@ -118,7 +118,7 @@ int auto_perform()
                 obj = new("/d/qilian/obj/klguan");
                 obj->move(ob);
                 COMMAND_DIR"std/halt"->main(ob);
-                message_vision("$N´ÓôÂôÄÖÐÄÃ³öÒ»" + obj->query("unit") + obj->name() + "À´¡£\n", ob);
+                message_vision("$Nä»Žè¢ˆè£Ÿä¸­æ‹¿å‡ºä¸€" + obj->query("unit") + obj->name() + "æ¥ã€‚\n", ob);
                 "/cmds/std/wear"->do_wear(ob, obj);
                 ob->kill_ob(victim);
         } else if( !obj->query("equipped") ) {
@@ -131,7 +131,7 @@ int auto_perform()
                 obj = new("/d/qilian/obj/rtlian");
                 obj->move(ob);
                 COMMAND_DIR"std/halt"->main(ob);
-                message_vision("$N´ÓôÂôÄÖÐÄÃ³öÒ»" + obj->query("unit") + obj->name() + "À´¡£\n", ob);
+                message_vision("$Nä»Žè¢ˆè£Ÿä¸­æ‹¿å‡ºä¸€" + obj->query("unit") + obj->name() + "æ¥ã€‚\n", ob);
                 "/cmds/std/wear"->do_wear(ob, obj);
                 ob->kill_ob(victim); 
         } else if( !obj->query("equipped") ) {
@@ -144,7 +144,7 @@ int auto_perform()
 
         inv = all_inventory(environment(ob));
         for(i = 0; i < sizeof(inv); i++ ) {
-                if( strsrch(inv[i]->query("name"), "¶ÏµôµÄ") == 0 )
+                if( strsrch(inv[i]->query("name"), "æ–­æŽ‰çš„") == 0 )
                           destruct(inv[i]);
         }
 

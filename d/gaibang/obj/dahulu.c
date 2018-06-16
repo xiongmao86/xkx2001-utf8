@@ -7,14 +7,14 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("´óºùÂ«", ({"da hulu", "hulu", "hu", "bottle"}));
+	set_name("å¤§è‘«èŠ¦", ({"da hulu", "hulu", "hu", "bottle"}));
 	set_color("$HIR$");
 	set_weight(800);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÖìºìÆáµÄ´óºùÂ«£¬×ÔÌÆÄ©´«µ½½ñÈÕ£¬ÒÑÓĞºÃ¼¸°ÙÄê£¬\nÊÀÊÀ´ú´úÓÉØ¤°ïµÄ°ïÖ÷Ö´ÕÆ£¬¾ÍºÃÏñ»ÊµÛµÄÓñçô¡¢×ö¹ÙµÄ½ğÓ¡Ò»°ã¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªæœ±çº¢æ¼†çš„å¤§è‘«èŠ¦ï¼Œè‡ªå”æœ«ä¼ åˆ°ä»Šæ—¥ï¼Œå·²æœ‰å¥½å‡ ç™¾å¹´ï¼Œ\nä¸–ä¸–ä»£ä»£ç”±ä¸å¸®çš„å¸®ä¸»æ‰§æŒï¼Œå°±å¥½åƒçš‡å¸çš„ç‰çºã€åšå®˜çš„é‡‘å°ä¸€èˆ¬ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 350);
 		set("max_liquid", 90);
 	}
@@ -23,7 +23,7 @@ void create()
 	// we set it to contain water at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "Ã×¾Æ",
+		"name": "ç±³é…’",
 		"remaining": 90,
 		"drunk_apply": 3,
 	]));

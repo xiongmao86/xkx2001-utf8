@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ºÓÎ÷Õò");
+	set("short", "æ²³è¥¿é•‡");
 	set("long", @LONG
-´ËÕòÕý´¦åúÀöºþÄÏ£¬×¡µÄÊÇ°¢Þ¼ÂùµÄÐÝÁÔ²¿¡£°¢Þ¼ÂùÊôÌ¨ÒÄ£¬´åÃñ³ýÁË¸ûÖÖ
-ÑØºþµÄÌïµØÍâ£¬Ö÷ÒªÒÔ²¶ÓãÎªÉú¡£ÁÙºþ·ç¹â¸ñÍâÐãÀö£¬±±±ß²»Ô¶¾ÍÊÇÓæ´¬³öÈëµÄ
-Ð¡ÂëÍ·¡£ÄÏ±ßÉ½ÖÐÓÐ²»ÉÙÒ°ÊÞ£¬ÐÝÁÔ²¿µÄÄÐ×Ó¾­³£Ç°È¥á÷ÁÔ¡£
+æ­¤é•‡æ­£å¤„å¦ƒä¸½æ¹–å—ï¼Œä½çš„æ˜¯é˜¿è—œè›®çš„ä¼‘çŒŽéƒ¨ã€‚é˜¿è—œè›®å±žå°å¤·ï¼Œæ‘æ°‘é™¤äº†è€•ç§
+æ²¿æ¹–çš„ç”°åœ°å¤–ï¼Œä¸»è¦ä»¥æ•é±¼ä¸ºç”Ÿã€‚ä¸´æ¹–é£Žå…‰æ ¼å¤–ç§€ä¸½ï¼ŒåŒ—è¾¹ä¸è¿œå°±æ˜¯æ¸”èˆ¹å‡ºå…¥çš„
+å°ç å¤´ã€‚å—è¾¹å±±ä¸­æœ‰ä¸å°‘é‡Žå…½ï¼Œä¼‘çŒŽéƒ¨çš„ç”·å­ç»å¸¸å‰åŽ»ç‹©çŒŽã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/tyshang" : 1,
@@ -20,7 +20,7 @@ LONG);
 		"north" : __DIR__"minov72",
 		"west" : __DIR__"minov76",
 		]));
-	set("area", "åúÀöºþ");
+	set("area", "å¦ƒä¸½æ¹–");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	set("outdoors","dali");

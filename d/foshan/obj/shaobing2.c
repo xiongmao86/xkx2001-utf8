@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("ÉÕ±ı", ({"shaobing", "cake"}));
+        set_name("çƒ§é¥¼", ({"shaobing", "cake"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÕÅÏãÅçÅçµÄ´óÉÕ±ı£¬ÀïÃæÓĞ´Ğ»¨£¬ÍâÃæÓĞÖ¥Âé¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "ä¸€å¼ é¦™å–·å–·çš„å¤§çƒ§é¥¼ï¼Œé‡Œé¢æœ‰è‘±èŠ±ï¼Œå¤–é¢æœ‰èŠéº»ã€‚\n");
+                set("unit", "å¼ ");
                 set("value", 70);
                 set("food_remaining", 3);
                 set("food_supply", 30);
@@ -33,16 +33,16 @@ int do_eat(string arg)
 	object me = this_player();
 
 	if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	if( me->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
         if( !living(me) ) return 0;
 
         if( !query("food_remaining") )
-                return notify_fail( name() + "ÒÑ¾­Ã»Ê²Ã´ºÃ³ÔµÄÁË¡£\n");
+                return notify_fail( name() + "å·²ç»æ²¡ä»€ä¹ˆå¥½åƒçš„äº†ã€‚\n");
         if( (int)me->query("food") >= (int)me->max_food_capacity() )
-                return notify_fail("ÄãÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²Èû²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åƒå¤ªé¥±äº†ï¼Œå†ä¹Ÿå¡ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 
         me->add("food", query("food_supply"));
         me->add("jingli", query("food_supply")/5);
@@ -57,10 +57,10 @@ int do_eat(string arg)
         set("value", 0);
         add("food_remaining", -1);
         if( !query("food_remaining") ) {
-                tell_object(me,"Í»È»¸ÂàÔÒ»Éù£¬Äã²îµã¿©µôÒ»¿ÅÑÀ¡£Ô­À´ÉÕ±ıÀïÓĞÒ»¿éÌúÆ¬¡£\n");
+                tell_object(me,"çªç„¶å˜å˜£ä¸€å£°ï¼Œä½ å·®ç‚¹å’¯æ‰ä¸€é¢—ç‰™ã€‚åŸæ¥çƒ§é¥¼é‡Œæœ‰ä¸€å—é“ç‰‡ã€‚\n");
                 ling = new(__DIR__"xtling");
                 ling->move(me);
-                message_vision("$N½«Ê£ÏÂµÄ" + name() + "³ÔµÃ¸ÉÇ¬¾»¾»¡£\n", me);
+                message_vision("$Nå°†å‰©ä¸‹çš„" + name() + "åƒå¾—å¹²ä¹¾å‡€å‡€ã€‚\n", me);
 
                 if( !this_object()->finish_eat() ) {
                         destruct(this_object());
@@ -68,7 +68,7 @@ int do_eat(string arg)
 
 
         } else 
-                message_vision("$NÄÃÆğ" + name() + "Ò§ÁË¼¸¿Ú¡£\n", me);
+                message_vision("$Næ‹¿èµ·" + name() + "å’¬äº†å‡ å£ã€‚\n", me);
 
         me->start_busy(1);
         return 1;

@@ -1,16 +1,16 @@
 //Cracked by Roath
-// yayi.c  ¹Ù¸®ÑÃÒÛ
+// yayi.c  å®˜åºœè¡™å½¹
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("ÑÃÒÛ", ({ "ya yi", "ya" }));
+	set_name("è¡™å½¹", ({ "ya yi", "ya" }));
         set_color("$YEL$");
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 
-	set("long", "Ò»¸ö¸ß´óÍþÃÍµÄºº×Ó£¬ÒòÎª¾ÃÔÚ¹Ù¸®×öÊÂ£¬Á³ÉÏÒÑ¾­Ä¥Á¶µÃºÁÎÞ±íÇé¡£\n");
+	set("long", "ä¸€ä¸ªé«˜å¤§å¨çŒ›çš„æ±‰å­ï¼Œå› ä¸ºä¹…åœ¨å®˜åºœåšäº‹ï¼Œè„¸ä¸Šå·²ç»ç£¨ç‚¼å¾—æ¯«æ— è¡¨æƒ…ã€‚\n");
 	set("combat_exp", 7500);
 	set("shen_type", 1);
         set_skill("unarmed", 30);
@@ -32,7 +32,7 @@ void init()
 
 int accept_kill(object me)
 {
-        command("say À´ÈË°¡£¬ÓÐ´Ì¿ÍÒª´³ÑÃÃÅ£¡\n");
+        command("say æ¥äººå•Šï¼Œæœ‰åˆºå®¢è¦é—¯è¡™é—¨ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

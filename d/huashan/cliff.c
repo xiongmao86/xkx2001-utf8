@@ -1,19 +1,19 @@
 //Cracked by Roath
-// cliff.c ¾ø±Ú
+// cliff.c ç»å£
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¾ø±Ú");
+        set("short", "ç»å£");
 	set("long", @LONG
-³ıÁËÉíÇ°µÄÒ»ÃæÇÍ±ÚÍâ(wall)£¬ÖÜÎ§¶¼ÊÇ°×Ã£Ã£µÄÔÆÎí£¬Ê²Ã´Ò²¿´²»
-µ½¡£
+é™¤äº†èº«å‰çš„ä¸€é¢å³­å£å¤–(wall)ï¼Œå‘¨å›´éƒ½æ˜¯ç™½èŒ«èŒ«çš„äº‘é›¾ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸
+åˆ°ã€‚
 LONG
         );
 
 	set("item_desc",([
-		"wall" : "Ò»ÃæÇÍ±Ú¡£\n",
+		"wall" : "ä¸€é¢å³­å£ã€‚\n",
 	]));
 
         set("no_clean_up", 0);
@@ -50,7 +50,7 @@ int do_quit()
 */
 int do_sleep()
 {
-	write("ÄãÉíÔÚ°ë¿ÕÖĞÈçºÎË¯¾õ£¿\n");
+	write("ä½ èº«åœ¨åŠç©ºä¸­å¦‚ä½•ç¡è§‰ï¼Ÿ\n");
 	return 1;
 }
 
@@ -59,18 +59,18 @@ int do_climb(string arg)
         object me = this_player();
 
         if ( arg && arg != "up" )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
         if ( !me->query_temp("tied") )
-                return notify_fail("Ã»¶«Î÷Ö§³ÅÄãÔõÃ´ÅÀÑ½£¿\n");
+                return notify_fail("æ²¡ä¸œè¥¿æ”¯æ’‘ä½ æ€ä¹ˆçˆ¬å‘€ï¼Ÿ\n");
 
-        message_vision("$NÀ­×ÅÉş×Ó¿ªÊ¼ÍùÑÂ¶¥ÉÏÅÀÈ¥¡£\n", me);
-        message("vision", me->name()+"Ò»»á¶ù±ãÏûÊ§ÔÚÔÆÆøÀïÁË¡£\n", environment(me), ({me}) );
+        message_vision("$Næ‹‰ç€ç»³å­å¼€å§‹å¾€å´–é¡¶ä¸Šçˆ¬å»ã€‚\n", me);
+        message("vision", me->name()+"ä¸€ä¼šå„¿ä¾¿æ¶ˆå¤±åœ¨äº‘æ°”é‡Œäº†ã€‚\n", environment(me), ({me}) );
 
 	me->move(__DIR__"fengding");
-	message("vision", me->name()+"Æø´­ĞêĞêµØÓÉ¾ø±ÚÏÂÅÀÁËÉÏÀ´¡£\n", environment(me), ({me}) );
+	message("vision", me->name()+"æ°”å–˜å˜˜å˜˜åœ°ç”±ç»å£ä¸‹çˆ¬äº†ä¸Šæ¥ã€‚\n", environment(me), ({me}) );
 
-	me->receive_damage("qi", 150, "ÌåÁ¦Í¸Ö§¹ı¶ÈËÀÁË");
+	me->receive_damage("qi", 150, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 
 	return 1;
 }
@@ -81,27 +81,27 @@ int do_break(string arg)
 
         if ( !arg || arg != "wall" ) return 0;
 
-	if ( objectp(weapon=me->query_temp("weapon")) && weapon->name() != "ÌúÇÂ" ) {
-		message_vision("$NÄÃÆğ"+weapon->name()+"ÔÚÇÍ±ÚÉÏÍÚÁË¼¸ÏÂ¡£\n", me);
-		message_vision("Ö»ÌıµÃ¡°Å¾¡±µØÒ»Éù£¬"+weapon->name()+"¶ÏÎª¼¸½Ø£¡\n", me);
+	if ( objectp(weapon=me->query_temp("weapon")) && weapon->name() != "é“é”¹" ) {
+		message_vision("$Næ‹¿èµ·"+weapon->name()+"åœ¨å³­å£ä¸ŠæŒ–äº†å‡ ä¸‹ã€‚\n", me);
+		message_vision("åªå¬å¾—â€œå•ªâ€åœ°ä¸€å£°ï¼Œ"+weapon->name()+"æ–­ä¸ºå‡ æˆªï¼\n", me);
 		destruct(weapon);
 		return 1;
 	}
 
 	if ( !weapon ) {
-		message_vision("$NÓÃÊÖÔÚÇÍ±ÚÉÏÍÚÁË¼¸ÏÂ£¬Í»È»Ò»ÉùÍ´½Ğ£¬ËÆºõ±»Ê²Ã´¶«Î÷´Ì×Å£¬¸ãµÃÊÖÉÏÏÊÑªÁÜÀì£¡\n", me);
-		me->receive_wound("qi", 20, "ÊÜÉË¹ıÖØËÀÁË");
+		message_vision("$Nç”¨æ‰‹åœ¨å³­å£ä¸ŠæŒ–äº†å‡ ä¸‹ï¼Œçªç„¶ä¸€å£°ç—›å«ï¼Œä¼¼ä¹è¢«ä»€ä¹ˆä¸œè¥¿åˆºç€ï¼Œæå¾—æ‰‹ä¸Šé²œè¡€æ·‹æ¼“ï¼\n", me);
+		me->receive_wound("qi", 20, "å—ä¼¤è¿‡é‡æ­»äº†");
 		return 1;
         }
 
 	if ( random(10) == 1 ) {
-		message_vision("$NÓÃÌúÇÂÍÚ¾òÁËÒ»Õó£¬Í»È»¾õµÃ±ÚÉÏÒ»ÕóËÉ¶¯£¬Ã¦¼Ó½ô¾òÆÆ·âÄà£¬Â¶³öÒ»¸öĞ¡¶´Ñ¨¡£\n", me);
+		message_vision("$Nç”¨é“é”¹æŒ–æ˜äº†ä¸€é˜µï¼Œçªç„¶è§‰å¾—å£ä¸Šä¸€é˜µæ¾åŠ¨ï¼Œå¿™åŠ ç´§æ˜ç ´å°æ³¥ï¼Œéœ²å‡ºä¸€ä¸ªå°æ´ç©´ã€‚\n", me);
 		set("exits/enter", __DIR__"yongdao3");
 		me->set_temp("exit", 1);
 	}
-	else message_vision("$NÓÃÌúÇÂÍÚ¾òÁËÒ»Õó£¬Ê²Ã´Ò²Ã»·¢ÏÖ¡£\n", me);
+	else message_vision("$Nç”¨é“é”¹æŒ–æ˜äº†ä¸€é˜µï¼Œä»€ä¹ˆä¹Ÿæ²¡å‘ç°ã€‚\n", me);
 
-	me->receive_damage("qi", 20, "ÌåÁ¦Í¸Ö§¹ı¶È£¬Ê§ÊÖµøÏÂ¾ø±ÚËÀÁË");
+	me->receive_damage("qi", 20, "ä½“åŠ›é€æ”¯è¿‡åº¦ï¼Œå¤±æ‰‹è·Œä¸‹ç»å£æ­»äº†");
 	
 	return 1;
 }
@@ -109,7 +109,7 @@ int do_break(string arg)
 int valid_leave(object me, string dir)
 {
 	if ( !me->query("jinshe") && me->query("age") > 22 && me->query_str() > 20 ) 
-		return notify_fail("ÄãÉíÌåÌ«´óÁË£¬¼·²»½ø¶´ÀïÈ¥£¡\n");
+		return notify_fail("ä½ èº«ä½“å¤ªå¤§äº†ï¼ŒæŒ¤ä¸è¿›æ´é‡Œå»ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

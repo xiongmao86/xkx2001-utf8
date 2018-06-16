@@ -7,15 +7,15 @@
 inherit HANDS;
 void create()
 {
-	set_name("ÌúÊÖÕÆ", ({ "iron hand", "hand", "shu", "book" }));
+	set_name("é“æ‰‹æŒ", ({ "iron hand", "hand", "shu", "book" }));
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
+		set("unit", "å—");
 		set("long",
-			"Ò×½î¾­¹¥·ÀÆª\n"
-			"ÕâÊÇÒ»¿éÌúÊÖÕÆ£¬ÉÏÃæ°¼°¼Í¹Í¹¿ÌÂúÁËÈËĞÎ²«»÷µÄ³¡Ãæ¡£\n");
+			"æ˜“ç­‹ç»æ”»é˜²ç¯‡\n"
+			"è¿™æ˜¯ä¸€å—é“æ‰‹æŒï¼Œä¸Šé¢å‡¹å‡¹å‡¸å‡¸åˆ»æ»¡äº†äººå½¢æå‡»çš„åœºé¢ã€‚\n");
 		set("value", 70000);
 		set("material", "steel");
 		set("real", 1);
@@ -42,22 +42,22 @@ int do_study(string arg)
 	object me = this_player();
 
 	if ( arg != "iron hand" && arg != "hand" )
-	return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+	return notify_fail("ä½ è¦å­¦ä»€ä¹ˆï¼Ÿ\n");
 
 	if( me->is_busy() )
-                return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓĞ×öÍê¡£\n");
+                return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰åšå®Œã€‚\n");
 
 	if ( me->query("jingli") < 50)
-	return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+	return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
 
 	if ( me->is_fighting() 
 	&& (int)me->query_skill("parry", 1) >= 30 
 	&& (int)me->query_skill("parry", 1) <= 100 )
 	{
-		me->receive_damage("jingli", random(60), "±»ÌúÊÖÕÆÔÒËÀÁË");
+		me->receive_damage("jingli", random(60), "è¢«é“æ‰‹æŒç ¸æ­»äº†");
 		me->improve_skill("parry", random(me->query_str()*2));
 		me->start_busy(1);
-		message_vision("$NÒ»±ßÕ½¶·£¬Ò»±ß³é¿Õ¼±¼±Ã¦Ã¦µØÄÃ³öÌúÊÖÕÆÕÕ×Å±È»®¡£\n", me);
+		message_vision("$Nä¸€è¾¹æˆ˜æ–—ï¼Œä¸€è¾¹æŠ½ç©ºæ€¥æ€¥å¿™å¿™åœ°æ‹¿å‡ºé“æ‰‹æŒç…§ç€æ¯”åˆ’ã€‚\n", me);
 		return 1;
 	}
 

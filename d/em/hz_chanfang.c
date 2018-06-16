@@ -1,5 +1,5 @@
 //Cracked by Roath
-// hz_chanfang.c »ª²ØâÖìø·¿
+// hz_chanfang.c åè—åºµç¦…æˆ¿
 // Shan: 96/06/22
 
 #include <room.h>
@@ -9,11 +9,11 @@ string look_door();
 
 void create()
 {
-        set("short", "»ª²ØâÖìø·¿");
+        set("short", "åè—åºµç¦…æˆ¿");
 	set("long", @LONG
-ÕâÀï±ãÊÇ¶ëáÒ»ª²ØâÖµÄìø·¿¡£µØÏÂÉ¢ÂÒµØ·Å×ÅĞí¶àÆÑÍÅ£¬Ä¾ÓãµÈ£¬´Ë´¦
-ÕıÊÇ±¾ÅÉµÜ×Ó´ò×øĞŞĞĞÖ®Ëù¡£¼¸Î»ÄêÇáÊ¦Ì«ºÍË×¼ÒÅ®µÜ×ÓÕıËàÈİÈë¶¨¡£
-¡¡¡¡ìø·¿ºóÃæÓĞÒ»µÀÃÅÍ¨Íù»ª²ØâÖĞİÏ¢ÊÒ£¬±±±ßµÄ×ßÀÈÍ¨Ïò¹ã³¡¡£
+è¿™é‡Œä¾¿æ˜¯å³¨åµ‹åè—åºµçš„ç¦…æˆ¿ã€‚åœ°ä¸‹æ•£ä¹±åœ°æ”¾ç€è®¸å¤šè’²å›¢ï¼Œæœ¨é±¼ç­‰ï¼Œæ­¤å¤„
+æ­£æ˜¯æœ¬æ´¾å¼Ÿå­æ‰“åä¿®è¡Œä¹‹æ‰€ã€‚å‡ ä½å¹´è½»å¸ˆå¤ªå’Œä¿—å®¶å¥³å¼Ÿå­æ­£è‚ƒå®¹å…¥å®šã€‚
+ã€€ã€€ç¦…æˆ¿åé¢æœ‰ä¸€é“é—¨é€šå¾€åè—åºµä¼‘æ¯å®¤ï¼ŒåŒ—è¾¹çš„èµ°å»Šé€šå‘å¹¿åœºã€‚
 LONG
 	);
 	set("exits", ([
@@ -27,7 +27,7 @@ LONG
                 "door"          :       (: look_door :),
         ]));
 
-        create_door("south", "Ä¾ÃÅ", "north", DOOR_CLOSED);
+        create_door("south", "æœ¨é—¨", "north", DOOR_CLOSED);
 
 	set("no_fight", 1);
 
@@ -39,7 +39,7 @@ LONG
 
 string look_door()
 {
-        return "Ò»µÀĞ¡ÃÅÁ¬Í¨ìø·¿ÓëĞİÏ¢ÊÒ£¬ÃÅÉÏ¹Ò×Å¸öĞ¡ÅÆ×Ó£ºĞİÏ¢ÊÒ¡£\n";
+        return "ä¸€é“å°é—¨è¿é€šç¦…æˆ¿ä¸ä¼‘æ¯å®¤ï¼Œé—¨ä¸ŠæŒ‚ç€ä¸ªå°ç‰Œå­ï¼šä¼‘æ¯å®¤ã€‚\n";
 
 }
 
@@ -51,11 +51,11 @@ void init()
 int do_jingzuo(string arg)
 {
 	object me = this_player();
-        if ( me->query("family/family_name") != "¶ëáÒÅÉ" || me->is_busy() )
+        if ( me->query("family/family_name") != "å³¨åµ‹æ´¾" || me->is_busy() )
                 return command("jingzuo "+arg);
 	if(random(9) == 3) {
-		tell_object(me, "ºöÈ»ÍâÃæ´«À´Ò»ÕóÔëÔÓÉù£¬ÄãÖ»¾õĞÄ·³ÒâÂÒ£¬²»ÄÜ¾²ĞÄĞŞÁ·£¬\nÖ»ºÃ¸ÄÈ¥±ğâÖìø·¿¼ÌĞøĞŞĞĞ¡£\n");
-		tell_room(environment(me),(string)me->query("name")+"×ßÀ²£¬È¥±ğâÖìø·¿¼ÌĞøĞŞĞĞÁË¡£\n", me);
+		tell_object(me, "å¿½ç„¶å¤–é¢ä¼ æ¥ä¸€é˜µå™ªæ‚å£°ï¼Œä½ åªè§‰å¿ƒçƒ¦æ„ä¹±ï¼Œä¸èƒ½é™å¿ƒä¿®ç»ƒï¼Œ\nåªå¥½æ”¹å»åˆ«åºµç¦…æˆ¿ç»§ç»­ä¿®è¡Œã€‚\n");
+		tell_room(environment(me),(string)me->query("name")+"èµ°å•¦ï¼Œå»åˆ«åºµç¦…æˆ¿ç»§ç»­ä¿®è¡Œäº†ã€‚\n", me);
 		switch (random(3)) {
 			case 0: me->move("/d/emei/chanfang_fs");
 				break;
@@ -64,7 +64,7 @@ int do_jingzuo(string arg)
 			case 2: me->move("/d/emei/chanfang_qf");
 				break;
 		}
-		tell_room(environment(me),(string)me->query("name")+"´Ó±ğâÖìø·¿À´ÕâÀï¼ÌĞøĞŞĞĞÀ²¡£\n", me);
+		tell_room(environment(me),(string)me->query("name")+"ä»åˆ«åºµç¦…æˆ¿æ¥è¿™é‡Œç»§ç»­ä¿®è¡Œå•¦ã€‚\n", me);
 		return 1;
 	}
 	return command("jingzuo "+arg);
@@ -72,9 +72,9 @@ int do_jingzuo(string arg)
 
 int valid_leave(object me, string dir)
 {
-	if ( me->query("gender") != "Å®ĞÔ" && dir == "south" ) 
-		return notify_fail("ÄÏÃæÄË¶ëáÒÅ®ÏÀĞİÏ¢Ö®Ëù£¬ÕâÎ»" + 
-			RANK_D->query_respect(me) + "»¹ÇëÁô²½¡£\n");
+	if ( me->query("gender") != "å¥³æ€§" && dir == "south" ) 
+		return notify_fail("å—é¢ä¹ƒå³¨åµ‹å¥³ä¾ ä¼‘æ¯ä¹‹æ‰€ï¼Œè¿™ä½" + 
+			RANK_D->query_respect(me) + "è¿˜è¯·ç•™æ­¥ã€‚\n");
 		
 	return ::valid_leave(me, dir);
 }

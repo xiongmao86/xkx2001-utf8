@@ -11,10 +11,10 @@ void on_board(object room);
 
 void create()
 {
-	set("short", "ºş±õ");
+	set("short", "æ¹–æ»¨");
 	set("long", @LONG
-ÕâÀïÊÇÌ«ºşºş±õ£¬¼«Ä¿ÍûÈ¥£¬µ«¼ûÑÌ²¨ºÆÃì£¬Ô¶Ë®½ÓÌì¡£¸½½ü
-ìóÓĞÁÈÁÈ¼¸»§ÈË¼Ò£¬ºş±õ²´×ÅÒ»ÅÅÓæ´¬¡£
+è¿™é‡Œæ˜¯å¤ªæ¹–æ¹–æ»¨ï¼Œæç›®æœ›å»ï¼Œä½†è§çƒŸæ³¢æµ©æ¸ºï¼Œè¿œæ°´æ¥å¤©ã€‚é™„è¿‘
+ç¥—æœ‰å¯¥å¯¥å‡ æˆ·äººå®¶ï¼Œæ¹–æ»¨æ³Šç€ä¸€æ’æ¸”èˆ¹ã€‚
 LONG
 	);
 	 set("exits", ([
@@ -23,7 +23,7 @@ LONG
 	set("cost", 2);
 	set("outdoors", "guiyun");
 	
-	set("water_name", "ºş");
+	set("water_name", "æ¹–");
 	set("boat", __DIR__"duchuan2");
 	set("opposite", __DIR__"matou2");
 

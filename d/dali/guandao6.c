@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹ÙµÀ");
+	set("short", "å®˜é“");
 	set("long", @LONG
-ÕâÊÇÒ»ÌõòêÑÑÆéá«µÄÉ½¼äÍÁÂ·£¬ÊÇÓÉÖÐÔ­Í¨Ïò´óÀíµÄ¹ÙµÀ¡£´Ë´¦Êô´¨ÄÏ£¬Ïò
-Î÷ÄÏÈ¥µÄÅÌÉ½Â·Í¨ÉÏÔÆ¹óÉ½Çø£¬¼Ì¶ø¿É´ïÄÏÕÑ´óÀí¹ú£¬´ËÈ¥Ïò±±²»Ô¶¾ÍÊÇÊñÖÐÃû
-´¨¡ª¡ª¶ëáÒÉ½¡£
+è¿™æ˜¯ä¸€æ¡èœ¿èœ’å´Žå²–çš„å±±é—´åœŸè·¯ï¼Œæ˜¯ç”±ä¸­åŽŸé€šå‘å¤§ç†çš„å®˜é“ã€‚æ­¤å¤„å±žå·å—ï¼Œå‘
+è¥¿å—åŽ»çš„ç›˜å±±è·¯é€šä¸Šäº‘è´µå±±åŒºï¼Œç»§è€Œå¯è¾¾å—æ˜­å¤§ç†å›½ï¼Œæ­¤åŽ»å‘åŒ—ä¸è¿œå°±æ˜¯èœ€ä¸­å
+å·â€”â€”å³¨åµ‹å±±ã€‚
 LONG);
 	set("exits", ([
 		"northeast" : "/d/emei/shijie1",

@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/zhongnan/chanshen.c
-//³¤Éúµî
+//é•¿ç”Ÿæ®¿
 // sdong 08/04/98
 
 #include <ansi.h>
@@ -10,11 +10,11 @@ inherit ROOM;
 
 void create()
 {
-		  set("short", HIM"³¤Éúµî"NOR);
+		  set("short", HIM"é•¿ç”Ÿæ®¿"NOR);
 		  set("long", @LONG
-ÕâÀïÊÇÖØÑô¹¬µÄ³¤Éúµî¡£ÕýÖÐ¼äÊÇ¸ö¾´ÏãµÄ´óÏã°¸£¬µØÉÏ·Å×Å¼¸¸öÆÑÍÅ¡£
-ÕâÀïÏã»ð¼«Íú£¬ÖÚ¶àÏã¿ÍÃÇÕýÔÚ½øÏã£¬ÆíÇó³¤Éú²»ÀÏ¡£±±±ßÍ¨Íùºóµî£¬ÄÏ±ßÍ¨
-Íù³¤´ºµî¡£
+è¿™é‡Œæ˜¯é‡é˜³å®«çš„é•¿ç”Ÿæ®¿ã€‚æ­£ä¸­é—´æ˜¯ä¸ªæ•¬é¦™çš„å¤§é¦™æ¡ˆï¼Œåœ°ä¸Šæ”¾ç€å‡ ä¸ªè’²å›¢ã€‚
+è¿™é‡Œé¦™ç«æžæ—ºï¼Œä¼—å¤šé¦™å®¢ä»¬æ­£åœ¨è¿›é¦™ï¼Œç¥ˆæ±‚é•¿ç”Ÿä¸è€ã€‚åŒ—è¾¹é€šå¾€åŽæ®¿ï¼Œå—è¾¹é€š
+å¾€é•¿æ˜¥æ®¿ã€‚
 LONG
 		  );
 		  set("valid_startroom", 1);

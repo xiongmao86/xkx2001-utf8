@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ���ɽ·
+// 玉皇山路
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -9,10 +9,10 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "���ɽ��");
+   set("short", "玉皇山脚");
    set("long", @LONG
-ֻ�����ϵ�ɽ·�������ӡ�ɽ·����һ��С����ͤ������������
-��ͤ��Ъ�š���������һ����ʯ�������������ɽ��·��
+只见往上的山路曲折蜿延。山路旁有一座小六角亭，几个游人正
+在亭里歇脚。东北边是一条青石大道，往西是上山的路。
 LONG
         );
 

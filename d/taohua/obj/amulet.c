@@ -1,5 +1,5 @@
 //Cracked by Roath
-// amulet.c ³¤ÃüËø
+// amulet.c é•¿å‘½é”
 #include <ansi.h>
 #include <armor.h>
 
@@ -7,15 +7,15 @@ inherit NECK;
 
 void create()
 {
-	set_name("³¤ÃüËø", ({ "amulet" }));
+	set_name("é•¿å‘½é”", ({ "amulet" }));
         set_color("$YEL$");
 	set("weight", 500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»´®ÆÄÎª¾«ÖÂµÄ³¤ÃüËø£¬²»¹ıÒÑÏàµ±ÆÆ¾É£¬"+
-			    "ÉÏÃæÒÀÏ¡¿ÌÁË¡°³¤Ãü°ÙËê¡±¼¸¸ö×Ö£¬ÏÂÃæËÆºõÓĞÒ»¸öĞ¡Ğ¡µÄ¡°Çú¡±×Ö¡£\n");
-		set("unit", "´®");
+		set("long", "è¿™æ˜¯ä¸€ä¸²é¢‡ä¸ºç²¾è‡´çš„é•¿å‘½é”ï¼Œä¸è¿‡å·²ç›¸å½“ç ´æ—§ï¼Œ"+
+			    "ä¸Šé¢ä¾ç¨€åˆ»äº†â€œé•¿å‘½ç™¾å²â€å‡ ä¸ªå­—ï¼Œä¸‹é¢ä¼¼ä¹æœ‰ä¸€ä¸ªå°å°çš„â€œæ›²â€å­—ã€‚\n");
+		set("unit", "ä¸²");
 		set("value", 1500);
 		set("material", "gold");
 		set("armor_prop/armor", 1);

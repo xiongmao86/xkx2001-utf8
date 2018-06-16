@@ -1,5 +1,5 @@
 //Cracked by Roath
-//ºÓ±ß
+//æ²³è¾¹
 //xiaojian May 20,2000
 
 #include <ansi.h>
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ººË®°¶±ß");
+	set("short", "æ±‰æ°´å²¸è¾¹");
 	set("long",@LONG
-ÕâÀïÊÇººË®°¶±ß£¬ÒòÎªµØÊÆÆ½Ì¹¿ªÀ«µÄÔµ¹Ê£¬ÕâÀïµÄË®Á÷ÏÔ
-µÃ»ººÍÁËĞí¶à£¬ËùÒÔÕâÀïµÄºÓË®¿´ÉÏÈ¥Çå³º¸É¾»¡£ÄÏÑô³ÇµÄ¾ÓÃñ
-¶¼ÔÚÕâÀïÌôË®ºÈ£¬°¶±ß»¹ÓĞ¼¸¸öÅ©´å¸¾Å®¶××ÅÏ´ÒÂ·ş¡£
+è¿™é‡Œæ˜¯æ±‰æ°´å²¸è¾¹ï¼Œå› ä¸ºåœ°åŠ¿å¹³å¦å¼€é˜”çš„ç¼˜æ•…ï¼Œè¿™é‡Œçš„æ°´æµæ˜¾
+å¾—ç¼“å’Œäº†è®¸å¤šï¼Œæ‰€ä»¥è¿™é‡Œçš„æ²³æ°´çœ‹ä¸Šå»æ¸…æ¾ˆå¹²å‡€ã€‚å—é˜³åŸçš„å±…æ°‘
+éƒ½åœ¨è¿™é‡ŒæŒ‘æ°´å–ï¼Œå²¸è¾¹è¿˜æœ‰å‡ ä¸ªå†œæ‘å¦‡å¥³è¹²ç€æ´—è¡£æœã€‚
 LONG);
 	
         set("exits", ([
@@ -41,23 +41,23 @@ int do_yao(string arg)
 	me = this_player();
 		
 	if(!arg || (arg != "shui" && arg != "water"))
-		return notify_fail("ÄãÒªÒ¨Ê²Ã´£¿\n");	
+		return notify_fail("ä½ è¦èˆ€ä»€ä¹ˆï¼Ÿ\n");	
 	ob = present("shui piao", me);
         if (!ob)
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞË®Æ°£¬ÔõÃ´Ò¨Ë®? \n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰æ°´ç“¢ï¼Œæ€ä¹ˆèˆ€æ°´? \n");
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 	if (ob->query("water_filled"))
-			return notify_fail("Æ°ÀïÒÑ¾­Ê¢ÂúÁËË®ÁË¡£\n");
+			return notify_fail("ç“¢é‡Œå·²ç»ç››æ»¡äº†æ°´äº†ã€‚\n");
 	if (!me->query("shaolin/job_asked"))
-        	return notify_fail("ÄãÓÖÃ»ÓĞÁìÈÎÎñ£¬¸ÉÂğºÎ±ØÍùºÓ±ßÅÜ£¿µ±ĞÄÑÍËÀ£¡\n");
+        	return notify_fail("ä½ åˆæ²¡æœ‰é¢†ä»»åŠ¡ï¼Œå¹²å—ä½•å¿…å¾€æ²³è¾¹è·‘ï¼Ÿå½“å¿ƒæ·¹æ­»ï¼\n");
 	if (random(100) ==1)
 	{ 
-		message_vision(HIR"$NÒ»²»Ğ¡ĞÄ£¬ÊÖÉÏÒ»»¬,°ÑÆ°µôµ½ºÓÀïÁË¡£\n"NOR, me);
+		message_vision(HIR"$Nä¸€ä¸å°å¿ƒï¼Œæ‰‹ä¸Šä¸€æ»‘,æŠŠç“¢æ‰åˆ°æ²³é‡Œäº†ã€‚\n"NOR, me);
 		destruct(ob);
 		return 1;
 	}
-    message_vision("$NÍäÏÂÑü£¬´ÓÇå³ºµÄºÓË®ÖĞÒ¨ÁËÒ»Æ°Ë®¡£\n",me);
+    message_vision("$Nå¼¯ä¸‹è…°ï¼Œä»æ¸…æ¾ˆçš„æ²³æ°´ä¸­èˆ€äº†ä¸€ç“¢æ°´ã€‚\n",me);
 	ob->set("water_filled",1);
 	me->start_busy(3+random(2));
 	me->receive_damage("jingli", (8+ random(3)));
@@ -66,7 +66,7 @@ int do_yao(string arg)
 int valid_leave(object me, string dir)
 {
         if( dir=="east" && !wizardp(me) &&(me->query("shaolin/job_asked") ))
-                return notify_fail("ÏëÍµÀÁ£¿²»ÅÂ½äÂÉÔºµÄÖ÷³Ö´¦ÄãÒÔÕÈĞÌ? \n");
+                return notify_fail("æƒ³å·æ‡’ï¼Ÿä¸æ€•æˆ’å¾‹é™¢çš„ä¸»æŒå¤„ä½ ä»¥æ–åˆ‘? \n");
         return ::valid_leave(me, dir);
 }
 

@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡Åï×Ó");
+        set("short", "å°æ£šå­");
 	set("long", @LONG
-ÕâÊÇÒ»¸öÁÙÊ±´îÆğÀ´µÄĞ¡Åï×Ó¡£
+è¿™æ˜¯ä¸€ä¸ªä¸´æ—¶æ­èµ·æ¥çš„å°æ£šå­ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -23,8 +23,8 @@ LONG
 }
 int valid_leave()
 {
-	if( this_player()->query_temp("marks/Íõ") ) {
-		this_player()->set_temp("marks/Íõ", 0);
+	if( this_player()->query_temp("marks/ç‹") ) {
+		this_player()->set_temp("marks/ç‹", 0);
 	}
 	return 1;
 } 

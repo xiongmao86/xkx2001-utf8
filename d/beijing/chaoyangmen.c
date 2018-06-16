@@ -3,11 +3,11 @@
 
 inherit ROOM;
 
-string GATE_DESC_SHORT="������";
+string GATE_DESC_SHORT="朝阳门";
 string GATE_DESC_LONG=@LONG
-���Ǿ��Ƕ���ĳ����š���ǽ������������䣬ȫ����
-ש�������ɣ����Ŷ�ҲΪש��Ͳ�ǣ�ʮ�ּ�����ۡ�������
-����ͨ�������Ĵ�����ſ���һ�Ÿ�ʾ(gaoshi).
+这是京城东向的朝阳门。城墙建于明永乐年间，全部用
+砖包砌而成，城门洞也为砖砌筒壳，十分坚固美观。出门往
+东是通往东北的大道。门口有一张告示(gaoshi).
 LONG;
 
 mapping GATE_EXITS=([

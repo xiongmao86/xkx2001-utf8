@@ -1,19 +1,19 @@
 //Cracked by Roath
-// skeleton.c ÷¼÷Ã¹Ç
+// skeleton.c éª·é«…éª¨
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name("÷¼÷Ã¹Ç", ({"skeleton", "kulou", "gu"}));
+        set_name("éª·é«…éª¨", ({"skeleton", "kulou", "gu"}));
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
+                set("unit", "å‰¯");
                 set("long",
-			"÷¼÷Ã¹ÇÉíÉÏÒÂ·şÒÑÀÃÁËÆß°Ë³É£¬ÍğÈ»ÉĞ¿É¼ûµ½ÊÇ¸öÈËĞÎ¡£\n");
+			"éª·é«…éª¨èº«ä¸Šè¡£æœå·²çƒ‚äº†ä¸ƒå…«æˆï¼Œå®›ç„¶å°šå¯è§åˆ°æ˜¯ä¸ªäººå½¢ã€‚\n");
                 set("material", "steel");
 		set("value", 100);
         }

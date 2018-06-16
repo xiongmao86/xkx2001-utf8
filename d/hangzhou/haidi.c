@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/hangzhou/haidi.c   º£µÌ
+// /d/hangzhou/haidi.c   æµ·å ¤
 // by aln 2 / 98
 
 #include <room.h>
@@ -8,11 +8,11 @@
 inherit ROOM;
 
 void create()
-{        set("short", "º£µÌ");
+{        set("short", "æµ·å ¤");
          set("long", @LONG
-Õâ¶ùºÃ¼¸Ê®ÀïÊÇÈË¹¤ÐÞÖþµÄº£µÌ¡£ÒòÎªº£Ë®µ¹¹à£¬»ÙËðÁ¼Ìï¡£Àú´ú¹Ù¸®¾­
-³£¶¯Ô±Ãñ¹¤²»¶ÏÐÞÖþº£µÌ£¬Ãñ¹¤ÖÚ¶à±ã×ÔÈ»¾À¼¯³ÉÌÁ°ï¡£ÌÁ°ï¶¼ÊÇ¿àÁ¦£¬Ëä¶Ô
-¹ÙÀôÊ±³£¿Ë¿Û¹¤âÃ²»Âú£¬µ«¾øÎÞÔì·´Ö®ÐÄ¡£
+è¿™å„¿å¥½å‡ åé‡Œæ˜¯äººå·¥ä¿®ç­‘çš„æµ·å ¤ã€‚å› ä¸ºæµ·æ°´å€’çŒï¼Œæ¯æŸè‰¯ç”°ã€‚åŽ†ä»£å®˜åºœç»
+å¸¸åŠ¨å‘˜æ°‘å·¥ä¸æ–­ä¿®ç­‘æµ·å ¤ï¼Œæ°‘å·¥ä¼—å¤šä¾¿è‡ªç„¶çº é›†æˆå¡˜å¸®ã€‚å¡˜å¸®éƒ½æ˜¯è‹¦åŠ›ï¼Œè™½å¯¹
+å®˜åæ—¶å¸¸å…‹æ‰£å·¥é¥·ä¸æ»¡ï¼Œä½†ç»æ— é€ åä¹‹å¿ƒã€‚
 LONG	);
 
          set("exits", ([ /* sizeof() == 2 */ 

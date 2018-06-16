@@ -6,11 +6,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-	set("short", "É½¶´");
+	set("short", "å±±æ´ž");
 	set("long", @LONG
-ÏÀ¿Íµº³£ÄêÅÉÇ²µÜ×Óµ½ÖÐÔ­¸÷µØ´òÌ½¸÷ÃÅÅÉÄÚÇé£¬¶àÄêµÄ»ýÀÛÒÔ
-¼°Ðí¶à²»ÎªÈËÖªµÄÎäÁÖÕäÎÅ±ã¼ÇÔØÔÚÕâÀïµÄÊé(books)ÖÐ¡£Ö»¼ûÊé¼ÜÊé
-×À¾ãÈ«£¬×ÀÉÏÓÍµÆ³¤Ã÷£¬ÕæÊÇ¸ö¶ÁÊéµÄºÃµØ·½¡£
+ä¾ å®¢å²›å¸¸å¹´æ´¾é£å¼Ÿå­åˆ°ä¸­åŽŸå„åœ°æ‰“æŽ¢å„é—¨æ´¾å†…æƒ…ï¼Œå¤šå¹´çš„ç§¯ç´¯ä»¥
+åŠè®¸å¤šä¸ä¸ºäººçŸ¥çš„æ­¦æž—çé—»ä¾¿è®°è½½åœ¨è¿™é‡Œçš„ä¹¦(books)ä¸­ã€‚åªè§ä¹¦æž¶ä¹¦
+æ¡Œä¿±å…¨ï¼Œæ¡Œä¸Šæ²¹ç¯é•¿æ˜Žï¼ŒçœŸæ˜¯ä¸ªè¯»ä¹¦çš„å¥½åœ°æ–¹ã€‚
 LONG );
 
 	set("exits", ([
@@ -18,7 +18,7 @@ LONG );
 	]));
 
 	set("item_desc",([
-	    "books" : 	"ÊéÃæÉÏ¶¼Ð´×ÅÒ»¸öÎäÁÖÃÅÅÉµÄÃû×Ö¡£\n",
+	    "books" : 	"ä¹¦é¢ä¸Šéƒ½å†™ç€ä¸€ä¸ªæ­¦æž—é—¨æ´¾çš„åå­—ã€‚\n",
 	]));
 	
         setup();
@@ -33,9 +33,9 @@ int do_du(string arg)
 {	object me = this_player();
 	int check;
 	if ( !arg )
-		return notify_fail( "ÄãÏëÑ§Ê²÷á?\n");
+		return notify_fail( "ä½ æƒ³å­¦ä»€éº½?\n");
 	if ( arg != "book" )
-		return notify_fail( "ÄãÒª¶ÁÊ²÷á?\n");
-	write("·­¿ªÕâ±¾ÊéµÄµÚÒ»Ò³£¬ÉÏÃæÐ´×Å\n");
+		return notify_fail( "ä½ è¦è¯»ä»€éº½?\n");
+	write("ç¿»å¼€è¿™æœ¬ä¹¦çš„ç¬¬ä¸€é¡µï¼Œä¸Šé¢å†™ç€\n");
 	return 1;
 }

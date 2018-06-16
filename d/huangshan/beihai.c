@@ -1,15 +1,15 @@
 //Cracked by Roath
-// ����
+// 北海
 // Dong  01/20/97.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 void create()
-{   set("short", "����");
+{   set("short", "北海");
     set("long", @LONG
-�λ�ɽ�����Ǳ����ġ����︽���ǹ��ճ�������ĺõط�������
-��һ�͵꣬���οͿɹ��ޣ��峿���ճ�������������̨�����߿ɵ���
-��ͤ��
+游黄山北海是必来的。这里附近是观日出和日落的好地方。这里
+有一客店，让游客可过宿，清晨观日出。北边是清凉台，西边可到排
+云亭。
 LONG);
 
     set("exits", ([ /* sizeof() == 5 */

@@ -6,16 +6,16 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("°×ÀÏ°å", ({ "bai laoban", "bai", "laoban", "bai baopi", "bopi"}));
+        set_name("ç™½è€æ¿", ({ "bai laoban", "bai", "laoban", "bai baopi", "bopi"}));
         set_color("$YEL$");
-        set("title", "°×°þÆ¤");
+        set("title", "ç™½å‰¥çš®");
         set("shen_type", 0);
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set_max_encumbrance(100000000);
         set("age", 35);
         set("long",
-                "ÕòÉÏ×îÓÐÇ®µÄ²ÆÖ÷£¬ÐÕ°×£¬ÍâºÅ½Ð×ö°×°þÆ¤£¬ÓÖ¿ªµ±ÆÌ£¬ÓÖ¿ªÃ×ÐÐ¡£\n");
+                "é•‡ä¸Šæœ€æœ‰é’±çš„è´¢ä¸»ï¼Œå§“ç™½ï¼Œå¤–å·å«åšç™½å‰¥çš®ï¼Œåˆå¼€å½“é“ºï¼Œåˆå¼€ç±³è¡Œã€‚\n");
         set("no_get_from", 1);
 
         set("dex", 80);
@@ -47,19 +47,19 @@ void init()
 
 void unconcious()
 {
-        message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉíÀ­¿ª¹ñÌ¨ÏÂÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï±ß°ÑÃÅËøÉÏÁË¡£\n",
+        message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹‰å¼€æŸœå°ä¸‹ä¸€é“æš—é—¨ï¼Œé’»äº†è¿›åŽ»ï¼Œå’”åš“ä»Žé‡Œè¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
                 this_object());
         destruct(this_object());
 }
 
 void die()
 {
-        message_vision("\n$NËÀÁË¡£\n", this_object());
+        message_vision("\n$Næ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒÐÐÐ×É±ÈË£¬Ã»Íõ·¨ÁËÂð£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡çŽ‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         return 1;
 }

@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIW "¹íÃÅ¹Ø" NOR);
+	set("short", HIW "é¬¼é—¨å…³" NOR);
 	set("long", 
-		"ÕâÀï¾ÍÊÇÖøÃûµÄÒõ¼äÈë¿Ú¡¸¹íÃÅ¹Ø¡¹£¬ÔÚÄãÃæÇ°´£Á¢ÖøÒ»×ù¸ß´óµÄ\n"
-		"ºÚÉ«³ÇÂ¥£¬Ðí\¶àÍö»êÕý¿Þ¿ÞÌäÌäµØÁÐ¶ÓÇ°½ø£¬ÒòÎªÒ»½ø¹íÃÅ¹Ø¾ÍÎÞ·¨ÔÙ\n"
-		"»ØÑô¼äÁË¡£\n");
+		"è¿™é‡Œå°±æ˜¯è‘—åçš„é˜´é—´å…¥å£ã€Œé¬¼é—¨å…³ã€ï¼Œåœ¨ä½ é¢å‰çŸ—ç«‹è‘—ä¸€åº§é«˜å¤§çš„\n"
+		"é»‘è‰²åŸŽæ¥¼ï¼Œè®¸\å¤šäº¡é­‚æ­£å“­å“­å•¼å•¼åœ°åˆ—é˜Ÿå‰è¿›ï¼Œå› ä¸ºä¸€è¿›é¬¼é—¨å…³å°±æ— æ³•å†\n"
+		"å›žé˜³é—´äº†ã€‚\n");
 	set("exits", ([
 		"north" : "/d/death/gateway",
 	]) );
@@ -50,7 +50,7 @@ void init()
 int do_suicide(string arg)
 {
         object me = this_player();
-        tell_object(me, "Äã»¹ËÀ×ÅÄØ¡£\n");
+        tell_object(me, "ä½ è¿˜æ­»ç€å‘¢ã€‚\n");
         return 1;
 }
 

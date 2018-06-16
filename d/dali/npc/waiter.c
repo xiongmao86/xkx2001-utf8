@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÊÌÕß", ({ "shi zhe", "waiter" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("ä¾è€…", ({ "shi zhe", "waiter" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35+random(5));
-	set("long", "¿´ÉÏÈ¥³¤µÄÃ¼ÇåÄ¿Ğã¡£\n");
+	set("long", "çœ‹ä¸Šå»é•¿çš„çœ‰æ¸…ç›®ç§€ã€‚\n");
 	set("combat_exp", 4500);
 	set("attitude", "heroism");
 

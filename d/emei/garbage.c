@@ -1,14 +1,14 @@
 //Cracked by Roath
-// garbage.c À¬»ø
+// garbage.c åƒåœ¾
 // used to collect object that has delayed call_out but also need destruct
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "À¬»øÏä");
+        set("short", "åƒåœ¾ç®±");
         set("long", @LONG
-¶ëáÒÀ¬»øÏä¡£
+å³¨åµ‹åƒåœ¾ç®±ã€‚
 LONG
         );
 

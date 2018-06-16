@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tycaisun.c Ì¨ÒÄ²ÉËñÈË
+// tycaisun.c å°å¤·é‡‡ç¬‹äºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("²ÉËñÈË", ({ "caisun ren", "ren", "woman" }) );
-	set("long", "Ò»¸öÂ¬Â¹²¿µÄÇàÄêÌ¨ÒÄ¸¾Å®£¬±³ºó±³ÁË¸öÖñ¿ğ£¬ÊÖÄÃÒ»°Ñ¿³²ñµ¶£¬À´²ÉÖñËñ¡£\n");
+	set_name("é‡‡ç¬‹äºº", ({ "caisun ren", "ren", "woman" }) );
+	set("long", "ä¸€ä¸ªå¢é¹¿éƒ¨çš„é’å¹´å°å¤·å¦‡å¥³ï¼ŒèƒŒåèƒŒäº†ä¸ªç«¹ç­ï¼Œæ‰‹æ‹¿ä¸€æŠŠç æŸ´åˆ€ï¼Œæ¥é‡‡ç«¹ç¬‹ã€‚\n");
 
 	set("age", 25);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 25);

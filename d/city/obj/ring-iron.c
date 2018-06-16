@@ -6,14 +6,14 @@ inherit FINGER;
 
 void create()
 {
-        set_name("Ìú½äÖ¸", ({ "iron ring", "ring" }));
+        set_name("é“æˆ’æŒ‡", ({ "iron ring", "ring" }));
         set_color("$HIC$");
         set("weight", 400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÑ°³£µÄ½äÖ¸£¬×÷ÎªÒ»°ãÃñ¼äµÄ×°ÊÎÆ·£¬²ÄÖÊÎªÌú¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªå¯»å¸¸çš„æˆ’æŒ‡ï¼Œä½œä¸ºä¸€èˆ¬æ°‘é—´çš„è£…é¥°å“ï¼Œæè´¨ä¸ºé“ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 2500);
                 set("material", "iron");
                 set("armor_prop/armor", 1);

@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ӣ������");
+	set("short", "朝英练功室");
 	set("long", @LONG
-��ʯ�ҳ�Բ�ͣ����ǵ����ֳ�Ӣ��ϰ�����ĵط���
+这石室呈圆型，正是当年林朝英练习剑法的地方。
 
  LONG
 	);

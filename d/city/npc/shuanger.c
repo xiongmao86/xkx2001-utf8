@@ -1,5 +1,5 @@
 //Cracked by Roath
-//  Ë«¶ù
+//  åŒå„¿
 // kane
 
 #include <ansi.h>
@@ -11,12 +11,12 @@ int do_repair(string arg);
 
 void create()
 {
-        set_name("Ë«¶ù", ({ "shuang er", "shuanger", "shuang"}));
-        set("title", "Â¹¶¦¹«·òÈË");
+        set_name("åŒå„¿", ({ "shuang er", "shuanger", "shuang"}));
+        set("title", "é¹¿é¼å…¬å¤«äºº");
         set("long",
-"ËıÊÇµ±³¯Â¹¶¦¹«Î¤¹«Ò¯µÄÆßÎ»·òÈËÖ®Ò»£¬ÊÇÆßÎ»·òÈËÖĞ×îÎÂÈáÉÆÁ¼£¬\n"
-"ÉÆ½âÈËÒâµÄÒ»Î»¡£Ëı¿´ÆğÀ´Ëä²»´ó°®Ëµ»°£¬µ«È´ÎäÒÕ¸ßÇ¿\n");
-        set("gender", "Å®ĞÔ");
+"å¥¹æ˜¯å½“æœé¹¿é¼å…¬éŸ¦å…¬çˆ·çš„ä¸ƒä½å¤«äººä¹‹ä¸€ï¼Œæ˜¯ä¸ƒä½å¤«äººä¸­æœ€æ¸©æŸ”å–„è‰¯ï¼Œ\n"
+"å–„è§£äººæ„çš„ä¸€ä½ã€‚å¥¹çœ‹èµ·æ¥è™½ä¸å¤§çˆ±è¯´è¯ï¼Œä½†å´æ­¦è‰ºé«˜å¼º\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -53,9 +53,9 @@ void create()
         prepare_skill("cuff", "pishi-poyu");
 
         set("inquiry", ([
-                "ĞŞ²¹"     : (: ask_me :),
-                "·ì²¹"     : (: ask_me :),
-                "ĞŞÀí"   : (: ask_me :)
+                "ä¿®è¡¥"     : (: ask_me :),
+                "ç¼è¡¥"     : (: ask_me :),
+                "ä¿®ç†"   : (: ask_me :)
         ]));
 
         setup();
@@ -73,12 +73,12 @@ string ask_me()
         object me = this_player();
 
         if (query_temp("busy"))
-                return "Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n";
+                return "å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n";
         if (!me->query_temp("allow_repair"))
-                return "ÕâÎ»"+RANK_D->query_respect(me)+"ÄúÇëÏÈ¸¶ÎåÁ½°×Òø¡£\n";
+                return "è¿™ä½"+RANK_D->query_respect(me)+"æ‚¨è¯·å…ˆä»˜äº”ä¸¤ç™½é“¶ã€‚\n";
 
         me->set_temp("pending/sewing", 1);
-        return "²»ÖªµÀÕâÎ»"+RANK_D->query_respect(me)+"ĞèÒªÎÒ²¹(repair)Ğ©Ê²÷á£¿\n"; }
+        return "ä¸çŸ¥é“è¿™ä½"+RANK_D->query_respect(me)+"éœ€è¦æˆ‘è¡¥(repair)äº›ä»€éº½ï¼Ÿ\n"; }
 
 int do_repair(string arg)
 {
@@ -87,13 +87,13 @@ int do_repair(string arg)
 
         me = this_player();
 
-	if (!arg) return notify_fail("ÄãÒª²¹Ê²Ã´¶«Î÷£¿\n");        
+	if (!arg) return notify_fail("ä½ è¦è¡¥ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");        
 
 	if( !objectp(obj = present(arg, me)) )
-                return notify_fail("ÄãÒª²¹Ê²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦è¡¥ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
         if (!obj->query("armor_prop/armor") || obj->query("armor_prop/armor")<1)
-                return notify_fail("Õâ¶«Î÷ÄÜ²¹Âğ£¿\n");
+                return notify_fail("è¿™ä¸œè¥¿èƒ½è¡¥å—ï¼Ÿ\n");
 
         set_temp("busy",1);
         start_busy(2);
@@ -104,7 +104,7 @@ int do_repair(string arg)
         call_out("destroy_ob", 1, obj);
 
         obj = new(file);
-        write("Ë«¶ùÓõÁËÒ»¿Ú³¤Æø£¬ËµµÀ£º¡°²¹ºÃÁË£¬ÄÃÈ¥°É£¬ÏÂ´ÎĞ¡ĞÄµãÅ¶¡£\n");
+        write("åŒå„¿åäº†ä¸€å£é•¿æ°”ï¼Œè¯´é“ï¼šâ€œè¡¥å¥½äº†ï¼Œæ‹¿å»å§ï¼Œä¸‹æ¬¡å°å¿ƒç‚¹å“¦ã€‚\n");
         obj->move(me);
 	me->delete_temp("allow_repair");
 
@@ -122,7 +122,7 @@ void enough_rest()
 int accept_object(object me, object ob)
 {
         command("smile");
-	command("say ÕæÊÇ¶àĞ»" + RANK_D->query_respect(me) + "ÄúÁË £¡");
+	command("say çœŸæ˜¯å¤šè°¢" + RANK_D->query_respect(me) + "æ‚¨äº† ï¼");
 
         if(ob->query("money_id") && ob->value() >= 500)
                 me->set_temp("allow_repair", 1);

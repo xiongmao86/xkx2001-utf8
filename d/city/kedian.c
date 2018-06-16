@@ -21,12 +21,12 @@ void create()
         object *ob;
         local = localtime(time());
 
-  	set("short", HIC"�͵�"NOR);
+  	set("short", HIC"客店"NOR);
         set("long", @LONG
-����һ�Ҽ�Ǯ�����Ŀ�ջ������ǳ���¡������οͶ�ѡ��������ţ����
-����������������صķ������顣��С����������æ������ת���Ӵ�����ǻ����
-�Ŀ��ˡ��͵�����˴Ӳ�¶�棬��������˭���и��ָ����Ĳ²⡣ǽ�Ϲ���һ��
-����(paizi)��������һ�����ǡ�
+这是一家价钱低廉的客栈，生意非常兴隆。外地游客多选择这里落脚，你可
+以在这里打听到各地的风土人情。店小二里里外外忙得团团转，接待着南腔北调
+的客人。客店的主人从不露面，他究竟是谁，有各种各样的猜测。墙上挂着一个
+牌子(paizi)，北面是一间马厩。
 LONG
         );
 
@@ -35,9 +35,9 @@ LONG
         set("no_sleep_room",1);
 
         set("item_desc", ([
-                "paizi" : "¥���ŷ���ÿҹ����������\n",
+                "paizi" : "楼上雅房，每夜五两白银。\n",
 //		"vortex" : 
-//"���ƺ��Ǵ�˵���ᵽ���Ĵ��͵㣬���͵���Ǳ߿��������ã�Ҳ���ǵ�����\n",
+//"这似乎是传说中提到过的传送点，传送点的那边可能是天堂，也许是地狱。\n",
         ]));
 
         set("objects", ([
@@ -84,18 +84,18 @@ int do_open_men(string arg)
 	object room;
 
 	if (query("exits/enter"))
-		  return notify_fail("�������Ѿ��Ǵ򿪵ġ�\n");
+		  return notify_fail("这扇门已经是打开的。\n");
 
 	if (!arg || (arg != "men" && arg != "west"))
-		  return notify_fail("��Ҫ��ʲô��\n");
+		  return notify_fail("你要打开什么？\n");
 
 	if ( (string)SECURITY_D->get_status(me) != "(arch)" )
-		  return notify_fail("ʲô��\n");
+		  return notify_fail("什么？\n");
 
 	log_file("status_log", sprintf( "%s opened sjsz door on %s.\n", me->query("id"), ctime(time()) ));
 
 	set("exits/enter", "/d/bwdh/square");
-	message_vision("$N����ָ���һ�㣬֨��һ������һ�����š�\n", this_player());
+	message_vision("$N用手指凌空一点，吱地一声，打开一道大门。\n", this_player());
 
 	return 1;
 }
@@ -103,10 +103,10 @@ int do_open_men(string arg)
 int do_close_men()
 {
 	if (!query("exits/enter"))
-		  return notify_fail("�������Ѿ��ǹ��ϵġ�\n");
+		  return notify_fail("这扇门已经是关上的。\n");
 
   	delete("exits/enter");
-	message("vision", "���������ع����ˡ�\n", this_object());
+	message("vision", "大门慢慢地关上了。\n", this_object());
      	return 1;
 }
 
@@ -124,15 +124,15 @@ int do_close_men()
 //	me = this_player();
 //	if (arg =="vortex") {
 //                        message("vision",
-//		me->name() + "������ǽһֱ���˹�ȥ���߽�ǽ�ﲻ���ˡ�\n",
+//		me->name() + "朝着南墙一直走了过去，走进墙里不见了。\n",
  //                       environment(me), ({me}) );
 //                        me->move("/u/ding/diablo_r1");
  //                       message("vision",
-//me->name() + "������ͻȻƾ�ճ���������ǰ��\n",
+//me->name() + "的身形突然凭空出现在你面前。\n",
 //                        environment(me), ({me}) );
 //                return 1;
 //        } else 
-//        return notify_fail("��Ҫ�������\n");
+//        return notify_fail("你要进入哪里？\n");
 //}
 // end of my temp. code --ding
 
@@ -147,11 +147,11 @@ int valid_leave(object me, string dir)
 
         if(objectp(present("xiao er", environment(me)))) {
                 if ( !me->query_temp("rent_paid") && dir == "up" )
-                return notify_fail("��С��һ�µ���¥��ǰ������һ���������ţ����ס����\n");
+                return notify_fail("店小二一下挡在楼梯前，白眼一翻：怎麽着，想白住啊！\n");
 
                 if ( me->query_temp("rent_paid") && dir != "up" )
-                return notify_fail("��С���ܵ��ű���ס���͹��Ѿ��������ӣ����᲻ס��������أ�
-���˻���ΪС���ź����أ�\n");
+                return notify_fail("店小二跑到门边拦住：客官已经付了银子，怎麽不住店就走了呢！
+旁人还以为小店伺候不周呢！\n");
         }
 
 		  id = (string)me->query("id");
@@ -161,7 +161,7 @@ int valid_leave(object me, string dir)
         {
                 me->set("startroom", "/d/death/block");
                 me->move("/d/death/block");
-                return notify_fail("�ٺ٣��������ܵ�����ȥ����\n");
+                return notify_fail("嘿嘿，看你能跑到哪里去！！\n");
         }
 		  }
 
@@ -184,19 +184,19 @@ int do_dial(string arg)
 {
         object me = this_player();
                 if ( !arg || arg != "1-900-NOBODYHOME" )
-             return notify_fail( "������Ҫ���˭��\n");
-        if ( me->query("family/family_name") == "������") {
+             return notify_fail( "请问你要打给谁？\n");
+        if ( me->query("family/family_name") == "星宿派") {
         	tell_object(me,
-			"��ֻ����һ����ȣ�"+RANK_D->query_rude(me)+"���㻹�Ҵ�绰���ţ��ȸ��⳥�ѣ���\n");
+			"你只听得一声大喝："+RANK_D->query_rude(me)+"！你还敢打电话上门？先付赔偿费！！\n");
         	return 1;
 	}
-        if ( me->query("family/family_name") == "������") {
+        if ( me->query("family/family_name") == "少林派") {
         	tell_object(me,
-			"���������һ���ƹ����¼�����Բ���û���ڼң�Ǯ��û�յ������Ժ�\n");
+			"你耳边听到一阵破锅般的录音，对不起，没人在家，钱还没收到，请稍候！\n");
        		return 1;
 	}
         tell_object(me,
-		"�Բ���û���ڼң���������Э��ֻ�������������������й���ʦ��ӳ������⣡\n");
+		"对不起，没人在家，而且我们协会只处理少林派事务，请找有关巫师反映你的问题！\n");
 	return 1;
 }
 

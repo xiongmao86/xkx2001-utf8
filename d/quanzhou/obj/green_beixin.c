@@ -1,5 +1,5 @@
 //Cracked by Roath
-// green_beixin.c Çà¶ĞÆşÑÀ±³ĞÄ
+// green_beixin.c é’ç¼æç‰™èƒŒå¿ƒ
 
 #include <ansi.h>
 #include <armor.h>
@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name( "Çà¶ĞÆşÑÀ±³ĞÄ", ({ "qing beixin", "beixin" }) );
+        set_name( "é’ç¼æç‰™èƒŒå¿ƒ", ({ "qing beixin", "beixin" }) );
 	set_color(GRN);
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 300);
                 set("material", "cloth");
                 set("armor_prop/armor", 6);

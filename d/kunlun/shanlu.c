@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-ֻ���˴���·��᫣������վ���һ�����ذ�������բʯ�š����漴��
-��������ɽ�ڡ����Ҷ���ɽ��Ĳ�������֪ͨ��η���
+只见此处道路崎岖，地势险峻，一处处关隘均有铁闸石门。北面即是
+光明顶的山口。左右都有山间的岔道，不知通向何方。
 LONG );
 
         set("exits", ([

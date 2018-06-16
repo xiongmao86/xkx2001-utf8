@@ -5,18 +5,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name("ÅĞ¹Ù±Ê", ({ "panguan bi", "bi" }) );
+        set_name("åˆ¤å®˜ç¬”", ({ "panguan bi", "bi" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
+                set("unit", "å¯¹");
                 set("long", 
-"ÕâÊÇÒ»¶ÔÈı³ßÁù´ç³¤µÄÅĞ¹Ù±Ê£¬Í¸ÌåÍ¨ºÚ¡£\n");
+"è¿™æ˜¯ä¸€å¯¹ä¸‰å°ºå…­å¯¸é•¿çš„åˆ¤å®˜ç¬”ï¼Œé€ä½“é€šé»‘ã€‚\n");
                 set("value", 100);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»¶Ô$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€å¯¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_sword(20);

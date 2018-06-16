@@ -8,11 +8,11 @@
 inherit ROOM;
 
 void create()
-{       set("short", "Ğ¡Ôº");
+{       set("short", "å°é™¢");
         set("long", @LONG
-ÕâÀïÊÇïÚ¾ÖµÄºóÔº£¬ÓÃÀ´¼Ä·Å¿Í»§µÄïÚ»õ¡£Æ½Ê±¿Õ×Å±ãÊÇÖÚïÚÍ·ºÍÌË×ÓÊÖĞİ  
-ÏĞµÄÈ¥´¦£¬Ò²ÊÇÁ·¹¦µÄ³¡Ëù¡£×î½ü×ÜïÚÍ·´ÓÉÙÁÖËÂÙ·ÇëÁË¼¸Ãû¸ßÉ®À´Ö¸µãïÚ¾Ö×Ó  
-ÉÏÏÂºÃ¼¸°ÙÈËµÄÎä¹¦£¬Õâ¶ù±ãÏÔµÃÈÈÄÖÍò·Ö£¬Ê±³£Í¨Ïü´ïµ©¡£
+è¿™é‡Œæ˜¯é•–å±€çš„åé™¢ï¼Œç”¨æ¥å¯„æ”¾å®¢æˆ·çš„é•–è´§ã€‚å¹³æ—¶ç©ºç€ä¾¿æ˜¯ä¼—é•–å¤´å’Œè¶Ÿå­æ‰‹ä¼‘  
+é—²çš„å»å¤„ï¼Œä¹Ÿæ˜¯ç»ƒåŠŸçš„åœºæ‰€ã€‚æœ€è¿‘æ€»é•–å¤´ä»å°‘æ—å¯ºä¿œè¯·äº†å‡ åé«˜åƒ§æ¥æŒ‡ç‚¹é•–å±€å­  
+ä¸Šä¸‹å¥½å‡ ç™¾äººçš„æ­¦åŠŸï¼Œè¿™å„¿ä¾¿æ˜¾å¾—çƒ­é—¹ä¸‡åˆ†ï¼Œæ—¶å¸¸é€šå®µè¾¾æ—¦ã€‚
 LONG);
         set("exits", ([ /* sizeof() == 3 */ 
                 "west" : __DIR__"xiaoyuanee", 
@@ -39,7 +39,7 @@ void init()
                 me->receive_damage("jing", cost + random(cost));
                 me->receive_damage("jingli", cost + random(cost));
 
-                message_vision("\n¼¸Î»ïÚÍ·ÉÏÇ°Ïò$NĞĞÀñ£¬ÕùÏÈ¿ÖºóµØÏò$NÇë½ÌÎä¹¦¡£\n", this_player());
+                message_vision("\nå‡ ä½é•–å¤´ä¸Šå‰å‘$Nè¡Œç¤¼ï¼Œäº‰å…ˆæååœ°å‘$Nè¯·æ•™æ­¦åŠŸã€‚\n", this_player());
                 me->start_busy(1 + random(cost/10));
         }
         add_action("do_dazuo", "dazuo");
@@ -52,7 +52,7 @@ int do_dazuo(string arg)
 
         if( busy = me->query_busy() ) {
                 if (intp(busy)) me->start_busy(busy+1);
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å£¡\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€ï¼\n");
         }
 
         return 0;
@@ -63,7 +63,7 @@ int valid_leave(object me, string dir)
         if( me->query_condition("lmjob") ) {
                 me->apply_condition("lmjob", 0);
                 me->delete_temp("lmjob");
-                message_vision("\n$N¶ÔÉíÅÔµÄïÚÍ·ÃÇËµµÀ£ºÎÒÓĞµã¼±ÊÂ£¬ÏÂ´ÎÔÙ½ÌÄãÃÇ°É¡£\n", me);
+                message_vision("\n$Nå¯¹èº«æ—çš„é•–å¤´ä»¬è¯´é“ï¼šæˆ‘æœ‰ç‚¹æ€¥äº‹ï¼Œä¸‹æ¬¡å†æ•™ä½ ä»¬å§ã€‚\n", me);
         }
 
         return ::valid_leave(me, dir);

@@ -7,14 +7,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»µêĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ğ¡¶ş¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 
 	setup();
 }
@@ -35,12 +35,12 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			say( "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬½øÀ´ºÈ±­²è£¬ĞªĞªÍÈ°É¡£\n");
+			say( "åº—å°äºŒç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¿›æ¥å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
 			break;
 		case 1:
-			say( "µêĞ¡¶şÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬Çë½øÇë½ø¡£\n");
+			say( "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¯·è¿›è¯·è¿›ã€‚\n");
 			break;
 	}
 }
@@ -49,7 +49,7 @@ int accept_object(object who, object ob)
 {
 	if (ob->query("money_id") && ob->value() >= 500) 
 	{
-		tell_object(who, "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬Ğ¡µÄ¸øÄúÍ·Ç°ÒıÂ·£¬¿Í¹ÙÕâ¾ÍÇëÉÏÂ¥ĞªÏ¢¡£\n");
+		tell_object(who, "å°äºŒä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œå°çš„ç»™æ‚¨å¤´å‰å¼•è·¯ï¼Œå®¢å®˜è¿™å°±è¯·ä¸Šæ¥¼æ­‡æ¯ã€‚\n");
 		who->set_temp("rent_paid",1);
 		set_temp("leading", 1);
 		remove_call_out("do_up");
@@ -58,15 +58,15 @@ int accept_object(object who, object ob)
 	}
 //        else if (ob->query("money_id") && ob->value() >= 20)
 //	{
-//		tell_object(who, "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬ÒªÈ¥Ğ¡°×²Ë»éÒö½éÉÜËù£¬Ğ¡µÄÕâ¾Í¸øÄú¿ªÃÅÈ¥¡£\n");
-//		write("Ö»¼ûĞ¡¶şÀ­¿ªÒ»µÀ²àÃÅ£¬ÈÃÄã×ßÁË½øÈ¥¡£\n");
+//		tell_object(who, "å°äºŒä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œè¦å»å°ç™½èœå©šå§»ä»‹ç»æ‰€ï¼Œå°çš„è¿™å°±ç»™æ‚¨å¼€é—¨å»ã€‚\n");
+//		write("åªè§å°äºŒæ‹‰å¼€ä¸€é“ä¾§é—¨ï¼Œè®©ä½ èµ°äº†è¿›å»ã€‚\n");
 //		who->move("/u/xbc/broker.c");		
 //		return 1;
 //	}
 
 	else if (ob->query("money_id") && ob->value() >= 10) 
 	{
-		tell_object(who, "Ğ¡¶şÃ¦¶ÑÆğĞ¦Èİ£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬ÓĞÊ²Ã´»°£¬Äú¾¡¹ÜÎÊ£¡¡£\n");
+		tell_object(who, "å°äºŒå¿™å †èµ·ç¬‘å®¹ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œæœ‰ä»€ä¹ˆè¯ï¼Œæ‚¨å°½ç®¡é—®ï¼ã€‚\n");
 		who->set_temp("ready_ask",1);
 		return 1;
 	}
@@ -76,8 +76,8 @@ int accept_object(object who, object ob)
 
 int accept_kill(object obj)
 {
-        command("say ¸÷Î»¿Í¹Ù¾ÈÃü°¡£¡ " + obj->name() + "Õâ¸ö" + RANK_D->query_rude(obj
-) + "ÒªÉ±ÁËÎÒ£¡");
+        command("say å„ä½å®¢å®˜æ•‘å‘½å•Šï¼ " + obj->name() + "è¿™ä¸ª" + RANK_D->query_rude(obj
+) + "è¦æ€äº†æˆ‘ï¼");
 }
 
 void do_up(object me, object who)
@@ -85,8 +85,8 @@ void do_up(object me, object who)
 	who->set_leader(me);
 	command("go up");                        
 	
-	tell_object(who, "Ğ¡¶şĞ¦ÎûÎûµØËµ£º¿Í¹ÙÄúËãÕÒ¶ÔµØ·½ÁË£¬ÎÒÃÇÕâ¶ùÊÇÁéÖİ×î¸É¾»µÄ¿Íµê¡£
-Ğ¡¶ş±ßËµ±ß´ÓÑü¼äÕªÏÂÒ»´ó´®Ô¿³×£¬ÕÒ³öÒ»°ÑÀ´¸øÄã¿ªÃÅ¡£\n");
+	tell_object(who, "å°äºŒç¬‘å˜»å˜»åœ°è¯´ï¼šå®¢å®˜æ‚¨ç®—æ‰¾å¯¹åœ°æ–¹äº†ï¼Œæˆ‘ä»¬è¿™å„¿æ˜¯çµå·æœ€å¹²å‡€çš„å®¢åº—ã€‚
+å°äºŒè¾¹è¯´è¾¹ä»è…°é—´æ‘˜ä¸‹ä¸€å¤§ä¸²é’¥åŒ™ï¼Œæ‰¾å‡ºä¸€æŠŠæ¥ç»™ä½ å¼€é—¨ã€‚\n");
 
 	remove_call_out("do_enter");
 	call_out("do_enter", random(5), me, who);
@@ -97,8 +97,8 @@ void do_enter(object me, object who)
 	who->set_leader(me);
 	command("go enter");
 	
-	tell_object(who, "Ğ¡¶ş¶ÔÄãĞ¦Ğ¦£¬Ëµ£ºÕâ·¿¼äºÜ²»´í°É!
-¿Í¹ÙÄúºÃºÃĞİÏ¢£¬Ğ¡µÄÈ¥Ã¦ÁË£¬ÓĞÊ²Ã´ÊÂ¾¡¹Ü·Ô¸À¡£\n");
+	tell_object(who, "å°äºŒå¯¹ä½ ç¬‘ç¬‘ï¼Œè¯´ï¼šè¿™æˆ¿é—´å¾ˆä¸é”™å§!
+å®¢å®˜æ‚¨å¥½å¥½ä¼‘æ¯ï¼Œå°çš„å»å¿™äº†ï¼Œæœ‰ä»€ä¹ˆäº‹å°½ç®¡å©å’ã€‚\n");
 
 	who->set_leader(0);
 	command("go out");

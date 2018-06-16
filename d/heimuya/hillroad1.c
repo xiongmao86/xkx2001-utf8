@@ -9,9 +9,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山道");
         set("long", @LONG
-������������ɽ�����Ա���ľ�ߴ󣬵�·���Ƕ��͡�
+这是条阴暗的山道，旁边树木高大，道路极是陡峭。
 LONG
         );
 

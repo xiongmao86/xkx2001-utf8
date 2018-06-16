@@ -1,17 +1,17 @@
 //Cracked by Roath
-// /d/hangzhou/npc/hsbz.c  ÌìÓ¥½ÌÖÚ
+// /d/hangzhou/npc/hsbz.c  å¤©é¹°æ•™ä¼—
 // by aln 2 / 98
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÌìÓ¥½ÌÖÚ", 
+        set_name("å¤©é¹°æ•™ä¼—", 
               ({ "tianying jiaozhong", "jiaozhong" }) );
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("long",
-"ËûÉí´©Çà²¼¶ÌÉÀ¿ã£¬Í·´÷¶·óÒ£¬ÉíĞÎ×³Êµ¡£\n");
+"ä»–èº«ç©¿é’å¸ƒçŸ­è¡«è£¤ï¼Œå¤´æˆ´æ–—ç¬ ï¼Œèº«å½¢å£®å®ã€‚\n");
         set("combat_exp", 5000);
         set("shen_type",  -1);
 

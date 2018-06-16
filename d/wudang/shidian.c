@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shidian.c Ê¯µî 
+// shidian.c çŸ³æ®¿ 
 // xQin 11/00
 
 inherit ROOM;
@@ -8,12 +8,12 @@ string look_shiliang();
 
 void create()
 {
-	set("short", "Ê¯µî");
+	set("short", "çŸ³æ®¿");
 	set("long", @LONG
-ÕâÊÇÄÏÑÒÉÏµÄÊ¯µî£¬¾Í½¨ÔÚÐüÑÒÇÍ±ÚÉÏ£¬ºÃÏóÊÇÏâÇ¶ÔÚÇ§ØðÏ÷±ÚÖ®¼ä¡£
-Ê¯µîÉÏ½ÓÔÆÌì£¬ÏÂÁÙ¾ø½§£¬ÓëÄÏÑÒ»ëÎªÒ»Ìå£¬Ê¹ÈËÒÉÎªÉñ¹í¸«Éñ¹¦¡£Ê¯µî¾ø
-ÑÒÅÔÉì³öÒ»µñÁúÊ¯Áº£¨shiliang£©£¬ÇÌÊ×ÌìÖù·å¡£ÁúÍ·ÉÏÖÃÐ¡ÏãÂ¯£¬¹ýÈ¥ÓÐ
-²»ÉÙÏã¿ÍÃ°×ÅÉúÃüÎ£ÏÕÉÏÈ¥ÉÕÏã£¬Ë×³ÆµñÁúÊ¯ÁºÎª¡°ÁúÍ·Ïã¡±¡£
+è¿™æ˜¯å—å²©ä¸Šçš„çŸ³æ®¿ï¼Œå°±å»ºåœ¨æ‚¬å²©å³­å£ä¸Šï¼Œå¥½è±¡æ˜¯é•¶åµŒåœ¨åƒä»žå‰Šå£ä¹‹é—´ã€‚
+çŸ³æ®¿ä¸ŠæŽ¥äº‘å¤©ï¼Œä¸‹ä¸´ç»æ¶§ï¼Œä¸Žå—å²©æµ‘ä¸ºä¸€ä½“ï¼Œä½¿äººç–‘ä¸ºç¥žé¬¼æ–§ç¥žåŠŸã€‚çŸ³æ®¿ç»
+å²©æ—ä¼¸å‡ºä¸€é›•é¾™çŸ³æ¢ï¼ˆshiliangï¼‰ï¼Œç¿˜é¦–å¤©æŸ±å³°ã€‚é¾™å¤´ä¸Šç½®å°é¦™ç‚‰ï¼Œè¿‡åŽ»æœ‰
+ä¸å°‘é¦™å®¢å†’ç€ç”Ÿå‘½å±é™©ä¸ŠåŽ»çƒ§é¦™ï¼Œä¿—ç§°é›•é¾™çŸ³æ¢ä¸ºâ€œé¾™å¤´é¦™â€ã€‚
 LONG
 	);
         set("outdoors", "wudang");
@@ -24,8 +24,8 @@ LONG
 	
 	set("item_desc", ([
 		"shiliang" : "
-·ÅÑÛÍûÈ¥£¬Ö»¼ûÊ¯Áú³¤½üÒ»ÕÉ£¬¿í½öÒ»³ß£¬ÌÚ¿ÕÓû·É¡£ÈôÇá¹¦¹ýÈËÒ²¿ÉÔ¾ÉÏÒ»ÊÔ
-(jump shiliang)£¬µ«ÊÇÊ¯ÁúÉÏËÆºõÖ»ÄÜÈÝÉíÒ»ÈË¡£\n",
+æ”¾çœ¼æœ›åŽ»ï¼Œåªè§çŸ³é¾™é•¿è¿‘ä¸€ä¸ˆï¼Œå®½ä»…ä¸€å°ºï¼Œè…¾ç©ºæ¬²é£žã€‚è‹¥è½»åŠŸè¿‡äººä¹Ÿå¯è·ƒä¸Šä¸€è¯•
+(jump shiliang)ï¼Œä½†æ˜¯çŸ³é¾™ä¸Šä¼¼ä¹Žåªèƒ½å®¹èº«ä¸€äººã€‚\n",
 	]));
 
 	set("cost", 6);
@@ -33,7 +33,7 @@ LONG
 }
 void init()
 {
-        add_action("do_mianbi","Ãæ±Ú");
+        add_action("do_mianbi","é¢å£");
         add_action("do_mianbi","mianbi");
         add_action("do_jump", "jump");
 }
@@ -49,12 +49,12 @@ int do_mianbi()
         if (me->is_busy()
         || me->query_temp("pending/exercising")
         || me->query_temp("exit_blocked"))
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if (me->query("jing") < 200 || me->query("jingli") < 200)
-        return notify_fail("Äã¾õµÃ·³Ôê²»°²£¬ÄÑÒÔ¾Û¾«Èë¶¨¡£\n");
+        return notify_fail("ä½ è§‰å¾—çƒ¦èºä¸å®‰ï¼Œéš¾ä»¥èšç²¾å…¥å®šã€‚\n");
         
-        message_vision("$NÃæ¶Ô×ÅÊ¯Áºµø×ø¾²Ë¼£¬Á¼¾Ã£¬ËÆÓÐËùÎò¡£\n", me);
+        message_vision("$Né¢å¯¹ç€çŸ³æ¢è·Œåé™æ€ï¼Œè‰¯ä¹…ï¼Œä¼¼æœ‰æ‰€æ‚Ÿã€‚\n", me);
 
         me->start_busy(8);
         me->set("jing",1);
@@ -74,12 +74,12 @@ int do_mianbi()
 
         if (gain > 20) gain = 20;
 
-        if (me->query("family/family_name") != "Îäµ±ÅÉ") gain = gain/4;
+        if (me->query("family/family_name") != "æ­¦å½“æ´¾") gain = gain/4;
 
         me->add("combat_exp", gain * 8 + random(gain*4));
         me->set("shen", me->query("combat_exp"));
 
-        if (me->query("family/family_name") == "Îäµ±ÅÉ")
+        if (me->query("family/family_name") == "æ­¦å½“æ´¾")
         me->add("potential", gain * me->query_skill("taoism") / 25
         + random(gain*me->query_skill("taoism")/60));
 
@@ -99,12 +99,12 @@ int do_jump(string arg)
 	
 
         
-	if (!arg || arg != "shiliang" ) return notify_fail("ÄãÒªÌøµ½ÄÄÀï£¿\n");
+	if (!arg || arg != "shiliang" ) return notify_fail("ä½ è¦è·³åˆ°å“ªé‡Œï¼Ÿ\n");
 	
 	cost = (me->query_dex()*me->query_skill("dodge")/ me->query_con() )/10;
         if (cost < 10) cost= 10;
         if( me->query("jingli") < 30)
-        return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦½ßÁË¡£\n");
+        return notify_fail("ä½ å·²ç»ç²¾ç–²åŠ›ç«­äº†ã€‚\n");
         
         lv = me->query("int", 1)*2;
 	if (me->query_skill("dodge") > 200) lv /=2;
@@ -113,18 +113,18 @@ int do_jump(string arg)
 	if (me->query_skill("dodge") > 500) lv /=5;
 	
 	if (me->query_skill("dodge", 1) < 20)
-	return notify_fail("ÄãÇá¹¦²»¹»£¬´Ë¾Ù¶¯ÄË×ÔÉ±ÎÞÒÉ¡£\n");
+	return notify_fail("ä½ è½»åŠŸä¸å¤Ÿï¼Œæ­¤ä¸¾åŠ¨ä¹ƒè‡ªæ€æ— ç–‘ã€‚\n");
 	
 	if (me->query_skill("dodge", 1) < 100 && random(150)==1)
 	{
 	me->add("jingli", -cost);
-	message_vision("$NÒ»¸ö×ÝÉí·ÉÏòÊ¯Áº£¬Ö»¼û¿ìÔ¾ÉÏÁúÊ¯ÁºÊ±Éí×ÓÍ»È»±ÊÖ±µÄË¤ÈëÉîÔ¨¡£\n", me);
+	message_vision("$Nä¸€ä¸ªçºµèº«é£žå‘çŸ³æ¢ï¼Œåªè§å¿«è·ƒä¸Šé¾™çŸ³æ¢æ—¶èº«å­çªç„¶ç¬”ç›´çš„æ‘”å…¥æ·±æ¸Šã€‚\n", me);
 	
 	me->move(__DIR__"shijie1"); 
-	tell_object(me,"ÄãÖ»¾õµÃÁ½¶úÉú·ç£¬²»¶ÏµÄÍùÏÂ×¹£¬ÒÔ±»ÏÅµÄ²»ÄÜ×ÔÎÒ¡£\n");
-	message("vision", "Ö»ÌýµÃ¡¸Åé¡¹µÄÒ»Éù¾ÞÏì£¬" +me->name() 
-			+"×²ÔÚÊ¯½×ÉÏ£¬Ë¤µÃ·ÛÉíËé¹Ç£¬³ÉÁËÒ»ÍÅÈâ½¬¡£\n", environment(me), me);
-	me->set_temp("last_damage_from", "µôÏÂÁúÊ¯ÁºË¤ËÀÁË");
+	tell_object(me,"ä½ åªè§‰å¾—ä¸¤è€³ç”Ÿé£Žï¼Œä¸æ–­çš„å¾€ä¸‹å ï¼Œä»¥è¢«å“çš„ä¸èƒ½è‡ªæˆ‘ã€‚\n");
+	message("vision", "åªå¬å¾—ã€Œç °ã€çš„ä¸€å£°å·¨å“ï¼Œ" +me->name() 
+			+"æ’žåœ¨çŸ³é˜¶ä¸Šï¼Œæ‘”å¾—ç²‰èº«ç¢Žéª¨ï¼Œæˆäº†ä¸€å›¢è‚‰æµ†ã€‚\n", environment(me), me);
+	me->set_temp("last_damage_from", "æŽ‰ä¸‹é¾™çŸ³æ¢æ‘”æ­»äº†");
 	me->receive_wound("qi", me->query("max_qi")+100);
 	return 1;
 	}
@@ -134,22 +134,22 @@ int do_jump(string arg)
         if( room = find_object(__DIR__"long_shiliang") )
         if((int)room->query_temp("shiliang_trigger")==1 )
         {
-        message_vision("$NÒ»¸ö×ÝÉí·ÉÏòÊ¯Áº£¬ÉíÐÎÉõÊÇäìÈ÷µ«ÃÍÈ»$NÓÖ·ÉÁË»ØÀ´£¬ÂúÁ³¾ª»ÌÊ§´ë¡£", me) ;
+        message_vision("$Nä¸€ä¸ªçºµèº«é£žå‘çŸ³æ¢ï¼Œèº«å½¢ç”šæ˜¯æ½‡æ´’ä½†çŒ›ç„¶$Nåˆé£žäº†å›žæ¥ï¼Œæ»¡è„¸æƒŠæƒ¶å¤±æŽªã€‚", me) ;
         me -> move( __DIR__"long_shiliang");
         me -> move( __DIR__"shidian");
         me->add("jingli", -cost);  
         me->start_busy( 1 );
         me->improve_skill("dodge", lv+random(lv) );
-        tell_object(me,"Ô­À´ÊÇÄãÍ»È»·¢ÏÖÓÐ¸öÈËÓ°ÔÚÁúÊ¯ÁºÉÏ£¬¼±ÖÐÉúÖÇ£¬¿ÕÖÐ\n"
-                       "Ó²ÉúÉúÒ»¸ö»ØÉí£¬·ÉÁË»ØÀ´¡£");
+        tell_object(me,"åŽŸæ¥æ˜¯ä½ çªç„¶å‘çŽ°æœ‰ä¸ªäººå½±åœ¨é¾™çŸ³æ¢ä¸Šï¼Œæ€¥ä¸­ç”Ÿæ™ºï¼Œç©ºä¸­\n"
+                       "ç¡¬ç”Ÿç”Ÿä¸€ä¸ªå›žèº«ï¼Œé£žäº†å›žæ¥ã€‚");
        return 1 ;
     }
     room->set_temp("shiliang_trigger", 1);
-    message_vision("$Nµ±¼´Ê©Õ¹Çá¹¦£¬Ò»×ÝÉíÔ¾ÉÏÁËÊ¯Áº¡£\n", me );
+    message_vision("$Nå½“å³æ–½å±•è½»åŠŸï¼Œä¸€çºµèº«è·ƒä¸Šäº†çŸ³æ¢ã€‚\n", me );
     me->move(room) ;
     me->improve_skill("dodge", lv+random(lv) );
     me->add("jingli", -cost);  
-    tell_object(me,"\nÄãÌáÁËÒ»¿ÚÕæÆø£¬×ÝÉíÔ¾ÉÏÁúÊ¯Áº£¬ÒþÔ¼¾õµÃÕâÒ»Ô¾¼ä×Ô¼ºµÄÇá¹¦ÓÐËù½ø²½¡£\n"  ) ;
+    tell_object(me,"\nä½ æäº†ä¸€å£çœŸæ°”ï¼Œçºµèº«è·ƒä¸Šé¾™çŸ³æ¢ï¼Œéšçº¦è§‰å¾—è¿™ä¸€è·ƒé—´è‡ªå·±çš„è½»åŠŸæœ‰æ‰€è¿›æ­¥ã€‚\n"  ) ;
     room->delete_temp("shiliang_trigger");
     me->start_busy( 1 );
     return 1 ;

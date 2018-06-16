@@ -1,5 +1,5 @@
 //Cracked by Roath
-// citong_n1.c ��ͩ��·
+// citong_n1.c 刺桐北路
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͩ��·");
+        set("short", "刺桐北路");
 	set("long", @LONG
-����Ȫ�ݵ���Ҫ�ɵ�����ֱ���㣬��ˮ���������ַǷ��������Ƕ����
-��ͨ����������һ�Ӷӵ�ʿ��������ȥ������ɭ�ϡ�
+这是泉州的主要干道，笔直宽广，车水马龙，热闹非凡。东边是都督巷，
+可通往都督府。一队队的士兵穿来插去，把守森严。
 LONG
         );
 

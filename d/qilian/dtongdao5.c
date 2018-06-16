@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "��");
+  set ("short", "甬道");
   set ("long", @LONG
-����һ���������������������ǲ��ܣ�ǧ�𡢷��졢�ּˡ�
-��������Ρ�
+这是一条长长的甬道，两壁上满是彩塑：千佛、飞天、乐妓、
+建筑物、花饰。
 LONG);
 set("exits", ([
   "east" : __DIR__"shiku0",

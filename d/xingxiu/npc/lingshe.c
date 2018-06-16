@@ -1,5 +1,5 @@
 //Cracked by Roath
-//lingshe Î÷ÓòÁéÉß
+//lingshe è¥¿åŸŸçµè›‡
 //kane, 2/9/98
 
 #include <ansi.h>
@@ -7,16 +7,16 @@ inherit NPC_TRAINEE;
 
 void create()
 {
-        set_name("ÁéÉß", ({ "ling she", "she", "snake" }) );
+        set_name("çµè›‡", ({ "ling she", "she", "snake" }) );
 	set_color("$HIW$");
-        set("race", "ÉßÀà");
+        set("race", "è›‡ç±»");
         set("age", 4);
-        set("long", "Ò»ÌõÒø¹âÉÁÉÁµÄĞ¡Éß£¬²úÓÚÎ÷Óò£¬¼«Îªº±¼û¡£\n");
+        set("long", "ä¸€æ¡é“¶å…‰é—ªé—ªçš„å°è›‡ï¼Œäº§äºè¥¿åŸŸï¼Œæä¸ºç½•è§ã€‚\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆğÀ´");
-        set("msg_trained","$nÇÄÎŞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$nå†²$Nå˜¶åœ°ä¸€åèˆŒå¤´");
+        set("msg_succ", "$nå˜¶å˜¶åšå“ï¼Œè›‡å¤´éšç€$Nçš„æ‰‹åŠ¨äº†èµ·æ¥");
+        set("msg_trained","$næ‚„æ— å£°æ¯åœ°æ¸¸åˆ°$Nçš„è„šä¸‹ä¸åŠ¨äº†");
         set("auto_follow",0);
         set("wildness", 90);
 
@@ -39,7 +39,7 @@ void init()
         ::init();
 	add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-	    ob->query("family/family_name") != "°×ÍÕÉ½" &&
+	    ob->query("family/family_name") != "ç™½é©¼å±±" &&
                 random(ob->query_kar() + ob->query_per()) < 30) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -49,7 +49,7 @@ void init()
 /*
 void unconcious()
 {	
-	write("ÁéÉßàÂµØÒ»ÏÂÌÓµôÁË¡£\n");
+	write("çµè›‡å—¦åœ°ä¸€ä¸‹é€ƒæ‰äº†ã€‚\n");
 	destruct(this_object());
 }
 void die()
@@ -74,13 +74,13 @@ int convert(string arg)
 	object ob;
 
 	if (arg != "ling she") return 0;
-	if (me->query("family/family_name") != "°×ÍÕÉ½") 
-		return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+	if (me->query("family/family_name") != "ç™½é©¼å±±") 
+		return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ä¸ºæ–ã€‚\n");
 	if (me->query_skill("training",1) < 70 + random(70)) {
 		kill_ob(me);
 		return 1;
 	}
-	message_vision("$N×óÊÖ°´×¡ÁéÉßµÄÍ·£¬ÓÒÊÖÇá¸§ÆäÆß´ç£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬Æ¬¿Ì¼ä½«Éß»¯ÎªÒ»¸ùÉßÕÈ¡£\n",
+	message_vision("$Nå·¦æ‰‹æŒ‰ä½çµè›‡çš„å¤´ï¼Œå³æ‰‹è½»æŠšå…¶ä¸ƒå¯¸ï¼Œå£ä¸­å¿µå¿µæœ‰è¯ï¼Œç‰‡åˆ»é—´å°†è›‡åŒ–ä¸ºä¸€æ ¹è›‡æ–ã€‚\n",
 		me,);
 	        ob = new("/d/xingxiu/obj/lingshezhang");
         ob->move(environment(this_object()));

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/xixiang.c Ï´Ïó³Ø
+// /d/emei/xixiang.c æ´—è±¡æ± 
 // Shan: 96/06/22
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ï´Ïó³Ø");
+        set("short", "æ´—è±¡æ± ");
 	set("long", @LONG
-Ï´Ïó³ØÔ­Ö»ÊÇÒ»Í¤£¬Í¤Ç°ÓĞÒ»¸öÊ¯ÆöµÄĞ¡³Ø(pool)£¬³Ø±ß²»Ô¶¾ÍÊÇÎ£ÑÒ¡£
-Ï´Ïó³ØÔ¢ÓÚÒ»Æ¬ÀäÉ¼ÁÖÖĞ£¬ÓĞÈô°×ÔÆÉî´¦µÄÏÉÉ½Çí¸ó¡£ÈôÊÇÔÆÊÕÎíÁ²¡¢±Ì¿ÕÍò
-Àï¡¢ÔÂÀÊÖĞÌìÊ±£¬±ã¾õÍòô¥¾ã¼Å£¬Çå¹âÎŞÏŞ£¬ÍğÈôÉíÔÚÌì¹¬£¬³¹ÌåÉúÁ¹¡£ÕâÕı
-ÊÇÖøÃûµÄ¡¸Ïó³Ø³ØÒ¹¡¹¡£ÓÉ´ËÏòÄÏÉÏÅÊ£¬±ãÖÁÀ×¶´Æº£¬¶«ÏÂÖÁÁ«»¨Ê¯¡£
+æ´—è±¡æ± åŸåªæ˜¯ä¸€äº­ï¼Œäº­å‰æœ‰ä¸€ä¸ªçŸ³ç Œçš„å°æ± (pool)ï¼Œæ± è¾¹ä¸è¿œå°±æ˜¯å±å²©ã€‚
+æ´—è±¡æ± å¯“äºä¸€ç‰‡å†·æ‰æ—ä¸­ï¼Œæœ‰è‹¥ç™½äº‘æ·±å¤„çš„ä»™å±±ç¼é˜ã€‚è‹¥æ˜¯äº‘æ”¶é›¾æ•›ã€ç¢§ç©ºä¸‡
+é‡Œã€æœˆæœ—ä¸­å¤©æ—¶ï¼Œä¾¿è§‰ä¸‡ç±ä¿±å¯‚ï¼Œæ¸…å…‰æ— é™ï¼Œå®›è‹¥èº«åœ¨å¤©å®«ï¼Œå½»ä½“ç”Ÿå‡‰ã€‚è¿™æ­£
+æ˜¯è‘—åçš„ã€Œè±¡æ± æ± å¤œã€ã€‚ç”±æ­¤å‘å—ä¸Šæ”€ï¼Œä¾¿è‡³é›·æ´åªï¼Œä¸œä¸‹è‡³è²èŠ±çŸ³ã€‚
 LONG
 	);
 	set("exits", ([
@@ -24,14 +24,14 @@ LONG
 
         set("item_desc", ([
 		"pool" :
-"ÕâÊÇÒ»¸öÊ¯ÆöµÄÁù½ÇĞ¡³Ø£¬´«ËµÆÕÏÍ³ËÏóÖÁ´Ë£¬±ØÏÈÔÚ´Ë³ØãåÔ¡ÆäÏó£¬¶øºó²Å\n"
-"ÉıÖÁ½ğ¶¥£¬¹ÊÎª¡¸Ï´Ïó³Ø¡¹¡£\n",
+"è¿™æ˜¯ä¸€ä¸ªçŸ³ç Œçš„å…­è§’å°æ± ï¼Œä¼ è¯´æ™®è´¤ä¹˜è±¡è‡³æ­¤ï¼Œå¿…å…ˆåœ¨æ­¤æ± æ²æµ´å…¶è±¡ï¼Œè€Œåæ‰\n"
+"å‡è‡³é‡‘é¡¶ï¼Œæ•…ä¸ºã€Œæ´—è±¡æ± ã€ã€‚\n",
 
-		"Î£ÑÒ" :
-"Î£ÑÒ±ß¿ÌÓĞ¡¸ÑÒ¹ÈÁé¹â¡¹ËÄ¸ö´ó×Ö¡£ÑÒÏÂÖÕÄêÎª°×ÔÆ»·ÈÆ£¬ÄÑ¼ûÆäµ×¡£\n",
+		"å±å²©" :
+"å±å²©è¾¹åˆ»æœ‰ã€Œå²©è°·çµå…‰ã€å››ä¸ªå¤§å­—ã€‚å²©ä¸‹ç»ˆå¹´ä¸ºç™½äº‘ç¯ç»•ï¼Œéš¾è§å…¶åº•ã€‚\n",
 
 		"rock" :
-"Î£ÑÒ±ß¿ÌÓĞ¡¸ÑÒ¹ÈÁé¹â¡¹ËÄ¸ö´ó×Ö¡£ÑÒÏÂÖÕÄêÎª°×ÔÆ»·ÈÆ£¬ÄÑ¼ûÆäµ×¡£\n"
+"å±å²©è¾¹åˆ»æœ‰ã€Œå²©è°·çµå…‰ã€å››ä¸ªå¤§å­—ã€‚å²©ä¸‹ç»ˆå¹´ä¸ºç™½äº‘ç¯ç»•ï¼Œéš¾è§å…¶åº•ã€‚\n"
 
 ])  ) ;
 
@@ -52,30 +52,30 @@ void init()
 
 	add_action("do_swim", "swim");
 	add_action("do_swim", "dive");
-	if ( (string)comer->query("race") == "ÈËÀà" )
+	if ( (string)comer->query("race") == "äººç±»" )
 		for ( i=0 ; i < sizeof(inv); i++)
 			if ( inv[i]->query_temp("xixiang_swimming") ) {
 				if ( inv[i]->is_spouse_of(comer) ) {
-					tell_object(inv[i], HIB"Äã·¢ÏÖÓĞÈË×ßµ½³Ø±ß£¬×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇÄãµÄ"
+					tell_object(inv[i], HIB"ä½ å‘ç°æœ‰äººèµ°åˆ°æ± è¾¹ï¼Œä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯ä½ çš„"
 							+ inv[i]->query("spouse/title")
-							+ "£¬Ğé¾ªÒ»³¡¡£\n"NOR);
+							+ "ï¼Œè™šæƒŠä¸€åœºã€‚\n"NOR);
 					message("vision",CYN + comer->name()
-							+ "¶Ô×ÅÄã»áĞÄµØÒ»Ğ¦¡£\n"NOR, inv[i]);
-					message("vision",CYN"Äã¶Ô×Å" + inv[i]->name()
-							+ "»áĞÄµØÒ»Ğ¦¡£\n"NOR, comer);
+							+ "å¯¹ç€ä½ ä¼šå¿ƒåœ°ä¸€ç¬‘ã€‚\n"NOR, inv[i]);
+					message("vision",CYN"ä½ å¯¹ç€" + inv[i]->name()
+							+ "ä¼šå¿ƒåœ°ä¸€ç¬‘ã€‚\n"NOR, comer);
 				}
-				else if ( (string)inv[i]->query("gender") != "Å®ĞÔ"
-					|| (string)comer->query("gender") == "Å®ĞÔ" ) {
-					tell_object(inv[i], RED"ÄãÍ»È»¼ûµ½ÓĞÍâÈËÂ·¹ı£¬ÏÅµÃ¸Ï½ôÌø³öÏó³Ø£¬ºŞ²»µÃÕÒ¸öµØ·ì×ê½øÈ¥¡£\n"NOR);
-					tell_object(comer, RED"Äã¼ûµ½Ò»¸öÈË»Å»ÅÕÅÕÅµØ´ÓÏ´Ïó³ØÖĞÌøÁËÉÏÀ´¡£\n"NOR);
+				else if ( (string)inv[i]->query("gender") != "å¥³æ€§"
+					|| (string)comer->query("gender") == "å¥³æ€§" ) {
+					tell_object(inv[i], RED"ä½ çªç„¶è§åˆ°æœ‰å¤–äººè·¯è¿‡ï¼Œå“å¾—èµ¶ç´§è·³å‡ºè±¡æ± ï¼Œæ¨ä¸å¾—æ‰¾ä¸ªåœ°ç¼é’»è¿›å»ã€‚\n"NOR);
+					tell_object(comer, RED"ä½ è§åˆ°ä¸€ä¸ªäººæ…Œæ…Œå¼ å¼ åœ°ä»æ´—è±¡æ± ä¸­è·³äº†ä¸Šæ¥ã€‚\n"NOR);
 					inv[i]->delete_temp("xixiang_swimming");
 					inv[i]->set("jing", 0);
 					inv[i]->start_busy(1);
 				}
 				else {
-					tell_object(inv[i], RED"ÄãÍ»È»·¢ÏÖ" + comer->name()
-						+ "Õı¶ÔÄã²»»³ºÃÒâµØ¿úÊÓ£¬ÄãÏÅµÃ¼¸ºõÒªÔÎÁË¹ıÈ¥¡£\n"NOR);
-					tell_object(comer, RED"ÄãÍ»È»·¢ÏÖÏó³ØÖĞÓĞÅ®×ÓãåÔ¡£¬Ëı¼¸ºõÒª±»ÄãÏÅµÃÔÎÁË¹ıÈ¥¡£\n"NOR);
+					tell_object(inv[i], RED"ä½ çªç„¶å‘ç°" + comer->name()
+						+ "æ­£å¯¹ä½ ä¸æ€€å¥½æ„åœ°çª¥è§†ï¼Œä½ å“å¾—å‡ ä¹è¦æ™•äº†è¿‡å»ã€‚\n"NOR);
+					tell_object(comer, RED"ä½ çªç„¶å‘ç°è±¡æ± ä¸­æœ‰å¥³å­æ²æµ´ï¼Œå¥¹å‡ ä¹è¦è¢«ä½ å“å¾—æ™•äº†è¿‡å»ã€‚\n"NOR);
 					inv[i]->delete_temp("xixiang_swimming");
 					inv[i]->set("jing", 0);
 					inv[i]->start_busy(1);
@@ -92,15 +92,15 @@ int do_swim(string arg)
 	int t; // time of the day in minutes
 	mixed local;
 	
-	if ( !arg || (arg != "pool" && arg != "Ï´Ïó³Ø") ) {
-		return notify_fail("Ê²Ã´£¿\n");
+	if ( !arg || (arg != "pool" && arg != "æ´—è±¡æ± ") ) {
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	}
 
 	if ( me->query_temp("xixiang_swimming") )
-		return notify_fail("ÄãÕıÔÚ³ØÖĞÏ·Ë®¡£\n");
+		return notify_fail("ä½ æ­£åœ¨æ± ä¸­æˆæ°´ã€‚\n");
 
 	if ( me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	inv = all_inventory(me);	
 	for (i=0; i<sizeof(inv); i++) {
@@ -110,27 +110,27 @@ int do_swim(string arg)
 				case "armor":
 				case "suncoats":
 					if ( inv[i]->query_weight() > 8000)
-						return notify_fail("´©×Å³ÁÖØµÄ¼×Î¸ÏÂË®£¬²»ÅÂÑÍËÀÄã°¡£¿£¡\n");
+						return notify_fail("ç©¿ç€æ²‰é‡çš„ç”²èƒƒä¸‹æ°´ï¼Œä¸æ€•æ·¹æ­»ä½ å•Šï¼Ÿï¼\n");
 					else 
 						me->receive_damage("jing", 10, me);
-						return notify_fail(BLU"ÄãÌø½øÏ´Ïó³ØÖĞ£¬ÅªµÃ»ëÉíÒÂ·şÊªäõäõµÄ£¬¸Ï½ôÅÀ»Ø³ØÍâ¡£Àä·çÒ»´µ£¬Äã²»ÓÉ\nµÃ´òÁËÒ»¸öÅçÌç¡£\n"NOR);
+						return notify_fail(BLU"ä½ è·³è¿›æ´—è±¡æ± ä¸­ï¼Œå¼„å¾—æµ‘èº«è¡£æœæ¹¿æ¼‰æ¼‰çš„ï¼Œèµ¶ç´§çˆ¬å›æ± å¤–ã€‚å†·é£ä¸€å¹ï¼Œä½ ä¸ç”±\nå¾—æ‰“äº†ä¸€ä¸ªå–·åšã€‚\n"NOR);
 				case "boots":
-					return notify_fail("´©×ÅĞ¬ÏÂË®£¿£¡\n");
+					return notify_fail("ç©¿ç€é‹ä¸‹æ°´ï¼Ÿï¼\n");
 				case "bandage":
-					return notify_fail("Äã»¹¹ü×ÅÉËÄØ£¬²»ÅÂÏÂË®ºóÉË¿Ú¸ĞÈ¾£¿£¡\n");
+					return notify_fail("ä½ è¿˜è£¹ç€ä¼¤å‘¢ï¼Œä¸æ€•ä¸‹æ°´åä¼¤å£æ„ŸæŸ“ï¼Ÿï¼\n");
 				default:
 					break;
 			}
 	}
 	inv = all_inventory(environment(me));
 	for (i=0; i<sizeof(inv); i++) 
-		if ( (string)inv[i]->query("race") == "ÈËÀà" && inv[i] != me && !me->is_spouse_of(inv[i]) )
-			return notify_fail("ÖÚÄ¿î¥î¥Ö®ÏÂÍÑ¹âÒÂÉÑÏÂË®£¬Äã²»ÏÓº¦ëıÂğ£¿£¡\n");
+		if ( (string)inv[i]->query("race") == "äººç±»" && inv[i] != me && !me->is_spouse_of(inv[i]) )
+			return notify_fail("ä¼—ç›®ç½ç½ä¹‹ä¸‹è„±å…‰è¡£è£³ä¸‹æ°´ï¼Œä½ ä¸å«Œå®³è‡Šå—ï¼Ÿï¼\n");
 
         local = localtime(time()*60);
         t = local[2]*60 + local[1];
 
-	message_vision(CYN"$NÍùÏ´Ïó³ØÖĞÌøÈ¥¡£\n"NOR, me);
+	message_vision(CYN"$Nå¾€æ´—è±¡æ± ä¸­è·³å»ã€‚\n"NOR, me);
 	me->set_temp("xixiang_swimming", 1);
 	inv = all_inventory(me);
 	flag = 0;
@@ -142,14 +142,14 @@ int do_swim(string arg)
 
 	me->start_busy(10);
 	if ( t > 1200 || t < 300 ) {
-		write(HIB"´ËÊ±Ò¹ÉîÈË¾²£¬Äã¾¡ÇéµØÔÚ³ØÖĞÏ·Ë®£¬Ïë½èÇåÁ¹µÄ³ØË®½â³ıÒ»ÌìµÄÆ£ÀÍ¡£\n"NOR);	
+		write(HIB"æ­¤æ—¶å¤œæ·±äººé™ï¼Œä½ å°½æƒ…åœ°åœ¨æ± ä¸­æˆæ°´ï¼Œæƒ³å€Ÿæ¸…å‡‰çš„æ± æ°´è§£é™¤ä¸€å¤©çš„ç–²åŠ³ã€‚\n"NOR);	
 		call_out("out_of_pool", 20+random(12), me, 1);
 	}
 	else {
-		write(HIB"³ØË®ÇåÁ¹£¬Äã¾¡ÇéµØÔÚ³ØÖĞÏ·Ë®£¬µ«ÈÔÊ±Ê±µ£ĞÄÊÇ·ñÓĞÈËÂ·¹ı¿úÊÓ¡£\n"NOR);
+		write(HIB"æ± æ°´æ¸…å‡‰ï¼Œä½ å°½æƒ…åœ°åœ¨æ± ä¸­æˆæ°´ï¼Œä½†ä»æ—¶æ—¶æ‹…å¿ƒæ˜¯å¦æœ‰äººè·¯è¿‡çª¥è§†ã€‚\n"NOR);
 		call_out("out_of_pool", 20+random(12), me, 0);
 	}
-	if ( flag ) write(HIB"²»¹ıÄãÉíÉÏµÄÇ®Îï¶¼µô½øË®ÖĞ£¬ÔÙÒ²ÕÒ²»µ½ÁË£º£¨\n"NOR);
+	if ( flag ) write(HIB"ä¸è¿‡ä½ èº«ä¸Šçš„é’±ç‰©éƒ½æ‰è¿›æ°´ä¸­ï¼Œå†ä¹Ÿæ‰¾ä¸åˆ°äº†ï¼šï¼ˆ\n"NOR);
 
 	return 1;
 }
@@ -160,8 +160,8 @@ void out_of_pool(object me, int recover)
 	me->delete_temp("xixiang_swimming");
 
 	if ( recover ) {
-		tell_object(me, GRN"¹ıÁËÒ»Ğ¡»á¶ù£¬ÄãÅÀ³ö³ØÍâ£¬Ö»¾õÆ£ÀÍ¾¡È¥£¬¾«Éñ¶¶ËÓ¡£\n"NOR);
-		if ( me->query("gender") == "Å®ĞÔ" ) {
+		tell_object(me, GRN"è¿‡äº†ä¸€å°ä¼šå„¿ï¼Œä½ çˆ¬å‡ºæ± å¤–ï¼Œåªè§‰ç–²åŠ³å°½å»ï¼Œç²¾ç¥æŠ–æ“ã€‚\n"NOR);
+		if ( me->query("gender") == "å¥³æ€§" ) {
 			me->add("jing", (me->query("eff_jing") - me->query("jing"))/2);
 			me->add("qi", (me->query("eff_qi") - me->query("qi"))/2);
 			me->add("jingli", (me->query("max_jingli") - me->query("jingli"))/2);
@@ -174,15 +174,15 @@ void out_of_pool(object me, int recover)
 			me->add("jingli", ((int)me->query("max_jingli")-(int)me->query("jingli"))/3);
 			me->add("neili", ((int)me->query("max_neili")-(int)me->query("neili"))/3);
 		}
-		message("vision", "Ö»¼û"+me->name()+"¾«Éñ»À·¢µØ´ÓÏ´Ïó³ØÖĞÅÀÁËÉÏÀ´¡£\n",
+		message("vision", "åªè§"+me->name()+"ç²¾ç¥ç„•å‘åœ°ä»æ´—è±¡æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n",
 			 environment(me), ({ me }) );
 	}
 	else {
-		tell_object(me, GRN"¹ıÁËÒ»Ğ¡»á¶ù£¬Äã¾õµÃÔÚ³ØÖĞÓÎÀÛÁË£¬ÅÀ»Ø³ØÍâ¡£\n"NOR);
-		message("vision", "Ö»¼û"+me->name()+"´ÓÏ´Ïó³ØÖĞÅÀÁËÉÏÀ´¡£\n",
+		tell_object(me, GRN"è¿‡äº†ä¸€å°ä¼šå„¿ï¼Œä½ è§‰å¾—åœ¨æ± ä¸­æ¸¸ç´¯äº†ï¼Œçˆ¬å›æ± å¤–ã€‚\n"NOR);
+		message("vision", "åªè§"+me->name()+"ä»æ´—è±¡æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n",
                          environment(me), ({ me }) );
 		me->improve_skill("force", random(me->query_con()/5));
-		if (me->query("gender") == "Å®ĞÔ")
+		if (me->query("gender") == "å¥³æ€§")
 			me->improve_skill("beauty", 5*me->query_per());
 	}
 	me->start_busy(1);

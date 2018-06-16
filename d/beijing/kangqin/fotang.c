@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "佛堂");
 	set("long", @LONG
-����һ�侫�µķ��á�����񻨡�����һ������㰸�����ż����㡣
+这是一间精致的佛堂。窗格雕花。正中一尊佛像，香案上烧着几柱香。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

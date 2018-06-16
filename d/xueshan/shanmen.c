@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½ÃÅ");
+        set("short", "å±±é—¨");
         set("long", @LONG
-ÕâÀïÊÇ´óÂÖËÂµÄÉ½ÃÅ£¬ÃÅÇ°ÊÇÂçÒï²»¾øµÄ½øÏã³¯Ê¥µÄÐÅÍ½£¬ÓÐµÄÉõÖÁÀ´
-×ÔÎÚË¿²ØÎ÷ÄÏµÄ²¨Ë¿¡£É½ÃÅ(gate)Ç°Õ¾ÁË¼¸¸öÊÖ³Ö·¨Æ÷µÄ¸ðÂ×²¼ÔÚÎ¬³ÖÖÈÐò£¬
-¶«·½ÊÇÒ»ÌõÇàÊ¯°åÆÌ³ÉµÄÉ½Â·¡£
+è¿™é‡Œæ˜¯å¤§è½®å¯ºçš„å±±é—¨ï¼Œé—¨å‰æ˜¯ç»œç»Žä¸ç»çš„è¿›é¦™æœåœ£çš„ä¿¡å¾’ï¼Œæœ‰çš„ç”šè‡³æ¥
+è‡ªä¹Œä¸è—è¥¿å—çš„æ³¢ä¸ã€‚å±±é—¨(gate)å‰ç«™äº†å‡ ä¸ªæ‰‹æŒæ³•å™¨çš„è‘›ä¼¦å¸ƒåœ¨ç»´æŒç§©åºï¼Œ
+ä¸œæ–¹æ˜¯ä¸€æ¡é’çŸ³æ¿é“ºæˆçš„å±±è·¯ã€‚
 LONG
         );
         set("exits", ([
@@ -18,7 +18,7 @@ LONG
                 "north" : __DIR__"guangchang",
         ]));
         set("item_desc", ([
-                "gate" : "Á½ÉÈºñºñµÄÍ­É«´óÃÅ£¬·ÇºÏÊýÈËÖ®Á¦£¬ÊÇÄÑÒÔÍÆ¶¯µÄ¡£\n"
+                "gate" : "ä¸¤æ‰‡åŽšåŽšçš„é“œè‰²å¤§é—¨ï¼Œéžåˆæ•°äººä¹‹åŠ›ï¼Œæ˜¯éš¾ä»¥æŽ¨åŠ¨çš„ã€‚\n"
         ]));
 	set("objects", ([
                 __DIR__"npc/gelun1" : 2,
@@ -38,12 +38,12 @@ int valid_leave(object me, string dir)
 	this_player()->delete_temp("mark/comin");
 
         if (present("ge lunbu", environment(me))) {
-            if (!myfam || myfam["family_name"] != "Ñ©É½ÅÉ"
-	    && myfam["family_name"] != "Ñªµ¶ÃÅ" 
+            if (!myfam || myfam["family_name"] != "é›ªå±±æ´¾"
+	    && myfam["family_name"] != "è¡€åˆ€é—¨" 
 	    && !present("suyou guan", this_player()))
-            if (!this_player()->query_temp("marks/ËÖ"))		
-                return notify_fail("¸ðÂ×²¼µ²×¡ÄãËµ£ºÄã×¼±¸ÓÃÊ²÷á¹©·îÎÒÃÇ·ðÒ¯Ñ½£¿\n");
-	else this_player()->set_temp("marks/ËÖ", 0);
+            if (!this_player()->query_temp("marks/é…¥"))		
+                return notify_fail("è‘›ä¼¦å¸ƒæŒ¡ä½ä½ è¯´ï¼šä½ å‡†å¤‡ç”¨ä»€éº½ä¾›å¥‰æˆ‘ä»¬ä½›çˆ·å‘€ï¼Ÿ\n");
+	else this_player()->set_temp("marks/é…¥", 0);
         }
         
         return 1;

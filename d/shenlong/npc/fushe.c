@@ -8,16 +8,16 @@ int snake_attspeed(object);
 
 void create()
 {
-	set_name("¸¹Éß", ({ "snake", "fushe" }) );
-	set("race", "ÉßÀà");
+	set_name("è…¹è›‡", ({ "snake", "fushe" }) );
+	set("race", "è›‡ç±»");
 	set("age", 10);
-	set("long", "Ò»ÌõÉíÐÎ´Ö×³µÄ¸¹Éß£¬Ææ¶¾ÎÞ±È¡£\n");
+	set("long", "ä¸€æ¡èº«å½¢ç²—å£®çš„è…¹è›‡ï¼Œå¥‡æ¯’æ— æ¯”ã€‚\n");
 	set("attitude", "peaceful");
 
 	set("str", 33);
 	set("cor", 33);
 
-//        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+//        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 //        set("verbs", ({ "bite" }) );
 
 	set("combat_exp", 20000 + random(20000));
@@ -34,7 +34,7 @@ void create()
 void die()
 {
 	object ob;
-//        message_vision("$NÅ¾µÄÒ»Éù¶Ï³ÉÁ½½Ø£¡$NËÀÁË¡£\n", this_object());
+//        message_vision("$Nå•ªçš„ä¸€å£°æ–­æˆä¸¤æˆªï¼$Næ­»äº†ã€‚\n", this_object());
 	ob = new(DRUG_D("fushedan"));
 	ob->move(environment(this_object()));
 	destruct(this_object());

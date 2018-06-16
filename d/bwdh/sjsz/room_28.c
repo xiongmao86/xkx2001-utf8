@@ -8,12 +8,12 @@ inherit ROOM;
 void open_basement();
 
 void create() {
-    set("short", HIW"������"NOR);
+    set("short", HIW"比武厅"NOR);
     set("long", @LONG
-����������ʯ����Ѫ���߰ߣ������ǵ������Ŀ��ۡ�
-�еĵط����н�ӡ����Ȼ���ڹ��������ӡ�ϵġ�������
-��͸��Ѫ�����͸�ʬζ��ʹ���ܵ��쳣�Ĵ̼�������סѪ
-�����š�
+比武厅花岗石地上血迹斑斑，到处是刀、剑的砍痕。
+有的地方还有脚印，显然是内功极深的人印上的。空气中
+渗透着血腥气和腐尸味，使你受到异常的刺激，禁不住血
+脉忿张。
 LONG
 	 );
 	 set("objects", ([
@@ -48,7 +48,7 @@ void open_basement()
 	 if( !present("master") )
 	 {
 		if( !query("exits/down") )
-			message("vision",HIR"ֻ�����һ���죬�����Զ�����һ�ȴ��š�\n\n"NOR,this_object() );
+			message("vision",HIR"只听轰的一声响，地上自动打开了一扇大门。\n\n"NOR,this_object() );
 		 set("exits/down",__DIR__"room_29");
 	 }
 	 else delete("exits/down");

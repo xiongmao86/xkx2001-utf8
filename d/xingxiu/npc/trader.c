@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("²¨Ë¹ÉÌÈË", ({ "bosi shangren", "shangren", "trader" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("æ³¢æ–¯å•†äºº", ({ "bosi shangren", "shangren", "trader" }));
+        set("gender", "ç”·æ€§");
         set("age", 40 + random(10));
 
-        set("long", "Ò»¸ö¸ß±ÇÀ¶ÑÛµÄ²¨Ë¹ÉÌÈË¡£Ëû¿´×ÅÄãÁ³ÉÏÂ¶³ö½Æ»«µÄÐ¦ÈÝ¡£\n");
+        set("long", "ä¸€ä¸ªé«˜é¼»è“çœ¼çš„æ³¢æ–¯å•†äººã€‚ä»–çœ‹ç€ä½ è„¸ä¸Šéœ²å‡ºç‹¡çŒ¾çš„ç¬‘å®¹ã€‚\n");
 
         set("attitude", "friendly");
 
@@ -32,8 +32,8 @@ void create()
 	set("camel_count", 1);
         set("chat_chance", 5);
         set("chat_msg", ({
-"²¨Ë¹ÉÌÈË¶ÔÄã¼·ÁËÒ»ÏÂÑÛ¾¦\n",
-"²¨Ë¹ÉÌÈË¶ÔÄãËµ£º°¢À­°¢¿É°Í£¬ÄÂº±Ä¬µÂÈðËØ°¢À­¡£ ÄãÃ»Ìý¶®¡£\n",
+"æ³¢æ–¯å•†äººå¯¹ä½ æŒ¤äº†ä¸€ä¸‹çœ¼ç›\n",
+"æ³¢æ–¯å•†äººå¯¹ä½ è¯´ï¼šé˜¿æ‹‰é˜¿å¯å·´ï¼Œç©†ç½•é»˜å¾·ç‘žç´ é˜¿æ‹‰ã€‚ ä½ æ²¡å¬æ‡‚ã€‚\n",
                 (: random_move :)
         }) );
         carry_object(__DIR__"obj/wandao")->wield();

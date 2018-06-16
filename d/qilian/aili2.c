@@ -7,10 +7,10 @@ inherit ROOM;
 void create()
 
 {
-        set("short", "°®Á¦Éú");
+        set("short", "çˆ±åŠ›ç”Ÿ");
         set("long", @LONG
-ÕâÀïÊÇÒ»±éÁ÷É³¡£Ì§ÑÛÍûÈ¥£¬»ÆÃ£Ã£Ò»Æ¬É³Ä®£¬ËÆÎŞ¾¡Í·£¬Ö±Á¬Ìì±ß£¬
-Ò»²»ÁôÉñÌ¤Èë£¬¾ÍÊ¯Å£Èëº££¬ÏûÊ§µÃÎŞÓ°ÎŞ×ÙÁË£¬ÃÉ¹ÅÓï³ÆÎª°®Á¦Éú¡£
+è¿™é‡Œæ˜¯ä¸€éæµæ²™ã€‚æŠ¬çœ¼æœ›å»ï¼Œé»„èŒ«èŒ«ä¸€ç‰‡æ²™æ¼ ï¼Œä¼¼æ— å°½å¤´ï¼Œç›´è¿å¤©è¾¹ï¼Œ
+ä¸€ä¸ç•™ç¥è¸å…¥ï¼Œå°±çŸ³ç‰›å…¥æµ·ï¼Œæ¶ˆå¤±å¾—æ— å½±æ— è¸ªäº†ï¼Œè’™å¤è¯­ç§°ä¸ºçˆ±åŠ›ç”Ÿã€‚
 LONG
         );
         set("exits", ([
@@ -29,13 +29,13 @@ int valid_leave(object me, string dir)
 {
 	if( random((int)me->query_skill("dodge")) <= 5)
 	{
-		me->receive_wound("qi", 300, "±»Á÷É³»îÂñÁË");
-		message_vision(HIY"$NµÄÉí×Ó±»Á÷É³Îü×¡ÁË¡£ \n"NOR, me);
+		me->receive_wound("qi", 300, "è¢«æµæ²™æ´»åŸ‹äº†");
+		message_vision(HIY"$Nçš„èº«å­è¢«æµæ²™å¸ä½äº†ã€‚ \n"NOR, me);
 	}
         else {
-                me->receive_damage("qi", 200, "±»Á÷É³»îÂñÁË");
-                me->receive_wound("qi",  100, "±»Á÷É³»îÂñÁË");
-                message_vision(HIY"$NµÄË«½ÅÔÚÂıÂıµØÏİ½øÁ÷É³Àï¡£\n"NOR, me );
+                me->receive_damage("qi", 200, "è¢«æµæ²™æ´»åŸ‹äº†");
+                me->receive_wound("qi",  100, "è¢«æµæ²™æ´»åŸ‹äº†");
+                message_vision(HIY"$Nçš„åŒè„šåœ¨æ…¢æ…¢åœ°é™·è¿›æµæ²™é‡Œã€‚\n"NOR, me );
 	}
 	return ::valid_leave(me, dir);
 } 

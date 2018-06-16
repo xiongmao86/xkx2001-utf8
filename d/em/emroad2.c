@@ -1,15 +1,15 @@
 //Cracked by Roath
-// emroad2.c Ğ¡Â·
+// emroad2.c å°è·¯
 // Shan: 96/06/22
 
 inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "Ğ¡Â·");
+        set("short", "å°è·¯");
         set("long", @LONG
-ÕâÊÇËÄ´¨Óëºş±±µÄ½»½ç¡£Ò»Ìõ¾²ÇÄÇÄµÄĞ¡ÍÁÂ·£¬Á½ÅÔÓĞÊèÊèÂäÂäµÄÅ©Éá¸û
-Ìï£¬µ«Â·ÉÏĞĞÈËºÜÉÙ£¬¶¼´Ò´Ò¸ÏÂ·¡£
+è¿™æ˜¯å››å·ä¸æ¹–åŒ—çš„äº¤ç•Œã€‚ä¸€æ¡é™æ‚„æ‚„çš„å°åœŸè·¯ï¼Œä¸¤æ—æœ‰ç–ç–è½è½çš„å†œèˆè€•
+ç”°ï¼Œä½†è·¯ä¸Šè¡Œäººå¾ˆå°‘ï¼Œéƒ½åŒ†åŒ†èµ¶è·¯ã€‚
 LONG
         );
         set("exits", ([
@@ -44,7 +44,7 @@ void init()
         if ( interactive(ob=this_player()) 
 	&& me->query_temp("rob_victim") && random(5)==1) {
 
-                message_vision(HIR"Í»È»Ò»¸ö´óººÓÉÎ÷±ßµÄÊ÷ÁÖÌøÁË³öÀ´£¬À¹×¡ÁË$N¡£\n"NOR, me);
+                message_vision(HIR"çªç„¶ä¸€ä¸ªå¤§æ±‰ç”±è¥¿è¾¹çš„æ ‘æ—è·³äº†å‡ºæ¥ï¼Œæ‹¦ä½äº†$Nã€‚\n"NOR, me);
                 robber = new(__DIR__"npc/rob_tufei");
                 robber->move(environment(ob));
         }
@@ -52,7 +52,7 @@ void init()
 int valid_leave(object me, string dir)
 {
         if ( me->query_temp("rob_victim") && present("tu fei", environment(me) ))
-                return notify_fail("ÍÁ·ËĞ×°Í°ÍµØ½ĞµÀ£º·Å´ÏÃ÷µã£¬¿ì½«±¦±´½»³öÀ´£¡\n");
+                return notify_fail("åœŸåŒªå‡¶å·´å·´åœ°å«é“ï¼šæ”¾èªæ˜ç‚¹ï¼Œå¿«å°†å®è´äº¤å‡ºæ¥ï¼\n");
         else { me->delete_temp("rob_victim"); }
 
         return ::valid_leave(me, dir);

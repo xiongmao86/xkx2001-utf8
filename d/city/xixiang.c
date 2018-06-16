@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ѿ���Է�");
+	set("short", "丫鬟卧房");
 	set("long", @LONG
-����Ѿ�ߵķ��䡣���г���򵥣�ûʲô������
+这是丫鬟的房间。房中陈设简单，没什么东西。
 LONG
 	);
 

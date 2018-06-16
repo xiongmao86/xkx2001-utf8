@@ -6,11 +6,11 @@ inherit F_VENDOR;
 
 void create()
 {
-	set_name("Ìú½³", ({ "tie jiang", "jiang" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é“åŒ ", ({ "tie jiang", "jiang" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 28);
 	set("long",
-		"Ëû´ò×Å³à²²£¬½áÊµµÄ¼¡Èâ¸ß¸ß·ßÆğ£¬ÆÓÊµµÄÁ³ÉÏ´ø×ÅÒóÇÚµÄÎ¢Ğ¦¡£\n");
+		"ä»–æ‰“ç€èµ¤è†Šï¼Œç»“å®çš„è‚Œè‚‰é«˜é«˜æ„¤èµ·ï¼Œæœ´å®çš„è„¸ä¸Šå¸¦ç€æ®·å‹¤çš„å¾®ç¬‘ã€‚\n");
 	set("combat_exp", 3000);
         set("str", 25);
         set("dex", 20);
@@ -50,5 +50,5 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-	command("say »¶Ó­ÕâÎ»"+RANK_D->query_respect(ob)+"¹âÁÙ£¬ÇëËæ±ã²Î¹Û¡£");
+	command("say æ¬¢è¿è¿™ä½"+RANK_D->query_respect(ob)+"å…‰ä¸´ï¼Œè¯·éšä¾¿å‚è§‚ã€‚");
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ¿´Ì¨
+// çœ‹å°
 
 #include <ansi.h>
 inherit ROOM;
@@ -8,12 +8,12 @@ int do_study(string arg);
 
 void create()
 {
-        set("short", HIG"¿´Ì¨"NOR);
+        set("short", HIG"çœ‹å°"NOR);
         set("long",
-"ÕâÀïÊÇÁÙÊ±´îÆğµÄ±ÈÎä¿´Ì¨¡£ËÄÃæ²ã²ãµşµşµÄ´îÆğÁËÒ»ÅÅÅÅ³¤µÊ£¬ÖĞ¼äÒ»
-´ó¿é¿ÕµØ£¬Á¢ÆğÁËÒ»×ùÀŞÌ¨¡£µØÏÂ²åÁËÒ»Ãæ½õÆì£¬°×µ×ºì»¨£¬Ğå×Å¡°"+HIR"±ÈÎäÕĞÇ×"NOR+"¡±
-ËÄ¸ö½ğ×Ö£¬ÆìÏÂÁ½ÈËÕı×ÔÈ­À´½ÅÈ¥µÄ´òµÃÈÈÄÖ£¬Õû¸ö¿´Ì¨±»¼·µÃË®Ğ¹²»Í¨£¬²ÊÉù
-Ò»Õó¸ß¹ıÒ»Õó¡£\n"
+"è¿™é‡Œæ˜¯ä¸´æ—¶æ­èµ·çš„æ¯”æ­¦çœ‹å°ã€‚å››é¢å±‚å±‚å å çš„æ­èµ·äº†ä¸€æ’æ’é•¿å‡³ï¼Œä¸­é—´ä¸€
+å¤§å—ç©ºåœ°ï¼Œç«‹èµ·äº†ä¸€åº§æ“‚å°ã€‚åœ°ä¸‹æ’äº†ä¸€é¢é”¦æ——ï¼Œç™½åº•çº¢èŠ±ï¼Œç»£ç€â€œ"+HIR"æ¯”æ­¦æ‹›äº²"NOR+"â€
+å››ä¸ªé‡‘å­—ï¼Œæ——ä¸‹ä¸¤äººæ­£è‡ªæ‹³æ¥è„šå»çš„æ‰“å¾—çƒ­é—¹ï¼Œæ•´ä¸ªçœ‹å°è¢«æŒ¤å¾—æ°´æ³„ä¸é€šï¼Œå½©å£°
+ä¸€é˜µé«˜è¿‡ä¸€é˜µã€‚\n"
         );
 
         set("valid_startroom", 1);
@@ -48,7 +48,7 @@ int valid_leave(object me, string dir)
 {
         if( dir=="up" ) {
                 if( wizardp(me) || me->query_temp("organizer") ) return 1;
-                else return notify_fail("Äã²»ÄÜ×Ô¼ºÉÏÈ¥¡£\n");
+                else return notify_fail("ä½ ä¸èƒ½è‡ªå·±ä¸Šå»ã€‚\n");
         }
 
         if( dir=="north" ) {
@@ -58,15 +58,15 @@ int valid_leave(object me, string dir)
                 {
                         if( me->query_temp("zhaoqing") )
                         {
-                                return notify_fail("ÄãÊÇÅ®Ö÷ÈË,ÏÖÔÚ²»ÄÜÀë¿ª¡£\n");
+                                return notify_fail("ä½ æ˜¯å¥³ä¸»äºº,ç°åœ¨ä¸èƒ½ç¦»å¼€ã€‚\n");
                         }
-                        else return notify_fail("ÄãÊÇÑ¡ÊÖ,ÏÖÔÚ²»ÄÜÀë¿ª¡£\n");
+                        else return notify_fail("ä½ æ˜¯é€‰æ‰‹,ç°åœ¨ä¸èƒ½ç¦»å¼€ã€‚\n");
                 }
         }
 
         if( dir=="enter" ) {
                 if( wizardp(me) ) return 1;
-                else return notify_fail("Äã²»ÄÜ½øÈ¥¡£\n");
+                else return notify_fail("ä½ ä¸èƒ½è¿›å»ã€‚\n");
         }
 
         return ::valid_leave(me, dir);
@@ -77,14 +77,14 @@ int valid_leave(object me, string dir)
 int do_practice(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÕâÀï²»×¼Á·¹¦!\n");
+                  tell_object(me, "è¿™é‡Œä¸å‡†ç»ƒåŠŸ!\n");
                   return 1;
 }
 
 int do_study(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÕâÀï²»×¼¶ÁÊé!\n");
+                  tell_object(me, "è¿™é‡Œä¸å‡†è¯»ä¹¦!\n");
         return 1;
 }
 

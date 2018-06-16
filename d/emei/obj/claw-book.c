@@ -1,18 +1,18 @@
 //Cracked by Roath
-// claw-book.c »ù±¾×¦·¨
+// claw-book.c åŸºæœ¬çˆªæ³•
 // xbc 1997/02/03
 
 inherit ITEM;
 inherit F_UNIQUE;
 void create()
 {
-	set_name("ÑòÆ¤", ({ "skin", "book", "yangpi" }));
+	set_name("ç¾Šçš®", ({ "skin", "book", "yangpi" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "ÕâÊÇÒ»¿é·¢»ÆµÄÑòÆ¤£¬ÀïÃæÃÜÃÜÂéÂé¿ÌÁËĞí¶àĞ¡×Ö¡£\n");
+		set("unit", "å—");
+		set("long", "è¿™æ˜¯ä¸€å—å‘é»„çš„ç¾Šçš®ï¼Œé‡Œé¢å¯†å¯†éº»éº»åˆ»äº†è®¸å¤šå°å­—ã€‚\n");
 		set("value", 400);
 		set("material", "paper");
 		set("skill", ([

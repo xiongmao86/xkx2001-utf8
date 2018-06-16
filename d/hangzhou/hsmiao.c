@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/hangzhou/hsmiao.c   º£ÉñÃí
+// /d/hangzhou/hsmiao.c   æµ·ç¥žåº™
 // by aln 2 / 98
 
 #include <room.h>
@@ -8,10 +8,10 @@
 inherit ROOM;
 
 void create()
-{        set("short", "º£ÉñÃí");
+{        set("short", "æµ·ç¥žåº™");
          set("long", @LONG
-ÕâÀïÊÇ¿¿º£µÄÒ»¸öÐ¡Çð£¬¶«±±½ÇÒ»¿éÍ»³öµÄÉ½ÑÒÖ®ÉÏÓÐÒ»ËùÃíÓî¡£ÎÝÇ°±â
-¶î£¬ÒþÔ¼¿É¼ûÊÇ¡°º£ÉñÃí¡±Èý×Ö¡£º£ÉñÃí¼«ÊÇ¼òÂª£¬ÂúµØ³¾ÍÁ£¬ÃíÖÐÒ²ÎÞÃí×£¡£
+è¿™é‡Œæ˜¯é æµ·çš„ä¸€ä¸ªå°ä¸˜ï¼Œä¸œåŒ—è§’ä¸€å—çªå‡ºçš„å±±å²©ä¹‹ä¸Šæœ‰ä¸€æ‰€åº™å®‡ã€‚å±‹å‰æ‰
+é¢ï¼Œéšçº¦å¯è§æ˜¯â€œæµ·ç¥žåº™â€ä¸‰å­—ã€‚æµ·ç¥žåº™æžæ˜¯ç®€é™‹ï¼Œæ»¡åœ°å°˜åœŸï¼Œåº™ä¸­ä¹Ÿæ— åº™ç¥ã€‚
 LONG	);
 
          set("exits", ([ /* sizeof() == 2 */

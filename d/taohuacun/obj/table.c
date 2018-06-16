@@ -1,17 +1,17 @@
-//table.c Êá×±Ì¨
+//table.c æ¢³å¦†å°
 inherit ITEM;
 void create()
 {
-        set_name("Êá×±Ì¨", ({ "table" , "shuzhuang tai", "tai"}) );
+        set_name("æ¢³å¦†å°", ({ "table" , "shuzhuang tai", "tai"}) );
         set_weight(5000);
         set_max_encumbrance(8000000);
         set("no_shown", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
                 set("no_get", 1);
-                set("long", "ÕâÊÇÒ»ÕÅÊá×±Ì¨£¬éªÄ¾µñ¾Í£¬½ğË¿ç¸±ß£¬Ì¨ÉÏÒ»Ãæ¾§ÁÁµÄË®¾§¾µ×Ó¡£\n");
+                set("long", "è¿™æ˜¯ä¸€å¼ æ¢³å¦†å°ï¼Œæ¥ æœ¨é›•å°±ï¼Œé‡‘ä¸ç»ºè¾¹ï¼Œå°ä¸Šä¸€é¢æ™¶äº®çš„æ°´æ™¶é•œå­ã€‚\n");
                 set("value", 0);
         }
 }

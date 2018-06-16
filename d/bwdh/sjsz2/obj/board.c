@@ -5,14 +5,14 @@
 inherit ITEM;
 
 void create() {
-    set_name("ÍÅÌåÈü³É¼¨°æ", ({ "board"}) );
+    set_name("å›¢ä½“èµ›æˆç»©ç‰ˆ", ({ "board"}) );
     set_weight(10000);
     set_max_encumbrance(500000);
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "¸ö");
-        set("long", "ÍÅÌåÈü³É¼¨°æ´æ×Å±ÈÎäµÄÍæ¼ÒÃÇµÄÈ«²¿³É¼¨¡£");
+        set("unit", "ä¸ª");
+        set("long", "å›¢ä½“èµ›æˆç»©ç‰ˆå­˜ç€æ¯”æ­¦çš„ç©å®¶ä»¬çš„å…¨éƒ¨æˆç»©ã€‚");
         set("value", 10000);
         set("material", "steel");
         set("no_get",1);

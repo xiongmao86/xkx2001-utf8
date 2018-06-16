@@ -1,16 +1,16 @@
 //Cracked by Roath
-// staff_book.c ¹÷·¨Í¼½â
+// staff_book.c æ£æ³•å›¾è§£
 inherit ITEM;
 
 void create()
 {
-	set_name("ÕÈ·¨Í¼½â", ({ "staff book", "book" }));
+	set_name("æ–æ³•å›¾è§£", ({ "staff book", "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»±¾Ïß×°Êé£¬ÀïÃæÃÜÃÜÂéÂéµÄ»­ÁË²»ÉÙÎèÕÈµÄ×ËÊÆ¡£\n");
+		set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€æœ¬çº¿è£…ä¹¦ï¼Œé‡Œé¢å¯†å¯†éº»éº»çš„ç”»äº†ä¸å°‘èˆæ–çš„å§¿åŠ¿ã€‚\n");
 		set("value", 500);
 		set("material", "paper");
 		set("skill", ([

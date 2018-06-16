@@ -8,14 +8,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL"ÈËÆ¤Ãæ¾ß"NOR, ({ "mian ju", "mask" }) );
+        set_name(YEL"äººçš®é¢å…·"NOR, ({ "mian ju", "mask" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâËÆºõÊÇÒ»¸öÓÉÈËÆ¤ÖÆ³ÉµÄÃæ¾ß¡£\n");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™ä¼¼ä¹Žæ˜¯ä¸€ä¸ªç”±äººçš®åˆ¶æˆçš„é¢å…·ã€‚\n");
+                set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
                 set("no_sell", 1);
                 set("no_drop", 1);
                 set("no_steal", 1);
@@ -35,31 +35,31 @@ void init()
 int do_pretend(string arg)
 {
 	object who, me=this_player();
-	if (!arg) return notify_fail("ÄãÏë¼Ù×°Ë­£¿\n");
+	if (!arg) return notify_fail("ä½ æƒ³å‡è£…è°ï¼Ÿ\n");
 	if ((arg == "none" || arg == "cancel") && me->query_temp("pretented")) {
 		this_player()->delete_temp("apply/name");
 		this_player()->delete_temp("apply/short");
 		this_player()->delete_temp("apply/long");
-		message_vision(HIB"$NÉìÊÖÍùÁ³ÉÏÒ»Ä¨£¬ÏÖ³öÔ­À´ÏàÃ²¡£\n"NOR, this_player());
+		message_vision(HIB"$Nä¼¸æ‰‹å¾€è„¸ä¸Šä¸€æŠ¹ï¼ŒçŽ°å‡ºåŽŸæ¥ç›¸è²Œã€‚\n"NOR, this_player());
 		me->delete_temp("pretented");
 		set("no_get", 0);
 	}
 	if (arg == "biao shi" || arg == "robber" || arg == "tangzi shou" || arg == "biaoshi" || arg == "shou" || arg == "zei")
-		return notify_fail("Äã²»¿ÉÒÔ¼Ù°çÕâ¸öÈË! \n");
+		return notify_fail("ä½ ä¸å¯ä»¥å‡æ‰®è¿™ä¸ªäºº! \n");
 	
-	if(!objectp(who = present(arg, environment(this_player()))) || !living(who) || (string)who->query("race")!="ÈËÀà")
-		return notify_fail("ÄãÏë¼Ù×°Ë­£¿\n");
+	if(!objectp(who = present(arg, environment(this_player()))) || !living(who) || (string)who->query("race")!="äººç±»")
+		return notify_fail("ä½ æƒ³å‡è£…è°ï¼Ÿ\n");
 	
 	if(wizardp(who)){
-		command("say ´óµ¨£¡¸Ò¼Ù°çWIZ£¡");
+		command("say å¤§èƒ†ï¼æ•¢å‡æ‰®WIZï¼");
 		this_player()->unconcious();
 		this_player()->announce();
 		return 1;
 	}
 
     	if((me->query_temp("can_ban")!=1 || query("usage")<=0) && me->query("id")!="shu shi"){
-    		message_vision("$N´ÓÉíÉÏÄÇ³öÒ»ÕÅÈíÆ¤£¬Ê¹¾¢ÍùÁ³ÉÏ°´È¥¡£\n", this_player());
-                message_vision(HIR"Ö»Ìý¼ûßÐµØÒ»Éù£¬ÈíÆ¤±»$NËºµÄ·ÛËé¡£\n"NOR, this_player());
+    		message_vision("$Nä»Žèº«ä¸Šé‚£å‡ºä¸€å¼ è½¯çš®ï¼Œä½¿åŠ²å¾€è„¸ä¸ŠæŒ‰åŽ»ã€‚\n", this_player());
+                message_vision(HIR"åªå¬è§å’åœ°ä¸€å£°ï¼Œè½¯çš®è¢«$Næ’•çš„ç²‰ç¢Žã€‚\n"NOR, this_player());
                 this_player()->delete_temp("apply/name");
                 this_player()->delete_temp("apply/short");
                 this_player()->delete_temp("apply/long");
@@ -70,7 +70,7 @@ int do_pretend(string arg)
         
         if(me->query("id")!="shu shi")
         	add("usage", -1);
-        write("Äã¿ªÊ¼¼Ù×°" + who->name() + ".\n");
+        write("ä½ å¼€å§‹å‡è£…" + who->name() + ".\n");
         this_player()->set_temp("pretented",1);
         this_player()->set_temp("apply/name", ({who->name()}));
         this_player()->set_temp("apply/short", ({who->short()}));

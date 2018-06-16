@@ -11,21 +11,21 @@ int do_allow(string);
 void init()
 {
     if (!wizardp(this_player())) {
-        set("no_get", "ËãÁË°É£¬¼ì¸öÁîÅÆ¶ªÌõÃü£¬ºÎ¿àÄØ£¿\n");
-	set("no_drop", "Ïë°ÑÁîÅÆ¸øÈÓÁË£¿Äã²»ÒªÃüÁË£¿\n");
+        set("no_get", "ç®—äº†å§ï¼Œæ£€ä¸ªä»¤ç‰Œä¸¢æ¡å‘½ï¼Œä½•è‹¦å‘¢ï¼Ÿ\n");
+	set("no_drop", "æƒ³æŠŠä»¤ç‰Œç»™æ‰”äº†ï¼Ÿä½ ä¸è¦å‘½äº†ï¼Ÿ\n");
     }
     add_action("do_allow", "allow");
 }
 
 void create()
 {
-    set_name("³Ç·ÀÁîÅÆ", ({"lingpai"}));
+    set_name("åŸé˜²ä»¤ç‰Œ", ({"lingpai"}));
     set_weight(600);
     if (clonep())
 	set_default_object(__FILE__);
     else{
-        set("unit", "Ö»");
-        set("long", "ÕâÊÇ±ø²¿µÄ³Ç·ÀÁîÅÆ£¬ÓÃËü¿ÉÒÔÌØ×¼ (allow) °ÙĞÕĞ¯Ìú¾ßÈë³Ç\n");
+        set("unit", "åª");
+        set("long", "è¿™æ˜¯å…µéƒ¨çš„åŸé˜²ä»¤ç‰Œï¼Œç”¨å®ƒå¯ä»¥ç‰¹å‡† (allow) ç™¾å§“æºé“å…·å…¥åŸ\n");
         set("value", 0);
         set("material", "bamboo");
     }
@@ -37,17 +37,17 @@ int do_allow(string name)
     object ling=this_object(), me=this_player(), obj;
 
     if (!name || name=="") {
-	return notify_fail("ÄãÏëÈÃË­½øÃÅ£¿\n");
+	return notify_fail("ä½ æƒ³è®©è°è¿›é—¨ï¼Ÿ\n");
     }
     
     if(!objectp(obj = present(name, environment(me))))
-         return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+         return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
     if (!obj->is_character() || obj->is_corpse())
-         return notify_fail("¿´Çå³şµã£¬Õâ²»ÊÇ»îÈË¡£\n");
+         return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œè¿™ä¸æ˜¯æ´»äººã€‚\n");
 
-    message_vision("$N¶Ô×Å$n´ó´óßÖßÖµØËµµÀ£º"
-	"½ñÌì¹ÙÒ¯ĞÄÇéºÃ£¬¾ÍÆÆÀıÈÃÄã½ø³Ç°É¡£\n",	me, obj);
+    message_vision("$Nå¯¹ç€$nå¤§å¤§å’§å’§åœ°è¯´é“ï¼š"
+	"ä»Šå¤©å®˜çˆ·å¿ƒæƒ…å¥½ï¼Œå°±ç ´ä¾‹è®©ä½ è¿›åŸå§ã€‚\n",	me, obj);
     obj->set_temp("outer_gate_allowed", 1);
     return 1;
 }

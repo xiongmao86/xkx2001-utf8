@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("´ó»ÆÅ£", ({ "cow", "niu", "huang niu" }) );
-        set("race", "¼ÒÐó");
+        set_name("å¤§é»„ç‰›", ({ "cow", "niu", "huang niu" }) );
+        set("race", "å®¶ç•œ");
         set("age", 11);
-        set("long", "Ò»Í·ÊÝ¹Çá×á¾µÄ´ó»ÆÅ££¬²»ÖªÊÇË­¼ÒµÄ£¬ÕýµÍÍ·ÈÏÕæµØ³Ô×Å²Ý¡£\n");
+        set("long", "ä¸€å¤´ç˜¦éª¨å¶™å³‹çš„å¤§é»„ç‰›ï¼Œä¸çŸ¥æ˜¯è°å®¶çš„ï¼Œæ­£ä½Žå¤´è®¤çœŸåœ°åƒç€è‰ã€‚\n");
 
         set("str", 26);
         set("cor", 30);
@@ -31,7 +31,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ºßÁË¼¸ºß¾ÍËÀÁË£¡\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œå“¼äº†å‡ å“¼å°±æ­»äº†ï¼\n", this_object());
         ob = new(__DIR__"obj/beef");
         ob->move(environment(this_object()));
         ob = new(__DIR__"obj/niupi");

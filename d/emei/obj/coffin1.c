@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/obj/coffin.c Ê¯¹×
+// /d/emei/obj/coffin.c çŸ³æ£º
 
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIW"Ê¯¹×"NOR, ({ "coffin", "guan cai", "guan" }) );
+	set_name(HIW"çŸ³æ£º"NOR, ({ "coffin", "guan cai", "guan" }) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ú");
-                set("long", "ÕâÊÇÒ»¾ß°×ÓñÊ¯µñ³ÉµÄÊ¯¹×¡£\n");
+		set("unit", "å£");
+                set("long", "è¿™æ˜¯ä¸€å…·ç™½çŽ‰çŸ³é›•æˆçš„çŸ³æ£ºã€‚\n");
 		set("value", 1000);
 //		set("material", "stone");
 		set("no_get",1);
@@ -37,9 +37,9 @@ int do_open(string arg)
 	object rwj;
 
 	if ( !arg && ( arg != "coffin" ) && ( arg != "guan" ) )
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$NÔË×ãÆø£¬Ë«ÊÖÓÃÁ¦È¥°á°×ÓñÊ¯¹×¸Ç¡£\n", me);
+	message_vision("$Nè¿è¶³æ°”ï¼ŒåŒæ‰‹ç”¨åŠ›åŽ»æ¬ç™½çŽ‰çŸ³æ£ºç›–ã€‚\n", me);
 	if (query("arrow_count") > 0) {
 		remove_call_out("shoot_arrow");
 		call_out("shoot_arrow", 1, me);	
@@ -50,10 +50,10 @@ int do_open(string arg)
 	me->add("qi", -(20+random(20)));
 
 	if ( (int)me->query_str() < 22 ) {
-		return notify_fail("ÄãÃ»ÄÇÃ´´óÁ¦Æø°á¶¯¹×¸Ç¡£\n");
+		return notify_fail("ä½ æ²¡é‚£ä¹ˆå¤§åŠ›æ°”æ¬åŠ¨æ£ºç›–ã€‚\n");
 	}
 
-	message_vision("$NÓÃÁ¦°á¿ª°×ÓñÊ¯¹×¸Ç¡£\n", me);
+	message_vision("$Nç”¨åŠ›æ¬å¼€ç™½çŽ‰çŸ³æ£ºç›–ã€‚\n", me);
 	ob2 = new(__DIR__"coffin2");
 	ob2->move(environment(me));
 	rwj = new("/d/taohua/obj/ruanwei-jia");
@@ -69,35 +69,35 @@ int shoot_arrow(object me)
 
 	switch ((int)query("arrow_count")) {
 	case 3:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ý´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÃæÃÅ£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»Žæ£ºåŽä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„é¢é—¨ï¼\n"NOR, me);
 		break;
 	case 2:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ý´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÑÊºí£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»Žæ£ºåŽä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„å’½å–‰ï¼\n"NOR, me);
 		break;
 	case 1:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ý´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÇ°ÐØ£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»Žæ£ºåŽä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„å‰èƒ¸ï¼\n"NOR, me);
 		break;
 	default:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ý´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÃæÃÅ£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»Žæ£ºåŽä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„é¢é—¨ï¼\n"NOR, me);
 		break;
 	}
 	add("arrow_count", -1);
 
 	if ( (int)me->query_dex() > (22+random(8))) {
-		message_vision("$NÍ·Ò»µÍ£¬±Ü¿ª¶Ì¼ý£¬Ìøµ½Ò»ÅÔ¡£\n", me);
+		message_vision("$Nå¤´ä¸€ä½Žï¼Œé¿å¼€çŸ­ç®­ï¼Œè·³åˆ°ä¸€æ—ã€‚\n", me);
 		return 1;
 	}
 
 	else if ( (int)me->query_dex() > (20+random(4))) {
-		message_vision("$NÓûÉÁÉí±Ü¿ª£¬È´±»ÆäÖÐÒ»Ö§¶Ì¼ýÉäÖÐÓÒ¼ç£¬ÔÎËÀ¹ýÈ¥¡£\n", me);
+		message_vision("$Næ¬²é—ªèº«é¿å¼€ï¼Œå´è¢«å…¶ä¸­ä¸€æ”¯çŸ­ç®­å°„ä¸­å³è‚©ï¼Œæ™•æ­»è¿‡åŽ»ã€‚\n", me);
 		me->add("qi", -50);
 		me->unconcious();
 		return 1;
 	}
 
 	else {
-		message_vision("$N¶ã±Ü²»¼°£¬±»¶Ì¼ýÉä¸öÕýºÃ£¬µ¹ÔÚµØÉÏ¡£\n", me);
-		me->receive_damage("qi", 50, "±»¶¾¼ýÉäËÀÁË");
+		message_vision("$Nèº²é¿ä¸åŠï¼Œè¢«çŸ­ç®­å°„ä¸ªæ­£å¥½ï¼Œå€’åœ¨åœ°ä¸Šã€‚\n", me);
+		me->receive_damage("qi", 50, "è¢«æ¯’ç®­å°„æ­»äº†");
 		me->die();
 		return 1;
 	}

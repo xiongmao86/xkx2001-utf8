@@ -8,17 +8,17 @@ inherit HAMMER;
 
 void create()
 {
-		  set_name("Ò©³ú", ({ "yao chu", "chu" }) );
+		  set_name("è¯é”„", ({ "yao chu", "chu" }) );
 		  set_weight(1000);
 		  if( clonep() )
 					 set_default_object(__FILE__);
 		  else {
-					 set("unit", "°Ñ");
-					 set("long", "ÕâÊÇÒ»°ÑÈ«Õæ½ÌµÀ³¤ÃÇÓÃÀ´×¨ÃÅ²ÉÒ©ÓÃµÄÒ©³ú¡£\n");
+					 set("unit", "æŠŠ");
+					 set("long", "è¿™æ˜¯ä¸€æŠŠå…¨çœŸæ•™é“é•¿ä»¬ç”¨æ¥ä¸“é—¨é‡‡è¯ç”¨çš„è¯é”„ã€‚\n");
                 set("value", 50);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(5);
@@ -29,7 +29,7 @@ init()
 {
 	object me = this_player();
 	 if ( me->query("id",1)!="qiu chuji" && !wizardp(me)) {
-		set("no_drop",  "ÕâÃ´ÓĞÓÃµÄ¶«Î÷ÔõÃ´ÄÜÈÓÁËÄØ¡£\n");
-		set("no_steal", "Õâ¸ö¶«Î÷ÄãÍµ²»µ½¡£\n");
+		set("no_drop",  "è¿™ä¹ˆæœ‰ç”¨çš„ä¸œè¥¿æ€ä¹ˆèƒ½æ‰”äº†å‘¢ã€‚\n");
+		set("no_steal", "è¿™ä¸ªä¸œè¥¿ä½ å·ä¸åˆ°ã€‚\n");
 		}
 }

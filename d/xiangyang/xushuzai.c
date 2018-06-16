@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÐìÊüÕ¬");
+	set("short", "å¾åº¶å®…");
 	set("long", @LONG
-Ïà´«Èý¹úÊ±ÐìÊüÔøÒòÌæÈË±¨³ð£¬Ê§ÊÖÉ±ÈË£¬¾ÍÇÜááÍÑÌÓ£¬¸üÃû¡°µ¥¸£¡±Á÷Ô¢
-ì¶´Ë¡£Õâ¼ä´óÎÝ¹²Ç°ááÁ½ÔºÈý½ø¡£ËÄÖÜÊýÊ÷Ä¾²Ô²Ô£¬¶þÌõË®ÇþÌùÇ½»ù¶ø¹ý£¬ÏÔµÃ
-Ê®·ÖÇåÓÄ¡£´óÔºÄÚÁ¢Ò»ÐìÊüÏñ(xiang)£¬Ç°Á¢Ò»´ó¾Þ±®(bei)¡£
+ç›¸ä¼ ä¸‰å›½æ—¶å¾åº¶æ›¾å› æ›¿äººæŠ¥ä»‡ï¼Œå¤±æ‰‹æ€äººï¼Œå°±æ“’å¾Œè„±é€ƒï¼Œæ›´åâ€œå•ç¦â€æµå¯“
+æ–¼æ­¤ã€‚è¿™é—´å¤§å±‹å…±å‰å¾Œä¸¤é™¢ä¸‰è¿›ã€‚å››å‘¨æ•°æ ‘æœ¨è‹è‹ï¼ŒäºŒæ¡æ°´æ¸ è´´å¢™åŸºè€Œè¿‡ï¼Œæ˜¾å¾—
+ååˆ†æ¸…å¹½ã€‚å¤§é™¢å†…ç«‹ä¸€å¾åº¶åƒ(xiang)ï¼Œå‰ç«‹ä¸€å¤§å·¨ç¢‘(bei)ã€‚
 LONG
 	);
 	set("no_clean_up", 0);
@@ -18,8 +18,8 @@ LONG
   "west" : __DIR__"qilidian",
 ]));
 	set("item_desc", ([
-		"xiang" : "Ì§Í·¿´Ê±£¬ù£¼ûÄÇËÜÏñ¸ð½í²¼ÅÛ£¬ÔíÌÐÎÚÂÄ£¬ÏàÃ²ÉõÊÇÇåñ³¡£\n",
-		"bei" : "´ó±®ÉÏ¿Ì×Å¡°ººÐìÊü¹ÊøÎ¡±Îå×Ö¡£\n",
+		"xiang" : "æŠ¬å¤´çœ‹æ—¶ï¼ŒîŠ”è§é‚£å¡‘åƒè‘›å·¾å¸ƒè¢ï¼Œçš‚ç»¦ä¹Œå±¥ï¼Œç›¸è²Œç”šæ˜¯æ¸…ç™¯ã€‚\n",
+		"bei" : "å¤§ç¢‘ä¸Šåˆ»ç€â€œæ±‰å¾åº¶æ•…î‰¡â€äº”å­—ã€‚\n",
 	]));
 	setup();
 	replace_program(ROOM);

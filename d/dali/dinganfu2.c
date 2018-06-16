@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ğ¡Ôº");
+	set("short", "å°é™¢");
 	set("long", @LONG
-ÕâÀïÊÇ´óÀí¹úµÍ¼¶¹ÙÔ±µÄ×¡Ëù¡£´óÀí¶ÎÊÏÎªÖĞÔ­ÎäÁÖÊÀ¼Ò£¬¹ÍÓ¶²»ÉÙÎäÁÖ½­
-ºşÈËÊ¿Îª³¼£¬·²½×¼¶ÔÚÎä½«ÒÔÏÂÕß¶¼×¡ÔÚÕâÀï¡£¶«Î÷·½¸÷ÓĞÒ»Ğ©Ïá·¿£¬ÄÇÊÇÎÔ·¿¡£
-ÄÏ±ßÊÇÒ»¼ä»ï·¿£¬Ìá¹©ÉÅÊ³¡£Ôº½ÇµÄÒ»ÉÈĞ¡ÃÅÍ¨Íù¿â·¿¡£
+è¿™é‡Œæ˜¯å¤§ç†å›½ä½çº§å®˜å‘˜çš„ä½æ‰€ã€‚å¤§ç†æ®µæ°ä¸ºä¸­åŸæ­¦æ—ä¸–å®¶ï¼Œé›‡ä½£ä¸å°‘æ­¦æ—æ±Ÿ
+æ¹–äººå£«ä¸ºè‡£ï¼Œå‡¡é˜¶çº§åœ¨æ­¦å°†ä»¥ä¸‹è€…éƒ½ä½åœ¨è¿™é‡Œã€‚ä¸œè¥¿æ–¹å„æœ‰ä¸€äº›å¢æˆ¿ï¼Œé‚£æ˜¯å§æˆ¿ã€‚
+å—è¾¹æ˜¯ä¸€é—´ä¼™æˆ¿ï¼Œæä¾›è†³é£Ÿã€‚é™¢è§’çš„ä¸€æ‰‡å°é—¨é€šå¾€åº“æˆ¿ã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/xiaosi" : 2,
@@ -22,7 +22,7 @@ LONG);
 		"east"  : __DIR__"dinganfu4",
 		"enter"	: __DIR__"dinganfu6",
 		]));
-	create_door("enter","Ä¾ÃÅ","out", DOOR_CLOSED);
+	create_door("enter","æœ¨é—¨","out", DOOR_CLOSED);
 	set("cost", 1);
 	set("no_clean_up", 0);
 	set("no_sleep_room",1);
@@ -33,8 +33,8 @@ int valid_leave(object me, string dir)
 {
 	if (dir=="east" || dir=="west")
 	{
-		if (dir=="west" && me->query("gender")=="Å®ĞÔ") return notify_fail("ÄÇÊÇÄĞ×ÓµÄÏá·¿£¡\n");
-		if (dir=="east" && me->query("gender")=="ÄĞĞÔ") return notify_fail("ÄÇÊÇÅ®×ÓµÄÏá·¿£¡\n");
+		if (dir=="west" && me->query("gender")=="å¥³æ€§") return notify_fail("é‚£æ˜¯ç”·å­çš„å¢æˆ¿ï¼\n");
+		if (dir=="east" && me->query("gender")=="ç”·æ€§") return notify_fail("é‚£æ˜¯å¥³å­çš„å¢æˆ¿ï¼\n");
 	}
 	return ::valid_leave(me, dir);
 }

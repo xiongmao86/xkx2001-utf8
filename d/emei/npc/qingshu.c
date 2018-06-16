@@ -9,11 +9,11 @@ string ask_me();
 
 void create()
 {
-	set_name("ËÎÇàÊé", ({ "song qingshu", "song", "qingshu" }));
+	set_name("å®‹é’ä¹¦", ({ "song qingshu", "song", "qingshu" }));
 	set("long", 
-		"ËûÊÇÎäµ±Ê×Í½ËÎÔ¶ÇÅµÄ´ó¶ù×Ó£¬Îä¹¦¾İËµÔÚÎäµ±Èı´úµÜ×ÓÖĞÊÇæ¯æ¯Õß¡£\n"
-		"ËûÉí×Å°×É«µÀÅÛ£¬ÊÖ³Ö³¤½££¬ÏàÃ²Ó¢¿¡£¬¾ÙÖ¹²»Ë×¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–æ˜¯æ­¦å½“é¦–å¾’å®‹è¿œæ¡¥çš„å¤§å„¿å­ï¼Œæ­¦åŠŸæ®è¯´åœ¨æ­¦å½“ä¸‰ä»£å¼Ÿå­ä¸­æ˜¯å§£å§£è€…ã€‚\n"
+		"ä»–èº«ç€ç™½è‰²é“è¢ï¼Œæ‰‹æŒé•¿å‰‘ï¼Œç›¸è²Œè‹±ä¿Šï¼Œä¸¾æ­¢ä¸ä¿—ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("attitude", "heroism");
 	set("shen_type", -1);
@@ -50,15 +50,15 @@ void create()
 
 	prepare_skill("strike", "mian-zhang");
 
-	create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+	create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
 	set("class", "taoist");
 
 	set("inquiry", 
 		([
-			"ÖÜÜÆÈô" : (: ask_me :),
-			"ËÎÔ¶ÇÅ" : "±ãÊÇ¼Ò¸¸¡£\n",
-			"ÕÅÈı·á" : "ÊÇÎÒÊ¦×æ¡£\n",
-			"¹ÈĞé" : "ÎÒµÄÊ¦µÜ£¬¹¦·ò²»ĞĞ£¬µÀµÂ¾­ÄîµÃµÀ²»ÉÙ¡£\n",
+			"å‘¨èŠ·è‹¥" : (: ask_me :),
+			"å®‹è¿œæ¡¥" : "ä¾¿æ˜¯å®¶çˆ¶ã€‚\n",
+			"å¼ ä¸‰ä¸°" : "æ˜¯æˆ‘å¸ˆç¥–ã€‚\n",
+			"è°·è™š" : "æˆ‘çš„å¸ˆå¼Ÿï¼ŒåŠŸå¤«ä¸è¡Œï¼Œé“å¾·ç»å¿µå¾—é“ä¸å°‘ã€‚\n",
 		]));
                                 
 
@@ -71,21 +71,21 @@ void attempt_apprentice(object ob)
 {
 	mapping fam;
 
-	if( mapp(fam = ob->query("family")) && fam["family_name"] != "Îäµ±ÅÉ" 
+	if( mapp(fam = ob->query("family")) && fam["family_name"] != "æ­¦å½“æ´¾" 
 	&&  ob->query("combat_exp") >= 10000 )
 	{
-		command ("say " + RANK_D->query_respect(this_player()) + "ÊÇ" 
-			+ fam["family_name"] + "µÄÎä¹¦¸ßÊÖ£¬±¾É½¿É²»¸ÒÊÕÁô£¡");
+		command ("say " + RANK_D->query_respect(this_player()) + "æ˜¯" 
+			+ fam["family_name"] + "çš„æ­¦åŠŸé«˜æ‰‹ï¼Œæœ¬å±±å¯ä¸æ•¢æ”¶ç•™ï¼");
 		return;
 	}
 
 	if ((int)ob->query("shen") > 0) {
 		command("say " + RANK_D->query_respect(ob) +
-			"»¹ÊÇÈ¥°İÎÒÊ¦µÜ¹ÈĞé°É¡£");
+			"è¿˜æ˜¯å»æ‹œæˆ‘å¸ˆå¼Ÿè°·è™šå§ã€‚");
 		return;
 	}
 
-	command("say ºÃ°É£¬Æ¶µÀ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œè´«é“å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + ob->query("id"));
 }
 
@@ -95,8 +95,8 @@ string ask_me()
 
         me = this_player();
            message("vision",
-   HIY "ËÎÇàÊé´óÅ­£º¡ºÄãÒ²Åä´òÖÜÅ®ÏÀµÄÖ÷Òâ£¿£¡¡»\n"
-       "ËÎÇàÊé¾öĞÄÉ±ËÀ" + me->name() +"\n"
+   HIY "å®‹é’ä¹¦å¤§æ€’ï¼šã€ä½ ä¹Ÿé…æ‰“å‘¨å¥³ä¾ çš„ä¸»æ„ï¼Ÿï¼ã€\n"
+       "å®‹é’ä¹¦å†³å¿ƒæ€æ­»" + me->name() +"\n"
    NOR, environment(), this_object() );
                    kill_ob(this_player());
    return "\n";
@@ -108,7 +108,7 @@ void init()
 
         ::init();
         if (interactive(ob = this_player()) && !is_fighting()
-		&& (string)environment()->query("short") == "Ğ¡Ê÷ÁÖ") {
+		&& (string)environment()->query("short") == "å°æ ‘æ—") {
                 remove_call_out("greeting");
                 call_out("greeting", 1, ob);
         }
@@ -117,13 +117,13 @@ void init()
 void greeting(object me)
 {
         if (me->query("shen")<0) {
-          command("say "+ RANK_D->query_rude(me) +"Ò²À´Íµî¥¶ëÃ¼Å®ÏÀµÄÇŞ¹¬£¿Ğ¡ĞÄ"
-		"´óÒ¯ÎÒÔ×ÁËÄã£¡");
+          command("say "+ RANK_D->query_rude(me) +"ä¹Ÿæ¥å·ç½å³¨çœ‰å¥³ä¾ çš„å¯å®«ï¼Ÿå°å¿ƒ"
+		"å¤§çˆ·æˆ‘å®°äº†ä½ ï¼");
 	  return ;
 	}
 	if (me->query_temp("miekou")) return;
 	command("hi " + me->query("id"));
-	command("say Ğ¡µÜÔÚ´Ë¾ÃºòÁË¡£");
+	command("say å°å¼Ÿåœ¨æ­¤ä¹…å€™äº†ã€‚");
 	command("follow "+me->query("id"));
 	me->set_temp("miekou",1);
 	remove_call_out("miekou");
@@ -134,8 +134,8 @@ void greeting(object me)
 
 int miekou(object song, object me)
 {
-	command("say Èç¹ûÄãÈÕáá°ÑÎÒÍµî¥¶ëÃ¼Å®ÏÀÇŞ¹¬µÄÊÂĞûÑï³öÈ¥£¬ÎÒ»¹Ôõ÷áÔÚ½­ºşÉÏ×ß¶¯£¿");
-	tell_object(me,"ËÎÇàÊéÏëÉ±ÄãÃğ¿Ú£¡\n");
+	command("say å¦‚æœä½ æ—¥å¾ŒæŠŠæˆ‘å·ç½å³¨çœ‰å¥³ä¾ å¯å®«çš„äº‹å®£æ‰¬å‡ºå»ï¼Œæˆ‘è¿˜æ€éº½åœ¨æ±Ÿæ¹–ä¸Šèµ°åŠ¨ï¼Ÿ");
+	tell_object(me,"å®‹é’ä¹¦æƒ³æ€ä½ ç­å£ï¼\n");
         kill_ob(me);
 	return 1;
 }

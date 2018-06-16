@@ -9,15 +9,15 @@ int do_move();
 
 void create()
 {
-    set_name("½­ºşºº×Ó", ({
+    set_name("æ±Ÿæ¹–æ±‰å­", ({
 	    "jianghu hanzi", "han",
     }));
     set("long",
-	"ÕâÊÇÒ»¸ö·ç³¾ÆËÆËµÄ½­ºşºº×Ó£¬Ò»¿´¾ÍÖªµÀÉí»³Îä¹¦¡£\n"
+	"è¿™æ˜¯ä¸€ä¸ªé£å°˜æ‰‘æ‰‘çš„æ±Ÿæ¹–æ±‰å­ï¼Œä¸€çœ‹å°±çŸ¥é“èº«æ€€æ­¦åŠŸã€‚\n"
     );
 
 
-    set("gender", "ÄĞĞÔ");
+    set("gender", "ç”·æ€§");
     set("attitude", "heroism");
 
     set("age", 25);
@@ -100,7 +100,7 @@ void do_move()
 	call_out("do_move", 10);
 	set_temp("attempt", 0);
     } else {
-	message_vision("$N×ß½øÁËÈËÈº£¬Ò»»á¶ù¾Í²»¼ûÁË¡£\n", me);
+	message_vision("$Nèµ°è¿›äº†äººç¾¤ï¼Œä¸€ä¼šå„¿å°±ä¸è§äº†ã€‚\n", me);
 	destruct(me);
     }
 }
@@ -120,7 +120,7 @@ void die()
 		SHIWEI_LEVEL(inv[i]) == query("shiwei_level") &&
 		inv[i]->query_temp("can_pancha") ) {
 		found_shiwei++;
-		message_vision("\n$NÒ»½ÅÌß¿ª$nµÄÊ¬Ìå£¬µÃÒâµØĞ¦ÁËĞ¦¡£\n",
+		message_vision("\n$Nä¸€è„šè¸¢å¼€$nçš„å°¸ä½“ï¼Œå¾—æ„åœ°ç¬‘äº†ç¬‘ã€‚\n",
 		    inv[i], me);
 		player = inv[i];
 		if (env->query("is_inner_gate")){
@@ -131,7 +131,7 @@ void die()
 	}
     }
     if (! found_shiwei){
-	message_vision("\n$Nµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n", me);
+	message_vision("\n$Nå€’åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰äº†å‡ ä¸‹å°±æ­»äº†ã€‚\n", me);
     }
 
 

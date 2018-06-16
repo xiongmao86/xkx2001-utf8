@@ -7,21 +7,21 @@ void greeting(object ob);
 
 void create()
 {
-	set_name("¾Æ¹İĞ¡¶ş", ({ "xiao er", "xiao", "waiter", "jiuguan waiter" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é…’é¦†å°äºŒ", ({ "xiao er", "xiao", "waiter", "jiuguan waiter" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»¾Æ¹İĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½é…’é¦†å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ğ¡¶ş¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
                 __DIR__"obj/peanut",
                 __DIR__"obj/tofu",
         }));
         set("inquiry", ([
-        "´ò¾Æ" : "ºÙºÙ£¬²»ÊÇĞ¡µÄ×Ô¿ä£¬ÎÒÃÇÕâµÄ¾Æ¿ÉÈ«ÊÇÉÏµÈµÄºÃ¾Æ£¡\n",
-        "¾Æ" : "¿Í¹ÙÒªºÈ¾Æ¿ÉÕæÊÇÀ´¶ÔµØ·½ÁË£¬ÄúÂ¥ÉÏÑÅ×ùÇë¡£\n",
+        "æ‰“é…’" : "å˜¿å˜¿ï¼Œä¸æ˜¯å°çš„è‡ªå¤¸ï¼Œæˆ‘ä»¬è¿™çš„é…’å¯å…¨æ˜¯ä¸Šç­‰çš„å¥½é…’ï¼\n",
+        "é…’" : "å®¢å®˜è¦å–é…’å¯çœŸæ˜¯æ¥å¯¹åœ°æ–¹äº†ï¼Œæ‚¨æ¥¼ä¸Šé›…åº§è¯·ã€‚\n",
 	]));
 	
 	setup();
@@ -37,7 +37,7 @@ object ob;
 	::init();
 	if( interactive(ob) && !is_fighting() ) {
 		if ( (myfam = ob->query("family")) 
-		&& myfam["family_name"] == "Ø¤°ï" 
+		&& myfam["family_name"] == "ä¸å¸®" 
 		&& ob->query_skill("begging",1) > 10 )
 		{
 			remove_call_out("greeting");
@@ -59,12 +59,12 @@ void greeting(object ob)
 
 	switch( random(2) ) {
 		case 0:
-			say( "¾Æ¹İĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬½øÀ´ºÈµã¾ÆÅ¯Å¯Éí×Ó°É¡£\n");
+			say( "é…’é¦†å°äºŒç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¿›æ¥å–ç‚¹é…’æš–æš–èº«å­å§ã€‚\n");
 			break;
 		case 1:
-			say( "¾Æ¹İĞ¡¶şÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬Çë½øÇë½ø£¬ÎÒÃÇÕâ¶ùµÄ¿É¶¼ÊÇºÃ¾Æ°¡¡£\n");
+			say( "é…’é¦†å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¯·è¿›è¯·è¿›ï¼Œæˆ‘ä»¬è¿™å„¿çš„å¯éƒ½æ˜¯å¥½é…’å•Šã€‚\n");
 			break;
 	}
 }

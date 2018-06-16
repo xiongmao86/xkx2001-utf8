@@ -1,16 +1,16 @@
 //Cracked by Roath
-// /d/hangzhou/npc/hsbz.c  ÑÎèÉ
+// /d/hangzhou/npc/hsbz.c  ç›æ­
 // by aln 2 / 98
 
 inherit NPC;
 
 void create()
 {
-        set_name("º£É³ÅÉÑÎèÉ", ({ "yanxiao" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("æµ·æ²™æ´¾ç›æ­", ({ "yanxiao" }) );
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("long",
-"ËûÉí´©Çà²¼¶ÌÉÀ¿ã£¬Í·´÷¶·óÒ£¬ÉíĞÎ×³Êµ¡£\n");
+"ä»–èº«ç©¿é’å¸ƒçŸ­è¡«è£¤ï¼Œå¤´æˆ´æ–—ç¬ ï¼Œèº«å½¢å£®å®ã€‚\n");
         set("combat_exp", 4500);
         set("shen_type",  -1);
 

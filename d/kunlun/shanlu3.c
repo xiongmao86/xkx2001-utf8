@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-ɽ��ĵ�·��᫲�ƽ������ɷ�Ƿ�����������Ȼ�����̵ĵ��̡�ż��
-���Կ���Ѳ�ӵ��������ڡ�������ȥ����һƬ��ư��̵����֡�
+山间的道路崎岖不平，走来煞是费力。这里仍然是明教的地盘。偶尔
+可以看见巡视的明教人众。向西望去，是一片半黄半绿的树林。
 LONG );
 
         set("exits", ([

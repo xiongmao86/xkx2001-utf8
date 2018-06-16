@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÄÚÌÃ");
+	set("short", "å†…å ‚");
 	set("long", @LONG
-ÕâÀïÊÇÒ©ÆÌµÄÄÚÌÃ£¬¶«Ê×°ÚÁËÒ»¸öÊé¼Ü£¬ÉÏÃæ·ÅÁË²»ÉÙÒ½Êé¡£´Ë
-Íâ»¹ÓÐ¼¸ÕÅ×ÀÒÎ(chair)¡£¿´À´´ó¸ÅÊÇÒ©ÆÌ½Ó´ý¿ÍÈËµÄµØ·½¡£
+è¿™é‡Œæ˜¯è¯é“ºçš„å†…å ‚ï¼Œä¸œé¦–æ‘†äº†ä¸€ä¸ªä¹¦æž¶ï¼Œä¸Šé¢æ”¾äº†ä¸å°‘åŒ»ä¹¦ã€‚æ­¤
+å¤–è¿˜æœ‰å‡ å¼ æ¡Œæ¤…(chair)ã€‚çœ‹æ¥å¤§æ¦‚æ˜¯è¯é“ºæŽ¥å¾…å®¢äººçš„åœ°æ–¹ã€‚
 LONG
 	);
 	set("exits", ([ 
@@ -16,8 +16,8 @@ LONG
 	set("no_clean_up", 0);
 
 	set("item_desc", ([
-	"chair" : "Ò»ÕÅÒÎ×Ó£¬Ä¨ÊÃµÃºÜ¸É¾»£¬ÒÎ±³¿Ì×ÅË«ÁúÇÀÖéµÄÍ¼°¸£¬
-Á½ÌõÁú¿ÌµÃÉõÊÇÉú¶¯£¬ÕÅÑÀÎè×¦µØÇÀ¶áÒ»¸öÏâÔÚÒÎ±³ÉÏÇà¹â·¢ÁÁµÄÌúÇò(Iron Ball)¡£\n",
+	"chair" : "ä¸€å¼ æ¤…å­ï¼ŒæŠ¹æ‹­å¾—å¾ˆå¹²å‡€ï¼Œæ¤…èƒŒåˆ»ç€åŒé¾™æŠ¢ç çš„å›¾æ¡ˆï¼Œ
+ä¸¤æ¡é¾™åˆ»å¾—ç”šæ˜¯ç”ŸåŠ¨ï¼Œå¼ ç‰™èˆžçˆªåœ°æŠ¢å¤ºä¸€ä¸ªé•¶åœ¨æ¤…èƒŒä¸Šé’å…‰å‘äº®çš„é“çƒ(Iron Ball)ã€‚\n",
 ]));
 	setup();
 }
@@ -36,19 +36,19 @@ int do_push(string arg)
 	if( !arg || arg == "" ) return 0;
 	if( arg == "ball" || arg == "qiu") 
 	{
-	message_vision("$N×ßÏòÎ÷Ê×Ò»ÕÅÒÎ×Ó£¬ÉìÊÖÔÚÒÎ±³ÌúÇòÉÏÒ»°´¡­¡­\n\n"+
-	"ÒÎ×Ó»º»ºÏòÒ»±ßÒÆÈ¥£¬Â¶³öÒ»¸öºÚ÷î÷îµÄ´ó¶´¡£\n",me);
+	message_vision("$Nèµ°å‘è¥¿é¦–ä¸€å¼ æ¤…å­ï¼Œä¼¸æ‰‹åœ¨æ¤…èƒŒé“çƒä¸Šä¸€æŒ‰â€¦â€¦\n\n"+
+	"æ¤…å­ç¼“ç¼“å‘ä¸€è¾¹ç§»åŽ»ï¼Œéœ²å‡ºä¸€ä¸ªé»‘é»é»çš„å¤§æ´žã€‚\n",me);
         set("exits/down", __DIR__"yaopu_mishi");
         remove_call_out("close_door");
         call_out("close_door",15,me);	
 		return 1;
 	}
 	else
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 }
 
 void close_door()
 {
-	tell_room(this_object(),"ÒÎ×Ó»º»ºÒÆ»ØÔ­Î»£¬ÕÚ×¡ÁËµØ¶´¡£\n");
+	tell_room(this_object(),"æ¤…å­ç¼“ç¼“ç§»å›žåŽŸä½ï¼Œé®ä½äº†åœ°æ´žã€‚\n");
 	delete("exits/down");
 }

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷´ó½Ö");
+        set("short", "è¥¿å¤§è¡—");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ¿íÀ«µÄÇàÊ¯°å½ÖµÀ£¬Ïò¶«Î÷Á½Í·ÑÓÉì¡£±±ÃæµÄ²è¹ÝÊ±Ê±´«À´Ò»Æ¬Ðú
-»©Ö®Éù£¬¿ÍÈËÓã¹á°ã³öÈë¡£³¯ÄÏÊÇÓÐÃûµÄÐùÔ¯ÆåÔ·£¬²»ÉÙÎÄÈËÑÅÊ¿¶¼Ï²»¶µ½ÄÇ¸ß
-Ì¸À«ÂÛ£¬ÒÔÆå»áÓÑ¡£¶«±ßÊÇÒ»¸öÈÈÄÖµÄ¹ã³¡¡£      
+è¿™æ˜¯ä¸€æ¡å®½é˜”çš„é’çŸ³æ¿è¡—é“ï¼Œå‘ä¸œè¥¿ä¸¤å¤´å»¶ä¼¸ã€‚åŒ—é¢çš„èŒ¶é¦†æ—¶æ—¶ä¼ æ¥ä¸€ç‰‡å–§
+å“—ä¹‹å£°ï¼Œå®¢äººé±¼è´¯èˆ¬å‡ºå…¥ã€‚æœå—æ˜¯æœ‰åçš„è½©è¾•æ£‹è‹‘ï¼Œä¸å°‘æ–‡äººé›…å£«éƒ½å–œæ¬¢åˆ°é‚£é«˜
+è°ˆé˜”è®ºï¼Œä»¥æ£‹ä¼šå‹ã€‚ä¸œè¾¹æ˜¯ä¸€ä¸ªçƒ­é—¹çš„å¹¿åœºã€‚      
 LONG );
         set("outdoors", "city");
         set("no_clean_up", 0);

@@ -9,14 +9,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ñ©É£",({"xue sang","sang"}));
+        set_name("é›ªæ¡‘",({"xue sang","sang"}));
         set_weight(900000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿ÃÌìÉ½ÌØÓĞµÄÉú³¤ÔÚÑ©·åµÄÑ©É£Ê÷¡£
-´«ËµÓĞÒ»ÖÖÑ©²Ï×îÏ²»¶Éú³¤ÔÚÕâÑ©É£Ö®ÉÏ£¬¾­³£ÓĞÈËÀ´Ñ°ÕÒ(search)¡ \n");
-                set("unit", "¿Ã");
+                set("long", "è¿™æ˜¯ä¸€æ£µå¤©å±±ç‰¹æœ‰çš„ç”Ÿé•¿åœ¨é›ªå³°çš„é›ªæ¡‘æ ‘ã€‚
+ä¼ è¯´æœ‰ä¸€ç§é›ªèš•æœ€å–œæ¬¢ç”Ÿé•¿åœ¨è¿™é›ªæ¡‘ä¹‹ä¸Šï¼Œç»å¸¸æœ‰äººæ¥å¯»æ‰¾(search). \n");
+                set("unit", "æ£µ");
                 set("value", 8);
                 set("no_get", 1);
 		set("leaves",20);
@@ -38,14 +38,14 @@ int do_search()
 object obj=this_object(),me=this_player();
 
 if (me->query_temp("find_can"))
-	return notify_fail("Ñ©²ÏÒÑ¾­ÔÚÑ©É£ÉÏÁË£¬Äã»¹ÕÒÊ²Ã´Ñ½£¿\n");
+	return notify_fail("é›ªèš•å·²ç»åœ¨é›ªæ¡‘ä¸Šäº†ï¼Œä½ è¿˜æ‰¾ä»€ä¹ˆå‘€ï¼Ÿ\n");
 
 if(random(me->query("kar"))>15)
 	{
-        tell_object(me,HIG"Äã×ĞÏ¸µÄ·­¶¯Ñ©É£Ò¶£¬µ½´¦Ñ°ÕÒÆğÀ´¡£\n" NOR);
+        tell_object(me,HIG"ä½ ä»”ç»†çš„ç¿»åŠ¨é›ªæ¡‘å¶ï¼Œåˆ°å¤„å¯»æ‰¾èµ·æ¥ã€‚\n" NOR);
 	if(random(10)>5)
 		{
-                tell_object(me,HIR"ÄãºöÈ»ÑÛÇ°Ò»ÁÁ£¬Ò»Ìõ¾§Ó¨Ñ©°×µÄÑ©²Ï(can)ÕıÎÔÔÚÒ»Æ¬Ñ©É£Ò¶ÉÏ£¡\n"NOR);
+                tell_object(me,HIR"ä½ å¿½ç„¶çœ¼å‰ä¸€äº®ï¼Œä¸€æ¡æ™¶è¹é›ªç™½çš„é›ªèš•(can)æ­£å§åœ¨ä¸€ç‰‡é›ªæ¡‘å¶ä¸Šï¼\n"NOR);
 		me->set_temp("find_can",1);
 		}
         me->add("neili",-10);
@@ -53,7 +53,7 @@ if(random(me->query("kar"))>15)
 	}
 else    {
         me->add("neili",-10);
-        return notify_fail("ÄãÕÒÁË°ëÌìÊ²Ã´Ò²Ã»ÕÒµ½£¡\n");
+        return notify_fail("ä½ æ‰¾äº†åŠå¤©ä»€ä¹ˆä¹Ÿæ²¡æ‰¾åˆ°ï¼\n");
         }
 }
 
@@ -64,24 +64,24 @@ string what;
 
 //message_vision(arg);
 if (!arg || sscanf(arg,"%s",what)!=1)
-	return notify_fail("ÄãÒªÎ¹Ê²Ã´£¿\n");
+	return notify_fail("ä½ è¦å–‚ä»€ä¹ˆï¼Ÿ\n");
 
 if (what!="can")
-	return notify_fail("ÕâÀïµÄÑ©É£Ò¶Ö»ÓĞÌìÉ½Ñ©²Ï°®³Ô£¡\n");
+	return notify_fail("è¿™é‡Œçš„é›ªæ¡‘å¶åªæœ‰å¤©å±±é›ªèš•çˆ±åƒï¼\n");
 
 if (!me->query_temp("find_can"))
-	return notify_fail("ÕâÑ©É£ÉÏÊ²Ã´Ò²Ã»ÓĞ£¬ÄãÒªÎ¹Ê²Ã´£¿\n");
+	return notify_fail("è¿™é›ªæ¡‘ä¸Šä»€ä¹ˆä¹Ÿæ²¡æœ‰ï¼Œä½ è¦å–‚ä»€ä¹ˆï¼Ÿ\n");
 
 if (me->query_temp("get_si"))
-	return notify_fail("Ñ©²Ï¸ÕÍÂ¹ıË¿£¬¿ÖÅÂÏÖÔÚ²»»áÔÙÍÂÁË£¡\n");
+	return notify_fail("é›ªèš•åˆšåè¿‡ä¸ï¼Œææ€•ç°åœ¨ä¸ä¼šå†åäº†ï¼\n");
 
 if (obj->query("leaves")>1)
 	{
-        tell_object(me,HIY "ÄãÕªÁËÒ»Æ¬Ñ©É£Ò¶Î¹¸øÑ©²Ï³Ô¡£Ñ©²Ï×ĞÏ¸µÄ³ÔÁËÆğÀ´¡£\n" NOR);
+        tell_object(me,HIY "ä½ æ‘˜äº†ä¸€ç‰‡é›ªæ¡‘å¶å–‚ç»™é›ªèš•åƒã€‚é›ªèš•ä»”ç»†çš„åƒäº†èµ·æ¥ã€‚\n" NOR);
 	obj->set("leaves",obj->query("leaves")-1);
 		if (random(10)>5)
 			{
-                        tell_object(me,HIY "Ñ©²Ï³ÔÍêÁËÉ£Ò¶£¬Í·Ò»°º£¬ÍÂ³öÒ»¸ù²ÏË¿£¬Äã¸Ï½ôÓÃÊÖ½Ó×¡¡£\n" NOR);
+                        tell_object(me,HIY "é›ªèš•åƒå®Œäº†æ¡‘å¶ï¼Œå¤´ä¸€æ˜‚ï¼Œåå‡ºä¸€æ ¹èš•ä¸ï¼Œä½ èµ¶ç´§ç”¨æ‰‹æ¥ä½ã€‚\n" NOR);
                         me->set_temp("get_si",1);
 			ob=new("/d/xingxiu/obj/xuecan-si");
 			ob->move(me);
@@ -90,7 +90,7 @@ if (obj->query("leaves")>1)
 else 
 	{
 	call_out("grow",200,obj);
-	return notify_fail("Ñ©É£ÉÏµÄÒ¶×Ó¶¼ÕªÍêÁË£¬µÈÂıÂı³¤³öÀ´ÔÙÀ´Î¹°É£¡\n");
+	return notify_fail("é›ªæ¡‘ä¸Šçš„å¶å­éƒ½æ‘˜å®Œäº†ï¼Œç­‰æ…¢æ…¢é•¿å‡ºæ¥å†æ¥å–‚å§ï¼\n");
 	}
 }
 
@@ -106,7 +106,7 @@ int do_look(string arg)
         if(what=="sang" || what=="xue sang")
 		{	
 		if(me->query_temp("find_can"))
-                        tell_object( me, ob->query("long") + "ÏÖÔÚÉÏÃæÓĞÒ»Ö»Ñ©²Ï(can)£¡ºÃÏóÕıÔÚµÈÄãÎ¹(fed)Ëü¡£\n");
+                        tell_object( me, ob->query("long") + "ç°åœ¨ä¸Šé¢æœ‰ä¸€åªé›ªèš•(can)ï¼å¥½è±¡æ­£åœ¨ç­‰ä½ å–‚(fed)å®ƒã€‚\n");
 		else	tell_object( me, ob->query("long"));
                 return 1;
                 }
@@ -117,6 +117,6 @@ return 0;
 
 int grow(object ob)
 {
-	message_vision(HIG "Ñ©É£ÉÏµÄÉ£Ò¶ÓÖ³¤³öÀ´ÁË£¡\n");
+	message_vision(HIG "é›ªæ¡‘ä¸Šçš„æ¡‘å¶åˆé•¿å‡ºæ¥äº†ï¼\n");
 	ob->set("leaves",20);
 }

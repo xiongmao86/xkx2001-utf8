@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "²è¹İ");
+	set("short", "èŒ¶é¦†");
 	set("long", @LONG
-¾©³Ç²è¹İ¡£
+äº¬åŸèŒ¶é¦†ã€‚
 LONG
 	);
 
@@ -33,40 +33,40 @@ int do_fill(string arg)
 	object ob, obj, me = this_player();
 
 	if (!objectp(obj = present("qu san", environment(me))))
-	{	write("ÕÆ¹ñµÄ²»ÔÚ£¡\n");
+	{	write("æŒæŸœçš„ä¸åœ¨ï¼\n");
 		return 1;
 	}
 
 	if (!living(obj)){
-		write("Äã»¹ÊÇµÈÕÆ¹ñµÄĞÑ¹ıÀ´ÔÙËµ°É¡£\n");
+		write("ä½ è¿˜æ˜¯ç­‰æŒæŸœçš„é†’è¿‡æ¥å†è¯´å§ã€‚\n");
 		return 1;
 	}
 
 	if (!arg || !(ob = present(arg, this_player())) || !ob->query("liquid")){
-                write("ÄãÒª°Ñ¾Æ×°ÔÚÄÄ¶ù£¿\n");
+                write("ä½ è¦æŠŠé…’è£…åœ¨å“ªå„¿ï¼Ÿ\n");
 		return 1;
 	}
 
 	switch (MONEY_D->player_pay(this_player(), 20)) {
         case 0: {
-		write("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+		write("ç©·å…‰è›‹ï¼Œä¸€è¾¹å‘†ç€å»ï¼\n");
 		return 1;
 		}
         case 2: {
-                write("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+                write("æ‚¨çš„é›¶é’±ä¸å¤Ÿäº†ï¼Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
 		return 1;
 		}
 	}
 
         if( ob->query("liquid/remaining") )
-                message_vision("$N½«" + ob->name() + "ÀïÊ£ÏÂµÄ" + ob->query("liquid/name") + 
-		"µ¹µô¡£\n", this_player());
-        message_vision("$N¸øÇúÈı¶şÊ®ÎÄÍ­°å¡£\nÇúÈı¸ø$NµÄ"+ob->name()+"×°ÂúÉÕ¾Æ¡£\n", this_player());
+                message_vision("$Nå°†" + ob->name() + "é‡Œå‰©ä¸‹çš„" + ob->query("liquid/name") + 
+		"å€’æ‰ã€‚\n", this_player());
+        message_vision("$Nç»™æ›²ä¸‰äºŒåæ–‡é“œæ¿ã€‚\næ›²ä¸‰ç»™$Nçš„"+ob->name()+"è£…æ»¡çƒ§é…’ã€‚\n", this_player());
 
         if( this_player()->is_fighting() ) this_player()->start_busy(2);
 
         ob->set("liquid/type", "alcohol");
-        ob->set("liquid/name", "ÉÕ¾Æ");
+        ob->set("liquid/name", "çƒ§é…’");
         ob->set("liquid/remaining", query("max_liquid"));
         ob->set("liquid/drink_func", 0);
 	ob->set("liquid/drunk_apply", 4);

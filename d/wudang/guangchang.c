@@ -1,5 +1,5 @@
 //Cracked by Roath
-// guangchang.c �㳡
+// guangchang.c 广场
 // by Xiang
 // xQin 04/01
 
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", WHT"�䵱�㳡"NOR);
+	set("short", WHT"武当广场"NOR);
 	set("long", @LONG
-����һ���ɴ�ʯ���̳ɵĹ㳡�����䵱����ѧϰ�书�ͻ����д�ĵص�
-����Χ��������ͩ����һ������������ص���Ҷ��һ���������ĵ�ͯ����
-��ɨ�����洫���������㣬�����ǵ�ˮ�ܡ�
+这是一个由大石板铺成的广场，是武当弟子学习武功和互相切磋的地点
+。周围种满了梧桐树，一到秋天就是满地的落叶。一个年纪轻轻的道童正在
+打扫。东面传来阵阵桃香，往南是滴水檐。
 LONG
 	);
         set("outdoors", "wudang");

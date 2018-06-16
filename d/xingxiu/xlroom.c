@@ -7,7 +7,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÂÌÖÞ");
+        set("short", "ç»¿æ´²");
         set("objects", ([
                 __DIR__"obj/xianglu-dao" : 1,
         ]));

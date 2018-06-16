@@ -1,15 +1,15 @@
 //Cracked by Roath
-// pan14.c Ê®¶şÅÌ
+// pan14.c åäºŒç›˜
 // Shan: 96/06/22
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ê®¶şÅÌ");
+        set("short", "åäºŒç›˜");
         set("long", @LONG
-ÕâÀïÊ¯½×¶¸ÕÛ¶àÍä£¬ºÅ³Æ¡¸Ê®¶şÅÌ¡¹¡£ÓÉ´ËÎ÷ÉÏ¿É´ï»ªÑÏ¶¥£¬¶«ÏÂÔòµ½Íò
-ÄêâÖ¡£
+è¿™é‡ŒçŸ³é˜¶é™¡æŠ˜å¤šå¼¯ï¼Œå·ç§°ã€ŒåäºŒç›˜ã€ã€‚ç”±æ­¤è¥¿ä¸Šå¯è¾¾åä¸¥é¡¶ï¼Œä¸œä¸‹åˆ™åˆ°ä¸‡
+å¹´åºµã€‚
 LONG
         );
         set("exits", ([
@@ -32,12 +32,12 @@ int valid_leave(object me, string dir)
         {
                 me->set("jingli",current_jingli-random(10));
                 me->improve_skill("dodge", random(5));
-                write("ÄãÅÀÉÏÁËÊ®¶şÅÌ£¬¾õµÃÉÏÉ½µÄÂ·ÓÖ¶¸ÓÖÍä£¬ºÃÀÛÈË¡£\n");
+                write("ä½ çˆ¬ä¸Šäº†åäºŒç›˜ï¼Œè§‰å¾—ä¸Šå±±çš„è·¯åˆé™¡åˆå¼¯ï¼Œå¥½ç´¯äººã€‚\n");
         }
 
         else if (dir == "westup" && current_jingli <= 10)
         {
-                write("ÄãÀÛµÃ×ß²»¶¯ÁË£¬ºöÈ»ÑÛÃ°½ğĞÇ£¬ÔÎÁË¹ıÈ¥¡£\n");
+                write("ä½ ç´¯å¾—èµ°ä¸åŠ¨äº†ï¼Œå¿½ç„¶çœ¼å†’é‡‘æ˜Ÿï¼Œæ™•äº†è¿‡å»ã€‚\n");
                 me->unconcious();
                 return notify_fail("");
         }

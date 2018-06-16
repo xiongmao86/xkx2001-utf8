@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÁÖÓñÁú", ({ "lin yulong", "lin", "yulong" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ—ç‰é¾™", ({ "lin yulong", "lin", "yulong" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 28);
         set("str", 40);
         set("dex", 30);
@@ -33,7 +33,7 @@ void create()
         setup();
         set("chat_chance", 5);
         set("chat_msg", ({  
-		"ÁÖÓñÁúºÈµÀ£º¡¸Äã×¡¿Ú£¬ËûÃÇµÄµ¶·¨ÊÇÎÒ½ÌµÄ£¡¡¹\n",
+		"æ—ç‰é¾™å–é“ï¼šã€Œä½ ä½å£ï¼Œä»–ä»¬çš„åˆ€æ³•æ˜¯æˆ‘æ•™çš„ï¼ã€\n",
 	}));
         carry_object("/d/city/obj/cloth")->wear();
 	carry_object("/d/city/obj/gangdao")->wear();
@@ -52,7 +52,7 @@ void init()
 void greeting(object me)
 {
 	if (present("yuan dao", me) || present("yang dao", me)) {
-	command("say ºÃÄã¸öĞ¡Ôô£¬¾¹É±ËÀºÃÈË£¡ÄÃÃüÀ´£¡");
+	command("say å¥½ä½ ä¸ªå°è´¼ï¼Œç«Ÿæ€æ­»å¥½äººï¼æ‹¿å‘½æ¥ï¼");
 
 	write("\n\n\n");
 	kill_ob(me);

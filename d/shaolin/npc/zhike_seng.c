@@ -10,16 +10,16 @@ string ask_tiaoshui();
 string ask_abandon();
 void create()
 {
-        set_name("Öª¿ÍÉ®", ({
+        set_name("çŸ¥å®¢åƒ§", ({
                 "zhike seng",
                 "seng",
         }));
         set("long",
-                "Ëû¾ÍÊÇÉÙÁÖËÂ×¨¹ÜÏã»ğµÄÖª¿ÍÉ®£¬½üÀ´¸ü±»Î¯ÅÉ¸ºÔğÉÙÁÖµÜ×ÓµÄÒûË®ÎÊÌâ¡£\n"
-                "ËûÉí´©Ò»Ï®Çà²¼É®ÒÂ£¬ÕûÌìĞ¦ºÇºÇµÄ¡£\n"
+                "ä»–å°±æ˜¯å°‘æ—å¯ºä¸“ç®¡é¦™ç«çš„çŸ¥å®¢åƒ§ï¼Œè¿‘æ¥æ›´è¢«å§”æ´¾è´Ÿè´£å°‘æ—å¼Ÿå­çš„é¥®æ°´é—®é¢˜ã€‚\n"
+                "ä»–èº«ç©¿ä¸€è¢­é’å¸ƒåƒ§è¡£ï¼Œæ•´å¤©ç¬‘å‘µå‘µçš„ã€‚\n"
         );
  
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -68,17 +68,17 @@ void create()
         prepare_skill("finger", "nianhua-zhi");
         prepare_skill("strike", "sanhua-zhang");
 
-        create_family("ÉÙÁÖÅÉ", 37, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 37, "å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
         (: auto_perform :), }));
 
         set("inquiry", ([
-            "¹¤×÷" : (: ask_tiaoshui :),
-		    "ÌôË®" : (: ask_tiaoshui :),
+            "å·¥ä½œ" : (: ask_tiaoshui :),
+		    "æŒ‘æ°´" : (: ask_tiaoshui :),
 		    "job" : (: ask_tiaoshui :),
 			"abandon" : (: ask_abandon :),
-			"·ÅÆú" : (: ask_abandon :),
+			"æ”¾å¼ƒ" : (: ask_abandon :),
         ]));
         
         setup();

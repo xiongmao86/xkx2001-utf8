@@ -1,5 +1,5 @@
 //Cracked by Roath
-// weapon: ¡¸ÂÌ²¨ÏãÂ¶µ¶¡¹ (Xianglu dao)
+// weapon: ã€Œç»¿æ³¢é¦™éœ²åˆ€ã€ (Xianglu dao)
 // wsky 4/7/00
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("´ÅÊ¯", ({ "cishi", "magnet", "shi" }));
+        set_name("ç£çŸ³", ({ "cishi", "magnet", "shi" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿é²»ÆğÑÛµÄÊ¯Í·£¬ËÆºõ¿ÉÒÔÎüÆğÎ¢Ï¸µÄ½ğÊôÎïÊÂ¡£\n"NOR);
+                set("unit", "å—");
+                set("long", "è¿™æ˜¯ä¸€å—ä¸èµ·çœ¼çš„çŸ³å¤´ï¼Œä¼¼ä¹å¯ä»¥å¸èµ·å¾®ç»†çš„é‡‘å±ç‰©äº‹ã€‚\n"NOR);
                 set("material", "stone");
         }
         setup();

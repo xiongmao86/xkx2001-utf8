@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(GRN"¸ğ²¼³¤ÅÛ"NOR, ({"changpao", "cloth","pao"}) );
+	set_name(GRN"è‘›å¸ƒé•¿è¢"NOR, ({"changpao", "cloth","pao"}) );
     set_weight(1500);
     if( clonep() )
        set_default_object(__FILE__);
     else {
-        set("unit", "¼ş");
-		set("long", "ÕâÊÇ´Ö¸ğ²¼Ö¯µÄ³¤ÅÛ£¬ÊÖÃşÉÏÈ¥ºÜ´Ö²Ú¡£\n");
+        set("unit", "ä»¶");
+		set("long", "è¿™æ˜¯ç²—è‘›å¸ƒç»‡çš„é•¿è¢ï¼Œæ‰‹æ‘¸ä¸Šå»å¾ˆç²—ç³™ã€‚\n");
         set("material", "cloth");
         set("armor_prop/armor", 15);
 	set("value",500);

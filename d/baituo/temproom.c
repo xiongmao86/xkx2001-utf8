@@ -1,14 +1,14 @@
 //Cracked by Roath
-// ÉßÅ«ÖĞÍ¾ÒÆ¶¯´¦
+// è›‡å¥´ä¸­é€”ç§»åŠ¨å¤„
 // maco
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡Â·");
+        set("short", "å°è·¯");
         set("long", @LONG
-Í¨ÍùÉß³¡ÄÚ²¿µÄµÀÂ·¡£
+é€šå¾€è›‡åœºå†…éƒ¨çš„é“è·¯ã€‚
 LONG
         );
         setup();

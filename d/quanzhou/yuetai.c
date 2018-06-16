@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yuetai.c ��̨�㳡
+// yuetai.c 月台广场
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��̨�㳡");
+        set("short", "月台广场");
 	set("long", @LONG
-����ƽ̹�⻬��ʯ��㳡���м�͹��һ̨�棬�����һ�ٵ�¯��̨����Ƕ
-����ʮ����ʨ��������ʯ��������Ũ��������ζ����������һ���ֺ��ʯ
-����
+这是平坦光滑的石面广场，中间凸起一台面，面放置一焚吊炉。台座边嵌
+着七十二幅狮身人面青石浮雕，有着浓厚的异国风味。东西各有一座恢宏的石
+塔。
 LONG
         );
 

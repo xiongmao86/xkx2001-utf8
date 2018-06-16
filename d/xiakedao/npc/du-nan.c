@@ -9,12 +9,12 @@ int auto_perform();
 
 void create()
 {
-        set_name("¶ÉÄÑ", ({ "du nan", "nan" }) );
-        set("title", "ÉÙÁÖ³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¸¡éš¾", ({ "du nan", "nan" }) );
+        set("title", "å°‘æ—é•¿è€");
+        set("gender", "ç”·æ€§");
         set("age", 90);
         set("long",
-                "ÕâÊÇÒ»¸öÃæ¼ÕÉîÏİ£¬Êİ¹ÇÁã¶¡µÄÀÏÉ®£¬ËûÁ³É«ÆáºÚ£¬ÏóÊÇÉúÌúÖı³É¡£\n");
+                "è¿™æ˜¯ä¸€ä¸ªé¢é¢Šæ·±é™·ï¼Œç˜¦éª¨é›¶ä¸çš„è€åƒ§ï¼Œä»–è„¸è‰²æ¼†é»‘ï¼Œè±¡æ˜¯ç”Ÿé“é“¸æˆã€‚\n");
 
         set("attitude", "peaceful");
         set("combat_exp", 1500000);
@@ -31,9 +31,9 @@ void create()
         set("neili", 3000);
         set("max_neili", 3000);
 
-        create_family("ÉÙÁÖÅÉ", 35, "³¤ÀÏ");
+        create_family("å°‘æ—æ´¾", 35, "é•¿è€");
         set("class", "bonze");
-        assign_apprentice("µÜ×Ó", 0);
+        assign_apprentice("å¼Ÿå­", 0);
 
         set_skill("force", 180);
         set_skill("cuff", 180);

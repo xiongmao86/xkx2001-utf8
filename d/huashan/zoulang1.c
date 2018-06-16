@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: zoulang1.c ×ßÀÈ
+// Room: zoulang1.c èµ°å»Š
 // qfy July 7, 1996.
 
 inherit ROOM;
@@ -8,10 +8,10 @@ void reset();
 
 void create()
 {
-    set("short", "×ßÀÈ");
+    set("short", "èµ°å»Š");
     set("long", @LONG
-ÆÌ×ÅÄ¾°åµÄ×ßÀÈ¹á´©¶«Î÷Á½·½Ãæ£¬ÄÏ±ßÊÇÁíÒ»¼äÆ«Ìü¡£ËÄÖÜ·Ç³£Äþ¾²£¬
-¿ÉÎÅÖ¨Ö¨ÄñÓïºÍßóßó³æÃù£¬Ò»Æ¬ÏéºÍ¡£
+é“ºç€æœ¨æ¿çš„èµ°å»Šè´¯ç©¿ä¸œè¥¿ä¸¤æ–¹é¢ï¼Œå—è¾¹æ˜¯å¦ä¸€é—´ååŽ…ã€‚å››å‘¨éžå¸¸å®é™ï¼Œ
+å¯é—»å±å±é¸Ÿè¯­å’Œå”§å”§è™«é¸£ï¼Œä¸€ç‰‡ç¥¥å’Œã€‚
 LONG
     );
 

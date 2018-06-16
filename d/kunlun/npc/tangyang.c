@@ -12,21 +12,21 @@ void create()
 		mapping I_inquiry=([ ]);
 		mixed Skill_name;
 
-        set_name("����", ({ "tang yang","tang"}) );
-        set("title", "���̺�ˮ������ʹ");
-        create_family("����",37,"����ʹ");
-        set("gender", "����");
+        set_name("唐洋", ({ "tang yang","tang"}) );
+        set("title", "明教洪水旗掌旗使");
+        create_family("明教",37,"掌旗使");
+        set("gender", "男性");
         set("age",35);
         set("long", "
-����
+待添
 \n");
         set("attitude", "peaceful");
         set("shen", 1000000);
         
-	I_inquiry["name"]="���¾������̺�ˮ������ʹ���󣬲�֪�����к�ָ�̡�";
-		I_inquiry["����"]=(: ask_job :);
+	I_inquiry["name"]="在下就是明教洪水旗掌旗使唐洋，不知阁下有何指教。";
+		I_inquiry["任务"]=(: ask_job :);
 		I_inquiry["job"]=(: ask_job :);
-		I_inquiry["����"]=(: ask_abandon :);
+		I_inquiry["放弃"]=(: ask_abandon :);
 		I_inquiry["abandon"]=(: ask_abandon :);
 		Set_Inquiry(I_inquiry,Skill_name);
 
@@ -65,14 +65,14 @@ string ask_job()
      mapping fam ;
      object ling,tong;
 
-    if (!(fam = this_player()->query("family")) || fam["family_name"] != "����")
-        return "��λ"+RANK_D->query_respect(player)+"�����ҽ̵��֣��Ǹ������Ǹҷ��ɸ���ʲô�����ء�\n";
+    if (!(fam = this_player()->query("family")) || fam["family_name"] != "明教")
+        return "这位"+RANK_D->query_respect(player)+"并非我教弟兄，那敢在下那敢分派阁下什么任务呢。\n";
 
 	if(!objectp(ling = present("tieyan ling", player)) )
-		return "��λ"+RANK_D->query_respect(player)+"û���ҽ��������������μ�¼���͹�ʧ��\n";
+		return "这位"+RANK_D->query_respect(player)+"没有我教信物铁焰令，我如何记录奖赏过失？\n";
 
 //	if (fam["generation"] <37)
-//		 return "��λ"+RANK_D->query_respect(player)+"�ѹ�Ϊ�ҽ�"+fam["title"]+"������ͷ���ܡ�\n";
+//		 return "这位"+RANK_D->query_respect(player)+"已贵为我教"+fam["title"]+"，岂敢劳烦大架。\n";
 
 	if (player->query_temp("water_amount") >= 15)
 	{
@@ -81,8 +81,8 @@ string ask_job()
 			destruct(tong);
 		player->delete_temp("water_amount");
 		remove_call_out("reward");
-		call_out("reward",1,this_player(),"��ˮ");
-		return "�ɵò�������ȥ�ú���Ϣ��Ϣ��\n";
+		call_out("reward",1,this_player(),"挑水");
+		return "干得不错！下去好好休息休息。\n";
 	}
 
 	if(player->query("mingjiao/job"))
@@ -94,11 +94,11 @@ string ask_job()
 	
 	tong=new(OBJ_PATH"/mutong");
 	tong->move(player);
-	tell_object(player,"�������һ��ľͰ��\n");
+	tell_object(player,"唐洋给你一个木桶。\n");
 	
-	return "�Һ�ˮ���ڽ��ڸ������춾ˮ�������ˮ�������ˣ���ȥ\n"
-		"��ˮ��̶ȡЩˮ����������ˮ�ҵĴ�����̶ˮ���Ǻ�\n"
-		"�䣬��Ҫ���С�ġ�\n";
+	return "我洪水旗在教内负责制造毒水，最近冰水快用完了，你去\n"
+		"碧水寒潭取些水来，倒进藏水室的大缸里。那潭水极是寒\n"
+		"冷，你要多加小心。\n";
 
 		 
 }   

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cherry.c Ó£ÌÒ
+// cherry.c æ¨±æ¡ƒ
 
 #include <ansi.h>
 inherit ITEM;
@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name(RED"Ó£ÌÒ"NOR, ({"ying tao", "cherry"}));
+	set_name(RED"æ¨±æ¡ƒ"NOR, ({"ying tao", "cherry"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»µúË®ÁéĞÂÏÊ£¬ºìÑŞ¿ÉÈËµÄÓ£ÌÒ¡£\n");
-		set("unit", "µú");
+		set("long", "ä¸€ç¢Ÿæ°´çµæ–°é²œï¼Œçº¢è‰³å¯äººçš„æ¨±æ¡ƒã€‚\n");
+		set("unit", "ç¢Ÿ");
 		set("value", 60);
 		set("food_remaining", 4);
 		set("food_supply", 30);

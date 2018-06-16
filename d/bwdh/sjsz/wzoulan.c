@@ -7,9 +7,9 @@ inherit ROOM;
 #include "sjsz_room.h"
 
 void create() {
-	 set("short", HIG"Ğ¡µÀ"NOR);
+	 set("short", HIG"å°é“"NOR);
 	 set("long", @LONG
-ÕâÀïÊÇÒ»ÌõÁÖÖĞĞ¡µÀ£¬¼Å¾²µÃÈÃÈËº¦ÅÂ¡£
+è¿™é‡Œæ˜¯ä¸€æ¡æ—ä¸­å°é“ï¼Œå¯‚é™å¾—è®©äººå®³æ€•ã€‚
 LONG
 	 );
 	 set("exits", ([

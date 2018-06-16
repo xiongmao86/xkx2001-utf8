@@ -1,15 +1,15 @@
 //Cracked by Roath
-// xiake-jian.c ÏÀ¿Íµ¶
+// xiake-jian.c ä¾ å®¢åˆ€
 
 inherit SKILL;
 
 mapping *action = ({
-([     "action" : "$Nµ¶½»×óÊÖ£¬Ò»ÕÐ¡¸³ÖõüÈ°ºîÙø¡¹£¬ÊÖÖÐ$wÓÉÏÂÍùÉÏ·´ÊÖÏò$nµÄ$lÅü³ö",
+([     "action" : "$Nåˆ€äº¤å·¦æ‰‹ï¼Œä¸€æ‹›ã€ŒæŒè§žåŠä¾¯å¬´ã€ï¼Œæ‰‹ä¸­$wç”±ä¸‹å¾€ä¸Šåæ‰‹å‘$nçš„$låŠˆå‡º",
        "force" : 120,
        "dodge" : 20,
        "damage" : 5,
         "lvl" : 0,
-        "damage_type":  "¸îÉË"
+        "damage_type":  "å‰²ä¼¤"
 ]),
 });
 
@@ -33,9 +33,9 @@ int practice_skill(object me)
 
        if (!objectp(weapon = me->query_temp("weapon"))
        || (string)weapon->query("skill_type") != "blade")
-               return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+               return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
        if ((int)me->query("jingli") < 50)
-               return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·ÏÀ¿Íµ¶¡£\n");
+               return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒä¾ å®¢åˆ€ã€‚\n");
        me->receive_damage("jingli", 30);
        return 1;
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�߹�ɽ��");
+	set("short", "蛇谷山道");
 	set("long", @LONG
-���ǰ���ɽ�߹��е�ɽ·����һ�������ȳ�����С�������ŵ���
-����������������С�ɽ·������ľ�������ݴ��в�ʱ����ɳɳ֮��
-���ƺ���ʲ���ڲ������شܶ���
+这是白驼山蛇谷中的山路，是一条人马踩出来的小道，随着地势
+曲折起伏，蜿蜒难行。山路两旁林木葱郁，草丛中不时响起沙沙之声
+，似乎有什麽在草里来回窜动。
 LONG
 	);
 

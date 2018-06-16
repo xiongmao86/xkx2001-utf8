@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sleeproom.c »ª²ØâÖÐÝÏ¢ÊÒ
+// sleeproom.c åŽè—åºµä¼‘æ¯å®¤
 // Shan: 96/06/22
 
 #include <room.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»ª²ØâÖÐÝÏ¢ÊÒ");
+        set("short", "åŽè—åºµä¼‘æ¯å®¤");
 	set("long", @LONG
-ÕâÀïÊÇ¶ëáÒ»ª²ØâÖµÄÐÝÏ¢ÊÒ¡£´°Á±À­ÏÂÀ´£¬·¿ÀïÕûÕûÆëÆë·ÅÁËºÜ¶àÄ¾´²¡£
-ÓÐ¼¸¸öÒ¹ÍíÊØâÖµÄÐ¡Ê¦Ì«ÕýÔÚË¯¾õ¡£
-¡¡¡¡ÐÝÏ¢ÊÒÍâ¾ÍÊÇìø·¿¡£
+è¿™é‡Œæ˜¯å³¨åµ‹åŽè—åºµçš„ä¼‘æ¯å®¤ã€‚çª—å¸˜æ‹‰ä¸‹æ¥ï¼Œæˆ¿é‡Œæ•´æ•´é½é½æ”¾äº†å¾ˆå¤šæœ¨åºŠã€‚
+æœ‰å‡ ä¸ªå¤œæ™šå®ˆåºµçš„å°å¸ˆå¤ªæ­£åœ¨ç¡è§‰ã€‚
+ã€€ã€€ä¼‘æ¯å®¤å¤–å°±æ˜¯ç¦…æˆ¿ã€‚
 LONG
 	);
 	set("exits", ([
@@ -22,7 +22,7 @@ LONG
                 "door"          :       (: look_door :),
         ]));
 
-        create_door("north", "Ä¾ÃÅ", "south", DOOR_CLOSED);
+        create_door("north", "æœ¨é—¨", "south", DOOR_CLOSED);
 
 	set("no_fight", 1);
 	set("sleep_room", 1);

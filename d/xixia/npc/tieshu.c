@@ -7,13 +7,13 @@ int ask_me();
 
 void create()
 {
-	set_name("ºÕÁ¬ÌúÊ÷", ({ "helian tieshu", "helian", "tieshu" }) );
-	set("nickname", "Î÷ÏÄÍõÒ¯");
-	set("title", "Õ÷¶«´ó½«¾ü");
-	set("gender", "ÄĞĞÔ");
+	set_name("èµ«è¿é“æ ‘", ({ "helian tieshu", "helian", "tieshu" }) );
+	set("nickname", "è¥¿å¤ç‹çˆ·");
+	set("title", "å¾ä¸œå¤§å°†å†›");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"´ËÈËÉí´©´óºì½õÅÛ£¬Ó¥¹³±Ç¡¢°Ë×ÖĞë¡£\n");
+		"æ­¤äººèº«ç©¿å¤§çº¢é”¦è¢ï¼Œé¹°é’©é¼»ã€å…«å­—é¡»ã€‚\n");
 	set("combat_exp", 50000);
         set("shen_type", -1);
 	set("no_get", 1);
@@ -38,7 +38,7 @@ void create()
 	set_skill("dodge", 60);
         set("inquiry",
         ([
-                "Ğ§Ãü" : (: ask_me :),
+                "æ•ˆå‘½" : (: ask_me :),
         ]));
 
 
@@ -59,8 +59,8 @@ int do_kill(string arg)
         if (!arg || !id(arg)) return 0;
 
         if (present("wu shi", environment(this_object()))){
-        	command("say ÄãÏëÄ±º¦±¾¹Ù£¬µ±ÕæÊÇ×ÔÕÒËÀÂ·£¡ ×óÓÒºÎÔÚ£¡");
-        	message_vision("ºÕÁ¬ÌúÊ÷×óÓÒµÄÎäÊ¿¶Ô$N·¢¶¯¹¥»÷£¡\n", this_player());
+        	command("say ä½ æƒ³è°‹å®³æœ¬å®˜ï¼Œå½“çœŸæ˜¯è‡ªæ‰¾æ­»è·¯ï¼ å·¦å³ä½•åœ¨ï¼");
+        	message_vision("èµ«è¿é“æ ‘å·¦å³çš„æ­¦å£«å¯¹$Nå‘åŠ¨æ”»å‡»ï¼\n", this_player());
 
         	for(i=0; i<2; i++) {
                 	if( objectp( ob = present("wu shi " + (i+1), environment(this_object())) ) )
@@ -79,12 +79,12 @@ int ask_me()
         room = load_object("/d/taishan/fengchan");
 
         if (userp(me) && me->query("id") == room->query("winner") ) {
-        	command("say ¸óÏÂÊÇÎäÁÖÃËÖ÷£¬±¾ÌÃ¿Éµ£´ı²»Æğ£¡");
+        	command("say é˜ä¸‹æ˜¯æ­¦æ—ç›Ÿä¸»ï¼Œæœ¬å ‚å¯æ‹…å¾…ä¸èµ·ï¼");
         	return 1;
         }
 
 	if ((int)me->query_condition("ypjob") > 0) {
-		say("ºÕÁ¬ÌúÊ÷´óÅ­µÀ£ºËûÂèµÄ£¬°ä¸øÄãµÄ»î»¹Ã»Íê³É£¬¾ÓÈ»¸ÒÓĞÁ³À´¼ûÎÒ£¡\n");
+		say("èµ«è¿é“æ ‘å¤§æ€’é“ï¼šä»–å¦ˆçš„ï¼Œé¢ç»™ä½ çš„æ´»è¿˜æ²¡å®Œæˆï¼Œå±…ç„¶æ•¢æœ‰è„¸æ¥è§æˆ‘ï¼\n");
 		command("slap " +me->query("id"));
 		return 1;
 	}
@@ -92,15 +92,15 @@ int ask_me()
 	if ( ((int)me->query("yipin/done")+30)/
 			((int)me->query("yipin/failure")+1) < random(3)) {
 		command("sneer " +me->query("id"));
-		say("ºÕÁ¬ÌúÊ÷ÀäĞ¦µÀ£ºÄãÏÈĞª¼¸Ìì°É£¬ÎÒÊÖÍ·Õâ¼¸×®²îÊÂ¿ÉĞÅ²»¹ıÈÃÄãÈ¥×ö¡£\n");
+		say("èµ«è¿é“æ ‘å†·ç¬‘é“ï¼šä½ å…ˆæ­‡å‡ å¤©å§ï¼Œæˆ‘æ‰‹å¤´è¿™å‡ æ¡©å·®äº‹å¯ä¿¡ä¸è¿‡è®©ä½ å»åšã€‚\n");
 		me->delete_temp("xixia/testpass");
-		me->delete_temp("xixia/Ò»Æ·ÌÃ");
+		me->delete_temp("xixia/ä¸€å“å ‚");
 		me->delete_temp("apply/short");
 		me->apply_condition("ypjob", 100);
 		return 1;
 	}
  
-	if (me->query_temp("xixia/Ò»Æ·ÌÃ")) {
+	if (me->query_temp("xixia/ä¸€å“å ‚")) {
 		command("nod " +me->query("id"));
 		me->apply_condition("ypjob", 70);
 		if (me->query_condition("xakiller") > 0)
@@ -110,18 +110,18 @@ int ask_me()
 	}
 
 	if ((int)me->query_temp("xixia/testpass")) {
-		say("ºÕÁ¬ÌúÊ÷¹ş¹ş´óĞ¦µÀ£»ºÃ£¡½ñÌìÆğÄã¾ÍÔÚÎÒÎ÷ÏÄÒ»Æ·ÌÃÏÂÈÎÊÂ°É£¡\n");
-		me->set_temp("xixia/Ò»Æ·ÌÃ",1);
+		say("èµ«è¿é“æ ‘å“ˆå“ˆå¤§ç¬‘é“ï¼›å¥½ï¼ä»Šå¤©èµ·ä½ å°±åœ¨æˆ‘è¥¿å¤ä¸€å“å ‚ä¸‹ä»»äº‹å§ï¼\n");
+		me->set_temp("xixia/ä¸€å“å ‚",1);
 		me->delete_temp("xixia/testpass");
 		me->set_temp("apply/short",
-     ({ HIW"Î÷ÏÄÒ»Æ·ÌÃÎäÊ¿ "NOR+me->query("name")+"("+capitalize(me->query("id"))+")"}));
+     ({ HIW"è¥¿å¤ä¸€å“å ‚æ­¦å£« "NOR+me->query("name")+"("+capitalize(me->query("id"))+")"}));
 		me->apply_condition("ypjob", 70);
 		if (me->query_condition("xakiller") > 0)
 		me->apply_condition("xakiller", 0);
 		call_out("assign_job", 1, me);
 		return 1;
 	} else {
-		return notify_fail ("ºÕÁ¬ÌúÊ÷ËµµÀ£ºÄãÈ¥ÎÊÅ¬¶ùº£°É¡£\n");
+		return notify_fail ("èµ«è¿é“æ ‘è¯´é“ï¼šä½ å»é—®åŠªå„¿æµ·å§ã€‚\n");
 	}
 }
 
@@ -143,7 +143,7 @@ private int is_suitable(object victim, object killer)
 	if( victim->query("combat_exp") < killer->query("combat_exp")
 	 || victim->query("combat_exp") > killer->query("combat_exp")*7/4
 	 || !clonep(victim) || userp(victim) 
-	 || victim->query("race") != "ÈËÀà"
+	 || victim->query("race") != "äººç±»"
 	 || victim->query("shen") < 0
 	 || victim->query("winner")
 	 || strsrch(base_name(victim), "/kunfu/skill") == 0
@@ -175,11 +175,11 @@ void assign_job(object me)
 
 	ttt=gender_pronoun(victim_list[i]->query("gender"));
 
-	say("ºÕÁ¬ÌúÊ÷ËµµÀ£º"+victim_list[i]->query("name")+"½üÈÕÒ»Ö±¸úÎÒÃÇÎ÷ÏÄ¹ú×÷¶Ô£¬"
-	    +"ÄãÈ¥¸øÎÒ°Ñ"+ttt+"É±ÁË£¡\n");
-	tell_object(me,"ºÕÁ¬ÌúÊ÷ËµÍêÈÓ¸øÄãÒ»¿éÇàÌúÁî¡£\n");
+	say("èµ«è¿é“æ ‘è¯´é“ï¼š"+victim_list[i]->query("name")+"è¿‘æ—¥ä¸€ç›´è·Ÿæˆ‘ä»¬è¥¿å¤å›½ä½œå¯¹ï¼Œ"
+	    +"ä½ å»ç»™æˆ‘æŠŠ"+ttt+"æ€äº†ï¼\n");
+	tell_object(me,"èµ«è¿é“æ ‘è¯´å®Œæ‰”ç»™ä½ ä¸€å—é’é“ä»¤ã€‚\n");
 	ob=new(__DIR__"obj/ypling");
-	ob->set("long", "ÕâÊÇÒ»¿éÎ÷ÏÄÒ»Æ·ÌÃÌÃÖ÷Áî¡£ÉÏÃæĞ´×Å¡°"+victim_list[i]->query("name")+"¡±¡£\n");
+	ob->set("long", "è¿™æ˜¯ä¸€å—è¥¿å¤ä¸€å“å ‚å ‚ä¸»ä»¤ã€‚ä¸Šé¢å†™ç€â€œ"+victim_list[i]->query("name")+"â€ã€‚\n");
 	ob->set("victim", victim_list[i]->query("name"));
 	ob->set("owner", me->query("id"));
         ob->move(me);
@@ -188,13 +188,13 @@ void assign_job(object me)
 int accept_object(object who, object ob)
 {
 	string *award_list = ({
-	"¶ÉÄÑ",
-	"¶É½Ù",
-	"¶É¶ò",
-	"ºéÆß¹«",
-	"»ÆÒ©Ê¦",
-	"ÖÜÜÆÈô",
-	"ÕÅÈı·á"
+	"æ¸¡éš¾",
+	"æ¸¡åŠ«",
+	"æ¸¡å„",
+	"æ´ªä¸ƒå…¬",
+	"é»„è¯å¸ˆ",
+	"å‘¨èŠ·è‹¥",
+	"å¼ ä¸‰ä¸°"
 	});
 
 	int gain;
@@ -203,7 +203,7 @@ int accept_object(object who, object ob)
 	 || ob->query("owner") != who->query("id"))
 		return 0;
 
-	if (who->query_temp("xixia/Ò»Æ·ÌÃ")){
+	if (who->query_temp("xixia/ä¸€å“å ‚")){
 	gain = ob->query("gain");
 		if (who->query_condition("ypjob") > 0 && ob->query("gain")){
 		who->add("combat_exp", gain * 6 + random(gain*5));
@@ -211,7 +211,7 @@ int accept_object(object who, object ob)
 		if (who->query("potential") > who->query("max_potential"))
 			who->set("potential", who->query("max_potential"));
 		command("u&me "+who->query("id"));
-		command("say Æ¾ÇàÌúÁîÈ¥Å¬¶ûº£ÄÇÀïÁì¹¤Ç®°É¡£");
+		command("say å‡­é’é“ä»¤å»åŠªå°”æµ·é‚£é‡Œé¢†å·¥é’±å§ã€‚");
 		who->add("yipin/done", 1);
 		who->apply_condition("ypjob", 0);
 
@@ -221,7 +221,7 @@ int accept_object(object who, object ob)
 	}
 	else {
 		command("kick "+who->query("id"));
-		say("ºÕÁ¬ÌúÊ÷´óÅ­µÀ£ºÃ»ÓÃµÄ¶«Î÷£¬Õâ÷á°ëÌì²Å¸ÉÍê»î£¬¿÷Äã»¹ÓĞÁ³»ØÀ´¼ûÎÒ£¡\n");
+		say("èµ«è¿é“æ ‘å¤§æ€’é“ï¼šæ²¡ç”¨çš„ä¸œè¥¿ï¼Œè¿™éº½åŠå¤©æ‰å¹²å®Œæ´»ï¼Œäºä½ è¿˜æœ‰è„¸å›æ¥è§æˆ‘ï¼\n");
 		who->add("yipin/failure", 1);
 	}		
 	call_out("destroy_it", 1, ob);
@@ -237,7 +237,7 @@ void destroy_it(object ob)
 
 void unconcious()
 {
-        message_vision("\nÍ»È»£¬$NÒ»°´×ùÒÎÉÏµÄ»ú¹Ø£¬Ö»¼ûÇ½ÉÏÏÖ³öÒ»¸öÃÅ¶´£¬$N×ªÉí×êÁË½øÈ¥¡£\n",
+        message_vision("\nçªç„¶ï¼Œ$Nä¸€æŒ‰åº§æ¤…ä¸Šçš„æœºå…³ï¼Œåªè§å¢™ä¸Šç°å‡ºä¸€ä¸ªé—¨æ´ï¼Œ$Nè½¬èº«é’»äº†è¿›å»ã€‚\n",
                 this_object());
         destruct(this_object());
 }	

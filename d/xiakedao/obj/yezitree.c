@@ -10,13 +10,13 @@ int t0;
 
 void create()
 {
-	set_name("Ò¬×ÓÊ÷",({"yezi tree", "tree"}));
+	set_name("æ¤°å­æ ‘",({"yezi tree", "tree"}));
 	set_weight(900000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¿Ã¸ß¸ßµÄÒ¬×ÓÊ÷£¬Ê÷¶¥ºÃÏó»¹ÓĞ¼¸Ö»Ò¬×Ó¡£\n");
-		set("unit", "¿Ã");
+		set("long", "è¿™æ˜¯ä¸€æ£µé«˜é«˜çš„æ¤°å­æ ‘ï¼Œæ ‘é¡¶å¥½è±¡è¿˜æœ‰å‡ åªæ¤°å­ã€‚\n");
+		set("unit", "æ£µ");
 		set("value", 8);
 		set("no_get", 1);
     	}
@@ -43,13 +43,13 @@ int do_pa(string arg)
 	object ye, me = this_player();
 	int check;
 
-	if( !arg || arg!="tree" && arg != "Ê÷" )
-		return notify_fail("ÄãÒªÅÀÉõÃ´£¿\n");
+	if( !arg || arg!="tree" && arg != "æ ‘" )
+		return notify_fail("ä½ è¦çˆ¬ç”šä¹ˆï¼Ÿ\n");
 	
 	if ((int)me->query("jingli") < 50)
-                return notify_fail("ÄãÀÛµÃÁ¬Õ¾¶¼Õ¾²»ÆğÀ´ÁË£¬Ôõ÷áÅÀÊ÷£¿\n");
+                return notify_fail("ä½ ç´¯å¾—è¿ç«™éƒ½ç«™ä¸èµ·æ¥äº†ï¼Œæ€éº½çˆ¬æ ‘ï¼Ÿ\n");
         me->receive_damage("jingli", 20);
-	message_vision(HIW"$NË«ÊÖ±§×¡Ê÷¸É£¬ºßßêºßßêµÄÅÀÁËÆğÀ´¡£\n"NOR,
+	message_vision(HIW"$NåŒæ‰‹æŠ±ä½æ ‘å¹²ï¼Œå“¼å“§å“¼å“§çš„çˆ¬äº†èµ·æ¥ã€‚\n"NOR,
 		       me);
         if ((int)me->query_skill("dodge", 1) >= 10)
 	  {
@@ -57,19 +57,19 @@ int do_pa(string arg)
 	      {
 		if (query("yezicount")>0)
 		  {
-		    message_vision("$NÅÀÉÏÁËÊ÷¶¥£¬ÕªÁËÒ»Ö»Ò¬×Ó¡£\n", me);
+		    message_vision("$Nçˆ¬ä¸Šäº†æ ‘é¡¶ï¼Œæ‘˜äº†ä¸€åªæ¤°å­ã€‚\n", me);
 		    ye = new(__DIR__+ "yezi");
 		    ye->move(me);
 		    add("yezicount", -1);
 		  }
 		else
 		  {
-                    message_vision("$NÅÀÉÏÁËÊ÷¶¥£¬·¢ÏÖÒ¬×ÓÒÑ¾­±»ÈËÕª¹âÁË¡£\n", me);
+                    message_vision("$Nçˆ¬ä¸Šäº†æ ‘é¡¶ï¼Œå‘ç°æ¤°å­å·²ç»è¢«äººæ‘˜å…‰äº†ã€‚\n", me);
 		  }
 	      }
 	    else
 	      {
-                message_vision("$NÅÀÉÏÁËÊ÷¶¥£¬ÏëÕªÒ»Ö»Ò¬×Ó£¬Ã»Ïëµ½ÊÖÖĞÒÑ¾­ÄÃÁËÁíÒ»Ö»£¬Ò»¸ö²»ÁôÉñ£¬´ÓÊ÷¶¥ÔÔÁËÏÂÀ´£¡\n", me);
+                message_vision("$Nçˆ¬ä¸Šäº†æ ‘é¡¶ï¼Œæƒ³æ‘˜ä¸€åªæ¤°å­ï¼Œæ²¡æƒ³åˆ°æ‰‹ä¸­å·²ç»æ‹¿äº†å¦ä¸€åªï¼Œä¸€ä¸ªä¸ç•™ç¥ï¼Œä»æ ‘é¡¶æ ½äº†ä¸‹æ¥ï¼\n", me);
 		if ((int)me->query("qi") > 30)
 		  me->receive_damage("qi", 20);
 		else me->receive_damage("jingli",40);
@@ -81,7 +81,7 @@ int do_pa(string arg)
 	  (int)me->query_skill("dodge",1);
         if (check > (int)me->query("combat_exp") * 10)
 	  {       
-	    write ("ÄãÊµÕ½¾­Ñé²»×ã£¬ÅÀÁË°ëÌìÈ«ÎŞ³¤½ø¡£\n");
+	    write ("ä½ å®æˆ˜ç»éªŒä¸è¶³ï¼Œçˆ¬äº†åŠå¤©å…¨æ— é•¿è¿›ã€‚\n");
 	    return 1;
 	  }
 

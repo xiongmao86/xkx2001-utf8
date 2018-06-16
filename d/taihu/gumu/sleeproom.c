@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÐÝÏ¢ÊÒ");
+	set("short", "ä¼‘æ¯å®¤");
 	set("long", @LONG
-Äãµ«¼û·¿ÖÐ¿Õ¿Õ¶´¶´£¬Ò»¿é±¾³¤ÌõÇàÊ¯×÷´²(shichuang)£¬´²ÉÏÆÌ
-ÁËÕÅ²ÝÏ¯£¬Ò»·ù°×²¼µ±×÷±¡±»¡£ÊÒ¶«µÄÒ»¸ùÌú¶¤ÉÏÏµ×¡ÁËÒ»¸ùÉþË÷£¬
-ÉþË÷ºá¹ýÊÒÖÐ£¬ÁíÒ»¶ËÏµÔÚÎ÷±ÚµÄÒ»¿Ú¶¤ÉÏ£¬ÉþË÷£¨shengsuo)ÀëµØ
-Ô¼ÄªÒ»ÈËÀ´¸ß¡£
+ä½ ä½†è§æˆ¿ä¸­ç©ºç©ºæ´žæ´žï¼Œä¸€å—æœ¬é•¿æ¡é’çŸ³ä½œåºŠ(shichuang)ï¼ŒåºŠä¸Šé“º
+äº†å¼ è‰å¸­ï¼Œä¸€å¹…ç™½å¸ƒå½“ä½œè–„è¢«ã€‚å®¤ä¸œçš„ä¸€æ ¹é“é’‰ä¸Šç³»ä½äº†ä¸€æ ¹ç»³ç´¢ï¼Œ
+ç»³ç´¢æ¨ªè¿‡å®¤ä¸­ï¼Œå¦ä¸€ç«¯ç³»åœ¨è¥¿å£çš„ä¸€å£é’‰ä¸Šï¼Œç»³ç´¢ï¼ˆshengsuo)ç¦»åœ°
+çº¦èŽ«ä¸€äººæ¥é«˜ã€‚
 LONG
 	);
 	 set("exits", ([

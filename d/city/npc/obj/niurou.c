@@ -1,5 +1,5 @@
 //Cracked by Roath
-// niurou.c ÊìÅ£Èâ
+// niurou.c ç†Ÿç‰›è‚‰
 
 inherit ITEM;
 inherit F_FOOD;
@@ -9,13 +9,13 @@ int do_cut(string);
 
 void create()
 {
-        set_name("ÊìÅ£Èâ", ({"shou niurou", "rou"}));
+        set_name("ç†Ÿç‰›è‚‰", ({"shou niurou", "rou"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ëºÏãÅçÅçµÄÊìÅ£Èâ¡£\n");
-                set("unit", "ëº");
+                set("long", "ä¸€ç‰’é¦™å–·å–·çš„ç†Ÿç‰›è‚‰ã€‚\n");
+                set("unit", "ç‰’");
                 set("value", 120);
                 set("food_remaining", 3);
                 set("food_supply", 80);

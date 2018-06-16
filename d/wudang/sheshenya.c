@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sheshenya.c ·ÉÉıÑÒ
+// sheshenya.c é£å‡å²©
 // by Fang 8/19/96
 // Modified by xQin 6/99
 
@@ -29,11 +29,11 @@ string *wudang = ({
 
 void create()
 {
-	set("short", "·ÉÉıÑÒ");
+	set("short", "é£å‡å²©");
 	set("long", @LONG
-ÕâÊÇÒ»´¦ÏÕ¾şµÄĞüÑÂÇÍ±Ú£¬Ïà´«ÕæÎäµÛÔÚ´ËÉáÉíµÃµÀ¡£´Ë¼ä·åÁëÆæÇÍ£¬
-Ê÷Ä¾²Ô´ä£¬ÉÏ½Ó±ÌÏö£¬ÏÂÁÙ¾ø½§£¬ÊÇÎäµ±É½ÈıÊ®ÁùÑÒÖĞ×îÃÀµÄÒ»´¦£¬ÑÂÉÏÁ¢
-ÓĞÌúÕ¤À¸£¬·ÀÖ¹ÓĞÈË×ÔÉ±²½ÕæÎäµÛµÄºó³¾¡£
+è¿™æ˜¯ä¸€å¤„é™©å³»çš„æ‚¬å´–å³­å£ï¼Œç›¸ä¼ çœŸæ­¦å¸åœ¨æ­¤èˆèº«å¾—é“ã€‚æ­¤é—´å³°å²­å¥‡å³­ï¼Œ
+æ ‘æœ¨è‹ç¿ ï¼Œä¸Šæ¥ç¢§éœ„ï¼Œä¸‹ä¸´ç»æ¶§ï¼Œæ˜¯æ­¦å½“å±±ä¸‰åå…­å²©ä¸­æœ€ç¾çš„ä¸€å¤„ï¼Œå´–ä¸Šç«‹
+æœ‰é“æ …æ ï¼Œé˜²æ­¢æœ‰äººè‡ªæ€æ­¥çœŸæ­¦å¸çš„åå°˜ã€‚
 LONG
 	);
 	set("outdoors", "wudang");
@@ -59,15 +59,15 @@ int do_jump(string arg)
 	object me = this_player();
 
 	if( !arg || arg == "" )
-		return notify_fail("Ê²÷á£¿\n");
+		return notify_fail("ä»€éº½ï¼Ÿ\n");
 
 	if( arg == "cliff" )
 	{
 		if( me->query_skill("dodge") < 150 )
-			return notify_fail("ÄÇ÷á¸ßµÄÌúÕ¤À¸£¬Äã±ÄµÃÉÏÈ¥÷á£¿\n");
+			return notify_fail("é‚£éº½é«˜çš„é“æ …æ ï¼Œä½ è¹¦å¾—ä¸Šå»éº½ï¼Ÿ\n");
 
-		message_vision("$N×İÉíÔ¾¹ıÌúÕ¤À¸£¬×ãµ×Ì¤¿Õ£¬°ë¸öÉí×ÓÒÑÔÚÉîÔ¨Ö®ÉÏ£¬×ó×ã¸ú×Å¿ç³ö£¬È«ÉíÏòÇ°¼±ÆË£¬Íù¾ø±ÚÌøÏÂ£¡\n", me);
-		me->set_temp("last_damage_from", "Ğ§·ÂÕæÎäÌøÑÂ·ÉÉıÁË");
+		message_vision("$Nçºµèº«è·ƒè¿‡é“æ …æ ï¼Œè¶³åº•è¸ç©ºï¼ŒåŠä¸ªèº«å­å·²åœ¨æ·±æ¸Šä¹‹ä¸Šï¼Œå·¦è¶³è·Ÿç€è·¨å‡ºï¼Œå…¨èº«å‘å‰æ€¥æ‰‘ï¼Œå¾€ç»å£è·³ä¸‹ï¼\n", me);
+		me->set_temp("last_damage_from", "æ•ˆä»¿çœŸæ­¦è·³å´–é£å‡äº†");
 		fall_down(me, "char", 0);
 		return 1;
 	}
@@ -83,26 +83,26 @@ int do_push(string who)
 	mapping prepare;
 
 	victim = present(who, environment(me));
-	if( !who )return notify_fail("ÄãÏëÍÆÊ²Ã´£¿\n");
-	if( !victim ) return notify_fail("Õâ¸öÈË²»ÔÚÕâÀï°É¡£\n");
-	if( victim==me ) return notify_fail("Ö¸Áî¸ñÊ½£ºjump cliff\n");
+	if( !who )return notify_fail("ä½ æƒ³æ¨ä»€ä¹ˆï¼Ÿ\n");
+	if( !victim ) return notify_fail("è¿™ä¸ªäººä¸åœ¨è¿™é‡Œå§ã€‚\n");
+	if( victim==me ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šjump cliff\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÏÖÔÚ×Ô¹Ë¶¼²»Ï¾£¬»¹ÓĞĞÄË¼º¦±ğÈË£¿\n");
+		return notify_fail("ä½ ç°åœ¨è‡ªé¡¾éƒ½ä¸æš‡ï¼Œè¿˜æœ‰å¿ƒæ€å®³åˆ«äººï¼Ÿ\n");
 
 	if( !victim->is_character() || victim->query("id") == "corpse" )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºthrow <ÎïÆ·>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šthrow <ç‰©å“>\n");
 
 	if( objectp(weapon = me->query_temp("weapon")) )
-		return notify_fail("ÄÃ×Å"+weapon->name()+"Ôõ÷áÍÆÈË£¿\n");
+		return notify_fail("æ‹¿ç€"+weapon->name()+"æ€éº½æ¨äººï¼Ÿ\n");
 
-	message_vision(CYN"\n$NÒ»»ÎÖ®¼Ê£¬ÒÑÈÆµ½$nÉíÅÔ£¬Í»È»¾¢¹áË«±Û£¬ÃÍµÄ½«$pÏòÇÍ±ÚÍÆÈ¥"NOR"£¡\n", me, victim);
+	message_vision(CYN"\n$Nä¸€æ™ƒä¹‹é™…ï¼Œå·²ç»•åˆ°$nèº«æ—ï¼Œçªç„¶åŠ²è´¯åŒè‡‚ï¼ŒçŒ›çš„å°†$på‘å³­å£æ¨å»"NOR"ï¼\n", me, victim);
 	me->start_busy(1);
 
 	if( !living(victim) )
 	{
-		message_vision("$nÍùÉ½¹ÈÖĞÖ±ÔÔÏÂÈ¥¡£\n", me, victim);
-		victim->set_temp("last_damage_from", "±»"+me->name()+"ÍÆÏÂĞüÑÂË¤ËÀÁË");
+		message_vision("$nå¾€å±±è°·ä¸­ç›´æ ½ä¸‹å»ã€‚\n", me, victim);
+		victim->set_temp("last_damage_from", "è¢«"+me->name()+"æ¨ä¸‹æ‚¬å´–æ‘”æ­»äº†");
 		do_scream();
 		fall_down(victim, "char", 0);
 		victim->revive();
@@ -131,8 +131,8 @@ int do_push(string who)
 
 		if( random( ap * 2 ) < dp && !random(10) )
 		{
-			message_vision("$NÈ«ÉíÁ¦µÀ¶¼ÓÃÔÚÕâÒ»ÍÆÖ®ÉÏ£¬²»ÁÏ¾¹±»$n±Ü¿ª£¬ÉíĞÎÒ»»Î£¬Ì¤ÁË¸ö¿Õ£¬´ÓĞüÑÂÅÔË¤ÁËÏÂÈ¥¡£\n", me, victim);
-			me->set_temp("last_damage_from", "´Ó°Ù³ß¸ß¿ÕµôÏÂ£¬Ë¤³ÉÒ»ÍÅÈâÄà");
+			message_vision("$Nå…¨èº«åŠ›é“éƒ½ç”¨åœ¨è¿™ä¸€æ¨ä¹‹ä¸Šï¼Œä¸æ–™ç«Ÿè¢«$né¿å¼€ï¼Œèº«å½¢ä¸€æ™ƒï¼Œè¸äº†ä¸ªç©ºï¼Œä»æ‚¬å´–æ—æ‘”äº†ä¸‹å»ã€‚\n", me, victim);
+			me->set_temp("last_damage_from", "ä»ç™¾å°ºé«˜ç©ºæ‰ä¸‹ï¼Œæ‘”æˆä¸€å›¢è‚‰æ³¥");
 			do_scream();
 			fall_down(me, "char", 0);
 			return 1;
@@ -151,13 +151,13 @@ int do_push(string who)
 			if( !parry_skill || !SKILL_D(parry_skill)->parry_available() ) 
 				parry_skill = "parry";
 			message_vision(replace_string(SKILL_D(parry_skill)->query_parry_msg(victim->query_temp("weapon"), 
-				victim), "$w", "Ë«ÊÖ"), me, victim);
+				victim), "$w", "åŒæ‰‹"), me, victim);
 			if( !victim->is_killing(me->query("id")) ) victim->kill_ob(me);
 			return 1;
 		}
 
-		message_vision("$nÒ»¸öÃ»Õ¾ÎÈ£¬²»ÓÉ×ÔÖ÷µÄÍùÉ½¹ÈÖĞµôÁËÏÂÈ¥¡£\n", me, victim);
-		victim->set_temp("last_damage_from", "±»"+me->name()+"ÍÆÏÂĞüÑÂË¤ËÀÁË");
+		message_vision("$nä¸€ä¸ªæ²¡ç«™ç¨³ï¼Œä¸ç”±è‡ªä¸»çš„å¾€å±±è°·ä¸­æ‰äº†ä¸‹å»ã€‚\n", me, victim);
+		victim->set_temp("last_damage_from", "è¢«"+me->name()+"æ¨ä¸‹æ‚¬å´–æ‘”æ­»äº†");
 		do_scream();
 		fall_down(victim, "char", 0);
                 return 1;
@@ -174,20 +174,20 @@ int fall_down(object me, string type, int stage)
 	{
 		switch( random(5) )
 		{
-			case 1 : tell_object(me, "ÄãÖ»¾õÉí×ÓĞé¸¡£¬È«×ö²»µÃÖ÷£¬Ö»ÊÇ±ÊÖ±µÄµøÂä¡£\n");
+			case 1 : tell_object(me, "ä½ åªè§‰èº«å­è™šæµ®ï¼Œå…¨åšä¸å¾—ä¸»ï¼Œåªæ˜¯ç¬”ç›´çš„è·Œè½ã€‚\n");
 				 break;
-			case 2 : tell_object(me, "Äã¶úÅÔ·çÉùºôºô£¬ËäÊÇÇê¿Ì¼äÖ®ÊÂ£¬È´ËÆÎŞÇîÎŞ¾¡£¬ÓÀÔ¶µø¸öÃ»Íê¡£\n");
+			case 2 : tell_object(me, "ä½ è€³æ—é£å£°å‘¼å‘¼ï¼Œè™½æ˜¯é¡·åˆ»é—´ä¹‹äº‹ï¼Œå´ä¼¼æ— ç©·æ— å°½ï¼Œæ°¸è¿œè·Œä¸ªæ²¡å®Œã€‚\n");
 				 break;
-			case 3 : tell_object(me, "ÄãÈËÔÚ°ë¿Õ£¬ĞéĞé»Î»Î£¬ÊµÊÇÉí²»ÓÉ¼º£¬È«ÎŞ°ë·Ö×ÅÁ¦´¦¡£\n");
+			case 3 : tell_object(me, "ä½ äººåœ¨åŠç©ºï¼Œè™šè™šæ™ƒæ™ƒï¼Œå®æ˜¯èº«ä¸ç”±å·±ï¼Œå…¨æ— åŠåˆ†ç€åŠ›å¤„ã€‚\n");
 				 break;
-			case 4 : tell_object(me, "ÄãÖ»¾õÉíÅÔ·çÉù»¢»¢£¬Éí×Ó²»×¡µÄÏòÏÂË¤Âä¡£\n");
+			case 4 : tell_object(me, "ä½ åªè§‰èº«æ—é£å£°è™è™ï¼Œèº«å­ä¸ä½çš„å‘ä¸‹æ‘”è½ã€‚\n");
 				 break;
-			default: tell_object(me, "Äãµ«¾õ¶úÅÔ·çÉù²»¾ø£¬Çê¿ÌÖ®¼ä£¬ÒÑµ½ÁË");
+			default: tell_object(me, "ä½ ä½†è§‰è€³æ—é£å£°ä¸ç»ï¼Œé¡·åˆ»ä¹‹é—´ï¼Œå·²åˆ°äº†");
 				 break;
 		}
 		me->move(__DIR__+wudang[stage]);
 
-		message("vision", "ÄãÒşÒş¼ûµ½Ò»ÈË´ÓÉ½·åÉÏÖ±¶é¶øÏÂ£¬Ò»Ê±È´¿´²»ÇåÊÇË­¡£\n",
+		message("vision", "ä½ éšéšè§åˆ°ä¸€äººä»å±±å³°ä¸Šç›´å •è€Œä¸‹ï¼Œä¸€æ—¶å´çœ‹ä¸æ¸…æ˜¯è°ã€‚\n",
 			environment(me), me);
 
 		fall_down(me, type, ++stage);
@@ -200,8 +200,8 @@ int fall_down(object me, string type, int stage)
 		{
 			if( !random(25) && random(inv[i]->query_kar()) < 15 )
 			{
-				tell_object(inv[i], "ÄãºÕÈ»·¢ÏÖÄÇÈË¾¹ÊÇÏòÄãÖ±³å¶øÀ´£¡£¡£¡\n");
-				tell_object(me, "Äã²»ÓÉ×ÔÖ÷µÄ±ÊÖ±¶éÏÂ£¬³åÏòÒ»ÈË£¬ÒÀÏ¡¿´³öÊÇ"+ inv[i]->name() +"¡£\n");
+				tell_object(inv[i], "ä½ èµ«ç„¶å‘ç°é‚£äººç«Ÿæ˜¯å‘ä½ ç›´å†²è€Œæ¥ï¼ï¼ï¼\n");
+				tell_object(me, "ä½ ä¸ç”±è‡ªä¸»çš„ç¬”ç›´å •ä¸‹ï¼Œå†²å‘ä¸€äººï¼Œä¾ç¨€çœ‹å‡ºæ˜¯"+ inv[i]->name() +"ã€‚\n");
 				if( random(inv[i]->query_skill("dodge")) > 200 )
 				{
 					dodge_skill = inv[i]->query_skill_mapped("dodge");
@@ -213,15 +213,15 @@ int fall_down(object me, string type, int stage)
 					inv[i]->query_skill_prepared("cuff") == "taiji-quan" &&
 					inv[i]->query_skill_mapped("parry") == "taiji-quan" )
 				{
-					message_vision(CYN"$Nµ±¼´Ê¹³öÒ»ÕĞ¡¸À¿È¸Î²¡¹£¬ÓÒ½ÅÊµ£¬×ó½ÅĞé£¬ÔËÆğ¡°¼·¡±×Ö¾÷£¬Õ³Á¬Õ³Ëæ£¬ÓÒÕÆÒÑ´î×¡$n£¬ºá¾¢·¢³ö£¬½«$pÏÂ¶éÖ®Á¦×ªÖ±Îªºá£¬½«$nÒÆµÃºá·É³öÈ¥¡£\n"NOR, inv[i], me);
-					tell_object(inv[i], HIR"ÄãÖ»¾õö®Ê±Ö®¼äÍ·ÔÎÑÛ»¨£¬¼¸Óû×øµ¹¡£\n"NOR);
+					message_vision(CYN"$Nå½“å³ä½¿å‡ºä¸€æ‹›ã€Œæ½é›€å°¾ã€ï¼Œå³è„šå®ï¼Œå·¦è„šè™šï¼Œè¿èµ·â€œæŒ¤â€å­—è¯€ï¼Œç²˜è¿ç²˜éšï¼Œå³æŒå·²æ­ä½$nï¼Œæ¨ªåŠ²å‘å‡ºï¼Œå°†$pä¸‹å •ä¹‹åŠ›è½¬ç›´ä¸ºæ¨ªï¼Œå°†$nç§»å¾—æ¨ªé£å‡ºå»ã€‚\n"NOR, inv[i], me);
+					tell_object(inv[i], HIR"ä½ åªè§‰éœæ—¶ä¹‹é—´å¤´æ™•çœ¼èŠ±ï¼Œå‡ æ¬²åå€’ã€‚\n"NOR);
 					inv[i]->set("neili", 0);
 				}
 				else
 				{
 					count++;
-					message_vision("$nÖ±³åÈë$N»³ÖĞ£¬Á¢Ê±×²µÃ$P¸¹ÆÆ³¦Á÷£¬ËÀÓÚ·ÇÃü¡£\n", inv[i], me);
-					inv[i]->receive_wound("qi", inv[i]->query("max_qi")+100, "±»"+me->name()+"×²µÃ¸¹ÆÆ³¦Á÷£¬ËÀÓÚ·ÇÃü");
+					message_vision("$nç›´å†²å…¥$Næ€€ä¸­ï¼Œç«‹æ—¶æ’å¾—$Pè…¹ç ´è‚ æµï¼Œæ­»äºéå‘½ã€‚\n", inv[i], me);
+					inv[i]->receive_wound("qi", inv[i]->query("max_qi")+100, "è¢«"+me->name()+"æ’å¾—è…¹ç ´è‚ æµï¼Œæ­»äºéå‘½");
 				}
 			break;
 			}
@@ -229,18 +229,18 @@ int fall_down(object me, string type, int stage)
 
 	if( !count )
 	{
-		tell_object(me, "ÄãÖ±×²µ½Ê¯½×ÉÏ£¬");
+		tell_object(me, "ä½ ç›´æ’åˆ°çŸ³é˜¶ä¸Šï¼Œ");
 		switch( random(3) )
 		{
-			case 0 : tell_object(me, "ÏÊÑª±ÅÁ÷£¬±Ç×ÓÍáÔÚ°ë±ß£¬È´±ãËÆ¿ªÁË¸öÓÍÆÌ¡ÃÏÌµÄ£¬ËáµÄ£¬À±µÄ£¬Ò»·¢¶¼¹ö³öÀ´¡£\n");
+			case 0 : tell_object(me, "é²œè¡€è¿¸æµï¼Œé¼»å­æ­ªåœ¨åŠè¾¹ï¼Œå´ä¾¿ä¼¼å¼€äº†ä¸ªæ²¹é“ºâˆ¶å’¸çš„ï¼Œé…¸çš„ï¼Œè¾£çš„ï¼Œä¸€å‘éƒ½æ»šå‡ºæ¥ã€‚\n");
 				 break;
-			case 1 : tell_object(me, "ÑÛÀâ·ìÁÑ£¬ÎÚÖé±Å³ö£¬Ò²ËÆ¿ªÁË¸ö²Ê²¯ÆÌµÄ¡Ã"HIR"ºì"NOR"µÄ£¬"BLU"ºÚ"NOR"µÄ£¬"MAG"×Ï"NOR"µÄ£¬¶¼ÕÀ½«³öÀ´¡£\n");
+			case 1 : tell_object(me, "çœ¼æ£±ç¼è£‚ï¼Œä¹Œç è¿¸å‡ºï¼Œä¹Ÿä¼¼å¼€äº†ä¸ªå½©å¸›é“ºçš„âˆ¶"HIR"çº¢"NOR"çš„ï¼Œ"BLU"é»‘"NOR"çš„ï¼Œ"MAG"ç´«"NOR"çš„ï¼Œéƒ½ç»½å°†å‡ºæ¥ã€‚\n");
 				 break;
-			case 2 : tell_object(me, "Ì«ÑôÉÏÕı×Å£¬È´ËÆ×öÁËÒ»È«ÌÃË®Â½µÄµÀ³¡¡ÃÅÍ¶ù£¬îà¶ù£¬îó¶ù£¬Ò»ÆëÏì¡£\n");
+			case 2 : tell_object(me, "å¤ªé˜³ä¸Šæ­£ç€ï¼Œå´ä¼¼åšäº†ä¸€å…¨å ‚æ°´é™†çš„é“åœºâˆ¶ç£å„¿ï¼Œé’¹å„¿ï¼Œé“™å„¿ï¼Œä¸€é½å“ã€‚\n");
 				 break;
 		}
-		message("vision", "Ö»ÌıµÃ¡¸Åé¡¹µÄÒ»Éù¾ŞÏì£¬" +me->name() 
-			+"×²ÔÚÊ¯½×ÉÏ£¬Ë¤µÃ·ÛÉíËé¹Ç£¬³ÉÁËÒ»ÍÅÈâ½¬¡£\n", environment(me), me);
+		message("vision", "åªå¬å¾—ã€Œç °ã€çš„ä¸€å£°å·¨å“ï¼Œ" +me->name() 
+			+"æ’åœ¨çŸ³é˜¶ä¸Šï¼Œæ‘”å¾—ç²‰èº«ç¢éª¨ï¼Œæˆäº†ä¸€å›¢è‚‰æµ†ã€‚\n", environment(me), me);
 	}
 
 	me->receive_wound("qi", me->query("max_qi")+100, me->query_temp("last_damage_from"));
@@ -249,7 +249,7 @@ int fall_down(object me, string type, int stage)
 	for( i = 0; i < sizeof(inv); i++ )
 	{
 		if( inv[i]->is_character() )
-		inv[i]->receive_wound("qi", inv[i]->query("max_qi")+100, "±»"+me->name()+"Á¬ÀÛµøµÃ·ÛÉíËé¹ÇÁË");
+		inv[i]->receive_wound("qi", inv[i]->query("max_qi")+100, "è¢«"+me->name()+"è¿ç´¯è·Œå¾—ç²‰èº«ç¢éª¨äº†");
 	}
 	return 1;
 }
@@ -275,7 +275,7 @@ int visit_room(string room_path, mapping info, mapping mapdb_info, mixed args)
 	if( strsrch(room_path, "/d/wudang/") != 0 ) return 1;
 	room = find_object(room_path);
 	if( !objectp(room) ) return 0;
-	message("info", HIR"¡¸°¡¡«¡«¡«¡¹°ëÉ½Í»È»´«À´Ò»Õó¼«ÆàÀ÷µÄ²Ò½ĞÉù¡£\n"NOR, room, 0);
+	message("info", HIR"ã€Œå•Šï½ï½ï½ã€åŠå±±çªç„¶ä¼ æ¥ä¸€é˜µæå‡„å‰çš„æƒ¨å«å£°ã€‚\n"NOR, room, 0);
 }
 
 void do_scream()

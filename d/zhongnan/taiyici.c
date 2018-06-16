@@ -9,10 +9,10 @@ int do_jump();
 
 void create()
 {
-		  set("short",HIC"Ì«ÒÒ³Ø"NOR);
+		  set("short",HIC"å¤ªä¹™æ± "NOR);
 		  set("long",@LONG
-ÄãÑÛÇ°³öÏÖÒ»¸öÉ½¼äºş²´£¬Õâ¾ÍÊÇÖøÃûµÄÌ«ÒÒ³Ø(chi)£¬´«ÎªÌÆÌì±¦Äê¼äµØÕğÔì³É£¬
-ËÄÖÜ¸ß·å»·ÁĞ£¬³ØÃæ±Ì²¨µ´Ñú£¬É½¹âË®Ó°£¬·ç¾°Ê®·ÖÓÅÃÀ¡£
+ä½ çœ¼å‰å‡ºç°ä¸€ä¸ªå±±é—´æ¹–æ³Šï¼Œè¿™å°±æ˜¯è‘—åçš„å¤ªä¹™æ± (chi)ï¼Œä¼ ä¸ºå”å¤©å®å¹´é—´åœ°éœ‡é€ æˆï¼Œ
+å››å‘¨é«˜å³°ç¯åˆ—ï¼Œæ± é¢ç¢§æ³¢è¡æ¼¾ï¼Œå±±å…‰æ°´å½±ï¼Œé£æ™¯ååˆ†ä¼˜ç¾ã€‚
 LONG);
 
 		  set("exits",([
@@ -24,8 +24,8 @@ LONG);
 
 		  set("item_desc", ([
 		"chi" :
-"\n\nÕâÊÇÒ»¸öºÜ´óµÄÉ½¼äºş£¬±Ì²¨µ´Ñú£¬ºşË®Çå³º¼ûµ×£¬ÈÃÈËÈÌ²»×¡ÏëÌø(jump)ÏÂÈ¥\n"
-"³©ÓÎÒ»·¬¡£\n\n\n",
+"\n\nè¿™æ˜¯ä¸€ä¸ªå¾ˆå¤§çš„å±±é—´æ¹–ï¼Œç¢§æ³¢è¡æ¼¾ï¼Œæ¹–æ°´æ¸…æ¾ˆè§åº•ï¼Œè®©äººå¿ä¸ä½æƒ³è·³(jump)ä¸‹å»\n"
+"ç•…æ¸¸ä¸€ç•ªã€‚\n\n\n",
 ])  ) ;
 
 		  set("no_clean_up", 0);
@@ -45,12 +45,12 @@ int do_jump()
 	object me = this_player();
 
 	if ( me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
-	message_vision(HIY"\n$NÍùÌ«ÒÒ³ØÖĞÌøÈ¥¡£\n"NOR, me);
+	message_vision(HIY"\n$Nå¾€å¤ªä¹™æ± ä¸­è·³å»ã€‚\n"NOR, me);
 	me->set_temp("taiyi_swimming", 1);
 	me->move("/d/zhongnan/taiyici1");
-	message_vision(HIY"\n$NÍùÌ«ÒÒ³ØÖĞÌøÁË½øÀ´¡£\n"NOR, me);
+	message_vision(HIY"\n$Nå¾€å¤ªä¹™æ± ä¸­è·³äº†è¿›æ¥ã€‚\n"NOR, me);
 
 	return 1;
 }

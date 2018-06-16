@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "夏拉");
         set("long", @LONG
-̧����ȥ����ããһƬɳĮ�����޾�ͷ��ֱ����ߡ����ﾡ��
-��ɳʯ����û��һ���������ɹ����Ϊ������
+抬眼望去，黄茫茫一片沙漠，似无尽头，直连天边。这里尽是
+黄沙石砾，没有一点生气，蒙古语称为夏拉。
 LONG
         );
         set("exits", ([

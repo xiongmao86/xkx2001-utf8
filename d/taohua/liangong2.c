@@ -1,7 +1,7 @@
 //Cracked by Roath
 //Kane
 // modified by sdong to anti-robot, 7/12/1999
-//Ôö¼Ó(discuss <¶ÔÏó> <´ÎÊý> )¹¦ÄÜ by maco 9/2/1999
+//å¢žåŠ (discuss <å¯¹è±¡> <æ¬¡æ•°> )åŠŸèƒ½ by maco 9/2/1999
 
 inherit ROOM;
 
@@ -14,11 +14,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿");
+	set("short", "ç»ƒåŠŸæˆ¿");
 	set("long", @LONG
-ÕâÊÇÌÒ»¨µºµÜ×ÓµÄÁ·¹¦·¿¡£ÎÝ×Ó¶«°ë²¿É¢·Å×Å¼¸¸öÆÑÍÅ£¬¹©ÖîµÜ×Ó´ò×øÍÂÄÉ£¬µ÷
-ÆøÑøÏ¢£¬ÐÞÁ·ÄÚ¹¦Ö®ÓÃ¡£Î÷°ë²¿µØÉÏÔò»æ×Å·üôËÁùÊ®ËÄØÔµÄ·½Î»ØÔÏó£¬´ó¸ÅÊÇÐÞÏ°Ææ
-ÃÅ¶Ý¼×ËùÓÃ¡£Êé¼ÜÉÏÓÐÒ»Ð©¾­Êé¡£
+è¿™æ˜¯æ¡ƒèŠ±å²›å¼Ÿå­çš„ç»ƒåŠŸæˆ¿ã€‚å±‹å­ä¸œåŠéƒ¨æ•£æ”¾ç€å‡ ä¸ªè’²å›¢ï¼Œä¾›è¯¸å¼Ÿå­æ‰“ååçº³ï¼Œè°ƒ
+æ°”å…»æ¯ï¼Œä¿®ç»ƒå†…åŠŸä¹‹ç”¨ã€‚è¥¿åŠéƒ¨åœ°ä¸Šåˆ™ç»˜ç€ä¼ç¾²å…­åå››å¦çš„æ–¹ä½å¦è±¡ï¼Œå¤§æ¦‚æ˜¯ä¿®ä¹ å¥‡
+é—¨éç”²æ‰€ç”¨ã€‚ä¹¦æž¶ä¸Šæœ‰ä¸€äº›ç»ä¹¦ã€‚
 LONG
 	);
 	 set("exits", ([

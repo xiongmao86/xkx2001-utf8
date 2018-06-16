@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Î×Ê¦»á¿ÍÊÒ");
+	set("short", "å·«å¸ˆä¼šå®¢å®¤");
 	set("long", @LONG
-ÕâÀïÊÇÎ×Ê¦ºÍÍæ¼Ò½»Á÷µÄµØ·½¡£Èç¹ûÄãÓĞÊ²Ã´ÎÊÌâĞèÒªÏòÎ×Ê¦Çë½Ì£¬¿ÉÒÔÔÚ
-ÕâÀïÁôÑÔ(post)¡£²»¹ıÈç¹ûÎÊÌâÇ£Éæµ½½âÃÕ»òÕßÒÑ¾­ÔÚ°ïÖúÎÄ¼şÀïÓĞÏêÏ¸ËµÃ÷£¬
-Î×Ê¦ÃÇ¾Í²»Ò»¶¨»á»Ø´ğ¡£Â¥ÉÏÊÇÎ×Ê¦ĞİÏ¢ÊÒ¡£
+è¿™é‡Œæ˜¯å·«å¸ˆå’Œç©å®¶äº¤æµçš„åœ°æ–¹ã€‚å¦‚æœä½ æœ‰ä»€ä¹ˆé—®é¢˜éœ€è¦å‘å·«å¸ˆè¯·æ•™ï¼Œå¯ä»¥åœ¨
+è¿™é‡Œç•™è¨€(post)ã€‚ä¸è¿‡å¦‚æœé—®é¢˜ç‰µæ¶‰åˆ°è§£è°œæˆ–è€…å·²ç»åœ¨å¸®åŠ©æ–‡ä»¶é‡Œæœ‰è¯¦ç»†è¯´æ˜ï¼Œ
+å·«å¸ˆä»¬å°±ä¸ä¸€å®šä¼šå›ç­”ã€‚æ¥¼ä¸Šæ˜¯å·«å¸ˆä¼‘æ¯å®¤ã€‚
 LONG
 	);
 
@@ -20,7 +20,7 @@ LONG
 	set("no_fight", "1");
         set("no_steal", 1);
         set("no_sleep_room", "1");
-	create_door("southeast", "ÖñÃÅ", "northwest", DOOR_CLOSED);
+	create_door("southeast", "ç«¹é—¨", "northwest", DOOR_CLOSED);
 
 	set("cost", 0);
 	setup();
@@ -30,7 +30,7 @@ LONG
 int valid_leave(object me, string dir)
 {
         if( dir=="up" && !wizardp(me) )
-                return notify_fail("ÄÇÀïÖ»ÓĞÎ×Ê¦²ÅÄÜ½øÈ¥¡£\n");
+                return notify_fail("é‚£é‡Œåªæœ‰å·«å¸ˆæ‰èƒ½è¿›å»ã€‚\n");
         return ::valid_leave(me, dir);
 }
 
@@ -49,21 +49,21 @@ void init()
 int do_exercise(string arg)
 {
         object me = this_player();
-        tell_object(me, "ÄãÊÇÀ´×÷¿Í»¹ÊÇÀ´Á·¹¦°¡£¿\n");
+        tell_object(me, "ä½ æ˜¯æ¥ä½œå®¢è¿˜æ˜¯æ¥ç»ƒåŠŸå•Šï¼Ÿ\n");
         return 1;
 }
 
 int do_practice(string arg)
 {
         object me = this_player();
-        tell_object(me, "ÔÚ¿ÍÌüÀïÒ²ÏëÁ·¹¦£¬Ì«·ÅËÁÁË°É£¿\n");
+        tell_object(me, "åœ¨å®¢å…é‡Œä¹Ÿæƒ³ç»ƒåŠŸï¼Œå¤ªæ”¾è‚†äº†å§ï¼Ÿ\n");
         return 1;
 }
 
 int do_study(string arg)
 {
         object me = this_player();
-        tell_object(me, "×÷¿Í»¹Ïë¶ÁÊé£¬±ğÕâÃ´ÈÏÕæºÃ²»ºÃ£¿\n");
+        tell_object(me, "ä½œå®¢è¿˜æƒ³è¯»ä¹¦ï¼Œåˆ«è¿™ä¹ˆè®¤çœŸå¥½ä¸å¥½ï¼Ÿ\n");
         return 1;
 }
 

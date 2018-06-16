@@ -6,18 +6,18 @@ int check_value();
 
 void create()
 {
-    set_name("´ó²èÍë", ({"cha", "tea"}));
+    set_name("å¤§èŒ¶ç¢—", ({"cha", "tea"}));
     set_weight(500);
     if (clonep())
 	set_default_object(__FILE__);
     else {
-	set("long", "ÕâÊÇÒ»¸ö×°´óÍë²èµÄ´ÅÍë£¬ÒÑ¾­ÓĞĞ©·¢»ÆÁË¡£\n");
-	set("unit", "¸ö");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªè£…å¤§ç¢—èŒ¶çš„ç£ç¢—ï¼Œå·²ç»æœ‰äº›å‘é»„äº†ã€‚\n");
+	set("unit", "ä¸ª");
 	set("max_liquid", 3);
 	set("value", 100);
 	set("liquid", ([
 		"type" : "tea",
-		"name" : "´óÍë²èË®",
+		"name" : "å¤§ç¢—èŒ¶æ°´",
 		"remaining" : 3,
 		"drunk_supply" : 5,
 	]));

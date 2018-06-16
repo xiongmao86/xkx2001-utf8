@@ -9,11 +9,11 @@ int do_qiao(string arg);
 
 void create()
 {
-	set("short", "ÖÓÂ¥¶þ²ã");
+	set("short", "é’Ÿæ¥¼äºŒå±‚");
 	set("long", @LONG
-ÕâÀïÊÇÖÓÂ¥ÉÏ²ãµÄÐ¡ÎÝ×Ó¡£ÇàÍ­ÖýÔìµÄÍ­ÖÓ (zhong) ÒÑ¾­·¢ÂÌ£¬
-ÅÔ±ßµÄ×²é³¿´ÆðÀ´Ò²Àú¾­²×É£¡£Çå³¿µÄÊ±ºòÕâÀïµÄÊ¿±ø»áÇÃÖÓÒÔÊ¾¸ü
-´Î£¬ÖÓÉùÈ«³Ç¶¼ÌýµÃ¼û¡£ÎÝ×Ó½ÇÉÏÓÐ¸öÊ¿±øÔÚ´òíï¶ù¡£
+è¿™é‡Œæ˜¯é’Ÿæ¥¼ä¸Šå±‚çš„å°å±‹å­ã€‚é’é“œé“¸é€ çš„é“œé’Ÿ (zhong) å·²ç»å‘ç»¿ï¼Œ
+æ—è¾¹çš„æ’žæ§Œçœ‹èµ·æ¥ä¹ŸåŽ†ç»æ²§æ¡‘ã€‚æ¸…æ™¨çš„æ—¶å€™è¿™é‡Œçš„å£«å…µä¼šæ•²é’Ÿä»¥ç¤ºæ›´
+æ¬¡ï¼Œé’Ÿå£°å…¨åŸŽéƒ½å¬å¾—è§ã€‚å±‹å­è§’ä¸Šæœ‰ä¸ªå£«å…µåœ¨æ‰“ç›¹å„¿ã€‚
 LONG
 	);
 	set("exits", ([ 
@@ -21,8 +21,8 @@ LONG
 	]));
 	
  	set("item_desc", ([
-	"zhong" : "Ò»Ö»¾Þ´óµÄÇàÍ­ÖÓ¡£\n"
-		  "ÄãÈÌ²»×¡ÏëÇÃ(qiao)Ò»ÏÂ£¬¿ÉÊÇÓÖÅÂ¾ªÐÑÅÔ±ßµÄÊ¿±ø¡£\n",
+	"zhong" : "ä¸€åªå·¨å¤§çš„é’é“œé’Ÿã€‚\n"
+		  "ä½ å¿ä¸ä½æƒ³æ•²(qiao)ä¸€ä¸‹ï¼Œå¯æ˜¯åˆæ€•æƒŠé†’æ—è¾¹çš„å£«å…µã€‚\n",
 	]));
 	set("no_clean_up", 0);
 	set("outdoors", "beijing");
@@ -38,10 +38,10 @@ void init()
     add_action("do_qiao", "qiao");
 }
 
-#define LOUD_SOUND "ÖÓÂ¥µÄ´óÖÓ·¢³öÒ»ÉùÉù¾ÞÏì£º¡°µ±£¬µ±£¬µ±¡£¡£¡£¡±£¬ÕðµÃÄã¶ú¶ä¶¼ÒªÁûÁË¡£\n"
-#define NORMAL_SOUND "ÖÓÂ¥µÄ´óÖÓÏìÁËÆðÀ´£º¡°µ±£¬µ±£¬µ±¡£¡£¡£¡±¡£\n"
-#define WEAK_SOUND "Ò»ÕóÖÓÉù´ÓÔ¶´¦´«À´£º¡°µ±£¬µ±£¬µ±¡£¡£¡£¡±¡£\n"
-#define FADE_SOUND "Ô¶´¦´«À´ÒÀÏ¡¿É±æµÄÖÓÉù£º¡°µ±£¬µ±£¬µ±£¬¡£¡£¡£¡±¡£\n"
+#define LOUD_SOUND "é’Ÿæ¥¼çš„å¤§é’Ÿå‘å‡ºä¸€å£°å£°å·¨å“ï¼šâ€œå½“ï¼Œå½“ï¼Œå½“ã€‚ã€‚ã€‚â€ï¼Œéœ‡å¾—ä½ è€³æœµéƒ½è¦è‹äº†ã€‚\n"
+#define NORMAL_SOUND "é’Ÿæ¥¼çš„å¤§é’Ÿå“äº†èµ·æ¥ï¼šâ€œå½“ï¼Œå½“ï¼Œå½“ã€‚ã€‚ã€‚â€ã€‚\n"
+#define WEAK_SOUND "ä¸€é˜µé’Ÿå£°ä»Žè¿œå¤„ä¼ æ¥ï¼šâ€œå½“ï¼Œå½“ï¼Œå½“ã€‚ã€‚ã€‚â€ã€‚\n"
+#define FADE_SOUND "è¿œå¤„ä¼ æ¥ä¾ç¨€å¯è¾¨çš„é’Ÿå£°ï¼šâ€œå½“ï¼Œå½“ï¼Œå½“ï¼Œã€‚ã€‚ã€‚â€ã€‚\n"
 
 int visit_room(string room_path, mapping info, mapping mapdb_info, mixed args)
 {
@@ -78,16 +78,16 @@ int do_qiao(string arg)
     object player = this_player();
     object bing;
 
-    if (! arg || arg != "zhong") return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+    if (! arg || arg != "zhong") return notify_fail("ä½ è¦æ•²ä»€ä¹ˆï¼Ÿ\n");
     if (present("bing", environment(player)) )
-	return notify_fail("ÄãÏëÈ¥ÇÃÖÓ£¬µ«ÊÇÊ¿±øÀ¹×¡ÁËÄã¡£\n");
+	return notify_fail("ä½ æƒ³åŽ»æ•²é’Ÿï¼Œä½†æ˜¯å£«å…µæ‹¦ä½äº†ä½ ã€‚\n");
     
-    message_vision("$N³Ã×ÅÊ¿±øÔÚ´òíï£¬ÃÍµÄÇÃÁËÒ»ÏÂ´óÖÓ¡£\n",
+    message_vision("$Nè¶ç€å£«å…µåœ¨æ‰“ç›¹ï¼ŒçŒ›çš„æ•²äº†ä¸€ä¸‹å¤§é’Ÿã€‚\n",
 	player);
     make_zhong_sound();
     bing = new("/d/beijing/npc/bj_bing");
     bing->move(environment(player));
-    message_vision("ÕýÔÚ´òíïµÄÊ¿±ø±»ÏÅµÃÌøÁËÆðÀ´¡£\n", player);
+    message_vision("æ­£åœ¨æ‰“ç›¹çš„å£«å…µè¢«å“å¾—è·³äº†èµ·æ¥ã€‚\n", player);
     player->apply_condition("bjkiller", 100);
     return 1;
 }

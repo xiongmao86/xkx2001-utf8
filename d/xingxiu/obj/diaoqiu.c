@@ -7,13 +7,13 @@ inherit NECK;
 
 void create()
 {
-	set_name( MAG "õõôÃ" NOR, ({ "diao qiu", "qiu" }) );
+	set_name( MAG "è²‚è£˜" NOR, ({ "diao qiu", "qiu" }) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»Ìõ½õÃ«õõÆ¤Î§²±¡£\n");
+		set("unit", "æ¡");
+                set("long", "è¿™æ˜¯ä¸€æ¡é”¦æ¯›è²‚çš®å›´è„–ã€‚\n");
 		set("value", 500);
 		set("material", "leather");
 		set("armor_prop/armor", 5);

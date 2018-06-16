@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("»¤ÎÀ", ({ "hu wei", "wei" }));
-        set("long", "Ò»¸öÉñÇéØâº·µÄÃÉ¹Å´óºº£¬ÊÇ¾üÖĞ½«¹ÙµÄËæ´Ó£¬¾ùÊÇÊìÏ°ÎäÒÕÖ®±²¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æŠ¤å«", ({ "hu wei", "wei" }));
+        set("long", "ä¸€ä¸ªç¥æƒ…å‰½æ‚çš„è’™å¤å¤§æ±‰ï¼Œæ˜¯å†›ä¸­å°†å®˜çš„éšä»ï¼Œå‡æ˜¯ç†Ÿä¹ æ­¦è‰ºä¹‹è¾ˆã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "heroism");
         set("str", 25);
@@ -45,7 +45,7 @@ void leave(object ob)
         object me = this_object();
 
 	if(!ob){
-        message_vision("$N´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n"NOR,me);
+        message_vision("$NåŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n"NOR,me);
         destruct(me);
         }
 	else {
@@ -55,7 +55,7 @@ void leave(object ob)
 }
 int accept_fight(object me)
 {
-        command("say Áì½Ì¸öÆ¨£¬¿´±¾´óÒ¯Ô×ÁËÄã£¡\n");
+        command("say é¢†æ•™ä¸ªå±ï¼Œçœ‹æœ¬å¤§çˆ·å®°äº†ä½ ï¼\n");
         kill_ob(me);
         return 1;
 }

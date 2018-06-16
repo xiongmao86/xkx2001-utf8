@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-����·��һ����ͯ���ţ���ϣ��ڴ��̵Ѷ���������ϡϡ����ķֲ��ż�ʮ
-�������෿��ң��ɽ�����ˣ��ɳ����������衣��Χɽ��ˮ�㣬��ľ�Դ䣬��
-��������
+见路上一个牧童跨於牛背上，口吹短笛而来。附近稀稀落落的分布着几十
+间土坯泥房，遥望山畔数人，荷锄耕於田间作歌。周围山青水秀，树木苍翠，风
+景秀丽。
 LONG
 	);
 	set("outdoors", "xiangyang");

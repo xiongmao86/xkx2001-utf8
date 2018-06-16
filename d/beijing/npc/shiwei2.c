@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: 二等侍卫
+// Npc: 浜岀瓑渚嶅崼
 // Ssy, chu
 
 #include <ansi.h>
@@ -9,14 +9,14 @@ void set_shiwei_status(int);
 
 void create()
 {
-	set_name("二等侍卫", ({
+	set_name("浜岀瓑渚嶅崼", ({
 		"erdeng shiwei",
 		"shiwei",
 		"wei",
 	}));
 	set("long",
-		"这是一个品级不低的御前侍卫，大多是满族王公大臣子弟。\n"
-		"他看起来有点心不在焉。\n"
+		"杩欐槸涓�涓搧绾т笉浣庣殑寰″墠渚嶅崼锛屽ぇ澶氭槸婊℃棌鐜嬪叕澶ц嚕瀛愬紵銆俓n"
+		"浠栫湅璧锋潵鏈夌偣蹇冧笉鍦ㄧ剦銆俓n"
 	);
 
 	set("age", 35);

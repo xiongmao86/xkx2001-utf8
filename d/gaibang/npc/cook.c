@@ -1,5 +1,5 @@
 //Cracked by Roath
-// d/gaibang/npc/cook.c ؤ���������
+// d/gaibang/npc/cook.c 丐帮二袋弟子
 // xbc 06/22/1997
 
 #include <ansi.h>
@@ -10,35 +10,35 @@ string ask_me(string, object);
 
 void create()
 {
-	set_name("С�л�", ({"beggar", "jiao hua", "cook"}));
-	set("title", "ؤ���������");
-	set("gender", "����");
+	set_name("小叫化", ({"beggar", "jiao hua", "cook"}));
+	set("title", "丐帮二袋弟子");
+	set("gender", "男性");
 	set("age", 17);
 	set("long", 
-		"���������ؤ������Ũü���ۣ���ͷ�Ͼ��Ǻ��顣����������һ�Ѵ��ף������ղ�������\n");
+		"这个少年乞丐，长得浓眉大眼，额头上尽是汗珠。他手上握着一把大勺，正在烧菜做饭。\n");
 
 	set("chat_chance", 1);
 	set("chat_msg", ({
-		"С�л������������������ʲô�˺��أ�\n",
-		"С�л�ץ��һ��Ĩ�����Ѵ�����˲����ŵ����Ͽ�ʼ���ˡ�\n",
-		"С�л�����һ���ʯͷ�ϣ�������ǰ�����ַ�������� \n",
-		"����һ��ϤϤ�����ĽŲ�����С�л������������������������������\n",
+		"小叫化自言自语道：今天做什么菜好呢？\n",
+		"小叫化抓起一块抹布，把大锅擦了擦，放到灶上开始炒菜。\n",
+		"小叫化坐在一块大石头上，望着面前的竹林发起呆来。 \n",
+		"听到一阵悉悉簌簌的脚步声，小叫化四周望了望，警觉地提起大勺来。\n",
 	}) );
 
         set("inquiry", ([
                 "here"   : (: ask_me, "zhulin":),
                 "rumors" : (: ask_me, "yaoyan"  :),
-		"����" : (: ask_me, "cook" :),
-		"�ղ�" : (: ask_me, "cook" :),
-		"����" : (: ask_me, "cook" :),
-		"���߹�" : (: ask_me, "hong" :),
-		"���ϰ���" : (: ask_me, "hong" :),
-		"ţ����" : (: ask_me, "beef"  :),
-		"���˭������÷" : (: ask_me, "beef" :),
-                "������"   : (: ask_me, "soup" :),
-		"���ײ�" : (: ask_me, "baicai" :),
-		"������" : (: ask_me, "doufu" :),
-		"��ʮ��������ҹ" : (: ask_me, "doufu" :),
+		"炒菜" : (: ask_me, "cook" :),
+		"烧菜" : (: ask_me, "cook" :),
+		"做饭" : (: ask_me, "cook" :),
+		"洪七公" : (: ask_me, "hong" :),
+		"洪老帮主" : (: ask_me, "hong" :),
+		"牛肉条" : (: ask_me, "beef"  :),
+		"玉笛谁家听落梅" : (: ask_me, "beef" :),
+                "好逑汤"   : (: ask_me, "soup" :),
+		"炒白菜" : (: ask_me, "baicai" :),
+		"蒸豆腐" : (: ask_me, "doufu" :),
+		"二十四桥明月夜" : (: ask_me, "doufu" :),
         ]));
 
 	set("attitude", "friendly");
@@ -71,7 +71,7 @@ void create()
 	
 	prepare_skill("hand", "shexing-diaoshou");
 
-	create_family("ؤ��", 19, "����");
+	create_family("丐帮", 19, "弟子");
 	setup();
 
 	carry_object("/d/gaibang/obj/budai")->set_amount(1);
@@ -81,30 +81,30 @@ void create()
 string ask_me(string name, object ob)
 {
 	if ( name == "yaoyan" )
-		return "���ϰ����������ݣ���˵�����һ��ظ����ղ˳ԡ�";
+		return "洪老帮主来了扬州，听说是想找黄蓉给他烧菜吃。";
 
 	if ( name == "zhulin" )
-		return "��Ƭ���ֿ�����ؤ��ĵ��̡������������������ϰ�����ЩС�ˡ�������æ��";
+		return "这片竹林可是咱丐帮的地盘。我这两天在这里帮洪老帮主烧些小菜。你来帮忙吗？";
 
 	if ( name == "hong" )
-		return "���ϰ�������̰�ԡ���������߶�Ż��غ����յĲˣ�˵���ػ��ա�
-С�л��ֵ�����˵˭Ҫ���˺�������ԵĲˣ������ܾͻ�ָ��Щ�书�����п�����Ϊͽ�ܣ�
-С�л�̾�˿���˵�����������������˺ü����µĲ��ˣ��ɺ��������û����Щɶ��";
+		return "洪老帮主最是贪吃。他整天念叨着黄蓉和她烧的菜，说她特会烧。
+小叫化又道：听说谁要烧了洪帮主爱吃的菜，他可能就会指点些武功，还有可能收为徒弟！
+小叫化叹了口气说：唉，我在这里烧了好几个月的菜了，可洪帮主还是没教我些啥。";
 
 	if ( name == "cook" )
-		return "����ղ��𣿰���һ�°ɡ�����ȥ�Һò��ϣ��������գ�cook�������������������С�";
+		return "你会烧菜吗？帮我一下吧。你先去找好材料，来这里烧（cook）。基本调料我这里有。";
 
 	if ( name == "beef" )
-		return "���ظ����ϰ����չ�ţ������˵��ʲô���˭������÷����˵���������������ء�";
+		return "黄蓉给洪老帮主烧过牛肉条，说叫什么玉笛谁家听落梅，听说有四五样肉做成呢。";
 
 	if ( name == "soup" )
-		return "�������������ϰ����������˵���ú�Ҷ������ӣ��ɶ���յģ��óԼ��ˡ�";
+		return "好逑汤？听洪老帮主提起过，说是用荷叶、竹笋、樱桃啥的烧的，好吃极了。";
 
         if ( name == "baicai" )
-		return "���ײ�˭���������������ϰ���˵�����س��ľͲ�ͬһ�㣬����Ѽ�ƺͼ��͡�";
+		return "炒白菜谁不会做！可听洪老帮主说，黄蓉炒的就不同一般，用了鸭掌和鸡油。";
 
 	if ( name == "doufu" ) 
-		return "����������������������˵��ʲô��ʮ��������ҹ����֪����ɶ�ر�ġ�";
+		return "啊，黄蓉做过的蒸豆腐，说叫什么二十四桥明月夜，不知道有啥特别的。";
 	
 }
 

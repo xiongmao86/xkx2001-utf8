@@ -10,13 +10,13 @@ void init()
 }
 void create()
 {
-        set_name(HIG"ÄñÓð´óë©"NOR, ({"da chang", "chang"}));
+        set_name(HIG"é¸Ÿç¾½å¤§æ°…"NOR, ({"da chang", "chang"}));
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¼þÄñÓðÖ¯³ÉµÄ´óë©£¬ÎåÑÕÁùÉ«£¬É·ÊÇºÃ¿´¡£\n");
-                set("unit", "¼þ");
+                set("long", "ä¸€ä»¶é¸Ÿç¾½ç»‡æˆçš„å¤§æ°…ï¼Œäº”é¢œå…­è‰²ï¼Œç…žæ˜¯å¥½çœ‹ã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
 		set("value", 100);
 		set("armor_prop/armor", 1);
@@ -36,17 +36,17 @@ int do_move(string arg)
 
 	if (me->query("combat_exp") > 50000){
                 message_vision(
-"$NÇáÇáµØÅ²¶¯ÓðÃ«´óë©£¬¶¶ÆðÒ»Ð©³¾ÍÁ£¬ºöÈ»ÓðÒÂÉÏµÄÓðÃ«È«¶¼ËÉÁË¿ªÀ´£¬Ò»Æ¬Æ¬µôµ½µØÉÏ...£¬ÇºµÃ$NÖ±´òÅçÌç¡£\n", this_player());
+"$Nè½»è½»åœ°æŒªåŠ¨ç¾½æ¯›å¤§æ°…ï¼ŒæŠ–èµ·ä¸€äº›å°˜åœŸï¼Œå¿½ç„¶ç¾½è¡£ä¸Šçš„ç¾½æ¯›å…¨éƒ½æ¾äº†å¼€æ¥ï¼Œä¸€ç‰‡ç‰‡æŽ‰åˆ°åœ°ä¸Š...ï¼Œå‘›å¾—$Nç›´æ‰“å–·åšã€‚\n", this_player());
 
 		ob = new("/d/xueshan/obj/wucan-yi");
                 if (ob){
                 ob->move("/d/xueshan/dycave");
-                message_vision("$NÍ»È»·¢ÏÖÏÂÃæÓÐÒ»¼þÎÚºÚµÄÎïÊÂ¡£\n", this_player());
+                message_vision("$Nçªç„¶å‘çŽ°ä¸‹é¢æœ‰ä¸€ä»¶ä¹Œé»‘çš„ç‰©äº‹ã€‚\n", this_player());
 		}
         }
 	else {
                 message_vision(
-"$NÇáÇáµØÅ²¶¯ôÂôÄ£¬Í»È»´ÓÓðÃ«´óë©µÄ¿ßÁþÖÐÃ°³öÒ»¹É¶¾Æø£¬×ê½ø$NµÄ±Ç×ÓÖÐ¡£\n", this_player());
+"$Nè½»è½»åœ°æŒªåŠ¨è¢ˆè£Ÿï¼Œçªç„¶ä»Žç¾½æ¯›å¤§æ°…çš„çªŸçª¿ä¸­å†’å‡ºä¸€è‚¡æ¯’æ°”ï¼Œé’»è¿›$Nçš„é¼»å­ä¸­ã€‚\n", this_player());
                 me->unconcious();
         }
 	destruct(this_object());

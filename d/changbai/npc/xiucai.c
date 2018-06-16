@@ -8,11 +8,11 @@ int do_forge();
 
 void create()
 {
-        set_name(HIY"ÂäµÚÐã²Å"NOR, ({ "xiucai" }));
+        set_name(HIY"è½ç¬¬ç§€æ‰"NOR, ({ "xiucai" }));
         set("long", 
-"ËûÄêÇàÊ±ÆÄÓÐ±§¸º£¬ºóÀ´×Ô±©×ÔÆú¡£\n"
-"Ö»Æ¾Ò»µãÄ«²Å¾­³£¸ÉÐ©ÍµÁº»»ÖùµÄ¹´µ±¶ÈÈÕ¡£\n"); 
-        set("gender", "ÄÐÐÔ");
+"ä»–å¹´é’æ—¶é¢‡æœ‰æŠ±è´Ÿï¼ŒåŽæ¥è‡ªæš´è‡ªå¼ƒã€‚\n"
+"åªå‡­ä¸€ç‚¹å¢¨æ‰ç»å¸¸å¹²äº›å·æ¢æ¢æŸ±çš„å‹¾å½“åº¦æ—¥ã€‚\n"); 
+        set("gender", "ç”·æ€§");
         set("age", 35);
 
         set_skill("unarmed", 10);
@@ -25,7 +25,7 @@ void create()
         set("shen_type", -1);
 
         set("inquiry", ([
-                "Î±Ôì" : (: do_forge :),
+                "ä¼ªé€ " : (: do_forge :),
                 "weizao" : (: do_forge :),
                 "forge" : (: do_forge :),
         ]) );
@@ -36,15 +36,15 @@ void create()
 int do_forge()
 {
         object me = this_player(); 
-        if( !me->query_temp("cbs_ÂäµÚ/a") )
+        if( !me->query_temp("cbs_è½ç¬¬/a") )
                 return 0;
 
-        me->delete_temp("cbs_ÂäµÚ/a");
+        me->delete_temp("cbs_è½ç¬¬/a");
         
         command("hehe");
-        command("whisper " + me->query("id") + " " + "Ò»Á½»Æ½ð£¬²»¶þ¼Û¡£\n");
+        command("whisper " + me->query("id") + " " + "ä¸€ä¸¤é»„é‡‘ï¼Œä¸äºŒä»·ã€‚\n");
 
-        me->set_temp("cbs_ÂäµÚ/b", 1);
+        me->set_temp("cbs_è½ç¬¬/b", 1);
         return 1;
 }
 
@@ -52,20 +52,20 @@ int accept_object(object who, object ob)
 {
         object obj;
 
-        if( ob->name() == "¼×¹ÇÎÄ" ) {
+        if( ob->name() == "ç”²éª¨æ–‡" ) {
                 command("ah " + who->query("id"));
-                who->set_temp("cbs_ÂäµÚ/a", 1);
+                who->set_temp("cbs_è½ç¬¬/a", 1);
                 call_out("destroy", 1, ob);
                 return 1;
         }
 
-        if( ob->value() >= 10000 && who->query_temp("cbs_ÂäµÚ/b") ) {
-	        who->delete_temp("cbs_ÂäµÚ");
-                say("ÂäµÚÐã²ÅÐ¦ÎûÎûËµµÀ£ºÕâ·ùËÌ´Ê±£Ö¤´í²»ÁË¡£\n");
+        if( ob->value() >= 10000 && who->query_temp("cbs_è½ç¬¬/b") ) {
+	        who->delete_temp("cbs_è½ç¬¬");
+                say("è½ç¬¬ç§€æ‰ç¬‘å˜»å˜»è¯´é“ï¼šè¿™å¹…é¢‚è¯ä¿è¯é”™ä¸äº†ã€‚\n");
 
                 obj = new("/d/shenlong/obj/songci");
                 obj->move(who);
-                message_vision("$N½«Ò»" + obj->query("unit") + obj->query("name") + "½»¸ø$n¡£\n", this_object(), who);
+                message_vision("$Nå°†ä¸€" + obj->query("unit") + obj->query("name") + "äº¤ç»™$nã€‚\n", this_object(), who);
                 return 1;
         }
 

@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��լ");
+	set("short", "内宅");
 	set("long", @LONG
-���������ŵ���լ��ס���ᶽ�ļҾ졣���˵��˾͸�ֹ���ˡ�
+这里是衙门的内宅，住着提督的家眷。外人到此就该止步了。
 LONG
 	);
 

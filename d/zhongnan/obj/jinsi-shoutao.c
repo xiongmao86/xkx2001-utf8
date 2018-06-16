@@ -1,4 +1,4 @@
-// jinsi-shoutao.c ½ğË¿ÊÖÌ×
+// jinsi-shoutao.c é‡‘ä¸æ‰‹å¥—
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit WRISTS;
 
 void create()
 {
-	set_name(HIY "½ğË¿ÊÖÌ×" NOR, ({ "jinsi shoutao", "shoutao" }));
-       	set("long", "ÕâÊÇÒ»¶Ô½ğË¿ÊÖÌ×£¬Ó¨»¬ÎÂÈó£¬¹â½àÎŞè¦£¬ÕæÊÇÏ¡ÊÀº±ÓĞ¡£\n");
+	set_name(HIY "é‡‘ä¸æ‰‹å¥—" NOR, ({ "jinsi shoutao", "shoutao" }));
+       	set("long", "è¿™æ˜¯ä¸€å¯¹é‡‘ä¸æ‰‹å¥—ï¼Œè¹æ»‘æ¸©æ¶¦ï¼Œå…‰æ´æ— ç‘•ï¼ŒçœŸæ˜¯ç¨€ä¸–ç½•æœ‰ã€‚\n");
 	set("weight", 300);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶Ô");
+		set("unit", "å¯¹");
 		set("value", 50000);
 		set("material", "gold");
 		set("armor_prop/armor", 5);

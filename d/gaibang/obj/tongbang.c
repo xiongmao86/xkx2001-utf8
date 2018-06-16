@@ -1,24 +1,24 @@
 //Cracked by Roath
-//tongbang.c Í­°ô
+//tongbang.c é“œæ£’
 #include <ansi.h>
 #include <weapon.h>
 inherit STICK;
 
 void create()
 {
-        set_name("Í­°ô", ({ "tong bang", "bang", "tongbang", "stick" "bonze stick" }));
+        set_name("é“œæ£’", ({ "tong bang", "bang", "tongbang", "stick" "bonze stick" }));
         set_color("$YEL$");
         set_weight(30000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù´Ö¶ÌµÄÍ­°ô£¬¿´ÆğÀ´»Æ³Î³ÎµÄ£¬ÖØÁ¿È´²»Çá¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ä¸€æ ¹ç²—çŸ­çš„é“œæ£’ï¼Œçœ‹èµ·æ¥é»„æ¾„æ¾„çš„ï¼Œé‡é‡å´ä¸è½»ã€‚\n");
                 set("rigidity", 1000);
                 set("value", 5000);
                 set("material", "bonze");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
         }
         init_stick(65+ random(10));
         setup();

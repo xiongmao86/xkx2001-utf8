@@ -9,12 +9,12 @@ inherit FERRY;
 
 void create()
 {
-        set("short", "��ˮ����");
+        set("short", "汉水北岸");
         set("long", @LONG
-��ˮ����Ҳ���൱���֣��Ա����ɿ�������һ����ֱ�Ĺٵ�
-ֱͨ�������˵���紾�ӣ�·�Լ��������������������Ҷ���һ
-����ġ��ơ���ӭ��Ʈ�εΪ׳�ۡ�Ҳ�в���С����·����
-����ѱ棬ȴҲ����ʢ����ȴ��
+汉水北岸也是相当热闹，自北岸渡口往北，一条笔直的官道
+直通南阳。此地民风淳朴，路旁夹柳成阴，酒厮林立，且都有一
+面大大的「酒」旗迎风飘扬，蔚为壮观。也有不少小贩沿路叫买，
+语多难辨，却也令人盛情难却。
 LONG
         );
 
@@ -24,7 +24,7 @@ LONG
         ]));
 
         set("item_desc", ([
-        "river" : "��������һҶС�ۣ�Ҳ����(yell)һ�����Ҿ���������\n",
+        "river" : "近岸处有一叶小舟，也许喊(yell)一声船家就能听见。\n",
 
     ]));
 
@@ -33,7 +33,7 @@ LONG
         set("outdoors", "shaolin");
         set("cost", 1);
 
-        set("name", "��");
+        set("name", "江");
         set("boat", __DIR__"duchuan");
         set("opposite", __DIR__"hanshui1");
 

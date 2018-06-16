@@ -1,5 +1,5 @@
 //Cracked by Roath
-// copy from zhu.c Öììä
+// copy from zhu.c æœ±ç†¹
 // CLEANSWORD 1996/2/2
 // Jay 9/11/96, added degree
 
@@ -8,10 +8,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÀÏÑ§Ê¿", ({ "shi", "xue shi" }));
+	set_name("è€å­¦å£«", ({ "shi", "xue shi" }));
         set_color("$YEL$");
-	set("long", "ËûÊÇ¸ö¾«Í¨Ê«ÀíµÄÑ§Õß£¬Ô­±¾ÊÇ±»±Æ¶øÀ´µ½ÏÀ¿Íµº£¬µ«Ñ§ÁËÎä¹¦ááËÀ\nĞÄËúµØµÄÁôÁËÏÂÀ´¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set("long", "ä»–æ˜¯ä¸ªç²¾é€šè¯—ç†çš„å­¦è€…ï¼ŒåŸæœ¬æ˜¯è¢«é€¼è€Œæ¥åˆ°ä¾ å®¢å²›ï¼Œä½†å­¦äº†æ­¦åŠŸå¾Œæ­»\nå¿ƒå¡Œåœ°çš„ç•™äº†ä¸‹æ¥ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
         set("max_jing", 200);
         set("max_qi", 200);
@@ -25,8 +25,8 @@ void create()
 	set("shen_type", 1);
 
 	set("inquiry", ([
-		"Ñ§Î»" : "¶ÁÊé×÷¹ÙÄÄÀï±ÈµÃÉÏÑ§ÎäÁ·¹¦Ç¿£¿\n",
-		"¿Æ¾Ù" : "¶ÁÊé×÷¹ÙÄÄÀï±ÈµÃÉÏÑ§ÎäÁ·¹¦Ç¿£¿\n",
+		"å­¦ä½" : "è¯»ä¹¦ä½œå®˜å“ªé‡Œæ¯”å¾—ä¸Šå­¦æ­¦ç»ƒåŠŸå¼ºï¼Ÿ\n",
+		"ç§‘ä¸¾" : "è¯»ä¹¦ä½œå®˜å“ªé‡Œæ¯”å¾—ä¸Šå­¦æ­¦ç»ƒåŠŸå¼ºï¼Ÿ\n",
 	]));
 
 	setup();
@@ -40,11 +40,11 @@ void create()
 
 int recognize_apprentice(object ob)
 {	if (ob->query_skill("literate", 1) <= 20)
-	{	ob->set_temp("mark/Öì", 1);
+	{	ob->set_temp("mark/æœ±", 1);
 		return 1;
 	}
 	else
-	{	ob->delete_temp("mark/Öì", 1);
+	{	ob->delete_temp("mark/æœ±", 1);
 		return 1;
 	}
 }
@@ -66,13 +66,13 @@ void greeting(object me)
 {
 	if (me->query_skill("literate", 1) == 0 )
 	{	command("say " + RANK_D->query_respect(me) + 
-			"ËäËµÁ·Îä±È¶ÁÊéÖØÒª£¬µ«ÄãÄ¿²»Ê¶¶¡£¬ÈçºÎÈ¥Àí
-½âÄÇÏÀ¿ÍĞĞÎä¹¦ÃØ¼®ÄØ£¿");
-		command("say Äã¿ÉÒÔ¸úÎÒÑ§µã¶ÁÊé(xue " + query("id") + " literate)");
+			"è™½è¯´ç»ƒæ­¦æ¯”è¯»ä¹¦é‡è¦ï¼Œä½†ä½ ç›®ä¸è¯†ä¸ï¼Œå¦‚ä½•å»ç†
+è§£é‚£ä¾ å®¢è¡Œæ­¦åŠŸç§˜ç±å‘¢ï¼Ÿ");
+		command("say ä½ å¯ä»¥è·Ÿæˆ‘å­¦ç‚¹è¯»ä¹¦(xue " + query("id") + " literate)");
 	}
 	else 
 	{	if (me->query_skill("literate", 1) >= 20 )
-		{	command("say ¿ìÈ¥Á·Îä°É£¬¶ÁÄÇ÷á¶àÊé¿¼×´ÔªÄÄ£¿");
+		{	command("say å¿«å»ç»ƒæ­¦å§ï¼Œè¯»é‚£éº½å¤šä¹¦è€ƒçŠ¶å…ƒå“ªï¼Ÿ");
 		}
 	}
 }

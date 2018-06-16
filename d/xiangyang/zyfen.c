@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "״Ԫ��");
+	set("short", "状元坟");
 	set("long", @LONG
-����һ��ʲ��Ҳû�еĿշ��䡣
+这是一间什麽也没有的空房间。
 LONG
 	);
 	set("no_clean_up", 0);

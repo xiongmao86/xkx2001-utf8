@@ -9,14 +9,14 @@ int cure_ob(string);
 
 void create()
 {
-	set_name(HIR"½ð¸Õ´óÁ¦Íè"NOR, ({"dali wan", "wan"}));
+	set_name(HIR"é‡‘åˆšå¤§åŠ›ä¸¸"NOR, ({"dali wan", "wan"}));
 	set_weight(100);
 	if (clonep())
 	set_default_object(__FILE__);
 	else 
 	{
-		set("unit", "¿Å");
-		set("long","ÕâÊÇ½­ºþÉÏ³£¼ûµÄÒ©Íè£¬ºìÉ«£¬ÁúÑÛ´óÐ¡£¬·þºó»áÁ¦Æø´óÔö¡£\n");
+		set("unit", "é¢—");
+		set("long","è¿™æ˜¯æ±Ÿæ¹–ä¸Šå¸¸è§çš„è¯ä¸¸ï¼Œçº¢è‰²ï¼Œé¾™çœ¼å¤§å°ï¼ŒæœåŽä¼šåŠ›æ°”å¤§å¢žã€‚\n");
 		set("value", 5000);
 	}
 	setup();
@@ -26,9 +26,9 @@ int cure_ob(object me)
 {
 	int app_str;
 	if (me->query_temp("daliwan"))
-		return notify_fail("ÄãÒÑ·þ¹ý´óÁ¦ÍèÁË¡£\n");
+		return notify_fail("ä½ å·²æœè¿‡å¤§åŠ›ä¸¸äº†ã€‚\n");
 	app_str = random(5)+1;
-	message_vision(HIR"$N·þÏÂÒ»¿Å½ð¸Õ´óÁ¦Íè£¬ÂÕÁËÂÕ¸ì²²£¬Ö±ÏëÕÒÈË´òÒ»¼Ü¡£\n"NOR,me);
+	message_vision(HIR"$Næœä¸‹ä¸€é¢—é‡‘åˆšå¤§åŠ›ä¸¸ï¼ŒæŠ¡äº†æŠ¡èƒ³è†Šï¼Œç›´æƒ³æ‰¾äººæ‰“ä¸€æž¶ã€‚\n"NOR,me);
 	me->add_temp("apply/strength",app_str);
 	me->set_temp("daliwan",1);
     destruct(this_object());
@@ -37,7 +37,7 @@ int cure_ob(object me)
 
 //void remove_eff(int app_str, object me)
 //{
-//	message_vision(HIM"$N¸ì²²Ò»Õó·¢Èí£¬¿´À´½ð¸Õ´óÁ¦ÍèÒ©ÐÔÒÑÈ¥¡£\n"NOR,me);
+//	message_vision(HIM"$Nèƒ³è†Šä¸€é˜µå‘è½¯ï¼Œçœ‹æ¥é‡‘åˆšå¤§åŠ›ä¸¸è¯æ€§å·²åŽ»ã€‚\n"NOR,me);
 //	me->add_temp("apply/strength",-app_str);
 //	me->delete_temp("daliwan");
 //}

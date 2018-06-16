@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ÇàÊ¯´óµÀ
+// é’çŸ³å¤§é“
 // Dong  11/03/1996.
 // modified by aln 2 / 98
 
@@ -8,10 +8,10 @@
 inherit ROOM;
 
 void create()
-{   set("short", "ÇàÊ¯´óµÀ");
+{   set("short", "é’çŸ³å¤§é“");
     set("long", @LONG
-´óµÀÉÏÓÎÈË£¬»ò²½ÐÐ£¬»ò³Ã½Î£¬»òÆïÂí¡£¸ö¸öÏ²ÆøÑóÑóµÄÀ´ÓÎÎ÷
-ºþ¡£ÍùÎ÷ÊÇºé´ºÇÅ¡£´óµÀÔòÑÓÉìÏò¶«±±±ß¡£
+å¤§é“ä¸Šæ¸¸äººï¼Œæˆ–æ­¥è¡Œï¼Œæˆ–è¶è½¿ï¼Œæˆ–éª‘é©¬ã€‚ä¸ªä¸ªå–œæ°”æ´‹æ´‹çš„æ¥æ¸¸è¥¿
+æ¹–ã€‚å¾€è¥¿æ˜¯æ´ªæ˜¥æ¡¥ã€‚å¤§é“åˆ™å»¶ä¼¸å‘ä¸œåŒ—è¾¹ã€‚
 LONG      );
 
          set("exits", ([ /* sizeof() == 2 */ 

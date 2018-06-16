@@ -7,10 +7,10 @@ inherit ROOM;
 void create()
 {
     int i;
-	set("short", "ɳ��");
+	set("short", "沙丘");
 	set("long", @LONG
-������һ���޼ʵ�ɳĮ���Ĺ�ãã������ɳ���ϱߵ�ɳ���
-�ֳ�ϡϡ��������ݡ�
+这里是一望无际的沙漠，四顾茫茫，尽是沙丘，南边的沙丘间
+现出稀稀落落的铁草。
 LONG
 	);
 

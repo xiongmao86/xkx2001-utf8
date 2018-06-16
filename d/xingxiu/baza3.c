@@ -1,16 +1,16 @@
 //Cracked by Roath
-// baza ����
+// baza 巴扎
 // maco 2/17/2000
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "巴扎西侧");
 	set("long", @LONG
-����ǰ��������ߣ������Ļ�Ʒ�����ࡢ��ۡ����ա�ţ��
-���ϡ�Ƥ�ľ�ĵȵȡ�ɢ�Ӹ��ص�ά��������ũ�����˶����ڴ�
-�ϼ����ף��˳����ﲻ����
+这儿是巴扎的西边，贩卖的货品有类、面粉、骆驼、牛羊、
+香料、皮革、木材等等。散居各地的维族商旅与农夫牧人都会在此
+赶集交易，人潮络绎不绝。
 LONG
 	);
 	set("exits", ([ 

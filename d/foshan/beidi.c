@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±±µÛÃí");
+        set("short", "åŒ—å¸åº™");
         set("long", @LONG
-±±µÛÃí×ø±±³¯ÄÏ¡£Ôº×ÓÖÐÒ»¸ö´óË®ÌÁ£¬ÌÁÖÐÊ¯¹êÊ¯Éß£¬°ºÈ»ÅÌ¾á¡£
-´óµîÉñÏñÊ¯°åÉÏÑª¼£ÒóÈ»¡£±±µÛÉñÏñÁ¢ÓÚ´óµîÕýÖÐ¡£
+åŒ—å¸åº™ååŒ—æœå—ã€‚é™¢å­ä¸­ä¸€ä¸ªå¤§æ°´å¡˜ï¼Œå¡˜ä¸­çŸ³é¾ŸçŸ³è›‡ï¼Œæ˜‚ç„¶ç›˜è¸žã€‚
+å¤§æ®¿ç¥žåƒçŸ³æ¿ä¸Šè¡€è¿¹æ®·ç„¶ã€‚åŒ—å¸ç¥žåƒç«‹äºŽå¤§æ®¿æ­£ä¸­ã€‚
 LONG
         );
         set("exits", ([
@@ -34,13 +34,13 @@ int do_ketou(string arg)
 {
 	object me = this_player();
 	if (!present("feng yiming",me) && !present("feng yiming",environment(me))) {
-		message_vision("$NÔÚ±±µÛÒ¯Ò¯ÏñÇ°¿ÄÁË¼¸¸öÍ·£¬ËµµÀ£º¡°±±µÛÒ¯Ò¯±£ÓÓÎÒÁ·³É¾øÊÀÎä¹¦£¡¡±\n",me);
+		message_vision("$Nåœ¨åŒ—å¸çˆ·çˆ·åƒå‰ç£•äº†å‡ ä¸ªå¤´ï¼Œè¯´é“ï¼šâ€œåŒ—å¸çˆ·çˆ·ä¿ä½‘æˆ‘ç»ƒæˆç»ä¸–æ­¦åŠŸï¼â€\n",me);
 		return 1;
 	}
 
-	message_vision("$NÔÚ±±µÛÒ¯Ò¯ÏñÇ°¿ÄÁË¼¸¸öÏìÍ·£¬ËµµÀ£º¡°±±µÛÒ¯Ò¯£¬"+
-		"ÄãÍþÁéÏÔºÕ£¬Ìæ"+ RANK_D->query_self(me)+ "\nÓÐÔ©ÉìÔ©£¬ÓÐ³ð±¨³ð¡£" +
-		"ÕâØËÄñÍµ³ÔÁËÎÒµÄ·ï»ËÈâ£¬µ«ÅÔÈË¶¼ËµËûÃ»³Ô£¡¡±\n", me);
+	message_vision("$Nåœ¨åŒ—å¸çˆ·çˆ·åƒå‰ç£•äº†å‡ ä¸ªå“å¤´ï¼Œè¯´é“ï¼šâ€œåŒ—å¸çˆ·çˆ·ï¼Œ"+
+		"ä½ å¨çµæ˜¾èµ«ï¼Œæ›¿"+ RANK_D->query_self(me)+ "\næœ‰å†¤ä¼¸å†¤ï¼Œæœ‰ä»‡æŠ¥ä»‡ã€‚" +
+		"è¿™åŽ®é¸Ÿå·åƒäº†æˆ‘çš„å‡¤å‡°è‚‰ï¼Œä½†æ—äººéƒ½è¯´ä»–æ²¡åƒï¼â€\n", me);
 	me->set_temp("beidi-ketou",1);
 	return 1;
 }
@@ -52,26 +52,26 @@ int do_kaitang(string arg)
 	object weapon;
 
 	if (!arg)
-		return notify_fail("Òª×ÔÉ±£¿\n");
+		return notify_fail("è¦è‡ªæ€ï¼Ÿ\n");
 	if( arg !="feng" && arg !="feng yiming" && arg !="yiming"
 		|| !me->query_temp("beidi-ketou")) 
-		return notify_fail("±±µÛÏñÇ°£¬²»¿ÉÔì´Î£¡\n");
+		return notify_fail("åŒ—å¸åƒå‰ï¼Œä¸å¯é€ æ¬¡ï¼\n");
 	if ( !feng_son = present("feng yiming",environment(me)))
-		return notify_fail("¿ÉËû²»ÔÚÃíÀï¡£\n");
+		return notify_fail("å¯ä»–ä¸åœ¨åº™é‡Œã€‚\n");
 	
         if( !objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword"
         && (string)weapon->query("skill_type") != "blade" )
-        	return notify_fail("¿ªÌÅ¿ÉÊÇÒªÓÃ¹¤¾ßµÄ¡£\n"); 
+        	return notify_fail("å¼€è†›å¯æ˜¯è¦ç”¨å·¥å…·çš„ã€‚\n"); 
 
 	if(present("feng tiannan",environment(me))) {
-		message_vision("·ïÌìÄÏ¶Ô$Nº°µÀ£º¡°ÐÝÉËÎÒ¶ù£¡¡±\n", me);
+		message_vision("å‡¤å¤©å—å¯¹$Nå–Šé“ï¼šâ€œä¼‘ä¼¤æˆ‘å„¿ï¼â€\n", me);
 		return 1;
 	}
 
-	message_vision("$NÀ­×¡·ïÒ»ÃùµÄÒÂ½ó£¬ÏòÉÏÒ»³¶£¬Â¶³ö¶Ç¸¹¼¡·ô£¬ºá¹ý" + weapon->query("name") +
-		"£¬½ÐµÀ£º¡°ËûÊÇ·ñ³ÔÁË·ï»ËÈâ£¬´ó¼ÒÕö´óÑÛ¾¦ÇÆ¸öÃ÷°×£¬±ðËµÎÒÔ©Í÷ºÃÈË£¡¡±\n", me);
-	message_vision("ºöÈ»¼ä£¬ÃÅÍâÇÀ½øÒ»ÈË£¬¶Ô$NºÈµÀ£º¡°ÐÝÉËÎÒ¶ù£¡¡±£¬·ïÒ»Ãù³Ë»úÌÓ×ßÁË¡£\n", me);
+	message_vision("$Næ‹‰ä½å‡¤ä¸€é¸£çš„è¡£è¥Ÿï¼Œå‘ä¸Šä¸€æ‰¯ï¼Œéœ²å‡ºè‚šè…¹è‚Œè‚¤ï¼Œæ¨ªè¿‡" + weapon->query("name") +
+		"ï¼Œå«é“ï¼šâ€œä»–æ˜¯å¦åƒäº†å‡¤å‡°è‚‰ï¼Œå¤§å®¶çå¤§çœ¼ç›çž§ä¸ªæ˜Žç™½ï¼Œåˆ«è¯´æˆ‘å†¤æž‰å¥½äººï¼â€\n", me);
+	message_vision("å¿½ç„¶é—´ï¼Œé—¨å¤–æŠ¢è¿›ä¸€äººï¼Œå¯¹$Nå–é“ï¼šâ€œä¼‘ä¼¤æˆ‘å„¿ï¼â€ï¼Œå‡¤ä¸€é¸£ä¹˜æœºé€ƒèµ°äº†ã€‚\n", me);
 	feng = new(__DIR__"npc/feng");
 	feng->move(environment(me));
 	feng->kill_ob(me);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// fushou3.c ������ի��
+// fushou3.c 福寿庵斋堂
 
 #include <room.h>
 inherit ROOM;
@@ -13,11 +13,11 @@ string* names = ({
 
 void create()
 {
-        set("short", "������ի��");
+        set("short", "福寿庵斋堂");
 	set("long", @LONG
-������Ƕ��Ҹ����ֵ�ի�á������ֱ����󣬵����ھ����Ӵ������ֵĵ��ӣ�
-ի�õ�Ҳ��С��ֻ�����ڰ����˳����Ĳ����ͳ��ʣ���λСʦ̫������æµ�Ų���
-��ի�����ϰ��˼��趹��������������Լ���Ѽ����ζ��ʳ��������һ����(door)��
+这里便是峨嵋福寿庵的斋堂。福寿庵本不大，但由于经常接待其他庵的弟子，
+斋堂倒也不小。只见厅内摆满了长长的餐桌和长凳，几位小师太正来回忙碌着布置
+素斋。桌上摆了几盆豆腐，花生，青菜以及素鸭等美味素食。北面有一扇门(door)。
 LONG
 	);
 	set("exits", ([
@@ -26,7 +26,7 @@ LONG
 	]));
 
         set("item_desc",([
-                "door"  : "һ��С��ͨ������¥�ϵ���Ϣ�ҡ�\n",
+                "door"  : "一扇小门通往北面楼上的休息室。\n",
         ]));
 
         set("objects",([
@@ -36,7 +36,7 @@ LONG
 		names[random(sizeof(names))]: 1,
         ]));
 
-        create_door("northup", "ľ��", "southdown", DOOR_CLOSED);
+        create_door("northup", "木门", "southdown", DOOR_CLOSED);
 
 	set("cost", 0);
 	setup();

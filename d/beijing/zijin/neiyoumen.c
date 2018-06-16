@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "内右门");
 	set("long", @LONG
-����ͨ�����ĵ������������Ҫ�Ż�,�ɴ������ǻʵۺͺ�����
-��ס�ĵط�.
+这是通往养心殿和西六宫的重要门户,由此往里是皇帝和后妃们
+居住的地方.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */

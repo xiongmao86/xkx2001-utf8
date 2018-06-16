@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºÚ°××Ó",({ "heibai zi","zi","heibai" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("é»‘ç™½å­",({ "heibai zi","zi","heibai" }) );
+        set("gender", "ç”·æ€§");
         set("age", 55);
 	set("long",
-		"ËûÃ¼Ä¿ÇåÐã£¬Í··¢¼«ºÚ¶øÆ¤·ô¼«°×£¬"
-		"ËÆºõÒ»¾ß½©Ê¬Ä£Ñù¡£\n");
+		"ä»–çœ‰ç›®æ¸…ç§€ï¼Œå¤´å‘æžé»‘è€Œçš®è‚¤æžç™½ï¼Œ"
+		"ä¼¼ä¹Žä¸€å…·åƒµå°¸æ¨¡æ ·ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯¶þ×¯Ö÷");
+        set("title","æ¢…åº„äºŒåº„ä¸»");
         set("combat_exp", 85000);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -27,10 +27,10 @@ void create()
 	set("jiali",45);
 
 
-	set("mz/toy","ÆåÆ×");
+	set("mz/toy","æ£‹è°±");
 	set("mz/set","heibai");
 	set("mz/need","tubiweng");
-	set("mz/needname","Èý×¯Ö÷");
+	set("mz/needname","ä¸‰åº„ä¸»");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 	carry_object(__DIR__"obj/qiping")->wield();

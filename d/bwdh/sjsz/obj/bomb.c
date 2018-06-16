@@ -9,13 +9,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name( HIR "Åùö¨µ¯" NOR, ({ "bomb", "zha yao"}) );
+	set_name( HIR "éœ¹é›³å¼¹" NOR, ({ "bomb", "zha yao"}) );
 	set_weight(10);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ã¶");
-                set("long", "Õâ¿´ÆðÀ´ËÆºõÊÇÒ»Ã¶³ö×ÔÃ÷½ÌÁÒ»ðÆìµÄÅùö¨µ¯£¬ÉÏÃæ»¹ÓÐµ¼»ðË÷(fire)¡£\n");
+		set("unit", "æžš");
+                set("long", "è¿™çœ‹èµ·æ¥ä¼¼ä¹Žæ˜¯ä¸€æžšå‡ºè‡ªæ˜Žæ•™çƒˆç«æ——çš„éœ¹é›³å¼¹ï¼Œä¸Šé¢è¿˜æœ‰å¯¼ç«ç´¢(fire)ã€‚\n");
                 set("value", 1000000);		
 	        set("material", "iron");
         }
@@ -36,16 +36,16 @@ int do_fire(string arg)
 
 	/*
 	if ( !arg || arg!="bomb" )
-	   return notify_fail( "ÄãÏëÒªÒýÈ¼Ê²Ã´£¿\n");
+	   return notify_fail( "ä½ æƒ³è¦å¼•ç‡ƒä»€ä¹ˆï¼Ÿ\n");
 	*/
 
 	if ( !ob->query_temp("fired") ) {
-	   message_vision("$NÌÍ³öÒ»Ã¶$n£¬ÉìÊÖÓÃÁ¦Ò»À­£¬À­¿ªÁËµ¼»ðË÷¡£\n", me,ob);
+	   message_vision("$NæŽå‡ºä¸€æžš$nï¼Œä¼¸æ‰‹ç”¨åŠ›ä¸€æ‹‰ï¼Œæ‹‰å¼€äº†å¯¼ç«ç´¢ã€‚\n", me,ob);
 	   ob->set_temp("fired", 1);
 	   ob->set_temp("owner",me);
 	   call_out("explode", 1+ random(5), me, ob);
 	}
-	else return notify_fail("ÄãÒ»À­²Å·¢ÏÖ´ËÅùö¨µ¯ÒÑ±»ÒýÈ¼ÁË£¬¾Í¿ì±¬Õ¨ÁË£¡\n");
+	else return notify_fail("ä½ ä¸€æ‹‰æ‰å‘çŽ°æ­¤éœ¹é›³å¼¹å·²è¢«å¼•ç‡ƒäº†ï¼Œå°±å¿«çˆ†ç‚¸äº†ï¼\n");
 
 	return 1;
 }
@@ -56,7 +56,7 @@ int explode(object me, object ob)
 	int i,damage;
 	string str;
 
-	message_vision("Ö»ÌýµÄÒ»Éù¾ªÌì¶¯µØµÄ±¬Ïì£¬ËÄÖÜÒ»ÇÐÒÑ±»Õ¨µÃ»Ò·ÉÑÌÃð£¡\n", ob);
+	message_vision("åªå¬çš„ä¸€å£°æƒŠå¤©åŠ¨åœ°çš„çˆ†å“ï¼Œå››å‘¨ä¸€åˆ‡å·²è¢«ç‚¸å¾—ç°é£žçƒŸç­ï¼\n", ob);
 
 	owner = query_temp("owner");
 
@@ -79,7 +79,7 @@ int explode(object me, object ob)
 	
 	if( userp(env) ){
 		env->set("eff_qi",-1);
-		message_vision(HIR"$N±»Õ¨µÃ·ÛÉíËé¹Ç£¡\n"NOR,env);
+		message_vision(HIR"$Nè¢«ç‚¸å¾—ç²‰èº«ç¢Žéª¨ï¼\n"NOR,env);
         env->receive_damage("qi", env->query("max_qi"),  owner);
         env->receive_wound("qi", env->query("max_qi"), owner);
 		env=environment(env);
@@ -89,7 +89,7 @@ int explode(object me, object ob)
 
 	for (i=0; i<sizeof(victims); i++) {
 	   	if (!living(victims[i]) || victims[i]==me ) continue;
-		message_vision(HIR"$N±»Õ¨µÃÈËÑöÂí·­£¡\n"NOR,victims[i]);
+		message_vision(HIR"$Nè¢«ç‚¸å¾—äººä»°é©¬ç¿»ï¼\n"NOR,victims[i]);
 		damage= 2000+random(8000);
         victims[i]->receive_damage("qi", damage,  owner);
         victims[i]->receive_wound("qi", random(damage), owner);

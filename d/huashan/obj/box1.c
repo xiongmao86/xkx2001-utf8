@@ -1,19 +1,19 @@
 //Cracked by Roath
-// box1.c ´óÌúºĞ
+// box1.c å¤§é“ç›’
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name("ÌúºĞ", ({"tie he", "he", "box"}));
+        set_name("é“ç›’", ({"tie he", "he", "box"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("long",
-			"´ËºĞ¸ßÔ¼Ò»³ß£¬Á½³ß¼û·½£¬È´ÇáÆ®Æ®µØËÆºõÃ»²Ø×ÅÊ²Ã´¶«Î÷¡£\n");
+			"æ­¤ç›’é«˜çº¦ä¸€å°ºï¼Œä¸¤å°ºè§æ–¹ï¼Œå´è½»é£˜é£˜åœ°ä¼¼ä¹æ²¡è—ç€ä»€ä¹ˆä¸œè¥¿ã€‚\n");
                 set("material", "steel");
 		set("value", 100);
         }
@@ -30,23 +30,23 @@ int do_open(string arg)
 	object ob1, ob2, me=this_player();
 
 	if ( !arg || arg =="" )
-		return notify_fail("ÄãÒª½«Ê²Ã´´ò¿ª£¿\n");
+		return notify_fail("ä½ è¦å°†ä»€ä¹ˆæ‰“å¼€ï¼Ÿ\n");
 
         if ( (arg == "tie he" || arg == "he" || arg == "box" )
         && objectp(ob1 = present(arg, me)) ) {
 	   	if ( !ob1->query_temp("opened") ) {	
-			message_vision("$N´ò¿ª´óÌúºĞ£¬·¢ÏÖÒ»ºĞÖĞÓĞ¸ö´óĞÅ·â¡£\n", me);
+			message_vision("$Næ‰“å¼€å¤§é“ç›’ï¼Œå‘ç°ä¸€ç›’ä¸­æœ‰ä¸ªå¤§ä¿¡å°ã€‚\n", me);
 
-		tell_object(me, "Äã·¢ÏÖºĞ×ÓÇ³µÃ³öÆæ£¬Àëµ×½öÓĞÒ»´ç£¬ÁÏµÃ±ØÓĞ¼Ğ²ã¡£\n");
+		tell_object(me, "ä½ å‘ç°ç›’å­æµ…å¾—å‡ºå¥‡ï¼Œç¦»åº•ä»…æœ‰ä¸€å¯¸ï¼Œæ–™å¾—å¿…æœ‰å¤¹å±‚ã€‚\n");
 		ob1->set_temp("opened", 1);
-		message_vision("$N½«´óĞÅ·âÄÃÆğÀ´¡£\n", me);
+		message_vision("$Nå°†å¤§ä¿¡å°æ‹¿èµ·æ¥ã€‚\n", me);
 
 		ob2=new(__DIR__"letter1");
 		ob2->move(me);
 	   }
 	   else {
-		message_vision("$N´ò¿ª´óÌúºĞ¡£\n", me);
-		tell_object(me, "Äã·¢ÏÖºĞ×ÓÇ³µÃ³öÆæ£¬Àëµ×½öÓĞÒ»´ç£¬ÁÏµÃ±ØÓĞ¼Ğ²ã¡£\n");
+		message_vision("$Næ‰“å¼€å¤§é“ç›’ã€‚\n", me);
+		tell_object(me, "ä½ å‘ç°ç›’å­æµ…å¾—å‡ºå¥‡ï¼Œç¦»åº•ä»…æœ‰ä¸€å¯¸ï¼Œæ–™å¾—å¿…æœ‰å¤¹å±‚ã€‚\n");
 	   }
 
 	   return 1;
@@ -62,13 +62,13 @@ int do_pull(string arg)
                 return 0;
 
 	if ( ob = present(arg, me) ) {
-		message_vision("$N°´ÏÂÌúºĞ×óÓÒ»úÀ¨£¬Ë«ÊÖÅõºĞÁ¦ÏÆ£¬Ö»ÌıµÃ¡°Ñ½¡±µÄÒ»Éù£¬ÌúºĞ¼´¿ª¡£\n", me);
-		message_vision(HIR"Í»È»Ö»ÌıµÃ¡°àÍàÍ¡±ÕóÏì£¬ÊıÊ®Ã¶¶Ì¼ıÓÉÌúºĞÄÚÉä³ö£¬½«$NÉä³ÉÁË´Ìâ¬£¡\n"NOR, me);
+		message_vision("$NæŒ‰ä¸‹é“ç›’å·¦å³æœºæ‹¬ï¼ŒåŒæ‰‹æ§ç›’åŠ›æ€ï¼Œåªå¬å¾—â€œå‘€â€çš„ä¸€å£°ï¼Œé“ç›’å³å¼€ã€‚\n", me);
+		message_vision(HIR"çªç„¶åªå¬å¾—â€œå—¤å—¤â€é˜µå“ï¼Œæ•°åæšçŸ­ç®­ç”±é“ç›’å†…å°„å‡ºï¼Œå°†$Nå°„æˆäº†åˆºçŒ¬ï¼\n"NOR, me);
 
                 ob1=new(__DIR__"jinshe_book1");
                 ob1->move(environment(me));
 
-		me->receive_wound("qi", me->query("max_qi")+100, "±»¶¾¼ıÉäËÀÁË");
+		me->receive_wound("qi", me->query("max_qi")+100, "è¢«æ¯’ç®­å°„æ­»äº†");
 
 		destruct(ob);
 	

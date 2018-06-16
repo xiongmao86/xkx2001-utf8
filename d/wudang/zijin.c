@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zijin.c �Ͻ�� 
+// zijin.c 紫金城 
 // by Fang 8/20/96
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIY"�Ͻ��"NOR);
+	set("short", HIY"紫金城"NOR);
 	set("long", @LONG
-�����ػ������Ͻ��ǽ���ܳ������ǽ�ɻ���ʯ��ɽ�����ɣ�������
-���ž����پ��ڣ�����Ϊ����·�ڣ�����׳�ۡ�
+这是守护金殿的紫金城墙，周长三里，城墙由花岗石依山势砌成，东西北
+城门均面临绝壁，南门为上下路口，气势壮观。
 LONG
 	);
         set("outdoors", "wudang");

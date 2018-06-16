@@ -1,17 +1,17 @@
 //Cracked by Roath
-// »ªÉ½Ð¡ºï×Ó
+// åŽå±±å°çŒ´å­
 // qfy 27/7/96
 //modified by xiaojian to prevent using it to dig gold 09/9/00
 inherit NPC;
 
 void create()
 {
-        set_name("Ð¡ºï×Ó", ({"hou zi","hou","monkey"}));
-        set("race", "Ò°ÊÞ");
+        set_name("å°çŒ´å­", ({"hou zi","hou","monkey"}));
+        set("race", "é‡Žå…½");
         set("age", 2);
-        set("long", "Ò»Ö»¿É°®µÄÐ¡ºï×Ó£¬¼ûÄãÍû×ÅËü£¬ÌÓ¿ªÀëÄãÔ¶Ð©ÏòÄã»ØÍû¡£\n");
+        set("long", "ä¸€åªå¯çˆ±çš„å°çŒ´å­ï¼Œè§ä½ æœ›ç€å®ƒï¼Œé€ƒå¼€ç¦»ä½ è¿œäº›å‘ä½ å›žæœ›ã€‚\n");
         set("attitude", "peaceful");
-        set("limbs", ({ "Í·²¿", "ÉíÌå",  "Ç°Ö«", "ºóÍÈ", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“",  "å‰è‚¢", "åŽè…¿", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 500);
         set_temp("apply/attack", 10);
@@ -20,10 +20,10 @@ void create()
         set_temp("apply/armor", 3);
         set("chat_chance", 10);
         set("chat_msg", ({
-                "Ò»Ö»Ð¡ºï×ÓºöÈ»ÅÜ¹ýÀ´£¬ÏòÄã×÷ÁË¸öÒ¾¡£\n",
-                "Ð¡ºï×ÓÒ¡ÁËÒ¡Î²°Í¡£\n",
-                "¼¸Ö»Ð¡ºï×Ó±Ä±ÄÌøÌøµØÅÜ¹ýÀ´£¬ÓÖ»¥Ïà×·ÖðÀëÈ¥¡£\n",
-                "Ð¡ºï×ÓÔÚÄãµÄ½Å±ß°¤°¤²Á²Á£¬Ïë¸úÄãÍæ¡£\n",
+                "ä¸€åªå°çŒ´å­å¿½ç„¶è·‘è¿‡æ¥ï¼Œå‘ä½ ä½œäº†ä¸ªæ–ã€‚\n",
+                "å°çŒ´å­æ‘‡äº†æ‘‡å°¾å·´ã€‚\n",
+                "å‡ åªå°çŒ´å­è¹¦è¹¦è·³è·³åœ°è·‘è¿‡æ¥ï¼Œåˆäº’ç›¸è¿½é€ç¦»åŽ»ã€‚\n",
+                "å°çŒ´å­åœ¨ä½ çš„è„šè¾¹æŒ¨æŒ¨æ“¦æ“¦ï¼Œæƒ³è·Ÿä½ çŽ©ã€‚\n",
                 (: random_move :)
         }) );
         setup();
@@ -31,9 +31,9 @@ void create()
 private void go_home()
 {
         if( !living(this_object()) ) return;
-        message_vision("$NÒ»±ÄÒ»ÌøµØÀë¿ªÁË¡£\n", this_object());
+        message_vision("$Nä¸€è¹¦ä¸€è·³åœ°ç¦»å¼€äº†ã€‚\n", this_object());
         this_object()->move("/d/huashan/husun");
-        message_vision("$N±Ä±ÄÌøÌøµÄ±ÄÁË¹ýÀ´¡£\n", this_object());
+        message_vision("$Nè¹¦è¹¦è·³è·³çš„è¹¦äº†è¿‡æ¥ã€‚\n", this_object());
 }
 
 void init()
@@ -54,34 +54,34 @@ int accept_object(object me, object obj)
                 
         if ( obj->query("food_supply") && obj->value() >= 0 ) {
            command("drop"+obj->query("id"));
-           message_vision("Ð¡ºï×Ó¸ßÐËµØÈÆ×Å$N±Ä±ÄÌøÌø¡£\n", me);
+           message_vision("å°çŒ´å­é«˜å…´åœ°ç»•ç€$Nè¹¦è¹¦è·³è·³ã€‚\n", me);
            set_leader(me);
-           say("Ð¡ºï×ÓÈýÁ½ÏÂ±ã°Ñ"+(string)obj->query("name")+"³ÔµÃ¸É¸É¾»¾»¡£\n");
+           say("å°çŒ´å­ä¸‰ä¸¤ä¸‹ä¾¿æŠŠ"+(string)obj->query("name")+"åƒå¾—å¹²å¹²å‡€å‡€ã€‚\n");
            me->add("monkey", 1);
 
            if( (int)me->query("monkey")==15 || (int)me->query("monkey")==25 
            || (int)me->query("monkey")==35 || (int)me->query("monkey")==45 ) {
-                message_vision("Ð¡ºï×ÓÀ­³¶$NµÄÒÂ·þ£¬Ê¾Òâ$N¸ú×ÅËü¡£\n", me);
-                message("vision", me->name() + "Ëæ×ÅÐ¡ºï×Ó×ßÏòÉîÉ½£¬×ó¹ÕÓÒ¹ÕµØÒ»ÏÂ×Ó±ã¿´²»¼ûÁË¡£\n", environment(me), ({me}));
-                message("vision", "ÁíÒ»Ö»Ð¡ºï×ÓÅÜÁË¹ýÀ´¡£\n", environment(me), ({me}));
-                write("ÄãËæ×ÅÐ¡ºï×ÓÔÚÉ½Àï×ß×Å£¬¶«×ªÎ÷×ªµØ¸ãµÃÄãÃÔÊ§ÁË·½Ïò¡£\n");
-                write("×ßÁËÁ¼¾Ã£¬Ð¡ºï×Ó°ÑÄã´øµ½Ò»¸öÉ½¶´Ç°£¬Ö¸×Å¶´¿ÚÒªÄã½øÈ¥¡£\n");
-                write("½ô½Ó×Å£¬Ð¡ºï×Ó±ãÍùÒ°ÁÖÀïÅÜÁË¡£\n");
+                message_vision("å°çŒ´å­æ‹‰æ‰¯$Nçš„è¡£æœï¼Œç¤ºæ„$Nè·Ÿç€å®ƒã€‚\n", me);
+                message("vision", me->name() + "éšç€å°çŒ´å­èµ°å‘æ·±å±±ï¼Œå·¦æ‹å³æ‹åœ°ä¸€ä¸‹å­ä¾¿çœ‹ä¸è§äº†ã€‚\n", environment(me), ({me}));
+                message("vision", "å¦ä¸€åªå°çŒ´å­è·‘äº†è¿‡æ¥ã€‚\n", environment(me), ({me}));
+                write("ä½ éšç€å°çŒ´å­åœ¨å±±é‡Œèµ°ç€ï¼Œä¸œè½¬è¥¿è½¬åœ°æžå¾—ä½ è¿·å¤±äº†æ–¹å‘ã€‚\n");
+                write("èµ°äº†è‰¯ä¹…ï¼Œå°çŒ´å­æŠŠä½ å¸¦åˆ°ä¸€ä¸ªå±±æ´žå‰ï¼ŒæŒ‡ç€æ´žå£è¦ä½ è¿›åŽ»ã€‚\n");
+                write("ç´§æŽ¥ç€ï¼Œå°çŒ´å­ä¾¿å¾€é‡Žæž—é‡Œè·‘äº†ã€‚\n");
                 me->move("/d/huashan/yelin1");
-                message("vision",me->name()+"¸ú×ÅÐ¡ºï×Ó×ßÁË¹ýÀ´¡£\n", environment(me), ({me}) );
+                message("vision",me->name()+"è·Ÿç€å°çŒ´å­èµ°äº†è¿‡æ¥ã€‚\n", environment(me), ({me}) );
            }    
 
 
            if ( (int)me->query("monkey") == 50 ) {
-                message_vision("Ð¡ºï×ÓÀ­³¶$NµÄÒÂ·þ£¬Ê¾Òâ$N¸ú×ÅËü¡£\n", me);
-                message("vision", me->name() + "Ëæ×ÅÐ¡ºï×Ó×ßÏòÉîÉ½£¬×ó¹ÕÓÒ¹ÕµØÒ»ÏÂ×Ó±ã¿´²»¼ûÁË¡£\n", environment(me), ({me}));
-                message("vision", "ÁíÒ»Ö»Ð¡ºï×ÓÅÜÁË¹ýÀ´¡£\n", environment(me), ({me}));
-                write("ÄãËæ×ÅÐ¡ºï×ÓÔÚÉ½Àï×ß×Å£¬¶«×ªÎ÷×ªµØ¸ãµÃÄãÃÔÊ§ÁË·½Ïò¡£\n");
-                write("ÄãÒþÔ¼¾õµÃÕâ´ÎµÄÂ·ÏßºÍÇ°¼¸´Î×ß¹ýµÄ²»Í¬¡£×ßÁËÁ¼¾Ã£¬Ð¡ºï×Ó°ÑÄã´øµ½\n");
-                write("Ò»¸öÉ½¶´Àï¡£\n");
+                message_vision("å°çŒ´å­æ‹‰æ‰¯$Nçš„è¡£æœï¼Œç¤ºæ„$Nè·Ÿç€å®ƒã€‚\n", me);
+                message("vision", me->name() + "éšç€å°çŒ´å­èµ°å‘æ·±å±±ï¼Œå·¦æ‹å³æ‹åœ°ä¸€ä¸‹å­ä¾¿çœ‹ä¸è§äº†ã€‚\n", environment(me), ({me}));
+                message("vision", "å¦ä¸€åªå°çŒ´å­è·‘äº†è¿‡æ¥ã€‚\n", environment(me), ({me}));
+                write("ä½ éšç€å°çŒ´å­åœ¨å±±é‡Œèµ°ç€ï¼Œä¸œè½¬è¥¿è½¬åœ°æžå¾—ä½ è¿·å¤±äº†æ–¹å‘ã€‚\n");
+                write("ä½ éšçº¦è§‰å¾—è¿™æ¬¡çš„è·¯çº¿å’Œå‰å‡ æ¬¡èµ°è¿‡çš„ä¸åŒã€‚èµ°äº†è‰¯ä¹…ï¼Œå°çŒ´å­æŠŠä½ å¸¦åˆ°\n");
+                write("ä¸€ä¸ªå±±æ´žé‡Œã€‚\n");
                 me->delete("monkey");
                 me->move("/d/huashan/shandong3");
-                message("vision",me->name()+"¸ú×ÅÐ¡ºï×Ó×ßÁË¹ýÀ´¡£\n", environment(me), ({me}) );
+                message("vision",me->name()+"è·Ÿç€å°çŒ´å­èµ°äº†è¿‡æ¥ã€‚\n", environment(me), ({me}) );
            }
 
            remove_call_out("destroy_it");
@@ -89,13 +89,13 @@ int accept_object(object me, object obj)
            return 1;
         }
         else {
-           say("Ð¡ºï×Ó½«"+(string)obj->query("name")+"½ÓÁË¹ýÀ´£¬ÍæÅªÁË¼¸ÏÂ£¬ËÆºõ²»¶®ÓÐÉõÃ´ÓÃ¡£\n");
+           say("å°çŒ´å­å°†"+(string)obj->query("name")+"æŽ¥äº†è¿‡æ¥ï¼ŒçŽ©å¼„äº†å‡ ä¸‹ï¼Œä¼¼ä¹Žä¸æ‡‚æœ‰ç”šä¹ˆç”¨ã€‚\n");
            command("shake");
            if (obj->query("money_id")) {
               obj2 = new(base_name(obj));
               obj2->set_amount((int)obj->query_amount());
               obj2->move(environment(me));
-              say("Ð¡ºï×Ó¶ªÏÂÒ»Ð©"+(string)obj->query("name")+"¡£\n");
+              say("å°çŒ´å­ä¸¢ä¸‹ä¸€äº›"+(string)obj->query("name")+"ã€‚\n");
            }    
            remove_call_out("drop_it");
            call_out("drop_it", 1, obj);

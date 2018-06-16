@@ -1,43 +1,43 @@
 //Cracked by Roath
-// /kungfu/skill/riyue-shenzhang.c ÈÕÔÂÉñÕÆ
+// /kungfu/skill/riyue-shenzhang.c æ—¥æœˆç¥æŒ
 // by wsky
 
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$NË«Ã¼Ò»Ñï£¬Ò»ÕĞ¡¸ÈÕÔÂ³õÉı¡¹Ë«È­Î¢Î¢Ò»¶Ù£¬È»ºó·É¿ìµÄ´òÏò$nµÄ$l",
+([      "action": "$NåŒçœ‰ä¸€æ‰¬ï¼Œä¸€æ‹›ã€Œæ—¥æœˆåˆå‡ã€åŒæ‹³å¾®å¾®ä¸€é¡¿ï¼Œç„¶åé£å¿«çš„æ‰“å‘$nçš„$l",
         "dodge": 30,
         "force": 280,
-        "skill_name" : "ÈÕÔÂ³õÉı",
-        "damage_type": "ğöÉË"
+        "skill_name" : "æ—¥æœˆåˆå‡",
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NÉíĞÎÒ»»Î£¬ÇÀÔÚ$nµÄÉíÇ°£¬Ë«È­Ò»ÒõÒ»ÑôÀ×öª°ãµÄ»÷Ïò$nµÄ$l£¬ºÃÒ»ÕĞ¡¸ÈÕ¿÷ÔÂÓ¯¡¹",
+([      "action": "$Nèº«å½¢ä¸€æ™ƒï¼ŒæŠ¢åœ¨$nçš„èº«å‰ï¼ŒåŒæ‹³ä¸€é˜´ä¸€é˜³é›·éœ†èˆ¬çš„å‡»å‘$nçš„$lï¼Œå¥½ä¸€æ‹›ã€Œæ—¥äºæœˆç›ˆã€",
         "dodge": 10,
         "force": 200,
-        "skill_name" : "ÈÕ¿÷ÔÂÓ¯",
-        "damage_type": "ğöÉË"
+        "skill_name" : "æ—¥äºæœˆç›ˆ",
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NÓÒ¿çÒ»²½£¬Ò»ÕĞ¡¸ÈÕÔÂ»ÔÃ÷¡¹£¬×óÈ­Ò»¸öĞè»Î£¬ÓÒÈ­ÉÁµç°ãµÄ»÷Ïò$nµÄ$l",
+([      "action": "$Nå³è·¨ä¸€æ­¥ï¼Œä¸€æ‹›ã€Œæ—¥æœˆè¾‰æ˜ã€ï¼Œå·¦æ‹³ä¸€ä¸ªéœ€æ™ƒï¼Œå³æ‹³é—ªç”µèˆ¬çš„å‡»å‘$nçš„$l",
         "dodge": -20,
         "force": 450,
         "damage": 65,
-        "skill_name" : "ÈÕÔÂ»ÔÃ÷",
-        "damage_type": "ğöÉË"
+        "skill_name" : "æ—¥æœˆè¾‰æ˜",
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NÉÁ¿ª$nµÄ¹¥»÷£¬ÓÒÈ­ÃÍµÄ´òÏò$nµÄ$l£¬ÕıÊÇÒ»ÕĞ¡¸½¾ÈÕÑ×Ñ×¡¹",
+([      "action": "$Né—ªå¼€$nçš„æ”»å‡»ï¼Œå³æ‹³çŒ›çš„æ‰“å‘$nçš„$lï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œéª„æ—¥ç‚ç‚ã€",
         "dodge": 10,
         "force": 350,
         "damage": 60,
-        "skill_name" : "½¾ÈÕÑ×Ñ×",
-        "damage_type": "ğöÉË"
+        "skill_name" : "éª„æ—¥ç‚ç‚",
+        "damage_type": "ç˜€ä¼¤"
 ]),
-([      "action": "$NÒ»Éù¿ñºô£¬ÉíÉÏÒÂÉÀÎ¢Î¢Æ®Æğ£¬Ò»ÕĞ¡¸Ê¥»ğ¹âÃ÷¡¹£¬Ë«È­Ò»Ç°Ò»ºóµÄ´òÏò$nµÄ$l",
+([      "action": "$Nä¸€å£°ç‹‚å‘¼ï¼Œèº«ä¸Šè¡£è¡«å¾®å¾®é£˜èµ·ï¼Œä¸€æ‹›ã€Œåœ£ç«å…‰æ˜ã€ï¼ŒåŒæ‹³ä¸€å‰ä¸€åçš„æ‰“å‘$nçš„$l",
         "dodge": 10,
         "force": 350,
         "damage": 80,
-        "skill_name" : "Ê¥»ğ¹âÃ÷",
-        "damage_type": "ğöÉË"
+        "skill_name" : "åœ£ç«å…‰æ˜",
+        "damage_type": "ç˜€ä¼¤"
 ]),
 });
 
@@ -47,12 +47,12 @@ int valid_learn(object me)
 {
 
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("Á·ÈÕÔÂÈ­±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç»ƒæ—¥æœˆæ‹³å¿…é¡»ç©ºæ‰‹ã€‚\n");
         if ((int)me->query_skill("shenghuo-xuanming", 1) < 10)
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨»ğºò²»¹»£¬ÎŞ·¨Á·³éËèÕÆ¡£\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•ç»ƒæŠ½é«“æŒã€‚\n");
 
         if ((int)me->query("max_neili") < 60)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·ÈÕÔÂÈ­¡£");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒæ—¥æœˆæ‹³ã€‚");
         return 1;
 }
 
@@ -61,9 +61,9 @@ int practice_skill(object me)
 {
 
         if ((int)me->query("jingli") < 30)
-                return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
         if ((int)me->query("neili") < 8)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÈÕÔÂÈ­¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ—¥æœˆæ‹³ã€‚\n");
 
         if (me->query_skill("riyue-shenzhang", 1) < 50)
                 me->receive_damage("jingli", 20);

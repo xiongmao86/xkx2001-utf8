@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÁúÈª¹Û");
+        set("short", "é¾™æ³‰è§‚");
         set("long", 
-"ÁúÈª¹ÛÎªºãÉ½Ê®°Ë¾°Ö®Ò»£¬¹ÛÖĞÓĞÁ½ÑÛÈªË®£¬Ïà¸ô²»µ½°ë
-ÕÉ£¬ÈªË®Ò»¿àÒ»Ìğ£¬±ãÊÇËùÎ½µÄ¡°ÁúÈª¸Ê¿à¡±¡£ÌÆĞş×ÚÀîÂ¡»ù
-Ôø³öÓÎµ½´Ë£¬Óù±ÊÇ×Êé¡°ÁúÈª¹Û¡±µÄØÒ¶î¡£\n"
+"é¾™æ³‰è§‚ä¸ºæ’å±±åå…«æ™¯ä¹‹ä¸€ï¼Œè§‚ä¸­æœ‰ä¸¤çœ¼æ³‰æ°´ï¼Œç›¸éš”ä¸åˆ°åŠ
+ä¸ˆï¼Œæ³‰æ°´ä¸€è‹¦ä¸€ç”œï¼Œä¾¿æ˜¯æ‰€è°“çš„â€œé¾™æ³‰ç”˜è‹¦â€ã€‚å”ç„å®—æéš†åŸº
+æ›¾å‡ºæ¸¸åˆ°æ­¤ï¼Œå¾¡ç¬”äº²ä¹¦â€œé¾™æ³‰è§‚â€çš„åŒ¾é¢ã€‚\n"
         );
         set("exits", ([
                 "westdown"  : __DIR__"zizhiyu",
@@ -27,7 +27,7 @@ void init()
 int do_drink(string arg)
 {	
         if(arg !="ganquan") 
-	        return notify_fail("ÄãÒªºÈÊ²Ã´? \n");
+	        return notify_fail("ä½ è¦å–ä»€ä¹ˆ? \n");
         else{
 
         int current_water,current_food;
@@ -41,15 +41,15 @@ int do_drink(string arg)
         if (current_water<me->max_water_capacity()) {
             me->set("water", current_water+30+random(20));
 	    me->set("food", current_food+20+ random(10));
-            message("vision", me->name()+"ÍäÏÂÑü£¬ÅõÁËÒ»°Ñ¸ÊÈªË®ºÈÁËÏÂÈ¥¡£\n"
+            message("vision", me->name()+"å¼¯ä¸‹è…°ï¼Œæ§äº†ä¸€æŠŠç”˜æ³‰æ°´å–äº†ä¸‹å»ã€‚\n"
             , environment(me), ({me}) );
-            write("ÄãÅõÁËÒ»°Ñ¸ÊÈªºÈÁËÏÂÈ¥¡£ÈªË®Ò»ÈëĞØ¸¹£¬±ãÓÌÈç¸ÊÂ¶È÷ĞÄ£¬Ë¬Í¸ÇåÁ¹¡£\n");
+            write("ä½ æ§äº†ä¸€æŠŠç”˜æ³‰å–äº†ä¸‹å»ã€‚æ³‰æ°´ä¸€å…¥èƒ¸è…¹ï¼Œä¾¿çŠ¹å¦‚ç”˜éœ²æ´’å¿ƒï¼Œçˆ½é€æ¸…å‡‰ã€‚\n");
 	 if ((int)me->query("eff_qi") != 
             (int)me->query("max_qi"))
             me->receive_curing("qi", 10+random(10));
 
         }
-        else write("ÄãÒÑ¾­ºÈÁËºÃ¶àÈªË®£¬ÒÑ¾­ÔÙÒ²ºÈ²»ÏÂÁË¡£\n");
+        else write("ä½ å·²ç»å–äº†å¥½å¤šæ³‰æ°´ï¼Œå·²ç»å†ä¹Ÿå–ä¸ä¸‹äº†ã€‚\n");
 
         return 1;
 	}

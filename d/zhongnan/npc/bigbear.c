@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /clone/beast/bigbear.c
-// ´ó¹·ĞÜ
+// å¤§ç‹—ç†Š
 // sdong 08/98
 
 #include <ansi.h>
@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-		  set_name("´ó¹·ĞÜ", ({ "da gouxiong", "gouxiong" ,"bear"}) );
-		  set("race", "Ò°ÊŞ");
+		  set_name("å¤§ç‹—ç†Š", ({ "da gouxiong", "gouxiong" ,"bear"}) );
+		  set("race", "é‡å…½");
 		  set("age", 1);
-		  set("long", "Ò»Ö»ÓÖ¸ßÓÖ´óµÄ´ó¹·ĞÜ£¬ËüÕıÆøÊÆĞÚĞÚµØµÉ×ÅÑÛ¾¦¿´×ÅÄã¡£\n");
+		  set("long", "ä¸€åªåˆé«˜åˆå¤§çš„å¤§ç‹—ç†Šï¼Œå®ƒæ­£æ°”åŠ¿æ±¹æ±¹åœ°çªç€çœ¼ç›çœ‹ç€ä½ ã€‚\n");
         set("attitude", "peaceful");
 		  set_weight(200000);
 		  set("max_qi", 100);
@@ -41,7 +41,7 @@ void die()
 
 		  ob = new(DRUG_D("xiongdan"));
 		  ob->move(environment(this_object()));
-		  message_vision("$N²Òº¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+		  message_vision("$Næƒ¨åšä¸€å£°ï¼Œæ­»äº†ï¼\n", this_object());
 		  destruct(ob2);
 }
 

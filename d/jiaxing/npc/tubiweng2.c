@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Íº±ÊÎÌ",({ "tubi weng","weng" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ç§ƒç¬”ç¿",({ "tubi weng","weng" }) );
+        set("gender", "ç”·æ€§");
         set("age", 45);
 	set("long",
-		"Ëû°«°«ÅÖÅÖ£¬Í·¶¥ÍºµÃÓÍ¹â»¬ÁÁ£¬"
-		"Ò»¸ùÍ··¢Ò²Ã»ÓĞ£¬ÒÂÉÀÉÏ¶¼ÊÇÄ«¼£¡£\n");
+		"ä»–çŸ®çŸ®èƒ–èƒ–ï¼Œå¤´é¡¶ç§ƒå¾—æ²¹å…‰æ»‘äº®ï¼Œ"
+		"ä¸€æ ¹å¤´å‘ä¹Ÿæ²¡æœ‰ï¼Œè¡£è¡«ä¸Šéƒ½æ˜¯å¢¨è¿¹ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯Èı×¯Ö÷");
+        set("title","æ¢…åº„ä¸‰åº„ä¸»");
         set("combat_exp", 80000);
         set("shen_type", 0);
         set("attitude", "friendly");

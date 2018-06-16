@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dufu.c ¶¼¶½¸®
+// dufu.c éƒ½ç£åºœ
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶¼¶½¸®");
+        set("short", "éƒ½ç£åºœ");
 	set("long", @LONG
-ÕâÊÇÈªÖİ¶¼¶½µÄ¸®Û¡¡£ÈªÖİ¶¼¶½ÕÆ¹ÜÈªÖİµÄº£Â½±øÈ¨£¬¿ØÖÆ×ÅÎ÷Ñó¹ã´óº£
-Óò£¬¹ÜÏ½µ±Ê±×îÇ¿´óµÄÔ¶ÑóË®Ê¦£¬ÄËÒ»µÈÒ»ÖØÒªµÄ¹ÙÖ°¡£
+è¿™æ˜¯æ³‰å·éƒ½ç£çš„åºœé‚¸ã€‚æ³‰å·éƒ½ç£æŒç®¡æ³‰å·çš„æµ·é™†å…µæƒï¼Œæ§åˆ¶ç€è¥¿æ´‹å¹¿å¤§æµ·
+åŸŸï¼Œç®¡è¾–å½“æ—¶æœ€å¼ºå¤§çš„è¿œæ´‹æ°´å¸ˆï¼Œä¹ƒä¸€ç­‰ä¸€é‡è¦çš„å®˜èŒã€‚
 LONG
         );
 
@@ -33,10 +33,10 @@ LONG
 int valid_leave(object me, string dir)
 {
 	if ( objectp(present("wu jiang",environment(me))) && dir == "south" )
-		return notify_fail("Îä½«´óºÈµÀ£º¶¼¶½ÓĞÁî£¬ÏĞÔÓÈËµÈ²»ÄÜÓÉ´Ë¾­¹ı£¡\n");
+		return notify_fail("æ­¦å°†å¤§å–é“ï¼šéƒ½ç£æœ‰ä»¤ï¼Œé—²æ‚äººç­‰ä¸èƒ½ç”±æ­¤ç»è¿‡ï¼\n");
 
 	if ( objectp(present("guan bing",environment(me))) && dir == "south" )
-		return notify_fail("¹Ù±ø´óºÈµÀ£º¶¼¶½ÓĞÁî£¬ÏĞÔÓÈËµÈ²»ÄÜÓÉ´Ë¾­¹ı£¡\n");
+		return notify_fail("å®˜å…µå¤§å–é“ï¼šéƒ½ç£æœ‰ä»¤ï¼Œé—²æ‚äººç­‰ä¸èƒ½ç”±æ­¤ç»è¿‡ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

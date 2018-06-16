@@ -1,5 +1,5 @@
 //Cracked by Roath
-// º£µÁÎÑ
+// æµ·ç›—çª
 // Ssy
 
 inherit __DIR__"no_pk_room";
@@ -14,10 +14,10 @@ void create()
         int i = random(sizeof(npcs));
         int j = random(sizeof(npcs));
 
-    	set("short", "º£µÁÎÑ");
+    	set("short", "æµ·ç›—çª");
     	set("long", @LONG
-Õâ¼ä²İÅïÆÆÆÆÀÃÀÃ£¬ÀïÃæÖ»ÓĞ¼¸ÕÅĞ¡´²ºÍÒ»µã¸ÉÁ¸£¬´²ÉÏ»¹ÌÉÁË
-¼¸¸öÈË¡£
+è¿™é—´è‰æ£šç ´ç ´çƒ‚çƒ‚ï¼Œé‡Œé¢åªæœ‰å‡ å¼ å°åºŠå’Œä¸€ç‚¹å¹²ç²®ï¼ŒåºŠä¸Šè¿˜èººäº†
+å‡ ä¸ªäººã€‚
 LONG
     	);
 

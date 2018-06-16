@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tylieren.c Ì¨ÒÄÁÔÈË
+// tylieren.c å°å¤·çŒäºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ì¨ÒÄÁÔÈË", ({ "lie ren", "man", "hunter" }) );
-	set("long", "Ò»Î»Ì¨ÒÄ×åµÄÁÔÊÖ£¬ÉÃÓÃ¶Ìåó£¬Éä·ÉÄñ¡£\n");
+	set_name("å°å¤·çŒäºº", ({ "lie ren", "man", "hunter" }) );
+	set("long", "ä¸€ä½å°å¤·æ—çš„çŒæ‰‹ï¼Œæ“…ç”¨çŸ­å¼©ï¼Œå°„é£é¸Ÿã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

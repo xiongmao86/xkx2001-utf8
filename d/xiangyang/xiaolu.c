@@ -5,10 +5,10 @@ inherit ROOM;
 #include <room.h>
 void create()
 {
-	set("short", "Ğ¡Â·");
+	set("short", "å°è·¯");
 	set("long", @LONG
-Äã×ßÔÚ¼ÙÉ½Ê¯ÅÔµÄĞ¡Â·ÉÏ£¬ÈÆ¹ı¼ÙÉ½£¬Ò»±ßÊÇáá»¨Ô°£¬¶«ÄÏ±ß
-Í¨ÍùÉÖÒ©Í¤¡£
+ä½ èµ°åœ¨å‡å±±çŸ³æ—çš„å°è·¯ä¸Šï¼Œç»•è¿‡å‡å±±ï¼Œä¸€è¾¹æ˜¯å¾ŒèŠ±å›­ï¼Œä¸œå—è¾¹
+é€šå¾€èŠè¯äº­ã€‚
 LONG
 	);
 	set("outdoors", "xiangyang");
@@ -19,7 +19,7 @@ LONG
   "southeast" : __DIR__"ting",
   "west" : __DIR__"chenhou",
 ]));
-	create_door("west", "Ğ¡ÃÅ", "east", DOOR_CLOSED);
+	create_door("west", "å°é—¨", "east", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

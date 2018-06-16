@@ -8,14 +8,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(CYN"³ñ¶Ğ"NOR, ({ "silk" }) );
+        set_name(CYN"ç»¸ç¼"NOR, ({ "silk" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"ÕâÊÇÒ»Æ¥×ö¹¤¼«Æä¿¼¾¿µÄ³ñ¶Ğ¡£\n");
-                set("unit",  "Æ¥");
+"è¿™æ˜¯ä¸€åŒ¹åšå·¥æå…¶è€ƒç©¶çš„ç»¸ç¼ã€‚\n");
+                set("unit",  "åŒ¹");
                 set("value",  100000000);
                 set("material", "silk");
         }

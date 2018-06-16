@@ -1,5 +1,5 @@
 //Cracked by Roath
-// mixiang.c �ײ���
+// mixiang.c 米仓巷
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ײ���");
+        set("short", "米仓巷");
 	set("long", @LONG
-����ͨ�����ֵ�С·���������˵��������ٹٸ����֣���������ŭ֮�£�
-�ؿ���·�������йٱ���Ԯ���֡�
+这是通往粮仓的小路。由于民间匪盗经常抢劫官府粮仓，都督府震怒之下，
+特开此路以利府中官兵增援粮仓。
 LONG
         );
 

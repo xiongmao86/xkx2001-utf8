@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ¹ù×¯
+// éƒ­åº„
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -9,17 +9,17 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "¹ù×¯");
+   set("short", "éƒ­åº„");
    set("long", @LONG
-×¯Ô°µÄ´óØÒÉÏÊÇ¡°¹ù×¯¡±Á½¸ö´ó×Ö¡£´óÃÅ(gate)½ô±Õ£¬ÀïÃæ¾²ÇÄ
-ÇÄµÄÒ»µãÉùÒô¶¼Ã»ÓĞ¡£
+åº„å›­çš„å¤§åŒ¾ä¸Šæ˜¯â€œéƒ­åº„â€ä¸¤ä¸ªå¤§å­—ã€‚å¤§é—¨(gate)ç´§é—­ï¼Œé‡Œé¢é™æ‚„
+æ‚„çš„ä¸€ç‚¹å£°éŸ³éƒ½æ²¡æœ‰ã€‚
 LONG
       );
 
    set("item_desc", 
     	   ([
       	"gate" : 
-		"ÖìºìµÄ´óÃÅ½ô±Õ×Å£¬ÇÃÇÃ(knock)¿´°É¡£\n"
+		"æœ±çº¢çš„å¤§é—¨ç´§é—­ç€ï¼Œæ•²æ•²(knock)çœ‹å§ã€‚\n"
    	   ])
 	);
 
@@ -38,15 +38,15 @@ LONG
 void init()
 {
    add_action("do_knock","knock");
-   add_action("do_knock","ÇÃ");
+   add_action("do_knock","æ•²");
 }
 
 int do_knock(string arg)
 {  
    if( !arg || arg=="" ) return 0;
-   if( arg=="gate" || arg=="ÃÅ")
+   if( arg=="gate" || arg=="é—¨")
    {			
-	message_vision("$N ¡°ßË£¬ßË£¬ßË£¬¡£¡£¡£¡±µØÇÃ×ÅÃÅ£¬¿ÉÀïÃæÈ´Ò»µã¶¯¾²¶¼Ã»ÓĞ¡£\n", this_player());
+	message_vision("$N â€œå’šï¼Œå’šï¼Œå’šï¼Œã€‚ã€‚ã€‚â€åœ°æ•²ç€é—¨ï¼Œå¯é‡Œé¢å´ä¸€ç‚¹åŠ¨é™éƒ½æ²¡æœ‰ã€‚\n", this_player());
 	return 1;
    }
 }

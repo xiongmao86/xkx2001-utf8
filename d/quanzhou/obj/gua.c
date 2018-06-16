@@ -9,13 +9,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(CYN"Ê¯ÇàÒøÊó¹Ó"NOR, ({ "shiqing gua", "yinshu gua", "gua"}) );
+	set_name(CYN"çŸ³é’é“¶é¼ è¤‚"NOR, ({ "shiqing gua", "yinshu gua", "gua"}) );
 	set_weight(700);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¼ş×ö¹¤¾«Ï¸µÄÊ¯ÇàÒøÊó¹Ó¡£\n");
-		set("unit", "¼ş");
+		set("long", "è¿™æ˜¯ä¸€ä»¶åšå·¥ç²¾ç»†çš„çŸ³é’é“¶é¼ è¤‚ã€‚\n");
+		set("unit", "ä»¶");
 		set("value", 300);
 		set("material", "cloth");
 		set("armor_prop/armor", 3);

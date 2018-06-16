@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -8,11 +8,11 @@ string look_bush();
 
 void create()
 {
-	set("short", "�߹�����");
+	set("short", "蛇谷树林");
 	set("long", @LONG
-���ǰ���ɽ���߹�֮�У����������ŴԴ԰���(bush)�����ض���
-�ӲݺͿ�֦��Ҷ����ζ������š�С·���۵ش������ԣ���֪��ͨ��
-�������������ȥ�����ָ���ï�ܲ��������ˡ�
+这是白驼山的蛇谷之中，四周生长着丛丛矮树(bush)，满地都是
+杂草和枯枝败叶，气味不大好闻。小路曲折地穿过树丛，不知道通往
+哪里。往西北方望去，树林更加茂密不见天日了。
 LONG
 	);
 

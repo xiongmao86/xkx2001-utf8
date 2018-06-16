@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小峰");
         set("long", @LONG
-��������ɽ��һ��СС��ɽ�塣����������Χ��ȥ�����׶���ԭ
-�ķ�⾡���۵ס�����һ��С·������ɽ��
+这里是天山上一座小小的山峰。从这里向周围望去，帕米尔高原
+的风光尽收眼底。东面一条小路可以下山。
 LONG
         );
         set("exits", ([

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±ø²¿ÑÃÃÅ");
+	set("short", "å…µéƒ¨è¡™é—¨");
 	set("long", @LONG
-ÕâÀïÊÇµ±½ñ³¯Í¢µÄ±ø²¿ÑÃÃÅ¡£×óÓÒÁ½±ßÊÇËàÁ¢µÄ¹Ù±ø£¬ÕýÇ°·½
-ÊÇÒ»¸öºÜ´óµÄÌüÌÃ¡£±ø²¿ÉÐÊé¸ß¸ßµØ×øÔÚÉÏÊÖÌ«Ê¦ÒÎÉÏ²éÔÄÍ¨ÎÄ£¬ 
-Ò»ÈºÎÄÃØÅÜÀ´ÅÜÈ¥£¬ÓÐÊ±»¹±§×ÅÒ»Ð©Ãû²á¡£Ç½ÉÏÓÐÒ»¸ö¸æÊ¾(gaoshi).
+è¿™é‡Œæ˜¯å½“ä»Šæœå»·çš„å…µéƒ¨è¡™é—¨ã€‚å·¦å³ä¸¤è¾¹æ˜¯è‚ƒç«‹çš„å®˜å…µï¼Œæ­£å‰æ–¹
+æ˜¯ä¸€ä¸ªå¾ˆå¤§çš„åŽ…å ‚ã€‚å…µéƒ¨å°šä¹¦é«˜é«˜åœ°ååœ¨ä¸Šæ‰‹å¤ªå¸ˆæ¤…ä¸ŠæŸ¥é˜…é€šæ–‡ï¼Œ 
+ä¸€ç¾¤æ–‡ç§˜è·‘æ¥è·‘åŽ»ï¼Œæœ‰æ—¶è¿˜æŠ±ç€ä¸€äº›åå†Œã€‚å¢™ä¸Šæœ‰ä¸€ä¸ªå‘Šç¤º(gaoshi).
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */
@@ -22,7 +22,7 @@ LONG
 	]));
 	
   	set("item_desc", ([
-	"gaoshi" : "Ã×ÉÐÊéÇ×ÁÙ´¦ÀíÍ¶¾ü£¬ÉýÇ¨£¬ÍËÒÛµÈÊÂÒË¡£\n",
+	"gaoshi" : "ç±³å°šä¹¦äº²ä¸´å¤„ç†æŠ•å†›ï¼Œå‡è¿ï¼Œé€€å½¹ç­‰äº‹å®œã€‚\n",
 	]));
 
 	set("no_clean_up", 0);

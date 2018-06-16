@@ -1,15 +1,15 @@
 //Cracked by Roath
-// /d/emei/qianfo1.c Ç§·ðâÖ´óµî
+// /d/emei/qianfo1.c åƒä½›åºµå¤§æ®¿
 // Shan: 96/07/10
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ç§·ðâÖ´óµî");
+        set("short", "åƒä½›åºµå¤§æ®¿");
 	set("long", @LONG
-Ç§·ðâÖµîÓî¸ß¹ãºêÀ«£¬Çå½à×¯ÑÏ¡£âÖÄÚÓÐÒ»¾ßÆßÍòÇ§·ðÁ«µÆ£¬ÓÐÎÆÁúÆßÌõ
-»·ÓÚµÆÌå£¬²¢ÓÐ·ðÏñÊý°ÙÖÜÔÑÅÅÁÐ£¬µñÂÆ¾«ÖÂÎÞ±È¡£
+åƒä½›åºµæ®¿å®‡é«˜å¹¿å®é˜”ï¼Œæ¸…æ´åº„ä¸¥ã€‚åºµå†…æœ‰ä¸€å…·ä¸ƒä¸‡åƒä½›èŽ²ç¯ï¼Œæœ‰çº¹é¾™ä¸ƒæ¡
+çŽ¯äºŽç¯ä½“ï¼Œå¹¶æœ‰ä½›åƒæ•°ç™¾å‘¨åŒæŽ’åˆ—ï¼Œé›•ç¼•ç²¾è‡´æ— æ¯”ã€‚
 LONG
 	);
 	set("exits", ([

@@ -13,10 +13,10 @@ string day_event(){return NATURE_D->outdoor_room_event();}
 
 void create()
 {
-	set("short", "¶É´¬");
+	set("short", "æ¸¡èˆ¹");
 	set("long", @LONG
-ÕâÊÇ¹éÔÆ×¯À´ÍùÌ«ºş(lake)µÄÒ»Ò¶±âÖÛ¡£Àë°¶½¥Ô¶£¬ËÄÍû¿ÕÀ«
-£¬ÕæÊÇÄªÖªÌìµØÖ®ÔÚºşº££¬ÒÖ»óÊÇºşº£Ö®ÔÚÌìµØ¡£
+è¿™æ˜¯å½’äº‘åº„æ¥å¾€å¤ªæ¹–(lake)çš„ä¸€å¶æ‰èˆŸã€‚ç¦»å²¸æ¸è¿œï¼Œå››æœ›ç©ºé˜”
+ï¼ŒçœŸæ˜¯è«çŸ¥å¤©åœ°ä¹‹åœ¨æ¹–æµ·ï¼ŒæŠ‘æƒ‘æ˜¯æ¹–æµ·ä¹‹åœ¨å¤©åœ°ã€‚
 LONG
 	);
 
@@ -25,8 +25,8 @@ LONG
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "ËÒ");
-		set("water_name", "ºş");
+		set("unit", "è‰˜");
+		set("water_name", "æ¹–");
 		set("invalid_startroom",1);
 		set("outdoors", "shaolin");
 		set("item_desc", ([
@@ -44,19 +44,19 @@ string look_lake()
 	object *boat;
 
 	if( day_event() == "event_night" || day_event() == "event_midnight")
-	desc = WHT"·ÅÑÛÍûÈ¥£¬·±ĞÇÔÚÌì£¬±¡ÎíÁıºş£¬ÕóÕóÁ¹·ç×Ô±³áá´µÀ´£¬ÉõÊÇ³©¿ì¡£\n"NOR;
+	desc = WHT"æ”¾çœ¼æœ›å»ï¼Œç¹æ˜Ÿåœ¨å¤©ï¼Œè–„é›¾ç¬¼æ¹–ï¼Œé˜µé˜µå‡‰é£è‡ªèƒŒå¾Œå¹æ¥ï¼Œç”šæ˜¯ç•…å¿«ã€‚\n"NOR;
 	else if( day_event() == "event_dawn" )
-	desc = HIY"ÕâÊ±ÌìÒÑ´óÃ÷£¬ÈÕ¹â×Ô¶«ÉäÀ´£¬Ë®²¨»Î¶¯£¬ÓÌÈçÍòµÀ½ğÉßÔÚ´¬±ß·ÉÎèÒ»°ã¡£\n"NOR;
+	desc = HIY"è¿™æ—¶å¤©å·²å¤§æ˜ï¼Œæ—¥å…‰è‡ªä¸œå°„æ¥ï¼Œæ°´æ³¢æ™ƒåŠ¨ï¼ŒçŠ¹å¦‚ä¸‡é“é‡‘è›‡åœ¨èˆ¹è¾¹é£èˆä¸€èˆ¬ã€‚\n"NOR;
 	else if( day_event() == "event_evening" )
-	desc = HIM"·ÅÑÛµ«¼ûÄºö°²Ô²Ô£¬ÑÌ²¨ºÆíµ£¬Ï¦Ñô³È»Æ£¬ÍíÏ¼ÌÒºì£¬ÕæÏñÊÇÒ»·ùË®Ä«É½Ë®Ò»°ã¡£\n"NOR;
-	else  desc = HIG"·ÅÑÛµ«¼ûÉ½ÇàË®ÂÌ£¬ÌìÀ¶ÔÆ²Ô£¬Ò»ÕóÇá·ç´µÀ´£¬Ë®²¨²´²´²´µÄ´òÔÚ´¬Í·¡£\n"NOR;
+	desc = HIM"æ”¾çœ¼ä½†è§æš®éœ­è‹è‹ï¼ŒçƒŸæ³¢æµ©æ·¼ï¼Œå¤•é˜³æ©™é»„ï¼Œæ™šéœæ¡ƒçº¢ï¼ŒçœŸåƒæ˜¯ä¸€å¹…æ°´å¢¨å±±æ°´ä¸€èˆ¬ã€‚\n"NOR;
+	else  desc = HIG"æ”¾çœ¼ä½†è§å±±é’æ°´ç»¿ï¼Œå¤©è“äº‘è‹ï¼Œä¸€é˜µè½»é£å¹æ¥ï¼Œæ°´æ³¢æ³Šæ³Šæ³Šçš„æ‰“åœ¨èˆ¹å¤´ã€‚\n"NOR;
 	boat = filter_array(children(base_name(this_object())), (: clonep :));
 	if (sizeof(boat) > 8)
-		desc += "Ö»¼ûºşÃæÉÏÒ»ÅÅÅÅµÄÈ«ÊÇĞ¡´¬£¬·ÅÑÛÍûÈ¥£¬ÖÛËÆÒÏ¾Û£¬²»¼ÆÆäÊı£¬"
-		"ÓÌÈçÒ»ÕÅ´óÂÌÖ½ÉÏ½¦ÂúÄ«µãÒ»°ã¡£\n";
+		desc += "åªè§æ¹–é¢ä¸Šä¸€æ’æ’çš„å…¨æ˜¯å°èˆ¹ï¼Œæ”¾çœ¼æœ›å»ï¼ŒèˆŸä¼¼èšèšï¼Œä¸è®¡å…¶æ•°ï¼Œ"
+		"çŠ¹å¦‚ä¸€å¼ å¤§ç»¿çº¸ä¸Šæº…æ»¡å¢¨ç‚¹ä¸€èˆ¬ã€‚\n";
 	else if (sizeof(boat) > 1)
-		desc += "ºşÃæÉÏ·«Ó°µãµã£¬ÄãËæÊÖµãÊı£¬À´Íù¹éÔÆ×¯Ë®Â·µÄ±ãÓĞ"+chinese_number(sizeof(boat))+"¡¢"+chinese_number(sizeof(boat)+1)+"ËÒĞ¡´¬¡£\n";
-	else desc += "ºşÃæÉÏ·«Ó°µãµã£¬²»¹ıÀ´Íù¹éÔÆ×¯Ë®Â·µÄ´¬ìó£¬ËÆºõ¾ÍìóÓĞÕâÒ»Á½ËÒ¡£\n";
+		desc += "æ¹–é¢ä¸Šå¸†å½±ç‚¹ç‚¹ï¼Œä½ éšæ‰‹ç‚¹æ•°ï¼Œæ¥å¾€å½’äº‘åº„æ°´è·¯çš„ä¾¿æœ‰"+chinese_number(sizeof(boat))+"ã€"+chinese_number(sizeof(boat)+1)+"è‰˜å°èˆ¹ã€‚\n";
+	else desc += "æ¹–é¢ä¸Šå¸†å½±ç‚¹ç‚¹ï¼Œä¸è¿‡æ¥å¾€å½’äº‘åº„æ°´è·¯çš„èˆ¹ç¥—ï¼Œä¼¼ä¹å°±ç¥—æœ‰è¿™ä¸€ä¸¤è‰˜ã€‚\n";
 
 	return desc;
 }
@@ -84,15 +84,15 @@ int auto_clean_up()
 	if( room->query("exits/out") ) {
 
 		for(i=0; i<sizeof(inv); i++) {
-			if( inv[i]->query("race") == "ÈËÀà" )
-				msg = "Çë";
-			else msg = "¸Ï";
+			if( inv[i]->query("race") == "äººç±»" )
+				msg = "è¯·";
+			else msg = "èµ¶";
 
 			if( inv[i]->is_character() ) {
-				tell_object(inv[i], "´¬·òÏòÄãËµµÀ£º¡°"+ RANK_D->query_respect(inv[i]) +"£¬ÒÑ¾­µ½°¶ÁË£¬ÇëÏÂ´¬°Õ£¡\n");
-				message_vision("´¬·ò°Ñ$N"+msg+"ÏÂÁË¶É´¬¡£\n", inv[i]);
+				tell_object(inv[i], "èˆ¹å¤«å‘ä½ è¯´é“ï¼šâ€œ"+ RANK_D->query_respect(inv[i]) +"ï¼Œå·²ç»åˆ°å²¸äº†ï¼Œè¯·ä¸‹èˆ¹ç½¢ï¼\n");
+				message_vision("èˆ¹å¤«æŠŠ$N"+msg+"ä¸‹äº†æ¸¡èˆ¹ã€‚\n", inv[i]);
 				inv[i]->move(exit);
-				if( inv[i]->query("race") == "ÈËÀà" ) message("vision", inv[i]->name()+"´Ó´¬ÉÏ×ßÁËÏÂÀ´¡£\n", exit, inv[i]);
+				if( inv[i]->query("race") == "äººç±»" ) message("vision", inv[i]->name()+"ä»èˆ¹ä¸Šèµ°äº†ä¸‹æ¥ã€‚\n", exit, inv[i]);
 				else message( "vision", inv[i]->name() + inv[i]->query("comein_message") , environment(inv[i]), inv[i] );
 
 			}
@@ -126,7 +126,7 @@ void arrive()
 {
 	object boat = this_object();
 
-	message("vision", "´¬·ò°â½°»®´¬£¬ÔÚºşÖĞĞĞÁËÊıÀï£¬»º»ºÍ£²´ÔÚ°¶±ß£¬½«Ò»¿éÌ¤½Å°å´îÉÏÁËµÌ°¶¡£\n", boat );
+	message("vision", "èˆ¹å¤«æ‰³æ¡¨åˆ’èˆ¹ï¼Œåœ¨æ¹–ä¸­è¡Œäº†æ•°é‡Œï¼Œç¼“ç¼“åœæ³Šåœ¨å²¸è¾¹ï¼Œå°†ä¸€å—è¸è„šæ¿æ­ä¸Šäº†å ¤å²¸ã€‚\n", boat );
 
 	boat->set("exits/out", this_object()->query_temp("opp"));
 
@@ -139,7 +139,7 @@ void close_passage()
 	object *inv, boat = this_object();
 
 	boat->delete("exits/out");
-	message("vision", "´¬·ò°ÑÌ¤½Å°åÊÕÆğÀ´£¬°Ñ±âÖÛÊ»ÏòºşĞÄ¡£\n", this_object());
+	message("vision", "èˆ¹å¤«æŠŠè¸è„šæ¿æ”¶èµ·æ¥ï¼ŒæŠŠæ‰èˆŸé©¶å‘æ¹–å¿ƒã€‚\n", this_object());
 	boat->delete("yell_trigger");
 	inv = all_inventory(boat);
 	if (sizeof(inv) < 1) 
@@ -163,21 +163,21 @@ int do_anchor(string arg)
 	if( arg ) return 0;
 
 	if( boat->query("exits/out") )
-		return notify_fail("´¬ÒÑ¾­¿¿°¶ÁË¡£\n");
+		return notify_fail("èˆ¹å·²ç»é å²¸äº†ã€‚\n");
 
-	message_vision("$NÏò´¬·ò´ßÎÊ£º¡°´¬¼Ò£¬»¹Ã»µ½°¶Âğ£¿¡±\n", me);
+	message_vision("$Nå‘èˆ¹å¤«å‚¬é—®ï¼šâ€œèˆ¹å®¶ï¼Œè¿˜æ²¡åˆ°å²¸å—ï¼Ÿâ€\n", me);
 
 	if( time() - query("sail_time") < 10 ) {
-		message_vision("´¬·òÃéÁË$NÒ»ÑÛ£¬ËµµÀ£º¡°"+ RANK_D->query_respect(me) +"£¬ÔÛÃÇ²Å¸ÕÀë°¶ÄÄ£¡¡±\n", me);
+		message_vision("èˆ¹å¤«ç„äº†$Nä¸€çœ¼ï¼Œè¯´é“ï¼šâ€œ"+ RANK_D->query_respect(me) +"ï¼Œå’±ä»¬æ‰åˆšç¦»å²¸å“ªï¼â€\n", me);
 	}
 
 	else if( time() - query("sail_time") < 30 ) {
-		message("vision", "´¬·òÓÆÔÕÓÆÔÕµØ°â×Å½°£¬Ò»±ß´ğ×Å£º¡°"+ RANK_D->query_respect(me) +"±ğ¼±ÄÄ£¬¾Í¿ìµ½ÁË£¡¡±\n", boat );
+		message("vision", "èˆ¹å¤«æ‚ å“‰æ‚ å“‰åœ°æ‰³ç€æ¡¨ï¼Œä¸€è¾¹ç­”ç€ï¼šâ€œ"+ RANK_D->query_respect(me) +"åˆ«æ€¥å“ªï¼Œå°±å¿«åˆ°äº†ï¼â€\n", boat );
 	}
 
 	else {
-		message("vision", "´¬·ò°â×Å½°£¬´ğµÀ£º¡°ÄÄ£¬Õâ²»¾Íµ½ÁË÷á£¿¡±\n", boat );
-		message("vision", "´¬·ò½«´¬»º»ºÍ£²´ÔÚ°¶±ß£¬½«Ò»¿éÌ¤½Å°å´îÉÏÁËµÌ°¶¡£\n", boat );
+		message("vision", "èˆ¹å¤«æ‰³ç€æ¡¨ï¼Œç­”é“ï¼šâ€œå“ªï¼Œè¿™ä¸å°±åˆ°äº†éº½ï¼Ÿâ€\n", boat );
+		message("vision", "èˆ¹å¤«å°†èˆ¹ç¼“ç¼“åœæ³Šåœ¨å²¸è¾¹ï¼Œå°†ä¸€å—è¸è„šæ¿æ­ä¸Šäº†å ¤å²¸ã€‚\n", boat );
 		boat->set("exits/out", this_object()->query_temp("opp"));
 	}
 

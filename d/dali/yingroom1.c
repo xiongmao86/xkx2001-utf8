@@ -3,14 +3,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÄàÌ¶");
+	set("short", "æ³¥æ½­");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¸öÆ¬´óÄàÌ¶£¬ÏòÇ°ÍûÈ¥£¬ÑÛÇ°Ò»ÍÅÃ£Ã£°×Îí¹ü×ÅÒ»·½Ò»Ô²Á½¼äÃ©Îİ£¬
-ÒşÒşÔ¼Ô¼ÓĞµÆ¹â´Ó·½ÎİÖĞÉä³ö¡£´ËÃ©ÎİÎŞÃÅÎŞ»§£¬Á¬´°»§¶¼Ã»ÓĞÒ»¸ö£¬²»ÖªµÀÍÁ
-Ç½(wall)ÄÇ±ßÓĞĞ©Ê²Ã´¡£
+è¿™é‡Œæ˜¯ä¸€ä¸ªç‰‡å¤§æ³¥æ½­ï¼Œå‘å‰æœ›å»ï¼Œçœ¼å‰ä¸€å›¢èŒ«èŒ«ç™½é›¾è£¹ç€ä¸€æ–¹ä¸€åœ†ä¸¤é—´èŒ…å±‹ï¼Œ
+éšéšçº¦çº¦æœ‰ç¯å…‰ä»æ–¹å±‹ä¸­å°„å‡ºã€‚æ­¤èŒ…å±‹æ— é—¨æ— æˆ·ï¼Œè¿çª—æˆ·éƒ½æ²¡æœ‰ä¸€ä¸ªï¼Œä¸çŸ¥é“åœŸ
+å¢™(wall)é‚£è¾¹æœ‰äº›ä»€ä¹ˆã€‚
 LONG);
 	set("item_desc",([
-		"wall" : "Ò»¶Â¿´ÆğÀ´²»ÊÇºÜ¸ßµÄÍÁÇ½¡£\n",
+		"wall" : "ä¸€å µçœ‹èµ·æ¥ä¸æ˜¯å¾ˆé«˜çš„åœŸå¢™ã€‚\n",
 		]));
 	set("exits", ([
 		"north" : "/d/dali/maze1",
@@ -30,17 +30,17 @@ int do_jump(string arg)
 {
 	object me = this_player();
 
-	if ( !arg || arg != "wall") return notify_fail( "Ê²Ã´£¿\n");
-	message_vision("$N×İÉíÍùÍÁÇ½ÉÏÌøÈ¥¡£\n", me);
+	if ( !arg || arg != "wall") return notify_fail( "ä»€ä¹ˆï¼Ÿ\n");
+	message_vision("$Nçºµèº«å¾€åœŸå¢™ä¸Šè·³å»ã€‚\n", me);
 	if ( me->query_skill("dodge",1) <= 50)
 	{
-		message_vision("$NÍ¨µÄÒ»ÉùË¤½øÁËÄàÌ¶£¬ÂúÉí³ôÆø¡£\n", me);
+		message_vision("$Né€šçš„ä¸€å£°æ‘”è¿›äº†æ³¥æ½­ï¼Œæ»¡èº«è‡­æ°”ã€‚\n", me);
 		me->receive_wound("qi", 100);
 	}
 	if ( me->query_skill("dodge",1) > 50 )
 	{
 		me->move("/d/dali/yingroom2");
-		message("vision", me->name() + "×İÉíÓÉÇ½ÉÏÌøÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision", me->name() + "çºµèº«ç”±å¢™ä¸Šè·³äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 	}
 	return 1;
 } 

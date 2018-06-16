@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xian. ÙşÀÏ°å
+// xian. å†¼è€æ¿
 
 #include <ansi.h>
 #include <dbase.h>
@@ -12,15 +12,15 @@ string ask_me();
 
 void create()
 {
-        set_name("ÙşÀÏ°å", ({ "xian laoban", "xian" }));
+        set_name("å†¼è€æ¿", ({ "xian laoban", "xian" }));
         set_color("$YEL$");
-        set("title", "×íÏÉÂ¥ÀÏ°å");
+        set("title", "é†‰ä»™æ¥¼è€æ¿");
         set("shen_type", 1);
 
         set("str", 20);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
-        set("long", "Ï´ÀÏ°å¾­Óª×æ´«ÏÂÀ´µÄ×íÏÉÂ¥ÒÑÓĞ¶àÄê¡£\n");
+        set("long", "æ´—è€æ¿ç»è¥ç¥–ä¼ ä¸‹æ¥çš„é†‰ä»™æ¥¼å·²æœ‰å¤šå¹´ã€‚\n");
         set("combat_exp", 50000);
         set("qi", 300);
         set("max_qi", 300);
@@ -39,11 +39,11 @@ void create()
                 "/d/city/obj/santaoya",
         }));
         set("inquiry", ([
-            "Ï²Ñç" : (: ask_me :),
-            "Ï²¾Æ" : (: ask_me :),
-            "°ìÏ²Ñç" : (: ask_me :),
-            "°ìÏ²¾Æ" : (: ask_me :),
-            "°ì¾ÆÏ¯" : (: ask_me :),
+            "å–œå®´" : (: ask_me :),
+            "å–œé…’" : (: ask_me :),
+            "åŠå–œå®´" : (: ask_me :),
+            "åŠå–œé…’" : (: ask_me :),
+            "åŠé…’å¸­" : (: ask_me :),
         ]) );
                 
         setup();
@@ -62,57 +62,57 @@ int ask_me()
         object me, bride, *players;
         
         if (query_temp("busy")) {
-                write("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+                write("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
                 return 1;
         }
                                 
         me = this_player();
         
         if( objectp(me->query_temp("marriage/accept")) ) {
-                message_vision(CYN "$NĞ¦ÃĞÃĞµØ¶Ô$nËµ£ºĞÂÄï×ÓÔõÃ´ÅÜÀ´ÁË? ĞÂÀÉ¹Ù¶ùÄÄ¶ùÈ¥ÁË? \n" NOR,
+                message_vision(CYN "$Nç¬‘çœ¯çœ¯åœ°å¯¹$nè¯´ï¼šæ–°å¨˜å­æ€ä¹ˆè·‘æ¥äº†? æ–°éƒå®˜å„¿å“ªå„¿å»äº†? \n" NOR,
                         this_object(), me);
                 return 1;
         }       
         
         if( objectp(me->query_temp("marriage/ring")) ) {
-                message_vision(CYN "$NĞ¦ÃĞÃĞµØ¶Ô$nËµ£ºÏ²¾Æ¶¼ºÈÁË£¬¸Ï½ôÂò½äÖ¸°É£¡\n" NOR,
+                message_vision(CYN "$Nç¬‘çœ¯çœ¯åœ°å¯¹$nè¯´ï¼šå–œé…’éƒ½å–äº†ï¼Œèµ¶ç´§ä¹°æˆ’æŒ‡å§ï¼\n" NOR,
                         this_object(), me);
                 return 1;
         }       
                         
         if( !objectp(bride = me->query_temp("marriage/banquet")) ) {
-                message_vision(CYN "$NĞ¦ÃĞÃĞµØ¶Ô$nËµ£º°ìÏ²¾ÆÄÇ¿ÉÊÇÁ©¸öÈËµÄÊÂ¡£\n" NOR,
+                message_vision(CYN "$Nç¬‘çœ¯çœ¯åœ°å¯¹$nè¯´ï¼šåŠå–œé…’é‚£å¯æ˜¯ä¿©ä¸ªäººçš„äº‹ã€‚\n" NOR,
                         this_object(), me);
                 return 1;
         }
                 
         if( !objectp(present(bride, environment(me))) ) {
-                message_vision(CYN "$NĞ¦ÃĞÃĞµØ¶Ô$nËµ£ºÔõÃ´²»¼ûĞÂÄï×Ó? \n" NOR,
+                message_vision(CYN "$Nç¬‘çœ¯çœ¯åœ°å¯¹$nè¯´ï¼šæ€ä¹ˆä¸è§æ–°å¨˜å­? \n" NOR,
                         this_object(), me);
                 return 1;
         }
         
         switch (MONEY_D->player_pay(me, 100000)) {
         case 0:
-                message_vision(CYN "$NĞ¦ÃĞÃĞµØ¶Ô$nËµ£ºÄãÏÈ°ÑÇ®×¼±¸ºÃ£¬ÎÒÁ¢¿Ì¾Í°ì£¡\n" NOR,
+                message_vision(CYN "$Nç¬‘çœ¯çœ¯åœ°å¯¹$nè¯´ï¼šä½ å…ˆæŠŠé’±å‡†å¤‡å¥½ï¼Œæˆ‘ç«‹åˆ»å°±åŠï¼\n" NOR,
                         this_object(), me);
                 return 1;
         default:
                 set_temp("busy", 1);
-                message_vision(CYN "$NĞ¦ÃĞÃĞµØµãµãÍ·Ëµ£ºÎÒÕâ¾Í¸øÄãÃÇ°ì£¡\n" NOR,
+                message_vision(CYN "$Nç¬‘çœ¯çœ¯åœ°ç‚¹ç‚¹å¤´è¯´ï¼šæˆ‘è¿™å°±ç»™ä½ ä»¬åŠï¼\n" NOR,
                         this_object(), me);
-                command("chat " + me->name() + "Óë" + bride->name() + 
-                        "½ñÈÕÏ²½áÁ¼Ôµ£¬×íÏÉÂ¥ÉÏ´ó¿ªÏ²Ñç£¬»¹Íû¸÷Î»ÉÍ¹â£¡");      
+                command("chat " + me->name() + "ä¸" + bride->name() + 
+                        "ä»Šæ—¥å–œç»“è‰¯ç¼˜ï¼Œé†‰ä»™æ¥¼ä¸Šå¤§å¼€å–œå®´ï¼Œè¿˜æœ›å„ä½èµå…‰ï¼");      
                 log_file("test/marry",
                          sprintf("%s %s married %s %s on %s\n", me->name(), me->query("id"), bride->name(), bride->query("id"), ctime(time())));
 
                 players = users();
                 map_array(players, (: new(__DIR__"obj/kaoya")->move($1) :) );
                 map_array(players,
-                        (: tell_object($1, HIM"ÄãµÃµ½Ò»Ö»¿¾Ñ¼¡£\n"NOR) :) );
+                        (: tell_object($1, HIM"ä½ å¾—åˆ°ä¸€åªçƒ¤é¸­ã€‚\n"NOR) :) );
                 map_array(players, (: new(__DIR__"obj/nuerhong")->move($1) :) );
                 map_array(players,
-                        (: tell_object($1, HIM"ÄãµÃµ½Ò»Æ¿Å®¶ùºì¡£\n"NOR) :) );
+                        (: tell_object($1, HIM"ä½ å¾—åˆ°ä¸€ç“¶å¥³å„¿çº¢ã€‚\n"NOR) :) );
                 me->delete_temp("marriage/banquet");
                 me->set_temp("marriage/ring", bride);
                 bride->delete_temp("marriage/accept");
@@ -125,7 +125,7 @@ int ask_me()
 }
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

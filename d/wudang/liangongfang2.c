@@ -1,17 +1,17 @@
 //Cracked by Roath
-// liangongfang2.c Á·¹¦·¿
+// liangongfang2.c ç»ƒåŠŸæˆ¿
 // xQin 11/00
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿" );
+	set("short", "ç»ƒåŠŸæˆ¿" );
 	set("long", @LONG
-ÕâÀïÊÇÎäµ±µÜ×ÓµÄÁ·¹¦·¿¡£·¿ÄÚÖ½´°ÐéÑÚ£¬´°ÍâµÄÑô¹âÍ¶Éä½øÀ´£¬Ö»¼û
-²¢ÎÞÒ»×ÀÒ»ÒÎ£¬µØÉÏÆÌ×Å²ÝµæºÍÆÑÍÅ¡£¼¸¸öÎäµ±µÜ×ÓÕýÅÌÏ¥×øÔÚÆÑÍÅÉÏ¹Û¿´
-Á½¸öÎäµ±µÜ×ÓÒÔÎäµ±µÄÈëÃÅÈ­·¨Ïà»¥ÇÐ´è¼¼ÒÕ¡£ÓÐµÜ×Ó¼ûÄã½øÀ´£¬³¯ÄãµãÍ·
-Î¢Ð¦£¬È´²¢²»×öÉù¡£
+è¿™é‡Œæ˜¯æ­¦å½“å¼Ÿå­çš„ç»ƒåŠŸæˆ¿ã€‚æˆ¿å†…çº¸çª—è™šæŽ©ï¼Œçª—å¤–çš„é˜³å…‰æŠ•å°„è¿›æ¥ï¼Œåªè§
+å¹¶æ— ä¸€æ¡Œä¸€æ¤…ï¼Œåœ°ä¸Šé“ºç€è‰åž«å’Œè’²å›¢ã€‚å‡ ä¸ªæ­¦å½“å¼Ÿå­æ­£ç›˜è†ååœ¨è’²å›¢ä¸Šè§‚çœ‹
+ä¸¤ä¸ªæ­¦å½“å¼Ÿå­ä»¥æ­¦å½“çš„å…¥é—¨æ‹³æ³•ç›¸äº’åˆ‡ç£‹æŠ€è‰ºã€‚æœ‰å¼Ÿå­è§ä½ è¿›æ¥ï¼Œæœä½ ç‚¹å¤´
+å¾®ç¬‘ï¼Œå´å¹¶ä¸åšå£°ã€‚
 LONG
 	);
 	set("exits", ([

@@ -1,15 +1,15 @@
 //Cracked by Roath
-// feng.c ·çÇåÑï
+// feng.c é£æ¸…æ‰¬
 // qfy July 16, 1996.
 
 inherit NPC;
 
 void create() 
 {
-        set_name("·çÇåÑï", ({ "feng qingyang", "feng", "qingyang" }));
+        set_name("é£æ¸…æ‰¬", ({ "feng qingyang", "feng", "qingyang" }));
         set("long", 
-"Õâ±ãÊÇµ±ÄêÃûÕğ½­ºşµÄ»ªÉ½ÃûËŞ·çÇåÑï¡£ËûÉíÖøÇàÅÛ£¬ÉñÆøÒÖÓôÁ³Èç½ğÖ½¡£\n");
-        set("gender", "ÄĞĞÔ");
+"è¿™ä¾¿æ˜¯å½“å¹´åéœ‡æ±Ÿæ¹–çš„åå±±åå®¿é£æ¸…æ‰¬ã€‚ä»–èº«è‘—é’è¢ï¼Œç¥æ°”æŠ‘éƒè„¸å¦‚é‡‘çº¸ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 70);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -50,7 +50,7 @@ void create()
         prepare_skill("strike", "hunyuan-zhang");
         prepare_skill("cuff", "pishi-poyu");
 
-        create_family("»ªÉ½ÅÉ", 12, "½£×Ú³¤ÀÏ");
+        create_family("åå±±æ´¾", 12, "å‰‘å®—é•¿è€");
 
 	set("no_get", 1);
 
@@ -62,9 +62,9 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command ("say Õâ¡¸ÏÀ¿ÍĞĞ¡¹µÄ¹ÅÊ«Í¼½â£¬°ü²Ø×Å¹ÅÍù½ñÀ´×î²©´ó¾«Éî
-µÄÎäÑ§ÃØ°Â£¬ÀÏ·ò½ß¾¡ĞÄÖÇ£¬ÉĞ×Ô²»ÄÜ²ÎÎòÆäÖĞÊ®Ö®Ò»¶ş£¬ÄÇ»¹ÄÜ·Ö
-ĞÄÈ¥Àí»áÊÀÉÏË×ÊÂ¡£ ");
+        command ("say è¿™ã€Œä¾ å®¢è¡Œã€çš„å¤è¯—å›¾è§£ï¼ŒåŒ…è—ç€å¤å¾€ä»Šæ¥æœ€åšå¤§ç²¾æ·±
+çš„æ­¦å­¦ç§˜å¥¥ï¼Œè€å¤«ç«­å°½å¿ƒæ™ºï¼Œå°šè‡ªä¸èƒ½å‚æ‚Ÿå…¶ä¸­åä¹‹ä¸€äºŒï¼Œé‚£è¿˜èƒ½åˆ†
+å¿ƒå»ç†ä¼šä¸–ä¸Šä¿—äº‹ã€‚ ");
 }
 
 void init()
@@ -89,7 +89,7 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say ·ÇÒ²£¬·ÇÒ²£¬ÕâÕĞÓ¦¸Ã½£ÒâÇú¶ø½£ÊÆÖ±");
+                {		command("say éä¹Ÿï¼Œéä¹Ÿï¼Œè¿™æ‹›åº”è¯¥å‰‘æ„æ›²è€Œå‰‘åŠ¿ç›´");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
 				opp->set("jingli", maxjingli);
@@ -97,7 +97,7 @@ void greeting(object me)
 				opp->set("qi", maxqi);
                 }
                 //else if (random(2) == 0)
-                //{       command("say °×¾ÓÒ×Ê«ÔÆ£¬¡¸ÎğÇáÖ±ÕÛ½££¬ÓÌÊ¤ÇúÈ«¹³¡¹¡£");
+                //{       command("say ç™½å±…æ˜“è¯—äº‘ï¼Œã€Œå‹¿è½»ç›´æŠ˜å‰‘ï¼ŒçŠ¹èƒœæ›²å…¨é’©ã€ã€‚");
                 //}
         }
 

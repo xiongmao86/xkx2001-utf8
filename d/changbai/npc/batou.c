@@ -8,11 +8,11 @@ string ask_suobogun();
 
 void create()
 {
-	set_name("ºÕ¶ûËÕ", ({ "heersu", "ba tou" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("èµ«å°”è‹", ({ "heersu", "ba tou" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 70);
-	set("long", "ÕâÊÇÒ»Î»Ğë·¢°à°×µÄÆßÑ®ÀÏÈË¡£¹ÅÍ­É«µÄÆ¤·ô£¬ÑÛÖĞÍ¸³ö¸ÕÒã¼áÇ¿µÄÄ¿¹â¡£\n");
-	set("nickname", "ÀÏ°ÑÍ·" );
+	set("long", "è¿™æ˜¯ä¸€ä½é¡»å‘ç­ç™½çš„ä¸ƒæ—¬è€äººã€‚å¤é“œè‰²çš„çš®è‚¤ï¼Œçœ¼ä¸­é€å‡ºåˆšæ¯…åšå¼ºçš„ç›®å…‰ã€‚\n");
+	set("nickname", "è€æŠŠå¤´" );
 
 	set("shen_type", 1);
 	set("str", 29);
@@ -28,11 +28,11 @@ void create()
 	set_temp("apply/defense", 50);
 
 	set("inquiry", ([
-		"name"   : "ÎÒ¾ÍÊÇºÕ¶ûËÕ£¬ÄãÕÒÎÒÓĞÊ²Ã´ÊÂÃ´£¿",
-		"²É²Î"   : (: ask_caishen :),
-                "²Î"     : (: ask_caishen :),
-		"Ë÷²¦¹÷"   : (: ask_suobogun :),
-                "Â¹¹ÇÇ¥×Ó"  : (: ask_suobogun :),
+		"name"   : "æˆ‘å°±æ˜¯èµ«å°”è‹ï¼Œä½ æ‰¾æˆ‘æœ‰ä»€ä¹ˆäº‹ä¹ˆï¼Ÿ",
+		"é‡‡å‚"   : (: ask_caishen :),
+                "å‚"     : (: ask_caishen :),
+		"ç´¢æ‹¨æ£"   : (: ask_suobogun :),
+                "é¹¿éª¨é’å­"  : (: ask_suobogun :),
 	]) );
 	setup();
 	add_money("silver", 10);
@@ -45,10 +45,10 @@ int ask_caishen()
 
         command("secret " + myid);
         command("whisper " + myid + " " + 
-                " ²É²ÎÓÖ½Ğ¡°·ÅÉ½¡±£¬ÄËÊÇÒ»Ïî¼È¼è¿àÓÖÎ£ÏÕµÄĞĞµ±¡£ÉîÉ½ÀÏÁÖÖĞ\n"
-                "²»µ«ó¼³æÃÍÊŞÉõ¶à£¬Ò»µ«Óöµ½·çÑ©ÌìÆø£¬ÄÇ¸üÊÇĞ×¶à¼ªÉÙ£¡\n"
-                "ÄãÈçÏë²Éµ½²Î£¬ĞëÈ¥³¤°×´óÉ½Ö®ÖĞ£¬ÓÃË÷²¦¹÷»÷´òÉ½²İ£¬Ñ°ÕÒÉ½²ÎµÄ\n"
-                "×Ù¼££¬Ò»µ«ÕÒµ½£¬ĞèÓÃÂ¹¹ÇÇ¥×Ó²ÅÄÜ½«Ö®Æğ³ö£¬·ñÔò»áÉËµ½¸ùĞë£¡\n");
+                " é‡‡å‚åˆå«â€œæ”¾å±±â€ï¼Œä¹ƒæ˜¯ä¸€é¡¹æ—¢è‰°è‹¦åˆå±é™©çš„è¡Œå½“ã€‚æ·±å±±è€æ—ä¸­\n"
+                "ä¸ä½†è ¹è™«çŒ›å…½ç”šå¤šï¼Œä¸€ä½†é‡åˆ°é£é›ªå¤©æ°”ï¼Œé‚£æ›´æ˜¯å‡¶å¤šå‰å°‘ï¼\n"
+                "ä½ å¦‚æƒ³é‡‡åˆ°å‚ï¼Œé¡»å»é•¿ç™½å¤§å±±ä¹‹ä¸­ï¼Œç”¨ç´¢æ‹¨æ£å‡»æ‰“å±±è‰ï¼Œå¯»æ‰¾å±±å‚çš„\n"
+                "è¸ªè¿¹ï¼Œä¸€ä½†æ‰¾åˆ°ï¼Œéœ€ç”¨é¹¿éª¨é’å­æ‰èƒ½å°†ä¹‹èµ·å‡ºï¼Œå¦åˆ™ä¼šä¼¤åˆ°æ ¹é¡»ï¼\n");
  
         return 1;
 }
@@ -59,13 +59,13 @@ string ask_suobogun()
         string myid;
 
         if( (int)me->query_temp("cbshen/ask_gun") > 0 )
-                return "Äã²»ÊÇÒÑ¾­ÎÊ¹ıÎÒÁËÂğ£¬Ôõ÷áÓÖÀ´ÎÊ£¿ \n";
+                return "ä½ ä¸æ˜¯å·²ç»é—®è¿‡æˆ‘äº†å—ï¼Œæ€éº½åˆæ¥é—®ï¼Ÿ \n";
 
         if( present("suobo gun", me) ) 
-		return "ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞÁËÂğ£¬Ôõ÷áÓÖÀ´ÎÊ£¿ \n";
+		return "ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰äº†å—ï¼Œæ€éº½åˆæ¥é—®ï¼Ÿ \n";
 
 	if( present("suobo gun", environment()) ) 
-	        return "µØÉÏÕâ²»ÓĞÂğ£¿ ÄãÒªµÄ»°¾Í¼ñ×ß°É¡£\n";
+	        return "åœ°ä¸Šè¿™ä¸æœ‰å—ï¼Ÿ ä½ è¦çš„è¯å°±æ¡èµ°å§ã€‚\n";
 
         myid = me->query("id");
 
@@ -76,33 +76,33 @@ string ask_suobogun()
                 obj = new("/d/changbai/obj/sbgun");
                 obj->set("owner", myid);
                 obj->move(me);
-                message_vision("$N½»¸ø$nÒ»" + obj->query("unit") + obj->name() + "¡£\n", this_object(), me);
+                message_vision("$Näº¤ç»™$nä¸€" + obj->query("unit") + obj->name() + "ã€‚\n", this_object(), me);
 
                 obj = new("/d/changbai/obj/qianzi");
                 obj->set("owner", myid);
                 obj->move(me);
-                message_vision("$N½»¸ø$nÒ»" + obj->query("unit") + obj->name() + "¡£\n", this_object(), me);
+                message_vision("$Näº¤ç»™$nä¸€" + obj->query("unit") + obj->name() + "ã€‚\n", this_object(), me);
 
                 me->delete_temp("cbshen");
 
-                return "²»´í£¬Äã¹ûÈ»ĞÄ´æ³ÏÒâ¡£Õâ¸öË÷²¦¹÷ºÍÂ¹¹ÇÇ¥×Ó¾ÍËÍ¸øÄã°É£¡\n";
+                return "ä¸é”™ï¼Œä½ æœç„¶å¿ƒå­˜è¯šæ„ã€‚è¿™ä¸ªç´¢æ‹¨æ£å’Œé¹¿éª¨é’å­å°±é€ç»™ä½ å§ï¼\n";
                 break;
         case 2:
                 command("haha " + myid);
                 me->set_temp("cbshen/ask_gun", 2);
-                return "ÄãÔÙÈ¥É½ÉñÒ¯µÄÁéÎ»Ç°¼À°İÒ»ÏÂ¡£\n";
+                return "ä½ å†å»å±±ç¥çˆ·çš„çµä½å‰ç¥­æ‹œä¸€ä¸‹ã€‚\n";
                 break;
 
         case 3:
                 command("disapp " + myid);
                 me->set_temp("cbshen/ask_gun", 3);
-                return "ËãÁË°É£¬Õâ±²×ÓÄã¾Í±ğÖ¸ÍûÁË¡£\n";
+                return "ç®—äº†å§ï¼Œè¿™è¾ˆå­ä½ å°±åˆ«æŒ‡æœ›äº†ã€‚\n";
                 break;
         default:
                 break;
 	}
 
         me->set_temp("cbshen/ask_gun", 1);
-        return "ÄãÏÈÈ¥É½ÉñÒ¯µÄÁéÎ»Ç°¼À°İÒ»ÏÂ£¬ÒÔÊ¾ĞÄ´æ³ÏÒâ°É£¡\n";
+        return "ä½ å…ˆå»å±±ç¥çˆ·çš„çµä½å‰ç¥­æ‹œä¸€ä¸‹ï¼Œä»¥ç¤ºå¿ƒå­˜è¯šæ„å§ï¼\n";
 }
 

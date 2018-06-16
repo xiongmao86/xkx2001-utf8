@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wushidao.c ÎäÊ¿µ¶
+// wushidao.c æ­¦å£«åˆ€
 
 #include <weapon.h>
 
@@ -7,17 +7,17 @@ inherit BLADE;
 
 void create()
 {
-	set_name("ÎäÊ¿µ¶", ({ "wushi dao", "dao", "blade" }) );
+	set_name("æ­¦å£«åˆ€", ({ "wushi dao", "dao", "blade" }) );
 	set_weight(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 300);
 		set("material", "steel");
-		set("long", "ÕâÊÇÒ»°ÑÈÕ±¾ÀËÈË³£ÓÃµÄÎäÊ¿µ¶£¬µ¶ÉíĞŞ³¤£¬ÂÔ×÷»¡ĞÎ£¬ÈĞ¿Ú¼«Îª·æÀû¡£\n");
-		set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄµ¶ÇÊ¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠæ—¥æœ¬æµªäººå¸¸ç”¨çš„æ­¦å£«åˆ€ï¼Œåˆ€èº«ä¿®é•¿ï¼Œç•¥ä½œå¼§å½¢ï¼Œåˆƒå£æä¸ºé”‹åˆ©ã€‚\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„åˆ€é˜ã€‚\n");
 	}
 	init_blade(30);
 	setup();

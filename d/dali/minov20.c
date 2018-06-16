@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ũ��");
+	set("short", "农田");
 	set("long", @LONG
-����һС����ͨ��ˮ��أ���گ��ů��ʪ���Թ�����������ֲˮ��Ϊ������
-�����Ǵ��������ټ���ƽԭ���Σ���Ҫ�Ը���Ϊ���İ����˿�����һЩ��ũ�
-��ػ��ֳ�С�飬һЩ��������������������ˮţ�������е�·����ũ���򶫶�
-ȥ��
+这是一小块普通的水田地，南诏温暖潮湿，自古以来就以种植水稻为主。这
+附近是大理地区少见的平原地形，主要以耕作为生的摆夷人开垦了一些的农田。
+田地划分成小块，一些摆夷男子正在田里引着水牛耕作。有道路穿过农田向东而
+去。
 LONG);
 	set("objects", ([
 		__DIR__"npc/niu.c" : 1,
@@ -22,7 +22,7 @@ LONG);
 		"west" : __DIR__"minov17",
 		"east" : __DIR__"minov23",
 		]));
-	set("area", "��٤��");
+	set("area", "罗伽甸");
 	set("cost", 3);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

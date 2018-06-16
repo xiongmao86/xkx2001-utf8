@@ -12,13 +12,13 @@ int do_look(string arg);
 
 void create()
 {
-	set("short", "����");
+	set("short", "民屋");
 	set("long",
-"����һ�����͵���ͨ�ϰ���ס�ݡ��ͱ������һ�������������ƾɵ�������
-ֻ�ڷ���һ�ž����Ӻͼ����ϴ��������������ڴ���˯�����������ף������Щ
-׳�������۵��ˡ��㷢���ұ�С��������һ������û���µ�Ӥ����Ц���еؿ�
-���㣬����Ҳ���ޡ�����һ��С͵�Ƶ��ڷ�����������ȥ��������ǽ�ŷ���һ��
-��"+YEL"�׸�"NOR+"(gang)��\n"
+"这是一个典型的普通老百姓住屋。和别的民屋一样，不大且又破旧的屋子里
+只摆放着一张旧桌子和几张老床，几个人正躺在床上睡觉，鼾声如雷，想必这些
+壮汉们是累倒了。你发觉右边小床上躺着一个好像还没满月的婴儿正笑眯眯地看
+着你，许久也不哭。你像一个小偷似的在房间里走来走去，发现西墙脚放着一个
+大"+YEL"米缸"NOR+"(gang)。\n"
 	);
 
 	set("exits", ([
@@ -48,12 +48,12 @@ void print_enter(mapping enter)
 	if (mapp(enter)) {
    	    names = keys(enter);
 	    for (i=0; i<sizeof(names); i++) {
-		printf("    %s ������ %d �Σ�\n", names[i], enter[names[i]]);
+		printf("    %s 进来过 %d 次．\n", names[i], enter[names[i]]);
 		n++;
 	    }
 	}
 	if (n == 0) {
-	    printf("û�˽�������\n");
+	    printf("没人进来过．\n");
 	}
 }
 
@@ -64,31 +64,31 @@ int do_look(string arg)
     mapping enter;
 
     if (arg != "gang") {
-        return notify_fail("��Ҫ��ʲô��");
+        return notify_fail("你要看什么？");
     }
     if (!wizardp(player) && !player->query("futou_bang")) {
-        message_vision("$N�����׸׿��˰��죬�����׸����в����׳森\n",
+        message_vision("$N对着米缸看了半天，发现米缸里有不少米虫．\n",
 	    player);
     }else{
-        message_vision("$N��ϸ�쿴�׸ף��ƺ����о������ָ�ƣ�����\n",
+        message_vision("$N仔细察看米缸，似乎在研究上面的指纹．．．\n",
 	    player);
 	db = find_object(SKILL_DB);
         if (!objectp(db)) db = new(SKILL_DB);
         if (!objectp(db)) {
-	    message_vision("$N, �������ʦ��skill_db ���ܱ� clone��", player);
+	    message_vision("$N, 请告诉巫师，skill_db 不能被 clone．", player);
 	    return 1;
  	}
    	enter = db->query("futou/enter");
-        printf("�㷢�֣�\n");
+        printf("你发现：\n");
 	print_enter(enter);
 	if (!wizardp(player)) {
-	  message_vision("$N��ϸ�ز��˲��׸׵ı�Ե��\n", player);
+	  message_vision("$N仔细地擦了擦米缸的边缘．\n", player);
 	  db->delete("futou/enter");
 	}
 	db->save();
 
 	if (wizardp(player)) {
-	    printf("�ӹŵ��񣬽������ҵ��У�\n");
+	    printf("从古到今，进过密室的有：\n");
 	    print_enter(db->query("futou/enter_all"));
 	}
     }
@@ -116,24 +116,24 @@ int do_move(string arg)
     mapping enter;
 
     if (arg != "gang") {
-        return notify_fail("��ҪŲʲô��");
+        return notify_fail("你要挪什么？");
     }
     if (player->query("combat_exp") < 10000 ||  player->query("max_neili") < 1000) {
-      message_vision("$Nʹ���˾�ȥ���׸ף������׸��ƺ����ڵ���һ�㣬��˿������\n",
+      message_vision("$N使足了劲去推米缸，可是米缸似乎长在地上一般，纹丝不动．\n",
 		     player);
     }else{
-      message_vision("$NŲ���׸ף����Ϻ�Ȼ��¶��һ�����ڣ�$N�Ӷ������˽�ȥ��\n",
+      message_vision("$N挪开米缸，地上忽然显露出一个洞口．$N从洞口钻了进去．\n",
 		     player);
       player->move("/d/city/ft_room1");
 
       if (!player->query("futou_bang")) {
-	message_vision("$N��ս�ľ�����С���ߵ��˵��ϵ�һ��ľ׮��\n", 
+	message_vision("$N胆战心惊，不小心踢倒了地上的一个木桩．\n", 
 		       player);
       }
       db = find_object(SKILL_DB);
       if (!objectp(db)) db = new(SKILL_DB);
       if (!objectp(db)) {
-	message_vision("$N, �������ʦ��skill_db ���ܱ� clone��", player);
+	message_vision("$N, 请告诉巫师，skill_db 不能被 clone．", player);
       }else{
 	enter = db->query("futou/enter");
 	enter = add_enter(enter, player);
@@ -145,7 +145,7 @@ int do_move(string arg)
 
 	db->save();
       }
-      message_vision("$N�Ӷ������˽�����\n", player);
+      message_vision("$N从洞口钻了进来．\n", player);
     }
     return 1;
 }

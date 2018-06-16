@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ëş»ù");
+	set("short", "å¡”åŸº");
 	set("long", @LONG
-ºêÊ¥ËÂËş»ù×ùÏµÓÃÊ¯°åÆö³É£¬ÓëÇ§Ñ°Ëş»ùÎª×©Æö²»Í¬¡£»ù×ùÎ÷ÃæÓĞËşÃÅ£¬¿É
-ÈëÄÚÅÊµÇ¶øÉÏ¡£
+å®åœ£å¯ºå¡”åŸºåº§ç³»ç”¨çŸ³æ¿ç Œæˆï¼Œä¸åƒå¯»å¡”åŸºä¸ºç –ç Œä¸åŒã€‚åŸºåº§è¥¿é¢æœ‰å¡”é—¨ï¼Œå¯
+å…¥å†…æ”€ç™»è€Œä¸Šã€‚
 LONG);
 	set("exits", ([
 		"up" : __DIR__"hongts1.c",
@@ -27,11 +27,11 @@ int valid_leave(object me, string dir)
 	{
 		me->set("jingli",current_jingli-random(30));
 		me->improve_skill("dodge", random(10));
-		write("ÄãÅÀÉÏÒ»²ãÂ¥£¬ÓĞĞ©ÀÛÁË¡£\n");
+		write("ä½ çˆ¬ä¸Šä¸€å±‚æ¥¼ï¼Œæœ‰äº›ç´¯äº†ã€‚\n");
 	}
 	else if (dir == "up" && current_jingli <= 40)
 	{
-		write("ÄãÀÛµÃ×ß²»¶¯ÁË£¬ºöÈ»ÑÛÃ°½ğĞÇ£¬ÔÎÁË¹ıÈ¥¡£\n");
+		write("ä½ ç´¯å¾—èµ°ä¸åŠ¨äº†ï¼Œå¿½ç„¶çœ¼å†’é‡‘æ˜Ÿï¼Œæ™•äº†è¿‡å»ã€‚\n");
 		me->unconcious();
 		return notify_fail("");
 	}

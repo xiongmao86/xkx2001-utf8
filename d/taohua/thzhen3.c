@@ -16,11 +16,11 @@ string* dirs2 = ({
 void create()
 {
 
-	set("short", "ÌÒ»¨ÁÖ");
+	set("short", "æ¡ƒèŠ±æž—");
         set("long", @LONG
-Äã×ßÁË¼¸²½£¬ºöÈ»Ïëµ½Èç¹ûµºÖÐÓÐÈË£¬²»ÈçÔÚÔ­µØ¾²×ø´ý±ä£¬Èç´ËÂÒ´³ÖÕ¾¿²»
-ÊÇ¸öÁË¾Ö¡£ËµÒ²Ææ¹Ö£¬¿ªÊ¼ÄãÎÞÂÛÈçºÎÒ²Àë²»¿ªÔ­µØ£¬ÏÖÔÚÏëÃÙÂ·»ØÈ¥£¬È´·¢ÏÖ×Ô
-¼ºÀëÔ­µØºÃÏóÔ½À´Ô½Ô¶ÁË¡£
+ä½ èµ°äº†å‡ æ­¥ï¼Œå¿½ç„¶æƒ³åˆ°å¦‚æžœå²›ä¸­æœ‰äººï¼Œä¸å¦‚åœ¨åŽŸåœ°é™åå¾…å˜ï¼Œå¦‚æ­¤ä¹±é—¯ç»ˆç©¶ä¸
+æ˜¯ä¸ªäº†å±€ã€‚è¯´ä¹Ÿå¥‡æ€ªï¼Œå¼€å§‹ä½ æ— è®ºå¦‚ä½•ä¹Ÿç¦»ä¸å¼€åŽŸåœ°ï¼ŒçŽ°åœ¨æƒ³è§…è·¯å›žåŽ»ï¼Œå´å‘çŽ°è‡ª
+å·±ç¦»åŽŸåœ°å¥½è±¡è¶Šæ¥è¶Šè¿œäº†ã€‚
 LONG
         );
 
@@ -56,7 +56,7 @@ int valid_leave(object me, string dir)
   gain = random((me->query_skill("qimen-dunjia",1))/30)+1;
   if (dirs[count] == dir || dirs2[count] == dir) {
         me->move("/d/taohua/xiaojing");
-        if (!myfam || myfam["family_name"] == "ÌÒ»¨µº") {
+        if (!myfam || myfam["family_name"] == "æ¡ƒèŠ±å²›") {
 		if (me->query("combat_exp")<20000+random(10000)) {
             		me->add("combat_exp", gain);
 	  		if (me->query("potential") < me->query("max_potential"))

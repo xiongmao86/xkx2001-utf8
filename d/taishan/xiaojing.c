@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaojing2.c Ğ¡¾¶
+// xiaojing2.c å°å¾„
 // qfy July 12, 1996
 
 #include <room.h>
@@ -9,9 +9,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡¾¶");
+        set("short", "å°å¾„");
         set("long", @LONG
-Ò»ÌõÀïĞí³¤µÄĞ¡¾¶£¬Ô¶´¦ÓĞ×ùÇÍ±Ú£¬·ç¾°Éõ¼Ñ¡£
+ä¸€æ¡é‡Œè®¸é•¿çš„å°å¾„ï¼Œè¿œå¤„æœ‰åº§å³­å£ï¼Œé£æ™¯ç”šä½³ã€‚
 LONG
         );
 
@@ -26,5 +26,5 @@ LONG
 
 void init()
 {
-	this_player()->set_temp("marks/Ğ¡", 1);
+	this_player()->set_temp("marks/å°", 1);
 }

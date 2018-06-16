@@ -1,15 +1,15 @@
 //Cracked by Roath
-// xilang2.c Î÷Ïá×ßÀÈ
+// xilang2.c è¥¿åŽ¢èµ°å»Š
 // xQin 11/00
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "Î÷Ïá×ßÀÈ");
+	set("short", "è¥¿åŽ¢èµ°å»Š");
 	set("long", @LONG
-Äã×ßÔÚÒ»ÌõÓÄ¾²µÄ×ßÀÈÉÏ£¬±±ÃæÊÇÒ»×ù¸óÂ¥£¬ÍùÄÏÊÇÎäµ±µÜ×ÓµÄÁ·¹¦·¿
-ËùÔÚ£¬²»Ê±´«³öµÜ×ÓÃÇÁ·¹¦µÄÉùÒô¡£
+ä½ èµ°åœ¨ä¸€æ¡å¹½é™çš„èµ°å»Šä¸Šï¼ŒåŒ—é¢æ˜¯ä¸€åº§é˜æ¥¼ï¼Œå¾€å—æ˜¯æ­¦å½“å¼Ÿå­çš„ç»ƒåŠŸæˆ¿
+æ‰€åœ¨ï¼Œä¸æ—¶ä¼ å‡ºå¼Ÿå­ä»¬ç»ƒåŠŸçš„å£°éŸ³ã€‚
 LONG
 	);
 

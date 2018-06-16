@@ -8,11 +8,11 @@ inherit NPC;
 void create()
 {
 	seteuid(getuid());
-	set_name("ÕÅÈı", ({ "zhang san", "zhang", "san", "bai bian" }) );
-	set("title", HIY "°Ù±äµÀÈË" NOR);
-	set("gender", "ÄĞĞÔ" );
+	set_name("å¼ ä¸‰", ({ "zhang san", "zhang", "san", "bai bian" }) );
+	set("title", HIY "ç™¾å˜é“äºº" NOR);
+	set("gender", "ç”·æ€§" );
 	set("age", 50);
-	set("long", "Ò»Î»åååååİåİµÄµÀÊ¿¡£\n");
+	set("long", "ä¸€ä½é‚‹é‚‹é¢é¢çš„é“å£«ã€‚\n");
 	set("attitude", "heroism");
 	set("class", "taoist");
 
@@ -50,7 +50,7 @@ void create()
 	map_skill("sword", "taiji-jian");
 	map_skill("dodge", "tiyunzong");
 
-	create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+	create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
 
 	set("chat_chance", 5);
 	set("chat_msg", ({

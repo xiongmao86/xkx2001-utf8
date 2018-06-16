@@ -1,18 +1,18 @@
 //Cracked by Roath
-// zixia_book.c ×ÏÏ¼ÃØóÅ
+// zixia_book.c ç´«éœç§˜ç¬ˆ
 
 inherit ITEM;
 void create()
 {
-	set_name("×ÏÏ¼ÃØóÅ", ({ "zixia book", "book" }));
+	set_name("ç´«éœç§˜ç¬ˆ", ({ "zixia book", "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long", 
-		"ÕâÊÇ»ªÉ½Æø×ÚµÄÕòÉ½Ö®±¦¡¶×ÏÏ¼ÃØ¼®¡·¡£×ÏÏ¼Éñ¹¦ÊÇÎäÁÖÖĞÒ»µÈ\n"
-		"Ò»µÄÄÚ¼Ò¹¦·ò£¬ÄÜÎª±ğÈËÁÆÉË¼°×ÔÁÆ¡£\n");
+		"è¿™æ˜¯åå±±æ°”å®—çš„é•‡å±±ä¹‹å®ã€Šç´«éœç§˜ç±ã€‹ã€‚ç´«éœç¥åŠŸæ˜¯æ­¦æ—ä¸­ä¸€ç­‰\n"
+		"ä¸€çš„å†…å®¶åŠŸå¤«ï¼Œèƒ½ä¸ºåˆ«äººç–—ä¼¤åŠè‡ªç–—ã€‚\n");
 		set("value", 7000);
 		set("material", "paper");
 		set("skill", ([

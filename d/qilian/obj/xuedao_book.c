@@ -5,19 +5,19 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ñªµ¶ÃØóÅ", ({ "xuedao book", "book" }));
+	set_name("è¡€åˆ€ç§˜ç¬ˆ", ({ "xuedao book", "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long", 
-		"·âÃæÉÏÓĞ×Å¼¸¸ö×Ö²»Ïó×Ö£¬»­²»Ïó»­µÄÍ¼ĞĞ¡£ÄÚÖĞÈ«ÊÇÂãÌåÄĞÏñ£¬¸÷ÓĞÒì×Ë£¬\n"
-                "È«ÊÇÇú·¢¹³±Ç£¬ÉîÄ¿¸ßÈ§µÄÎ÷ÓòÈËÊÏ¡£\n");
+		"å°é¢ä¸Šæœ‰ç€å‡ ä¸ªå­—ä¸è±¡å­—ï¼Œç”»ä¸è±¡ç”»çš„å›¾è¡Œã€‚å†…ä¸­å…¨æ˜¯è£¸ä½“ç”·åƒï¼Œå„æœ‰å¼‚å§¿ï¼Œ\n"
+                "å…¨æ˜¯æ›²å‘é’©é¼»ï¼Œæ·±ç›®é«˜é¢§çš„è¥¿åŸŸäººæ°ã€‚\n");
 		set("value", 5000);
 		set("material", "paper");
-		set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+		set("no_drop","è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 		set("skill", ([
 			"name":	"xue-dao", // name of the skill
 			"exp_required":	10000,	  // minimum combat experience required

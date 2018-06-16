@@ -7,14 +7,14 @@ inherit CLUB;
 
 void create()
 {
-    set_name(YEL"´óÊ÷Ö¦"NOR, ({"shuzhi", "zhi", "branch"}));
+    set_name(YEL"å¤§æ ‘æ"NOR, ({"shuzhi", "zhi", "branch"}));
     set_weight(500+random(500)); 
     if( clonep() )
       set_default_object(__FILE__);
     else {
-      set("long", "ÕâÊÇÒ»¸ù´óÊ÷Ö¦¡£\n");
-	set("unit","¸ù");
-	set("wield_msg","$N°Î³öÒ»¸ù´óÊ÷Ö¦ÎÕÔÚÊÖÖĞ¡£\n");
+      set("long", "è¿™æ˜¯ä¸€æ ¹å¤§æ ‘æã€‚\n");
+	set("unit","æ ¹");
+	set("wield_msg","$Næ‹”å‡ºä¸€æ ¹å¤§æ ‘ææ¡åœ¨æ‰‹ä¸­ã€‚\n");
 	set("material", "wood");
     }
     init_club(random(2));

@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("É®ÈË", ({ "seng ren", "seng" }));
-	set("long", "ÕâÊÇÒ»Î»É®ÈË¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("åƒ§äºº", ({ "seng ren", "seng" }));
+	set("long", "è¿™æ˜¯ä¸€ä½åƒ§äººã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 	set("attitude", "peaceful");
 	set("class", "bonze");
@@ -22,7 +22,7 @@ void create()
 	set("combat_exp", 5000);
 	set("score", 100);
 	set("chat_chance", 5);
-	set("chat_msg",({"É®ÈË»üÊ×ËµµÀ£ºÕâÎ»Ê©Ö÷ÓĞÇëÁË£¡\n",}));
+	set("chat_msg",({"åƒ§äººç¨½é¦–è¯´é“ï¼šè¿™ä½æ–½ä¸»æœ‰è¯·äº†ï¼\n",}));
 	set_skill("unarmed", 30);
 	set_skill("staff", 40);
 	set_skill("parry", 30);

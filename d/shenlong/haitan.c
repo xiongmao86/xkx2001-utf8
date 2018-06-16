@@ -1,5 +1,5 @@
 //Cracked by Roath
-// º£Ì² /d/shenlong/haitan
+// æµ·æ»© /d/shenlong/haitan
 // aln 4 / 98
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "º£Ì²");
+	set("short", "æµ·æ»©");
         set("long", @LONG
-µ«¼û°¶ÉÏÊ÷Ä¾²Ô´ä£¬³¤³¤µÄº£Ì²Íû²»µ½¾¡Í·£¬¾¡ÊÇÑ©°×µÄÏ¸É³£¬ËÄ´¦Ò»Æ¬
-¼Å¾²£¬Ìý²»¼ûÒ»µãÉùÒô£¬Î÷ÃæÊÇ´óº££¬¶«Ãæ·Â·÷ÓÐÒ»×ùÉ½·å£¬Á½ÅÔÊÇÍû²»µ½¾¡
-Í·µÄº£Ì²¡£
+ä½†è§å²¸ä¸Šæ ‘æœ¨è‹ç¿ ï¼Œé•¿é•¿çš„æµ·æ»©æœ›ä¸åˆ°å°½å¤´ï¼Œå°½æ˜¯é›ªç™½çš„ç»†æ²™ï¼Œå››å¤„ä¸€ç‰‡
+å¯‚é™ï¼Œå¬ä¸è§ä¸€ç‚¹å£°éŸ³ï¼Œè¥¿é¢æ˜¯å¤§æµ·ï¼Œä¸œé¢ä»¿æ‹‚æœ‰ä¸€åº§å±±å³°ï¼Œä¸¤æ—æ˜¯æœ›ä¸åˆ°å°½
+å¤´çš„æµ·æ»©ã€‚
 LONG
         );
 
@@ -33,14 +33,14 @@ void init()
         int damage;
 
         if( interactive(me = this_player()) 
-        && !(me->query("sg/spy") || me->query("family/family_name") == "ÉñÁú½Ì")
+        && !(me->query("sg/spy") || me->query("family/family_name") == "ç¥žé¾™æ•™")
         &&  random((int)me->query_skill("dodge")) < 80 ) {
-                message_vision( HIR "$NµÄÑÛÇ°Í»È»³öÏÖÒ»¸öÎÞµ×µÄÉîÔ¨...$NµôÈëÁËÏÝÚåÖ®ÖÐ¡£\n" NOR, me);
-                message_vision( HIR "ÏÝÚåÖÐµÄ¸Ö°åÍ»È»Ã°³öÐí¶à·æÀûµÄ¸ÖÕë£¬ÉîÉîµØÔúÈëÁË$NµÄÉíÌåÖÐ...\n" NOR, me);
+                message_vision( HIR "$Nçš„çœ¼å‰çªç„¶å‡ºçŽ°ä¸€ä¸ªæ— åº•çš„æ·±æ¸Š...$NæŽ‰å…¥äº†é™·é˜±ä¹‹ä¸­ã€‚\n" NOR, me);
+                message_vision( HIR "é™·é˜±ä¸­çš„é’¢æ¿çªç„¶å†’å‡ºè®¸å¤šé”‹åˆ©çš„é’¢é’ˆï¼Œæ·±æ·±åœ°æ‰Žå…¥äº†$Nçš„èº«ä½“ä¸­...\n" NOR, me);
 
                 damage = 100000 / ( 100 + (int)me->query_skill("force"));
-                me->receive_wound("qi", damage + random(damage), "±»ÔúËÀÁË");
-                me->receive_damage("qi", damage + random(damage), "±»ÔúËÀÁË");
+                me->receive_wound("qi", damage + random(damage), "è¢«æ‰Žæ­»äº†");
+                me->receive_damage("qi", damage + random(damage), "è¢«æ‰Žæ­»äº†");
 
                 me->apply_condition("snake_poison", 50 + random(50) +
                         me->query_condition("snake_poison"));

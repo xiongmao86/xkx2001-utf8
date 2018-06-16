@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jinjia.c »Æ½ğ¿ø¼×
+// jinjia.c é»„é‡‘ç›”ç”²
 //
 #include <ansi.h>
 #include <armor.h>
@@ -9,13 +9,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name(HIY"»Æ½ğ¿ø¼×"NOR, ({ "golden armor", "armor" }) );
+	set_name(HIY"é»„é‡‘ç›”ç”²"NOR, ({ "golden armor", "armor" }) );
 	set_weight(26000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸±»Æ½ğ¿ø¼×£¬´òÔìµÃÊ®·Ö¾«ÖÂ£¬ĞØ¼×ÉÏ¿Ì×ÅÒ»Í·±³Éú³á°òµÄÂæÍÕ¡£\nÎ÷Óò¹Å¹úÖĞ£¬Ö»ÓĞ¹úÍõ²ÅÄÜÒÔ·ÉÂæÍÕ×÷»Õ¼Ç¡£\n");
-		set("unit", "¼ş");
+		set("long", "ä¸€å‰¯é»„é‡‘ç›”ç”²ï¼Œæ‰“é€ å¾—ååˆ†ç²¾è‡´ï¼Œèƒ¸ç”²ä¸Šåˆ»ç€ä¸€å¤´èƒŒç”Ÿç¿…è†€çš„éª†é©¼ã€‚\nè¥¿åŸŸå¤å›½ä¸­ï¼Œåªæœ‰å›½ç‹æ‰èƒ½ä»¥é£éª†é©¼ä½œå¾½è®°ã€‚\n");
+		set("unit", "ä»¶");
 		set("material", "gold");
 		set("value", 50000);
 		set("armor_prop/armor", 150);

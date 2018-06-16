@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ɽׯ");
+        set("short", "白驼山庄");
         set("long", @LONG
-�����ǡ�������ŷ���������ĵط�������ʲô����Ҳû�С�
+这里是「西毒」欧阳锋练功的地方，屋内什么摆设也没有。
 LONG
         );
         set("exits", ([ 

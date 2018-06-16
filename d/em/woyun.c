@@ -1,15 +1,15 @@
 //Cracked by Roath
-// woyun.c ÎÔÔÆâÖ
+// woyun.c å§äº‘åºµ
 // Shan: 96/06/25
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÎÔÔÆâÖ");
+        set("short", "å§äº‘åºµ");
 	set("long", @LONG
-ÎÔÔÆâÖÅÔ±ßÓÐ¸ö¾®ÂçÈª£¬¾ÝËµÒÔÇ°ÔøÒòÒûË®ÈË¶à¶ø¸ÉºÔ£¬ÖÚÄáÎªÖ®ËÐ¾­£¬
-ÓÚÊÇÈªË®¸´³ö¡£³öÁËÎÔÔÆâÖ±ãÊÇ¶Ã¹âÌ¨£¬ÅÔ±ßÊÇ»ª²ØâÖ¡£
+å§äº‘åºµæ—è¾¹æœ‰ä¸ªäº•ç»œæ³‰ï¼Œæ®è¯´ä»¥å‰æ›¾å› é¥®æ°´äººå¤šè€Œå¹²æ¶¸ï¼Œä¼—å°¼ä¸ºä¹‹è¯µç»ï¼Œ
+äºŽæ˜¯æ³‰æ°´å¤å‡ºã€‚å‡ºäº†å§äº‘åºµä¾¿æ˜¯ç¹å…‰å°ï¼Œæ—è¾¹æ˜¯åŽè—åºµã€‚
 LONG
 	);
 	set("exits", ([
@@ -48,23 +48,23 @@ int do_song(string arg)
         check = level*level*level;
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÎÞ·¨ÔÚÕ½¶·ÖÐ×¨ÐÄÏÂÀ´ÑÐ¶ÁÐÂÖª£¡\n");
+                return notify_fail("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ï¼\n");
 
 	if (!arg || arg != "jing" || !objectp(ob = present("maha jing", me)) )
-                return notify_fail("ÄãÒªÄîÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¿µä»€ä¹ˆï¼Ÿ\n");
 
         if( !me->query_skill("literate", 1) )
-                return notify_fail("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                return notify_fail("ä½ æ˜¯ä¸ªæ–‡ç›²ï¼Œå…ˆå­¦ç‚¹æ–‡åŒ–(literate)å§ã€‚\n");
 
 	if( me->query("jing") < 100)
 		me->unconcious();
 	
-	me->receive_damage("jing",100, "ËÐ¾­Ê±¾«Éñ²»¼¯ÖÐ£¬»èËÀ");
+	me->receive_damage("jing",100, "è¯µç»æ—¶ç²¾ç¥žä¸é›†ä¸­ï¼Œæ˜æ­»");
 
-	message_vision("$Nò¯³ÏµØÔÚ¾®±ßËÐ¾­¡£\n", me);
+	message_vision("$Nè™”è¯šåœ°åœ¨äº•è¾¹è¯µç»ã€‚\n", me);
 
         if ( level >= 100  && check < (int)me->query("combat_exp")*10 
 	&& SKILL_D("linji-zhuang")->valid_learn(me) )

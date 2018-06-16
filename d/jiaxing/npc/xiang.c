@@ -1,19 +1,19 @@
 //Cracked by Roath
-// xiang.c  <-- ÏòÎÊÌì, not  ÏèÉÙÒ¯.
+// xiang.c  <-- å‘é—®å¤©, not  ç¿”å°‘çˆ·.
 // Jay 8/9/96
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÏòÎÊÌì",({ "xiang wentian","xiang" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("å‘é—®å¤©",({ "xiang wentian","xiang" }) );
+        set("gender", "ç”·æ€§");
         set("age", 45);
 	set("long",
-		"ËûÈÝÃ²ÇåÛÇ£¬Ò»´ÔÊèÊèÀÊÀÊµÄ»¨°×³¤Ðë´¹ÔÚÐØÇ°£¬ÑÛÍûÔ¶´¦"
-		"»ÆÍÁ´óµØºÍÇàÌìÏà½ÓÖ®´¦¡£\n");
-        set("nickname","ÌìÍõÀÏ×Ó");
-        set("title","ÈÕÔÂÉñ½ÌÓÒÊ¹");
+		"ä»–å®¹è²Œæ¸…çŸï¼Œä¸€ä¸›ç–ç–æœ—æœ—çš„èŠ±ç™½é•¿é¡»åž‚åœ¨èƒ¸å‰ï¼Œçœ¼æœ›è¿œå¤„"
+		"é»„åœŸå¤§åœ°å’Œé’å¤©ç›¸æŽ¥ä¹‹å¤„ã€‚\n");
+        set("nickname","å¤©çŽ‹è€å­");
+        set("title","æ—¥æœˆç¥žæ•™å³ä½¿");
         set("combat_exp", 30000);
         set("shen_type", 0);
         set("attitude", "heroism");
@@ -45,8 +45,8 @@ void init()
 int accept_object(object me, object obj)
 {
         switch ((string)obj->query("name")) {
-	case "½ð´´Ò©":
-       	message("vision",me->name()+"¸øÏòÎÊÌìÒ»°ü½ð´´Ò©¡£\n",environment(me),
+	case "é‡‘åˆ›è¯":
+       	message("vision",me->name()+"ç»™å‘é—®å¤©ä¸€åŒ…é‡‘åˆ›è¯ã€‚\n",environment(me),
 	    ({me}));
 	command("thank "+me->query("id"));
 	if (!query("giveyao")) {
@@ -55,15 +55,15 @@ int accept_object(object me, object obj)
 	  call_out("create_shashou",10);
 	}
 	return 1;
-	case "ÌúÇò":
-        message("vision",me->name()+"¸øÏòÎÊÌìÒ»Ö»ÌúÇò¡£\n",environment(me),
+	case "é“çƒ":
+        message("vision",me->name()+"ç»™å‘é—®å¤©ä¸€åªé“çƒã€‚\n",environment(me),
             ({me}));
-        command("say ÕâÎ»"+RANK_D->query_respect(me)+"µÄ¾ÈÃüÖ®¶÷ÏòÄ³Ã»³Ý²»Íü¡£");
+        command("say è¿™ä½"+RANK_D->query_respect(me)+"çš„æ•‘å‘½ä¹‹æ©å‘æŸæ²¡é½¿ä¸å¿˜ã€‚");
 	command("bow "+me->query("id"));
 	command("look "+me->query("id"));
 	command("ah");
-	command("say ¶÷¹«¿´ÆðÀ´ÉîÊÜÄÚÉË¡£ÎÒÓÐ¼¸¸öÅóÓÑÉí»³¾ø¼Æ£¬»òÐí¿ÉÒÔÒ½µÃÁË"
-		"¶÷¹«µÄÉË£¬²»Öª¶÷¹«Ô¸È¥Ò½ÉË(yishang)·ñ£¿");
+	command("say æ©å…¬çœ‹èµ·æ¥æ·±å—å†…ä¼¤ã€‚æˆ‘æœ‰å‡ ä¸ªæœ‹å‹èº«æ€€ç»è®¡ï¼Œæˆ–è®¸å¯ä»¥åŒ»å¾—äº†"
+		"æ©å…¬çš„ä¼¤ï¼Œä¸çŸ¥æ©å…¬æ„¿åŽ»åŒ»ä¼¤(yishang)å¦ï¼Ÿ");
 	me->set_temp("yishang",1);
 	return 1;
 	}
@@ -78,7 +78,7 @@ void eatyao()
 void create_shashou()
 {
   object s1,s2,s3;
-	say("Í»È»´ÓÊ÷ÁÖÀï³å³ö¼¸¸ö¶ñºÝºÝµÄ¾¢×°ºº×Ó¡£\n\n");
+	say("çªç„¶ä»Žæ ‘æž—é‡Œå†²å‡ºå‡ ä¸ªæ¶ç‹ ç‹ çš„åŠ²è£…æ±‰å­ã€‚\n\n");
 
 	s1 = new(__DIR__"shashou");
 	s2 = new(__DIR__"shashou");
@@ -98,13 +98,13 @@ int do_yishang()
 	if (!me->query_temp("yishang"))
 		return 0;
 
-	message("vision",me->name()+"ËæÏòÎÊÌì×ßÈëÁÖÖÐ¡£\n", environment(me),({me}));
+	message("vision",me->name()+"éšå‘é—®å¤©èµ°å…¥æž—ä¸­ã€‚\n", environment(me),({me}));
 	me->move("/d/jiaxing/mzgate");
 	this_object()->move("/d/jiaxing/mzgate");
 
-	write("ÄãËæ×ÅÏòÎÊÌìÀ´µ½Ò»×ù×¯ÔºÇ°¡£\n");
-	command("say Ã·×¯ËÄÎ»×¯Ö÷¶¼Éí»³¾ø¼Æ£¬ÄãÈôÄÜÙøÁËËûÃÇ£¬ËûÃÇ»áÌæÄãÒ½ÉË¡£");
-	command("say µ«ËûÃÇÇáÒ×²»³öÊÖ¡£");
+	write("ä½ éšç€å‘é—®å¤©æ¥åˆ°ä¸€åº§åº„é™¢å‰ã€‚\n");
+	command("say æ¢…åº„å››ä½åº„ä¸»éƒ½èº«æ€€ç»è®¡ï¼Œä½ è‹¥èƒ½å¬´äº†ä»–ä»¬ï¼Œä»–ä»¬ä¼šæ›¿ä½ åŒ»ä¼¤ã€‚");
+	command("say ä½†ä»–ä»¬è½»æ˜“ä¸å‡ºæ‰‹ã€‚");
 	o1 = new(__DIR__"obj/qipu");
 	o2 = new(__DIR__"obj/xinglutu");
 	o3 = new(__DIR__"obj/shuaiyitie");
@@ -113,10 +113,10 @@ int do_yishang()
 	o2->move(me);
 	o3->move(me);
 	o4->move(me);
-        message_vision("$nµÝ¸øÁË$N¼¸Ñù±¦Îï¡£\n", me, this_object() );
-        command("say Äãµ½Ê±°ÑÕâ¼¸¼þ±¦Îï·Ö±ð¸ø¼¸¸ö×¯Ö÷¡£");
+        message_vision("$né€’ç»™äº†$Nå‡ æ ·å®ç‰©ã€‚\n", me, this_object() );
+        command("say ä½ åˆ°æ—¶æŠŠè¿™å‡ ä»¶å®ç‰©åˆ†åˆ«ç»™å‡ ä¸ªåº„ä¸»ã€‚");
 	command("give qiu to "+me->query("id"));
-	command("say ×îááºÍµØÀÎÀïµÄÀÏÍ·±È½£Ç°°ÑÕâ¸öÌúÇò½»¸øËû¡£");
+	command("say æœ€å¾Œå’Œåœ°ç‰¢é‡Œçš„è€å¤´æ¯”å‰‘å‰æŠŠè¿™ä¸ªé“çƒäº¤ç»™ä»–ã€‚");
 	command("bow "+me->query("id"));
 	command("bye");
 	destruct(this_object());

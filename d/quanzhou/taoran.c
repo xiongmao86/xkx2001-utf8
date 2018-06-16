@@ -1,5 +1,5 @@
 //Cracked by Roath
-// taoran.c ÌÔÈ»²è¾Ó
+// taoran.c æ·˜ç„¶èŒ¶å±…
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌÔÈ»²è¾Ó");
+        set("short", "æ·˜ç„¶èŒ¶å±…");
 	set("long", @LONG
-ÕâÊÇ×¨¹©Æ·³¢ºÍÏúÊÛ²èÒ¶µÄµêÆÌ£¬µêÀïÇåÏãËÄÒç½øÃÅ¾ÍÓÐÐÄ¿õÉñâùÖ®¸Ð¡£
-Ç½ÉÏÓÐÒ»¼ÛÄ¿±í(sign)¡£
+è¿™æ˜¯ä¸“ä¾›å“å°å’Œé”€å”®èŒ¶å¶çš„åº—é“ºï¼Œåº—é‡Œæ¸…é¦™å››æº¢è¿›é—¨å°±æœ‰å¿ƒæ—·ç¥žæ€¡ä¹‹æ„Ÿã€‚
+å¢™ä¸Šæœ‰ä¸€ä»·ç›®è¡¨(sign)ã€‚
 LONG
         );
 
@@ -23,11 +23,11 @@ LONG
         ]));
 
 	set("item_desc",([
-		"sign" : "ÎÚÁú²è  £ºÈýÊ®ÎÄÍ­°å\n"
-			 "Ìú¹ÛÒô  £ºÈýÊ®ÎÄÍ­°å\n"
-			 "Áú¾®²è  £ºÈýÊ®ÎÄÍ­°å\n"
-			 "ÜÔÀò»¨²è£ºÈýÊ®ÎÄÍ­°å\n"
-			 "ÏãÆ¬    £ºÈýÊ®ÎÄÍ­°å\n"
+		"sign" : "ä¹Œé¾™èŒ¶  ï¼šä¸‰åæ–‡é“œæ¿\n"
+			 "é“è§‚éŸ³  ï¼šä¸‰åæ–‡é“œæ¿\n"
+			 "é¾™äº•èŒ¶  ï¼šä¸‰åæ–‡é“œæ¿\n"
+			 "èŒ‰èŽ‰èŠ±èŒ¶ï¼šä¸‰åæ–‡é“œæ¿\n"
+			 "é¦™ç‰‡    ï¼šä¸‰åæ–‡é“œæ¿\n"
 	]));
 
         set("no_clean_up", 0);

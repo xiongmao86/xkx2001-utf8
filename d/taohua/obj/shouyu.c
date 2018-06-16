@@ -4,27 +4,27 @@ inherit ITEM;
 
 void create()
 {
-        set_name("»ÆÒ©Ê¦ÊÖÚÍ", ({"shou yu", "yu", "letter"}));
+        set_name("é»„è¯å¸ˆæ‰‹è°•", ({"shou yu", "yu", "letter"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·â");
+                set("unit", "å°");
                 set("long","\n
 =================================
 |				|
-|		×Ö		|
-|		ÚÍ		|
-|		Áé		|
-|		·ç		|
-|		Îá		|
-|		Í½		|
+|		å­—		|
+|		è°•		|
+|		çµ		|
+|		é£		|
+|		å¾		|
+|		å¾’		|
 |				|
-|			ÌÒ	|
-|			»¨	|
-|			»Æ	|
+|			æ¡ƒ	|
+|			èŠ±	|
+|			é»„	|
 |				|
-|			¼ê	|
+|			ç¼„	|
 |				|
 =================================\n");
                 set("material", "paper");

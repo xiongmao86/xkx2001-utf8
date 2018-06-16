@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�տ��㳡");
+	set("short", "空旷广场");
 	set("long", @LONG
-���ǿտ�һ���Ĺ㳡��������ϰ�����������
-�����ʿ�����ڴ���ʾ���ʵ۱����ϱߵļ�
-ͤ�ļ����ɴ�������һ��ƽ����
+这是空旷一个的广场，便于练习可跑马射箭。
+清代武士殿试在此演示，皇帝便在南边的箭
+亭阅技。由此往东是一排平房。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */

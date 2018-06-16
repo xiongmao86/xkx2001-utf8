@@ -7,17 +7,17 @@ void fix_exits_for_night(int is_night);
 
 void create()
 {
-	set("short", "���п�");
+	set("short", "菜市口");
 	set("long", @LONG
-�����ǳ�͢��ն����ʾ�ڵĳ�����·������һ����ͷ̨ (tai)��Ӧ�þ�����
-���õġ���Զ�����ŵ����ֻ�����Լ��������������ɱ�����չ����������ĶԱȡ�
+这里是朝廷处斩犯人示众的场所。路中央有一个断头台 (tai)，应该就是行
+刑用的。不远处天桥的热闹还能隐约听到，与这里肃杀的气氛构成了鲜明的对比。
 LONG
 	);
 	fix_exits_for_night(0);
 	set("no_clean_up", 0);
 
 	set("item_desc", ([
-	"tai" : "һ��Ѫ���߰ߵ�ľ̨�ӡ�\n",
+	"tai" : "一个血迹斑斑的木台子。\n",
 ]));
 	set("outdoors", "beijing");
 	set("cost", 2);

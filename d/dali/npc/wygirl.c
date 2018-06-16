@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wygirl.c ÎÚÒÄÉÙÅ®
+// wygirl.c ä¹Œå¤·å°‘å¥³
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÉÙÅ®", ({ "shao nu", "girl" }) );
-	set("long", "Ò»Î»ÎÚÒÄ×åµÄÉÙÅ®£¬ÒÔËÖÔó·¢£¬ÅÌ³ÉÁ½»·£¬ÉÏÅûÀ¶É´Í·½í£¬ÊÎÒÔ»¨±ß¡£\n");
+	set_name("å°‘å¥³", ({ "shao nu", "girl" }) );
+	set("long", "ä¸€ä½ä¹Œå¤·æ—çš„å°‘å¥³ï¼Œä»¥é…¥æ³½å‘ï¼Œç›˜æˆä¸¤ç¯ï¼Œä¸ŠæŠ«è“çº±å¤´å·¾ï¼Œé¥°ä»¥èŠ±è¾¹ã€‚\n");
 
 	set("age", 15);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

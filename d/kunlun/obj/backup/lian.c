@@ -1,22 +1,22 @@
 //Cracked by Roath
-// lian.c ÌúÁ´
+// lian.c é“é“¾
 
 #include <weapon.h>
 inherit WHIP;
 
 void create()
 {
-        set_name("ÌúÁ´", ({ "lian", "tielian","chain" }));
+        set_name("é“é“¾", ({ "lian", "tielian","chain" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "ÕâÊÇ²»¹ı¿ê×Ó´ÖÏ¸µÄÌúÁ´¡£\n");
+                set("unit", "æ¡");
+                set("long", "è¿™æ˜¯ä¸è¿‡ç­·å­ç²—ç»†çš„é“é“¾ã€‚\n");
                 set("value", 50);
                 set("material", "iron");
-                set("wield_msg", "$N´ÓÑü¼ä½âÏÂÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ø»ØÑüÉÏ¡£\n");
+                set("wield_msg", "$Nä»è…°é—´è§£ä¸‹ä¸€æ¡$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nç¼ å›è…°ä¸Šã€‚\n");
         }
         init_whip(5);
         setup();
@@ -31,23 +31,23 @@ int do_cut(string arg)
 {	object weapon;
 	object me = this_player();
 	if ( !arg && arg != "lian" && arg != "chain" )
-	     return notify_fail( "Ê²Ã´£¿\n");
+	     return notify_fail( "ä»€ä¹ˆï¼Ÿ\n");
 	if ( !objectp(weapon = me->query_temp("weapon")))
 	{  if (me->query("qi") > 500)
-	   {	message_vision( "$NÀ­×¡Ğ¡ÕÑË«ÊÖÖ»¼äµÄÌúÁ´£¬ÔË¾¢·ÖÀ­£¬ÌúÁ´½¥½¥ÑÓ³¤£¬È´ÊÇ²»¶Ï¡£\n", me);
-		write("Ğ¡ÕÑËµµÀ¡°ÕâÁ´×Ó¹Å¹ÖµÃ½ô£¬±ãÊÇ±¦µ¶ÀûÈĞ£¬Ò²ÉËËü²»ÁË¡£ËøÉÏµÄÔ¿³×ÔÚĞ¡½ãÊÖÀï¡£¡±");
+	   {	message_vision( "$Næ‹‰ä½å°æ˜­åŒæ‰‹åªé—´çš„é“é“¾ï¼Œè¿åŠ²åˆ†æ‹‰ï¼Œé“é“¾æ¸æ¸å»¶é•¿ï¼Œå´æ˜¯ä¸æ–­ã€‚\n", me);
+		write("å°æ˜­è¯´é“â€œè¿™é“¾å­å¤æ€ªå¾—ç´§ï¼Œä¾¿æ˜¯å®åˆ€åˆ©åˆƒï¼Œä¹Ÿä¼¤å®ƒä¸äº†ã€‚é”ä¸Šçš„é’¥åŒ™åœ¨å°å§æ‰‹é‡Œã€‚â€");
 		return 1;
 	   }
 	   else
-	   {	message_vision( "$NÀ­×¡Ğ¡ÕÑË«ÊÖÖ»¼äµÄÌúÁ´£¬ÔË¾¢·ÖÀ­£¬ÌúÁ´½¥½¥ÑÓ³¤£¬È´ÊÇ²»¶Ï¡£\n", me);
-		message_vision("Ğ¡ÕÑ½ĞµÀ¡°°¦Ñ½£¬²»ºÃ¡£ÄãÔ½À­Ô½³¤£¬ÎÒ¿É¸ü¼Ó²»±ãÀ²¡£¡±");
+	   {	message_vision( "$Næ‹‰ä½å°æ˜­åŒæ‰‹åªé—´çš„é“é“¾ï¼Œè¿åŠ²åˆ†æ‹‰ï¼Œé“é“¾æ¸æ¸å»¶é•¿ï¼Œå´æ˜¯ä¸æ–­ã€‚\n", me);
+		message_vision("å°æ˜­å«é“â€œå”‰å‘€ï¼Œä¸å¥½ã€‚ä½ è¶Šæ‹‰è¶Šé•¿ï¼Œæˆ‘å¯æ›´åŠ ä¸ä¾¿å•¦ã€‚â€");
 		return 1;
 	   }
 
 	}
    	if ((string)weapon->query("skill_type") != "sword" )
 	{	
-	   message_vision("$N¾ÙÆğ" + weapon->name() + "£¬ÓÃ¾¢ÔÒÏÂ£¬Ö»ÌıµÃÅéµÄÒ»Éù£¬µ«ÌúÁ´»¹ÊÇ²»¶Ï¡£\n", me);
+	   message_vision("$Nä¸¾èµ·" + weapon->name() + "ï¼Œç”¨åŠ²ç ¸ä¸‹ï¼Œåªå¬å¾—ç °çš„ä¸€å£°ï¼Œä½†é“é“¾è¿˜æ˜¯ä¸æ–­ã€‚\n", me);
 	}
 
 	

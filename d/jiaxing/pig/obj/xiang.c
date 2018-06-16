@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name("ÏèÉÙÒ¯", ({"xiang"}));
+        set_name("ç¿”å°‘çˆ·", ({"xiang"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
-                set("long", "ÕâÊÇÒ»Á£Öú³¤ÄÚÁ¦µÄÁéÒ©£¬³ÔÁËÖ®ºóÓĞÒª·ÉÏèµÄÓûÍû£¬Ïñ¸öÉÙÒ¯ËÆµÄ¡£\n");
+                set("unit", "ç²’");
+                set("long", "è¿™æ˜¯ä¸€ç²’åŠ©é•¿å†…åŠ›çš„çµè¯ï¼Œåƒäº†ä¹‹åæœ‰è¦é£ç¿”çš„æ¬²æœ›ï¼Œåƒä¸ªå°‘çˆ·ä¼¼çš„ã€‚\n");
         }
         setup();
 }
@@ -28,13 +28,13 @@ int do_eat(string arg)
         object me = this_player();
 
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
         if ( me->query("neili") >= me->query("max_neili")*2 )
-        return notify_fail("ÄãÏÖÔÚÃ»±ØÒª³ÔÏèÉÙÒ¯¡£\n");
+        return notify_fail("ä½ ç°åœ¨æ²¡å¿…è¦åƒç¿”å°‘çˆ·ã€‚\n");
 
         me->add("neili", 1);
-        message_vision(HIY "$N³ÔÏÂÒ»Á£ÏèÉÙÒ¯£¬Ö»¾õµÃÉíÇáÈçÑàÒª·ÉÏè£¡\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€ç²’ç¿”å°‘çˆ·ï¼Œåªè§‰å¾—èº«è½»å¦‚ç‡•è¦é£ç¿”ï¼\n" NOR, me);
 
         destruct(this_object());
         return 1;

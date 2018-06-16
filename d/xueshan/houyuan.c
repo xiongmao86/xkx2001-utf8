@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ժ");
+        set("short", "后院");
         set("long", @LONG
-�����Ǻ�Ժ��ǽ���Ϸ���һ���Ħ�Ǵ�������͵����ϰ�����书
-�õ�ľ�ˡ������ǻ���ס�İ�Ƿ¥������������������ǽ��Ժ��
+这里是后院，墙边上放着一个鸠摩智从少林寺偷来研习少林武功
+用的木人。北面是活佛居住的昂欠楼，西边是天龙殿，南面是金刚院。
 LONG
         );
         set("exits", ([

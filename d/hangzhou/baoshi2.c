@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ±£ÊçËþ
+// ä¿æ·‘å¡”
 // Dong  11/03/1996.
 
 #include <ansi.h>
@@ -11,11 +11,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±£ÊçËþ");
+        set("short", "ä¿æ·‘å¡”");
         set("long", @LONG
-±£ÊçËþ×ËÌ¬ÐãÀöÍ¦°Î£¬Ëþ»ù¼«Ð¡£¬È´¸ººÉÁË¼«¸ßµÄËþÉí¡£´«ËµÎâ
-Ô½ÍõÇ®ºëÊç·îÕÙÈë¾©£¬¾ÃÁôÎ´·µ£¬Ëû´ó³¼ÎâÑÓË¬Îª×£Ô­ÆäÆ½°²¹éÀ´£¬
-¶ø½¨´ËËþ£¬¹ÊÃû±£ÊçËþ¡£ÍùÄÏÊÇÏÂÉ½µÄÂ·¡£
+ä¿æ·‘å¡”å§¿æ€ç§€ä¸½æŒºæ‹”ï¼Œå¡”åŸºæžå°ï¼Œå´è´Ÿè·äº†æžé«˜çš„å¡”èº«ã€‚ä¼ è¯´å´
+è¶ŠçŽ‹é’±å¼˜æ·‘å¥‰å¬å…¥äº¬ï¼Œä¹…ç•™æœªè¿”ï¼Œä»–å¤§è‡£å´å»¶çˆ½ä¸ºç¥åŽŸå…¶å¹³å®‰å½’æ¥ï¼Œ
+è€Œå»ºæ­¤å¡”ï¼Œæ•…åä¿æ·‘å¡”ã€‚å¾€å—æ˜¯ä¸‹å±±çš„è·¯ã€‚
 LONG  );
 
         set("objects",([

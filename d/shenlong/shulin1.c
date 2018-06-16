@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ���� /d/shenlong/shulin1
+// 树林 /d/shenlong/shulin1
 // ywz 10/10/96
 
 inherit ROOM;
@@ -7,11 +7,11 @@ inherit ROOM;
 void create()
 {
     int i;
-        set("short", "����");
+        set("short", "树林");
         set("long", @LONG
-��������߰�����ֻ������ͷ���ϴ���һЩ�����������ż����ï�ܵ�Ҷ
-��͸����һ�߹������Ҷ�ڷ��衣��ľ���õ���ζ�����ᴫ���߳����е�����
-ʹ�˲�����ԥ��ǰ���ĽŲ���
+树林里光线暗淡，只能听见头顶上传来一些鸟儿的啼鸣。偶而从茂密的叶
+间透过的一线光伴着落叶在飞舞。朽木腐烂的气味和身後传来蛇虫爬行的声音
+使人不觉犹豫了前进的脚步。
 LONG
         );
 	i = random (3);

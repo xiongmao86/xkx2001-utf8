@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pishui-zhu.c ±ÙË®ÁéÖé
+// pishui-zhu.c è¾Ÿæ°´çµç 
 
 inherit ITEM;
 
@@ -11,12 +11,12 @@ void init()
 
 void create()
 {
-	set_name("±ÙË®ÁéÖé", ({"pishui zhu", "zhu"}));
+	set_name("è¾Ÿæ°´çµç ", ({"pishui zhu", "zhu"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿ÅÓÉ±ÌË®½ğ¾¦ÊŞÊŞ½ÇÖÆ³ÉµÄ±ÙË®ÁéÖé£¬ÄÜÈÃÅå´÷Õßº®¶¾²»ÇÖ£¬ºé²¨±ÙÒ×¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—ç”±ç¢§æ°´é‡‘ç›å…½å…½è§’åˆ¶æˆçš„è¾Ÿæ°´çµç ï¼Œèƒ½è®©ä½©æˆ´è€…å¯’æ¯’ä¸ä¾µï¼Œæ´ªæ³¢è¾Ÿæ˜“ã€‚\n");
 		set("value", 1000);
 	}
 	setup();
@@ -24,9 +24,9 @@ void create()
 
 int do_eat(string arg)
 {
-	if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if (!id(arg)) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("\n$N¹¾ààÒ»Éù£¬°Ñ±ÙË®ÖéÍÌÏÂ¶ÇÀï£¬ËÆºõÊ²Ã´Î¶µÀÒ²Ã»³¢µ½ ... \n", this_player());
+	message_vision("\n$Nå’•å™œä¸€å£°ï¼ŒæŠŠè¾Ÿæ°´ç åä¸‹è‚šé‡Œï¼Œä¼¼ä¹ä»€ä¹ˆå‘³é“ä¹Ÿæ²¡å°åˆ° ... \n", this_player());
 	this_player()->set_temp("zhu_eat", 1);
 
 	destruct(this_object());
@@ -35,9 +35,9 @@ int do_eat(string arg)
 
 int do_han(string arg)
 {
-	if (!id(arg)) return notify_fail("ÄãÒªº¬Ê²Ã´£¿\n");
+	if (!id(arg)) return notify_fail("ä½ è¦å«ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("\n$NĞ¡ĞÄÒíÒíµØÄéÆğ±ÙË®ÁéÖé£¬º¬ÔÚ×ìÀï¡£\n", this_player());
+	message_vision("\n$Nå°å¿ƒç¿¼ç¿¼åœ°æ‹ˆèµ·è¾Ÿæ°´çµç ï¼Œå«åœ¨å˜´é‡Œã€‚\n", this_player());
 	this_player()->set_temp("zhu_han", 1);
 
 	return 1;

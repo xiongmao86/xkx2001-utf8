@@ -8,18 +8,18 @@ inherit ARMOR;
 
 void create()
 {
-	set_name("Èíâ¬¼×", ({ "ruanwei jia", "jia" }));
+	set_name("è½¯çŒ¬ç”²", ({ "ruanwei jia", "jia" }));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("long", 
-"ÕâÊÇÒ»¼þÈíâ¬¼×¡£\n");
+"è¿™æ˜¯ä¸€ä»¶è½¯çŒ¬ç”²ã€‚\n");
 		set("material", "cloth");
-		set("unit", "¼þ");
+		set("unit", "ä»¶");
 		set("value", 7000000);
-		set("wear_msg", HIY "$N´©ÉÏÒ»¼þÈíâ¬¼×¡£\n" NOR);
-		set("unequip_msg", HIY "$N½«Èíâ¬¼×ÍÑÁËÏÂÀ´¡£\n" NOR);
+		set("wear_msg", HIY "$Nç©¿ä¸Šä¸€ä»¶è½¯çŒ¬ç”²ã€‚\n" NOR);
+		set("unequip_msg", HIY "$Nå°†è½¯çŒ¬ç”²è„±äº†ä¸‹æ¥ã€‚\n" NOR);
 		set("armor_prop/armor", 250);
 //		set("no_drop", 1);
 	}
@@ -35,8 +35,8 @@ mixed hit_by(object me, object victim, int damage, object weapon)
 	else {
 		damage /= 2;
 		if (damage > 0)
-		    me->receive_wound("qi", damage/2, "±»Èíâ¬¼×´ÌËÀÁË");
-		result = "Ö»¼û$N´ó½ÐÒ»Éù¼±Ã¦ÊÕÊÖ£¬ÊÖÉÏÒÑ±»Èíâ¬¼×´ÌµÃÏÊÑªÁÜÀì¡£\n";
+		    me->receive_wound("qi", damage/2, "è¢«è½¯çŒ¬ç”²åˆºæ­»äº†");
+		result = "åªè§$Nå¤§å«ä¸€å£°æ€¥å¿™æ”¶æ‰‹ï¼Œæ‰‹ä¸Šå·²è¢«è½¯çŒ¬ç”²åˆºå¾—é²œè¡€æ·‹æ¼“ã€‚\n";
 		result+= "( $N"+ COMBAT_D->eff_status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
 		return ([ "result": result, "damage": damage+random(damage) ]);
 	}

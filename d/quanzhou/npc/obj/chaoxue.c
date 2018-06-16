@@ -9,13 +9,13 @@ inherit BOOTS;
 
 void create()
 {
-	set_name(BLU"Ğ¡³¯Ñ¥"NOR, ({ "chao xue", "boots", "shoes"}) );
+	set_name(BLU"å°æœé´"NOR, ({ "chao xue", "boots", "shoes"}) );
 	set_weight(400);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ë«");
-		set("long",  "ÕâÊÇÒ»Ë«Çà¶Ğ·Ûµ×Ğ¡³¯Ñ¥¡£\n");
+		set("unit", "åŒ");
+		set("long",  "è¿™æ˜¯ä¸€åŒé’ç¼ç²‰åº•å°æœé´ã€‚\n");
                 set("value", 100);
 		set("material", "cloth");
                 set("armor_type", "boots");

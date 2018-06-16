@@ -1,20 +1,20 @@
 //Cracked by Kafei
-// baitie.c °İÌù
+// baitie.c æ‹œè´´
 // AceP
 
 inherit ITEM;
 
 void create()
 {
-	set_name("°İÌù", ({"bai tie", "tie", "letter"}));
+	set_name("æ‹œè´´", ({"bai tie", "tie", "letter"}));
     set_weight(100);
     if (clonep())
         set_default_object(__FILE__);
     else {
-		set("unit", "·â");
-        set("long","ÕâÊÇÒ»·âÓÉÂíÎåµÂÇ×±ÊĞ´µÄ°İÌù£¬Æ¾´Ë¿ÉÇ°ÍùÎŞÁ¿É½½£ºş¹¬¹ÛÄ¦ÎŞÁ¿½£ÅÉÎåÄêÒ»´ÎµÄ±ÈÎä¡£\n");
-		set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-		set("no_get",  "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+		set("unit", "å°");
+        set("long","è¿™æ˜¯ä¸€å°ç”±é©¬äº”å¾·äº²ç¬”å†™çš„æ‹œè´´ï¼Œå‡­æ­¤å¯å‰å¾€æ— é‡å±±å‰‘æ¹–å®«è§‚æ‘©æ— é‡å‰‘æ´¾äº”å¹´ä¸€æ¬¡çš„æ¯”æ­¦ã€‚\n");
+		set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+		set("no_get",  "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
         set("material", "paper");
     }
 }

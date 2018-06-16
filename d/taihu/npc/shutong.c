@@ -9,10 +9,10 @@ string ask_me_2(string);
 
 void create()
 {
-	set_name("ÊéÍ¯", ({"shu tong","tong",}));
-	set("long","ËûÊÇ×¯Ö÷µÄËæÉíÊéÍ¯£¬Æ½ËØ¿´¹Ü²ØÊé¡£\n");
+	set_name("ä¹¦ç«¥", ({"shu tong","tong",}));
+	set("long","ä»–æ˜¯åº„ä¸»çš„éšèº«ä¹¦ç«¥ï¼Œå¹³ç´ çœ‹ç®¡è—ä¹¦ã€‚\n");
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 
 	set("age", 15);
@@ -38,8 +38,8 @@ void create()
       set_temp("apply/defense", 20);
 
         set("inquiry", ([
-		"Ò×¾­ĞòØÔÆª" : (: ask_me_1, "yijing1" :),
-            "Ò×¾­ËµØÔÆª" : (: ask_me_2, "yijing2" :)
+		"æ˜“ç»åºå¦ç¯‡" : (: ask_me_1, "yijing1" :),
+            "æ˜“ç»è¯´å¦ç¯‡" : (: ask_me_2, "yijing2" :)
         ]));
 
 	set("yijing1_count", 3);
@@ -55,25 +55,25 @@ string ask_me_1(string name)
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÌÒ»¨µº")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ¡ƒèŠ±å²›")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±Ö×¯ËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æ•åº„ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (  present("yi jing", this_player()) )
 		return RANK_D->query_respect(this_player()) + 
-		"ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞÂğ£¬ÔõÃ´ÓÖÀ´ÒªÁË£¿ ÕæÊÇÎŞÁÄ£¡";
+		"ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰å—ï¼Œæ€ä¹ˆåˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯æ— èŠï¼";
 
 	if (query("yijing1_count") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÊéÒÑ±»È¡×ßÁË¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ï¼Œä¹¦å·²è¢«å–èµ°äº†ã€‚";
 
 	ob = new("/d/taohua/obj/" + name);
 	ob->move(this_player());
 
 	add("yijing1_count", -1);
 
-	message_vision("ÊéÍ¯¸ø$NÒ»±¾" + ob->query("name") + "¡£\n", this_player());
+	message_vision("ä¹¦ç«¥ç»™$Nä¸€æœ¬" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£Ğ¡ĞÄ±ğÅª¶ªÁË¡£";
+	return "æ‹¿å»å§ã€‚å°å¿ƒåˆ«å¼„ä¸¢äº†ã€‚";
 }
 
 string ask_me_2(string name)
@@ -81,19 +81,19 @@ string ask_me_2(string name)
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÌÒ»¨µº")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ¡ƒèŠ±å²›")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±Ö×¯ËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æ•åº„ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (query("yijing2_count") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÊéÒÑ±»È¡×ßÁË¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ï¼Œä¹¦å·²è¢«å–èµ°äº†ã€‚";
 
 	ob = new("/d/taohua/obj/" + name);
 	ob->move(this_player());
 
 	add("yijing2_count", -1);
 
-	message_vision("ÊéÍ¯¸ø$NÒ»±¾" + ob->query("name") + "¡£\n", this_player());
+	message_vision("ä¹¦ç«¥ç»™$Nä¸€æœ¬" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£Ğ¡ĞÄ±ğÅª¶ªÁË¡£";
+	return "æ‹¿å»å§ã€‚å°å¿ƒåˆ«å¼„ä¸¢äº†ã€‚";
 }

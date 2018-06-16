@@ -1,16 +1,16 @@
 //Cracked by Roath
- // ɽ·
+ // 山路
 // Dong  11/03/1996.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 
 void create()
-{   set("short", "ɽ·");
+{   set("short", "山路");
     set("long", @LONG
-����С·�ϣ�ֻ����ɽ��Ұ���������͵Ĳ��ũ����Ů���ڻ�
-Ц���вɲ衣ɽ·�����������ߣ����߾�����������������һ����
-·��
+走在小路上，只见漫山遍野都是绿油油的茶蓬。农家少女们在欢
+笑声中采茶。山路延伸向东西两边，北边就是龙井，东北边有一条土
+路。
 LONG);
 
     set("exits", ([ /* sizeof() == 4 */ 

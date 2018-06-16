@@ -8,17 +8,17 @@ inherit STICK;
 
 void create()
 {
-	set_name("Ä¾°ô", ({ "mu bang", "bang", "walking stick", "stick" }) );
+	set_name("æœ¨æ£’", ({ "mu bang", "bang", "walking stick", "stick" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ùÄ¾°ô£¬¿ÉÒÔµ±×öÅÀÉ½ÓÃµÄÊÖÕÈ¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹æœ¨æ£’ï¼Œå¯ä»¥å½“åšçˆ¬å±±ç”¨çš„æ‰‹æ–ã€‚\n");
 		set("value", 50);
 		set("material", "wood");
-		set("wield_msg", "$NÄÃ³öÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 
 	init_stick(5);

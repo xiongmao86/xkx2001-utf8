@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", RED"Íõ¸®´óÃÅ"NOR"£º");
-	set("long","ÄãÕıÕ¾ÔÚÒ»×ùºÀ»ªµÄ¸®ÃÅÇ°£¬ÃÅÇ°ÓĞÁ½Ö»¼«´óµÄÊ¯Ê¨×Ó£¬ÃÅÉÏ¸ßĞüÒ»¿éºáØÒ£¬
-ÉÏÊé"HIY"¡¸Æ½ÄÏÍõ¸®¡¹"NOR"ËÄ¸ö½ğ×Ö¡£ÃÅ¿ÚÕ¾×ÅÁ½ÅÅÊÌÎÀ£¬Éí×Å½õÒÂ£¬ÊÖÖ´¸Öµ¶£¬ÆøÓîĞù
-°º¡£ñÒÍòÀïÆøÓîĞù°ºµØÕ¾ÔÚÊÌÎÀÖĞ¼ä£¬Ä¿¹âÈç¾æµØ´òÁ¿×Å´ÓÕâÀï¾­¹ıµÄĞĞÈË¡£\n"
+	set("short", RED"ç‹åºœå¤§é—¨"NOR"ï¼š");
+	set("long","ä½ æ­£ç«™åœ¨ä¸€åº§è±ªåçš„åºœé—¨å‰ï¼Œé—¨å‰æœ‰ä¸¤åªæå¤§çš„çŸ³ç‹®å­ï¼Œé—¨ä¸Šé«˜æ‚¬ä¸€å—æ¨ªåŒ¾ï¼Œ
+ä¸Šä¹¦"HIY"ã€Œå¹³å—ç‹åºœã€"NOR"å››ä¸ªé‡‘å­—ã€‚é—¨å£ç«™ç€ä¸¤æ’ä¾å«ï¼Œèº«ç€é”¦è¡£ï¼Œæ‰‹æ‰§é’¢åˆ€ï¼Œæ°”å®‡è½©
+æ˜‚ã€‚è¤šä¸‡é‡Œæ°”å®‡è½©æ˜‚åœ°ç«™åœ¨ä¾å«ä¸­é—´ï¼Œç›®å…‰å¦‚ç‚¬åœ°æ‰“é‡ç€ä»è¿™é‡Œç»è¿‡çš„è¡Œäººã€‚\n"
 );
 	set("objects", ([
 		__DIR__"npc/weishi1" : 1,
@@ -33,7 +33,7 @@ void init()
 {
 	object me;
 	if (interactive(me = this_player())
-		&& me->query("family/family_name")=="´óÀí¶Î¼Ò"
+		&& me->query("family/family_name")=="å¤§ç†æ®µå®¶"
 		&& !me->query("dali/employee"))
 	{
 		me->set("dali/employee",1);
@@ -43,10 +43,10 @@ void init()
 int valid_leave(object me, string dir)
 {
 	object ob;
-	if (me->query("family/family_name")!="´óÀí¶Î¼Ò"
+	if (me->query("family/family_name")!="å¤§ç†æ®µå®¶"
 		&& !me->query("dali/employee")
 		&& dir == "enter"
 		&& living(ob=present("zhu wanli", environment(me))))
-	return notify_fail("ñÒÍòÀïºÈµÀ£ºÏĞÔÓÈËµÈ£¬²»µÃÈëÄÚ¡£\n");
+	return notify_fail("è¤šä¸‡é‡Œå–é“ï¼šé—²æ‚äººç­‰ï¼Œä¸å¾—å…¥å†…ã€‚\n");
 	return ::valid_leave(me, dir);
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zhang3.c ÏÀ¿ÍµºÕÅÈı
+// zhang3.c ä¾ å®¢å²›å¼ ä¸‰
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -13,10 +13,10 @@ void greeting(object);
 
 void create()
 {
-	set_name("ÕÅÈı", ({ "zhang san", "zhang"}));
-	set("long", "ËûÉí²Ä¿ıÎà£¬Ô²Á³´ó¶ú£¬Ğ¦ÎûÎûµØºÍ°ª¿ÉÇ×¡£\n");
-	set("nickname", "ÉÍÉÆÊ¹");
-	set("gender", "ÄĞĞÔ");
+	set_name("å¼ ä¸‰", ({ "zhang san", "zhang"}));
+	set("long", "ä»–èº«æé­æ¢§ï¼Œåœ†è„¸å¤§è€³ï¼Œç¬‘å˜»å˜»åœ°å’Œè”¼å¯äº²ã€‚\n");
+	set("nickname", "èµå–„ä½¿");
+	set("gender", "ç”·æ€§");
 	set("age", random(50) + 30);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -24,7 +24,7 @@ void create()
 	set("int", 25);
 	set("con", 25);
 	set("dex", 25);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 1500);
 	set("eff_qi", 1500);
 	set("qi", 1500);

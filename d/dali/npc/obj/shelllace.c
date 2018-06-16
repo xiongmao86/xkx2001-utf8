@@ -6,12 +6,12 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIY"±¥ø«œÓ¡¥"NOR, ({ "shell lace", "lace" }));
+        set_name(HIY"Ë¥ùÂ£≥È°πÈìæ"NOR, ({ "shell lace", "lace" }));
         set("weight", 400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¥Æ");
+                set("unit", "‰∏≤");
                 set("value", 1000);
                 set("material", "gold");
                 set("armor_prop/armor", 1);

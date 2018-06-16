@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ʯ��");
+  set ("short", "石窟");
   set ("long", @LONG
-��һ���޵ò��ö�Ŀ���ڻ�ɫ�ʷḻ�������ڶࡣ������Ҫ��ƽ
-����ա�Ҳ�з��졢��ʿ����ա�
+这一窟修得灿烂夺目，壁画色彩丰富，人物众多。描绘的主要是平
+民百姓。也有飞天、力士、金刚。
 LONG);
 
   set("exits", ([

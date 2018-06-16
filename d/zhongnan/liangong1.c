@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/zhongnan/liangong1.c Á·¹¦·¿
+// /d/zhongnan/liangong1.c ç»ƒåŠŸæˆ¿
 // by sdong
 
 #include <room.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Á·¹¦·¿");
+        set("short", "ç»ƒåŠŸæˆ¿");
         set("long", @LONG
-Á·¹¦·¿ÊÇ¹©µÜ×ÓĞŞÁ·ÄÚ¹¦£¬»òÑĞ¶ÁÎäÑ§Êé¼®Ö®´¦¡£·¿ÄÚ²¢ÎŞÌØ±ğ
-°ÚÉè£¬ÒÔÃâµÜ×ÓĞĞ¹¦Ê±·ÖĞÄ£¬µ¢ÎóÁË½ø¶È¡£¶«±ßÊÇÄĞÏá·¿¡£Î÷±ßÊÇÑİ
-ÎäÌü¡£
+ç»ƒåŠŸæˆ¿æ˜¯ä¾›å¼Ÿå­ä¿®ç»ƒå†…åŠŸï¼Œæˆ–ç ”è¯»æ­¦å­¦ä¹¦ç±ä¹‹å¤„ã€‚æˆ¿å†…å¹¶æ— ç‰¹åˆ«
+æ‘†è®¾ï¼Œä»¥å…å¼Ÿå­è¡ŒåŠŸæ—¶åˆ†å¿ƒï¼Œè€½è¯¯äº†è¿›åº¦ã€‚ä¸œè¾¹æ˜¯ç”·å¢æˆ¿ã€‚è¥¿è¾¹æ˜¯æ¼”
+æ­¦å…ã€‚
 LONG
         );
 
@@ -27,8 +27,8 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-        if ( me->query("gender") == "Å®ĞÔ" && dir == "east" && !wizardp(me) )
-                return notify_fail("¿´Çå³şµã£¬ÄÇÊÇÄĞÏá·¿£¡\n");
+        if ( me->query("gender") == "å¥³æ€§" && dir == "east" && !wizardp(me) )
+                return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œé‚£æ˜¯ç”·å¢æˆ¿ï¼\n");
 
         return ::valid_leave(me, dir);
 }

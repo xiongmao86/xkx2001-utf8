@@ -10,10 +10,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê÷ÁÖ");
+        set("short", "æ ‘æž—");
         set("long", @LONG
-ÕâÊÇÍòÊÞÉ½×¯ËùÑ±ÑøµÄÒ°ÊÞÆÜÏ¢µÄÁÖ×Ó¡£ÍùÄÏ±ãÊÇÉ½×¯Ñ±ÊÞ³¡£¬
-±±ÃæÍ¨ÏòÉ½×¯ºóÃæµÄÇÍ±Ú¡£
+è¿™æ˜¯ä¸‡å…½å±±åº„æ‰€é©¯å…»çš„é‡Žå…½æ –æ¯çš„æž—å­ã€‚å¾€å—ä¾¿æ˜¯å±±åº„é©¯å…½åœºï¼Œ
+åŒ—é¢é€šå‘å±±åº„åŽé¢çš„å³­å£ã€‚
 LONG
         );
         set("exits", ([
@@ -48,13 +48,13 @@ int do_howl(string arg)
    if (num > 0) {
        for (i=0; i<num; i++) {
 		  if(animals[i]->query_lord() == me)
-              return notify_fail("Äã×ÝÉù³¤Ð¥£¬µÈÁËºÃÒ»»á¶ù£¬Ê÷ÁÖÀïÒÀ¾É¾²ÇÄÇÄµÄºÁÎÞ¶¯¾²¡£\n");
+              return notify_fail("ä½ çºµå£°é•¿å•¸ï¼Œç­‰äº†å¥½ä¸€ä¼šå„¿ï¼Œæ ‘æž—é‡Œä¾æ—§é™æ‚„æ‚„çš„æ¯«æ— åŠ¨é™ã€‚\n");
 
        }
    }
    animal=new(file);
    animal->animal_special_init(me);
-   message_vision(HIG"$NºôÐ¥Ò»Éù£¬Ò»Ö»$n´ÓÊ÷ÁÖÉî´¦´ÜÁË³öÀ´£¬¹Ô¹ÔµØ·üÔÚ$NµÄ½Å±ß¡£\n"NOR, me, animal);
+   message_vision(HIG"$Nå‘¼å•¸ä¸€å£°ï¼Œä¸€åª$nä»Žæ ‘æž—æ·±å¤„çªœäº†å‡ºæ¥ï¼Œä¹–ä¹–åœ°ä¼åœ¨$Nçš„è„šè¾¹ã€‚\n"NOR, me, animal);
    animal->move(here);
 
    return 1;

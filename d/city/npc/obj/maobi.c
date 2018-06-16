@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ã«±Ê", ({"mao bi", "bi"}));
+	set_name("æ¯›ç¬”", ({"mao bi", "bi"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»ÓÃÉÏºÃÑòÃ«ÖÆ³ÉµÄÃ«±Ê£¬ÉÏÃæÕ´ÂúÁËºÚÄ«¡£\n");
-		set("unit", "Ö§");
+		set("long", "ä¸€åªç”¨ä¸Šå¥½ç¾Šæ¯›åˆ¶æˆçš„æ¯›ç¬”ï¼Œä¸Šé¢æ²¾æ»¡äº†é»‘å¢¨ã€‚\n");
+		set("unit", "æ”¯");
 		set("value", 100);
 	}
 }

@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏ½®É³Ä®");
+        set("short", "å—ç–†æ²™æ¼ ");
         set("long", @LONG
-Õâ¾ÍÊÇºÆå«µÄËş¿ËÀ­Âí¸É´óÉ³Ä®£¬Ò»×ß½øÀ´£¬Äã·Â·ğÃÔÊ§ÁË·½Ïò¡£
-Äã¸Ğµ½¿ÚÄÚÊ®·Ö½¹¿Ê£¬»¹ÊÇ¿ìĞ©Àë¿ª°É¡£
+è¿™å°±æ˜¯æµ©ç€šçš„å¡”å…‹æ‹‰é©¬å¹²å¤§æ²™æ¼ ï¼Œä¸€èµ°è¿›æ¥ï¼Œä½ ä»¿ä½›è¿·å¤±äº†æ–¹å‘ã€‚
+ä½ æ„Ÿåˆ°å£å†…ååˆ†ç„¦æ¸´ï¼Œè¿˜æ˜¯å¿«äº›ç¦»å¼€å§ã€‚
 LONG
         );
 
@@ -35,14 +35,14 @@ int valid_leave(object me, string dir)
 
         current_water = me->query("water");
         if (current_water==0) {
-          write("ÄãÒÑ¾­¸Ğµ½²»ĞĞÁË£¬Ú¤Ú¤ÖĞÄã¾õµÃÓĞÈË°ÑÄãÌ§µ½ÌìÉ½½ÅÏÂ¡£\n");
+          write("ä½ å·²ç»æ„Ÿåˆ°ä¸è¡Œäº†ï¼Œå†¥å†¥ä¸­ä½ è§‰å¾—æœ‰äººæŠŠä½ æŠ¬åˆ°å¤©å±±è„šä¸‹ã€‚\n");
           me->move(__DIR__"shanjiao");
           me->unconcious();
 	  return 0;
         }
 
         if (current_water>0 && current_water<=20) {
-            write("Äã¹ıÓÚÈ±Ë®£¬ÑÛÃ°½ğĞÇ¡£\n");
+            write("ä½ è¿‡äºç¼ºæ°´ï¼Œçœ¼å†’é‡‘æ˜Ÿã€‚\n");
             me->set("water",0);
         }
 
@@ -50,7 +50,7 @@ int valid_leave(object me, string dir)
             me->set("water",current_water-20);
         }
         if (dir=="east" || dir=="south" || dir=="west" || dir=="north") 
-           write("ÄãÏòÄÇ±ß×ßÈ¥£¬½á¹û·¢ÏÖÄÇÊÇÉ³Ä®ÖĞµÄº£ÊĞò×Â¥¡£\n");
+           write("ä½ å‘é‚£è¾¹èµ°å»ï¼Œç»“æœå‘ç°é‚£æ˜¯æ²™æ¼ ä¸­çš„æµ·å¸‚èœƒæ¥¼ã€‚\n");
         return ::valid_leave(me, dir);
 }
 

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// houzhu.c ºóä¾¸Û
+// houzhu.c åŽæ¸šæ¸¯
 // qfy Nov 3, 1996
 
 inherit ROOM;
@@ -12,12 +12,12 @@ int  do_yell(string);
 
 void create()
 {
-        set("short", "ºóä¾¸Û");
+        set("short", "åŽæ¸šæ¸¯");
 	set("long", @LONG
-ºóä¾¸ÛÊÇÈªÖÝÈý´ó¸Û¿ÚÖ®Ê×¡£ÕâÀï¸ÛÀ«Ë®Éî£¬·çÆ½ÀË¾²¡£¼«Ä¿Ô¶Ì÷£¬º£Ìì
-Ò»É«£¬ÎµÀ¶ÎÞÏ¾¡£°¶±ßÍ£¿¿×ÅÃÜÃÜÂéÂéµÄ¸÷ÖÖ´¬Ö»¡£ÓÉÓÚº£ÍâÃ³Ò×µÄ¹ã·º·¢Õ¹£¬
-ÈªÖÝÒò¶ø³ÉÎª¡¸º£ÉÏË¿³ñÖ®Â·¡¹µÄÆðµã¡£ÔÚÖÚ¶àµÄ´¬Ö»ÖÐ¼ä£¬»¹ÓÐÒ»Ö»´óÕ½´¬
-(chuan)¡£
+åŽæ¸šæ¸¯æ˜¯æ³‰å·žä¸‰å¤§æ¸¯å£ä¹‹é¦–ã€‚è¿™é‡Œæ¸¯é˜”æ°´æ·±ï¼Œé£Žå¹³æµªé™ã€‚æžç›®è¿œçœºï¼Œæµ·å¤©
+ä¸€è‰²ï¼Œè”šè“æ— æš‡ã€‚å²¸è¾¹åœé ç€å¯†å¯†éº»éº»çš„å„ç§èˆ¹åªã€‚ç”±äºŽæµ·å¤–è´¸æ˜“çš„å¹¿æ³›å‘å±•ï¼Œ
+æ³‰å·žå› è€Œæˆä¸ºã€Œæµ·ä¸Šä¸ç»¸ä¹‹è·¯ã€çš„èµ·ç‚¹ã€‚åœ¨ä¼—å¤šçš„èˆ¹åªä¸­é—´ï¼Œè¿˜æœ‰ä¸€åªå¤§æˆ˜èˆ¹
+(chuan)ã€‚
 LONG
         );
 
@@ -31,7 +31,7 @@ LONG
         ]));
 
 	set("item_desc", ([
-		"chuan" : "ÕâÊÇÒ»ËÒ´óÕ½´¬£¬¸Õ¸Õ´ÓÌ¨Íå»ØÀ´¡£Ë®Ê¦ÃÇ³Ë(cheng)Õ½´¬´òÕÌ¡£\n",
+		"chuan" : "è¿™æ˜¯ä¸€è‰˜å¤§æˆ˜èˆ¹ï¼Œåˆšåˆšä»Žå°æ¹¾å›žæ¥ã€‚æ°´å¸ˆä»¬ä¹˜(cheng)æˆ˜èˆ¹æ‰“ä»—ã€‚\n",
         ]));
 
 	set("outdoors", "quanzhou");
@@ -56,10 +56,10 @@ int do_yell(string arg)
     if(present("shuishi bing", environment(me)))
      {
 	if (!(ob = present("shi lingpai",me))) {
-		message_vision("Ë®Ê¦Ê¿±ø¶Ô$NËµµÀ£ºÄãÒÔÎªÕâÊÇÄã×Ô¼ÒµÄ´¬Âð£¿\n",me);
+		message_vision("æ°´å¸ˆå£«å…µå¯¹$Nè¯´é“ï¼šä½ ä»¥ä¸ºè¿™æ˜¯ä½ è‡ªå®¶çš„èˆ¹å—ï¼Ÿ\n",me);
 		return 1;
 	}	
-	message("vision","Ë®Ê¦Ê¿±ø½Ó¹ýÁîÅÆ£¬µãµãÍ·£¬ËµµÀ£º¼ÈÈ»Ê©½«¾üÓÐÁî£¬Äã¾ÍÉÏ´¬°É¡£\n", this_object());
+	message("vision","æ°´å¸ˆå£«å…µæŽ¥è¿‡ä»¤ç‰Œï¼Œç‚¹ç‚¹å¤´ï¼Œè¯´é“ï¼šæ—¢ç„¶æ–½å°†å†›æœ‰ä»¤ï¼Œä½ å°±ä¸Šèˆ¹å§ã€‚\n", this_object());
 
 	destruct(ob);
 	check_trigger();
@@ -80,20 +80,20 @@ void check_trigger()
                 room->set("yell_trigger", 1);
                 set("exits/enter", __DIR__"ship");
                 room->set("exits/out", __FILE__);
-                message("vision", "Ë®Ê¦Ê¿±ø°ÑÕ½´¬µÄ·ç·«³¶Æð£¬×¼±¸Æðº½¡£\n", this_object());
-                message_vision("Ë®Ê¦Ê¿±ø½«Ò»¿éÌ¤½Å°å´îÉÏÂëÍ·£¬¶Ô$NËµ£º¡°ÉÏÀ´°É¡±\n", this_player());
+                message("vision", "æ°´å¸ˆå£«å…µæŠŠæˆ˜èˆ¹çš„é£Žå¸†æ‰¯èµ·ï¼Œå‡†å¤‡èµ·èˆªã€‚\n", this_object());
+                message_vision("æ°´å¸ˆå£«å…µå°†ä¸€å—è¸è„šæ¿æ­ä¸Šç å¤´ï¼Œå¯¹$Nè¯´ï¼šâ€œä¸Šæ¥å§â€\n", this_player());
                 remove_call_out("on_ship");
                 call_out("on_ship", 20);
             }
             else
-                message("vision", "ÕæÒÅº¶£¡´¬¸Õ¿ª×ß¡£\n", this_object() );
+                message("vision", "çœŸé—æ†¾ï¼èˆ¹åˆšå¼€èµ°ã€‚\n", this_object() );
         }
         else
             message("vision", "ERROR: boat not found\n", this_object() );
     }
 	
     else
-        message("vision", "Ë®Ê¦Ê¿±øËµµÀ£º¡°¿ìÉÏÀ´°É¡£¡±\n",
+        message("vision", "æ°´å¸ˆå£«å…µè¯´é“ï¼šâ€œå¿«ä¸Šæ¥å§ã€‚â€\n",
             this_object() );
 }
 
@@ -103,13 +103,13 @@ void on_ship()
 
     if( !query("exits/enter") ) return;
 
-    message("vision", "Ë®Ê¦Ê¿±ø°Ñ´¬ÃªÊÕÆð£¬Ë³·ç×ª¶¯·ç·«¡£\n",
+    message("vision", "æ°´å¸ˆå£«å…µæŠŠèˆ¹é”šæ”¶èµ·ï¼Œé¡ºé£Žè½¬åŠ¨é£Žå¸†ã€‚\n",
         this_object() );
 
     if( room = find_object(__DIR__"ship") )
     {
         room->delete("exits/out");
-        message("vision", "Õ½´¬Ê»ÏòÁËÃ£Ã£µÄ´óº£...\n", room );
+        message("vision", "æˆ˜èˆ¹é©¶å‘äº†èŒ«èŒ«çš„å¤§æµ·...\n", room );
     }
     delete("exits/enter");
 
@@ -123,8 +123,8 @@ void arrive()
     if( room = find_object(__DIR__"ship") )
     {
         room->set("exits/out", "/d/island/diaoyu");
-//        message("vision", "Ë®Ê¦Ê¿±øËµµÀ£º¡°±¨¸æ£¬ÈªÖÝµ½ÁË£¡¡±\n",room );
-        message("vision", "Ë®Ê¦Ê¿±øËµµÀ£º¡°±¨¸æ£¬Ç°·½·¢ÏÖº£µº£¡¡±\n",room );
+//        message("vision", "æ°´å¸ˆå£«å…µè¯´é“ï¼šâ€œæŠ¥å‘Šï¼Œæ³‰å·žåˆ°äº†ï¼â€\n",room );
+        message("vision", "æ°´å¸ˆå£«å…µè¯´é“ï¼šâ€œæŠ¥å‘Šï¼Œå‰æ–¹å‘çŽ°æµ·å²›ï¼â€\n",room );
     }
 
     remove_call_out("close_passage");
@@ -136,7 +136,7 @@ void close_passage()
     object room;
     if( room = find_object(__DIR__"ship") ) {
         room->delete("exits/out");
-        message("vision","Ë®Ê¦Ê¿±ø°ÑÌ¤½Å°åÊÕÆðÀ´£¬Õ½´¬Ê»ÏòÁËÃ£Ã£µÄ´óº£...\n", room);
+        message("vision","æ°´å¸ˆå£«å…µæŠŠè¸è„šæ¿æ”¶èµ·æ¥ï¼Œæˆ˜èˆ¹é©¶å‘äº†èŒ«èŒ«çš„å¤§æµ·...\n", room);
         room->delete("yell_trigger");
     }
 }

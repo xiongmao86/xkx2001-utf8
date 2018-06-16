@@ -1,18 +1,18 @@
 //Cracked by Roath
-// heye ºÉÒ¶
+// heye è·å¶
 // xbc 06/21/97
 
 inherit ITEM;
 
 void create()
 {
-	set_name("ºÉÒ¶", ({"he ye", "lotus leaf"}));
+	set_name("è·å¶", ({"he ye", "lotus leaf"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Æ¬´ó´óµÄÂÌÂÌµÄºÉÒ¶¡£\n");
-		set("unit", "Æ¬");
+		set("long", "ä¸€ç‰‡å¤§å¤§çš„ç»¿ç»¿çš„è·å¶ã€‚\n");
+		set("unit", "ç‰‡");
 		set("value", 0);
 	}
 }

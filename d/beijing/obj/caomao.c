@@ -5,13 +5,13 @@ inherit HEAD;
 
 void create()
 {
-    set_name("²İÃ±", ({"caomao", "hat"}));
+    set_name("è‰å¸½", ({"caomao", "hat"}));
     set_weight(500);
     if (clonep())
 	set_default_object(__FILE__);
     else {
-	set("long", "Ò»¶¥Å©¼Ò³£¼ûµÄ²İÃ±¡£\n");
-	set("unit", "¶¥");
+	set("long", "ä¸€é¡¶å†œå®¶å¸¸è§çš„è‰å¸½ã€‚\n");
+	set("unit", "é¡¶");
 	set("material", "cloth");
 	set("armor_type", "head");
 	set("armor_prop/armor", 1);

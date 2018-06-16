@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tyfisher.c Ì¨ÒÄÓæ·ò
+// tyfisher.c å°å¤·æ¸”å¤«
 
 inherit NPC;
 
 void create()
 {
-	set_name("Óæ·ò", ({ "yu fu", "yu", "fisher" }) );
-	set("long", "Ò»Î»Ì¨ÒÄ×åµÄÓæ·ò£¬¿¸ÕâÁ½ÌõÖñ½°£¬Ìá×ÅÒ»¸öÓãÂ¨¡£\n");
+	set_name("æ¸”å¤«", ({ "yu fu", "yu", "fisher" }) );
+	set("long", "ä¸€ä½å°å¤·æ—çš„æ¸”å¤«ï¼Œæ‰›è¿™ä¸¤æ¡ç«¹æ¡¨ï¼Œæç€ä¸€ä¸ªé±¼ç¯“ã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

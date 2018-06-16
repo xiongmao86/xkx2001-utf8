@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ʯ��");
+  set ("short", "石窟");
   set ("long", @LONG
-Ī�߿�ʼ��춷���Ԫ���꣬�����������������д�Լ�İٸ�ʯ�ߡ�
-������Ī�߿ߵ�һ�����ڡ�
+莫高窟始建於符秦元二年，后历代均有扩建，有大约四百个石窟。
+这里是莫高窟第一层的入口。
 LONG);
 
   set("exits", ([ 

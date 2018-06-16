@@ -1,17 +1,17 @@
 //Cracked by Roath
-// baima.c °×Âí
+// baima.c ç™½é©¬
 
 inherit NPC_TRAINEE;
 
 void create()
 {
-	set_name("°×Âí", ({ "bai ma", "ma", "horse" }) );
-	set("race", "¼ÒĞó");
+	set_name("ç™½é©¬", ({ "bai ma", "ma", "horse" }) );
+	set("race", "å®¶ç•œ");
 	set("age", 10);
-	set("long", "ÕâÊÇÒ»Æ¥°×É«µÄ´óÍğÂí£¬ÉúµÃÁú¾±Ê¨××£¬ËÄÌã·ÉÇà£¬È·ÊÇÆ¥º±¼ûµÄÇ§ÀïÂí¡£\n");
-	set("msg_fail", "$n³å×Å$NÅ­Ë»Ò»Éù£¬ÈËÁ¢ÆğÀ´£¡");
-	set("msg_succ", "$nÒ¡×ÅÍ·´ò×ª£¬Ìã×Ó»÷´ò×ÅµØÃæ£¬ËÆºõ´ò²»¶¨Ö÷Òâ");
-	set("msg_trained","$nµÍË»Ò»Éù£¬×ßµ½$NÉí±ß°¤°¤²Á²Á£¬ÏÔµÃÊ®·Ö¸ßĞË£¡");
+	set("long", "è¿™æ˜¯ä¸€åŒ¹ç™½è‰²çš„å¤§å®›é©¬ï¼Œç”Ÿå¾—é¾™é¢ˆç‹®é¬ƒï¼Œå››è¹„é£é’ï¼Œç¡®æ˜¯åŒ¹ç½•è§çš„åƒé‡Œé©¬ã€‚\n");
+	set("msg_fail", "$nå†²ç€$Næ€’å˜¶ä¸€å£°ï¼Œäººç«‹èµ·æ¥ï¼");
+	set("msg_succ", "$næ‘‡ç€å¤´æ‰“è½¬ï¼Œè¹„å­å‡»æ‰“ç€åœ°é¢ï¼Œä¼¼ä¹æ‰“ä¸å®šä¸»æ„");
+	set("msg_trained","$nä½å˜¶ä¸€å£°ï¼Œèµ°åˆ°$Nèº«è¾¹æŒ¨æŒ¨æ“¦æ“¦ï¼Œæ˜¾å¾—ååˆ†é«˜å…´ï¼");
 	set("auto_follow",1);
 	set("attitude", "peaceful");
 
@@ -51,14 +51,14 @@ int do_ride()
 				me->set_temp("rider",  ob->name());
 				me->set_leader(ob);
 
-				message_vision("\n$NÒ»×İÉí£¬Íş·çÁİÁİµØÆïÔÚÁË" + me->name() +"ÉíÉÏ¡£\n", ob);
+				message_vision("\n$Nä¸€çºµèº«ï¼Œå¨é£å‡›å‡›åœ°éª‘åœ¨äº†" + me->name() +"èº«ä¸Šã€‚\n", ob);
 				return 1;
 			}
-			else    return notify_fail( me->query_temp("rider") + "ÒÑ¾­ÆïÔÚËüÉíÉÏÉÏÁË£¡\n");
+			else    return notify_fail( me->query_temp("rider") + "å·²ç»éª‘åœ¨å®ƒèº«ä¸Šä¸Šäº†ï¼\n");
 		}
-		else	return notify_fail("ÄãÒÑ¾­ÆïÔÚ" + ob->query_temp("riding") + "ÉÏÁË£¡\n");
+		else	return notify_fail("ä½ å·²ç»éª‘åœ¨" + ob->query_temp("riding") + "ä¸Šäº†ï¼\n");
 	}
-	else return notify_fail("Äã²»ÊÇËüµÄÖ÷ÈË£¡\n");
+	else return notify_fail("ä½ ä¸æ˜¯å®ƒçš„ä¸»äººï¼\n");
 
 	return 0;
 }
@@ -73,10 +73,10 @@ int do_unride()
 	{
 		ob->delete_temp("riding");
 		me->delete_temp("rider" );
-		message_vision("\n$NÒ»×İÉí£¬´Ó" + me->name() +"ÉíÉÏÔ¾ÁËÏÂÀ´¡£\n", ob);
+		message_vision("\n$Nä¸€çºµèº«ï¼Œä»" + me->name() +"èº«ä¸Šè·ƒäº†ä¸‹æ¥ã€‚\n", ob);
 		return 1;
 	}
-	else return notify_fail("Äã»¹Ã»ÆïËüÄØ£¡\n");
+	else return notify_fail("ä½ è¿˜æ²¡éª‘å®ƒå‘¢ï¼\n");
 
 	return 0;
 }

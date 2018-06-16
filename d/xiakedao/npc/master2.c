@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("À¶ÒÂµÜ×Ó", ({ "lanyi dizi", "lan yi", "dizi"}));
-        set("long", "ËûÊÇÄ¾µºÖ÷µÄÒ»ÃûµÜ×Ó£¬×¨¹Ü´«ÊÚµºÉÏµÜ×ÓµÄ»ù±¾¹¦·ò¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è“è¡£å¼Ÿå­", ({ "lanyi dizi", "lan yi", "dizi"}));
+        set("long", "ä»–æ˜¯æœ¨å²›ä¸»çš„ä¸€åå¼Ÿå­ï¼Œä¸“ç®¡ä¼ æˆå²›ä¸Šå¼Ÿå­çš„åŸºæœ¬åŠŸå¤«ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 34);
 
         set_skill("strike", 30);
@@ -39,9 +39,9 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 
-	command("say »¶Ó­ÕâÎ»"+RANK_D->query_respect(ob)+
-		"£¬Äã¿ÉÏòÎÒÑ§ÕÆ·¨(strike)£¬ÄÚ¹¦(force)£¬\n"+
-                "ÕĞ¼Ü(parry)¼°Çá¹¦(dodge)¡£");
+	command("say æ¬¢è¿è¿™ä½"+RANK_D->query_respect(ob)+
+		"ï¼Œä½ å¯å‘æˆ‘å­¦æŒæ³•(strike)ï¼Œå†…åŠŸ(force)ï¼Œ\n"+
+                "æ‹›æ¶(parry)åŠè½»åŠŸ(dodge)ã€‚");
 }
 
 int recognize_apprentice(object ob)

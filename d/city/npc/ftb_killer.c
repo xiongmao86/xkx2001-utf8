@@ -12,7 +12,7 @@ string ask_move();
 void create()
 {
         set_random_name();
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
         set("str", 23);
         set("dex", 30);
@@ -28,9 +28,9 @@ void create()
         set("no_refresh", 1);
 
         set("inquiry", ([
-            "¸«Í·°ï" : "¸«Í·°ï? Äã¿ÉÖªµÀËûÃÇ°ïÖ÷µÄËùÔÚÂğ£¿",
-            "³Ì½ğ¸«" : (: ask_move :),
-            "´Ì¿Í" : (: ask_cike :)
+            "æ–§å¤´å¸®" : "æ–§å¤´å¸®? ä½ å¯çŸ¥é“ä»–ä»¬å¸®ä¸»çš„æ‰€åœ¨å—ï¼Ÿ",
+            "ç¨‹é‡‘æ–§" : (: ask_move :),
+            "åˆºå®¢" : (: ask_cike :)
         ]));
 
         setup();
@@ -42,7 +42,7 @@ void create()
 
 void self_destruct() {
     object me = this_object();
-    message("vision", name(1)+"¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", environment(me), me);
+    message("vision", name(1)+"æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n", environment(me), me);
     destruct(me);
 }
 
@@ -126,7 +126,7 @@ void set_status(mixed player_arg) {
     skill_rate += random(10);
 
     menpai = set_skills(0, exp*exp_rate/100, skill_rate);
-    set("long", "Ëû¿´ÆğÀ´ÊÇ"+menpai+"ÅÉ¸ßÊÖ¡£\n");
+    set("long", "ä»–çœ‹èµ·æ¥æ˜¯"+menpai+"æ´¾é«˜æ‰‹ã€‚\n");
     set_hp(query_skill("force", 1));
     if (exp > 100000) carry_object(query("default_weapon"))->wield();
 
@@ -154,9 +154,9 @@ string ask_cike()
 {
     object player = this_player();
     if (query("player_name") == player->query("id")) {
-        return "ÀÏ×ÓÔõÃ´Ô½¿´Ô½¾õµÃÄãÏñÊÇ¸öÉ±ÊÖÄØ?";
+        return "è€å­æ€ä¹ˆè¶Šçœ‹è¶Šè§‰å¾—ä½ åƒæ˜¯ä¸ªæ€æ‰‹å‘¢?";
     }else {
-        return "ÇàÌì°×ÈÕµÄ, ÄÄÀïÓĞ´Ì¿Í? Ğ¦»°.";
+        return "é’å¤©ç™½æ—¥çš„, å“ªé‡Œæœ‰åˆºå®¢? ç¬‘è¯.";
     }
 }
 
@@ -172,7 +172,7 @@ string ask_move()
         exits = room->query("exits");
         dirs = keys(exits);
         command("go "+dirs[random(sizeof(dirs))]);
-        return "ºÃ¼Ò»ï£¬ÕæÀ´ÁË¡£";
+        return "å¥½å®¶ä¼™ï¼ŒçœŸæ¥äº†ã€‚";
     }else {
         return 0;
     }

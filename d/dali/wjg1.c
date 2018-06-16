@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ٹȹȿ�");
+	set("short", "万劫谷谷口");
 	set("long", @LONG
-������һ��ɽ�ȵĹȿڣ�һ��Ƭƽ̹�Ĳݵأ�����ɽ�ڶ��ͣ�û�г�·��Զ
-����ͷ��ȫ��һ���������������һ��(songshu)��������Щ�ر�
+这里是一个山谷的谷口，一大片平坦的草地，两边山壁陡峭，没有出路。远
+处尽头又全是一株株大松树，其中一株(songshu)看起来有些特别。
 LONG);
 	set("item_desc", ([
-		"songshu" : "���������������˳���������������һƬ�����˰��ᣬд�žŸ����֣�\n���ն�����˹�" RED "ɱ" NOR "���⡱��������ڣ��ǡ�ɱ����ȴ�����ɫ��\n",
+		"songshu" : "这株松树上削下了长许长，尺许宽的一片，漆了白漆，写着九个大字：\n“姓段者入此谷" RED "杀" NOR "无赦”，八字漆黑，那“杀”字却作殷红色。\n",
 		]));
 	set("exits", ([
 		"out"   : __DIR__"senlin1.c",

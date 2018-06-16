@@ -10,10 +10,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("���ϴ�", ({ "wu laoda", "wu", "laoda"}));
+        set_name("乌老大", ({ "wu laoda", "wu", "laoda"}));
         set("long", 
-"�������ĸߴ󣬳��۳��ȣ���ֻ���ȴ���ַ����������ԣ�һ�����԰׵�����\n����̫��Ѩ�߸߹����ƺ��书��ǿ��\n");
-        set("gender", "����");
+"此人身材高大，长臂长腿，两只蒲扇大的手放在身子两旁，一张脸苍白的怕人\n此人太阳穴高高鼓起，似乎武功高强。\n");
+        set("gender", "男性");
         set("age", 45);
         set("attitude", "heroism");
         set("shen_type", 0);
@@ -33,10 +33,10 @@ void create()
         set("chat_chance_combat", 15);
         
         set("inquiry", ([
-        "���ɴ��" : (: ask_dahui :),
-        "����" : (: ask_join :),
-        "����" : (: ask_weapon :),
-        "ɣ����": (: ask_sangtu :),
+        "万仙大会" : (: ask_dahui :),
+        "加入" : (: ask_join :),
+        "武器" : (: ask_weapon :),
+        "桑土公": (: ask_sangtu :),
         ]));
 
         set_skill("force", 200);
@@ -73,9 +73,9 @@ void init()
 int ask_dahui(){
         object me=this_player();
         if (me->query_temp("wulaoda")!=1){
-                say("���ϴ����������ģ���������ɣ�����������İ��㣬���������ˣ����ȥɱ��ɽͯ�ѣ���\n���ϴ������˵����������һֻ��ľ�ϡ�\n");
+                say("乌老大道：“他妈的，老子中了桑土公这老贼的暗算，命都不保了，如何去杀天山童姥？”\n乌老大对着你说道：你真是一只大笨木瓜。\n");
         } else {
-                say("���ϴ��������л����������������û���ˣ���Ϊ��Ҫ�����ɴ���أ���\n");
+                say("乌老大道：“多谢你啦！老子我现在没事了！你为何要问万仙大会呢？”\n");
                 me->set_temp("joinable",1);
                 me->delete_temp("wulaoda");
         }
@@ -87,9 +87,9 @@ int ask_join(){
         if (me->query_temp("joinable")!=1){
                 command("? "+me->query("id"));
         } else {
-                say("���ϴ��������Ҳ������ɱͯ�����ҿ����书���񡭡���\n");
-                say("���ϴ�������ðɣ�������ܽ��������У��Ҿ�������룡��\n");
-                say("(������������ϴ���������accept test)\n");
+                say("乌老大道：“你也想帮大伙儿杀童姥吗？我看你武功好像……”\n");
+                say("乌老大道：“好吧！你如果能接老子三招，我就让你加入！”\n");
+                say("(如果你想与乌老大过招请键入accept test)\n");
                 me->delete_temp("joinable");
                 me->set_temp("testable",1);
         }
@@ -103,7 +103,7 @@ int do_accept(string arg)
         mapping guild;
 
         if (!(int)me->query_temp("testable") && me->query("id")!="wsky")
-                return notify_fail ("��Ϲ��ʲô��\n");
+                return notify_fail ("你瞎试什么？\n");
 
         set("combat_exp", me->query("combat_exp"));
         set("jiali", me->query("force")*3/2);
@@ -111,7 +111,7 @@ int do_accept(string arg)
         set("max_neili",me->query("max_neili"));
         
         if( arg== "test" ) {
-                say("\n���ϴ������С���ˣ����ǵ�һ�У���\n\n");
+                say("\n乌老大道：“小心了，这是第一招！”\n\n");
                 
                 COMBAT_D->do_attack(this_object(), this_player(),
                 query_temp("weapon"));
@@ -121,10 +121,10 @@ int do_accept(string arg)
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-                say("���ϴ�̾�˿�����˵��������һ�ж��Ų����������Բ�����....\n");
+                say("乌老大叹了口气，说道：连第一招都撑不过，真是自不量力....\n");
                         return 1;
                 }
-                say("\n���ϴ�˵�������ǵڶ���....\n\n");
+                say("\n乌老大说道：这是第二招....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
                 query_temp("weapon"));
                 COMBAT_D->do_attack(this_object(), this_player(),
@@ -133,10 +133,10 @@ int do_accept(string arg)
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-                say("���ϴ󡸺ߡ���һ����˵���������������಻�����ļһ�....\n");
+                say("乌老大「哼」地一声，说道：便是有这许多不怕死的家伙....\n");
                 return 1;
                 }
-                say("\n���ϴ�˵��������������....\n\n");
+                say("\n乌老大说道：第三招来了....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
                 query_temp("weapon"));
                 COMBAT_D->do_attack(this_object(), this_player(),
@@ -145,11 +145,11 @@ int do_accept(string arg)
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-                say("���ϴ�̾������....\n");
+                say("乌老大叹道：唉....\n");
                 return 1;
                 }
 
-                say("\n���ϴ�������ã������������ʮ������������ʮ���������ɣ���\n");
+                say("\n乌老大道：“好，你加入我门三十六洞洞主，七十二岛岛主吧！”\n");
                 this_player()->set_temp("wu_test", 1);
                 return 1;
         }
@@ -166,26 +166,26 @@ int ask_weapon(){
         
         
         if(!(int)me->query_temp("wu_test")){
-                say ("���ϴ����һ����������������ʲô��������\n");
+                say ("乌老大白眼一翻，道：“武器，什么武器？”\n");
         } else {
                 
-                say ("���ϴ�һ���֣�˵���������Ժ򡣡�Ȼ���߽��������һƬ�����\n");
+                say ("乌老大一拱手，说道：“请稍候。”然后走进了身后的一片树林里。\n");
                 wu->move(room);
                 command("get xianglu dao");
                 wu->move(environment(me));
-                say("Ƭ�̣����ϴ������˻�����\n");
+                say("片刻，乌老大又走了回来。\n");
                 
                 if (!present("xianglu dao",wu)) {
-                        say ("���ϴ�˵�����������Ĳ��ɣ������Ѿ������������ˡ���\n");
-                        message_vision("���ϴ���$Nһ��ȭ���ﳤ��ȥ��\n",me);
+                        say ("乌老大说道：“你来的不巧，武器已经被旁人拿走了。”\n");
+                        message_vision("乌老大向$N一报拳，扬长而去。\n",me);
                         destruct(this_object());
                 } else {
-                        say ("���ϴ������ɱ�˲���û������ͯ�ѵĹ���������ģ�������̲���¶��������ȥ�ðɣ���\n");
+                        say ("乌老大道：“杀人不能没武器！童姥的功夫好利害的！我这柄绿波香露刀你先拿去用吧！”\n");
                         command("give blade to "+me->query("id"));
                         me->delete_temp("testable");
                         me->delete_temp("wu_test");  
-                        CHANNEL_D->do_channel(me, "rumor", sprintf("%sŪ����һ��"+HIG"�̲���¶��"NOR+"��", me->query("name")));                    
-                        message_vision("���ϴ���$Nһ��ȭ���ﳤ��ȥ��\n",me);
+                        CHANNEL_D->do_channel(me, "rumor", sprintf("%s弄到了一柄"+HIG"绿波香露刀"NOR+"。", me->query("name")));                    
+                        message_vision("乌老大向$N一报拳，扬长而去。\n",me);
                         destruct(this_object());
                 }
                 
@@ -196,22 +196,22 @@ int ask_weapon(){
 int accept_object(object me, object obj)
 {
         switch ((string)obj->query("name")) {
-                case "��ҩ":
+                case "金创药":
                 if(obj->query("id")!="jin chuangyao");
                 if(query("giveyao")){
-                        say("���ϴ�˵������л�����Ѿ�����ҩ�ˡ�\n");
+                        say("乌老大说道：多谢，我已经服过药了。\n");
                         return 0;
                 }
-                message("vision",me->name()+"�����ϴ�һ����ҩ��\n",environment(me),
+                message("vision",me->name()+"给乌老大一包金创药。\n",environment(me),
                 ({me}));
                 command("thank "+me->query("id"));
                 set("giveyao",1);
                 command("fu jin");
                 if(query("givestone")!=1)
-                        say("���ϴ�˵��������л��Ϊ����������������ɣ����ţë�룬��Ҫ�����ϵĴ�ʯ�ⶾ��\n��˵���������������޺�һ�������������\n");
+                        say("乌老大说道：“多谢这为大侠，但是我身中桑土公牛毛针，需要他身上的磁石解毒。\n听说他现在正躲在星宿海一处悬崖左近。”\n");
                         
                 else {
-                        say("���ϴ��֣����������飬���飬����æ����\n");
+                        say("乌老大拱手，道：「承情，承情，多多帮忙。」\n");
                         me->set_temp("wulaoda",1);
                         set("cured",1);
                         set("eff_qi",me->query("max_qi"));
@@ -220,27 +220,27 @@ int accept_object(object me, object obj)
                         set("neili",me->query("max_neili")*3/2);
                 }                       
                 return 1;
-                case "��ʯ":
+                case "磁石":
                 if(obj->query("id")!="cishi") return 0;
                 
                 if(obj->is_character() || userp(obj)){
-                        command("say �һ�Ū�ң�");
+                        command("say 敢唬弄我？");
                         command("follow "+me->query("id"));
                         command("kill "+me->query("id"));
                         return 0;
                 }
                 
                 if(query("givestone")) {
-                        say("���ϴ�˵������л��һ���ʯ�Ѿ����ˡ�\n");
+                        say("乌老大说道：多谢，一块磁石已经够了。\n");
                         return 0;
                 }
-                message("vision",me->name()+"�����ϴ�һ���ʯ��\n",environment(me),({me}));
-                say("���ϴ�Ѵ�ʯ�����˿��ϴ���ֻ���á�ٿ����һ�������뱻�����������⣡\n");
+                message("vision",me->name()+"给乌老大一块磁石。\n",environment(me),({me}));
+                say("乌老大把磁石放在伤口上处，只听得“倏”的一声，毒针被磁铁吸出体外！\n");
                 set("givestone",1);
                 if (query("giveyao")!=1) {
-                        say("���ϴ�˵�������ෳ��λ������������һЩ��ҩ����\n");
+                        say("乌老大说道：“相烦这位大侠给在下买一些金创药。”\n");
                 } else {
-                        say("���ϴ��֣����������飬���飬����æ����\n");
+                        say("乌老大拱手，道：「承情，承情，多多帮忙。」\n");
                         me->set_temp("wulaoda",1);
                         set("cured",1);
                         set("eff_qi",me->query("max_qi"));
@@ -253,21 +253,21 @@ int accept_object(object me, object obj)
 }
 
 int ask_sangtu(){
-        say("���ϴ�ҧ���гݵ�˵������������ƺ��������޺�һ�������������\n");
+        say("乌老大咬牙切齿地说道：“这臭贼似乎躲在星宿海一处悬崖左近。”\n");
         return 1;
 }
 
 void unconcious(){
-        say("���ϴ�һ��������Ӵ�� ת�����ܡ�\nֻ����Ӱһ�������ϴ��Ѿ���ʮ�ɿ��⣬׷��׷�����ˡ�\n\n");
+        say("乌老大一声：“哎哟” 转身就跑。\n只见灰影一闪，乌老大已经在十丈开外，追是追不上了。\n\n");
         destruct(this_object());
 }
 
 void die(){
-        say("���ϴ�һ��������Ӵ�� ת�����ܡ�\nֻ����Ӱһ�������ϴ��Ѿ���ʮ�ɿ��⣬׷��׷�����ˡ�\n\n");
+        say("乌老大一声：“哎哟” 转身就跑。\n只见灰影一闪，乌老大已经在十丈开外，追是追不上了。\n\n");
         destruct(this_object());
 }
 
 void dest(){
-        say("���ϴ�Ҵ�ææ���뿪�ˡ�\n");
+        say("乌老大匆匆忙忙地离开了。\n");
         destruct(this_object());
 }

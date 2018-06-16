@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shanmen.c Îäµ±ĞşÔÀÃÅ
+// shanmen.c æ­¦å½“ç„å²³é—¨
 // by Xiang
 
 inherit ROOM;
@@ -8,13 +8,13 @@ int do_exercise(string);
 
 void create()
 {
-	set("short", "ĞşÔÀÃÅ");
+	set("short", "ç„å²³é—¨");
 	set("long", @LONG
-ÄãµÄÃæÇ°ÊÇÒ»×ùÁÖÄ¾·±Ã¯µÄ¸ßÉ½£¬¼¸×ùÉ½·åÔÚÔÆÎíÖĞÒşÔ¼¿É¼û£¬Ò»ÌõÊ¯
-½×ÏòÉ½ÉÏÑÓÉì£¬×ß×Å¼¸¸ö½øÏã¿Í¡£Ò»¸öÎåÂ¥Ê½µÄÊ¯·»¿çÉ½¶ø½¨£¬Ğ´×Å¡°ĞşÔÀ
-ÃÅ¡±Èı¸ö´ó×Ö£¬Ô­À´Õâ¾ÍÊÇÌìÏÂÎÅÃûµÄÎäµ±É½¡£Îäµ±É½Ò»ÃûÌ«ºÍÉ½£¬ÎªÆßÊ®
-¶ş¸£µØÖ®Ò»£¬ÓĞ¶şÊ®Æß·å¡¢ÈıÊ®ÁùÑÒ¡¢¶şÊ®ËÄ½§¡¢ÎåÌ¨¡¢Îå¾®¡¢ÈıÌ¶¡¢ÈıÌì
-ÃÅ¡¢Èı¶´ÌìºÍÒ»¸£µØ£¬°ÙÀïÄÚÃÜÊ÷É­ÂŞ£¬±ÎÈÕ²ÎÌì£¬¾°ÎïÓÄ¾ø¡£
+ä½ çš„é¢å‰æ˜¯ä¸€åº§æ—æœ¨ç¹èŒ‚çš„é«˜å±±ï¼Œå‡ åº§å±±å³°åœ¨äº‘é›¾ä¸­éšçº¦å¯è§ï¼Œä¸€æ¡çŸ³
+é˜¶å‘å±±ä¸Šå»¶ä¼¸ï¼Œèµ°ç€å‡ ä¸ªè¿›é¦™å®¢ã€‚ä¸€ä¸ªäº”æ¥¼å¼çš„çŸ³åŠè·¨å±±è€Œå»ºï¼Œå†™ç€â€œç„å²³
+é—¨â€ä¸‰ä¸ªå¤§å­—ï¼ŒåŸæ¥è¿™å°±æ˜¯å¤©ä¸‹é—»åçš„æ­¦å½“å±±ã€‚æ­¦å½“å±±ä¸€åå¤ªå’Œå±±ï¼Œä¸ºä¸ƒå
+äºŒç¦åœ°ä¹‹ä¸€ï¼Œæœ‰äºŒåä¸ƒå³°ã€ä¸‰åå…­å²©ã€äºŒåå››æ¶§ã€äº”å°ã€äº”äº•ã€ä¸‰æ½­ã€ä¸‰å¤©
+é—¨ã€ä¸‰æ´å¤©å’Œä¸€ç¦åœ°ï¼Œç™¾é‡Œå†…å¯†æ ‘æ£®ç½—ï¼Œè”½æ—¥å‚å¤©ï¼Œæ™¯ç‰©å¹½ç»ã€‚
 LONG
 	);
         set("outdoors", "wudang");
@@ -47,9 +47,9 @@ int do_exercise(string arg)
 {
 	object me = this_player();
 
-	if ( me->query("job/description") == "ÊØÎÀÉ½ÃÅ" || me->query("job/guarding") > 0 )
+	if ( me->query("job/description") == "å®ˆå«å±±é—¨" || me->query("job/guarding") > 0 )
 	{
-		tell_object(me, "Äã»¹ÊÇ×¨ĞÄÊØÃÅ°É£¡\n");
+		tell_object(me, "ä½ è¿˜æ˜¯ä¸“å¿ƒå®ˆé—¨å§ï¼\n");
 		return 1;
 	}
 	
@@ -70,12 +70,12 @@ int valid_leave(object me, string dir)
 			
 				
 	
-	if ( (string)me->query("job/description") == "ÊØÎÀÉ½ÃÅ" )
+	if ( (string)me->query("job/description") == "å®ˆå«å±±é—¨" )
 	if (objectp(present("zhike daozhang", environment(me))))
-		return notify_fail("Öª¿ÍµÀ³¤ºÈµÀ£ºÊ±³½Î´µ½£¬Äã¾ÍÏëÁï£¡\n");
+		return notify_fail("çŸ¥å®¢é“é•¿å–é“ï¼šæ—¶è¾°æœªåˆ°ï¼Œä½ å°±æƒ³æºœï¼\n");
 	else 		
 	{
-		message_vision("$N¿´Öª¿ÍµÀ³¤²»ÔÚ£¬³Ã»úÁï×ßÁË¡£\n", me); 	
+		message_vision("$Nçœ‹çŸ¥å®¢é“é•¿ä¸åœ¨ï¼Œè¶æœºæºœèµ°äº†ã€‚\n", me); 	
 
 		me->delete("job/guarding");
 		me->delete("job/allow");
@@ -94,18 +94,18 @@ int valid_leave(object me, string dir)
         inv = all_inventory(this_object());
     
         for (i = 0; i < sizeof(inv); i++)
-        if (userp(inv[i]) && (string)inv[i]->query("job/description") == "ÊØÎÀÉ½ÃÅ")
+        if (userp(inv[i]) && (string)inv[i]->query("job/description") == "å®ˆå«å±±é—¨")
 		{
 			j++;
 			if (objectp(wp = inv[i]->query_temp("weapon")))
-				message_vision("$N¶Ô$nºÈµÀ£º¶ûµÈĞ°Ä§ÍáµÀÈËÎï£¬ÒªÏë¹ı´ËÉ½ÃÅ£¬µÃÏÈÎÊÎÊÎÒÊÖÖĞµÄ"
-				+ wp->query("name")+ "´ğÓ¦²»´ğÓ¦£¡\n", inv[i], me); 
+				message_vision("$Nå¯¹$nå–é“ï¼šå°”ç­‰é‚ªé­”æ­ªé“äººç‰©ï¼Œè¦æƒ³è¿‡æ­¤å±±é—¨ï¼Œå¾—å…ˆé—®é—®æˆ‘æ‰‹ä¸­çš„"
+				+ wp->query("name")+ "ç­”åº”ä¸ç­”åº”ï¼\n", inv[i], me); 
 			else 
-				message_vision("$N¶Ô$nºÈµÀ£ºÖ»ÒªÎÒÔÚ£¬¶ûµÈĞ°Ä§ÍáµÀÈËÎï£¬±ãĞİÏë¹ı´ËÉ½ÃÅ£¡\n", inv[i], me);
+				message_vision("$Nå¯¹$nå–é“ï¼šåªè¦æˆ‘åœ¨ï¼Œå°”ç­‰é‚ªé­”æ­ªé“äººç‰©ï¼Œä¾¿ä¼‘æƒ³è¿‡æ­¤å±±é—¨ï¼\n", inv[i], me);
 		}
 
         if ( objectp(present("zhike daozhang", environment(me))) )
-            return notify_fail("Öª¿ÍµÀ³¤°Î³ö³¤½£¶Ô×ÅÄã£ºÈç²»ÊÇÉÏÉ½¾´Ïã£¬¼´¿ÌÇë»Ø£¡\n");
+            return notify_fail("çŸ¥å®¢é“é•¿æ‹”å‡ºé•¿å‰‘å¯¹ç€ä½ ï¼šå¦‚ä¸æ˜¯ä¸Šå±±æ•¬é¦™ï¼Œå³åˆ»è¯·å›ï¼\n");
             
         if (j) return notify_fail("\n");    
 	}

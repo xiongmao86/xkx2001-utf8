@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zi_shoes.c Ë«Áº×Ï¶ĞÃæĞ¬×Ó 
+// zi_shoes.c åŒæ¢ç´«ç¼é¢é‹å­ 
  
 #include <armor.h>
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit BOOTS;
  
 void create()
 {
-	set_name(MAG"×Ï¶ĞÃæĞ¬×Ó"NOR, ({ "shoes"}) );
+	set_name(MAG"ç´«ç¼é¢é‹å­"NOR, ({ "shoes"}) );
 	set_weight(800);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("material", "cloth");
-		set("unit", "Ë«");
-		set("long", "ÕâÊÇÒ»Ë«ĞåÖø¡¸ÊÙ¡¹×ÖµÄË«Áº×Ï¶ĞÃæĞ¬×Ó¡£\n");
+		set("unit", "åŒ");
+		set("long", "è¿™æ˜¯ä¸€åŒç»£è‘—ã€Œå¯¿ã€å­—çš„åŒæ¢ç´«ç¼é¢é‹å­ã€‚\n");
 		set("value", 5000);
 		set("armor_prop/dodge", 8);
 	}

@@ -4,12 +4,12 @@
 inherit ITEM;
 
 string* titles = ({
-        "ÂŞººÈ­·¨",
-        "·çÔÆÊÖÊÖ·¨",
-        "°ãÈôÕÆ·¨",
-        "ÆÕ¶ÉÕÈ·¨",
-        "·üÄ§½£·¨",
-        "´ïÄ¦½£·¨",
+        "ç½—æ±‰æ‹³æ³•",
+        "é£äº‘æ‰‹æ‰‹æ³•",
+        "èˆ¬è‹¥æŒæ³•",
+        "æ™®æ¸¡æ–æ³•",
+        "ä¼é­”å‰‘æ³•",
+        "è¾¾æ‘©å‰‘æ³•",
 });
 
 string* skills = ({
@@ -27,8 +27,8 @@ void create()
 
 	set_name(titles[i], ({ "shaolin wuji", "wuji" }));
 	set_weight(200);
-	set("unit", "²á");
-	set("long", "ÕâÊÇÒ»²á" + titles[i] + "\n");
+	set("unit", "å†Œ");
+	set("long", "è¿™æ˜¯ä¸€å†Œ" + titles[i] + "\n");
 	set("value", 200);
 	set("material", "paper");
 	set("skill", ([

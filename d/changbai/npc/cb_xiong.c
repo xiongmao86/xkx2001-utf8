@@ -18,10 +18,10 @@ string *walkrooms = ({
 
 void create()
 {
-        set_name("ºÚĞÜ", ({ "hei xiong", "xiong" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("é»‘ç†Š", ({ "hei xiong", "xiong" }) );
+        set("race", "é‡å…½");
         set("age", 25);
-        set("long", "Ò»Ö»ÉíÌåË¶´óµÄ¹·ĞÜ£¬ËüÕıµÉ×ÅÑÛ¾¦¿´×ÅÄã¡£\n");
+        set("long", "ä¸€åªèº«ä½“ç¡•å¤§çš„ç‹—ç†Šï¼Œå®ƒæ­£çªç€çœ¼ç›çœ‹ç€ä½ ã€‚\n");
         set("attitude", "aggressive");
         set_weight(200000);
         set("max_qi", 2000);
@@ -54,7 +54,7 @@ void die()
         ob = new(DRUG_D("xiongdan"));
         ob->move(environment());
 
-        message_vision("$N²Òº¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Næƒ¨åšä¸€å£°ï¼Œæ­»äº†ï¼\n", this_object());
         destruct(this_object());
 }
 
@@ -85,7 +85,7 @@ int random_walk()
         string *dirs, dir;
 
         if( member_array(base_name(environment()), walkrooms) == -1 ) {
-                message_vision("$NÒ»ÁïÑÌÅÜµôÁË¡£\n", this_object());
+                message_vision("$Nä¸€æºœçƒŸè·‘æ‰äº†ã€‚\n", this_object());
                 destruct(this_object());
         }
 

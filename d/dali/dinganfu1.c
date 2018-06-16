@@ -9,11 +9,11 @@ string Point2="";
 
 void create()
 {
-	set("short", "·¨ÌÃ");
+	set("short", "æ³•å ‚");
 	set("long", @LONG
-¶¨°²¸®µÄ·¨ÌÃÄÚÆø·ÕËàÄÂ£¬ÌÃµÄÉÏÊ×°ÚµÄÊÇÒ»ÅÅÎå¸ö³¤°¸£¬°¸ºó×øµÄÊÇÎå¸ö
-²»Í¬×åÒáµÄ¹ÙÔ±¡£³¤°¸ÏÂÊ×ÓÐÁ½¸öÍ¨Òë£¬ÓÐ´Í×ù¡£´ËÍâ£¬·¨ÌÃÁ½±ß»¹¸÷Õ¾ÁËËÄÎå
-ÑÃÒÛ¡£
+å®šå®‰åºœçš„æ³•å ‚å†…æ°”æ°›è‚ƒç©†ï¼Œå ‚çš„ä¸Šé¦–æ‘†çš„æ˜¯ä¸€æŽ’äº”ä¸ªé•¿æ¡ˆï¼Œæ¡ˆåŽåçš„æ˜¯äº”ä¸ª
+ä¸åŒæ—è£”çš„å®˜å‘˜ã€‚é•¿æ¡ˆä¸‹é¦–æœ‰ä¸¤ä¸ªé€šè¯‘ï¼Œæœ‰èµåº§ã€‚æ­¤å¤–ï¼Œæ³•å ‚ä¸¤è¾¹è¿˜å„ç«™äº†å››äº”
+è¡™å½¹ã€‚
 LONG);
 	set("objects", ([
 		"kungfu/class/dali/wujiang1" : 1,
@@ -44,19 +44,19 @@ int do_cant(string arg)
 
 	if (me->query_temp("dali/investigation"))
 	{
-		write("\nÒÑ¾­ÉýÌÃÁË»¹²»°²·ÖÒ»µã£¿\n");
+		write("\nå·²ç»å‡å ‚äº†è¿˜ä¸å®‰åˆ†ä¸€ç‚¹ï¼Ÿ\n");
 		return 1;
 	}
 	if (query_verb()=="exert" || query_verb()=="yun")
 	{
 		if (arg == "roar")
 		{
-			write("\n¹«ÌÃÖ®ÉÏ½ûÖ¹Ðú»©¡£\n");
+			write("\nå…¬å ‚ä¹‹ä¸Šç¦æ­¢å–§å“—ã€‚\n");
 			return 1;
 		}
 		if (arg == "sing")
 		{
-			write("\n¹«ÌÃÖ®ÉÏ½ûÖ¹Ðú»©¡£\n");
+			write("\nå…¬å ‚ä¹‹ä¸Šç¦æ­¢å–§å“—ã€‚\n");
 			return 1;
 		}
 		return 0;
@@ -70,11 +70,11 @@ int do_cant(string arg)
 			if (arg == "duan jin" || arg == "duan")
 			{
 				if (!ob=present(arg, environment(me))) return 0;
-				message_vision("$N³Ã$n²»±¸, ÇÄÈ»´í²½×ªÉí, ´Ó±³ºó³öÖ¸Í»Ï®¡£\n\n\n", me, ob);
-				message_vision(CYN "$NÅ­µÀ£º¡¸´óµ¨¿É¶ñ£¡¹«ÌÃÖ®ÉÏ¾¹¸ÒÍµÏ®±¾¹Ù£¡À´ÈË°¡£¡¡¹\n\n\n"NOR, ob, me);
+				message_vision("$Nè¶$nä¸å¤‡, æ‚„ç„¶é”™æ­¥è½¬èº«, ä»ŽèƒŒåŽå‡ºæŒ‡çªè¢­ã€‚\n\n\n", me, ob);
+				message_vision(CYN "$Næ€’é“ï¼šã€Œå¤§èƒ†å¯æ¶ï¼å…¬å ‚ä¹‹ä¸Šç«Ÿæ•¢å·è¢­æœ¬å®˜ï¼æ¥äººå•Šï¼ã€\n\n\n"NOR, ob, me);
 				me->start_busy(30);    
-				Point1="ÒâÍ¼ÓÚ¹«ÌÃÉÏÍµÏ®";
-				Point2="¾¹ÓûÍµÏ®±¾¹Ù";
+				Point1="æ„å›¾äºŽå…¬å ‚ä¸Šå·è¢­";
+				Point2="ç«Ÿæ¬²å·è¢­æœ¬å®˜";
 				me->set_temp("dali/investigation",1);
 				remove_call_out("processing");
 				call_out("processing", 5, ob);
@@ -95,11 +95,11 @@ int do_cant(string arg)
 			if (arg == "duan jin" || arg == "duan")
 			{
 				if (!ob=present(arg, environment(me))) return 0;
-                message_vision(HIR "$N¹îÐ¦ÖÐ¶Ô×Å$nÄîÁË¼¸¾äÃÜÖä£¬ÓÖÉìÊÖÖ¸ÁËÖ¸"+ob->name()+"¡£\n\n\n", me, item);
-				message_vision(CYN "$NÒ»Éù´óºÈÒ»ÉùµÀ£º¡¸´óµ¨£¡¾¹¸ÒÔÚ¹«ÌÃÖ®ÉÏ½ÌËôÉ±ÈË£¡À´ÈË°¡£¡¡¹\n\n\n"NOR, ob, me);
+                message_vision(HIR "$Nè¯¡ç¬‘ä¸­å¯¹ç€$nå¿µäº†å‡ å¥å¯†å’’ï¼Œåˆä¼¸æ‰‹æŒ‡äº†æŒ‡"+ob->name()+"ã€‚\n\n\n", me, item);
+				message_vision(CYN "$Nä¸€å£°å¤§å–ä¸€å£°é“ï¼šã€Œå¤§èƒ†ï¼ç«Ÿæ•¢åœ¨å…¬å ‚ä¹‹ä¸Šæ•™å”†æ€äººï¼æ¥äººå•Šï¼ã€\n\n\n"NOR, ob, me);
 				me->start_busy(30);    
-				Point1="½ÌËôÐÐÐ×";
-				Point2="¾¹½ÌËôÐÐÐ×Ä±º¦±¾¹Ù";
+				Point1="æ•™å”†è¡Œå‡¶";
+				Point2="ç«Ÿæ•™å”†è¡Œå‡¶è°‹å®³æœ¬å®˜";
 				me->set_temp("dali/investigation",1);
 				remove_call_out("processing");
 				call_out("processing", 5, ob);
@@ -116,11 +116,11 @@ int do_cant(string arg)
 				if (!ob=present(arg, environment(me))) return 0;
 				item = present(what, me);
 				if (!item) return 0;
-				message_vision("$NÊÖÒ»Ñï£¬½«"+item->name()+"¶Ô×¼$nÖÀÈ¥¡£\n\n\n", me, ob);
-				message_vision(CYN "$NÅ­µÀ£º¡¸´óµ¨¿É¶ñ£¡¹«ÌÃÖ®ÉÏ¾¹¸ÒÍµÏ®±¾¹Ù£¡À´ÈË°¡£¡¡¹\n\n\n"NOR, ob, me);
+				message_vision("$Næ‰‹ä¸€æ‰¬ï¼Œå°†"+item->name()+"å¯¹å‡†$næŽ·åŽ»ã€‚\n\n\n", me, ob);
+				message_vision(CYN "$Næ€’é“ï¼šã€Œå¤§èƒ†å¯æ¶ï¼å…¬å ‚ä¹‹ä¸Šç«Ÿæ•¢å·è¢­æœ¬å®˜ï¼æ¥äººå•Šï¼ã€\n\n\n"NOR, ob, me);
 				me->start_busy(30);    
-				Point1="ÒâÍ¼ÓÚ¹«ÌÃÉÏÍµÏ®";
-				Point2="¾¹ÒÔÀûÆ÷Ï®»÷±¾¹Ù";
+				Point1="æ„å›¾äºŽå…¬å ‚ä¸Šå·è¢­";
+				Point2="ç«Ÿä»¥åˆ©å™¨è¢­å‡»æœ¬å®˜";
 				me->set_temp("dali/investigation",1);
 				remove_call_out("processing");
 				call_out("processing", 5, ob);
@@ -133,11 +133,11 @@ int do_cant(string arg)
 		if (arg == "duan jin" || arg == "duan")
 		{
 			if (!ob=present(arg, environment(me))) return 0;
-			message_vision("$N¶ÔÖø$nºÈµÀ£º¡¸³ôÔô£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n\n\n", me, ob);
-			message_vision(CYN "$NÒ»Éù´óºÈÒ»ÉùµÀ£º¡¸´óµ¨£¡¹«ÌÃÖ®ÉÏ¾¹¸ÒÐÐÐ×£¡À´ÈË°¡£¡¡¹\n\n\n"NOR, ob, me);
+			message_vision("$Nå¯¹è‘—$nå–é“ï¼šã€Œè‡­è´¼ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n\n\n", me, ob);
+			message_vision(CYN "$Nä¸€å£°å¤§å–ä¸€å£°é“ï¼šã€Œå¤§èƒ†ï¼å…¬å ‚ä¹‹ä¸Šç«Ÿæ•¢è¡Œå‡¶ï¼æ¥äººå•Šï¼ã€\n\n\n"NOR, ob, me);
 			me->start_busy(30);    
-			Point1="ÊÔÍ¼ÔÚ¹«ÌÃÉÏÐÐÐ×";
-			Point2="»¹¸ÒÍýÍ¼ÐÐÐ×";
+			Point1="è¯•å›¾åœ¨å…¬å ‚ä¸Šè¡Œå‡¶";
+			Point2="è¿˜æ•¢å¦„å›¾è¡Œå‡¶";
 			me->set_temp("dali/investigation",1);
 			remove_call_out("processing");
 			call_out("processing", 5, ob);
@@ -148,19 +148,19 @@ int do_cant(string arg)
 }
 void processing(object ob)
 {
-	message_vision(HIR "ÑÃÒÛÆëÉùº°µÀ£ºÍþ¡«¡«¡«¡«Îä¡«¡«¡«¡«£¡\n" NOR, ob);
-	write(HIW "\nÄãË«ÍÈÒ»Èí£¬¹òÔÚÁËµØÉÏ£¬Ì§Í·Ï¸¿´£¬Ö»¼ûÊýÊ®Î»ÎÀÊ¿ÊÖ³Öµ¶Ç¹½«ÄãÍÅÍÅÎ§Æð£¬\nÆäÖÐÒ»ÈË¸ü»Ó¶¯ÊÖÖÐÌúÁ´ÏòÄã¾±ÖÐÌ×À´¡£\n\n\n" NOR);
-	message_vision(HIY "\n\n¶ÎÚêºÈµÀ£º¡¸ÔÚÎÒ´óÀí¹«ÌÃÖ®ÖÐ"+Point2+"£¬¸Ãµ±ºÎ×ï£¡¡¹\n\n\n" NOR, ob);
+	message_vision(HIR "è¡™å½¹é½å£°å–Šé“ï¼šå¨ï½žï½žï½žï½žæ­¦ï½žï½žï½žï½žï¼\n" NOR, ob);
+	write(HIW "\nä½ åŒè…¿ä¸€è½¯ï¼Œè·ªåœ¨äº†åœ°ä¸Šï¼ŒæŠ¬å¤´ç»†çœ‹ï¼Œåªè§æ•°åä½å«å£«æ‰‹æŒåˆ€æžªå°†ä½ å›¢å›¢å›´èµ·ï¼Œ\nå…¶ä¸­ä¸€äººæ›´æŒ¥åŠ¨æ‰‹ä¸­é“é“¾å‘ä½ é¢ˆä¸­å¥—æ¥ã€‚\n\n\n" NOR);
+	message_vision(HIY "\n\næ®µé™‰å–é“ï¼šã€Œåœ¨æˆ‘å¤§ç†å…¬å ‚ä¹‹ä¸­"+Point2+"ï¼Œè¯¥å½“ä½•ç½ªï¼ã€\n\n\n" NOR, ob);
 	call_out("jailing", 5, ob, 5);
 }
 void jailing(object ob)
 {
 	object me=this_player();
-	message_vision(HIY "\n\n$NÓÖµÀ£º¡¸½ñÅÐ$nÊÕ¼àÁù¸öÔÂ£¬ÒÔ³ÍºóÐ§£¡ÈçÓÐÔÙ·¸×ï¼ÓÒ»µÈ£¡¡¹\n\n\n" NOR, ob, me);
-	message_vision(HIR "ÄÇÊÖÖ´ÌúÁ´Ö®ÈËÓÃÁ¦Ò»×§£¬$NÖ»¾õºôÎü²»Ë³£¬»èÁË¹ýÈ¥......\n\n" NOR, me);
+	message_vision(HIY "\n\n$Nåˆé“ï¼šã€Œä»Šåˆ¤$næ”¶ç›‘å…­ä¸ªæœˆï¼Œä»¥æƒ©åŽæ•ˆï¼å¦‚æœ‰å†çŠ¯ç½ªåŠ ä¸€ç­‰ï¼ã€\n\n\n" NOR, ob, me);
+	message_vision(HIR "é‚£æ‰‹æ‰§é“é“¾ä¹‹äººç”¨åŠ›ä¸€æ‹½ï¼Œ$Nåªè§‰å‘¼å¸ä¸é¡ºï¼Œæ˜äº†è¿‡åŽ»......\n\n" NOR, me);
 	me->delete_temp("dali/investigation");
 	me->set("startroom", "/d/dali/laoyu");
 	me->move(__DIR__"laoyu");
 	me->unconcious();
-	CHANNEL_D->do_channel(ob, "chat", sprintf("ÓÉÓÚ" + me->name()+"("+me->query("id")+")"+Point1+"£¬Ä¿Ç°ÒÑÓÉ´óÀí¶¨°²¸®ÊÕ¼à£¡"));
+	CHANNEL_D->do_channel(ob, "chat", sprintf("ç”±äºŽ" + me->name()+"("+me->query("id")+")"+Point1+"ï¼Œç›®å‰å·²ç”±å¤§ç†å®šå®‰åºœæ”¶ç›‘ï¼"));
 }

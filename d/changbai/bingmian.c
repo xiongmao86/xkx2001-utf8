@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±ùÃæ");
+	set("short", "å†°é¢");
 	set("long", @LONG
-ÕâÀïÊÇËÉ»¨½­µÄ½­Ãæ£¬ÏÖÒÑ¶³³ÉÁË¼¸³ßºñµÄ¼á±ù¡£ÐÐÈË»òÂíÆ¥£¬³µÁ¾¾ù
-¿ÉºáÓâ½­Ãæ¶ø¾øÎÞÎ£ÏÕ¡£±ùÃæÉÏÁôÓÐºñºñµÄ»ýÑ©£¬ÓëÁ½°¶Á¬³ÉÒ»Æ¬£¬Ö»ÓÐÖÐ
-¼ä¾­³£ÐÐ×ßÖ®³ö£¬Â¶³öÒ»ÌõÇàÉ«µÄ±ùÂ·¡£
+è¿™é‡Œæ˜¯æ¾èŠ±æ±Ÿçš„æ±Ÿé¢ï¼ŒçŽ°å·²å†»æˆäº†å‡ å°ºåŽšçš„åšå†°ã€‚è¡Œäººæˆ–é©¬åŒ¹ï¼Œè½¦è¾†å‡
+å¯æ¨ªé€¾æ±Ÿé¢è€Œç»æ— å±é™©ã€‚å†°é¢ä¸Šç•™æœ‰åŽšåŽšçš„ç§¯é›ªï¼Œä¸Žä¸¤å²¸è¿žæˆä¸€ç‰‡ï¼Œåªæœ‰ä¸­
+é—´ç»å¸¸è¡Œèµ°ä¹‹å‡ºï¼Œéœ²å‡ºä¸€æ¡é’è‰²çš„å†°è·¯ã€‚
 LONG	);
 	set("exits", ([ 
               "west" : __DIR__"chuanc",
@@ -37,12 +37,12 @@ void init()
                         weapon->unequip();
                         weapon->move(environment(me));
                         if( weapon->query("value") < 2000 ) {
-                                weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+                                weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
                                 weapon->set("value", 0);
                                 weapon->set("weapon_prop", 0);
                         }
                         
-                        message_vision(HIR"$NÊÖÖÐµÄ" + weapon->name() + "ÍÑÊÖ¶ø³ö¡£\n"NOR, me);
+                        message_vision(HIR"$Næ‰‹ä¸­çš„" + weapon->name() + "è„±æ‰‹è€Œå‡ºã€‚\n"NOR, me);
                 }
 /*
                 inv = all_inventory(me);
@@ -50,7 +50,7 @@ void init()
                         if( !inv[i]->query("armor_prop") )
                                 inv[i]->move(this_object());
 */
-                message_vision(HIR"\n$NÖ»¾õµÃ½ÅÏÂÒ»»¬£¬È«ÉíÌÚ¿Õ¶øÆð£¬½á½áÊµÊµµÄË¤ÔÚÁË±ùÃæÉÏ£¡\n"NOR, me);
+                message_vision(HIR"\n$Nåªè§‰å¾—è„šä¸‹ä¸€æ»‘ï¼Œå…¨èº«è…¾ç©ºè€Œèµ·ï¼Œç»“ç»“å®žå®žçš„æ‘”åœ¨äº†å†°é¢ä¸Šï¼\n"NOR, me);
 
                 me->receive_damage("qi", 50);
                 me->receive_wound("qi", 3 + random(10));

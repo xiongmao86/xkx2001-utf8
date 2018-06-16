@@ -1,5 +1,5 @@
 //Cracked by Roath
-// doctor.c Ò½Õß
+// doctor.c åŒ»è€…
 // Ssy
 
 #include <ansi.h>
@@ -10,12 +10,12 @@ void greeting(object);
 
 void create()
 {
-	set_name("Ò½Õß", ({ "doctor", "yizhe"}));
+	set_name("åŒ»è€…", ({ "doctor", "yizhe"}));
 	set("long", 
-	    "Ò»Î»°×·¢ÒøĞëµÄÀÏÕß¡£¾İËµµ±ÄêÔø¾­ÊÇ½­ºşÉÏÒ»Î»ÖøÃûµÄÉñÒ½¡£\n"
-            "µ«×Ô´ÓÀ´µ½ÏÀ¿ÍµºÉÏºó£¬ÒşĞÕÂñÃû£¬ÖÁ½ñË­Ò²²»ÖªµÀËûÕæÃûÊÇÉõÃ´ÁË¡£\n"
-            "Ëû¿´ÆğÀ´ÀÁÑóÑóµÄ£¬ÄãÒªÊÇÏëÇëËûÁÆÉËµÄ»°¿ÖÅÂ²»ÄÇÃ´ÈİÒ×¡£\n");
-	set("gender", "ÄĞĞÔ");
+	    "ä¸€ä½ç™½å‘é“¶é¡»çš„è€è€…ã€‚æ®è¯´å½“å¹´æ›¾ç»æ˜¯æ±Ÿæ¹–ä¸Šä¸€ä½è‘—åçš„ç¥åŒ»ã€‚\n"
+            "ä½†è‡ªä»æ¥åˆ°ä¾ å®¢å²›ä¸Šåï¼Œéšå§“åŸ‹åï¼Œè‡³ä»Šè°ä¹Ÿä¸çŸ¥é“ä»–çœŸåæ˜¯ç”šä¹ˆäº†ã€‚\n"
+            "ä»–çœ‹èµ·æ¥æ‡’æ´‹æ´‹çš„ï¼Œä½ è¦æ˜¯æƒ³è¯·ä»–ç–—ä¼¤çš„è¯ææ€•ä¸é‚£ä¹ˆå®¹æ˜“ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 74);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -23,7 +23,7 @@ void create()
 	set("int", 20);
 	set("con", 20);
 	set("dex", 20);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 150);
 	set("eff_qi", 150);
 	set("qi", 150);
@@ -45,8 +45,8 @@ void create()
 	set_skill("sword", 5);
 	
 	set("inquiry", ([
-			"ÁÆÉË"   : 	"ÎÒÏÖÔÚ¾ëµÃºÜ£¬ÈÃÎÒĞªĞª°Õ¡£\n",
-			"heal"   :      "ÎÒÏÖÔÚ¾ëµÃºÜ£¬ÈÃÎÒĞªĞª°Õ¡£\n",
+			"ç–—ä¼¤"   : 	"æˆ‘ç°åœ¨å€¦å¾—å¾ˆï¼Œè®©æˆ‘æ­‡æ­‡ç½¢ã€‚\n",
+			"heal"   :      "æˆ‘ç°åœ¨å€¦å¾—å¾ˆï¼Œè®©æˆ‘æ­‡æ­‡ç½¢ã€‚\n",
 		]));
 
 	setup();
@@ -73,13 +73,13 @@ void greeting(object me)
 	if (wound < 20)
 	  {
 	    command("walkby " + me->query("id"));
-	    command("say " + RANK_D->query_respect(me) + "ÔõÃ´ÉËµÃÕâÑùÀ÷º¦£¿\n");
+	    command("say " + RANK_D->query_respect(me) + "æ€ä¹ˆä¼¤å¾—è¿™æ ·å‰å®³ï¼Ÿ\n");
 	  }
 	else if (wound < 100)
 	  {
 	    command("sigh");
 	    command("say " + RANK_D->query_respect(me) +
-"ÓÖÊÜÉËÀ²£¿Ã»¹ØÏµ£¬Á·ÎäÂï£¬²»³Ôµã¿àÍ·ÔõÃ´ÄÜ³É´óÆ÷ÄØ£¿");
+"åˆå—ä¼¤å•¦ï¼Ÿæ²¡å…³ç³»ï¼Œç»ƒæ­¦å˜›ï¼Œä¸åƒç‚¹è‹¦å¤´æ€ä¹ˆèƒ½æˆå¤§å™¨å‘¢ï¼Ÿ");
 	  }
 	else
 	  {
@@ -96,13 +96,13 @@ int accept_object(object me, object obj)
 int accept_obj(object me, object obj)
 {
         object ke;
-        if( obj->query("name")=="Ò¬×Ó") 
+        if( obj->query("name")=="æ¤°å­") 
 	  {
 	     command("thumb "+ me->query("id"));
 	     command("say " + RANK_D->query_respect(me) +
-"ÔõÃ´ÖªµÀÎÒÏ²»¶³ÔÒ¬×Ó£¿¡¡ºÃ°Õ£¬ÎÒ¸øÄã¿´¿´ÉË¡­¡­\n");
-	     message_vision("$NÈ¡ÁËĞ©Ò©Æ·£¬ÓÖÄÃÀ´Ğí¶à±Á´ø¼Ğ°åµÈÎï£¬¸ø$nÀûÂäµØ°üÔúÁËÒ»ÏÂ£¬¹ûÈ»ÊÇÃîÊÖ»Ø´º£¡\n", this_object(), me);
-	     message_vision("$NĞ¦µÀ£ºÄãÕâµãĞ¡ÉË£¬ÔÚÎÒ¿´À´Ëã²»ÁËÉõÃ´¡£\n", this_object(), me);
+"æ€ä¹ˆçŸ¥é“æˆ‘å–œæ¬¢åƒæ¤°å­ï¼Ÿã€€å¥½ç½¢ï¼Œæˆ‘ç»™ä½ çœ‹çœ‹ä¼¤â€¦â€¦\n");
+	     message_vision("$Nå–äº†äº›è¯å“ï¼Œåˆæ‹¿æ¥è®¸å¤šç»·å¸¦å¤¹æ¿ç­‰ç‰©ï¼Œç»™$nåˆ©è½åœ°åŒ…æ‰äº†ä¸€ä¸‹ï¼Œæœç„¶æ˜¯å¦™æ‰‹å›æ˜¥ï¼\n", this_object(), me);
+	     message_vision("$Nç¬‘é“ï¼šä½ è¿™ç‚¹å°ä¼¤ï¼Œåœ¨æˆ‘çœ‹æ¥ç®—ä¸äº†ç”šä¹ˆã€‚\n", this_object(), me);
 	     me->set("eff_qi", me->query("max_qi"));
 	     return 1;
 	  }

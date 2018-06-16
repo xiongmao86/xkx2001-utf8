@@ -11,11 +11,11 @@ int is_sg_spy() { return 1;}
 
 void create()
 {
-        set_name("ÎºÎŞË«", ({ "wulin mengzhu", "mengzhu", "zhu" }) );
-        set("title", "ÎäÁÖÃËÖ÷" );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é­æ— åŒ", ({ "wulin mengzhu", "mengzhu", "zhu" }) );
+        set("title", "æ­¦æ—ç›Ÿä¸»" );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-        set("long","Ëû¾ÍÊÇĞÛ¾áÎäÁÖ£¬ºÅÕÙÌìÏÂ£¬Íş·çºÕºÕµÄµ±½ñÎäÁÖÃËÖ÷¡£\n");
+        set("long","ä»–å°±æ˜¯é›„è¸æ­¦æ—ï¼Œå·å¬å¤©ä¸‹ï¼Œå¨é£èµ«èµ«çš„å½“ä»Šæ­¦æ—ç›Ÿä¸»ã€‚\n");
         set("attitude", "heroism");
 
         set("str", 25);

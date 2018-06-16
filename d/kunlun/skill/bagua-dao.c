@@ -1,16 +1,16 @@
 //Cracked by Roath
-// bagua-dao.c °ËØÔµ¶
+// bagua-dao.c å…«å¦åˆ€
   
 inherit SKILL;
 mapping *action = ({
-([      "action" : "$N$wÊ¹³ö°ËØÔµ¶£¬¿³Ïò$n",
+([      "action" : "$N$wä½¿å‡ºå…«å¦åˆ€ï¼Œç å‘$n",
 	"force" : 170,
 	"dodge" : 15
 	"parry" : 15
 	"damage": 20
 	"lvl" : 0,
-	"skill_name" : "°ËØÔµ¶",
-	"damage_type" : "¿³ÉË"
+	"skill_name" : "å…«å¦åˆ€",
+	"damage_type" : "ç ä¼¤"
 ]),
 	// more actions
 });
@@ -20,9 +20,9 @@ int valid_enable(string usage) { return usage == "blade" || usage == "parry"; }
 int valid_learn(object me)
 {
 	if ((int)me->query("max_neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if ((int)me->query_skill("shenghuo-xuanming",1) < 20)
-		return notify_fail("ÄãµÄÊ¥»ğĞşÚ¤¹¦»ğºòÎ´µ½£¬ÔİÎŞ·¨ĞŞÏ°°ËØÔµ¶¡£\n");
+		return notify_fail("ä½ çš„åœ£ç«ç„å†¥åŠŸç«å€™æœªåˆ°ï¼Œæš‚æ— æ³•ä¿®ä¹ å…«å¦åˆ€ã€‚\n");
 	return 1;
 }
 
@@ -57,10 +57,10 @@ int practice_skill(object me)
 	object weapon;
 
 	if (!objectp(weapon = me->query_temp("weapon")) || (string)weapon->query("skill_type") != "blade")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if ((int)me->query("jingli") < 50)
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»ĞŞÁ·°ËØÔµ¶¡£\n");
-	me->receive_damage("jingli", 30, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä¿®ç»ƒå…«å¦åˆ€ã€‚\n");
+	me->receive_damage("jingli", 30, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 	return 1;
 }
 

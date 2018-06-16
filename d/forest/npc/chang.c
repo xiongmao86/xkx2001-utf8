@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("³£³¤·ç", ({ "chang changfeng","chang" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å¸¸é•¿é£", ({ "chang changfeng","chang" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"ËûÓÖ¸ßÓÖ·Ê£¬±ãÈçÊÇÒ»×ùÌúËş°ÚÔÚµØÏÂ¡£\n");
-	set("nickname","Ë«ÕÆ¿ª±®");
-	set("title","Ì«ÔÀËÄÏÀ");
+		"ä»–åˆé«˜åˆè‚¥ï¼Œä¾¿å¦‚æ˜¯ä¸€åº§é“å¡”æ‘†åœ¨åœ°ä¸‹ã€‚\n");
+	set("nickname","åŒæŒå¼€ç¢‘");
+	set("title","å¤ªå²³å››ä¾ ");
 	set("combat_exp", 15000);
         set("shen_type", -1);
 	set("attitude", "aggressive");

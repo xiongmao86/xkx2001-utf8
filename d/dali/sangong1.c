@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "˾����");
+	set("short", "司空堂");
 	set("long", @LONG
-����һ������ûʵĹ��ã��Ǵ�����˾�հ���ʯƽ�����������˾����˾��
-��Ͻ����������˰�񡢵�·�����޽��ȡ���˾��Ҫ������æ���İ��ϸ߸߶�
-��һ�����ġ�
+这是一间端正堂皇的公堂，是大理国司空巴天石平常办理公务的司所。司空
+管辖内政事务，如税务、道路桥梁修建等。所司紧要，政务繁忙，文案上高高堆
+起一叠公文。
 LONG);
 	set("objects", ([
 		__DIR__"npc/ba-tianshi" : 1,

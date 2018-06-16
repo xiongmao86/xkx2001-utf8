@@ -9,16 +9,16 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ä¹ÊÒ");
+	set("short", "å¢“å®¤");
 	set("long", @LONG
-ÕâÀïÊÇ¹ùÏåÄ¹ÏÂµÄÄ¹ÊÒ¡£Ä¹ÊÒ²»´ó£¬ÕıÃæÊÇÒ»¾ß°×ÓñÊ¯¹×£¬ÅÔ±ß·Å×ÅÒ»Õµ³¤Ã÷
-µÆ¡£Ê¯¹×Ò»³¾²»È¾£¬¿´À´¾­³£ÓĞÈË½øÀ´´òÉ¨¡£
+è¿™é‡Œæ˜¯éƒ­è¥„å¢“ä¸‹çš„å¢“å®¤ã€‚å¢“å®¤ä¸å¤§ï¼Œæ­£é¢æ˜¯ä¸€å…·ç™½ç‰çŸ³æ£ºï¼Œæ—è¾¹æ”¾ç€ä¸€ç›é•¿æ˜
+ç¯ã€‚çŸ³æ£ºä¸€å°˜ä¸æŸ“ï¼Œçœ‹æ¥ç»å¸¸æœ‰äººè¿›æ¥æ‰“æ‰«ã€‚
 LONG
 	);
 
 	set("objects",  ([__DIR__"obj/coffin1" : 1,]) );
 	set("item_desc", ([
-		"coffin" : "ÕâÊÇÒ»¾ß°×ÓñÊ¯µñ³ÉµÄÊ¯¹×¡£\n",
+		"coffin" : "è¿™æ˜¯ä¸€å…·ç™½ç‰çŸ³é›•æˆçš„çŸ³æ£ºã€‚\n",
 	]));
 
 	set("invalid_startroom", 1);
@@ -42,35 +42,35 @@ int shoot_arrow(object me)
 
 	switch ((int)query("arrow_count")) {
 	case 3:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ı´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÃæÃÅ£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»æ£ºåä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„é¢é—¨ï¼\n"NOR, me);
 		break;
 	case 2:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ı´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÑÊºí£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»æ£ºåä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„å’½å–‰ï¼\n"NOR, me);
 		break;
 	case 1:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ı´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÇ°ĞØ£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»æ£ºåä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„å‰èƒ¸ï¼\n"NOR, me);
 		break;
 	default:
-		message_vision(HIY"ºöÈ»¼ä¼¸Ö§¶Ì¼ı´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÃæÃÅ£¡\n"NOR, me);
+		message_vision(HIY"å¿½ç„¶é—´å‡ æ”¯çŸ­ç®­ä»æ£ºåä¸€ä¸ªæœºå…³é‡Œå°„å‡ºæ¥ï¼Œç›´å°„å‘$Nçš„é¢é—¨ï¼\n"NOR, me);
 		break;
 	}
 	add("arrow_count", -1);
 
 	if ( (int)me->query_dex() > (22+random(8))) {
-		message_vision("$NÍ·Ò»µÍ£¬±Ü¿ª¶Ì¼ı£¬Ìøµ½Ò»ÅÔ¡£\n", me);
+		message_vision("$Nå¤´ä¸€ä½ï¼Œé¿å¼€çŸ­ç®­ï¼Œè·³åˆ°ä¸€æ—ã€‚\n", me);
 		return 1;
 	}
 
 	else if ( (int)me->query_dex() > (20+random(4))) {
-		message_vision("$NÓûÉÁÉí±Ü¿ª£¬È´±»ÆäÖĞÒ»Ö§¶Ì¼ıÉäÖĞÓÒ¼ç£¬ÔÎËÀ¹ıÈ¥¡£\n", me);
+		message_vision("$Næ¬²é—ªèº«é¿å¼€ï¼Œå´è¢«å…¶ä¸­ä¸€æ”¯çŸ­ç®­å°„ä¸­å³è‚©ï¼Œæ™•æ­»è¿‡å»ã€‚\n", me);
 		me->add("qi", -50);
 		me->unconcious();
 		return 1;
 	}
 
 	else {
-		message_vision("$N¶ã±Ü²»¼°£¬±»¶Ì¼ıÉä¸öÕıºÃ£¬µ¹ÔÚµØÉÏ¡£\n", me);
-		me->receive_damage("qi", 50, "±»¶¾¼ıÉäËÀÁË");
+		message_vision("$Nèº²é¿ä¸åŠï¼Œè¢«çŸ­ç®­å°„ä¸ªæ­£å¥½ï¼Œå€’åœ¨åœ°ä¸Šã€‚\n", me);
+		me->receive_damage("qi", 50, "è¢«æ¯’ç®­å°„æ­»äº†");
 		me->die();
 		return 1;
 	}
@@ -90,16 +90,16 @@ int do_move(string arg)
         if( arg =="coffin" || arg =="guan" ) {
 		if ( !query_temp("secret_trigger") ) {
 			set_temp("secret_trigger", 1);
-                	message_vision("$NÓÃÁ¦È¥ÒÆÊ¯¹×£¬²»ÖªÅöµ½ÁËÊ²Ã´»ú¹Ø£¬Ä¹ÊÒÒ»½ÇºöÈ»¿ªÁËÒ»µÀĞ¡ÃÅ¡£\n", me); 
+                	message_vision("$Nç”¨åŠ›å»ç§»çŸ³æ£ºï¼Œä¸çŸ¥ç¢°åˆ°äº†ä»€ä¹ˆæœºå…³ï¼Œå¢“å®¤ä¸€è§’å¿½ç„¶å¼€äº†ä¸€é“å°é—¨ã€‚\n", me); 
 			set("exits/down", __DIR__"secret_path1");
                        	room->set("exits/up", __FILE__);
-                       	message("vision", "Í·¶¥ÉÏµÄ°µÃÅºöÈ»±»ÈË´ò¿ª£¬Ä¹ÊÒÖĞ´«À´Î¢ÈõµÄµÆ¹â¡£\n",room );
+                       	message("vision", "å¤´é¡¶ä¸Šçš„æš—é—¨å¿½ç„¶è¢«äººæ‰“å¼€ï¼Œå¢“å®¤ä¸­ä¼ æ¥å¾®å¼±çš„ç¯å…‰ã€‚\n",room );
 			remove_call_out("close_door");
 			call_out("close_door", 30, me);
                 	return 1;
         	}
        		else
-        		return notify_fail("ÄãÓÃÁ¦È¥ÒÆÊ¯¹×£¬ÀÛµÃÂúÍ·´óº¹¡£\n");
+        		return notify_fail("ä½ ç”¨åŠ›å»ç§»çŸ³æ£ºï¼Œç´¯å¾—æ»¡å¤´å¤§æ±—ã€‚\n");
 	}
 	return 0;
 }
@@ -110,10 +110,10 @@ void close_door()
 
 	if( !query("secret_trigger") ) return;
 
-	message("vision", "¹ıÁËÒ»»á¶ù£¬°µÃÅÇáÇáµØ¹ØÉÏÁË£¬Ò»ÇĞÓÖ»Ö¸´µ½´ÓÇ°µÄÑù×Ó¡£\n", this_object() );
+	message("vision", "è¿‡äº†ä¸€ä¼šå„¿ï¼Œæš—é—¨è½»è½»åœ°å…³ä¸Šäº†ï¼Œä¸€åˆ‡åˆæ¢å¤åˆ°ä»å‰çš„æ ·å­ã€‚\n", this_object() );
 	delete("exits/down");
 	room->delete("exits/up");
-	tell_room(room, "¹ıÁËÒ»»á¶ù£¬°µÃÅÇáÇáµØ¹ØÉÏÁË¡£\n");
+	tell_room(room, "è¿‡äº†ä¸€ä¼šå„¿ï¼Œæš—é—¨è½»è½»åœ°å…³ä¸Šäº†ã€‚\n");
 	delete("secret_trigger");
 }
 

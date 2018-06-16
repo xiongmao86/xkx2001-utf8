@@ -8,13 +8,13 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "ÌìÉ½½ÅÏÂ");
+	set("short", "å¤©å±±è„šä¸‹");
 	set("long", @LONG
-±±Ãæ¾ÍÊÇ±ßÚïÖØÕòÒÁÀçÁË¡£µ«¼û³Ç¹ùÖ®Íâ£¬Î¡¶ëµÄÌìÉ½£¬Ö±²åÔÆÌì£¬
-ÆøÊÆĞÛÎ°£»Ã£Ã£ÎÖÒ°£¬ÚäÄ°ÏàÁ¬£¬Ò»Æ¬´Ğ´ä£¬±¼ÌÚµÄÒÁÀçºÓ£¬ÍğÈçÒ»Ìõ
-ÒøÉ«µÄ¶Ğ´ø£¬ÇúÕÛİÓ»Ø¡£ºÓÅÏ£¬³Ç½¼£¬Ë®Ş¡×İºá£¬ÁÖ´ø³ÉÍø¡£Ò»µÀÌìÉ½
-½«Î÷Óò·ÖÎªÁ½°ë¡£±±½®ÊÇÎ÷Óò¸÷×åµÄ¾Û¾ÓÇø£¬ÄÏ½®ÊÇÎŞ±ßµÄËş¿ËÀ­Âí¸É
-´óÉ³Ä®¡£
+åŒ—é¢å°±æ˜¯è¾¹é™²é‡é•‡ä¼ŠçŠäº†ã€‚ä½†è§åŸéƒ­ä¹‹å¤–ï¼Œå·å³¨çš„å¤©å±±ï¼Œç›´æ’äº‘å¤©ï¼Œ
+æ°”åŠ¿é›„ä¼Ÿï¼›èŒ«èŒ«æ²ƒé‡ï¼Œé˜¡é™Œç›¸è¿ï¼Œä¸€ç‰‡è‘±ç¿ ï¼Œå¥”è…¾çš„ä¼ŠçŠæ²³ï¼Œå®›å¦‚ä¸€æ¡
+é“¶è‰²çš„ç¼å¸¦ï¼Œæ›²æŠ˜è¦å›ã€‚æ²³ç•”ï¼ŒåŸéƒŠï¼Œæ°´è•–çºµæ¨ªï¼Œæ—å¸¦æˆç½‘ã€‚ä¸€é“å¤©å±±
+å°†è¥¿åŸŸåˆ†ä¸ºä¸¤åŠã€‚åŒ—ç–†æ˜¯è¥¿åŸŸå„æ—çš„èšå±…åŒºï¼Œå—ç–†æ˜¯æ— è¾¹çš„å¡”å…‹æ‹‰é©¬å¹²
+å¤§æ²™æ¼ ã€‚
 LONG
 	);
 	set("exits", ([
@@ -46,13 +46,13 @@ void init()
 		&& !inv[i]->query("money_id")) j++;
 	}
 	
-	if (me->query("family/family_name")!="ĞÇËŞÅÉ" && j>0)
+	if (me->query("family/family_name")!="æ˜Ÿå®¿æ´¾" && j>0)
 	me->set_temp("rob_victim", 1);
 
 	if ( interactive(ob=this_player()) && ob->query_temp("biao/bayi")
 	&& present("hong biao", ob) && random(3)==1 
 	|| me->query_temp("rob_victim") && random(5)==1) {
-		message_vision(HIR"¡¸Âı×Å£¡¡¹£¬Ò»¸öĞÇËŞÅÉµÜ×Ó×ßÁË³öÀ´£¬À¹×¡ÁË$N¡£\n"NOR, ob);
+		message_vision(HIR"ã€Œæ…¢ç€ï¼ã€ï¼Œä¸€ä¸ªæ˜Ÿå®¿æ´¾å¼Ÿå­èµ°äº†å‡ºæ¥ï¼Œæ‹¦ä½äº†$Nã€‚\n"NOR, ob);
 		robber = new(__DIR__"npc/xxdizi");
 		robber->move(environment(ob));
 	}
@@ -64,7 +64,7 @@ int valid_leave(object me, string dir)
 
     if ( me->query_temp("biao/bayi") && present("xingxiu dizi", environment(me)) 
 	|| me->query_temp("rob_victim") && present("xingxiu dizi", environment(me)))
-	return notify_fail("ĞÇËŞÅÉµÜ×Ó¶ñºİºİµØÍşĞ²µÀ£º¿ì½«±¦±´½»³öÀ´£¬·ñÔòÈ¡Äã¹·Ãü£¡\n");
+	return notify_fail("æ˜Ÿå®¿æ´¾å¼Ÿå­æ¶ç‹ ç‹ åœ°å¨èƒé“ï¼šå¿«å°†å®è´äº¤å‡ºæ¥ï¼Œå¦åˆ™å–ä½ ç‹—å‘½ï¼\n");
 	
     if (dir == "southwest") {
 

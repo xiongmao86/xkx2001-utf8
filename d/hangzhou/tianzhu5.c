@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ÉÏÌìóÃ
+// ä¸Šå¤©ç«º
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -9,10 +9,10 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "·¨Ï²ËÂ");
+   set("short", "æ³•å–œå¯º");
    set("long", @LONG
-·¨Ï²ËÂÊÇÌìóÃÈýËÂÖÐ×î³¨ÀÊÉîÓÄµÄÒ»×ù¡£½øÏãµÄÓÎ¿Í²»Ê±µÄ½ø½ø
-³ö³ö¡£Íù¶«¿É´ïÁú¾®£¬³¯±±ÊÇÏÂÉ½µÄÂ·¡£
+æ³•å–œå¯ºæ˜¯å¤©ç«ºä¸‰å¯ºä¸­æœ€æ•žæœ—æ·±å¹½çš„ä¸€åº§ã€‚è¿›é¦™çš„æ¸¸å®¢ä¸æ—¶çš„è¿›è¿›
+å‡ºå‡ºã€‚å¾€ä¸œå¯è¾¾é¾™äº•ï¼ŒæœåŒ—æ˜¯ä¸‹å±±çš„è·¯ã€‚
 LONG
         );
 

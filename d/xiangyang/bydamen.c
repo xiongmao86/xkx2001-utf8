@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ӫ����");
+	set("short", "兵营大门");
 	set("long", @LONG
-����վ�ڱ�Ӫ���ſڣ�����һ���ŵ�Ӫ�������Կ��������Ʒ��Ĺٱ�������
-�ӽ������ţ������治ʱ�����ź������ϰ������ǲ������ڴ˹ۿ��ģ���������
-�鷳��øϿ��߿���
+你正站在兵营的门口，对面一排排的营房，可以看到穿着制服的官兵们正在
+加紧操练着，从面不时传来呐喊声。老百姓们是不允许在此观看的，不想惹上
+麻烦最好赶快走开。
 LONG
 	);
 	set("outdoors", "xiangyang");

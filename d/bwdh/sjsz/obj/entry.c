@@ -5,12 +5,12 @@
 inherit ITEM;
 
 void create() {
-    set_name("Ğ¡×é", ({ "entry"}) );
+    set_name("å°ç»„", ({ "entry"}) );
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "¸ö");
-        set("long", "Ğ¡×é¼ÇÂ¼\n");
+        set("unit", "ä¸ª");
+        set("long", "å°ç»„è®°å½•\n");
         set("no_get",1);
         set("no_clean_up", 1);
     }

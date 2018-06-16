@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½Â·");
+        set("short", "å±±è·¯");
         set("long", @LONG
-ÕâÀïÊÇÉÙÁÖÉ®ÈËÃÇÎªÁËÌôË®×¨ÃÅ¿ªÔä³öµÄÒ»ÌõĞ¡Â·£¬Õû¸öÉ½
-Â·Ö»ÄÜÈİÒ»¸öÈËĞĞ×ß¡£ËÂÀïÎªÁËÈÃÕâĞ©ÎäÉ®ÄÜ¹»¸üºÃµØÁ·¹¦¾Í¹æ
-¶¨ÌôË®µÄÈË±ØĞëÆ½¾ÙË«±ÛÌáÍ°¶øĞĞ¡£É½Â·¼«¶¸£¬¶øÇÒÓÖÊªÓÖ»¬£¬
-Ò»²»Ğ¡ĞÄ¾Í»áË¤¸ö¸úÍ·¡£
+è¿™é‡Œæ˜¯å°‘æ—åƒ§äººä»¬ä¸ºäº†æŒ‘æ°´ä¸“é—¨å¼€å‡¿å‡ºçš„ä¸€æ¡å°è·¯ï¼Œæ•´ä¸ªå±±
+è·¯åªèƒ½å®¹ä¸€ä¸ªäººè¡Œèµ°ã€‚å¯ºé‡Œä¸ºäº†è®©è¿™äº›æ­¦åƒ§èƒ½å¤Ÿæ›´å¥½åœ°ç»ƒåŠŸå°±è§„
+å®šæŒ‘æ°´çš„äººå¿…é¡»å¹³ä¸¾åŒè‡‚ææ¡¶è€Œè¡Œã€‚å±±è·¯æé™¡ï¼Œè€Œä¸”åˆæ¹¿åˆæ»‘ï¼Œ
+ä¸€ä¸å°å¿ƒå°±ä¼šæ‘”ä¸ªè·Ÿå¤´ã€‚
 
 LONG
         );
@@ -44,17 +44,17 @@ int valid_leave(object me, string dir)
         object ob;
 	ob = present("shui tong", me);
 	if( random((int)me->query("kar")) <= 3){
-		me->receive_damage("qi", 30, "ÔÚÉ½ÉÏË¤ËÀÁË");
-                me->receive_wound("qi",  20, "ÔÚÉ½ÉÏË¤ËÀÁË"); 
+		me->receive_damage("qi", 30, "åœ¨å±±ä¸Šæ‘”æ­»äº†");
+                me->receive_wound("qi",  20, "åœ¨å±±ä¸Šæ‘”æ­»äº†"); 
 		if (ob){
 			if (random(30) == 1) {
-			message_vision(HIB"$NÍ»È»½ÅÏÂÒ»»¬£¬´òÁË¸öôóôò£¬»¹ºÃÃ»Ë¤µ¹£¡\n"NOR, me);
-			message_vision(HIR"$NÈ´·¢ÏÖË®Í°²»Ğ¡ĞÄ×²µ½ÁËÂ·±ßµÄÊ¯Í·ÉÏ£¬×²ÁË¸ö·ÛËé£¡\n"NOR, me);
+			message_vision(HIB"$Nçªç„¶è„šä¸‹ä¸€æ»‘ï¼Œæ‰“äº†ä¸ªè¶”è¶„ï¼Œè¿˜å¥½æ²¡æ‘”å€’ï¼\n"NOR, me);
+			message_vision(HIR"$Nå´å‘ç°æ°´æ¡¶ä¸å°å¿ƒæ’åˆ°äº†è·¯è¾¹çš„çŸ³å¤´ä¸Šï¼Œæ’äº†ä¸ªç²‰ç¢ï¼\n"NOR, me);
 			destruct(ob);
 			}
 		else{	     
-            message_vision(HIG"$N½ÅÏÂÒ»»¬£¬²»Ğ¡ĞÄË¤ÁË¸ö¸úÍ·£¡\n"NOR, me);
-			message_vision(HIG"½á¹ûÍ°ÀïµÄË®È«²¿È÷³öÈ¥ÁË£¡\n"NOR, me);
+            message_vision(HIG"$Nè„šä¸‹ä¸€æ»‘ï¼Œä¸å°å¿ƒæ‘”äº†ä¸ªè·Ÿå¤´ï¼\n"NOR, me);
+			message_vision(HIG"ç»“æœæ¡¶é‡Œçš„æ°´å…¨éƒ¨æ´’å‡ºå»äº†ï¼\n"NOR, me);
 			ob->delete("full");
 			ob->set("water_level",0);
 			
@@ -62,9 +62,9 @@ int valid_leave(object me, string dir)
 		}
 		else			
 				{
-                message_vision(HIR"$N½ÅÏÂÒ»»¬£¬²ÈÁË¸ö¿Õ£¡\n"NOR, me);
+                message_vision(HIR"$Nè„šä¸‹ä¸€æ»‘ï¼Œè¸©äº†ä¸ªç©ºï¼\n"NOR, me);
 				me->move("/d/shaolin/riverbank");
-                return notify_fail(HIR"Äã´ÓÉ½ÉÏ¹öÁËÏÂÀ´£¬Ö»¾õµÃ»ëÉíÎŞ´¦²»ÌÛ£¬»¹ÊÜÁË¼¸´¦ÉË¡£\n"NOR);
+                return notify_fail(HIR"ä½ ä»å±±ä¸Šæ»šäº†ä¸‹æ¥ï¼Œåªè§‰å¾—æµ‘èº«æ— å¤„ä¸ç–¼ï¼Œè¿˜å—äº†å‡ å¤„ä¼¤ã€‚\n"NOR);
         }
 	}
         return ::valid_leave(me, dir);

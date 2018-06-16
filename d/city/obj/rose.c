@@ -7,14 +7,14 @@
 inherit ITEM;
 
 string* titles = ({
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
-        "Ãµ¹å»¨",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
+        "çŽ«ç‘°èŠ±",
 });
 
 void create()
@@ -34,8 +34,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
-                set("long", "ÕâÊÇÒ»¶ä½¿ÑÞÓûµÎµÄÃµ¹å»¨£¬ÏóÕ÷×ÅÁµÈËµÄÅ¨Å¨°®Òâ¡£\n");
+                set("unit", "æœµ");
+                set("long", "è¿™æ˜¯ä¸€æœµå¨‡è‰³æ¬²æ»´çš„çŽ«ç‘°èŠ±ï¼Œè±¡å¾ç€æ‹äººçš„æµ“æµ“çˆ±æ„ã€‚\n");
                 set("value", 20);
         }
 }
@@ -53,9 +53,9 @@ int do_smell(string arg)
         object flower = present("flower", me);
 
         if ( !arg|| arg != "flower" ) 
-           return notify_fail("ÄãÒªÎÅÊ²Ã´£¿\n");
+           return notify_fail("ä½ è¦é—»ä»€ä¹ˆï¼Ÿ\n");
 
-        message_vision("$NÄÃÆð" + (string)flower->query("name") +"£¬·ÅÔÚ±Ç¶ËÉîÉîµØÒ»ÎÅ¡£\n", me);
+        message_vision("$Næ‹¿èµ·" + (string)flower->query("name") +"ï¼Œæ”¾åœ¨é¼»ç«¯æ·±æ·±åœ°ä¸€é—»ã€‚\n", me);
         return 1;
 }
 
@@ -65,7 +65,7 @@ int do_dai(string arg)
         string arg1, arg2;
         int argc;
 
-        if ( !arg ) return notify_fail("ÄãÒª´÷Ê²Ã´£¿\n");
+        if ( !arg ) return notify_fail("ä½ è¦æˆ´ä»€ä¹ˆï¼Ÿ\n");
 
         if ( (argc = sscanf(arg, "%s %s", arg1, arg2)) != 2) {
                 argc = 1;
@@ -73,54 +73,54 @@ int do_dai(string arg)
         }
 
         if ((argc == 1 && arg1 != "flower"))
-                return notify_fail("ÄãÒª´÷Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æˆ´ä»€ä¹ˆï¼Ÿ\n");
 
         if (argc == 1) {
                 if ( arg1 != "flower" )
-                        return notify_fail("ÄãÒª´÷Ê²Ã´£¿\n");
+                        return notify_fail("ä½ è¦æˆ´ä»€ä¹ˆï¼Ÿ\n");
 
                 if ( !(weapon = present( "flower", me)) ) 
-                        return notify_fail("ÄãÃ»ÓÐ»¨¿ÉÒÔ´÷¡£\n");
+                        return notify_fail("ä½ æ²¡æœ‰èŠ±å¯ä»¥æˆ´ã€‚\n");
 
-                if ( me->query("gender") == "Å®ÐÔ" ) {
-                        message_vision("$N½«" + (string)weapon->query("name") +"²åÔÚ·¢¼Ê£¬ºÃ¸öÃÀÃ²½¿Äï¡£\n", me);
+                if ( me->query("gender") == "å¥³æ€§" ) {
+                        message_vision("$Nå°†" + (string)weapon->query("name") +"æ’åœ¨å‘é™…ï¼Œå¥½ä¸ªç¾Žè²Œå¨‡å¨˜ã€‚\n", me);
                 }
                 else {
-                        message_vision("$N½«" + (string)weapon->query("name") +"±ðÔÚÐØÇ°£¬ºÃ¸ö·çÁ÷¶ùÀÉ¡£\n", me);
+                        message_vision("$Nå°†" + (string)weapon->query("name") +"åˆ«åœ¨èƒ¸å‰ï¼Œå¥½ä¸ªé£Žæµå„¿éƒŽã€‚\n", me);
                 }
                 target = me;
         }
         else if (argc == 2) {
                 if ( !(target = present(arg1, environment(me)))
                      || !target->is_character() )
-                        return notify_fail("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+                        return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
                 if ( !userp(target) || target==me) 
-                        return notify_fail("ÕÒ¸öÍæ¼ÒÏ×ÒóÇÚ°É¡£\n");
+                        return notify_fail("æ‰¾ä¸ªçŽ©å®¶çŒ®æ®·å‹¤å§ã€‚\n");
 
                 if ( arg2 != "flower" ) 
-                        return notify_fail("ÄãÏë¸ø" + target->name() + "´÷Ê²Ã´£¿\n");
+                        return notify_fail("ä½ æƒ³ç»™" + target->name() + "æˆ´ä»€ä¹ˆï¼Ÿ\n");
 
                 if ( !(weapon = present( "flower", me)) ) 
-                        return notify_fail("ÄãÃ»ÓÐ" + (string)weapon->query("name") +"¿ÉÒÔ´÷¡£\n");
+                        return notify_fail("ä½ æ²¡æœ‰" + (string)weapon->query("name") +"å¯ä»¥æˆ´ã€‚\n");
 
-                if ( target->query("gender") == "Å®ÐÔ" ) {
-                        printf("Äã½«" + (string)weapon->query("name") +"²åÔÚ%sµÄ·¢¼Ê£¬ºÃ¸öÃÀÃ²½¿Äï¡£\n", 
+                if ( target->query("gender") == "å¥³æ€§" ) {
+                        printf("ä½ å°†" + (string)weapon->query("name") +"æ’åœ¨%sçš„å‘é™…ï¼Œå¥½ä¸ªç¾Žè²Œå¨‡å¨˜ã€‚\n", 
                                 target->name());
                         message("vision", 
-                             sprintf("%s½«" + (string)weapon->query("name") +"²åÔÚÄãµÄ·¢¼Ê£¬ºÃ¸öÃÀÃ²½¿Äï¡£\n",
+                             sprintf("%så°†" + (string)weapon->query("name") +"æ’åœ¨ä½ çš„å‘é™…ï¼Œå¥½ä¸ªç¾Žè²Œå¨‡å¨˜ã€‚\n",
                                   me->name()), target);
                         message("vision", 
-                             sprintf("%s½«" + (string)weapon->query("name") +"²åÔÚ%sµÄ·¢¼Ê£¬ºÃ¸öÃÀÃ²½¿Äï¡£\n",  
+                             sprintf("%så°†" + (string)weapon->query("name") +"æ’åœ¨%sçš„å‘é™…ï¼Œå¥½ä¸ªç¾Žè²Œå¨‡å¨˜ã€‚\n",  
                                   me->name(), target->name()), environment(me), ({me, target}) );
                 }
                 else {
-                        printf("Äã½«" + (string)weapon->query("name") +"±ðÔÚ%sµÄÐØÇ°£¬ÎûÎûÎû¡£\n", 
+                        printf("ä½ å°†" + (string)weapon->query("name") +"åˆ«åœ¨%sçš„èƒ¸å‰ï¼Œå˜»å˜»å˜»ã€‚\n", 
                                 target->name());
                         message("vision",
-                             sprintf("%s½«" + (string)weapon->query("name") +"±ðÔÚÄãµÄÐØÇ°£¬ºÃ¸ö·çÁ÷¶ùÀÉ¡£\n",
+                             sprintf("%så°†" + (string)weapon->query("name") +"åˆ«åœ¨ä½ çš„èƒ¸å‰ï¼Œå¥½ä¸ªé£Žæµå„¿éƒŽã€‚\n",
                                 me->name()), target);
-                        message("vision", sprintf("%s½«" + (string)weapon->query("name") +"»¨±ðÔÚ%sÐØÇ°£¬ºÃ¸ö·çÁ÷¶ùÀÉ¡£\n", 
+                        message("vision", sprintf("%så°†" + (string)weapon->query("name") +"èŠ±åˆ«åœ¨%sèƒ¸å‰ï¼Œå¥½ä¸ªé£Žæµå„¿éƒŽã€‚\n", 
                                 me->name(), target->name()), environment(me), ({me, target}) );
                 }
         }

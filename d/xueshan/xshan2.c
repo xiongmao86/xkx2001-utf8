@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ѩɽ");
+        set("short", "大雪山");
         set("long", @LONG
-Ⱥɽ���ƣ����ܻ�ѩ���겻�����ϱ߲�Զ����һ��ɽ�ȡ�
+群山环绕，四周积雪终年不化。南边不远处有一个山谷。
 LONG
         );
         set("exits", ([
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
 
         if( dir == "southup" && random((int)me->query_skill("dodge")) <= 10){
         
-                message_vision(HIW"ͻȻ��¡һ�����죬$N����̤�˸��գ�... ��...ѩ���ˣ�\n"NOR, me );
+                message_vision(HIW"突然轰隆一声巨响，$N脚下踏了个空，... 啊...雪崩了！\n"NOR, me );
           	ob = all_inventory(environment(me));
 		for(i=0; i<sizeof(ob); i++) {
                 if( !userp(ob[i]) ) continue;
@@ -44,13 +44,13 @@ int valid_leave(object me, string dir)
 		else
 		ob[i]->move(__DIR__"shankou");
 
-		ob[i]->receive_damage("qi", 100, "��ѩ��������");
-		ob[i]->receive_wound("qi", 70, "��ѩ��������");
-		message("vision", HIW"ֻ��" + ob[i]->query("name")
- + "��Ҳ�Ƶش�ɽ���ϱ����������Ǳ�һ����ѩ��ͷ��ס����������ǰ��ѩ���ˣ�\n"NOR, environment(me), me);
+		ob[i]->receive_damage("qi", 100, "被雪崩活埋了");
+		ob[i]->receive_wound("qi", 70, "被雪崩活埋了");
+		message("vision", HIW"只见" + ob[i]->query("name")
+ + "飞也似地从山顶上奔下来，但是被一个大雪球当头砸住，啊。。。前面雪崩了！\n"NOR, environment(me), me);
 		
 		}
-                return notify_fail(HIW"ֻ����Ƭ�Ļ�ѩ��ɽ���ϱ��ڶ��£���������ǵص��˹�������;���д��˲�����ʯ���Ͻ������ɣ�\n"NOR);
+                return notify_fail(HIW"只见大片的积雪从山峰上奔腾而下，向你铺天盖地地扑过来，沿途并夹带了不少岩石。赶紧逃命吧！\n"NOR);
         }
 	return ::valid_leave(me, dir);
 }

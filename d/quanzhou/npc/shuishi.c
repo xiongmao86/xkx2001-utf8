@@ -1,16 +1,16 @@
 //Cracked by Roath
-// bing.c ¹Ù±ø
+// bing.c å®˜å…µ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("Ë®Ê¦Ê¿±ø", ({ "shuishi bing", "bing" }));
+	set_name("æ°´å¸ˆå£«å…µ", ({ "shuishi bing", "bing" }));
         set_color("$YEL$");
 	set("age", 22);
-	set("gender", "ÄÐÐÔ");
-	set("long", "Ë®Ê¦Ê¿±ø¾«ÓÚË®Õ½£¬»á¼ÝÕ½´¬¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "æ°´å¸ˆå£«å…µç²¾äºŽæ°´æˆ˜ï¼Œä¼šé©¾æˆ˜èˆ¹ã€‚\n");
 	set("attitude", "heroism");
 
 	set("str", 24);
@@ -30,8 +30,8 @@ void create()
 
         set("chat_chance_combat", 10);
 	set("chat_msg_combat", ({
-		"¹Ù±øºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÔì·´²»³É£¿\n",
-		"¹Ù±øºÈµÀ£ºÅÜµÃÁËºÍÉÐÅÜ²»ÁËÃí£¬Äã»¹ÊÇ¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+		"å®˜å…µå–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
+		"å®˜å…µå–é“ï¼šè·‘å¾—äº†å’Œå°šè·‘ä¸äº†åº™ï¼Œä½ è¿˜æ˜¯å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
 	}));
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();
@@ -51,7 +51,7 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 	me->apply_condition("killer", 100);
 	kill_ob(me);
 	return 1;
@@ -59,7 +59,7 @@ int accept_fight(object me)
 
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

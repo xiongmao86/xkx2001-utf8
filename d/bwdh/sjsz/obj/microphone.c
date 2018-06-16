@@ -5,12 +5,12 @@
 inherit ITEM;
 
 void create() {
-    set_name("»°Í²", ({ "huatong" }));
+    set_name("è¯ç­’", ({ "huatong" }));
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "¸ö");
-        set("long", "ÓÃÕâ¸ö»°Í²¿ÉÒÔĞû²¼(announce)Ò»Ğ©Í¨Öª¸øÊÔ½£É½×¯µÄÈË¡£\n");
+        set("unit", "ä¸ª");
+        set("long", "ç”¨è¿™ä¸ªè¯ç­’å¯ä»¥å®£å¸ƒ(announce)ä¸€äº›é€šçŸ¥ç»™è¯•å‰‘å±±åº„çš„äººã€‚\n");
         set("material", "steel");
         set("weight", 5000);
         set("value", 10000000);
@@ -30,9 +30,9 @@ int do_announce(string arg) {
     if(!wizardp(me))
         return 0;
     if(!arg)
-        return notify_fail("ÄãÏëĞû²¼Ê²Ã´£¿\n");
+        return notify_fail("ä½ æƒ³å®£å¸ƒä»€ä¹ˆï¼Ÿ\n");
 
-    msg = "Ò»¸ö¿Õ¶´µÄÉùÒô´«ÁË¹ıÀ´£º¡°" + arg + "¡±¡£\n";
+    msg = "ä¸€ä¸ªç©ºæ´çš„å£°éŸ³ä¼ äº†è¿‡æ¥ï¼šâ€œ" + arg + "â€ã€‚\n";
 
     tell_room("/d/bwdh/sjsz/square", msg);
     tell_room("/d/bwdh/sjsz/gamble_room", msg);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/npc/m_dizi2.c ÄĞµÜ×Ó 
+// /d/emei/npc/m_dizi2.c ç”·å¼Ÿå­ 
 // Shan: 96/07/09
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ string ask_me(string);
 
 void create()
 {
-	set_name("ÄĞµÜ×Ó", ({ "dizi", "nan dizi" }));
+	set_name("ç”·å¼Ÿå­", ({ "dizi", "nan dizi" }));
 	set("long", 
-        "ËûÊÇ¶ëáÒÉ½µÄµÚÎå´úµÜ×Ó£¬ÊÇÔÚ»ªÑÏâÖÊØâÖµÄĞ¡µÜ×Ó¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä»–æ˜¯å³¨åµ‹å±±çš„ç¬¬äº”ä»£å¼Ÿå­ï¼Œæ˜¯åœ¨åä¸¥åºµå®ˆåºµçš„å°å¼Ÿå­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 14+random(5));
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -39,18 +39,18 @@ void create()
         set_temp("apply/defense", 15+random(3));
         set_temp("apply/damage", 5+random(2));
 
-	create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
 	setup();
 	
 	carry_object(__DIR__"obj/hui-cloth")->wear();
         set("chat_chance", 3);
         set("chat_msg", ({
-		"¶ëáÒĞ¡µÜ×ÓµÀ£ºÕâ¾ÍÊÇ¹ÅĞÄºÍÉĞ½áÃ©ÊÒµÄµØ·½¡£\n",
+		"å³¨åµ‹å°å¼Ÿå­é“ï¼šè¿™å°±æ˜¯å¤å¿ƒå’Œå°šç»“èŒ…å®¤çš„åœ°æ–¹ã€‚\n",
         }) );
 
         set("inquiry", ([
-                "ÓñÅ®·å" : (: ask_me, "yunufeng" :),
+                "ç‰å¥³å³°" : (: ask_me, "yunufeng" :),
         ]));
 
 }
@@ -59,7 +59,7 @@ string ask_me(string name)
 {
 
        if ( name == "yunufeng" )
-        say(CYN "\nĞ¡µÜ×ÓµÀ£ºÓñÅ®·å¶¥ÓĞ¸öĞ¡³Ø×Ó£¬ËÄ¼¾²»¿İ£¬ÌıËµÒÔÇ°ÓĞÌìÅ®ÔÚÄÇÀïãåÔ¡ÄØ£¡ \n\n" NOR);
+        say(CYN "\nå°å¼Ÿå­é“ï¼šç‰å¥³å³°é¡¶æœ‰ä¸ªå°æ± å­ï¼Œå››å­£ä¸æ¯ï¼Œå¬è¯´ä»¥å‰æœ‰å¤©å¥³åœ¨é‚£é‡Œæ²æµ´å‘¢ï¼ \n\n" NOR);
 
 }
 

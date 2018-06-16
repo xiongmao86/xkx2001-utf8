@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chan.c  ¡¸²ø¡¹×Ö¾÷
+// chan.c  ã€Œç¼ ã€å­—è¯€
 // by aln 2 / 98
 
 #include <ansi.h>
@@ -23,12 +23,12 @@ int perform(object me, object target)
         ]);
 
         if( me->is_busy() ) {
-                tell_object(me, "ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÊ©ÓÃÍâ¹¦¡£)\n");
+                tell_object(me, "ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½ç”¨å¤–åŠŸã€‚)\n");
                 return 1;
         }
 
         if( me->query("neili") <= 300 ) {
-                tell_object(me, "ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                tell_object(me, "ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
                 return 1;
         }
 
@@ -37,45 +37,45 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) ) {
-                tell_object(me, "Ç£ÖÆ¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                tell_object(me, "ç‰µåˆ¶æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
                 return 1;
         }
 
         if( target->is_busy() ) {
-                tell_object(me, target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                tell_object(me, target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§â…µ\n");
                 return 1;
         }
 
         if( !(weapon = me->query_temp("weapon")) ) {
-                tell_object(me, "ÄãÊÖÖĞÃ»ÓĞÎäÆ÷£¬ÈçºÎÊ¹µÃ²ø×Ö¾÷£¿\n");
+                tell_object(me, "ä½ æ‰‹ä¸­æ²¡æœ‰æ­¦å™¨ï¼Œå¦‚ä½•ä½¿å¾—ç¼ å­—è¯€ï¼Ÿ\n");
                 return 1;
         }
 
         skill = (string)weapon->query("skill_type");
         if( member_array(skill, keys(skills)) == -1 ) {
-                tell_object(me, "ÄãÊ¹ÓÃµÄÎäÆ÷²»ÄÜÊ¹ÄãÊ©Õ¹²ø×Ö¾÷£¡\n");
+                tell_object(me, "ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸èƒ½ä½¿ä½ æ–½å±•ç¼ å­—è¯€ï¼\n");
                 return 1;
         }
 
         spskill = skills[skill];
         if( me->query_skill_mapped(skill) != spskill ) {
-                tell_object(me, "ÄãÏÖÔÚ²»ÔÚÊ¹ÓÃ" + to_chinese(spskill) + "¡£\n");
+                tell_object(me, "ä½ ç°åœ¨ä¸åœ¨ä½¿ç”¨" + to_chinese(spskill) + "ã€‚\n");
                 return 1;
         }
 
         if( (int)me->query_skill(skill) < 100 ) {
-	        tell_object(me, "ÄãµÄ" + to_chinese(spskill) + "²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸²ø¡¹×Ö¾÷¡£\n");
+	        tell_object(me, "ä½ çš„" + to_chinese(spskill) + "ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç¼ ã€å­—è¯€ã€‚\n");
                 return 1;
         }
 
         spforce = forces[skill];
         if( (int)me->query_skill(spforce, 1) < 80 ) {
-                tell_object(me, "ÄãµÄ" + to_chinese(spforce) + "ĞŞÎª²»¹»£¬²»»áÊ¹ÓÃ¡¸²ø¡¹×Ö¾÷¡£\n");
+                tell_object(me, "ä½ çš„" + to_chinese(spforce) + "ä¿®ä¸ºä¸å¤Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç¼ ã€å­—è¯€ã€‚\n");
                 return 1;
         }
 
         if( me->query_skill_mapped("force") != spforce ) {
-                tell_object(me, "ÄãËùÓÃµÄÄÚ¹¦²»·û¡£\n");
+                tell_object(me, "ä½ æ‰€ç”¨çš„å†…åŠŸä¸ç¬¦ã€‚\n");
                 return 1;
         }
 
@@ -84,36 +84,36 @@ int perform(object me, object target)
 
         switch(spskill) {
         case "taiji-jian":
-                msg = CYN "$NÊ¹³öÌ«¼«½£·¨¡¸²ø¡¹×Ö¾÷£¬Á¬µİÊı¸öĞéÕĞÆóÍ¼ÈÅÂÒ$nµÄ¹¥ÊÆ¡£\n";
+                msg = CYN "$Nä½¿å‡ºå¤ªæå‰‘æ³•ã€Œç¼ ã€å­—è¯€ï¼Œè¿é€’æ•°ä¸ªè™šæ‹›ä¼å›¾æ‰°ä¹±$nçš„æ”»åŠ¿ã€‚\n";
                 break;
         case "dagou-bang":
-		msg = CYN "$NÊ¹³ö´ò¹·°ô·¨¡¸²ø¡¹×Ö¾÷£¬»Ã³öÁ¬É½°ôÓ°£¬½«$nÍÌÃ»£¡\n";
+		msg = CYN "$Nä½¿å‡ºæ‰“ç‹—æ£’æ³•ã€Œç¼ ã€å­—è¯€ï¼Œå¹»å‡ºè¿å±±æ£’å½±ï¼Œå°†$nåæ²¡ï¼\n";
                 break;
 	case "riyue-bian":
-		msg = HIY "$NÊ¹³öÈÕÔÂ±Ş·¨µÄÌì²øµØÈÆ¾÷£¬Á¬»ÓÊı±Ş£¬ÈçºÚÁú°ã×ÅµØÏò$nµÄÈ«Éí¾íÈ¥£¡\n";
+		msg = HIY "$Nä½¿å‡ºæ—¥æœˆé­æ³•çš„å¤©ç¼ åœ°ç»•è¯€ï¼Œè¿æŒ¥æ•°é­ï¼Œå¦‚é»‘é¾™èˆ¬ç€åœ°å‘$nçš„å…¨èº«å·å»ï¼\n";
                 break;
         }
 
         if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
                 switch(spskill) {
                 case "riyue-bian":
-                        msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¬»ëÉí±»ÂşÌì±ŞÓ°¹üÔÚÆäÖĞ£¡\n" NOR;
+                        msg += "ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼Œæµ‘èº«è¢«æ¼«å¤©é­å½±è£¹åœ¨å…¶ä¸­ï¼\n" NOR;
                         break;
                 case "taiji-jian":
-                        msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°¢¦\n" NOR;
+                        msg += "ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæªæ‰‹ä¸åŠâ…µ\n" NOR;
                         break;
                 case "dagou-bang":
-                        msg += "½á¹û$p±»$P²øÁË¸öÊÖÃ¦½ÅÂÒ£¬Ò»Ê±ÎŞ·¨»¹ÕĞ½ø¹¥£¡\n" NOR;
+                        msg += "ç»“æœ$pè¢«$Pç¼ äº†ä¸ªæ‰‹å¿™è„šä¹±ï¼Œä¸€æ—¶æ— æ³•è¿˜æ‹›è¿›æ”»ï¼\n" NOR;
                         break;
                 }
                 target->start_busy(1 + random( (int)me->query_skill(spskill, 1) / 20));
         } else {
                 switch(spskill) {
                 case "riyue-bian":
-                        msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ±Ş·¨È¥Â·£¬Ãô½İµØÉÁÁË¿ªÈ¥¡£\n" NOR;
+                        msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„é­æ³•å»è·¯ï¼Œæ•æ·åœ°é—ªäº†å¼€å»ã€‚\n" NOR;
                         break;
                 default:
-                        msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+                        msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
                         break;
                 }
 

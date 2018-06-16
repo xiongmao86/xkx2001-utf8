@@ -1,5 +1,5 @@
 //Cracked by Roath
-// incense.c Ïã»ğ
+// incense.c é¦™ç«
 // By Marz 11/11/96
 // Ryu, 12/5/96
 
@@ -12,13 +12,13 @@ int worn;
 
 void create()
 {
-	set_name("µãÈ¼µÄÏã",({"incense"}));
+	set_name("ç‚¹ç‡ƒçš„é¦™",({"incense"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ö¦µãÈ¼µÄÏã£¬ÉÕ³öÒ»¹Éµ­µ­µÄÓÄÏã¡£\n");
-		set("unit", "Ö¦");
+		set("long", "è¿™æ˜¯ä¸€æç‚¹ç‡ƒçš„é¦™ï¼Œçƒ§å‡ºä¸€è‚¡æ·¡æ·¡çš„å¹½é¦™ã€‚\n");
+		set("unit", "æ");
 		set("value", 10000);
     	}
 	
@@ -38,11 +38,11 @@ void wear(int phase)
 	worn = phase;
 	switch(phase) {
 	case 1:
-		set("long", "ÕâÊÇÒ»Ö¦µãÈ¼µÄÏã£¬ÒÑ¾­ÉÕµôÒ»°ëÁË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æç‚¹ç‡ƒçš„é¦™ï¼Œå·²ç»çƒ§æ‰ä¸€åŠäº†ã€‚\n");
 		call_out("wear", 60, phase+1); 
 		break;
 	case 2:
-		set("long", "ÕâÊÇÒ»Ö¦ÕıÈ¼×ÅµÄÏã£¬¼¸ºõ¿ìÉÕÍêÁË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€ææ­£ç‡ƒç€çš„é¦™ï¼Œå‡ ä¹å¿«çƒ§å®Œäº†ã€‚\n");
 		call_out("wear", 60, phase+1); 
 		break;
 	case 3:

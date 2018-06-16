@@ -1,14 +1,14 @@
 //Cracked by Roath
-// /d/zhongnan/bingqifang.c ±øÆ÷·¿
+// /d/zhongnan/bingqifang.c å…µå™¨æˆ¿
 // sdong
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "±øÆ÷·¿");
+        set("short", "å…µå™¨æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÖØÑô¹¬µÄ±øÆ÷·¿£¬Ç½ÉÏ¸÷´¦¹ÒÁËĞí¶à³¤½££¬¶Ì½££¬Öñ½£ºÍ·÷³¾¡£
+è¿™é‡Œæ˜¯é‡é˜³å®«çš„å…µå™¨æˆ¿ï¼Œå¢™ä¸Šå„å¤„æŒ‚äº†è®¸å¤šé•¿å‰‘ï¼ŒçŸ­å‰‘ï¼Œç«¹å‰‘å’Œæ‹‚å°˜ã€‚
 LONG
 		  );
 
@@ -39,8 +39,8 @@ int valid_leave(object me, string dir)
                 if ((string)inv[i]->query("skill_type")=="blade") j++;
         }
         
-        if ( j == 1 ) me->set_temp("marks/½£", 1);
-        if ( j > 1 ) return notify_fail("±ğÄÇÃ´×ÔË½£¡Äã²»ÄÜ´ø×ß³¬¹ıÒ»°Ñ±øÆ÷¡£\n");
+        if ( j == 1 ) me->set_temp("marks/å‰‘", 1);
+        if ( j > 1 ) return notify_fail("åˆ«é‚£ä¹ˆè‡ªç§ï¼ä½ ä¸èƒ½å¸¦èµ°è¶…è¿‡ä¸€æŠŠå…µå™¨ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

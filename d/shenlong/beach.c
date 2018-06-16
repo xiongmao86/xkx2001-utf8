@@ -8,12 +8,12 @@ inherit HARBOR;
 
 void create()
 {
-        set("short", "º£°¶");
+        set("short", "æµ·å²¸");
         set("long", @LONG
-ÕâÊÇÉñÁúµºµÄ³öº£¿Ú£¬ÀË»¨ÅÄ´ò×Å½¸Ê¯£¬·¢³öÕóÕóÏìÉù£¬º£ÃæÉÏÒ»ÈºÈºº£
-Å¸¡ºÅ·Å·..¡»µØ½Ð×Å£¬²»Ê±ÓÐÓã¶ùÔ¾³öº£Ãæ£¬½¦Æð²ã²ãµÄÀË»¨¡£±ßÉÏÓÐËÒ´ó´¬
-(chuan)£¬ ´¬ÉÏ×ø×Å¼¸¸ö´¬·ò´ò°çµÄÈË£¬³Ë´¬¿É¶É¹ý´óº£µ½´ïº£µÄÁíÒ»¶Ë¡£¶«
-ÃæÊÇÉñÁúµºµÄº£Ì²¡£
+è¿™æ˜¯ç¥žé¾™å²›çš„å‡ºæµ·å£ï¼ŒæµªèŠ±æ‹æ‰“ç€ç¤çŸ³ï¼Œå‘å‡ºé˜µé˜µå“å£°ï¼Œæµ·é¢ä¸Šä¸€ç¾¤ç¾¤æµ·
+é¸¥ã€Žæ¬§æ¬§..ã€åœ°å«ç€ï¼Œä¸æ—¶æœ‰é±¼å„¿è·ƒå‡ºæµ·é¢ï¼Œæº…èµ·å±‚å±‚çš„æµªèŠ±ã€‚è¾¹ä¸Šæœ‰è‰˜å¤§èˆ¹
+(chuan)ï¼Œ èˆ¹ä¸Šåç€å‡ ä¸ªèˆ¹å¤«æ‰“æ‰®çš„äººï¼Œä¹˜èˆ¹å¯æ¸¡è¿‡å¤§æµ·åˆ°è¾¾æµ·çš„å¦ä¸€ç«¯ã€‚ä¸œ
+é¢æ˜¯ç¥žé¾™å²›çš„æµ·æ»©ã€‚
 LONG
         );
 
@@ -24,7 +24,7 @@ LONG
         ]));
 
         set("item_desc", ([
-                "chuan" : "ÕâÊÇÒ»ËÒº£´¬£¬¿ÉÔØÈË¶Éº££¬µ«ÊÇ´¬¼ÒÔÚÆ½Ê±Ò²ÓÃËüÀ´´òÓã¡£\n",
+                "chuan" : "è¿™æ˜¯ä¸€è‰˜æµ·èˆ¹ï¼Œå¯è½½äººæ¸¡æµ·ï¼Œä½†æ˜¯èˆ¹å®¶åœ¨å¹³æ—¶ä¹Ÿç”¨å®ƒæ¥æ‰“é±¼ã€‚\n",
         ]));
 
         set("objects", ([
@@ -32,8 +32,8 @@ LONG
     //             "/d/shenlong/npc/bai" : 1,
         ]));
 
-        set("island", "ÉñÁúµº");
-        set("shape", "³öÏÖÒ»Æ¬Â½µØ¡£");
+        set("island", "ç¥žé¾™å²›");
+        set("shape", "å‡ºçŽ°ä¸€ç‰‡é™†åœ°ã€‚");
         set("navigate/locx", 30);
         set("navigate/locy", 20);
 

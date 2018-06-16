@@ -1,15 +1,15 @@
 //Cracked by Roath
-// cliff.c 舍身崖下
+// cliff.c 鑸嶈韩宕栦笅
 // xbc: 96/02/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "舍身崖下");
+        set("short", "鑸嶈韩宕栦笅");
 	set("long", @LONG
 
-你掉下舍身崖，身体一直往下落。没救了，你不禁大叫：啊¨¨¨
+浣犳帀涓嬭垗韬礀锛岃韩浣撲竴鐩村線涓嬭惤銆傛病鏁戜簡锛屼綘涓嶇澶у彨锛氬晩篓篓篓
 
 LONG
 	);

@@ -5,16 +5,16 @@ string ask_me(object who);
 
 void create()
 {
-	set_name("ÍõÀÏºº", ({ "wang laohan", "wang", "laohan" }));
+	set_name("ç‹è€æ±‰", ({ "wang laohan", "wang", "laohan" }));
 	set("shen_type", 0);
 
 	set("str", 30);
 	set("con", 30);
 	set("dex", 18);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("long",
-		"ËûÊÇÒ»¸öÍ··¢»¨°×µÄÀÏÍ·£¬Ã¦×Å¿¾ÉÕ±ı£¬Í·Ò²²»Ì§¡£\n");
+		"ä»–æ˜¯ä¸€ä¸ªå¤´å‘èŠ±ç™½çš„è€å¤´ï¼Œå¿™ç€çƒ¤çƒ§é¥¼ï¼Œå¤´ä¹Ÿä¸æŠ¬ã€‚\n");
 	set("combat_exp", 400000);
         set("max_qi", 1000);
         set("max_jing", 800);
@@ -38,11 +38,11 @@ void create()
 
 	set("attitude", "friendly");
 	set("inquiry", ([
-		"ĞşÌúÁî" : "°¡¡­¡­Ã»ÌıËµ¹ı¡£\n",
-		"Ğ»ÑÌ¿Í" : "ÌıËµÊÇ¸ö¹¦·òÆæ¸ßµÄ¹ÖÈË¡£\n",
-		"ÉÕ±ı" : "ÎÒµÄÉÕ±ıÓÖºÃ³ÔÓÖ±ãÒËµÄ¡£\n",
-		"ÓÍÌõ" : "ÎÒµÄÓÍÌõÓÖºÃ³ÔÓÖ±ãÒËµÄ¡£\n",
-		"ÎâµÀÍ¨" : (: ask_me :),
+		"ç„é“ä»¤" : "å•Šâ€¦â€¦æ²¡å¬è¯´è¿‡ã€‚\n",
+		"è°¢çƒŸå®¢" : "å¬è¯´æ˜¯ä¸ªåŠŸå¤«å¥‡é«˜çš„æ€ªäººã€‚\n",
+		"çƒ§é¥¼" : "æˆ‘çš„çƒ§é¥¼åˆå¥½åƒåˆä¾¿å®œçš„ã€‚\n",
+		"æ²¹æ¡" : "æˆ‘çš„æ²¹æ¡åˆå¥½åƒåˆä¾¿å®œçš„ã€‚\n",
+		"å´é“é€š" : (: ask_me :),
 	]));
 	
 	set("vendor_goods", ({
@@ -66,21 +66,21 @@ string ask_me(object who)
         int i;
 	object cake;
         if( (random(10) < 5) || is_fighting() )
-                return "ÎÒ¡­²»ÖªµÀ¡£\n";
+                return "æˆ‘â€¦ä¸çŸ¥é“ã€‚\n";
 
         message("vision",
-		"ÍõÀÏººµÀ£ºÄã¼ÈÈ»ÖªµÀÀÏ×ÓµÄÃû×Ö£¬¾Í¸Ã¶ÔÎÒ×ğÖØĞ©£¡ÄÉÃüÀ´°É£¡\n"
-                "ÎâµÀÍ¨´óºÈÒ»Éù£¬½ĞµÀ£º¡°¼ÈÈ»Èç´Ë£¬ÀÏ×Ó½ñÌì·´Õı»í³öÈ¥£¬¸úÄãÆ´ÁË¡£¡±\n" 
-                "ÎâµÀÍ¨È¡³öÒ»¸±ÅĞ¹Ù±ÊÎÕÔÚÊÖÖĞ¡£\n" ,
+		"ç‹è€æ±‰é“ï¼šä½ æ—¢ç„¶çŸ¥é“è€å­çš„åå­—ï¼Œå°±è¯¥å¯¹æˆ‘å°Šé‡äº›ï¼çº³å‘½æ¥å§ï¼\n"
+                "å´é“é€šå¤§å–ä¸€å£°ï¼Œå«é“ï¼šâ€œæ—¢ç„¶å¦‚æ­¤ï¼Œè€å­ä»Šå¤©åæ­£è±å‡ºå»ï¼Œè·Ÿä½ æ‹¼äº†ã€‚â€\n" 
+                "å´é“é€šå–å‡ºä¸€å‰¯åˆ¤å®˜ç¬”æ¡åœ¨æ‰‹ä¸­ã€‚\n" ,
                 environment(), this_object() );
 
         set("attitude", "aggressive");
-        set_name("ÎâµÀÍ¨", ({ "wu daotong", "wu", "daotong" }));
+        set_name("å´é“é€š", ({ "wu daotong", "wu", "daotong" }));
 	kill_ob(this_player());
         carry_object("/clone/weapon/panguanbi")->wield();
 	cake = new(__DIR__"obj/shaobing2");
 	cake->move(this_object());
-        return "Äã¼ÈÈ»ÖªµÀÀÏ×ÓµÄÃû×Ö£¬¾Í¸Ã¶ÔÎÒ×ğÖØĞ©£¡ÄÉÃüÀ´°É£¡\n";
+        return "ä½ æ—¢ç„¶çŸ¥é“è€å­çš„åå­—ï¼Œå°±è¯¥å¯¹æˆ‘å°Šé‡äº›ï¼çº³å‘½æ¥å§ï¼\n";
 }
 
 void unconcious()
@@ -88,7 +88,7 @@ void unconcious()
 	object ob = this_object();
 	object cake;
 
-        message_vision("\nÍ»È»£¬Ö»¼û$NÌÍ³öÒ»ÕÅÉÕ±ıÍÌ½ø¶ÇÀï£¬Ëæ¼´×êµØµÀÅÜÁË£¡\n",
+        message_vision("\nçªç„¶ï¼Œåªè§$Næå‡ºä¸€å¼ çƒ§é¥¼åè¿›è‚šé‡Œï¼Œéšå³é’»åœ°é“è·‘äº†ï¼\n",
                 ob);
 	if (cake = present("shaobing",ob)) destruct(cake);
 	ob->unconcious();
@@ -99,7 +99,7 @@ void die()
         object ob = this_object();
         object cake;
 
-        message_vision("\nÍ»È»£¬Ö»¼û$NÌÍ³öÒ»ÕÅÉÕ±ıÍÌ½ø¶ÇÀï£¬Ëæ¼´×êµØµÀÅÜÁË£¡\n",
+        message_vision("\nçªç„¶ï¼Œåªè§$Næå‡ºä¸€å¼ çƒ§é¥¼åè¿›è‚šé‡Œï¼Œéšå³é’»åœ°é“è·‘äº†ï¼\n",
                 ob);
         if (cake = present("shaobing",ob)) destruct(cake);
         destruct(ob);

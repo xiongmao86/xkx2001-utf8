@@ -13,17 +13,17 @@ void init()
 
 void create()
 {
-        set_name("Ðå»¨Õë", ({ "xiuhua zhen", "zhen", "needle" }));
+        set_name("ç»£èŠ±é’ˆ", ({ "xiuhua zhen", "zhen", "needle" }));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù¾«¸ÖÏ¸Ä¥µÄÐå»¨Õë£¬ÊÇÐå»¨ÓÃµÄ¾ø¼Ñ¹¤¾ß¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ä¸€æ ¹ç²¾é’¢ç»†ç£¨çš„ç»£èŠ±é’ˆï¼Œæ˜¯ç»£èŠ±ç”¨çš„ç»ä½³å·¥å…·ã€‚\n");
                 set("value", 100);
                 set("material", "steel");
-                set("wield_msg", "$NÓÃÄ´Ö¸ºÍÊ³Ö¸´Ó÷Þ¼äÄé³öÒ»¸ù$n¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖÐµÄ$n²å»Ø÷Þ¼ä¡£\n");
+                set("wield_msg", "$Nç”¨æ‹‡æŒ‡å’Œé£ŸæŒ‡ä»Žé¬“é—´æ‹ˆå‡ºä¸€æ ¹$nã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›žé¬“é—´ã€‚\n");
         }
         init_sword(10);
         setup();
@@ -33,19 +33,19 @@ int do_make(string arg)
 	object  ob, *obj, me = this_player();
 	int i;
 	if( !arg || arg!="bilin zhen" )
-                return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åšä»€ä¹ˆï¼Ÿ\n");
 	if( me->query_skill("poison", 1) < 120)
-		return notify_fail("ÄãµÄ¶¾¼¼»ðºî²»¹»£¬²»ÄÜÖÆ×÷Á¶ÐÄµ¯¡£\n");
+		return notify_fail("ä½ çš„æ¯’æŠ€ç«ä¾¯ä¸å¤Ÿï¼Œä¸èƒ½åˆ¶ä½œç‚¼å¿ƒå¼¹ã€‚\n");
 	if(! present("wugong ke", me) && !present("xiezi ke", me)
 	&& !present("shedan", me) && !present("du zhusi", me)
 	&& !present("shachong ke", me))
-		return notify_fail("ÄãÃ»ÓÐ×ã¹»µÄÔ­ÁÏ£¡\n");
-        message_vision(CYN"$NÐ¡ÐÄÒíÒíµØ°ÑÒ»¸ùÐå»¨Õë²å½ø¶¾Ò©ÄóËé£¬×¢½øÄÚÁ¦£¬´ê³ÉÁËÒ»Åñ±ÌÁ×Õë¡£\n"NOR, me );
+		return notify_fail("ä½ æ²¡æœ‰è¶³å¤Ÿçš„åŽŸæ–™ï¼\n");
+        message_vision(CYN"$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€æ ¹ç»£èŠ±é’ˆæ’è¿›æ¯’è¯æç¢Žï¼Œæ³¨è¿›å†…åŠ›ï¼Œæ“æˆäº†ä¸€ç¯·ç¢§ç£·é’ˆã€‚\n"NOR, me );
 		ob = new("/d/xingxiu/obj/blzhen.c");
 	        ob->move(me);
 	obj = all_inventory(me);
         for(i=sizeof(obj)-1; i>=0; i--) {
-        if( obj[i]->query("name") == "òÚò¼¿Ç" || obj[i]->query("id") == "xiezi ke"
+        if( obj[i]->query("name") == "èœˆèš£å£³" || obj[i]->query("id") == "xiezi ke"
 	|| obj[i]->query("id") == "shedan" || obj[i]->query("id") == "du zhusi"
 	|| obj[i]->query("id") == "shachong ke")
 	destruct(obj[i]);

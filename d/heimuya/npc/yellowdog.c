@@ -5,23 +5,23 @@ inherit NPC_TRAINEE;
 
 void create()
 {
-        set_name("Ğ¡»Æ¹·", ({ "dog" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("å°é»„ç‹—", ({ "dog" }) );
+        set("race", "é‡å…½");
         set("age", 3);
-        set("long", "Ò»Ö»¼«¿É°®µÄĞ¡»Æ¹·¡£\n");
+        set("long", "ä¸€åªæå¯çˆ±çš„å°é»„ç‹—ã€‚\n");
         
         set("str", 32);
         set("dex", 36);
         set("wildness", 2);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "å¾Œè„š", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("chat_chance", 6);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "Ğ¡»Æ¹·ÓÃ±Ç×ÓÎÅÁËÎÅÄãµÄ½Å¡£\n",
-                "Ğ¡»Æ¹·¶ÔÖøÄãÒ¡ÁËÒ¡Î²°Í¡£\n" }) );
+                "å°é»„ç‹—ç”¨é¼»å­é—»äº†é—»ä½ çš„è„šã€‚\n",
+                "å°é»„ç‹—å¯¹è‘—ä½ æ‘‡äº†æ‘‡å°¾å·´ã€‚\n" }) );
                 
         set_temp("apply/attack", 10);
         set_temp("apply/armor", 3);
@@ -33,7 +33,7 @@ int accept_object(object who, object ob)
 {
         if( ob->id("bone") ) {
                 set_leader(who);
-                message("vision", name() + "¸ßĞËµØÍôÍô½ĞÁËÆğÀ´¡£\n", environment());
+                message("vision", name() + "é«˜å…´åœ°æ±ªæ±ªå«äº†èµ·æ¥ã€‚\n", environment());
                 return 1;
         }
 }

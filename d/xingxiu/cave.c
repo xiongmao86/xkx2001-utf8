@@ -9,9 +9,9 @@ int do_zuan(string);
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´");
         set("long", @LONG
-Õâ¸öÉ½¶´ÀïÉìÊÖ²»¼ûÎåÖ¸£¬Ö»ÓĞ³ö¿Ú´¦Í¸½øÒ»Ë¿¹âÏß¡£
+è¿™ä¸ªå±±æ´é‡Œä¼¸æ‰‹ä¸è§äº”æŒ‡ï¼Œåªæœ‰å‡ºå£å¤„é€è¿›ä¸€ä¸å…‰çº¿ã€‚
 LONG
         );
 	set("objects", ([
@@ -43,9 +43,9 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
              write(
-             "ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖÎ÷ÃæÊ¯±ÚÉÏÓĞÒ»µÀÁÑ·ì£¬ËÆºõ¿ÉÒÔ×ê(zuan)³öÈ¥¡£\n"
+             "ä½ ç‚¹ç‡ƒäº†ç«æŠ˜ï¼Œå‘ç°è¥¿é¢çŸ³å£ä¸Šæœ‰ä¸€é“è£‚ç¼ï¼Œä¼¼ä¹å¯ä»¥é’»(zuan)å‡ºå»ã€‚\n"
              );
-             this_player()->set_temp("marks/×ê", 1);
+             this_player()->set_temp("marks/é’»", 1);
              return 1;
        }
 }
@@ -56,22 +56,22 @@ int do_zuan(string arg)
 	mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if (me->query_temp("marks/×ê") ) {
+        if (me->query_temp("marks/é’»") ) {
 	if(present("zhaixing zi", environment(me))
-	&& (!myfam || myfam["family_name"] != "ĞÇËŞÅÉ"))
-	return notify_fail("ÕªĞÇ×ÓÒ»°Ñ¾¾×¡ÄãµÄÒÂÁìËµµÀ£ºÄãÏëÍùÄÄ¶ù×ê£¿\n");
+	&& (!myfam || myfam["family_name"] != "æ˜Ÿå®¿æ´¾"))
+	return notify_fail("æ‘˜æ˜Ÿå­ä¸€æŠŠæªä½ä½ çš„è¡£é¢†è¯´é“ï¼šä½ æƒ³å¾€å“ªå„¿é’»ï¼Ÿ\n");
 
-            message("vision", me->name() + "×ÌÁïÒ»ÏÂ²»Öª´ÓÊ²Ã´µØ·½×ê³öÈ¥ÁË¡£\n",
+            message("vision", me->name() + "æ»‹æºœä¸€ä¸‹ä¸çŸ¥ä»ä»€ä¹ˆåœ°æ–¹é’»å‡ºå»äº†ã€‚\n",
                     environment(me), ({me}) );
             me->move("/d/xingxiu/cave2");
-            message("vision", me->name() + "´ÓÊ¯·ìÀï×êÁË³öÀ´¡£\n",
+            message("vision", me->name() + "ä»çŸ³ç¼é‡Œé’»äº†å‡ºæ¥ã€‚\n",
                     environment(me), ({me}) );
-            this_player()->set_temp("marks/×ê", 0);
+            this_player()->set_temp("marks/é’»", 0);
 
             return 1;
         }
         else {
-            write("ÄãÏëÍùÄÄ¶ù×ê?!\n");
+            write("ä½ æƒ³å¾€å“ªå„¿é’»?!\n");
             return 1;
         }
 }

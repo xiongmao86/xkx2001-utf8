@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIM"�����"NOR);
+        set("short", HIM"三清殿"NOR);
         set("long", @LONG
-��������������������ȫ��̻�͵ĵص㡣����Ԫʼ����̫�ϵ�
-����̫���Ͼ����������м��Ǹ�����Ĵ��㰸����ǽ���ż���̫ʦ�Σ���
-�Ϸ��ż������š��������������ȣ������ǹ㳡���ϱ�ͨ��ɽ�ŵ
+这里是重阳宫的三清殿，是全真教会客的地点。供着元始天尊、太上道
+君和太上老君的神像。正中间是个敬香的大香案，靠墙放着几张太师椅，地
+上放着几个蒲团。东西两侧是走廊，北边是广场，南边通往山门殿。
 LONG
         );
         set("valid_startroom", 1);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: nanshi.c »ªÉ½ÄĞµÜ×ÓĞİÏ¢ÊÒ
+// Room: nanshi.c åå±±ç”·å¼Ÿå­ä¼‘æ¯å®¤
 // qfy July 7, 1996 
 
 #include <room.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄĞµÜ×ÓĞİÏ¢ÊÒ");
+        set("short", "ç”·å¼Ÿå­ä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ»ªÉ½ÄĞµÜ×ÓµÄĞİÏ¢ÊÒ¡£´°Ã÷¼¸¾»£¬°ÚÉè¼òµ¥¡£¿¿Ç½ÉèÓĞ¼¸ÕÅÄ¾´²£¬
-½üÃÅ´¦·Å×ÅÒ»ÕÅ×À×Ó¡£Î÷±ßÁ¬×Å×ßÀÈ£¬±±±ßÔòÊÇÁ·¹¦·¿¡£
+è¿™æ˜¯åå±±ç”·å¼Ÿå­çš„ä¼‘æ¯å®¤ã€‚çª—æ˜å‡ å‡€ï¼Œæ‘†è®¾ç®€å•ã€‚é å¢™è®¾æœ‰å‡ å¼ æœ¨åºŠï¼Œ
+è¿‘é—¨å¤„æ”¾ç€ä¸€å¼ æ¡Œå­ã€‚è¥¿è¾¹è¿ç€èµ°å»Šï¼ŒåŒ—è¾¹åˆ™æ˜¯ç»ƒåŠŸæˆ¿ã€‚
 LONG
         );
 
@@ -22,8 +22,8 @@ LONG
 	    "north" :  __DIR__"liangong1",
 	]));
 
-	create_door("north", "ÖñÃÅ", "south", DOOR_CLOSED);
-	create_door("west", "Ä¾ÃÅ", "east", DOOR_CLOSED);
+	create_door("north", "ç«¹é—¨", "south", DOOR_CLOSED);
+	create_door("west", "æœ¨é—¨", "east", DOOR_CLOSED);
 
 	set("cost", 0);
         setup();
@@ -44,7 +44,7 @@ int do_exercise(string arg)
 {
         object me = this_player();
 
-        tell_object(me, "±ğÈË³ÁË¯µÄ´òº©Éù³³×ÅÄã£¬Ê¹Äã²»ÄÜ¾²ÏÂĞÄÀ´´ò×ø£¡\n");
+        tell_object(me, "åˆ«äººæ²‰ç¡çš„æ‰“æ†¨å£°åµç€ä½ ï¼Œä½¿ä½ ä¸èƒ½é™ä¸‹å¿ƒæ¥æ‰“åï¼\n");
         return 1;
 }
 
@@ -52,7 +52,7 @@ int do_practice(string arg)
 {
         object me = this_player();
 
-        tell_object(me, "·¿ÀïÔÓÎïÌ«¶à£¬µØ·½²»¹»¿í³©£¬ÄãÊ¹²»¿ªÊÖ½ÅÀ´Á·Ï°£¡\n");
+        tell_object(me, "æˆ¿é‡Œæ‚ç‰©å¤ªå¤šï¼Œåœ°æ–¹ä¸å¤Ÿå®½ç•…ï¼Œä½ ä½¿ä¸å¼€æ‰‹è„šæ¥ç»ƒä¹ ï¼\n");
         return 1;
 }
 
@@ -60,7 +60,7 @@ int do_study(string arg)
 {
         object me = this_player();
 
-        tell_object(me, "±ğÈË³ÁË¯µÄ´òº©Éù³³×ÅÄã£¬Ê¹Äã²»ÄÜ¾²ÏÂĞÄÀ´ÑĞ¶Á£¡\n");
+        tell_object(me, "åˆ«äººæ²‰ç¡çš„æ‰“æ†¨å£°åµç€ä½ ï¼Œä½¿ä½ ä¸èƒ½é™ä¸‹å¿ƒæ¥ç ”è¯»ï¼\n");
         return 1;
 }
 */
@@ -74,7 +74,7 @@ int valid_leave(object me, string dir)
         if ( dir == "west" || dir == "north" ) {
                 for (i=0; i<sizeof(inv); i++) {
                         if (inv[i]->is_character())
-                        return notify_fail("Äã²»ÄÜ´ø×ÅÆäËûÍæ¼ÒÀë¿ªĞİÏ¢ÊÒ¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½å¸¦ç€å…¶ä»–ç©å®¶ç¦»å¼€ä¼‘æ¯å®¤ã€‚\n");
                 }
         }
 

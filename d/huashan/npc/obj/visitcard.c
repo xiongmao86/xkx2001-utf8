@@ -1,17 +1,17 @@
 //Cracked by Roath
-// visitcard.c °ÝÌû
+// visitcard.c æ‹œå¸–
 inherit ITEM;
 
 void create()
 {
-        set_name("°ÝÌû", ({"bai tie", "tie"}));
+        set_name("æ‹œå¸–", ({"bai tie", "tie"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼ ");
                 set("long",
-"ÕâÊÇÕÅÆÕÍ¨µÄ°ÝÌû¡£\n");
+"è¿™æ˜¯å¼ æ™®é€šçš„æ‹œå¸–ã€‚\n");
                 set("material", "paper");
         }
 }

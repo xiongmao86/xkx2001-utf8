@@ -7,16 +7,16 @@ void create()
 {
 	int i;
 
-	set_name("��ũ�����", ({ "shennong dizi","shennong","dizi" }) );
-	set("gender", "����");
+	set_name("神农帮弟子", ({ "shennong dizi","shennong","dizi" }) );
+	set("gender", "男性");
 	i = random(8);
 	set("age", 35+i);
 	if (i>4) 
 	set("long",
-		"����һ����ũ��İ��ڣ��������£�����ҩ�ң��ֳ�һ���̵���\n");
+		"这是一个神农帮的帮众，身穿黄衣，肩悬药囊，手持一柄短刀。\n");
 	else
         set("long",
-                "����һ����ũ��İ��ڣ��������£�����ҩ�ң��ֳ�һ��ҩ����\n");
+                "这是一个神农帮的帮众，身穿黄衣，肩悬药囊，手持一柄药锄。\n");
 	set("combat_exp", 5000+i*4000);
 	set("shen_type", 0);
 	set("attitude", "heroism");

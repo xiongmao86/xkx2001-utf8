@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ի");
+	set("short", "书斋");
 	set("long", @LONG
-һ���徲����ի��ľ���ϳ������ķ��ı�����ͷ��������ǹ�
-�龭�䣬���������ձ�������һ����īɽˮ�����ⰻȻ��
+一间清静的书斋，木案上陈列著文房四宝，後头书架上满是古
+书经典，整齐有序。照壁上悬著一幅泼墨山水，古意盎然。
 LONG
 	);
 	set("no_clean_up", 0);

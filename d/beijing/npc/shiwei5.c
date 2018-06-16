@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: 五等侍卫
+// Npc: 浜旂瓑渚嶅崼
 // Ssy, chu
 
 #include <ansi.h>
@@ -9,12 +9,12 @@ void set_shiwei_status(int);
 
 void create()
 {
-	set_name("五等侍卫", ({
+	set_name("浜旂瓑渚嶅崼", ({
 		"wudeng shiwei",
 		"shiwei",
 		"wei",
 	}));
-	set("long", "这是一个低级御前侍卫。\n");
+	set("long", "杩欐槸涓�涓綆绾у尽鍓嶄緧鍗�俓n");
 
 	set("age", 29);
 	setup();

@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÖñÁÖÐ¡µÀ");
+        set("short", "ç«¹æž—å°é“");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÂÑÊ¯ÆÌ³ÉµÄÐ¡µÀ£¬ÇúÇúÕÛÕÛµØÍ¨ÏòÇ°·½¡£Á½±ßÊÇÃÜ
-ÃÜµÄÖñÁÖ¡£ÕâÀïÈË¼£º±ÖÁ£¬Î©ÎÅ×ãµ×ßµ»÷Â·Ãæ£¬ÓÐÉ®ÇÃÄ¾ÓãÉù£»
-Î¢·ç´µ·÷ÖñÒ¶£¬ÓÖÈçóùóùìø³ª¡£ÁîÈË³¾ÐÄÎªÖ®Ò»µÓ£¬ÕæÊÇ¾ø¼Ñ
-µÄìøÐÞËùÔÚ¡£
+è¿™æ˜¯ä¸€æ¡åµçŸ³é“ºæˆçš„å°é“ï¼Œæ›²æ›²æŠ˜æŠ˜åœ°é€šå‘å‰æ–¹ã€‚ä¸¤è¾¹æ˜¯å¯†
+å¯†çš„ç«¹æž—ã€‚è¿™é‡Œäººè¿¹ç½•è‡³ï¼ŒæƒŸé—»è¶³åº•å©å‡»è·¯é¢ï¼Œæœ‰åƒ§æ•²æœ¨é±¼å£°ï¼›
+å¾®é£Žå¹æ‹‚ç«¹å¶ï¼Œåˆå¦‚ç°Œç°Œç¦…å”±ã€‚ä»¤äººå°˜å¿ƒä¸ºä¹‹ä¸€æ¶¤ï¼ŒçœŸæ˜¯ç»ä½³
+çš„ç¦…ä¿®æ‰€åœ¨ã€‚
 LONG
         );
 
@@ -40,36 +40,36 @@ int do_zuochan()
         object me = this_player();
         int level;
 
-        if( (string)me->query("family/family_name") != "ÉÙÁÖÅÉ" ) 
-                return notify_fail("Äã²»ÊÇÉÙÁÖµÜ×Ó£¬²»ÄÜÔÚ´Ë×øìø¡£\n");
+        if( (string)me->query("family/family_name") != "å°‘æž—æ´¾" ) 
+                return notify_fail("ä½ ä¸æ˜¯å°‘æž—å¼Ÿå­ï¼Œä¸èƒ½åœ¨æ­¤åç¦…ã€‚\n");
 
         if( (level = (int)me->query_skill("buddhism", 1)) < 120 )
-                return notify_fail("ÄãµÄ·ð·¨ÐÞÎªÌ«µÍ£¬²»ÄÜ×ÔÐÐ×øìøÐÞÐÐ¡£\n");
+                return notify_fail("ä½ çš„ä½›æ³•ä¿®ä¸ºå¤ªä½Žï¼Œä¸èƒ½è‡ªè¡Œåç¦…ä¿®è¡Œã€‚\n");
 
 
         if (me->is_busy() || me->query_temp("pending/exercising")
             || me->query_temp("exit_blocked"))
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐ¾²ÐÞ£¬ÕÒËÀ°¡£¿£¡\n");
+                return notify_fail("æˆ˜æ–—ä¸­é™ä¿®ï¼Œæ‰¾æ­»å•Šï¼Ÿï¼\n");
 
         if( (int)me->query("jing") * 100 / (int)me->query("max_jing") < 70 )
-                return notify_fail("ÄãÏÖÔÚ¾«²»¹»£¬ÎÞ·¨¿ØÖÆÐÄÄ§¾²ÐÞ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ç²¾ä¸å¤Ÿï¼Œæ— æ³•æŽ§åˆ¶å¿ƒé­”é™ä¿®ã€‚\n");
 
         if( (int)me->query("qi") * 100 / (int)me->query("max_qi") < 70 )
-                return notify_fail("ÄãÏÖÔÚÌåÁ¦²»¹»£¬ÄÑÒÔÄý¾ÛÌåÄÜ¾²ÐÞ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ä½“åŠ›ä¸å¤Ÿï¼Œéš¾ä»¥å‡èšä½“èƒ½é™ä¿®ã€‚\n");
 
         if( me->query_condition("zuochan") )
-                return notify_fail("Äã¸Õ×øìø¹ý¡£\n");
+                return notify_fail("ä½ åˆšåç¦…è¿‡ã€‚\n");
 
         if( !(present("muyu chui", me)) )
-                return notify_fail("Äã±ØÐëÊ¹ÓÃÄ¾Óãé³ÖúÄã×øìøÐÞÐÐ¡£\n");
+                return notify_fail("ä½ å¿…é¡»ä½¿ç”¨æœ¨é±¼æ§ŒåŠ©ä½ åç¦…ä¿®è¡Œã€‚\n");
 
-        message_vision("$NÅÌÏ¥×øÏÂ£¬±ÕÉÏÑÛ¾¦ÇÃÄ¾Óã×øìø¡£\n", me);
+        message_vision("$Nç›˜è†åä¸‹ï¼Œé—­ä¸Šçœ¼ç›æ•²æœ¨é±¼åç¦…ã€‚\n", me);
 
         me->start_busy(5);
         call_out("zuochaned", 5, me);
@@ -167,8 +167,8 @@ void zuochaned(object me)
 
         me->reset_action();
 
-        message_vision("$N»º»ºÕö¿ªÑÛ¾¦£¬³¤ÊæÒ»¿ÚÆøÕ¾ÁËÆðÀ´¡£\n", me);
-        write("\nÄã½øÈëÁË·ðÎÒÁ½ÍüµÄ¾³½ç£¬¶ÙÊ±µ­²´ÁËÏ°ÎäºÃÊ¤Ö®ÐÄ¡£\n");
+        message_vision("$Nç¼“ç¼“çå¼€çœ¼ç›ï¼Œé•¿èˆ’ä¸€å£æ°”ç«™äº†èµ·æ¥ã€‚\n", me);
+        write("\nä½ è¿›å…¥äº†ä½›æˆ‘ä¸¤å¿˜çš„å¢ƒç•Œï¼Œé¡¿æ—¶æ·¡æ³Šäº†ä¹ æ­¦å¥½èƒœä¹‹å¿ƒã€‚\n");
         //me->add("int", temp);
 
         me->apply_condition("zuochan", amount );

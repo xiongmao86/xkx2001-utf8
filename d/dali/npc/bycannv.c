@@ -1,15 +1,15 @@
 //Cracked by Roath
-// bycannv.c °ÚÒÄÑø²ÏÅ®
+// bycannv.c æ‘†å¤·å…»èš•å¥³
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ñø²ÏÅ®", ({ "yangcan nu", "nu", "woman" }) );
-	set("long", "Ò»¸öÄêÇáµÄ°ÚÒÄ´å¸¾£¬Ñø²Ï·ÄË¿ÎªÉú¡£\n");
+	set_name("å…»èš•å¥³", ({ "yangcan nu", "nu", "woman" }) );
+	set("long", "ä¸€ä¸ªå¹´è½»çš„æ‘†å¤·æ‘å¦‡ï¼Œå…»èš•çººä¸ä¸ºç”Ÿã€‚\n");
 
 	set("age", 20);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 15);

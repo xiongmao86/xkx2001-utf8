@@ -1,5 +1,5 @@
 //Cracked by Roath
-// liangong2.c Á·¹¦·¿
+// liangong2.c ç»ƒåŠŸæˆ¿
 // by qfy
 
 #include <room.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿");
+	set("short", "ç»ƒåŠŸæˆ¿");
 	set("long", @LONG
-Á·¹¦·¿ÊÇ¹©»ªÉ½µÜ×ÓĞŞÁ·ÄÚ¹¦£¬»òÑĞ¶ÁÎäÑ§Êé¼®Ö®´¦¡£·¿ÄÚ²¢ÎŞÌØ±ğ
-°ÚÉè£¬ÒÔÃâµÜ×ÓĞĞ¹¦Ê±·ÖĞÄ£¬µ¢ÎóÁË½ø¶È¡£Î÷±ßÊÇÅ®µÜ×ÓĞİÏ¢ÊÒ¡£
+ç»ƒåŠŸæˆ¿æ˜¯ä¾›åå±±å¼Ÿå­ä¿®ç»ƒå†…åŠŸï¼Œæˆ–ç ”è¯»æ­¦å­¦ä¹¦ç±ä¹‹å¤„ã€‚æˆ¿å†…å¹¶æ— ç‰¹åˆ«
+æ‘†è®¾ï¼Œä»¥å…å¼Ÿå­è¡ŒåŠŸæ—¶åˆ†å¿ƒï¼Œè€½è¯¯äº†è¿›åº¦ã€‚è¥¿è¾¹æ˜¯å¥³å¼Ÿå­ä¼‘æ¯å®¤ã€‚
 LONG
 	);
 
@@ -23,8 +23,8 @@ LONG
 	set("cost", 0);
 	setup();
 
-	create_door("north", "Ä¾ÃÅ", "south", DOOR_CLOSED);
-	create_door("west", "ÖñÃÅ", "east", DOOR_CLOSED);
+	create_door("north", "æœ¨é—¨", "south", DOOR_CLOSED);
+	create_door("west", "ç«¹é—¨", "east", DOOR_CLOSED);
 
 //      replace_program(ROOM);
 }
@@ -34,8 +34,8 @@ int valid_leave(object me, string dir)
 	mapping myfam;
 	myfam = (mapping)me->query("family");
 
-	if ( me->query("gender") == "ÄĞĞÔ" && dir == "west" && !wizardp(me) )
-		return notify_fail("¿´Çå³şµã£¬ÄÇÊÇÅ®µÜ×ÓĞİÏ¢ÊÒ£¡\n");
+	if ( me->query("gender") == "ç”·æ€§" && dir == "west" && !wizardp(me) )
+		return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œé‚£æ˜¯å¥³å¼Ÿå­ä¼‘æ¯å®¤ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

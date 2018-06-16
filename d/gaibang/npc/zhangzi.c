@@ -1,20 +1,20 @@
 //Cracked by Roath
-// zhangzi.c 獐子
+// zhangzi.c 鐛愬瓙
 
 inherit NPC;
 
 void create()
 {
-	set_name("獐子", ({ "zhang zi", "zhang", "deer" }) );
-	set("race", "野兽");
+	set_name("鐛愬瓙", ({ "zhang zi", "zhang", "deer" }) );
+	set("race", "閲庡吔");
 	set("age", 5);
-	set("long", "一匹小獐子，长得象小鹿，头上没有角。\n");
+	set("long", "涓�鍖瑰皬鐛愬瓙锛岄暱寰楄薄灏忛箍锛屽ご涓婃病鏈夎銆俓n");
 	set("attitude", "peaceful");
 	
         set("str", 20);
         set("dex", 30);
 
-//	set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+//	set("limbs", ({ "澶撮儴", "韬綋", "鍓嶈剼", "鍚庤剼", "灏惧反" }) );
 //	set("verbs", ({ "bite", "claw" }) );
 
 	set("combat_exp", 150);
@@ -35,7 +35,7 @@ void create()
 void die()
 {
 	object ob;
-	message_vision("$N凄惨的嚎了几声，倒在地上死了。\n", this_object());
+	message_vision("$N鍑勬儴鐨勫殠浜嗗嚑澹帮紝鍊掑湪鍦颁笂姝讳簡銆俓n", this_object());
 	ob = new("d/gaibang/obj/zhangrou");
 	ob->move(environment(this_object()));
 	destruct(this_object());

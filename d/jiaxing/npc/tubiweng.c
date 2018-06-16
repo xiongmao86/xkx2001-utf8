@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Íº±ÊÎÌ",({ "tubi weng","weng" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("ç§ƒç¬”ç¿",({ "tubi weng","weng" }) );
+        set("gender", "ç”·æ€§");
         set("age", 45);
 	set("long",
-		"Ëû°«°«ÅÖÅÖ£¬Í·¶¥ÍºµÃÓÍ¹â»¬ÁÁ£¬"
-		"Ò»¸ùÍ··¢Ò²Ã»ÓÐ£¬ÒÂÉÀÉÏ¶¼ÊÇÄ«¼£¡£\n");
+		"ä»–çŸ®çŸ®èƒ–èƒ–ï¼Œå¤´é¡¶ç§ƒå¾—æ²¹å…‰æ»‘äº®ï¼Œ"
+		"ä¸€æ ¹å¤´å‘ä¹Ÿæ²¡æœ‰ï¼Œè¡£è¡«ä¸Šéƒ½æ˜¯å¢¨è¿¹ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯Èý×¯Ö÷");
+        set("title","æ¢…åº„ä¸‰åº„ä¸»");
         set("combat_exp", 80000);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -27,10 +27,10 @@ void create()
 	set("jiali",40);
 
 
-	set("mz/toy","ÂÊÒâÌû");
+	set("mz/toy","çŽ‡æ„å¸–");
 	set("mz/set","tubiweng");
 	set("mz/need","danqing");
-	set("mz/needname","ËÄ×¯Ö÷");
+	set("mz/needname","å››åº„ä¸»");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 	carry_object(__DIR__"obj/panguanbi")->wield();

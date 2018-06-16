@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pan13.c Ê®¶şÅÌ
+// pan13.c åäºŒç›˜
 // Shan: 96/06/22
 
 #include <ansi.h>;
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê®¶şÅÌ");
+        set("short", "åäºŒç›˜");
         set("long", @LONG
-ÕâÀïÊ¯½×¶¸ÕÛ¶àÍä£¬ºÅ³Æ¡¸Ê®¶şÅÌ¡¹¡£Äã¼ûÂ·±ßÓĞ¸ö°ËÒô³Ø£¬ÓĞÈËÕıÔÚÏò
-³ØÖĞ»÷ÕÆ(clap)¡£ÓÉ´ËÎ÷ÉÏ¿É´ï»ªÑÏ¶¥£¬¶«ÏÂÔòµ½ÍòÄêâÖ¡£
+è¿™é‡ŒçŸ³é˜¶é™¡æŠ˜å¤šå¼¯ï¼Œå·ç§°ã€ŒåäºŒç›˜ã€ã€‚ä½ è§è·¯è¾¹æœ‰ä¸ªå…«éŸ³æ± ï¼Œæœ‰äººæ­£åœ¨å‘
+æ± ä¸­å‡»æŒ(clap)ã€‚ç”±æ­¤è¥¿ä¸Šå¯è¾¾åä¸¥é¡¶ï¼Œä¸œä¸‹åˆ™åˆ°ä¸‡å¹´åºµã€‚
 LONG
         );
         set("exits", ([
@@ -34,16 +34,16 @@ int do_clap(string arg)
     object me = this_player();
 
 	if (me->query("jing") < 30)
-                return notify_fail("ÄãÒÑ¾­Ã»ÓĞ¾«Á¦»÷ÕÆÁËÒ®¡£\n");
+                return notify_fail("ä½ å·²ç»æ²¡æœ‰ç²¾åŠ›å‡»æŒäº†è€¶ã€‚\n");
 
     message_vision(
-"³ØÄÚºöÈ»ÓĞÍÜ´óÃùÒ»Éù£¬½Ó×ÅÈºÍÜ´ÎµÚÏàºÏ£¬×îºóÓÖÊÇÒ»ÍÜ´óÃù£¬ÈºÍÜ±ã¸ÂÈ»
-¶øÖ¹£¬ÆäÊıÕıºÃÎª°Ë¡£\n", this_player());
+"æ± å†…å¿½ç„¶æœ‰è›™å¤§é¸£ä¸€å£°ï¼Œæ¥ç€ç¾¤è›™æ¬¡ç¬¬ç›¸åˆï¼Œæœ€ååˆæ˜¯ä¸€è›™å¤§é¸£ï¼Œç¾¤è›™ä¾¿å˜ç„¶
+è€Œæ­¢ï¼Œå…¶æ•°æ­£å¥½ä¸ºå…«ã€‚\n", this_player());
 
     if (me->query_skill("strike", 1) < 30) {
-	me->receive_damage("jing", 25, "Ê§×ãµô½ø°ËÒô³ØÑÍËÀÁË");
+	me->receive_damage("jing", 25, "å¤±è¶³æ‰è¿›å…«éŸ³æ± æ·¹æ­»äº†");
 	me->improve_skill("strike", me->query_str());
-	tell_object(me, HIY"ÄãµÄ»ù±¾ÕÆ·¨½ø²½ÁË¡£\n"NOR);
+	tell_object(me, HIY"ä½ çš„åŸºæœ¬æŒæ³•è¿›æ­¥äº†ã€‚\n"NOR);
     }
     return 1;
 }
@@ -58,12 +58,12 @@ int valid_leave(object me, string dir)
         {
                 me->set("jingli",current_jingli-random(10));
                 me->improve_skill("dodge", random(5));
-                write("ÄãÅÀÉÏÁËÊ®¶şÅÌ£¬¾õµÃÉÏÉ½µÄÂ·ÓÖ¶¸ÓÖÍä£¬ºÃÀÛÈË¡£\n");
+                write("ä½ çˆ¬ä¸Šäº†åäºŒç›˜ï¼Œè§‰å¾—ä¸Šå±±çš„è·¯åˆé™¡åˆå¼¯ï¼Œå¥½ç´¯äººã€‚\n");
         }
 
         else if (dir == "southwest" && current_jingli <= 10)
         {
-                write("ÄãÀÛµÃ×ß²»¶¯ÁË£¬ºöÈ»ÑÛÃ°½ğĞÇ£¬ÔÎÁË¹ıÈ¥¡£\n");
+                write("ä½ ç´¯å¾—èµ°ä¸åŠ¨äº†ï¼Œå¿½ç„¶çœ¼å†’é‡‘æ˜Ÿï¼Œæ™•äº†è¿‡å»ã€‚\n");
                 me->unconcious();
                 return notify_fail("");
         }

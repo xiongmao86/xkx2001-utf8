@@ -5,17 +5,17 @@ inherit THROWING;
 
 void create()
 {
-        set_name("Ìú°ËØÔ", ({ "tie bagua", "bagua" }) );
+        set_name("é“å…«å¦", ({ "tie bagua", "bagua" }) );
         set_weight(10000);
 	set_color(GRN);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        	set("long", "Ìú°ËØÔÊÇ´¿ÌúËùÖı£¬·ÖÁ¿¼«ÖØ£¬ÉÏÓĞ°ËØÔÍ¼°¸¡£\n");
-        	set("unit", "Ã¶");
-		set("base_unit", "Ã¶");
-		set("wield_msg", GRN "$NÓÉ¿Ú´üÀïÄÃ³ö$n¡£\n" NOR );
-		set("unwield_msg", GRN "$N½«$n·Å»Ø¿Ú´üÖĞ¡£\n" NOR );
+        	set("long", "é“å…«å¦æ˜¯çº¯é“æ‰€é“¸ï¼Œåˆ†é‡æé‡ï¼Œä¸Šæœ‰å…«å¦å›¾æ¡ˆã€‚\n");
+        	set("unit", "æš");
+		set("base_unit", "æš");
+		set("wield_msg", GRN "$Nç”±å£è¢‹é‡Œæ‹¿å‡º$nã€‚\n" NOR );
+		set("unwield_msg", GRN "$Nå°†$næ”¾å›å£è¢‹ä¸­ã€‚\n" NOR );
         	set("value", 1600);
 		set("armor_prop/armor", 1);
 		set("tanzhi",200);

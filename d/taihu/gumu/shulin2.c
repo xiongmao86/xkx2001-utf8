@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "树林");
 	set("long", @LONG
-����Խ�����Խ�Ƕ���������ҲԽŨ��ֻ���ǲ�
-֪��������ҲԽ��Խ�졣���ǵ���һ��ĺá�
+入林越深，鸟鸣越是动听，花香也越浓。只是那不
+知名的声音也越来越响。还是当心一点的好。
 LONG
 	);
 

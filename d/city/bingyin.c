@@ -7,16 +7,16 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±øÓª");
+	set("short", "å…µè¥");
 	set("long", @LONG
-ÕâÀïÊÇ±øÓª£¬ÃÜÃÜÂéÂéµ½´¦¶¼ÊÇ¹Ù±ø£¬ÓĞµÄÔÚÎä½«µÄÖ¸»ÓÏÂÁĞ¶Ó²ÙÁ·£¬ÓĞµÄ
-¶À×ÔÔÚÁ·¹¦£¬ÓĞµÄ×ø×Å¡¢ÌÉ×ÅÕıÔÚĞİÏ¢¡£ÄÏÇ½ÏÂ×ø×ÅÖ÷Ë§£¬²»¶¯ÉùÉ«µØÑ°ÊÓ×ÅËÄ
-ÖÜ¡£Î÷±ßÓĞÒ»¸öÃÅ(door)£¬±±ÃæÓĞÒ»¸öĞ¡´°¿Ú(window)¡£
+è¿™é‡Œæ˜¯å…µè¥ï¼Œå¯†å¯†éº»éº»åˆ°å¤„éƒ½æ˜¯å®˜å…µï¼Œæœ‰çš„åœ¨æ­¦å°†çš„æŒ‡æŒ¥ä¸‹åˆ—é˜Ÿæ“ç»ƒï¼Œæœ‰çš„
+ç‹¬è‡ªåœ¨ç»ƒåŠŸï¼Œæœ‰çš„åç€ã€èººç€æ­£åœ¨ä¼‘æ¯ã€‚å—å¢™ä¸‹åç€ä¸»å¸…ï¼Œä¸åŠ¨å£°è‰²åœ°å¯»è§†ç€å››
+å‘¨ã€‚è¥¿è¾¹æœ‰ä¸€ä¸ªé—¨(door)ï¼ŒåŒ—é¢æœ‰ä¸€ä¸ªå°çª—å£(window)ã€‚
 LONG
 	);
 
 	set("item_desc", ([
-		"door" : "ÕâÊÇÒ»ÉÈ¼«ºñµÄÌúÃÅ¡£\n",
+		"door" : "è¿™æ˜¯ä¸€æ‰‡æåšçš„é“é—¨ã€‚\n",
 	]));
 	set("exits", ([
 		"west" : __DIR__"jail",
@@ -29,7 +29,7 @@ LONG
 		__DIR__"npc/bing" : 4,
 	]));
 
-	create_door("west", "ÌúÃÅ", "east", DOOR_CLOSED);
+	create_door("west", "é“é—¨", "east", DOOR_CLOSED);
 	set("cost", 0);
 	setup();
 }
@@ -44,18 +44,18 @@ int do_pass(string arg)
 	object ob;
 
         if (!arg || !(ob = present(arg, this_player())))
-                return notify_fail("ÄãÒªËÍÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é€ä»€ä¹ˆï¼Ÿ\n");
 
 	if (ob->query_weight() > 5000)
-		return notify_fail(ob->query("name")+"Ì«´óÁË£¬²»ÄÜ´Ó´°¿ÚÀïÈû½øÈ¥¡£\n");
+		return notify_fail(ob->query("name")+"å¤ªå¤§äº†ï¼Œä¸èƒ½ä»çª—å£é‡Œå¡è¿›å»ã€‚\n");
 
 	if (ob->query("id") == "huashi fen" || ob->query("id") == "tie he" || ob->is_container() || ob->query("hsf"))
-		return notify_fail("Õâ¸ö¶«Î÷·Å²»½øÈ¥¡£\n");
+		return notify_fail("è¿™ä¸ªä¸œè¥¿æ”¾ä¸è¿›å»ã€‚\n");
 
-	message_vision("$N°ÑÒ»"+ob->query("unit")+"$n´Ó´°¿ÚÈûÁË½øÈ¥¡£\n", this_player(), ob);
+	message_vision("$NæŠŠä¸€"+ob->query("unit")+"$nä»çª—å£å¡äº†è¿›å»ã€‚\n", this_player(), ob);
 	ob->move("/d/city/dalao");
-	message("vision", this_player()->name()+"´Ó´°ÍâÈû½øÀ´Ò»"
-		+ob->query("unit")+ob->query("name")+"¡£\n",environment(ob), ob);
+	message("vision", this_player()->name()+"ä»çª—å¤–å¡è¿›æ¥ä¸€"
+		+ob->query("unit")+ob->query("name")+"ã€‚\n",environment(ob), ob);
 	return 1;
 }
 int do_visit(string arg)
@@ -67,15 +67,15 @@ int do_visit(string arg)
 	if(!( env = find_object("/d/city/dalao")) )
 	        env = load_object("/d/city/dalao");
 
-	message_vision("$NÅ¿ÔÚ´°Ì¨ÉÏÍùÀïÍûÈ¥¡£\n", me);
-	tell_room(env, "Äã¸Ğµ½ÓĞÒ»Ë«ÑÛ¾¦ÔÚ´°Íâ´òÁ¿Äã¡£\n");
+	message_vision("$Nè¶´åœ¨çª—å°ä¸Šå¾€é‡Œæœ›å»ã€‚\n", me);
+	tell_room(env, "ä½ æ„Ÿåˆ°æœ‰ä¸€åŒçœ¼ç›åœ¨çª—å¤–æ‰“é‡ä½ ã€‚\n");
 	return COMMAND_DIR"std/look"->look_room(me, env);
 }
 int valid_leave(object me, string dir)
 {
 	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
 		dir == "west")
-		return notify_fail("¹Ù±øÀ¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
+		return notify_fail("å®˜å…µæ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
 
 	return ::valid_leave(me, dir);
 }

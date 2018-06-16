@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("åĞÒ£×Ó", ({ "xiaoyao zi","xiaoyao","zi" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("é€é¥å­", ({ "xiaoyao zi","xiaoyao","zi" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"ËûÊÇ¸ö²¡·òÄ£ÑùµÄÖĞÄêÈË£¬ÒÂÉÀñÜñÚ£¬Ò§ÖøÒ»¸ùºµÑÌ¹Ü£¬Ë«Ä¿ËÆÕöËÆ±Õ£¬×ìÀïÂıÂıÅç³öÑÌÎí¡£\n");
-	set("nickname","ÑÌÏ¼ÉñÁú");
-	set("title","Ì«ÔÀËÄÏÀ");
+		"ä»–æ˜¯ä¸ªç—…å¤«æ¨¡æ ·çš„ä¸­å¹´äººï¼Œè¡£è¡«è¤´è¤›ï¼Œå’¬è‘—ä¸€æ ¹æ—±çƒŸç®¡ï¼ŒåŒç›®ä¼¼çä¼¼é—­ï¼Œå˜´é‡Œæ…¢æ…¢å–·å‡ºçƒŸé›¾ã€‚\n");
+	set("nickname","çƒŸéœç¥é¾™");
+	set("title","å¤ªå²³å››ä¾ ");
 	set("combat_exp", 20000);
         set("shen_type", -1);
 	set("attitude", "aggressive");
@@ -21,7 +21,7 @@ void create()
 
 	set("chat_chance", 5);
 	set("chat_msg", ({
-		"åĞÒ£×Ó×óÊÖ°´ĞØ£¬¿ÈËÔÆğÀ´¡£\n",
+		"é€é¥å­å·¦æ‰‹æŒ‰èƒ¸ï¼Œå’³å—½èµ·æ¥ã€‚\n",
 	}) );
 
 	set_skill("club", 50);

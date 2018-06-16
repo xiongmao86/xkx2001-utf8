@@ -1,15 +1,15 @@
 //Cracked by Roath
-// phshang.c Æ¤»õÉÌ
+// phshang.c çš®è´§å•†
 
 inherit NPC;
 
 void create()
 {
-	set_name("Æ¤»õÉÌ", ({ "pihuo shang", "shang" }) );
-	set("long", "Ò»Î»À´Ô¶µÀ¶øÀ´µÄºº×åÉÌÈË£¬À´´Ë²É¹ºÆ¤»õ¡£\n");
+	set_name("çš®è´§å•†", ({ "pihuo shang", "shang" }) );
+	set("long", "ä¸€ä½æ¥è¿œé“è€Œæ¥çš„æ±‰æ—å•†äººï¼Œæ¥æ­¤é‡‡è´­çš®è´§ã€‚\n");
 
 	set("age", 35);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

@@ -1,17 +1,17 @@
 //Cracked by Roath
-// paomo.c ÑòÈâÅİâÉ 
+// paomo.c ç¾Šè‚‰æ³¡é¦ 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ÑòÈâÅİâÉ", ({"yangrou paomo", "yangrou", "paomo"}));
+        set_name("ç¾Šè‚‰æ³¡é¦", ({"yangrou paomo", "yangrou", "paomo"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÍëÏãÅçÅçµÄÑòÈâÅİâÉ¡£\n");
-                set("unit", "Íë");
+                set("long", "ä¸€ç¢—é¦™å–·å–·çš„ç¾Šè‚‰æ³¡é¦ã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 70);
                 set("food_remaining", 3);
                 set("food_supply", 50);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ����ɽ·
+// 天竺山路
 // Dong  11/03/1996.
 // modified by aln 2 / 98
 
@@ -10,10 +10,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-СϪ���ɽ·����Ϫ��һ��Сʯ�š�Ϫ��ũ��С������Ϸ���֡�
-���ϱ㵽�������á����¾��������á�
+小溪横过山路，跨溪有一座小石桥。溪边农家小孩在嬉戏玩乐。
+南上便到了上天竺。北下就是中天竺。
 LONG
         );
 

@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name("ÎÞ»¨¹û", ({"wuhua guo","guo"}));
+        set_name("æ— èŠ±æžœ", ({"wuhua guo","guo"}));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "¸ö");
-                set("long","ÕâÊÇÒ»¸öÎÞ»¨¹û¡£\n");
+                set("unit", "ä¸ª");
+                set("long","è¿™æ˜¯ä¸€ä¸ªæ— èŠ±æžœã€‚\n");
                 set("value", 100);
                         set("yaocai", 1);
                         set("cure_s",0);

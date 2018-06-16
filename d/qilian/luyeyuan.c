@@ -7,12 +7,12 @@ void create()
 {
 	object ob;
 
-        set("short", "Â¹Ò°Ô·");
+        set("short", "é¹¿é‡è‹‘");
         set("long", @LONG
-Ò»ÍÅÍÅÎíÆø£¬´ÓÉñÃØÄª²âµÄÂ·µÄÉî´¦Ó¿³öÀ´¡£Ğ¡Â·»íÈ»¿ªÀÊ£¬ÄãµÄ
-ÑÛÇ°³öÏÖÒ»¿é³¤Âú¼ªÏé²İºÍ²øÖ¦Ê²»¨µÄÃÜÁÖ£¬¼¸Ö»Â¹ÌøÔ¾ì¶ÆäÖĞ¡£×ß½ø
-ÃÜÁÖ£¬»¨Ò¶¼°Ï¥Éî¡£Ò»ÖêË«æ¶ÂŞÊ÷¼ä£¬°²ÓĞÒ»Á«×ù(lianzuo)£¬×ùÉÏÓĞ
-á¦¸Ç¡¢è¬çó¡£×ùÏÂ¹©×ÅÊ¯²§£¬²§ÖĞÊ¢×ÅÏã»¨¡¢ÏãÄ¾¡£
+ä¸€å›¢å›¢é›¾æ°”ï¼Œä»ç¥ç§˜è«æµ‹çš„è·¯çš„æ·±å¤„æ¶Œå‡ºæ¥ã€‚å°è·¯è±ç„¶å¼€æœ—ï¼Œä½ çš„
+çœ¼å‰å‡ºç°ä¸€å—é•¿æ»¡å‰ç¥¥è‰å’Œç¼ æä»€èŠ±çš„å¯†æ—ï¼Œå‡ åªé¹¿è·³è·ƒæ–¼å…¶ä¸­ã€‚èµ°è¿›
+å¯†æ—ï¼ŒèŠ±å¶åŠè†æ·±ã€‚ä¸€æ ªåŒå¨‘ç½—æ ‘é—´ï¼Œå®‰æœ‰ä¸€è²åº§(lianzuo)ï¼Œåº§ä¸Šæœ‰
+å¹¡ç›–ã€ç’çã€‚åº§ä¸‹ä¾›ç€çŸ³é’µï¼Œé’µä¸­ç››ç€é¦™èŠ±ã€é¦™æœ¨ã€‚
 LONG
         );
 
@@ -20,7 +20,7 @@ LONG
                 "east" : __DIR__"wangyou",
         ]));
         set("item_desc", ([
-                "lianzuo" : "Á«×ùÉÏÓĞ¼ªÏé²İÆÌ³É×ùµæ¡£\n",
+                "lianzuo" : "è²åº§ä¸Šæœ‰å‰ç¥¥è‰é“ºæˆåº§å«ã€‚\n",
         ]));
 	set("cost", 2);
         set("outdoors","qilian-shan");
@@ -46,13 +46,13 @@ int do_sit(string arg)
         if( !arg || arg=="" ) return 0;
 
 	if( me->query_temp("sitted"))
-		return notify_fail("ÄãÒÑ¾­×ø×ÅÁË£¡\n");
+		return notify_fail("ä½ å·²ç»åç€äº†ï¼\n");
 
         skl = me->query_skills();
         sname  = keys(skl);
 
         if( arg == "lianzuo"){
-	message_vision("$NÌ¤ÉÏÁ«×ù£¬°²×¡ÕıÄî£¬Ãæ¶«¶ø×ø¡£\n", me);
+	message_vision("$Nè¸ä¸Šè²åº§ï¼Œå®‰ä½æ­£å¿µï¼Œé¢ä¸œè€Œåã€‚\n", me);
         me->set_temp("sitted", 1);
 
 /*        for(i=0; i<sizeof(skl); i++) {
@@ -64,13 +64,13 @@ int do_sit(string arg)
                 me->unconcious();
         }
 	else if ( present("longxiang jing", me) && me->query("potential") > 0){
-                message_vision(HIY"ÏãÄ¾²»µã×ÔÈ¼£¬$N×÷Ã÷¿ÕÏëÄî£¬¾ßÕıÄîÕıÖª£¬¶È»¯Ô°Âú£¬ÈëËÄìø¶¨¶ø°ãÄùÅÍ¡£\n"NOR, me);
+                message_vision(HIY"é¦™æœ¨ä¸ç‚¹è‡ªç‡ƒï¼Œ$Nä½œæ˜ç©ºæƒ³å¿µï¼Œå…·æ­£å¿µæ­£çŸ¥ï¼Œåº¦åŒ–å›­æ»¡ï¼Œå…¥å››ç¦…å®šè€Œèˆ¬æ¶…ç£ã€‚\n"NOR, me);
                 me->start_busy(10+random(10));
                 me->improve_skill("longxiang-banruo", me->query_int()*7/10
                 * me->query("potential"));
 		me->set("jing", 0);
                 me->set("potential", 0);
-                tell_object(me, "ÄãµÄÁúÏó°ãÈô¹¦½ø²½ÁË¡£\n");
+                tell_object(me, "ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸè¿›æ­¥äº†ã€‚\n");
 		return 1;
         }
 	return 1;
@@ -79,15 +79,15 @@ int do_sit(string arg)
 int do_stand()
 {
 	if (this_player()->query_busy())
-		return notify_fail("Äã»¹²»ÄÜÕ¾ÆğÀ´£¡\n");
+		return notify_fail("ä½ è¿˜ä¸èƒ½ç«™èµ·æ¥ï¼\n");
 
-        message_vision("$NÕ¾ÁËÆğÀ´£¬×ßÏÂÁ«×ù¡£\n", this_player());
+        message_vision("$Nç«™äº†èµ·æ¥ï¼Œèµ°ä¸‹è²åº§ã€‚\n", this_player());
         this_player()->delete_temp("sitted");
 	return 1;
 }
 int valid_leave(object me, string dir)
 {
 	if (me->query_temp("sitted"))
-	return notify_fail("×ø×Å×ß£¿\n");
+	return notify_fail("åç€èµ°ï¼Ÿ\n");
 	return ::valid_leave(me, dir);
 }

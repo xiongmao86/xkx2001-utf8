@@ -6,10 +6,10 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "Ê¯±Ú");
+        set("short", "çŸ³å£");
         set("long", @LONG
-ÕâÊÇÔÚÉ½ÆÂÉÏÍ»³öÀ´µÄÒ»¿éÊ¯±Ú£¬ËÄÖÜÔÓ²İ´ÔÉú¡£×ó±ßºÃÏóÓĞ¸ö
-Ğ¡¶´(hole)£¬ËÆºõ¿ÉÒÔ×ê(zuan)½øÈ¥¡£´ÓÕâÌø(jump)ÏÂÈ¥¾ÍÊÇÉ½½ÅÁË¡£
+è¿™æ˜¯åœ¨å±±å¡ä¸Šçªå‡ºæ¥çš„ä¸€å—çŸ³å£ï¼Œå››å‘¨æ‚è‰ä¸›ç”Ÿã€‚å·¦è¾¹å¥½è±¡æœ‰ä¸ª
+å°æ´(hole)ï¼Œä¼¼ä¹å¯ä»¥é’»(zuan)è¿›å»ã€‚ä»è¿™è·³(jump)ä¸‹å»å°±æ˜¯å±±è„šäº†ã€‚
 LONG );
         set("objects", ([ 
 			 __DIR__ + "npc/monkey" : 1, 
@@ -31,29 +31,29 @@ void init()
 int do_zuan(string arg)
 {	object me = this_player();
 	if ( !arg )
-		return notify_fail( "ÄãÏë×êÊ²÷á?\n");
+		return notify_fail( "ä½ æƒ³é’»ä»€éº½?\n");
 	if ( arg != "hole" )
-		return notify_fail( "ÀÏÀÏÊµÊµ zuan hole °É¡£\n");
-	message_vision("$NÒ»ÍäÑü£¬ÍùÄÇ¶´¿Ú×êÁË½øÈ¥¡£\n", me);
-	write("ÄãÔÚ¶´ÀïÅÀÁËÒ»»á¶ù£¬Í»È»ÑÛÇ°Ò»ÁÁ¡£\n");
+		return notify_fail( "è€è€å®å® zuan hole å§ã€‚\n");
+	message_vision("$Nä¸€å¼¯è…°ï¼Œå¾€é‚£æ´å£é’»äº†è¿›å»ã€‚\n", me);
+	write("ä½ åœ¨æ´é‡Œçˆ¬äº†ä¸€ä¼šå„¿ï¼Œçªç„¶çœ¼å‰ä¸€äº®ã€‚\n");
 	me->move(__DIR__"yongdao2");
-	message("vision", me->name() + "´Ó¶´Àï×êÁË³öÀ´¡£\n",environment(me), ({me}) );
+	message("vision", me->name() + "ä»æ´é‡Œé’»äº†å‡ºæ¥ã€‚\n",environment(me), ({me}) );
 
 	return 1;
 }
 int do_jump(string arg)
 {	object me = this_player();
 	if ( !arg )
-	{	write("ÄãÒªÍùÄÄÌø£¿\n");
+	{	write("ä½ è¦å¾€å“ªè·³ï¼Ÿ\n");
 		return 1;
 	}
 	if ( arg != "down" )
 		return 0;
-	message_vision("$N´ÓÉ½ÆÂÉÏÌøÁËÏÂÈ¥¡£\n", me);
+	message_vision("$Nä»å±±å¡ä¸Šè·³äº†ä¸‹å»ã€‚\n", me);
 	me->move(__DIR__"shanxia");
 	if (me->query_skill("dodge") > 20) 
-		message("vision", me->name() + "É½ÆÂÉÏÌøÁËÏÂÀ´¡£\n",environment(me), me );
+		message("vision", me->name() + "å±±å¡ä¸Šè·³äº†ä¸‹æ¥ã€‚\n",environment(me), me );
 	else
-		message("vision", me->name() + "É½ÆÂÉÏ¹öÁËÏÂÀ´¡£\n",environment(me), me );
+		message("vision", me->name() + "å±±å¡ä¸Šæ»šäº†ä¸‹æ¥ã€‚\n",environment(me), me );
 	return 1;
 }

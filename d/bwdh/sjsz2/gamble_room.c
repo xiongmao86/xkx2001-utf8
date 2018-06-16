@@ -10,7 +10,7 @@ string long_desc();
 string look_paizi();
 
 void create() {
-    set("short", "¶Ä³¡");
+    set("short", "èµŒåœº");
     set("long", (: long_desc :) );
     set("exits", ([
         "west"  : __DIR__"square",
@@ -42,30 +42,30 @@ string look_paizi() {
     int i;
 
     if ( ob->query("status") == 1) {
-        msg = HIY"\n" + sprintf("    µÚ %2d ¾Ö  Ñ¹×¢ÖĞ\n    £­£­£­£­£­£­£­£­", ob->query("round")) + "\n"NOR;
+        msg = HIY"\n" + sprintf("    ç¬¬ %2d å±€  å‹æ³¨ä¸­\n    ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼", ob->query("round")) + "\n"NOR;
         i = to_int(ob->query("east"));
         if ( i > 0 )
-            msg = msg + HIR"    ¶«¶Ó  " + chinese_number(i) + "ÅâÒ»\n"NOR;
+            msg = msg + HIR"    ä¸œé˜Ÿ  " + chinese_number(i) + "èµ”ä¸€\n"NOR;
         else if (i < 0)
-            msg = msg + HIR"    ¶«¶Ó  Ò»Åâ" + chinese_number(-i) + "\n"NOR;
+            msg = msg + HIR"    ä¸œé˜Ÿ  ä¸€èµ”" + chinese_number(-i) + "\n"NOR;
         i = to_int(ob->query("west"));
         if ( i > 0 )
-            msg = msg + HIR"    Î÷¶Ó  " + chinese_number(i) + "ÅâÒ»\n"NOR;
+            msg = msg + HIR"    è¥¿é˜Ÿ  " + chinese_number(i) + "èµ”ä¸€\n"NOR;
         else if (i < 0)
-            msg = msg + HIR"    Î÷¶Ó  Ò»Åâ" + chinese_number(-i) + "\n"NOR;
+            msg = msg + HIR"    è¥¿é˜Ÿ  ä¸€èµ”" + chinese_number(-i) + "\n"NOR;
     }
     else if ( ob->query("status") == -1) {
-        msg = HIY"\n" + sprintf("    µÚ %2d ¾Ö  Åâ¸¶ÖĞ\n    £­£­£­£­£­£­£­£­", ob->query("round")) + "\n"NOR;
+        msg = HIY"\n" + sprintf("    ç¬¬ %2d å±€  èµ”ä»˜ä¸­\n    ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼", ob->query("round")) + "\n"NOR;
         if ( ob->query("win") == "east" )
-            msg = msg + HIR"        ¶«¶Ó»ñÊ¤\n"NOR;
+            msg = msg + HIR"        ä¸œé˜Ÿè·èƒœ\n"NOR;
         else if (ob->query("win") == "west" )
-            msg = msg + HIR"        Î÷¶Ó»ñÊ¤\n"NOR;
+            msg = msg + HIR"        è¥¿é˜Ÿè·èƒœ\n"NOR;
         else
-            msg = msg + HIW"      ±¾¾ÖÎŞÓ®¼Ò\n"NOR;
+            msg = msg + HIW"      æœ¬å±€æ— èµ¢å®¶\n"NOR;
         return msg;
     }
     else
-        msg = HIG"    ÔİÎŞ¶Ä¾Ö\n"NOR;
+        msg = HIG"    æš‚æ— èµŒå±€\n"NOR;
     return msg;
 }
 
@@ -74,13 +74,13 @@ string long_desc() {
     object ob = this_object();
 
     if (ob->query("status") == 1 )
-        msg = "¶Ä³¡ÄÚÈËÉ½ÈËº££¬ÎÚÑÌÕÎÆø¡£´ó¼Ò·×·×ÏÂ×¢£¬ÓĞÈË¿ÚÄ­ºá·ÉµØ\n·¢±íÒâ¼û£¬ÓĞÈËÁ½ÑÛ·¢Ö±£¬à«à«×ÔÓï¡£\n";
+        msg = "èµŒåœºå†…äººå±±äººæµ·ï¼Œä¹ŒçƒŸç˜´æ°”ã€‚å¤§å®¶çº·çº·ä¸‹æ³¨ï¼Œæœ‰äººå£æ²«æ¨ªé£åœ°\nå‘è¡¨æ„è§ï¼Œæœ‰äººä¸¤çœ¼å‘ç›´ï¼Œå–ƒå–ƒè‡ªè¯­ã€‚\n";
     else if (ob->query("status") == -1 )
-        msg = "¶Ä³¡ÏÖÔÚÊÇÅâ¸¶Ê±¼ä£¬Ó®¼ÒÏ²ÆøÑóÑó£¬µÃÒâµØÊı×ÅÒø×Ó£¬Êä¼Ò\nÔçÒÑ¼±ºìÁËÑÛ£¬Ãæºì¶ú³à¡£\n";
+        msg = "èµŒåœºç°åœ¨æ˜¯èµ”ä»˜æ—¶é—´ï¼Œèµ¢å®¶å–œæ°”æ´‹æ´‹ï¼Œå¾—æ„åœ°æ•°ç€é“¶å­ï¼Œè¾“å®¶\næ—©å·²æ€¥çº¢äº†çœ¼ï¼Œé¢çº¢è€³èµ¤ã€‚\n";
     else
-        msg = "¶Ä³¡ÏÖÔÚÃ»ÓĞÓªÒµ£¬ËùÒÔÀäÀäÇåÇåµÄ¡£\n";
+        msg = "èµŒåœºç°åœ¨æ²¡æœ‰è¥ä¸šï¼Œæ‰€ä»¥å†·å†·æ¸…æ¸…çš„ã€‚\n";
 
-    msg = msg + "¶Ä³¡ÕıÖĞ¹ÒÕßÒ»¸öÅÆ×Ó(paizi)¡£\n";
+    msg = msg + "èµŒåœºæ­£ä¸­æŒ‚è€…ä¸€ä¸ªç‰Œå­(paizi)ã€‚\n";
     return msg;
 }
 
@@ -92,22 +92,22 @@ int do_bet(string arg) {
     string side;
 
     if ( ob->query("status") != 1 )
-        return notify_fail("ÏÖÔÚ²»ÊÇÑ¹×¢Ê±¼ä¡£\n");
+        return notify_fail("ç°åœ¨ä¸æ˜¯å‹æ³¨æ—¶é—´ã€‚\n");
 
     if (sscanf(arg, "%s %d", side, i) != 2) 
-        return notify_fail("Ê²Ã´£¿\n");
+        return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
     if ( ((side != "east") && (side != "west")) )
-        return notify_fail("Ê²Ã´£¿\n");
+        return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
     if ( i < 0 )
-        return notify_fail("ÏŞ¶îÔÚÒ»µ½Ò»°ÙÁ½°×Òø¡£\n");
+        return notify_fail("é™é¢åœ¨ä¸€åˆ°ä¸€ç™¾ä¸¤ç™½é“¶ã€‚\n");
 
     money = present("silver_money", me);
     if( !money )
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ç§è´§å¸ã€‚\n");
     if( (int)money->query_amount() < i)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÄÇÃ´¶à°×Òø¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰é‚£ä¹ˆå¤šç™½é“¶ã€‚\n");
     money->set_amount((int)money->query_amount() - i);
     money->move(me);
 
@@ -119,12 +119,12 @@ int do_bet(string arg) {
                     me->set("bwdh_gamble/east_round", ob->query("round"));
                     if ( balance == 0 ) {
                         me->set("bwdh_gamble/east_bet", i);
-                        write("ÄãÑºÁË" + chinese_number(i) + "Á½°×ÒøÔÚ¶«¶Ó¡£\n");
+                        write("ä½ æŠ¼äº†" + chinese_number(i) + "ä¸¤ç™½é“¶åœ¨ä¸œé˜Ÿã€‚\n");
                         return 1;
                     }
                     else {
                         me->set("bwdh_gamble/east_bet", i + balance);
-                        write("ÄãÓÖÑºÁË" + chinese_number(i) + "Á½°×ÒøÔÚ¶«¶Ó¡£\n");
+                        write("ä½ åˆæŠ¼äº†" + chinese_number(i) + "ä¸¤ç™½é“¶åœ¨ä¸œé˜Ÿã€‚\n");
                         return 1;
                     }
                     break;
@@ -135,12 +135,12 @@ int do_bet(string arg) {
                     me->set("bwdh_gamble/west_round", ob->query("round"));
                     if ( balance == 0 ) {
                         me->set("bwdh_gamble/west_bet", i);
-                        write("ÄãÑºÁË" + chinese_number(i) + "Á½°×ÒøÔÚ¶«¶Ó¡£\n");
+                        write("ä½ æŠ¼äº†" + chinese_number(i) + "ä¸¤ç™½é“¶åœ¨ä¸œé˜Ÿã€‚\n");
                         return 1;
                     }
                     else {
                         me->set("bwdh_gamble/west_bet", i + balance);
-                        write("ÄãÓÖÑºÁË" + chinese_number(i) + "Á½°×ÒøÔÚ¶«¶Ó¡£\n");
+                        write("ä½ åˆæŠ¼äº†" + chinese_number(i) + "ä¸¤ç™½é“¶åœ¨ä¸œé˜Ÿã€‚\n");
                         return 1;
                     }
                     break;
@@ -156,11 +156,11 @@ int do_collect() {
     string win_side;
 
     if ( ob->query("status") != -1 )
-        return notify_fail("ÏÖÔÚ²»ÊÇÅâ¸¶Ê±¼ä¡£\n");
+        return notify_fail("ç°åœ¨ä¸æ˜¯èµ”ä»˜æ—¶é—´ã€‚\n");
 
     win_side = ob->query("win");
     if ( win_side != "east" && win_side != "west" )
-        return notify_fail("±¾¾ÖÎŞÓ®¼Ò¡£\n");
+        return notify_fail("æœ¬å±€æ— èµ¢å®¶ã€‚\n");
 
     switch(win_side) {
     case "east" :   if ( me->query("bwdh_gamble/east_round") == ob->query("round") ) {
@@ -168,7 +168,7 @@ int do_collect() {
                         ratio = ob->query("east");
                     }
                     else {
-                        write("¶Ä³¡»ï¼Æ¶ÔÄã¡°ºß¡±µÄÀäĞ¦Ò»Éù£¬Ò»½Å°ÑÄãÌß³öÃÅÍâ¡£\n");
+                        write("èµŒåœºä¼™è®¡å¯¹ä½ â€œå“¼â€çš„å†·ç¬‘ä¸€å£°ï¼Œä¸€è„šæŠŠä½ è¸¢å‡ºé—¨å¤–ã€‚\n");
                         me->move(__DIR__"square");
                         return 1;
                     }
@@ -179,7 +179,7 @@ int do_collect() {
                         ratio = ob->query("west");
                     }
                     else {
-                        write("¶Ä³¡»ï¼Æ¶ÔÄã¡°ºß¡±µÄÀäĞ¦Ò»Éù£¬È¥ÕĞºôÆäËûÈËÁË¡£\n");
+                        write("èµŒåœºä¼™è®¡å¯¹ä½ â€œå“¼â€çš„å†·ç¬‘ä¸€å£°ï¼Œå»æ‹›å‘¼å…¶ä»–äººäº†ã€‚\n");
                         return 1;
                     }
                     me->set("bwdh_gamble/west_round", 0);
@@ -195,13 +195,13 @@ int do_collect() {
     money->set_amount(bet);
     money->move(me);
     me->set("bwdh_gamble/east_round", 0);
-    write ("¶Ä³¡¸¶¸øÄã" + chinese_number(bet) + "Á½°×Òø¡£\n");
+    write ("èµŒåœºä»˜ç»™ä½ " + chinese_number(bet) + "ä¸¤ç™½é“¶ã€‚\n");
     return 1;
 }
 
 int valid_leave(object player, string dir) {
     if (!wizardp(player) && dir == "up")
-        return notify_fail("´Ë¼äÖ÷ÈË²¢Ã»ÓĞÑûÇëÄãÈ¥ÄÇÀï£¡\n");
+        return notify_fail("æ­¤é—´ä¸»äººå¹¶æ²¡æœ‰é‚€è¯·ä½ å»é‚£é‡Œï¼\n");
 
     return ::valid_leave(player, dir);
 }

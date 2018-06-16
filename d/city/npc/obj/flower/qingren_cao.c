@@ -8,14 +8,14 @@ int value() { return query_amount() * (int)query("base_value"); }
 
 void create()
 {
-	set_name(HIG "ÇéÈË²İ" NOR, ({"qingren cao"}));
+	set_name(HIG "æƒ…äººè‰" NOR, ({"qingren cao"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»ÖêÅîËÉÇáÓ¯£¬×´ÈçÔÆÎíµÄÇéÈË²İ£¬ÏóÕ÷×Å°®ÒâÓÀºã¡£\n");
-		set("unit", "Öê");
+		set("long", "è¿™æ˜¯ä¸€æ ªè“¬æ¾è½»ç›ˆï¼ŒçŠ¶å¦‚äº‘é›¾çš„æƒ…äººè‰ï¼Œè±¡å¾ç€çˆ±æ„æ°¸æ’ã€‚\n");
+		set("unit", "æ ª");
 		set("value", 15);
-		set("base_unit", "Öê");
+		set("base_unit", "æ ª");
         set("base_weight", 100);
 		set("flower_w",1);
 			}

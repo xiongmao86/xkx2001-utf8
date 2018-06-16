@@ -8,11 +8,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "Ê¯¶´");
+        set("short", "çŸ³æ´ž");
         set("long", @LONG
-ÑÛÇ°Öò¹â÷öµ­£¬ËÄÖÜÎ´¼ûÈÎºÎ×°ÊÎ£¬¹âÍº´Ö²ÚµÄÊ¯±ÚÉÏËÄ×ÖÐ¡×­£¬
-ÕýÊÇ×îºóÒ»¾ä×Ü¸Ù£º¡¸ÌìÈË¹éÕæ¡¹£¬ÏÂÃæÓÖÓÐÒ»ÐÐÐ¡×Ö(xiaozi)¡£¼¸
-ÕÅÊ¯×ÀÊ¯µÊËæÒâµØ°Ú·Å×Å£¬ËÆÊÇÔÓÂÒÎÞÕÂ£¬ÓÖËÆÄÚ²ØÐþ»ú¡£
+çœ¼å‰çƒ›å…‰é»¯æ·¡ï¼Œå››å‘¨æœªè§ä»»ä½•è£…é¥°ï¼Œå…‰ç§ƒç²—ç³™çš„çŸ³å£ä¸Šå››å­—å°ç¯†ï¼Œ
+æ­£æ˜¯æœ€åŽä¸€å¥æ€»çº²ï¼šã€Œå¤©äººå½’çœŸã€ï¼Œä¸‹é¢åˆæœ‰ä¸€è¡Œå°å­—(xiaozi)ã€‚å‡ 
+å¼ çŸ³æ¡ŒçŸ³å‡³éšæ„åœ°æ‘†æ”¾ç€ï¼Œä¼¼æ˜¯æ‚ä¹±æ— ç« ï¼Œåˆä¼¼å†…è—çŽ„æœºã€‚
 LONG );
 
       set("exits", ([
@@ -24,11 +24,11 @@ LONG );
 ]));
 	set("item_desc",([
 	    "xiaozi" : "
-Ð¡×ÖÐ´µÄÊÇ£º¡¸ÎôÄêÓàµÈ³ÁÄçÎÞÊõ£¬Î©Ê¯¹«ÃîÎòÉñ¹¦£¬¸ÇÒò...¡¹£¬
-ºóÃæµÄ×Ö¼£ÒÑÄ£ºýÄÑ±æ¡£\n",
+å°å­—å†™çš„æ˜¯ï¼šã€Œæ˜”å¹´ä½™ç­‰æ²‰æººæ— æœ¯ï¼ŒæƒŸçŸ³å…¬å¦™æ‚Ÿç¥žåŠŸï¼Œç›–å› ...ã€ï¼Œ
+åŽé¢çš„å­—è¿¹å·²æ¨¡ç³Šéš¾è¾¨ã€‚\n",
 	]));
 
-//	create_door("out", "Ê¯ÃÅ", "enter", DOOR_CLOSED);
+//	create_door("out", "çŸ³é—¨", "enter", DOOR_CLOSED);
 	set("indoors", "xiakedao" );
 	set("cost", 0);
 	setup();

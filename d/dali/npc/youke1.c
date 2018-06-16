@@ -1,15 +1,15 @@
 //Cracked by Roath
-// youke1.c ÓÎ¿Í
+// youke1.c æ¸¸å®¢
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÓÎ¿Í", ({ "you ke", "ke" }) );
-	set("long", "Ò»¸öÔ¶µÀÀ´µÄºº×åÓÎ¿Í£¬·ç³¾ÆÍÆÍ£¬µ«ÏÔÈ»ÎªÑÛÇ°ÃÀ¾°Ëù¶¯£¬ĞË¸ß²ÊÁÒ¡£\n");
+	set_name("æ¸¸å®¢", ({ "you ke", "ke" }) );
+	set("long", "ä¸€ä¸ªè¿œé“æ¥çš„æ±‰æ—æ¸¸å®¢ï¼Œé£å°˜ä»†ä»†ï¼Œä½†æ˜¾ç„¶ä¸ºçœ¼å‰ç¾æ™¯æ‰€åŠ¨ï¼Œå…´é«˜å½©çƒˆã€‚\n");
 
 	set("age", 30);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

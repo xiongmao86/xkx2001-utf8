@@ -8,17 +8,17 @@ inherit HALBERD;
 
 void create()
 {
-        set_name(HIC"Ğ¡ÇàÆì"NOR, ({ "qing qi", "qi" }) );
+        set_name(HIC"å°é’æ——"NOR, ({ "qing qi", "qi" }) );
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
-                set("long", "ÕâÊÇÒ»ÃæÁ¬¸Ë²»µ½¶ş³ßµÄÇàÉ«Ğ¡Æì£¬ÆìÉÏĞå×Å¸öÃ÷½ÌµÄ»ğÑ×¼ÇºÅ\n");
+                set("unit", "é¢");
+                set("long", "è¿™æ˜¯ä¸€é¢è¿æ†ä¸åˆ°äºŒå°ºçš„é’è‰²å°æ——ï¼Œæ——ä¸Šç»£ç€ä¸ªæ˜æ•™çš„ç«ç‚è®°å·\n");
                 set("value", 0);
                 set("material", "");
-                set("wield_msg", "$NÄÃ³öÒ»±ú$n¡£\n");
-                set("unwield_msg", "$N°Ñ$n²å»Ø±³áá¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŸ„$nã€‚\n");
+                set("unwield_msg", "$NæŠŠ$næ’å›èƒŒå¾Œã€‚\n");
         }
         init_halberd(20);
         setup();

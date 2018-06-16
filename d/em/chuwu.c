@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chuwu.c �����
+// chuwu.c 储物间
 // Shan: 96/06/22
 
 #include <room.h>
@@ -17,12 +17,12 @@ string* names = ({
 
 void create()
 {
-        set("short", "�����");
+        set("short", "储物间");
 	set("long", @LONG
-������Ƕ��һ����ֵĴ���䣬���ܶ��Ǽ��ӡ�һ�����Ϸ����˸�����
-�����г��������������޵ȣ�������Ŀ����һ�����Ϸ��˸��ַ��ߡ�����һ
-�����ϰ�������С���ӣ�ԭ����װ��ҩƷ��ҩ��һλʦ̫������������
-��Ʒ����æµ���������ߡ���������и�С¥�ݡ��������ի���ˡ�
+这里便是峨嵋华藏庵的储物间，四周都是架子。一个架上放满了各样兵
+器，有长剑，拂尘，长鞭等，琳琅满目。另一个架上放了各种防具。还有一
+个架上摆了许多小柜子，原来是装满药品的药柜。一位师太负责管理这里的
+物品，正忙碌着整理防具。后面好象有个小楼梯。门外就是斋堂了。
 LONG
 	);
 	set("exits", ([
@@ -41,7 +41,7 @@ LONG
                 "door"          :       (: look_door :),
         ]));
 
-        create_door("north", "ľ��", "south", DOOR_CLOSED);
+        create_door("north", "木门", "south", DOOR_CLOSED);
 
 	set("cost", 0);
 	setup();
@@ -51,7 +51,7 @@ LONG
 
 string look_door()
 {
-        return "һ��С����ͨի���봢��䡣\n";
+        return "一道小门连通斋堂与储物间。\n";
 }
 
 void reset()

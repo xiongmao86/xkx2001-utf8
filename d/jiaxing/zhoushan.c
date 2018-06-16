@@ -7,10 +7,10 @@ inherit HARBOR;
 
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "舟山");
         set("long", @LONG
-������ɽ��һ����ۣ��������Ҵ�(chuan)���������ż����������ˣ�
-�˴��ɶɹ��󺣵��ﴫ˵�е��һ����������Ǽ��˳ǣ�������һ���޼ʵĴ󺣡�
+这是舟山的一个渔港，边上有艘大船(chuan)，船上坐着几个渔夫打扮的人，
+乘船可渡过大海到达传说中的桃花岛。西面是嘉兴城，东面是一望无际的大海。
 LONG
         );
         set("outdoors", "taohua");
@@ -19,7 +19,7 @@ LONG
         ]));
 
         set("item_desc", ([
-                "chuan" : "����һ�Һ����������˶ɺ������Ǵ�����ƽʱҲ���������㡣\n",
+                "chuan" : "这是一艘海船，可载人渡海，但是船家在平时也用它来打鱼。\n",
         ]));
 
         set("navigate/locx", 0);

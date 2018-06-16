@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiang ½­°ÙÊ¤
+// jiang æ±Ÿç™¾èƒœ
 
 #include <ansi.h>
 
@@ -10,10 +10,10 @@ void create()
 {
 	seteuid(getuid());
 
-	set_name("½­°ÙÊ¤", ({ "jiang baisheng", "jiang", "baisheng" }) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("æ±Ÿç™¾èƒœ", ({ "jiang baisheng", "jiang", "baisheng" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "µ±½ñÎäÁÖÃËÖ÷ÎºÎÞË«Ö®ÊÖÏÂÖ®Ç×±ø¶Ó³¤¡£\n");
+	set("long", "å½“ä»Šæ­¦æž—ç›Ÿä¸»é­æ— åŒä¹‹æ‰‹ä¸‹ä¹‹äº²å…µé˜Ÿé•¿ã€‚\n");
 	set("attitude", "heroism");
 	set("generation",0);
 	set("winner","none");
@@ -44,7 +44,7 @@ void create()
 	set("fight_times", 0);	
 
 	set("inquiry", ([
-		"ÉÏÉ½" : (: check_qualification :),
+		"ä¸Šå±±" : (: check_qualification :),
 	]));
 
 	setup();
@@ -62,7 +62,7 @@ int accept_fight(object ob)
 
 	times = me->query("fight_times");
 	if ( times >= 10 )
-		return notify_fail("½­°ÙÊ¤ÒÑ¾­È«ÉíÍÑÁ¦£¬Å¿ÔÚµØÉÏ´ó¿ÚµØ´­×Å´ÖÆø£¡\n");	
+		return notify_fail("æ±Ÿç™¾èƒœå·²ç»å…¨èº«è„±åŠ›ï¼Œè¶´åœ¨åœ°ä¸Šå¤§å£åœ°å–˜ç€ç²—æ°”ï¼\n");	
 
 	me->set("eff_qi", me->query("max_qi"));
 	me->set("qi",     me->query("max_qi"));
@@ -90,9 +90,9 @@ int checking(object me, object ob)
 	{
 		if (( (int)me->query("qi")*100 / my_max_qi) <= 80 ) 
 		{
-			say(GRN "\n½­°ÙÊ¤ËµµÀ£º ÎºÃËÖ÷Ôó±»ÌìÏÂ£¬¸£¼Ã²ÔÉú£¬ ËûÀÏÈË¼ÒËãÎÞÒÅ²ß£¬¹¦ÎÞ²»¿Ë£¬¿ËÎÞ²»Ê¤£¡\n" NOR);
-			say(GRN "\n½­°ÙÊ¤ËµµÀ£º ÎºÃËÖ÷Ò»¾ä»°£¬ÊôÏÂ°ìÊÂ´ÁÁ¦£¬ÓÂÍùÖ±Ç°£¡ ±ùÌìÑ©µØÍùÀï´³£¬µ¶É½»ðº£¾Í¸ÒÈ¥£¡\n" NOR);
-			message_vision(HIY "\n½­°ÙÊ¤ËµÍê£¬È«Éí²»Öª´òÄÄÀïÃ°³öÀ´µÄÒ»¹ÉÁ¦Æø£¬²»µ«¹¦Á¦¾¡¸´£¬È­Á¦Ò²ÍþÃÍºÃ¶à±¶£¡\n" NOR, ob);
+			say(GRN "\næ±Ÿç™¾èƒœè¯´é“ï¼š é­ç›Ÿä¸»æ³½è¢«å¤©ä¸‹ï¼Œç¦æµŽè‹ç”Ÿï¼Œ ä»–è€äººå®¶ç®—æ— é—ç­–ï¼ŒåŠŸæ— ä¸å…‹ï¼Œå…‹æ— ä¸èƒœï¼\n" NOR);
+			say(GRN "\næ±Ÿç™¾èƒœè¯´é“ï¼š é­ç›Ÿä¸»ä¸€å¥è¯ï¼Œå±žä¸‹åŠžäº‹æˆ³åŠ›ï¼Œå‹‡å¾€ç›´å‰ï¼ å†°å¤©é›ªåœ°å¾€é‡Œé—¯ï¼Œåˆ€å±±ç«æµ·å°±æ•¢åŽ»ï¼\n" NOR);
+			message_vision(HIY "\næ±Ÿç™¾èƒœè¯´å®Œï¼Œå…¨èº«ä¸çŸ¥æ‰“å“ªé‡Œå†’å‡ºæ¥çš„ä¸€è‚¡åŠ›æ°”ï¼Œä¸ä½†åŠŸåŠ›å°½å¤ï¼Œæ‹³åŠ›ä¹Ÿå¨çŒ›å¥½å¤šå€ï¼\n" NOR, ob);
 
 			me->set("eff_qi", me->query("max_qi"));
 			me->set("qi",     me->query("max_qi"));
@@ -102,7 +102,7 @@ int checking(object me, object ob)
 		}
 		else if (( (int)ob->query("qi")*100 / his_max_qi) < 50 ) 
 		{
-			say(GRN "\n½­°ÙÊ¤ËµµÀ£º ¿´À´ÄãÐ¡×Ó¸úÎÒ»¹²î×ÅÒ»´ó½ØÄØ£¬»ØÈ¥Á·ÉÏÊ®ÄêÔÙÀ´°É£¡\n");
+			say(GRN "\næ±Ÿç™¾èƒœè¯´é“ï¼š çœ‹æ¥ä½ å°å­è·Ÿæˆ‘è¿˜å·®ç€ä¸€å¤§æˆªå‘¢ï¼Œå›žåŽ»ç»ƒä¸Šåå¹´å†æ¥å§ï¼\n");
 			return 1;
 		}
 
@@ -131,11 +131,11 @@ string check_qualification()
 	if ( qualified_skills_no > 5 ) {
 		ob->set_temp("qualified", 1);
 		command( "bow" );
-		return "ÕâÎ»"+RANK_D->query_respect(ob)+"Çë×Ô±ã¡£";
+		return "è¿™ä½"+RANK_D->query_respect(ob)+"è¯·è‡ªä¾¿ã€‚";
 	}
 	else {
-		message_vision("½­°ÙÊ¤ÀäÀäµØ¿´ÁË$NÒ»ÑÛ¡£\n", ob);
-		return "ÃËÖ÷¼°Á½Î»Ê¹ÕßÃ»¹¦·ò¼ûÄã¡£";
+		message_vision("æ±Ÿç™¾èƒœå†·å†·åœ°çœ‹äº†$Nä¸€çœ¼ã€‚\n", ob);
+		return "ç›Ÿä¸»åŠä¸¤ä½ä½¿è€…æ²¡åŠŸå¤«è§ä½ ã€‚";
 	}
 }
 
@@ -143,14 +143,14 @@ int accept_object(object who, object ob)
 {
         object wage;
 
-        if (who->query_temp("biao/jiang") && ob->name()=="ºìïÚ") {
+        if (who->query_temp("biao/jiang") && ob->name()=="çº¢é•–") {
                 who->delete_temp("biao/jiang");
 		who->delete_temp("apply/short");
-                command( "say ÓÐÀÍÕâÎ»"+RANK_D->query_respect(who)+"ÁË£¬Äã¿ÉÒÔ×ßÁË¡£");
+                command( "say æœ‰åŠ³è¿™ä½"+RANK_D->query_respect(who)+"äº†ï¼Œä½ å¯ä»¥èµ°äº†ã€‚");
                 wage = new("/clone/money/silver");
                 wage->set_amount(5);
                 wage->move(who);
-                message_vision("½­°ÙÊ¤¸ø$NÎåÁ½°×Òø×÷Îª×ßïÚµÄ³êÀÍ¡£\n", who);
+                message_vision("æ±Ÿç™¾èƒœç»™$Näº”ä¸¤ç™½é“¶ä½œä¸ºèµ°é•–çš„é…¬åŠ³ã€‚\n", who);
                 remove_call_out("destroy_it");
                 call_out("destroy_it", 1, ob);
                 return 1;

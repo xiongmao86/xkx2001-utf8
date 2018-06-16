@@ -1,5 +1,5 @@
 //Cracked by Roath
-// taoci.c ÌÕ´ÉÆÌ
+// taoci.c é™¶ç“·é“º
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌÕ´ÉÆÌ");
+        set("short", "é™¶ç“·é“º");
 	set("long", @LONG
-ÕâÀïÉÕÖÆ¸÷Ê½¸÷ÑùµÄÌÕ´ÉÖÆÆ·¡£¹ñÌ¨ÉÏ°Ú×Å»¨É«¸÷ÒìµÄÍëµúÆ¿¹Þ£¬°×ðªÍ¸
-Ã÷£¬ÇÉ¶áÌì¹¤¡£¶¯Îï´ÉÆ÷£¬Ï¸ÄåÔ²Èó£¬èòèòÈçÉú¡£ÓÉÓÚËüµÄÌØÊâµØÎ»£¬Òò´ËÉú
-ÒâºÍ¼¼Êõ´ÓÀ´¶¼ÊÇ´«×Ó²»´«Å®¡£
+è¿™é‡Œçƒ§åˆ¶å„å¼å„æ ·çš„é™¶ç“·åˆ¶å“ã€‚æŸœå°ä¸Šæ‘†ç€èŠ±è‰²å„å¼‚çš„ç¢—ç¢Ÿç“¶ç½ï¼Œç™½çš™é€
+æ˜Žï¼Œå·§å¤ºå¤©å·¥ã€‚åŠ¨ç‰©ç“·å™¨ï¼Œç»†è…»åœ†æ¶¦ï¼Œæ ©æ ©å¦‚ç”Ÿã€‚ç”±äºŽå®ƒçš„ç‰¹æ®Šåœ°ä½ï¼Œå› æ­¤ç”Ÿ
+æ„å’ŒæŠ€æœ¯ä»Žæ¥éƒ½æ˜¯ä¼ å­ä¸ä¼ å¥³ã€‚
 LONG
         );
 

@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ìú´²", ({"tie chuang","chuang","bed"}));
+        set_name("é“åºŠ", ({"tie chuang","chuang","bed"}));
 	set_weight(200000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long","Ò»ÕÅÓ²°ğ°ğµÄÌú´²¡£\n");
-                set("unit", "ÕÅ");
+		set("long","ä¸€å¼ ç¡¬æ¢†æ¢†çš„é“åºŠã€‚\n");
+                set("unit", "å¼ ");
                 set("material", "steal");
         } 
 	setup();

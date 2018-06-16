@@ -6,11 +6,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("С��", ({ "seller" }) );
-        set("gender", "����" );
+        set_name("小贩", ({ "seller" }) );
+        set("gender", "男性" );
         set("age", 32);
         set("long",
-                "���Ǹ�С����������������ʵʵ�������������Ƕ��ͱ��ˡ�\n");
+                "这是个小贩，别看他长的老老实实，可你别想从他那儿掏便宜。\n");
         set("combat_exp", 300);
         set("str", 17);
         set("dex", 20);
@@ -18,10 +18,10 @@ void create()
         set("int", 22);
   	set("chat_chance", 10);
 	set("chat_msg", ({
-	"С�����������͹٣���ݾ��ǵĵ�ͼ�ɣ������������������\n",
-	"С�����������͹٣��򶥲�ñ�ɣ������ﶬ�����ð���\n",
-        "С��������������⾩�ǿɴ�����û�е�ͼ����Ƕ����Ҳ��š�\n",
-        "С��������������������죬û׼��Ҫ��������û��ñ���а���\n",
+	"小贩叫卖道：客官，买份京城的地图吧，东南西北都清楚啊。\n",
+	"小贩叫卖道：客官，买顶草帽吧，春夏秋冬都管用啊。\n",
+        "小贩自言自语道：这京城可大啦，没有地图你可那儿都找不着。\n",
+        "小贩自言自语道：您瞧这天，没准儿要下雨啦，没草帽哪行啊。\n",
 	}));
         set("attitude", "friendly");
         set("vendor_goods", ({

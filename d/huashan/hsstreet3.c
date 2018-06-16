@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "´åÍâÍÁÂ·");
+	set("short", "æ‘å¤–åœŸè·¯");
 	set("long", @LONG
-ÕâÀï×óÓÒµÀÅÔÈÔÊÇÃÜÁÖ£¬ÔÚµÀÂ·ÉÏÍ¶ÏÂ´óÆ¬ÒõÓ°£¬¸Ð¾õÉõÊÇÁ¹Ë¬¡£Ò»
-Õó·ç½ô£¬¿ÕÖÐ¼¸Æ¬ÂäÒ¶·ÉÎè¡£Â·ÅÔÒÀÏ¡ÓÐ¼¸ÌõÐ¡¾¶Í¨ÍùÁÖÖÐ¡£Ç°ÃæÔ¶´¦Òþ
-Ô¼¿ÉÎÅÈËÂíÐú»©¡£
+è¿™é‡Œå·¦å³é“æ—ä»æ˜¯å¯†æž—ï¼Œåœ¨é“è·¯ä¸ŠæŠ•ä¸‹å¤§ç‰‡é˜´å½±ï¼Œæ„Ÿè§‰ç”šæ˜¯å‡‰çˆ½ã€‚ä¸€
+é˜µé£Žç´§ï¼Œç©ºä¸­å‡ ç‰‡è½å¶é£žèˆžã€‚è·¯æ—ä¾ç¨€æœ‰å‡ æ¡å°å¾„é€šå¾€æž—ä¸­ã€‚å‰é¢è¿œå¤„éš
+çº¦å¯é—»äººé©¬å–§å“—ã€‚
 LONG
 	);
 
@@ -36,21 +36,21 @@ int valid_leave(object me, string dir)
 
 	if ( dir == "northwest" || dir == "south" )  {
 		if ( objectp(ob=me->query("rided")) )
-			return notify_fail(ob->name()+"Éí×ÓÌ«´óÁË£¬½ø²»ÁËÊ÷ÁÖ£¡\n");
+			return notify_fail(ob->name()+"èº«å­å¤ªå¤§äº†ï¼Œè¿›ä¸äº†æ ‘æž—ï¼\n");
 		else {
 			inv = all_inventory(me);
 			for (i=0; i<sizeof(inv); i++) {
                 		if ( (string)inv[i]->query("ridable") )
-					return notify_fail(inv[i]->name()+"Éí×ÓÌ«´óÁË£¬Äã±³²»½øÊ÷ÁÖ£¡\n");
+					return notify_fail(inv[i]->name()+"èº«å­å¤ªå¤§äº†ï¼Œä½ èƒŒä¸è¿›æ ‘æž—ï¼\n");
 			}
         	}
 
 		if ( me->query("ridable") ) {
 			if ( objectp(master=me->query_lord()) ) {
-				tell_object(master, me->name()+"Éí×ÓÌ«´óÁË£¬½ø²»ÁËÊ÷ÁÖ£¡\n");
+				tell_object(master, me->name()+"èº«å­å¤ªå¤§äº†ï¼Œè¿›ä¸äº†æ ‘æž—ï¼\n");
 			}
 
-			return notify_fail(me->name()+"Éí×ÓÌ«´óÁË£¬½ø²»ÁËÊ÷ÁÖ£¡\n");
+			return notify_fail(me->name()+"èº«å­å¤ªå¤§äº†ï¼Œè¿›ä¸äº†æ ‘æž—ï¼\n");
 		}
         }
 

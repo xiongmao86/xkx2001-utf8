@@ -1,5 +1,5 @@
 //Cracked by Roath
-// kaoyang.c ¿¾È«Ñò
+// kaoyang.c çƒ¤å…¨ç¾Š
 
 #include <ansi.h>
 inherit ITEM;
@@ -10,13 +10,13 @@ int do_cut(string);
 
 void create()
 {
-	set_name(HIY"¿¾È«Ñò"NOR, ({"kaoyang", "yang", "sheep" }));
+	set_name(HIY"çƒ¤å…¨ç¾Š"NOR, ({"kaoyang", "yang", "sheep" }));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "»Ø½®µÄ³öÃûÃÀÊ³¿¾È«Ñò£¬ÑòÉí³Ê½ğ»ÆÉ«£¬ÑòÍ·ÉÏÓÃºì³ñ´òÁË¸ö»¨½á¡£\n");
-		set("unit", "Ö»");
+		set("long", "å›ç–†çš„å‡ºåç¾é£Ÿçƒ¤å…¨ç¾Šï¼Œç¾Šèº«å‘ˆé‡‘é»„è‰²ï¼Œç¾Šå¤´ä¸Šç”¨çº¢ç»¸æ‰“äº†ä¸ªèŠ±ç»“ã€‚\n");
+		set("unit", "åª");
 		set("value", 3000);
 		set("food_remaining", 10);
 		set("food_supply", 100);
@@ -51,10 +51,10 @@ int do_cut(string arg)
 			ob2 = new("/d/xixia/obj/yangrou");
 			ob2->move(environment(ob1));
 		}
-		message_vision("$N½«¿¾È«ÑòÉÏ»¹Ã»³ÔÍêµÄ"+chinese_number(num)+"ÌõÑòÍÈºÍÈâ¿éÇĞÏÂ£¬Ğ¡µ¶ÆÊÈâ´¦ÏãÆøËÄÒç£¬ÁîÈË´¹ÏÑ¡£\n", me);
+		message_vision("$Nå°†çƒ¤å…¨ç¾Šä¸Šè¿˜æ²¡åƒå®Œçš„"+chinese_number(num)+"æ¡ç¾Šè…¿å’Œè‚‰å—åˆ‡ä¸‹ï¼Œå°åˆ€å‰–è‚‰å¤„é¦™æ°”å››æº¢ï¼Œä»¤äººå‚æ¶ã€‚\n", me);
 	}
 	else {
-		message_vision("$N½«Ê£ÏÂµÄ¿¾È«ÑòÒ»¿é¿éÇĞÏÂ£¬Ğ¡µ¶ÆÊÈâ´¦ÏãÆøËÄÒç£¬ÁîÈË´¹ÏÑ¡£\n", me);
+		message_vision("$Nå°†å‰©ä¸‹çš„çƒ¤å…¨ç¾Šä¸€å—å—åˆ‡ä¸‹ï¼Œå°åˆ€å‰–è‚‰å¤„é¦™æ°”å››æº¢ï¼Œä»¤äººå‚æ¶ã€‚\n", me);
 
 	}
 		destruct(ob1);

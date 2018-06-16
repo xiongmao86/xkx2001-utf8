@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pnecklace.c °×½ðÏîÁ´
+// pnecklace.c ç™½é‡‘é¡¹é“¾
 #include <ansi.h>
 #include <armor.h>
 
@@ -7,13 +7,13 @@ inherit NECK;
 
 void create()
 {
-        set_name("°×½ðÏîÁ´", ({ "platinium necklace", "necklace", "lace" }));
+        set_name("ç™½é‡‘é¡¹é“¾", ({ "platinium necklace", "necklace", "lace" }));
         set_color("$HIW$");
         set("weight", 500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "´®");
+                set("unit", "ä¸²");
                 set("value", 18500);
                 set("material", "platinium");
                 set("armor_prop/armor", 1);

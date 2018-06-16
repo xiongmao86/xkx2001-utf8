@@ -1,15 +1,15 @@
 //Cracked by Roath
-// °×ÍÕ¸Ä°æ
+// ç™½é©¼æ”¹ç‰ˆ
 // maco 2/17/2000
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "³¤ÀÈ");
+	set("short", "é•¿å»Š");
 	set("long", @LONG
-Ò»Ìõ°××©ÆöÇ½µÄ³¤ÀÈ£¬ÄÏ±ßµÄ¹°ÃÅÍ¨Íù´óÌü£¬Î÷±±±ßÊÇÉÙÖ÷µÄÎÔ
-·¿£¬ÃÅÇ°´¹×ÅÐå»¨ÈíÁ±£¬éºÖùµñÊÎ»ªÀö£¬ÀïÃæ²»Ê±´«³öÉÙÅ®µÄ½¿Ð¦Éù¡£
+ä¸€æ¡ç™½ç –ç Œå¢™çš„é•¿å»Šï¼Œå—è¾¹çš„æ‹±é—¨é€šå¾€å¤§åŽ…ï¼Œè¥¿åŒ—è¾¹æ˜¯å°‘ä¸»çš„å§
+æˆ¿ï¼Œé—¨å‰åž‚ç€ç»£èŠ±è½¯å¸˜ï¼Œæ¥¹æŸ±é›•é¥°åŽä¸½ï¼Œé‡Œé¢ä¸æ—¶ä¼ å‡ºå°‘å¥³çš„å¨‡ç¬‘å£°ã€‚
 LONG
 	);
 	set("exits", ([ 

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ³¤ÀÈ /d/shenlong/changlang.c
+// é•¿å»Š /d/shenlong/changlang.c
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¤ÀÈ");
+        set("short", "é•¿å»Š");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ³¤ÀÈ£¬Î÷ÃæÍ¨Ïò´óÌü£¬¶«ÃæÊÇ·å¶¥£¬ÖÜÎ§¹ÒÂúÁËÊ÷Ò¶¡¢ÇàÌÙ£¬±ß
-ÉÏÓÐÐí¶àÐ¡Ê¯µÊ¿É¹©ÈËÐÝÏ¢¡£Ò»Ð©µÊ×ÓÉÏÃæÈýÈýÁ½Á½µØ×øÁËÐí¶àÉñÁú½ÌµÄµÜ×Ó£¬
-ÕýÔÚÆß×ì°ËÉàµØÌ¸ÂÛ×ÅÊ²Ã´¡£
+è¿™æ˜¯ä¸€æ¡é•¿å»Šï¼Œè¥¿é¢é€šå‘å¤§åŽ…ï¼Œä¸œé¢æ˜¯å³°é¡¶ï¼Œå‘¨å›´æŒ‚æ»¡äº†æ ‘å¶ã€é’è—¤ï¼Œè¾¹
+ä¸Šæœ‰è®¸å¤šå°çŸ³å‡³å¯ä¾›äººä¼‘æ¯ã€‚ä¸€äº›å‡³å­ä¸Šé¢ä¸‰ä¸‰ä¸¤ä¸¤åœ°åäº†è®¸å¤šç¥žé¾™æ•™çš„å¼Ÿå­ï¼Œ
+æ­£åœ¨ä¸ƒå˜´å…«èˆŒåœ°è°ˆè®ºç€ä»€ä¹ˆã€‚
 LONG
         );
         set("cost", 1);

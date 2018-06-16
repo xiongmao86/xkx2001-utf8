@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±ÌÂÞÉ½ÏÂ");
+	set("short", "ç¢§ç½—å±±ä¸‹");
 	set("long", @LONG
-´Ë¼äÕý´¦±ÌÂÞÉ½½ÅÏÂ£¬¼¸²ãÌÝÌïÑØÉ½ÆÂ¶øÉÏ£¬ÍÁµØ¿´À´Ò»µãÒ²²»·ÊÎÖ£¬×÷Îï
-½ÏÏ¡Êè¡£ÎÚÒÄµØÇøÅ©ÒµÆÄÂäºó£¬ÐÐ»»¼¾ÂÖ¸û£¬´åÃñÔÚ²»Í¬µÄ¼¾½Ú¸û×÷²»Í¬µÄÌïµØ
-£¬Ðí¶à¸½½üµÄÌÝÌïÕý»ÄÎß×ÅÎÞÈË¸û×÷¡£
+æ­¤é—´æ­£å¤„ç¢§ç½—å±±è„šä¸‹ï¼Œå‡ å±‚æ¢¯ç”°æ²¿å±±å¡è€Œä¸Šï¼ŒåœŸåœ°çœ‹æ¥ä¸€ç‚¹ä¹Ÿä¸è‚¥æ²ƒï¼Œä½œç‰©
+è¾ƒç¨€ç–ã€‚ä¹Œå¤·åœ°åŒºå†œä¸šé¢‡è½åŽï¼Œè¡Œæ¢å­£è½®è€•ï¼Œæ‘æ°‘åœ¨ä¸åŒçš„å­£èŠ‚è€•ä½œä¸åŒçš„ç”°åœ°
+ï¼Œè®¸å¤šé™„è¿‘çš„æ¢¯ç”°æ­£è’èŠœç€æ— äººè€•ä½œã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/wynong" : 1,
@@ -20,7 +20,7 @@ LONG);
 		"southeast" : __DIR__"shanlu1",
 		"westup" : __DIR__"minov45",
 		]));
-	set("area", "±ÌÂÞÑ©É½");
+	set("area", "ç¢§ç½—é›ªå±±");
 	set("cost", 3);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

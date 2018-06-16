@@ -5,13 +5,13 @@ inherit BLADE;
 
 void create()
 {
-        set_name("ÖñØÒ", ({ "zhubian", "basket" }));
+        set_name("ç«¹åŒ¾", ({ "zhubian", "basket" }));
         set_weight(7000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸ö×÷¹¤¾«Ï¸µÄÖñØÒ¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªä½œå·¥ç²¾ç»†çš„ç«¹åŒ¾ã€‚\n");
                 set("value", 200);
                 set("material", "steel");
         }

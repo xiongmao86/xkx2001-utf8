@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-һ��ɽ·��������ï�ܵ����֣����������಻���Ĵ�ɽ����·���Լ��ɼ�
-һЩ����Ĵ���ɽ·���������š�
+一条山路，两边是茂密的树林，西面是延绵不绝的大山，道路两旁间或可见
+一些夷族的村镇。山路向南蜿蜒着。
 LONG);
 	set("objects", ([
 		__DIR__"npc/wujian": 1,

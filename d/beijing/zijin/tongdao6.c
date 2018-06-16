@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ͨ��");
+	set("short", "通道");
 	set("long", @LONG
-����һ������ʯ�̳ɵĿ���ͨ��,�ɹ����г���ͨ��,��������
-�ɸߵ�Χǽ,���˸е�ׯ������.
+这是一条大青石铺成的宽敞通道,可供宫中车马通过,两侧是数
+丈高的围墙,令人感到庄严肃穆.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */

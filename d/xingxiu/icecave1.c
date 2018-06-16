@@ -15,11 +15,11 @@ int do_dig();
 
 void create()
 {
-        set("short", "±ù¶´");
+        set("short", "å†°æ´");
         set("long", @LONG
-½øµ½±ù¶´ÀïÃæ£¬ÄÇ¶´¶¥ÉÏ½ô½ô´¹¹Ò×Å±ù×¶(icicle)£¬³¤¶Ì²»Æë£¬
-´ÖÏ¸²»Ò»£»¶´µ×ÏÂ±ùÊ÷´ÔÉú£¬Ç§×ËÍòÌ¬¡£´©ĞĞ¶´ÄÚ£¬ºÃËÆ½øÁË¹â¹Ö
-Â½ÀëµÄÉñ»°ÊÀ½ç¡£
+è¿›åˆ°å†°æ´é‡Œé¢ï¼Œé‚£æ´é¡¶ä¸Šç´§ç´§å‚æŒ‚ç€å†°é”¥(icicle)ï¼Œé•¿çŸ­ä¸é½ï¼Œ
+ç²—ç»†ä¸ä¸€ï¼›æ´åº•ä¸‹å†°æ ‘ä¸›ç”Ÿï¼Œåƒå§¿ä¸‡æ€ã€‚ç©¿è¡Œæ´å†…ï¼Œå¥½ä¼¼è¿›äº†å…‰æ€ª
+é™†ç¦»çš„ç¥è¯ä¸–ç•Œã€‚
 LONG
         );
         set("exits", ([
@@ -58,25 +58,25 @@ int do_flick(string arg) {
                 return 0;
 
         if (me->query_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
         if (query("icicle") < 1)
-                return notify_fail("ÕâÀïµÄ±ù×¶Äã¶¼¹»²»×ÅÁË¡£\n");
+                return notify_fail("è¿™é‡Œçš„å†°é”¥ä½ éƒ½å¤Ÿä¸ç€äº†ã€‚\n");
 
         if ( (int)me->query("jing") < 30 || (int)me->query("jingli") < 30)
-                return notify_fail("ÄãµÄ¾«Éñ²»ÄÜ¼¯ÖĞ¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸èƒ½é›†ä¸­ã€‚\n");
 
         if( arg=="icicle")
         {
         me->receive_damage("jing", 15); 
         me->receive_damage("jingli", 15);
         add("icicle", -1);
-        message_vision("$NÇáÇáµØÓÃÊÖÖ¸µ¯¶ÏÁËÒ»¸ù±ù×¶¡£\n", me);
+        message_vision("$Nè½»è½»åœ°ç”¨æ‰‹æŒ‡å¼¹æ–­äº†ä¸€æ ¹å†°é”¥ã€‚\n", me);
         if (random(me->query_skill("feixing-shu", 1)) > 30){
         me->improve_skill("feixing-shu", me->query("int"));
 
-	message_vision("$Nµ¯·É³öÈ¥µÄ±ù×¶×²¶ÏÁËÁíÒ»¸ù±ù×¶£¬Æ¹Æ¹ÅÒÅÒÂÒÏì¡£\n", me);
-        tell_object(me, "ÄãËÆºõÁìÎòÁËÒ»²ã·ÉĞÇÊõµÄ¼¼ÄÜ¡£\n");
+	message_vision("$Nå¼¹é£å‡ºå»çš„å†°é”¥æ’æ–­äº†å¦ä¸€æ ¹å†°é”¥ï¼Œä¹’ä¹’ä¹“ä¹“ä¹±å“ã€‚\n", me);
+        tell_object(me, "ä½ ä¼¼ä¹é¢†æ‚Ÿäº†ä¸€å±‚é£æ˜Ÿæœ¯çš„æŠ€èƒ½ã€‚\n");
         if (me->query_skill("feixing-shu", 1) > 100)
         me->receive_damage("jing", 15);
         if (me->query_skill("feixing-shu", 1) > 150)
@@ -101,11 +101,11 @@ int blow()
         if( !this_player() || !environment(this_player()) )  return 1;
         if( base_name(environment(this_player())) !="/d/xingxiu/icecave1") return 1;
 
-        message_vision( HIC"\nÂ¶Ë®´Ó¶´¶¥Á÷ÏÂÀ´£¬ÂıÂıµØ½á³ÉÁË±ù×¶¡£\n"NOR, this_player() );
+        message_vision( HIC"\néœ²æ°´ä»æ´é¡¶æµä¸‹æ¥ï¼Œæ…¢æ…¢åœ°ç»“æˆäº†å†°é”¥ã€‚\n"NOR, this_player() );
 
         for ( i=0 ; i < sizeof(inv); i++)
         {
-                if ( (string)inv[i]->query("race") == "ÈËÀà" )
+                if ( (string)inv[i]->query("race") == "äººç±»" )
                 {
                         blow_result(inv[i]);
                 }
@@ -130,13 +130,13 @@ private int blow_result(object victim)
         room = this_object();
         exp=me->query("combat_exp");
 
-        if( random(50)<1 && !me->is_fighting() && fam["family_name"] =="ĞÇËŞÅÉ")
+        if( random(50)<1 && !me->is_fighting() && fam["family_name"] =="æ˜Ÿå®¿æ´¾")
         {
 
-message_vision(HIR"$NÖ»Ìı¼ûÒ»ÉùÅ­ºÈ£¬´ÓºÚ°µ½ÇÂäÖĞ×ê³öÒ»ÈË£¬Ïò$N¹¥À´¡£\n"NOR,me);
+message_vision(HIR"$Nåªå¬è§ä¸€å£°æ€’å–ï¼Œä»é»‘æš—è§’è½ä¸­é’»å‡ºä¸€äººï¼Œå‘$Næ”»æ¥ã€‚\n"NOR,me);
 
                 ob = new("/d/xingxiu/npc/xxnpc");
-                ob->set_name("ÕıÅÉÏÀ¿Í", ({ "xia ke", "ke", "xia" }) );
+                ob->set_name("æ­£æ´¾ä¾ å®¢", ({ "xia ke", "ke", "xia" }) );
                 skill=me->query_skill("dodge",1);
         
                 while(skill*skill*skill<exp*10) skill++;
@@ -304,15 +304,15 @@ message_vision(HIR"$NÖ»Ìı¼ûÒ»ÉùÅ­ºÈ£¬´ÓºÚ°µ½ÇÂäÖĞ×ê³öÒ»ÈË£¬Ïò$N¹¥À´¡£\n"NOR,me);
 
         if( random( victim->query_skill("force") ) > 45 && victim->query("neili") > 20 && victim->query_skill("feixing-shu",1)>100 )
         {
-                message_vision( WHT"\n$NÔË¹¦µÖÓùº®Á÷£¬Í¬Ê±Íû×Å¶´¶¥µÄ±ù×¶£¬ÑĞÎö×Å°µÆ÷µØ°ÂÃî£¡\n"NOR, victim );
+                message_vision( WHT"\n$Nè¿åŠŸæŠµå¾¡å¯’æµï¼ŒåŒæ—¶æœ›ç€æ´é¡¶çš„å†°é”¥ï¼Œç ”æç€æš—å™¨åœ°å¥¥å¦™ï¼\n"NOR, victim );
                 if(query("icicle")<100) add("icicle", 1+random(6));
                 victim->add("neili",-random(40));
                 victim->improve_skill("feixing-shu",me->query("int"));
         }
         else
         {
-                message_vision( RED"\n$N´òÁË¸öÀä²ü£¡\n"NOR, victim );
-                victim->receive_damage("qi", random(50), "±»¶³ËÀÁË£¡");
+                message_vision( RED"\n$Næ‰“äº†ä¸ªå†·é¢¤ï¼\n"NOR, victim );
+                victim->receive_damage("qi", random(50), "è¢«å†»æ­»äº†ï¼");
                 if(query("icicle")<100) add("icicle", 1+random(3));
         }
 

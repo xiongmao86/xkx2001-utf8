@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡Â·");
+        set("short", "å°è·¯");
         set("long", @LONG
-ÕâÀïÊÇÑïÖİ³ÇÍâµÄÒ»ÌõĞ¡Â·£¬ÒõÆøÉ­È»¡£Î÷ÃæÓĞ¸öĞ¡ÍÁÇğ£¬¶«±ßÊÇÍ¨ÍùÑïÖİ
-³ÇµÄ¹ÙµÀ¡£
+è¿™é‡Œæ˜¯æ‰¬å·åŸå¤–çš„ä¸€æ¡å°è·¯ï¼Œé˜´æ°”æ£®ç„¶ã€‚è¥¿é¢æœ‰ä¸ªå°åœŸä¸˜ï¼Œä¸œè¾¹æ˜¯é€šå¾€æ‰¬å·
+åŸçš„å®˜é“ã€‚
 LONG
         );
         set("exits", ([ 
@@ -27,14 +27,14 @@ LONG
 }
 int valid_leave(object me, string dir)
 {
-   if (dir =="westup" && me->query("family/family_name")!="°×ÍÕÉ½" ) {
+   if (dir =="westup" && me->query("family/family_name")!="ç™½é©¼å±±" ) {
         if (objectp(present("binu", environment(me))))
                 return notify_fail(
-	"æ¾Å®ÉìÊÖµ²×¡ÁËÄãµÄÈ¥Â·£ºÉÙ×¯Ö÷ÕıÔÚµ÷Ñµ¶¾Éß£¬Çë¸ÄÈÕÔÙÀ´¡£\n");
+	"å©¢å¥³ä¼¸æ‰‹æŒ¡ä½äº†ä½ çš„å»è·¯ï¼šå°‘åº„ä¸»æ­£åœ¨è°ƒè®­æ¯’è›‡ï¼Œè¯·æ”¹æ—¥å†æ¥ã€‚\n");
 
         if (objectp(present("qian yankai", environment(me))))
                 return notify_fail(
-	"ÂíÁùµÂÒ»ÉìÊÖµ²×¡ÁËÄãµÄÈ¥Â·£ºÉÙ×¯Ö÷ÕıÔÚµ÷Ñµ¶¾Éß£¬Çë¸ÄÈÕÔÙÀ´¡£\n");
+	"é©¬å…­å¾·ä¸€ä¼¸æ‰‹æŒ¡ä½äº†ä½ çš„å»è·¯ï¼šå°‘åº„ä¸»æ­£åœ¨è°ƒè®­æ¯’è›‡ï¼Œè¯·æ”¹æ—¥å†æ¥ã€‚\n");
    }      
    return ::valid_leave(me, dir);
 }

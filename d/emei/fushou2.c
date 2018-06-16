@@ -1,15 +1,15 @@
 //Cracked by Roath
-// Room: fushou2.c ¸£ÊÙâÖĞİÏ¢ÊÒ
+// Room: fushou2.c ç¦å¯¿åºµä¼‘æ¯å®¤
 
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", "¸£ÊÙâÖĞİÏ¢ÊÒ");
+        set("short", "ç¦å¯¿åºµä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ¸£ÊÙâÖ½Ó´ı¶ëáÒÅ®ÏÀÃÇµÄĞİÏ¢ÊÒ£¬¶ëáÒÅ®µÜ×Ó»ØÉ½Ö®Ç°Í¨³£ÔÚ´Ë½èËŞ
-Ò»ËŞ£¬ºÃ±¸×ãÌåÁ¦ÉÏÉ½¡£·¿ÄÚ°ÚÓĞÒ»ÕÅ³¤×À£¬¿¿Ç½ÉèÓĞ¼¸ÕÅÄ¾´²¡£
+è¿™æ˜¯ç¦å¯¿åºµæ¥å¾…å³¨åµ‹å¥³ä¾ ä»¬çš„ä¼‘æ¯å®¤ï¼Œå³¨åµ‹å¥³å¼Ÿå­å›å±±ä¹‹å‰é€šå¸¸åœ¨æ­¤å€Ÿå®¿
+ä¸€å®¿ï¼Œå¥½å¤‡è¶³ä½“åŠ›ä¸Šå±±ã€‚æˆ¿å†…æ‘†æœ‰ä¸€å¼ é•¿æ¡Œï¼Œé å¢™è®¾æœ‰å‡ å¼ æœ¨åºŠã€‚
 LONG
         );
 
@@ -20,7 +20,7 @@ LONG
 	    "southdown" : __DIR__"fushou3",
 	]));
 
-	create_door("southdown", "Ä¾ÃÅ", "northup", DOOR_CLOSED);
+	create_door("southdown", "æœ¨é—¨", "northup", DOOR_CLOSED);
 
 	set("cost", 0);
         setup();
@@ -37,7 +37,7 @@ int valid_leave(object me, string dir)
         if ( dir == "southdown" ) {
                 for (i=0; i<sizeof(inv); i++) {
                         if (inv[i]->is_character())
-                        return notify_fail("Äã²»ÄÜ´ø×ÅÆäËûÍæ¼ÒÀë¿ªĞİÏ¢ÊÒ¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½å¸¦ç€å…¶ä»–ç©å®¶ç¦»å¼€ä¼‘æ¯å®¤ã€‚\n");
                 }
         }
 

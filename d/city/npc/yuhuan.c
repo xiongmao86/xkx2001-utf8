@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yuhuan.c ³ÌÓñ»· 
+// yuhuan.c ç¨‹ç‰ç¯ 
 
 #include <ansi.h>
 inherit NPC;
@@ -7,15 +7,15 @@ inherit F_SKILL;
 
 void create()
 {
-	set_name("³ÌÓñ»·", ({ "cheng yuhuan", "cheng", "yuhuan" }));
+	set_name("ç¨‹ç‰ç¯", ({ "cheng yuhuan", "cheng", "yuhuan" }));
         set_color("$YEL$");
 	set("long", 
-		"Ëı¾ÍÊÇ³ÌÖª¸®µÄ¶ÀÉúÅ®¶ù£¬³¤µÃÈç»¨ËÆÓñ£¬Ã²ÈüÌìÏÉµÄ³ÌÓñ»·¡£\n"
-		"¾İËµËıÔø¾­ÔÚÎäµ±ÃÅÏÂÑ§¹ı½£·¨¡£\n");
+		"å¥¹å°±æ˜¯ç¨‹çŸ¥åºœçš„ç‹¬ç”Ÿå¥³å„¿ï¼Œé•¿å¾—å¦‚èŠ±ä¼¼ç‰ï¼Œè²Œèµ›å¤©ä»™çš„ç¨‹ç‰ç¯ã€‚\n"
+		"æ®è¯´å¥¹æ›¾ç»åœ¨æ­¦å½“é—¨ä¸‹å­¦è¿‡å‰‘æ³•ã€‚\n");
 		
-	set("title", "Öª¸®Ç§½ğ");
-	set("nickname", "ÓñÏÉ¹Ã");
-	set("gender", "Å®ĞÔ");
+	set("title", "çŸ¥åºœåƒé‡‘");
+	set("nickname", "ç‰ä»™å§‘");
+	set("gender", "å¥³æ€§");
 	set("age", 18);
 	set("shen_type", 1);
 
@@ -47,7 +47,7 @@ void create()
 }
 int accept_kill(object me)
 {
-        command("say Äã»îµÃ²»ÄÍ·³ÁË£¿¿´±¾Ğ¡½ãÔõÃ´ÊÕÊ°Äã£¡\n");
+        command("say ä½ æ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿçœ‹æœ¬å°å§æ€ä¹ˆæ”¶æ‹¾ä½ ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

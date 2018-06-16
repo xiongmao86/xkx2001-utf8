@@ -1,5 +1,5 @@
 //Cracked by Roath
-// arrow.c ¼ı
+// arrow.c ç®­
 // kane
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit COMBINED_ITEM;
 inherit F_EQUIP;
 void create()
 {
-        set_name("ÀÇÑÀ¼ı", ({ "arrow" }) );
+        set_name("ç‹¼ç‰™ç®­", ({ "arrow" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        	set("long", "Ã÷»Î»ÎµÄÀû¼ı£¬¼ıÎ²Ç¶×Å¼¸ÊøÓğÃ«¡£\n");
-        	set("unit", "´ü");
-		set("base_unit", "Ö§");
+        	set("long", "æ˜æ™ƒæ™ƒçš„åˆ©ç®­ï¼Œç®­å°¾åµŒç€å‡ æŸç¾½æ¯›ã€‚\n");
+        	set("unit", "è¢‹");
+		set("base_unit", "æ”¯");
         	set("value", 150);
 		set("damage", 5);
 		set("armor_type", "embed");
@@ -25,7 +25,7 @@ void create()
                 set("armor_prop/defense", -50);
                 set("armor_prop/unarmed", -50);
 		set("no_sell", 1);
-		set("unequip_msg", HIR"$NÒ»Ò§ÑÀ½«$n´ÓÉË¿ÚÉÏ°ÎÁËÏÂÀ´£¬Ò»¹ÉÏÊÑªÃÍµØÓ¿ÁË³öÀ´¡£\n"NOR);
+		set("unequip_msg", HIR"$Nä¸€å’¬ç‰™å°†$nä»ä¼¤å£ä¸Šæ‹”äº†ä¸‹æ¥ï¼Œä¸€è‚¡é²œè¡€çŒ›åœ°æ¶Œäº†å‡ºæ¥ã€‚\n"NOR);
         }
 	set_amount(15);
         setup();

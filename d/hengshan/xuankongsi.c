@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´äÆÁ·åÐü¿ÕËÂ");
+        set("short", "ç¿ å±å³°æ‚¬ç©ºå¯º");
         set("long", 
-"Îª±±ÔÀºãÉ½µÚÒ»Ææ¹Û£¬×ÔÏÂÑöÍû£¬µ«¼û·É¸ó¶þ×ù£¬ËÊÁ¢ÓÚ
-´äÆÁ·å¶¥£¬ÍðËÆÏÉÈËÂ¥¸ó£¬ÏÖÓÚÔÆ¶Ë¡£Á½×ù·É¸ó½Ô¸ßÈý²ã£¬
-ÁèÐéÊýÊ®ÕÉ£¬Ïà¾àÊýÊ®²½£¬Á½Â¥ÒÔ·ÉÇÅÏàÁ¬¡£\n");
+"ä¸ºåŒ—å²³æ’å±±ç¬¬ä¸€å¥‡è§‚ï¼Œè‡ªä¸‹ä»°æœ›ï¼Œä½†è§é£žé˜äºŒåº§ï¼Œè€¸ç«‹äºŽ
+ç¿ å±å³°é¡¶ï¼Œå®›ä¼¼ä»™äººæ¥¼é˜ï¼ŒçŽ°äºŽäº‘ç«¯ã€‚ä¸¤åº§é£žé˜çš†é«˜ä¸‰å±‚ï¼Œ
+å‡Œè™šæ•°åä¸ˆï¼Œç›¸è·æ•°åæ­¥ï¼Œä¸¤æ¥¼ä»¥é£žæ¡¥ç›¸è¿žã€‚\n");
         
 set("exits", ([
                 "westup"  : __DIR__"shenshege",

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sanqingdian.c ÈýÇåµî
+// sanqingdian.c ä¸‰æ¸…æ®¿
 // by Marz@11/10/96 
 // xQin 8/00
 
@@ -13,11 +13,11 @@ int look_an();
 
 void create()
 {
-	set("short", "ÈýÇåµî");
+	set("short", "ä¸‰æ¸…æ®¿");
 	set("long", @LONG
-ÕâÀïÊÇ×ÏÏö¹¬µÄÈýÇåµî£¬ÊÇÎäµ±ÅÉ»á¿ÍµÄµØµã¡£¹©×ÅÔªÊ¼Ìì×ð¡¢Ì«ÉÏµÀ
-¾ýºÍÌìÉÏÀÏ¾ýµÄÉñÏñ¡£ÕýÖÐ¼äÊÇ¸ö¾´ÏãµÄ´óÏã°¸(an)£¬¿¿Ç½·Å×Å¼¸ÕÅÌ«Ê¦ÒÎ£¬
-µØÉÏ·Å×Å¼¸¸öÆÑÍÅ¡£¶«Î÷Á½²àÊÇ×ßÀÈ£¬±±±ßÊÇÁ·ÎäµÄ¹ã³¡£¬ÄÏ±ßÊÇºóÔº¡£
+è¿™é‡Œæ˜¯ç´«éœ„å®«çš„ä¸‰æ¸…æ®¿ï¼Œæ˜¯æ­¦å½“æ´¾ä¼šå®¢çš„åœ°ç‚¹ã€‚ä¾›ç€å…ƒå§‹å¤©å°Šã€å¤ªä¸Šé“
+å›å’Œå¤©ä¸Šè€å›çš„ç¥žåƒã€‚æ­£ä¸­é—´æ˜¯ä¸ªæ•¬é¦™çš„å¤§é¦™æ¡ˆ(an)ï¼Œé å¢™æ”¾ç€å‡ å¼ å¤ªå¸ˆæ¤…ï¼Œ
+åœ°ä¸Šæ”¾ç€å‡ ä¸ªè’²å›¢ã€‚ä¸œè¥¿ä¸¤ä¾§æ˜¯èµ°å»Šï¼ŒåŒ—è¾¹æ˜¯ç»ƒæ­¦çš„å¹¿åœºï¼Œå—è¾¹æ˜¯åŽé™¢ã€‚
 LONG
 	);
 	set("valid_startroom", 1);
@@ -63,16 +63,16 @@ string look_an()
 	
 	switch (burnt) {
 	case 0:
-		return(HIC"Ïã°¸ÉÏ¹©·î×ÅÐÂÉÏµÄÏã»ð£¬·Ò·¼ÂúÌÃ¡£\n"NOR);
+		return(HIC"é¦™æ¡ˆä¸Šä¾›å¥‰ç€æ–°ä¸Šçš„é¦™ç«ï¼ŒèŠ¬èŠ³æ»¡å ‚ã€‚\n"NOR);
 		break;
 	case 1:
-		return(HIC"Ïã°¸ÉÏÏãÑÌçÔÈÆ£¬Ïã»ðÉÕµÃÕýÍú¡£\n"NOR);
+		return(HIC"é¦™æ¡ˆä¸Šé¦™çƒŸç¼­ç»•ï¼Œé¦™ç«çƒ§å¾—æ­£æ—ºã€‚\n"NOR);
 		break;
 	case 2:
-		return(HIC"Ïã°¸ÉÏµÄÏã»ðÒÑ¾­ÉÕÁË´ó°ë£¬¼¸ÂÆÓàÑÌ£¬ÑÙÑÙÓûÏ¢¡£\n"NOR);
+		return(HIC"é¦™æ¡ˆä¸Šçš„é¦™ç«å·²ç»çƒ§äº†å¤§åŠï¼Œå‡ ç¼•ä½™çƒŸï¼Œå¥„å¥„æ¬²æ¯ã€‚\n"NOR);
 		break;
 	default:
-		return(HIY"Ïã°¸ÉÏÖ»Ê£ÏÂÒ»¶ÑÑÌ»Ò£¬µÈ×ÅÓÐÈË¾´(jing)·îÏã»ð£¡£¡\n"NOR);
+		return(HIY"é¦™æ¡ˆä¸Šåªå‰©ä¸‹ä¸€å †çƒŸç°ï¼Œç­‰ç€æœ‰äººæ•¬(jing)å¥‰é¦™ç«ï¼ï¼\n"NOR);
 		break;
 	}
 	
@@ -93,20 +93,20 @@ int do_jing(string arg)
 	
 	if ( !objectp(me = this_player()) ) return 0;	
 	
-	if (!arg ) return notify_fail("ÄãÒª¾´Ê²Ã´£¿\n");  
+	if (!arg ) return notify_fail("ä½ è¦æ•¬ä»€ä¹ˆï¼Ÿ\n");  
 					
 	if( !objectp(obj = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	           
 	if ( obj->query("id") != "incense" 
-	 ||  obj->is_character() ) return notify_fail("Ö»ÄÜ¾´Ïã£¡\n");  
+	 ||  obj->is_character() ) return notify_fail("åªèƒ½æ•¬é¦™ï¼\n");  
 	
 	burnt = 0;
 	remove_call_out("burn");
 	call_out("burn", 120, 1);
 	
-	message_vision(HIC"$NÄÃ³öÒ»"+obj->query("unit")+obj->query("name")
-		+"£¬¹§¹§¾´¾´µØ²åÔÚÏã°¸ÉÏ¡£\n"NOR, me);
+	message_vision(HIC"$Næ‹¿å‡ºä¸€"+obj->query("unit")+obj->query("name")
+		+"ï¼Œæ­æ­æ•¬æ•¬åœ°æ’åœ¨é¦™æ¡ˆä¸Šã€‚\n"NOR, me);
 		
 	if (me->query("age") < 20 && me->query("wudang/offerring") < 60)
 	me->add("wudang/offerring", 2);

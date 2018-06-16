@@ -10,12 +10,12 @@ int auto_perform();
 
 void create()
 {
-        set_name("Å·Ñô·æ", ({ "ouyang feng", "ouyang", "feng" }));
-        set("long", "ËûÉíÐÎ¸ß´ó£¬¸ß±ÇÉîÄ¿£¬ÂúÁ³Ñ©°×¶ÌÐë£¬¸ù¸ùËÆÌú¡£\n"
-                "Ëû¼«ÉÆÊ¹¶¾£¬ºÅ³Æ¡°Î÷¶¾¡±¡£\n");
-        set("nickname","ÀÏ¶¾Îï");
-        set("title", "°×ÍÕÉ½×¯Ö÷");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ¬§é˜³é”‹", ({ "ouyang feng", "ouyang", "feng" }));
+        set("long", "ä»–èº«å½¢é«˜å¤§ï¼Œé«˜é¼»æ·±ç›®ï¼Œæ»¡è„¸é›ªç™½çŸ­é¡»ï¼Œæ ¹æ ¹ä¼¼é“ã€‚\n"
+                "ä»–æžå–„ä½¿æ¯’ï¼Œå·ç§°â€œè¥¿æ¯’â€ã€‚\n");
+        set("nickname","è€æ¯’ç‰©");
+        set("title", "ç™½é©¼å±±åº„ä¸»");
+        set("gender", "ç”·æ€§");
 
         set("age", 65);
 
@@ -58,12 +58,12 @@ void create()
         set("attitude", "peaceful");
         set("shen_type", -1);
 
-        create_family("°×ÍÕÉ½", 1 , "×¯Ö÷");
+        create_family("ç™½é©¼å±±", 1 , "åº„ä¸»");
         set("chat_chance", 4);
         set("chat_msg", ({
-                "Å·Ñô·æµÃÒâµÄÐ¦µÀ£ºµÈÎÒÎò³öÕâÏÀ¿ÍÐÐµÄÎä¹¦ÎÒ¾ÍÊÇÌìÏÂµÚÒ»ÁË\n",
-                "Å·Ñô·æµÃÒâµÄÐ¦µÀ£ºÍõÀÏµÀ¿´ÄãÍùÄÄÅÜ¡£\n",
-                "Å·Ñô·æµÃÒâµÄÐ¦µÀ£ºÒ»µÆÀÏÍºÂ¿£¬¿´ÄãµÄÒ»ÑôÖ¸Ôõ÷áÙøÎÒ¡£\n",
+                "æ¬§é˜³é”‹å¾—æ„çš„ç¬‘é“ï¼šç­‰æˆ‘æ‚Ÿå‡ºè¿™ä¾ å®¢è¡Œçš„æ­¦åŠŸæˆ‘å°±æ˜¯å¤©ä¸‹ç¬¬ä¸€äº†\n",
+                "æ¬§é˜³é”‹å¾—æ„çš„ç¬‘é“ï¼šçŽ‹è€é“çœ‹ä½ å¾€å“ªè·‘ã€‚\n",
+                "æ¬§é˜³é”‹å¾—æ„çš„ç¬‘é“ï¼šä¸€ç¯è€ç§ƒé©´ï¼Œçœ‹ä½ çš„ä¸€é˜³æŒ‡æ€Žéº½å¬´æˆ‘ã€‚\n",
         }) );
 
         setup();
@@ -73,7 +73,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command ("say ¿ì¹öÀÏ×ÓÃ»¿Õ±ðÀ´·³ÎÒ");
+        command ("say å¿«æ»šè€å­æ²¡ç©ºåˆ«æ¥çƒ¦æˆ‘");
         return;
 }
 
@@ -101,7 +101,7 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say Ê®²½Ò»ÈË£¬°Ù²½Ê®ÈË£¬ÈËÁ¦ÓÐÏÞ£¬ÈçºÎÉ±ÄØ¡£");
+                {		command("say åæ­¥ä¸€äººï¼Œç™¾æ­¥åäººï¼ŒäººåŠ›æœ‰é™ï¼Œå¦‚ä½•æ€å‘¢ã€‚");
 				command("consider ");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );

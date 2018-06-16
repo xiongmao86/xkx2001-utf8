@@ -4,14 +4,14 @@
 inherit ITEM;
 void create()
 {
-	set_name("ºú¼Òµ¶·¨²ĞÆª", ({ "hujia daofa", "book", "daofa" }));
+	set_name("èƒ¡å®¶åˆ€æ³•æ®‹ç¯‡", ({ "hujia daofa", "book", "daofa" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long",
-		"ÕâÊÇºúÒ»µ¶¸ù¾İÃ÷Ä©´óÏÀ·ÉÌìºüÀêËù´´µ¶·¨¸Ä½øµÄ¡¸ºú¼Òµ¶·¨¡¹µÄÇ°Á½Ò³£¬ÉÏÃæ½²ÁËĞ©µ¶·¨µÄÈëÃÅÖªÊ¶¡£\n");
+		"è¿™æ˜¯èƒ¡ä¸€åˆ€æ ¹æ®æ˜æœ«å¤§ä¾ é£å¤©ç‹ç‹¸æ‰€åˆ›åˆ€æ³•æ”¹è¿›çš„ã€Œèƒ¡å®¶åˆ€æ³•ã€çš„å‰ä¸¤é¡µï¼Œä¸Šé¢è®²äº†äº›åˆ€æ³•çš„å…¥é—¨çŸ¥è¯†ã€‚\n");
 		set("value", 100);
 		set("material", "paper");
 		set("no_sell", 1);

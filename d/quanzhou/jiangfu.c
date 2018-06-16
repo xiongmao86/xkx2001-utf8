@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiangfu.c Ê©ÀÅ½«¾ü¸®
+// jiangfu.c æ–½ç…å°†å†›åºœ
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê©ÀÅ½«¾ü¸®");
+        set("short", "æ–½ç…å°†å†›åºœ");
 	set("long", @LONG
-ÕâÊÇÒ»×ùÆøÊÆ»ÖºêµÄ´óÕ¬Ôº£¬ÁğÁ§Íß¶¥£¬·ÉéÜ¶·¹°£¬·ç¸ñåÄÒì¡£´óºìµÄÕı
-ÃÅÉÏ·½¹Ò×ÅÒ»¿éºáØÒ£¬ÉÏÊéËÄ¸ö½ğ¹âÉÁÉÁµÄ¡¸¾¸º£ºî¸®¡¹£¬ÄËÊÇ»ÊÉÏËùë·Ö®Õ¬£¬
-ÒÔÕÃÊ©ÀÅ½«¾ü¹¥ÆÆÌ¨ÍåµÄ¹¦¼¨¡£
+è¿™æ˜¯ä¸€åº§æ°”åŠ¿æ¢å®çš„å¤§å®…é™¢ï¼Œç‰ç’ƒç“¦é¡¶ï¼Œé£æªæ–—æ‹±ï¼Œé£æ ¼è¿¥å¼‚ã€‚å¤§çº¢çš„æ­£
+é—¨ä¸Šæ–¹æŒ‚ç€ä¸€å—æ¨ªåŒ¾ï¼Œä¸Šä¹¦å››ä¸ªé‡‘å…‰é—ªé—ªçš„ã€Œé–æµ·ä¾¯åºœã€ï¼Œä¹ƒæ˜¯çš‡ä¸Šæ‰€æ••ä¹‹å®…ï¼Œ
+ä»¥å½°æ–½ç…å°†å†›æ”»ç ´å°æ¹¾çš„åŠŸç»©ã€‚
 LONG
         );
 
@@ -35,9 +35,9 @@ int valid_leave(object me, string dir)
 {
         if (objectp(present("guan bing", environment(me))) &&
                 dir == "north")
-                return notify_fail("¹Ù±øÀ¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
+                return notify_fail("å®˜å…µæ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
 	if (objectp(present("wu jiang", environment(me))) &&
                 dir == "north")
-                return notify_fail("Îä½«À¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
+                return notify_fail("æ­¦å°†æ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
         return ::valid_leave(me, dir);
 }

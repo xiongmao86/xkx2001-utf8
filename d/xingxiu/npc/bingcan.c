@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("冰蚕", ({ "bing can"}) );
+        set_name("鍐拌殨", ({ "bing can"}) );
 	set_color("$HIW$");
-        set("race", "昆虫");
-        set("subrace", "爬虫");
+        set("race", "鏄嗚櫕");
+        set("subrace", "鐖櫕");
         set("age", 3);
-        set("long", "这蚕虫纯白如玉，微戴青色。比寻常的蚕儿大了一倍有余，便如一条蚯蚓，身子透明直如水晶。\n");
+        set("long", "杩欒殨铏函鐧藉鐜夛紝寰埓闈掕壊銆傛瘮瀵诲父鐨勮殨鍎垮ぇ浜嗕竴鍊嶆湁浣欙紝渚垮涓�鏉¤毌铓擄紝韬瓙閫忔槑鐩村姘存櫠銆俓n");
         set("attitude", "peaceful");
 
-//        set("limbs", ({ "头部", "身体", "触角", "前螯" }) );
+//        set("limbs", ({ "澶撮儴", "韬綋", "瑙﹁", "鍓嶈灟" }) );
 
         set("combat_exp", 900);
         set_temp("apply/attack", 10);

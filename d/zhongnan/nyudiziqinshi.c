@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������Ϣ��");
+        set("short", "弟子休息室");
 
         set("long",@LONG
-��춹�Ĺ��ֻ��Ů���ӣ�Ĺ��Ҳֻ�д�һ����Ϣ�ҡ����м���ʯ����
-����Щ���죬��ܣ��ͦ�Ǹɾ��ġ�ǽ���и�С���ӣ�������˸�ͭ����һ
-Щ��֬���и��������ڴ�硣�ӱ���С�ų�ȥ��һ���ߵ���
+由於古墓派只收女弟子，墓中也只有此一间休息室。室中几张石床上
+铺了些被褥，打埽的挺是干净的。墙边有个小桌子，上面放了个铜镜和一
+些胭脂，有个弟子正在打扮。从北的小门出去是一条走道。
 LONG);
 
         set("exits",([ "north" : __DIR__"zoudao4",
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
         if ( dir == "north" ) {
                 for (i=0; i<sizeof(inv); i++) {
                         if (inv[i]->is_character())
-                        return notify_fail("�㲻�ܴ�����������뿪��Ϣ�ҡ�\n");
+                        return notify_fail("你不能带着其他玩家离开休息室。\n");
                 }
         }
         return ::valid_leave(me, dir);

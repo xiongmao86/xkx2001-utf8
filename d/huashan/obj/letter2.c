@@ -1,19 +1,19 @@
 //Cracked by Roath
-// letter2.c Ğ¡·âÌ×
+// letter2.c å°å°å¥—
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name("Ğ¡·âÌ×", ({"feng tao", "tao", "envelope"}));
+        set_name("å°å°å¥—", ({"feng tao", "tao", "envelope"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("long",
-			"·âÆ¤ÉÏĞ´×Å£º¡°ÆôºĞÖ®·¨¡±¡£\n");
+			"å°çš®ä¸Šå†™ç€ï¼šâ€œå¯ç›’ä¹‹æ³•â€ã€‚\n");
                 set("material", "paper");
         }
 }
@@ -28,18 +28,18 @@ int do_open(string arg)
 	object me=this_player();
 
 	if ( !arg || arg =="" )
-		return notify_fail("ÄãÒª½«Ê²Ã´´ò¿ª£¿\n");
+		return notify_fail("ä½ è¦å°†ä»€ä¹ˆæ‰“å¼€ï¼Ÿ\n");
 
         if ( (arg == "feng tao" || arg == "tao" || arg == "envelope" )
         && objectp(present(arg, me)) ) {	
 		if ( this_object()->query_temp("opened") )
-			return notify_fail("ÄãÒÑ¾­²ğ¿ªĞÅ·â£¬³é³öĞÅÖ½ÁË£¡\n");
+			return notify_fail("ä½ å·²ç»æ‹†å¼€ä¿¡å°ï¼ŒæŠ½å‡ºä¿¡çº¸äº†ï¼\n");
 
-		message_vision("$N²ğ¿ªĞÅ·â£¬³é³öÒ»ÕÅ²Ğ¾ÉµÄĞÅÖ½¡£\n", me);
-		this_object()->set_name("ĞÅÖ½", ({"letter"}));
-		this_object()->set("unit", "ÕÅ");
+		message_vision("$Næ‹†å¼€ä¿¡å°ï¼ŒæŠ½å‡ºä¸€å¼ æ®‹æ—§çš„ä¿¡çº¸ã€‚\n", me);
+		this_object()->set_name("ä¿¡çº¸", ({"letter"}));
+		this_object()->set("unit", "å¼ ");
 		this_object()->set("long", HIG
-		"ÌúºĞ×óÓÒ£¬¸÷ÓĞ»úÀ¨£¬Ë«ÊÖÅõºĞÁ¦ÏÆ(pull)£¬ÌúºĞ¼´¿ª¡£\n" NOR);
+		"é“ç›’å·¦å³ï¼Œå„æœ‰æœºæ‹¬ï¼ŒåŒæ‰‹æ§ç›’åŠ›æ€(pull)ï¼Œé“ç›’å³å¼€ã€‚\n" NOR);
 
 		this_object()->set_temp("opened", 1);
 		me->set_temp("read2", 1);

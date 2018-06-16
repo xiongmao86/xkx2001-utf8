@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÃíºóÊ¯ÊÒ");
+        set("short", "åº™åŽçŸ³å®¤");
         set("long", @LONG
-ÖñÁÖÉî´¦µÄÊ¯ÊÒÇåÑÅÓÄ¾²£¬´°ÍâÂúÑÛÊÇÓÄÓÄ±ÌÖñ£¬ÕýÊÇìø×Ú²ÎìøÖ®ÃîËù¡£ÊÒ
-ÖÐÐ¡¼¸ÉÏµã×ÅÒ»Â¯Ì´Ïã£¬¼¸ÅÔÒ»Î»ÀÏÉ®¶Ë×øÔÚÆÑÍÅÉÏ¡£
+ç«¹æž—æ·±å¤„çš„çŸ³å®¤æ¸…é›…å¹½é™ï¼Œçª—å¤–æ»¡çœ¼æ˜¯å¹½å¹½ç¢§ç«¹ï¼Œæ­£æ˜¯ç¦…å®—å‚ç¦…ä¹‹å¦™æ‰€ã€‚å®¤
+ä¸­å°å‡ ä¸Šç‚¹ç€ä¸€ç‚‰æª€é¦™ï¼Œå‡ æ—ä¸€ä½è€åƒ§ç«¯ååœ¨è’²å›¢ä¸Šã€‚
 LONG);
 	set("objects", ([
 		"/kungfu/class/dali/yideng.c" : 1,

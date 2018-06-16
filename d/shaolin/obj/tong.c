@@ -1,5 +1,5 @@
 //Cracked by Roath
-//ÀÆÕ∞
+//Ê∞¥Ê°∂
 //xiaojian May 25,2000
 //Fix ppl useing other piao get more exp mantian may/17/2001
 
@@ -9,14 +9,14 @@ string long_desc();
 void create()
 {
 	int water_level;
-	set_name("ÀÆÕ∞", ({"shui tong", "tong", "bucket"}));
+	set_name("Ê∞¥Ê°∂", ({"shui tong", "tong", "bucket"}));
 	set_weight(1000);
 	if(clonep())
 		set_default_object(__FILE__);
 
 	else {
 		set("long", (: long_desc :));
-		set("unit", "∏ˆ");
+		set("unit", "‰∏™");
 		set("material", "wood");
 		set("value", 5000);
 		set("no_sell", 1);
@@ -32,17 +32,17 @@ string long_desc()
 	object ob;
 	ob = this_object();
 	descrp = 
-		HIW"’‚∏±ƒæÕ∞”––©Ãÿ±£¨Õ∞µ◊º‚º‚µƒ£¨∏˘±æ¡¢≤ªŒ»°£¡Ω÷ªÕ∞”…“ªÃıœ∏¬È…˛¥©¡¨∆¿¥£¨—˘◊””––©π÷π÷µƒ°£\n"NOR;
+		HIW"ËøôÂâØÊú®Ê°∂Êúâ‰∫õÁâπÂà´ÔºåÊ°∂Â∫ïÂ∞ñÂ∞ñÁöÑÔºåÊ†πÊú¨Á´ã‰∏çÁ®≥„ÄÇ‰∏§Âè™Ê°∂Áî±‰∏ÄÊù°ÁªÜÈ∫ªÁª≥Á©øËøûËµ∑Êù•ÔºåÊ†∑Â≠êÊúâ‰∫õÊÄ™ÊÄ™ÁöÑ„ÄÇ\n"NOR;
 	if (ob->query("water_level") == 0)
-		descrp += HIC"Õ∞¿Ô√Ê“ªµŒÀÆ∂º√ª”–°£\n"NOR;
+		descrp += HIC"Ê°∂ÈáåÈù¢‰∏ÄÊª¥Ê∞¥ÈÉΩÊ≤°Êúâ„ÄÇ\n"NOR;
 	else if (ob->query("water_level") <= 1)
-		descrp += HIC"¿Ô√Ê”–“ªµ„µ„ÀÆ°£\n"NOR;
+		descrp += HIC"ÈáåÈù¢Êúâ‰∏ÄÁÇπÁÇπÊ∞¥„ÄÇ\n"NOR;
 	else if (ob->query("water_level") <= 3)
-		descrp += HIC"¿Ô√Ê”–∞ÎÕ∞ÀÆ°£\n"NOR;
+		descrp += HIC"ÈáåÈù¢ÊúâÂçäÊ°∂Ê∞¥„ÄÇ\n"NOR;
 	else if (ob->query("water_level") <= 4)
-		descrp += HIC"¿Ô√ÊµƒÀÆøÏ¬˙¡À°£\n"NOR;
+		descrp += HIC"ÈáåÈù¢ÁöÑÊ∞¥Âø´Êª°‰∫Ü„ÄÇ\n"NOR;
 	else
-		descrp += HIC"ƒæÕ∞«·«·µÿªŒ¡ÀªŒ£¨¿Ô√ÊµƒÀÆ¬˙¡À£¨”––©¡¢≤ªŒ»°£ \n"NOR;
+		descrp += HIC"Êú®Ê°∂ËΩªËΩªÂú∞ÊôÉ‰∫ÜÊôÉÔºåÈáåÈù¢ÁöÑÊ∞¥Êª°‰∫ÜÔºåÊúâ‰∫õÁ´ã‰∏çÁ®≥„ÄÇ \n"NOR;
 	return descrp;
 }
 
@@ -60,15 +60,15 @@ int do_tiao(string arg)
 	object me, ob;
 	me = this_player();
 	if(!arg || (arg != "shui tong" && arg!= "tong" && arg != "bucket"))
-		return notify_fail("ƒ„“™ÃÙ ≤√¥? \n");
+		return notify_fail("‰Ω†Ë¶ÅÊåë‰ªÄ‰πà? \n");
 	ob = present("shui tong", environment(me));
 	if(!ob)
-		return notify_fail("’‚¿Ô∏ΩΩ¸√ª”–’‚—˘∂´Œ˜°£\n");
+		return notify_fail("ËøôÈáåÈôÑËøëÊ≤°ÊúâËøôÊ†∑‰∏úË•ø„ÄÇ\n");
 	if (me->is_busy())
-		return notify_fail("ƒ„’˝√¶◊≈ƒÿ£°\n");
+		return notify_fail("‰Ω†Ê≠£ÂøôÁùÄÂë¢ÔºÅ\n");
 	if(ob->query("owner") != me->query("id") && (!wizardp(me)))
-		return notify_fail("’‚∏ˆ≤ª «ƒ„µƒÀÆÕ∞°£\n");
-	message_vision(HIR"$N∞—¬È…˛ÃÙ‘⁄ºÁ…œ£¨»ª∫Û‘˙¡À∏ˆ¬Ì≤Ω£¨∆¯æ€µ§ÃÔ£¨À´±€”√¡¶£¨ƒæÕ∞±ª∆Ω∆ΩÃ·∆°£\n"NOR,me);
+		return notify_fail("Ëøô‰∏™‰∏çÊòØ‰Ω†ÁöÑÊ∞¥Ê°∂„ÄÇ\n");
+	message_vision(HIR"$NÊääÈ∫ªÁª≥ÊåëÂú®ËÇ©‰∏äÔºåÁÑ∂ÂêéÊâé‰∫Ü‰∏™È©¨Ê≠•ÔºåÊ∞îËÅö‰∏πÁî∞ÔºåÂèåËáÇÁî®ÂäõÔºåÊú®Ê°∂Ë¢´Âπ≥Âπ≥ÊèêËµ∑„ÄÇ\n"NOR,me);
 	me->receive_damage("jingli",5+random(5));
 	//tong has been carried, so the position factor is not applied
 	ob->delete("tong_pos");
@@ -82,17 +82,17 @@ int do_fang(string arg)
 	object me, ob;
 	me = this_player();
 	if(!arg || (arg != "shui tong" && arg != "tong" && arg != "bucket"))	
-		return notify_fail("ƒ„“™∑≈œ¬ ≤√¥? \n");
+		return notify_fail("‰Ω†Ë¶ÅÊîæ‰∏ã‰ªÄ‰πà? \n");
 	ob = present("shui tong", me);
 	if( !ob)
-		return notify_fail("ƒ„≤¢√ª”–ÃÙ◊≈»Œ∫Œ∂´Œ˜°£\n");
+		return notify_fail("‰Ω†Âπ∂Ê≤°ÊúâÊåëÁùÄ‰ªª‰Ωï‰∏úË•ø„ÄÇ\n");
 	if(me->is_busy())
-		return notify_fail("ƒ„’˝√¶◊≈ƒÿ! \n");
-	message_vision(HIB"$N∞—ƒæÕ∞¥”ºÁ…œ∑≈œ¬£¨“ª ÷∑ˆ◊°£¨ƒ˝¡¶”⁄±€£¨»ª∫ÛÕ¬∆¯ø™…˘£¨≈ƒœÚƒæÕ∞±ﬂ‘µ°£\n"NOR,me);
-	message_vision(HIC"$NÃ˝µΩ°∞≈æ≈æ°±¡Ω…˘«·œÏ£¨ƒæÕ∞Œ»Œ»µÿ≤Â‘⁄µÿ…œ°£\n"NOR,me);
-	me->receive_damage("qi",(10+random(10)),"±ªƒæÕ∞‘“À¿¡À");
+		return notify_fail("‰Ω†Ê≠£ÂøôÁùÄÂë¢! \n");
+	message_vision(HIB"$NÊääÊú®Ê°∂‰ªéËÇ©‰∏äÊîæ‰∏ãÔºå‰∏ÄÊâãÊâ∂‰ΩèÔºåÂáùÂäõ‰∫éËáÇÔºåÁÑ∂ÂêéÂêêÊ∞îÂºÄÂ£∞ÔºåÊãçÂêëÊú®Ê°∂ËæπÁºò„ÄÇ\n"NOR,me);
+	message_vision(HIC"$NÂê¨Âà∞‚ÄúÂï™Âï™‚Äù‰∏§Â£∞ËΩªÂìçÔºåÊú®Ê°∂Á®≥Á®≥Âú∞ÊèíÂú®Âú∞‰∏ä„ÄÇ\n"NOR,me);
+	me->receive_damage("qi",(10+random(10)),"Ë¢´Êú®Ê°∂Á†∏Ê≠ª‰∫Ü");
 	ob->move(environment(me));
-	//tong has been putdown, so set tong to be good position,compared to drop tong,tong won't be  ˙÷±µƒ
+	//tong has been putdown, so set tong to be good position,compared to drop tong,tong won't be Á´ñÁõ¥ÁöÑ
 	ob->set("tong_pos",1);
 	me->start_busy(1);
 	return 1;
@@ -106,33 +106,33 @@ int do_dao(string arg)
 
 	if( !arg
         ||      sscanf(arg, "%s to %s", what, target)!=2)
-                return notify_fail("√¸¡Ó∏Ò Ω: dao <ŒÔ∆∑> to <ŒÔ∆∑>°£\n");
+                return notify_fail("ÂëΩ‰ª§Ê†ºÂºè: dao <Áâ©ÂìÅ> to <Áâ©ÂìÅ>„ÄÇ\n");
 
 	ob1 = present("shui piao", me);
 	ob2 = present(target, environment(me));
 	if(!ob1)
-		return notify_fail("ƒ„“™”√ ≤√¥µπÀÆ? \n");
+		return notify_fail("‰Ω†Ë¶ÅÁî®‰ªÄ‰πàÂÄíÊ∞¥? \n");
 	if(!ob1->query("water_filled"))
-		return notify_fail("ÀÆ∆∞¿Ô√ª”–ÀÆ‘ı√¥µπ? \n");
+		return notify_fail("Ê∞¥Áì¢ÈáåÊ≤°ÊúâÊ∞¥ÊÄé‰πàÂÄí? \n");
 	if( !ob2 )
-		return notify_fail("ƒ„“™Õ˘ƒƒ¿ÔµπÀÆ? \n");
+		return notify_fail("‰Ω†Ë¶ÅÂæÄÂì™ÈáåÂÄíÊ∞¥? \n");
 	if (what != "shui" && what != "water")
-		return notify_fail("ƒ„“™µπ ≤√¥? \n");
+		return notify_fail("‰Ω†Ë¶ÅÂÄí‰ªÄ‰πà? \n");
 	if (me->is_busy())
-		return notify_fail("ƒ„’˝√¶◊≈ƒÿ£°\n");
+		return notify_fail("‰Ω†Ê≠£ÂøôÁùÄÂë¢ÔºÅ\n");
 	if(ob2->query("full"))
-		return notify_fail("ÀÆÕ∞“—æ≠¬˙¡À°£\n");
+		return notify_fail("Ê∞¥Ê°∂Â∑≤ÁªèÊª°‰∫Ü„ÄÇ\n");
 	if(ob2->query("owner") != me->query("id") && (!wizardp(me)))
-		return notify_fail("’‚∏ˆ≤ª «ƒ„µƒÀÆÕ∞°£\n");
+		return notify_fail("Ëøô‰∏™‰∏çÊòØ‰Ω†ÁöÑÊ∞¥Ê°∂„ÄÇ\n");
 	if(!ob2->query("tong_pos"))
-		return notify_fail("ƒ„±ÿ–Î∞—Õ∞∑≈œ¬(putdown),Õ∞≤≈ƒ‹ ˙¡¢∆¿¥°£\n");
+		return notify_fail("‰Ω†ÂøÖÈ°ªÊääÊ°∂Êîæ‰∏ã(putdown),Ê°∂ÊâçËÉΩÁ´ñÁ´ãËµ∑Êù•„ÄÇ\n");
 	if(ob1->query("owner/id") != me->query("id"))
 	{
-		message_vision("$N”√◊≈"+ob1->query("owner/name")+"µƒÀÆ∆∞∞—“ª∆∞ÀÆµπΩ¯¡ÀÀÆÕ∞°£\n",me);
+		message_vision("$NÁî®ÁùÄ"+ob1->query("owner/name")+"ÁöÑÊ∞¥Áì¢Êää‰∏ÄÁì¢Ê∞¥ÂÄíËøõ‰∫ÜÊ∞¥Ê°∂„ÄÇ\n",me);
 		if(me->query_condition("tiaoshui") >5)
 			me->apply_condition("tiaoshui",me->query_condition("tiaoshui")-5);
 	}
-	else message_vision("$N∞—“ª∆∞ÀÆµπΩ¯¡ÀÀÆÕ∞°£\n",me);
+	else message_vision("$NÊää‰∏ÄÁì¢Ê∞¥ÂÄíËøõ‰∫ÜÊ∞¥Ê°∂„ÄÇ\n",me);
 	ob1->set("water_filled",0);
 	ob2->add("water_level",1);
 	ob2->set("long", (: long_desc :));

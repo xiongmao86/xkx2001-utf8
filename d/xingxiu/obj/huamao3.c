@@ -9,13 +9,13 @@ inherit HEAD;
 
 void create()
 {
-	set_name("ÇúÂü»¨Ã±", ({ "quman huamao", "mao", "cap" }) );
+	set_name("æ›²æ›¼èŠ±å¸½", ({ "quman huamao", "mao", "cap" }) );
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÎ¬Îá¶û×åÖĞ³£¼ûµÄ»¨Ã±£¬ĞÎ×´ÏÂÔ²ÉÏ·½£¬ºÚ½ğË¿ÈŞÃ±ÑØ£¬ÂÌµ×°×»¨£¬ËØ¾»µ­ÑÅ¡£\n");
-		set("unit", "¶¥");
+		set("long", "è¿™æ˜¯ç»´å¾å°”æ—ä¸­å¸¸è§çš„èŠ±å¸½ï¼Œå½¢çŠ¶ä¸‹åœ†ä¸Šæ–¹ï¼Œé»‘é‡‘ä¸ç»’å¸½æ²¿ï¼Œç»¿åº•ç™½èŠ±ï¼Œç´ å‡€æ·¡é›…ã€‚\n");
+		set("unit", "é¡¶");
 		set("value", 300);
 		set("material", "cloth");
 		set("armor_prop/armor", 2);

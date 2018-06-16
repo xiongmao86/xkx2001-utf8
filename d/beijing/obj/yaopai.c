@@ -21,9 +21,9 @@ int query_autoload() {return 0;}
 void init()
 {
     if (!wizardp(this_player())) {
-	set("no_get",   "ÊÌÎÀÑüÅÆÄãÄÃ²»ÆğÀ´¡£\n");
-	set("no_drop",  "ÄãÊÇÊÌÎÀ¾Í²»ÄÜ°ÑÑüÅÆÈÓÁË¡£\n");
-	set("no_steal", "Õâ¸ö¶«Î÷ÄãÍµ²»µ½¡£\n");
+	set("no_get",   "ä¾å«è…°ç‰Œä½ æ‹¿ä¸èµ·æ¥ã€‚\n");
+	set("no_drop",  "ä½ æ˜¯ä¾å«å°±ä¸èƒ½æŠŠè…°ç‰Œæ‰”äº†ã€‚\n");
+	set("no_steal", "è¿™ä¸ªä¸œè¥¿ä½ å·ä¸åˆ°ã€‚\n");
     }
 
     add_action("do_lairen", "lairen");
@@ -37,22 +37,22 @@ void init()
 
 void create()
 {
-    set_name("ÊÌÎÀÑüÅÆ", ({"yaopai"}));
+    set_name("ä¾å«è…°ç‰Œ", ({"yaopai"}));
     set_weight(6);
     if (clonep())
 	set_default_object(__FILE__);
     else{
-        set("unit", "Ö»");
+        set("unit", "åª");
         set("long", @LONG
-Õâ¸öÊÇÊÌÎÀÍ³Ò»Åå´÷µÄÑüÅÆ¡£ÓÃËü¿ÉÒÔÖ¸»ÓÄãµÄËæ´Ó¡£
-ÓÃ·¨£º
-	gather  : ÕÙ¼¯ËùÓĞËæ´Ó¡£
-	cisha   : ÃüÁîËæ´ÓÇ°Íù´ÌÉ±ËûÈË¡£
-	lairen  : ÕĞºôËæ´ÓÀ´±£»¤Äã¡£
-	na      : ÃüÁîËæ´Ó×½ÄÃ·´Ôô¡£
-	sha     : ÃüÁîËæ´Ó¸ñÉ±·´Ôô¡£
-	jiaodao : ½Ìµ¼Ëæ´Ó£¬ÈÃËûÃÇÌá¸ßÊµÕ½¾­Ñé¡£
-	xiuxi   : ÈÃËæ´ÓÈ¥ĞİÏ¢¡£
+è¿™ä¸ªæ˜¯ä¾å«ç»Ÿä¸€ä½©æˆ´çš„è…°ç‰Œã€‚ç”¨å®ƒå¯ä»¥æŒ‡æŒ¥ä½ çš„éšä»ã€‚
+ç”¨æ³•ï¼š
+	gather  : å¬é›†æ‰€æœ‰éšä»ã€‚
+	cisha   : å‘½ä»¤éšä»å‰å¾€åˆºæ€ä»–äººã€‚
+	lairen  : æ‹›å‘¼éšä»æ¥ä¿æŠ¤ä½ ã€‚
+	na      : å‘½ä»¤éšä»æ‰æ‹¿åè´¼ã€‚
+	sha     : å‘½ä»¤éšä»æ ¼æ€åè´¼ã€‚
+	jiaodao : æ•™å¯¼éšä»ï¼Œè®©ä»–ä»¬æé«˜å®æˆ˜ç»éªŒã€‚
+	xiuxi   : è®©éšä»å»ä¼‘æ¯ã€‚
 LONG
 	);
         set("value", 0);
@@ -110,12 +110,12 @@ int do_lairen(string arg)
     object target, *suicong;
     int    i;
 
-    message_vision("$N´óÉù½ĞµÀ£ºÀ´ÈËÄÄ£¬ÀÏÒ¯µÄĞ¡ÃüÒª²»±£À²£¡\n", player);
+    message_vision("$Nå¤§å£°å«é“ï¼šæ¥äººå“ªï¼Œè€çˆ·çš„å°å‘½è¦ä¸ä¿å•¦ï¼\n", player);
 
     suicong = find_my_suicongs(arg, 1);
     if (!suicong) {
-	if (arg) return notify_fail("ÄãÒªÕĞºôË­£¿\n");
-	return notify_fail("ÕâÀïÃ»ÓĞÄãµÄËæ´ÓÄÜ°ïÄã¡£\n");
+	if (arg) return notify_fail("ä½ è¦æ‹›å‘¼è°ï¼Ÿ\n");
+	return notify_fail("è¿™é‡Œæ²¡æœ‰ä½ çš„éšä»èƒ½å¸®ä½ ã€‚\n");
     }
 
 
@@ -124,16 +124,16 @@ int do_lairen(string arg)
 
 	for (i=0; i<sizeof(suicong); i++){
 	    if (target && target != suicong[i]) {
-	        message_vision("$N¸ßÉùÓ¦µ½£ºÊôÏÂÔÚ£¡"+
+	        message_vision("$Né«˜å£°åº”åˆ°ï¼šå±ä¸‹åœ¨ï¼"+
 			target->name()+RANK_D->query_rude(target)+
-			"£¬ÄãÊÇ»îÄåÁË£¬¸ÒÀ´ÉËÎÒ¼ÒÀÏÒ¯£¿\n", suicong[i]);
+			"ï¼Œä½ æ˜¯æ´»è…»äº†ï¼Œæ•¢æ¥ä¼¤æˆ‘å®¶è€çˆ·ï¼Ÿ\n", suicong[i]);
 	        suicong[i]->kill_ob(target);
 	        target->fight_ob(suicong[i]);
  	    }
 	}
     }else{
         for (i=0; i<sizeof(suicong); i++)
-	    message_vision("$N´òÁË¸ö¹şÇ·£¬Ó¦µ½£ºÊôÏÂÔÚ¡£\n", suicong[i]);
+	    message_vision("$Næ‰“äº†ä¸ªå“ˆæ¬ ï¼Œåº”åˆ°ï¼šå±ä¸‹åœ¨ã€‚\n", suicong[i]);
     }
     return 1;
 }
@@ -147,20 +147,20 @@ int do_cisha(string arg)
     string name;
 
     if (!arg)
-	return notify_fail("ÄãÒªÈÃËæ´Ó´ÌÉ±Ë­£¿\n");
+	return notify_fail("ä½ è¦è®©éšä»åˆºæ€è°ï¼Ÿ\n");
 
     suicong = find_my_suicongs(0, 1);
     if (!suicong) 
-	return notify_fail("ÕâÀïÃ»ÓĞÄãµÄËæ´ÓÄÜ°ïÄã¡£\n");
+	return notify_fail("è¿™é‡Œæ²¡æœ‰ä½ çš„éšä»èƒ½å¸®ä½ ã€‚\n");
 
     log_file("beijing/cisha", 
-		sprintf("%s : %sÈÃËæ´Ó´ÌÉ± %s \n", 
+		sprintf("%s : %sè®©éšä»åˆºæ€ %s \n", 
 		ctime(time()), 
 		player->query("name")+" ("+player->query("id")+") ", arg));
 
     for (i=0; i<sizeof(suicong); i++){
-	message_vision("$NµÍÉù¶Ô$nËµ£ºÄãÈ¥ÕÒÕÒ¿´ÓĞÃ»ÓĞÒ»¸ö½Ğ"+
-		arg+"µÄ£¬ÓĞ¾Í¸øÎÒÉ±ÁË¡£\n", player, suicong[i]);
+	message_vision("$Nä½å£°å¯¹$nè¯´ï¼šä½ å»æ‰¾æ‰¾çœ‹æœ‰æ²¡æœ‰ä¸€ä¸ªå«"+
+		arg+"çš„ï¼Œæœ‰å°±ç»™æˆ‘æ€äº†ã€‚\n", player, suicong[i]);
 	suicong[i]->start_cisha(arg);
     }
     return 1;
@@ -173,28 +173,28 @@ int do_sha(string arg)
     int    i;
 
     if (!arg)
-	return notify_fail("ÄãÒªÈÃËæ´ÓÉ±Ë­£¿\n");
+	return notify_fail("ä½ è¦è®©éšä»æ€è°ï¼Ÿ\n");
 
     target = present(arg, environment(player));
     if (!target)
-	return notify_fail("ÄãÒªÉ±Ë­£¿\n");
+	return notify_fail("ä½ è¦æ€è°ï¼Ÿ\n");
     if (!target->is_character())
-	return notify_fail(target->name()+"²»ÊÇ»îÎï¡£\n");
+	return notify_fail(target->name()+"ä¸æ˜¯æ´»ç‰©ã€‚\n");
     if (!living(target))
-	return notify_fail(target->name()+"¶¼ÕâÑùÁËÄã»¹ÒªÈË°ïÃ¦£¿\n");
+	return notify_fail(target->name()+"éƒ½è¿™æ ·äº†ä½ è¿˜è¦äººå¸®å¿™ï¼Ÿ\n");
 
-    message_vision("$N´óÉùºÈµÀ£ºÀ´ÈËÄÄ£¬°Ñ"+target->name()+"¸øÎÒÔ×ÁË£¡\n", player);
+    message_vision("$Nå¤§å£°å–é“ï¼šæ¥äººå“ªï¼ŒæŠŠ"+target->name()+"ç»™æˆ‘å®°äº†ï¼\n", player);
 
     suicong = find_my_suicongs(0, 1);
     if (!suicong) {
-	return notify_fail("ÕâÀïÃ»ÓĞÄãµÄËæ´ÓÄÜ°ïÄã¡£\n");
+	return notify_fail("è¿™é‡Œæ²¡æœ‰ä½ çš„éšä»èƒ½å¸®ä½ ã€‚\n");
     }
 
     for (i=0; i<sizeof(suicong); i++){
         if (target && target != suicong[i]) {
-	    message_vision("$N¸ßÉùÓ¦µ½£ºÊôÏÂÔÚ£¡"+
+	    message_vision("$Né«˜å£°åº”åˆ°ï¼šå±ä¸‹åœ¨ï¼"+
 	        target->name()+RANK_D->query_rude(target)+
-		"£¬Äã¾ÍÈ¥ÑÖÍõÀÏ×ÓÄÇ¶ùÍæ°É¡£\n", suicong[i]);
+		"ï¼Œä½ å°±å»é˜ç‹è€å­é‚£å„¿ç©å§ã€‚\n", suicong[i]);
 	    suicong[i]->kill_ob(target);
 	    target->kill_ob(suicong[i]);
 	}
@@ -208,28 +208,28 @@ int do_na(string arg)
     int    i;
 
     if (!arg)
-	return notify_fail("ÄãÒªÈÃËæ´Ó×½ÄÃË­£¿\n");
+	return notify_fail("ä½ è¦è®©éšä»æ‰æ‹¿è°ï¼Ÿ\n");
 
     target = present(arg, environment(player));
     if (!target)
-	return notify_fail("ÄãÒª×½ÄÃË­£¿\n");
+	return notify_fail("ä½ è¦æ‰æ‹¿è°ï¼Ÿ\n");
     if (!target->is_character())
-	return notify_fail(target->name()+"²»ÊÇ»îÎï¡£\n");
+	return notify_fail(target->name()+"ä¸æ˜¯æ´»ç‰©ã€‚\n");
     if (!living(target))
-	return notify_fail(target->name()+"¶¼ÕâÑùÁËÄã»¹ÒªÈË°ïÃ¦£¿\n");
+	return notify_fail(target->name()+"éƒ½è¿™æ ·äº†ä½ è¿˜è¦äººå¸®å¿™ï¼Ÿ\n");
 
-    message_vision("$N´óÉùºÈµÀ£ºÀ´ÈËÄÄ£¬°Ñ"+target->name()+"ÄÃÏÂÁË£¡\n", player);
+    message_vision("$Nå¤§å£°å–é“ï¼šæ¥äººå“ªï¼ŒæŠŠ"+target->name()+"æ‹¿ä¸‹äº†ï¼\n", player);
 
     suicong = find_my_suicongs(0, 1);
     if (!suicong) {
-	return notify_fail("ÕâÀïÃ»ÓĞÄãµÄËæ´ÓÄÜ°ïÄã¡£\n");
+	return notify_fail("è¿™é‡Œæ²¡æœ‰ä½ çš„éšä»èƒ½å¸®ä½ ã€‚\n");
     }
 
     for (i=0; i<sizeof(suicong); i++){
         if (target && target != suicong[i]) {
-	    message_vision("$N¸ßÉùÓ¦µ½£ºÊôÏÂÔÚ£¡"+
+	    message_vision("$Né«˜å£°åº”åˆ°ï¼šå±ä¸‹åœ¨ï¼"+
 	        target->name()+RANK_D->query_rude(target)+
-		"£¬Äã¾Í¹Ô¹ÔµÄ¸úÎÒ¼ÒÀÏÒ¯ÉÏÑÃÃÅ×ßÒ»ÌË°É¡£\n", suicong[i]);
+		"ï¼Œä½ å°±ä¹–ä¹–çš„è·Ÿæˆ‘å®¶è€çˆ·ä¸Šè¡™é—¨èµ°ä¸€è¶Ÿå§ã€‚\n", suicong[i]);
 	    suicong[i]->fight_ob(target);
 	    target->kill_ob(suicong[i]);
 	}
@@ -271,7 +271,7 @@ int do_xiuxi(string arg)
     int    i;
 
     result = find_my_suicongs(arg, 0);
-    if (!result) return notify_fail("ÄãÒªÈÃË­È¥ĞİÏ¢£¿\n");
+    if (!result) return notify_fail("ä½ è¦è®©è°å»ä¼‘æ¯ï¼Ÿ\n");
 
     for (i=0; i<sizeof(result); i++){
 	suicong = result[i];
@@ -279,13 +279,13 @@ int do_xiuxi(string arg)
 	    suicong->is_busy() ||
 	    ! living(suicong))
 	    return notify_fail(suicong->query("name")+
-		    "ÏÖÔÚÕıÃ¦×Å£¬µÈ»á¶ùÔÙĞİÏ¢°É¡£\n");
+		    "ç°åœ¨æ­£å¿™ç€ï¼Œç­‰ä¼šå„¿å†ä¼‘æ¯å§ã€‚\n");
 	suicong->drop_all_weapon();
 	suicong->set("xiuxi_time", player->query("mud_age"));
 	suicong->save();
-	message_vision("$NÀë¿ªÕâÀï»ØÓªĞİÏ¢ÁË¡£\n", suicong);
-	tell_object(player, "ºÃµÄ£¬ÈÃ"+suicong->query("name")+
-		    "»ØÓªĞİÏ¢¡£\n");
+	message_vision("$Nç¦»å¼€è¿™é‡Œå›è¥ä¼‘æ¯äº†ã€‚\n", suicong);
+	tell_object(player, "å¥½çš„ï¼Œè®©"+suicong->query("name")+
+		    "å›è¥ä¼‘æ¯ã€‚\n");
 	destruct(suicong);
     }
     return 1;
@@ -298,26 +298,26 @@ int do_jiaodao(string arg)
     int    jing_cost, exp_inc;
 
     if (!arg) 
-	return notify_fail("ÄãÒª½Ìµ¼Ë­£¿\n");
+	return notify_fail("ä½ è¦æ•™å¯¼è°ï¼Ÿ\n");
 
     result = find_my_suicongs(arg, 1);
-    if (!result) return notify_fail("ÄãÏë½Ìµ¼Ë­£¿\n");
+    if (!result) return notify_fail("ä½ æƒ³æ•™å¯¼è°ï¼Ÿ\n");
     suicong = result[0];
 
     if (player->is_busy())
-        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬µÈÓĞ¿ÕÔÙ½Ìµ¼±ğÈË°É¡£\n");
+        return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œç­‰æœ‰ç©ºå†æ•™å¯¼åˆ«äººå§ã€‚\n");
     if (suicong->is_fighting() || player->is_fighting())
-        return notify_fail("ÏÈ°Ñ¼Ü´òÍêÔÙËµ°É¡£\n");
+        return notify_fail("å…ˆæŠŠæ¶æ‰“å®Œå†è¯´å§ã€‚\n");
     if ((int)suicong->query("combat_exp") >= (int)player->query("combat_exp"))
-        return notify_fail("ÄãÏëÁË°ëÌì£¬È´Ã»·¢ÏÖÓĞÊ²Ã´¿É½ÌµÄ¡£\n");
+        return notify_fail("ä½ æƒ³äº†åŠå¤©ï¼Œå´æ²¡å‘ç°æœ‰ä»€ä¹ˆå¯æ•™çš„ã€‚\n");
     if ((int)player->query("potential") <= 0)
-        return notify_fail("ÄãµÄÇ±ÄÜ²»×ã£¬ÏÖÔÚ²»ÄÜ½Ìµ¼±ğÈË¡£\n");
+        return notify_fail("ä½ çš„æ½œèƒ½ä¸è¶³ï¼Œç°åœ¨ä¸èƒ½æ•™å¯¼åˆ«äººã€‚\n");
     
     jing_cost = 2*(40 - (int)player->query("int"));
     exp_inc   = 2*random((int)player->query_int());
 
     if ((int)player->query("jing") <= jing_cost)
-        return notify_fail("ÄãÏÖÔÚÌ«ÀÛÁË£¬Ã»¾«Éñ½Ì±ğÈË¡£\n");
+        return notify_fail("ä½ ç°åœ¨å¤ªç´¯äº†ï¼Œæ²¡ç²¾ç¥æ•™åˆ«äººã€‚\n");
     
     // seems fine now, let's act
     player->add("learned_points", 1);    // here, learn is reversed.
@@ -326,8 +326,8 @@ int do_jiaodao(string arg)
     suicong->add("combat_exp",  exp_inc);
     fix_skills(suicong);  // pull up skills to exp limit
 
-    tell_object(player, "ÄãËµÁËĞ©½­ºşÉÏµÄ¼ûÎÅ£¬"+suicong->name()+
-                "ËÆºõ³¤ÁËĞ©¼ûÊ¶¡£\n");
+    tell_object(player, "ä½ è¯´äº†äº›æ±Ÿæ¹–ä¸Šçš„è§é—»ï¼Œ"+suicong->name()+
+                "ä¼¼ä¹é•¿äº†äº›è§è¯†ã€‚\n");
     return 1;
 
 }
@@ -342,9 +342,9 @@ int do_gather()
 
     suicong_num = me->query("suicong_num");
     if (suicong_num <= 0)
-	return notify_fail("ÄãÃ»ÓĞËæ´Ó¡£\n");
+	return notify_fail("ä½ æ²¡æœ‰éšä»ã€‚\n");
 
-    message_vision("$NÍÏ³¤ÁËÉùÒôµÀ£ºÀ´ÈËÄÄ¡£¡£¡£\n", me);
+    message_vision("$Næ‹–é•¿äº†å£°éŸ³é“ï¼šæ¥äººå“ªã€‚ã€‚ã€‚\n", me);
     suicong_ready = allocate(suicong_num+1);
     for (i=0; i<suicong_num+1; i++){
         suicong_ready[i] = 0;
@@ -357,15 +357,15 @@ int do_gather()
 	    if (ob->is_busy() ||
 	        ob->has_task() ||
 	  	ob->is_fighting()) {
-		tell_object(me, ob->name()+"ÅÉÈËÉÓĞÅÀ´ËµËûÕıÃ¦×Å¹«ÎñÄØ¡£\n");
+		tell_object(me, ob->name()+"æ´¾äººæä¿¡æ¥è¯´ä»–æ­£å¿™ç€å…¬åŠ¡å‘¢ã€‚\n");
 	    } else {
 		if (environment(me) != environment(ob)){
-                    message_vision("$N´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n", ob);
+                    message_vision("$NåŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n", ob);
                     ob->move(environment(me));
-                    message_vision("$N¿ì²½×ßÁË¹ıÀ´¡£\n", ob);
+                    message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", ob);
                     ob->set_leader(me);
 		}else{
-		    message_vision("$N´ğÓ¦µÀ£ºÊôÏÂÔÚ´Ë¡£\n", ob);
+		    message_vision("$Nç­”åº”é“ï¼šå±ä¸‹åœ¨æ­¤ã€‚\n", ob);
 		}
             }
         }
@@ -377,7 +377,7 @@ int do_gather()
 	    suicong->move(environment(me));
 	    suicong->reload_suicong(me, i);
 	    suicong->set_leader(me);
-	    message_vision("$N¿ì²½×ßÁË¹ıÀ´¡£\n", suicong);
+	    message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", suicong);
 	}
     }
     return 1;

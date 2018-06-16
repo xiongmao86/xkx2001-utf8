@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name("ÎÚÒÄ´ó÷â", ({ "da hui","hui" }) );
-	set("long", "ÕâÊÇÒ»ºÚÉ«´ó÷â£¬ÎÚÒÄ×åÄĞ×Ó¶¼Ï²»¶Åû´ËÎï¡£\n");
+	set_name("ä¹Œå¤·å¤§éº¾", ({ "da hui","hui" }) );
+	set("long", "è¿™æ˜¯ä¸€é»‘è‰²å¤§éº¾ï¼Œä¹Œå¤·æ—ç”·å­éƒ½å–œæ¬¢æŠ«æ­¤ç‰©ã€‚\n");
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("material", "cloth");
 		set("armor_prop/armor", 1);
 	}

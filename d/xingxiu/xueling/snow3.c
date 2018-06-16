@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"ѩ��"NOR);
+        set("short", HIW"雪岭"NOR);
         set("long", @LONG
-����羰�ĺã�ɽ�����ߣ�ԭ���������ֵط�����Ӧ���˵���  
-����������ȴ������һ��ɽׯ����֪��ʲô���ڡ�
+这里风景颇好，山舞银蛇，原驰腊象。这种地方本不应有人的足  
+迹，但东方却隐隐有一处山庄，不知是什么所在。
 LONG
         );
         set("exits", ([

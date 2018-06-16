@@ -1,5 +1,5 @@
 //Cracked by Roath
-//ÇàÍ­»¤¶î
+//é’é“œæŠ¤é¢
 //kane
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ inherit HEAD;
 
 void create()
 {
-	set_name( "ÇàÍ­»¤¶î" , ({ "qingtong hue", "hue" }) );
+	set_name( "é’é“œæŠ¤é¢" , ({ "qingtong hue", "hue" }) );
 	set_weight(1200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶¥");
-                set("long", "ÕâÊÇÒ»¶¥ÇàÍ­´òÖÆµÄ»¤¶î¡£\n");
+		set("unit", "é¡¶");
+                set("long", "è¿™æ˜¯ä¸€é¡¶é’é“œæ‰“åˆ¶çš„æŠ¤é¢ã€‚\n");
 		set("value", 500);
 		set("material", "bronze");
 		set("armor_prop/armor", 8);

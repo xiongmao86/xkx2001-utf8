@@ -1,5 +1,5 @@
 //Cracked by Roath
-//Ë®Æ°
+//æ°´ç“¢
 //xiaojian May 25,2000
 
 #include <ansi.h>
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ë®Æ°", ({"shui piao", "piao"}));
+	set_name("æ°´ç“¢", ({"shui piao", "piao"}));
 	set_weight(100);
 	if(clonep())
 		set_default_object(__FILE__);
 
 	else {
-		set("long", "ÕâÊÇÒ»¸öÒ¨Ë®ÓÃµÄË®Æ°¡£\n");
-		set("unit", "¸ö");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªèˆ€æ°´ç”¨çš„æ°´ç“¢ã€‚\n");
+		set("unit", "ä¸ª");
 		set("material", "wood");
 		set("value", 0);
 	}
@@ -23,8 +23,8 @@ init()
 {
         object me = this_player();
          if (!wizardp(me)) {
-                set("no_give",  "Õâ¸ö¶«Î÷²»ÄÜËæ±ã¸øÈË¡£\n");
-                set("no_steal", "Õâ¸ö¶«Î÷ÄãÍµ²»µ½¡£\n");
+                set("no_give",  "è¿™ä¸ªä¸œè¥¿ä¸èƒ½éšä¾¿ç»™äººã€‚\n");
+                set("no_steal", "è¿™ä¸ªä¸œè¥¿ä½ å·ä¸åˆ°ã€‚\n");
                 }
 }
 	

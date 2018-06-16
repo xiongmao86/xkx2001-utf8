@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(YEL"²õÍÉ"NOR, ({"chantui"}));
+        set_name(YEL"è‰èœ•"NOR, ({"chantui"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","²õÍÉ£º²õÓÉÓ×³æÍÉ±äÖÁ³É³æËùÒÅµÄ¿Ç£¬ÓĞÈ¥·çÊªµÄĞ§¹û¡£\n");
+                set("unit", "é’±");
+                set("long","è‰èœ•ï¼šè‰ç”±å¹¼è™«èœ•å˜è‡³æˆè™«æ‰€é—çš„å£³ï¼Œæœ‰å»é£æ¹¿çš„æ•ˆæœã€‚\n");
                 set("value", 80);
 				set("yaocai", 1);
         		set("cure_s",3);

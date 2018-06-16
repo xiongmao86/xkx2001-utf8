@@ -9,12 +9,12 @@ int do_lingwu();
 
 void create()
 {
-        set("name", "¹ã³¡");
-        set("short", "¹ã³¡");
-        set("long", "ÕâÀïÊÇÒ»¸ö¿íÀ«µÄ¹ã³¡£¬ÇàÊ¯ÆÌ³ÉµÄµØ°å±»È«ÕæµÀÊ¿´òÉ¨µÄ¸É¸É\n¾»¾»£¬¹ã³¡ÕýÖÐÁ¢×ÅÒ»×ùÊ¯±®(bei )¡£ÉÏÃæÃÜÃÜÂéÂéµØ¿Ì×ÅÐ¡×Ö¡£Ê¯\n±®ÅÔ±ß×ø×ÅÒ»¸öÄ¾Í·ÈË£¬ÎåÐÄÏòÌì£¬ÐÎÏó±ÆÕæ£¬»³ÖÐ±§×ÅÒ»±ú·÷³¾¡£\n\n");
+        set("name", "å¹¿åœº");
+        set("short", "å¹¿åœº");
+        set("long", "è¿™é‡Œæ˜¯ä¸€ä¸ªå®½é˜”çš„å¹¿åœºï¼Œé’çŸ³é“ºæˆçš„åœ°æ¿è¢«å…¨çœŸé“å£«æ‰“æ‰«çš„å¹²å¹²\nå‡€å‡€ï¼Œå¹¿åœºæ­£ä¸­ç«‹ç€ä¸€åº§çŸ³ç¢‘(bei )ã€‚ä¸Šé¢å¯†å¯†éº»éº»åœ°åˆ»ç€å°å­—ã€‚çŸ³\nç¢‘æ—è¾¹åç€ä¸€ä¸ªæœ¨å¤´äººï¼Œäº”å¿ƒå‘å¤©ï¼Œå½¢è±¡é€¼çœŸï¼Œæ€€ä¸­æŠ±ç€ä¸€æŸ„æ‹‚å°˜ã€‚\n\n");
 
         set("item_desc", ([
-                "bei" : "±®ÉÏ¿Ì×Å¶ÏÔÆ±Þ·¨µÄÒªÒå¡£\n\n",
+                "bei" : "ç¢‘ä¸Šåˆ»ç€æ–­äº‘éž­æ³•çš„è¦ä¹‰ã€‚\n\n",
         ]));
 
         set("objects", ([
@@ -45,30 +45,30 @@ int do_lingwu(){
 		
 	object me=this_player();
 
-	if (this_player()->is_busy()) return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+	if (this_player()->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 	
 	if (me->query_skill("duanyun-bian",1)<150)
-		return notify_fail("Äã¶ÏÔÆ±Þ·¨ÐÞÎª²»×ãÒÔÁìÎòÆä¾«»ª¡£\n");
+		return notify_fail("ä½ æ–­äº‘éž­æ³•ä¿®ä¸ºä¸è¶³ä»¥é¢†æ‚Ÿå…¶ç²¾åŽã€‚\n");
 
 	if (!present("fuchen", me) && me->query("id")!="wsky")
-                        return notify_fail("ÄãÃ»ÓÐÐ¯´ø·÷³¾¡£\n\n");
+                        return notify_fail("ä½ æ²¡æœ‰æºå¸¦æ‹‚å°˜ã€‚\n\n");
 	
 	if (me->query_skill("duanyun-bian",1)>500)
-		return notify_fail("Äã¿´ÁË¿´±®ÉÏµÄÐ¡×Ö£¬¾õµÃÄÇÐ©¶Ô×Ô¼ºÀ´ËµÌ«Ç³ÁË¡£\n");
+		return notify_fail("ä½ çœ‹äº†çœ‹ç¢‘ä¸Šçš„å°å­—ï¼Œè§‰å¾—é‚£äº›å¯¹è‡ªå·±æ¥è¯´å¤ªæµ…äº†ã€‚\n");
 
 	if (me->query("neili")<30)
-		return notify_fail("ÄãÄÚÁ¦²»×ã¡£\n");
+		return notify_fail("ä½ å†…åŠ›ä¸è¶³ã€‚\n");
 
 	if (me->query("jingli")<30)
-		return notify_fail("Äã¾«Á¦²»×ã¡£\n");
+		return notify_fail("ä½ ç²¾åŠ›ä¸è¶³ã€‚\n");
 
 	exp=me->query("combat_exp");
 	while(skill*skill*skill<exp*10) skill++;
 	
 	if (me->query_skill("duanyun-bian",1)>skill)
-		return notify_fail("Äã¿´ÁË¿´±®ÉÏµÄÐ¡×Ö£¬¾õµÃ×Ô¼º¾­Ñé²»¹»Àí½âÕâÐ©¡£\n");
+		return notify_fail("ä½ çœ‹äº†çœ‹ç¢‘ä¸Šçš„å°å­—ï¼Œè§‰å¾—è‡ªå·±ç»éªŒä¸å¤Ÿç†è§£è¿™äº›ã€‚\n");
 
-	message_vision("\n$NÊÖ³Ö·÷³¾Õ¾ÔÚÊ¯±®Ç°£¬Å¬Á¦ÔÄ¶Á×Å¶ÏÔÆ±ÞµÄ¾«Òå¡£\n",me);
+	message_vision("\n$Næ‰‹æŒæ‹‚å°˜ç«™åœ¨çŸ³ç¢‘å‰ï¼ŒåŠªåŠ›é˜…è¯»ç€æ–­äº‘éž­çš„ç²¾ä¹‰ã€‚\n",me);
 
 	me->start_busy(3);
 	me->add("jingli",20);
@@ -76,7 +76,7 @@ int do_lingwu(){
 
 	if (random(100)<10){
 
-		message_vision("\n$N¿´ÁË¿´±®ÅÔµÄÄ¾ÈË£¬ÊÖ³Ö·÷³¾ÇáÇá»Î¶¯£¬ËÆºõ¶Ô¶ÏÔÆ±Þ·¨ÂÔÓÐËùÎò¡£\n",me);		
+		message_vision("\n$Nçœ‹äº†çœ‹ç¢‘æ—çš„æœ¨äººï¼Œæ‰‹æŒæ‹‚å°˜è½»è½»æ™ƒåŠ¨ï¼Œä¼¼ä¹Žå¯¹æ–­äº‘éž­æ³•ç•¥æœ‰æ‰€æ‚Ÿã€‚\n",me);		
 		this_player()->improve_skill("duanyun-bian", this_player()->query_skill("whip",1)/10);	
 
 	}

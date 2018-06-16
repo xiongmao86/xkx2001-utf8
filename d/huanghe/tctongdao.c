@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Í¨µÀ");
+        set("short", "é€šé“");
         set("long", @LONG
-Ò»Ìõ³¤³¤µÄÍ¨µÀ£¬ğ®µÀÇ½ÉÏµã×ÅÅ£ÓÍ¾ŞÖò£¬×ß³öÊıÕÉ£¬±ã¼´×ªÍä¡£Õû¸öÍ¨
-µÀÒ»Æ¬¼Å¾²£¬ÏÔµÃÊ®·ÖÒõÉ­¿É²À¡£¼¸¸ö°ïÖÚÕıÔÚÀ´»ØÑ²Âß¡£
+ä¸€æ¡é•¿é•¿çš„é€šé“ï¼Œç”¬é“å¢™ä¸Šç‚¹ç€ç‰›æ²¹å·¨çƒ›ï¼Œèµ°å‡ºæ•°ä¸ˆï¼Œä¾¿å³è½¬å¼¯ã€‚æ•´ä¸ªé€š
+é“ä¸€ç‰‡å¯‚é™ï¼Œæ˜¾å¾—ååˆ†é˜´æ£®å¯æ€–ã€‚å‡ ä¸ªå¸®ä¼—æ­£åœ¨æ¥å›å·¡é€»ã€‚
 LONG );
 
         set("exits", ([
@@ -43,17 +43,17 @@ int valid_leave(object me, string dir)
         if( !living(ob) )
                 return ::valid_leave(me, dir);
 
-        if( me->query_temp("bangs/fam") == "Ìú²æ°ï"
-        ||  me->query("fam") == "Ìú²æ°ï" )
+        if( me->query_temp("bangs/fam") == "é“å‰å¸®"
+        ||  me->query("fam") == "é“å‰å¸®" )
                 return ::valid_leave(me, dir);
 
         if( (obj = present("tie cha", me)) ) {
-                message("vision", "°ïÖÚËµµÀ£ºÊÇÍõÀÏÁù½éÉÜÀ´µÄÂğ£¬Çë½øÇë½ø¡£\n", this_object());
+                message("vision", "å¸®ä¼—è¯´é“ï¼šæ˜¯ç‹è€å…­ä»‹ç»æ¥çš„å—ï¼Œè¯·è¿›è¯·è¿›ã€‚\n", this_object());
                 destruct(obj);
                 return ::valid_leave(me, dir);
         }
 
-        message_vision("$NÀ¹ÔÚ$nÃæÇ°£¬ËµµÀ£ºÀïÃæÊÇ±¾°ïÖØµØ£¬ÏëÕÒËÀÂğ¡£\n", ob, me);
+        message_vision("$Næ‹¦åœ¨$né¢å‰ï¼Œè¯´é“ï¼šé‡Œé¢æ˜¯æœ¬å¸®é‡åœ°ï¼Œæƒ³æ‰¾æ­»å—ã€‚\n", ob, me);
         return notify_fail("");
 }
 

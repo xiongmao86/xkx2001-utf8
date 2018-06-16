@@ -10,11 +10,11 @@ int vomit(object);
 
 void create()
 {
-        set("short", "ÊÌÎÀÊ³ÌÃ");
+        set("short", "ä¾å«é£Ÿå ‚");
         set("long", @LONG
-ÕâÀïÊÇÊÌÎÀÃÇ³Ô·¹µÄµØ·½¡£µÍµÈÊÌÎÀÃÇÀ´À´ÍùÍù£¬±ß³Ô
-±ßÁÄÌì¡£Å¼¶ûÒ²ÄÜ¿´µ½Ò»Ð©ÊÌÎÀÓªµÄ´ó¹Ù¡£²Í×ÀÉÏ·ÅÁËºÃÐ©
-³ÔµÄºÈµÄ£¬Äã¾ÍËæ±ãÓÃ°É¡£
+è¿™é‡Œæ˜¯ä¾å«ä»¬åƒé¥­çš„åœ°æ–¹ã€‚ä½Žç­‰ä¾å«ä»¬æ¥æ¥å¾€å¾€ï¼Œè¾¹åƒ
+è¾¹èŠå¤©ã€‚å¶å°”ä¹Ÿèƒ½çœ‹åˆ°ä¸€äº›ä¾å«è¥çš„å¤§å®˜ã€‚é¤æ¡Œä¸Šæ”¾äº†å¥½äº›
+åƒçš„å–çš„ï¼Œä½ å°±éšä¾¿ç”¨å§ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -25,9 +25,9 @@ LONG
         ]));
 
 	set("item_desc", ([
-	"table" : "×ÀÉÏ·ÅÁËÐí¶àÂøÍ·¿É³Ô (eat)£¬Ò²ÓÐÇåË®¿ÉºÈ (drink)\n",
-	"×À×Ó" : "×ÀÉÏ·ÅÁËÐí¶àÂøÍ·¿É³Ô (eat)£¬Ò²ÓÐÇåË®¿ÉºÈ (drink)\n",
-	"²Í×À" : "×ÀÉÏ·ÅÁËÐí¶àÂøÍ·¿É³Ô (eat)£¬Ò²ÓÐÇåË®¿ÉºÈ (drink)\n",
+	"table" : "æ¡Œä¸Šæ”¾äº†è®¸å¤šé¦’å¤´å¯åƒ (eat)ï¼Œä¹Ÿæœ‰æ¸…æ°´å¯å– (drink)\n",
+	"æ¡Œå­" : "æ¡Œä¸Šæ”¾äº†è®¸å¤šé¦’å¤´å¯åƒ (eat)ï¼Œä¹Ÿæœ‰æ¸…æ°´å¯å– (drink)\n",
+	"é¤æ¡Œ" : "æ¡Œä¸Šæ”¾äº†è®¸å¤šé¦’å¤´å¯åƒ (eat)ï¼Œä¹Ÿæœ‰æ¸…æ°´å¯å– (drink)\n",
         ]));
  
         set("no_clean_up", 0);
@@ -52,22 +52,22 @@ int do_eat(string arg)
 	return command("eat "+arg);
 
     if (player->is_busy())
-	return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
     food = player->query("food");
     max_food = player->max_food_capacity();
 
     if (food >= max_food) 
-	return notify_fail("ÄãÒÑ¾­³Ô³ÅÁË£¬»¹Òª³Ô£¿\n");
+	return notify_fail("ä½ å·²ç»åƒæ’‘äº†ï¼Œè¿˜è¦åƒï¼Ÿ\n");
     
     food += max_food/10;
     if (food > max_food) food = max_food;
-    message_vision("$NÄÃÆð×ÀÉÏµÄÂøÍ·³ÔÁËÁ½¿Ú¡£\n", player);
+    message_vision("$Næ‹¿èµ·æ¡Œä¸Šçš„é¦’å¤´åƒäº†ä¸¤å£ã€‚\n", player);
     player->start_busy(2);
     player->set("food", food);
 
     if (!IS_SHIWEI(player) &&
 	!wizardp(player)){
-	message_vision("$N·¢ÏÖÅÔ±ßÓÐÈËÍµÍµµÄÐ¦ÁËÒ»Éù¡£\n", player);
+	message_vision("$Nå‘çŽ°æ—è¾¹æœ‰äººå·å·çš„ç¬‘äº†ä¸€å£°ã€‚\n", player);
 	call_out("vomit", 5, player);
     }
     return 1;
@@ -75,7 +75,7 @@ int do_eat(string arg)
 
 int vomit(object player)
 {
-    message_vision("$NÍ»È»Å»ÍÂÆðÀ´¡£ÍÂ³öÀ´µÄÂøÍ·ÀïÃæºÃÏó»¹ÓÐÊ²Ã´¶«Î÷ÔÚÈä¶¯¡£\n",
+    message_vision("$Nçªç„¶å‘•åèµ·æ¥ã€‚åå‡ºæ¥çš„é¦’å¤´é‡Œé¢å¥½è±¡è¿˜æœ‰ä»€ä¹ˆä¸œè¥¿åœ¨è •åŠ¨ã€‚\n",
 		player);
     player->set("food", 0);
     player->start_busy(5);
@@ -91,22 +91,22 @@ int do_drink(string arg)
 	return command("eat "+arg);
 
     if (player->is_busy())
-	return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
     water = player->query("water");
     max_water = player->max_water_capacity();
 
     if (water >= max_water) 
-	return notify_fail("ÄãÒÑ¾­ºÈ±¥ÁË£¬»¹Òª³Ô£¿\n");
+	return notify_fail("ä½ å·²ç»å–é¥±äº†ï¼Œè¿˜è¦åƒï¼Ÿ\n");
     
     water += max_water/10;
     if (water > max_water) water = max_water;
-    message_vision("$N¶ËÆð×ÀÉÏµÄË®ÅèºÈÁËÁ½¿Ú¡£\n", player);
+    message_vision("$Nç«¯èµ·æ¡Œä¸Šçš„æ°´ç›†å–äº†ä¸¤å£ã€‚\n", player);
     player->start_busy(1);
     player->set("water", water);
 
     if (!IS_SHIWEI(player) &&
 	!wizardp(player)){
-	message_vision("$N·¢ÏÖÅÔ±ßÓÐÈËÍµÍµµÄÐ¦ÁËÒ»Éù¡£\n", player);
+	message_vision("$Nå‘çŽ°æ—è¾¹æœ‰äººå·å·çš„ç¬‘äº†ä¸€å£°ã€‚\n", player);
 	player->apply_condition("slumber_drug",
 	    player->query_condition("slumber_drug")+100);
     }

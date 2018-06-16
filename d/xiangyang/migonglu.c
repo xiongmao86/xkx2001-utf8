@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�׹�·");
+	set("short", "米公路");
 	set("long", @LONG
-��Ϊ���鷨�������Ĺʾ����⸽�������α�Ѵ˴���Ϊ�׹�·��ԭ������
-��С����Ϊ�ɹŴ��ʱ�����£�����Ĵ������Ǩ����������ѳɻ�Ұ����
-ȥ�����󣬱��Ͽ���������
+因为大书法家米芾的故居在这附近，这便把此处称为米公路。原本安宁
+的小村因为蒙古大军时常南下，左近的村民大都南迁，良田如今已成荒野。东
+去是南洋，北上可至陕西。
 LONG
 	);
 	set("outdoors", "xiangyang");

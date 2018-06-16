@@ -5,11 +5,11 @@ inherit ITEM;
 int throw_ob(object me, object victim);
 void create()
 {
-   set_name(HIW"ÎÞÐÎÉ¢"NOR, ({"wuxing san", "san", "wuxing"}));
+   set_name(HIW"æ— å½¢æ•£"NOR, ({"wuxing san", "san", "wuxing"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "°ü");
+      set("unit", "åŒ…");
       set("value", 10);
       set("skill", "feixing-shu");
    }
@@ -22,38 +22,38 @@ int throw_ob(object me, object victim)
    mapping myfam, vfam;
    
    
-   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "ÐÇËÞÅÉ"))
-                  return notify_fail("Ö»ÓÐÐÇËÞµÜ×ÓÀûÓÃ±¾ÃÅÃØ´«ÄÚ¹¦·½ÄÜÊ¹ÓÃÎÞÐÎÉ¢¡£\n"); 
+   if ( (!( myfam= me->query("family")) || myfam["family_name"] != "æ˜Ÿå®¿æ´¾"))
+                  return notify_fail("åªæœ‰æ˜Ÿå®¿å¼Ÿå­åˆ©ç”¨æœ¬é—¨ç§˜ä¼ å†…åŠŸæ–¹èƒ½ä½¿ç”¨æ— å½¢æ•£ã€‚\n"); 
 
    if (me->is_fighting())
-   	return notify_fail("ÄãÕýÃ¦×Å´ò¼ÜÄØ£¬ÌÚ²»³öÊÖÀ´£¡\n");	
+   	return notify_fail("ä½ æ­£å¿™ç€æ‰“æž¶å‘¢ï¼Œè…¾ä¸å‡ºæ‰‹æ¥ï¼\n");	
 
    if( me->query("neili") <= 2500 ){
-        write("ÄãµÄÄÚÁ¦²»¹»´ÝÆÈÎÞÐÎÉ¢¶¾£¡\n");
+        write("ä½ çš„å†…åŠ›ä¸å¤Ÿæ‘§è¿«æ— å½¢æ•£æ¯’ï¼\n");
         return 1;
    }
 
    if (me->query_skill("poison", 1) < 120){
-        write("µ±ÐÄ¶¾ËÀÄã×Ô¼º£¡\n");
+        write("å½“å¿ƒæ¯’æ­»ä½ è‡ªå·±ï¼\n");
         return 1;
    }
 
-   if( environment(me)->query("no_fight") ) return notify_fail("²»ÐÐ!\n");
+   if( environment(me)->query("no_fight") ) return notify_fail("ä¸è¡Œ!\n");
 	
-   if( me->is_busy() ) return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÊ©ÓÃÍâ¹¦¡£)\n");
+   if( me->is_busy() ) return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½ç”¨å¤–åŠŸã€‚)\n");
 	
 
    if (victim->query_condition("sxs_poison")){  
-        write("´ËÈËÒÑÖÐÁËÈýÐ¦×·»êÉ¢£¬Ãü²»¾ÃÒÓ£¡\n");
+        write("æ­¤äººå·²ä¸­äº†ä¸‰ç¬‘è¿½é­‚æ•£ï¼Œå‘½ä¸ä¹…çŸ£ï¼\n");
         return 1;
    }
 
    if (me->query_condition("pker") > 240 && userp(victim)){
-        write("Äã¸Ðµ½Ò»Ë¿ÄÚ¾Î£¬ÊÖÍ»È»ÈíÁËÏÂÀ´¡£\n");
+        write("ä½ æ„Ÿåˆ°ä¸€ä¸å†…ç–šï¼Œæ‰‹çªç„¶è½¯äº†ä¸‹æ¥ã€‚\n");
         return 1;
    }
    
-   message_vision("$NÎ¢Î¢Ò»Ð¦£¬Éñ³öÐ¡Ö¸Ïò$nÇáÇáÒ»µ¯£¬$n¾õµÃÑÛÇ°Ò»»¨£¬ËÆºõÓÐÒ»²ã°×ÎíÏò×Ô¼ºÆ®À´¡£\n"NOR, me, victim);
+   message_vision("$Nå¾®å¾®ä¸€ç¬‘ï¼Œç¥žå‡ºå°æŒ‡å‘$nè½»è½»ä¸€å¼¹ï¼Œ$nè§‰å¾—çœ¼å‰ä¸€èŠ±ï¼Œä¼¼ä¹Žæœ‰ä¸€å±‚ç™½é›¾å‘è‡ªå·±é£˜æ¥ã€‚\n"NOR, me, victim);
 
    if (me->query_skill("poison", 1) < victim->query_skill("poison", 1) + 30){
            victim->apply_condition("insect_poison", 100);
@@ -102,7 +102,7 @@ int throw_ob(object me, object victim)
         
         return 1;
    } else {
-        message_vision(HIR"$nÅÛÐäÒ»·÷£¬Ò»¹ÉÄÚ¾¢·¢³ö£¬½«ÄÇÎÞÐÎÉ¢¾¡Êý³¯$N·÷½«»ØÈ¥¡£\n" NOR, me, victim);
+        message_vision(HIR"$nè¢è¢–ä¸€æ‹‚ï¼Œä¸€è‚¡å†…åŠ²å‘å‡ºï¼Œå°†é‚£æ— å½¢æ•£å°½æ•°æœ$Næ‹‚å°†å›žåŽ»ã€‚\n" NOR, me, victim);
         this_object()->set_temp("used", 1);
         this_object()->set("value", 10);
         victim->apply_condition("sanpoison",me->query_skill("poison",1));      

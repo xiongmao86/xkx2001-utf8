@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ּ���");
+        set("short", "林间大道");
         set("long", @LONG
-������һ���ּ����������Ǻ��Ͼ��ڡ��ϱ�ͨ�������һ��
-ɽ�ڡ�·���и�С���ӡ�
+这里是一条林间大道。这里是湖南境内。南边通向南岭的一个
+山口。路西有个小村子。
 LONG
         );
         set("exits", ([

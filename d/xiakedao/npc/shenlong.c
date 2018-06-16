@@ -1,22 +1,22 @@
 //Cracked by Roath
-// chi.c ÏÀ¿ÍµºÉñÁú³àÁúÃÅµÜ×Ó
+// chi.c ä¾ å®¢å²›ç¥é¾™èµ¤é¾™é—¨å¼Ÿå­
 inherit NPC;
 #include <ansi.h>
 string* menpai = ({
 	"say 
-          ÎÒÃÇ½ÌÖ÷ÉñÍ¨¹ã´ó£¬ÌìÏÂµÚÒ»¡£½ÌÖ÷·òÈËÃÀÈçÌìÏÉ¡£½ÌÖĞ
-ÎåÁúÊ¹£¬ÅÖÊİÍ·ÍÓ£¬¸ö¸öÎä¹¦¸ßÇ¿¡£»¯¹ÇÃàÕÆ£¬ÃÀÈËÈıÕĞ£¬¶¼ÊÇÎäÁÖ
-¾øÑ§¡£µºÉÏµÜ×Ó»¹ÄÜÑ§ÍÚÏİ¾®"+HBRED+HIW"(trap)"NOR +"£¬¿ÉÓÃÀ´»÷É±¸ßÊÖ¡£",
+          æˆ‘ä»¬æ•™ä¸»ç¥é€šå¹¿å¤§ï¼Œå¤©ä¸‹ç¬¬ä¸€ã€‚æ•™ä¸»å¤«äººç¾å¦‚å¤©ä»™ã€‚æ•™ä¸­
+äº”é¾™ä½¿ï¼Œèƒ–ç˜¦å¤´é™€ï¼Œä¸ªä¸ªæ­¦åŠŸé«˜å¼ºã€‚åŒ–éª¨ç»µæŒï¼Œç¾äººä¸‰æ‹›ï¼Œéƒ½æ˜¯æ­¦æ—
+ç»å­¦ã€‚å²›ä¸Šå¼Ÿå­è¿˜èƒ½å­¦æŒ–é™·äº•"+HBRED+HIW"(trap)"NOR +"ï¼Œå¯ç”¨æ¥å‡»æ€é«˜æ‰‹ã€‚",
 });
 int ask_menpai(string* message);
 
 void create()
 {
-	set_name("ÉñÁúÅ®µÜ×Ó", ({ "chilong dizi","dizi" }) );
-	set("gender", "Å®ĞÔ");
+	set_name("ç¥é¾™å¥³å¼Ÿå­", ({ "chilong dizi","dizi" }) );
+	set("gender", "å¥³æ€§");
 	set("age", 15+random(10));
         set("long",
-		"ÕâÊÇ³àÁúÃÅµÜ×Ó£¬Äê¼Í¶¼ºÜĞ¡£¬ËÆºõ²»ÚÏÊÀÊÂ¡£\n");
+		"è¿™æ˜¯èµ¤é¾™é—¨å¼Ÿå­ï¼Œå¹´çºªéƒ½å¾ˆå°ï¼Œä¼¼ä¹ä¸è°™ä¸–äº‹ã€‚\n");
 	set("combat_exp", 100);
         set("shen_type", -1);
         set("attitude", "heroism");
@@ -26,9 +26,9 @@ void create()
 
 	set("jingli",100);
 
-	create_family("ÉñÁú½Ì", 4, "µÜ×Ó");
+	create_family("ç¥é¾™æ•™", 4, "å¼Ÿå­");
 	set("inquiry", ([
-			"ÉñÁúµº"   :  (: ask_menpai, menpai:),
+			"ç¥é¾™å²›"   :  (: ask_menpai, menpai:),
 		]));
 
       setup();
@@ -64,9 +64,9 @@ void init()
 void greeting(object me)
 {	if (me->query_temp(this_object()->query("id")) == 0 )
 	{	command("flirt " + me->query("id"));
-		command("say ÕâÎ»" + RANK_D->query_respect(me) + 
-		"À´ÎÒÃÇÉñÁúµº°É£¬ÎÒÃÇÄÇ×î¶àÉÙÄêÉÙÅ®¡£\n" +
-		"ÄãÓĞÊ²÷áÎÊÌâÎÊÎÒ¾ÍºÃÀ²¡£"+HBRED+HIW"(ask dizi about ÉñÁúµº)"NOR +"»òÊÔÊÔ \n" +
+		command("say è¿™ä½" + RANK_D->query_respect(me) + 
+		"æ¥æˆ‘ä»¬ç¥é¾™å²›å§ï¼Œæˆ‘ä»¬é‚£æœ€å¤šå°‘å¹´å°‘å¥³ã€‚\n" +
+		"ä½ æœ‰ä»€éº½é—®é¢˜é—®æˆ‘å°±å¥½å•¦ã€‚"+HBRED+HIW"(ask dizi about ç¥é¾™å²›)"NOR +"æˆ–è¯•è¯• \n" +
 		HBRED+HIW"(help shenlong)"NOR);
 		me->set_temp(this_object()->query("id"), 1);
 	}

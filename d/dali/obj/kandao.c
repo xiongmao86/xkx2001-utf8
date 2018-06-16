@@ -8,17 +8,17 @@ inherit BLADE;
 
 void create()
 {
-	set_name("¿³µ¶", ({ "kan dao", "dao" }));
+	set_name("ç åˆ€", ({ "kan dao", "dao" }));
 	set_weight(3000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»±úĞ¡¿³µ¶£¬ÈĞÉíÆÄ¿í£¬Ã»ÓĞ»¤ÊÖ£¬¶ÌĞ¡¾«º·¡£Ç°¶ËÓĞÒ»»Ø¹³£¬ÊÊºÏÅü¿³Ê÷Ä¾Ö¦Ìõ¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€æŸ„å°ç åˆ€ï¼Œåˆƒèº«é¢‡å®½ï¼Œæ²¡æœ‰æŠ¤æ‰‹ï¼ŒçŸ­å°ç²¾æ‚ã€‚å‰ç«¯æœ‰ä¸€å›é’©ï¼Œé€‚åˆåŠˆç æ ‘æœ¨ææ¡ã€‚\n");
 		set("value", 250);
 		set("material", "steel");
-		set("wield_msg", "$NÄÃ³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 	init_blade(10);
 	setup();

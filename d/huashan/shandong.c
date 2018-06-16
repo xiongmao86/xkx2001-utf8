@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ª™…Ω…Ω∂¥
+// ÂçéÂ±±Â±±Ê¥û
 // qfy 26/6/1996.
 
 #include <room.h>
@@ -11,12 +11,12 @@ int do_strike(string);
 
 void create()
 {
-   set("short", "…Ω∂¥");
+   set("short", "Â±±Ê¥û");
    set("long", @LONG
-…Ω∂¥ƒ⁄”–øÈπ‚¡Ô¡Ôµƒ¥Û Ø£¨≤ª÷™µ¿‘¯”–∂‡…Ÿª™…Ω≈…µƒ«∞±≤‘⁄¥ÀÀºπ˝√Ê
-±⁄£¨“‘÷¬’‚øÈ¥Û Øæπ±ª◊¯µ√ª¨¡Ô°£ Ø±⁄(wall)◊Û≤‡øÃ◊≈°∏∑Á«Â—Ô°π»˝∏ˆ¥Û
-◊÷£¨ «“‘¿˚∆˜À˘øÃ£¨± ªÆ≤‘æ¢£¨…Ó”–∞Î¥Á°£’‚»˝◊÷øÃµ√æ¢¡¶∑«∑≤£¨œÎ±ÿ∆‰
-»ÀŒ‰π¶“ª∂® Æ∑÷¡Àµ√°£
+Â±±Ê¥ûÂÜÖÊúâÂùóÂÖâÊ∫úÊ∫úÁöÑÂ§ßÁü≥Ôºå‰∏çÁü•ÈÅìÊõæÊúâÂ§öÂ∞ëÂçéÂ±±Ê¥æÁöÑÂâçËæàÂú®Ê≠§ÊÄùËøáÈù¢
+Â£ÅÔºå‰ª•Ëá¥ËøôÂùóÂ§ßÁü≥Á´üË¢´ÂùêÂæóÊªëÊ∫ú„ÄÇÁü≥Â£Å(wall)Â∑¶‰æßÂàªÁùÄ„ÄåÈ£éÊ∏ÖÊâ¨„Äç‰∏â‰∏™Â§ß
+Â≠óÔºåÊòØ‰ª•Âà©Âô®ÊâÄÂàªÔºåÁ¨îÂàíËãçÂä≤ÔºåÊ∑±ÊúâÂçäÂØ∏„ÄÇËøô‰∏âÂ≠óÂàªÂæóÂä≤ÂäõÈùûÂá°ÔºåÊÉ≥ÂøÖÂÖ∂
+‰∫∫Ê≠¶Âäü‰∏ÄÂÆöÂçÅÂàÜ‰∫ÜÂæó„ÄÇ
 LONG
 	);
    set("exits", ([ /* sizeof() == 1 */
@@ -24,7 +24,7 @@ LONG
    ]));
 
    set("item_desc", ([
-      "wall" : "“ª√Ê∫‹∫Òµƒ Ø±⁄°£\n",
+      "wall" : "‰∏ÄÈù¢ÂæàÂéöÁöÑÁü≥Â£Å„ÄÇ\n",
    ]));
        
 	set("cost", 2);
@@ -39,7 +39,7 @@ void init()
 	me->set_temp("hz_job/sgy", 1);
    }
 
-   add_action("do_mianbi","√Ê±⁄");
+   add_action("do_mianbi","Èù¢Â£Å");
    add_action("do_mianbi","mianbi");
    add_action("do_strike","strike");
    add_action("do_lingwu","lingwu");
@@ -54,24 +54,24 @@ int do_mianbi()
    level = (int)me->query_skill("force",1);
    check = level*level*level;
 
-   message_vision("$N‘⁄¥Û Ø…œ◊¯¡Àœ¬¿¥£¨√Ê∂‘◊≈ Ø±⁄ı√◊¯æ≤Àº°£\n", me);
+   message_vision("$NÂú®Â§ßÁü≥‰∏äÂùê‰∫Ü‰∏ãÊù•ÔºåÈù¢ÂØπÁùÄÁü≥Â£ÅË∂∫ÂùêÈùôÊÄù„ÄÇ\n", me);
 
-   if ( random(15) == 9 && !me->query_temp("marks/√Ê") ) { 
-      write("¡ºæ√£¨ƒ„Õª»ª”–“ªπ…∆∆±⁄(strike)µƒ≥Â∂Ø°£\n");
-      me->set_temp("marks/√Ê", 1);
+   if ( random(15) == 9 && !me->query_temp("marks/Èù¢") ) { 
+      write("ËâØ‰πÖÔºå‰Ω†Á™ÅÁÑ∂Êúâ‰∏ÄËÇ°Á†¥Â£Å(strike)ÁöÑÂÜ≤Âä®„ÄÇ\n");
+      me->set_temp("marks/Èù¢", 1);
       }
       me->set_busy(10);
 
    if ( random(200) == 18 && (int)me->query("shen") < 30000 ) {
       me->set("shen",shen_n+20);
-      write("ƒ„µƒœ¿“Â’˝∆¯‘ˆº”¡À°£\n");
+      write("‰Ω†ÁöÑ‰æ†‰πâÊ≠£Ê∞îÂ¢ûÂä†‰∫Ü„ÄÇ\n");
       }
 
    if ( random(200) == 1 && (int)me->query_skill("force", 1) <= 40 
    && check < (int)me->query("combat_exp")*10 ) {
-      me->receive_damage("jing", 10, "–ƒ¡¶Ω ¥·À¿¡À");
+      me->receive_damage("jing", 10, "ÂøÉÂäõÁªûÁòÅÊ≠ª‰∫Ü");
       me->improve_skill("force", me->query("int"));
-      write("ƒ„¡ÏŒÚ¡Àƒ⁄π¶∑Ω√Êµƒº∏∏ˆ“…ƒ—°£\n");
+      write("‰Ω†È¢ÜÊÇü‰∫ÜÂÜÖÂäüÊñπÈù¢ÁöÑÂá†‰∏™ÁñëÈöæ„ÄÇ\n");
       }
 
    return 1;
@@ -89,19 +89,19 @@ int do_lingwu()
    && (int)me->query_skill("zixia-gong", 1) <= 100
    && present("zixia book", me) && (int)me->query("jing") > 29 ) {
       if ( check < (int)me->query("combat_exp")*10 ) {
-	me->receive_damage("jing", 20, "–ƒ¡¶Ω ¥·À¿¡À");
+	me->receive_damage("jing", 20, "ÂøÉÂäõÁªûÁòÅÊ≠ª‰∫Ü");
 	me->improve_skill("zixia-gong", me->query("int"));
-	write("ƒ„¡ÏŒÚ¡À◊œœº…Òπ¶∑Ω√Êµƒº∏∏ˆ“…ƒ—°£\n"); 
+	write("‰Ω†È¢ÜÊÇü‰∫ÜÁ¥´ÈúûÁ•ûÂäüÊñπÈù¢ÁöÑÂá†‰∏™ÁñëÈöæ„ÄÇ\n"); 
       }
       else {
-	write("ƒ„ µ’Ωæ≠—È≤ª◊„£¨Œﬁ∑®¡ÏŒÚ◊œœº…Òπ¶°£\n");
+	write("‰Ω†ÂÆûÊàòÁªèÈ™å‰∏çË∂≥ÔºåÊó†Ê≥ïÈ¢ÜÊÇüÁ¥´ÈúûÁ•ûÂäü„ÄÇ\n");
       } 
    }    
    else if ( (int)me->query("jing") < 30 ) {
-      write("ƒ„æ´…ÒŒﬁ∑®ºØ÷–°£\n");
+      write("‰Ω†Á≤æÁ•ûÊó†Ê≥ïÈõÜ‰∏≠„ÄÇ\n");
    }            
    else {
-     write(" ≤√¥£ø\n");
+     write("‰ªÄ‰πàÔºü\n");
    } 
 	 
    return 1;
@@ -114,42 +114,42 @@ int do_strike(string arg)
    n = me->query("neili");
    q = me->query("qi");
 	
- if( me->query_temp("marks/√Ê") ) 
+ if( me->query_temp("marks/Èù¢") ) 
  {
    
    if( !arg || arg!="wall" ) 
-       return notify_fail("ƒ„“™ª˜∆∆…ı√¥£ø£°\n");
+       return notify_fail("‰Ω†Ë¶ÅÂáªÁ†¥Áîö‰πàÔºüÔºÅ\n");
 				
    if( !objectp(weapon = me->query_temp("weapon"))
    || (string)weapon->query("skill_type") != "sword" ) {
 
    if( me->query("neili") < 200)
-	return notify_fail("ƒ„µƒƒ⁄¡¶≤ªπª£°\n");
+	return notify_fail("‰Ω†ÁöÑÂÜÖÂäõ‰∏çÂ§üÔºÅ\n");
 
 	message_vision(
-	"$N’æ∆…Ì¿¥£¨∞›≥ˆ∆Ô¬Ì∂◊Ò… Ω£¨…ÓŒ¸“ªø⁄∆¯£¨À´’∆Õ¨ ±≈ƒœÚ Ø±⁄°£\n", me);
+	"$NÁ´ôËµ∑Ë∫´Êù•ÔºåÊãúÂá∫È™ëÈ©¨Ëπ≤Ë£ÜÂºèÔºåÊ∑±Âê∏‰∏ÄÂè£Ê∞îÔºåÂèåÊéåÂêåÊó∂ÊãçÂêëÁü≥Â£Å„ÄÇ\n", me);
 	message_vision(
-	"Ω·π˚ ≤√¥“≤√ª∑¢…˙°£ø¥¿¥∆∆±⁄µƒ∑Ω∑®≤¢≤ª∂‘£¨$N◊‘º∫∑¥∂¯ ‹…À°£\n", me);
+	"ÁªìÊûú‰ªÄ‰πà‰πüÊ≤°ÂèëÁîü„ÄÇÁúãÊù•Á†¥Â£ÅÁöÑÊñπÊ≥ïÂπ∂‰∏çÂØπÔºå$NËá™Â∑±ÂèçËÄåÂèó‰º§„ÄÇ\n", me);
 	me->set("neili",n-200);
-	me->receive_damage("qi",200,"ÃÂ¡¶Õ∏÷ßπ˝∂»À¿¡À");                                        
+	me->receive_damage("qi",200,"‰ΩìÂäõÈÄèÊîØËøáÂ∫¶Ê≠ª‰∫Ü");                                        
    }
    else {       
 	if (n>=200) {
 	   message_vision(
-	   "$NæŸΩ£‘À◊„ƒ⁄¡¶¥ÃœÚ Ø±⁄£¨≤¡µƒ“ª…˘£¨Ω£æπ∂˚≤Â»Î Ø±⁄÷Æ÷–£¨÷±√ª÷¡±˙£°\n", me);
+	   "$N‰∏æÂâëËøêË∂≥ÂÜÖÂäõÂà∫ÂêëÁü≥Â£ÅÔºåÊì¶ÁöÑ‰∏ÄÂ£∞ÔºåÂâëÁ´üÂ∞îÊèíÂÖ•Áü≥Â£Å‰πã‰∏≠ÔºåÁõ¥Ê≤°Ëá≥ÊüÑÔºÅ\n", me);
 	   message_vision(
-	   "$NÀÊº¥≥È≥ˆΩ£¿¥£¨µ´Ã˝µ√≈È≈È÷Æ…˘≤ªæ¯£¨ ØÕ∑≤ª◊°πˆ¬‰£¨¬∂≥ˆ“ª∏ˆ’≠’≠µƒø◊µ¿°£\n", me);
+	   "$NÈöèÂç≥ÊäΩÂá∫ÂâëÊù•Ôºå‰ΩÜÂê¨ÂæóÁ†∞Á†∞‰πãÂ£∞‰∏çÁªùÔºåÁü≥Â§¥‰∏ç‰ΩèÊªöËêΩÔºåÈú≤Âá∫‰∏Ä‰∏™Á™ÑÁ™ÑÁöÑÂ≠îÈÅì„ÄÇ\n", me);
 	   set("exits/enter", __DIR__"yongdao1");
 	   me->set("neili",n-200);
-	   me->delete_temp("marks/√Ê");
+	   me->delete_temp("marks/Èù¢");
 	   remove_call_out("close");
 	   call_out("close", 5, this_object());
 	}
 	else {   
 	   message_vision(
-	   "$NæŸΩ££¨‘À◊„ƒ⁄¡¶¥ÃœÚ Ø±⁄£¨Ôœµƒ“ª…˘£¨Ω·π˚Ω£∂œ»À…À£¨‘≠¿¥ƒ⁄¡¶≤ª◊„£°\n", me);
+	   "$N‰∏æÂâëÔºåËøêË∂≥ÂÜÖÂäõÂà∫ÂêëÁü≥Â£ÅÔºåÈîµÁöÑ‰∏ÄÂ£∞ÔºåÁªìÊûúÂâëÊñ≠‰∫∫‰º§ÔºåÂéüÊù•ÂÜÖÂäõ‰∏çË∂≥ÔºÅ\n", me);
 	   me->set("neili",0);
-	   me->receive_damage("qi",200,"ÃÂ¡¶Õ∏÷ßπ˝∂»À¿¡À"); 
+	   me->receive_damage("qi",200,"‰ΩìÂäõÈÄèÊîØËøáÂ∫¶Ê≠ª‰∫Ü"); 
 	   destruct(weapon);
 	}
 	
@@ -160,7 +160,7 @@ int do_strike(string arg)
    
  }
  else {
-   write(" ≤√¥£ø\n");
+   write("‰ªÄ‰πàÔºü\n");
  }     
    
  return 1;    
@@ -168,6 +168,6 @@ int do_strike(string arg)
 
 void close(object room)
 {
-    message("vision"," ØÕ∑œ°¿Ôª©¿≠ÃÆÀ˙œ¬¿¥£¨”÷∑‚◊°¡À»Îø⁄°£\n", room);
+    message("vision","Áü≥Â§¥Á®ÄÈáåÂìóÊãâÂùçÂ°å‰∏ãÊù•ÔºåÂèàÂ∞Å‰Ωè‰∫ÜÂÖ•Âè£„ÄÇ\n", room);
     room->delete("exits/enter");
 }

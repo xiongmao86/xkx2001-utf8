@@ -1,23 +1,23 @@
 //Cracked by Roath
-// wudang.c µÀÍ¯
+// wudang.c é“ç«¥
 #include <ansi.h>
 inherit NPC;
 string* menpai = ({
 	"say 
-          Îäµ±ºÍÉÙÁÖÄËÎäÁÖµÄÌ©É½±±¶·¡£Îäµ±ÕÅÕæÈË×Ô´´µÄ¡°Ì«¼«¡±
-    ÊÇÒÔÈá¿Ë¸ÕµÄÎäÁÖ¾øÑ§¡£Îäµ±¹¦·ò¾«¼ò¡£Ö»ÓĞÒ»Ì×½£·¨£¬Ò»Ì×È­·¨£¬
-    ºÍÒ»Ì×Çá¹¦Éí·¨¡£Îäµ±µÜ×Ó¶¼ÊÇµÀ¼ÒÖĞÈË¹ÊĞè¾«ĞŞµÀµÂ¾­£¬ÒÔ´Ë³¤
-    Æø¡£Îäµ±µÜ×ÓÔÚÌ«¼«Éñ¹¦ºÍµÀ¼ÒĞÄ·¨ÓĞºÜ¸ß¾³½çÖ®Ê±¿ÉÓëÈË»¹»ê»ò
-    ×Ô¾È¡£",
+          æ­¦å½“å’Œå°‘æ—ä¹ƒæ­¦æ—çš„æ³°å±±åŒ—æ–—ã€‚æ­¦å½“å¼ çœŸäººè‡ªåˆ›çš„â€œå¤ªæâ€
+    æ˜¯ä»¥æŸ”å…‹åˆšçš„æ­¦æ—ç»å­¦ã€‚æ­¦å½“åŠŸå¤«ç²¾ç®€ã€‚åªæœ‰ä¸€å¥—å‰‘æ³•ï¼Œä¸€å¥—æ‹³æ³•ï¼Œ
+    å’Œä¸€å¥—è½»åŠŸèº«æ³•ã€‚æ­¦å½“å¼Ÿå­éƒ½æ˜¯é“å®¶ä¸­äººæ•…éœ€ç²¾ä¿®é“å¾·ç»ï¼Œä»¥æ­¤é•¿
+    æ°”ã€‚æ­¦å½“å¼Ÿå­åœ¨å¤ªæç¥åŠŸå’Œé“å®¶å¿ƒæ³•æœ‰å¾ˆé«˜å¢ƒç•Œä¹‹æ—¶å¯ä¸äººè¿˜é­‚æˆ–
+    è‡ªæ•‘ã€‚",
 });
 int ask_menpai(string* message);
 
 void create()
 {
-	set_name("ÖĞ²®", ({ "wudang dizi", "dizi", "zhongbo" }));
+	set_name("ä¸­ä¼¯", ({ "wudang dizi", "dizi", "zhongbo" }));
 	set("long", 
-		"ËûÊÇÎäµ±É½µÄĞ¡±²µÜ×Ó¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–æ˜¯æ­¦å½“å±±çš„å°è¾ˆå¼Ÿå­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 16);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -36,9 +36,9 @@ void create()
 	set("score", 1000);
 
 
-	create_family("Îäµ±ÅÉ", 4, "µÜ×Ó");
+	create_family("æ­¦å½“æ´¾", 4, "å¼Ÿå­");
 	set("inquiry", ([
-			"Îäµ±"   :  (: ask_menpai, menpai:),
+			"æ­¦å½“"   :  (: ask_menpai, menpai:),
 		]));
 
 	setup();
@@ -62,9 +62,9 @@ void greeting(object me)
 {	
         if (me->query_temp(this_object()->query("id")) == 0 )
 	{	command("hi " + me->query("id"));
-		command("say ÕâÎ»" + RANK_D->query_respect(me) + 
-			"ÄãÓĞÊ²÷áÎÊÌâÎÊÎÒ¾ÍºÃÀ²¡£\n" +
-		         HBRED+HIW"(ask dizi about Îäµ±)"NOR +" »òÊÔÊÔ "+HBRED+HIW"help wudang"NOR);
+		command("say è¿™ä½" + RANK_D->query_respect(me) + 
+			"ä½ æœ‰ä»€éº½é—®é¢˜é—®æˆ‘å°±å¥½å•¦ã€‚\n" +
+		         HBRED+HIW"(ask dizi about æ­¦å½“)"NOR +" æˆ–è¯•è¯• "+HBRED+HIW"help wudang"NOR);
 		me->set_temp(this_object()->query("id"), 1);
 	}
 }

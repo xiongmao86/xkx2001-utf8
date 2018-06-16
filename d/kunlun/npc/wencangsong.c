@@ -12,21 +12,21 @@ void create()
 		mapping I_inquiry=([ ]);
 		mixed Skill_name;
 
-        set_name("ÎÅ²ÔËÉ", ({ "wen cangsong","wen"}) );
-        set("title", "Ã÷½Ì¾ŞÄ¾ÆìÕÆÆìÊ¹");
-        create_family("Ã÷½Ì",37,"ÕÆÆìÊ¹");
-        set("gender", "ÄĞĞÔ");
+        set_name("é—»è‹æ¾", ({ "wen cangsong","wen"}) );
+        set("title", "æ˜æ•™å·¨æœ¨æ——æŒæ——ä½¿");
+        create_family("æ˜æ•™",37,"æŒæ——ä½¿");
+        set("gender", "ç”·æ€§");
         set("age",36);
         set("long", "
-´ıÌí
+å¾…æ·»
 \n");
         set("attitude", "peaceful");
         set("shen", 1000000);
         
-	I_inquiry["name"]="ÔÚÏÂ¾ÍÊÇÃ÷½Ì¾ŞÄ¾ÆìÕÆÆìÊ¹ÎÅ²ÔËÉ£¬²»Öª¸óÏÂÓĞºÎÖ¸½Ì¡£";
-	I_inquiry["ÈÎÎñ"]=(: ask_job :);
+	I_inquiry["name"]="åœ¨ä¸‹å°±æ˜¯æ˜æ•™å·¨æœ¨æ——æŒæ——ä½¿é—»è‹æ¾ï¼Œä¸çŸ¥é˜ä¸‹æœ‰ä½•æŒ‡æ•™ã€‚";
+	I_inquiry["ä»»åŠ¡"]=(: ask_job :);
 	I_inquiry["job"]=(: ask_job :);
-	I_inquiry["·ÅÆú"]=(: ask_abandon :);
+	I_inquiry["æ”¾å¼ƒ"]=(: ask_abandon :);
 	I_inquiry["abandon"]=(: ask_abandon :);
 
 	Skill_name=({"shenghuo-xuanming","wuxing-bu","duoming-bi",
@@ -63,14 +63,14 @@ string ask_job()
      mapping fam ;
      object ling,axe,shugan;
 
-    if (!(fam = this_player()->query("family")) || fam["family_name"] != "Ã÷½Ì")
-        return "ÕâÎ»"+RANK_D->query_respect(player)+"²¢·ÇÎÒ½ÌµÜĞÖ£¬ÄÇ¸ÒÔÚÏÂÄÇ¸Ò·ÖÅÉ¸óÏÂÊ²Ã´ÈÎÎñÄØ¡£\n";
+    if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ˜æ•™")
+        return "è¿™ä½"+RANK_D->query_respect(player)+"å¹¶éæˆ‘æ•™å¼Ÿå…„ï¼Œé‚£æ•¢åœ¨ä¸‹é‚£æ•¢åˆ†æ´¾é˜ä¸‹ä»€ä¹ˆä»»åŠ¡å‘¢ã€‚\n";
 
 	if(!objectp(ling = present("tieyan ling", player)) )
-		return "ÕâÎ»"+RANK_D->query_respect(player)+"Ã»ÓĞÎÒ½ÌĞÅÎïÌúÑæÁî£¬ÎÒÈçºÎ¼ÇÂ¼½±ÉÍ¹ıÊ§£¿\n";
+		return "è¿™ä½"+RANK_D->query_respect(player)+"æ²¡æœ‰æˆ‘æ•™ä¿¡ç‰©é“ç„°ä»¤ï¼Œæˆ‘å¦‚ä½•è®°å½•å¥–èµè¿‡å¤±ï¼Ÿ\n";
 
 //	if (fam["generation"] <37)
-//		 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÒÑ¹óÎªÎÒ½Ì"+fam["title"]+"£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+//		 return "è¿™ä½"+RANK_D->query_respect(player)+"å·²è´µä¸ºæˆ‘æ•™"+fam["title"]+"ï¼Œå²‚æ•¢åŠ³çƒ¦å¤§æ¶ã€‚\n";
 
 	if ( player->query("mingjiao/job")=="mu_kanshu" && shugan=present("shu gan",player) )
 	{
@@ -79,15 +79,15 @@ string ask_job()
 			command("pat "+player->query("id"));
 			if (axe=present("axe",player))
 				destruct(axe);
-			message_vision("ÎÅ²ÔËÉ½ĞÀ´Ò»Ãû½ÌÖÚ£¬°Ñ$NµÄÊ÷¸É½ÓÁË¹ıÈ¥¡£\n",player);
+			message_vision("é—»è‹æ¾å«æ¥ä¸€åæ•™ä¼—ï¼ŒæŠŠ$Nçš„æ ‘å¹²æ¥äº†è¿‡å»ã€‚\n",player);
 			destruct(shugan);
 			player->delete_temp("apply/short");
 			remove_call_out("reward");
-			call_out("reward",1,this_player(),"¿³Ê÷");
-			return player->query("name")+"¸ÉµÃ²»´í£¡ÏÂÈ¥ºÃºÃĞİÏ¢ĞİÏ¢¡£\n";
+			call_out("reward",1,this_player(),"ç æ ‘");
+			return player->query("name")+"å¹²å¾—ä¸é”™ï¼ä¸‹å»å¥½å¥½ä¼‘æ¯ä¼‘æ¯ã€‚\n";
 		}
 		else
-			return "ÕâºÃÏó²»ÊÇÄã¿³µÄ°É¡£ÏëÍµÀÁ£¿\n";
+			return "è¿™å¥½è±¡ä¸æ˜¯ä½ ç çš„å§ã€‚æƒ³å·æ‡’ï¼Ÿ\n";
 	}
 
 	if(player->query("mingjiao/job"))
@@ -99,9 +99,9 @@ string ask_job()
 	
 	axe=new(OBJ_PATH"/axe");
 	axe->move(player);
-	tell_object(player,"ÎÅ²ÔËÉ¸øÄãÒ»°Ñ¸«Í·¡£\n");
+	tell_object(player,"é—»è‹æ¾ç»™ä½ ä¸€æŠŠæ–§å¤´ã€‚\n");
 	
-	return "ÄãÀ´µÄÕıºÃ£¬ĞÖµÜÃÇÑİÁ·Õó·¨£¬¾ŞÄ¾²»¹»ÁË£¬ÄãÈ¥Ê÷ÁÖÀï¿³Ğ©Ê÷¸É¿¸»ØÀ´¡£\n";
+	return "ä½ æ¥çš„æ­£å¥½ï¼Œå…„å¼Ÿä»¬æ¼”ç»ƒé˜µæ³•ï¼Œå·¨æœ¨ä¸å¤Ÿäº†ï¼Œä½ å»æ ‘æ—é‡Œç äº›æ ‘å¹²æ‰›å›æ¥ã€‚\n";
 
 }   
 

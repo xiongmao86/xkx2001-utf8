@@ -1,18 +1,18 @@
 //Cracked by Roath
-// jiaohuaji.c °ü×Ó
+// jiaohuaji.c åŒ…å­
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("½Ğ»¯¼¦", ({"jiaohua-ji", "ji"}));
+	set_name("å«åŒ–é¸¡", ({"jiaohua-ji", "ji"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»±»¿¾µÃÁ÷ÓÍ£¬ÏãÎ¶ÆË±ÇµÄ½Ğ»¯¼¦¡£\n");
-		set("unit", "Ö»");
+		set("long", "ä¸€åªè¢«çƒ¤å¾—æµæ²¹ï¼Œé¦™å‘³æ‰‘é¼»çš„å«åŒ–é¸¡ã€‚\n");
+		set("unit", "åª");
 		set("value", 50);
 		set("food_remaining", 1);
 		set("food_supply", 30);

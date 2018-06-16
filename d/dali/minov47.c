@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ϫ��");
+	set("short", "易溪部");
 	set("long", @LONG
-��Ϫ��Ҳ���������������Ĳ��䡣���ﴦ���µأ������в���ũ���ũҵ
-�����Ҫ�����ָ���������񾭳�Ǩ�㣬��������˼�������⣬�������ݶ�
-�ܼ�ª��
+易溪部也是乌夷族乌杂蛮的部落。这里处半坡地，附近有不少农田，但农业
+落后，需要换季轮耕，因而村民经常迁徙，镇子里除了祭祀大屋外，其它房屋都
+很简陋。
 LONG);
 	set("objects", ([
 		__DIR__"npc/wygirl" : 1,
@@ -20,7 +20,7 @@ LONG);
 		"northeast" : __DIR__"minov46",
 		"south" : __DIR__"minov48",
 		]));
-	set("area", "��ˮ�ذ�");
+	set("area", "泸水沿岸");
 	set("cost", 3);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

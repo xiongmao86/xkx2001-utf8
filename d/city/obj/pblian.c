@@ -4,14 +4,14 @@ inherit ITEM;
 inherit F_EQUIP;
 void create()
 {
-        set_name("ÌúÁ´", ({ "tie lian"}) );
+        set_name("é“é“¾", ({ "tie lian"}) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long", "ÕâÊÇÒ»ÌõÃ÷»Î»Î£¬³ÁµéµéµÄÌúÁ´¡£\n");
-        	set("unit", "´ü");
-		set("base_unit", "Ö§");
+		set("long", "è¿™æ˜¯ä¸€æ¡æ˜æ™ƒæ™ƒï¼Œæ²‰ç”¸ç”¸çš„é“é“¾ã€‚\n");
+        	set("unit", "è¢‹");
+		set("base_unit", "æ”¯");
         	set("value", 150);
 		set("armor_type", "shoulder");
                 set("armor_prop/armor",1);
@@ -30,7 +30,7 @@ int do_embed()
 	::wear();
 	set("no_drop", 1);
 	set("no_get", 1);
-	set("long", "Ò»Ìõ³ÁµéµéµÄÌúÁ´£¬´©ÔÚ"+environment()->query("name")+"Á½¼çµÄÅıÅÃ¹ÇÉÏ¡£\n");
+	set("long", "ä¸€æ¡æ²‰ç”¸ç”¸çš„é“é“¾ï¼Œç©¿åœ¨"+environment()->query("name")+"ä¸¤è‚©çš„çµç¶éª¨ä¸Šã€‚\n");
 	return 1;
 }
 

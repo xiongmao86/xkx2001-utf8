@@ -11,13 +11,13 @@ int worn;
 
 void create()
 {
-        set_name(HIR"Ò»¶Ñ»ğÑæ"NOR,({"huo yan"}));
+        set_name(HIR"ä¸€å †ç«ç„°"NOR,({"huo yan"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR"»ğÑæ¸ßÔ¼³ß£¬"+GRN+"É«×÷´¿±Ì£¬"+BLU+"¹íÆøÉ­É­£¬"+HIR+"ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR);
-                set("unit", "¶Ñ");
+                set("long", HIR"ç«ç„°é«˜çº¦å°ºï¼Œ"+GRN+"è‰²ä½œçº¯ç¢§ï¼Œ"+BLU+"é¬¼æ°”æ£®æ£®ï¼Œ"+HIR+"å’Œå¯»å¸¸ç«ç„°å¤§å¼‚ã€‚\n"NOR);
+                set("unit", "å †");
                 set("value", 10000);
                 set("no_get", 1);
                 set("no_drop", 1);
@@ -44,49 +44,49 @@ int do_kick(string arg){
 	if( !arg || me != this_player(1)) return 0;
 	ob = present(arg, environment(me));  
 	
-	if(!ob) return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÉúÎï¡£\n");
+	if(!ob) return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªç”Ÿç‰©ã€‚\n");
 	
 	exp1=me->query("combat_exp");
 	exp2=ob->query("combat_exp");
 	
 	if(!ob->is_character() || !me->is_fighting(ob) )
-                return notify_fail("Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	
-	if (me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+	if (me->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 	
 	if ((me->query_skill("feixing-shu",1)<150)){
-		message_vision(HIR"\n$NÎûÎûÒ»Ğ¦£¬ÌáÆğ½ÅÀ´£¬Ïò»ğÑæÌßÈ¥£¬½á¹ûÒ»Éù²Ò½Ğ£¬±»»ğÑæÉÕÉË¡£\n"NOR,me);
-		me->receive_wound("qi", random(500),"ÉÕËÀÁË");
+		message_vision(HIR"\n$Nå˜»å˜»ä¸€ç¬‘ï¼Œæèµ·è„šæ¥ï¼Œå‘ç«ç„°è¸¢å»ï¼Œç»“æœä¸€å£°æƒ¨å«ï¼Œè¢«ç«ç„°çƒ§ä¼¤ã€‚\n"NOR,me);
+		me->receive_wound("qi", random(500),"çƒ§æ­»äº†");
 		destruct(this_object());
 		me->start_busy(random(2)+2);
 		return 1;
 	} else {
 		
 		me->add("neili",-me->query_skill("feixing-shu",1));
-		message_vision(RED"\n$NÁ³É«Ò»±ä£¬ÉíĞÎÒ»»Î£¬ÒÑ¾­×ªµ½$nÉíºó¡£¾ÙÆğÓÒ½Å£¬Î¢Î¢Ò»Ìô£¬½«»ğÑæÏò$n²¦È¥¡£\n"NOR,me,ob);
+		message_vision(RED"\n$Nè„¸è‰²ä¸€å˜ï¼Œèº«å½¢ä¸€æ™ƒï¼Œå·²ç»è½¬åˆ°$nèº«åã€‚ä¸¾èµ·å³è„šï¼Œå¾®å¾®ä¸€æŒ‘ï¼Œå°†ç«ç„°å‘$næ‹¨å»ã€‚\n"NOR,me,ob);
 		me->start_busy(random(2)+2);
 		if(random(exp1)>random(exp2)){
 		
 			if( ob->query_temp("armor/cloth")){
 				armor = ob->query_temp("armor/cloth");
                 		if( armor->query("id") != "armor") {
-                     			message_vision(HIR"\nÖ»¼û$NÉíÉÏµÄ$n"+HIY+"±»»ğÑæÉÕµÃËÄÉ¢¶ø·É¡£\n"NOR, ob, armor);
+                     			message_vision(HIR"\nåªè§$Nèº«ä¸Šçš„$n"+HIY+"è¢«ç«ç„°çƒ§å¾—å››æ•£è€Œé£ã€‚\n"NOR, ob, armor);
                      			armor->unequip();
                      			armor->move(environment(ob));
-                     			armor->set("name", "ÉÕ½¹µÄ" + armor->query("name"));
+                     			armor->set("name", "çƒ§ç„¦çš„" + armor->query("name"));
                      			armor->set("value", 0);
                      			armor->set("armor_prop/armor", 0);
                      			ob->reset_action();
                 		}
                 	}
                 	
-			message_vision(HIR"\nÖ»Ìı¼ûÒ»Éù²Ò½Ğ£¬$n¶ãÉÁ²»¼°£¬±»»ğÑæÉÕÖĞ¡£\n"NOR,me,ob);
-			ob->receive_wound("qi", me->query_skill("feixing-shu",1),"ÉÕËÀÁË");
+			message_vision(HIR"\nåªå¬è§ä¸€å£°æƒ¨å«ï¼Œ$nèº²é—ªä¸åŠï¼Œè¢«ç«ç„°çƒ§ä¸­ã€‚\n"NOR,me,ob);
+			ob->receive_wound("qi", me->query_skill("feixing-shu",1),"çƒ§æ­»äº†");
 			ob->start_busy(random(2)+1);
 			destruct(this_object());
 			return 1;
 		} else {
-			message_vision(HIY"\n$n´ó¾ªÖ®ÏÂÉÁ¿ª£¬»ğ¹âÏÂÖ»¼û$NÎ¢Î¢ÀäĞ¦¡£\n"NOR,me,ob);
+			message_vision(HIY"\n$nå¤§æƒŠä¹‹ä¸‹é—ªå¼€ï¼Œç«å…‰ä¸‹åªè§$Nå¾®å¾®å†·ç¬‘ã€‚\n"NOR,me,ob);
 			destruct(this_object());
 			return 1;
 		}
@@ -99,15 +99,15 @@ void wear(int phase)
         worn = phase;
         switch(phase) {
         case 1:
-                set("long", HIR"»ğÑæĞÜĞÜÈ¼ÉÕ×Å£¬"+GRN+"É«×÷´¿±Ì£¬"+BLU+"¹íÆøÉ­É­£¬"+HIR+"ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR);
+                set("long", HIR"ç«ç„°ç†Šç†Šç‡ƒçƒ§ç€ï¼Œ"+GRN+"è‰²ä½œçº¯ç¢§ï¼Œ"+BLU+"é¬¼æ°”æ£®æ£®ï¼Œ"+HIR+"å’Œå¯»å¸¸ç«ç„°å¤§å¼‚ã€‚\n"NOR);
                 call_out("wear", 100, phase+1); 
                 break;
         case 2:
-                set("long", RED"»ğÊÆÔ½À´Ô½Èõ£¬¼¸ºõ¿ìÉÕÍêÁË¡£\n"NOR);
+                set("long", RED"ç«åŠ¿è¶Šæ¥è¶Šå¼±ï¼Œå‡ ä¹å¿«çƒ§å®Œäº†ã€‚\n"NOR);
                 call_out("wear", 30, phase+1); 
                 break;
         case 3:
-                message_vision(RED"»ğÑæ½¥½¥µØÏ¨ÃğÁË¡£\n"NOR, this_object());
+                message_vision(RED"ç«ç„°æ¸æ¸åœ°ç†„ç­äº†ã€‚\n"NOR, this_object());
                 destruct(this_object());
                 break;
         }       

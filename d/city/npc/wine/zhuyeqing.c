@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zhuyeqing.c ÖñÒ¶Çà
+// zhuyeqing.c ç«¹å¶é’
 
 #include <ansi.h>
 inherit ITEM;
@@ -7,16 +7,16 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name("¾ÆÆ¿", ({"zhuye qing", "zhuye", "jiuping",}));
+	set_name("é…’ç“¶", ({"zhuye qing", "zhuye", "jiuping",}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("long", @LONG
-Ò»¸öÓÃÀ´×°ÖñÒ¶ÇàµÄ¾ÆÆ¿¡£´Ë¾Æ¾İËµÔ´ÓÚ ¡°ĞÓ»¨´å¡±£¬¾ÆÉ«ÇàÂÌ£¬¾§Ó¨Í¸Ã÷¡£
+ä¸€ä¸ªç”¨æ¥è£…ç«¹å¶é’çš„é…’ç“¶ã€‚æ­¤é…’æ®è¯´æºäº â€œæèŠ±æ‘â€ï¼Œé…’è‰²é’ç»¿ï¼Œæ™¶è¹é€æ˜ã€‚
 LONG
         );
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 160);
 		set("max_liquid", 20);
 	}
@@ -25,7 +25,7 @@ LONG
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "ÖñÒ¶Çå",
+		"name": "ç«¹å¶æ¸…",
 		"remaining": 20,
 		"drunk_apply": 8,
 	]));

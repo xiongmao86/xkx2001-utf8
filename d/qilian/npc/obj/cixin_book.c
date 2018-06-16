@@ -9,15 +9,15 @@ int do_start(object me);
 
 void create()
 {
-        set_name("´ÌÐÄÃØ¾ö", ({ "cixin yaojue", "yaojue" }));
+        set_name("åˆºå¿ƒç§˜å†³", ({ "cixin yaojue", "yaojue" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾²ÐÈ±²»È«µÄÐ¡²á×Ó,ÉÏÃæ¼ÇÔØ×Å±ÙÐ°½£·¨Ê§´«ÒÑ¾ÃµÄ´ÌÐÄÃØ¾ö¡£\n");
+                set("unit", "æœ¬");
+                set("long", "è¿™æ˜¯ä¸€æœ¬æ®‹ç¼ºä¸å…¨çš„å°å†Œå­,ä¸Šé¢è®°è½½ç€è¾Ÿé‚ªå‰‘æ³•å¤±ä¼ å·²ä¹…çš„åˆºå¿ƒç§˜å†³ã€‚\n");
                 set("material", "paper");
-				set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+				set("no_drop","è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 				set("no_get",1);
 				set("no_steal",1);
                 set("value", 300000);
@@ -35,16 +35,16 @@ int do_lingwu(string arg)
 	int cost;
 	me=this_player();
 	 if (me->is_busy())
-            return notify_fail("ÄãÕýÃ¦×ÅÄØ!\n");
+            return notify_fail("ä½ æ­£å¿™ç€å‘¢!\n");
 
 	
-	if(arg!=this_object()->query("id")) return notify_fail("ÄãÒªÁìÎòÊ²Ã´?\n");
+	if(arg!=this_object()->query("id")) return notify_fail("ä½ è¦é¢†æ‚Ÿä»€ä¹ˆ?\n");
 	if(me->query_skill("pixie-jian", 1) <180)
-            return notify_fail("ÄãµÄ±ÙÐ°½£·¨²»¹»æµÊì£¬ÎÞ·¨ÁìÎòÒª¾öÖÐµÄ°ÂÃî¡£\n");
+            return notify_fail("ä½ çš„è¾Ÿé‚ªå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•é¢†æ‚Ÿè¦å†³ä¸­çš„å¥¥å¦™ã€‚\n");
 	if(this_object()->query("master")!=me->query("id"))
 	{
 		me->add("max_neili",-100);
-		return notify_fail(HIR"ÄãÒ»¶ÁÖ®ÏÂÖ»¾õ»ëÉíÔïÈÈ£¬ÄÚÁ¦²»¾Û£¬Ëµ²»³öµÄÄÑÊÜ¡£\n"NOR);
+		return notify_fail(HIR"ä½ ä¸€è¯»ä¹‹ä¸‹åªè§‰æµ‘èº«ç‡¥çƒ­ï¼Œå†…åŠ›ä¸èšï¼Œè¯´ä¸å‡ºçš„éš¾å—ã€‚\n"NOR);
 
 	}
 	if(this_player()->query_temp("linji/zhixin")
@@ -52,15 +52,15 @@ int do_lingwu(string arg)
 	{
 		me->add("max_neili",-100);
 		me->add("max_jingli",-100);
-		return notify_fail(HIR"ÄãÍ»È»·¢ÏÖ»ëÉí¾²Âö²»³©£¬Ëµ²»³öµÄÄÑ¹ý£¬×ªÑÛ¼äËÆºõÒªÖÏÏ¢¡£\n"NOR);
+		return notify_fail(HIR"ä½ çªç„¶å‘çŽ°æµ‘èº«é™è„‰ä¸ç•…ï¼Œè¯´ä¸å‡ºçš„éš¾è¿‡ï¼Œè½¬çœ¼é—´ä¼¼ä¹Žè¦çª’æ¯ã€‚\n"NOR);
 
 	}
 
 
 	if(me->query("canuse_cixin")==1)
-		    return notify_fail("ÄãÒÑ¾­ÁìÎò´ÌÐÄÃØ¾öµÄ¾«Òª¡£\n");
+		    return notify_fail("ä½ å·²ç»é¢†æ‚Ÿåˆºå¿ƒç§˜å†³çš„ç²¾è¦ã€‚\n");
 	if(me->query("neili")<3000||me->query("jingli")<2000)
-		return notify_fail("Äã¾«Éñ²»¼Ñ£¬ÎÞ·¨ÁìÎòÐÄ·¨ÖÐµÄ°ÂÃî¡£\n");
+		return notify_fail("ä½ ç²¾ç¥žä¸ä½³ï¼Œæ— æ³•é¢†æ‚Ÿå¿ƒæ³•ä¸­çš„å¥¥å¦™ã€‚\n");
 	cost=me->query("int");
 	if(cost>=30)
 		cost=5;
@@ -68,7 +68,7 @@ int do_lingwu(string arg)
 		cost=35-cost;
 	me->set_temp("cixin_cost",cost);
 	
-	message_vision(HIB "$N´Ó»³ÖÐÃþ³öÒ»±¾Ð¡²á×Ó,Ï¸Ï¸µÄ¿´×Å,Á³ÉÏÂ¶³ö¹îÒìµÄÉñÉ«¡£\n" NOR, me);
+	message_vision(HIB "$Nä»Žæ€€ä¸­æ‘¸å‡ºä¸€æœ¬å°å†Œå­,ç»†ç»†çš„çœ‹ç€,è„¸ä¸Šéœ²å‡ºè¯¡å¼‚çš„ç¥žè‰²ã€‚\n" NOR, me);
     me->start_busy((: do_start:));
 	return 1;
 
@@ -83,11 +83,11 @@ int do_start(object me)
 		if(random(me->query("int"))>19||random(me->query_int())>40)	
 		{
 			me->add("pixie-cixin",1);
-			tell_object  (me,HIY"ÄãËÆºõ¶Ô´ÌÐÄÒª¾öÓÐÒ»Ë¿ÁìÎò¡£\n"NOR);
+			tell_object  (me,HIY"ä½ ä¼¼ä¹Žå¯¹åˆºå¿ƒè¦å†³æœ‰ä¸€ä¸é¢†æ‚Ÿã€‚\n"NOR);
 			
 			if(me->query("pixie-cixin")>=20)
 			{
-				tell_object  (me,HIY"ÄãÖÕÓÚÁìÎò³ö´ÌÐÄÃØ¾öµÄ¾«Òª¡£\n"NOR);
+				tell_object  (me,HIY"ä½ ç»ˆäºŽé¢†æ‚Ÿå‡ºåˆºå¿ƒç§˜å†³çš„ç²¾è¦ã€‚\n"NOR);
 				if(me->query("canuse_cixin")!=1)
 				me->add("str",1);
 				me->set("canuse_cixin",1);
@@ -101,7 +101,7 @@ int do_start(object me)
 		else
 		{
 			
-			tell_object  (me,HIR"ÄãÖ»¾õÐÄÍ·Ò»Õó¶ñÐÄ£¬È«Éí¾­ÂöÄæ×ª,¡°ÍÛ¡±µÄÍÂ³öÒ»¿ÚÏÊÑª¡£\n"NOR);
+			tell_object  (me,HIR"ä½ åªè§‰å¿ƒå¤´ä¸€é˜µæ¶å¿ƒï¼Œå…¨èº«ç»è„‰é€†è½¬,â€œå“‡â€çš„åå‡ºä¸€å£é²œè¡€ã€‚\n"NOR);
 		    me->unconcious();
 
 		}

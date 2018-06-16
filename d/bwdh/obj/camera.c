@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/bwdh/obj/camer.c  ÉãÓ°Ê¦
+// /d/bwdh/obj/camer.c  æ‘„å½±å¸ˆ
 // sdong 09/30/98
 #include <room.h>
 #include <ansi.h>
@@ -13,10 +13,10 @@ void moving();
 void create()
 {
 	object me = this_player();
-	set_name("ÉãÓ°Ê¦", ({ "zhi bo", "camera" }) );
-	set("long", "Ò»Î»¾«Ã÷ÄÜ¸ÉµÄÉãÓ°Ê¦¡£\n");
+	set_name("æ‘„å½±å¸ˆ", ({ "zhi bo", "camera" }) );
+	set("long", "ä¸€ä½ç²¾æ˜èƒ½å¹²çš„æ‘„å½±å¸ˆã€‚\n");
 	set_weight(100);
-	set("unit", "Î»");
+	set("unit", "ä½");
 
 	set("max_jingli",10000);
 	set("max_jing",10000);
@@ -44,7 +44,7 @@ string look_room(object me, object env)
 		  string str, *dirs;
 
 		  if( !env ) {
-					 return "ÄãµÄËÄÖÜ»ÒÃÉÃÉµØÒ»Æ¬£¬Ê²Ã´Ò²Ã»ÓĞ¡£\n";
+					 return "ä½ çš„å››å‘¨ç°è’™è’™åœ°ä¸€ç‰‡ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n";
 		  }
 		  str = sprintf( "%s - %s\n    %s%s",
 					 env->query("short"),
@@ -59,12 +59,12 @@ string look_room(object me, object env)
 										  dirs[i] = 0;
 					 dirs -= ({ 0 });
 					 if( sizeof(dirs)==0 )
-								str += "    ÕâÀïÃ»ÓĞÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£\n";
+								str += "    è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜æ˜¾çš„å‡ºè·¯ã€‚\n";
 					 else if( sizeof(dirs)==1 )
-								str += "    ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ " + BOLD + dirs[0] + NOR + "¡£\n";
+								str += "    è¿™é‡Œå”¯ä¸€çš„å‡ºå£æ˜¯ " + BOLD + dirs[0] + NOR + "ã€‚\n";
                 else
-                        str += sprintf("    ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ " + BOLD + "%s" + NOR + " ºÍ " + BOLD + "%s" + NOR + "¡£\n",
-                                implode(dirs[0..sizeof(dirs)-2], "¡¢"), dirs[sizeof(dirs)-1]);
+                        str += sprintf("    è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ " + BOLD + "%s" + NOR + " å’Œ " + BOLD + "%s" + NOR + "ã€‚\n",
+                                implode(dirs[0..sizeof(dirs)-2], "ã€"), dirs[sizeof(dirs)-1]);
         }
 //      str += env->door_description();
 
@@ -75,17 +75,17 @@ string look_room(object me, object env)
 					 if( objectp(inv[i]->query("rider")) ) continue;
 					 else inv[i]->delete("rider");
 					 if( objectp(inv[i]->query("rided")) ) {
-								str += "  " + inv[i]->short() + "ÆïÔÚ" +
-								(inv[i]->query("rided"))->name() + "ÉÏ";
+								str += "  " + inv[i]->short() + "éª‘åœ¨" +
+								(inv[i]->query("rided"))->name() + "ä¸Š";
 					 if( stringp(inv[i]->query_temp("exit_blocked")))
-								str += "µ²×ÅÍù"+inv[i]->query_temp("exit_blocked")+
-								"È¥µÄÂ·";
+								str += "æŒ¡ç€å¾€"+inv[i]->query_temp("exit_blocked")+
+								"å»çš„è·¯";
 								str += "\n";
 					 }
 					 else {
 								if (stringp(inv[i]->query_temp("exit_blocked")))
-								str += "  " + inv[i]->short() + "µ²×ÅÍù" + inv[i]->query_temp("exit_blocked")
-										  +"È¥µÄÂ·\n";
+								str += "  " + inv[i]->short() + "æŒ¡ç€å¾€" + inv[i]->query_temp("exit_blocked")
+										  +"å»çš„è·¯\n";
                         else 
                         str += "  " + inv[i]->short() + "\n";
                         inv[i]->delete("rided");
@@ -110,12 +110,12 @@ int do_broadcast(string arg)
 	for(i=1;i <= query("destinations/nDest");i++)
 	{
 		if( query("destinations/"+i) == arg)
-			return notify_fail("ÒÑ¾­ÔÚ²¥·¢Ä¿±êÖĞÁË¡£");;
+			return notify_fail("å·²ç»åœ¨æ’­å‘ç›®æ ‡ä¸­äº†ã€‚");;
 	}
 
 	set( "destinations/nDest",query("destinations/nDest")+1 );
 	set( "destinations/"+i,arg);
-	tell_object(me, "ºÃ£¡"+arg+"¼ÓÈë²¥·¢Ä¿±êÖĞ!\n");
+	tell_object(me, "å¥½ï¼"+arg+"åŠ å…¥æ’­å‘ç›®æ ‡ä¸­!\n");
 	return 1;
 }
 
@@ -134,7 +134,7 @@ int do_shut(string arg)
 		if( query("destinations/"+i) == arg)break;
 	}
 	if(i >query("destinations/nDest") )
-			return notify_fail("²»ÔÚ²¥·¢Ä¿±êÖĞÁË¡£");;
+			return notify_fail("ä¸åœ¨æ’­å‘ç›®æ ‡ä¸­äº†ã€‚");;
 
 	for(i=i;i < query("destinations/nDest");i++)
 	{
@@ -142,7 +142,7 @@ int do_shut(string arg)
 	}
 
 	set( "destinations/nDest",query("destinations/nDest")-1 );
-	tell_object(me, "ºÃ£¡²»ÔÙ²¥·¢µ½"+arg+"!\n");
+	tell_object(me, "å¥½ï¼ä¸å†æ’­å‘åˆ°"+arg+"!\n");
 	return 1;
 }
 
@@ -152,7 +152,7 @@ int do_query()
 	object me = this_player();
 	int i;
 
-	tell_object(me,"ÒÔÏÂ·¿¼äÎª±¾»ú²¥·¢Ä¿µÄ£º\n");
+	tell_object(me,"ä»¥ä¸‹æˆ¿é—´ä¸ºæœ¬æœºæ’­å‘ç›®çš„ï¼š\n");
 	for(i=1;i <= query("destinations/nDest");i++)
 	{
 		tell_object(me, query("destinations/"+i )+"\n");
@@ -190,14 +190,14 @@ void receive_message(string msgclass, string msg)
 	if(last != -1 )
 		msg = msg[0..(last-1)];
 
-	if (msg[0..0] != "\n")msg = GRN"¡¾"+where+"¡¿"NOR + msg;
-	else msg = replace_string(msg, "\n", "\n"GRN"¡¾"+where+"¡¿"NOR);
+	if (msg[0..0] != "\n")msg = GRN"ã€"+where+"ã€‘"NOR + msg;
+	else msg = replace_string(msg, "\n", "\n"GRN"ã€"+where+"ã€‘"NOR);
 
 	last = strlen(msg);
 	temp = msg[(last-6)..(last-1)];
 
-	if( temp == "Àë¿ª¡£" || temp == "³öÈ¥¡£" ) {
-		msg = replace_string(msg, "Àë¿ª¡£", "×ßÈ¥¡£");
+	if( temp == "ç¦»å¼€ã€‚" || temp == "å‡ºå»ã€‚" ) {
+		msg = replace_string(msg, "ç¦»å¼€ã€‚", "èµ°å»ã€‚");
 		remove_call_out("moving");
 		call_out("moving",1);
 	}

@@ -13,42 +13,42 @@ string ask_tyling()
     mapping fam ;
 	int comexp;
 
-    if (!(fam = this_player()->query("family")) || fam["family_name"] != "Ã÷½Ì")
-		return "ÕâÎ»"+RANK_D->query_respect(player)+"²¢·ÇÎÒÃ÷½ÌµÜĞÖ£¬´òÌıÕâ¸ö¸ÉÂï¡£\n";
+    if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ˜æ•™")
+		return "è¿™ä½"+RANK_D->query_respect(player)+"å¹¶éæˆ‘æ˜æ•™å¼Ÿå…„ï¼Œæ‰“å¬è¿™ä¸ªå¹²å˜›ã€‚\n";
 
 
 	if(objectp(ling = present("tieyan ling", player)) )
-		return "ÌúÑæÁîÄËÎÒÃ÷½ÌĞÅÎï£¬Ã¿¸ö½ÌÖÚÔÚÈë½ÌÊ±¶¼»áÓÉÎÒ½Ì¹âÃ÷Ê¹Õß·¢ÅÉÒ»¿é¡£Æ¾´Ë\n"
-		"Áî£¬¿ÉÒÔÏò½ÌÖĞĞÖµÜÇë½ÌÎä¹¦£¬·²ÊÇ¹¦¹ı½±ÉÍ£¬¶¼»á¼ÇÂ¼ÔÚÕâ¿éÌúÑæÁîÉÏ¡£ÕâÌúÁî¹ØÏµÖØ\n"
-		"´ó£¬"+RANK_D->query_respect(player)+"ÇĞÄª¶ªÊ§£¬ÁîÔÚÈËÔÚ£¬ÁîÍöÈËÍö¡£\n";
+		return "é“ç„°ä»¤ä¹ƒæˆ‘æ˜æ•™ä¿¡ç‰©ï¼Œæ¯ä¸ªæ•™ä¼—åœ¨å…¥æ•™æ—¶éƒ½ä¼šç”±æˆ‘æ•™å…‰æ˜ä½¿è€…å‘æ´¾ä¸€å—ã€‚å‡­æ­¤\n"
+		"ä»¤ï¼Œå¯ä»¥å‘æ•™ä¸­å…„å¼Ÿè¯·æ•™æ­¦åŠŸï¼Œå‡¡æ˜¯åŠŸè¿‡å¥–èµï¼Œéƒ½ä¼šè®°å½•åœ¨è¿™å—é“ç„°ä»¤ä¸Šã€‚è¿™é“ä»¤å…³ç³»é‡\n"
+		"å¤§ï¼Œ"+RANK_D->query_respect(player)+"åˆ‡è«ä¸¢å¤±ï¼Œä»¤åœ¨äººåœ¨ï¼Œä»¤äº¡äººäº¡ã€‚\n";
 	else
-		if(query("id")=="leng qian"&&query("name")=="ÀäÇ«")
+		if(query("id")=="leng qian"&&query("name")=="å†·è°¦")
 		{
 			comexp=player->query("mingjiao/credit");
 			if(comexp)
 				comexp=comexp-comexp/50;
 			if(comexp<=0)
 				comexp=0;
-			command("say ¶ªÁËÌúÑæÁî£¬¸Ãµ±ÊÜ·£¡£\n");
-			tell_object(player,HIB"ÄãµÄÃ÷½ÌÉùÍûÏÂ½µÁË¡£\n"NOR);
+			command("say ä¸¢äº†é“ç„°ä»¤ï¼Œè¯¥å½“å—ç½šã€‚\n");
+			tell_object(player,HIB"ä½ çš„æ˜æ•™å£°æœ›ä¸‹é™äº†ã€‚\n"NOR);
 			player->set("mingjiao/credit",comexp);
 			
 			ling = new("/d/kunlun/obj/tieyanling");
 			ling->move(player);
 
-			message_vision("$N´ÓÉíÉÏÄÃ³öÒ»¿éÌúÑæÁî½»¸ø$n¡£\n",this_object(),player);
-			return player->query("name")+"£¡ÊÕºÃ£¬²»¿ÉÔÙ¶ª¡£\n";
+			message_vision("$Nä»èº«ä¸Šæ‹¿å‡ºä¸€å—é“ç„°ä»¤äº¤ç»™$nã€‚\n",this_object(),player);
+			return player->query("name")+"ï¼æ”¶å¥½ï¼Œä¸å¯å†ä¸¢ã€‚\n";
 		}
 		
 		else
-			return "ÌúÑæÁîÄËÎÒÃ÷½ÌĞÅÎï£¬"+RANK_D->query_respect(player)+"Ôõ¿É¶ªÊ§£¿¿ìÈ¥ÏòÀäÖ´·¨Ù÷Ã÷¹ıÊ§¡£\n";
+			return "é“ç„°ä»¤ä¹ƒæˆ‘æ˜æ•™ä¿¡ç‰©ï¼Œ"+RANK_D->query_respect(player)+"æ€å¯ä¸¢å¤±ï¼Ÿå¿«å»å‘å†·æ‰§æ³•ç¦€æ˜è¿‡å¤±ã€‚\n";
 
 
 }
 
 void attempt_apprentice(object ob)
 {
-		command("say ÎÒ¹âÃ÷Ê¥½ÌÏòÀ´Ã»ÓĞÊ¦Í½Ö®±ğ£¬Ö»ÓĞµÈ¼¶Ö®·Ö£¬½ÌÖÚÖ®¼ä¿ÉÒÔÏà»¥´«ÊÚÎäÒÕ¡£ÕâÊÇÎÒ½ÌÀúÀ´µÄ¹æ¾Ø¡£" + RANK_D->query_respect(ob) +"ÏëÒªÑ§ÎäµÄ»°£¬¿ÉÏò½ÌÖĞÓĞÃûÍûµÄĞÖµÜÇë½Ì¡£\n");
+		command("say æˆ‘å…‰æ˜åœ£æ•™å‘æ¥æ²¡æœ‰å¸ˆå¾’ä¹‹åˆ«ï¼Œåªæœ‰ç­‰çº§ä¹‹åˆ†ï¼Œæ•™ä¼—ä¹‹é—´å¯ä»¥ç›¸äº’ä¼ æˆæ­¦è‰ºã€‚è¿™æ˜¯æˆ‘æ•™å†æ¥çš„è§„çŸ©ã€‚" + RANK_D->query_respect(ob) +"æƒ³è¦å­¦æ­¦çš„è¯ï¼Œå¯å‘æ•™ä¸­æœ‰åæœ›çš„å…„å¼Ÿè¯·æ•™ã€‚\n");
 		
 		return;
 }
@@ -72,12 +72,12 @@ void Set_Inquiry(mapping I_inquiry,mixed Skill_name)
 			
 		}
 	
-		I_inquiryS["Îä¹¦"]="ÔÚÏÂ²»²Å£¬ÄÜ´«ÊÚ¸ø¸óÏÂµÄÎä¹¦ÓĞ\n"+str_skill+"\nÈç¸óÏÂÏëÑ§£¬Ö»ĞèÏòÎÒÇë½Ì( qingjiao <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı])£¬¾Í¿ÉÒÔÁË¡£\n";
+		I_inquiryS["æ­¦åŠŸ"]="åœ¨ä¸‹ä¸æ‰ï¼Œèƒ½ä¼ æˆç»™é˜ä¸‹çš„æ­¦åŠŸæœ‰\n"+str_skill+"\nå¦‚é˜ä¸‹æƒ³å­¦ï¼Œåªéœ€å‘æˆ‘è¯·æ•™( qingjiao <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°])ï¼Œå°±å¯ä»¥äº†ã€‚\n";
 	}
 	else
-		I_inquiryS["Îä¹¦"]="ÔÚÏÂÎä¹¦µÍÎ¢£¬¿ÖÅÂ²»ÄÜ´«ÊÚ¸óÏÂÊ²Ã´Îä¹¦£¬¸óÏÂÇëÁíÇë¸ßÃ÷¡£\n";
+		I_inquiryS["æ­¦åŠŸ"]="åœ¨ä¸‹æ­¦åŠŸä½å¾®ï¼Œææ€•ä¸èƒ½ä¼ æˆé˜ä¸‹ä»€ä¹ˆæ­¦åŠŸï¼Œé˜ä¸‹è¯·å¦è¯·é«˜æ˜ã€‚\n";
 
-	I_inquiryS["ÌúÑæÁî"]=(: ask_tyling :);
+	I_inquiryS["é“ç„°ä»¤"]=(: ask_tyling :);
 	set("inquiry",I_inquiryS);
 
 	
@@ -150,27 +150,27 @@ void set_title(object player, int generation)
 	switch(generation)
 	{
 		case 33:
-			title = "½ÌÖ÷";
+			title = "æ•™ä¸»";
 			break;
 		case 34:
-			title = "¹âÃ÷Ê¹Õß";
+			title = "å…‰æ˜ä½¿è€…";
 			break;
 		case 35:
-			title = "»¤½Ì·¨Íõ";
+			title = "æŠ¤æ•™æ³•ç‹";
 			break;
 		case 36:
-			title = "É¢ÈË";
+			title = "æ•£äºº";
 			break;
 		case 37:
-			title = "ÕÆÆìÊ¹";
+			title = "æŒæ——ä½¿";
 			break;
 		case 38:
-			title = "½ÌÖÚ";
+			title = "æ•™ä¼—";
 			break;
 		default:
-			title = "½ÌÖÚ";
+			title = "æ•™ä¼—";
 	}
 
-	player->set("title","Ã÷½Ì"+title);
+	player->set("title","æ˜æ•™"+title);
 
 }

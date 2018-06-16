@@ -4,7 +4,7 @@
 * [x] convert clone/
 * [x] convert adm/
 * [x] convert cmds/
-* [ ] convert d/
+* [x] convert d/
 * [ ] convert data/
 * [ ] convert doc/
 * [ ] convert feature/
@@ -44,7 +44,7 @@ Remove empty line and cut path and trim line and > lognext.
 file -f log
 ```
 
-### ?. Remove files whose name is binary file added with .bak
+### ?. And remove those binary files' .bak file.
 **If all files in log are binary files.**
 ```shell
 find . -type f -name "*.bak" | xargs rm
@@ -64,39 +64,159 @@ rm log
 ```shell
 find . -type f -name "*.h" | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
 ```
-### ?+2. Process log file same as step 3
+### ?+2. Process log file
 ```shell
 cat log| sed /^$/d | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g > lognext
 mv lognext log
 ```
-### ?+3. Find Binary files in log same as step 4
+### ?+3. Find Binary files and remove their correspond .bak files
+Sub algorithm:
+1. detect binary file
 ```shell
-file -f log
+file -f log > lognext
 ```
-### ?+4. Remove files whose name is binary file added with .bak
-### ?+5. Process each file that are left in log
-1. open current converted file(`code xxx.h.bak` or `code xxx.h-gai.bak` depending on whether this is your first time to process the file.)
-2. to find last two or there intelligible characters.
-3. find the exact hex code of those characters. this is the [recommended site.](http://mytju.com/classcode/tools/encode_gb2312.asp)
-4. open current working file (`xxx.h` or `xxx.h-gai`) with Hex Fiend, find and bookmark that characters.
-5. find out the nearest intelligilble character after the bookmark.
-6. find out what is added or what is miss between the bookmarks.
-8. edit and save to `xxx.h-gai`
-9. `iconv -f gb18030 -t utf8 xxx.h-gai > xxx.h.gai.bak`
-10. if convert is not successful, set current converted file as `xxx.h-gai.bak` refered to at 1 and current working file as `xxx.h-gai` refered at 4, goto 1.
-11. check result by `code xxx.h-gai.bak` to see how is it going.
-12. if there are still errors, goto 1 with converted file and working file set as  10 mentioned.
-13. if file is handling fine. `mv xxx.h-gai.bak xxx.h`, `rm xxx.h-gai xxx.h.bak`.
-14. process next file.
-### ?+6 Move all `xxx.h.bak` files back to `xxx.h`
+2. This should probable only done by hand? Replace sed pattern (`\ data$` for example) to delete binary file.
+Remember to update lognext each turn.
 ```shell
-find . -type f -name "*.h" | xargs -I {} sh -c "mv {}.bak {}"
-```
-### ?+7 Remove log
-```shell
-rm log
+cat lognext | sed -n /\ data$/p | cut -d ":" -f 1 | xargs -I {} sh -c "rm {}.bak"
+cat lognext | sed /\ data$/d > lognextnext
+mv lognextnext lognext
 ```
 
+3. After filter out every binary file, transform the filtered longnext back to log
+```shell
+cat lognext | cut -d ":" -f 1 > log
+rm lognext
+```
+
+### ?+5. Process each file that are left in log **remember to paste back to #h file**
+```shell
+function openup() {
+    code $1.bak;
+    open -a "Hex Fiend" $1
+}
+function convert() {
+    iconv -f 18030 -t utf8 $1 > $1.bak
+}
+function cleanup() {
+    mv $1-gai.bak $1;
+    rm $1-gai $1.bak
+}
+```
+Algorithms process each file:
+1. Open current converted file with vscode, and current working file with `Hex Fiend`(`openup xxx.h` or `openup xxx.h-gai` depending on whether this is your first time to process the file.) 
+2. Find last two or there intelligible characters in vscode. 
+3. Identify its hex code and bookmark them in Hex Fiend. This is the [recommended site.](http://mytju.com/classcode/tools/encode_gb2312.asp)
+4. Find the nearest intelligilble character after the bookmark and bookmark them either.
+5. Figure out what is added or what is lost between the bookmarks.
+6. Edit and save to `xxx.h-gai`
+7. `convert xxx.h-gai`
+8. check result by `code xxx.h-gai.bak` to see how is it going.
+9. If convert is not successful, goto 3.
+10. If file is handling fine. `cleanup xxx.h`.
+11. Process next file.
+### ?+6 Move all `xxx.h.bak` files back to `xxx.h`
+```shell
+find . -type f -name "*.h" | xargs -I {} sh -c "mv {}.bak {}" 2>processed
+```
+### ?+7 Process processed file
+```shell
+cat processed | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g | sed s/\.bak$//g > processednext
+mv processednext processed
+```
+
+### ?+7 If that every file in log are processed, we known nothing is neglected.
+```shell
+diff log processed
+```
+diff to see if log and processed is match. processed file make contain binary file that are excluded in log. Generate a list to `file -f list`, to see whether all of them are binary file.
+
+After checking remove log and processed.
+```shell
+rm log processed
+```
+### ?+8 Git commit
+
+## c files
+The procedure is just like *.h files. Make a copy of section 'h files' and 
+just replace ".h" with ".c".
+
+### ?+1. Convert *.c files
+```shell
+find . -type f -name "*.c" | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
+```
+### ?+2. Process log file
+```shell
+cat log| sed /^$/d | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g > lognext
+mv lognext log
+```
+### ?+3. Find Binary files and remove their correspond .bak files
+Sub algorithm:
+1. detect binary file
+```shell
+file -f log > lognext
+```
+2. This should probable only done by hand? Replace sed pattern (`\ data$` for example) to delete binary file.
+Remember to update lognext each turn.
+```shell
+cat lognext | sed -n /\ data$/p | cut -d ":" -f 1 | xargs -I {} sh -c "rm {}.bak"
+cat lognext | sed /\ data$/d > lognextnext
+mv lognextnext lognext
+```
+
+3. After filter out every binary file, transform the filtered longnext back to log
+```shell
+cat lognext | cut -d ":" -f 1 > log
+rm lognext
+```
+
+### ?+5. Process each file that are left in log **remember to paste back to #h file**
+```shell
+function openup() {
+    code $1.bak;
+    open -a "Hex Fiend" $1
+}
+function convert() {
+    iconv -f 18030 -t utf8 $1 > $1.bak
+}
+function cleanup() {
+    mv $1-gai.bak $1;
+    rm $1-gai $1.bak
+}
+```
+Algorithms process each file:
+1. Open current converted file with vscode, and current working file with `Hex Fiend`(`openup xxx.c` or `openup xxx.c-gai` depending on whether this is your first time to process the file.) 
+2. Find last two or there intelligible characters in vscode. 
+3. Identify its hex code and bookmark them in Hex Fiend. This is the [recommended site.](http://mytju.com/classcode/tools/encode_gb2312.asp)
+4. Find the nearest intelligilble character after the bookmark and bookmark them either.
+5. Figure out what is added or what is lost between the bookmarks.
+6. Edit and save to `xxx.c-gai`
+7. `convert xxx.c-gai`
+8. check result by `code xxx.c-gai.bak` to see how is it going.
+9. If convert is not successful, goto 3.
+10. If file is handling fine. `cleanup xxx.c`.
+11. Process next file.
+### ?+6 Move all `xxx.h.bak` files back to `xxx.h`
+```shell
+find . -type f -name "*.c" | xargs -I {} sh -c "mv {}.bak {}" 2>processed
+```
+### ?+7 Process processed file
+```shell
+cat processed | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g | sed s/\.bak$//g > processednext
+mv processednext processed
+```
+
+### ?+7 If that every file in log are processed, we known nothing is neglected.
+```shell
+diff log processed
+```
+diff to see if log and processed is match. processed file make contain binary file that are excluded in log. Generate a list to `file -f list`, to see whether all of them are binary file.
+
+After checking remove log and processed.
+```shell
+rm log processed
+```
+### ?+8 Git commit
 
 -------------------------------------
 # How to process each folder **Draft Only**

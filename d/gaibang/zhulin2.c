@@ -5,9 +5,9 @@ inherit	ROOM;
 
 void create()
 {
-		set("short", "ÖñÁÖĞ¡µÀ");
+		set("short", "ç«¹æ—å°é“");
 		set("long",	@LONG
-ÕâÊÇÒ»ÌõÖñÁÖĞ¡µÀ£¬Á½ÅÔ¾¡ÊÇÕÚÌì±ÎÈÕµÄÃ¯ÃÜµÄÖñÁÖ¡£
+è¿™æ˜¯ä¸€æ¡ç«¹æ—å°é“ï¼Œä¸¤æ—å°½æ˜¯é®å¤©è”½æ—¥çš„èŒ‚å¯†çš„ç«¹æ—ã€‚
 LONG
 		);
 
@@ -44,15 +44,15 @@ int	do_make(string arg)
 
 		if ( arg ==	"zhu bang" ){
 				if (query("bang_count")	< 1) {
-						tell_object(me,	"ÄÜ×öÖñ°ôµÄÖñ×Ó¶¼½Ø¹âÁË¡£\n", me);
+						tell_object(me,	"èƒ½åšç«¹æ£’çš„ç«¹å­éƒ½æˆªå…‰äº†ã€‚\n", me);
 						return 1;
 				}
 				else if	( me->query_str() <	20)	{
-						tell_object(me,	"ÄãµÄÁ¦Æø²»¹»½ØÖñ×Ó×öÖñ°ô¡£\n",	me);
+						tell_object(me,	"ä½ çš„åŠ›æ°”ä¸å¤Ÿæˆªç«¹å­åšç«¹æ£’ã€‚\n",	me);
 						return 1;
 				}
 				else {
-						message_vision("$NÕÛÏÂÒ»¸ËÖñ×Ó£¬×öÁËÒ»Ö»Öñ°ô¡£\n", me);
+						message_vision("$NæŠ˜ä¸‹ä¸€æ†ç«¹å­ï¼Œåšäº†ä¸€åªç«¹æ£’ã€‚\n", me);
 						ob->move(me);
 						add("bang_count", -1);
 						return 1;

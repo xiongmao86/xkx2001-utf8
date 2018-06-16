@@ -7,13 +7,13 @@ void setup()
 
 void create()
 {
-        set_name(HIY"Ò©²Ä"NOR, ({"yaocai"}));
+        set_name(HIY"è¯æ"NOR, ({"yaocai"}));
 	set_weight(90);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "Ò»°üº¬¶àÖÖÒ©ÎïµÄÒ©²Ä£¬¼ÆÓĞÀÏÉ½²Î¡¢Ñ©Á«×Ó¡¢Â¹È×¡¢ÌïÆß¡¢µ¤É°µÈµÈ¡£\n");
+                set("unit", "åŒ…");
+                set("long", "ä¸€åŒ…å«å¤šç§è¯ç‰©çš„è¯æï¼Œè®¡æœ‰è€å±±å‚ã€é›ªè²å­ã€é¹¿èŒ¸ã€ç”°ä¸ƒã€ä¸¹ç ‚ç­‰ç­‰ã€‚\n");
                 set("value", 10000);
 		set("medicine", 1);
         }

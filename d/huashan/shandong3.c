@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shandong3.c É½¶´
+// shandong3.c å±±æ´
 // qfy 96/6/30
 
 #include <room.h>
@@ -9,9 +9,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´");
         set("long", @LONG
-ÕâÊÇÒ»¸öĞ¡É½¶´£¬¶´Àï¼Ò¾ßÒ»Ó¦¾ã±¸¡£
+è¿™æ˜¯ä¸€ä¸ªå°å±±æ´ï¼Œæ´é‡Œå®¶å…·ä¸€åº”ä¿±å¤‡ã€‚
 LONG
         );
 

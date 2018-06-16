@@ -1,5 +1,5 @@
 //Cracked by Roath
-// apple.c Æ»¹û
+// apple.c è‹¹æœ
 // by aln 4 / 98
 
 inherit ITEM;
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Æ»¹û", ({"ping guo", "apple", "guo"}));
+	set_name("è‹¹æœ", ({"ping guo", "apple", "guo"}));
         set_weight(40);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-		set("long", "Ò»¸öÓÖ´óÓÖºìµÄÆ»¹û\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªåˆå¤§åˆçº¢çš„è‹¹æœ\n");
+		set("unit", "ä¸ª");
                 set("value", 80);
 		set("food_remaining", 5);
 		set("food_supply", 5);
@@ -33,16 +33,16 @@ int do_yao(string arg)
                 return 0;
 
         if( this_player()->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 
         if( !living(this_player()) ) 
                 return 0;
 
         if( !query("food_remaining") )
-                return notify_fail( name() + "ÒÑ¾­Ã»Ê²Ã´ºÃ³ÔµÄÁË¡£\n");
+                return notify_fail( name() + "å·²ç»æ²¡ä»€ä¹ˆå¥½åƒçš„äº†ã€‚\n");
 
         if( (int)this_player()->query("food") >= (int)this_player()->max_food_capacity() )
-                return notify_fail("ÄãÒÑ¾­³ÔµÃÌ«¶àÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åƒå¾—å¤ªå¤šäº†ã€‚\n");
 
         this_player()->add("food", (int)query("food_supply"));
         this_player()->receive_curing("jing", this_player()->query("con"));
@@ -56,11 +56,11 @@ int do_yao(string arg)
         set("value", 0);
         add("food_remaining", -1);
         if( !query("food_remaining") ) {
-                message_vision("$N½«Ê£ÏÂµÄ" + name() + "³ÔµÃ¸ÉÇ¬¾»¾»¡£\n", this_player());
+                message_vision("$Nå°†å‰©ä¸‹çš„" + name() + "åƒå¾—å¹²ä¹¾å‡€å‡€ã€‚\n", this_player());
                 if( !this_object()->finish_eat() )
                         destruct(this_object());
         } else 
-                message_vision("$NÄÃÆğ" + name() + "Ò§ÁË¼¸¿Ú¡£\n", this_player());
+                message_vision("$Næ‹¿èµ·" + name() + "å’¬äº†å‡ å£ã€‚\n", this_player());
 
         this_player()->start_busy(1);
         return 1;

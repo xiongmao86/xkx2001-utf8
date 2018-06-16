@@ -1,18 +1,18 @@
 //Cracked by Roath
-// baicai °×²Ë
+// baicai ç™½èœ
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("°×²Ë", ({"baicai", "vegetable"}));
+	set_name("ç™½èœ", ({"baicai", "vegetable"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿ÅĞÂÏÊµÄ´ó°×²ËĞÄ¡£\n");
-		set("unit", "¿Å");
+		set("long", "ä¸€é¢—æ–°é²œçš„å¤§ç™½èœå¿ƒã€‚\n");
+		set("unit", "é¢—");
 		set("value", 20);
 		set("food_remaining", 2);
 		set("food_supply", 20);

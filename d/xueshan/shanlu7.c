@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½Â·");
+        set("short", "å±±è·¯");
         set("long", @LONG
-ÕâÀïÊÇ¿¿½ü´¨Î÷µÄ³çÉ½¾şÁë£¬¹ÖÊ¯á×á¾¡£ÔÙÍù¶«È¥¾ÍÊÇ´¨Î÷±ßÔµÁË¡£
-ÍùÎ÷ÓĞÒ»×ùÑ©É½¸ßËÊÈëÔÆ¡£Â·±ßÉÏÓĞÒ»¸ö´óÑ©¿Ó(hollow)¡£
+è¿™é‡Œæ˜¯é è¿‘å·è¥¿çš„å´‡å±±å³»å²­ï¼Œæ€ªçŸ³å¶™å³‹ã€‚å†å¾€ä¸œå»å°±æ˜¯å·è¥¿è¾¹ç¼˜äº†ã€‚
+å¾€è¥¿æœ‰ä¸€åº§é›ªå±±é«˜è€¸å…¥äº‘ã€‚è·¯è¾¹ä¸Šæœ‰ä¸€ä¸ªå¤§é›ªå‘(hollow)ã€‚
 LONG
         );
         set("exits", ([
@@ -18,7 +18,7 @@ LONG
 		"eastdown" : "/d/emei/chuanxi2",
         ]));
 	set("item_desc", ([
-	"hollow" : "Ò»¸öÑ©¿Ó£¬ËÆºõ¿ÉÒÔÌø(jump)ÏÂÈ¥¡£\n",
+	"hollow" : "ä¸€ä¸ªé›ªå‘ï¼Œä¼¼ä¹å¯ä»¥è·³(jump)ä¸‹å»ã€‚\n",
 	]));
 	set("objects", ([
                 __DIR__"npc/liu" : 1,
@@ -41,9 +41,9 @@ int do_jump(string arg)
         if( !arg || arg=="" ) return 0;
 
         if( arg=="hollow"){
-        message_vision("$N¸ÕÏëÍùÏÂÌø£¬½ÅÔÚÑ©µØÉÏÒ»»¬£¬±åß´Ò»ÏÂË¤µ½¿Óµ×¡£\n", me);
+        message_vision("$Nåˆšæƒ³å¾€ä¸‹è·³ï¼Œè„šåœ¨é›ªåœ°ä¸Šä¸€æ»‘ï¼Œåå½ä¸€ä¸‹æ‘”åˆ°å‘åº•ã€‚\n", me);
                         message("vision",
-        me->name() + "½ÅÏÂÒ»»¬£¬±åß´Ò»ÏÂË¤²»¼ûÁË¡£\n",
+        me->name() + "è„šä¸‹ä¸€æ»‘ï¼Œåå½ä¸€ä¸‹æ‘”ä¸è§äº†ã€‚\n",
                                 environment(me), ({me}) );
 		ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++){
@@ -53,7 +53,7 @@ int do_jump(string arg)
 	}
                         me->move("/d/qilian/underxs");
                         message("vision",
-                                me->name() + "Í»È»±åß´Ò»Éù´ÓÉÏÃæË¤µ½¿ÓÀï¡£\n",environment(me), ({me}) );
+                                me->name() + "çªç„¶åå½ä¸€å£°ä»ä¸Šé¢æ‘”åˆ°å‘é‡Œã€‚\n",environment(me), ({me}) );
 	return 1;
 	}
 }

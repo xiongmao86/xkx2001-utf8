@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", RED"�軨԰"NOR);
+	set("short", RED"茶花园"NOR);
 	set("long", @LONG
-�⻨԰��ˮ��һ�Ŵ���֮��һ�ԴԻ���ӳˮ���죬������ϼ��һ����ȥ��
-���Ǻ���ͷ׵Ĳ軨�����ƺ��������������޼�Ʒ��
+这花园在水边一排垂柳之后，一丛丛花树映水而红，灿若云霞。一眼望去，
+都是红白缤纷的茶花，但似乎胡乱生长，并无佳品。
 LONG);
 	set("exits", ([
 		"northwest" : __DIR__"garden4.c",

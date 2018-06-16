@@ -11,49 +11,49 @@ void create()
 	switch (random(5))
 	{
 		case 0 :
-			set_name("Ğ¡Ôô", ({"xiao zei", "zei"}));
+			set_name("å°è´¼", ({"xiao zei", "zei"}));
 			break;
 		case 1 :
-			set_name("µØÆ¦", ({"di pi", "pi"}));
+			set_name("åœ°ç—", ({"di pi", "pi"}));
 			break;
 		case 2 :
-			set_name("¶ñ°Ô", ({"e ba", "ba"}));
+			set_name("æ¶éœ¸", ({"e ba", "ba"}));
 			break;
 		case 3 :
-			set_name("Á÷Ã¥", ({"liu mang", "liu"}));
+			set_name("æµæ°“", ({"liu mang", "liu"}));
 			break;
 		case 4 :
-			set_name("ÎŞÀµ", ({"wu lai", "lai"}));
+			set_name("æ— èµ–", ({"wu lai", "lai"}));
 			break;
 	}
 	switch (random(6))
 	{
 		case 0 :
-			set("title", "ĞÇËŞÅÉÅÄÂíÊÖ");
-			set("long", "Õâ¼Ò»ïÔÚĞÇËŞÅÉ×÷¹ı¼¸ÌìÁïĞëÅÄÂíµÄÊÂ¶ù£¬Ò²¶àÉÙÑ§ÁËĞ©¹¦·ò£¬»Øµ½ÏçÀï¾ÍÎª·Ç×÷´õ¡£\nËû¿´ÆğÀ´¹¦·òµÍÎ¢¡£\n");
+			set("title", "æ˜Ÿå®¿æ´¾æ‹é©¬æ‰‹");
+			set("long", "è¿™å®¶ä¼™åœ¨æ˜Ÿå®¿æ´¾ä½œè¿‡å‡ å¤©æºœé¡»æ‹é©¬çš„äº‹å„¿ï¼Œä¹Ÿå¤šå°‘å­¦äº†äº›åŠŸå¤«ï¼Œå›åˆ°ä¹¡é‡Œå°±ä¸ºéä½œæ­¹ã€‚\nä»–çœ‹èµ·æ¥åŠŸå¤«ä½å¾®ã€‚\n");
 			break;
 		case 1 :
-			set("title", "»ªÉ½ÅÉÆúÍ½");
-			set("long", "´ËÈËÔø¾­°İÔÚ»ªÉ½ÃÅÏÂÑ§ÒÕ£¬ÒòÎªĞĞÎª²»¹ì±»Öğ³öÃÅÇ½£¬ÔÚµØ·½ÉÏÖÕÈÕ¹í»ì£¬´ò¼Ü¶·Å¹¡£\nËû¿´ÆğÀ´ËäÈ»ÓĞÁ½½ïÁ¦Æø£¬¹¦·òÈ´²»ÔõÃ´Ñù¡£\n");
+			set("title", "åå±±æ´¾å¼ƒå¾’");
+			set("long", "æ­¤äººæ›¾ç»æ‹œåœ¨åå±±é—¨ä¸‹å­¦è‰ºï¼Œå› ä¸ºè¡Œä¸ºä¸è½¨è¢«é€å‡ºé—¨å¢™ï¼Œåœ¨åœ°æ–¹ä¸Šç»ˆæ—¥é¬¼æ··ï¼Œæ‰“æ¶æ–—æ®´ã€‚\nä»–çœ‹èµ·æ¥è™½ç„¶æœ‰ä¸¤æ–¤åŠ›æ°”ï¼ŒåŠŸå¤«å´ä¸æ€ä¹ˆæ ·ã€‚\n");
 			break;
 		case 2 :
-			set("title", "Îäµ±ÅÉÅÑÍ½");
-			set("long", "ËûÔø¾­ÊÇÎäµ±ÅÉµÄµÍ±²µÜ×Ó£¬Ä³´ÎËæÊ¦¸µÏÂÉ½ÔâÓö³ğµĞ£¬ÂôÊ¦±£Ãü£¬´ËºóÔÙÒ²²»¸Ò»ØÎäµ±£¬Æ¾×ÅÒ»µã¹¦·òÔÚ½­ºşÉÏØË»ì¡£\nËû¿´ÆğÀ´¹¦·òÆÄ²î¾¢¡£\n");
+			set("title", "æ­¦å½“æ´¾å›å¾’");
+			set("long", "ä»–æ›¾ç»æ˜¯æ­¦å½“æ´¾çš„ä½è¾ˆå¼Ÿå­ï¼ŒæŸæ¬¡éšå¸ˆå‚…ä¸‹å±±é­é‡ä»‡æ•Œï¼Œå–å¸ˆä¿å‘½ï¼Œæ­¤åå†ä¹Ÿä¸æ•¢å›æ­¦å½“ï¼Œå‡­ç€ä¸€ç‚¹åŠŸå¤«åœ¨æ±Ÿæ¹–ä¸Šå®æ··ã€‚\nä»–çœ‹èµ·æ¥åŠŸå¤«é¢‡å·®åŠ²ã€‚\n");
 			break;
 		case 3 :
-			set("title", "Ñ©É½ÅÉĞ¡À®Âï");
-			set("long", "ËûÊÇĞÂ½ü²ÅÈë´óÂÖËÂµÄĞ¡À®Âï£¬¾­³£´ÓÑ©É½ÉÏÏÂÀ´£¬µ½´óÀí±ß¾³µÄÉ½´åÍµ¼¦Ãş¹·¡£\nËû»¹Ã»ÓĞÑ§µ½¶àÉÙ¹¦·ò¡£\n");
+			set("title", "é›ªå±±æ´¾å°å–‡å˜›");
+			set("long", "ä»–æ˜¯æ–°è¿‘æ‰å…¥å¤§è½®å¯ºçš„å°å–‡å˜›ï¼Œç»å¸¸ä»é›ªå±±ä¸Šä¸‹æ¥ï¼Œåˆ°å¤§ç†è¾¹å¢ƒçš„å±±æ‘å·é¸¡æ‘¸ç‹—ã€‚\nä»–è¿˜æ²¡æœ‰å­¦åˆ°å¤šå°‘åŠŸå¤«ã€‚\n");
 			break;
 		case 4 :
-			set("title", "Ø¤°ï¶ñÔô");
-			set("long", "ÕâÈËÒ»ÉíÆòØ¤´ò°ç£¬ÆäÊµÔçÒÑÒòÎª¶ñ¼£±»Ø¤°ï¿ª³ı£¬ÔÚ±±·½»ì²»ÏÂÈ¥ÁË£¬ÅÜµ½ÄÏ±ßÀ´×÷¶ñ¡£\nËû³ıÁËØË´òĞ×ºİ£¬Ã»ÓĞ¶àÉÙÕæ²ÅÊµÑ§¡£\n");
+			set("title", "ä¸å¸®æ¶è´¼");
+			set("long", "è¿™äººä¸€èº«ä¹ä¸æ‰“æ‰®ï¼Œå…¶å®æ—©å·²å› ä¸ºæ¶è¿¹è¢«ä¸å¸®å¼€é™¤ï¼Œåœ¨åŒ—æ–¹æ··ä¸ä¸‹å»äº†ï¼Œè·‘åˆ°å—è¾¹æ¥ä½œæ¶ã€‚\nä»–é™¤äº†å®æ‰“å‡¶ç‹ ï¼Œæ²¡æœ‰å¤šå°‘çœŸæ‰å®å­¦ã€‚\n");
 			break;
 		case 5 :
-			set("title", "Îå¶¾½Ì´òÊÖ");
-			set("long", "Îå¶¾½Ì×Ü²¿ÔÚ´óÀí£¬×ÔÈ»ÒªÍøÂŞ×¦ÑÀÅàÑøÊÆÁ¦£¬´ËÈËÊÇµØ·½ÉÏÓĞÃûµÄ¶ñ¹÷£¬±»ÊÕ×÷´òÊÖ¡£\nËûËäÈ»Ã»Ñ§¹ı¶àÉÙ¹¦·ò£¬ÉíÊÖµ¹ÊÇÂù½Ã½¡µÄ¡£\n");
+			set("title", "äº”æ¯’æ•™æ‰“æ‰‹");
+			set("long", "äº”æ¯’æ•™æ€»éƒ¨åœ¨å¤§ç†ï¼Œè‡ªç„¶è¦ç½‘ç½—çˆªç‰™åŸ¹å…»åŠ¿åŠ›ï¼Œæ­¤äººæ˜¯åœ°æ–¹ä¸Šæœ‰åçš„æ¶æ£ï¼Œè¢«æ”¶ä½œæ‰“æ‰‹ã€‚\nä»–è™½ç„¶æ²¡å­¦è¿‡å¤šå°‘åŠŸå¤«ï¼Œèº«æ‰‹å€’æ˜¯è›®çŸ«å¥çš„ã€‚\n");
 			break;
 	}
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 20+random(10));
 	set("attitude", "heroism");
 	set("str", 20+random(10));
@@ -85,22 +85,22 @@ void killvictim(object me, object who)
 {
 	if (present(who, environment(me)))
 	{
-		if (who->query("race")=="ÈËÀà" && who->query("age")<15)
+		if (who->query("race")=="äººç±»" && who->query("age")<15)
 		{
 			command("grin "+who->query("id"));
-			message_vision("$N¶ñºİºİµØ¶Ô$n½ĞµÀ£º´óÒ¯½ñÌì²»¸ßĞË£¬ÏÈÄÃÄãµÄĞ¡Ãü¶ùÀ´¼À¼Àµ¶£¡  $N¿´À´ÏëÉ±ËÀ$n£¡\n", me, who);
+			message_vision("$Næ¶ç‹ ç‹ åœ°å¯¹$nå«é“ï¼šå¤§çˆ·ä»Šå¤©ä¸é«˜å…´ï¼Œå…ˆæ‹¿ä½ çš„å°å‘½å„¿æ¥ç¥­ç¥­åˆ€ï¼  $Nçœ‹æ¥æƒ³æ€æ­»$nï¼\n", me, who);
 			kill_ob(who);
 			return;
 		}
-		if (who->query("gender")=="Å®ĞÔ" && who->query("age")<30  && random(3)==2)
+		if (who->query("gender")=="å¥³æ€§" && who->query("age")<30  && random(3)==2)
 		{
 			command("flirt "+who->query("id"));
-			message_vision("$NÉÏÇ°µ÷Ï·$n£¬$nÈ´·ÜÁ¦ÕõÔú²»´Ó¡£$N²ªÈ»´óÅ­£¬¿´À´ÏëÉ±ËÀ$n£¡\n", me, who);
+			message_vision("$Nä¸Šå‰è°ƒæˆ$nï¼Œ$nå´å¥‹åŠ›æŒ£æ‰ä¸ä»ã€‚$Nå‹ƒç„¶å¤§æ€’ï¼Œçœ‹æ¥æƒ³æ€æ­»$nï¼\n", me, who);
 			me->set_temp("rapping",1);
 			kill_ob(who);
 			return;
 		}
-		else if (who->query("gender")=="Å®ĞÔ" && who->query("age")<30 )
+		else if (who->query("gender")=="å¥³æ€§" && who->query("age")<30 )
 		{
 			switch (random(4))
 			{
@@ -120,16 +120,16 @@ void killvictim(object me, object who)
 			switch (random(4))
 			{
 				case 0 :
-					message_vision("$NÉÏÇ°µ÷Ï·$n£¬$nÈ´¶Ô$NÀí¶¼²»Àí¡£\n", me, who);
+					message_vision("$Nä¸Šå‰è°ƒæˆ$nï¼Œ$nå´å¯¹$Nç†éƒ½ä¸ç†ã€‚\n", me, who);
 					break;
 				case 1 :
-					message_vision("$N¼¯Á¦ÌÖºÃ$n£¬$nÈ´¶Ô$NÊÓ¶ø²»¼û¡£\n", me, who);
+					message_vision("$Né›†åŠ›è®¨å¥½$nï¼Œ$nå´å¯¹$Nè§†è€Œä¸è§ã€‚\n", me, who);
 					break;
 				case 2 :
-					message_vision("$N¶Ô$n°Ù°ãÒóÇÚ£¬$nÈ´¶Ô$NÎŞ¶¯ÓÚÖÔ¡£\n", me, who);
+					message_vision("$Nå¯¹$nç™¾èˆ¬æ®·å‹¤ï¼Œ$nå´å¯¹$Næ— åŠ¨äºè¡·ã€‚\n", me, who);
 					break;
 				case 3 :
-					message_vision("$N¶Ô$nÌğÑÔÃÛÓï£¬$nÈ´¶Ô$NÅ­Ä¿ÏàÊÓ¡£\n", me, who);
+					message_vision("$Nå¯¹$nç”œè¨€èœœè¯­ï¼Œ$nå´å¯¹$Næ€’ç›®ç›¸è§†ã€‚\n", me, who);
 					break;
 			}
 			me->start_busy(20);
@@ -137,17 +137,17 @@ void killvictim(object me, object who)
 			call_out("action_start", 5, me, who);
 			return;
 		}
-		else if (who->query("race")!="ÈËÀà")
+		else if (who->query("race")!="äººç±»")
 		{
 			command("grin "+who->query("id"));
-			message_vision("$NÀÖµÀ£º¡°ÀÏ×ÓµÄ¶Ç×ÓÕı¹¾¹¾½ĞÄØ£¬ÓĞÒ°Î¶ËÍÉÏÃÅÀ´¡£¡±  $NÏë°Ñ$nÉ±ÁË³Ôµô¡£\n", me, who);
+			message_vision("$Nä¹é“ï¼šâ€œè€å­çš„è‚šå­æ­£å’•å’•å«å‘¢ï¼Œæœ‰é‡å‘³é€ä¸Šé—¨æ¥ã€‚â€  $Næƒ³æŠŠ$næ€äº†åƒæ‰ã€‚\n", me, who);
 			kill_ob(who);
 			return;
 		}
 		else if (random(3)==2)
 		{
-			message_vision("$NÀäĞ¦×ÅµØ¶Ô$nËµ£º¡°ÀÏ×ÓÎÒÇ××Ô³öÂí£¬"+RANK_D->query_rude(who)+"»¹²»¹Ô¹ÔµØ¸Ï¿ì½ğÒøÖé±¦½»³öÀ´£¿\n", me, who);
-			message_vision("$n³ÙÒÉ²»¸ø£¬$N±ãÒõĞ¦×ÅºğµÀ£º¡°"+RANK_D->query_rude(who)+"ÕÒËÀ£¬½ñÌìÀÏ×ÓÒªÉ±¸ö¼¦È®²»Áô£¡¡±  ¿´À´$NÏëÉ±ËÀ$n£¡\n", me, who);
+			message_vision("$Nå†·ç¬‘ç€åœ°å¯¹$nè¯´ï¼šâ€œè€å­æˆ‘äº²è‡ªå‡ºé©¬ï¼Œ"+RANK_D->query_rude(who)+"è¿˜ä¸ä¹–ä¹–åœ°èµ¶å¿«é‡‘é“¶ç å®äº¤å‡ºæ¥ï¼Ÿ\n", me, who);
+			message_vision("$nè¿Ÿç–‘ä¸ç»™ï¼Œ$Nä¾¿é˜´ç¬‘ç€å¼é“ï¼šâ€œ"+RANK_D->query_rude(who)+"æ‰¾æ­»ï¼Œä»Šå¤©è€å­è¦æ€ä¸ªé¸¡çŠ¬ä¸ç•™ï¼â€  çœ‹æ¥$Næƒ³æ€æ­»$nï¼\n", me, who);
 			kill_ob(who);
 			return;
 		}
@@ -156,13 +156,13 @@ void killvictim(object me, object who)
 			switch (random(4))
 			{
 				case 0 :
-					message_vision(CYN"$NĞ¦ÎûÎûµÄ×ßÏò$nËµ£º¡°"+RANK_D->query_self_rude(me)+"ÎÒ½ñÌì»ØÏç£¬È±ÉÙĞ©ÅÌ²ø"+RANK_D->query_close(who)+"£¬½èµãÒøÁ½À´»¨»¨°É£¿\n"NOR, me, who);
+					message_vision(CYN"$Nç¬‘å˜»å˜»çš„èµ°å‘$nè¯´ï¼šâ€œ"+RANK_D->query_self_rude(me)+"æˆ‘ä»Šå¤©å›ä¹¡ï¼Œç¼ºå°‘äº›ç›˜ç¼ "+RANK_D->query_close(who)+"ï¼Œå€Ÿç‚¹é“¶ä¸¤æ¥èŠ±èŠ±å§ï¼Ÿ\n"NOR, me, who);
 					break;
 				case 1 :
 					command("poor "+who->query("id"));
 					break;
 				case 2 :
-					message_vision(CYN"$Nºáµ¶µ±µÀ¶Ô×Å$nÒ»Éù´óº°£º¡°´ËÉ½ÊÇÎÒ¿ª£¬´ËÊ÷ÊÇÎÒÔÔ£¬ÈôÒª´Ó´Ë¹ı£¬ÁôÏÂÂòÂ·²Æ !\n"NOR, me, who);
+					message_vision(CYN"$Næ¨ªåˆ€å½“é“å¯¹ç€$nä¸€å£°å¤§å–Šï¼šâ€œæ­¤å±±æ˜¯æˆ‘å¼€ï¼Œæ­¤æ ‘æ˜¯æˆ‘æ ½ï¼Œè‹¥è¦ä»æ­¤è¿‡ï¼Œç•™ä¸‹ä¹°è·¯è´¢ !\n"NOR, me, who);
 					break;
 				case 3 :
 					command("interest "+who->query("id"));
@@ -171,16 +171,16 @@ void killvictim(object me, object who)
 			switch (random(4))
 			{
 				case 0 :
-					message_vision(CYN"$n×¥ÆğÒ»°Ñ¹Ï×Óµİ¸ø$N£ººÜÎŞÁÄ°É£¿À´£¬³¢³¢Õâ¹Ï×Ó£¬×¢Òâ²»ÒªÂÒÍÂ¿Ç¶ù°¡£¡\n"NOR, me, who);
+					message_vision(CYN"$næŠ“èµ·ä¸€æŠŠç“œå­é€’ç»™$Nï¼šå¾ˆæ— èŠå§ï¼Ÿæ¥ï¼Œå°å°è¿™ç“œå­ï¼Œæ³¨æ„ä¸è¦ä¹±åå£³å„¿å•Šï¼\n"NOR, me, who);
 					break;
 				case 1 :
-					message_vision(CYN"$nÁøÃ¼µ¹Êú£¬ß³µÀ£º¡°ÉÙ´òÎÒµÄÖ÷ÒâÁË,ÕæÊÇÎŞÁÄÍ¸¶¥£¡ÎÒ²»»á´ğÓ¦µÄ,Äã¾ÍËÀÁËĞÄ°É£¡¡±\n"NOR, me, who);
+					message_vision(CYN"$næŸ³çœ‰å€’ç«–ï¼Œå±é“ï¼šâ€œå°‘æ‰“æˆ‘çš„ä¸»æ„äº†,çœŸæ˜¯æ— èŠé€é¡¶ï¼æˆ‘ä¸ä¼šç­”åº”çš„,ä½ å°±æ­»äº†å¿ƒå§ï¼â€\n"NOR, me, who);
 					break;
 				case 2 :
-					message_vision("$nÈ¡³öÒ»¸öĞå»¨ºÉ°üÀ´£¬Íù×ÀÉÏÒ»ÖÀ£¬Ö»ÌıµÃàªµÄÒ»ÉùÇáÏì£¬ÏÔÈ»ºÉ°üÖĞÃ»Ê²Ã´½ğÒø¡£\n", me, who);
+					message_vision("$nå–å‡ºä¸€ä¸ªç»£èŠ±è·åŒ…æ¥ï¼Œå¾€æ¡Œä¸Šä¸€æ·ï¼Œåªå¬å¾—å—’çš„ä¸€å£°è½»å“ï¼Œæ˜¾ç„¶è·åŒ…ä¸­æ²¡ä»€ä¹ˆé‡‘é“¶ã€‚\n", me, who);
 					break;
 				case 3 :
-					message_vision(CYN"$n¶Ô$NËµ£º¡°ÎÒ²»ÈÏÊ¶Äã£¬Æ¾Ê²Ã´Òª¸øÄã£¡\n"NOR, me, who);
+					message_vision(CYN"$nå¯¹$Nè¯´ï¼šâ€œæˆ‘ä¸è®¤è¯†ä½ ï¼Œå‡­ä»€ä¹ˆè¦ç»™ä½ ï¼\n"NOR, me, who);
 					break;
 			}
 			me->start_busy(20);
@@ -201,39 +201,39 @@ void action_start(object me, object who)
 		remove_call_out("action_stop");
 		return;
 	}
-	if (who->query("gender")=="Å®ĞÔ" && who->query("age")<30)
+	if (who->query("gender")=="å¥³æ€§" && who->query("age")<30)
 	{
 		switch (random(4))
 		{
 			case 0 :
-				message_vision(CYN"$N²ø×Å$n²»·ÅµÄËµ£º¡°"+RANK_D->query_close(who)+"±ğÕâÑùÂï£¬À´ÈÃÎÒÏãÒ»¸ö¡£\n"NOR, me, who);
+				message_vision(CYN"$Nç¼ ç€$nä¸æ”¾çš„è¯´ï¼šâ€œ"+RANK_D->query_close(who)+"åˆ«è¿™æ ·å˜›ï¼Œæ¥è®©æˆ‘é¦™ä¸€ä¸ªã€‚\n"NOR, me, who);
 				break;
 			case 1 :
-				message_vision(CYN"$N¿ªÊ¼¶Ô$n¶¯ÊÖ¶¯½ÅµÄËµ£º¡°"+RANK_D->query_close(who)+"¸ú×Å"+RANK_D->query_self_rude(me)+"»ØÈ¥°É¡£\n"NOR, me, who);
+				message_vision(CYN"$Nå¼€å§‹å¯¹$nåŠ¨æ‰‹åŠ¨è„šçš„è¯´ï¼šâ€œ"+RANK_D->query_close(who)+"è·Ÿç€"+RANK_D->query_self_rude(me)+"å›å»å§ã€‚\n"NOR, me, who);
 				break;
 			case 2 :
-				message_vision(CYN"$N´ÖÉù´ÖÆøµÄ¶Ô$nËµ£º¡°"+RANK_D->query_close(who)+"¸ú×Å"+RANK_D->query_self_rude(me)+"±£Ö¤ÄãÏí¸£Ò»±²×Ó¡£\n"NOR, me, who);
+				message_vision(CYN"$Nç²—å£°ç²—æ°”çš„å¯¹$nè¯´ï¼šâ€œ"+RANK_D->query_close(who)+"è·Ÿç€"+RANK_D->query_self_rude(me)+"ä¿è¯ä½ äº«ç¦ä¸€è¾ˆå­ã€‚\n"NOR, me, who);
 				break;
 			case 3 :
-				message_vision(CYN"$N¿ªÊ¼¶Ô$nÉÏÏÂÆäÊÖËµ£º¡°"+RANK_D->query_close(who)+"³¤µÄÕæ±êÖÂ£¬¿´µÄÎÒĞÄÀïÏû»ê¡£\n"NOR, me, who);
+				message_vision(CYN"$Nå¼€å§‹å¯¹$nä¸Šä¸‹å…¶æ‰‹è¯´ï¼šâ€œ"+RANK_D->query_close(who)+"é•¿çš„çœŸæ ‡è‡´ï¼Œçœ‹çš„æˆ‘å¿ƒé‡Œæ¶ˆé­‚ã€‚\n"NOR, me, who);
 				break;
 		}
 		switch (random(4))
 		{
 			case 0 :
-				message_vision(CYN"$nÅŞÁËÒ»Éù£¬¶Ô$NÅ­µÀ£º¡°¾ÍÄãÕâñ®¸òó¡£¬²»ÖªÔÒ»µÁË¶àÉÙÃæ¾µ×ÓÁË£¬Ò²ÅäºÍÎÒÌáÒ»¸ö°®×Ö£¡¡±\n"NOR, me, who);
+				message_vision(CYN"$nå‘¸äº†ä¸€å£°ï¼Œå¯¹$Næ€’é“ï¼šâ€œå°±ä½ è¿™ç™è›¤èŸ†ï¼Œä¸çŸ¥ç ¸åäº†å¤šå°‘é¢é•œå­äº†ï¼Œä¹Ÿé…å’Œæˆ‘æä¸€ä¸ªçˆ±å­—ï¼â€\n"NOR, me, who);
 				me->set_temp("rapping",1);
 				break;
 			case 1 :
-				message_vision(CYN"$n¶Ô×Å$NÈÂµÀ£º¡°Äãµ±ÄãÊÇË­Ñ½£¬ÄãÒÔÎªÄãÊÇĞ¡ÁúÅ®Ñ½£¿¡±\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹ç€$Nåš·é“ï¼šâ€œä½ å½“ä½ æ˜¯è°å‘€ï¼Œä½ ä»¥ä¸ºä½ æ˜¯å°é¾™å¥³å‘€ï¼Ÿâ€\n"NOR, me, who);
 				me->set_temp("rapping",1);
 				break;
 			case 2 :
-				message_vision("$n¿çÉÏÒ»²½£¬×óÓÒ¿ª¹­£¬±ãÊÇËÄ¼Ç¶ú¹â¡£Å¾Å¾Å¾Å¾ËÄÉùÏì¹ı£¬$NÁ½±ßÁ³¼ÕµÇÊ±ºìÖ×¡£\n", me, who);
+				message_vision("$nè·¨ä¸Šä¸€æ­¥ï¼Œå·¦å³å¼€å¼“ï¼Œä¾¿æ˜¯å››è®°è€³å…‰ã€‚å•ªå•ªå•ªå•ªå››å£°å“è¿‡ï¼Œ$Nä¸¤è¾¹è„¸é¢Šç™»æ—¶çº¢è‚¿ã€‚\n", me, who);
 				me->set_temp("rapping",1);
 				break;
 			case 3 :
-				message_vision(CYN"$n¶Ô$NËµµÀ£º¡°ÄãÕâ¸öÈËÔõÃ´Á³Æ¤±È³ÇÇ½¹ÕÍä¶ù»¹ºñ£¡¡±\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹$Nè¯´é“ï¼šâ€œä½ è¿™ä¸ªäººæ€ä¹ˆè„¸çš®æ¯”åŸå¢™æ‹å¼¯å„¿è¿˜åšï¼â€\n"NOR, me, who);
 				me->set_temp("rapping",1);
 				break;
 		}
@@ -246,31 +246,31 @@ void action_start(object me, object who)
 				command("stare "+who->query("id"));
 				break;
 			case 1 :
-				message_vision(CYN"$N¶Ô×Å$nÅ­µÀ£º¡°"+RANK_D->query_rude(who)+"£¡"+RANK_D->query_self_rude(me)+"¸øÄãÈı·ÖÑÕÉ«Äã¾Í¿ªÆğÈ¾·¿À´ÁË¡£\n"NOR, me, who);
+				message_vision(CYN"$Nå¯¹ç€$næ€’é“ï¼šâ€œ"+RANK_D->query_rude(who)+"ï¼"+RANK_D->query_self_rude(me)+"ç»™ä½ ä¸‰åˆ†é¢œè‰²ä½ å°±å¼€èµ·æŸ“æˆ¿æ¥äº†ã€‚\n"NOR, me, who);
 				break;
 			case 2 :
-				message_vision(CYN"$N¶Ô$nºÈµÀ£º¡¸"+RANK_D->query_rude(who)+"£¬Äã»¹Òª²»ÒªÃü£¿£¬»¹²»¿ì°ÑÉíÉÏµÄ½ğÒøÖé±¦½»³öÀ´£¿¡¹\n"NOR, me, who);
+				message_vision(CYN"$Nå¯¹$nå–é“ï¼šã€Œ"+RANK_D->query_rude(who)+"ï¼Œä½ è¿˜è¦ä¸è¦å‘½ï¼Ÿï¼Œè¿˜ä¸å¿«æŠŠèº«ä¸Šçš„é‡‘é“¶ç å®äº¤å‡ºæ¥ï¼Ÿã€\n"NOR, me, who);
 				break;
 			case 3 :
-				message_vision(CYN"$N¾ªÅ­½»¼¯£¬Ö¸×Å$nµÀ£º¡¸ÄãÕâ"+RANK_D->query_rude(who)+"£¬µ±Õæ»îµÃ²»ÄÍ·³ÁË£¿¡¹\n"NOR, me, who);
+				message_vision(CYN"$NæƒŠæ€’äº¤é›†ï¼ŒæŒ‡ç€$né“ï¼šã€Œä½ è¿™"+RANK_D->query_rude(who)+"ï¼Œå½“çœŸæ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿã€\n"NOR, me, who);
 				break;
 		}
 		switch (random(4))
 		{
 			case 0 :
-				message_vision(CYN"$nÑöÌì³¤Ì¾µÀ£º¡¸ÄÑµÀÕâ¸öÊÀµÀ¾¹È»Ã»ÓĞÍõ·¨£¬ÌìÀíºÎÔÚ°¡£¿£¡ ¡¹\n"NOR, me, who);
+				message_vision(CYN"$nä»°å¤©é•¿å¹é“ï¼šã€Œéš¾é“è¿™ä¸ªä¸–é“ç«Ÿç„¶æ²¡æœ‰ç‹æ³•ï¼Œå¤©ç†ä½•åœ¨å•Šï¼Ÿï¼ ã€\n"NOR, me, who);
 				me->set_temp("robbing",1);
 				break;
 			case 1 :
-				message_vision(CYN"$n¶Ô$NºÈµÀ£º¡¸"+RANK_D->query_rude(me)+"£¬Äã¾¹¸Òµ±½ÖĞĞÇÀ£¬ÎÒÒªÈ¥¹Ù¸®¸æÄã£¡£¡£¡ ¡¹\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(me)+"ï¼Œä½ ç«Ÿæ•¢å½“è¡—è¡ŒæŠ¢ï¼Œæˆ‘è¦å»å®˜åºœå‘Šä½ ï¼ï¼ï¼ ã€\n"NOR, me, who);
 				me->set_temp("robbing",1);
 				break;
 			case 2 :
-				message_vision(CYN"$n¶Ô×Å$N´ó½Ğ£º¡°$N£¬ÄãÕâ¸ö³ôÁ÷Ã¥£¡¡±\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹ç€$Nå¤§å«ï¼šâ€œ$Nï¼Œä½ è¿™ä¸ªè‡­æµæ°“ï¼â€\n"NOR, me, who);
 				me->set_temp("robbing",1);
 				break;
 			case 3 :
-				message_vision("$n¶Ô$NµÄ¿ÖÏÅÍêÈ«ÖÃÖ®²»Àí¡£\n", me, who);
+				message_vision("$nå¯¹$Nçš„æå“å®Œå…¨ç½®ä¹‹ä¸ç†ã€‚\n", me, who);
 				me->set_temp("robbing",1);
 				break;
 		}
@@ -290,7 +290,7 @@ void action_end(object me, object who)
 		remove_call_out("action_stop");
 		return;
 	}
-	if (who->query("gender")=="Å®ĞÔ" && who->query("age")<30)
+	if (who->query("gender")=="å¥³æ€§" && who->query("age")<30)
 	{
 		switch (random(6))
 		{
@@ -316,23 +316,23 @@ void action_end(object me, object who)
 		switch (random(4))
 		{
 			case 0 :
-				message_vision(CYN"$n¶Ô×Å$N´óÂî£º¡¸²»ÒªÁ³£¬ÎŞ³ÜÏÂÁ÷£¬µ÷Ï·¸¾Å®¡£¡¹\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹ç€$Nå¤§éª‚ï¼šã€Œä¸è¦è„¸ï¼Œæ— è€»ä¸‹æµï¼Œè°ƒæˆå¦‡å¥³ã€‚ã€\n"NOR, me, who);
 				remove_call_out("action_stop");
 				call_out("action_stop", 1, me, who);
 
 				break;
 			case 1 :
-				message_vision("$n¶Ô$NÊÓ¶ø²»¼û¡£\n", me, who);
+				message_vision("$nå¯¹$Nè§†è€Œä¸è§ã€‚\n", me, who);
 				remove_call_out("action_start");
 				call_out("action_start", 5, me, who);
 				break;
 			case 2 :
-				message_vision(CYN"$n¶Ô×Å$NËµÁË¾ä£ºÎŞÁÄ£¡\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹ç€$Nè¯´äº†å¥ï¼šæ— èŠï¼\n"NOR, me, who);
 				remove_call_out("action_stop");
 				call_out("action_stop", 1, me, who);
 				break;
 			case 3 :
-				message_vision(CYN"$nÂîµÀ£ºÄãÎŞ²»ÎŞÁÄ°¡£¡\n"NOR, me, who);
+				message_vision(CYN"$néª‚é“ï¼šä½ æ— ä¸æ— èŠå•Šï¼\n"NOR, me, who);
 				remove_call_out("action_stop");
 				call_out("action_stop", 1, me, who);
 				break;
@@ -343,46 +343,46 @@ void action_end(object me, object who)
 		switch (random(8))
 		{
 			case 0 :
-				message_vision("$N¶ñºİºİµØ¶¢×Å$n£º"+RANK_D->query_rude(who)+"£¬ÎÒ¿´ÄãÕâ´ÎÍùÄÄ¶ùÅÜ¡£\n", me, who);
+				message_vision("$Næ¶ç‹ ç‹ åœ°ç›¯ç€$nï¼š"+RANK_D->query_rude(who)+"ï¼Œæˆ‘çœ‹ä½ è¿™æ¬¡å¾€å“ªå„¿è·‘ã€‚\n", me, who);
 				break;
 			case 1 :
-				message_vision("$N¶ñºİºİµØ¶¢×Å$n£º"+RANK_D->query_rude(who)+"£¬ÎÒ¿´ÄãÕâ´ÎÍùÄÄ¶ùÅÜ¡£\n", me, who);
+				message_vision("$Næ¶ç‹ ç‹ åœ°ç›¯ç€$nï¼š"+RANK_D->query_rude(who)+"ï¼Œæˆ‘çœ‹ä½ è¿™æ¬¡å¾€å“ªå„¿è·‘ã€‚\n", me, who);
 				break;
 			case 2 :
-				message_vision(CYN"$N¶Ô$nºÈµÀ£º¡¸ÆøËÀÎÒÁË£¬ÎÒÏÈÉ±ÁËÄãÕâ"+RANK_D->query_rude(who)+"ÔÙËµ¡£¡¹\n"NOR, me, who);
+				message_vision(CYN"$Nå¯¹$nå–é“ï¼šã€Œæ°”æ­»æˆ‘äº†ï¼Œæˆ‘å…ˆæ€äº†ä½ è¿™"+RANK_D->query_rude(who)+"å†è¯´ã€‚ã€\n"NOR, me, who);
 				break;
 			case 4 :
-				message_vision(CYN"$N¾ªÅ­½»¼¯£¬Ö¸×Å$nµÀ£º¡¸ÄãÕâ"+RANK_D->query_rude(who)+"£¬µ±Õæ»îµÃ²»ÄÍ·³ÁË£¿¡¹\n"NOR, me, who);
+				message_vision(CYN"$NæƒŠæ€’äº¤é›†ï¼ŒæŒ‡ç€$né“ï¼šã€Œä½ è¿™"+RANK_D->query_rude(who)+"ï¼Œå½“çœŸæ´»å¾—ä¸è€çƒ¦äº†ï¼Ÿã€\n"NOR, me, who);
 				break;
 			case 5 :
-				message_vision("$N±ÉÒÄµØ¿´×Å$n£¬ºŞ²»µÃ°ÑËû´óĞ¶°Ë¿éÉúÍÌ»î°ş¡£\n", me, who);
+				message_vision("$Né„™å¤·åœ°çœ‹ç€$nï¼Œæ¨ä¸å¾—æŠŠä»–å¤§å¸å…«å—ç”Ÿåæ´»å‰¥ã€‚\n", me, who);
 				break;
 			case 6 :
-				message_vision(CYN"$NÒ»ÅÄ×À×Ó£¬¶Ô×Å$nÉúÆøµÄ½ĞµÀ£º¡¸ÄãË£°³£¿£¡Äã°Ñ°³µ±ºï×ÓË££¿£¡¡¹\n"NOR, me, who);
+				message_vision(CYN"$Nä¸€æ‹æ¡Œå­ï¼Œå¯¹ç€$nç”Ÿæ°”çš„å«é“ï¼šã€Œä½ è€ä¿ºï¼Ÿï¼ä½ æŠŠä¿ºå½“çŒ´å­è€ï¼Ÿï¼ã€\n"NOR, me, who);
 				break;
 			case 7 :
-				message_vision(CYN"$N¶Ô×Å$nÂîµÀ£º¡¸"+RANK_D->query_rude(who)+"£¬ÎÒ²»ºİºİ×áÄãÒ»¶Ù£¬ÄÑÏûĞÄÍ·Ö®ºŞ¡£¡¹\n"NOR, me, who);
+				message_vision(CYN"$Nå¯¹ç€$néª‚é“ï¼šã€Œ"+RANK_D->query_rude(who)+"ï¼Œæˆ‘ä¸ç‹ ç‹ æä½ ä¸€é¡¿ï¼Œéš¾æ¶ˆå¿ƒå¤´ä¹‹æ¨ã€‚ã€\n"NOR, me, who);
 				break;
 		}
 		switch (random(4))
 		{
 			case 0 :
-				message_vision(CYN"$n´ó½Ğ£º¡¸¾ÈÃü°¡£¡É±ÈË°¡£¡À´ÈË°¡£¡¡¹\n"NOR, me, who);
+				message_vision(CYN"$nå¤§å«ï¼šã€Œæ•‘å‘½å•Šï¼æ€äººå•Šï¼æ¥äººå•Šï¼ã€\n"NOR, me, who);
 				remove_call_out("action_stop");
 				call_out("action_stop", 1, me, who);
 				break;
 			case 1 :
-				message_vision("$n¶Ô$N°®Àí²»ÀíµÄ¡£\n", me, who);
+				message_vision("$nå¯¹$Nçˆ±ç†ä¸ç†çš„ã€‚\n", me, who);
 				remove_call_out("action_stop");
 				call_out("action_stop", 1, me, who);
 				break;
 			case 2 :
-				message_vision(CYN"$n¶Ô$NËµ£º¡¸¿´£¡ÄãºóÃæÓĞ¿×È¸£¡¡¹\n"NOR, me, who);
+				message_vision(CYN"$nå¯¹$Nè¯´ï¼šã€Œçœ‹ï¼ä½ åé¢æœ‰å­”é›€ï¼ã€\n"NOR, me, who);
 				remove_call_out("action_stop");
 				call_out("action_stop", 1, me, who);
 				break;
 			case 3 :
-				message_vision("$n²¢Î´ÔÚÒâ$NµÄ»°£¡\n", me, who);
+				message_vision("$nå¹¶æœªåœ¨æ„$Nçš„è¯ï¼\n", me, who);
 				remove_call_out("action_start");
 				call_out("action_start", 5, me, who);
 				break;
@@ -405,13 +405,13 @@ void action_stop(object me, object who)
 	switch (random(3))
 	{
 		case 0 :
-			message_vision("$N×ÔÌÖÃ»È¤£¬»ÒÁïÁïµÄ×ßÁË¡£\n", me, who);
+			message_vision("$Nè‡ªè®¨æ²¡è¶£ï¼Œç°æºœæºœçš„èµ°äº†ã€‚\n", me, who);
 			break;
 		case 1 :
-			message_vision("$N¼û$nºÁÎŞ·´Ó¦£¬×Ô¹Ë×ßÁË¡£\n", me, who);
+			message_vision("$Nè§$næ¯«æ— ååº”ï¼Œè‡ªé¡¾èµ°äº†ã€‚\n", me, who);
 			break;
 		case 2 :
-			message_vision("$N¼û$nÌ¬¶ÈÇ¿Ó²£¬Ö»ºÃ×÷°Õ¡£\n", me, who);
+			message_vision("$Nè§$næ€åº¦å¼ºç¡¬ï¼Œåªå¥½ä½œç½¢ã€‚\n", me, who);
 			break;
 	}
 	me->delete_temp("robbing");
@@ -444,7 +444,7 @@ int random_move()
 	me->add("steps",1);
 	if (!objectp(environment()) || !mapp(exits = environment()->query("exits")) || query("jingli") < query("max_jingli") / 2 ) return 0;
 	dirs = keys(exits);
-	if (this_object()->query("race") == "ÈËÀà" && mapp(doors = environment()->query_doors())) dirs += keys(doors);
+	if (this_object()->query("race") == "äººç±»" && mapp(doors = environment()->query_doors())) dirs += keys(doors);
 	if (sizeof(dirs) == 0) return 0;
 	dir = dirs[random(sizeof(dirs))];
 	if (strsrch(environment(me)->query("exits/"+dir), "/d/dali/minov") == -1) return 0;
@@ -457,13 +457,13 @@ void destroying(object me)
 	switch (random(3))
 	{
 		case 0 :
-			message_vision("$Nã¬ã¬µØ×ÔÑÔ×ÔÓïµÀ£º¡°½ñÌìÕæµ¹Ã¹£¬³öÀ´Ò»´óÈ¦Ê²Ã´Ò²Ã»Åªµ½¡£¡±  Ëµ°Õ¾Í¼±´Ò´ÒµØ×ßÁË¡£\n",me);
+			message_vision("$Næ‚»æ‚»åœ°è‡ªè¨€è‡ªè¯­é“ï¼šâ€œä»Šå¤©çœŸå€’éœ‰ï¼Œå‡ºæ¥ä¸€å¤§åœˆä»€ä¹ˆä¹Ÿæ²¡å¼„åˆ°ã€‚â€  è¯´ç½¢å°±æ€¥åŒ†åŒ†åœ°èµ°äº†ã€‚\n",me);
 			break;
 		case 1 :
-			message_vision("$N²»ÂúÒâµØµØÈÂÈÂµÀ£º¡°ËûÂèµÄ£¬½ñÌìÕæ²»×ßÔË£¡ÕâÃ´Ò»´óÌË¾ÓÈ»Ê²Ã´Ò²Ã»Åªµ½¡£¡±  Ëµ°Õ¾Í¼±´Ò´ÒµØ×ßÁË¡£\n",me);
+			message_vision("$Nä¸æ»¡æ„åœ°åœ°åš·åš·é“ï¼šâ€œä»–å¦ˆçš„ï¼Œä»Šå¤©çœŸä¸èµ°è¿ï¼è¿™ä¹ˆä¸€å¤§è¶Ÿå±…ç„¶ä»€ä¹ˆä¹Ÿæ²¡å¼„åˆ°ã€‚â€  è¯´ç½¢å°±æ€¥åŒ†åŒ†åœ°èµ°äº†ã€‚\n",me);
 			break;
 		case 2 :
-			message_vision("$N²»ÂúÒâµØµØà½àìµÀ£º¡°½ñÌìÔõÃ´Ê²Ã´Ò²Ã»ÓĞÕÒµ½ ... ... Ã÷Ìì´øĞ©ÈËÊÖÔÙÀ´°É¡£¡±  Ëµ°Õ¾Í¼±´Ò´ÒµØ×ßÁË¡£\n",me);
+			message_vision("$Nä¸æ»¡æ„åœ°åœ°å˜Ÿå›”é“ï¼šâ€œä»Šå¤©æ€ä¹ˆä»€ä¹ˆä¹Ÿæ²¡æœ‰æ‰¾åˆ° ... ... æ˜å¤©å¸¦äº›äººæ‰‹å†æ¥å§ã€‚â€  è¯´ç½¢å°±æ€¥åŒ†åŒ†åœ°èµ°äº†ã€‚\n",me);
 			break;
 	}
 	destruct(me);

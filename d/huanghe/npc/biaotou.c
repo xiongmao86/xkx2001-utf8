@@ -17,12 +17,12 @@ void create()
         biaojus = keys(info_biaoju);
         biaoju = biaojus[random(sizeof(biaojus))];
 
-        set_name("ïÚÍ·", ({ "biao tou" }));
-        set("nickname", biaoju + "ïÚ¾Ö");
-        set("gender", "ÄĞĞÔ");
+        set_name("é•–å¤´", ({ "biao tou" }));
+        set("nickname", biaoju + "é•–å±€");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-"Ò»ÃûÉí²Ä¸ß´óµÄ×³ºº¡£\n");
+"ä¸€åèº«æé«˜å¤§çš„å£®æ±‰ã€‚\n");
         set("attitude", "peaceful");
         set("shen_type", 1);
 

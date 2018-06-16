@@ -1,23 +1,23 @@
 //Cracked by Kafei
-// pingtai.c ÇÍ±ÚÉÏµÄÆ½Ì¨
+// pingtai.c å³­å£ä¸Šçš„å¹³å°
 // qfy July 13, 1996
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Æ½Ì¨");
+        set("short", "å¹³å°");
         set("long", @LONG
-Æ½Ì¨´óÊ¯ÉÏ¡¸½£Ú£¡¹Á½¸ö´ó×ÖÖ®ÅÔ£¬ÉĞÓĞÁ½ĞĞ×ÖÌå½ÏĞ¡µÄÊ¯¿Ì(shike)
-¡£ÁíÓĞÒ»¸öÓÉĞí¶àÊ¯¿é¶Ñ³ÉµÄ´ó·Ø(grave)¡£Õâ·Ø±³ÏòÉ½¹È£¬¸©Ñö¿ÕÀ«£¬Õ¼
-¾¡ĞÎÊÆ£¬Ïë¼û¶Ñ³É´Ë·ØµÄÇ°±²ÎÄÎäÈ«²Å£¬±§¸º·Ç³££¡
+å¹³å°å¤§çŸ³ä¸Šã€Œå‰‘å†¢ã€ä¸¤ä¸ªå¤§å­—ä¹‹æ—ï¼Œå°šæœ‰ä¸¤è¡Œå­—ä½“è¾ƒå°çš„çŸ³åˆ»(shike)
+ã€‚å¦æœ‰ä¸€ä¸ªç”±è®¸å¤šçŸ³å—å †æˆçš„å¤§åŸ(grave)ã€‚è¿™åŸèƒŒå‘å±±è°·ï¼Œä¿¯ä»°ç©ºé˜”ï¼Œå 
+å°½å½¢åŠ¿ï¼Œæƒ³è§å †æˆæ­¤åŸçš„å‰è¾ˆæ–‡æ­¦å…¨æ‰ï¼ŒæŠ±è´Ÿéå¸¸ï¼
 LONG
         );
 
 	set("item_desc",([
-            "shike" : "¡¸½£Ä§¶À¹ÂÇó°Ü¼ÈÎŞµĞì¶ÌìÏÂ£¬ÄËÂñ½£ì¶Ë¹¡£\n"
-	   	      "ÎØºô£¡ÈºĞÛÊøÊÖ£¬³¤½£¿ÕÀû£¬²»Òà±¯·ò£¡¡¹\n",
-	    "grave" : "´ó·ØÓÉĞí¶àÊ¯¿é¶Ñ³É¡£\n"
+            "shike" : "ã€Œå‰‘é­”ç‹¬å­¤æ±‚è´¥æ—¢æ— æ•Œæ–¼å¤©ä¸‹ï¼Œä¹ƒåŸ‹å‰‘æ–¼æ–¯ã€‚\n"
+	   	      "å‘œå‘¼ï¼ç¾¤é›„æŸæ‰‹ï¼Œé•¿å‰‘ç©ºåˆ©ï¼Œä¸äº¦æ‚²å¤«ï¼ã€\n",
+	    "grave" : "å¤§åŸç”±è®¸å¤šçŸ³å—å †æˆã€‚\n"
         ]));
 
 
@@ -27,7 +27,7 @@ LONG
 
 void init()
 {
-	this_player()->delete_temp("marks/·ç");
+	this_player()->delete_temp("marks/é£");
 	add_action("do_climb", "climb");
 	add_action("do_move", "move");
 	add_action("do_put", "put");
@@ -39,14 +39,14 @@ int do_climb(string arg)
 	me->delete_temp("diao_winner");
 
 	if ( !arg )
-	   return notify_fail( "Ê²Ã´£¿\n" );
+	   return notify_fail( "ä»€ä¹ˆï¼Ÿ\n" );
 
 	if ( arg != "down" ) 
-	   return notify_fail( "Äã²»ÄÜÍùÄÇ¶ùÅÀ£¡\n" );
+	   return notify_fail( "ä½ ä¸èƒ½å¾€é‚£å„¿çˆ¬ï¼\n" );
 
-   	message_vision("$NÊÖ×ã²¢ÓÃ£¬Ğ¡ĞÄÒíÒíµØÍùÇÍ±ÚÏÂÅÀÈ¥¡£\n", me);
+   	message_vision("$Næ‰‹è¶³å¹¶ç”¨ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å¾€å³­å£ä¸‹çˆ¬å»ã€‚\n", me);
    	me->move(__DIR__"qiaobi1");
-	message("vision", me->name()+"ÓÉÆ½Ì¨ÉÏÅÀÁËÏÂÀ´¡£\n", environment(me), me);
+	message("vision", me->name()+"ç”±å¹³å°ä¸Šçˆ¬äº†ä¸‹æ¥ã€‚\n", environment(me), me);
 
 	return 1;
 }
@@ -56,17 +56,17 @@ int do_move(string arg)
         object sword, diao, me = this_player();
 
         if ( !arg || arg != "stone" )
-           return notify_fail( "Ê²Ã´£¿\n" );
+           return notify_fail( "ä»€ä¹ˆï¼Ÿ\n" );
 
-     if ( !me->query_temp("marks/Ğş") ) {
+     if ( !me->query_temp("marks/ç„") ) {
       if ( !objectp(present("xuantie jian", me)) && !objectp(present("xuantie jian", environment(me))) ) {
-	me->set_temp("marks/°á", 1);
+	me->set_temp("marks/æ¬", 1);
 
 	if ( !me->query_temp("diao_winner") ) {
-	   message_vision("$NÆóÍ¼½«´ó·ØÉÏµÄÊ¯¿é°á¿ª¡£\n", me);
+	   message_vision("$Nä¼å›¾å°†å¤§åŸä¸Šçš„çŸ³å—æ¬å¼€ã€‚\n", me);
 
 	   if ( !me->query_temp("fought_diao") ) {
-	      message_vision("ºöÌıµÃ¡°¹¾¹¾¡±ÊıÉù£¬Ò»¹É¾¢·çÆËÃæ¶øÀ´£¬Ô­À´ÉñµñÒÑ¸úËæ¶øÖÁ×èÖ¹$NÒÆÊ¯¡£\n", me);
+	      message_vision("å¿½å¬å¾—â€œå’•å’•â€æ•°å£°ï¼Œä¸€è‚¡åŠ²é£æ‰‘é¢è€Œæ¥ï¼ŒåŸæ¥ç¥é›•å·²è·Ÿéšè€Œè‡³é˜»æ­¢$Nç§»çŸ³ã€‚\n", me);
               if ( !present("shen diao", environment(me) ) ) {
 		diao = new(__DIR__"npc/shendiao");
               	diao->move(environment(me));
@@ -79,28 +79,28 @@ int do_move(string arg)
 	      me->set_temp("fought_diao", 1);
 	      call_out("observe",1,me,diao);
 	   }
-	   else return notify_fail("Äã³¢ÊÔÒÆ¿ªµÚÒ»¸ö´óÊ¯¿é£¬È´·¢ÏÖÁ¦ÓĞ²»µ¡£¬Ê¯¿éºãÈ»²»¶¯¡£\n");
+	   else return notify_fail("ä½ å°è¯•ç§»å¼€ç¬¬ä¸€ä¸ªå¤§çŸ³å—ï¼Œå´å‘ç°åŠ›æœ‰ä¸æ€ ï¼ŒçŸ³å—æ’ç„¶ä¸åŠ¨ã€‚\n");
 	}
 	else {
-	   message_vision("$N½«Ê¯¿é°á¿ª£¬ÒÆÔÚÒ»ÅÔ¡£\n", me);
+	   message_vision("$Nå°†çŸ³å—æ¬å¼€ï¼Œç§»åœ¨ä¸€æ—ã€‚\n", me);
 	   sword = new("/clone/unique/xuantie-jian");
            if (!sword) 
-	   return notify_fail("Äã·¢ÏÖÔ­À´ÕâÀïÔø¾­ÓĞÈËÀ´¹ı£¬²»ÖªÆäÈËÓĞºÎÒâÍ¼¡£\n");
+	   return notify_fail("ä½ å‘ç°åŸæ¥è¿™é‡Œæ›¾ç»æœ‰äººæ¥è¿‡ï¼Œä¸çŸ¥å…¶äººæœ‰ä½•æ„å›¾ã€‚\n");
 	   sword->move(environment(me));
-	   CHANNEL_D->do_channel(me, "rumor", sprintf("%sÅªµ½ÁËÒ»±úĞşÌúÖØ½£¡£", me->query("name")));
-	   message_vision("´ó·ØÀïÔ­À´Âñ²Ø×ÅÒ»±úºÚ÷î÷îºÁ²»ÆğÑÛµÄ³¤½£¡£\n", me);
-	   message_vision("$NÊÔ×ÅÌáÆğ³¤½££¬Ö»Êı³ß±ãÇºµÄÒ»ÉùÍÑÊÖµôÏÂ£¬ÔÚÊ¯ÉÏÒ»Åö£¬»ğ»¨ËÄ½¦¡£\n", me);
-	   message_vision("Ô­À´ÄÇ½£³ÁÖØÖ®¼«£¬Èı³ß¶à³¤µÄÒ»°Ñ½££¬ÖØÁ¿¾¹×Ô²»ÏÂÆß°ËÊ®½ï£¡\n", me);
-	   message_vision("½£ÅÔµÄÒ»¿éÊ¯Æ¬ÉÏĞ´×Å£º¡¸ÖØ½£ÎŞ·æ£¬´óÇÉ²»¹¤¡£ËÄÊ®ËêÇ°ÊÑÖ®ºáĞĞÌìÏÂ¡£¡¹\n", me);
-	   me->set_temp("marks/Ğş", 1);
+	   CHANNEL_D->do_channel(me, "rumor", sprintf("%så¼„åˆ°äº†ä¸€æŸ„ç„é“é‡å‰‘ã€‚", me->query("name")));
+	   message_vision("å¤§åŸé‡ŒåŸæ¥åŸ‹è—ç€ä¸€æŸ„é»‘é»é»æ¯«ä¸èµ·çœ¼çš„é•¿å‰‘ã€‚\n", me);
+	   message_vision("$Nè¯•ç€æèµ·é•¿å‰‘ï¼Œåªæ•°å°ºä¾¿å‘›çš„ä¸€å£°è„±æ‰‹æ‰ä¸‹ï¼Œåœ¨çŸ³ä¸Šä¸€ç¢°ï¼Œç«èŠ±å››æº…ã€‚\n", me);
+	   message_vision("åŸæ¥é‚£å‰‘æ²‰é‡ä¹‹æï¼Œä¸‰å°ºå¤šé•¿çš„ä¸€æŠŠå‰‘ï¼Œé‡é‡ç«Ÿè‡ªä¸ä¸‹ä¸ƒå…«åæ–¤ï¼\n", me);
+	   message_vision("å‰‘æ—çš„ä¸€å—çŸ³ç‰‡ä¸Šå†™ç€ï¼šã€Œé‡å‰‘æ— é”‹ï¼Œå¤§å·§ä¸å·¥ã€‚å››åå²å‰æƒä¹‹æ¨ªè¡Œå¤©ä¸‹ã€‚ã€\n", me);
+	   me->set_temp("marks/ç„", 1);
 	   me->delete_temp("diao_winner");			
 	   me->delete_temp("fought_diao");
-	   me->delete_temp("marks/°á");
+	   me->delete_temp("marks/æ¬");
 	}
      }
-     else return notify_fail( "ÄãÒÑÓĞĞşÌúÖØ½£»òĞşÌúÖØ½£¾ÍÔÚµØÉÏ£¬ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+     else return notify_fail( "ä½ å·²æœ‰ç„é“é‡å‰‘æˆ–ç„é“é‡å‰‘å°±åœ¨åœ°ä¸Šï¼Œä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
    } 
-   else return notify_fail( "ÄãÒÑÈ¡¹ıĞşÌúÖØ½£ÁË£¡\n" ); 
+   else return notify_fail( "ä½ å·²å–è¿‡ç„é“é‡å‰‘äº†ï¼\n" ); 
 
      return 1;
 }
@@ -109,7 +109,7 @@ int observe(object me, object diao)
 {
 	object ob;
 
-	if( me->is_fighting() && me->query_temp("marks/°á") ) {
+	if( me->is_fighting() && me->query_temp("marks/æ¬") ) {
             call_out("observe",1,me,diao);
             return 1;
         }
@@ -118,8 +118,8 @@ int observe(object me, object diao)
 	     me->remove_enemy(diao);
 	     diao->remove_enemy(me);
              me->set_temp("diao_winner", 1);
-             message_vision("Éñµñ¶Ô$NµãµãÍ·ÒâÊ¾¼ÎĞí£¬½«·ØÉÏ×îÖØµÄÒ»¿é´óÊ¯Å²¿ª¡£\n", me);
-	     message_vision("Éñµñ²àÉíÈÃ$N°áÊ¯£¬½Ó×Å±ã¶À¸ö¶ùÀë¿ªÆ½Ì¨¡£\n", me);
+             message_vision("ç¥é›•å¯¹$Nç‚¹ç‚¹å¤´æ„ç¤ºå˜‰è®¸ï¼Œå°†åŸä¸Šæœ€é‡çš„ä¸€å—å¤§çŸ³æŒªå¼€ã€‚\n", me);
+	     message_vision("ç¥é›•ä¾§èº«è®©$Næ¬çŸ³ï¼Œæ¥ç€ä¾¿ç‹¬ä¸ªå„¿ç¦»å¼€å¹³å°ã€‚\n", me);
 	     destruct(diao);
         }
 
@@ -132,38 +132,38 @@ int do_put(string arg)
         object ob, obj, me = this_player();
 
         if( !arg || sscanf(arg, "%s in %s", sword, what)!=2 )
-                return notify_fail("ÃüÁî¸ñÊ½: put <ÎïÆ·> in <ÎïÆ·>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: put <ç‰©å“> in <ç‰©å“>ã€‚\n");
 
 	if ( what != "grave" ){
-	printf("ÄãÒª°Ñ¶«Î÷ÍùÄÄÀï·Å?\n"); 
+	printf("ä½ è¦æŠŠä¸œè¥¿å¾€å“ªé‡Œæ”¾?\n"); 
 	return 1;
 	}
 
 	if (!(ob=present(sword,me))){
-	printf("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n"); 
+	printf("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n"); 
 	return 1;
 	}
 
 	if (ob->query("id")!="xuantie jian"){
-	printf("Äã²»ÄÜ°Ñ" + ob->name() + "·Å½øÊ¯¿é¶ÑÆö´ó·ØÀï¡£\n"); 
+	printf("ä½ ä¸èƒ½æŠŠ" + ob->name() + "æ”¾è¿›çŸ³å—å †ç Œå¤§åŸé‡Œã€‚\n"); 
 	return 1;
 	}
 
 //	printf("%s , %s ", sword, what); return 1;
 
-        message_vision("$N½«" + ob->name() + "·Å»ØÊ¯¿é¶ÑÆö´ó·ØÀï¡£\n", me);
+        message_vision("$Nå°†" + ob->name() + "æ”¾å›çŸ³å—å †ç Œå¤§åŸé‡Œã€‚\n", me);
         destruct(ob);
 
-	message_vision("Í»È»$N±³ºóÒ»¸öÉùÒôËµµÀ£º¡°Ã»Ïëµ½ºóÊÀĞ¡×Ó¾¹ÓĞÈç´Ë³öÏ¢ÕßÉÏµÃ´Ë´¦À´¡£¡±\n", me);
-	message_vision("$NÒ»¾ª»ØÍ·¿´À´£¬¼ûÉíºóÎåÕÉ¿ªÍâÕ¾×ÅÒ»¸öÇàÅÛ¿Í£¬ÓÒ±ÛÒ»Ö»³¤Ğä¿Õ¿ÕÈçÒ²¡£\n", me);
+	message_vision("çªç„¶$NèƒŒåä¸€ä¸ªå£°éŸ³è¯´é“ï¼šâ€œæ²¡æƒ³åˆ°åä¸–å°å­ç«Ÿæœ‰å¦‚æ­¤å‡ºæ¯è€…ä¸Šå¾—æ­¤å¤„æ¥ã€‚â€\n", me);
+	message_vision("$Nä¸€æƒŠå›å¤´çœ‹æ¥ï¼Œè§èº«åäº”ä¸ˆå¼€å¤–ç«™ç€ä¸€ä¸ªé’è¢å®¢ï¼Œå³è‡‚ä¸€åªé•¿è¢–ç©ºç©ºå¦‚ä¹Ÿã€‚\n", me);
 	me->set_temp("marks/yangguo", 1);
 	obj = load_object("/kungfu/class/gumu/yangguo");
 	obj->move("/d/taishan/pingtai");
 	if ( me->query("shen") >= -100000 ) {      
-		message("vision","Ñî¹ı¶Ô"+me->name()+"µÍÉùµØËµÁË¼¸¾ä»°¡£\n", environment(me), ({me})); 	
+		message("vision","æ¨è¿‡å¯¹"+me->name()+"ä½å£°åœ°è¯´äº†å‡ å¥è¯ã€‚\n", environment(me), ({me})); 	
           }
           else {	
-          	message_vision( "Ñî¹ıÄıÊÓ$NÁ¼¾Ã£¬Ò»Éù³¤Ì¾£¬±ãÆ®È»ÏÂÉ½ÀëÈ¥¡£\n", me );
+          	message_vision( "æ¨è¿‡å‡è§†$Nè‰¯ä¹…ï¼Œä¸€å£°é•¿å¹ï¼Œä¾¿é£˜ç„¶ä¸‹å±±ç¦»å»ã€‚\n", me );
 		destruct(obj);
           }	
 	return 1;

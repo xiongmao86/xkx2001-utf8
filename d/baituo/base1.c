@@ -1,15 +1,15 @@
 //Cracked by Roath
 // room: /d/baituo/base1
-// °×ÍÕ¸Ä°æ
+// ç™½é©¼æ”¹ç‰ˆ
 // maco 2/17/2000
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜ½Ñ");
+        set("short", "å¯†çª–");
         set("long", @LONG
-ÕâÀïÉìÊÖ²»¼ûÎåÖ¸£¬Ö»ÄÜÌıµ½ßñßñàÂßïÅÀ³æÈä¶¯µÄÉùÒô¡£
+è¿™é‡Œä¼¸æ‰‹ä¸è§äº”æŒ‡ï¼Œåªèƒ½å¬åˆ°å”å”å—¦å”¢çˆ¬è™«è •åŠ¨çš„å£°éŸ³ã€‚
 LONG
         );
         set("exits", ([ 
@@ -21,7 +21,7 @@ LONG
 		"/d/foshan/npc/zsnake" : 2,
          ]) );
         replace_program(ROOM);
-	create_door("up", "ÃÜ½ÑÊ¯ÃÅ", "down", DOOR_CLOSED);
+	create_door("up", "å¯†çª–çŸ³é—¨", "down", DOOR_CLOSED);
 	set("cost", 0);
         setup();
 }

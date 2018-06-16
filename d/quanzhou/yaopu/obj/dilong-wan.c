@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "Í¨Ï¬µØÁúÍè" NOR, ({"dilong wan", "wan"}));
+        set_name(HIY "é€šçŠ€åœ°é¾™ä¸¸" NOR, ({"dilong wan", "wan"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long","ÕâÊÇÒ»¿Å¸ëµ°´óÐ¡µÄ»ÆÉ«Ô²Çò£¬ÑÕÉ«³Á°µ£¬²¢²»ÆðÑÛ¡£\n");
+                set("unit", "é¢—");
+                set("long","è¿™æ˜¯ä¸€é¢—é¸½è›‹å¤§å°çš„é»„è‰²åœ†çƒï¼Œé¢œè‰²æ²‰æš—ï¼Œå¹¶ä¸èµ·çœ¼ã€‚\n");
                 set("value", 10000);
 		set("medicine", 1);
         }
@@ -22,7 +22,7 @@ void create()
 int cure_ob(object me)
 {
 
-   message_vision("$N³ÔÏÂÒ»¿Å" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€é¢—" + name() + "ã€‚\n", me);
 
 
    if ((int)me->query_condition("xx_poison") > 0) {

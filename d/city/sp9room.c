@@ -6,11 +6,11 @@ inherit "/inherit/room/p9room";
 
 void create()
 {
-        set("short", "�ƾ���");
+        set("short", "牌九室");
         set("long", @LONG
-���������ƾŵĵط��������м����һ�Ŵ�̨�ӡ�̨���Ա����Ÿ�
-С���� (paizi)������ĵ���С�ƾţ�ÿ�������ƣ�һ��һ���ۡ��ĳ�
-��ׯ�ң��Ŀ�ֻ��ѹ��bet���мҡ�
+这里是推牌九的地方，屋子中间摆着一张大台子。台子旁边立着个
+小牌子 (paizi)。这里赌的是小牌九，每门两张牌，一翻一瞪眼。赌场
+是庄家，赌客只能压（bet）闲家。
 LONG );
 
         set("exits", ([
@@ -19,8 +19,8 @@ LONG );
 
         set("item_desc", ([
                 "paizi" : 
-"�ĳ���˰���壬���ĳ�������ɢ������\n"
-"�ƾŵ��淨���ܿ��Կ� help paigow.\n",
+"赌场抽税五厘，本赌场不备零散碎银。\n"
+"牌九的玩法介绍可以看 help paigow.\n",
         ]));
 
         set("no_fight", "1");

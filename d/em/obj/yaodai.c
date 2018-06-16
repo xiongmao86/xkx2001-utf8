@@ -8,14 +8,14 @@ inherit WAIST;
 
 void create()
 {
-	set_name( "Æ¤Ñü´ø", ({ "yao dai", "yaodai" }) );
+	set_name( "çš®è…°å¸¦", ({ "yao dai", "yaodai" }) );
 	set_weight(300);
 	set_max_encumbrance(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»¼şÆ¤ÖÊµÄ¿íÑü´ø£¬¼Ğ²ãÍ¸¿Õ£¬¿ÉÒÔ·Å¸÷ÖÖÈí±øÈĞ¡£\n");
+		set("unit", "æ¡");
+                set("long", "è¿™æ˜¯ä¸€ä»¶çš®è´¨çš„å®½è…°å¸¦ï¼Œå¤¹å±‚é€ç©ºï¼Œå¯ä»¥æ”¾å„ç§è½¯å…µåˆƒã€‚\n");
 		set("value", 20);
 		set("material", "waist");
 		set("armor_prop/armor", 5);
@@ -29,6 +29,6 @@ int reject(object ob)
 { 
 	if (ob && ob->query("weapon_prop") ) return 0;
 	if (sizeof(all_inventory(this_object()))==0) return 0;
-	notify_fail("Æ¤Ñü´øÔÙ·Å²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+	notify_fail("çš®è…°å¸¦å†æ”¾ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 	return 1;
 }

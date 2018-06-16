@@ -1,13 +1,13 @@
 //Cracked by Roath
-// yiren.c ½­ºşÒÕÈË
+// yiren.c æ±Ÿæ¹–è‰ºäºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("½­ºşÒÕÈË", ({ "jianghu yiren", "yiren" }));
-	set("long", "¡¡¡¡ËûÊÇÒ»¸öÍâµØÀ´µÄ½­ºşÒÕÈË£¬ÊÖÀïÇ£×ÅÒ»Ö»½ğË¿ºï¶ù£¬ÂúÁ³·ç³¾Ö®É«¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ±Ÿæ¹–è‰ºäºº", ({ "jianghu yiren", "yiren" }));
+	set("long", "ã€€ã€€ä»–æ˜¯ä¸€ä¸ªå¤–åœ°æ¥çš„æ±Ÿæ¹–è‰ºäººï¼Œæ‰‹é‡Œç‰µç€ä¸€åªé‡‘ä¸çŒ´å„¿ï¼Œæ»¡è„¸é£å°˜ä¹‹è‰²ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 40+random(20));
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -25,7 +25,7 @@ void create()
 	set_skill("blade", 30+random(10));
 	set("chat_chance", 8);
 	set("chat_msg", ({
-		"½­ºşÒÕÈËÇÃ×ÅÊÖÀïµÄÍ­îàßººÈµÀ£º´ó¼ÒÓĞÇ®µÄÅõ¸öÇ®³¡£¬Ã»Ç®µÄÅõ¸öÈË³¡¡£\n",
+		"æ±Ÿæ¹–è‰ºäººæ•²ç€æ‰‹é‡Œçš„é“œé’¹å†å–é“ï¼šå¤§å®¶æœ‰é’±çš„æ§ä¸ªé’±åœºï¼Œæ²¡é’±çš„æ§ä¸ªäººåœºã€‚\n",
 		}) );
 	setup();
 	carry_object("/clone/armor/cloth")->wear();

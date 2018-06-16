@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /clone/beast/bigtiger.c
-// ɽ�ϻ�
+// 山老虎
 // sdong 08/98
 
 #include <ansi.h>
@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-		  set_name("ɽ�ϻ�", ({ "shan laohu", "laohu" ,"tiger"}) );
-		  set("race", "Ұ��");
+		  set_name("山老虎", ({ "shan laohu", "laohu" ,"tiger"}) );
+		  set("race", "野兽");
 		  set("age", 1);
-		  set("long", "һֻ�ָ��ִ��ɽ�ϻ��������������ڵص����۾������㡣\n");
+		  set("long", "一只又高又大的山老虎，它正气势汹汹地瞪着眼睛看着你。\n");
 		  set("attitude", "peaceful");
 		  set_weight(200000);
 		  set("max_qi", 100);
@@ -41,7 +41,7 @@ void die()
 
 		  ob = new(DRUG_D("hugu"));
 		  ob->move(environment(this_object()));
-		  message_vision("$N�Һ�һ�������ˣ�\n", this_object());
+		  message_vision("$N惨嚎一声，死了！\n", this_object());
 		  destruct(ob2);
 }
 

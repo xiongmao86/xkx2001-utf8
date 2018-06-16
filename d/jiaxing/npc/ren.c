@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÈÎÎÒĞĞ",({ "ren woxing","ren" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ä»»æˆ‘è¡Œ",({ "ren woxing","ren" }) );
+        set("gender", "ç”·æ€§");
         set("age", 55);
 	set("long",
-		"Ëû»¨°×³¤Ğë´¹ÔÚĞØÇ°£¬ºú×ÓÂúÁ³£¬¿´²»ÇåËûµÄ±¾À´ÃæÈİ¡£\n");
+		"ä»–èŠ±ç™½é•¿é¡»å‚åœ¨èƒ¸å‰ï¼Œèƒ¡å­æ»¡è„¸ï¼Œçœ‹ä¸æ¸…ä»–çš„æœ¬æ¥é¢å®¹ã€‚\n");
       //  set("nickname","");
-        set("title","ÈÕÔÂÉñ½ÌÇ°½ÌÖ÷");
+        set("title","æ—¥æœˆç¥æ•™å‰æ•™ä¸»");
         set("combat_exp", 1800000);
         set("shen_type", 0);
         set("attitude", "peaceful");
@@ -56,12 +56,12 @@ void greeting(object me)
 		return;
 	}
 	command("thank "+me->query("id"));
-	command("say ¶àĞ»ÄãµÄÏàÖú£¬ÎÒ²ÅµÃÒÔÌÓÍÑ¡£");
+	command("say å¤šè°¢ä½ çš„ç›¸åŠ©ï¼Œæˆ‘æ‰å¾—ä»¥é€ƒè„±ã€‚");
 	if (!present("kuihua baodian",me)) {
-	 command("say ÔùÄãÒ»±¾±Ö½ÌµÄ´«½ÌÖ®±¦Êé£¬ÄãÈôÓĞĞÄ¿ÉÒÔÑĞ¶Á¡£");
+	 command("say èµ ä½ ä¸€æœ¬æ•æ•™çš„ä¼ æ•™ä¹‹å®ä¹¦ï¼Œä½ è‹¥æœ‰å¿ƒå¯ä»¥ç ”è¯»ã€‚");
 	 book = new(__DIR__"obj/baodian");
 	 book->move(me);
-	 command("chat ÌìÏÂÓ¢ĞÛ£¬Î¨"+me->query("name")+"ÓëÎÒ¶ú£¡");
+	 command("chat å¤©ä¸‹è‹±é›„ï¼Œå”¯"+me->query("name")+"ä¸æˆ‘è€³ï¼");
 	}
 	return;
 }

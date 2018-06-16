@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wylieren.c ÎÚÒÄÁÔÈË
+// wylieren.c ä¹Œå¤·çŒäºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÁÔÈË", ({ "lie ren", "ren", "hunter" }) );
-	set("long", "Ò»Î»ÉíÇ¿Á¦×³µÄÎÚÒÄ×åÁÔÊÖ¡£\n");
+	set_name("çŒäºº", ({ "lie ren", "ren", "hunter" }) );
+	set("long", "ä¸€ä½èº«å¼ºåŠ›å£®çš„ä¹Œå¤·æ—çŒæ‰‹ã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

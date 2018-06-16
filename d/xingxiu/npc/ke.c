@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Å·Ñô¿Ë", ({ "ouyang ke", "ouyang", "ke" }));
-        set("long", "ËûÊÖÒ¡ÕÛÉÈ£¬·çÁ÷ÈåÑÅ¡£\n");
-        set("title", "°×ÍÕÉ½ÉÙ×¯Ö÷");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¬§é˜³å…‹", ({ "ouyang ke", "ouyang", "ke" }));
+        set("long", "ä»–æ‰‹æ‘‡æŠ˜æ‰‡ï¼Œé£æµå„’é›…ã€‚\n");
+        set("title", "ç™½é©¼å±±å°‘åº„ä¸»");
+        set("gender", "ç”·æ€§");
         set("age", 27);
 
         set_skill("unarmed", 50);

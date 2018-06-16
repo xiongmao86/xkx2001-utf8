@@ -8,30 +8,30 @@ string long_desc() {
     string msg;
 
     msg = "\n" +
-HIR"    °Ô"NOR + "\n" +
+HIR"    ‚òÖ"NOR + "\n" +
 HIB"    ||"NOR + "\n" +
 HIB"    ||"NOR + RED"~~~~~~~~~~~~~~~~~~~~"NOR + "\n" +
 HIB"    ||"NOR + RED"                  /"NOR + "\n" +
-HIB"    ||"NOR + HIY"    Œ‰¡÷√À÷˜"NOR + RED"     ("NOR + "\n" +
+HIB"    ||"NOR + HIY"    Ê≠¶ÊûóÁõü‰∏ª"NOR + RED"     ("NOR + "\n" +
 HIB"    ||"NOR + RED"                  \\"NOR + "\n" +
 HIB"    ||"NOR + RED"~~~~~~~~~~~~~~~~~~~~"NOR  + "\n" +
 HIB"    ||"NOR + "\n" +
 HIB"    ||"NOR + "\n" +
 HIB"    ||"NOR + "\n" +
 HIB"    ||"NOR + "\n" +
-HIB"    £÷"NOR + "\n";
+HIB"    Ôº∂"NOR + "\n";
 
     return msg;
 }
 
 void create() {
-    set_name("Œ‰¡÷¥Û∆Ï", ({ "flag" }) );
+    set_name("Ê≠¶ÊûóÂ§ßÊóó", ({ "flag" }) );
     set_weight(200);
     if (clonep())
         set_default_object(__FILE__);
     else {
         set("long", (: long_desc :));
-        set("unit", "√Ê");
+        set("unit", "Èù¢");
         set("value", 100000);
     }
     setup();

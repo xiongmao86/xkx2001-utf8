@@ -1,5 +1,5 @@
 //Cracked by Roath
-// luanshi.c ��ʯ��
+// luanshi.c 乱石岗
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ��");
+        set("short", "乱石岗");
 	set("long", @LONG
-������ľ��ɭ����ʯ��ᾣ��¶����������Ҫ�������������̾ݵĵط���
+这里树木阴森，砾石嶙峋，坡陡坑深，地势险要，历来是土匪盘据的地方。
 LONG
         );
 

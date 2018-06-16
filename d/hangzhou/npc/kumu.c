@@ -11,17 +11,17 @@ string ask_job();
 
 void create()
 {
-	set_name("¿İÄ¾ìøÊ¦", ({
+	set_name("æ¯æœ¨ç¦…å¸ˆ", ({
 		"kumu chanshi",
 		"kumu",
 		"chanshi",
 	}));
 	set("long",
-		"Õâ¾ÍÊÇ±¾ËÂµÄ×¡³Ö£¬Ò»Î»Á½÷Ş°ß°×µÄÀÏÉ®£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£ËûÉí²ÄÂÔ¸ß£¬\n"
-		"Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓĞÉñ¡£\n"
+		"è¿™å°±æ˜¯æœ¬å¯ºçš„ä½æŒï¼Œä¸€ä½ä¸¤é¬“æ–‘ç™½çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¢­é’å¸ƒé•¶è¾¹è¢ˆè£Ÿã€‚ä»–èº«æç•¥é«˜ï¼Œ\n"
+		"å¤ªé˜³ç©´å¾®å‡¸ï¼ŒåŒç›®ç‚¯ç‚¯æœ‰ç¥ã€‚\n"
 	);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -56,7 +56,7 @@ void create()
 	prepare_skill("finger", "nianhua-zhi");
 
         set("inquiry", ([
-                "½²¾­" : (: ask_job :),
+                "è®²ç»" : (: ask_job :),
                 "job" : (: ask_job :),
         ]));
 
@@ -71,22 +71,22 @@ string ask_job()
         object obj, place, *inv, me = this_player();
 
         if( is_fighting() || is_busy() )
-                return "ÎÒÕıÃ¦×Å¡£";
+                return "æˆ‘æ­£å¿™ç€ã€‚";
 
-        if( (string)me->query("gender") != "ÄĞĞÔ" )
-                return "°¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Å®Ê©Ö÷Äª¿ªÀÏÄÉµÄÍæĞ¦¡£";
+        if( (string)me->query("gender") != "ç”·æ€§" )
+                return "é˜¿å¼¥é™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼å¥³æ–½ä¸»è«å¼€è€çº³çš„ç©ç¬‘ã€‚";
 
         if( (string)me->query("class") != "bonze" )
-                return "°¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Ê©Ö÷²»ÊÇ·ğÃÅµÜ×Ó£¬»¹ÊÇÇë»Ø°É¡£";
+                return "é˜¿å¼¥é™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼æ–½ä¸»ä¸æ˜¯ä½›é—¨å¼Ÿå­ï¼Œè¿˜æ˜¯è¯·å›å§ã€‚";
 
         if( (int)me->query_skill("buddhism", 1) < 120 )
-                return "±¾ËÂÖ»ÑÓÇë¸ßÉ®Ç°À´½²¾­Ëµ·ğ¡£";
+                return "æœ¬å¯ºåªå»¶è¯·é«˜åƒ§å‰æ¥è®²ç»è¯´ä½›ã€‚";
 
         if( day_event() != "event_dawn" )
-                return "±¾ËÂ×²ÖÓËĞ¾­Ê±³½ÒÑ¹ı£¬" + RANK_D->query_respect(me) + "ÏÂ´ÎÔÙÀ´°É¡£";
+                return "æœ¬å¯ºæ’é’Ÿè¯µç»æ—¶è¾°å·²è¿‡ï¼Œ" + RANK_D->query_respect(me) + "ä¸‹æ¬¡å†æ¥å§ã€‚";
 
         if( me->query_condition("lyjob") )
-                return RANK_D->query_respect(me) + "ÒÑ¾­ÔÚ½²¾­Ëµ·ğÁË¡£";
+                return RANK_D->query_respect(me) + "å·²ç»åœ¨è®²ç»è¯´ä½›äº†ã€‚";
 
         command("nod");
         me->apply_condition("lyjob", 3 + random(3));
@@ -95,9 +95,9 @@ string ask_job()
         && !(present("jiasha", me)) ) {
                 obj = new("/d/hangzhou/obj/jiasha");
                 obj->move(me);
-                message_vision("ÅÔ±ßÒ»É®½«Ò»¼şºìÒÂôÂôÄÅûÔÚ$NÉíÉÏ¡£\n", me);
+                message_vision("æ—è¾¹ä¸€åƒ§å°†ä¸€ä»¶çº¢è¡£è¢ˆè£ŸæŠ«åœ¨$Nèº«ä¸Šã€‚\n", me);
         }
 
-        return "Ì«ºÃÁË£¬±¾ËÂÕıĞèÒ»ÃûÍâËÂ¸ßÉ®Ç°À´½²¾­Ëµ·ğ¡£";
+        return "å¤ªå¥½äº†ï¼Œæœ¬å¯ºæ­£éœ€ä¸€åå¤–å¯ºé«˜åƒ§å‰æ¥è®²ç»è¯´ä½›ã€‚";
 }
 

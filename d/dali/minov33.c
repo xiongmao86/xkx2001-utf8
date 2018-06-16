@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ɽ����");
+	set("short", "半山竹林");
 	set("long", @LONG
-һ��Ƭï�ܵĳ������������ڰ�ɽ���Ļ����ϡ����ӶԴ���������������˵
-�ǣ�������Ҫ�Ľ������ϣ�Ҳ���ճ�������Ʒ��ԭ���ϡ�ɽ�µĴ�ׯ��İ�����
-������ɽ���ɷ����ӡ�����ɽ����Ϫ���£�������ˮ���Ѿ��Ĵ�ɽ�񾭳��ѿ�
-���µ����Ӷ���Ϫ�У�����˳ˮƮ���������Ӹ�����Ϫˮ������������
+一大片茂密的成年竹林生长在半山腰的缓坡上。竹子对大理地区各民族来说
+是，既是重要的建筑材料，也是日常生活用品的原材料。山下的村庄里的摆夷人
+经常上山来采伐竹子。北面山上有溪流下，到这里水流已经颇大，山民经常把砍
+伐下的竹子丢在溪中，任其顺水飘流，到村子附近的溪水里再捞起来。
 LONG);
 	set("objects", ([
 		__DIR__"npc/byshanren1.c" : 2,
@@ -20,7 +20,7 @@ LONG);
 		"northup" : __DIR__"minov32",
 		"eastdown" : __DIR__"minov34",
 		]));
-	set("area", "���۲�");
+	set("area", "步雄部");
 	set("cost", 3);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

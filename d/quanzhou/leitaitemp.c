@@ -1,16 +1,16 @@
 //Cracked by Roath
-// d/quanzhou/leitai.c ±ÈÎäÀÞÌ¨;
+// d/quanzhou/leitai.c æ¯”æ­¦æ“‚å°;
 inherit ROOM;
 
 void create()
 {
-        set("short", "±ÈÎäÀÞÌ¨");
+        set("short", "æ¯”æ­¦æ“‚å°");
         set("long", @LONG
-ÕâÊÇÒ»×ù¼áÊµ×³¹ÛµÄÀÞÌ¨¡£ÀÞÌ¨¸ßÔ¼ÕÉÓà£¬Ãæ»ý´óÔ¼ÓÐÈýÕÉ·½Ô²£¬È«ÓÉÍë
-¿Ú´ÖµÄÄ¾Í·´î³É¡£Ì¨ºóµÄÇ½ÉÏÊé×ÅÒ»¸ö±ÊÁ¦¾¢Ðã£¬ÆøÊÆ°õíçµÄ´ó×Ö¡ª¡¸Îä¡¹¡£
-ÀÞÌ¨Ç°ÓÐÃæ´ó¹ÄºÍÖ»ÅÆ×Ó(sign)£¬ÕÕ¹æ¾ØËùÓÐ±ÈÎäµÄÈË¶¼Ðè»÷¹ÄÐû²¼£¬ÈÃ½­ºþ
-µÃÖª¡£½­ºþÖÐµÄºÀ¿ÍÃÇ³£ÔÚ´ËÇÐ´è±ÈÊÔ£¬ÉõÖÁÁË¶Ï¶÷Ô©¡£µ±È»²»Ê±Ò²ÓÐ½­ºþ¶ù
-Å®À´´Ë¡¸±ÈÎäÕÐÇ×¡¹£¬Óñ³ÉÏ²ÊÂ£¬ÁôÏÂÒ»¶ÎÎäÁÖ¼Ñ»°¡£
+è¿™æ˜¯ä¸€åº§åšå®žå£®è§‚çš„æ“‚å°ã€‚æ“‚å°é«˜çº¦ä¸ˆä½™ï¼Œé¢ç§¯å¤§çº¦æœ‰ä¸‰ä¸ˆæ–¹åœ†ï¼Œå…¨ç”±ç¢—
+å£ç²—çš„æœ¨å¤´æ­æˆã€‚å°åŽçš„å¢™ä¸Šä¹¦ç€ä¸€ä¸ªç¬”åŠ›åŠ²ç§€ï¼Œæ°”åŠ¿ç£…ç¤´çš„å¤§å­—â€”ã€Œæ­¦ã€ã€‚
+æ“‚å°å‰æœ‰é¢å¤§é¼“å’Œåªç‰Œå­(sign)ï¼Œç…§è§„çŸ©æ‰€æœ‰æ¯”æ­¦çš„äººéƒ½éœ€å‡»é¼“å®£å¸ƒï¼Œè®©æ±Ÿæ¹–
+å¾—çŸ¥ã€‚æ±Ÿæ¹–ä¸­çš„è±ªå®¢ä»¬å¸¸åœ¨æ­¤åˆ‡ç£‹æ¯”è¯•ï¼Œç”šè‡³äº†æ–­æ©å†¤ã€‚å½“ç„¶ä¸æ—¶ä¹Ÿæœ‰æ±Ÿæ¹–å„¿
+å¥³æ¥æ­¤ã€Œæ¯”æ­¦æ‹›äº²ã€ï¼ŒçŽ‰æˆå–œäº‹ï¼Œç•™ä¸‹ä¸€æ®µæ­¦æž—ä½³è¯ã€‚
 LONG
         );
         
@@ -18,9 +18,9 @@ LONG
 	]));
 
 	set("item_desc", ([
-		"sign" : "»÷¹ÄÖ¸Áî£ºdagu [zhaoqin(marryfight)|qiecuo(fight)|juezhan(kill)] <sb>\n\n"
-			"ÕâÀïÖ»¹©±ÈÎäÕÐÇ×(zhaoqin)£¬ÇÐ´è±ÈÊÔ(qiecuo)¼°ÉúËÀ¾øÕ½(juezhan)ËùÓÃ¡£\n" 
-			"ÈôÓÐËÀÉË£¬ÉúËÀ×Ô¸º£¡£¡\n",
+		"sign" : "å‡»é¼“æŒ‡ä»¤ï¼šdagu [zhaoqin(marryfight)|qiecuo(fight)|juezhan(kill)] <sb>\n\n"
+			"è¿™é‡Œåªä¾›æ¯”æ­¦æ‹›äº²(zhaoqin)ï¼Œåˆ‡ç£‹æ¯”è¯•(qiecuo)åŠç”Ÿæ­»ç»æˆ˜(juezhan)æ‰€ç”¨ã€‚\n" 
+			"è‹¥æœ‰æ­»ä¼¤ï¼Œç”Ÿæ­»è‡ªè´Ÿï¼ï¼\n",
 	]));
 
 	set("no_death", 1);
@@ -41,38 +41,38 @@ int do_dagu(string arg)
 	object ob, me = this_player();
 	string opp, str, event;
 
-	if ( !arg ) return notify_fail("ÄãÒªÐû²¼Ê²Ã´£¿\n");
+	if ( !arg ) return notify_fail("ä½ è¦å®£å¸ƒä»€ä¹ˆï¼Ÿ\n");
 
-	if ( sscanf(arg, "%s %s", event, opp) != 2  ) return notify_fail("ÄãÒªÐû²¼Ê²Ã´£¿\n");
+	if ( sscanf(arg, "%s %s", event, opp) != 2  ) return notify_fail("ä½ è¦å®£å¸ƒä»€ä¹ˆï¼Ÿ\n");
 
-	if ( me->query("id") == opp ) return notify_fail("ÄãÓÐÃ«²¡°¡£¿\n");
+	if ( me->query("id") == opp ) return notify_fail("ä½ æœ‰æ¯›ç—…å•Šï¼Ÿ\n");
 
-	if ( !present(opp, environment(me)) ) return notify_fail("ÕâÀï²¢ÎÞ´ËÈË£¬»¹ÊÇÔ¼ºÃÔÙÀ´°É¡£\n");
+	if ( !present(opp, environment(me)) ) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼Œè¿˜æ˜¯çº¦å¥½å†æ¥å§ã€‚\n");
 
-	if ( !find_living(opp) ) return notify_fail("Äã¹íÃÔÐÄÇÏÀ²£¿ÄÇ²»ÊÇ»îÎï£¡\n");
+	if ( !find_living(opp) ) return notify_fail("ä½ é¬¼è¿·å¿ƒçªå•¦ï¼Ÿé‚£ä¸æ˜¯æ´»ç‰©ï¼\n");
 
 	if ( event == "marryfight" || event == "zhaoqin" ) {
-		if ( me->query("gender") == "ÎÞÐÔ" )
-		     	return notify_fail("ÄãÕâ±²×Ó±ðÖ¸ÍûÁË£¡\n");
+		if ( me->query("gender") == "æ— æ€§" )
+		     	return notify_fail("ä½ è¿™è¾ˆå­åˆ«æŒ‡æœ›äº†ï¼\n");
 		else if ( me->query("class") == "bonze" )
-			return notify_fail("Äã·²ÐÄÎ´¾»£¬×ï¹ý£¡×ï¹ý£¡\n");
-                else if ( me->query("gender") == "ÄÐÐÔ" )
-                        return notify_fail("Î¨ÓÐÅ®·½²ÅÄÜ¾ÙÐÐ±ÈÎäÕÐÇ×£¡\n");
-		else str = "±ÈÎäÕÐÇ×";
+			return notify_fail("ä½ å‡¡å¿ƒæœªå‡€ï¼Œç½ªè¿‡ï¼ç½ªè¿‡ï¼\n");
+                else if ( me->query("gender") == "ç”·æ€§" )
+                        return notify_fail("å”¯æœ‰å¥³æ–¹æ‰èƒ½ä¸¾è¡Œæ¯”æ­¦æ‹›äº²ï¼\n");
+		else str = "æ¯”æ­¦æ‹›äº²";
 	}
 	else if ( event == "fight" || event == "qiecuo" ) {
-		str = "ÇÐ´è±ÈÊÔ";
+		str = "åˆ‡ç£‹æ¯”è¯•";
 	}
 	else if ( event == "kill" || event == "juezhan" ) {
-		str = "ÉúËÀ¾øÕ½";
+		str = "ç”Ÿæ­»ç»æˆ˜";
 	}
-	else return notify_fail("ÕâÀïÖ»¹©±ÈÎäÕÐÇ×(zhaoqin)£¬ÇÐ´è±ÈÊÔ(qiecuo)¼°ÉúËÀ¾øÕ½(juezhan)ËùÓÃ¡£\n"); 
+	else return notify_fail("è¿™é‡Œåªä¾›æ¯”æ­¦æ‹›äº²(zhaoqin)ï¼Œåˆ‡ç£‹æ¯”è¯•(qiecuo)åŠç”Ÿæ­»ç»æˆ˜(juezhan)æ‰€ç”¨ã€‚\n"); 
 
 	ob = find_player(opp);
 
-	message_vision("$NÄÃÆð¹Äé³£¬´òÁË´ó¹ÄÒ»ÏÂ£¬´ó¹Ä·¢³ö¡¸àÌ¡¹µÄÒ»Éù¾ÞÏì£¬´«³öÀÏÔ¶¡£\n", me);
-	CHANNEL_D->do_channel(me,"rumor",sprintf("%sÄÃÆð¹Äé³£¬´òÁË´ó¹ÄÒ»ÏÂ£¬´ó¹Ä·¢³ö¡¸àÌ¡¹µÄÒ»Éù¾ÞÏì£¬´«³öÀÏÔ¶¡£", me->name()));
-	CHANNEL_D->do_channel(me,"chat",sprintf("±¾ÈËÏÖÓë%sÓÚÀÞÌ¨½øÐÐ%s£¬Çë¸÷Î»½­ºþÍ¬µÀ×ö¸ö¼ûÖ¤¡£", ob->name(), str));
+	message_vision("$Næ‹¿èµ·é¼“æ§Œï¼Œæ‰“äº†å¤§é¼“ä¸€ä¸‹ï¼Œå¤§é¼“å‘å‡ºã€Œå—µã€çš„ä¸€å£°å·¨å“ï¼Œä¼ å‡ºè€è¿œã€‚\n", me);
+	CHANNEL_D->do_channel(me,"rumor",sprintf("%sæ‹¿èµ·é¼“æ§Œï¼Œæ‰“äº†å¤§é¼“ä¸€ä¸‹ï¼Œå¤§é¼“å‘å‡ºã€Œå—µã€çš„ä¸€å£°å·¨å“ï¼Œä¼ å‡ºè€è¿œã€‚", me->name()));
+	CHANNEL_D->do_channel(me,"chat",sprintf("æœ¬äººçŽ°ä¸Ž%säºŽæ“‚å°è¿›è¡Œ%sï¼Œè¯·å„ä½æ±Ÿæ¹–åŒé“åšä¸ªè§è¯ã€‚", ob->name(), str));
 
 	return 1;
 }
@@ -88,7 +88,7 @@ int do_say(string arg)
 
 	if( !wizardp(me))
 	{
-		tell_object(me, "ÕâÀï³³³³ºåºåµÄ£¬ÔõÃ´´óÉùËµ»°¶¼Ìý²»Çå¡£\n");
+		tell_object(me, "è¿™é‡Œåµåµå“„å“„çš„ï¼Œæ€Žä¹ˆå¤§å£°è¯´è¯éƒ½å¬ä¸æ¸…ã€‚\n");
         	return 1;
 	}
 	return 0;

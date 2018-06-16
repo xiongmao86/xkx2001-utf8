@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ╟всЯ╥Е
+// Г≥╫Г▌┴ЕЁ╟
 // maco
 #include <ansi.h>
 
@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "м╗╣ю");
+	set("short", "И─ И│⌠");
 	set("long", @LONG
-р╩╢╕оап║╣дм╗╣юё╛в╙мД╢╕спр╩ихп║це║ё
+Д╦─Е╓└Г▀╜Е╟▐Г └И─ И│⌠О╪▄Х╫╛Е╪╞Е╓└Ф°┴Д╦─Ф┴┤Е╟▐И≈╗Ц─┌
 LONG
 	);
 

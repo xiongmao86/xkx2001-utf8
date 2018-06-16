@@ -1,5 +1,5 @@
 //Cracked by Roath
-// diaopi.c õõÆ¤
+// diaopi.c è²‚çš®
 // ywz 09/05/1996
 
 #include <armor.h>
@@ -9,19 +9,19 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(HIW "õõÆ¤" NOR, ({ "diaopi", "pi" }) );
+	set_name(HIW "è²‚çš®" NOR, ({ "diaopi", "pi" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("value", 2500);
 		set("material", "cloth");
 		set("long",
-		"³¤°×É½ÉÏµÄ±¦Îï£¬´©ÉÏËüÄÜ¹»Óùº®±£Å¯£¬²¢ÄÜÓĞĞ§µÄ¶ã±Ü¹¥»÷¡£\n");
-		set("wear_msg", HIY "$N´©ÉÏ$n£¬ºÇ£¬Å¯ºÍ¼«ÁË£¡\n" NOR);
-		set("remove_msg", HIY "$NÍÑÏÂ$n£¬µşºÃ·ÅÔÚÉí±ß¡£\n" NOR);
-		set("unwear_msg", HIY "$NÍÑÏÂ$n£¬µşºÃ·ÅÔÚÉí±ß¡£\n" NOR);
+		"é•¿ç™½å±±ä¸Šçš„å®ç‰©ï¼Œç©¿ä¸Šå®ƒèƒ½å¤Ÿå¾¡å¯’ä¿æš–ï¼Œå¹¶èƒ½æœ‰æ•ˆçš„èº²é¿æ”»å‡»ã€‚\n");
+		set("wear_msg", HIY "$Nç©¿ä¸Š$nï¼Œå‘µï¼Œæš–å’Œæäº†ï¼\n" NOR);
+		set("remove_msg", HIY "$Nè„±ä¸‹$nï¼Œå å¥½æ”¾åœ¨èº«è¾¹ã€‚\n" NOR);
+		set("unwear_msg", HIY "$Nè„±ä¸‹$nï¼Œå å¥½æ”¾åœ¨èº«è¾¹ã€‚\n" NOR);
 		set("armor_prop/armor", 25);
 	}
 	setup();

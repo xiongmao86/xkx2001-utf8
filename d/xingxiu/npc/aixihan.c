@@ -6,11 +6,11 @@ inherit F_VENDOR;
 
 void create()
 {
-	set_name("°®Î÷º²", ({ "aixihan", "seller", "girl" }) );
-	set("gender", "Å®ÐÔ" );
-	set("title", "»¨Ã±Ì¯··");
+	set_name("çˆ±è¥¿ç¿°", ({ "aixihan", "seller", "girl" }) );
+	set("gender", "å¥³æ€§" );
+	set("title", "èŠ±å¸½æ‘Šè´©");
 	set("age", 20);
-	set("long", "Ò»Î»Âô»¨Ã±µÄ»Ø×åÉÙÅ®¡£\n°®Î÷º²ÊÇ»ØÈËÅ®×ÓÖÐ×î¶àÓÃµÄÃû×Ö£¬ÓÐÈçººÈËµÄ·Ò·¼ÕêÊçÖ®Àà¡£\n");
+	set("long", "ä¸€ä½å–èŠ±å¸½çš„å›žæ—å°‘å¥³ã€‚\nçˆ±è¥¿ç¿°æ˜¯å›žäººå¥³å­ä¸­æœ€å¤šç”¨çš„åå­—ï¼Œæœ‰å¦‚æ±‰äººçš„èŠ¬èŠ³è´žæ·‘ä¹‹ç±»ã€‚\n");
 	set("shen_type", 1);
 	set("combat_exp", 1000);
 	set("str", 22);
@@ -46,15 +46,15 @@ void greeting(object ob)
 {
 	string msg;
 	if( !ob || environment(ob) != environment() ) return;
-	if(ob->query("gender") == "Å®ÐÔ") {
-		if(ob->query("age") < 20) msg = "É­ÄÜ¶û";
-		else if(ob->query("age") < 30) msg = "°¢Ç¡";
-		else msg = "°¢Äá¿¨";
+	if(ob->query("gender") == "å¥³æ€§") {
+		if(ob->query("age") < 20) msg = "æ£®èƒ½å°”";
+		else if(ob->query("age") < 30) msg = "é˜¿æ°";
+		else msg = "é˜¿å°¼å¡";
 	}
 	else {
-		if(ob->query("age") < 20) msg = "·ö¿µ";
-		else msg = "°¢¿¹";
+		if(ob->query("age") < 20) msg = "æ‰¶åº·";
+		else msg = "é˜¿æŠ—";
 	}
-	say ("°®Î÷º²Î¢Î¢¹ªÉí£¬ËµµÀ£ºÄúºÃ£¬"+msg+"¡£\n");
+	say ("çˆ±è¥¿ç¿°å¾®å¾®èº¬èº«ï¼Œè¯´é“ï¼šæ‚¨å¥½ï¼Œ"+msg+"ã€‚\n");
 	return;
 }

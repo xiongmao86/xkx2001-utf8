@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÕÅ³¯ÌÆ", ({ "zhang chaotang", "zhang", "chaotang" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å¼ æœå”", ({ "zhang chaotang", "zhang", "chaotang" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("int", 28);
 	set("long",
-		"ÕâÊÇ¸ö±¥¶ÁÊ«ÊéµÄÄÏÑóÊéÉú£¬ËûÒ»Ö±ÏòÍùÖĞÍÁÎÄ»¯£¬ÌØÀ´¸Ï¿¼¡£\n");
+		"è¿™æ˜¯ä¸ªé¥±è¯»è¯—ä¹¦çš„å—æ´‹ä¹¦ç”Ÿï¼Œä»–ä¸€ç›´å‘å¾€ä¸­åœŸæ–‡åŒ–ï¼Œç‰¹æ¥èµ¶è€ƒã€‚\n");
 
         set("inquiry", ([
-		"²³Äà¹ú" : "¾ÍÊÇÏÖÔÚµÄÎÄÀ³¡£\n",
+		"æ¸¤æ³¥å›½" : "å°±æ˜¯ç°åœ¨çš„æ–‡è±ã€‚\n",
 	]));
 	set("attitude", "peaceful");
         set("shen_type", 1);

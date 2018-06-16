@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: taogu.c Сľ��
+// Room: taogu.c 小木屋
 // qfy July 25, 1996.
 
 inherit ROOM;
@@ -8,10 +8,10 @@ void reset();
 
 void create()
 {
-    set("short", "Сľ��");
+    set("short", "小木屋");
     set("long", @LONG
-һ������򵥵�Сľ�ݡ�������һ����¯��ǽ�Ϲ���һ��������
-��������һλ���ߣ�������Ȼ���أ�ȴ���˲��ɵ�����������
+一所摆设简单的小木屋。室内有一个香炉，墙上挂着一炳长剑。
+当中坐着一位老者，穿著虽然朴素，却令人不由得心生敬仰。
 LONG
     );
 

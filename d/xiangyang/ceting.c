@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "侧厅");
 	set("long", @LONG
-��������˵������ʹƽʱ�Ӽ��������ڣ�����ȴ�����˵�ǹ��ꪡ���������
-���Ż�Ƥ��Ƥ��ǽ�Ϲ��Ź�ʸ�������������˴��ɫ��
+这屋子虽说是制置使平时接见将官所在，房中却摆满了刀枪剑戟。见地上
+铺着虎皮豹皮，墙上挂着弓矢刀剑，不脱武人粗犷本色。
 LONG
 	);
 	set("no_clean_up", 0);

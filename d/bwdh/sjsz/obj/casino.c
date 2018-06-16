@@ -5,12 +5,12 @@
 inherit ITEM;
 
 void create() {
-    set_name("¶ÄÌ¨", ({ "casino table" }));
+    set_name("èµŒå°", ({ "casino table" }));
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "ÕÅ");
-        set("long", "ÕâÕÅ¶ÄÌ¨ÊÇ¿ØÖÆ¶Ä³¡µÄ£º\nCommands:\n  casino east n\n  casino west n \n
+        set("unit", "å¼ ");
+        set("long", "è¿™å¼ èµŒå°æ˜¯æ§åˆ¶èµŒåœºçš„ï¼š\nCommands:\n  casino east n\n  casino west n \n
   casino bet \n  casino pay \n  casino stop \n");
         set("material", "steel");
         set("weight", 5000);
@@ -34,7 +34,7 @@ int casino_cmds(string arg) {
     if (!wizardp(me))
         return 0;
     if (!arg)
-        return notify_fail("Ö¸Áî´íÎó£¡£¨ÎŞ²ÎÊı£©\n");
+        return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼ï¼ˆæ— å‚æ•°ï¼‰\n");
 
     args = sscanf(arg, "%s %d", cmd, ratio);
     if (args != 2)
@@ -43,79 +43,79 @@ int casino_cmds(string arg) {
     if (!objectp(room)) {
         room = load_object("/d/bwdh/sjsz/gamble_room");
         if (!objectp(room))
-            return notify_fail("ÕÒ²»µ½¶Ä³¡¡£\n");
+            return notify_fail("æ‰¾ä¸åˆ°èµŒåœºã€‚\n");
     }
 
     if (args == 1) {
         switch (cmd) {
         case "bet" :  if ( room->query("status") == 1)
-                          return notify_fail("¶Ä³¡ÏÖÔÚÕıÔÚ½ÓÊÕÑ¹×¢¡£\n");
+                          return notify_fail("èµŒåœºç°åœ¨æ­£åœ¨æ¥æ”¶å‹æ³¨ã€‚\n");
                       else {
                           round = room->query("round");
                           round++;
                           room->set("round", round);
-                          temp = "µÚ" + chinese_number(round) + "¾Ö";
+                          temp = "ç¬¬" + chinese_number(round) + "å±€";
                           room->set("status", 1);
-                          message_vision("$N´óº°Ò»Éù£º¡°" + temp + "£¬¿ª¶Ä£¡¡±\n", me);
+                          message_vision("$Nå¤§å–Šä¸€å£°ï¼šâ€œ" + temp + "ï¼Œå¼€èµŒï¼â€\n", me);
                           return 1;
                       }
                       break;
         case "pay" :  if ( room->query("status") == -1)
-                          return notify_fail("ÕıÅâ×ÅÄØ£¡\n");
+                          return notify_fail("æ­£èµ”ç€å‘¢ï¼\n");
                       else {
                           room->set("status", -1);
-                          message_vision("$N¿ŞÉ¥×ÅÁ³µÀ£º¡°ÍêÁË£¬ÓÖÒªÅâÁË¡£¡±\n", me);
+                          message_vision("$Nå“­ä¸§ç€è„¸é“ï¼šâ€œå®Œäº†ï¼Œåˆè¦èµ”äº†ã€‚â€\n", me);
                           return 1;
                       }
                       break;
         case "stop":  if (room->query("status") == 0)
-                          return notify_fail("¶Ä³¡ÒÑ¾­¹ØÃÅÀ²¡£\n");
+                          return notify_fail("èµŒåœºå·²ç»å…³é—¨å•¦ã€‚\n");
                       else {
                           room->set("status", 0);
-                          message_vision("$N¹Ø±ÕÁË¶Ä³¡¡£\n", me);
+                          message_vision("$Nå…³é—­äº†èµŒåœºã€‚\n", me);
                           return 1;
                       }
                       break;
-        default : return notify_fail("Ö¸Áî´íÎó£¡£¨µ¥²ÎÊı£©\n");
+        default : return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼ï¼ˆå•å‚æ•°ï¼‰\n");
                   break;
         }
     }
 
     if (args == 2) {
          if (room->query("status") != 0)
-             return notify_fail("ÇëÏÈ¹Ø±Õ¶Ä³¡¡£\n");
+             return notify_fail("è¯·å…ˆå…³é—­èµŒåœºã€‚\n");
          if (ratio > 0)
-             temp = chinese_number(ratio) + "ÅâÒ»";
+             temp = chinese_number(ratio) + "èµ”ä¸€";
          else if (ratio < 0)
-             temp = "Ò»Åâ" + chinese_number(-ratio);
+             temp = "ä¸€èµ”" + chinese_number(-ratio);
 
          switch (cmd) {
          case "east" : if (ratio != 0) {
                            room->set("east", ratio);
-                           message_vision("$NÉè¶¨¶«¶ÓÅâÂÊÎª" + temp +"¡£\n", me);
+                           message_vision("$Nè®¾å®šä¸œé˜Ÿèµ”ç‡ä¸º" + temp +"ã€‚\n", me);
                            return 1;
                        }
                        else {
                            room->set("win", "east");
-                           message_vision("$NÅĞ¶¨¶«¶ÓÊ¤£¡\n", me);
+                           message_vision("$Nåˆ¤å®šä¸œé˜Ÿèƒœï¼\n", me);
                            return 1;
                        }
                        return 1;
          case "west" : if (ratio != 0) {
                            room->set("west", ratio);
-                           message_vision("$NÉè¶¨Î÷¶ÓÅâÂÊÎª" + temp +"¡£\n", me);
+                           message_vision("$Nè®¾å®šè¥¿é˜Ÿèµ”ç‡ä¸º" + temp +"ã€‚\n", me);
                            return 1;
                        }
                        else {
                            room->set("win", "east");
-                           message_vision("$NÅĞ¶¨Î÷¶ÓÊ¤£¡\n", me);
+                           message_vision("$Nåˆ¤å®šè¥¿é˜Ÿèƒœï¼\n", me);
                            return 1;
                        }
                        return 1;
-         default : return notify_fail("Ö¸Áî´íÎó£¡£¨Ë«²ÎÊı£©\n");
+         default : return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼ï¼ˆåŒå‚æ•°ï¼‰\n");
                    break;
          }
     }  
 
-    return notify_fail("Ö¸Áî´íÎó£¡\n");
+    return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼\n");
 }

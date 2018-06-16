@@ -8,10 +8,10 @@ int do_drop(object);
 
 void create()
 {
-	set("short", "��ʯ��");
+	set("short", "乱石堆");
 	set("long", @LONG
-ɽ���һ����ʯ�ѣ���Χ�������Ŷ�ʮ���ˣ�����һ�����֮��
-���˸���С�����ߣ��ߴ����ˣ�����������ũ�����˾�����ˡ�
+山坳的一处乱石堆，周围团团坐着二十几人，当中一块高岩之上
+坐了个瘦小的老者，高处旁人，料来便是神农帮帮主司空玄了。
 LONG );
 
 	set("exits", ([

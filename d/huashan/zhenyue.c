@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "镇岳宫");
 	set("long", @LONG
-���������Ϊƽ̹���ϡ���ɽ���οͶ��ڴ�������Ϣ�ټ���ǰ�С���
-���м����ª�����磬���Ƕ�����ճ��ߣ�����ͷ��ЪϢ�ڴˡ�
+这里地势略为平坦，上、下山的游客多在此稍作休息再继续前行。附
+近有几间简陋的旅社，欲登东峰观日出者，大都于头晚歇息于此。
 LONG
         );
         set("exits", ([ /* sizeof() == 3 */

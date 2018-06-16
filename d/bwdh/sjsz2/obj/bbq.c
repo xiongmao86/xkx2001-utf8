@@ -6,13 +6,13 @@ inherit ITEM;
 inherit F_FOOD;
 
 void create() {
-    set_name("¿¾Èâ", ({ "bbq" }) );
+    set_name("çƒ¤è‚‰", ({ "bbq" }) );
     set_weight(200);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»¿é¿¾µÃ½ğ»Æ½ğ»ÆµÄ¿¾Èâ£¬¹âÎÅÒ»ÎÅ¾ÍÒªÁ÷¿ÚË®ÁË¡£\n");
-        set("unit", "¿é");
+        set("long", "ä¸€å—çƒ¤å¾—é‡‘é»„é‡‘é»„çš„çƒ¤è‚‰ï¼Œå…‰é—»ä¸€é—»å°±è¦æµå£æ°´äº†ã€‚\n");
+        set("unit", "å—");
         set("value", 0);
         set("food_remaining", 2);
         set("food_supply", 50);

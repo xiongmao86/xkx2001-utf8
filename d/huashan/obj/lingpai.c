@@ -1,5 +1,5 @@
 //Cracked by Roath
-// lingpai.c Ğ°ÅÉµÜ×ÓÁîÅÆ
+// lingpai.c é‚ªæ´¾å¼Ÿå­ä»¤ç‰Œ
 inherit ITEM;
 static int amount;
 
@@ -54,17 +54,17 @@ varargs int move(mixed dest, int silent)
 
 void create()
 {
-        set_name("ÇàÍ­ÁîÅÆ", ({"ling pai", "ling", "pai"}));
+        set_name("é’é“œä»¤ç‰Œ", ({"ling pai", "ling", "pai"}));
 	set_amount(1);
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
-		set("base_unit", "Ãæ");
+                set("unit", "é¢");
+		set("base_unit", "é¢");
                 set("base_weight", 50);
                 set("long",
-"ÇàÍ­ÖıµÄÁîÅÆÒ»±ß¿Ì×Å»¢Í·£¬ÁíÒ»±ß¿Ì×ÅÀÇÍ·£¬Éú¶¯èòèò£¬ÕøÄü¿ÉÅÂ¡£\n");
+"é’é“œé“¸çš„ä»¤ç‰Œä¸€è¾¹åˆ»ç€è™å¤´ï¼Œå¦ä¸€è¾¹åˆ»ç€ç‹¼å¤´ï¼Œç”ŸåŠ¨æ ©æ ©ï¼Œç‹°ç‹å¯æ€•ã€‚\n");
                 set("material", "iron");
         }
 }

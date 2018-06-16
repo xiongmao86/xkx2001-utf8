@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(MAG"öèµ¨"NOR, ({"shadan","dan"}));
+        set_name(MAG"é²¨èƒ†"NOR, ({"shadan","dan"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Á£");
-                set("long","öèµ¨£ºÒ»ÖÖÇ³º£öèÓãµÄµ¨£¬¿É½â°Ù¶¾¡£\n");
+                set("unit", "ç²’");
+                set("long","é²¨èƒ†ï¼šä¸€ç§æµ…æµ·é²¨é±¼çš„èƒ†ï¼Œå¯è§£ç™¾æ¯’ã€‚\n");
                 set("value", 6500);
 				set("yaocai", 1);
         		set("cure_s",0);

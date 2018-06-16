@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(MAG"±ªÌ¥"NOR, ({"bao tai","baotai","tai"}));
+        set_name(MAG"è±¹èƒ"NOR, ({"bao tai","baotai","tai"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ö»");
-                set("long","±ªÌ¥£º´ó²¹Ö®Îï£¬ÁÆÄÚÉËÓĞÆæĞ§£»ÒÔ±ªÌ¥ËùÁ¶Ö®Ò©£¬¶àÓĞÇ¿½î½¡¹ÇµÄĞ§¹û¡£\n");
+                set("unit", "åª");
+                set("long","è±¹èƒï¼šå¤§è¡¥ä¹‹ç‰©ï¼Œç–—å†…ä¼¤æœ‰å¥‡æ•ˆï¼›ä»¥è±¹èƒæ‰€ç‚¼ä¹‹è¯ï¼Œå¤šæœ‰å¼ºç­‹å¥éª¨çš„æ•ˆæœã€‚\n");
                 set("value", 12000);
 				set("yaocai", 1);
         		set("cure_s",30);

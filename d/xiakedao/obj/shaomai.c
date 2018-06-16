@@ -1,18 +1,18 @@
 //Cracked by Roath
-// shaomai.c ÉÕÂô
+// shaomai.c çƒ§å–
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ÉÕÂô", ({"shao mai", "dumpling"}));
+        set_name("çƒ§å–", ({"shao mai", "dumpling"}));
         set_weight(40);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»µúÁîÈË²ö×ìµÄÉÕÂô¡£\n");
-                set("unit", "µú");
+                set("long", "ä¸€ç¢Ÿä»¤äººé¦‹å˜´çš„çƒ§å–ã€‚\n");
+                set("unit", "ç¢Ÿ");
                 set("value", 10);
                 set("food_remaining", 3);
                 set("food_supply", 15);

@@ -7,12 +7,12 @@ void arguing(object me, object ob, int question);
 inherit ROOM;
 
 void create() {
-    set("short", "Ê¯½×");
+    set("short", "çŸ³é˜¶");
 	
 	set("long", @LONG
-Ê¯¼¶¼ÌÐøÏòÉÏÑÓÉì£¬ÆÙ²¼ÔÚ½ÅÏÂÔ½À´Ô½Ð¡£¬Ë®ÉùÒ²½¥ÐÐÔ¶È¥
-¼¸Î»Éí×Å»Ò»ÆÉ«É®ÒÂµÄÉ®ÈË²Á¼ç¶ø¹ý£¬¿´ËûÃÇÏÂÉ½µÄÊ±áá½Å²½³Á
-ÎÈ£¬ºÃÏóÊÇ¸ö»á¼Ò×Ó¡£ÍùÉÏÔ¶Ì÷£¬ËÆºõ¿ÉÒÔ¿´µ½Ê¯éÜÒ»½Ç¡£
+çŸ³çº§ç»§ç»­å‘ä¸Šå»¶ä¼¸ï¼Œç€‘å¸ƒåœ¨è„šä¸‹è¶Šæ¥è¶Šå°ï¼Œæ°´å£°ä¹Ÿæ¸è¡Œè¿œåŽ»
+å‡ ä½èº«ç€ç°é»„è‰²åƒ§è¡£çš„åƒ§äººæ“¦è‚©è€Œè¿‡ï¼Œçœ‹ä»–ä»¬ä¸‹å±±çš„æ—¶å¾Œè„šæ­¥æ²‰
+ç¨³ï¼Œå¥½è±¡æ˜¯ä¸ªä¼šå®¶å­ã€‚å¾€ä¸Šè¿œçœºï¼Œä¼¼ä¹Žå¯ä»¥çœ‹åˆ°çŸ³æªä¸€è§’ã€‚
 LONG
 	);
 	
@@ -29,9 +29,9 @@ LONG
 void init() {
     object challenger, me = this_player();
 
-    if ( me->query("family/family_name") == "ÉÙÁÖÅÉ" && me->query("family/generation") < 38
+    if ( me->query("family/family_name") == "å°‘æž—æ´¾" && me->query("family/generation") < 38
          && random(5) == 2 && !present("sengren", environment(me)) ) {
-        message_vision(HIR "Ê¯¼¶ÅÔ±ßµÄ²Ý´ÔÖÐºöÈ»Ô¾ÆðÒ»¸öÉíÓ°£¬µ²×¡ÁË$N£¡\n" NOR, me);
+        message_vision(HIR "çŸ³çº§æ—è¾¹çš„è‰ä¸›ä¸­å¿½ç„¶è·ƒèµ·ä¸€ä¸ªèº«å½±ï¼ŒæŒ¡ä½äº†$Nï¼\n" NOR, me);
         challenger = new(__DIR__"npc/challenger");
         challenger->move(environment(me));
         me->set_temp("challenged", 1);
@@ -46,67 +46,67 @@ int do_argue(string arg) {
     object ob, me = this_player();
     int count;
 
-	if( me->query("family/family_name") != "ÉÙÁÖÅÉ" )
-	    return notify_fail("ÉÙÁÖÉ½ÃÅÇ°£¬²»ÐíÐú»©×ÌÊÂ£¡\n");
+	if( me->query("family/family_name") != "å°‘æž—æ´¾" )
+	    return notify_fail("å°‘æž—å±±é—¨å‰ï¼Œä¸è®¸å–§å“—æ»‹äº‹ï¼\n");
 
     if( !arg )
-        return notify_fail("ÄãÏëËµ·þË­£¿\n");
+        return notify_fail("ä½ æƒ³è¯´æœè°ï¼Ÿ\n");
 
     if( !(ob = present(arg, environment(me))) )
-        return notify_fail("Õâ¶ùÃ»ÓÐÄãÒªËµ·þµÄÈË¡£\n");
+        return notify_fail("è¿™å„¿æ²¡æœ‰ä½ è¦è¯´æœçš„äººã€‚\n");
 
     if( me->query("family/generation") > 37 )
-        return notify_fail("ÄãµÄ±²·Ý»¹²»¹»¡£\n");
+        return notify_fail("ä½ çš„è¾ˆä»½è¿˜ä¸å¤Ÿã€‚\n");
 
     if( !me->query_temp("challenged") )
-        return notify_fail("ÉÙÁÖµÜ×ÓÆñ¿ÉÒÔ¶àÈ¡Ê¤£¡\n");
+        return notify_fail("å°‘æž—å¼Ÿå­å²‚å¯ä»¥å¤šå–èƒœï¼\n");
 
     if( me->is_fighting() || me->is_busy() )
-        return notify_fail("ÄãÕýÃ¦×Å¡£\n");
+        return notify_fail("ä½ æ­£å¿™ç€ã€‚\n");
 
-    if( ob->query("race") != "ÈËÀà" )
-        return notify_fail(ob->name() + "Ìý²»¶®ÈË»°£¡\n");
+    if( ob->query("race") != "äººç±»" )
+        return notify_fail(ob->name() + "å¬ä¸æ‡‚äººè¯ï¼\n");
 
     if( ob->is_fighting() || ob->is_busy() )
-        return notify_fail(ob->name() + "ÕýÃ¦×Å¡£\n");
+        return notify_fail(ob->name() + "æ­£å¿™ç€ã€‚\n");
 
     if( userp(ob) )
-        return notify_fail("»¹ÊÇÓÃÏÐÁÄÆµµÀ¸ú±ðµÄÍæ¼ÒËµÀí°É¡£\n");
+        return notify_fail("è¿˜æ˜¯ç”¨é—²èŠé¢‘é“è·Ÿåˆ«çš„çŽ©å®¶è¯´ç†å§ã€‚\n");
 
     if( ob->query_temp("opponent") != me )
-        return notify_fail("ÈË¼Ò²»ÏëÀíÄã£¡\n");
+        return notify_fail("äººå®¶ä¸æƒ³ç†ä½ ï¼\n");
 
     if ( !(me->query_temp("argued")) ) {
         me->set_temp("argued", 1);
-        message_vision("\n$NËµµÀ£º¡°°¢åôÙ¢·ð£¡³ö¼ÒÈË´È±¯Îª»³£¬Ï°ÎäÖ»ÊÇÇ¿Éí½¡Ìå¡£¡±\n", me);
-        message_vision("$NËµµÀ£º¡°Ð¡É®ÏëÌÖ½ÌÒ»Ð©·ð·¨£¬²»Öª´óÊ¦ÊÇ·ñÔ¸ÒâÖ¸µãÒ»¶þ£¿¡±\n", me);
+        message_vision("\n$Nè¯´é“ï¼šâ€œé˜¿å¼­ä½—ä½›ï¼å‡ºå®¶äººæ…ˆæ‚²ä¸ºæ€€ï¼Œä¹ æ­¦åªæ˜¯å¼ºèº«å¥ä½“ã€‚â€\n", me);
+        message_vision("$Nè¯´é“ï¼šâ€œå°åƒ§æƒ³è®¨æ•™ä¸€äº›ä½›æ³•ï¼Œä¸çŸ¥å¤§å¸ˆæ˜¯å¦æ„¿æ„æŒ‡ç‚¹ä¸€äºŒï¼Ÿâ€\n", me);
         call_out("arguing", 1, me, ob, 0);
         me->start_busy(2);
     }
     else {
         count = me->query_temp("argued");
         if (count > 3)
-            return notify_fail("¿´À´ÄãÃ»ÓÐÊ²Ã´ÎÊÌâÄÜÄÑµ¹Ëû¡£»¹ÊÇÁíÏë°ì·¨°É¡£\n");
+            return notify_fail("çœ‹æ¥ä½ æ²¡æœ‰ä»€ä¹ˆé—®é¢˜èƒ½éš¾å€’ä»–ã€‚è¿˜æ˜¯å¦æƒ³åŠžæ³•å§ã€‚\n");
         if (count == 1) {
             switch (random(5)+1) {
             case 1:
-                message_vision("\n$NÎÊµÀ£º¡°¡¸¶ÙÎò¡¹ºÎ½â£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œã€Œé¡¿æ‚Ÿã€ä½•è§£ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 11);
                 break;
             case 2:
-                message_vision("\n$NÎÊµÀ£º¡°¡¸½¥Îò¡¹ºÎ½â£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œã€Œæ¸æ‚Ÿã€ä½•è§£ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 12);
                 break;
             case 3:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚÒ»¾õÎò£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬ä¸€è§‰æ‚Ÿï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 13);
                 break;
             case 4:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚ¶þ¾õÖª£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬äºŒè§‰çŸ¥ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 14);
                 break;
             case 5:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚÈý¾õÖª£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬ä¸‰è§‰çŸ¥ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 15);
                 break;
             }
@@ -114,23 +114,23 @@ int do_argue(string arg) {
         if (count == 2) {
             switch (random(5)+1) {
             case 1:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚËÄ¾õÖª£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬å››è§‰çŸ¥ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 21);
                 break;
             case 2:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚÎå¾õÎò£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬äº”è§‰æ‚Ÿï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 22);
                 break;
             case 3:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚÁù¾õÖª£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬å…­è§‰çŸ¥ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 23);
                 break;
             case 4:
-                message_vision("\n$NÎÊµÀ£º¡°ÖÚÉúÒÔÊ®ÊÂÎª¶ñ£¬ºÎµÈÎªÊ®£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¼—ç”Ÿä»¥åäº‹ä¸ºæ¶ï¼Œä½•ç­‰ä¸ºåï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 24);
                 break;
             case 5:
-                message_vision("\n$NÎÊµÀ£º¡°Îá±²µÜ×Ó£¬µ±·îÁù¶È£¬ºÎÎªÁù¶È£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œå¾è¾ˆå¼Ÿå­ï¼Œå½“å¥‰å…­åº¦ï¼Œä½•ä¸ºå…­åº¦ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 25);
                 break;
             }
@@ -138,23 +138,23 @@ int do_argue(string arg) {
         if (count == 3) {
             switch (random(5)+1) {
             case 1:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚÆß¾õÎò£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬ä¸ƒè§‰æ‚Ÿï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 31);
                 break;
             case 2:
-                message_vision("\n$NÎÊµÀ£º¡°Îª·ðµÜ×Ó£¬³£ì¶ÖçÒ¹£¬ÖÁÐÄËÐÄî°Ë´óÈË¾õ¡£ºÎÎªµÚ°Ë¾õÖª£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä¸ºä½›å¼Ÿå­ï¼Œå¸¸æ–¼æ˜¼å¤œï¼Œè‡³å¿ƒè¯µå¿µå…«å¤§äººè§‰ã€‚ä½•ä¸ºç¬¬å…«è§‰çŸ¥ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 32);
                 break;
             case 3:
-                message_vision("\n$NÎÊµÀ£º¡°ºÎÎªÎÞ³££¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä½•ä¸ºæ— å¸¸ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 33);
                 break;
             case 4:
-                message_vision("\n$NÎÊµÀ£º¡°ÒÔºÎÒòÔµ£¬µÃÖªËÞÃü£¿»áÆäÖÁµÀ£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä»¥ä½•å› ç¼˜ï¼Œå¾—çŸ¥å®¿å‘½ï¼Ÿä¼šå…¶è‡³é“ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 34);
                 break;
             case 5:
-                message_vision("\n$NÎÊµÀ£º¡°ºÎÕßÎªÉÆ£¿ºÎÕß×î´ó£¿¡±\n", me);
+                message_vision("\n$Né—®é“ï¼šâ€œä½•è€…ä¸ºå–„ï¼Ÿä½•è€…æœ€å¤§ï¼Ÿâ€\n", me);
                 call_out("arguing", 3, me, ob, 35);
                 break;
             }
@@ -176,7 +176,7 @@ void arguing(object me, object ob, int question) {
     if( !objectp(ob) ) return;
 
     if( question == 0) {
-        message_vision("\n$NµãÍ·µÀ£º¡°²»´í£¬µ±Óë´óÊ¦Ó¡Ö¤·ð·¨¡£¡±\n", ob);
+        message_vision("\n$Nç‚¹å¤´é“ï¼šâ€œä¸é”™ï¼Œå½“ä¸Žå¤§å¸ˆå°è¯ä½›æ³•ã€‚â€\n", ob);
         return;
     }
 
@@ -196,7 +196,7 @@ void arguing(object me, object ob, int question) {
         me->add("potential", bonus/2);
         if ( me->query("potential",1) > me->query("max_potential",1) )
             me->set("potential", me->query("max_potential",1) );
-        message_vision("\n$NÄ¬²»×öÉù£¬ºöÈ»Ãæ´øÀ¢É«£¬Ò»Éù²»ÏìµØÀë¿ªÁË¡£\n", ob);
+        message_vision("\n$Né»˜ä¸åšå£°ï¼Œå¿½ç„¶é¢å¸¦æ„§è‰²ï¼Œä¸€å£°ä¸å“åœ°ç¦»å¼€äº†ã€‚\n", ob);
         destruct(ob);
         me->delete_temp("challenged");
         me->delete_temp("challenger");
@@ -213,7 +213,7 @@ void arguing(object me, object ob, int question) {
         me->add("potential", bonus/2);
         if ( me->query("potential",1) > me->query("max_potential",1) )
             me->set("potential", me->query("max_potential",1) );
-        message_vision("\n$NÄ¬²»×öÉù£¬ºöÈ»Ãæ´øÀ¢É«£¬Ò»Éù²»ÏìµØÀë¿ªÁË¡£\n", ob);
+        message_vision("\n$Né»˜ä¸åšå£°ï¼Œå¿½ç„¶é¢å¸¦æ„§è‰²ï¼Œä¸€å£°ä¸å“åœ°ç¦»å¼€äº†ã€‚\n", ob);
         destruct(ob);
         me->delete_temp("challenged");
         me->delete_temp("challenger");
@@ -223,49 +223,49 @@ void arguing(object me, object ob, int question) {
 
     switch(question) {
     case 11:
-        message_vision("\n$NÓ¦ÉùµÀ£º¡°Ò»ÎÅ·¨£¬¼´ÖªÎåÔÌ±¾¿Õ£¬Áù³¾·ÇÓÐ£¬Á¢¼´¿ªÎò£¬¶øÃ÷´óµÀ¡£¡±\n", ob);
+        message_vision("\n$Nåº”å£°é“ï¼šâ€œä¸€é—»æ³•ï¼Œå³çŸ¥äº”è•´æœ¬ç©ºï¼Œå…­å°˜éžæœ‰ï¼Œç«‹å³å¼€æ‚Ÿï¼Œè€Œæ˜Žå¤§é“ã€‚â€\n", ob);
         break;
     case 12:
-        message_vision("\n$NÓ¦ÉùµÀ£º¡°ÓÉÐÅ¶ø½â£¬½â¶øÐÐ£¬ÐÐ¶øÖ¤£¬´ÎµÚ½¥ÐÞ£¬Ò²¿ÉÎòÈë¡£¡±\n", ob);
+        message_vision("\n$Nåº”å£°é“ï¼šâ€œç”±ä¿¡è€Œè§£ï¼Œè§£è€Œè¡Œï¼Œè¡Œè€Œè¯ï¼Œæ¬¡ç¬¬æ¸ä¿®ï¼Œä¹Ÿå¯æ‚Ÿå…¥ã€‚â€\n", ob);
         break;
     case 13:
-        message_vision("\n$NÓ¦ÉùµÀ£º¡°ÊÀ¼äÎÞ³££¬¹úÍÁÎ£´à£¬ËÄ´ó¿à¿Õ£¬ÎåÒõÎÞÎÒ£¬ÉúÃð±äÒì£¬ÐéÎ±ÎÞÖ÷£¬  ÐÄÊÇ¶ñÔ´£¬ÐÎÎª×ïÞ´£¬ÈçÊÇ¹Û²ì£¬½¥ÀëÉúËÀ¡£¡±\n", ob);
+        message_vision("\n$Nåº”å£°é“ï¼šâ€œä¸–é—´æ— å¸¸ï¼Œå›½åœŸå±è„†ï¼Œå››å¤§è‹¦ç©ºï¼Œäº”é˜´æ— æˆ‘ï¼Œç”Ÿç­å˜å¼‚ï¼Œè™šä¼ªæ— ä¸»ï¼Œ  å¿ƒæ˜¯æ¶æºï¼Œå½¢ä¸ºç½ªè–®ï¼Œå¦‚æ˜¯è§‚å¯Ÿï¼Œæ¸ç¦»ç”Ÿæ­»ã€‚â€\n", ob);
         break;
     case 14:
-        message_vision("\n$NÓ¦ÉùµÀ£º¡°¶àÓûÎª¿à£¬ÉúËÀÆ£ÀÍ£¬´ÓÌ°ÓûÆð£¬ÉÙÓûÎÞÎª£¬ÉíÐÄ×ÔÔÚ¡£¡±\n", ob);
+        message_vision("\n$Nåº”å£°é“ï¼šâ€œå¤šæ¬²ä¸ºè‹¦ï¼Œç”Ÿæ­»ç–²åŠ³ï¼Œä»Žè´ªæ¬²èµ·ï¼Œå°‘æ¬²æ— ä¸ºï¼Œèº«å¿ƒè‡ªåœ¨ã€‚â€\n", ob);
         break;
     case 15:
-        message_vision("\n$NÓ¦ÉùµÀ£º¡°ÐÄÎÞÑá×ã£¬Î©µÃ¶àÇó£¬Ôö³¤×ï¶ñ£¬ÆÐÈø²»¶û£¬³£ÄîÖª×ã£¬°²Æ¶ÊØµÀ£¬Î©»ÛÊÇÒµ¡£¡±\n", ob);
+        message_vision("\n$Nåº”å£°é“ï¼šâ€œå¿ƒæ— åŽŒè¶³ï¼ŒæƒŸå¾—å¤šæ±‚ï¼Œå¢žé•¿ç½ªæ¶ï¼Œè©è¨ä¸å°”ï¼Œå¸¸å¿µçŸ¥è¶³ï¼Œå®‰è´«å®ˆé“ï¼ŒæƒŸæ…§æ˜¯ä¸šã€‚â€\n", ob);
         break;
     case 21:
-        message_vision("\n$NÂÔÒ»³ÁË¼£¬Î¢Ð¦µÀ£º¡°Ð¸µ¡×¹Âä£¬³£ÐÐ¾«½ø£¬ÆÆ·³ÄÕ¶ñ£¬´Ý·üËÄÄ§£¬³öÒõ½çÓü¡£½Ì»¯Ò»ÇÐ£¬Ï¤ÒÔ´óÀÖ¡£¡±\n", ob);
+        message_vision("\n$Nç•¥ä¸€æ²‰æ€ï¼Œå¾®ç¬‘é“ï¼šâ€œæ‡ˆæ€ å è½ï¼Œå¸¸è¡Œç²¾è¿›ï¼Œç ´çƒ¦æ¼æ¶ï¼Œæ‘§ä¼å››é­”ï¼Œå‡ºé˜´ç•Œç‹±ã€‚æ•™åŒ–ä¸€åˆ‡ï¼Œæ‚‰ä»¥å¤§ä¹ã€‚â€\n", ob);
         break;
     case 22:
-        message_vision("\n$NÂÔÒ»³ÁË¼£¬Î¢Ð¦µÀ£º¡°ÓÞ³ÕÉúËÀ£¬ÆÐÈø³£Äî£¬¹ãÑ§¶àÎÊ£¬Ôö³¤ÖÇ»Û£¬³É¾Í±ç²Å£¬½Ì»¯Ò»ÇÐ£¬Ï¤ÒÔ´óÀÖ¡£¡±\n", ob);
+        message_vision("\n$Nç•¥ä¸€æ²‰æ€ï¼Œå¾®ç¬‘é“ï¼šâ€œæ„šç—´ç”Ÿæ­»ï¼Œè©è¨å¸¸å¿µï¼Œå¹¿å­¦å¤šé—®ï¼Œå¢žé•¿æ™ºæ…§ï¼Œæˆå°±è¾©æ‰ï¼Œæ•™åŒ–ä¸€åˆ‡ï¼Œæ‚‰ä»¥å¤§ä¹ã€‚â€\n", ob);
         break;
     case 23:
-        message_vision("\n$NÂÔÒ»³ÁË¼£¬Î¢Ð¦µÀ£º¡°Æ¶¿à¶àÔ¹£¬ºá½á¶ñÔµ£»ÆÐÈø²¼Ê©£¬µÈÄîÔ¹Ç×£¬²»Äî¾É¶ñ£¬²»Ô÷¶ñÈË¡£¡±\n", ob);
+        message_vision("\n$Nç•¥ä¸€æ²‰æ€ï¼Œå¾®ç¬‘é“ï¼šâ€œè´«è‹¦å¤šæ€¨ï¼Œæ¨ªç»“æ¶ç¼˜ï¼›è©è¨å¸ƒæ–½ï¼Œç­‰å¿µæ€¨äº²ï¼Œä¸å¿µæ—§æ¶ï¼Œä¸æ†Žæ¶äººã€‚â€\n", ob);
         break;
     case 24:
-        message_vision("\n$NÂÔÒ»³ÁË¼£¬Î¢Ð¦µÀ£º¡°ÉíÈý£ºÉ±¡¢µÁ¡¢Òù£»¿ÚËÄ£ºÁ½Éà¡¢¶ñ¿Ú¡¢ÍýÑÔ¡¢ç²Óï£»ÒâÈý£º¼µ¡¢í£¡¢³Õ¡£¡±\n", ob);
+        message_vision("\n$Nç•¥ä¸€æ²‰æ€ï¼Œå¾®ç¬‘é“ï¼šâ€œèº«ä¸‰ï¼šæ€ã€ç›—ã€æ·«ï¼›å£å››ï¼šä¸¤èˆŒã€æ¶å£ã€å¦„è¨€ã€ç»®è¯­ï¼›æ„ä¸‰ï¼šå«‰ã€æšã€ç—´ã€‚â€\n", ob);
         break;
     case 25:
-        message_vision("\n$NÂÔÒ»³ÁË¼£¬Î¢Ð¦µÀ£º¡°²¼Ê©¡¢³Ö½ä¡¢ÈÌÈè¡¢¾«½ø¡¢Ò»ÐÄ¡¢ÖÇ»Û¡£¡±\n", ob);
+        message_vision("\n$Nç•¥ä¸€æ²‰æ€ï¼Œå¾®ç¬‘é“ï¼šâ€œå¸ƒæ–½ã€æŒæˆ’ã€å¿è¾±ã€ç²¾è¿›ã€ä¸€å¿ƒã€æ™ºæ…§ã€‚â€\n", ob);
         break;
     case 31:
-        message_vision("\n$N¿àË¼Á¼¾Ã£¬µÀ£º¡°ÎåÓû¹ý»¼£¬ËäÎªË×ÈË£¬²»È¾ÊÀÀÖ£¬³£ÄîÈýÒÂ£¬Íß²§·¨Æ÷£¬  Ö¾Ô¸³ö¼Ò£¬ÊØµÀÇå°×£¬èóÐÐ¸ßÔ¶£¬´È±¯Ò»ÇÐ¡£¡±\n", ob);
+        message_vision("\n$Nè‹¦æ€è‰¯ä¹…ï¼Œé“ï¼šâ€œäº”æ¬²è¿‡æ‚£ï¼Œè™½ä¸ºä¿—äººï¼Œä¸æŸ“ä¸–ä¹ï¼Œå¸¸å¿µä¸‰è¡£ï¼Œç“¦é’µæ³•å™¨ï¼Œ  å¿—æ„¿å‡ºå®¶ï¼Œå®ˆé“æ¸…ç™½ï¼Œæ¢µè¡Œé«˜è¿œï¼Œæ…ˆæ‚²ä¸€åˆ‡ã€‚â€\n", ob);
         break;
     case 32:
-        message_vision("\n$N¿àË¼Á¼¾Ã£¬µÀ£º¡°ÉúËÀ³ãÈ»£¬¿àÄÕÎÞÁ¿£¬·¢´ó³ËÐÄ£¬ÆÕ¼ÃÒ»ÇÐ£¬Ô¸´úÖÚÉú£¬ÊÜÎÞÁ¿¿à£¬ÁîÖîÖÚÉú£¬±Ï¾¹´óÀÖ¡£¡±\n", ob);
+        message_vision("\n$Nè‹¦æ€è‰¯ä¹…ï¼Œé“ï¼šâ€œç”Ÿæ­»ç‚½ç„¶ï¼Œè‹¦æ¼æ— é‡ï¼Œå‘å¤§ä¹˜å¿ƒï¼Œæ™®æµŽä¸€åˆ‡ï¼Œæ„¿ä»£ä¼—ç”Ÿï¼Œå—æ— é‡è‹¦ï¼Œä»¤è¯¸ä¼—ç”Ÿï¼Œæ¯•ç«Ÿå¤§ä¹ã€‚â€\n", ob);
         break;
     case 33:
-        message_vision("\n$N¿àË¼Á¼¾Ã£¬µÀ£º¡°É«¡¢Í´¡¢Ïë¡¢ÐÐ¡¢Ê¶£¬½ÔÎªÎÞ³£¡£¡±\n", ob);
+        message_vision("\n$Nè‹¦æ€è‰¯ä¹…ï¼Œé“ï¼šâ€œè‰²ã€ç—›ã€æƒ³ã€è¡Œã€è¯†ï¼Œçš†ä¸ºæ— å¸¸ã€‚â€\n", ob);
         break;
     case 34:
-        message_vision("\n$N¿àË¼Á¼¾Ã£¬µÀ£º¡°¾»ÐÄÊØÖ¾£¬¿É»áÖÁµÀ£»Æ©ÈçÄ¥¾µ£¬¹¸È¥Ã÷´æ£»¶ÏÓûÎÞÇó£¬µ±µÃËÞÃü¡£¡±\n", ob);
+        message_vision("\n$Nè‹¦æ€è‰¯ä¹…ï¼Œé“ï¼šâ€œå‡€å¿ƒå®ˆå¿—ï¼Œå¯ä¼šè‡³é“ï¼›è­¬å¦‚ç£¨é•œï¼Œåž¢åŽ»æ˜Žå­˜ï¼›æ–­æ¬²æ— æ±‚ï¼Œå½“å¾—å®¿å‘½ã€‚â€\n", ob);
         break;
     case 35:
-        message_vision("\n$N¿àË¼Á¼¾Ã£¬µÀ£º¡°ÐÐµÀÊØÕæÕßÉÆ¡£Ö¾ÓëµÀºÏÕß´ó¡£¡±\n", ob);
+        message_vision("\n$Nè‹¦æ€è‰¯ä¹…ï¼Œé“ï¼šâ€œè¡Œé“å®ˆçœŸè€…å–„ã€‚å¿—ä¸Žé“åˆè€…å¤§ã€‚â€\n", ob);
         break;
     default:
         ;
@@ -281,16 +281,16 @@ int do_giveup() {
     if ( me->query_temp("challenged") && present(me->query_temp("challenger"), environment(me)) ) {
         ob = me->query_temp("challenger");
         if ( !ob->query_temp("fought") ) {
-            message_vision("\n$NÀäÐ¦µÀ£º¡°ÉÙÁÖºÍÉÐ¸ö¸ö¶¼ÊÇÌ°ÉúÅÂËÀÖ®±²£¡¡±\n", ob);
+            message_vision("\n$Nå†·ç¬‘é“ï¼šâ€œå°‘æž—å’Œå°šä¸ªä¸ªéƒ½æ˜¯è´ªç”Ÿæ€•æ­»ä¹‹è¾ˆï¼â€\n", ob);
             me->add("combat_exp", -random(20));
         }
         me->delete_temp("challenger");
         me->delete_temp("challenged");
-        message_vision("\n$NÀë¿ªÁË¡£\n", ob);
+        message_vision("\n$Nç¦»å¼€äº†ã€‚\n", ob);
         destruct (ob);
     }
     else
-        return notify_fail("Ê²Ã´£¿");
+        return notify_fail("ä»€ä¹ˆï¼Ÿ");
 
     return 1;
 }            
@@ -302,7 +302,7 @@ int valid_leave(object me, string dir) {
 
 
     if ( me->query_temp("challenged") && objectp(ob) && me == ob->query_temp("opponent") )
-        return notify_fail("ÉÙÁÖµÜ×ÓÆñ¿ÉÌ°ÉúÅÂËÀ£¬ÒÔ×¹±¾ÅÉÉùÃû£¡\n");
+        return notify_fail("å°‘æž—å¼Ÿå­å²‚å¯è´ªç”Ÿæ€•æ­»ï¼Œä»¥å æœ¬æ´¾å£°åï¼\n");
     else { 
         me->delete_temp("challenged");
         me->delete_temp("challenger");

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cangjing.c ºóÉ½ÃÅ
+// cangjing.c åå±±é—¨
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -8,9 +8,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÉ½ÃÅ");
+        set("short", "åå±±é—¨");
 	set("long", @LONG
-ÕâÊÇ²Ø¾­¸óºó£¬¶«±±±ßÓĞÉÈĞ¡ÃÅ¡£
+è¿™æ˜¯è—ç»é˜åï¼Œä¸œåŒ—è¾¹æœ‰æ‰‡å°é—¨ã€‚
 LONG
         );
 
@@ -22,7 +22,7 @@ LONG
         set("objects", ([ 
         ]));
 
-	create_door("northeast", "Ğ¡ÃÅ", "southwest", DOOR_CLOSED);
+	create_door("northeast", "å°é—¨", "southwest", DOOR_CLOSED);
 
         set("no_clean_up", 0);
 	set("outdoors", "quanzhou");

@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÖµÈÕÀ®Âï", ({ "zhiri lama", "lama" }));
+	set_name("å€¼æ—¥å–‡å˜›", ({ "zhiri lama", "lama" }));
 	set("long", 
-"ÕâÊÇ¶ÈÄ¸µîµÄÖµÈÕÀ®Âï£¬×¨ÃÅ¸ºÔğ¸÷ÖÖ¾´·îÊÂÎï¡£\n");
-	set("gender", "ÄĞĞÔ");
+"è¿™æ˜¯åº¦æ¯æ®¿çš„å€¼æ—¥å–‡å˜›ï¼Œä¸“é—¨è´Ÿè´£å„ç§æ•¬å¥‰äº‹ç‰©ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("attitude", "peaceful");
 	set("class","lama");
@@ -38,8 +38,8 @@ int accept_object(object me, object ob)
 {
 	object butter, gang;
 
-	if (ob->name()!="ËÖÓÍ¹Ş") {
-        write("ÖµÈÕÀ®ÂïÁ³ÉÏÂ¶³öÃÔ»óµÄ±íÇé¡£\n");
+	if (ob->name()!="é…¥æ²¹ç½") {
+        write("å€¼æ—¥å–‡å˜›è„¸ä¸Šéœ²å‡ºè¿·æƒ‘çš„è¡¨æƒ…ã€‚\n");
         command ("shake");
 	    remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
@@ -47,13 +47,13 @@ int accept_object(object me, object ob)
 	}
  	if ( objectp(butter = present("su you", ob)) && objectp(gang = present("tong gang", environment(this_object()))) ) {
 		butter->move_liquid(gang);
-        message_vision("$N½«ËÖÓÍĞ¡ĞÄÒíÒíµÄµ¹Èë±éÕÕÑ©º£ÄÚ¡£\n", this_object());
+        message_vision("$Nå°†é…¥æ²¹å°å¿ƒç¿¼ç¿¼çš„å€’å…¥éç…§é›ªæµ·å†…ã€‚\n", this_object());
 	}
 	if (me->query("class") == "lama"){ 
 	if (me->query_skill("lamaism", 1) < 30){
 	me->set("lama_butter",me->query("mud_age"));	
 	command ("bow");
-        command ("say ·ğÖ÷±£ÓÓÊ©Ö÷£¡");
+        command ("say ä½›ä¸»ä¿ä½‘æ–½ä¸»ï¼");
 	remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
 	return 1;
@@ -62,13 +62,13 @@ int accept_object(object me, object ob)
 	&& me->query_skill("lamaism", 1) < 60){
 	me->set("lama_butter",me->query("mud_age") + 7600);
 	command ("bow");
-        command ("say ·ğÖ÷±£ÓÓÊ©Ö÷£¡");
+        command ("say ä½›ä¸»ä¿ä½‘æ–½ä¸»ï¼");
 	remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
 	return 1;
         }
     }
-	command ("say ·ğÖ÷±£ÓÓÊ©Ö÷£¡");
+	command ("say ä½›ä¸»ä¿ä½‘æ–½ä¸»ï¼");
 	remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
 	return 1;

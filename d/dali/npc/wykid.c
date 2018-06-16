@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wykid.c ÎÚÒÄĞ¡º¢
+// wykid.c ä¹Œå¤·å°å­©
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡º¢", ({ "wuyi kid", "kid" }) );
-	set("long", "Ò»¸öÓ×Ğ¡µÄÎÚÒÄ¶ùÍ¯¡£\n");
+	set_name("å°å­©", ({ "wuyi kid", "kid" }) );
+	set("long", "ä¸€ä¸ªå¹¼å°çš„ä¹Œå¤·å„¿ç«¥ã€‚\n");
 
 	set("age", 5);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 15);

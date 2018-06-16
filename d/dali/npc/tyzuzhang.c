@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tyzuzhang.c Ì¨ÒÄ×å³¤
+// tyzuzhang.c å°å¤·æ—é•¿
 
 inherit NPC;
 
 void create()
 {
-	set_name("×å³¤", ({ "zu zhang", "zhang", "woman" }) );
-	set("long", "Ò»Î»ÂúÁ³ÖåÎÆµÄÀÏÄê¸¾Å®£¬ÕıÊÇ±¾´åµÄ×å³¤¡£Ì¨ÒÄÊ±´¦Ä¸ÏµÊÏ×å£¬×åÖĞÈ¨¹ó½ÔÎª¸¾Å®¡£\n");
+	set_name("æ—é•¿", ({ "zu zhang", "zhang", "woman" }) );
+	set("long", "ä¸€ä½æ»¡è„¸çš±çº¹çš„è€å¹´å¦‡å¥³ï¼Œæ­£æ˜¯æœ¬æ‘çš„æ—é•¿ã€‚å°å¤·æ—¶å¤„æ¯ç³»æ°æ—ï¼Œæ—ä¸­æƒè´µçš†ä¸ºå¦‡å¥³ã€‚\n");
 
 	set("age", 65);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

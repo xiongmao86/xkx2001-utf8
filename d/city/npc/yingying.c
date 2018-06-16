@@ -1,16 +1,16 @@
 //Cracked by Roath
-// yingying.c ´ÞÝºÝº
+// yingying.c å´”èŽºèŽº
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("´ÞÝºÝº", ({ "cui yingying", "cui", "ying" }));
+	set_name("å´”èŽºèŽº", ({ "cui yingying", "cui", "ying" }));
         set_color("$YEL$");
-	set("long", "Ëý³¤µÃ¼«ÃÀ£¬ÓÈÆäÊÇÄÇ¶ÔÑÛ¾¦£¬ÃÄµÃÖ±¿ÉÒÔ¹´ÈË»êÆÇ¡£\n");
-	set("title", "²ÆÖ÷Å®¶ù");
-	set("gender", "Å®ÐÔ");
+	set("long", "å¥¹é•¿å¾—æžç¾Žï¼Œå°¤å…¶æ˜¯é‚£å¯¹çœ¼ç›ï¼Œåªšå¾—ç›´å¯ä»¥å‹¾äººé­‚é­„ã€‚\n");
+	set("title", "è´¢ä¸»å¥³å„¿");
+	set("gender", "å¥³æ€§");
 	set("age", 17);
 
 	set_skill("unarmed", 40);
@@ -28,7 +28,7 @@ void create()
 	
 int accept_kill(object me)
 {
-        command("say µùµù¾ÈÃü°¡£¡" + me->name() + "Õâ¸ö" + RANK_D->query_rude(me) + "ÒªÇ¿±©ÎÒ£¡\n");
+        command("say çˆ¹çˆ¹æ•‘å‘½å•Šï¼" + me->name() + "è¿™ä¸ª" + RANK_D->query_rude(me) + "è¦å¼ºæš´æˆ‘ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

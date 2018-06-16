@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÜÊÒ");
+	set("short", "å¯†å®¤");
 	set("long", @LONG
-ÕâÀïÏóÊÇÒ»¸öµØ½Ñ£¬¿ÉÄÜÊÇÒ©ÆÌÊÕ²ØÕä¹óÒ©ÎïµÄµØ·½¡£¶«Ê×Ò»¸ö
-´ó¼Ü×Ó£¬·Å×ÅÒ©²ÄºÍÎÞÊýÐ¡´ÉÆ¿¡£µØÉÏÓÐÒ»Ö»Á¶Ò©Â¯£¬¿ÕÆøÖÐ¾¡ÊÇÒ©
-Î¶¡£
+è¿™é‡Œè±¡æ˜¯ä¸€ä¸ªåœ°çª–ï¼Œå¯èƒ½æ˜¯è¯é“ºæ”¶è—çè´µè¯ç‰©çš„åœ°æ–¹ã€‚ä¸œé¦–ä¸€ä¸ª
+å¤§æž¶å­ï¼Œæ”¾ç€è¯æå’Œæ— æ•°å°ç“·ç“¶ã€‚åœ°ä¸Šæœ‰ä¸€åªç‚¼è¯ç‚‰ï¼Œç©ºæ°”ä¸­å°½æ˜¯è¯
+å‘³ã€‚
 LONG
 	);
 	set("no_clean_up", 0);
@@ -34,13 +34,12 @@ int do_turn(string arg)
 	if( !arg || arg == "" ) return 0;
 	if( arg == "ball" || arg == "qiu")
 	{
-		message_vision("$N×øÔÚÒÎÉÏ£¬°ÑÒÎ±³ÌúÇòÏñÓÒÒ»×ª£¬Í·ÉÏ¿ª³öÒ»¶´¡£¡
-£\nÒÎ×Ó´ø×Å$NÉýÁËÉÏÈ¥¡£\n",me);
+		message_vision("$Nååœ¨æ¤…ä¸Šï¼ŒæŠŠæ¤…èƒŒé“çƒåƒå³ä¸€è½¬ï¼Œå¤´ä¸Šå¼€å‡ºä¸€æ´žã€‚\næ¤…å­å¸¦ç€$Nå‡äº†ä¸ŠåŽ»ã€‚\n",me);
 		me->move(__DIR__"neitang");
 		return 1;
 	}
 	else
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 }
 
 int do_search(string arg)
@@ -52,7 +51,7 @@ int do_search(string arg)
 	if (arg == "jia" || arg == "shelf")
 	{
 		if (query("searched"))
-			return notify_fail("ÄãÔÚ¼Ü×ÓÉÏ·­Ñ°ÁËÒ»Õó£¬µ«Ê²Ã´¶¼Ã»ÕÒµ½¡£\n");
+			return notify_fail("ä½ åœ¨æž¶å­ä¸Šç¿»å¯»äº†ä¸€é˜µï¼Œä½†ä»€ä¹ˆéƒ½æ²¡æ‰¾åˆ°ã€‚\n");
 
 		switch (random(7))
 		{
@@ -80,7 +79,7 @@ int do_search(string arg)
 		}
 
 		set("searched",1);		
-		message_vision("Äã´ÓÒ»¸öÐ¡Æ¿×ÓÀïÕÒµ½Ò»¿Å"+ob->query("name")+"¡£\n",me);
+		message_vision("ä½ ä»Žä¸€ä¸ªå°ç“¶å­é‡Œæ‰¾åˆ°ä¸€é¢—"+ob->query("name")+"ã€‚\n",me);
 		ob->move(me);
 		return 1;
 	}

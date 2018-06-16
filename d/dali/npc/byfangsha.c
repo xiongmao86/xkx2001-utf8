@@ -1,15 +1,15 @@
 //Cracked by Roath
-// byfangsha.c °ÚÒÄ·ÄÉ´Å®
+// byfangsha.c æ‘†å¤·çººçº±å¥³
 
 inherit NPC;
 
 void create()
 {
-	set_name("·ÄÉ´Å®", ({ "fangsha nu", "nu", "woman" }) );
-	set("long", "Ò»¸öÄêÇáµÄ°ÚÒÄ´å¸¾£¬ĞÄÁéÊÖÇÉ£¬×¨ÉÃ·ÄÉ´¡£\n");
+	set_name("çººçº±å¥³", ({ "fangsha nu", "nu", "woman" }) );
+	set("long", "ä¸€ä¸ªå¹´è½»çš„æ‘†å¤·æ‘å¦‡ï¼Œå¿ƒçµæ‰‹å·§ï¼Œä¸“æ“…çººçº±ã€‚\n");
 
 	set("age", 20);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 15);

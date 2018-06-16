@@ -8,19 +8,19 @@ int do_out();
 
 void create()
 {
-	set("short", "ÃÔ¹¬Ê÷ÁÖ");
+	set("short", "è¿·å®«æ ‘æž—");
 	set("long", @LONG
-ÕâÊÇÃÔ¹¬ÖÐµÄÒ»¸öÂ·¿Ú£¬µ«¼ûËÄÏÂºÚÉ­É­µÄ¶¼ÊÇÊ÷Ä¾£¬½ÅÏÂÐ¡Â·¶«ÅÌÎ÷Çú£¬
-ÃÜÁÖÖÐÄÑ±æ·½Ïò£¬¾Ù²½Ì¤µ½µÄ¾¡ÊÇ°«Ê÷ÔÓ²Ý£¬¾£¼¬¹³´Ìµ½Ð¡ÍÈ£¬»®µÃÄãÏÊÑªÁÜÁÜ¡£
-Ò»¸öÐ¡Ä¾×®ÉÏ¶¤ÁËÎå¸öÄ¾ÅÆ£¬·Ö±ðÖ¸ÏòÎåÌõÐ¡Â·£¬²¢±êÃ÷¡°½ð£¬Ä¾£¬Ë®£¬»ð£¬ÍÁ¡±
-±±±ßÊ÷Ä¾Ï¡ÉÙÐ©£¬¿´À´¿ÉÒÔÊÇ×ß³öÈ¥(out)µÄ·½Ïò¡£
+è¿™æ˜¯è¿·å®«ä¸­çš„ä¸€ä¸ªè·¯å£ï¼Œä½†è§å››ä¸‹é»‘æ£®æ£®çš„éƒ½æ˜¯æ ‘æœ¨ï¼Œè„šä¸‹å°è·¯ä¸œç›˜è¥¿æ›²ï¼Œ
+å¯†æž—ä¸­éš¾è¾¨æ–¹å‘ï¼Œä¸¾æ­¥è¸åˆ°çš„å°½æ˜¯çŸ®æ ‘æ‚è‰ï¼Œè†æ£˜é’©åˆºåˆ°å°è…¿ï¼Œåˆ’å¾—ä½ é²œè¡€æ·‹æ·‹ã€‚
+ä¸€ä¸ªå°æœ¨æ¡©ä¸Šé’‰äº†äº”ä¸ªæœ¨ç‰Œï¼Œåˆ†åˆ«æŒ‡å‘äº”æ¡å°è·¯ï¼Œå¹¶æ ‡æ˜Žâ€œé‡‘ï¼Œæœ¨ï¼Œæ°´ï¼Œç«ï¼ŒåœŸâ€
+åŒ—è¾¹æ ‘æœ¨ç¨€å°‘äº›ï¼Œçœ‹æ¥å¯ä»¥æ˜¯èµ°å‡ºåŽ»(out)çš„æ–¹å‘ã€‚
 LONG);
 	set("exits", ([
-		"½ð" : __FILE__,
-		"Ä¾" : __FILE__,
-		"Ë®" : __FILE__,
-		"»ð" : __FILE__,
-		"ÍÁ" : __FILE__,
+		"é‡‘" : __FILE__,
+		"æœ¨" : __FILE__,
+		"æ°´" : __FILE__,
+		"ç«" : __FILE__,
+		"åœŸ" : __FILE__,
 		]));
 	set("cost", 3);
 	set("no_clean_up", 0);
@@ -43,10 +43,10 @@ void init()
 	}
 	if (me->query_skill("dodge",1)<100 && random(10)==1)
 	{
-		message_vision("$NÒ»¸ö²»Ð¡ÐÄ£¬ÔÚÊ÷´ÔÉÏÒ»°è£¬¡°¹¾à½¡±Ò»ÏÂË¤½øÁË¾£¼¬´Ô¡£\n", me);
+		message_vision("$Nä¸€ä¸ªä¸å°å¿ƒï¼Œåœ¨æ ‘ä¸›ä¸Šä¸€æ‹Œï¼Œâ€œå’•å˜Ÿâ€ä¸€ä¸‹æ‘”è¿›äº†è†æ£˜ä¸›ã€‚\n", me);
 		me->add("qi",-100);
 		me->add("eff_qi",-100);
-		message_vision("$NÕõÔúÁË°ëÌì£¬´Ó¾£¼¬´ÔÀïÅÀÁË³öÀ´£¬»ëÉíÔúÂúÁË´Ì£¬Í´¿àÄÑµ±¡£\n", me);
+		message_vision("$NæŒ£æ‰Žäº†åŠå¤©ï¼Œä»Žè†æ£˜ä¸›é‡Œçˆ¬äº†å‡ºæ¥ï¼Œæµ‘èº«æ‰Žæ»¡äº†åˆºï¼Œç—›è‹¦éš¾å½“ã€‚\n", me);
 	}
 	add_action("do_find", "find");
 	add_action("do_out", "out");
@@ -59,26 +59,26 @@ int valid_leave(object me, string dir)
 	mazepath=me->query_temp("mazepath");
 
 	mpath=sprintf("%d",mazepath);
-//	tell_object(me, "ÃÜÂë£º"+mpath+"\n");
+//	tell_object(me, "å¯†ç ï¼š"+mpath+"\n");
 
-	walked=sprintf("%d%d%d%d%d", (me->query_temp("mark/maze½ð")-1),(me->query_temp("mark/mazeÄ¾")-1),(me->query_temp("mark/mazeË®")-1),(me->query_temp("mark/maze»ð")-1),(me->query_temp("mark/mazeÍÁ")-1));
-//	tell_object(me, "×ß¹ý£º"+walked+"\n");
+	walked=sprintf("%d%d%d%d%d", (me->query_temp("mark/mazeé‡‘")-1),(me->query_temp("mark/mazeæœ¨")-1),(me->query_temp("mark/mazeæ°´")-1),(me->query_temp("mark/mazeç«")-1),(me->query_temp("mark/mazeåœŸ")-1));
+//	tell_object(me, "èµ°è¿‡ï¼š"+walked+"\n");
 
 	me->add("qi", -10);
 
 	if (walked==mpath)
 	{
-		tell_object(me,"Äã¿àË¼Ú¤Ïë£¬¾«ÆþÏ¸Ëã£¬ÖÕÓÚÕÒµ½ÁËÆÆ´ËÃÔ¹¬Ö®µÀ¡£Ö»Èý×ªÁ½×ª£¬±ã×ßÁË³öÈ¥¡£\n");
+		tell_object(me,"ä½ è‹¦æ€å†¥æƒ³ï¼Œç²¾æŽç»†ç®—ï¼Œç»ˆäºŽæ‰¾åˆ°äº†ç ´æ­¤è¿·å®«ä¹‹é“ã€‚åªä¸‰è½¬ä¸¤è½¬ï¼Œä¾¿èµ°äº†å‡ºåŽ»ã€‚\n");
 		set("exits/"+dir, "/d/dali/yingroom1.c");
 		remove_call_out("closing");
 		call_out("closing",1,dir);
 		return 1;
 	}
-	if (dir=="½ð") me->add_temp("mark/maze½ð", 1);
-	if (dir=="Ä¾") me->add_temp("mark/mazeÄ¾", 1);
-	if (dir=="Ë®") me->add_temp("mark/mazeË®", 1);
-	if (dir=="»ð") me->add_temp("mark/maze»ð", 1);
-	if (dir=="ÍÁ") me->add_temp("mark/mazeÍÁ", 1);
+	if (dir=="é‡‘") me->add_temp("mark/mazeé‡‘", 1);
+	if (dir=="æœ¨") me->add_temp("mark/mazeæœ¨", 1);
+	if (dir=="æ°´") me->add_temp("mark/mazeæ°´", 1);
+	if (dir=="ç«") me->add_temp("mark/mazeç«", 1);
+	if (dir=="åœŸ") me->add_temp("mark/mazeåœŸ", 1);
 	return ::valid_leave(me, dir);
 }
 void closing(string dir)
@@ -98,11 +98,11 @@ int do_find(string arg)
 		inv=all_inventory(me);
 		for(i=0; i<sizeof(inv); i++)
 		{
-			if (userp(inv[i])) return notify_fail("Äã¸ºÖØÌ«´óÁË£¬Ã»·¨ÕÒÂ·ÅÀÉ½¡£\n");
-			if (inv[i]->query("id")=="corpse") return notify_fail("´ø×ÅÊ¬ÌåÈ¥¼ûÊ¦¸µ²»Ì«ºÃ°É£¡\n");
+			if (userp(inv[i])) return notify_fail("ä½ è´Ÿé‡å¤ªå¤§äº†ï¼Œæ²¡æ³•æ‰¾è·¯çˆ¬å±±ã€‚\n");
+			if (inv[i]->query("id")=="corpse") return notify_fail("å¸¦ç€å°¸ä½“åŽ»è§å¸ˆå‚…ä¸å¤ªå¥½å§ï¼\n");
 		}
-		tell_object(me, "Äã×óÓÒ¿´¿´Ã»ÈË×¢ÒâÄã£¬ÍµÍµÃþÃþ²¦¿ªÊ÷´ÔÁïÁË½øÈ¥¡£\n");
-		tell_object(me, "Äã´ÓÒ»ÌõÃ»ÈËÖªµÀµÄÐ¡Â·ÉÏÁËÉ½£¬À´µ½ÁËÒ»µÆ´óÊ¦ËùÔÚµÄµØ·½¡£\n");
+		tell_object(me, "ä½ å·¦å³çœ‹çœ‹æ²¡äººæ³¨æ„ä½ ï¼Œå·å·æ‘¸æ‘¸æ‹¨å¼€æ ‘ä¸›æºœäº†è¿›åŽ»ã€‚\n");
+		tell_object(me, "ä½ ä»Žä¸€æ¡æ²¡äººçŸ¥é“çš„å°è·¯ä¸Šäº†å±±ï¼Œæ¥åˆ°äº†ä¸€ç¯å¤§å¸ˆæ‰€åœ¨çš„åœ°æ–¹ã€‚\n");
 		me->move("/d/dali/yideng9.c");
 		return 1;
 	}
@@ -113,12 +113,12 @@ int do_out()
 	object me;
 	me=this_player();
 
-	tell_object(me, "Äã¿àË¼Ú¤Ïë£¬×ó×ªÓÒ¿´ÁËÐí¾Ã£¬¾õµÃÃ»ÓÐÊ²Ã´°ì·¨ÕÒµ½Â·£¬Ö»ºÃ´ÓÔ­Â·ÍËÁË»ØÈ¥¡£\n");
-	me->set_temp("mark/maze½ð", 1);
-	me->set_temp("mark/mazeÄ¾", 1);
-	me->set_temp("mark/mazeË®", 1);
-	me->set_temp("mark/maze»ð", 1);
-	me->set_temp("mark/mazeÍÁ", 1);
+	tell_object(me, "ä½ è‹¦æ€å†¥æƒ³ï¼Œå·¦è½¬å³çœ‹äº†è®¸ä¹…ï¼Œè§‰å¾—æ²¡æœ‰ä»€ä¹ˆåŠžæ³•æ‰¾åˆ°è·¯ï¼Œåªå¥½ä»ŽåŽŸè·¯é€€äº†å›žåŽ»ã€‚\n");
+	me->set_temp("mark/mazeé‡‘", 1);
+	me->set_temp("mark/mazeæœ¨", 1);
+	me->set_temp("mark/mazeæ°´", 1);
+	me->set_temp("mark/mazeç«", 1);
+	me->set_temp("mark/mazeåœŸ", 1);
 	me->delete_temp("mazepath");
 	me->move("/d/dali/maze1.c");
 	return 1;

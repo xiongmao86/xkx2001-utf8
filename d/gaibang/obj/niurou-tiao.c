@@ -1,18 +1,18 @@
 //Cracked by Roath
-// gb_beef.c Å£ÈâÌõ
+// gb_beef.c ç‰›è‚‰æ¡
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Å£ÈâÌõ", ({"niurou tiao", "tiao", "beef"}));
+	set_name("ç‰›è‚‰æ¡", ({"niurou tiao", "tiao", "beef"}));
 	set_weight(40);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÍëÖËÅ£ÈâÌõ£¬Ã¿ÌõÅ£Èâ¶¼ÊÇÓÉËÄÌõĞ¡ÈâÆ´³É£¬ÏãÆøÅ¨Óô¡£\n");
-		set("unit", "Íë");
+		set("long", "ä¸€ç¢—ç‚™ç‰›è‚‰æ¡ï¼Œæ¯æ¡ç‰›è‚‰éƒ½æ˜¯ç”±å››æ¡å°è‚‰æ‹¼æˆï¼Œé¦™æ°”æµ“éƒã€‚\n");
+		set("unit", "ç¢—");
 		set("value", 50);
 		set("food_remaining", 1);
 		set("food_supply", 20);

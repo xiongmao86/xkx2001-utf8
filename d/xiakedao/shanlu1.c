@@ -6,10 +6,10 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-������ʯ�̳ɵ�С·�ϣ��Ų�ʮ����ݡ����Զ������֣�֦Ҷ��
-����գ��������ĺܲ������������ȸߴ����������ķ������һƬ��
+走在青石铺成的小路上，脚步十分轻捷。两旁都是密林，枝叶遮
+天蔽日，阴沉沉的很不舒服。林中鸟雀叽喳，与呼呼的风声混成一片。
 LONG );
 
       set("exits", ([

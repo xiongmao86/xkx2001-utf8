@@ -1,15 +1,15 @@
 //Cracked by Roath
-// linpingzhi.c ÁÖÆ½Ö®
+// linpingzhi.c æ—å¹³ä¹‹
 
 inherit NPC;
 inherit F_SKILL;
 
 void create()
 {
-	set_name("ÁÖÆ½Ö®", ({ "lin pingzhi", "lin", "pingzhi" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ—å¹³ä¹‹", ({ "lin pingzhi", "lin", "pingzhi" }));
+	set("gender", "ç”·æ€§");
 	set("age", 20);
-	set("long", "Ëû¾ÍÊÇ¡¸¸£ÍşïÚ¾Ö¡¹µÄÉÙµ±¼Ò£­£­ÁÖÆ½Ö®¡£\n");
+	set("long", "ä»–å°±æ˜¯ã€Œç¦å¨é•–å±€ã€çš„å°‘å½“å®¶ï¼ï¼æ—å¹³ä¹‹ã€‚\n");
 
 	set("combat_exp", 10000);
 	set("shen_type", 1);

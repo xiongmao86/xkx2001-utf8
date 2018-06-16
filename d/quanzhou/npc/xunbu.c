@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xunbu.c Ñ²²¶
+// xunbu.c å·¡æ•
 // Fang 8/21/96
 // modified Zhuang@XKX 960903
 //
@@ -22,11 +22,11 @@ private string *home_locations = ({
 
 void create()
 {
-	set_name("Ñ²²¶", ({ "xun bu", "bu" }));
+	set_name("å·¡æ•", ({ "xun bu", "bu" }));
         set_color("$YEL$");
 	set("age", 32);
-	set("gender", "ÄÐÐÔ");
-	set("long", "ÕâÊÇÒ»¸ö¾­ÑéÀÏµ½µÄÑ²²¶£¬Ò»Ë«¾«Ã÷µÄÑÛ¾¦ÀäÀäµØ¶¢×ÅÄã¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªç»éªŒè€åˆ°çš„å·¡æ•ï¼Œä¸€åŒç²¾æ˜Žçš„çœ¼ç›å†·å†·åœ°ç›¯ç€ä½ ã€‚\n");
 	set("attitude", "heroism");
 //	set("vendetta_mark", "authority");
 	set("pursuer", 1);
@@ -47,14 +47,14 @@ void create()
 	set_temp("apply/armor", 40);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "Ñ²²¶´óº°: ÉÁ¿ª£¡\n",
+                "å·¡æ•å¤§å–Š: é—ªå¼€ï¼\n",
                 (: random_move :)
         }) );
 
         set("chat_chance_combat", 10);
 	set("chat_msg_combat", ({
-		"Ñ²²¶ºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÔì·´²»³É£¿\n",
-		"Ñ²²¶ºÈµÀ£ºÅÜµÃÁËºÍÉÐÅÜ²»ÁËÃí£¬Äã»¹ÊÇ¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+		"å·¡æ•å–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
+		"å·¡æ•å–é“ï¼šè·‘å¾—äº†å’Œå°šè·‘ä¸äº†åº™ï¼Œä½ è¿˜æ˜¯å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
 	}));
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();
@@ -64,9 +64,9 @@ void create()
 void init()
 {
 	if( strsrch(file_name(environment()), "/d/quanzhou/") == -1 ) {
-		message_vision("$N¿ì²½×ßÁË¹ýÀ´¡£\n$NÉñÉ«»ÅÕÅµØÀë¿ªÁË¡£\n", this_object());
+		message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n$Nç¥žè‰²æ…Œå¼ åœ°ç¦»å¼€äº†ã€‚\n", this_object());
 		this_object()->move(home_locations[random(sizeof(home_locations))]);
-		message_vision("$N¿ì²½×ßÁË¹ýÀ´¡£\n", this_object());
+		message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", this_object());
 		return;
 	} else if( interactive(this_player())
 	&& (int)this_player()->query_condition("killer") ) {
@@ -78,13 +78,13 @@ void init()
 
 int accept_fight(object me)
 {
-        command("say Ð¡µÄÓÐ¹«ÎñÔÚÉí£¬²»ÄÜÓëÄã¹ýÕÐ¡£\n");
+        command("say å°çš„æœ‰å…¬åŠ¡åœ¨èº«ï¼Œä¸èƒ½ä¸Žä½ è¿‡æ‹›ã€‚\n");
         return 0;
 }
 
 int accept_kill(object me)
 {
-        command("say ÄãÕâÊÇÌ«ËêÍ·ÉÏ¶¯ÍÁ£¬»îµÃ²»ÄÍ·³ÁË£¡Ã÷Äê´ËÊ±¾ÍÊÇÄãµÄ¼ÉÈÕ£¡\n");
+        command("say ä½ è¿™æ˜¯å¤ªå²å¤´ä¸ŠåŠ¨åœŸï¼Œæ´»å¾—ä¸è€çƒ¦äº†ï¼æ˜Žå¹´æ­¤æ—¶å°±æ˜¯ä½ çš„å¿Œæ—¥ï¼\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

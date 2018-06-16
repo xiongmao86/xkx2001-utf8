@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pring.c �׽��ָ
+// pring.c 白金戒指
 
 #include <armor.h>
 #include <ansi.h>
@@ -8,12 +8,12 @@ inherit FINGER;
 
 void create()
 {
-        set_name(HIW"�׽��ָ"NOR, ({ "platinum ring", "ring" }));
+        set_name(HIW"白金戒指"NOR, ({ "platinum ring", "ring" }));
         set("weight", 400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
+                set("unit", "个");
                 set("value", 9900);
                 set("material", "platinum");
                 set("no_sell", 1);
@@ -28,12 +28,12 @@ void init()
                 
         // married but not wearing ring, must be just married or login
         if( me->is_married() && !me->query_temp("ring_worn") ) {
-                if( me->query("gender") == "Ů��" )
-                        set("long", "��ָ�Ͽ��ż���С�֣���ǿ������  "
-                                + me->query("spouse/name") + "��\n");
+                if( me->query("gender") == "女性" )
+                        set("long", "戒指上刻着几个小字：「强极则辱  "
+                                + me->query("spouse/name") + "」\n");
                 else
-                        set("long", "��ָ�Ͽ��ż���С�֣��������  "
-                                + me->query("spouse/name") + "��\n");
+                        set("long", "戒指上刻着几个小字：「情深不寿  "
+                                + me->query("spouse/name") + "」\n");
                 set("no_drop", 1);
                 set("no_get", 1);       
                 wear();
@@ -42,7 +42,7 @@ void init()
                 remove_action("do_exchange", "exchange");
                 remove_action("do_exchange", "huan");
         } else {
-                set("long", "һö�������İ׽��ָ��ͨ�������ŷ���֮���쳤�ؾá�\n");
+                set("long", "一枚亮闪闪的白金戒指，通常象征着夫妻之情天长地久。\n");
 //              set("no_drop", 0);
 //              set("no_get", 0);       
                 add_action("do_exchange", "exchange");
@@ -55,9 +55,9 @@ void init()
 
 int disable_remove(string arg)
 {
-        if (!id(arg)) return notify_fail("��Ҫ�ѵ�ʲô��\n");
+        if (!id(arg)) return notify_fail("你要脱掉什么？\n");
         
-        write("��������ȡ��������\n");
+        write("这样东西取不下来。\n");
         return 1;
 }        
 
@@ -72,33 +72,33 @@ int do_exchange(string arg)
         || sscanf(arg, "%s %s", name, id) != 2
         || id != "platinum ring" && id != "ring"
         || !objectp(who = present(name, environment(me))) )
-                return notify_fail("��Ҫ��˭������ָ? \n");
+                return notify_fail("你要跟谁交换戒指? \n");
 
 	if( objectp(me->query_temp("armor/finger")) )
-		return notify_fail("�����ϻ����Ž�ָ�ء�\n");
+		return notify_fail("你手上还带着戒指呢。\n");
 
 	if( objectp(who->query_temp("armor/finger")) )
-		return notify_fail(who->name() +"���ϻ����Ž�ָ�ء�\n");
+		return notify_fail(who->name() +"手上还带着戒指呢。\n");
 
         if( me->query_temp("marriage/ring") != who
         || who->query_temp("marriage/ring") != me )
-                return notify_fail("�㻹�����Һû���ָ���˰ɡ�\n");
+                return notify_fail("你还是先找好换戒指的人吧。\n");
                 
         if( !objectp(so = present("platinum ring", who)) )
-                return notify_fail("��ϧ�Է�û�н�ָ���Ժ��㽻����\n");
+                return notify_fail("可惜对方没有戒指可以和你交换。\n");
 
         if( !living(who) ) 
-                return notify_fail("������Ȱ�" + who->name() + "Ū�ѡ�\n");
+                return notify_fail("你必须先把" + who->name() + "弄醒。\n");
                         
-        if( me->query("gender") == "Ů��" ) {           
-                message_vision(HIM "$N��������һö�׽��ָ��������$n������ָ�ϡ�\n" NOR,
+        if( me->query("gender") == "女性" ) {           
+                message_vision(HIM "$N红着脸将一枚白金戒指轻轻套在$n的无名指上。\n" NOR,
                         who, me);
-                message_vision(HIM "$N�������棬����һö�׽��ָ����$n������ָ�ϡ�\n" NOR,
+                message_vision(HIM "$N娇羞满面，将另一枚白金戒指套在$n的无名指上。\n" NOR,
                         me, who);
         } else {
-                message_vision(HIM "$N��������һö�׽��ָ��������$n������ָ�ϡ�\n" NOR,
+                message_vision(HIM "$N红着脸将一枚白金戒指轻轻套在$n的无名指上。\n" NOR,
                         me, who);
-                message_vision(HIM "$N�������棬����һö�׽��ָ����$n������ָ�ϡ�\n" NOR,
+                message_vision(HIM "$N娇羞满面，将另一枚白金戒指套在$n的无名指上。\n" NOR,
                         who, me);
         }
                         

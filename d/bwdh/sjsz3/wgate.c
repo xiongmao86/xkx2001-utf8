@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/bwdh/sjsz/wgate.c
-// ÊÔ½£É½×¯Î÷ÃÅ
+// è¯•å‰‘å±±åº„è¥¿é—¨
 // by sdong 08/8/99
 
 #include <ansi.h>
@@ -17,7 +17,7 @@ int do_open_men(string arg);
 
 void create()
 {
-	set("short", HIR"ÊÔ½£É½×¯Î÷ÃÅ"NOR);
+	set("short", HIR"è¯•å‰‘å±±åº„è¥¿é—¨"NOR);
 	set("long", (: long_desc :));
 	set("invalid_startroom", 1);
 
@@ -47,11 +47,11 @@ string long_desc()
 		           /I______________I\\               
 		         //||||||||||||||||||\\\\            
 		     T\\//IIIIIIIIIIIIIIIIIIIIII\\\\/T       
-	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ ÊÔ½£É½×¯ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
+	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ è¯•å‰‘å±±åº„ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
 		         "+HIG"||"NOR+HIY"__________________"+HIG"||"NOR+HIY"             "+HIC"
 	  []___[]___[]__|[]___[]___||___[]___[]|__[]___[]___[]
 	  |__________________|_|________|_|__________________|"+HIB"
-             ||                   "+HIW"[Î÷ÃÅ]"+HIB"                 ||
+             ||                   "+HIW"[è¥¿é—¨]"+HIB"                 ||
              ||                ___________               ||
              ||               @           @              ||
              ||               |           |              ||

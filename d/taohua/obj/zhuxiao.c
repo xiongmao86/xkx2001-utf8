@@ -8,18 +8,18 @@ inherit SWORD;
 
 void create()
 {
-	set_name(GRN"Öñóï"NOR,({ "zhu xiao", "xiao" }) );
+	set_name(GRN"ç«¹ç®«"NOR,({ "zhu xiao", "xiao" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 100);
 		set("material", "bamboo");
                 set("shape", "flute");
-		set("long", "ÕâÊÇÒ»±úÈı³ßÀ´³¤£¬¾«¹¤ÖÆ³ÉµÄÇàÖñóï¡£\n");
-		set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŸ„ä¸‰å°ºæ¥é•¿ï¼Œç²¾å·¥åˆ¶æˆçš„é’ç«¹ç®«ã€‚\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 	init_sword(7);
 	setup();

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// taolao.c ÌÕÀÏÈË
+// taolao.c é™¶è€äºº
 
 inherit NPC;
 //inherit F_VENDOR;
@@ -7,16 +7,16 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÌÕÀÏÈË", ({ "tao lao", "tao", "lao" }));
-	set("title", "ÌÔÈ»²è¾ÓÀÏ°å");
+	set_name("é™¶è€äºº", ({ "tao lao", "tao", "lao" }));
+	set("title", "æ·˜ç„¶èŒ¶å±…è€æ¿");
 	set("shen_type", 1);
 
 	set("str", 30);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("long",
-		"ÌÕÀÏÈËÊÇ³öÃûµÄÀÏºÃÈË£¬ËûÂôµÄ²èÓÖÏãÓÖºÃ£¬¼ÛÇ®¹«µÀ£¬\n"
-		"ËùÒÔ³ÇÀïµÄÈË¶¼Ï²»¶µ½ËûÄÇÂò²è¡£\n");
+		"é™¶è€äººæ˜¯å‡ºåçš„è€å¥½äººï¼Œä»–å–çš„èŒ¶åˆé¦™åˆå¥½ï¼Œä»·é’±å…¬é“ï¼Œ\n"
+		"æ‰€ä»¥åŸŽé‡Œçš„äººéƒ½å–œæ¬¢åˆ°ä»–é‚£ä¹°èŒ¶ã€‚\n");
 	set("combat_exp", 1000);
 	set("attitude", "friendly");
 	
@@ -51,12 +51,12 @@ void greeting(object ob)
 		return;
 	switch(random(2)) {
 	case 0 :
-		say("ÌÕÀÏÈËÐ¦ÃÐÃÐµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-			"£¬¿ìÇë½øÀ´ºÈ±­ÈÈ²è¡£\n");
+		say("é™¶è€äººç¬‘çœ¯çœ¯åœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) +
+			"ï¼Œå¿«è¯·è¿›æ¥å–æ¯çƒ­èŒ¶ã€‚\n");
 		break;
 	case 1 :
-		say("ÌÕÀÏÈËËµµÀ£ºÓ´£¡ÕâÎ»" + RANK_D->query_respect(ob) + 
-			"£¬½ñÌì¸ÕÔËµ½ÁËÒ»ÅúÐÂÏÊ²èÒ¶£¬À´³¢³¢°É¡£\n");
+		say("é™¶è€äººè¯´é“ï¼šå“Ÿï¼è¿™ä½" + RANK_D->query_respect(ob) + 
+			"ï¼Œä»Šå¤©åˆšè¿åˆ°äº†ä¸€æ‰¹æ–°é²œèŒ¶å¶ï¼Œæ¥å°å°å§ã€‚\n");
 		break;
 	}
 }

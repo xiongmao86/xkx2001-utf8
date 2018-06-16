@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chmiao.c ³ÇÚòÃí
+// chmiao.c åŸéšåº™
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³ÇÚòÃí");
+        set("short", "åŸéšåº™");
 	set("long", @LONG
-ÕâÊÇÒ»¼äÄê´ú¾ÃÔ¶µÄĞ¡Ãí£¬ÀïÃæ¹©·Å×Å¹ÛÒôÆĞÈøºÍÍÁµØÒ¯£¬ÊÇÈªÖİÏç¼äÇó
-²·ÎÊØÔµÄ³¡Ëù£¬¾İËµÕâÀïµÄÇ©ØÔÌØÁé¡£ÅÔ±ßÓĞÉÈĞ¡ÃÅ¡£
+è¿™æ˜¯ä¸€é—´å¹´ä»£ä¹…è¿œçš„å°åº™ï¼Œé‡Œé¢ä¾›æ”¾ç€è§‚éŸ³è©è¨å’ŒåœŸåœ°çˆ·ï¼Œæ˜¯æ³‰å·ä¹¡é—´æ±‚
+åœé—®å¦çš„åœºæ‰€ï¼Œæ®è¯´è¿™é‡Œçš„ç­¾å¦ç‰¹çµã€‚æ—è¾¹æœ‰æ‰‡å°é—¨ã€‚
 LONG
         );
 
@@ -24,7 +24,7 @@ LONG
 		__DIR__"npc/miaozhu" : 1,
         ]));
 
-	create_door("southwest", "Ğ¡ÃÅ", "northeast", DOOR_CLOSED);
+	create_door("southwest", "å°é—¨", "northeast", DOOR_CLOSED);
 
         set("no_clean_up", 0);
 

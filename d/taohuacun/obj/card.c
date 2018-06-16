@@ -3,26 +3,26 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR"ºØ¿¨"NOR, ({"card"}));
-        set("unit", "ÕÅ");
+        set_name(HIR"è´ºå¡"NOR, ({"card"}));
+        set("unit", "å¼ ");
         set("long",HIR" 
 
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥ ÐÂ»éÖ¾Ï² ©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§  ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´  ©§
-©§  ©¦                                      ©¦  ©§
-©§  ©¦                                      ©¦  ©§
-©§  ©¦  homename: Éè¶¨·¿¼äÃû³Æ¡£            ©¦  ©§
-©§  ©¦  homedesc: Éè¶¨·¿¼äÃèÊö¡£            ©¦  ©§
-©§  ©¦  bedname : Éè¶¨´²ÆÌÃû³Æ¡£            ©¦  ©§
-©§  ©¦  beddesc : Éè¶¨´²ÆÌÃèÊö¡£            ©¦  ©§
-©§  ©¦  findbaby: ÕÒÄãÃÇµÄÐ¡º¢¡£            ©¦  ©§
-©§  ©¦  gosleep : ÉÏ´²Ë¯¾õ¡£ÕâÑù²Å»áÓÐbaby¡£©¦  ©§
-©§  ©¦  sleep <sb>: ´´Ôì°®µÄ½á¾§¡£          ©¦  ©§
-©§  ©¦                                      ©¦  ©§
-©§  ©¦                      ÌìÏÂÓÐÑ©¹§ºØ    ©¦  ©§
-©§  ©¦                                      ©¦  ©§
-©§  ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼  ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
+â”â”â”â”â”â”â”â”â”â” æ–°å©šå¿—å–œ â”â”â”â”â”â”â”â”â”â”“
+â”ƒ  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”ƒ
+â”ƒ  â”‚                                      â”‚  â”ƒ
+â”ƒ  â”‚                                      â”‚  â”ƒ
+â”ƒ  â”‚  homename: è®¾å®šæˆ¿é—´åç§°ã€‚            â”‚  â”ƒ
+â”ƒ  â”‚  homedesc: è®¾å®šæˆ¿é—´æè¿°ã€‚            â”‚  â”ƒ
+â”ƒ  â”‚  bedname : è®¾å®šåºŠé“ºåç§°ã€‚            â”‚  â”ƒ
+â”ƒ  â”‚  beddesc : è®¾å®šåºŠé“ºæè¿°ã€‚            â”‚  â”ƒ
+â”ƒ  â”‚  findbaby: æ‰¾ä½ ä»¬çš„å°å­©ã€‚            â”‚  â”ƒ
+â”ƒ  â”‚  gosleep : ä¸ŠåºŠç¡è§‰ã€‚è¿™æ ·æ‰ä¼šæœ‰babyã€‚â”‚  â”ƒ
+â”ƒ  â”‚  sleep <sb>: åˆ›é€ çˆ±çš„ç»“æ™¶ã€‚          â”‚  â”ƒ
+â”ƒ  â”‚                                      â”‚  â”ƒ
+â”ƒ  â”‚                      å¤©ä¸‹æœ‰é›ªæ­è´º    â”‚  â”ƒ
+â”ƒ  â”‚                                      â”‚  â”ƒ
+â”ƒ  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”ƒ
+â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”›
 
 ");
         set("value", 0);

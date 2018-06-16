@@ -11,12 +11,12 @@ int do_kill(object me, object dest);
 
 void create()
 {
-	set_name("Ğ»ÑÌ¿Í", ({ "xie yanke", "xie" }));
-	set("nickname", "Ä¦Ìì¾ÓÊ¿");
+	set_name("è°¢çƒŸå®¢", ({ "xie yanke", "xie" }));
+	set("nickname", "æ‘©å¤©å±…å£«");
 	set("long", 
-	"ËûÊÇ¸öÉíĞÎ¸ß´ó£¬ÏàÃ²ÇåÛÇµÄÀÏÕß¡£Ò»Ï®ÇàÅÛÔÚÄÚÁ¦¼¤µ´ÏÂ¹Ä¹Ä×öÏì¡£\n"+
-	"ò¢ÏÂÒ»¸±¶ÌĞë£¬Á³ÉÏ·º³öµ­µ­µÄÇàÉ«¡£\n");
-	set("gender", "ÄĞĞÔ");
+	"ä»–æ˜¯ä¸ªèº«å½¢é«˜å¤§ï¼Œç›¸è²Œæ¸…çŸçš„è€è€…ã€‚ä¸€è¢­é’è¢åœ¨å†…åŠ›æ¿€è¡ä¸‹é¼“é¼“åšå“ã€‚\n"+
+	"é¢Œä¸‹ä¸€å‰¯çŸ­é¡»ï¼Œè„¸ä¸Šæ³›å‡ºæ·¡æ·¡çš„é’è‰²ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("attitude", "heroism");
 	set("shen_type", 0);
@@ -76,8 +76,8 @@ void init()
         if( !me->query("waiting_target") && ob->query_temp("fee_paid") ) 
                 ob->delete_temp("fee_paid");
 
-        add_action("do_name","É±");
-	add_action("do_zao","Òª");
+        add_action("do_name","æ€");
+	add_action("do_zao","è¦");
 
 }
 
@@ -90,11 +90,11 @@ int do_zao(string target)
 
 	if (!who->query_temp("ling_paid")) return 0;
 	
-	command ("say ºÃ£¬ÀÏ²®²®Õâ¾Í¸øÄãÕª¡£");
+	command ("say å¥½ï¼Œè€ä¼¯ä¼¯è¿™å°±ç»™ä½ æ‘˜ã€‚");
 	date = new(__DIR__"obj/zao");
 	date->move(who);
-	message_vision("$N×İÉíÉÏÊ÷£¬¸ø$nÕªÁËÒ»Á£´óºìÔæ¡£\n", me, who);
-	command("say ºÃÁË£¬ÕâÏÂÔÛÃÇË­Ò²²»Ç·Ë­µÄÁË¡£");
+	message_vision("$Nçºµèº«ä¸Šæ ‘ï¼Œç»™$næ‘˜äº†ä¸€ç²’å¤§çº¢æ£ã€‚\n", me, who);
+	command("say å¥½äº†ï¼Œè¿™ä¸‹å’±ä»¬è°ä¹Ÿä¸æ¬ è°çš„äº†ã€‚");
 	command("jump");
 	who->delete_temp("ling_paid");
 	return 1;
@@ -110,17 +110,17 @@ int do_name(string target)
 
 /*
         if( me->query("sg/spy") )
-                return notify_fail("Ğ»ÑÌ¿Í¹ş¹ş´óĞ¦µÀ£ºÉñÁú½ÌÉ±¸öÈË»¹ÒªÀÏ·ò³öÂí£¿£¡\n");
+                return notify_fail("è°¢çƒŸå®¢å“ˆå“ˆå¤§ç¬‘é“ï¼šç¥é¾™æ•™æ€ä¸ªäººè¿˜è¦è€å¤«å‡ºé©¬ï¼Ÿï¼\n");
 */
 
         if( me->query("waiting_target") )
-                return notify_fail("Ğ»ÑÌ¿Í±§Ç¸µØËµµÀ£ºÎÒÏÖÔÚÕıÃ¦×ÅÄÄ£¬Äú´ô»á¶ùÔÚÀ´°É£¡\n");
+                return notify_fail("è°¢çƒŸå®¢æŠ±æ­‰åœ°è¯´é“ï¼šæˆ‘ç°åœ¨æ­£å¿™ç€å“ªï¼Œæ‚¨å‘†ä¼šå„¿åœ¨æ¥å§ï¼\n");
 
         if( !this_player()->query_temp("fee_paid") ) 
-                return notify_fail("Ğ»ÑÌ¿ÍËµµÀ£ºÒªÉ±Äã×Ô¼ºÈ¥É±ºÃÁË£¡\n");
+                return notify_fail("è°¢çƒŸå®¢è¯´é“ï¼šè¦æ€ä½ è‡ªå·±å»æ€å¥½äº†ï¼\n");
 
         if( !target || target==" ") 
-                return notify_fail("Ğ»ÑÌ¿Í²»ÄÍ·³µØËµµÀ£º¿ì¸æËßÎÒÄÇ¼Ò»ïµÄÃû×Ö£¬ÎÒ¿ÉÃ»¹¦·òÌıÄãÏĞÁÄ£¡\n");
+                return notify_fail("è°¢çƒŸå®¢ä¸è€çƒ¦åœ°è¯´é“ï¼šå¿«å‘Šè¯‰æˆ‘é‚£å®¶ä¼™çš„åå­—ï¼Œæˆ‘å¯æ²¡åŠŸå¤«å¬ä½ é—²èŠï¼\n");
 
         for(i=0; i<sizeof(all); i++) 
         {
@@ -129,14 +129,14 @@ int do_name(string target)
 	}
 
         if( !dest )
-                return notify_fail("Ğ»ÑÌ¿ÍÒ»ÉùÀäĞ¦£ºËûÏÖÔÚ²»ÔÚÓÎÏ·ÖĞ£¬¹ı»áÔÙÀ´°É¡£\n");
+                return notify_fail("è°¢çƒŸå®¢ä¸€å£°å†·ç¬‘ï¼šä»–ç°åœ¨ä¸åœ¨æ¸¸æˆä¸­ï¼Œè¿‡ä¼šå†æ¥å§ã€‚\n");
 
         if (dest->is_ghost())
-                return notify_fail("Ğ»ÑÌ¿ÍºÜ²»¸ßĞËµØËµµÀ£ºËûÒÑ¾­ÊÇ¸öËÀ¹íÁË£¬Äã»¹À´ÕÒÎÒ¸ÉÊ²Ã´£¡\n");
+                return notify_fail("è°¢çƒŸå®¢å¾ˆä¸é«˜å…´åœ°è¯´é“ï¼šä»–å·²ç»æ˜¯ä¸ªæ­»é¬¼äº†ï¼Œä½ è¿˜æ¥æ‰¾æˆ‘å¹²ä»€ä¹ˆï¼\n");
 
 /*
         if( dest->query("sg/spy") )
-                return notify_fail("Ğ»ÑÌ¿ÍÏÅÁËÒ»Ìø£¬ËµµÀ£ºÉñÁú½ÌµÄÈËÎÒÈÇ²»Æğ£¡\n");
+                return notify_fail("è°¢çƒŸå®¢å“äº†ä¸€è·³ï¼Œè¯´é“ï¼šç¥é¾™æ•™çš„äººæˆ‘æƒ¹ä¸èµ·ï¼\n");
 */
 
         me->set("waiting_target", dest->query("id"));
@@ -146,12 +146,12 @@ int do_name(string target)
                         dest->query("name"), dest->query("id")) );
 
         message("vision",
-                HIY "Ğ»ÑÌ¿ÍºÙºÙºÙµØ¸ÉĞ¦ÁË¼¸Éù£¬ËµµÀ£ºĞÒºÃÄãÃ»ÈÃÎÒ×Ô²ĞÉíÌå¡£\n"NOR,
+                HIY "è°¢çƒŸå®¢å˜¿å˜¿å˜¿åœ°å¹²ç¬‘äº†å‡ å£°ï¼Œè¯´é“ï¼šå¹¸å¥½ä½ æ²¡è®©æˆ‘è‡ªæ®‹èº«ä½“ã€‚\n"NOR,
                 environment(), me );
 
 //        me->set("pursuer", 1);
 
-        message_vision("$N×ßÁË³öÈ¥¡£\n" NOR, me);
+        message_vision("$Nèµ°äº†å‡ºå»ã€‚\n" NOR, me);
 
         call_out("do_chase", 1, me);
 
@@ -167,26 +167,26 @@ int accept_object(object who, object ob)
 
         if ((int)this_player()->query("age") < 16
         || this_player()->query("combat_exp") < 10000){
-                tell_object(who, "Ğ»ÑÌ¿ÍÇáÃïµØÇÆÁËÄãÒ»ÑÛ£¬²»Ğ¼µØËµµÀ£ºĞ¡Ã«º¢×ÓËã²»µÃÊı¡£\n");
+                tell_object(who, "è°¢çƒŸå®¢è½»è”‘åœ°ç§äº†ä½ ä¸€çœ¼ï¼Œä¸å±‘åœ°è¯´é“ï¼šå°æ¯›å­©å­ç®—ä¸å¾—æ•°ã€‚\n");
                 return 1;
                 }
 
-                tell_object(who, "Ğ»ÑÌ¿Í¸ßĞËµØÎÊÄã£º"+RANK_D->query_respect(who)+
-			"£¬Äã¶öÁË°É£¬Òª²»Òª³ÔÔæ£¿\n");
-                tell_object(who, "Çë¼üÈë£ºÒª\n");
+                tell_object(who, "è°¢çƒŸå®¢é«˜å…´åœ°é—®ä½ ï¼š"+RANK_D->query_respect(who)+
+			"ï¼Œä½ é¥¿äº†å§ï¼Œè¦ä¸è¦åƒæ£ï¼Ÿ\n");
+                tell_object(who, "è¯·é”®å…¥ï¼šè¦\n");
                 who->set_temp("ling_paid",1);
                 return 1;
         }
         else if (ob->query("money_id")) 
         {
-                tell_object(who, "Ğ»ÑÌ¿ÍºÙºÙÒ»Ğ¦£¬ËµµÀ£º¸øÎÒÕâÃ´¶àÇ®£¿ ½«À´ÎÒ¿ÉÃ»·¨»¹Äã°¡¡£\n");
+                tell_object(who, "è°¢çƒŸå®¢å˜¿å˜¿ä¸€ç¬‘ï¼Œè¯´é“ï¼šç»™æˆ‘è¿™ä¹ˆå¤šé’±ï¼Ÿ å°†æ¥æˆ‘å¯æ²¡æ³•è¿˜ä½ å•Šã€‚\n");
                 return 1;
         }
 	else if(ob->query("id")=="zao") {
-		command("say Ïë²»µ½ÀÏ·ò×İºá½­ºş¶àÄê£¬»¹ÒªÄãÇë¿Í¡£");
+		command("say æƒ³ä¸åˆ°è€å¤«çºµæ¨ªæ±Ÿæ¹–å¤šå¹´ï¼Œè¿˜è¦ä½ è¯·å®¢ã€‚");
 		if (who->query_temp("ling_paid")) {
-                	tell_object(who, "Ğ»ÑÌ¿Í³ÁÏÂÁ³À´£ºÒª²»È»ÕâÑù°É£¬ÎÒ°ïÄãÉ±¸ö³ğ¼Ò¡£\n");
-                	tell_object(who, "Çë¼üÈë£ºÉ± Ä¿±êÖĞÎÄÃû×Ö\n");
+                	tell_object(who, "è°¢çƒŸå®¢æ²‰ä¸‹è„¸æ¥ï¼šè¦ä¸ç„¶è¿™æ ·å§ï¼Œæˆ‘å¸®ä½ æ€ä¸ªä»‡å®¶ã€‚\n");
+                	tell_object(who, "è¯·é”®å…¥ï¼šæ€ ç›®æ ‡ä¸­æ–‡åå­—\n");
                 	who->set_temp("fee_paid",1);
 			who->delete_temp("ling_paid");
 		}
@@ -208,7 +208,7 @@ int do_chase(object me)
         }
 
         me->move(environment(dest));
-        message_vision("$N×ßÁË¹ıÀ´¡£\n" NOR, me);
+        message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n" NOR, me);
         me->set_leader(dest);
         command("look " + dest->query("id"));
 
@@ -232,8 +232,8 @@ int do_kill(object me, object dest)
         if( objectp(dest) && present(dest, environment(me))
                  && !environment(me)->query("no_fight"))
         {
-                message_vision(HIR "$N¶Ô$nËµµÀ£ºµ±ÄêÎÒ°ÑĞşÌúÁî½»¸øÈı¸ö¶ÔÎÒÓĞ¶÷µÄÅóÓÑ£¬·¢ÊÄ»á°ï°ÑĞşÌúÁî¸øÎÒµÄÈË×öÈÎºÎÊÂ£¬ÏÖÔÚÓĞÈËÒªÎÒÉ±ÁËÄã¡£\n"
-                        +RANK_D->query_respect(dest)+"£¬ÄãÈÏÃü°É£¡\n" NOR, me, dest);
+                message_vision(HIR "$Nå¯¹$nè¯´é“ï¼šå½“å¹´æˆ‘æŠŠç„é“ä»¤äº¤ç»™ä¸‰ä¸ªå¯¹æˆ‘æœ‰æ©çš„æœ‹å‹ï¼Œå‘èª“ä¼šå¸®æŠŠç„é“ä»¤ç»™æˆ‘çš„äººåšä»»ä½•äº‹ï¼Œç°åœ¨æœ‰äººè¦æˆ‘æ€äº†ä½ ã€‚\n"
+                        +RANK_D->query_respect(dest)+"ï¼Œä½ è®¤å‘½å§ï¼\n" NOR, me, dest);
                 me->set_leader(dest);
                 me->kill_ob(dest);
                 dest->fight_ob(me);
@@ -300,8 +300,8 @@ int do_back(object me)
 {
 
         me->move("/d/forest/mty1");
-        message("vision", "Ğ»ÑÌ¿Í×ßÁË½øÀ´£¬ÅÄÁËÅÄÉíÉÏµÄ³¾ÍÁ£¬\n"
-                "Ğ¦µÀ£ºÀÏÌìÒ¯±£ÓÓ£¬ÄãÖ»ÊÇÈÃÎÒÉ±¸öÈË¡£\n", 
+        message("vision", "è°¢çƒŸå®¢èµ°äº†è¿›æ¥ï¼Œæ‹äº†æ‹èº«ä¸Šçš„å°˜åœŸï¼Œ\n"
+                "ç¬‘é“ï¼šè€å¤©çˆ·ä¿ä½‘ï¼Œä½ åªæ˜¯è®©æˆ‘æ€ä¸ªäººã€‚\n", 
                 environment(), me );
         return 1;
 }

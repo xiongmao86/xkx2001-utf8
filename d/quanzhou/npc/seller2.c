@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/quanzhou/npc/seller2.c Ì¯··
+// /d/quanzhou/npc/seller2.c æ‘Šè´©
 // Shan: 96/07/09
 
 inherit NPC;
@@ -7,11 +7,11 @@ inherit F_VENDOR;
 
 void create()
 {
-	set_name("Ì¯··", ({ "tan fan", "seller", "fan" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("æ‘Šè´©", ({ "tan fan", "seller", "fan" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 28);
 	set("long",
-"ÕâÊÇ¸ö»úÁéÄÜ¸ÉµÄĞ¡Ì¯··£¬°ÚÅª×ÅÌ¯×ÓÀïµÄ¸÷ÖÖÎäÆ÷£¬Ò©Æ·£¬´óÉùÏòÀ´Íù½­ºş¿ÍßººÈ×Å¡£\n");
+"è¿™æ˜¯ä¸ªæœºçµèƒ½å¹²çš„å°æ‘Šè´©ï¼Œæ‘†å¼„ç€æ‘Šå­é‡Œçš„å„ç§æ­¦å™¨ï¼Œè¯å“ï¼Œå¤§å£°å‘æ¥å¾€æ±Ÿæ¹–å®¢å†å–ç€ã€‚\n");
 	set("shen_type", 1);
 	set("combat_exp", 60000);
         set("str", 26);

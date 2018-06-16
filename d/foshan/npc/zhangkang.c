@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÕÅ¿µ", ({ "zhang kang", "zhang", "kang" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("å¼ åº·", ({ "zhang kang", "zhang", "kang" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 28);
 	set("long",
-		"ÕâÊÇ¸öÀÏÊµ°Í½»µÄºº×Ó£¬ÊÇÕÅ³¯ÌÆµÄ´ÓÈË¡£\n");
+		"è¿™æ˜¯ä¸ªè€å®å·´äº¤çš„æ±‰å­ï¼Œæ˜¯å¼ æœå”çš„ä»äººã€‚\n");
 	set("shen_type", 1);
 	set("combat_exp", 1200);
         set("str", 25);

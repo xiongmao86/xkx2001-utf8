@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ú���");
+	set("short", "颐和轩");
 	set("long", @LONG
-����ԭΪǬ¡�ʵ۹��������Ϣ֮�������ú͡���������Ǭ¡��
-��Ԥף���Լ������Ҹ���
+这里原为乾隆皇帝归政后的憩息之所。“颐和”的名称是乾隆皇
+帝预祝他自己老年幸福。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

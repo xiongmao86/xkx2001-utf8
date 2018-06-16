@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ´óÌü /d/shenlong/dating
+// å¤§å… /d/shenlong/dating
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -9,11 +9,11 @@ string look_jia();
 
 void create()
 {
-	set("short", "´óÌü");
+	set("short", "å¤§å…");
 	set("long", @LONG
-ÄãÀ´µ½ÁËÒ»¸ö´óÌüÖ®ÖĞ£¬ÕâÌüË¶´óÎŞÅó£¬×ã¿ÉÈİµÃÏÂÇ§ÈËÖ®ÖÚ£¬Ò»ÈºÈºÉÙ
-ÄĞÉÙÅ®·ÖÎåÉ«Õ¾ºÃ£¬Ã¿¸ö¶ÓÁĞÖ®Ç°¶¼Õ¾×ÅÒ»¸öÍ·Ä¿¡£´óÌüËÄÖÜÓĞºÜ¶à³ö¿Ú¡£
-ËÄÖÜÊú×ÅÒ»ÅÅ±øÆ÷¼Ü(jia)¡£
+ä½ æ¥åˆ°äº†ä¸€ä¸ªå¤§å…ä¹‹ä¸­ï¼Œè¿™å…ç¡•å¤§æ— æœ‹ï¼Œè¶³å¯å®¹å¾—ä¸‹åƒäººä¹‹ä¼—ï¼Œä¸€ç¾¤ç¾¤å°‘
+ç”·å°‘å¥³åˆ†äº”è‰²ç«™å¥½ï¼Œæ¯ä¸ªé˜Ÿåˆ—ä¹‹å‰éƒ½ç«™ç€ä¸€ä¸ªå¤´ç›®ã€‚å¤§å…å››å‘¨æœ‰å¾ˆå¤šå‡ºå£ã€‚
+å››å‘¨ç«–ç€ä¸€æ’å…µå™¨æ¶(jia)ã€‚
 LONG
 	);
 
@@ -54,19 +54,19 @@ int do_get(string arg)
         if( sscanf(arg, "%s from jia", type) != 1) return 0;
 
         if( time() < me->query("sg/weapontime") + 300 ) {
-                tell_object(me, "ÄãÌ«Ì°ĞÄÁË£¬»¹ÊÇµÈÒ»ÏÂÔÙÀ´°É¡£\n");
+                tell_object(me, "ä½ å¤ªè´ªå¿ƒäº†ï¼Œè¿˜æ˜¯ç­‰ä¸€ä¸‹å†æ¥å§ã€‚\n");
                 return 1;
         }
 
         if( type != "armor" ) {
                 if( (int)me->query_skill(type, 1) < 1 ) {
-                        tell_object(me, "Äã²»»áÓÃÕâÖÖÎäÆ÷¡£\n");
+                        tell_object(me, "ä½ ä¸ä¼šç”¨è¿™ç§æ­¦å™¨ã€‚\n");
                         return 1;
                 }
         }
 
         switch(type) {
-        case "sword":   if(me->query("gender") == "ÎŞĞÔ") 
+        case "sword":   if(me->query("gender") == "æ— æ€§") 
                                 weapon = new("/clone/test/xiuhua");
                         else    weapon = new("/clone/weapon/gangjian");
                         break;
@@ -83,12 +83,12 @@ int do_get(string arg)
         case "armor":   weapon = new("/clone/armor/tiejia");
                         break;
 
-        default:        tell_object(me, "ÕÒ²»µ½" + type + "\n");
+        default:        tell_object(me, "æ‰¾ä¸åˆ°" + type + "\n");
                         return 1;
         }
 
         if( weapon->move(me) ) {
-                message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»"+weapon->query("unit")+weapon->name()+"¡£\n", me);
+                message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€"+weapon->query("unit")+weapon->name()+"ã€‚\n", me);
                 me->set("sg/weapontime", time());
         }  else {
                 destruct(weapon);
@@ -100,9 +100,9 @@ string look_jia()
 {
         string msg;
 
-        msg = "ÕâÊÇÒ»¸ö±øÆ÷¼Ü£¬Ê®°Ë°ãÎäÆ÷ÊÇÓ¦ÓĞ¾¡ÓĞ¡£\n";
-        msg+= "Ä¿Ç°´æ·ÅÓĞ½£(sword)£¬µ¶(blade)£¬°ô(stick)£¬ÕÈ(staff)£¬ÂÖ(hammer)£¬\n±Ş(whip)¡£»¹ÓĞÒ»Ğ©Ìú¼×(armor)¡£\n";
-        msg+= "ÇëÓÃÖ¸Áî¡°get ÖÖÀà from jia¡±ÄÃÈ¡Äã³ÆÊÖµÄ±øÆ÷»ò¼×ëĞ¡£\n";
+        msg = "è¿™æ˜¯ä¸€ä¸ªå…µå™¨æ¶ï¼Œåå…«èˆ¬æ­¦å™¨æ˜¯åº”æœ‰å°½æœ‰ã€‚\n";
+        msg+= "ç›®å‰å­˜æ”¾æœ‰å‰‘(sword)ï¼Œåˆ€(blade)ï¼Œæ£’(stick)ï¼Œæ–(staff)ï¼Œè½®(hammer)ï¼Œ\né­(whip)ã€‚è¿˜æœ‰ä¸€äº›é“ç”²(armor)ã€‚\n";
+        msg+= "è¯·ç”¨æŒ‡ä»¤â€œget ç§ç±» from jiaâ€æ‹¿å–ä½ ç§°æ‰‹çš„å…µå™¨æˆ–ç”²èƒ„ã€‚\n";
         return msg;
 }
 

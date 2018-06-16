@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��������");
+	set("short", "榕树雨林");
 	set("long", @LONG
-����һƬʪ������֣�����ˮ��������·���У�ʮ���ɸߵľ޴������̸���
-�ڣ����ɴֵü����˺ϱ�ҲΧ��ס����������֦�´�����ˮ�з�������������Ϊ
-����ľ��¡�������Ȼ�������ޣ�ȴ�Ƿ��ݾ۾ӵ���������������̨��������
-Խ�ڴ�������¶�ĸ�֦�ϣ��ö������Է���
+这是一片湿润的雨林，脚下水汪汪的无路可行，十数丈高的巨大榕树盘根错
+节，树干粗得几个人合抱也围不住。榕树的树枝下垂到泥水中反过来扎根，成为
+特意的景致。雨林虽然少有走兽，却是飞禽聚居的乐土，身手零活的台夷猎人攀
+越在大榕树浮露的根枝上，用短弩射猎飞鸟。
 LONG);
 	set("objects", ([
 		__DIR__"npc/tylieren" : 1,
@@ -19,7 +19,7 @@ LONG);
 	set("exits", ([
 		"west" : __DIR__"minov78",
 		]));
-	set("area", "³����");
+	set("area", "鲁望镇");
 	set("cost", 5);
 	set("no_clean_up", 0);
 	set("outdoors","dali");

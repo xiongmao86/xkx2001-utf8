@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chuanwu.c ����
+// chuanwu.c 船坞
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "船坞");
 	set("long", @LONG
-�������Ƽ���ȫ����õ��촬��ʦ�͹�����һ����ȥ���������깤�ͼ���
-�깤�ĸ�����;�����ִ�С��ľ������������ææµµ��һƬ��æ����
+这里是云集了全国最好的造船技师和工匠。一眼望去，满是已完工和即将
+完工的各种用途，各种大小的木船。坞内人们忙忙碌碌，一片繁忙景象。
 LONG
         );
 

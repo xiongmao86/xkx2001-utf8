@@ -4,13 +4,13 @@ inherit F_FOOD;
 
 void create()
 {
-    set_name("±ùÌÇºùÂ«", ({"hulu"}));
+    set_name("å†°ç³–è‘«èŠ¦", ({"hulu"}));
     set_weight(50);
     if (clonep())
 	set_default_object(__FILE__);
     else {
-	set("long", "ºìºìµÄÉ½é«£¬ÁÁ¾§¾§µÄ±ùÌÇ£¬ÄãµÄ¿ÚË®¿ì³öÀ´ÁË¡£\n");
-	set("unit", "´®");
+	set("long", "çº¢çº¢çš„å±±æ¥‚ï¼Œäº®æ™¶æ™¶çš„å†°ç³–ï¼Œä½ çš„å£æ°´å¿«å‡ºæ¥äº†ã€‚\n");
+	set("unit", "ä¸²");
 	set("food_remaining", 5);
 	set("value", 150);
     }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yezi.c Ò¬×Ó
+// yezi.c æ¤°å­
 // ssy
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ò¬×Ó", ({ "yezi", "ye" }));
+        set_name("æ¤°å­", ({ "yezi", "ye" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-		set("long", "Ò»Ö»´óÒ¬×Ó£¬ºÜÊÇÓÕÈË¡£\n");
+                set("unit", "åª");
+		set("long", "ä¸€åªå¤§æ¤°å­ï¼Œå¾ˆæ˜¯è¯±äººã€‚\n");
                 set("value", 70);
         }
         setup();
@@ -32,27 +32,27 @@ int do_za(string arg)
 	int level;
 
         if ( !arg )
-                return notify_fail( "ÄãÏëÔÒÊ²Ã´£¿\n");
+                return notify_fail( "ä½ æƒ³ç ¸ä»€ä¹ˆï¼Ÿ\n");
         if (( arg == "yezi" )||(arg == "ye"))
           {
 	    if (!stone=present("shikuai",me))
-	      return notify_fail( "ÄãÃ»ÓĞ¹¤¾ß£¬ÔõÃ´ÔÒ£¿\n");
+	      return notify_fail( "ä½ æ²¡æœ‰å·¥å…·ï¼Œæ€ä¹ˆç ¸ï¼Ÿ\n");
 	    else
 	      {
-		message_vision("$n°Ñ$N¸ß¸ß¾ÙÆğ£¬ºİºİµØÔÒÔÚÒ¬×ÓÉÏ£¬", stone,me);
+		message_vision("$næŠŠ$Né«˜é«˜ä¸¾èµ·ï¼Œç‹ ç‹ åœ°ç ¸åœ¨æ¤°å­ä¸Šï¼Œ", stone,me);
 		level=(int)me->query_skill("hammer",1);
 		check = level*level*level;
 		if (level > 20)
 		  {
-		    write ("Ö»Ò»ÏÂ±ãÔÒ¿ªÁË£¡\n");
+		    write ("åªä¸€ä¸‹ä¾¿ç ¸å¼€äº†ï¼\n");
 		  }
 		else if (check > (int)me->query("combat_exp") * 10)
 		  {       
-		    write ("ÔÒÁË°ëÌìÖÕÓÚÔÒ¿ªÁË£¡\n");
+		    write ("ç ¸äº†åŠå¤©ç»ˆäºç ¸å¼€äº†ï¼\n");
 		  }
 		else
 		  {
-		    write ("ÔÒÁË°ëÌìÖÕÓÚÔÒ¿ªÁË£¬Äã´ÓÖĞÑ§µ½ÁË»ù±¾´¸·¨µÄ³õ¼¶ÖªÊ¶£¡\n");
+		    write ("ç ¸äº†åŠå¤©ç»ˆäºç ¸å¼€äº†ï¼Œä½ ä»ä¸­å­¦åˆ°äº†åŸºæœ¬é”¤æ³•çš„åˆçº§çŸ¥è¯†ï¼\n");
 		    me->improve_skill("hammer", me->query("int"));
 		  }
 		ke = new("/d/xiakedao/obj/yezike");
@@ -68,10 +68,10 @@ int do_eat(string arg)
 { 
         object me = this_player();
         if ( !arg )
-                return notify_fail( "ÄãÏë³ÔÊ²Ã´£¿\n");
+                return notify_fail( "ä½ æƒ³åƒä»€ä¹ˆï¼Ÿ\n");
         if (( arg == "yezi" )||(arg == "ye"))
 	  {
-	    message_vision("$NÒ»¿ÚÒ§ÔÚÒ¬×Ó¿ÇÉÏ£¬²îµã°ÑÑÀ±ÀµôÁË£¬ÌÛµÃ½ĞÁËÒ»Éù¡£\n", me);
+	    message_vision("$Nä¸€å£å’¬åœ¨æ¤°å­å£³ä¸Šï¼Œå·®ç‚¹æŠŠç‰™å´©æ‰äº†ï¼Œç–¼å¾—å«äº†ä¸€å£°ã€‚\n", me);
 	    return 1;
 	  }
 	else return 0;

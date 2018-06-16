@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xionghuang.c ĞÛ»Æ
+// xionghuang.c é›„é»„
 // ywz 08/31/96
 
 #include <ansi.h>
@@ -16,13 +16,13 @@ void init()
 
 void create()
 {
-	set_name(YEL "ĞÛ»Æ" NOR, ({"xionghuang", "huang"}));
+	set_name(YEL "é›„é»„" NOR, ({"xionghuang", "huang"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-		set("unit", "¿é");
-		set("long", "ÕâÊÇÒ»¿éĞÛ»Æ£¬¿´ÉÏÈ¥»Æ³Î³ÎµÄ¡£\n");
+		set("unit", "å—");
+		set("long", "è¿™æ˜¯ä¸€å—é›„é»„ï¼Œçœ‹ä¸Šå»é»„æ¾„æ¾„çš„ã€‚\n");
 		set("value", 500);
         }
 
@@ -34,9 +34,9 @@ int do_eat(string arg)
         object me = this_player();
 
         if (!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	return notify_fail("Õâ¶«Î÷²»ÄÜÕâÃ´³Ô¡£\n");
+	return notify_fail("è¿™ä¸œè¥¿ä¸èƒ½è¿™ä¹ˆåƒã€‚\n");
 
 //	destruct(this_object());
         return 1;

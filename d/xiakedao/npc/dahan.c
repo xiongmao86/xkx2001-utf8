@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dahan.c »ÆÒÂ´óºº
+// dahan.c é»„è¡£å¤§æ±‰
 // Long, 6/13/97
 // xQin 7/00 cut sheyao
 
@@ -25,9 +25,9 @@ string* weapons = ({
 
 void create()
 {
-        set_name("»ÆÒÂ´óºº", ({ "da han", "han"}));
-        set("long", "ËûÉí²Ä¿ıÎä£¬¿´¹ıÈ¥ÏñÒ»×ùĞ¡É½ËÆµÄ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é»„è¡£å¤§æ±‰", ({ "da han", "han"}));
+        set("long", "ä»–èº«æé­æ­¦ï¼Œçœ‹è¿‡å»åƒä¸€åº§å°å±±ä¼¼çš„ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -35,7 +35,7 @@ void create()
         set("int", 25);
         set("con", 25);
         set("dex", 25);
-        set("race", "ÈËÀà");    
+        set("race", "äººç±»");    
         set("max_qi", 200);
         set("eff_qi", 200);
         set("qi", 200);
@@ -58,12 +58,12 @@ void create()
         set_skill("sword", 70);
         
         set("inquiry", ([
-                        "ÎäÆ÷"   :  (: ask_weapon :),
-                        "·À¾ß"   :  (: ask_armor :),
-                        "ÖĞÔ­"   :      (: ask_leave :),
-                        "µºÖ÷"   :      "µºÖ÷ºÃÏóÔÚ¶´Àï¡£\n",
-        "Âò"     :  "µºÉÏÃ»ÓĞÊ²÷áµêÆÌ¡£Äã»Øµ½ÖĞÔ­Ê±ÒªÊ²÷á¶«Î÷¿Éµ½µêÀïÂò¡£\n",
-        "Âô"     :  "µºÉÏÒ²Ã»ÓĞµ±ÆÌ¡£ÖĞÔ­µÄ¼¸¸ö´ó³ÇÕò¶¼ÓĞµ±ÆÌ£¬Ã»ÓÃµÄ¶«Î÷¿ÉÒÔÂôµô¡£\n",
+                        "æ­¦å™¨"   :  (: ask_weapon :),
+                        "é˜²å…·"   :  (: ask_armor :),
+                        "ä¸­åŸ"   :      (: ask_leave :),
+                        "å²›ä¸»"   :      "å²›ä¸»å¥½è±¡åœ¨æ´é‡Œã€‚\n",
+        "ä¹°"     :  "å²›ä¸Šæ²¡æœ‰ä»€éº½åº—é“ºã€‚ä½ å›åˆ°ä¸­åŸæ—¶è¦ä»€éº½ä¸œè¥¿å¯åˆ°åº—é‡Œä¹°ã€‚\n",
+        "å–"     :  "å²›ä¸Šä¹Ÿæ²¡æœ‰å½“é“ºã€‚ä¸­åŸçš„å‡ ä¸ªå¤§åŸé•‡éƒ½æœ‰å½“é“ºï¼Œæ²¡ç”¨çš„ä¸œè¥¿å¯ä»¥å–æ‰ã€‚\n",
                 ]));
         set("armor_count", 50);
         set("weapon_count", 50);
@@ -93,53 +93,53 @@ void greeting(object me)
         {       command(":) "+ me->query("id") );
                 whattosay = 
 "
-             ÕâÎ»"+RANK_D->query_respect(me) + 
-          "×ßÉ½Â·»òÒ°Â·Ê±ÒªĞ¡ĞÄÒ°ÊŞ£¬ÀÏ»¢ºÍ¶¾Éß
-     ¼ûÈË¾ÍÒ§µÄ¡£µ¶£¬½££¬Ê¯¿é»òÊ÷Ö¦¶¼¿ÉÒÔÓÃÀ´¼ÓÇ¿ÄãµÄ¹¥»÷Á¦¡£
-     »¹ÓĞÄã¿ÉÒÔÕÒĞ©¶«Î÷À´´©£¬¹·Æ¤£¬Å£Æ¤£¬Æ¤±³ĞÄ£¬»òÌú¼×µÈµÈ£¬
-     ÕâĞ©¶¼¿ÉÒÔÔö¼ÓÄãµÄ·ÀÓùÄÜÁ¦¡£";
+             è¿™ä½"+RANK_D->query_respect(me) + 
+          "èµ°å±±è·¯æˆ–é‡è·¯æ—¶è¦å°å¿ƒé‡å…½ï¼Œè€è™å’Œæ¯’è›‡
+     è§äººå°±å’¬çš„ã€‚åˆ€ï¼Œå‰‘ï¼ŒçŸ³å—æˆ–æ ‘æéƒ½å¯ä»¥ç”¨æ¥åŠ å¼ºä½ çš„æ”»å‡»åŠ›ã€‚
+     è¿˜æœ‰ä½ å¯ä»¥æ‰¾äº›ä¸œè¥¿æ¥ç©¿ï¼Œç‹—çš®ï¼Œç‰›çš®ï¼Œçš®èƒŒå¿ƒï¼Œæˆ–é“ç”²ç­‰ç­‰ï¼Œ
+     è¿™äº›éƒ½å¯ä»¥å¢åŠ ä½ çš„é˜²å¾¡èƒ½åŠ›ã€‚";
                 command("say " + whattosay);
                 me->set_temp(this_object()->query("id"), 1);
         }
         for( i = 0; i < sizeof(weapons); i++ )
         {       if (  weapon = present(weapons[i]->query("id"), me) )
                 {       if (weapon->query("equipped") == 0)
-                        {       command ("say" + RANK_D->query_respect(me) + "¿ì°ÑÄã´øµÄ" + 
-                                        weapon->query("name") + "×°±¸ÆğÀ´°É¡£\n" +
-                                        HBRED+HIW"(wield " + weapon->query("id") + ")"NOR + "¡£");
+                        {       command ("say" + RANK_D->query_respect(me) + "å¿«æŠŠä½ å¸¦çš„" + 
+                                        weapon->query("name") + "è£…å¤‡èµ·æ¥å§ã€‚\n" +
+                                        HBRED+HIW"(wield " + weapon->query("id") + ")"NOR + "ã€‚");
                         }
                         count = count + 1;
                 }
         }
         if (count == 0 ) 
-        {       command("say ÎÒÕâÀïÕıºÃÓĞ¼¸¼ş±øÆ÷£¬ÄãÒªµÄ»°¾Í¸æËßÎÒ¡£\n" + 
-                HBRED+HIW"(ask han about ÎäÆ÷)"NOR+ "¡£");
+        {       command("say æˆ‘è¿™é‡Œæ­£å¥½æœ‰å‡ ä»¶å…µå™¨ï¼Œä½ è¦çš„è¯å°±å‘Šè¯‰æˆ‘ã€‚\n" + 
+                HBRED+HIW"(ask han about æ­¦å™¨)"NOR+ "ã€‚");
         }
         count = 0;
         for( i = 0; i < sizeof(armors); i++ )
         {       if (  armor = present(armors[i]->query("id"), me) )
                 {       if (armor->query("equipped") == 0)
-                        {       say("»ÆÒÂ´óººËµµÀ£º" + RANK_D->query_respect(me) + "¿ì°ÑÄã´øµÄ" + 
-                                        armor->query("name") + "×°±¸ÆğÀ´°É¡£"+ 
-                                        HBRED+HIW"(wear " + armor->query("id") + ")"NOR +"¡£\n");
+                        {       say("é»„è¡£å¤§æ±‰è¯´é“ï¼š" + RANK_D->query_respect(me) + "å¿«æŠŠä½ å¸¦çš„" + 
+                                        armor->query("name") + "è£…å¤‡èµ·æ¥å§ã€‚"+ 
+                                        HBRED+HIW"(wear " + armor->query("id") + ")"NOR +"ã€‚\n");
                         }
                         count = count + 1;
                 }
         }
 
 	if (count == 0)
-        {       command("say ÎÒÕâºÃÏóÒ²»¹ÓĞÒ»Á½¼ş·À¾ß£¬Òª¾ÍÎÊÎÒÒª°É¡£\n" +
-                        HBRED+HIW"(ask han about ·À¾ß)"NOR +"¡£");
+        {       command("say æˆ‘è¿™å¥½è±¡ä¹Ÿè¿˜æœ‰ä¸€ä¸¤ä»¶é˜²å…·ï¼Œè¦å°±é—®æˆ‘è¦å§ã€‚\n" +
+                        HBRED+HIW"(ask han about é˜²å…·)"NOR +"ã€‚");
         }
 //        if (  present("she yao", me) )
-//	{	say("»ÆÒÂ´óººÖåÁËÖåÃ¼Í·ËµµÀ£º¸Ï¿ì°ÑÉßÒª·şÏÂ¡£\n");
+//	{	say("é»„è¡£å¤§æ±‰çš±äº†çš±çœ‰å¤´è¯´é“ï¼šèµ¶å¿«æŠŠè›‡è¦æœä¸‹ã€‚\n");
 //	} 
 //	else if (present("she yao", environment(me)))
-//	{	say("»ÆÒÂ´óººÖåÁËÖåÃ¼Í·ËµµÀ£º¸Ï¿ì°ÑÉßÒª·şÏÂ¡£\n");
+//	{	say("é»„è¡£å¤§æ±‰çš±äº†çš±çœ‰å¤´è¯´é“ï¼šèµ¶å¿«æŠŠè›‡è¦æœä¸‹ã€‚\n");
 //	}
        // count = (int)me->query_condition("snake_poison");
        // if ( count > 0)
-       // {       command("say °¦Ñ½£¬Äã±»¶¾ÉßÒ§ÁË£¬ÎÒÕâÕıºÃÓĞĞ©ÉßÒ©£¬¿ì·şÏÂ°É¡£\n" +
+       // {       command("say å”‰å‘€ï¼Œä½ è¢«æ¯’è›‡å’¬äº†ï¼Œæˆ‘è¿™æ­£å¥½æœ‰äº›è›‡è¯ï¼Œå¿«æœä¸‹å§ã€‚\n" +
          //       HBRED+HIW"(fu sheyao)"NOR);
           //      count = count / 5 + 1;
            //     for (i = 0; i < count; i++ )
@@ -152,7 +152,7 @@ void greeting(object me)
 }
 int ask_leave()
 {       
-        say("»ÆÒÂ´óººÒ¡ÁËÒ¡Í·ËµµÀ£ºÃ»ÓĞµºÖ÷Í¬Òâ£¬Äã¿É²»ÄÜË½×ÔÀëµº¡£\n");
+        say("é»„è¡£å¤§æ±‰æ‘‡äº†æ‘‡å¤´è¯´é“ï¼šæ²¡æœ‰å²›ä¸»åŒæ„ï¼Œä½ å¯ä¸èƒ½ç§è‡ªç¦»å²›ã€‚\n");
         return 1;
 }
 int ask_weapon()
@@ -160,17 +160,17 @@ int ask_weapon()
         object you = this_player();
         object weapon;
         if (query("weapon_count") < 1)
-        {       say("»ÆÒÂ´óººµÍÍ·ÔÚÉíÉÏ·­ÁË°ëÌì£¬±§Ç¸µØĞ¦ÁËĞ¦ËµµÀ£¬¶Ô²»Æğ£¬Ã»ÁË¡£\n");
+        {       say("é»„è¡£å¤§æ±‰ä½å¤´åœ¨èº«ä¸Šç¿»äº†åŠå¤©ï¼ŒæŠ±æ­‰åœ°ç¬‘äº†ç¬‘è¯´é“ï¼Œå¯¹ä¸èµ·ï¼Œæ²¡äº†ã€‚\n");
                 return 1;
         }
         
         for( i = 1; i < sizeof(weapons); i++ )
         {       if (  present(weapons[i]->query("id"), you) )
-                {       say("»ÆÒÂ´óººÖåÁËÖåÃ¼Í·ËµµÀ£ºÓĞÁË»¹Òª£¬ÄãÌ«Ì°ĞÄÁË°É¡£\n");
+                {       say("é»„è¡£å¤§æ±‰çš±äº†çš±çœ‰å¤´è¯´é“ï¼šæœ‰äº†è¿˜è¦ï¼Œä½ å¤ªè´ªå¿ƒäº†å§ã€‚\n");
                         return 1;
                 }
                 else if (present(weapons[i]->query("id"), environment(you)))
-                {       say("»ÆÒÂ´óººÍùµØÉÏÒ»Ö¸£ºµØÉÏ²»ÊÇÓĞÂğ£¬ÄãÒªµÄ»°¾Í¼ñ×ß°É¡£\n");
+                {       say("é»„è¡£å¤§æ±‰å¾€åœ°ä¸Šä¸€æŒ‡ï¼šåœ°ä¸Šä¸æ˜¯æœ‰å—ï¼Œä½ è¦çš„è¯å°±æ¡èµ°å§ã€‚\n");
                         return 1;
                 }
         }
@@ -179,7 +179,7 @@ int ask_weapon()
         weapon->move(this_object());
 //      command("say " + weapon->query("id") + " to " + you->query("id"));
         command("give " + weapon->query("id") + " to " + you->query("id"));
-//      say("»ÆÒÂ´óºº´ÓÉíÉÏÕÒ³öÒ»" + weapon->query("unit") + weapon->query("name") + "£¬µİÁË¸øÄã¡£\n");
+//      say("é»„è¡£å¤§æ±‰ä»èº«ä¸Šæ‰¾å‡ºä¸€" + weapon->query("unit") + weapon->query("name") + "ï¼Œé€’äº†ç»™ä½ ã€‚\n");
 //      weapon->move(you);
         add("weapon_count", -1);
         return 1;
@@ -189,16 +189,16 @@ int ask_armor()
         object you = this_player();
         object armor;
         if (query("armor_count") < 1)
-        {       say("»ÆÒÂ´óººµÍÍ·ÔÚÉíÉÏ·­ÁË°ëÌì£¬±§Ç¸µØĞ¦ÁËĞ¦ËµµÀ£¬¶Ô²»Æğ£¬Ã»ÁË¡£\n");
+        {       say("é»„è¡£å¤§æ±‰ä½å¤´åœ¨èº«ä¸Šç¿»äº†åŠå¤©ï¼ŒæŠ±æ­‰åœ°ç¬‘äº†ç¬‘è¯´é“ï¼Œå¯¹ä¸èµ·ï¼Œæ²¡äº†ã€‚\n");
                 return 1;
         }
         for( i = 1; i < sizeof(armors); i++ )
         {       if (  present(armors[i]->query("id"), you) )
-                {       say("»ÆÒÂ´óººÖåÁËÖåÃ¼Í·ËµµÀ£ºÓĞÁË»¹Òª£¬ÄãÌ«Ì°ĞÄÁË°É¡£\n");
+                {       say("é»„è¡£å¤§æ±‰çš±äº†çš±çœ‰å¤´è¯´é“ï¼šæœ‰äº†è¿˜è¦ï¼Œä½ å¤ªè´ªå¿ƒäº†å§ã€‚\n");
                         return 1;
                 }
                 else if (present(armors[i]->query("id"), environment(you)))
-                {       say("»ÆÒÂ´óººÍùµØÉÏÒ»Ö¸£ºµØÉÏ²»ÊÇÓĞÂğ£¬ÄãÒªµÄ»°¾Í¼ñ×ß°É¡£\n");
+                {       say("é»„è¡£å¤§æ±‰å¾€åœ°ä¸Šä¸€æŒ‡ï¼šåœ°ä¸Šä¸æ˜¯æœ‰å—ï¼Œä½ è¦çš„è¯å°±æ¡èµ°å§ã€‚\n");
                         return 1;
                 }
         }

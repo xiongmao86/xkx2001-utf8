@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��");
+        set("short", "甬道");
         set("long", @LONG
-��������ͨ��һ��ʯ�ң��Ա߱���ÿ����Զ����һյ�͵ƣ�ͷ
-���Ǹ߸ߵĹ������Ե���Щ��ɭ�ɲ�������������������أ������˵�
-��������ǰ����
+长长的甬道通向一个石室，旁边壁上每隔不远便有一盏油灯，头
+上是高高的拱顶，显得有些阴森可怖。几名帮众在这里把守，闲杂人等
+不能随意前进。
 LONG );
 
         set("exits", ([
@@ -42,7 +42,7 @@ int valid_leave(object me, string dir)
         if( !living(ob) )
                 return ::valid_leave(me, dir);
 
-        message_vision("$N����$n��ǰ��˵���������ǹ�Ѻ������ͽ�ĵط�������ذɡ�\n", ob, me);
+        message_vision("$N拦在$n面前，说道：里面是关押本帮叛徒的地方，你请回吧。\n", ob, me);
         return notify_fail("");
 }
 

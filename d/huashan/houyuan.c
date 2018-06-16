@@ -9,11 +9,11 @@ void reset();
 
 void create()
 {
-    set("short", "ºóÔº");
+    set("short", "åŽé™¢");
     set("long", @LONG
-ÕâÀïÊÇ»ªÉ½ÅÉµÄºóÔº£¬ÀïÃæÊÇ»ªÉ½µÜ×ÓµÄ¾ÓÊÒºÍÁ·¹¦·¿¡£»ªÉ½ÅÉ×ÜËù
-ÒÐÉ½¶ø½¨£¬µØÊÆÏÕ¾þ£¬Íù¶«±ãÊÇÐüÑÂ¡£Î÷ÃæÊÇÁíÒ»¸öÐ¡»¨Ôº£¬ÓÐ¼ÙÉ½Ð¡³Ø£¬
-¾°É«âùÈË£¬ÆÄÓÐ½­ÄÏÁÖÔ°µÄÌØÉ«¡£
+è¿™é‡Œæ˜¯åŽå±±æ´¾çš„åŽé™¢ï¼Œé‡Œé¢æ˜¯åŽå±±å¼Ÿå­çš„å±…å®¤å’Œç»ƒåŠŸæˆ¿ã€‚åŽå±±æ´¾æ€»æ‰€
+å€šå±±è€Œå»ºï¼Œåœ°åŠ¿é™©å³»ï¼Œå¾€ä¸œä¾¿æ˜¯æ‚¬å´–ã€‚è¥¿é¢æ˜¯å¦ä¸€ä¸ªå°èŠ±é™¢ï¼Œæœ‰å‡å±±å°æ± ï¼Œ
+æ™¯è‰²æ€¡äººï¼Œé¢‡æœ‰æ±Ÿå—æž—å›­çš„ç‰¹è‰²ã€‚
 LONG
     );
 
@@ -41,9 +41,9 @@ int valid_leave(object me, string dir)
     mapping myfam;
     myfam = (mapping)me->query("family");
 
-    if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir == "south" && !wizardp(me)
+    if ( (!myfam || myfam["family_name"] != "åŽå±±æ´¾") && dir == "south" && !wizardp(me)
     && !me->query_temp("marks/bai_ning") && objectp(present("lu dayou", environment(me))) )
-	return notify_fail("Â½´óÓÐºÈµÀ£ººóÃæÊÇ»ªÉ½ÅÉµÄÄÚÔº£¬ÕâÎ»"+RANK_D->query_respect(me)+"ÇëÖ¹²½¡£\n");
+	return notify_fail("é™†å¤§æœ‰å–é“ï¼šåŽé¢æ˜¯åŽå±±æ´¾çš„å†…é™¢ï¼Œè¿™ä½"+RANK_D->query_respect(me)+"è¯·æ­¢æ­¥ã€‚\n");
 
     return ::valid_leave(me, dir);
 }

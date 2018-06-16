@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yaolu.c Ò©Â¯
+// yaolu.c è¯ç‚‰
 // Kane
 
 #include <ansi.h>
@@ -8,16 +8,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIC"º®ÓñÒ©Â¯"NOR, ({ "yao lu", "lu" }) );
+	set_name(HIC"å¯’ç‰è¯ç‚‰"NOR, ({ "yao lu", "lu" }) );
 	set_weight(300000);
 	set_max_encumbrance(5000000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
                 set("long",
-"ÕâÊÇÒ»×ùÔ¼ÃşÒ»ÈË¶à¸ßµÄÒ©Â¯£¬³£Äê¼å°¾×Å¸÷ÖÖ¶¾ÎïÒ©²Ä£¬É¢·¢³öÕóÕóÒ©Æø£¬\n"
-"×ĞÏ¸Ò»ÎÅ£¬Ò©ÆøÖĞËÆºõ¼ĞÔÓ×Å´óÁ¿¸¯³ôĞÈÆø£¬ÖĞÖ®ÓûÅ»¡£\n");
+"è¿™æ˜¯ä¸€åº§çº¦æ‘¸ä¸€äººå¤šé«˜çš„è¯ç‚‰ï¼Œå¸¸å¹´ç…ç†¬ç€å„ç§æ¯’ç‰©è¯æï¼Œæ•£å‘å‡ºé˜µé˜µè¯æ°”ï¼Œ\n"
+"ä»”ç»†ä¸€é—»ï¼Œè¯æ°”ä¸­ä¼¼ä¹å¤¹æ‚ç€å¤§é‡è…è‡­è…¥æ°”ï¼Œä¸­ä¹‹æ¬²å‘•ã€‚\n");
 		set("value", 1000);
 		set("material", "wood");
 		set("no_get",1);
@@ -42,39 +42,39 @@ int do_put(string arg)
 	me = this_player();
 
 	if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
                 
         if( item == "all" ) {
-		write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+		write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
 		return 1;
 	}
                                                                 
 	sscanf(item, "%d %s", amount, item);
 	
 	if( !objectp(obj = present(item, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷£¿\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ï¼Ÿ\n");
 
 	if( query_temp("corpse_in") )
-		return notify_fail("ÄãÒ»´ÎÖ»ÄÜ·ÅÒ»¾ßÊ¬Ìå¡£\n");
+		return notify_fail("ä½ ä¸€æ¬¡åªèƒ½æ”¾ä¸€å…·å°¸ä½“ã€‚\n");
 
 	if( obj->query("id") != "corpse"
-        && obj->query("name") != "¶¾ÖëË¿"
-        && obj->query("name") != "¶¾Éßµ¨"
-        && obj->query("name") != "òÚò¼¿Ç"
-        && obj->query("name") != "Ğ«×Ó¿Ç"
-        && obj->query("name") != "É³³æ¿Ç" ) {
-		write("Äã²»ÄÜÍùÒ©Â¯Àï·ÅÕâÑù¶«Î÷¡£\n");
+        && obj->query("name") != "æ¯’è››ä¸"
+        && obj->query("name") != "æ¯’è›‡èƒ†"
+        && obj->query("name") != "èœˆèš£å£³"
+        && obj->query("name") != "èå­å£³"
+        && obj->query("name") != "æ²™è™«å£³" ) {
+		write("ä½ ä¸èƒ½å¾€è¯ç‚‰é‡Œæ”¾è¿™æ ·ä¸œè¥¿ã€‚\n");
 		return 1;
 	}
-	if( obj->query("name") == "¶¾ÖëË¿" )
+	if( obj->query("name") == "æ¯’è››ä¸" )
 		add_temp("mark1", 1);
-        if( obj->query("name") == "¶¾Éßµ¨" )
+        if( obj->query("name") == "æ¯’è›‡èƒ†" )
                 add_temp("mark2", 1);
-        if( obj->query("name") == "òÚò¼¿Ç" )
+        if( obj->query("name") == "èœˆèš£å£³" )
                 add_temp("mark3", 1);
-        if( obj->query("name") == "Ğ«×Ó¿Ç" )
+        if( obj->query("name") == "èå­å£³" )
                 add_temp("mark4", 1);
-        if( obj->query("name") == "É³³æ¿Ç" )
+        if( obj->query("name") == "æ²™è™«å£³" )
                 add_temp("mark5", 1);
 	if( obj->query("id") == "corpse" )
 		set_temp("corpse_in", 1);
@@ -85,17 +85,17 @@ int do_light(string arg)
 	object  me = this_player();
 
 	if (!present("fire", me))
-		return notify_fail("ÄãÒªÓÃÊ²Ã´µã»ğ£¿\n");
+		return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆç‚¹ç«ï¼Ÿ\n");
 /*
 	if(!query_temp("mark1") || !query_temp("mark2")
 	|| !query_temp("mark3") || !query_temp("mark4")
 	|| !query_temp("mark5") || !query_temp("corpse_in") )
-		return notify_fail("Ò©²ÄÆ·ÖÖ²»Æë£¡\n");
+		return notify_fail("è¯æå“ç§ä¸é½ï¼\n");
 */
         if (!id(arg))
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
-	message_vision(HIG"$NµãÈ¼ÁËÒ©Â¯ÏÂµÄ»ğ¶Ñ£¬Ò»ÍÅÂÌÉ«»ğÑæ¶¸È»Ò»ÁÁ¡£\n"NOR,me);
-	set("long", query("long") + CYN"ÀïÃæÃ°³öÂÆÂÆÇàÑÌ¡£\n"NOR);
+                return notify_fail("ä½ è¦ç‚¹ç‡ƒä»€ä¹ˆï¼Ÿ\n");
+	message_vision(HIG"$Nç‚¹ç‡ƒäº†è¯ç‚‰ä¸‹çš„ç«å †ï¼Œä¸€å›¢ç»¿è‰²ç«ç„°é™¡ç„¶ä¸€äº®ã€‚\n"NOR,me);
+	set("long", query("long") + CYN"é‡Œé¢å†’å‡ºç¼•ç¼•é’çƒŸã€‚\n"NOR);
 	remove_call_out("burning1");
 	remove_call_out("burning2");
 	remove_call_out("burning3");
@@ -114,21 +114,21 @@ void burning1(object me)
 	
 	for(i=0; i<sizeof(ob); i++) {
 /*
-	if( ob[i]->query("name") == "¶¾ÖëË¿"
-        || ob[i]->query("name") == "¶¾Éßµ¨"
-        || ob[i]->query("name") == "òÚò¼¿Ç"
-        || ob[i]->query("name") == "Ğ«×Ó¿Ç"
-        || ob[i]->query("name") == "É³³æ¿Ç" ) {
+	if( ob[i]->query("name") == "æ¯’è››ä¸"
+        || ob[i]->query("name") == "æ¯’è›‡èƒ†"
+        || ob[i]->query("name") == "èœˆèš£å£³"
+        || ob[i]->query("name") == "èå­å£³"
+        || ob[i]->query("name") == "æ²™è™«å£³" ) {
 		obj = ob[i];
 		destruct(obj);
 		ob = all_inventory(this_object());
 		}
 */
 	if( ob[i]->query("id") == "corpse")
-		ob[i]->set("name","½¹³ôµÄÊ¬Ìå");
+		ob[i]->set("name","ç„¦è‡­çš„å°¸ä½“");
 	}
 
-	message_vision(MAG"$NÖĞ²»¶ÏÃ°³öÅ¨ÑÌ£¬Â¯ÖĞ¸÷ÖÖ¶¾Îï¿ªÊ¼ÂıÂıÈÚ»¯£¡\n"NOR,this_object());
+	message_vision(MAG"$Nä¸­ä¸æ–­å†’å‡ºæµ“çƒŸï¼Œç‚‰ä¸­å„ç§æ¯’ç‰©å¼€å§‹æ…¢æ…¢èåŒ–ï¼\n"NOR,this_object());
 }
 
 void buring2(object me)
@@ -144,7 +144,7 @@ void buring2(object me)
 		obj = ob[i];
 	}
 */
-	message_vision(HIB"$NÖĞÇàÑÌ½¥½¥ÏûÉ¢£¬Â¯ÖĞµÄÊ¬Ìå½¥½¥ËõĞ¡£¬·ôÉ«×ªÀ¶£¡\n",this_object());
+	message_vision(HIB"$Nä¸­é’çƒŸæ¸æ¸æ¶ˆæ•£ï¼Œç‚‰ä¸­çš„å°¸ä½“æ¸æ¸ç¼©å°ï¼Œè‚¤è‰²è½¬è“ï¼\n",this_object());
 	obj = new("/d/xingxiu/obj/dushi");
 	skill = me->query_skill("poison",1);
 	extra = query_temp("mark1")+query_temp("mark2")+query_temp("mark3")+query_temp("mark4")+query_temp("mark5");
@@ -158,7 +158,7 @@ void buring3(object m)
         object *ob;
         int i, extra;
 
-	message_vision(YEL"$NÖĞµÄÊ¬Ìå½¥½¥½¹ºÚ·¢³ô£¬É¢·¢³öÒ»ÕóÕó¶¾ÑÌ£¡\n"NOR,this_object());
+	message_vision(YEL"$Nä¸­çš„å°¸ä½“æ¸æ¸ç„¦é»‘å‘è‡­ï¼Œæ•£å‘å‡ºä¸€é˜µé˜µæ¯’çƒŸï¼\n"NOR,this_object());
         extra = query_temp("mark1")+query_temp("mark2")+query_temp("mark3")+query_temp("mark4")+query_temp("mark5");
         ob = all_inventory(environment(this_object()));
 	for(i=0; i<sizeof(ob); i++) 

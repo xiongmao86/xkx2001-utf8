@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaoer2.c ¾ÆµêÐ¡¶þ
+// xiaoer2.c é…’åº—å°äºŒ
 
 inherit NPC;
 inherit F_DEALER;
@@ -8,22 +8,22 @@ string ask_me(string);
 
 void create()
 {
-	set_name("µêÐ¡¶þ", ({ "xiao er", "xiao", "waiter" }) );
-	set("gender", "ÄÐÐÔ" );
+	set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 22);
 	set("long",
-		"ÕâÎ»µêÐ¡¶þÕýÐ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆð¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+		"è¿™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œè¿˜ä¸æ—¶æ‹¿èµ·æŒ‚åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è„¸ã€‚\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
-	set("rank_info/respect", "Ð¡¶þ¸ç");
+	set("rank_info/respect", "å°äºŒå“¥");
 	set("vendor_goods", ({
 		__DIR__"obj/jitui",
 		__DIR__"obj/jiudai",
 		__DIR__"obj/baozi",
 	}));
         set("inquiry", ([
-            "¼¦ÓÍ" : (: ask_me, "oil" :),
-            "Ñ¼ÕÆ" : (: ask_me, "duck" :),
+            "é¸¡æ²¹" : (: ask_me, "oil" :),
+            "é¸­æŽŒ" : (: ask_me, "duck" :),
         ]) );
 
 	setup();
@@ -39,7 +39,7 @@ void init()
 	::init();
 	if( interactive(ob) && !is_fighting() ) {
 		if ( (myfam = ob->query("family")) 
-		&& myfam["family_name"] == "Ø¤°ï" 
+		&& myfam["family_name"] == "ä¸å¸®" 
 		&& ob->query_skill("begging",1) > 10 )
 		{
 			remove_call_out("saying");
@@ -61,12 +61,12 @@ void greeting(object ob)
 	if( !ob || environment(ob) != environment() ) return;
 	switch( random(2) ) {
 		case 0:
-			say( "µêÐ¡¶þÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬½øÀ´ºÈ±­²è£¬ÐªÐªÍÈ°É¡£\n");
+			say( "åº—å°äºŒç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¿›æ¥å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
 			break;
 		case 1:
-			say( "µêÐ¡¶þÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-				+ "£¬Çë½øÇë½ø¡£\n");
+			say( "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œè¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+				+ "ï¼Œè¯·è¿›è¯·è¿›ã€‚\n");
 			break;
 	}
 }
@@ -75,7 +75,7 @@ void saying(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
 
-	say("\nµêÐ¡¶þ´óºÈÒ»Éù£ºÄãÕâ³ôÒª·¹µÄ½øÀ´¸ÉÊ²÷á£¿ ¸øÎÒ¹ö³öÈ¥£¡\n\n");
+	say("\nåº—å°äºŒå¤§å–ä¸€å£°ï¼šä½ è¿™è‡­è¦é¥­çš„è¿›æ¥å¹²ä»€éº½ï¼Ÿ ç»™æˆ‘æ»šå‡ºåŽ»ï¼\n\n");
 	remove_call_out("kicking");
 	call_out("kicking", 1, ob);
 	
@@ -86,14 +86,14 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
 	ob->move("/d/city/beidajie2");
-	message("vision","Ö»Ìý¡°Æ¹¡±µØÒ»Éù£¬" +  ob->query("name") +
-		"±»ÈË´Ó×íÏÉÂ¥ÀïÒ»½ÅÌßÁË³öÀ´£¬ÀÇ±·Íò×´µÄÌÓ¿ªÁË¡£\n", environment(ob), ob);
+	message("vision","åªå¬â€œä¹’â€åœ°ä¸€å£°ï¼Œ" +  ob->query("name") +
+		"è¢«äººä»Žé†‰ä»™æ¥¼é‡Œä¸€è„šè¸¢äº†å‡ºæ¥ï¼Œç‹¼ç‹ˆä¸‡çŠ¶çš„é€ƒå¼€äº†ã€‚\n", environment(ob), ob);
 }
 int accept_kill(object obj)
 {
-//      Íæ¼ÒÀûÓÃ´Ëflood£¬¹Ê¸Ä¶¯¡£   Sure
-        command("say ¸÷Î»¿Í¹Ù¾ÈÃü°¡£¡ " + obj->name() + "Õâ¸ö" 
-	+ RANK_D->query_rude(obj) + "ÒªÉ±ÁËÎÒ£¡");
+//      çŽ©å®¶åˆ©ç”¨æ­¤floodï¼Œæ•…æ”¹åŠ¨ã€‚   Sure
+        command("say å„ä½å®¢å®˜æ•‘å‘½å•Šï¼ " + obj->name() + "è¿™ä¸ª" 
+	+ RANK_D->query_rude(obj) + "è¦æ€äº†æˆ‘ï¼");
 }
 
 string ask_me(string name)
@@ -102,24 +102,24 @@ string ask_me(string name)
 
 	if ( name == "oil" ) {
 		me->set_temp("ask_oil", 1);
-		return "ÎûÎûÎû£¬ÉÍ¸øÐ¡µÄ¼¸Á½Òø×Ó£¬°³¾ÍÈ¥³ø·¿´òÐ©¸øÄúÀÏ¡£";
+		return "å˜»å˜»å˜»ï¼Œèµç»™å°çš„å‡ ä¸¤é“¶å­ï¼Œä¿ºå°±åŽ»åŽ¨æˆ¿æ‰“äº›ç»™æ‚¨è€ã€‚";
 	}
 
 	if ( name == "duck" )
-		return "Ñ¼ÕÆ£¿ÄúÉÏÂ¥ÂòÐ©¿¾Ñ¼£¬°ÑÑ¼ÕÆÇÐÏÂÀ´²»¾ÍµÃÁË£¿";
+		return "é¸­æŽŒï¼Ÿæ‚¨ä¸Šæ¥¼ä¹°äº›çƒ¤é¸­ï¼ŒæŠŠé¸­æŽŒåˆ‡ä¸‹æ¥ä¸å°±å¾—äº†ï¼Ÿ";
 }
 
 int accept_object(object who, object ob)
 {
         if ( ob->query("money_id") ) {
 		if ( ob->value() >= 700 && who->query_temp("ask_oil") ) {
-			tell_object(who, "µêÐ¡¶þÒ»¹þÑü£¬ËµµÀ£º¶àÐ»ÄúÀÏ£¬Ð¡µÄÕâ¾Í¸øÄú´òÐ©¼¦ÓÍÀ´¡£\n");
+			tell_object(who, "åº—å°äºŒä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼Œå°çš„è¿™å°±ç»™æ‚¨æ‰“äº›é¸¡æ²¹æ¥ã€‚\n");
 			remove_call_out("get_oil");
 			call_out("get_oil", 2, this_object(), who);
 			return 1;
 		}
 
-		tell_object(who, "µêÐ¡¶þÒ»¹þÑü£¬ËµµÀ£º¶àÐ»ÄúÀÏ£¡\n");
+		tell_object(who, "åº—å°äºŒä¸€å“ˆè…°ï¼Œè¯´é“ï¼šå¤šè°¢æ‚¨è€ï¼\n");
 		return 1;
 	}
 
@@ -130,7 +130,7 @@ void get_oil(object ob, object me)
 {
         object ob1 = new("clone/food/jiyou");
 
-	message_vision("$nµ½³ø·¿×ªÁËÒ»È¦£¬ÄÃ¸ø$NÒ»¹Þ¶«Î÷¡£\n", me, ob);
+	message_vision("$nåˆ°åŽ¨æˆ¿è½¬äº†ä¸€åœˆï¼Œæ‹¿ç»™$Nä¸€ç½ä¸œè¥¿ã€‚\n", me, ob);
 	ob1->move(me);
 	me->delete_temp("ask_oil");
 }

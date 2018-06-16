@@ -1,5 +1,5 @@
 //Cracked by Roath
-// daxiong.c ´óĞÛ±¦µî
+// daxiong.c å¤§é›„å®æ®¿
 // Shan: 96/06/29
 
 #include <room.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»ª²ØâÖ´óĞÛ±¦µî");
+        set("short", "åè—åºµå¤§é›„å®æ®¿");
 	set("long", @LONG
-ÕâÊÇ¶ëáÒÉ½»ª²ØâÖµÄ´óĞÛ±¦µî¡£ÕıÖĞ¹©·î×ÅÆÕÏÍÆĞÈø¡£Ò»ÈºÇàÒÂĞ¡Ê¦Ì«Õı
-ÔÚµØÉÏËĞ¾­¡£ºóÃæÓĞµÀĞ¡ÃÅÍ¨Íùºóµî¡£
+è¿™æ˜¯å³¨åµ‹å±±åè—åºµçš„å¤§é›„å®æ®¿ã€‚æ­£ä¸­ä¾›å¥‰ç€æ™®è´¤è©è¨ã€‚ä¸€ç¾¤é’è¡£å°å¸ˆå¤ªæ­£
+åœ¨åœ°ä¸Šè¯µç»ã€‚åé¢æœ‰é“å°é—¨é€šå¾€åæ®¿ã€‚
 LONG
 	);
 
@@ -19,7 +19,7 @@ LONG
 		"south" : __DIR__"hz_back",
 	]));
 
-        create_door("south", "Ä¾ÃÅ", "north", DOOR_CLOSED);
+        create_door("south", "æœ¨é—¨", "north", DOOR_CLOSED);
 
         set("valid_startroom",1);
 

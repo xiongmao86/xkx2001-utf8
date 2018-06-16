@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-	set_name(HIB"À¶»¨"NOR, ({"lan hua","hua","flower"}));
+	set_name(HIB"è“èŠ±"NOR, ({"lan hua","hua","flower"}));
 	set_weight(5);
 	if (clonep())
 		set_default_object(__FILE__);
 	else
 	{
-	set("unit", "¿Ã");
-      set("long", "ÕâÀ¶»¨»¨¶äÉ«×÷ÉîÀ¶£¬ĞÎ×´ÆæÌØ£¬Ã¿¶ä»¨±ãÏóÊÇÒ»Ö»Ğ¬×Ó¡£\n");
+	set("unit", "æ£µ");
+      set("long", "è¿™è“èŠ±èŠ±æœµè‰²ä½œæ·±è“ï¼Œå½¢çŠ¶å¥‡ç‰¹ï¼Œæ¯æœµèŠ±ä¾¿è±¡æ˜¯ä¸€åªé‹å­ã€‚\n");
       set("value", 100);
 	set("medicine", 1);
 	set("no_get",1);

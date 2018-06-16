@@ -1,16 +1,16 @@
 //Cracked by Roath
-// challenger.c ÉÙÁÖÀ¹Â·ÈË  
+// challenger.c å°‘æ—æ‹¦è·¯äºº  
 
 inherit NPC;
 #include "/kungfu/class/shaolin/auto_perform.h"
 int auto_perform();
 
 void create() {
-    set_name("ÓÎ·½É®ÈË", ({ "sengren","seng" }) );
-    set("gender", "ÄĞĞÔ");
+    set_name("æ¸¸æ–¹åƒ§äºº", ({ "sengren","seng" }) );
+    set("gender", "ç”·æ€§");
     set("age", 25+random(25));
     set("long",
-        "ËûÊÇÒ»Î»ÔÆÓÎËÄ·½£¬ËæÔµ¶ÉÈËµÄÉ®ÈË¡£ÉúµÃ¹Ç¸ñ²»·²£¬·çÉñåÄÒì¡£\n");
+        "ä»–æ˜¯ä¸€ä½äº‘æ¸¸å››æ–¹ï¼Œéšç¼˜æ¸¡äººçš„åƒ§äººã€‚ç”Ÿå¾—éª¨æ ¼ä¸å‡¡ï¼Œé£ç¥è¿¥å¼‚ã€‚\n");
     set("shen_type", 1);
     set("attitude", "peaceful");
     set("heart_beat", 1);
@@ -92,9 +92,9 @@ void init() {
 	 }
 
 	 if ( !me->query_temp("said") ) {
-		  message_vision("$N¶Ô$nºÏÊ²ÎªÀñ£¬ËµµÀ£º°¢åôÙ¢·ğ£¡" +
-				RANK_D->query_respect(opponent) + "£¬Æ¶É®ÕâÏáÓĞÀñÁË£¡\n", me, opponent);
-		  command("say " + "¾ÃÑöÉÙÁÖÄËÎäÑ§Õı×Ú£¬Ğ¡É®³ÏĞÄÌÖ½Ì£¬²»Öª" + opponent->query("name") + "´óÊ¦¿É·ñÖ¸µãÒ»¶ş£¿\n");
+		  message_vision("$Nå¯¹$nåˆä»€ä¸ºç¤¼ï¼Œè¯´é“ï¼šé˜¿å¼­ä½—ä½›ï¼" +
+				RANK_D->query_respect(opponent) + "ï¼Œè´«åƒ§è¿™å¢æœ‰ç¤¼äº†ï¼\n", me, opponent);
+		  command("say " + "ä¹…ä»°å°‘æ—ä¹ƒæ­¦å­¦æ­£å®—ï¼Œå°åƒ§è¯šå¿ƒè®¨æ•™ï¼Œä¸çŸ¥" + opponent->query("name") + "å¤§å¸ˆå¯å¦æŒ‡ç‚¹ä¸€äºŒï¼Ÿ\n");
 		  me->set_temp("said", 1);
 	 }
 
@@ -186,7 +186,7 @@ int chat() {
             if ( ob->query("potential",1) > ob->query("max_potential",1) )
                 ob->set("potential", ob->query("max_potential",1) );
            // write_file("/log/test/sl_shanmen", 
-           //     sprintf("%sÓÚ%sÊ±µÃ%d¾­Ñé\n", ob->query("name"), ctime(time()), bonus));
+           //     sprintf("%säº%sæ—¶å¾—%dç»éªŒ\n", ob->query("name"), ctime(time()), bonus));
         }
 
         me->set_temp("destructed", 1);
@@ -214,24 +214,24 @@ void destruct_me(object me, object ob, int status) {
     switch (status) {
     case 0:
         command("halt");
-        command("say " + "ÉÙÁÖµÜ×ÓÔ­À´ÊÇÒÔ¶àÈ¡Ê¤£¡ÔÛÃÇºó»áÓĞÆÚ£¡\n");
-        message_vision("$NÒ»×İÉíÌø³öÈ¦Íâ£¬Ñï³¤¶øÈ¥¡£\n", me);
+        command("say " + "å°‘æ—å¼Ÿå­åŸæ¥æ˜¯ä»¥å¤šå–èƒœï¼å’±ä»¬åä¼šæœ‰æœŸï¼\n");
+        message_vision("$Nä¸€çºµèº«è·³å‡ºåœˆå¤–ï¼Œæ‰¬é•¿è€Œå»ã€‚\n", me);
         me->remove_all_enemy();
         killer->remove_all_enemy();
         break;
     case 1:
-        command("say " + "ÉÙÁÖµÄºÍÉĞÔõÃ´Ò»×ªÑÛ¾Í²»¼ûÁË£¿\n");
+        command("say " + "å°‘æ—çš„å’Œå°šæ€ä¹ˆä¸€è½¬çœ¼å°±ä¸è§äº†ï¼Ÿ\n");
         command("crazy");
         break;
     case 2:
         command("admire " + ob->query("id"));
-        command("say " + "Ğ¡É®½ñÈÕ¾Í´Ë±ğ¹ı£¬ÈÕºóµ±À´ÔÙ´ÎÌÖ½Ì£¡\n");
-        message_vision("$NË«ÊÖÒ»¹°£¬¹§¾´µØÀë¿ªÁË¡£\n", me);
+        command("say " + "å°åƒ§ä»Šæ—¥å°±æ­¤åˆ«è¿‡ï¼Œæ—¥åå½“æ¥å†æ¬¡è®¨æ•™ï¼\n");
+        message_vision("$NåŒæ‰‹ä¸€æ‹±ï¼Œæ­æ•¬åœ°ç¦»å¼€äº†ã€‚\n", me);
         break;
     case 3:
         command("haha " + ob->query("id"));
-        command("say " + "ÉÙÁÖËÂµÄºÍÉĞ¾Í»áÓÍ×ì»¬Éà£¬¿´À´Ã»ÓĞÊ²Ã´Õæ¹¦·ò£¡\n");
-        message_vision("$N´óĞ¦ÈıÉù£¬Ñï³¤¶øÈ¥¡£\n", me);
+        command("say " + "å°‘æ—å¯ºçš„å’Œå°šå°±ä¼šæ²¹å˜´æ»‘èˆŒï¼Œçœ‹æ¥æ²¡æœ‰ä»€ä¹ˆçœŸåŠŸå¤«ï¼\n");
+        message_vision("$Nå¤§ç¬‘ä¸‰å£°ï¼Œæ‰¬é•¿è€Œå»ã€‚\n", me);
         break;
     default:
     }

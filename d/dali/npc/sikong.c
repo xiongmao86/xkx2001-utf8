@@ -1,15 +1,15 @@
 //Cracked by Kafei
-// sikong.c Ë¾¿ÕĞş
+// sikong.c å¸ç©ºç„
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ë¾¿ÕĞş", ({ "sikong xuan", "siknong", "xuan" }));
-	set("nickname", "ÉñÅ©°ï°ïÖ÷");
+	set_name("å¸ç©ºç„", ({ "sikong xuan", "siknong", "xuan" }));
+	set("nickname", "ç¥å†œå¸®å¸®ä¸»");
 	set("long", 
-		"Ëû¾ÍÊÇÉñÅ©°ï°ïÖ÷Ë¾¿ÕĞş£¬Ëû³¤×ÅÒ»°ÑÉ½Ñòºú×Ó£¬ÉñÌ¬ÉõÊÇÙÆ°Á¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–å°±æ˜¯ç¥å†œå¸®å¸®ä¸»å¸ç©ºç„ï¼Œä»–é•¿ç€ä¸€æŠŠå±±ç¾Šèƒ¡å­ï¼Œç¥æ€ç”šæ˜¯å€¨å‚²ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 50);
 	set("shen_type", -1);
 	set("attitude", "heroism");

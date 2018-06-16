@@ -10,11 +10,11 @@ int do_halt();
 
 void create()
 {
-	set_name("¹«Æ½×Ó", ({ "gongping zi", "zi", "referee" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å…¬å¹³å­", ({ "gongping zi", "zi", "referee" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"ÕâÊÇÒ»Î»ÏÉ·çµÀ¹ÇµÄÖĞÄêµÀÈË£¬ÔçÄêÔÆÓÎËÄ·½£¬ĞÔºÃÈÎÏÀ£¬¹«ÕıÎŞË½¡£\n");
+		"è¿™æ˜¯ä¸€ä½ä»™é£é“éª¨çš„ä¸­å¹´é“äººï¼Œæ—©å¹´äº‘æ¸¸å››æ–¹ï¼Œæ€§å¥½ä»»ä¾ ï¼Œå…¬æ­£æ— ç§ã€‚\n");
 	set("combat_exp",60000);
         set("shen_type", 1);
 	set("attitude", "friendly");
@@ -33,7 +33,7 @@ void create()
 	set_skill("dodge", 80);
 
 	set("inquiry", ([
-		"±ÈÎä´ó»á"       : (: ask_me :),
+		"æ¯”æ­¦å¤§ä¼š"       : (: ask_me :),
 	]));
 
 	setup();
@@ -58,12 +58,12 @@ string ask_me()
 	int i;
 	ob = users();
 
-	if ( !wizardp(this_player()) ) return "ÄãÎŞÈ¨ÕÙ¿ª±ÈÎä´ó»á£¡\n";
+	if ( !wizardp(this_player()) ) return "ä½ æ— æƒå¬å¼€æ¯”æ­¦å¤§ä¼šï¼\n";
 
 	for ( i=sizeof(ob); i>0; i-- ) {
 		ob[i-1]->move("/d/quanzhou/leitai2");
 	}
 
-	return "ºÃ£¬ÏÖÔÚ±ÈÎä´ó»áÕıÊ½¿ªÊ¼£¬È«Ìå¼¯ºÏ£¡\n";
+	return "å¥½ï¼Œç°åœ¨æ¯”æ­¦å¤§ä¼šæ­£å¼å¼€å§‹ï¼Œå…¨ä½“é›†åˆï¼\n";
 }
 

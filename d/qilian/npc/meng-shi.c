@@ -1,5 +1,5 @@
 //Cracked by Roath
-// meng-shi1.c ÃÉ¹ÅÎÀÊ¿
+// meng-shi1.c è’™å¤å«å£«
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÃÉ¹ÅÎäÊ¿", ({ "wei shi", "shi", "guard" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è’™å¤æ­¦å£«", ({ "wei shi", "shi", "guard" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"ÕâÊÇÎ»ÃÉ¹ÅÎäÊ¿£¬ÉíÅû¸Ö¼×£¬ÊÖÖ´¸Öµ¶£¬Ë«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØÑ²ÊÓ×ÅËÄÖÜµÄÇéĞÎ¡£\n");
+		"è¿™æ˜¯ä½è’™å¤æ­¦å£«ï¼Œèº«æŠ«é’¢ç”²ï¼Œæ‰‹æ‰§é’¢åˆ€ï¼ŒåŒç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°å·¡è§†ç€å››å‘¨çš„æƒ…å½¢ã€‚\n");
 	set("combat_exp", 100000);
         set("shen_type", 1);
 	set("attitude", "heroism");

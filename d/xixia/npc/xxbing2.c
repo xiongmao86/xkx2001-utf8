@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("Î÷ÏÄ±ø", ({ "xixia bing", "bing" }) );
+	set_name("è¥¿å¤å…µ", ({ "xixia bing", "bing" }) );
 	set_weight(random(600000));
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"ÕâÊÇÃûÎ÷ÏÄ±ø£¬ÉíÅû¸Ö¼×£¬ÊÖÖ´³¤Ç¹¡£\n");
+		"è¿™æ˜¯åè¥¿å¤å…µï¼Œèº«æŠ«é’¢ç”²ï¼Œæ‰‹æ‰§é•¿æžªã€‚\n");
 	set("combat_exp", 80000);
         set("shen_type", 1);
 	set("attitude", "heroism");
@@ -55,7 +55,7 @@ void init()
 }
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("xakiller", 100);
         kill_ob(me);
         return 1;
@@ -63,7 +63,7 @@ int accept_fight(object me)
 
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("xakiller", 100);
         kill_ob(me);
         return 1;

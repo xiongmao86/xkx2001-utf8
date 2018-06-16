@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ѩɽ");
+        set("short", "大雪山");
         set("long", @LONG
-�����ر�ѩ������ǰ�װ�����һƬ���Ӷ����������ģ�������ʼ���١�
+这儿遍地冰雪，你眼前白皑皑的一片。从东边爬上来的，心跳开始加速。
 LONG
         );
         set("exits", ([

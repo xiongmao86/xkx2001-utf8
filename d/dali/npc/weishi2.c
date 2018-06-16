@@ -1,5 +1,5 @@
 //Cracked by Roath
-// weishi2.c »ÆÒÂÎÀÊ¿
+// weishi2.c é»„è¡£å«å£«
 
 #include <ansi.h>
 
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("»ÆÒÂÎÀÊ¿", ({ "wei shi", "shi", "guard" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("é»„è¡£å«å£«", ({ "wei shi", "shi", "guard" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "¡¡¡¡ÕâÊÇÎ»»ÆÒÂÎÀÊ¿£¬Éí×Å½õÒÂ£¬ÊÖÖ´¸Öµ¶£¬Ë«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØÑ²ÊÓ×ÅËÄÖÜ\nµÄÇéĞÎ¡£\n");
+	set("long", "ã€€ã€€è¿™æ˜¯ä½é»„è¡£å«å£«ï¼Œèº«ç€é”¦è¡£ï¼Œæ‰‹æ‰§é’¢åˆ€ï¼ŒåŒç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°å·¡è§†ç€å››å‘¨\nçš„æƒ…å½¢ã€‚\n");
 	set("combat_exp", 80000);
 	set("shen_type", 1);
 	set("attitude", "heroism");
@@ -33,7 +33,7 @@ void create()
 	set_skill("unarmed", 60);
 	set_skill("parry", 80);
 	set_skill("dodge", 80);
-	set("no_get", "Äã¿¸²»¶¯");
+	set("no_get", "ä½ æ‰›ä¸åŠ¨");
 	setup();
 	carry_object("/d/city/obj/gangdao")->wield();
 	carry_object("/d/dali/obj/ycloth")->wear();

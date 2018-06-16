@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÕÅÂè", ({ "zhang ma", "ma", "zhang" }) );
-        set("gender", "Å®ĞÔ" );
-	set("title", "Ó¶¸¾");
+        set_name("å¼ å¦ˆ", ({ "zhang ma", "ma", "zhang" }) );
+        set("gender", "å¥³æ€§" );
+	set("title", "ä½£å¦‡");
         set("age", 48);
         set("long", 
-	     "Ïô¸®µÄÅ®Ó¶¡£\n");
+	     "è§åºœçš„å¥³ä½£ã€‚\n");
         set("str", 20);
         set("dex", 20);
         set("con", 17);
@@ -22,11 +22,11 @@ void create()
 
         set("attitude", "peaceful");
         set("inquiry", ([
-            "Ïô¸®" : "Èç¹ûÄãÊÇÀ´ºØÊÙµÄ£¬ÎÒ²ÅÄÜÈÃÄã½øÃÅ¡£",
-	    "here" : "ÕâÀï¾ÍÊÇÏô¸®¡£",
-	    "name" : "ÎÒ»¹Ã»³É¼Ò£¬ÎÊÎÒÃû×ÖÈÃÈË¶à²»ºÃÒâË¼¡£",
-	    "ºØÊÙ" : "ÄãµÄÊÙÀñÄØ£¿",
-	    "Ïô°ëºÍ" : "ÄÇÊÇÎÒÃÇ¼ÒÀÏÒ¯¡£",
+            "è§åºœ" : "å¦‚æœä½ æ˜¯æ¥è´ºå¯¿çš„ï¼Œæˆ‘æ‰èƒ½è®©ä½ è¿›é—¨ã€‚",
+	    "here" : "è¿™é‡Œå°±æ˜¯è§åºœã€‚",
+	    "name" : "æˆ‘è¿˜æ²¡æˆå®¶ï¼Œé—®æˆ‘åå­—è®©äººå¤šä¸å¥½æ„æ€ã€‚",
+	    "è´ºå¯¿" : "ä½ çš„å¯¿ç¤¼å‘¢ï¼Ÿ",
+	    "è§åŠå’Œ" : "é‚£æ˜¯æˆ‘ä»¬å®¶è€çˆ·ã€‚",
        ]) );
 
         setup();
@@ -35,9 +35,9 @@ void create()
 private void go_home()
 {
 	if( !living(this_object()) ) return;
-        message_vision("$NÉñÉ«»ÅÕÅµØÀë¿ªÁË¡£\n", this_object());
+        message_vision("$Nç¥è‰²æ…Œå¼ åœ°ç¦»å¼€äº†ã€‚\n", this_object());
         this_object()->move("/d/forest/gate");
-	message_vision("$N¿ì²½×ßÁË¹ıÀ´¡£\n", this_object());
+	message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", this_object());
 }
 
 void init()
@@ -59,29 +59,29 @@ void init()
 void greeting(object me)
 {
     command("bow " + me->query("id"));
-    command("say ÕâÎ»" + RANK_D->query_respect(me)+"ÊÇÀ´¸øÎÒÃÇ¼ÒÀÏÒ¯ºØÊÙµÄ°É¡£");
+    command("say è¿™ä½" + RANK_D->query_respect(me)+"æ˜¯æ¥ç»™æˆ‘ä»¬å®¶è€çˆ·è´ºå¯¿çš„å§ã€‚");
 }
 
 int accept_object(object me, object obj)
 {
-	if ((string)obj->query("name")=="½ğîÎ") {
+	if ((string)obj->query("name")=="é‡‘é’—") {
 		remove_call_out("destroying");
 		call_out("destroying", 1, this_object(), obj); 
-	message("vision",me->name()+"¸øÕÅÂèÒ»Ö§½ğîÎ¡£\n",environment(me),
+	message("vision",me->name()+"ç»™å¼ å¦ˆä¸€æ”¯é‡‘é’—ã€‚\n",environment(me),
                 ({me}));
 	command("ah");
-	command("say ÕâÊÇÎÒ¼ÒĞ¡½ãµÄ½ğîÎ£¬Äª·ÇÕâÎ»"+RANK_D->query_respect(me)+"¾ÍÊÇÁîÎÒÃÇĞ¡½ãÉñ»êµßµ¹µÄÒâÖĞÈË£¿");
+	command("say è¿™æ˜¯æˆ‘å®¶å°å§çš„é‡‘é’—ï¼Œè«éè¿™ä½"+RANK_D->query_respect(me)+"å°±æ˜¯ä»¤æˆ‘ä»¬å°å§ç¥é­‚é¢ å€’çš„æ„ä¸­äººï¼Ÿ");
 	command("look "+me->query("id"));
-	command("say ÄãÏÈËæÎÒÈëóÛÏ¯¡£");
-	message_vision("ÕÅÂèÁì×Å$N½øÁËÏô¸®¡£\n", me);
+	command("say ä½ å…ˆéšæˆ‘å…¥ç­µå¸­ã€‚");
+	message_vision("å¼ å¦ˆé¢†ç€$Nè¿›äº†è§åºœã€‚\n", me);
 	me->move("/d/forest/yanting");
-	message("vision", me->name()+"¸ú×ÅÕÅÂè×ß½øÀ´¡£\n",environment(me),
+	message("vision", me->name()+"è·Ÿç€å¼ å¦ˆèµ°è¿›æ¥ã€‚\n",environment(me),
 		({me}));
-	write("ÄãÒ»¿´Âú×À·áÊ¢µÄ¾Æ²Ë¾Í³ÔÁËÆğÀ´¡£\n");
+	write("ä½ ä¸€çœ‹æ»¡æ¡Œä¸°ç››çš„é…’èœå°±åƒäº†èµ·æ¥ã€‚\n");
 	me->set("food",me->query("str")*10 + 120);
 	me->set("water",me->query("str")*10 + 120);
 	}
-	else command("say ÕâÔõ÷áºÃÒâË¼¡£");
+	else command("say è¿™æ€éº½å¥½æ„æ€ã€‚");
         return 1;
 }
 

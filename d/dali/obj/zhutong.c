@@ -8,20 +8,20 @@ int do_empty(string);
 
 void create()
 {
-	set_name("ÖñÍ²", ({ "zhu tong", "tong" }) );
+	set_name("ç«¹ç­’", ({ "zhu tong", "tong" }) );
 	set_weight(500);
 	set_max_encumbrance(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö§");
-		set("long", "ÕâÊÇÒ»Ö§ÖñÍ²£¬ÊÇÓÃÒ»¸öÖñ½Ú×ö³ÉµÄ£¬¿ÉÒÔÓÃÀ´×°Ë®»òÊ³Îï¡£\n");
+		set("unit", "æ”¯");
+		set("long", "è¿™æ˜¯ä¸€æ”¯ç«¹ç­’ï¼Œæ˜¯ç”¨ä¸€ä¸ªç«¹èŠ‚åšæˆçš„ï¼Œå¯ä»¥ç”¨æ¥è£…æ°´æˆ–é£Ÿç‰©ã€‚\n");
 		set("value", 10);
 		set("material", "bamboo");
 		set("max_liquid", 10);
         set("liquid", ([
 			"type": "water",
-			"name": "ÇåË®",
+			"name": "æ¸…æ°´",
 			"remaining": 0,
 			"drunk_supply": 0,
 			]));
@@ -41,7 +41,7 @@ int is_container() { return 1; }
 int reject(object ob) 
 {
 	if (this_object()->query("liquid/remaining")) {
-		notify_fail("ÖñÍ²ÀïÏÖÔÚÓÐË®£¬²»ÄÜÍùÀï·Å¶«Î÷¡£\n");
+		notify_fail("ç«¹ç­’é‡ŒçŽ°åœ¨æœ‰æ°´ï¼Œä¸èƒ½å¾€é‡Œæ”¾ä¸œè¥¿ã€‚\n");
 		return 1;
 	}
    	if (!ob) return 1;  // what does it mean by ob==null?
@@ -53,12 +53,12 @@ int reject(object ob)
 	 * -Chu
 	 */
 	if (ob->query("food_remaining")<1) {
- 	    notify_fail("ÖñÍ²ÀïÓÖÊªÓÖÓÍÄå£¬·ÅÕâ¸ö¿ÖÅÂ²»ºÏÊÊ°É¡£\n");
+ 	    notify_fail("ç«¹ç­’é‡Œåˆæ¹¿åˆæ²¹è…»ï¼Œæ”¾è¿™ä¸ªææ€•ä¸åˆé€‚å§ã€‚\n");
 	    return 1;
         }
 
 	if (sizeof(all_inventory(this_object()))<5) return 0;
-	notify_fail("ÕâÖ§ÖñÍ²ÒÑ¾­×°ÂúÁË£¬ÔÙÒ²·Å²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+	notify_fail("è¿™æ”¯ç«¹ç­’å·²ç»è£…æ»¡äº†ï¼Œå†ä¹Ÿæ”¾ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 	return 1;
 }
 
@@ -69,10 +69,10 @@ int do_empty(string arg)
 	if (!arg || (arg!="tong" && arg!="zhu tong")) return 0;
 
 	if (query("liquid/remaining")) {
-		message_vision("$N°ÑÖñÍ²Àï×°µÄ"+query("liquid/name")+"µ¹µô¡£\n",me);
+		message_vision("$NæŠŠç«¹ç­’é‡Œè£…çš„"+query("liquid/name")+"å€’æŽ‰ã€‚\n",me);
 		set("liquid/remaining", 0);
 	}
-	else tell_object(me,"ÕâÖ§ÖñÍ²Àï²¢Ã»ÓÐ×°ÐèÒªµ¹µôµÄ¶«Î÷¡£\n");
+	else tell_object(me,"è¿™æ”¯ç«¹ç­’é‡Œå¹¶æ²¡æœ‰è£…éœ€è¦å€’æŽ‰çš„ä¸œè¥¿ã€‚\n");
 	return 1;
 }
 
@@ -80,21 +80,21 @@ int do_fill(string arg)
 {
 	if (!this_object()->id(arg)) return 0;
 	if (this_player()->is_busy())
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	if (!environment(this_player())->query("resource/water"))
-		return notify_fail("ÕâÀïÃ»ÓÐµØ·½¿ÉÒÔ×°Ë®¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰åœ°æ–¹å¯ä»¥è£…æ°´ã€‚\n");
 
 	if (sizeof(all_inventory(this_object()))>0)
-		return notify_fail("Äã»¹ÊÇÏÈ°ÑÖñÍ²ÀïÃæµÄ¶«Î÷È¡³öÀ´ÔÙ×°Ë®°É¡£\n");
+		return notify_fail("ä½ è¿˜æ˜¯å…ˆæŠŠç«¹ç­’é‡Œé¢çš„ä¸œè¥¿å–å‡ºæ¥å†è£…æ°´å§ã€‚\n");
 
 	if (query("liquid/remaining"))
-		message_vision("$N½«" + name() + "ÀïÊ£ÏÂµÄ" + query("liquid/name") + "µ¹µô¡£\n", this_player());
-	message_vision("$N½«" + name() + "×°ÂúÇåË®¡£\n", this_player());
+		message_vision("$Nå°†" + name() + "é‡Œå‰©ä¸‹çš„" + query("liquid/name") + "å€’æŽ‰ã€‚\n", this_player());
+	message_vision("$Nå°†" + name() + "è£…æ»¡æ¸…æ°´ã€‚\n", this_player());
 
 	if( this_player()->is_fighting() ) this_player()->start_busy(2);
 
 	set("liquid/type", "water");
-	set("liquid/name", "ÇåË®");
+	set("liquid/name", "æ¸…æ°´");
 	set("liquid/remaining", this_object()->query("max_liquid"));
 	set("liquid/drink_func", 0);
 

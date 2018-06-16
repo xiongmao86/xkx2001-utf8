@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jinshe-zhuifa ½ğÉß×¶·¨
+// jinshe-zhuifa é‡‘è›‡é”¥æ³•
 
 #include <ansi.h>
 #include <weapon.h>
@@ -8,41 +8,41 @@ inherit F_EQUIP;
 int throw_ob(object me, object victim);
 
 string* xuedao = ({
-        "ËÄ°×Ñ¨",
-        "µØ²ÖÑ¨",
-        "´óÓ­Ñ¨",
-        "Ï¿³µÑ¨",
-        "Í·Î¬Ñ¨",
-        "ÏÂ¹ØÑ¨",
-        "Òş°×Ñ¨",
-        "Ì«°×Ñ¨",
-        "ÉÌÇğÑ¨",
-        "µØ»úÑ¨",
-	"ÉÙ³åÑ¨",
-        "ÉÙº£Ñ¨",
-        "Í¨ÀíÑ¨",
-        "ÉñÃÅÑ¨",
-        "Ó¡ÌÃÑ¨",
-        "½ğÂÉÑ¨",
-        "ÓñÒºÑ¨",
-        "ÓãÑüÑ¨",
-        "°ÙÀÍÑ¨",
-        "°Ù»áÑ¨",
-        "ÁéÌ¨Ñ¨",
-        "Ì«ÑôÑ¨",
-        "ëşÖĞÑ¨",
-        "ÃüÃÅÑ¨",
-        "ğ¯Î²Ñ¨",
-        "Æøº£Ñ¨"
+        "å››ç™½ç©´",
+        "åœ°ä»“ç©´",
+        "å¤§è¿ç©´",
+        "å³¡è½¦ç©´",
+        "å¤´ç»´ç©´",
+        "ä¸‹å…³ç©´",
+        "éšç™½ç©´",
+        "å¤ªç™½ç©´",
+        "å•†ä¸˜ç©´",
+        "åœ°æœºç©´",
+	"å°‘å†²ç©´",
+        "å°‘æµ·ç©´",
+        "é€šç†ç©´",
+        "ç¥é—¨ç©´",
+        "å°å ‚ç©´",
+        "é‡‘å¾‹ç©´",
+        "ç‰æ¶²ç©´",
+        "é±¼è…°ç©´",
+        "ç™¾åŠ³ç©´",
+        "ç™¾ä¼šç©´",
+        "çµå°ç©´",
+        "å¤ªé˜³ç©´",
+        "è†»ä¸­ç©´",
+        "å‘½é—¨ç©´",
+        "é¸ å°¾ç©´",
+        "æ°”æµ·ç©´"
 });
 string *throw_msg = ({
-HIY"$NÄÃÆğÒ»Ã¶½ğÉß×¶£¬¶Ô×¼$nÒ»ÑïÊÖ£¬½«½ğÉß×¶±ÊÖ±ÉäÏò$nµÄ"+xuedao[random(sizeof(xuedao))]+NOR,
-//"$NË«ÊÖÁ¬»Ó£¬Á½Ã¶½ğÉß×¶´ø×ÅºôĞ¥·çÉù£¬»®³É¶ş»¡ÉäÏò$nµÄ"+xuedao[random(sizeof(xuedao))]+"ºÍ"+xuedao[random(sizeof(xuedao))],
-//"$N·ÉÉíÔ¾Æğ£¬¾Ó¸ßÁÙÏÂÏò$nÃÍÉäÈıÃ¶½ğÉß×¶£¬Ö±È¡$nµÄË«Ä¿ºÍ"+xuedao[random(sizeof(xuedao))]+NOR,
-HIY"Í»È»$NµÍÍ·¹§Éí£¬Ö»ÌıµÃ¡¸à²¡¹µÄÒ»Éù£¬Ò»Ã¶½ğÉß×¶ÓÉºóÁì·É³ö£¬Íù$nµÄ"+xuedao[random(sizeof(xuedao))]+"µçÉä¶øÈ¥"NOR,
-HIY"µ«¼û$N½«Ë«ÊÖÂ£ÈëĞäÖĞ£¬ÎŞÉùÎŞÏ¢µØ·¢³öÒ»Ã¶½ğÉß×¶£¬Ğ±Éäµ½$nµÄ"+xuedao[random(sizeof(xuedao))]+"£¬Ñ¸½İÎŞ±È"NOR,
-HIY"$NÒ»Ğ¦¶øÍË£¬ÉìÊÖÈ´ÔÚÑü¼äÒ»ÅÄ£¬Ò»Ã¶½ğÉß×¶ÓÉĞØÇ°ÃÍÈ»Éä³ö£¬·ÉÈ¡$nµÄ"+xuedao[random(sizeof(xuedao))]+NOR,
-//"$NË«ÊÖÍ¬»Ó·¢³öÁ½Ã¶½ğÉß×¶¹¥Ïò$nË«Ä¿£¬ÕÅ¿ÚÒ»ÍÂÓÖÊÇÒ»Ã¶½ğÉß×¶£¬ºóÀ´¾ÓÉÏµØ³¬Ô½Ç°Á½Ã¶½ğÉß×¶£¬¼±¾¢µØÉäÖÁ$nµÄ"+xuedao[random(sizeof(xuedao))],
+HIY"$Næ‹¿èµ·ä¸€æšé‡‘è›‡é”¥ï¼Œå¯¹å‡†$nä¸€æ‰¬æ‰‹ï¼Œå°†é‡‘è›‡é”¥ç¬”ç›´å°„å‘$nçš„"+xuedao[random(sizeof(xuedao))]+NOR,
+//"$NåŒæ‰‹è¿æŒ¥ï¼Œä¸¤æšé‡‘è›‡é”¥å¸¦ç€å‘¼å•¸é£å£°ï¼Œåˆ’æˆäºŒå¼§å°„å‘$nçš„"+xuedao[random(sizeof(xuedao))]+"å’Œ"+xuedao[random(sizeof(xuedao))],
+//"$Né£èº«è·ƒèµ·ï¼Œå±…é«˜ä¸´ä¸‹å‘$nçŒ›å°„ä¸‰æšé‡‘è›‡é”¥ï¼Œç›´å–$nçš„åŒç›®å’Œ"+xuedao[random(sizeof(xuedao))]+NOR,
+HIY"çªç„¶$Nä½å¤´æ­èº«ï¼Œåªå¬å¾—ã€Œå—–ã€çš„ä¸€å£°ï¼Œä¸€æšé‡‘è›‡é”¥ç”±åé¢†é£å‡ºï¼Œå¾€$nçš„"+xuedao[random(sizeof(xuedao))]+"ç”µå°„è€Œå»"NOR,
+HIY"ä½†è§$Nå°†åŒæ‰‹æ‹¢å…¥è¢–ä¸­ï¼Œæ— å£°æ— æ¯åœ°å‘å‡ºä¸€æšé‡‘è›‡é”¥ï¼Œæ–œå°„åˆ°$nçš„"+xuedao[random(sizeof(xuedao))]+"ï¼Œè¿…æ·æ— æ¯”"NOR,
+HIY"$Nä¸€ç¬‘è€Œé€€ï¼Œä¼¸æ‰‹å´åœ¨è…°é—´ä¸€æ‹ï¼Œä¸€æšé‡‘è›‡é”¥ç”±èƒ¸å‰çŒ›ç„¶å°„å‡ºï¼Œé£å–$nçš„"+xuedao[random(sizeof(xuedao))]+NOR,
+//"$NåŒæ‰‹åŒæŒ¥å‘å‡ºä¸¤æšé‡‘è›‡é”¥æ”»å‘$nåŒç›®ï¼Œå¼ å£ä¸€ååˆæ˜¯ä¸€æšé‡‘è›‡é”¥ï¼Œåæ¥å±…ä¸Šåœ°è¶…è¶Šå‰ä¸¤æšé‡‘è›‡é”¥ï¼Œæ€¥åŠ²åœ°å°„è‡³$nçš„"+xuedao[random(sizeof(xuedao))],
 });
 string query_throw_msg()
 {
@@ -50,17 +50,17 @@ string query_throw_msg()
 }
 void create()
 {
-        set_name("½ğÉß×¶", ({ "jinshe zhui", "zhui" }) );
+        set_name("é‡‘è›‡é”¥", ({ "jinshe zhui", "zhui" }) );
         set_weight(1000);
         set_color(HIY);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-	set("long", "½ğÉß×¶ÊÇ´¿½ğËùÔì£¬ÖØÔ¼Ò»Á½£¬³¤Ô¼¶ş´ç°Ë·Ö£¬´ò³É°ºÊ×ÍÂÉà¡£\n"
-                    "µÄÉßĞÎ£¬ÉßÉà¼â¶Ë·Ö³ÉË«²æ£¬Ã¿Ò»²æ¶¼ÊÇÒ»¸öµ¹´Ì¡£Éß×¶µÄÉßÉÏ\n"
-                    "ÓĞ¸ö¡°Ñ©¡±×Ö¡£\n");
-	set("unit", "´ü");
-        set("base_unit", "Ã¶");
+	set("long", "é‡‘è›‡é”¥æ˜¯çº¯é‡‘æ‰€é€ ï¼Œé‡çº¦ä¸€ä¸¤ï¼Œé•¿çº¦äºŒå¯¸å…«åˆ†ï¼Œæ‰“æˆæ˜‚é¦–åèˆŒã€‚\n"
+                    "çš„è›‡å½¢ï¼Œè›‡èˆŒå°–ç«¯åˆ†æˆåŒå‰ï¼Œæ¯ä¸€å‰éƒ½æ˜¯ä¸€ä¸ªå€’åˆºã€‚è›‡é”¥çš„è›‡ä¸Š\n"
+                    "æœ‰ä¸ªâ€œé›ªâ€å­—ã€‚\n");
+	set("unit", "è¢‹");
+        set("base_unit", "æš");
 	set("value", 160000);
 	set("skill", "jinshe-zhuifa");
 	set("damage", 5);
@@ -69,7 +69,7 @@ void create()
                 set("armor_prop/attack", -50);
                 set("armor_prop/defense", -50);
 		set("no_sell", 1);
-                set("unequip_msg", HIR"$NÒ»Ò§ÑÀ½«$n´ÓÉË¿ÚÉÏ°ÎÁËÏÂÀ´£¬Ò»¹ÉÏÊÑªÃÍµØÓ¿ÁË³öÀ´¡£\n"NOR);
+                set("unequip_msg", HIR"$Nä¸€å’¬ç‰™å°†$nä»ä¼¤å£ä¸Šæ‹”äº†ä¸‹æ¥ï¼Œä¸€è‚¡é²œè¡€çŒ›åœ°æ¶Œäº†å‡ºæ¥ã€‚\n"NOR);
         }
         set_amount(16);
         setup();
@@ -94,8 +94,8 @@ int throw_ob(object me, object victim)
         limbs = victim->query("limbs");
 
                 if(!victim->query_temp("armor/embed")){
-                message_vision(CYN"½á¹û$NÒ»Éù²Ò½Ğ£¬$nÒÑÈ»²åÔÚ$NµÄ"+limbs[random(sizeof(limbs))]
-                          +"ÉÏ¡£\n"NOR, victim, ob);
+                message_vision(CYN"ç»“æœ$Nä¸€å£°æƒ¨å«ï¼Œ$nå·²ç„¶æ’åœ¨$Nçš„"+limbs[random(sizeof(limbs))]
+                          +"ä¸Šã€‚\n"NOR, victim, ob);
                                  ob2=new(__FILE__);
                                  ob2->set_amount(1);
                                  ob2->set("embedded", 1);
@@ -107,8 +107,8 @@ int throw_ob(object me, object victim)
 			victim->kill_ob(me);
                 }
                 else {
-                message_vision(CYN"½á¹ûÔÚ$NµÄ"+limbs[random(sizeof(limbs))]
-                          +"Ôì³öÒ»´¦²ÁÉË¡£\n"NOR, victim);
+                message_vision(CYN"ç»“æœåœ¨$Nçš„"+limbs[random(sizeof(limbs))]
+                          +"é€ å‡ºä¸€å¤„æ“¦ä¼¤ã€‚\n"NOR, victim);
 		victim->receive_wound("qi", me->query_str());
                 }
 		me->start_busy(random(3));
@@ -118,8 +118,8 @@ int throw_ob(object me, object victim)
                 ob2->move(environment(me));
         }
 
-        else if ( ap < dp/7 && victim->query("race") == "ÈËÀà"){
-                message_vision(CYN"²»ÁÏ$NÑÛÃ÷ÊÖ¿ì£¬Éí×ÓÒ»²à£¬°Ñ$nÇáÇáµØ½ÓÔÚÊÖÀï¡£\n"NOR, victim, ob);
+        else if ( ap < dp/7 && victim->query("race") == "äººç±»"){
+                message_vision(CYN"ä¸æ–™$Nçœ¼æ˜æ‰‹å¿«ï¼Œèº«å­ä¸€ä¾§ï¼ŒæŠŠ$nè½»è½»åœ°æ¥åœ¨æ‰‹é‡Œã€‚\n"NOR, victim, ob);
                 me->start_busy(random(3));
                                  ob->add_amount(-1);
                                  ob2=new(__FILE__);

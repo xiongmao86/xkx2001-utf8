@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/npc/monkey2.c ����
+// /d/emei/npc/monkey2.c 猴子
 // Shan 6/26/96
 
 inherit NPC;
@@ -8,13 +8,13 @@ void create()
 {
         seteuid(getuid());
 
-        set_name("����", ({ "monkey", "hou", "houzi" }) );
-        set("race", "Ұ��");
+        set_name("猴子", ({ "monkey", "hou", "houzi" }) );
+        set("race", "野兽");
         set("age", 8);
-        set("long", "һֻ����ĺ��ӣ��۰Ͱ͵Ŀ����㣬�������Щ�Եġ�\n");
+        set("long", "一只机灵的猴子，眼巴巴的看着你，大概想讨些吃的。\n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "ͷ��", "����",  "ǰ��", "����", "β��" }) );
+        set("limbs", ({ "头部", "身体",  "前腿", "后腿", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("thief", 0);
@@ -31,10 +31,10 @@ void create()
 
         set("chat_chance", 8);
         set("chat_msg", ({
-                "һֻ���Ӻ�Ȼ�ܹ������������˸�Ҿ��\n",
-		"һֻ����ߴߴ�������˹�����\n",
-		"���ӱı��������ܿ��ˡ�\n",
-                "����ҡҡβ���ܿ��ˡ�\n",
+                "一只猴子忽然跑过来，向你作了个揖。\n",
+		"一只猴子叽叽喳喳跑了过来。\n",
+		"猴子蹦蹦跳跳地跑开了。\n",
+                "猴子摇摇尾巴跑开了。\n",
                 (: random_move :)
         }) );
 }
@@ -57,7 +57,7 @@ void stealing(object ob)
 	mapping fam; 
  
 	if( !ob || environment(ob) != environment() 
-                || ((fam = ob->query("family")) && fam["family_name"] == "����")
+                || ((fam = ob->query("family")) && fam["family_name"] == "峨嵋")
           ) return;
 
 	switch( random(10) ) {

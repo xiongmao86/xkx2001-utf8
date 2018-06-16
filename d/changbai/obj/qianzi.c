@@ -7,13 +7,13 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Â¹¹ÇÇ¥×Ó", ({ "lugu qianzi", "qianzi" }));
+        set_name("é¹¿éª¨é’å­", ({ "lugu qianzi", "qianzi" }));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÂ¹¹ÇÖÆ³ÉµÄÇ¥×Ó£¬ÓÃËü¿ÉÒÔ°Ñ²Î´ÓÍÁÖĞÆğ(wa)³ö¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠé¹¿éª¨åˆ¶æˆçš„é’å­ï¼Œç”¨å®ƒå¯ä»¥æŠŠå‚ä»åœŸä¸­èµ·(wa)å‡ºã€‚\n");
                 set("value", 100);
                 set("material", "steel");
         }

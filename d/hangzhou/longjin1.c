@@ -1,12 +1,12 @@
 //Cracked by Roath
-// Áú¾®²èÊÒ
+// é¾™äº•èŒ¶å®¤
 // Dong  11/03/1996.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 
 void create()
-{   set("short", "²èÊÒ");
+{   set("short", "èŒ¶å®¤");
    set("long", @LONG
 LONG        );
 

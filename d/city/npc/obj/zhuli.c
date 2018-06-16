@@ -9,14 +9,14 @@ inherit HEAD;
 
 void create()
 {
-	set_name( "ÖñóÒ" , ({ "zhu li", "li" }) );
+	set_name( "ç«¹ç¬ " , ({ "zhu li", "li" }) );
         set_color("$HIG$");
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶¥");
-                set("long", "ÕâÊÇÒ»¶¥ÐÂÔúµÄÖñóÒ¡£\n");
+		set("unit", "é¡¶");
+                set("long", "è¿™æ˜¯ä¸€é¡¶æ–°æ‰Žçš„ç«¹ç¬ ã€‚\n");
 		set("value", 150);
 		set("material", "cloth");
 		set("armor_prop/armor", 3);

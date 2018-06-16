@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���㹬");
+	set("short", "储秀宫");
 	set("long", @LONG
-����ԭ����˳����谮�����Ӷ�������ס�ĵط�����������������
-˳��Ҳһֱ�����������þͼݱ��ˡ��������˾�ס��
+这里原来是顺治最宠爱的妃子董鄂妃居住的地方。董鄂妃生病死后，
+顺治也一直很忧郁，不久就驾崩了。现在无人居住。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */

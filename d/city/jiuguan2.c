@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIC"¾Æ¹Ý¶þÂ¥"NOR);
+	set("short", HIC"é…’é¦†äºŒæ¥¼"NOR);
 	set("long", @LONG
-ÕâÀïÊÇ¾Æ¹Ý¶þÂ¥£¬×ßµ½ÕâÂ¥ÏÂµÄÔÓ³³Ö®Éù½¥½¥ÏûÊ§¡£¼¸ÕÅ°ËÏÉ×ÀÉÏ×ùÂúÁË        
-±ö¿Í¡£Ö»¼ûÕâÀï²¼ÖÃµÄÉõÎªÑÅÖÂ£¬¿ÍÈËÒÂÖø¹âÏÊ£¬Óë·½²ÅÂ¥ÏÂµÄÇéÐÎ´óÎª²»Í¬
-¡£ËÄÖÜ¹ÒÖøÒ»Ð©×Ö»­£¬ÆäÖÐ»¹°üÀ¨ÁËÒ»·ù¶ÔÁª(duilian) £¬ºÍÌÆ´úÖøÃûÊ«ÈË¶Å
-¸¦µÄÄÇÊ×¡¶ÒûÖÐ°ËÏÉ¸è¡·(poem)¡£¹ñÌ¨ºó¹Ò×ÅÒ»¿éÅÆ×Ó(paizi) ¡£×ó±ßÓÐÎ»Ãî
-ÁäÉÙÅ®ÕýÔÚÂôÒÕ¡£
+è¿™é‡Œæ˜¯é…’é¦†äºŒæ¥¼ï¼Œèµ°åˆ°è¿™æ¥¼ä¸‹çš„æ‚åµä¹‹å£°æ¸æ¸æ¶ˆå¤±ã€‚å‡ å¼ å…«ä»™æ¡Œä¸Šåº§æ»¡äº†        
+å®¾å®¢ã€‚åªè§è¿™é‡Œå¸ƒç½®çš„ç”šä¸ºé›…è‡´ï¼Œå®¢äººè¡£è‘—å…‰é²œï¼Œä¸Žæ–¹æ‰æ¥¼ä¸‹çš„æƒ…å½¢å¤§ä¸ºä¸åŒ
+ã€‚å››å‘¨æŒ‚è‘—ä¸€äº›å­—ç”»ï¼Œå…¶ä¸­è¿˜åŒ…æ‹¬äº†ä¸€å¹…å¯¹è”(duilian) ï¼Œå’Œå”ä»£è‘—åè¯—äººæœ
+ç”«çš„é‚£é¦–ã€Šé¥®ä¸­å…«ä»™æ­Œã€‹(poem)ã€‚æŸœå°åŽæŒ‚ç€ä¸€å—ç‰Œå­(paizi) ã€‚å·¦è¾¹æœ‰ä½å¦™
+é¾„å°‘å¥³æ­£åœ¨å–è‰ºã€‚
 LONG
 	);
 	set("no_beg", 1);
@@ -28,45 +28,45 @@ LONG
         ]));
         set("item_desc", ([ 
         "duilian" : WHT"
-	£ª£ª£ª£ª£ª                       £ª£ª£ª£ª£ª
-	£ª      £ª                       £ª      £ª
-	£ª  Ò»  £ª	                 £ª  Íò  £ª
-	£ª  ´¨	£ª                       £ª  Àï  £ª
-	£ª  ·ç	£ª                       £ª  ºÓ  £ª
-	£ª  ÔÂ  £ª                       £ª  É½  £ª
-	£ª  Áô	£ª                       £ª  ¾¡  £ª
-	£ª  º¨  £ª                       £ª  ºÆ  £ª
-	£ª  Òû  £ª                       £ª  ¸è  £ª
-	£ª      £ª                       £ª      £ª
-	£ª£ª£ª£ª£ª                       £ª£ª£ª£ª£ª\n\n"NOR,
+	ï¼Šï¼Šï¼Šï¼Šï¼Š                       ï¼Šï¼Šï¼Šï¼Šï¼Š
+	ï¼Š      ï¼Š                       ï¼Š      ï¼Š
+	ï¼Š  ä¸€  ï¼Š	                 ï¼Š  ä¸‡  ï¼Š
+	ï¼Š  å·	ï¼Š                       ï¼Š  é‡Œ  ï¼Š
+	ï¼Š  é£Ž	ï¼Š                       ï¼Š  æ²³  ï¼Š
+	ï¼Š  æœˆ  ï¼Š                       ï¼Š  å±±  ï¼Š
+	ï¼Š  ç•™	ï¼Š                       ï¼Š  å°½  ï¼Š
+	ï¼Š  é…£  ï¼Š                       ï¼Š  æµ©  ï¼Š
+	ï¼Š  é¥®  ï¼Š                       ï¼Š  æ­Œ  ï¼Š
+	ï¼Š      ï¼Š                       ï¼Š      ï¼Š
+	ï¼Šï¼Šï¼Šï¼Šï¼Š                       ï¼Šï¼Šï¼Šï¼Šï¼Š\n\n"NOR,
 	
 	"poem" : CYN"
-     ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-     ¡ù ©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©· ¡ù
-     ¡ù ©§         <<ÒûÖÐ°ËÏÉ¸è>>           ©§ ¡ù
-     ¡ù ©§                                  ©§ ¡ù
-     ¡ù ©§  ÖªÕÂÆïÂíËÆ³Ë´¬£¬ÑÛ»¨Âä¾®Ë®ÖÐÃß¡£©§ ¡ù
-     ¡ù ©§  ÈêÑôÈý¶·Ê¼³¯Ìì£¬µÀ·êÇú³µ¿ÚÁ÷ÏÑ£¬©§ ¡ù
-     ¡ù ©§  ºÞ²»ÒÆ·âÏò¾ÆÈª¡£×óÏàÈÕÐË·ÑÍòÇ®£¬©§ ¡ù
-     ¡ù ©§  ÒûÈç³¤¾¨Îü°Ù´¨£¬ÏÎ±­ÀÖÊ¥³Æ±ÜÏÍ¡£©§ ¡ù
-     ¡ù ©§  ×ÚÖ®äìÈ÷ÃÀÉÙÄê£¬¾Ùõü°×ÑÛÍûÇàÌì£¬©§ ¡ù
-     ¡ù ©§  ð¨ÈçÓñÊ÷ÁÙ·çÇ°¡£ËÕ½ú³¤Õ«Ðå·ðÇ°£¬©§ ¡ù
-     ¡ù ©§  ×íÖÐÍùÍù°®ÌÓìø¡£Àî°×Ò»¶·Ê«°ÙÆª£¬©§ ¡ù
-     ¡ù ©§  ³¤°²ÊÐÉÏ¾Æ¼ÒÃß£¬Ìì×ÓºôÀ´²»ÉÏ´¬£¬©§ ¡ù
-     ¡ù ©§  ×Ô³Æ³¼ÊÇ¾ÆÖÐÏÉ¡£ÕÅÐñÈý±­²ÝÊ¥´«£¬©§ ¡ù
-     ¡ù ©§  ÍÑÃ±Â¶¶¥Íõ¹«Ç°£¬»ÓºÁÂäÖ½ÈçÔÆÑÌ£¬©§ ¡ù
-     ¡ù ©§  ½¹ËìÎå¶··½×¿È»£¬¸ßÌ¸À«ÂÛ¾ªËÄóÛ¡£©§ ¡ù
-     ¡ù ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿ ¡ù
-     ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n"NOR,
+     â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+     â€» â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”“ â€»
+     â€» â”ƒ         <<é¥®ä¸­å…«ä»™æ­Œ>>           â”ƒ â€»
+     â€» â”ƒ                                  â”ƒ â€»
+     â€» â”ƒ  çŸ¥ç« éª‘é©¬ä¼¼ä¹˜èˆ¹ï¼Œçœ¼èŠ±è½äº•æ°´ä¸­çœ ã€‚â”ƒ â€»
+     â€» â”ƒ  æ±é˜³ä¸‰æ–—å§‹æœå¤©ï¼Œé“é€¢æ›²è½¦å£æµæ¶Žï¼Œâ”ƒ â€»
+     â€» â”ƒ  æ¨ä¸ç§»å°å‘é…’æ³‰ã€‚å·¦ç›¸æ—¥å…´è´¹ä¸‡é’±ï¼Œâ”ƒ â€»
+     â€» â”ƒ  é¥®å¦‚é•¿é²¸å¸ç™¾å·ï¼Œè¡”æ¯ä¹åœ£ç§°é¿è´¤ã€‚â”ƒ â€»
+     â€» â”ƒ  å®—ä¹‹æ½‡æ´’ç¾Žå°‘å¹´ï¼Œä¸¾è§žç™½çœ¼æœ›é’å¤©ï¼Œâ”ƒ â€»
+     â€» â”ƒ  çšŽå¦‚çŽ‰æ ‘ä¸´é£Žå‰ã€‚è‹æ™‹é•¿æ–‹ç»£ä½›å‰ï¼Œâ”ƒ â€»
+     â€» â”ƒ  é†‰ä¸­å¾€å¾€çˆ±é€ƒç¦…ã€‚æŽç™½ä¸€æ–—è¯—ç™¾ç¯‡ï¼Œâ”ƒ â€»
+     â€» â”ƒ  é•¿å®‰å¸‚ä¸Šé…’å®¶çœ ï¼Œå¤©å­å‘¼æ¥ä¸ä¸Šèˆ¹ï¼Œâ”ƒ â€»
+     â€» â”ƒ  è‡ªç§°è‡£æ˜¯é…’ä¸­ä»™ã€‚å¼ æ—­ä¸‰æ¯è‰åœ£ä¼ ï¼Œâ”ƒ â€»
+     â€» â”ƒ  è„±å¸½éœ²é¡¶çŽ‹å…¬å‰ï¼ŒæŒ¥æ¯«è½çº¸å¦‚äº‘çƒŸï¼Œâ”ƒ â€»
+     â€» â”ƒ  ç„¦é‚äº”æ–—æ–¹å“ç„¶ï¼Œé«˜è°ˆé˜”è®ºæƒŠå››ç­µã€‚â”ƒ â€»
+     â€» â”—â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”› â€»
+     â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n"NOR,
      "paizi" : "
-     ¿¾¼¦ÍÈ(Jitui)              £º°ËÊ®ÎÄÍ­°å
-     ÊìÅ£Èâ(Shou niurou)        £ºÒ»Á½°×ÒøÓÖ¶þÊ®ÎÄÍ­°å
-     »¨µñ¾Æ(Huadiao)            £ºÒ»Á½°×ÒøÓÖÈýÊ®ÎÄÍ­°å
-     Å®¶ùºì(Nuerhong)  		£ºÒ»Á½°×ÒøÓÖÁùÊ®ÎÄÍ­°å
-     ×´Ôªºì(zhuangyuan hong)    £ºÒ»Á½°×ÒøÓÖÁùÊ®ÎÄÍ­°å
-     ÖñÒ¶Çà(Zhuye qing)         £ºÒ»Á½°×ÒøÓÖÁùÊ®ÎÄÍ­°å
-     ÁúÑÒ¾Æ(Longyan jiu)	£ºÈýÁ½°×Òø
-     ÏãÑ©¾Æ(Xiangxue jiu)	£ºÈýÁ½°×Òø\n\n",
+     çƒ¤é¸¡è…¿(Jitui)              ï¼šå…«åæ–‡é“œæ¿
+     ç†Ÿç‰›è‚‰(Shou niurou)        ï¼šä¸€ä¸¤ç™½é“¶åˆäºŒåæ–‡é“œæ¿
+     èŠ±é›•é…’(Huadiao)            ï¼šä¸€ä¸¤ç™½é“¶åˆä¸‰åæ–‡é“œæ¿
+     å¥³å„¿çº¢(Nuerhong)  		ï¼šä¸€ä¸¤ç™½é“¶åˆå…­åæ–‡é“œæ¿
+     çŠ¶å…ƒçº¢(zhuangyuan hong)    ï¼šä¸€ä¸¤ç™½é“¶åˆå…­åæ–‡é“œæ¿
+     ç«¹å¶é’(Zhuye qing)         ï¼šä¸€ä¸¤ç™½é“¶åˆå…­åæ–‡é“œæ¿
+     é¾™å²©é…’(Longyan jiu)	ï¼šä¸‰ä¸¤ç™½é“¶
+     é¦™é›ªé…’(Xiangxue jiu)	ï¼šä¸‰ä¸¤ç™½é“¶\n\n",
 
 	]));
 	setup();
@@ -75,9 +75,9 @@ LONG
 int valid_leave(object me, string dir)
 {
         if( present("du laoban", me) && dir="down" )
-                return notify_fail("ºÃ¶Ë¶ËµØÄãÏë´ø¶ÅÀÏ°åµ½ÄÇÀïÈ¥£¿£¡\n");
+                return notify_fail("å¥½ç«¯ç«¯åœ°ä½ æƒ³å¸¦æœè€æ¿åˆ°é‚£é‡ŒåŽ»ï¼Ÿï¼\n");
 if( present("xiao lian", me) && dir="down" )
-                return notify_fail("ºÃ¶Ë¶ËµØÄãÏë´øÐ¡Á«µ½ÄÇÀïÈ¥£¿£¡\n");
+                return notify_fail("å¥½ç«¯ç«¯åœ°ä½ æƒ³å¸¦å°èŽ²åˆ°é‚£é‡ŒåŽ»ï¼Ÿï¼\n");
         return ::valid_leave(me, dir);
 }
 

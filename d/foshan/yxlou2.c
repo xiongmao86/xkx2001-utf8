@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ӣ��¥");
+        set("short", "英雄楼");
         set("long", @LONG
-��¥�����νྻ�����п������κ��ݣ�ʮ���Ǹ��̴�֡�
-������Ը��ɽ��ȫ����
+酒楼里桌椅洁净。座中客人衣饰豪奢，十九是富商大贾。
+这里可以俯瞰佛山镇全景。
 LONG
         );
         set("exits", ([

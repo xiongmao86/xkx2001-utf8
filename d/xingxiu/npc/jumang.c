@@ -15,7 +15,7 @@ void init()
         if (interactive(ob = this_player()) && !is_fighting()
         && file_name(environment(this_object())) == "/d/xingxiu/xxcave" ) {
                 myfam = (mapping)ob->query("family");
-                if ((!myfam || myfam["family_name"] != "ĞÇËŞÅÉ") &&
+                if ((!myfam || myfam["family_name"] != "æ˜Ÿå®¿æ´¾") &&
                         (!wizardp(ob))) {
 		this_object()->kill_ob(ob);	
 		ob->start_busy(3);
@@ -26,13 +26,13 @@ void init()
 
 void create()
 {
-        set_name("¾Şòş", ({"ju mang", "mang"}));
-        set("race", "ÉßÀà");
+        set_name("å·¨èŸ’", ({"ju mang", "mang"}));
+        set("race", "è›‡ç±»");
         set("age", 100);
 	set_weight(150000);
-	set("long", "Ò»ÌõÉ«²Ê°ßìµµÄ¾Şòş¡£\n");
+	set("long", "ä¸€æ¡è‰²å½©æ–‘æ–“çš„å·¨èŸ’ã€‚\n");
 	set("attitude", "peaceful");
-	set("limbs", ({ "Í·", "¾±", "Ñü", "Î²°Í" }) );
+	set("limbs", ({ "å¤´", "é¢ˆ", "è…°", "å°¾å·´" }) );
 	set("verbs", ({ "bite" }) );
 	set("combat_exp", 20000);
 	
@@ -53,7 +53,7 @@ varargs void revive(int quiet)
 	::revive();
 	me = this_object();
 	env = environment(me);
-        //message_vision("$NµãÍ·¡£\n", me);
+        //message_vision("$Nç‚¹å¤´ã€‚\n", me);
 	inv = all_inventory(env);
 	for(i=0; i<sizeof(inv); i++) {
                 if( inv[i]==me ) continue;
@@ -64,11 +64,11 @@ varargs void revive(int quiet)
 		}
         }
 	if(cnt == 1) {
-        	message_vision("$N°ºÆğÍ·Ïò$nµãÁËÈıµã¡£\n", me, mst);
+        	message_vision("$Næ˜‚èµ·å¤´å‘$nç‚¹äº†ä¸‰ç‚¹ã€‚\n", me, mst);
 		me->set_leader(mst);
 	}
 	else
-        	message_vision("$NÂıÂıÓÎÏòÒ»±ß£¬ÅÌ³ÉÒ»×ùĞ¡É½¡£\n", me);
+        	message_vision("$Næ…¢æ…¢æ¸¸å‘ä¸€è¾¹ï¼Œç›˜æˆä¸€åº§å°å±±ã€‚\n", me);
                 //str += "  " + inv[i]->short() + "\n";
 }
 
@@ -78,18 +78,18 @@ int do_yao(string victim)
 	me = this_object();
 	ob = this_player();
 	if(!(vc = find_living(victim))) {
-		message_vision("$NÅÄÅÄ$nµÄÍ·¡£\n", ob, me);
+		message_vision("$Næ‹æ‹$nçš„å¤´ã€‚\n", ob, me);
 		return 1;
 	}
 	if(me->query_leader()) {
-		message_vision("$NÅÄÅÄ$nµÄÍ·£¬ÓÖÖ¸ÁËÖ¸" + vc->query("name") +
-			"¡£\n", ob, me);
+		message_vision("$Næ‹æ‹$nçš„å¤´ï¼ŒåˆæŒ‡äº†æŒ‡" + vc->query("name") +
+			"ã€‚\n", ob, me);
 		remove_call_out("biting");
 		call_out("biting",1,me,vc);
 		//command("say hi " + vc->query("name"));
 	}
 	else
-		message_vision("$NÅÄÅÄ$n¡£\n", ob, me);
+		message_vision("$Næ‹æ‹$nã€‚\n", ob, me);
 	return 1;
 }
 

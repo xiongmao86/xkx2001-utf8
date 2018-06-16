@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小屋");
         set("long", @LONG
-����һ���ª��Сľ�ݣ���������أ����˾���ʮ�ֲ������
-�ڻ谵�Ĺ����£��㿴��������һ��ʯͷ���ɵ�����(box)����
-֪����ʲô�ô���
+这是一间简陋的小木屋，屋里臭烘烘地，让人觉得十分不舒服。
+在昏暗的光线下，你看见屋里有一个石头做成的箱子(box)。不
+知道有什么用处。
 LONG
         );
         set("exits", ([
@@ -22,7 +22,7 @@ LONG
         set("outdoors", "xingxiuhai");
 
 	set("item_desc",([
-                "box"         :       "һ���ײĴ�С�����ӣ�������������һЩѪ����\n",
+                "box"         :       "一个棺材大小的箱子，里面隐隐的有一些血迹。\n",
         ]));
 	
         set("cost", 3);

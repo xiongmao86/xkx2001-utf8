@@ -1,6 +1,6 @@
 //Cracked by Roath
 //fixed by sage 5/08/2001
-// guo1.c Ò°¹û
+// guo1.c é‡æœ
 // ssy
 #include <ansi.h>
 
@@ -10,13 +10,13 @@ int do_eat(string);
 
 void create()
 {
-        set_name(RED "Ò°¹û" NOR, ({"ye guo", "guo"}));
+        set_name(RED "é‡æœ" NOR, ({"ye guo", "guo"}));
         set_weight(90);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", "ÕâÊÇÒ»Ã¶ºìÑŞÑŞµÄÒ°¹û¡£\n");
+                set("unit", "æš");
+                set("long", "è¿™æ˜¯ä¸€æšçº¢è‰³è‰³çš„é‡æœã€‚\n");
                 set("value", 20000);
         }
         setup();
@@ -24,8 +24,8 @@ void create()
 
 void init()
 {
-	set("no_get","Õâ¶«Î÷²»ÄÜËæ±ãÄÃ! \n");
-	set("no_drop","ÕâÃ´±¦¹óµÄÒ°¹û£¬ÄÄÄÜÂÒÈÓ! \n");
+	set("no_get","è¿™ä¸œè¥¿ä¸èƒ½éšä¾¿æ‹¿! \n");
+	set("no_drop","è¿™ä¹ˆå®è´µçš„é‡æœï¼Œå“ªèƒ½ä¹±æ‰”! \n");
 	add_action("do_eat", "eat");
 }
 
@@ -33,21 +33,21 @@ int do_eat(string arg)
 {	object it = this_object(), me = this_player();
 	
 	if( !arg )
-                return notify_fail("³ÔÊ²Ã´£¿\n");
+                return notify_fail("åƒä»€ä¹ˆï¼Ÿ\n");
         if ( arg != "guo" )
-                return notify_fail("Ê²÷á£¿\n");
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	if( (int)me->query("food") 
 	    >= (int)me->max_food_capacity() )
 	  {
-	    message("vision","ÄãÒÑ¾­³Ô±¥ÁË¡£\n", me);
+	    message("vision","ä½ å·²ç»åƒé¥±äº†ã€‚\n", me);
 	    return 1;
 	  }
 	  if ((int)me->query("combat_exp") > 250)
 
-        return notify_fail("ÏÀ¿ÍµºµÄ¶«Î÷ÊÇ²»ÄÜËæ±ã³ÔµÄ¡£\n");
+        return notify_fail("ä¾ å®¢å²›çš„ä¸œè¥¿æ˜¯ä¸èƒ½éšä¾¿åƒçš„ã€‚\n");
 
 	me->add("food", 50);
         me->add("water", 50);
@@ -56,7 +56,7 @@ int do_eat(string arg)
         me->set("jingli", (int)me->query("max_jingli"));
 
 
-	message_vision(RED "$N³ÔÏÂÒ»Ã¶Ò°¹û£¬¶ÙÊ±¾õµÃ¾«ÉñÍúÊ¢£¬»ëÉíÉÏÏÂ³äÂúÁË¾«Á¦¡£\n" NOR, me);
+	message_vision(RED "$Nåƒä¸‹ä¸€æšé‡æœï¼Œé¡¿æ—¶è§‰å¾—ç²¾ç¥æ—ºç››ï¼Œæµ‘èº«ä¸Šä¸‹å……æ»¡äº†ç²¾åŠ›ã€‚\n" NOR, me);
 	destruct(it);
 	return 1;
 }

@@ -1,15 +1,15 @@
 //Cracked by Roath
-// xiaolu1.c ��ɽ����ʯ��
+// xiaolu1.c 华山密室石阶
 // qfy 10/8/1997
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ʯ��");
+	set("short", "石阶");
 	set("long", @LONG
-ʯ����Ȼ�������ӣ���ͷ�ɼ��Ƚ����ŵ�ʯ�š�����ʯ���Ϲ��ŵ�ȼ
-�Ļ�ѣ���ͨ���յ�ʮ��������
+石阶蜿然向下伸延，尽头可见扇紧壁着的石门。两侧石壁上挂着点燃
+的火把，把通道照得十分明亮。
 LONG
 	);
 

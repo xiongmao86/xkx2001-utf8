@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Ò¹¹â±­
+// å¤œå…‰æ¯
 #include <ansi.h>
 
 inherit ITEM;
@@ -7,19 +7,19 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name(HIW"Ò¹¹â±­"NOR, ({"yeguang bei", "bei", "cup"}));
+	set_name(HIW"å¤œå…‰æ¯"NOR, ({"yeguang bei", "bei", "cup"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ìóÃÀÓñ¾«µñÏ¸×Á¶ø³ÉµÄÒ¹¹â±­£¬É«²Ê°ßìµ£¬¹Å¼®¼ÇÔØÒ¹¹â±­¡°°×ÓñÖ®¾«£¬¹âÃ÷Ò¹ÕÕ¡±¡£\n");
-		set("unit", "ìó");
+		set("long", "ä¸€ç¥—ç¾ç‰ç²¾é›•ç»†ç¢è€Œæˆçš„å¤œå…‰æ¯ï¼Œè‰²å½©æ–‘æ–“ï¼Œå¤ç±è®°è½½å¤œå…‰æ¯â€œç™½ç‰ä¹‹ç²¾ï¼Œå…‰æ˜å¤œç…§â€ã€‚\n");
+		set("unit", "ç¥—");
 		set("value", 50000);
 		set("max_liquid", 4);
 		set("worthless", 1);
 		set("liquid", ([
 			"type": "alcohol",
-			"name": "ÆÏÌÑ¾Æ",
+			"name": "è‘¡è„é…’",
 			"remaining": 4,
 			"drunk_apply": 5,
 		]));

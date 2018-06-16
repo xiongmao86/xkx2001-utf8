@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹ÅµÂÁÖ");
+	set("short", "å¤å¾·æž—");
 	set("long", @LONG
-ÕâÊÇÒ»Æ¬ÃÜÃÜµÄéªÄ¾ÁÖ£¬ÖêÖêÐãÍ¦¿¡°Î£¬Ö¦Ò¶·ÖÅûÉÏÅõ£¬ÈçÁ½ÊÖÓµ·ð£¬¾Ý
-ËµÓÐÆßÍòÖêÖ®¶à£¬ÒªÊÇ²»ÊìÏ¤µØÐÎºÜÈÝÒ×ÃÔÂ·¡£ÁÖÖÐÓÐÒ»Æ¬¿ÕµØ£¬¼¸Ö»éªÄ¾×®
-ÅÅ³ÉÃ·»¨Ä£Ñù¡£
+è¿™æ˜¯ä¸€ç‰‡å¯†å¯†çš„æ¥ æœ¨æž—ï¼Œæ ªæ ªç§€æŒºä¿Šæ‹”ï¼Œæžå¶åˆ†æŠ«ä¸Šæ§ï¼Œå¦‚ä¸¤æ‰‹æ‹¥ä½›ï¼Œæ®
+è¯´æœ‰ä¸ƒä¸‡æ ªä¹‹å¤šï¼Œè¦æ˜¯ä¸ç†Ÿæ‚‰åœ°å½¢å¾ˆå®¹æ˜“è¿·è·¯ã€‚æž—ä¸­æœ‰ä¸€ç‰‡ç©ºåœ°ï¼Œå‡ åªæ¥ æœ¨æ¡©
+æŽ’æˆæ¢…èŠ±æ¨¡æ ·ã€‚
 LONG
 	);
 
@@ -58,21 +58,21 @@ void init()
 int do_jump(string arg)
 {
 	object me = this_player();
-        if ( !arg || (arg != "Ã·»¨×®" && arg != "down")) return command("jump "+arg);
+        if ( !arg || (arg != "æ¢…èŠ±æ¡©" && arg != "down")) return command("jump "+arg);
         if ( me->query_temp("meihua/on") )
                 if ( arg == "down" ) {
                         me->delete_temp("meihua/on");
-                        message_vision("$NÒ»¸ö¿Õ·­´Ó×®ÉÏÌøÏÂ£¬ÎÈÎÈµØÕ¾ÔÚµØÉÏ¡£\n", me);
+                        message_vision("$Nä¸€ä¸ªç©ºç¿»ä»Žæ¡©ä¸Šè·³ä¸‹ï¼Œç¨³ç¨³åœ°ç«™åœ¨åœ°ä¸Šã€‚\n", me);
                         return 1;
                 } else
-                        return notify_fail("ÄãÒÑ¾­Õ¾ÔÚÃ·»¨×®ÉÏÁË£¬ÔÙÂÒÌøÐ¡ÐÄË¤ÏÂÈ¥¡£\n");
+                        return notify_fail("ä½ å·²ç»ç«™åœ¨æ¢…èŠ±æ¡©ä¸Šäº†ï¼Œå†ä¹±è·³å°å¿ƒæ‘”ä¸‹åŽ»ã€‚\n");
         if ( arg == "down" ) return command("jump down");
 	if ( me->query_skill("dodge", 1) < 30 ) {
-		message_vision("$NÒ»×ÝÉí£¬ÏëÒªÌøÉÏÃ·»¨×®£¬½á¹ûÌøµÄ²»¹»¸ß£¬Ë¤ÁË¸ö´ó¸úÍ·¡£\n", me);
+		message_vision("$Nä¸€çºµèº«ï¼Œæƒ³è¦è·³ä¸Šæ¢…èŠ±æ¡©ï¼Œç»“æžœè·³çš„ä¸å¤Ÿé«˜ï¼Œæ‘”äº†ä¸ªå¤§è·Ÿå¤´ã€‚\n", me);
 		me->receive_wound("qi", 20, me);
 		return 0;
 	} else
-		message_vision("$NÒ»×ÝÉí£¬ÌøÉÏÃ·»¨×®¡£\n", me);
+		message_vision("$Nä¸€çºµèº«ï¼Œè·³ä¸Šæ¢…èŠ±æ¡©ã€‚\n", me);
 	me->set_temp("meihua/on", 1);
 	return 1;
 }

@@ -10,11 +10,11 @@ void create()
 {
         int i;
 	i = random(8);
-	set_name("ÎŞÁ¿½£µÜ×Ó", ({ "wuliang dizi", "wuliang","dizi" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("æ— é‡å‰‘å¼Ÿå­", ({ "wuliang dizi", "wuliang","dizi" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35+i);
 	set("long",
-		"ÕâÊÇÎŞÁ¿½£ÅÉµÄÒ»ÃûµÜ×Ó£¬Ñü¿æÒ»±ú³¤½££¬ÉñÇéÓĞĞ©¹íËî£¬ÏóÊÇ¾åÅÂĞ©Ê²Ã´¡£\n");
+		"è¿™æ˜¯æ— é‡å‰‘æ´¾çš„ä¸€åå¼Ÿå­ï¼Œè…°æŒä¸€æŸ„é•¿å‰‘ï¼Œç¥æƒ…æœ‰äº›é¬¼ç¥Ÿï¼Œè±¡æ˜¯æƒ§æ€•äº›ä»€ä¹ˆã€‚\n");
 	set("combat_exp", 5000+i*4000);
 	set("shen_type", 0);
 	set("attitude", "heroism");

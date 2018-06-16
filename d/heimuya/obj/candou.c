@@ -1,18 +1,18 @@
 //Cracked by Roath
-// candou.c ²Ï¶¹
+// candou.c èš•è±†
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("²Ï¶¹", ({"can dou", "dou"}));
+        set_name("èš•è±†", ({"can dou", "dou"}));
         set_weight(60);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»µúÏãÅçÅçµÄ²Ï¶¹¡£\n");
-                set("unit", "µú");
+                set("long", "ä¸€ç¢Ÿé¦™å–·å–·çš„èš•è±†ã€‚\n");
+                set("unit", "ç¢Ÿ");
                 set("value", 15);
                 set("food_remaining", 1);
                 set("food_supply", 30);

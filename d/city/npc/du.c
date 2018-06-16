@@ -10,16 +10,16 @@ string ask_me();
 
 void create()
 {
-	set_name(YEL"¶ÅÀÏ°å"NOR, ({ "du laoban", "du", "laoban" }));
-	set("title", "¾Æ¹İÀÏ°å");
+	set_name(YEL"æœè€æ¿"NOR, ({ "du laoban", "du", "laoban" }));
+	set("title", "é…’é¦†è€æ¿");
 	set("shen_type", 1);
 	set("str", 20);
 	set("con", 20);
 	set("dex", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"ÑïÖİ¸ßÉı¾Æ¹İµÄÀÏ°å£¬ÂıÁ³¸»Ì©Ö®Æø¡£\n");
+		"æ‰¬å·é«˜å‡é…’é¦†çš„è€æ¿ï¼Œæ…¢è„¸å¯Œæ³°ä¹‹æ°”ã€‚\n");
 	set("combat_exp", 50000);
         set("qi", 300);
         set("max_qi", 300);
@@ -54,7 +54,7 @@ void init()
 	::init();
 	if( interactive(ob) && !is_fighting() ) {
 		if ( (myfam = ob->query("family")) 
-		&& myfam["family_name"] == "Ø¤°ï"
+		&& myfam["family_name"] == "ä¸å¸®"
 		&& environment(ob)==find_object("/d/city/jiuguan2.c"))
 		{
 			remove_call_out("greeting");
@@ -75,14 +75,14 @@ void greeting(object ob)
 {
 	if (!ob || environment(ob) != environment())
 		return;
-	command("say ÕâÎ»"+RANK_D->query_respect(ob)+"ÇëÉÏ×ù¡£");
+	command("say è¿™ä½"+RANK_D->query_respect(ob)+"è¯·ä¸Šåº§ã€‚");
 
 }
 
 
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;
@@ -92,7 +92,7 @@ void saying(object ob)
         if (!ob || environment(ob) != environment()) 
         return;
 	command("hmm");
-	command("say ÕâÀïÊÇÑÅ×ù£¬³ôÒª·¹µÄÉÏÀ´¸ÉÊ²Ã´£¡");
+	command("say è¿™é‡Œæ˜¯é›…åº§ï¼Œè‡­è¦é¥­çš„ä¸Šæ¥å¹²ä»€ä¹ˆï¼");
 	remove_call_out("kicking");
 	call_out("kicking", 1, ob);
 	
@@ -102,6 +102,6 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
 	ob->move("/d/city/jiuguan");
-	message("vision","¶ÅÀÏ°å´Ò´ÒÃ¦Ã¦µÄ°Ñ" +  ob->query("name") +
-		"¸ÏÁËÏÂÀ´¡£\n", environment(ob), ob);
+	message("vision","æœè€æ¿åŒ†åŒ†å¿™å¿™çš„æŠŠ" +  ob->query("name") +
+		"èµ¶äº†ä¸‹æ¥ã€‚\n", environment(ob), ob);
 }

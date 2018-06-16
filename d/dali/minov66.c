@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�䶨��");
+	set("short", "武定镇");
 	set("long", @LONG
-������̨�ķ�֧¬¹�����������θ����������������䶨���⻹ϽԪı��»
-�����򡣴��򲻴�����ɽ����������Եø������ġ�¬¹���˵���¥��ɢ��
-���������С�
+这里是台夷分支卢鹿族罗蝥部的治府，罗蝥部除了这武定州外还辖元谋、禄
+定两镇。此镇不大，正处山中竹林深处，显得格外清幽。卢鹿族人的竹楼四散分
+布在竹林中。
 LONG);
 	set("objects", ([
 		__DIR__"npc/tygirl" : 1,
@@ -21,7 +21,7 @@ LONG);
 		"south" : __DIR__"minov70",
 		"west" : __DIR__"minov68",
 		]));
-	set("area", "�䶨��");
+	set("area", "武定镇");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	set("outdoors","dali");

@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIR"²¯Ì×"NOR, ({"jin tao"}));
+	set_name(HIR"å¸›å¥—"NOR, ({"jin tao"}));
 	set_weight(1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃË¿³ñ×ö³ÉµÄÌ××Ó£¬¿ÉÒÔÓÃÀ´×°Êéº¯£¬ÎÄÊé¡£Ì××ÓµÄ±³ÃæÕ´×ÅÎå¸ùÓğÃ«¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨ä¸ç»¸åšæˆçš„å¥—å­ï¼Œå¯ä»¥ç”¨æ¥è£…ä¹¦å‡½ï¼Œæ–‡ä¹¦ã€‚å¥—å­çš„èƒŒé¢æ²¾ç€äº”æ ¹ç¾½æ¯›ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 1000);
 		set("send_level",3);
 
@@ -26,17 +26,17 @@ int do_feng(string arg)
 {
 	object ob_letter,me;
 	me=this_player();
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´×°½ø²¯Ì×Àï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆè£…è¿›å¸›å¥—é‡Œï¼Ÿ\n");
 	
 	ob_letter = present(arg, me);
 	if(!ob_letter)
-		return notify_fail("ÄãÉíÉÏºÃÏñ²¢Ã»ÓĞ·âÊéº¯£¿\n");
+		return notify_fail("ä½ èº«ä¸Šå¥½åƒå¹¶æ²¡æœ‰å°ä¹¦å‡½ï¼Ÿ\n");
 	if(!ob_letter->query("can_feng"))
-		return notify_fail("¶Ô²»Æğ£¡Äã²»ÄÜ½«Õâ¸ö·Å½ø²¯Ì×Àï¡£\n");
-		message_vision("$N´ÓÉíÉÏÌÍ³öÒ»ÕÅĞ´ºÃµÄÊéº¯×°ÔÚ²¯Ì×Àï¡£\n",me);
-	ob_letter->set("long", "ÕâÊÇÒ»¸öÒÑ¾­·âºÃµÄ²¯Ì×£¬ÀïÃæ×°ÓĞÊéº¯¡£Ì××ÓµÄ±³ÃæÕ´×ÅÎå¸ùÓğÃ«¡£\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼ä½ ä¸èƒ½å°†è¿™ä¸ªæ”¾è¿›å¸›å¥—é‡Œã€‚\n");
+		message_vision("$Nä»èº«ä¸Šæå‡ºä¸€å¼ å†™å¥½çš„ä¹¦å‡½è£…åœ¨å¸›å¥—é‡Œã€‚\n",me);
+	ob_letter->set("long", "è¿™æ˜¯ä¸€ä¸ªå·²ç»å°å¥½çš„å¸›å¥—ï¼Œé‡Œé¢è£…æœ‰ä¹¦å‡½ã€‚å¥—å­çš„èƒŒé¢æ²¾ç€äº”æ ¹ç¾½æ¯›ã€‚\n");
 	
-	ob_letter->set_name(HIR"ĞÅº¯"NOR, ({"xin han","letter"}));
+	ob_letter->set_name(HIR"ä¿¡å‡½"NOR, ({"xin han","letter"}));
 	ob_letter->set("can_feng",0);
 	ob_letter->set("can_send",1);
 	ob_letter->set("letter/send_level",3);

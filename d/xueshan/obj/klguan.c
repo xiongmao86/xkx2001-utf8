@@ -8,13 +8,13 @@ inherit HEAD;
 
 void create()
 {
-	set_name( BLU "÷¼÷Ã¹Ú" NOR, ({ "kulou guan", "guan" }) );
+	set_name( BLU "éª·é«…å† " NOR, ({ "kulou guan", "guan" }) );
 	set_weight(300);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶¥");
-                set("long", "ÕâÊÇÒ»¶¥÷¼÷Ã×öµÄ±¦¹Ú¡£\n");
+		set("unit", "é¡¶");
+                set("long", "è¿™æ˜¯ä¸€é¡¶éª·é«…åšçš„å®å† ã€‚\n");
 		set("value", 500);
 		set("no_sell",1);
 		set("material", "head");

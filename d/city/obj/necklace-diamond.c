@@ -6,13 +6,13 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIW"×êÊ¯ÏîÁ´"NOR, ({ "diamond necklace", "necklace", "lace" }));
+        set_name(HIW"é’»çŸ³é¡¹é“¾"NOR, ({ "diamond necklace", "necklace", "lace" }));
         set("weight", 500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´®ÒÔ×êÊ¯ÎªÖ÷ÌåµÄÏîÁ´£¬×¹×Óµñ×Á³ÉË®µÎĞÎ£¬ÖÜÎ§ÏâÖøÒ»È¦Ëé×ê£¬ÄÜËæÖø×ßÂ·µÄÒ¡Ò·Çá°Ú£¬»¯³öìÅÄ¿µÄ¹âÃ¢¡£\n");
-                set("unit", "´®");
+                set("long", "ä¸€ä¸²ä»¥é’»çŸ³ä¸ºä¸»ä½“çš„é¡¹é“¾ï¼Œå å­é›•ç¢æˆæ°´æ»´å½¢ï¼Œå‘¨å›´é•¶è‘—ä¸€åœˆç¢é’»ï¼Œèƒ½éšè‘—èµ°è·¯çš„æ‘‡æ›³è½»æ‘†ï¼ŒåŒ–å‡ºç‚«ç›®çš„å…‰èŠ’ã€‚\n");
+                set("unit", "ä¸²");
                 set("value", 28000);
                 set("material", "diamond");
                 set("armor_prop/armor", 7);

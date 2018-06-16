@@ -4,15 +4,15 @@
 inherit ITEM;
 
 string* titles = ({
-//	"°ãÈô¾­",
-//	"Î¬Ä¦¾­",
-//	"·¨»ª¾­",
-//	"»ªÑÏ¾­",
-	"ÎÞÁ¿ÊÙ¾­",
-	"´ó°ãÄùÅÍ¾­",
-	"°¢º¬¾­",
-	"½ð¸Õ¾­",
-	"²¨ÂÞÃÛ¶àÐÄ¾­",
+//	"èˆ¬è‹¥ç»",
+//	"ç»´æ‘©ç»",
+//	"æ³•åŽç»",
+//	"åŽä¸¥ç»",
+	"æ— é‡å¯¿ç»",
+	"å¤§èˆ¬æ¶…ç£ç»",
+	"é˜¿å«ç»",
+	"é‡‘åˆšç»",
+	"æ³¢ç½—èœœå¤šå¿ƒç»",
 });
 
 void create()
@@ -22,8 +22,8 @@ void create()
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long", "ÕâÊÇÒ»²á·ð¾­¡£\n");
+		set("unit", "æœ¬");
+		set("long", "è¿™æ˜¯ä¸€å†Œä½›ç»ã€‚\n");
 		set("value", 200);
 		set("material", "paper");
 		set("skill", ([
@@ -52,7 +52,7 @@ int do_tear(string arg)
 
 	if ( !arg )
 	{
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	}
 
 	me = this_player();
@@ -61,7 +61,7 @@ int do_tear(string arg)
 	{
 		bible = new(CLASS_D("shaolin")+"/obj/book-jiuyang");
 		where = environment(me);
-		message_vision("$NÇáÇáµØ°ÑÊéËºµô¡­¡­£¬Í»È»´ÓÊé·ìÖÐÆ®Âä³ö¼¸Ò³ÑòÆ¤Ö½¡£\n",
+		message_vision("$Nè½»è½»åœ°æŠŠä¹¦æ’•æŽ‰â€¦â€¦ï¼Œçªç„¶ä»Žä¹¦ç¼ä¸­é£˜è½å‡ºå‡ é¡µç¾Šçš®çº¸ã€‚\n",
 			this_player());
 		bible->move(file_name(where));
 		destruct(this_object());

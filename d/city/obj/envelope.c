@@ -9,14 +9,14 @@ string do_tear(string);
 
 void create()
 {
-    set_name("ĞÅ·â", ({"envelope", "xin feng", "feng"}));
+    set_name("ä¿¡å°", ({"envelope", "xin feng", "feng"}));
     set_weight(30);
     set_max_encumbrance(100);
     if (clonep())
 	set_default_object(__FILE__);
     else {
-	set("long", "Ò»Ö»ÆÕÍ¨µÄĞÅ·â¡£\n");
-	set("unit", "Ö»");
+	set("long", "ä¸€åªæ™®é€šçš„ä¿¡å°ã€‚\n");
+	set("unit", "åª");
 	set("material", "paper");
 	set("value", 50);
 	set("sealed", 0);
@@ -41,18 +41,18 @@ int reject(object ob)
 
     if (me->query("sealed")) {
 	if (me->query("opened")) {
-	    notify_fail("ĞÅ·âÒÑ¾­ÆÆÁË£¬Ã»·¨ÔÙ×°¶«Î÷ÁË¡£\n");
+	    notify_fail("ä¿¡å°å·²ç»ç ´äº†ï¼Œæ²¡æ³•å†è£…ä¸œè¥¿äº†ã€‚\n");
 	}else{
-	    notify_fail("ĞÅ·â·â×ÅÄØ£¬ÔõÃ´ÍùÀï×°¶«Î÷£¿\n");
+	    notify_fail("ä¿¡å°å°ç€å‘¢ï¼Œæ€ä¹ˆå¾€é‡Œè£…ä¸œè¥¿ï¼Ÿ\n");
 	}
 	return 1;
     }
     if (ob->query("material") != "paper") {
-	notify_fail("ĞÅ·âÀïÖ»ÄÜ×°Ö½¡£\n");
+	notify_fail("ä¿¡å°é‡Œåªèƒ½è£…çº¸ã€‚\n");
 	return 1;
     }
     if (sizeof(all_inventory(me)) >= 3) {
-	notify_fail("ĞÅ·âÀïÒÑ¾­ÈûÂúÁË¶«Î÷¡£\n");
+	notify_fail("ä¿¡å°é‡Œå·²ç»å¡æ»¡äº†ä¸œè¥¿ã€‚\n");
 	return 1;
     }
     return 0;
@@ -65,15 +65,15 @@ int do_write(string arg)
 
     if (arg != "envelope" && arg != "xin feng" && arg != "feng") return 0;
     if (player->is_busy())
-	return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
     if (me->query("content"))
-	return notify_fail("ĞÅ·âÉÏÒÑ¾­Ğ´ÂúÁË×Ö£¬ÄãÕÒ²»µ½µØ·½ÏÂ±Ê¡£\n");
+	return notify_fail("ä¿¡å°ä¸Šå·²ç»å†™æ»¡äº†å­—ï¼Œä½ æ‰¾ä¸åˆ°åœ°æ–¹ä¸‹ç¬”ã€‚\n");
 
-    message_vision("$NÔÚĞÅ·âÉÏĞ´Æğ¶«Î÷À´¡£¡£¡£\n", player);
+    message_vision("$Nåœ¨ä¿¡å°ä¸Šå†™èµ·ä¸œè¥¿æ¥ã€‚ã€‚ã€‚\n", player);
 
     me->set("writer", player->query("name"));
-    write("ĞÅ·âÉÏ¿ÉÒÔĞ´ºÃ¼¸ĞĞ£¬Ğ´ÍêÁËÓÃ . ±íÊ¾½áÊø¡£\n");
-    write("£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n");
+    write("ä¿¡å°ä¸Šå¯ä»¥å†™å¥½å‡ è¡Œï¼Œå†™å®Œäº†ç”¨ . è¡¨ç¤ºç»“æŸã€‚\n");
+    write("ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n");
     input_to("get_msg");
     return 1;
 }
@@ -102,7 +102,7 @@ int do_tear(string arg)
     object *inv;
 
     if (arg != "envelope" && arg != "xin feng" && arg != "feng") return 0;
-    message_vision("$NÒ»°Ñ½«ĞÅ·âËºµÃÏ¡ÀÃ¡£\n", player);
+    message_vision("$Nä¸€æŠŠå°†ä¿¡å°æ’•å¾—ç¨€çƒ‚ã€‚\n", player);
     destruct(me);
     return 1;
 }
@@ -114,11 +114,11 @@ int do_open(string arg)
 
     if (arg != "envelope" && arg != "xin feng" && arg != "feng") return 0;
     if (!me->query("sealed")) 
-	return notify_fail("ÕâÖ»ĞÅ·â´ÓÀ´¾ÍÃ»·âÆğÀ´¡£\n");
+	return notify_fail("è¿™åªä¿¡å°ä»æ¥å°±æ²¡å°èµ·æ¥ã€‚\n");
     if (me->query("opened")) 
-	return notify_fail("ÕâÖ»ĞÅ·âÒÑ¾­±»Ëº¿ªÁË¡£\n");
+	return notify_fail("è¿™åªä¿¡å°å·²ç»è¢«æ’•å¼€äº†ã€‚\n");
     me->set("opened", 1);
-    message_vision("$N°ÑĞÅ·âËº¿ª¡£\n", player);
+    message_vision("$NæŠŠä¿¡å°æ’•å¼€ã€‚\n", player);
     // set("value", 0);
     inv = all_inventory(me);
     if (sizeof(inv)) map_array(inv, "unlock", me);
@@ -131,13 +131,13 @@ int do_seal(string arg)
     object *inv;
 
     if (arg != "envelope" && arg != "xin feng" && arg != "feng") 
-	return notify_fail("ÄãÒª·âÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦å°ä»€ä¹ˆï¼Ÿ\n");
     if (me->query("sealed")) 
-	return notify_fail("ÕâÖ»ĞÅ·âÒÑ¾­ÊÇ·â×ÅµÄÁË¡£\n");
+	return notify_fail("è¿™åªä¿¡å°å·²ç»æ˜¯å°ç€çš„äº†ã€‚\n");
     if (me->query("opened")) 
-	return notify_fail("ÕâÖ»ĞÅ·âÒÑ¾­±»ËºÆÆÁË£¬ÄãÎŞ·¨ÔÙ°ÑËü·âÆğÀ´¡£\n");
+	return notify_fail("è¿™åªä¿¡å°å·²ç»è¢«æ’•ç ´äº†ï¼Œä½ æ— æ³•å†æŠŠå®ƒå°èµ·æ¥ã€‚\n");
     me->set("sealed", 1);
-    message_vision("$NĞ¡ĞÄÒíÒíµØ°ÑĞÅ·â·âÉÏ¿Ú¡£\n", player);
+    message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¿¡å°å°ä¸Šå£ã€‚\n", player);
     inv = all_inventory(me);
     if (sizeof(inv)) map_array(inv, "lock", me);
     return 1;
@@ -152,27 +152,27 @@ int do_look(string arg)
 
     if (me->query("sealed")) {
 	if (me->query("opened") == 0) {
-	    write("ÕâÊÇÒ»Ö»·â×ÅµÄĞÅ·â");
+	    write("è¿™æ˜¯ä¸€åªå°ç€çš„ä¿¡å°");
 	}else {
-	    write("ÕâÊÇÒ»Ö»±»´ò¿ªÁËµÄĞÅ·â");
+	    write("è¿™æ˜¯ä¸€åªè¢«æ‰“å¼€äº†çš„ä¿¡å°");
 	}
     } else {
-	write("ÕâÊÇÒ»Ö»Õ¸ĞÂµÄĞÅ·â");
+	write("è¿™æ˜¯ä¸€åªå´­æ–°çš„ä¿¡å°");
     }
 
     if(! me->query("content")) {
-	write("£¬ÉÏÃæÊ²Ã´Ò²Ã»Ğ´¡£\n");
+	write("ï¼Œä¸Šé¢ä»€ä¹ˆä¹Ÿæ²¡å†™ã€‚\n");
     }else{
-	write("£¬ÉÏÃæĞ´×Å£º\n\n");
+	write("ï¼Œä¸Šé¢å†™ç€ï¼š\n\n");
 	write(me->query("content")+"\n");
-	write("\n´Ó×Ö¼£À´¿´ËÆºõÊÇ"+me->query("writer")+"µÄÇ×±Ê¡£\n");
+	write("\nä»å­—è¿¹æ¥çœ‹ä¼¼ä¹æ˜¯"+me->query("writer")+"çš„äº²ç¬”ã€‚\n");
     }
 
     if (!me->query("sealed") || me->query("opened")) {
 	inv = all_inventory(me);
 	if (sizeof(inv)) {
 	    inv = map_array(inv, "inventory_look", this_object());
-	    write("ÀïÃæÓĞ£º\n  "+implode(inv, "\n  ") +"\n");
+	    write("é‡Œé¢æœ‰ï¼š\n  "+implode(inv, "\n  ") +"\n");
 	}
     }
     return 1;

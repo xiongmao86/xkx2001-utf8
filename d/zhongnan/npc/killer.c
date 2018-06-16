@@ -1,14 +1,14 @@
 //Cracked by Roath
-///d/zhongnan/npc/killer.c É±ÊÖ
+///d/zhongnan/npc/killer.c æ€æ‰‹
 // sdong 08/15/98
 
 inherit NPC;
 
 void create()
 {
-	set_name("É±ÊÖ", ({ "killer","killer" }) );
+	set_name("æ€æ‰‹", ({ "killer","killer" }) );
    set("age", 40);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("combat_exp", 5000);
 	set("shen_type", -1);
 	set("attitude", "heroism");
@@ -80,10 +80,10 @@ void init()
 				me->map_skill("dodge", "shenkongxing");
 				switch( random(2) ) {
 					case 0:
-								set_name("´ï¶û°Í", ({ "darba","da" }) );
+								set_name("è¾¾å°”å·´", ({ "darba","da" }) );
 								set("long",
-"ËûÊÇ½ðÂÖ·¨ÍõµÄ¶þµÜ×Ó£¬ÒÑµÃ·¨ÍõÎå¡¢Áù·ÖÕæ´«£¬¼æÌìÉúÉñÁ¦£¬Ò»ÉíÍâÃÅ¹¦·ò \n"
-"ÉõÊÇÁËµÃ£¬ËäÉíÐÎ¸ßÊÝ£¬È´Ê¹Ò»¸ù³¤´ïËÄ³ßµÄ´¿½ð½µÄ§èÆ¡£\n");
+"ä»–æ˜¯é‡‘è½®æ³•çŽ‹çš„äºŒå¼Ÿå­ï¼Œå·²å¾—æ³•çŽ‹äº”ã€å…­åˆ†çœŸä¼ ï¼Œå…¼å¤©ç”Ÿç¥žåŠ›ï¼Œä¸€èº«å¤–é—¨åŠŸå¤« \n"
+"ç”šæ˜¯äº†å¾—ï¼Œè™½èº«å½¢é«˜ç˜¦ï¼Œå´ä½¿ä¸€æ ¹é•¿è¾¾å››å°ºçš„çº¯é‡‘é™é­”æµã€‚\n");
 								set("age", 40);
 								me->set_skill("staff", max);
 								me->set_skill("jingang-chu", max);
@@ -95,12 +95,12 @@ void init()
 					case 1:
 								if(random(10)==0)
 								{
-								  set_name("½ðÂÖ·¨Íõ", ({ "jinlun fawang","fawang" }) );
+								  set_name("é‡‘è½®æ³•çŽ‹", ({ "jinlun fawang","fawang" }) );
 								  set("long",
-"Ò»¸öÖÐÄê·¬É®£¬ÉíÐÎ¼«¸ß¼«ÊÝ£¬ÍñÈçÒ»¸ú³¤Öñ¸Ë¡£ÄÔÃÅÎ¢ÏÝ£¬ÓÉÈçÒ»¸öµú×Ó¡£\n"
-"Ëû¾ÍÊÇµ±½ñÃÉ¹Å¹ú»¤¹ú·¨Íõ¡£\n");
-								  set("title", "ÃÉ¹Å¹úÊ¦");
-								  set("gender", "ÄÐÐÔ");
+"ä¸€ä¸ªä¸­å¹´ç•ªåƒ§ï¼Œèº«å½¢æžé«˜æžç˜¦ï¼Œå©‰å¦‚ä¸€è·Ÿé•¿ç«¹æ†ã€‚è„‘é—¨å¾®é™·ï¼Œç”±å¦‚ä¸€ä¸ªç¢Ÿå­ã€‚\n"
+"ä»–å°±æ˜¯å½“ä»Šè’™å¤å›½æŠ¤å›½æ³•çŽ‹ã€‚\n");
+								  set("title", "è’™å¤å›½å¸ˆ");
+								  set("gender", "ç”·æ€§");
 								  set("age", 50);
 								  set("class","lama");
 								  set("shen_type", -1);
@@ -116,10 +116,10 @@ void init()
 								}
 								else
 								{
-									set_name("»ô¶¼", ({ "huo du","huo" }) );
+									set_name("éœéƒ½", ({ "huo du","huo" }) );
 									set("long",
-"ËûÊÇ½ðÂÖ·¨ÍõµÄÈýµÜ×Ó£¬ËûÇáôÃ»º´ø£¬ÉñÌ¬ÉõÊÇäìÈ÷£¬Ë«Ä¿Ð±·É¡£\n");
-									set("title", "ÃÉ¹ÅÍõ×Ó");
+"ä»–æ˜¯é‡‘è½®æ³•çŽ‹çš„ä¸‰å¼Ÿå­ï¼Œä»–è½»è£˜ç¼“å¸¦ï¼Œç¥žæ€ç”šæ˜¯æ½‡æ´’ï¼ŒåŒç›®æ–œé£žã€‚\n");
+									set("title", "è’™å¤çŽ‹å­");
 									me->set_skill("sword", max);
 									me->set_skill("mingwang-jian", max);
 									me->map_skill("sword", "mingwang-jian");
@@ -131,14 +131,14 @@ void init()
 				}
 				break;
 			case 1:
-				  set_name("É³Í¨Ìì", ({ "sha tongtian", "sha" }));
-				  set("nickname", "¹íÃÅÁúÍõ");
+				  set_name("æ²™é€šå¤©", ({ "sha tongtian", "sha" }));
+				  set("nickname", "é¬¼é—¨é¾™çŽ‹");
 				  set("long",
-"É³Í¨ÌìÊÇ¸öÍº×Ó£¬Í·ÉÏÓÍ¹â¹âµØÃ»°ë¸ùÍ··¢£¬Ë«Ä¿²¼ÂúºìË¿£¬ÑÛ\n"
-"ÖéÍ»³ö£¬Éú¾ÍÒ»¸±ÒìÏà¡£ÐÔ×Ó±©Ôê£¬Îä¹¦È´ÊÇ³öÆæµØ¸ß£¬½­ºþÉÏ\n"
-"ÎÞÈË²»Ïþ¡£\n");
-				  set("title", "»ÆºÓ°ï°ïÖ÷");
-				  set("gender", "ÄÐÐÔ");
+"æ²™é€šå¤©æ˜¯ä¸ªç§ƒå­ï¼Œå¤´ä¸Šæ²¹å…‰å…‰åœ°æ²¡åŠæ ¹å¤´å‘ï¼ŒåŒç›®å¸ƒæ»¡çº¢ä¸ï¼Œçœ¼\n"
+"ç çªå‡ºï¼Œç”Ÿå°±ä¸€å‰¯å¼‚ç›¸ã€‚æ€§å­æš´èºï¼Œæ­¦åŠŸå´æ˜¯å‡ºå¥‡åœ°é«˜ï¼Œæ±Ÿæ¹–ä¸Š\n"
+"æ— äººä¸æ™“ã€‚\n");
+				  set("title", "é»„æ²³å¸®å¸®ä¸»");
+				  set("gender", "ç”·æ€§");
 				  set("age", 48);
 				  set("attitude", "peaceful");
 				  set("shen_type", -1);
@@ -165,12 +165,12 @@ void init()
 				  carry_object("/d/city/obj/tiejia")->wear();
 				break;
 			case 2:
-				  set_name("Áº×ÓÎÌ", ({ "liang ziweng", "liang" }));
-				  set("nickname", "²ÎÏÉÀÏ¹Ö");
+				  set_name("æ¢å­ç¿", ({ "liang ziweng", "liang" }));
+				  set("nickname", "å‚ä»™è€æ€ª");
 				  set("long",
-"Áº×ÓÎÌÉí²ÄÖÐµÈ£¬ÂúÍ·°×·¢ÈçÒø£¬µ«Á³É«¹âÈó£¬Éñ²ÉÞÄÞÄ£¬´©Ò»\n"
-"¼þ¸ð²¼³¤ÅÛ£¬´ò°ç·ÇµÀ·ÇË×¡£ËûÊÇ³¤°×É½ÎäÑ§µÄÒ»ÅÉ×ÚÊ¦¡£\n");
-				  set("gender", "ÄÐÐÔ");
+"æ¢å­ç¿èº«æä¸­ç­‰ï¼Œæ»¡å¤´ç™½å‘å¦‚é“¶ï¼Œä½†è„¸è‰²å…‰æ¶¦ï¼Œç¥žé‡‡å¼ˆå¼ˆï¼Œç©¿ä¸€\n"
+"ä»¶è‘›å¸ƒé•¿è¢ï¼Œæ‰“æ‰®éžé“éžä¿—ã€‚ä»–æ˜¯é•¿ç™½å±±æ­¦å­¦çš„ä¸€æ´¾å®—å¸ˆã€‚\n");
+				  set("gender", "ç”·æ€§");
 				  set("age", 45);
 				  set("shen_type", -1);
 
@@ -197,11 +197,11 @@ void init()
 				break;
 			case 3:
 
-				set_name("Å·Ñô¿Ë", ({ "ouyang ke", "ouyang", "ke" }));
-				set("long", "ËûÒ»Éí°×ÒÂ£¬ÇáôÃ»º´ø£¬ÉñÌ¬ÉõÊÇäìÈ÷£¬Ë«Ä¿Ð±·É£¬ÃæÄ¿¿¡ÑÅ£¬È´\nÓÖÓ¢Æø±ÆÈË¡£"
-					 "ÉíÉÏ·þÊÎ´ò°ç£¬Ù²È»ÊÇÒ»Î»¸»¹óÍõËï¡£\n");
-				set("title", "°×ÍÕÉ½ÉÙ×¯Ö÷");
-				set("gender", "ÄÐÐÔ");
+				set_name("æ¬§é˜³å…‹", ({ "ouyang ke", "ouyang", "ke" }));
+				set("long", "ä»–ä¸€èº«ç™½è¡£ï¼Œè½»è£˜ç¼“å¸¦ï¼Œç¥žæ€ç”šæ˜¯æ½‡æ´’ï¼ŒåŒç›®æ–œé£žï¼Œé¢ç›®ä¿Šé›…ï¼Œå´\nåˆè‹±æ°”é€¼äººã€‚"
+					 "èº«ä¸Šæœé¥°æ‰“æ‰®ï¼Œä¿¨ç„¶æ˜¯ä¸€ä½å¯Œè´µçŽ‹å­™ã€‚\n");
+				set("title", "ç™½é©¼å±±å°‘åº„ä¸»");
+				set("gender", "ç”·æ€§");
 				set("shen_type", -1);
 				set("age", 35);
 				me->set_skill("strike", max1);
@@ -227,11 +227,11 @@ void init()
 				me->carry_object("/clone/weapon/tiezhang")->wield();
 				break;
 			 case 4:
-			  set_name("ÅíÁ¬»¢", ({ "peng lianhu", "peng" }));
-			  set("nickname", "Ç§ÊÖÈËÍÀ");
+			  set_name("å½­è¿žè™Ž", ({ "peng lianhu", "peng" }));
+			  set("nickname", "åƒæ‰‹äººå± ");
 			  set("long",
-"ÅíÁ¬»¢Îå¶ÌÉí²Ä£¬ÂúÑÛºìË¿£¬Ä¿¹âÈçµç£¬ÉÏ´½¶ÌÐëÇÌÆð¡£ËûÉúÐÔ²Ð±©£¬ºÍÉ³Í¨ÌìÓÐÉîºñµÄ½»Çé¡£\n");
-			  set("gender", "ÄÐÐÔ");
+"å½­è¿žè™Žäº”çŸ­èº«æï¼Œæ»¡çœ¼çº¢ä¸ï¼Œç›®å…‰å¦‚ç”µï¼Œä¸Šå”‡çŸ­é¡»ç¿˜èµ·ã€‚ä»–ç”Ÿæ€§æ®‹æš´ï¼Œå’Œæ²™é€šå¤©æœ‰æ·±åŽšçš„äº¤æƒ…ã€‚\n");
+			  set("gender", "ç”·æ€§");
 			  set("age", 49);
 			  set("shen_type", -1);
 			  set_skill("force", max1);
@@ -260,10 +260,10 @@ void init()
 			  break;
 
 			 case 5:
-				  set_name("Òü¿ËÎ÷", ({ "yin kexi","yin","kexi" }));
-				  set("long", "Òü¿ËÎ÷ÊÇ¸ö²¨Ë¹ºúÈË£¬¸ß±ÇÉîÄ¿£¬ÏÈÇ°ÊÇ¸öÖé±¦ÉÌ£¬ÒòÎª¾«Í¨ËãÕÊ£¬±»Å·Ñô·åÕÐÀ´×ö¸öÕË·¿ÏÈÉú¡£\n");
-				  set("gender", "ÄÐÐÔ");
-				  set("title","°×ÍÕÉ½×¯ÕË·¿ÏÈÉú");
+				  set_name("å°¹å…‹è¥¿", ({ "yin kexi","yin","kexi" }));
+				  set("long", "å°¹å…‹è¥¿æ˜¯ä¸ªæ³¢æ–¯èƒ¡äººï¼Œé«˜é¼»æ·±ç›®ï¼Œå…ˆå‰æ˜¯ä¸ªç å®å•†ï¼Œå› ä¸ºç²¾é€šç®—å¸ï¼Œè¢«æ¬§é˜³å³°æ‹›æ¥åšä¸ªè´¦æˆ¿å…ˆç”Ÿã€‚\n");
+				  set("gender", "ç”·æ€§");
+				  set("title","ç™½é©¼å±±åº„è´¦æˆ¿å…ˆç”Ÿ");
 				  set("age", 35);
 				  set_skill("hand", max);
 				  set_skill("shexing-diaoshou", max);
@@ -315,19 +315,19 @@ void init()
 		  {
 		case 0:
 			command( "grin" );
-			command( "say ¾ÍÆ¾ÄãËÀÅ£±Ç×ÓµÄÈý½ÅÃ¨¹¦·ò£¬Ò²ÅäÔÚÕâÀï±È»®£¿ÈÃÀÏ×ÓÀ´½ÌÑµ½ÌÑµÄã£¬¿´ÕÐ£¡" );
+			command( "say å°±å‡­ä½ æ­»ç‰›é¼»å­çš„ä¸‰è„šçŒ«åŠŸå¤«ï¼Œä¹Ÿé…åœ¨è¿™é‡Œæ¯”åˆ’ï¼Ÿè®©è€å­æ¥æ•™è®­æ•™è®­ä½ ï¼Œçœ‹æ‹›ï¼" );
 			break;
 		case 1:
 			command( "hehe" );
-			command( "say ÌýËµ¾ÅÒõÕæ¾­ÂäÔÚÖØÑô¹¬Àï£¬ÀÏ×ÓÇ§ÀïÌöÌöÌØµØ¸ÏÀ´£¬ÄãÃÇ¾ÍÈÏÃü°É£¡" );
+			command( "say å¬è¯´ä¹é˜´çœŸç»è½åœ¨é‡é˜³å®«é‡Œï¼Œè€å­åƒé‡Œè¿¢è¿¢ç‰¹åœ°èµ¶æ¥ï¼Œä½ ä»¬å°±è®¤å‘½å§ï¼" );
 			break;
 		case 2:
 			command( "hehe" );
-			command( "say È«Õæ½ÌÕâÃ´´óµÄÃûÍ·£¬ÀÏ×Ó¿´À´Ò²²»¹ýÈç´Ë¡£ËÀÅ£±Ç×Ó£¬Äã¾ÍÈÏÃü°É£¡" );
+			command( "say å…¨çœŸæ•™è¿™ä¹ˆå¤§çš„åå¤´ï¼Œè€å­çœ‹æ¥ä¹Ÿä¸è¿‡å¦‚æ­¤ã€‚æ­»ç‰›é¼»å­ï¼Œä½ å°±è®¤å‘½å§ï¼" );
 			break;
 		default:
 			command( "hehe" );
-			command( "say ÀÏ×ÓÎÒ¿´ÄãËÀÅ£±Ç×Ó²»Ë³ÑÛ£¬ÌØµØÀ´²ù³ýÖØÑô¹¬¡£ÔôµÀ£¬Äã¾ÍÈÏÃü°É£¡" );
+			command( "say è€å­æˆ‘çœ‹ä½ æ­»ç‰›é¼»å­ä¸é¡ºçœ¼ï¼Œç‰¹åœ°æ¥é“²é™¤é‡é˜³å®«ã€‚è´¼é“ï¼Œä½ å°±è®¤å‘½å§ï¼" );
 			break;
 		  }
 		  me->set_temp("said", 1);
@@ -344,7 +344,7 @@ void init()
 void destruct_me(object me)
 {
 	if(me) {
-		message_vision("$N´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n\n", me);
+		message_vision("$NåŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n\n", me);
 		destruct(me);
 	}
 }
@@ -354,7 +354,7 @@ int accept_fight(object victim)
 {
 	object me = this_object();
 
-	command( "say Äã³ÔÁËÀÇÐÄ±ª×Óµ¨À²£¬¾¹¸Ò·´¿¹£¡" );
+	command( "say ä½ åƒäº†ç‹¼å¿ƒè±¹å­èƒ†å•¦ï¼Œç«Ÿæ•¢åæŠ—ï¼" );
 	me->set_temp("fought", 1);
 	me->kill_ob(victim);
 
@@ -367,7 +367,7 @@ int accept_kill(object victim)
 {
 	object me = this_object();
 
-	command( "say ²»ÖªËÀ»îµÄ¶«Î÷£¬ÈÃ´óÒ¯ÎÒ³¬¶ÉÄã°É£¡" );
+	command( "say ä¸çŸ¥æ­»æ´»çš„ä¸œè¥¿ï¼Œè®©å¤§çˆ·æˆ‘è¶…æ¸¡ä½ å§ï¼" );
 	me->kill_ob(victim);
 
 	remove_call_out("checking");
@@ -383,10 +383,10 @@ void unconcious()
 
 	if( random(20) == 10)
 	{
-		message_vision("\n$NºÞºÞµØËµµÀ£ºÃ»Ïëµ½Å£±Ç×ÓÃÇ×¦×ÓÕâÃ´Ó²£¬ÏÂ´ÎÔÙÕÒÂé·³¡£\n", this_object());
-		message_vision("$NÉí×ÓÏòºóÒ»Ìø£¬´Ò´ÒÃ¦Ã¦Àë¿ªÁË¡£\n", this_object());
+		message_vision("\n$Næ¨æ¨åœ°è¯´é“ï¼šæ²¡æƒ³åˆ°ç‰›é¼»å­ä»¬çˆªå­è¿™ä¹ˆç¡¬ï¼Œä¸‹æ¬¡å†æ‰¾éº»çƒ¦ã€‚\n", this_object());
+		message_vision("$Nèº«å­å‘åŽä¸€è·³ï¼ŒåŒ†åŒ†å¿™å¿™ç¦»å¼€äº†ã€‚\n", this_object());
 		destruct(me);
-		tell_object(ob,"\nÄãµÄÇ±ÄÜºÃÏóÔö¼ÓÁË£¡\n");
+		tell_object(ob,"\nä½ çš„æ½œèƒ½å¥½è±¡å¢žåŠ äº†ï¼\n");
 		ob->add("potential",me->query_temp("bonus",1) );
 		if(ob->query("potential",1)>ob->query("max_potential",1) )
 			ob->set("potential",ob->query("max_potential",1));
@@ -415,14 +415,14 @@ void die()
 		ob->add("potential", pot);
 		if ( ob->query("potential") > ob->query("max_potential") )
 			ob->set("potential", ob->query("max_potential"));
-		tell_object(ob,"\nÄãµÄ¾­ÑéºÍÇ±ÄÜºÃÏó½ø²½ÁË£¡\n");
+		tell_object(ob,"\nä½ çš„ç»éªŒå’Œæ½œèƒ½å¥½è±¡è¿›æ­¥äº†ï¼\n");
 		::die();
 	}
 	else
 	{
-		message_vision("\nÇ½ÉÏºöÈ»ÓÐÈËÌøÏÂÀ´£¬°Ñ$NÒ»°Ñ±§Æð£¬ºÈµÀ£ºÍºÔô£¬ÐÝÉËÎÒµÄÐÖµÜ¡£\n", this_object());
-		message_vision("ÃÉÃæÈË´ø×Å$NÍùÇ½ÉÏÒ»Ìø£¬´Ò´ÒÃ¦Ã¦Àë¿ªÁË¡£\n", this_object());
-		tell_object(ob,"\nÄãµÄÇ±ÄÜºÃÏóÔö¼ÓÁË£¡\n");
+		message_vision("\nå¢™ä¸Šå¿½ç„¶æœ‰äººè·³ä¸‹æ¥ï¼ŒæŠŠ$Nä¸€æŠŠæŠ±èµ·ï¼Œå–é“ï¼šç§ƒè´¼ï¼Œä¼‘ä¼¤æˆ‘çš„å…„å¼Ÿã€‚\n", this_object());
+		message_vision("è’™é¢äººå¸¦ç€$Nå¾€å¢™ä¸Šä¸€è·³ï¼ŒåŒ†åŒ†å¿™å¿™ç¦»å¼€äº†ã€‚\n", this_object());
+		tell_object(ob,"\nä½ çš„æ½œèƒ½å¥½è±¡å¢žåŠ äº†ï¼\n");
 		ob->add("potential",me->query_temp("bonus",1)*2 );
 		if(ob->query("potential",1)>ob->query("max_potential",1) )
 			ob->set("potential",ob->query("max_potential",1));

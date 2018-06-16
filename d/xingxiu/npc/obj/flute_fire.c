@@ -11,13 +11,13 @@ int worn;
 
 void create()
 {
-	set_name(HIR"Ò»¶Ñ»ğÑæ"NOR,({"huo yan"}));
+	set_name(HIR"ä¸€å †ç«ç„°"NOR,({"huo yan"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", HIR"»ğÑæ¸ßÔ¼³ß£¬"+GRN+"É«×÷´¿±Ì£¬"+BLU+"¹íÆøÉ­É­£¬"+HIR+"ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR);
-		set("unit", "¶Ñ");
+		set("long", HIR"ç«ç„°é«˜çº¦å°ºï¼Œ"+GRN+"è‰²ä½œçº¯ç¢§ï¼Œ"+BLU+"é¬¼æ°”æ£®æ£®ï¼Œ"+HIR+"å’Œå¯»å¸¸ç«ç„°å¤§å¼‚ã€‚\n"NOR);
+		set("unit", "å †");
 		set("value", 10000);
 		set("no_get", 1);
 		set("no_drop", 1);
@@ -39,15 +39,15 @@ void wear(int phase)
 	worn = phase;
 	switch(phase) {
 	case 1:
-		set("long", HIR"»ğÑæĞÜĞÜÈ¼ÉÕ×Å£¬"+GRN+"É«×÷´¿±Ì£¬"+BLU+"¹íÆøÉ­É­£¬"+HIR+"ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR);
+		set("long", HIR"ç«ç„°ç†Šç†Šç‡ƒçƒ§ç€ï¼Œ"+GRN+"è‰²ä½œçº¯ç¢§ï¼Œ"+BLU+"é¬¼æ°”æ£®æ£®ï¼Œ"+HIR+"å’Œå¯»å¸¸ç«ç„°å¤§å¼‚ã€‚\n"NOR);
 		call_out("wear", 100, phase+1); 
 		break;
 	case 2:
-		set("long", RED"»ğÊÆÔ½À´Ô½Èõ£¬¼¸ºõ¿ìÉÕÍêÁË¡£\n"NOR);
+		set("long", RED"ç«åŠ¿è¶Šæ¥è¶Šå¼±ï¼Œå‡ ä¹å¿«çƒ§å®Œäº†ã€‚\n"NOR);
 		call_out("wear", 30, phase+1); 
 		break;
 	case 3:
-		message_vision(RED"»ğÑæ½¥½¥µØÏ¨ÃğÁË¡£\n"NOR, this_object());
+		message_vision(RED"ç«ç„°æ¸æ¸åœ°ç†„ç­äº†ã€‚\n"NOR, this_object());
 		destruct(this_object());
 		break;
 	}	

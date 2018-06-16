@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dxxiang.c ������
+// dxxiang.c 打锡巷
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "打锡巷");
 	set("long", @LONG
-��������ͨͨ��һ��ʯ��С·���������棬Ҳ��������벻������ʩ�Ž�
-������̨���Ϊ����ս��������ǳص���ʯ�˻��̳ɴ�·��
+这是普普通通的一条石板小路。走在上面，也许你根本想不到这是施琅将
+军攻克台湾后为显其战功，将其城池的砌石运回铺成此路。
 LONG
         );
 

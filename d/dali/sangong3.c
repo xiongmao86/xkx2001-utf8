@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "˾ͽ��");
+	set("short", "司徒堂");
 	set("long", @LONG
-һ���徲�����ã���ɨ�øɸɾ�����˾ͽһ�㸺�����ѡ�ε����鹤������
-�������ľ��ѻ���ʱ�й�Ա���˰���ӡ�����ĵ��ǰ������ǲ���εع��ɡ�
+一所清静的书堂，打扫得干干净净。司徒一般负责官吏选拔等文书工作，是
+以堂内文卷堆积。时有官员来此拜领印玺公文等物，前往所排遣的任地公干。
 LONG);
 	set("objects", ([
 		__DIR__"npc/hua-hegen" : 1,

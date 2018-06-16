@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jitan.c ·¨Ì³
+// jitan.c æ³•å›
 // Ryu
 
 #include <ansi.h>
@@ -8,15 +8,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIY"·¨Ì³"NOR, ({ "fa tan", "altar", "tan" }) );
+	set_name(HIY"æ³•å›"NOR, ({ "fa tan", "altar", "tan" }) );
 	set_weight(300000);
 	set_max_encumbrance(5000000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸ö¼«ÆäÅÓ´óµÄÍ­ÖÆ¼ÀÌ³£¬¸ßÔ¼ÈıÕÉ£¬·½Ô²Ô¼ÓĞÎåÕÉ£¬ÄËÊÇµ±ÄêÍÂ·¬¹úÍõÇ×\n"
-			    "×ÔÖ¸»ÓÖıÔìµÄ£¬ºÄÇã¹úÖ®Á¦£¬Ê®Äê·½³É¡£\n");
+		set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªæå…¶åºå¤§çš„é“œåˆ¶ç¥­å›ï¼Œé«˜çº¦ä¸‰ä¸ˆï¼Œæ–¹åœ†çº¦æœ‰äº”ä¸ˆï¼Œä¹ƒæ˜¯å½“å¹´åç•ªå›½ç‹äº²\n"
+			    "è‡ªæŒ‡æŒ¥é“¸é€ çš„ï¼Œè€—å€¾å›½ä¹‹åŠ›ï¼Œåå¹´æ–¹æˆã€‚\n");
 		set("value", 1000);
 		set("material", "wood");
 		set("no_get",1);
@@ -45,20 +45,20 @@ int do_put(string arg)
 	me = this_player();
 
 	if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
                 
         if( item == "all" ) {
-		write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+		write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
 		return 1;
 	}
                                                                 
 	sscanf(item, "%d %s", amount, item);
 	
 	if( !objectp(obj = present(item, me)) )
-		return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+		return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( obj->query("id") != "corpse"){
-		write("Äã²»Íù¼ÀÌ³Àï·ÅÕâÑù¶«Î÷¡£\n");
+		write("ä½ ä¸å¾€ç¥­å›é‡Œæ”¾è¿™æ ·ä¸œè¥¿ã€‚\n");
 		return 1;
 	}
 }
@@ -67,15 +67,15 @@ int do_light(string arg)
 	object  me = this_player();
 
 	if (!present("fire", me))
-		return notify_fail("ÄãÒªÓÃÊ²Ã´µã»ğ£¿\n");
+		return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆç‚¹ç«ï¼Ÿ\n");
 	if (!query("in_use"))
-		return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦ç‚¹ç‡ƒä»€ä¹ˆï¼Ÿ\n");
         if (!id(arg))
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
-	message_vision(HIR"$NµãÈ¼ÁË¼ÀÌ³ÖĞµÄÄ¾²ñÓëËÖÓÍ£¬ĞÜĞÜÁÒ»ğ³åÌì¶øÆğ¡£\n"NOR, me);
+                return notify_fail("ä½ è¦ç‚¹ç‡ƒä»€ä¹ˆï¼Ÿ\n");
+	message_vision(HIR"$Nç‚¹ç‡ƒäº†ç¥­å›ä¸­çš„æœ¨æŸ´ä¸é…¥æ²¹ï¼Œç†Šç†Šçƒˆç«å†²å¤©è€Œèµ·ã€‚\n"NOR, me);
 	set("burning", 1);
 	set("pending", me->query("name"));
-	set("long", query("long") + HIR"ÀïÃæÈ¼×ÅĞÜĞÜµÄ»ğÑæ¡£\n"NOR);
+	set("long", query("long") + HIR"é‡Œé¢ç‡ƒç€ç†Šç†Šçš„ç«ç„°ã€‚\n"NOR);
 	set("in_use", 0);
 	remove_call_out("burning");
         call_out("burning",20+random(20), me);
@@ -87,7 +87,7 @@ void burning(object me)
 	point = me->query_temp("award_pending")*10/me->query("combat_exp");
 	point = point * me->query_skill("lamaism")/12;
 	if (me->query("combat_exp") < 150000) point = point/2;
-	message_vision(BLU"Ò»Ë¿»êÆÇÉı³ö¼ÀÌ³£¬È½È½¶øÆğ¡£»êÆÇÊÜ$N·ğ·¨¸ĞÕÙ£¬ÅÇ»²²»È¥¡£\n"NOR, me);
+	message_vision(BLU"ä¸€ä¸é­‚é­„å‡å‡ºç¥­å›ï¼Œå†‰å†‰è€Œèµ·ã€‚é­‚é­„å—$Nä½›æ³•æ„Ÿå¬ï¼Œå¾˜å¾Šä¸å»ã€‚\n"NOR, me);
 	if (me->query_temp("award_pending"))
 	me->add("potential", point + random(point/2));
 	if (me->query_temp("award_doubling"))
@@ -104,15 +104,15 @@ int do_spray(string arg)
 	if (!present("lubo", me))
 		return 0;
 	if (me->query("name") != query("pending"))
-		return notify_fail("Äã¸úÕâ¶ù´ÕÊ²Ã´ÈÈÄÖ£¿\n");
+		return notify_fail("ä½ è·Ÿè¿™å„¿å‡‘ä»€ä¹ˆçƒ­é—¹ï¼Ÿ\n");
 	if (!query("wait_for_spray"))
-		return notify_fail("Ê±³½Î´µ½£¡\n");
+		return notify_fail("æ—¶è¾°æœªåˆ°ï¼\n");
 	if (!id(arg))
-                return notify_fail("ÄãÏëÍùÄÄ¶ùÅç£¿\n");
+                return notify_fail("ä½ æƒ³å¾€å“ªå„¿å–·ï¼Ÿ\n");
 	if (ob->query("liquid/remaining") < 1)
-		return notify_fail("Â­²§ÀïÃæµÄË®ÒÑ¾­ËùÊ£ÎŞ¼¸ÁË¡£\n");
+		return notify_fail("é¢…é’µé‡Œé¢çš„æ°´å·²ç»æ‰€å‰©æ— å‡ äº†ã€‚\n");
 
-	message_vision(HIW"$N¶ËÆğÂ­²§Îü½øÒ»¿ÚË®£¬¡¸àÛ¡¹µÄÒ»ÉùÃÍµØ³¯ÄÇĞÜĞÜ»ğÑæÅç½«¹ıÈ¥¡£\n"NOR, me);
+	message_vision(HIW"$Nç«¯èµ·é¢…é’µå¸è¿›ä¸€å£æ°´ï¼Œã€Œå™—ã€çš„ä¸€å£°çŒ›åœ°æœé‚£ç†Šç†Šç«ç„°å–·å°†è¿‡å»ã€‚\n"NOR, me);
 	ob->add("liquid/remaining", -1);
 	set("wait_for_spray", 0);
 	set("time_to_dazuo", 1);
@@ -123,13 +123,13 @@ int do_dazuo()
 	object me = this_player();
 	
 	if (me->query("name") != query("pending"))
-                return notify_fail("Äã´ÕÊ²Ã´ÈÈÄÖ£¿\n");
+                return notify_fail("ä½ å‡‘ä»€ä¹ˆçƒ­é—¹ï¼Ÿ\n");
 	if (me->query("neili") < 600)
-		return notify_fail("ÄãÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ å†…åŠ›ä¸å¤Ÿï¼\n");
 	if (!query("time_to_dazuo"))
-                return notify_fail("Õâ²»ÊÇÄã´ò×øµÄÊ±ºò¡£\n");
+                return notify_fail("è¿™ä¸æ˜¯ä½ æ‰“åçš„æ—¶å€™ã€‚\n");
 
-	message_vision(HIY"$NÅÌÍÈ´ò×ø£¬Éñ¹âÄÚÔÌ£¬¿ÚÖĞÄîÄîÓĞ´Ç£¬½¥½¥ÓĞÒ»Ë¿»êÆÇÔÚ$NÃæÇ°Äı¾Û³ÉĞÎ¡£\n"NOR, me);
+	message_vision(HIY"$Nç›˜è…¿æ‰“åï¼Œç¥å…‰å†…è•´ï¼Œå£ä¸­å¿µå¿µæœ‰è¾ï¼Œæ¸æ¸æœ‰ä¸€ä¸é­‚é­„åœ¨$Né¢å‰å‡èšæˆå½¢ã€‚\n"NOR, me);
 	me->start_busy(20);
 	remove_call_out("rise");
         call_out("rise",20+random(20), me);
@@ -137,7 +137,7 @@ int do_dazuo()
 }
 void rise(object me)
 {
-       message_vision(BLU"»êÆÇÔ½¾ÛÔ½¶à£¬¾¹È»³Ê³öÈËĞÎ£¡ $NÊÖÖ¸ÈËĞÎ£¬¿ÚÄîÕæÑÔ£¬Ö¸ÒıÍùÉúÖ®Â·¡£\n"NOR, me);
+       message_vision(BLU"é­‚é­„è¶Šèšè¶Šå¤šï¼Œç«Ÿç„¶å‘ˆå‡ºäººå½¢ï¼ $Næ‰‹æŒ‡äººå½¢ï¼Œå£å¿µçœŸè¨€ï¼ŒæŒ‡å¼•å¾€ç”Ÿä¹‹è·¯ã€‚\n"NOR, me);
 	me->add("neili", -600);
 	if (me->query_temp("award_pending")*10/me->query("combat_exp") >= 16)
         me->add("max_neili", me->query_skill("lamaism", 1)/60);
@@ -151,22 +151,22 @@ int do_wave(string arg)
 	object weapon, me = this_player();
 
 	if (!arg && arg != "ling" && arg != "fa ling")
-		return notify_fail("ÄãÒªÒ¡Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æ‘‡ä»€ä¹ˆï¼Ÿ\n");
 		
 	if (!present("fa ling", me))
-		return notify_fail("ÄãÒªÒ¡Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æ‘‡ä»€ä¹ˆï¼Ÿ\n");
 
 	if (me->query("name") != query("pending"))
-                return notify_fail("Äã¸úÕâ¶ù´ÕÊ²Ã´ÈÈÄÖ£¿\n");
+                return notify_fail("ä½ è·Ÿè¿™å„¿å‡‘ä»€ä¹ˆçƒ­é—¹ï¼Ÿ\n");
 
 	if ( !objectp(weapon = me->query_temp("weapon"))
-	|| (me->query_temp("weapon"))->query("name") != "·¨Áå")
-		return notify_fail("ÄãÊÖÖĞÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+	|| (me->query_temp("weapon"))->query("name") != "æ³•é“ƒ")
+		return notify_fail("ä½ æ‰‹ä¸­æ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	
 	if (!query("time_to_wave"))
-		return notify_fail("Ê±³½Î´µ½£¡\n");
+		return notify_fail("æ—¶è¾°æœªåˆ°ï¼\n");
 
-	message_vision(CYN"$NÊÖ³Ö·¨Áå£¬±ß×ß±ßÒ¡£¬¸ßÉùËĞ¶ÁÃÜ´«¾­Öä¡£Í»È»´óºÈÒ»Éù¡£ÉùËÆÀ×öª¡£\n"NOR, me);
+	message_vision(CYN"$Næ‰‹æŒæ³•é“ƒï¼Œè¾¹èµ°è¾¹æ‘‡ï¼Œé«˜å£°è¯µè¯»å¯†ä¼ ç»å’’ã€‚çªç„¶å¤§å–ä¸€å£°ã€‚å£°ä¼¼é›·éœ†ã€‚\n"NOR, me);
 	set("time_to_wave", 0);
 	remove_call_out("close_up");
         call_out("close_up",20+random(20), me);
@@ -185,12 +185,12 @@ void close_up(object me)
 	if (me->query("combat_exp") > 80000 && me->query("combat_exp") < 100000)
 	gaining = gaining/2;
 
-	message_vision(HIW"´óÔºÀï¹âÃ£ËÄÆğ£¬Ò»Éù¾ŞÏì¹ıºó£¬ÓÖ»Ö¸´ÁËÆ½¾²¡£³¬¶ÈÍê±Ï¡£\n"NOR, me);
-	set("long", "ÕâÊÇÒ»¸ö¼«ÆäÅÓ´óµÄÍ­ÖÆ¼ÀÌ³£¬¸ßÔ¼ÈıÕÉ£¬·½Ô²Ô¼ÓĞÎåÕÉ£¬ÄËÊÇµ±ÄêÍÂ·¬¹úÍõÇ×\n"
-    		    "×ÔÖ¸»ÓÖıÔìµÄ£¬ºÄÇã¹úÖ®Á¦£¬Ê®Äê·½³É¡£\n");
-	set("long", query("long") + RED"ÀïÃæÈ¼×ÅµÄ»ğÑæ¿ìÏ¨ÃğÁË¡£\n"NOR);
+	message_vision(HIW"å¤§é™¢é‡Œå…‰èŒ«å››èµ·ï¼Œä¸€å£°å·¨å“è¿‡åï¼Œåˆæ¢å¤äº†å¹³é™ã€‚è¶…åº¦å®Œæ¯•ã€‚\n"NOR, me);
+	set("long", "è¿™æ˜¯ä¸€ä¸ªæå…¶åºå¤§çš„é“œåˆ¶ç¥­å›ï¼Œé«˜çº¦ä¸‰ä¸ˆï¼Œæ–¹åœ†çº¦æœ‰äº”ä¸ˆï¼Œä¹ƒæ˜¯å½“å¹´åç•ªå›½ç‹äº²\n"
+    		    "è‡ªæŒ‡æŒ¥é“¸é€ çš„ï¼Œè€—å€¾å›½ä¹‹åŠ›ï¼Œåå¹´æ–¹æˆã€‚\n");
+	set("long", query("long") + RED"é‡Œé¢ç‡ƒç€çš„ç«ç„°å¿«ç†„ç­äº†ã€‚\n"NOR);
 	me->improve_skill("lamaism", me->query("int"));
-	me->add("jingli", -300, "°Ñ×Ô¼º³¬¶ÈÁË");
+	me->add("jingli", -300, "æŠŠè‡ªå·±è¶…åº¦äº†");
 	set("burning", 0);
 	if (me->query_temp("award_pending"))
         me->add("combat_exp", gaining + random(gaining/2));
@@ -198,7 +198,7 @@ void close_up(object me)
         //me->add("combat_exp", (int)me->query_temp("award_pending")/50);	
 	me->delete_temp("award_pending");
 	me->delete_temp("award_doubling");
-	me->delete_temp("marks/¸ğ");
+	me->delete_temp("marks/è‘›");
 	if (random(me->query("potential")) > me->query_con()*3)
 	me->unconcious();
 	remove_call_out("renewing");
@@ -208,6 +208,6 @@ void renewing(object ob)
 {
 	ob->set("last_burner", ob->query("pending"));
 	ob->set("pending", 0);
-	ob->set("long", "ÕâÊÇÒ»¸ö¼«ÆäÅÓ´óµÄÍ­ÖÆ¼ÀÌ³£¬¸ßÔ¼ÈıÕÉ£¬·½Ô²Ô¼ÓĞÎåÕÉ£¬ÄËÊÇµ±ÄêÍÂ·¬¹úÍõÇ×\n"
-    			"×ÔÖ¸»ÓÖıÔìµÄ£¬ºÄÇã¹úÖ®Á¦£¬Ê®Äê·½³É¡£\n");
+	ob->set("long", "è¿™æ˜¯ä¸€ä¸ªæå…¶åºå¤§çš„é“œåˆ¶ç¥­å›ï¼Œé«˜çº¦ä¸‰ä¸ˆï¼Œæ–¹åœ†çº¦æœ‰äº”ä¸ˆï¼Œä¹ƒæ˜¯å½“å¹´åç•ªå›½ç‹äº²\n"
+    			"è‡ªæŒ‡æŒ¥é“¸é€ çš„ï¼Œè€—å€¾å›½ä¹‹åŠ›ï¼Œåå¹´æ–¹æˆã€‚\n");
 }				 

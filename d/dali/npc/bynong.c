@@ -1,15 +1,15 @@
 //Cracked by Roath
-// bynong.c °ÚÒÄÅ©·ò
+// bynong.c æ‘†å¤·å†œå¤«
 
 inherit NPC;
 
 void create()
 {
-	set_name("Å©·ò", ({ "nong fu", "nong", "farmer" }) );
-	set("long", "Ò»¸öÉíÇ¿Á¦×³µÄ°ÚÒÄÅ©·ò¡£\n");
+	set_name("å†œå¤«", ({ "nong fu", "nong", "farmer" }) );
+	set("long", "ä¸€ä¸ªèº«å¼ºåŠ›å£®çš„æ‘†å¤·å†œå¤«ã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

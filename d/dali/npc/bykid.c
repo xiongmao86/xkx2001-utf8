@@ -1,15 +1,15 @@
 //Cracked by Roath
-// bywoman.c °ÚÒÄ¸¾Å®
+// bywoman.c æ‘†å¤·å¦‡å¥³
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡º¢", ({ "baiyi kid", "kid" }) );
-	set("long", "Ò»¸öÓ×Ğ¡µÄ°ÚÒÄ¶ùÍ¯¡£\n");
+	set_name("å°å­©", ({ "baiyi kid", "kid" }) );
+	set("long", "ä¸€ä¸ªå¹¼å°çš„æ‘†å¤·å„¿ç«¥ã€‚\n");
 
 	set("age", 5);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 15);

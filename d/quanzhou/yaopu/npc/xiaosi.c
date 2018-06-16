@@ -3,10 +3,10 @@ inherit NPC;
 int ask_aoyao();
 void create()
 {
-        set_name("Ò©ÆÌĞ¡ØË", ({ "yaopu xiaosi","xiaosi"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è¯é“ºå°å®", ({ "yaopu xiaosi","xiaosi"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 17);
-        set("long","Ëû¼¡·ô»ÆÊİ£¬Á³ÓĞ²ËÉ«£¬¿ÉÖª¾­³£ÊÜÕÆ¹ñµÄ¿Ì±¡¡£\n");
+        set("long","ä»–è‚Œè‚¤é»„ç˜¦ï¼Œè„¸æœ‰èœè‰²ï¼Œå¯çŸ¥ç»å¸¸å—æŒæŸœçš„åˆ»è–„ã€‚\n");
         set("str", 12);
         set("dex", 20);
         set("con", 13);
@@ -19,11 +19,11 @@ void create()
 
         set("attitude", "friendly");
         set("inquiry", ([
-            "ÅäÒ©" : (: ask_aoyao :),
-            "Á¶Ò©" : (: ask_aoyao :),
-            "ÖÆÒ©" : (: ask_aoyao :),
-            "°¾Ò©" : (: ask_aoyao :),
-            "Ò©Â¯" : "¿ÍÈËÊÇÏë×Ô¼º¡¸°¾Ò©¡¹Âğ£¿",
+            "é…è¯" : (: ask_aoyao :),
+            "ç‚¼è¯" : (: ask_aoyao :),
+            "åˆ¶è¯" : (: ask_aoyao :),
+            "ç†¬è¯" : (: ask_aoyao :),
+            "è¯ç‚‰" : "å®¢äººæ˜¯æƒ³è‡ªå·±ã€Œç†¬è¯ã€å—ï¼Ÿ",
        ]) );
         setup();
 }
@@ -31,11 +31,11 @@ void create()
 int ask_aoyao()
 {
 	object me = this_player();
-	message_vision(query("name")+"Ïò$N½âÊÍµÀ£º\n",me);
-	message_vision("ÄãÏÈ½«¸Ç×Ó´ò¿ª\[open lip\]£¬È»ºó¼ÓÈëËùĞèµÄÒ©²Ä\[add **** in lu\]\n",me);
-	message_vision("¼Ç×Åµ¹Ò»Ğ©Ë®\[pour water\]£¬ÒÔÃâÒ©²ÄÉÕµôÁË¡£ÔÙ¿ÛºÃ¸Ç×Ó\[close lip\]\n",me);
-	message_vision("°ÑÌ¿ÅèµãÈ¼\[burn coal\]£¬µÈÂ¯»ğÍúÆğÀ´ÁË¡£¾Í¿ÉÒÔ°¾Ò©ÁË\[aoyao\]¡£\n",me);
-	message_vision("°¾Ò©Ê±ÒªËæÊ±¿ØÖÆ»ğºò£¬»¹Òª²»Í£½Á°è£¬ºÜÀÛÈËµÄ¡£Ò©°¾ºÃÁËÖ®ºó£¬\n",me);
-	message_vision("¼ÇµÃÏÈÃğÁË»ğ\[mie huo\]ÔÙÈ¡Ò©\[qu yao\]£¬ÒÔÃâ±»ÌÌÉË¡£\n",me);
+	message_vision(query("name")+"å‘$Nè§£é‡Šé“ï¼š\n",me);
+	message_vision("ä½ å…ˆå°†ç›–å­æ‰“å¼€\[open lip\]ï¼Œç„¶ååŠ å…¥æ‰€éœ€çš„è¯æ\[add **** in lu\]\n",me);
+	message_vision("è®°ç€å€’ä¸€äº›æ°´\[pour water\]ï¼Œä»¥å…è¯æçƒ§æ‰äº†ã€‚å†æ‰£å¥½ç›–å­\[close lip\]\n",me);
+	message_vision("æŠŠç‚­ç›†ç‚¹ç‡ƒ\[burn coal\]ï¼Œç­‰ç‚‰ç«æ—ºèµ·æ¥äº†ã€‚å°±å¯ä»¥ç†¬è¯äº†\[aoyao\]ã€‚\n",me);
+	message_vision("ç†¬è¯æ—¶è¦éšæ—¶æ§åˆ¶ç«å€™ï¼Œè¿˜è¦ä¸åœæ…æ‹Œï¼Œå¾ˆç´¯äººçš„ã€‚è¯ç†¬å¥½äº†ä¹‹åï¼Œ\n",me);
+	message_vision("è®°å¾—å…ˆç­äº†ç«\[mie huo\]å†å–è¯\[qu yao\]ï¼Œä»¥å…è¢«çƒ«ä¼¤ã€‚\n",me);
 	return 1;
 }

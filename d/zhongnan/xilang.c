@@ -1,20 +1,20 @@
 //Cracked by Roath
-// xilang.c Î÷Ïá×ßÀÈ
+// xilang.c è¥¿å¢èµ°å»Š
 // by Sdong 07/98
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷Ïá×ßÀÈ");
+        set("short", "è¥¿å¢èµ°å»Š");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ×ßÀÈÉÏ£¬¶«±ßÊÇ¹ãÄşµî£¬Î÷±ßÓĞÒ»×ùµ¤·¿£¬µ¤·¿ÓĞÒ»ÉÈÃÅ
-(men)£¬¿ÉÊÇÈ´½ô±Õ×Å¡£
+ä½ èµ°åœ¨ä¸€æ¡èµ°å»Šä¸Šï¼Œä¸œè¾¹æ˜¯å¹¿å®æ®¿ï¼Œè¥¿è¾¹æœ‰ä¸€åº§ä¸¹æˆ¿ï¼Œä¸¹æˆ¿æœ‰ä¸€æ‰‡é—¨
+(men)ï¼Œå¯æ˜¯å´ç´§é—­ç€ã€‚
 LONG
         );
 
         set("item_desc", ([
-                "men" : "ÕâÉÈÃÅºó±ãÊÇµ¤·¿¡£\n",
+                "men" : "è¿™æ‰‡é—¨åä¾¿æ˜¯ä¸¹æˆ¿ã€‚\n",
         ]));
 
         set("exits", ([
@@ -44,20 +44,20 @@ int do_unlock(string arg)
 		  object room;
 
 		  if (query("exits/west"))
-					 return notify_fail("ÕâÉÈÃÅÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+					 return notify_fail("è¿™æ‰‡é—¨å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
 		  if (!arg || (arg != "men" && arg != "west"))
-					 return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+					 return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 		  if (!(ob = present("danfang key", this_player())))
-					 return notify_fail("Äã²»»áÇËËø¡£\n");
+					 return notify_fail("ä½ ä¸ä¼šæ’¬é”ã€‚\n");
 		  set("exits/west", __DIR__"danfang1");
-		  message_vision("$NÓÃÒ»°ÑÔ¿³×´ò¿ª·¿ÃÅ¡£\n", this_player());
+		  message_vision("$Nç”¨ä¸€æŠŠé’¥åŒ™æ‰“å¼€æˆ¿é—¨ã€‚\n", this_player());
 
 		  if(!( room = find_object(__DIR__"danfang1")) )
 					 room = load_object(__DIR__"danfang1");
 		  if(objectp(room))
 		  {
 					 room->set("exits/east", __FILE__);
-					 message("vision", "Ö¨µØÒ»Éù£¬ÍâÃæÓĞÈË°Ñ´óÃÅ´ò¿ªÁË¡£\n", room);
+					 message("vision", "å±åœ°ä¸€å£°ï¼Œå¤–é¢æœ‰äººæŠŠå¤§é—¨æ‰“å¼€äº†ã€‚\n", room);
 					 remove_call_out("close_door");
 					 call_out("close_door", 10);
 		  }
@@ -74,9 +74,9 @@ void close_door()
 		  if(objectp(room))
 		  {
 					 delete("exits/west");
-								message("vision", "´óÃÅÂıÂıµØ×Ô¶¯¹ØÉÏÁË¡£\n", this_object());
+								message("vision", "å¤§é—¨æ…¢æ…¢åœ°è‡ªåŠ¨å…³ä¸Šäº†ã€‚\n", this_object());
 					 room->delete("exits/east");
-					 message("vision", "´óÃÅÂıÂıµØ×Ô¶¯¹ØÉÏÁË¡£\n", room);
+					 message("vision", "å¤§é—¨æ…¢æ…¢åœ°è‡ªåŠ¨å…³ä¸Šäº†ã€‚\n", room);
 		  }
 }
 

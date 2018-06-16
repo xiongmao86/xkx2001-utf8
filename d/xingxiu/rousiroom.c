@@ -7,9 +7,9 @@ inherit ROOM;
 void create()
 
 {
-        set("short", "ÈáË¿Ë÷ÖĞ");
+        set("short", "æŸ”ä¸ç´¢ä¸­");
         set("long", @LONG
-Äã¾õµÃËÆºõÓĞÇ§Ë¿ÍòÂÆ²øÈÆ×ÅÄã£¬¶¯µ¯²»µÃ¡£µ«ËÆºõ¿ÉÒÔ³¢ÊÔÕõÔú(break)Ò»ÏÂ¡£
+ä½ è§‰å¾—ä¼¼ä¹æœ‰åƒä¸ä¸‡ç¼•ç¼ ç»•ç€ä½ ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚ä½†ä¼¼ä¹å¯ä»¥å°è¯•æŒ£æ‰(break)ä¸€ä¸‹ã€‚
 LONG
         );
         set("indoors", "xingxiu");
@@ -39,7 +39,7 @@ void init()
 
 int do_practice()
 {
-        write("ÄãÏÖÔÚÊÖ½Å±»¸¿£¬ÎŞ·¨ĞĞ¶¯£¡\n");
+        write("ä½ ç°åœ¨æ‰‹è„šè¢«ç¼šï¼Œæ— æ³•è¡ŒåŠ¨ï¼\n");
         return 1;
 }
 
@@ -53,15 +53,15 @@ int do_break()
         {
                 me->delete_temp("current_catcher");
                 me->move("/d/xingxiu/riyuedong");
-                tell_object(me,"²»ÖªµÀÊ²Ã´Ê±ºòÈáË¿Ë÷ÒÑ¾­ËÉ¿ª£¬Ò²²»ÖªµÀÕâÃ´À´µ½ÕâÀï¡£\n");
+                tell_object(me,"ä¸çŸ¥é“ä»€ä¹ˆæ—¶å€™æŸ”ä¸ç´¢å·²ç»æ¾å¼€ï¼Œä¹Ÿä¸çŸ¥é“è¿™ä¹ˆæ¥åˆ°è¿™é‡Œã€‚\n");
                 return 1;               }       
-//      ob=present("ÈáË¿Ë÷",dest);
+//      ob=present("æŸ”ä¸ç´¢",dest);
 
 
         ob1=all_inventory(dest);
         for (i=0;i<sizeof(ob1);i++)
                 {
-                if (ob1[i]->query("name")=="ÈáË¿Ë÷")
+                if (ob1[i]->query("name")=="æŸ”ä¸ç´¢")
                         ob=ob1[i];
                 }
 
@@ -72,10 +72,10 @@ int do_break()
                 me->move("/d/xingxiu/riyuedong");
                 if(ob) {ob->delete("no_drop");
                         ob->delete_temp("catched");}
-                tell_object(me,"²»ÖªµÀÊ²Ã´Ê±ºòÈáË¿Ë÷ÒÑ¾­ËÉ¿ª£¬Ò²²»ÖªµÀÕâÃ´À´µ½ÕâÀï¡£\n");
+                tell_object(me,"ä¸çŸ¥é“ä»€ä¹ˆæ—¶å€™æŸ”ä¸ç´¢å·²ç»æ¾å¼€ï¼Œä¹Ÿä¸çŸ¥é“è¿™ä¹ˆæ¥åˆ°è¿™é‡Œã€‚\n");
                 return 1;               }
         if (me->query("neili")<100)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«µÍ£¬ÕõÔú²»¿ª£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªä½ï¼ŒæŒ£æ‰ä¸å¼€ï¼\n");
 
         me->add("neili",-200);
         if (random(me->query_skill("force",1)+(me->query("combat_exp")/1000))>random(dest->query_skill("force",1)+(dest->query("combat_exp")/1000)))
@@ -84,12 +84,12 @@ int do_break()
                 ob->delete_temp("catched");
                 ob->delete("no_drop");
                 me->move(environment(dest));
-                message_vision("$NÕõÍÑÊø¸¿£¬Ò»Ô¾¶ø³ö£¡\n",me);
+                message_vision("$NæŒ£è„±æŸç¼šï¼Œä¸€è·ƒè€Œå‡ºï¼\n",me);
                 }
         else {
 
-tell_object(environment(dest),HIY"ÈáË¿Ë÷ÖĞµÄÈËÆ´ÃüÅ¤À´Å¤È¥£¬¿ÉÊÇÃ»ÓĞÈÎºÎ×÷ÓÃ¡£\n"NOR);  
-                tell_object(me,"ÄãÆ´ÃüÕõÔú£¬¿ÉÊÇÎŞ·¨Í»ÆÆÊø¸¿£¡\n");
+tell_object(environment(dest),HIY"æŸ”ä¸ç´¢ä¸­çš„äººæ‹¼å‘½æ‰­æ¥æ‰­å»ï¼Œå¯æ˜¯æ²¡æœ‰ä»»ä½•ä½œç”¨ã€‚\n"NOR);  
+                tell_object(me,"ä½ æ‹¼å‘½æŒ£æ‰ï¼Œå¯æ˜¯æ— æ³•çªç ´æŸç¼šï¼\n");
         }
         return 1;
 }

@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/bwdh/kantai6.c
-// ¿´Ì¨
+// çœ‹å°
 // by sdong 09/25/98
 
 

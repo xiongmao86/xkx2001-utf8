@@ -1,16 +1,16 @@
 //Cracked by Roath
-// ss_huoji. ºèÏè³ñ¶Ğ×¯»ï¼Æ
+// ss_huoji. é¸¿ç¿”ç»¸ç¼åº„ä¼™è®¡
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("ºèÏè³ñ¶Ğ×¯»ï¼Æ", ({ "huoji", "keeper" }));
+	set_name("é¸¿ç¿”ç»¸ç¼åº„ä¼™è®¡", ({ "huoji", "keeper" }));
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
-	set("long", "ËûÊÇ¸öÇÚÀÍµÄ»ï¼Æ£¬ÕıÓä¿ìµØÏòµêÀïµÄ¹Ë¿Í½éÉÜ¸÷Ê½»¨É«ºÍÖÊµØµÄ³ñ¶Ğ¡£\n");
+	set("long", "ä»–æ˜¯ä¸ªå‹¤åŠ³çš„ä¼™è®¡ï¼Œæ­£æ„‰å¿«åœ°å‘åº—é‡Œçš„é¡¾å®¢ä»‹ç»å„å¼èŠ±è‰²å’Œè´¨åœ°çš„ç»¸ç¼ã€‚\n");
 	set("combat_exp", 2500);
 	set("attitude", "friendly");
 

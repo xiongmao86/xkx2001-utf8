@@ -1,14 +1,14 @@
 //Cracked by Roath
-// leader1.c ´ö×åÊ×Áì
+// leader1.c å‚£æ—é¦–é¢†
 
 inherit NPC;
 
 void create()
 {
-	set_name("´ö×åÊ×Áì", ({ "daizu shouling", "leader" }));
-	set("title", "ºéÔ´¶´¶´Ö÷");
-	set("gender", "ÄĞĞÔ");
-	set("long", "ÕâÊÇÒ»¸öÉí¹ü»¢Æ¤µÄ¸ß´óÄĞĞÔ¡£\n");
+	set_name("å‚£æ—é¦–é¢†", ({ "daizu shouling", "leader" }));
+	set("title", "æ´ªæºæ´æ´ä¸»");
+	set("gender", "ç”·æ€§");
+	set("long", "è¿™æ˜¯ä¸€ä¸ªèº«è£¹è™çš®çš„é«˜å¤§ç”·æ€§ã€‚\n");
 	set("age", 45);
 
 	set("str", 20);

@@ -5,17 +5,17 @@ inherit STAFF;
 
 void create()
 {
-	set_name(HIB"¶¾Ê¬"NOR, ({ "poison corpse","corpse" }));
+	set_name(HIB"æ¯’å°¸"NOR, ({ "poison corpse","corpse" }));
 	set_weight(28000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¾ß");
-		set("long","ÕâÊÇÒ»¾ß¾­¹ýÒ©Îï°¾Á¶µÄÊ¬Ìå£¬Çû¸ÉËÄÖ«¾ùÒÑËõÐ¡£¬Í­Æ¤Ìú¹Ç£¬¼áÈÍÎÞ±È£¬ÇÒÖÜÉí²¼Âú¾ç¶¾¡£\n");
+		set("unit", "å…·");
+		set("long","è¿™æ˜¯ä¸€å…·ç»è¿‡è¯ç‰©ç†¬ç‚¼çš„å°¸ä½“ï¼Œèº¯å¹²å››è‚¢å‡å·²ç¼©å°ï¼Œé“œçš®é“éª¨ï¼ŒåšéŸ§æ— æ¯”ï¼Œä¸”å‘¨èº«å¸ƒæ»¡å‰§æ¯’ã€‚\n");
 		set("value", 0);
 		set("material", "steel");
-		set("wield_msg", "$NÈ¡³öÒ»¾ß$n³ÖÔÚÊÖÖÐ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖÐµÄ$nÐ¡ÐÄÒíÒíÊÕºÃ¡£\n");
+		set("wield_msg", "$Nå–å‡ºä¸€å…·$næŒåœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nå°å¿ƒç¿¼ç¿¼æ”¶å¥½ã€‚\n");
 	}
   	init_staff(25);
 	setup();
@@ -28,9 +28,9 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 	if( random(me->query_skill("poison",1)) <
 victim->query_skill("force")/3*2 ) {
 		message_vision(HIB
-"$NÍ»È»Ë«Ä¿Ò»Õö£¬µÉÁË$nÒ»ÑÛ£¡£¡\n"NOR,this_object(), victim);
+"$Nçªç„¶åŒç›®ä¸€çï¼Œçžªäº†$nä¸€çœ¼ï¼ï¼\n"NOR,this_object(), victim);
 		tell_object(victim, HIB
-"ÄãÖ»¾õË«Ä¿Ò»Í´£¬ÄÔÖÐÒ»ÔÎ£¬ËÆºõ±»ÎüÈëÁËÒ»¸öÎÞµ×ÉîÔ¨£¡\n");
+"ä½ åªè§‰åŒç›®ä¸€ç—›ï¼Œè„‘ä¸­ä¸€æ™•ï¼Œä¼¼ä¹Žè¢«å¸å…¥äº†ä¸€ä¸ªæ— åº•æ·±æ¸Šï¼\n");
 		victim->start_busy(random(me->query_skill("poison",1)/20));
 	}
 

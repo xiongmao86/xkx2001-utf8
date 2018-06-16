@@ -5,8 +5,8 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¿Õ·¿¼ä");
-	set("long", "ÕâÊÇÒ»¼äÊ²÷áÒ²Ã»ÓÐµÄ¿Õ·¿¼ä¡£\n");
+	set("short", "ç©ºæˆ¿é—´");
+	set("long", "è¿™æ˜¯ä¸€é—´ä»€éº½ä¹Ÿæ²¡æœ‰çš„ç©ºæˆ¿é—´ã€‚\n");
 	setup();
 	replace_program(ROOM);
 }

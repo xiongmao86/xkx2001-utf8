@@ -1,5 +1,5 @@
 //Cracked by Roath
-// long_shiliang.c ÁúÊ¯Áº
+// long_shiliang.c é¾™çŸ³æ¢
 // xQin 11/00
 
 inherit ROOM;
@@ -10,10 +10,10 @@ int is_burning();
 
 void create()
 {
-        set("short", "ÁúÊ¯Áº");
-        set("long","Ê¯ÁºÉÏµØÐÎÏÕ¾þ£¬Èô·ÇÇá¹¦¼«¸ßÒàÎÞ·¨Ô¾ÉÏÀ´¡£Ö»¼ûÊ¯Áº¶¥¶Ëµñ¿ÌÁËÒ»\n"
-"¸öÏãÂ¯(lu)¡£\n\n"
-"    "HBWHT+HIC"ÕâÀïÉÏ½ÓÇàÌì£¬ÏÂÁÙÉî¹È£¬ÖÁÉíÆäÖÐÓÐÈçÔÚÔÆ»Ã¾°¡£\n\n"NOR
+        set("short", "é¾™çŸ³æ¢");
+        set("long","çŸ³æ¢ä¸Šåœ°å½¢é™©å³»ï¼Œè‹¥éžè½»åŠŸæžé«˜äº¦æ— æ³•è·ƒä¸Šæ¥ã€‚åªè§çŸ³æ¢é¡¶ç«¯é›•åˆ»äº†ä¸€\n"
+"ä¸ªé¦™ç‚‰(lu)ã€‚\n\n"
+"    "HBWHT+HIC"è¿™é‡Œä¸ŠæŽ¥é’å¤©ï¼Œä¸‹ä¸´æ·±è°·ï¼Œè‡³èº«å…¶ä¸­æœ‰å¦‚åœ¨äº‘å¹»æ™¯ã€‚\n\n"NOR
 	);
 	set("item_desc",([
             "lu" : ( :look_lu:),
@@ -48,19 +48,19 @@ string look_lu()
 
 	switch (burnt) {
 	case 0:
-		return(YEL"ÏãÂ¯ÉÏ¹©·î×ÅÐÂÉÏµÄÏã»ð£¬·Ò·¼ËÄÖÜ¡£\n"NOR);
+		return(YEL"é¦™ç‚‰ä¸Šä¾›å¥‰ç€æ–°ä¸Šçš„é¦™ç«ï¼ŒèŠ¬èŠ³å››å‘¨ã€‚\n"NOR);
 		break;
 	
 	case 1:
-		return(YEL"ÏãÂ¯ÉÏÏãÑÌçÔÈÆ£¬Ïã»ðÉÕµÃÕýÍú¡£\n"NOR);
+		return(YEL"é¦™ç‚‰ä¸Šé¦™çƒŸç¼­ç»•ï¼Œé¦™ç«çƒ§å¾—æ­£æ—ºã€‚\n"NOR);
 		break;
 		
 	case 2:
-		return(YEL"ÏãÂ¯ÉÏµÄÏã»ðÒÑ¾­ÉÕÁË´ó°ë£¬¼¸ÂÆÓàÑÌ£¬ÑÙÑÙÓûÏ¢¡£\n"NOR);
+		return(YEL"é¦™ç‚‰ä¸Šçš„é¦™ç«å·²ç»çƒ§äº†å¤§åŠï¼Œå‡ ç¼•ä½™çƒŸï¼Œå¥„å¥„æ¬²æ¯ã€‚\n"NOR);
 		break;
 		
 	default:
-		return(YEL"ÏãÂ¯ÉÏÖ»Ê£ÏÂÒ»¶ÑÑÌ»Ò£¬µÈ×ÅÓÐÈË¾´(jing)ÁúÍ·Ïã£¡£¡\n"NOR);
+		return(YEL"é¦™ç‚‰ä¸Šåªå‰©ä¸‹ä¸€å †çƒŸç°ï¼Œç­‰ç€æœ‰äººæ•¬(jing)é¾™å¤´é¦™ï¼ï¼\n"NOR);
 		break;
 		
 		}
@@ -71,21 +71,21 @@ int do_jing(string arg)
 	
 	if ( !objectp(me = this_player()) ) return 0;	
 	
-	if (!arg ) return notify_fail("ÄãÒª¾´Ê²Ã´£¿\n");  
+	if (!arg ) return notify_fail("ä½ è¦æ•¬ä»€ä¹ˆï¼Ÿ\n");  
 					
 	if( !objectp(obj = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	           
 	if ( obj->query("id") != "incense" 
-	 ||  obj->is_character() ) return notify_fail("Ö»ÄÜ¾´Ïã£¡\n");  
+	 ||  obj->is_character() ) return notify_fail("åªèƒ½æ•¬é¦™ï¼\n");  
 	
 	burnt = 0;
 	remove_call_out("burn");
 	call_out("burn", 120, 1);
 	
-	message_vision(HIC"$NÄÃ³öÒ»"+obj->query("unit")+obj->query("name")
-		+"£¬¹§¹§¾´¾´µØ²åÔÚÁúÍ·µÄÏãÂ¯ÉÏ¡£\n"NOR, me);
-	if (me->query("family/family_name") == "Îäµ±ÅÉ" )
+	message_vision(HIC"$Næ‹¿å‡ºä¸€"+obj->query("unit")+obj->query("name")
+		+"ï¼Œæ­æ­æ•¬æ•¬åœ°æ’åœ¨é¾™å¤´çš„é¦™ç‚‰ä¸Šã€‚\n"NOR, me);
+	if (me->query("family/family_name") == "æ­¦å½“æ´¾" )
 	me->add("combat_exp", 20+random(20));
 	me->add("potential", 10+random(10));	
 	if (me->query("age") < 20 && me->query("wudang/offerring") < 60)
@@ -108,17 +108,17 @@ int do_jump(string arg)
 	
 	
 	if(me->is_busy())
-        return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ã€‚\n");
         
         cost = (me->query_dex()*me->query_skill("dodge")/ me->query_con() )/10;
         if (cost < 10) cost= 10;
         if( me->query("jingli") < 30)
-        return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦½ßÁË¡£\n");
+        return notify_fail("ä½ å·²ç»ç²¾ç–²åŠ›ç«­äº†ã€‚\n");
         
 	if (arg == "back" || arg == "shidian" ) {      
-	message_vision("$N×ÝÉíÌø»ØÊ¯µî¡£\n\n", me);
+	message_vision("$Nçºµèº«è·³å›žçŸ³æ®¿ã€‚\n\n", me);
         me->move(__DIR__"shidian");
-        message("vision", me->name() + "×ÝÉí´ÓÁúÊ¯ÁºÉÏÌøÁËÏÂÀ´¡£\n",environment(me), ({me}) );
+        message("vision", me->name() + "çºµèº«ä»Žé¾™çŸ³æ¢ä¸Šè·³äº†ä¸‹æ¥ã€‚\n",environment(me), ({me}) );
         me->add("jingli", -cost);  
         
 	lv = me->query("int", 1)*2;
@@ -129,7 +129,7 @@ int do_jump(string arg)
 	
 	me->improve_skill("dodge", lv+random(lv) );
 	me->start_busy( 1 );
-	if (me->query("family/family_name") == "Îäµ±ÅÉ" 
+	if (me->query("family/family_name") == "æ­¦å½“æ´¾" 
 	&& me->query_skill("tiyunzong", 1) > 0 )
 	me->improve_skill("tiyunzong", random(lv) );
 	return 1;

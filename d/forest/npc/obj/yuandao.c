@@ -7,19 +7,19 @@ inherit BLADE;
 
 void create()
 {
-        set_name("Ô§µ¶", ({ "yuan dao", "dao", "blade" }) );
+        set_name("é¸³åˆ€", ({ "yuan dao", "dao", "blade" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("long",
-			"ÕâÊÇ°Ñ³¤µ¶£¬¾«¹âÒ«ÑÛ£¬µ¶ÈÐÉÏ¿ÌÖø¡¸ÈÊÕß¡¹¡£\n");
+			"è¿™æ˜¯æŠŠé•¿åˆ€ï¼Œç²¾å…‰è€€çœ¼ï¼Œåˆ€åˆƒä¸Šåˆ»è‘—ã€Œä»è€…ã€ã€‚\n");
                 set("value", 1400);
                 set("material", "blacksteel");
                 set("wield_msg", 
-			"Ö»Ìý¼û¡¸ì¬¡¹µØÒ»Éù£¬$NµÄÊÖÖÐÒÑ¾­¶àÁËÒ»°Ñ$n¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖÐµÄ$n²åÈëÑü¼äµÄµ¶ÇÊ¡£\n");
+			"åªå¬è§ã€Œé£•ã€åœ°ä¸€å£°ï¼Œ$Nçš„æ‰‹ä¸­å·²ç»å¤šäº†ä¸€æŠŠ$nã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„åˆ€éž˜ã€‚\n");
         }
 
         init_blade(60);
@@ -38,10 +38,10 @@ int do_study(string arg)
 	object me = this_player();
 
 	if ( arg != "yuan dao" && arg != "dao" && arg != "blade")
-	return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+	return notify_fail("ä½ è¦å­¦ä»€ä¹ˆï¼Ÿ\n");
 
 	if (!present("yang dao", me))
-	{ write("Ô§Ñìµ¶ºÏÔÚÒ»´¦·½¿ÉÑÐ¶Á¡£\n");
+	{ write("é¸³é¸¯åˆ€åˆåœ¨ä¸€å¤„æ–¹å¯ç ”è¯»ã€‚\n");
 	  return 1; }
 
 	if ( me->is_fighting() 
@@ -53,9 +53,9 @@ int do_study(string arg)
 		if (me->query("PKS")<10)
 		me->improve_skill("blade", me->query("int"));
 		else me->improve_skill("blade", 1);
-		tell_object(me, "Ö»¼ûÔ§Ñìµ¶Ïà»¥¶ÔÈÆ£¬¹¥·ÀºôÓ¦£¬Äã¶Ôµ¶ÊõµÄÁìÎòÓÖÉîÁËÒ»²ã£¡\n", me);
+		tell_object(me, "åªè§é¸³é¸¯åˆ€ç›¸äº’å¯¹ç»•ï¼Œæ”»é˜²å‘¼åº”ï¼Œä½ å¯¹åˆ€æœ¯çš„é¢†æ‚Ÿåˆæ·±äº†ä¸€å±‚ï¼\n", me);
 		if (me->query("PKS")>=10)
-		tell_object(me, "È»¶ø¡¸ÈÊÕßÎÞµÐ¡¹£¬ÄãÉ±º¦Íæ¼ÒÌ«¶à£¬·Á°­ÁËÄãµÄÁìßí¡£\n", me);
+		tell_object(me, "ç„¶è€Œã€Œä»è€…æ— æ•Œã€ï¼Œä½ æ€å®³çŽ©å®¶å¤ªå¤šï¼Œå¦¨ç¢äº†ä½ çš„é¢†å””ã€‚\n", me);
 		return 1;
 	}
 

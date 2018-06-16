@@ -1,16 +1,16 @@
 //Cracked by Roath
-// ping.c Æ½Ò»Ö¸
+// ping.c å¹³ä¸€æŒ‡
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("Æ½Ò»Ö¸", ({ "ping yizhi", "ping", "yizhi" }));
-	set("title", "Ò©ÆÌÀÏ°å");
-	set("nickname","É±ÈËÉñÒ½");
-	set("gender", "ÄĞĞÔ");
-	set("long", "Ëû¾ÍÊÇÒ½Êõ¸ß³¬µÄ¡¸É±ÈËÉñÒ½¡¹Æ½Ò»Ö¸¡£¿ÉÊÇËûĞÔ¸ñ¹Å¹Ö£¬²»ÊÇÊ²Ã´ÈË¶¼Ò½µÄ¡£\n");
+	set_name("å¹³ä¸€æŒ‡", ({ "ping yizhi", "ping", "yizhi" }));
+	set("title", "è¯é“ºè€æ¿");
+	set("nickname","æ€äººç¥åŒ»");
+	set("gender", "ç”·æ€§");
+	set("long", "ä»–å°±æ˜¯åŒ»æœ¯é«˜è¶…çš„ã€Œæ€äººç¥åŒ»ã€å¹³ä¸€æŒ‡ã€‚å¯æ˜¯ä»–æ€§æ ¼å¤æ€ªï¼Œä¸æ˜¯ä»€ä¹ˆäººéƒ½åŒ»çš„ã€‚\n");
 	set("age", 65);
 
 	set("int", 30);
@@ -43,14 +43,14 @@ void init()
 
 	::init();
         if( present("shou jiao", this_player()) && !this_player()->query_temp("jiao_giver") ) {
-		message_vision("\nÆ½Ò»Ö¸Í»È»»Ø¹ıÍ·À´£¬Ä¿¹â¾¼¾¼µØµÉ×Å$N£¬»º»ºËµµÀ£º¡°ÄãÉíÉÏ¿ÉÓĞ¼ş´ó±¦±´Ñ½£¬Ô¸ÒâÂô¸øÎÒÂğ£¿¡±\n" +
-				   "Ëû±ßËµ±ßÁ¬Á¬´ê×ÅÊÖ£¬ÂúÁ³·Å¹â£¬Â¶³ö¼«Îª½¹¼±ĞË·ÜµÄÉñÇé¡£\n\n", this_player());
+		message_vision("\nå¹³ä¸€æŒ‡çªç„¶å›è¿‡å¤´æ¥ï¼Œç›®å…‰ç‚¯ç‚¯åœ°çªç€$Nï¼Œç¼“ç¼“è¯´é“ï¼šâ€œä½ èº«ä¸Šå¯æœ‰ä»¶å¤§å®è´å‘€ï¼Œæ„¿æ„å–ç»™æˆ‘å—ï¼Ÿâ€\n" +
+				   "ä»–è¾¹è¯´è¾¹è¿è¿æ“ç€æ‰‹ï¼Œæ»¡è„¸æ”¾å…‰ï¼Œéœ²å‡ºæä¸ºç„¦æ€¥å…´å¥‹çš„ç¥æƒ…ã€‚\n\n", this_player());
 
 		ob = new("/clone/money/thousand-cash");
 		ob->set_amount(3);
 		ob->move(this_player());
 
-		message_vision("¡°ÎÒ¸øÄãÈıÇ§Á½»»Ëü£¬ÔõÃ´Ñù£¿£¡¡± Æ½Ò»Ö¸²»µÈ$N·´Ó¦¹ıÀ´£¬¾ÍÌÍ³öÒ»µşÒøÆ±£¬Èûµ½$NÊÖÖĞ¡£\n", 
+		message_vision("â€œæˆ‘ç»™ä½ ä¸‰åƒä¸¤æ¢å®ƒï¼Œæ€ä¹ˆæ ·ï¼Ÿï¼â€ å¹³ä¸€æŒ‡ä¸ç­‰$Nååº”è¿‡æ¥ï¼Œå°±æå‡ºä¸€å é“¶ç¥¨ï¼Œå¡åˆ°$Næ‰‹ä¸­ã€‚\n", 
 					this_player());
 	}
 }
@@ -60,20 +60,20 @@ int accept_object(object ob, object obj)
 	object me = this_object();
 
 	if( obj->query("id") == "shou jiao" && ob->query_temp("jiao_giver") ) {
-		message_vision("\nÆ½Ò»Ö¸Î¢Ğ¦µÀ£º¡°ºÃĞ¡×Ó£¬ÉÔµÈÒ»»á£¬ÎÒÕâ¾ÍÌæÄã×öÒ»¿Å±ÙË®ÁéÖé£¡\n", ob);
-		message_vision("\nÆ½Ò»Ö¸×ªÉí×ß½øÒ©ÆÌÄÚÌÃ¡£\n", ob);
+		message_vision("\nå¹³ä¸€æŒ‡å¾®ç¬‘é“ï¼šâ€œå¥½å°å­ï¼Œç¨ç­‰ä¸€ä¼šï¼Œæˆ‘è¿™å°±æ›¿ä½ åšä¸€é¢—è¾Ÿæ°´çµç ï¼\n", ob);
+		message_vision("\nå¹³ä¸€æŒ‡è½¬èº«èµ°è¿›è¯é“ºå†…å ‚ã€‚\n", ob);
 		call_out("do_make", 60, this_object(), this_player());
 		return 1;
 	}
 
 	if( obj->query("id") == "shou jiao" && !ob->query_temp("jiao_giver") ) {
-		message_vision("\nÆ½Ò»Ö¸»¶ºôÒ»Éù£¬½Ó¹ıÊŞ½Ç£¬·ÉÒ²ËÆµØÅÜµ½Ò©¹ñÅÔ£¬Ãş³öÒ»¸ö´óÌúºĞ£¬°ÑÊŞ½ÇÈûÁË½øÈ¥£¬ÔÙÖØĞÂËøºÃ¡£\n", ob);
+		message_vision("\nå¹³ä¸€æŒ‡æ¬¢å‘¼ä¸€å£°ï¼Œæ¥è¿‡å…½è§’ï¼Œé£ä¹Ÿä¼¼åœ°è·‘åˆ°è¯æŸœæ—ï¼Œæ‘¸å‡ºä¸€ä¸ªå¤§é“ç›’ï¼ŒæŠŠå…½è§’å¡äº†è¿›å»ï¼Œå†é‡æ–°é”å¥½ã€‚\n", ob);
 		ob->set_temp("jiao_giver", 1);
 		return 1;
 	}
 
 	if( obj->query("id") == "thousand-cash" && obj->query_amount() == 3 && ob->query_temp("jiao_giver") ) {
-		message_vision("\nÆ½Ò»Ö¸ÂúÁ³ºüÒÉµØµÉ×Å$NÇÆÁË°ëâÃ¡£ËµµÀ£º¡°Äã²»ÊÕÇ®£¿£¡ ÄÇÄãµ½µ×ÏëÒªÊ²Ã´£¿ Äãµ¹ËµËµ¿´£¡\n", ob);
+		message_vision("\nå¹³ä¸€æŒ‡æ»¡è„¸ç‹ç–‘åœ°çªç€$Nç§äº†åŠé¥·ã€‚è¯´é“ï¼šâ€œä½ ä¸æ”¶é’±ï¼Ÿï¼ é‚£ä½ åˆ°åº•æƒ³è¦ä»€ä¹ˆï¼Ÿ ä½ å€’è¯´è¯´çœ‹ï¼\n", ob);
 		ob->set_temp("cash_giver", 1);
 		add_action("do_say", "say");
 		return 1;
@@ -91,11 +91,11 @@ int do_say(string arg)
 		
 	if( !ob->query_temp("jiao_giver") || !ob->query_temp("cash_giver") ) return 0;
 
-	if( arg=="±ÙË®ÁéÖé" ) {
-		message_vision("\nÆ½Ò»Ö¸ÀäĞ¦µÀ£º¡°Ò»ÖêÊŞ½ÇÖ»ÄÜ×öÒ»¿Å±ÙË®Öé£¬ÎÒÄÜµÃÊ²Ã´ºÃ´¦£¿£¡ ³ı·ÇÄãÄÜÔÙ¸øÎÒÅªÒ»ÖêÀ´£¡¡±\n", ob);
+	if( arg=="è¾Ÿæ°´çµç " ) {
+		message_vision("\nå¹³ä¸€æŒ‡å†·ç¬‘é“ï¼šâ€œä¸€æ ªå…½è§’åªèƒ½åšä¸€é¢—è¾Ÿæ°´ç ï¼Œæˆ‘èƒ½å¾—ä»€ä¹ˆå¥½å¤„ï¼Ÿï¼ é™¤éä½ èƒ½å†ç»™æˆ‘å¼„ä¸€æ ªæ¥ï¼â€\n", ob);
 		return 1;
 	}
-	else	message_vision("\nÆ½Ò»Ö¸Ğ±ÑÛ¿´×Å$N£¬ÀäĞ¦µÀ£º¡°ÎÒ²»¶®ÄãÔÚËµĞ©Ê²Ã´£¡¡±\n", ob);
+	else	message_vision("\nå¹³ä¸€æŒ‡æ–œçœ¼çœ‹ç€$Nï¼Œå†·ç¬‘é“ï¼šâ€œæˆ‘ä¸æ‡‚ä½ åœ¨è¯´äº›ä»€ä¹ˆï¼â€\n", ob);
 	
 	return 0;
 }
@@ -104,12 +104,12 @@ int do_make(object me, object ob)
 {
 	object zhu;
 
-	message_vision("\nÆ½Ò»Ö¸×ßÁË³öÀ´£¬ËµµÀ£º¡°±ÙË®ÁéÖé×öºÃÁË£¬Õâ¾Í¸øÄã°É£¡ Ç°Í¾ÕäÖØ£¡¡±\n", ob);
+	message_vision("\nå¹³ä¸€æŒ‡èµ°äº†å‡ºæ¥ï¼Œè¯´é“ï¼šâ€œè¾Ÿæ°´çµç åšå¥½äº†ï¼Œè¿™å°±ç»™ä½ å§ï¼ å‰é€”çé‡ï¼â€\n", ob);
 	command("hehe");
 
 	zhu=new("/d/shaolin/obj/pishui-zhu");
 	zhu->move(ob);
 
-	message_vision("\nÆ½Ò»Ö¸½»¸ø$NÒ»¿Å±ÙË®ÁéÖé¡£\n", ob);
+	message_vision("\nå¹³ä¸€æŒ‡äº¤ç»™$Nä¸€é¢—è¾Ÿæ°´çµç ã€‚\n", ob);
 	return 1;
 }

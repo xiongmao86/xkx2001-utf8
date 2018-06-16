@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½Â·");
+        set("short", "å±±è·¯");
         set("long", @LONG
-É½Â·Æéá«ÄÑĞĞ£¬±é²¼µÄÊ¯Í·Ê¹Äã×ßÆğÀ´´ó·ÑÖÜÕÛ¡£×ßµ½ÕâÀï
-ÄãÒÑ¾­¾õµÃÁ½±ÛËáÂé¿ìÒªÖ§³Å²»×¡ÁË£¬Èç¹ûÕâÊ±ÍµÀÁÍ£ÏÂ½Å²½µÄ
-»°£¬ÂíÉÏ¾Í»áÓĞ½äÂÉÔºµÄÉ®±ø×¥ÄãÈ¥¼û½äÂÉÔºÊ××ùµÄ¡£
+å±±è·¯å´å²–éš¾è¡Œï¼Œéå¸ƒçš„çŸ³å¤´ä½¿ä½ èµ°èµ·æ¥å¤§è´¹å‘¨æŠ˜ã€‚èµ°åˆ°è¿™é‡Œ
+ä½ å·²ç»è§‰å¾—ä¸¤è‡‚é…¸éº»å¿«è¦æ”¯æ’‘ä¸ä½äº†ï¼Œå¦‚æœè¿™æ—¶å·æ‡’åœä¸‹è„šæ­¥çš„
+è¯ï¼Œé©¬ä¸Šå°±ä¼šæœ‰æˆ’å¾‹é™¢çš„åƒ§å…µæŠ“ä½ å»è§æˆ’å¾‹é™¢é¦–åº§çš„ã€‚
 LONG
         );
 
@@ -32,17 +32,17 @@ int valid_leave(object me, string dir)
 		shenfa = me->query("dex");
 		fam = me->query("family/family_name");
 		obj = present("shui tong", me);
-        if (dir == "northeast" && current_jingli >10 && (fam == "ÉÙÁÖÅÉ") &&(obj) && (obj->query("full")))
+        if (dir == "northeast" && current_jingli >10 && (fam == "å°‘æ—æ´¾") &&(obj) && (obj->query("full")))
         {
                 me->set("jingli",current_jingli-random(20));
                 me->improve_skill("dodge", random(shenfa));
 				me->improve_skill("cuff",random(bili));
-                write("ÄãÒ§×ÅÑÀÅÀÉÏÉ½ÆÂ£¬ÒÑ¾­ÀÛµÃ´­²»¹ıÆøÁË¡£\n");
+                write("ä½ å’¬ç€ç‰™çˆ¬ä¸Šå±±å¡ï¼Œå·²ç»ç´¯å¾—å–˜ä¸è¿‡æ°”äº†ã€‚\n");
         }
 
         else if (dir == "southeast" && current_jingli <= 10)
         {
-                write("ÄãÀÛµÃÊµÔÚ×ß²»¶¯ÁË£¬½ÅÏÂÒ»Èí£¬¾ÍÊ²Ã´Ò²²»ÖªµÀÁË¡£\n");
+                write("ä½ ç´¯å¾—å®åœ¨èµ°ä¸åŠ¨äº†ï¼Œè„šä¸‹ä¸€è½¯ï¼Œå°±ä»€ä¹ˆä¹Ÿä¸çŸ¥é“äº†ã€‚\n");
                 me->unconcious();
                 return notify_fail("");
         }

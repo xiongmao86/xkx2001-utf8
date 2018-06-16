@@ -9,13 +9,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(RED"¶ÔñÆ¹Ó×Ó"NOR, ({ "duijin guazi", "guazi", "gua"}) );
+	set_name(RED"å¯¹è¡¿è¤‚å­"NOR, ({ "duijin guazi", "guazi", "gua"}) );
 	set_weight(850);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¼ş×ö¹¤¾«Ï¸µÄ´óºì´Ì¶Ğ¶ÔñÆ¹Ó×Ó¡£\n");
-		set("unit", "¼ş");
+		set("long", "è¿™æ˜¯ä¸€ä»¶åšå·¥ç²¾ç»†çš„å¤§çº¢åˆºç¼å¯¹è¡¿è¤‚å­ã€‚\n");
+		set("unit", "ä»¶");
 		set("value", 350);
 		set("material", "cloth");
 		set("armor_prop/armor", 4);

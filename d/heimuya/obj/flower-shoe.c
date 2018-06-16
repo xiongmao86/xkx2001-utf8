@@ -7,15 +7,15 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( "Ğå»¨Ğ¬", ({ "flower shoes", "shoes"}) );
+        set_name( "ç»£èŠ±é‹", ({ "flower shoes", "shoes"}) );
         set_color("$HIM$");
-        set("long", "ÕâÊÇÒ»Ë«×ö¹¤¾«Ï¸µÄºìÉ«Ğå»¨Ğ¬¡£\n");
+        set("long", "è¿™æ˜¯ä¸€åŒåšå·¥ç²¾ç»†çš„çº¢è‰²ç»£èŠ±é‹ã€‚\n");
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "Ë«");
+                set("unit", "åŒ");
                 set("value", 1000);
                 set("armor_prop/armor", 1 );
                 set("female_only", 1);

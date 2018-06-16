@@ -1,15 +1,15 @@
 //Cracked by Roath
-// d/emei/cliffpath1.c ÑÂ±Ú
+// d/emei/cliffpath1.c å´–å£
 // xbc: 96/02/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÑÂ±Ú");
+        set("short", "å´–å£");
 	set("long", @LONG
-ÄãÕ¾ÔÚÑÂ±ÚÉÏµÄÊ¯·ì¼ä£¬Òª½ô½ô°Ç×¡ÑÂ±ÚÍ»³öµÄµØ·½²Å²»ÖÁÓÚË¤ÏÂÈ¥¡£Ê¯
-·ìÀï³ıÁËÉ³Ê¯²İÄ¾£¬Ê²Ã´Ò²Ã»ÓĞ¡£
+ä½ ç«™åœ¨å´–å£ä¸Šçš„çŸ³ç¼é—´ï¼Œè¦ç´§ç´§æ‰’ä½å´–å£çªå‡ºçš„åœ°æ–¹æ‰ä¸è‡³äºæ‘”ä¸‹å»ã€‚çŸ³
+ç¼é‡Œé™¤äº†æ²™çŸ³è‰æœ¨ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚
 LONG
 	);
 
@@ -17,9 +17,9 @@ LONG
 
         set("item_desc",([
 	    "down"	:
-"ÏÂÃæÊÇÍòÕÉÉîÔ¨¡£\n",
+"ä¸‹é¢æ˜¯ä¸‡ä¸ˆæ·±æ¸Šã€‚\n",
 		"cliff"	:
-"ÑÂ±ÚÉÏÓĞ¸ö´óÊ¯·ì£¬ÏòÏÂÉìÈ¥¡£\n",
+"å´–å£ä¸Šæœ‰ä¸ªå¤§çŸ³ç¼ï¼Œå‘ä¸‹ä¼¸å»ã€‚\n",
         ]));
 
 	set("cost", 10);
@@ -40,7 +40,7 @@ int do_jump(string arg)
         if ( !arg || arg == "" ) return 0;
 
         if ( arg == "down" ) {
-                message_vision("$N×İÉíÏòÏÂÌøÈ¥¡£\n", me);
+                message_vision("$Nçºµèº«å‘ä¸‹è·³å»ã€‚\n", me);
 		call_out("to_pool", 1, me);
                 return 1;
 	}
@@ -55,18 +55,18 @@ int do_climb(string arg)
 	k = (int)me->query_dex() + (int)me->query_kar();
 
 	if ( arg && arg != "down" && arg != "up")
-		return notify_fail("´ÓÕâÀï²»ÄÜ³¯ÄÇ¸ö·½ÏòÅÀ¡£\n");
+		return notify_fail("ä»è¿™é‡Œä¸èƒ½æœé‚£ä¸ªæ–¹å‘çˆ¬ã€‚\n");
 
 	if ( arg == "down" ){
 		if ( random(k) < 20 ) {
-                	message_vision("$NÏòÑÂÏÂÅÀÈ¥£¬ºöÈ»Ò»¸öÊ§ÊÖ£¬Ö±Ë¤ÁËÏÂÈ¥¡£¡£\n", me);
+                	message_vision("$Nå‘å´–ä¸‹çˆ¬å»ï¼Œå¿½ç„¶ä¸€ä¸ªå¤±æ‰‹ï¼Œç›´æ‘”äº†ä¸‹å»ã€‚ã€‚\n", me);
 			call_out("to_pool", 1, me);
 	        	return 1;
 		}
 		else {
-			message_vision("$N°Ç×ÅÑÂ±ÚÏòÏÂ±ßÅÀÈ¥¡£\n", me);
+			message_vision("$Næ‰’ç€å´–å£å‘ä¸‹è¾¹çˆ¬å»ã€‚\n", me);
 			me->move(__DIR__"valley");
-			message_vision("$N´ÓÑÂ±Úºó±ßÅÀÁË¹ıÀ´¡£\n", me);
+			message_vision("$Nä»å´–å£åè¾¹çˆ¬äº†è¿‡æ¥ã€‚\n", me);
 			me->add("jingli",-random(20));
 			return 1;
 		}
@@ -75,14 +75,14 @@ int do_climb(string arg)
 
 	if (arg == "up" ) {
 		if ( random(k) < 20 ) {
-                	message_vision("$N°Ç×ÅÑÂ±ÚÏòÉÏÅÀÈ¥£¬ºöÈ»Ò»¸öÊ§ÊÖ£¬Ö±Ë¤ÁËÏÂÈ¥¡£¡£\n", me);
+                	message_vision("$Næ‰’ç€å´–å£å‘ä¸Šçˆ¬å»ï¼Œå¿½ç„¶ä¸€ä¸ªå¤±æ‰‹ï¼Œç›´æ‘”äº†ä¸‹å»ã€‚ã€‚\n", me);
 			call_out("to_pool", 1, me);
 	        	return 1;
 		}
 		else {
-			message_vision("$N°Ç×ÅÑÂ±ÚÏòÉÏÅÀÈ¥¡£\n", me);
+			message_vision("$Næ‰’ç€å´–å£å‘ä¸Šçˆ¬å»ã€‚\n", me);
 			me->move(__DIR__"cliffpath1");
-			message_vision("$N°Ç×ÅÑÂ±Ú´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n", me);
+			message_vision("$Næ‰’ç€å´–å£ä»ä¸‹é¢çˆ¬äº†ä¸Šæ¥ã€‚\n", me);
 			me->add("jingli", -random(10));
 			return 1;
 		}

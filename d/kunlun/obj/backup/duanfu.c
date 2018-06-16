@@ -4,18 +4,18 @@ inherit THROWING;
 
 void create()
 {
-        set_name("¶Ì¸«", ({ "duan fu", "fu", "axe" }));
+        set_name("çŸ­æ–§", ({ "duan fu", "fu", "axe" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "´ü");
-                set("long", "´ü×ÓÀï·Å×Å¼¸±úĞ¡¸«Í·£¬Ã÷»Î»ÎµÄ·æÀû¼«ÁË¡£\n");
-				set("base_unit", "±ú");
+                set("unit", "è¢‹");
+                set("long", "è¢‹å­é‡Œæ”¾ç€å‡ æŸ„å°æ–§å¤´ï¼Œæ˜æ™ƒæ™ƒçš„é”‹åˆ©æäº†ã€‚\n");
+				set("base_unit", "æŸ„");
 				set("value", 150);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó²¼´üÀï°Î³öÒ»°Ñ$n¡£\n");
-                set("unwield_msg", "$N°Ñ$n·Å»Ø²¼´üÀï¡£\n");
+                set("wield_msg", "$Nä»å¸ƒè¢‹é‡Œæ‹”å‡ºä¸€æŠŠ$nã€‚\n");
+                set("unwield_msg", "$NæŠŠ$næ”¾å›å¸ƒè¢‹é‡Œã€‚\n");
         }
         init_throwing(25);
         set_amount(5);

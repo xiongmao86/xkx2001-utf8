@@ -1,15 +1,15 @@
 //Cracked by Roath
-// baza °ÍÔú
+// baza å·´æ‰Ž
 // maco 2/17/2000
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "°ÍÔú¶«²à");
+	set("short", "å·´æ‰Žä¸œä¾§");
 	set("long", @LONG
-Õâ¶ùÊÇ°ÍÔúµÄ¶«Í·£¬¸÷Ê½¸÷ÑùµÄÍÁ²ú¡¢Êß¹û¡¢¹¤ÒÕÆ·£¬Ó¦ÓÐ¾¡
-ÓÐ¡£°ÍÔýÖÐÈËÉ½ÈËº££¬ÍòÍ·×ê¶¯£¬µ½´¦ÊÇ½ÐÂôÉù¡¢ÌÖ¼ÛÉù¡¢¸ÏÂ¿Éù¡£
+è¿™å„¿æ˜¯å·´æ‰Žçš„ä¸œå¤´ï¼Œå„å¼å„æ ·çš„åœŸäº§ã€è”¬æžœã€å·¥è‰ºå“ï¼Œåº”æœ‰å°½
+æœ‰ã€‚å·´æœ­ä¸­äººå±±äººæµ·ï¼Œä¸‡å¤´é’»åŠ¨ï¼Œåˆ°å¤„æ˜¯å«å–å£°ã€è®¨ä»·å£°ã€èµ¶é©´å£°ã€‚
 LONG
 	);
 	set("exits", ([ 

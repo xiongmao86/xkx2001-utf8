@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���Ŵ��");
+	set("short", "鬼门大道");
 	set("long", @LONG
-������һ����ɭɭ��·��, ŨŨ�����������������, ������
-Զ������ɢȥ�Ƶ�. ���Ͽ�ȥ����ǿ���Էֱ��һ����¥��ģ��,
-������Լ���Կ�����յ����, ��Ũ�����Եø���Ĺ���. ·������
-����һ��ľ��Ľ���, �Ŷ��ǰ뿪��, ���㿴�����������ʲ��.
+你走在一条阴森森的路上, 浓浓的雾环绕在你的四周, 好像永
+远都不会散去似的. 往南看去你勉强可以分辨出一个城楼的模样,
+往北隐约可以看到几盏灯笼, 在浓雾中显得格外的诡异. 路的两旁
+各有一栋木造的建筑, 门都是半开的, 但你看不清楚里面有什麽.
 
 LONG
 	);
@@ -35,7 +35,7 @@ void init()
 int do_suicide(string arg)
 {
         object me = this_player();
-        tell_object(me, "�㻹�����ء�\n");
+        tell_object(me, "你还死着呢。\n");
         return 1;
 }
 

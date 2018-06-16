@@ -10,10 +10,10 @@ int do_bed();
 
 void create()
 {
-     set_name("ľ��",({"bed"}));
-     set("short","ľ��");
+     set_name("木床",({"bed"}));
+     set("short","木床");
      set("long", @LONG
-һ�Ŵ�ľ���� 
+一张大木床。 
 LONG
      );
      set("out","/d/taohuacun/taohua7");
@@ -45,9 +45,9 @@ int go_out()
 {
      object me=this_player();
      object out=this_object()->query("out");
-     message_vision("$N�ƿ�ɴ�ʣ��Ӵ������˳�ȥ��\n",me);
+     message_vision("$N掀开纱帐，从床里钻了出去。\n",me);
      me->move(out);
      tell_room(out,me->query("name")+
-         "�ƿ�ɴ�ʣ��Ӵ������˳�����\n",({me}));
+         "掀开纱帐，从床里钻了出来。\n",({me}));
      return 1;
 }

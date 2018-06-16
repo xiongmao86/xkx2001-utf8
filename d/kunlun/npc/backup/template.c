@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wei_yixiao.c ΤһЦ
+// wei_yixiao.c 韦一笑
 
 #include <ansi.h>
 inherit NPC;
@@ -13,7 +13,7 @@ void create()
 		"\n"
 		"\n");
 	set("age",  );
-	set("gender", "��");
+	set("gender", "性");
 	set("attitude", "");
 
 	set("str", 24);

@@ -3,10 +3,10 @@
 
 inherit ROOM;
 
-string GATE_DESC_SHORT = "������";
+string GATE_DESC_SHORT = "宣武门";
 string GATE_DESC_LONG = @LONG
-��������ͨ���пڣ����ţ����ﳤ���ֵĽ�ͨҪ���������������ϰ��ն���
-�ϼӲ��ʡ����ϵĸ�ʾ (gaoshi) �ƺ�д��Щʲô��
+这里是南通菜市口，天桥，西达长安街的交通要道。这里来往的老百姓都被
+严加查问。门上的告示 (gaoshi) 似乎写着些什么。
 LONG;
 mapping GATE_EXITS_NIGHT=([ /* sizeof() == 3 */
   // "north" : "/d/beijing/zijin/tianansquare",

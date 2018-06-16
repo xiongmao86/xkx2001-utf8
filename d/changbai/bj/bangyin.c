@@ -1,13 +1,13 @@
 //Cracked by Roath
-// /d/changbai/bj/bangyin.c °ïÓ¡
+// /d/changbai/bj/bangyin.c å¸®å°
 
 inherit ITEM;
 
 void create()
 {
-        set_name("°ïÓ¡", ({ "bangyin" }) );
+        set_name("å¸®å°", ({ "bangyin" }) );
         set("weight", 30);
-        set("unit", "¸ö");
+        set("unit", "ä¸ª");
         set("value", 0);
         set("material", "wood");
 }

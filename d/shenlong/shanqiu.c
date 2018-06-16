@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ɽ�� /d/shenlong/shanqiu
+// 山丘 /d/shenlong/shanqiu
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山丘");
 	set("long", @LONG
-����һƬɽ��أ�����������Ҷ�ͻ��������ڸ��¹��꣬����ʮ����Ţ��
-ͻȻ���㷢�ֵ����������߳����еĺۼ�����ϸ������С��������ӣ����
-ȷ�Ƴ��ޣ��㲻�ɵû�������һ�㼦Ƥ���񡣱�����һƬ��԰��
+这是一片山丘地，地上满是树叶和黄土，由于刚下过雨，地面十分泥泞，
+突然，你发现地上有许多蛇虫爬行的痕迹，粗细不均，小的有如筷子，大的
+确似车辙，你不由得浑身起了一层鸡皮疙瘩。北面是一片果园。
 LONG
         );
         set("outdoors", "shenlong");

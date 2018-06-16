@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIW "��¥" NOR);
+	set("short", HIW "三楼" NOR);
 	set("long", @LONG
-��¥�����ɽȺ�徹�㣬������������ˮ�������ƣ��̲��Ӵ����羰��
-�ѣ�Ϊ������¥֮һ�����С���ͥ����ˮ����������¥����ʢ������¥�����С�
-³��������������˵��ǡ��������»���
+登楼南望岘山群峰竟秀，岗峦起伏；北瞰汉水缭绕烟云，碧波萦带。风景极
+佳，为江南名楼之一，历有“洞庭天下水，岳阳天下楼”的盛誉。三楼壁上有“
+鲁肃练兵”、“张说题辞”两幅故事画。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

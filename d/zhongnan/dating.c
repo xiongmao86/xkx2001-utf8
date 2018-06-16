@@ -6,14 +6,14 @@ inherit ROOM;
 
 void create()
 {
-		  set("short","´óÌü");
+		  set("short","å¤§å…");
 
 		  set("long",@LONG
-Õâ´óÌü²¼ÖÃµÄ¼«Îª¼òµ¥£¬¼¸ÕÅÄ¾ÒÎºÍÒÎÕÅ×À×Ó·ÅÔÚÕıµ±ÖĞ£¬¿¿Ç½µÄÒÎ
-¸öĞ¡¹ñ×ÓÉÏµãÁËÒ»¸öĞ¡ÏãÂ¯£¬Æ®³öÀ´µÄôÁôÁÏãÑÌ´ø×ÅÒ»¹ÉÏãÎ¶¡£ÄãÖ»¾õµÃ
-ÕâÎ¶µÀÅ¨¶ø²»Äå£¬·´ÁîÄãÓĞÒ»¹ÉÆ®Æ®È»µÄ¸Ğ¾õ¡£ÌüÖĞµÄÖùÉÏ²åÁË¼¸Ö¦¾ŞÖò£¬
-°ÑÕâ¨æÕÕµÄÃ÷»Î»ÎµÄ¡£³ıÁËÍùÄÏÓĞÒ»¸öĞ¡ÃÅ¿ÉÍ¨µ½ááÌÃ£¬ÆäÓà·½Ïò¶¼ÊÇÓÄ
-°µµÄ×ßµÀ¡£
+è¿™å¤§å…å¸ƒç½®çš„æä¸ºç®€å•ï¼Œå‡ å¼ æœ¨æ¤…å’Œæ¤…å¼ æ¡Œå­æ”¾åœ¨æ­£å½“ä¸­ï¼Œé å¢™çš„æ¤…
+ä¸ªå°æŸœå­ä¸Šç‚¹äº†ä¸€ä¸ªå°é¦™ç‚‰ï¼Œé£˜å‡ºæ¥çš„è¢…è¢…é¦™çƒŸå¸¦ç€ä¸€è‚¡é¦™å‘³ã€‚ä½ åªè§‰å¾—
+è¿™å‘³é“æµ“è€Œä¸è…»ï¼Œåä»¤ä½ æœ‰ä¸€è‚¡é£˜é£˜ç„¶çš„æ„Ÿè§‰ã€‚å…ä¸­çš„æŸ±ä¸Šæ’äº†å‡ æå·¨çƒ›ï¼Œ
+æŠŠè¿™ã„¦ç…§çš„æ˜æ™ƒæ™ƒçš„ã€‚é™¤äº†å¾€å—æœ‰ä¸€ä¸ªå°é—¨å¯é€šåˆ°å¾Œå ‚ï¼Œå…¶ä½™æ–¹å‘éƒ½æ˜¯å¹½
+æš—çš„èµ°é“ã€‚
 LONG);
 
 	set("exits",([ "west" : __DIR__"zoudao4",
@@ -37,14 +37,14 @@ int valid_leave(object me, string dir)
         myfam = (mapping)me->query("family");
 
         if ( objectp(obj=present("xiao longnu", environment(me))) && living(obj) && !wizardp(me) ) {
-           if ( (!myfam || myfam["family_name"] != "¹ÅÄ¹ÅÉ") && (dir == "east" || dir == "west") )
-                return notify_fail("Ğ¡ÁúÅ®ËµµÀ£º±¾ÃÅÖØµØ£¬"+RANK_D->query_respect(me)+"Ö¹²½£¡\n");
+           if ( (!myfam || myfam["family_name"] != "å¤å¢“æ´¾") && (dir == "east" || dir == "west") )
+                return notify_fail("å°é¾™å¥³è¯´é“ï¼šæœ¬é—¨é‡åœ°ï¼Œ"+RANK_D->query_respect(me)+"æ­¢æ­¥ï¼\n");
 
-           if ( myfam && myfam["family_name"] != "¹ÅÄ¹ÅÉ" && (dir == "south" || dir == "east" || dir == "west"))
-                return notify_fail("Ğ¡ÁúÅ®ËµµÀ£º±¾ÃÅÖØµØ£¬"+RANK_D->query_respect(me)+"Ö¹²½£¡\n");
+           if ( myfam && myfam["family_name"] != "å¤å¢“æ´¾" && (dir == "south" || dir == "east" || dir == "west"))
+                return notify_fail("å°é¾™å¥³è¯´é“ï¼šæœ¬é—¨é‡åœ°ï¼Œ"+RANK_D->query_respect(me)+"æ­¢æ­¥ï¼\n");
         
-	   if ( myfam && myfam["master_name"] == "ÀîÄª³î" && dir == "east" )
-                return notify_fail("Ğ¡ÁúÅ®ËµµÀ£ºÄã»¹ÊÇÈÃÊ¦½ã±¾ÈËÀ´È¡ÓñÅ®ĞÄ¾­°É¡£\n");
+	   if ( myfam && myfam["master_name"] == "æè«æ„" && dir == "east" )
+                return notify_fail("å°é¾™å¥³è¯´é“ï¼šä½ è¿˜æ˜¯è®©å¸ˆå§æœ¬äººæ¥å–ç‰å¥³å¿ƒç»å§ã€‚\n");
         }
 
         return ::valid_leave(me, dir);

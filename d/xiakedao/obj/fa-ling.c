@@ -3,13 +3,13 @@ inherit ITEM;
 inherit F_AUTOLOAD;
 void create()
 {
-        set_name( "·£¶ñÁî", ({ "fae ling", "ling", "iron" }) );
+        set_name( "ç½šæ¶ä»¤", ({ "fae ling", "ling", "iron" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿ìÌúÅÆ£¬ÅÆµÄÒ»ÃæÊÇÒ»¸ö¿àÁ³£¬ÁíÒ»ÃæÊ²÷áÒ²Ã»ÓĞ\n");
+                set("unit", "å—");
+                set("long", "è¿™æ˜¯ä¸€å¿«é“ç‰Œï¼Œç‰Œçš„ä¸€é¢æ˜¯ä¸€ä¸ªè‹¦è„¸ï¼Œå¦ä¸€é¢ä»€éº½ä¹Ÿæ²¡æœ‰\n");
                 set("value", 0);
                 set("material", "iron");
         }
@@ -24,7 +24,7 @@ void autoload(string arg)
 {       object it = this_object();
         object me = this_player(); 
         string desc;
-                desc = "ÕâÊÇÒ»¿ìÌúÅÆ£¬ÅÆµÄÒ»ÃæÊÇÒ»¸ö¿àÁ³£¬ÁíÒ»Ãæ¿Ì×Å¡°" + me->query("name") + "¡±\n";
+                desc = "è¿™æ˜¯ä¸€å¿«é“ç‰Œï¼Œç‰Œçš„ä¸€é¢æ˜¯ä¸€ä¸ªè‹¦è„¸ï¼Œå¦ä¸€é¢åˆ»ç€â€œ" + me->query("name") + "â€\n";
                 it->set("long", desc);
                 it->set("owner", me->query("id"));
                 it->set("setted", 1);

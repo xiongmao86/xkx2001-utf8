@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tynong.c Ì¨ÒÄÅ©¸¾
+// tynong.c å°å¤·å†œå¦‡
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ì¨ÒÄÅ©¸¾", ({ "nong fu", "woman", "nong" }) );
-	set("long", "Ò»Î»ÄêÇáµÄÌ¨ÒÄÅ©¸¾£¬ÔÚÌïÀïĞÁÇÚµØÀÍ×÷×Å¡£\n");
+	set_name("å°å¤·å†œå¦‡", ({ "nong fu", "woman", "nong" }) );
+	set("long", "ä¸€ä½å¹´è½»çš„å°å¤·å†œå¦‡ï¼Œåœ¨ç”°é‡Œè¾›å‹¤åœ°åŠ³ä½œç€ã€‚\n");
 
 	set("age", 25);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

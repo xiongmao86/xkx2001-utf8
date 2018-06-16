@@ -13,11 +13,11 @@ mapping HELP_STAT = ([]);
 
 void create()
 {
-	set_name("½äÂÉÉ®", ({ "jielv seng", "seng" }));
+	set_name("æˆ’å¾‹åƒ§", ({ "jielv seng", "seng" }));
 	set("long", 
-"ËûÊÇÃÜ×ÚµÄ½äÂÉÉ®£¬³¤µÃ°ò´óÑüÔ²£¬ÊÖÖĞÌá×Å·¨Æ÷£¬Éí×Å»ÆÅÛ£¬Í·´÷»ÆÃ±£¬\n"
-"ÂúÃæËàÉ±Ö®Æø¡£ËûÊÇ´óÂÖÃ÷ÍõÇ××ÔÑ¡À´ÊØ»¤ËÂÄÚ±¦ÎïµÄ¡£\n");
-	set("gender", "ÄĞĞÔ");
+"ä»–æ˜¯å¯†å®—çš„æˆ’å¾‹åƒ§ï¼Œé•¿å¾—è†€å¤§è…°åœ†ï¼Œæ‰‹ä¸­æç€æ³•å™¨ï¼Œèº«ç€é»„è¢ï¼Œå¤´æˆ´é»„å¸½ï¼Œ\n"
+"æ»¡é¢è‚ƒæ€ä¹‹æ°”ã€‚ä»–æ˜¯å¤§è½®æ˜ç‹äº²è‡ªé€‰æ¥å®ˆæŠ¤å¯ºå†…å®ç‰©çš„ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "heroism");
 	set("class","lama");
@@ -101,8 +101,8 @@ void init()
         if (interactive(ob = this_player()) && 
 			 present("juan na xiang", this_player())) {
              myfam = (mapping)ob->query("family");
-             if (!myfam || myfam["family_name"] != "Ñ©É½ÅÉ"
-             && myfam["family_name"] != "Ñªµ¶ÃÅ" )
+             if (!myfam || myfam["family_name"] != "é›ªå±±æ´¾"
+             && myfam["family_name"] != "è¡€åˆ€é—¨" )
 			 {
                 remove_call_out("kill_target");
                 call_out("kill_target", 1, ob);
@@ -121,11 +121,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
 	
 //	if (ob->query_temp("mark/comin"))
-//                say( "¸ğÂ×²¼Ë«ÊÖºÏÊ²Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-//                                + "£¬ÔúÎ÷µÂÀÕ£¡\n");
+//                say( "è‘›ä¼¦å¸ƒåŒæ‰‹åˆä»€ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+//                                + "ï¼Œæ‰è¥¿å¾·å‹’ï¼\n");
 //	else
-//                say( "¸ğÂ×²¼Ë«ÊÖºÏÊ²Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-//                                + "£¬¿¦ÁĞ±ğ£¡\n");
+//                say( "è‘›ä¼¦å¸ƒåŒæ‰‹åˆä»€ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+//                                + "ï¼Œå–€åˆ—åˆ«ï¼\n");
 }
 
 int auto_robot()
@@ -367,7 +367,7 @@ int get_killer(object killer) {
 	object me = this_object();
 
 	if ( !me->is_fighting() ) {
-       message_vision("$N´óºÈÒ»Éù£¬¾¹¸ÒÄ±º¦ÎÒÊ¦ĞÖ£¬ÄÃÃüÀ´£¡£¡£¡\n", this_object());
+       message_vision("$Nå¤§å–ä¸€å£°ï¼Œç«Ÿæ•¢è°‹å®³æˆ‘å¸ˆå…„ï¼Œæ‹¿å‘½æ¥ï¼ï¼ï¼\n", this_object());
 	   perpare_fight (killer);
 	   kill_ob(killer);
 	}

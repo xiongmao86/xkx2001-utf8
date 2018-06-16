@@ -4,13 +4,13 @@
 inherit ITEM;
 void create()
 {
-	set_name(YEL"¼ê·â"NOR, ({"jian feng"}));
+	set_name(YEL"ç¼„å°"NOR, ({"jian feng"}));
 	set_weight(1);
 	if (clonep())			   
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÀ´×°Êéº¯µÄ¼ê·â¡£Æä±³ÃæÕ´×ÅÈı¸ùÓğÃ«¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨æ¥è£…ä¹¦å‡½çš„ç¼„å°ã€‚å…¶èƒŒé¢æ²¾ç€ä¸‰æ ¹ç¾½æ¯›ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 500);
 		set("send_level",2);
 
@@ -25,18 +25,18 @@ int do_feng(string arg)
 {
 	object ob_letter,me;
 	me=this_player();
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´×°½ø¼ê·âÀï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆè£…è¿›ç¼„å°é‡Œï¼Ÿ\n");
 	
 	ob_letter = present(arg, me);
 	if(!ob_letter)
-		return notify_fail("ÄãÉíÉÏºÃÏñ²¢Ã»ÓĞÕâ·âÊéº¯£¿\n");
+		return notify_fail("ä½ èº«ä¸Šå¥½åƒå¹¶æ²¡æœ‰è¿™å°ä¹¦å‡½ï¼Ÿ\n");
 	if(!ob_letter->query("can_feng"))
-		return notify_fail("¶Ô²»Æğ£¡Äã²»ÄÜ½«Õâ¸ö·Å½ø¼ê·âÀï¡£\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼ä½ ä¸èƒ½å°†è¿™ä¸ªæ”¾è¿›ç¼„å°é‡Œã€‚\n");
 	
-	message_vision("$N´ÓÉíÉÏÌÍ³öÒ»ÕÅĞ´ºÃµÄÊéº¯×°ÔÚ¼ê·âÀï¡£\n",me);
+	message_vision("$Nä»èº«ä¸Šæå‡ºä¸€å¼ å†™å¥½çš„ä¹¦å‡½è£…åœ¨ç¼„å°é‡Œã€‚\n",me);
 
-	ob_letter->set("long", "ÕâÊÇÒ»¸ö×°ÓĞÊéº¯µÄ¼ê·â¡£Æä±³ÃæÕ´×ÅÈı¸ùÓğÃ«¡£\n");
-	ob_letter->set_name(YEL"ĞÅº¯"NOR, ({"xin han","letter"}));
+	ob_letter->set("long", "è¿™æ˜¯ä¸€ä¸ªè£…æœ‰ä¹¦å‡½çš„ç¼„å°ã€‚å…¶èƒŒé¢æ²¾ç€ä¸‰æ ¹ç¾½æ¯›ã€‚\n");
+	ob_letter->set_name(YEL"ä¿¡å‡½"NOR, ({"xin han","letter"}));
 	ob_letter->set("can_feng",0);
 
 	ob_letter->set("can_send",1);

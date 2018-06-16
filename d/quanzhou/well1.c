@@ -9,9 +9,9 @@ int do_zuan(string);
 
 void create()
 {
-        set("short", "¾®µ×");
+        set("short", "äº•åº•");
         set("long", @LONG
-ÕâÊÇÔÚÒ»¿Ú¿İ¾®µÄ¾®µ×¡£¹âÏß¼«°µ£¬Ê²Ã´Ò²¿´²»Çå¡£
+è¿™æ˜¯åœ¨ä¸€å£æ¯äº•çš„äº•åº•ã€‚å…‰çº¿ææš—ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€‚
 LONG
         );
 
@@ -40,7 +40,7 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
              write(
-             "ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖ¾®µ×Ê²Ã´Ò²Ã»ÓĞ¡£\n"
+             "ä½ ç‚¹ç‡ƒäº†ç«æŠ˜ï¼Œå‘ç°äº•åº•ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n"
              );
              return 1;
        }
@@ -52,9 +52,9 @@ int do_zuan(string arg)
       me = this_player();
 
       message_vision(
-      "$NÏñÃ»Í·²ÔÓ¬Ò»ÑùÔÚºÚ¶´¶´µÄ¾®µ×Ï¹×ê£¬½á¹ûÒ»Í·×²ÔÚ¾®±ÚµÄÊ¯Í·ÉÏ¡£\n", this_player());
+      "$Nåƒæ²¡å¤´è‹è‡ä¸€æ ·åœ¨é»‘æ´æ´çš„äº•åº•çé’»ï¼Œç»“æœä¸€å¤´æ’åœ¨äº•å£çš„çŸ³å¤´ä¸Šã€‚\n", this_player());
       if (random(2)==1) {
-         write("Äã¾õµÃÄãÔÎºõºõµÄ£¬ËÆºõ×²ÉµÁË¡£\n");
+         write("ä½ è§‰å¾—ä½ æ™•ä¹ä¹çš„ï¼Œä¼¼ä¹æ’å‚»äº†ã€‚\n");
          if (me->query_skill("literate", 1) )
              me->set_skill("literate", me->query_skill("literate", 1)-1);
       }

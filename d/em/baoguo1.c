@@ -1,15 +1,15 @@
 //Cracked by Roath
-// baoguo1.c ±£¹úËÂ´óĞÛµî
+// baoguo1.c ä¿å›½å¯ºå¤§é›„æ®¿
 // Shan: 96/06/22
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "´óĞÛµî");
+        set("short", "å¤§é›„æ®¿");
         set("long", @LONG
-ÕâÀïÊÇ±¨¹úËÂ´óĞÛµî¡£±¨¹úËÂÊÇ¶ëáÒÉ½×î´óËÂÔºÖ®Ò»¡£´óĞÛµîÄÚ¹©×Å½ğ¹â
-²Ó²ÓµÄ·ğÏñ£¬ÆøÓîĞù°º¡£
+è¿™é‡Œæ˜¯æŠ¥å›½å¯ºå¤§é›„æ®¿ã€‚æŠ¥å›½å¯ºæ˜¯å³¨åµ‹å±±æœ€å¤§å¯ºé™¢ä¹‹ä¸€ã€‚å¤§é›„æ®¿å†…ä¾›ç€é‡‘å…‰
+ç¿ç¿çš„ä½›åƒï¼Œæ°”å®‡è½©æ˜‚ã€‚
 LONG
         );
         set("exits", ([
@@ -29,12 +29,12 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if ( me->query("family/family_name") != "¶ëáÒÅÉ" && dir == "west" ) 
-		return notify_fail("±£¹úËÂìø·¿Ö»½Ó´ı¶ëáÒµÜ×Ó£¬ÄãÒªÊÇ³ÏĞÄÀñ·ğ£¬ÔÚ´Ë¶à½ø¼¸×¢Ïã°É¡£\n");
+	if ( me->query("family/family_name") != "å³¨åµ‹æ´¾" && dir == "west" ) 
+		return notify_fail("ä¿å›½å¯ºç¦…æˆ¿åªæ¥å¾…å³¨åµ‹å¼Ÿå­ï¼Œä½ è¦æ˜¯è¯šå¿ƒç¤¼ä½›ï¼Œåœ¨æ­¤å¤šè¿›å‡ æ³¨é¦™å§ã€‚\n");
 
-	if ( me->query("gender") == "Å®ĞÔ" && dir == "west" )
-		return notify_fail("ÕâÎ»" + RANK_D->query_respect(me) +
-				"£¬Î÷ÃæÄËÊÇÄĞµÜ×ÓĞİÏ¢µÄìø·¿£¬ÄãÒ»Å®×Ó²»Ì«·½±ã°É£¿£¡\n");
+	if ( me->query("gender") == "å¥³æ€§" && dir == "west" )
+		return notify_fail("è¿™ä½" + RANK_D->query_respect(me) +
+				"ï¼Œè¥¿é¢ä¹ƒæ˜¯ç”·å¼Ÿå­ä¼‘æ¯çš„ç¦…æˆ¿ï¼Œä½ ä¸€å¥³å­ä¸å¤ªæ–¹ä¾¿å§ï¼Ÿï¼\n");
 
 	return ::valid_leave(me, dir);
 }

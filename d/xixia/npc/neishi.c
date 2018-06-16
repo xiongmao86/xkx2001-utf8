@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÄÚÊÌ", ({ "nei shi", "shi" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å†…ä¾", ({ "nei shi", "shi" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"ÕâÊÇ¸ö»ÊÊÒµÄÊÌ´Ó¡£\n");
+		"è¿™æ˜¯ä¸ªçš‡å®¤çš„ä¾ä»ã€‚\n");
 	set("combat_exp", 1000);
         set("shen_type", 0);
 	set("attitude", "peaceful");

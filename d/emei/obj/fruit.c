@@ -6,12 +6,12 @@ inherit ITEM;
 inherit F_FOOD;
 
 string* titles = ({
-        "ÏãÄ¾¹Ï",
-        "Ê¯Áñ",
-        "º£Àæ",
-        "ÊÁ×Ó",
-	"ÆÏÌÑ",
-	"ÃÛÂŞ¸Ì",
+        "é¦™æœ¨ç“œ",
+        "çŸ³æ¦´",
+        "æµ·æ¢¨",
+        "æŸ¿å­",
+	"è‘¡è„",
+	"èœœç½—æŸ‘",
 });
 
 void create()
@@ -21,8 +21,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÒ°¹û£¬ĞÂÏÊË®Áé¼«ÁË¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯ä¸€é¢—é‡æœï¼Œæ–°é²œæ°´çµæäº†ã€‚\n");
                 set("value", 10);
 		set("food_remaining", 5);
 		set("food_supply", 50);

@@ -7,10 +7,10 @@ int do_answer(string);
 
 void create()
 {
-        set_name("Ò»µÆ´óÊ¦", ({ "yideng dashi", "yideng", "dashi" }));
-        set("nickname", "ÄÏµÛ");
-        set("long", "´ËÈËÉíÐÎ¸ß´ó£¬Éí×ÅÒ»Ï®ÇàÉ«ôÂôÄ£¬È´ÊÇ²»Å­×ÔÍþ£¬ÈÃÈËËà¶øÆð¾´¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¸€ç¯å¤§å¸ˆ", ({ "yideng dashi", "yideng", "dashi" }));
+        set("nickname", "å—å¸");
+        set("long", "æ­¤äººèº«å½¢é«˜å¤§ï¼Œèº«ç€ä¸€è¢­é’è‰²è¢ˆè£Ÿï¼Œå´æ˜¯ä¸æ€’è‡ªå¨ï¼Œè®©äººè‚ƒè€Œèµ·æ•¬ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "heroism");
         set("shen_type", 1);
@@ -51,7 +51,7 @@ void create()
         prepare_skill("strike", "qingyan-zhang");
 
 
-        create_family("´óÀí¶Î¼Ò", 17, "µÜ×Ó");
+        create_family("å¤§ç†æ®µå®¶", 17, "å¼Ÿå­");
         setup();
         carry_object("/d/shaolin/npc/obj/cloth")->wear();
 //      carry_object("/clone/weapon/changjian")->wield();
@@ -59,9 +59,9 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command ("say Õâ¡¸ÏÀ¿ÍÐÐ¡¹µÄ¹ÅÊ«Í¼½â£¬°ü²Ø×Å¹ÅÍù½ñÀ´×î²©´ó¾«Éî
-µÄÎäÑ§ÃØ°Â£¬ÀÏ·ò½ß¾¡ÐÄÖÇ£¬ÉÐ×Ô²»ÄÜ²ÎÎòÆäÖÐÊ®Ö®Ò»¶þ£¬ÄÇ»¹ÄÜ·Ö
-ÐÄÈ¥Àí»áÊÀÉÏË×ÊÂ¡£ ");
+        command ("say è¿™ã€Œä¾ å®¢è¡Œã€çš„å¤è¯—å›¾è§£ï¼ŒåŒ…è—ç€å¤å¾€ä»Šæ¥æœ€åšå¤§ç²¾æ·±
+çš„æ­¦å­¦ç§˜å¥¥ï¼Œè€å¤«ç«­å°½å¿ƒæ™ºï¼Œå°šè‡ªä¸èƒ½å‚æ‚Ÿå…¶ä¸­åä¹‹ä¸€äºŒï¼Œé‚£è¿˜èƒ½åˆ†
+å¿ƒåŽ»ç†ä¼šä¸–ä¸Šä¿—äº‹ã€‚ ");
 }
 
 void init()
@@ -87,7 +87,7 @@ void greeting(object me)
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
                 {		command("humble huang yaoshi");
-				command("say ¾¢Á¦ÄÚº¬£¬·¢Ö®ÎÞÐÎ£¬ÉËÈËÓë²»¾õÖ®ÖÐ¡£");
+				command("say åŠ²åŠ›å†…å«ï¼Œå‘ä¹‹æ— å½¢ï¼Œä¼¤äººä¸Žä¸è§‰ä¹‹ä¸­ã€‚");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
 				opp->set("jingli", maxjingli);

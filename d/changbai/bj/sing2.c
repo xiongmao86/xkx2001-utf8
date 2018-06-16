@@ -1,5 +1,5 @@
 //Cracked by Roath
-// fanchang.c èó³ª
+// fanchang.c æ¢µå”±
 // changed by Aln for special lama npcs
 
 #include <ansi.h>
@@ -24,50 +24,50 @@ int exert(object me, object target)
 
 	if( !objectp(weapon = me->query_temp("weapon"))
         ||  (string)weapon->query("id") != "lubo" )
-                return notify_fail("ÄãÎ´Ö´·¨Æ÷£¬²»ÄÜÄýÉñèó³ª¡£\n");
+                return notify_fail("ä½ æœªæ‰§æ³•å™¨ï¼Œä¸èƒ½å‡ç¥žæ¢µå”±ã€‚\n");
 
 	if( !objectp(obj = present("kulou guan", me))
         ||  !obj->query("equipped") )
-		return notify_fail("ÄãÎ´¶¥÷¼÷Ã¹Ú£¬²»ÄÜÄýÉñèó³ª¡£\n");
+		return notify_fail("ä½ æœªé¡¶éª·é«…å† ï¼Œä¸èƒ½å‡ç¥žæ¢µå”±ã€‚\n");
 
 	if( !objectp(obj = present("rentou lian", me))
         ||  !obj->query("equipped") )
-                return notify_fail("ÄãÎ´´÷ÈËÍ·Á´£¬²»ÄÜÄýÉñèó³ª¡£\n");
+                return notify_fail("ä½ æœªæˆ´äººå¤´é“¾ï¼Œä¸èƒ½å‡ç¥žæ¢µå”±ã€‚\n");
 
 	if( !living(target) )
-                return notify_fail("¿´Çå³þÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
-	if( target->query("race") != "ÈËÀà" )
-		return notify_fail(target->query("name") + "Ìý²»¶®ÄãµÄÖäÓï£¡\n");
+	if( target->query("race") != "äººç±»" )
+		return notify_fail(target->query("name") + "å¬ä¸æ‡‚ä½ çš„å’’è¯­ï¼\n");
 
 	if( (int)me->query("neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_skill("necromancy", 1) < 30 )
-                return notify_fail("ÄãµÄ½µ·ü·¨¹¦Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„é™ä¼æ³•åŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("lamaism", 1) < 30 )
-                return notify_fail("ÄãµÄÃÜ×ÚÐÄ·¨¹¦Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å¯†å®—å¿ƒæ³•åŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("longxiang-banruo", 1) < 30 )
-		return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦¹¦Á¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸåŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀï²»ÄÜ³ª¡£\n");
+		return notify_fail("åœ¨è¿™é‡Œä¸èƒ½å”±ã€‚\n");
 
 	if( target->query_temp("cursed", 1) || target->query_temp("block_msg/all", 1))
-		return notify_fail("´ËÈËÒÑ±»½µ·ü£¡\n");
+		return notify_fail("æ­¤äººå·²è¢«é™ä¼ï¼\n");
 
 	if( (int)me->query_temp("curser") ) 
-                return notify_fail("Äã½µ·ü×ÅÁíÒ»¸÷ÈË£¡\n");
+                return notify_fail("ä½ é™ä¼ç€å¦ä¸€å„äººï¼\n");
 
 	me->add("neili", -50);
 	me->receive_damage("jingli", 50);
 
 	message_vision(
-		BLU "$NÒ¡Í·»ÎÄÔ£¬¿ÚÖÐ±³ËÐ´ó³Ë·ð¾­£¬¼ÐÔÓÒÔÃÜ×ÚÁù×ÖÖä¡£ÉùÒôÒõÑô¶Ù´ì£¬ÓÐÆðÓÐ·ü£¬°µº¬ÒôÂÉ¡£\n" NOR, me);
+		BLU "$Næ‘‡å¤´æ™ƒè„‘ï¼Œå£ä¸­èƒŒè¯µå¤§ä¹˜ä½›ç»ï¼Œå¤¹æ‚ä»¥å¯†å®—å…­å­—å’’ã€‚å£°éŸ³é˜´é˜³é¡¿æŒ«ï¼Œæœ‰èµ·æœ‰ä¼ï¼Œæš—å«éŸ³å¾‹ã€‚\n" NOR, me);
 
-	tell_object(target,  "Äã¾õµÃÄÇÃÜÖä±È¹í¿Þ»¹ÄÑÌý£¬ÄÔ´üÀïÒ»ÍÅÐõÂÒ£¬ÑÛÇ°Ò»¶Ñ¹íÓ°ÔÚÂÒÌø£¬ÐØÆø×èÈû£¬ËÄÖ«ÎÞÁ¦£¬»ìÈ»ÓûË¯¡£\n");
+	tell_object(target,  "ä½ è§‰å¾—é‚£å¯†å’’æ¯”é¬¼å“­è¿˜éš¾å¬ï¼Œè„‘è¢‹é‡Œä¸€å›¢çµ®ä¹±ï¼Œçœ¼å‰ä¸€å †é¬¼å½±åœ¨ä¹±è·³ï¼Œèƒ¸æ°”é˜»å¡žï¼Œå››è‚¢æ— åŠ›ï¼Œæ··ç„¶æ¬²ç¡ã€‚\n");
 		
 	ap = (int)me->query("neili") + (int)me->query("max_neili") +
              (int)me->query_skill("necromancy", 1) * 10 +
@@ -78,7 +78,7 @@ int exert(object me, object target)
         dp *= (int)target->query("combat_exp")/1000 + 1;
 
         if( random(ap + dp) > dp ) {
-		tell_object(target, HIR"\nÄãÖ»¾õµÃÑÛÇ°µÄÒ»ÇÐÀëÄãÂýÂýÔ¶È¥£¬ÄãµÄ»êÆÇËÆÒª³öÇÏ£¬²»ÔÙÓÉÄãÖ÷Ô×¡£\n"NOR);
+		tell_object(target, HIR"\nä½ åªè§‰å¾—çœ¼å‰çš„ä¸€åˆ‡ç¦»ä½ æ…¢æ…¢è¿œåŽ»ï¼Œä½ çš„é­‚é­„ä¼¼è¦å‡ºçªï¼Œä¸å†ç”±ä½ ä¸»å®°ã€‚\n"NOR);
 
                 target->start_busy(2 + random(2));
 		target->set_temp("cursed", 1);
@@ -86,7 +86,7 @@ int exert(object me, object target)
 	    //  target->set_temp("block_msg/all", 1);
 		me->set_temp("curser", 1);
 
-		message_vision(HIR"\n$NÍ»È»¿ªÊ¼Á½ÑÛ·¢Ö±£¬´ô´ôµØÍû×ÅÇ°·½¡£\n"NOR, target);
+		message_vision(HIR"\n$Nçªç„¶å¼€å§‹ä¸¤çœ¼å‘ç›´ï¼Œå‘†å‘†åœ°æœ›ç€å‰æ–¹ã€‚\n"NOR, target);
 
                 remove_call_out("del_sung");
                 call_out("del_sung", 3 + random(3), me, target);
@@ -111,7 +111,7 @@ void del_sung(object me, object target)
         if( target->query_temp("yield") )
                 target->delete_temp("yield");
 
-        message_vision("$NÂýÂýµØÇåÐÑ¹ýÀ´£¬»êÆÇÓÖ»Øµ½ÁË×Ô¼ºÉíÌåÉÏ¡£\n", target);
+        message_vision("$Næ…¢æ…¢åœ°æ¸…é†’è¿‡æ¥ï¼Œé­‚é­„åˆå›žåˆ°äº†è‡ªå·±èº«ä½“ä¸Šã€‚\n", target);
         }
 
         if( me ) {

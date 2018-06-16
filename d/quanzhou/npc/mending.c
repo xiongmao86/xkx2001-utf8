@@ -1,13 +1,13 @@
 //Cracked by Roath
-// mending.c Îä¹İÃÅ¶¡
+// mending.c æ­¦é¦†é—¨ä¸
 // qfy July 30, 1996
 inherit NPC;
 
 void create()
 {
-	set_name("Îä¹İÃÅ¶¡", ({ "men ding", "ding" }));
-	set("long", "Ëû³¤µÃ¸ßÍ·´óÂí£¬·Ç³£½¡×³¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ­¦é¦†é—¨ä¸", ({ "men ding", "ding" }));
+	set("long", "ä»–é•¿å¾—é«˜å¤´å¤§é©¬ï¼Œéå¸¸å¥å£®ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 
 	set_skill("unarmed", 20);

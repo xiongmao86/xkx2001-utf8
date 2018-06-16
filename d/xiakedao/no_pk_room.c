@@ -22,19 +22,19 @@ int do_kill(string arg)
         if( !arg || arg = "" )  return 0;
 
         if( this_object()->query("no_fight") )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("è¿™é‡Œç¦æ­¢æˆ˜æ–—ã€‚\n");
 
 	if( !target = present(arg, this_object()) )  return 0;
 
         if( !userp(target) )  return 0;
 
 	if( me == target )
-                return notify_fail("ÓÃ suicide Ö¸Áî»á±È½Ï¿ì:P¡£\n");
+                return notify_fail("ç”¨ suicide æŒ‡ä»¤ä¼šæ¯”è¾ƒå¿«:Pã€‚\n");
 
 	killer = new(__DIR__"npc/dizi");
 	killer->set("xkd/killer", me->query("id"));
 	killer->move(this_object());
-	message_vision("$N×ßÁË¹ıÀ´¡£\n" NOR, killer);
+	message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n" NOR, killer);
 	return 0;
 }
 */
@@ -45,12 +45,12 @@ int do_hit(string arg)
 
         if( !arg || arg = "" )  return 0;
         if( this_object()->query("no_fight") )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("è¿™é‡Œç¦æ­¢æˆ˜æ–—ã€‚\n");
         if( !target = present(arg, this_object()) )  return 0;
         if( !userp(target) )  return 0;
         if( me == target )
-                return notify_fail("´ò×Ô¼º£¿±ğÕâÃ´Ïë²»¿ª¡£¡£\n");
-	return notify_fail("µºÉÏ²»µÃ´òÍæ¼Ò£¡\n");
+                return notify_fail("æ‰“è‡ªå·±ï¼Ÿåˆ«è¿™ä¹ˆæƒ³ä¸å¼€ã€‚ã€‚\n");
+	return notify_fail("å²›ä¸Šä¸å¾—æ‰“ç©å®¶ï¼\n");
         return 0;
 }
 

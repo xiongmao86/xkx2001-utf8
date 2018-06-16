@@ -9,10 +9,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ɴ�");
+	set("short", "渡船");
 	set("long", @LONG
-�밶��Զ����������������Ī֪���֮�ں������ֻ��Ǻ���֮
-����ء�
+离岸渐远，四望空阔，真是莫知天地之在湖海，抑惑是湖海之
+在天地。
 LONG
 	);
 

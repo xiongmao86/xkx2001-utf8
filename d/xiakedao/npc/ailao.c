@@ -1,16 +1,16 @@
 //Cracked by Roath
-// ailao.c °«ÀÏÕß
+// ailao.c çŸ®è€è€…
 // qfy Sept 8, 1996.
 
 inherit NPC;
 
 void create()
 {
-        set_name("°«ÀÏÕß", ({ "ai lao", "ai", "lao" }));
+        set_name("çŸ®è€è€…", ({ "ai lao", "ai", "lao" }));
         set("long", 
-"´ËÀÏÉíÇû°«Ğ¡£¬µ«Æø¶È·Ç·²£¬ÁîÈË²»¸ÒĞ¡¿ú¡£ËûÓëÆäÊ¦µÜ¸ßÀÏÕß\n"
-"±Õ¹ØÒÑ¾Ã£¬½­ºşÉÏÏÊÎÅÆäÃû¡£Îä¹¦Ö®¸ß£¬È´ÁîÈËÕğ¾ª¡£\n");
-        set("gender", "ÄĞĞÔ");
+"æ­¤è€èº«èº¯çŸ®å°ï¼Œä½†æ°”åº¦éå‡¡ï¼Œä»¤äººä¸æ•¢å°çª¥ã€‚ä»–ä¸å…¶å¸ˆå¼Ÿé«˜è€è€…\n"
+"é—­å…³å·²ä¹…ï¼Œæ±Ÿæ¹–ä¸Šé²œé—»å…¶åã€‚æ­¦åŠŸä¹‹é«˜ï¼Œå´ä»¤äººéœ‡æƒŠã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 75);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -54,7 +54,7 @@ void create()
         prepare_skill("strike", "hunyuan-zhang");
         prepare_skill("cuff", "pishi-poyu");
 
-        create_family("»ªÉ½ÅÉ", 12, "³¤ÀÏ");
+        create_family("åå±±æ´¾", 12, "é•¿è€");
 
 
         setup();

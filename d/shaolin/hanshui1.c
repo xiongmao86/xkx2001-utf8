@@ -9,12 +9,12 @@ void create()
 {
         object room;
 
-        set("short", "ººË®ÄÏ°¶");
+        set("short", "æ±‰æ°´å—å²¸");
         set("long", @LONG
-ÃæÇ°ÊÇÒ»Ìõ²¨ÌÎ·­¹öµÄ´ó½­(river)¡£×ÇÁ÷¹ö¹ö£¬ÍòÖÛ¾º·¢¡£
-Á½°¶¶É´¬À´À´ÍùÍù£¬½­±ßÒ»³¤Áï°ÚÂúÁËÓãÌ¯£¬Óæ¼Ò¾Í½«´¬²´ÔÚ°¶
-±ß£¬¼¸¸öÆÆÂÜÖ§Ò»¿éÄ¾°å£¬°åÉÏ°ÚÂúÁË»î±ÄÂÒÌøµÄºº½­ÀðÓã¡£¹ý
-È¥²»Ô¶£¬ÊÇÓÐÃûµÄÀÏºÓ¿Ú£¬²»ÉÙ¹ý½­¿Í¶¼ÔÚÕâÀïµÈ´ý¶É´¬°Ú¶É¡£
+é¢å‰æ˜¯ä¸€æ¡æ³¢æ¶›ç¿»æ»šçš„å¤§æ±Ÿ(river)ã€‚æµŠæµæ»šæ»šï¼Œä¸‡èˆŸç«žå‘ã€‚
+ä¸¤å²¸æ¸¡èˆ¹æ¥æ¥å¾€å¾€ï¼Œæ±Ÿè¾¹ä¸€é•¿æºœæ‘†æ»¡äº†é±¼æ‘Šï¼Œæ¸”å®¶å°±å°†èˆ¹æ³Šåœ¨å²¸
+è¾¹ï¼Œå‡ ä¸ªç ´èæ”¯ä¸€å—æœ¨æ¿ï¼Œæ¿ä¸Šæ‘†æ»¡äº†æ´»è¹¦ä¹±è·³çš„æ±‰æ±Ÿé²¤é±¼ã€‚è¿‡
+åŽ»ä¸è¿œï¼Œæ˜¯æœ‰åçš„è€æ²³å£ï¼Œä¸å°‘è¿‡æ±Ÿå®¢éƒ½åœ¨è¿™é‡Œç­‰å¾…æ¸¡èˆ¹æ‘†æ¸¡ã€‚
 LONG
     );
 
@@ -23,7 +23,7 @@ LONG
         ]));
 
         set("item_desc", ([
-                "river" : "½ü°¶´¦ÓÐÒ»Ò¶Ð¡ÖÛ£¬Ò²Ðíº°(yell)Ò»Éù´¬¼Ò¾ÍÄÜÌý¼û¡£\n",
+                "river" : "è¿‘å²¸å¤„æœ‰ä¸€å¶å°èˆŸï¼Œä¹Ÿè®¸å–Š(yell)ä¸€å£°èˆ¹å®¶å°±èƒ½å¬è§ã€‚\n",
         ]));
 
         set("objects",([
@@ -34,7 +34,7 @@ LONG
         set("outdoors", "shaolin");
 	set("cost", 2);
 
-        set("name", "½­");
+        set("name", "æ±Ÿ");
         set("boat", __DIR__"duchuan");
         set("opposite", __DIR__"hanshui2");
     

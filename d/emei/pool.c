@@ -1,6 +1,6 @@
 //Cracked by Roath
 // pool.c
-// Ï´Ïó³ØÖĞ
+// æ´—è±¡æ± ä¸­
 // xQin 3/00
 
 inherit ROOM;
@@ -11,10 +11,10 @@ void out_of_pool(object, int);
 
 void create()
 {
-	set("short", HIC"³ØÖĞ"NOR);
-	set("long", "ÕâÊÇÒ»¸öÊ¯ÆöµÄÁù½ÇĞ¡³Ø£¬´«ËµÆÕÏÍ³ËÏóÖÁ´Ë£¬±ØÏÈÔÚ´Ë³ØãåÔ¡ÆäÏó£¬¶ø\n"
-"ºó²ÅÉıÖÁ½ğ¶¥£¬¹ÊÎª¡¸Ï´Ïó³Ø¡¹¡£\n\n"
-"¡¡¡¡"HBBLU+HIC"³ØË®Çå³ºÍ¸ÁÁ\n"NOR
+	set("short", HIC"æ± ä¸­"NOR);
+	set("long", "è¿™æ˜¯ä¸€ä¸ªçŸ³ç Œçš„å…­è§’å°æ± ï¼Œä¼ è¯´æ™®è´¤ä¹˜è±¡è‡³æ­¤ï¼Œå¿…å…ˆåœ¨æ­¤æ± æ²æµ´å…¶è±¡ï¼Œè€Œ\n"
+"åæ‰å‡è‡³é‡‘é¡¶ï¼Œæ•…ä¸ºã€Œæ´—è±¡æ± ã€ã€‚\n\n"
+"ã€€ã€€"HBBLU+HIC"æ± æ°´æ¸…æ¾ˆé€äº®\n"NOR
 	);
 
 	set("xixiang", 1);
@@ -33,9 +33,9 @@ void init()
 
 	if( interactive(me) )
 	{ 
-		tell_room(environment(me), "ÓĞÈË¡°ÆËÍ¨¡±Ò»ÉùÌøÁË½øÀ´¡£\n", ({ me }));
-		tell_object(me, "Äã¡°ÆËÍ¨¡±Ò»ÉùÌø½øÁË³ØË®¡£\n");
-		tell_room(room, "Ö»Ìı¡°ÆËÍ¨¡±Ò»Éù£¬"+me->name()+"ÒÑ¾­Ìø½øÁË³ØË®Àï¡£\n");
+		tell_room(environment(me), "æœ‰äººâ€œæ‰‘é€šâ€ä¸€å£°è·³äº†è¿›æ¥ã€‚\n", ({ me }));
+		tell_object(me, "ä½ â€œæ‰‘é€šâ€ä¸€å£°è·³è¿›äº†æ± æ°´ã€‚\n");
+		tell_room(room, "åªå¬â€œæ‰‘é€šâ€ä¸€å£°ï¼Œ"+me->name()+"å·²ç»è·³è¿›äº†æ± æ°´é‡Œã€‚\n");
 		me->start_call_out( (: call_other, __FILE__, "do_swim", me :), 1);
 
 		for( i=0 ; i < sizeof(inv); i++)
@@ -62,7 +62,7 @@ void init()
 
 int do_ban()
 {
-	write("ÔÚË®ÖĞ×öÕâÊÂ£¬Äã²»ÅÂ±»ÑÍËÀ°¡£¿\n");
+	write("åœ¨æ°´ä¸­åšè¿™äº‹ï¼Œä½ ä¸æ€•è¢«æ·¹æ­»å•Šï¼Ÿ\n");
 	return 1;
 }
 
@@ -79,48 +79,48 @@ void disturb(object bather, object freeloader)
 
 	if( check > 1 )
 	{
-		tell_object(freeloader, "ÄãÍ»È»·¢ÏÖ³ØË®ÖĞÓĞÈË£¬¶øÇÒ»¹²»Ö¹Ò»¸ö¡£\n");
+		tell_object(freeloader, "ä½ çªç„¶å‘ç°æ± æ°´ä¸­æœ‰äººï¼Œè€Œä¸”è¿˜ä¸æ­¢ä¸€ä¸ªã€‚\n");
 		do_halt(freeloader);
 		return;
 	}
 
 	if( bather->is_spouse_of(freeloader) )
 	{
-		tell_object(bather, HIB"Äã×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇÄãµÄ"+ bather->query("spouse/title")
-				+ "£¬Ğé¾ªÒ»³¡¡£\n"NOR);
-		message("vision",CYN + freeloader->name() + "¶Ô×ÅÄã»áĞÄµØÒ»Ğ¦¡£\n"NOR, bather);
-		message("vision",CYN"Äã¶Ô×Å" + bather->name() + "»áĞÄµØÒ»Ğ¦¡£\n"NOR, freeloader);
+		tell_object(bather, HIB"ä½ ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯ä½ çš„"+ bather->query("spouse/title")
+				+ "ï¼Œè™šæƒŠä¸€åœºã€‚\n"NOR);
+		message("vision",CYN + freeloader->name() + "å¯¹ç€ä½ ä¼šå¿ƒåœ°ä¸€ç¬‘ã€‚\n"NOR, bather);
+		message("vision",CYN"ä½ å¯¹ç€" + bather->name() + "ä¼šå¿ƒåœ°ä¸€ç¬‘ã€‚\n"NOR, freeloader);
 		return;
 	}
 
-	tell_object(freeloader, "Äã·¢ÏÖ³ØÖĞÒ²ÓĞÈËÔÚÓÎË®£¬");
-	if( (string)freeloader->query("race") != "ÈËÀà" )
+	tell_object(freeloader, "ä½ å‘ç°æ± ä¸­ä¹Ÿæœ‰äººåœ¨æ¸¸æ°´ï¼Œ");
+	if( (string)freeloader->query("race") != "äººç±»" )
 	{
-		tell_object(bather, HIB"Äã×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇ" + freeloader->query("unit")
-			+ freeloader->name() + "£¬Ğé¾ªÒ»³¡¡£\n"NOR);
+		tell_object(bather, HIB"ä½ ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯" + freeloader->query("unit")
+			+ freeloader->name() + "ï¼Œè™šæƒŠä¸€åœºã€‚\n"NOR);
 		return;
 	}
-	if( (string)bather->query("race") != "ÈËÀà" )
+	if( (string)bather->query("race") != "äººç±»" )
 	{
-		tell_object(freeloader, HIB"×ĞÏ¸Ò»¿´£¬Ô­À´ÊÇ" + bather->query("unit")
-			+ bather->name() + "£¬Ğé¾ªÒ»³¡¡£\n"NOR);
+		tell_object(freeloader, HIB"ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯" + bather->query("unit")
+			+ bather->name() + "ï¼Œè™šæƒŠä¸€åœºã€‚\n"NOR);
 		return;
 	}
-	if( freeloader->query("gender") == "ÄĞĞÔ" )
+	if( freeloader->query("gender") == "ç”·æ€§" )
 	{
-		if( bather->query("gender") != "Å®ĞÔ" )
+		if( bather->query("gender") != "å¥³æ€§" )
 		{
-			tell_object(freeloader, "×ĞÏ¸Ò»¿´£¬¶Ô·½È´²»ÊÇÅ®×Ó¡£\n");
-			message("vision",CYN + bather->name() + "ÖåÁËÖåÃ¼£¬ËÆºõÏë¶ÔÄãËµĞ©Ê²Ã´¡£\n"NOR, freeloader);
-			message("vision",CYN + freeloader->name() + "ÖåÁËÖåÃ¼£¬ËÆºõÏë¶ÔÄãËµĞ©Ê²Ã´¡£\n"NOR, bather);
+			tell_object(freeloader, "ä»”ç»†ä¸€çœ‹ï¼Œå¯¹æ–¹å´ä¸æ˜¯å¥³å­ã€‚\n");
+			message("vision",CYN + bather->name() + "çš±äº†çš±çœ‰ï¼Œä¼¼ä¹æƒ³å¯¹ä½ è¯´äº›ä»€ä¹ˆã€‚\n"NOR, freeloader);
+			message("vision",CYN + freeloader->name() + "çš±äº†çš±çœ‰ï¼Œä¼¼ä¹æƒ³å¯¹ä½ è¯´äº›ä»€ä¹ˆã€‚\n"NOR, bather);
 			return;
 		}
 		else
 		{
 			if( !living(bather) ) return;
-			tell_object(bather, RED"Äã×ĞÏ¸Ò»¿´£¬ÌøÈë³ØÖĞµÄÈË¾¹ÊÇÃûÄĞ×Ó£¬ËûÕı¶Ô×ÅÄã²»»³ºÃÒâµØ¿úÊÓ×Å£¡\n"NOR);
-			tell_object(bather, HIR"ÄãÖ»ÑªÆøÉÏ³å£¬¶ÙÊ±¸Ğµ½Ò»ÕóĞıÔÎ£¡\n"NOR);             
-			tell_object(freeloader, RED"\n×ĞÏ¸Ò»¿´£¬Ïó³ØÖĞãåÔ¡µÄÊÇÃûÅ®×Ó£¬Ëı¼¸ºõÒª±»ÄãÏÅµÃÔÎÁË¹ıÈ¥¡£\n"NOR);
+			tell_object(bather, RED"ä½ ä»”ç»†ä¸€çœ‹ï¼Œè·³å…¥æ± ä¸­çš„äººç«Ÿæ˜¯åç”·å­ï¼Œä»–æ­£å¯¹ç€ä½ ä¸æ€€å¥½æ„åœ°çª¥è§†ç€ï¼\n"NOR);
+			tell_object(bather, HIR"ä½ åªè¡€æ°”ä¸Šå†²ï¼Œé¡¿æ—¶æ„Ÿåˆ°ä¸€é˜µæ—‹æ™•ï¼\n"NOR);             
+			tell_object(freeloader, RED"\nä»”ç»†ä¸€çœ‹ï¼Œè±¡æ± ä¸­æ²æµ´çš„æ˜¯åå¥³å­ï¼Œå¥¹å‡ ä¹è¦è¢«ä½ å“å¾—æ™•äº†è¿‡å»ã€‚\n"NOR);
 			bather->set("jing", 0);
 			bather->set_temp("been_looked", 1);
 			bather->start_busy(1);
@@ -128,33 +128,33 @@ void disturb(object bather, object freeloader)
 			{
 				bather->unconcious();
 				bather->set_temp("apply/short", ({ bather->query("title")+ " "
-				+ bather->query("name")+ "("+capitalize(bather->query("id"))+")"+HIW" <È«Âã>"NOR }) );
+				+ bather->query("name")+ "("+capitalize(bather->query("id"))+")"+HIW" <å…¨è£¸>"NOR }) );
 			}
 			return;
 		}
 	}
-	if( freeloader->query("gender") == "Å®ĞÔ" )
+	if( freeloader->query("gender") == "å¥³æ€§" )
 	{
-		if( bather->query("gender") == "Å®ĞÔ" )
+		if( bather->query("gender") == "å¥³æ€§" )
 		{
-			tell_object(bather, "Äã×ĞÏ¸Ò»¿´£¬Ô­À´¶Ô·½Ò²ÊÇ¸öÅ®×Ó¡£\n");
-			tell_object(freeloader, "×ĞÏ¸Ò»¿´£¬Ô­À´¶Ô·½Ò²ÊÇ¸öÅ®×Ó¡£\n");
-			message("vision", CYN + freeloader->name() + "¶Ô×ÅÄãÇáÇáÒ»Ğ¦¡£\n"NOR, bather);
+			tell_object(bather, "ä½ ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥å¯¹æ–¹ä¹Ÿæ˜¯ä¸ªå¥³å­ã€‚\n");
+			tell_object(freeloader, "ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥å¯¹æ–¹ä¹Ÿæ˜¯ä¸ªå¥³å­ã€‚\n");
+			message("vision", CYN + freeloader->name() + "å¯¹ç€ä½ è½»è½»ä¸€ç¬‘ã€‚\n"NOR, bather);
 			return;
 		}
 		else
 		{
-			tell_object(freeloader, "×ĞÏ¸Ò»¿´£¬Ô­À´¶Ô·½¾¹ÊÇÎ»£®£®£®£®\n");
-			if( bather->query("gender") == "ÄĞĞÔ" )
-				tell_object(bather, HIY"Äã×ĞÏ¸Ò»¿´£¬Ìø½øÀ´µÄ¾¹ÊÇÅ®×Ó£¡£¡\n"NOR);
-			else 	tell_object(bather, "Äã×ĞÏ¸Ò»¿´£¬Ìø½øÀ´µÄÊÇÃûÅ®×Ó¡£\n"NOR);
+			tell_object(freeloader, "ä»”ç»†ä¸€çœ‹ï¼ŒåŸæ¥å¯¹æ–¹ç«Ÿæ˜¯ä½ï¼ï¼ï¼ï¼\n");
+			if( bather->query("gender") == "ç”·æ€§" )
+				tell_object(bather, HIY"ä½ ä»”ç»†ä¸€çœ‹ï¼Œè·³è¿›æ¥çš„ç«Ÿæ˜¯å¥³å­ï¼ï¼\n"NOR);
+			else 	tell_object(bather, "ä½ ä»”ç»†ä¸€çœ‹ï¼Œè·³è¿›æ¥çš„æ˜¯åå¥³å­ã€‚\n"NOR);
 			do_halt(freeloader);
 			return;
 		}
 	}
 	else
 	{
-		tell_object(bather, RED"ÄãÍ»È»¼ûµ½ÓĞÍâÈËÌø½øÀ´£¬ºŞ²»µÃÕÒ¸öµØ·ì×ê½øÈ¥¡£\n"NOR);
+		tell_object(bather, RED"ä½ çªç„¶è§åˆ°æœ‰å¤–äººè·³è¿›æ¥ï¼Œæ¨ä¸å¾—æ‰¾ä¸ªåœ°ç¼é’»è¿›å»ã€‚\n"NOR);
 		do_halt(bather);
 		bather->set("jing", 0);
 		bather->start_busy(1);
@@ -176,10 +176,10 @@ int do_swim(object me)
 
 	if( me->query_con() < 25 )
 	{
-		tell_object(me, HIB"²»ÁÏ³ØË®±ùÀä´Ì¹Ç£¬ÄãÃÍµÃÒ»²ü£¬Á¬Ã¦ÅÀ³ö³ØÍâ£¡\n"NOR);
-		tell_room(environment(me), me->name()+"¶³µÃÈ«Éí¶ßàÂ£¬¼±¼±Ã¦Ã¦µØÓÖÅÀÁËÉÏÈ¥£¡\n", ({ me }));
+		tell_object(me, HIB"ä¸æ–™æ± æ°´å†°å†·åˆºéª¨ï¼Œä½ çŒ›å¾—ä¸€é¢¤ï¼Œè¿å¿™çˆ¬å‡ºæ± å¤–ï¼\n"NOR);
+		tell_room(environment(me), me->name()+"å†»å¾—å…¨èº«å“†å—¦ï¼Œæ€¥æ€¥å¿™å¿™åœ°åˆçˆ¬äº†ä¸Šå»ï¼\n", ({ me }));
 		me->move(__DIR__"xixiang");
-		tell_room(environment(me), me->name()+"¼±¼±Ã¦Ã¦µØ´ÓÏ´Ïó³ØÖĞÌøÁËÉÏÀ´£¬È«Éí·¢°×£¬Ö±´ò¶ßàÂ£¡\n", ({ me }));
+		tell_room(environment(me), me->name()+"æ€¥æ€¥å¿™å¿™åœ°ä»æ´—è±¡æ± ä¸­è·³äº†ä¸Šæ¥ï¼Œå…¨èº«å‘ç™½ï¼Œç›´æ‰“å“†å—¦ï¼\n", ({ me }));
 		me->start_busy(2);
 		me->receive_damage("jingli", 100);
 		me->receive_damage("qi", 100);
@@ -194,17 +194,17 @@ int do_swim(object me)
 	if( time > 30 ) time = 30;
 	if ( t > 1200 || t < 300 )
 	{
-		write(HIB"´ËÊ±Ò¹ÉîÈË¾²£¬Äã¾¡ÇéµØÔÚ³ØÖĞÏ·Ë®£¬Ïë½èÇåÁ¹µÄ³ØË®½â³ıÒ»ÌìµÄÆ£ÀÍ¡£\n"NOR);	
+		write(HIB"æ­¤æ—¶å¤œæ·±äººé™ï¼Œä½ å°½æƒ…åœ°åœ¨æ± ä¸­æˆæ°´ï¼Œæƒ³å€Ÿæ¸…å‡‰çš„æ± æ°´è§£é™¤ä¸€å¤©çš„ç–²åŠ³ã€‚\n"NOR);	
 		call_out("out_of_pool", time, me, 1);
 	}
 	else
 	{
-		write(HIB"³ØË®ÇåÁ¹£¬Äã¾¡ÇéµØÔÚ³ØÖĞÏ·Ë®£¬µ«ÈÔÊ±Ê±µ£ĞÄÊÇ·ñÓĞÈËÂ·¹ı¿úÊÓ¡£\n"NOR);
+		write(HIB"æ± æ°´æ¸…å‡‰ï¼Œä½ å°½æƒ…åœ°åœ¨æ± ä¸­æˆæ°´ï¼Œä½†ä»æ—¶æ—¶æ‹…å¿ƒæ˜¯å¦æœ‰äººè·¯è¿‡çª¥è§†ã€‚\n"NOR);
 		call_out("out_of_pool", time, me, 0);
 	}
 
 	me->set_temp("xixiang_swimming", 1);
-	me->set_temp("apply/short", ({ me->query("title")+ " " +me->query("name")+"("+capitalize(me->query("id"))+")"+HIC" <ÓÎË®ÖĞ>"NOR}));
+	me->set_temp("apply/short", ({ me->query("title")+ " " +me->query("name")+"("+capitalize(me->query("id"))+")"+HIC" <æ¸¸æ°´ä¸­>"NOR}));
 
         me->start_busy(6);      
         return 1;         
@@ -221,20 +221,20 @@ void out_of_pool(object me, int recover)
 
 	if( !living(me) )
 	{
-		message_vision("Ò»ÕóÇå·ç´µÀ´£¬½«»èÃÔµÄ$NÍÆµ½³Ø±ß¡£\n", me);
+		message_vision("ä¸€é˜µæ¸…é£å¹æ¥ï¼Œå°†æ˜è¿·çš„$Næ¨åˆ°æ± è¾¹ã€‚\n", me);
 		me->move(__DIR__"xixiang");
-		message_vision("Ò»ÕóĞìĞìÇå·ç´µÀ´£¬½«»èÃÔµÄ$NÍÆµ½ÁË³Ø±ß¡£\n", me);
+		message_vision("ä¸€é˜µå¾å¾æ¸…é£å¹æ¥ï¼Œå°†æ˜è¿·çš„$Næ¨åˆ°äº†æ± è¾¹ã€‚\n", me);
 		return;
 	}
 	if( recover )
 	{
-		tell_object(me, GRN"¹ıÁËÒ»Ğ¡»á¶ù£¬ÄãÅÀ³ö³ØÍâ£¬Ö»¾õÆ£ÀÍ¾¡È¥£¬¾«Éñ¶¶ËÓ¡£\n"NOR);
-		message("vision", "Ö»¼û"+me->name()+"¾«Éñ»À·¢µØÅÀÉÏ³Ø±ß£¬´©ºÃÒÂ·ş¡£\n",
+		tell_object(me, GRN"è¿‡äº†ä¸€å°ä¼šå„¿ï¼Œä½ çˆ¬å‡ºæ± å¤–ï¼Œåªè§‰ç–²åŠ³å°½å»ï¼Œç²¾ç¥æŠ–æ“ã€‚\n"NOR);
+		message("vision", "åªè§"+me->name()+"ç²¾ç¥ç„•å‘åœ°çˆ¬ä¸Šæ± è¾¹ï¼Œç©¿å¥½è¡£æœã€‚\n",
 			environment(me), ({ me }) );
 		me->move(__DIR__"xixiang");
-		message("vision", "Ö»¼û"+me->name()+"¾«Éñ»À·¢µØ´ÓÏ´Ïó³ØÖĞÅÀÁËÉÏÀ´¡£\n",
+		message("vision", "åªè§"+me->name()+"ç²¾ç¥ç„•å‘åœ°ä»æ´—è±¡æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n",
 			environment(me), ({ me }) );
-		if( me->query("gender") == "Å®ĞÔ" )
+		if( me->query("gender") == "å¥³æ€§" )
 		{
 			me->add("jing", (me->query("eff_jing") - me->query("jing"))/2);
 			me->add("qi", (me->query("eff_qi") - me->query("qi"))/2);
@@ -253,14 +253,14 @@ void out_of_pool(object me, int recover)
 	}
 	else
 	{
-		tell_object(me, GRN"¹ıÁËÒ»Ğ¡»á¶ù£¬Äã¾õµÃÔÚ³ØÖĞÓÎÀÛÁË£¬ÅÀ»Ø³ØÍâ¡£\n"NOR);
-		message("vision", "Ö»¼û"+me->name()+"ÅÀ³öÏ´Ïó³Ø£¬´©ºÃÒÂ·ş¡£\n",
+		tell_object(me, GRN"è¿‡äº†ä¸€å°ä¼šå„¿ï¼Œä½ è§‰å¾—åœ¨æ± ä¸­æ¸¸ç´¯äº†ï¼Œçˆ¬å›æ± å¤–ã€‚\n"NOR);
+		message("vision", "åªè§"+me->name()+"çˆ¬å‡ºæ´—è±¡æ± ï¼Œç©¿å¥½è¡£æœã€‚\n",
 			environment(me), ({ me }) );
 		me->move(__DIR__"xixiang");
-		message("vision", "Ö»¼û"+me->name()+"´ÓÏ´Ïó³ØÖĞÅÀÁËÉÏÀ´¡£\n",
+		message("vision", "åªè§"+me->name()+"ä»æ´—è±¡æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n",
 			environment(me), ({ me }) );
 		me->improve_skill("force", random(me->query_con()/5));
-		if( me->query("gender") == "Å®ĞÔ" )
+		if( me->query("gender") == "å¥³æ€§" )
 			me->improve_skill("beauty", 5*me->query_per());
 	}
 	if( me->query_skill("swimming") < 125 ) me->improve_skill("swimming", random(me->query("dex"))*random(me->query_skill("swimming")/4)+1 );
@@ -270,7 +270,7 @@ void out_of_pool(object me, int recover)
 int do_halt(object me)
 {
 	if( !me ) me = this_player();
-//	if( me->is_busy() ) return notify_fail("Äã»¹ÔÚÃ¦ÄØ¡£\n");
+//	if( me->is_busy() ) return notify_fail("ä½ è¿˜åœ¨å¿™å‘¢ã€‚\n");
 
 	me->delete_temp("xixiang_swimming");
 	me->delete_temp("apply/short");
@@ -278,20 +278,20 @@ int do_halt(object me)
 	if( me->query_temp("been_looked") )
 	{
 		me->delete_temp("been_looked");
-		tell_object(me, "ÄãÁ¬Ã¦´©ºÃÒÂ·ş£¬ÅÀ³öÏ´Ïó³Ø¡£\n");
-		message("vision", me->name()+"´Ò´ÒÃ¦Ã¦´©ºÃÒÂÎï£¬ÅÀÉÏ³Ø±ß¡£\n",
+		tell_object(me, "ä½ è¿å¿™ç©¿å¥½è¡£æœï¼Œçˆ¬å‡ºæ´—è±¡æ± ã€‚\n");
+		message("vision", me->name()+"åŒ†åŒ†å¿™å¿™ç©¿å¥½è¡£ç‰©ï¼Œçˆ¬ä¸Šæ± è¾¹ã€‚\n",
 			environment(me), ({ me }) );
 		me->move(__DIR__"xixiang");
-		message("vision", me->name()+"Ò»Á³Æø¼«°Ü»µµØ´ÓÏ´Ïó³ØÖĞÅÀÁËÉÏÀ´¡£\n",
+		message("vision", me->name()+"ä¸€è„¸æ°”æè´¥ååœ°ä»æ´—è±¡æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n",
 			environment(me), ({ me }) );
 		return 1;
 	}
 
-	tell_object(me, "ÄãÁ¬Ã¦ÅÀÉÏ³Ø±ß´©ºÃÒÂ·ş¡£\n");
-	message("vision", me->name()+"¼±Ã¦ÅÀÉÏ³Ø±ß´©ºÃÒÂ·ş¡£\n",
+	tell_object(me, "ä½ è¿å¿™çˆ¬ä¸Šæ± è¾¹ç©¿å¥½è¡£æœã€‚\n");
+	message("vision", me->name()+"æ€¥å¿™çˆ¬ä¸Šæ± è¾¹ç©¿å¥½è¡£æœã€‚\n",
 			environment(me), ({ me }) );
 	me->move(__DIR__"xixiang");
-	message("vision", me->name()+"¼±¼±Ã¦Ã¦µØ´ÓÏ´Ïó³ØÖĞÅÀÁËÉÏÀ´¡£\n",
+	message("vision", me->name()+"æ€¥æ€¥å¿™å¿™åœ°ä»æ´—è±¡æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n",
 			environment(me), ({ me }) );
 	return 1;         
 }

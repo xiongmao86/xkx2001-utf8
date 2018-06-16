@@ -1,5 +1,5 @@
 //Cracked by Roath
-// mianzhao.c ÃæÕÖ
+// mianzhao.c é¢ç½©
 // modified by cleansword 1996/6/14
 
 #include <armor.h>
@@ -8,16 +8,16 @@ inherit HEAD;
 
 void create()
 {
-        set_name("ÃæÕÖ", ({ "mian zhao", "mask" }) );
+        set_name("é¢ç½©", ({ "mian zhao", "mask" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-		set("long", "ÕâÊÇ¸öºÚ²¼Í·Ì×£¬ÄÜ°ÑÕû¸öÄÔ´üÌ×ÆğÀ´£¬Ö»Â¶³öÁ½¸öÑÛ¾¦¡£\n");
+                set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸ªé»‘å¸ƒå¤´å¥—ï¼Œèƒ½æŠŠæ•´ä¸ªè„‘è¢‹å¥—èµ·æ¥ï¼Œåªéœ²å‡ºä¸¤ä¸ªçœ¼ç›ã€‚\n");
                 set("material", "cloth");
                 set("armor_prop/armor", 1);
-		set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+		set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
         }
         setup();
 }
@@ -32,9 +32,9 @@ int do_wear(string arg)
 {
 	if (!arg || (arg != "mian zhao" && arg != "mask") ) return 0;
 
-	this_player()->set_temp("apply/name",  ({"ÃÉÃæÈË"}));
-	this_player()->set_temp("apply/short", ({"ÃÉÃæÈË(Mengmian ren)"}));
-	this_player()->set_temp("apply/long",  ({"Ò»¸öºÚ²¼ÃÉÃæ£¬ÉñÃØÙâÙâµÄ¼Ò»ï¡£\n"}));
+	this_player()->set_temp("apply/name",  ({"è’™é¢äºº"}));
+	this_player()->set_temp("apply/short", ({"è’™é¢äºº(Mengmian ren)"}));
+	this_player()->set_temp("apply/long",  ({"ä¸€ä¸ªé»‘å¸ƒè’™é¢ï¼Œç¥ç§˜å…®å…®çš„å®¶ä¼™ã€‚\n"}));
 
 	return 0;
 }

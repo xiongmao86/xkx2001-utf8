@@ -1,5 +1,5 @@
 //Cracked by Roath
- // ʯ�ݶ�
+ // 石屋洞
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -8,11 +8,11 @@
 inherit ROOM;
 
 void create()
-{   set("short", "ʯ�ݶ�");
+{   set("short", "石屋洞");
     set("long", @LONG
-ɽ·����ʯ�ݶ���ʯ�ݶ��������ж������������������ߴ������
-�ྻ�������Ͽ���խ��״�縡�ݡ����ϱ㵽������¤��ɽ·�ľ�ͷ����
-һ���ɱ����ϵĴ����
+山路旁是石屋洞。石屋洞，洞中有洞，洞洞相连。主洞高大宽敞，
+洁净明亮，上宽下窄，状如浮螺。西上便到了满觉陇；山路的尽头连着
+一条由北至南的大道。
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */ 

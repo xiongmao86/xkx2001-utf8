@@ -6,17 +6,17 @@ inherit CLUB;
 
 void create()
 {
-       set_name("¶À×ãÍ­ÈË", ({"tongren"}));
+       set_name("ç‹¬è¶³é“œäºº", ({"tongren"}));
        set_weight(10000);
        if( clonep() )
               set_default_object(__FILE__);
        else {
-              set("long", "ÕâÍ­ÈËÖ»ÓĞ¶À×ã£¬ÊÖÈ´ÓĞÒ»¶Ô£¬Ë«ÊÖ¹ı¶¥ºÏÂ££¬ÕıÊÇÒ»°ÑÀ÷º¦µÄ±ÕÑ¨¾ï¡£\n");
-              set("unit", "¸ö");
+              set("long", "è¿™é“œäººåªæœ‰ç‹¬è¶³ï¼Œæ‰‹å´æœ‰ä¸€å¯¹ï¼ŒåŒæ‰‹è¿‡é¡¶åˆæ‹¢ï¼Œæ­£æ˜¯ä¸€æŠŠå‰å®³çš„é—­ç©´æ’…ã€‚\n");
+              set("unit", "ä¸ª");
               set("value", 2000);
               set("material", "bonze"); 
-              set("wield_msg","$N´Ó±³ÉÏĞ¶ÏÂ¶À½ÅÍ­ÈËÎÕÔÚÊÖÖĞ¡£\n");
-              set("unwield_msg","$N°Ñ¶À×ãÍ­ÈË·ÅÔÚ±³ÉÏ¡£\n");
+              set("wield_msg","$Nä»èƒŒä¸Šå¸ä¸‹ç‹¬è„šé“œäººæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+              set("unwield_msg","$NæŠŠç‹¬è¶³é“œäººæ”¾åœ¨èƒŒä¸Šã€‚\n");
        }
 
        init_club(50);

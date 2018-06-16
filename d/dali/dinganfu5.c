@@ -7,11 +7,11 @@ int serve();
 
 void create()
 {
-	set("short", "»ï·¿");
+	set("short", "ä¼™æˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇ¹ÙÕ¬µÄ»ï·¿£¬×¨Îª×¡ÔÚÕâÀïµÄ¹ÙÔ±ÃÇÌá¹©»ïÊ³(serve)¡£Ò»ÈºÉí×Å¾ü
-·şµÄ¹ÙÔ±ÕıÎ§×Å×À×Ó¾Í²Í£¬Æ·³¢´óÀíÌØ²úµÄ²ËëÈ¡£¹ÙÔ±ÃÇÔÚÕâÀï¿ÉÒÔ²»ÊÜÏŞÖÆµØ
-³ÔºÈÒª²Ë£¬µ«²»Ğí°ÑÊ³Îï´ø³ö³ø·¿¡£
+è¿™é‡Œæ˜¯å®˜å®…çš„ä¼™æˆ¿ï¼Œä¸“ä¸ºä½åœ¨è¿™é‡Œçš„å®˜å‘˜ä»¬æä¾›ä¼™é£Ÿ(serve)ã€‚ä¸€ç¾¤èº«ç€å†›
+æœçš„å®˜å‘˜æ­£å›´ç€æ¡Œå­å°±é¤ï¼Œå“å°å¤§ç†ç‰¹äº§çš„èœè‚´ã€‚å®˜å‘˜ä»¬åœ¨è¿™é‡Œå¯ä»¥ä¸å—é™åˆ¶åœ°
+åƒå–è¦èœï¼Œä½†ä¸è®¸æŠŠé£Ÿç‰©å¸¦å‡ºå¨æˆ¿ã€‚
 LONG);
 	set("exits", ([
 		"north" : __DIR__"dinganfu2",
@@ -30,9 +30,9 @@ int do_serve()
 	object ob,me;
 	me=this_player();
 
-	message_vision("$NÏò³ø×ÓÒªĞ©Ê³Îï³ÔºÈ¡£\n", me);
+	message_vision("$Nå‘å¨å­è¦äº›é£Ÿç‰©åƒå–ã€‚\n", me);
 
-	if (me->query("family/family_name") != "´óÀí¶Î¼Ò"
+	if (me->query("family/family_name") != "å¤§ç†æ®µå®¶"
 		&& !me->query("dali/employee")) return 1;
 
 	if (!present("guoqiao mixian", environment(me))
@@ -55,9 +55,9 @@ int do_serve()
 				break;
 		}    
 		ob->move(environment(me));
-		message_vision("³ø×Ó¶Ë³ö"+ob->name()+"¸ø$N¡£¡°ÄúÂıÂı³Ô£¬²»¹»»¹ÓĞ¡£¡±\n", me);
+		message_vision("å¨å­ç«¯å‡º"+ob->name()+"ç»™$Nã€‚â€œæ‚¨æ…¢æ…¢åƒï¼Œä¸å¤Ÿè¿˜æœ‰ã€‚â€\n", me);
 	}
-	else message_vision("³ø×Ó¶Ô$NËµµÀ£ºÄã²»ÊÇÓĞ¶«Î÷³ÔÂğ£¬³ÔÍêÔÙËµ°É¡£\n", me);
+	else message_vision("å¨å­å¯¹$Nè¯´é“ï¼šä½ ä¸æ˜¯æœ‰ä¸œè¥¿åƒå—ï¼Œåƒå®Œå†è¯´å§ã€‚\n", me);
 	
 	if (!present("puer cha", environment(me))
 		&& !present("qiguo ji", environment(me))
@@ -74,9 +74,9 @@ int do_serve()
 				break;
 		}
 		ob->move(environment(me));
-		message_vision("³ø×Ó¶Ë³ö"+ob->name()+"¸ø$N¡£¡°ÄúÂıÂıºÈ£¬²»¹»»¹ÓĞ¡£¡±\n", me);
+		message_vision("å¨å­ç«¯å‡º"+ob->name()+"ç»™$Nã€‚â€œæ‚¨æ…¢æ…¢å–ï¼Œä¸å¤Ÿè¿˜æœ‰ã€‚â€\n", me);
 	}
-	else message_vision("³ø×Ó¶Ô$NËµµÀ£ºÄã²»ÊÇÓĞ¶«Î÷ºÈÂğ£¿ºÈÍêÔÙËµ°É¡£\n", me);
+	else message_vision("å¨å­å¯¹$Nè¯´é“ï¼šä½ ä¸æ˜¯æœ‰ä¸œè¥¿å–å—ï¼Ÿå–å®Œå†è¯´å§ã€‚\n", me);
 	return 1;
 }
 
@@ -87,6 +87,6 @@ int valid_leave(object me, string dir)
 		|| present("qiguo ji", me)
 		|| present("ye er ba", me)
 		|| present("puer cha", me))
-		return notify_fail("³ø×ÓÀ¹×ÅÄãËµ£º¡°Äú»¹ÊÇ³ÔÍêÔÙ×ß°É¡£¡±\n");
+		return notify_fail("å¨å­æ‹¦ç€ä½ è¯´ï¼šâ€œæ‚¨è¿˜æ˜¯åƒå®Œå†èµ°å§ã€‚â€\n");
 	return ::valid_leave(me, dir);
 }

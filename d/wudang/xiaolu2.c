@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaolu2.c ÁÖ¼äÐ¡¾¶
+// xiaolu2.c æž—é—´å°å¾„
 // by Xiang
 // Modified by xQin 2/00
 // xQin 11/00
@@ -10,10 +10,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", GRN"ÁÖ¼äÐ¡¾¶"NOR);
+        set("short", GRN"æž—é—´å°å¾„"NOR);
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõÐ¡¾¶ÉÏ£¬Á½ÅÔÖÖÂúÁËÖñ×Ó£¬ÐÞóòÉ­É­£¬ÂÌÒñÂúµØ£¬³ýÁËÖñÒ¶
-ÉùºÍÄñÃùÉù£¬Ìý²»µ½±ðµÄ¶¯¾²¡£ÄÏÃæËÆºõÓÐÒ»ÌõºóÉ½Ð¡Â·¡£
+ä½ èµ°åœ¨ä¸€æ¡å°å¾„ä¸Šï¼Œä¸¤æ—ç§æ»¡äº†ç«¹å­ï¼Œä¿®ç¯æ£®æ£®ï¼Œç»¿è«æ»¡åœ°ï¼Œé™¤äº†ç«¹å¶
+å£°å’Œé¸Ÿé¸£å£°ï¼Œå¬ä¸åˆ°åˆ«çš„åŠ¨é™ã€‚å—é¢ä¼¼ä¹Žæœ‰ä¸€æ¡åŽå±±å°è·¯ã€‚
 LONG
         );
 

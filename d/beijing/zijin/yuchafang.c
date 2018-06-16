@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���跿");
+	set("short", "御茶房");
 	set("long", @LONG
-������̫���ֵ��,����̫����������ʱ�Ⱥ�ʵ۵����١�
+这里是太监的值房,几个太监在这里随时等候皇帝的宣召。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

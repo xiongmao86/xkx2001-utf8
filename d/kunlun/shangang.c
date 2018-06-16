@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山岗");
 	set("long", @LONG
-���ϳ������۲ݣ���Զ����һȺɽ�����ڳԲݡ�������һ͹�壬��ɽ
-ʯ��Ϊ��ɫ����ĺʱ�֣��ر���Ŀ��ɽ���ǳ���Ϊ���塣
+地上长满了嫩草，不远处有一群山羊正在吃草。北面有一凸峰，因山
+石本为赤色，日暮时分，特别醒目。山樵们称其为神火峰。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

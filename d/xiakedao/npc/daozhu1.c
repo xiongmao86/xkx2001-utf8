@@ -1,5 +1,5 @@
 //Cracked by Roath
-// daozhu1.c ÏÀ¿ÍµºÁúµºÖ÷
+// daozhu1.c ä¾ å®¢å²›é¾™å²›ä¸»
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ int ask_leave();
 
 void create()
 {
-        set_name("ÁúµºÖ÷", ({ "long daozhu", "long", "daozhu"}));
-        set("long", "Ëû÷ŞÃ¼È«°×£¬Á³É«ºìÈó£¬ÓĞÈçº¢Í¯¡£\n");
+        set_name("é¾™å²›ä¸»", ({ "long daozhu", "long", "daozhu"}));
+        set("long", "ä»–é¬“çœ‰å…¨ç™½ï¼Œè„¸è‰²çº¢æ¶¦ï¼Œæœ‰å¦‚å­©ç«¥ã€‚\n");
         set("
-gender", "ÄĞĞÔ");
+gender", "ç”·æ€§");
         set("age", 70);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -21,7 +21,7 @@ gender", "ÄĞĞÔ");
         set("int", 35);
         set("con", 25);
         set("dex", 25);
-        set("race", "ÈËÀà");    
+        set("race", "äººç±»");    
         set("max_qi", 2000);
         set("qi", 2000);
         set("max_jing", 2000);
@@ -43,8 +43,8 @@ gender", "ÄĞĞÔ");
         set_skill("sword", 200);
         
         set("inquiry", ([
-                        "ÖĞÔ­"   :      (: ask_leave :),
-                        "Àëµº"   :      (: ask_leave :),
+                        "ä¸­åŸ"   :      (: ask_leave :),
+                        "ç¦»å²›"   :      (: ask_leave :),
                 ]));
         setup();
 }
@@ -71,16 +71,16 @@ int greeting(object me)
 
 // xbc added pigging experience here:
 	/*if ((int)me->query("pig_new/played") >= 30) {
-		say("ÁúµºÌ§Í·ÍûÁËÄãÒ»ÑÛ£¬ËµµÀ£ºÈ¥ÖĞÔ­¹°Öí°¡£¿ºÇºÇºÇ¡­¡­\n");
-        	me->set_temp("marks/Àë", 1);
+		say("é¾™å²›æŠ¬å¤´æœ›äº†ä½ ä¸€çœ¼ï¼Œè¯´é“ï¼šå»ä¸­åŸæ‹±çŒªå•Šï¼Ÿå‘µå‘µå‘µâ€¦â€¦\n");
+        	me->set_temp("marks/ç¦»", 1);
 		return 1;
         }*/
         if ((int)me->query("combat_exp") < 250)
-        {       say("ÁúµºÌ§Í·ÍûÁËÄãÒ»ÑÛ£¬ËµµÀ£º¾­ÑéÉĞÇ³¡£\n");
+        {       say("é¾™å²›æŠ¬å¤´æœ›äº†ä½ ä¸€çœ¼ï¼Œè¯´é“ï¼šç»éªŒå°šæµ…ã€‚\n");
                 return 0;
         }
         if (sizeof(skl) < 5)
-        {       say("ÁúµºÌ§Í·ÍûÁËÄãÒ»ÑÛ£¬ËµµÀ£º¹¦·ò²»¹»¡£\n");
+        {       say("é¾™å²›æŠ¬å¤´æœ›äº†ä½ ä¸€çœ¼ï¼Œè¯´é“ï¼šåŠŸå¤«ä¸å¤Ÿã€‚\n");
                 return 0;
         }
         flag = 0;
@@ -89,15 +89,15 @@ int greeting(object me)
                 {       flag = flag + 1;       }
         }
         if (flag <= 5)
-        {       say("ÁúµºÌ§Í·ÍûÁËÄãÒ»ÑÛ£¬ËµµÀ£º¹¦·ò²»¹»¡£\n");
+        {       say("é¾™å²›æŠ¬å¤´æœ›äº†ä½ ä¸€çœ¼ï¼Œè¯´é“ï¼šåŠŸå¤«ä¸å¤Ÿã€‚\n");
                 return 0;
         }
-        say("ÁúµºÌ§Í·ÍûÁËÄãÒ»ÑÛ£¬Î¢Î¢Ò»Ğ¦µÀ£ºÄãÈ¥°É¡£\n");
-        me->set_temp("marks/Àë", 1);
+        say("é¾™å²›æŠ¬å¤´æœ›äº†ä½ ä¸€çœ¼ï¼Œå¾®å¾®ä¸€ç¬‘é“ï¼šä½ å»å§ã€‚\n");
+        me->set_temp("marks/ç¦»", 1);
 }
 
 int ask_leave()
 {       
-        say("ÁúµºÖ÷¶ÔÄã²»Àí²»²Ç£¬Ö»ÊÇÄıÍû×ÅÊ¯±Ú³öÉñ¡£\n");
+        say("é¾™å²›ä¸»å¯¹ä½ ä¸ç†ä¸ç¬ï¼Œåªæ˜¯å‡æœ›ç€çŸ³å£å‡ºç¥ã€‚\n");
         return 1;
 }

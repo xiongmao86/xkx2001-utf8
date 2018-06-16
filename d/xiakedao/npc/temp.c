@@ -2,7 +2,7 @@
 
 inherit NPC;
 string* menpai = ({
-	"µÀÍ¯ËµµÀ£º\n",
+	"é“ç«¥è¯´é“ï¼š\n",
 	"         \n",
 	"         \n",
 	"         \n",
@@ -11,15 +11,15 @@ string* menpai = ({
 int ask_menpai(string* message);
 
 	set("inquiry", ([
-			"Îäµ±"   :  (: ask_menpai, menpai:),
+			"æ­¦å½“"   :  (: ask_menpai, menpai:),
 		]));
 
 void greeting(object me)
 {	
-	say("µÀÍ¯Ğ¦×ÅËµµÀ£ºÕâÎ»" + 
+	say("é“ç«¥ç¬‘ç€è¯´é“ï¼šè¿™ä½" + 
 			RANK_D->query_respect(me) + "\n");
-	say("µÀÍ¯ËµµÀ£ºÄãÓĞÊ²÷áÎÊÌâÎÊÎÒ¾ÍºÃÀ²¡£(ask dao about Îäµ±) \n");
-	say("         »ò(help wudang)¡£\n");
+	say("é“ç«¥è¯´é“ï¼šä½ æœ‰ä»€éº½é—®é¢˜é—®æˆ‘å°±å¥½å•¦ã€‚(ask dao about æ­¦å½“) \n");
+	say("         æˆ–(help wudang)ã€‚\n");
  }
 
 #include "/d/xiakedao/npc/xkdnpc.h"

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// baituo python °×ÍÕÉ½Éß¹ÈµÄ´óÉß¡¢òşÉß
+// baituo python ç™½é©¼å±±è›‡è°·çš„å¤§è›‡ã€èŸ’è›‡
 // by maco 
 #include <ansi.h>
 
@@ -18,26 +18,26 @@ void create()
 	switch( poison )
 	{
 	case 0:
-		set_name("¾Şòş", ({ "ju mang", "she", "mang", "python" }) );
-		set("long", "Ò»ÌõÍë¿Ú´ÖÏ¸µÄÈı½ÇÍ·¾Şòş£¬ÓĞÁ½ÕÉ¶à³¤¡£\n");
+		set_name("å·¨èŸ’", ({ "ju mang", "she", "mang", "python" }) );
+		set("long", "ä¸€æ¡ç¢—å£ç²—ç»†çš„ä¸‰è§’å¤´å·¨èŸ’ï¼Œæœ‰ä¸¤ä¸ˆå¤šé•¿ã€‚\n");
 		set("chat_msg_combat", ({
 			(: auto_perform_chan :),
 		}));
 		break;
 	case 1:
-		set_name("´óÉß", ({ "da she", "she", "snake", "dashe" }) );
-		set("long", "Ò»ÌõÉí³¤Á½ÕÉ£¬´ÖÈçÈË±ÛµÄ´óÉß£¬È«Éí°ßìµÎåÉ«£¬Ò»¿ÅÍ·×÷Èı½ÇĞÎ£¬±ÈÈËµÄÈ­Í·»¹´ó¡£\n"
-		"Ñ°³£´óÉßÎŞ¶¾£¬´ËÉßÈç´Ë¾Ş´ó£¬È´ÊÇ¶¾Éß£¬ÊµÔÚº±¼û¡£\n");
+		set_name("å¤§è›‡", ({ "da she", "she", "snake", "dashe" }) );
+		set("long", "ä¸€æ¡èº«é•¿ä¸¤ä¸ˆï¼Œç²—å¦‚äººè‡‚çš„å¤§è›‡ï¼Œå…¨èº«æ–‘æ–“äº”è‰²ï¼Œä¸€é¢—å¤´ä½œä¸‰è§’å½¢ï¼Œæ¯”äººçš„æ‹³å¤´è¿˜å¤§ã€‚\n"
+		"å¯»å¸¸å¤§è›‡æ— æ¯’ï¼Œæ­¤è›‡å¦‚æ­¤å·¨å¤§ï¼Œå´æ˜¯æ¯’è›‡ï¼Œå®åœ¨ç½•è§ã€‚\n");
 		set("snake_poison", 340 +random(61));
 		set("chat_msg_combat", ({
 			(: auto_perform_duwu :),
 		}));
 		break;
 	case 2:
-		set_name("¶¾òş", ({ "du mang", "she", "mang", "snake", "python"}) );
-		set("long", "Ò»Ìõ°×ÉíºÚÕÂµÄ´óòşÉß£¬òşÍ·×÷Èı½ÇĞÎ£¬Í·¶¥ÉÏ¸ß¸ßÉúÁËÒ»¸ö\n"
-		"°¼°¼Í¹Í¹µÄÈâÁö£¬Éí³¤¶şÕÉ£¬´ÖÓâÊÖ±Û¡£\n"
-		"òşÉß±¾À´ÎŞ¶¾£¬ÕâÌõ´óòşÈ´ÉúµÄÈç´ËÒì×´£¬ÓÖ¾ß¾ç¶¾£¬ÊµÊÇÏ£º±¡£\n");
+		set_name("æ¯’èŸ’", ({ "du mang", "she", "mang", "snake", "python"}) );
+		set("long", "ä¸€æ¡ç™½èº«é»‘ç« çš„å¤§èŸ’è›‡ï¼ŒèŸ’å¤´ä½œä¸‰è§’å½¢ï¼Œå¤´é¡¶ä¸Šé«˜é«˜ç”Ÿäº†ä¸€ä¸ª\n"
+		"å‡¹å‡¹å‡¸å‡¸çš„è‚‰ç˜¤ï¼Œèº«é•¿äºŒä¸ˆï¼Œç²—é€¾æ‰‹è‡‚ã€‚\n"
+		"èŸ’è›‡æœ¬æ¥æ— æ¯’ï¼Œè¿™æ¡å¤§èŸ’å´ç”Ÿçš„å¦‚æ­¤å¼‚çŠ¶ï¼Œåˆå…·å‰§æ¯’ï¼Œå®æ˜¯å¸Œç½•ã€‚\n");
 		set("snake_poison", 380 +random(61));
 		set("chat_msg_combat", ({
 			(: auto_perform_chan :),
@@ -45,7 +45,7 @@ void create()
 		}));
 		break;
 	}
-	set("race", "ÉßÀà");
+	set("race", "è›‡ç±»");
 	set("age", 100);
 	set("attitude", "peaceful");
 
@@ -95,15 +95,15 @@ void hunting(object me, object ob)
 
 	if (present(ob, environment(me))) {
 		if (!ob->is_character() && ob->query("my_killer") != me->query("id")) {
-			message_vision("$NÔÚ$nÅÔ±ßÈÆÁË¼¸È¦£¬Ë»µØÒ»ÍÂĞÅ£¬ÂıÂıòêÑÑÓÎ¿ª£¬ËÆºõ²»¸ĞĞËÈ¤¡£\n", me, ob);
+			message_vision("$Nåœ¨$næ—è¾¹ç»•äº†å‡ åœˆï¼Œå˜¶åœ°ä¸€åä¿¡ï¼Œæ…¢æ…¢èœ¿èœ’æ¸¸å¼€ï¼Œä¼¼ä¹ä¸æ„Ÿå…´è¶£ã€‚\n", me, ob);
 			return;
 		}
 		else if( query_temp("hunting") && !me->is_fighting() && living(me) 
 		&& !me->is_busy() && !environment(me)->query("no_fight") ){
 
 			if(random(2) == 0) {
-			message("vision", HIR"ÄãºöÈ»ÎÅµÃÒ»ÕóĞÈ·ç£¬ÃÍ¼û"+me->name()+"ÕÅ¿ª´ó¿Ú£¬Â¶³öâ²ÑÀ£¬¼²Ïò"+ob->name()+"Ò§È¥£¡\n"NOR, environment(ob), ob);
-			tell_object(ob,HIR"Äã¶úÖĞºöÎÅË»Ë»ÉùÏì£¬Ò»³ÙÒÉ¼ä£¬İëµØĞÈ³ôÓ­Ãæ£¬"+me->name()+"ÃÍÈ»ÏòÄãÕÅ¿ÚÆËÀ´£¡\n"NOR);
+			message("vision", HIR"ä½ å¿½ç„¶é—»å¾—ä¸€é˜µè…¥é£ï¼ŒçŒ›è§"+me->name()+"å¼ å¼€å¤§å£ï¼Œéœ²å‡ºç ç‰™ï¼Œç–¾å‘"+ob->name()+"å’¬å»ï¼\n"NOR, environment(ob), ob);
+			tell_object(ob,HIR"ä½ è€³ä¸­å¿½é—»å˜¶å˜¶å£°å“ï¼Œä¸€è¿Ÿç–‘é—´ï¼Œè“¦åœ°è…¥è‡­è¿é¢ï¼Œ"+me->name()+"çŒ›ç„¶å‘ä½ å¼ å£æ‰‘æ¥ï¼\n"NOR);
 			COMBAT_D->do_attack(me, ob, me->query_temp("weapon"));
 			kill_ob(ob);
 			delete_temp("hunting");
@@ -115,7 +115,7 @@ void hunting(object me, object ob)
 			return;
 		}
 
-		else message_vision("$NÌıµ½$n¹ıÀ´µÄÉùÏ¢£¬Á¢Ê±ÅÌÇú³ÉÍÅ£¬°ºÆğÁËÍ·£¬Éì³öÑªºìµÄÉàÍ·£¬Ë»Ë»×÷Éù¡£\n", me, ob);
+		else message_vision("$Nå¬åˆ°$nè¿‡æ¥çš„å£°æ¯ï¼Œç«‹æ—¶ç›˜æ›²æˆå›¢ï¼Œæ˜‚èµ·äº†å¤´ï¼Œä¼¸å‡ºè¡€çº¢çš„èˆŒå¤´ï¼Œå˜¶å˜¶ä½œå£°ã€‚\n", me, ob);
 	}
 	return;
 }
@@ -126,35 +126,35 @@ void chaning(object me, object ob)
 	int ap, dp, pp, jingli, damage;
 
 	string *chan_msg = ({
-		HIR"\n$n°µÔË¾¢Á¦£¬Ïë½«²øÔÚÉíÉÏµÄ$N±À¶Ï¡£µ«$NÉí×Ó¿ÉÉì¿ÉËõ£¬Ö»ÂÔ¼ÓÑÓÉì£¬²¢²»»á¶Ï¡£\n"NOR,
-		HIR"\n$NÃÍÁ¦²ø½ô£¬Ö»¹¿µÃ$nÑü¹Ç¼¸ÓûÕÛ¶Ï¡£\n"NOR,
-		HIR"\n$NÉí×ÓÒ»¾íµ½$n£¬Ô½ÊÕÔ½½ô£¬ÔÙÒ²²»·Å£¬$n½¥½¥¸ø$N²øµÃ´­²»¹ıÆøÀ´¡£\n"NOR,
-		HIR"\n$n±»$N²ø×¡£¬³ıÁËÉëÒ÷Å­Âî£¬ÔÙÎŞ·´¿¹µÄÄÜÎª¡£\n"NOR,
+		HIR"\n$næš—è¿åŠ²åŠ›ï¼Œæƒ³å°†ç¼ åœ¨èº«ä¸Šçš„$Nå´©æ–­ã€‚ä½†$Nèº«å­å¯ä¼¸å¯ç¼©ï¼Œåªç•¥åŠ å»¶ä¼¸ï¼Œå¹¶ä¸ä¼šæ–­ã€‚\n"NOR,
+		HIR"\n$NçŒ›åŠ›ç¼ ç´§ï¼Œåªç®å¾—$nè…°éª¨å‡ æ¬²æŠ˜æ–­ã€‚\n"NOR,
+		HIR"\n$Nèº«å­ä¸€å·åˆ°$nï¼Œè¶Šæ”¶è¶Šç´§ï¼Œå†ä¹Ÿä¸æ”¾ï¼Œ$næ¸æ¸ç»™$Nç¼ å¾—å–˜ä¸è¿‡æ°”æ¥ã€‚\n"NOR,
+		HIR"\n$nè¢«$Nç¼ ä½ï¼Œé™¤äº†å‘»åŸæ€’éª‚ï¼Œå†æ— åæŠ—çš„èƒ½ä¸ºã€‚\n"NOR,
 	});
 	string *chan_beast_msg = ({
-		HIR"\n$NÃÍÁ¦²ø½ô£¬²»ÈÃ$nÓĞ»ú»áÌÓÍÑ¡£\n"NOR,
-		HIR"\n$NÉí×ÓÒ»¾íµ½$n£¬Ô½ÊÕÔ½½ô£¬ÔÙÒ²²»·Å£¬$n½¥½¥¸ø$N²øµÃ´­²»¹ıÆøÀ´¡£\n"NOR,
-		HIR"\n$n±»$N²ø×¡£¬ÂıÂıÊ§ÁË¿¹¾ÜÖ®Á¦£¬ÆøÏ¢Ô½À´Ô½ÊÇÎ¢Èõ¡£\n"NOR,
+		HIR"\n$NçŒ›åŠ›ç¼ ç´§ï¼Œä¸è®©$næœ‰æœºä¼šé€ƒè„±ã€‚\n"NOR,
+		HIR"\n$Nèº«å­ä¸€å·åˆ°$nï¼Œè¶Šæ”¶è¶Šç´§ï¼Œå†ä¹Ÿä¸æ”¾ï¼Œ$næ¸æ¸ç»™$Nç¼ å¾—å–˜ä¸è¿‡æ°”æ¥ã€‚\n"NOR,
+		HIR"\n$nè¢«$Nç¼ ä½ï¼Œæ…¢æ…¢å¤±äº†æŠ—æ‹’ä¹‹åŠ›ï¼Œæ°”æ¯è¶Šæ¥è¶Šæ˜¯å¾®å¼±ã€‚\n"NOR,
 	});
 
 	string *chan_snake_msg = ({
-		HIR"\n$NÃÍÁ¦²ø½ô£¬ÀÎÀÎ¹¿×¡$nµÄÆß´ç¡£\n"NOR,
-		HIR"\n$NÉí×ÓÒ»¾íµ½$n£¬Ô½ÊÕÔ½½ô£¬ÔÙÒ²²»·Å£¬$n½¥½¥¸ø$N²øµÃ´­²»¹ıÆøÀ´¡£\n"NOR,
-		HIR"\n$N½«$n½ô½ô²ø×¡£¬ÂıÂıÊ©Á¦£¬$nËäÈ»²»¶ÏÅ¤¶¯ÉßÉí£¬È´Ò²ÎŞ·¨ÍÑÀ§¡£\n"NOR,
+		HIR"\n$NçŒ›åŠ›ç¼ ç´§ï¼Œç‰¢ç‰¢ç®ä½$nçš„ä¸ƒå¯¸ã€‚\n"NOR,
+		HIR"\n$Nèº«å­ä¸€å·åˆ°$nï¼Œè¶Šæ”¶è¶Šç´§ï¼Œå†ä¹Ÿä¸æ”¾ï¼Œ$næ¸æ¸ç»™$Nç¼ å¾—å–˜ä¸è¿‡æ°”æ¥ã€‚\n"NOR,
+		HIR"\n$Nå°†$nç´§ç´§ç¼ ä½ï¼Œæ…¢æ…¢æ–½åŠ›ï¼Œ$nè™½ç„¶ä¸æ–­æ‰­åŠ¨è›‡èº«ï¼Œå´ä¹Ÿæ— æ³•è„±å›°ã€‚\n"NOR,
 	});
 	string *chan_bird_msg = ({
-		HIR"\n$NÃÍÁ¦²ø½ô£¬Ö»¹¿µÃ$nË«³á¼¸ÓûÕÛ¶Ï¡£\n"NOR,
-		HIR"\n$n±»$N²ø×¡£¬Ö¨Ö¨ÂÒ½Ğ£¬³á°ò²»Í£ÆË´ò¡£\n"NOR,
-		HIR"\n$NÓúÅÌÓú½ô£¬$nÃ«ÓğêÚÕÅ£¬½ßÁ¦Ïà¿¹£¬ÑÛ¼û²»Ö§¡£\n"NOR,
+		HIR"\n$NçŒ›åŠ›ç¼ ç´§ï¼Œåªç®å¾—$nåŒç¿…å‡ æ¬²æŠ˜æ–­ã€‚\n"NOR,
+		HIR"\n$nè¢«$Nç¼ ä½ï¼Œå±å±ä¹±å«ï¼Œç¿…è†€ä¸åœæ‰‘æ‰“ã€‚\n"NOR,
+		HIR"\n$Næ„ˆç›˜æ„ˆç´§ï¼Œ$næ¯›ç¾½è´²å¼ ï¼Œç«­åŠ›ç›¸æŠ—ï¼Œçœ¼è§ä¸æ”¯ã€‚\n"NOR,
 	});
 
 	string chan;
 	switch (ob->query("race")) {
-	case "ÈËÀà" :	chan = chan_msg[random(sizeof(chan_msg))];	break;
-	case "·ÉÇİ" :	chan = chan_bird_msg[random(sizeof(chan_bird_msg))];	break;
-	case "ÉßÀà" :	chan = chan_snake_msg[random(sizeof(chan_snake_msg))];	break;
-	case "Ò°ÊŞ" :
-	case "¼ÒĞó" :	chan = chan_beast_msg[random(sizeof(chan_beast_msg))];	break;
+	case "äººç±»" :	chan = chan_msg[random(sizeof(chan_msg))];	break;
+	case "é£ç¦½" :	chan = chan_bird_msg[random(sizeof(chan_bird_msg))];	break;
+	case "è›‡ç±»" :	chan = chan_snake_msg[random(sizeof(chan_snake_msg))];	break;
+	case "é‡å…½" :
+	case "å®¶ç•œ" :	chan = chan_beast_msg[random(sizeof(chan_beast_msg))];	break;
 	default:	return 0;
 	}
 	
@@ -168,7 +168,7 @@ void chaning(object me, object ob)
 	if(damage < 100 ) damage = 100;
 	
 	if(wizardp(ob)) 
-	tell_object(ob,sprintf("ap£º%d ,pp£º%d ,damage£º%d \n" ,ap,pp,damage));
+	tell_object(ob,sprintf("apï¼š%d ,ppï¼š%d ,damageï¼š%d \n" ,ap,pp,damage));
 
 	if(!ob) {
 		me->delete_temp("chaning");
@@ -182,20 +182,20 @@ void chaning(object me, object ob)
 		return;
 	}
 
-		if (!living(ob) ) {  //ÁÔÎï»èÁË¾ÍÒ§ËÀ
-			if(ob->query("race") == "ÈËÀà") 
-				message_vision(HIR"ÕâÊ±$nÒÑ¸ø$N²øµÃÑÙÑÙÒ»Ï¢£¬$NÕÅ¿ª´ó¿Ú£¬Ò§×¡ÁË$n£¬ÍÈ½ÅÏÈÈëÉß¿Ú£¬ÂıÂıµÄ¸øÍÌÖÁÑü¼ä£¬ÓÖÍÌÖÁĞØ¿Ú¡£\n"NOR, me, ob);
-			else message_vision(HIR"ÕâÊ±$nÒÑ¸ø$N²øµÃÑÙÑÙÒ»Ï¢£¬$NÕÅ¿ª´ó¿Ú£¬Ò»¿Ú±ã½«$nÒ§ËÀ¡£\n"NOR, me, ob);
-			ob->receive_wound("qi", (ob->query("qi")+100), "±»"+me->name()+"Ò§ËÀÁË");
-			ob->receive_damage("qi", (ob->query("qi")+100), "±»"+me->name()+"Ò§ËÀÁË");
+		if (!living(ob) ) {  //çŒç‰©æ˜äº†å°±å’¬æ­»
+			if(ob->query("race") == "äººç±»") 
+				message_vision(HIR"è¿™æ—¶$nå·²ç»™$Nç¼ å¾—å¥„å¥„ä¸€æ¯ï¼Œ$Nå¼ å¼€å¤§å£ï¼Œå’¬ä½äº†$nï¼Œè…¿è„šå…ˆå…¥è›‡å£ï¼Œæ…¢æ…¢çš„ç»™åè‡³è…°é—´ï¼Œåˆåè‡³èƒ¸å£ã€‚\n"NOR, me, ob);
+			else message_vision(HIR"è¿™æ—¶$nå·²ç»™$Nç¼ å¾—å¥„å¥„ä¸€æ¯ï¼Œ$Nå¼ å¼€å¤§å£ï¼Œä¸€å£ä¾¿å°†$nå’¬æ­»ã€‚\n"NOR, me, ob);
+			ob->receive_wound("qi", (ob->query("qi")+100), "è¢«"+me->name()+"å’¬æ­»äº†");
+			ob->receive_damage("qi", (ob->query("qi")+100), "è¢«"+me->name()+"å’¬æ­»äº†");
 			ob->delete_temp("snake_chan");
 			me->delete_temp("chaning");
 
 			return;
 		}
 
-		else if (!ob->is_character() ) {  //ÁÔÎïËÀÁË¾Í·Å¿ª
-			message_vision("$NËÉ¿ªÉí×Ó£¬·Å¿ªÁË$n£¬ËÄÏÂòêÑÑÓÎ×ß¡£\n", me, ob);
+		else if (!ob->is_character() ) {  //çŒç‰©æ­»äº†å°±æ”¾å¼€
+			message_vision("$Næ¾å¼€èº«å­ï¼Œæ”¾å¼€äº†$nï¼Œå››ä¸‹èœ¿èœ’æ¸¸èµ°ã€‚\n", me, ob);
 			ob->delete_temp("snake_chan");
 			me->delete_temp("chaning");
 			return;
@@ -203,7 +203,7 @@ void chaning(object me, object ob)
 		else {
 
 			if(ap < random(pp) || jingli < 500 ) {
-			message_vision("$NËÆºõµĞ²»¹ı$nµÄ¾¢Á¦£¬ÂıÂıËÉ¿ªÉí×Ó£¬·Å¿ªÁË$n£¬ËÄÏÂòêÑÑÓÎ×ß¡£\n", me, ob);
+			message_vision("$Nä¼¼ä¹æ•Œä¸è¿‡$nçš„åŠ²åŠ›ï¼Œæ…¢æ…¢æ¾å¼€èº«å­ï¼Œæ”¾å¼€äº†$nï¼Œå››ä¸‹èœ¿èœ’æ¸¸èµ°ã€‚\n", me, ob);
 			ob->delete_temp("snake_chan");
 			me->delete_temp("chaning");
 			}
@@ -214,8 +214,8 @@ void chaning(object me, object ob)
 			me->add("jingli", -(pp/20));
 
 			ob->add("jingli", -damage/4);
-			ob->receive_wound("qi", random(damage/10), "±»"+me->name()+"²øËÀÁË");
-			ob->receive_damage("qi", damage/2, "±»"+me->name()+"²øËÀÁË");
+			ob->receive_wound("qi", random(damage/10), "è¢«"+me->name()+"ç¼ æ­»äº†");
+			ob->receive_damage("qi", damage/2, "è¢«"+me->name()+"ç¼ æ­»äº†");
 
 			remove_call_out("chaning");
 			call_out("chaning", 1, me, ob); 
@@ -241,8 +241,8 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 	remove_call_out("chaning");
 	call_out("chaning", 1, me, victim); 
 	
-	if(victim->query("race") == "ÈËÀà") return HIR"$nÒ»¸öÊèÉñ£¬Ñü¼äÒÑ±»$N²ø×¡¡£$NËæ¼´ÔÚ$nÉíÉÏÈÆÁËÊıÔÑ£¬Á¬ÊÖ±ÛÒ²ÈÆÔÚÆäÖĞ£¬Áî$pÔÙÒ²Ã»·¨¿¹¾Ü¡£\n"NOR;
-	else return HIR"ÕâÒ»ÏÂ$nÃ»ÓĞ¶ã¿ª£¬$NÁ¢¿ÌÔÚ$pÉíÉÏÈÆÁË¼¸ÔÑ£¬$n¶ÙÊ±¶¯µ¯²»µÃ¡£\n"NOR;
+	if(victim->query("race") == "äººç±»") return HIR"$nä¸€ä¸ªç–ç¥ï¼Œè…°é—´å·²è¢«$Nç¼ ä½ã€‚$Néšå³åœ¨$nèº«ä¸Šç»•äº†æ•°åŒï¼Œè¿æ‰‹è‡‚ä¹Ÿç»•åœ¨å…¶ä¸­ï¼Œä»¤$på†ä¹Ÿæ²¡æ³•æŠ—æ‹’ã€‚\n"NOR;
+	else return HIR"è¿™ä¸€ä¸‹$næ²¡æœ‰èº²å¼€ï¼Œ$Nç«‹åˆ»åœ¨$pèº«ä¸Šç»•äº†å‡ åŒï¼Œ$né¡¿æ—¶åŠ¨å¼¹ä¸å¾—ã€‚\n"NOR;
 	}
 
 }
@@ -253,10 +253,10 @@ int convert(string arg)
 	object ob;
 
 	if (arg!="snake" && arg!="she") return 0;
-	if (me->query("family/family_name") != "°×ÍÕÉ½") 
-		return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+	if (me->query("family/family_name") != "ç™½é©¼å±±") 
+		return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ä¸ºæ–ã€‚\n");
 
-	return notify_fail(this_object()->name()+"Éí×ÓÌ«¹ı´Ö´ó£¬ÎŞ·¨»¯ÎªÉßÕÈ¡£\n");
+	return notify_fail(this_object()->name()+"èº«å­å¤ªè¿‡ç²—å¤§ï¼Œæ— æ³•åŒ–ä¸ºè›‡æ–ã€‚\n");
 }
 
 int do_struggle(string arg)
@@ -277,14 +277,14 @@ int do_struggle(string arg)
 	ap = jingli + random(jingli);
 
 	if(me->query_temp("struggle_snake") > 4) {
-		message_vision(HIW"\n$NÓÃÁ¦ÕõÁËÒ»Õõ£¬Ïë°ÚÍÑ²ø×¡Éí×ÓµÄ$n.....\n"NOR, me, snake);
-		message_vision(HIR"\n²»ÁÏ$NÉí×Ó¶¯µÃÌ«À÷º¦£¬¼¤Å­ÁË²ø×¡ÁË$PµÄ$n£¬Ò»¿Ú±ãÒ§×¡$PµÄÑÊºí£¡\n"NOR, me, snake);
-		me->receive_wound("qi", random(ap/2), "±»"+me->name()+"Ò§ËÀÁË");
-		me->receive_damage("qi", ap/2, "±»"+me->name()+"Ò§ËÀÁË");
+		message_vision(HIW"\n$Nç”¨åŠ›æŒ£äº†ä¸€æŒ£ï¼Œæƒ³æ‘†è„±ç¼ ä½èº«å­çš„$n.....\n"NOR, me, snake);
+		message_vision(HIR"\nä¸æ–™$Nèº«å­åŠ¨å¾—å¤ªå‰å®³ï¼Œæ¿€æ€’äº†ç¼ ä½äº†$Pçš„$nï¼Œä¸€å£ä¾¿å’¬ä½$Pçš„å’½å–‰ï¼\n"NOR, me, snake);
+		me->receive_wound("qi", random(ap/2), "è¢«"+me->name()+"å’¬æ­»äº†");
+		me->receive_damage("qi", ap/2, "è¢«"+me->name()+"å’¬æ­»äº†");
 		me->unconcious();
 	}
 	else {
-		message_vision(HIW"\n$NÓÃÁ¦ÕõÁËÒ»Õõ£¬Ïë°ÚÍÑ²ø×¡Éí×ÓµÄ$n.....\n"NOR, me, snake);
+		message_vision(HIW"\n$Nç”¨åŠ›æŒ£äº†ä¸€æŒ£ï¼Œæƒ³æ‘†è„±ç¼ ä½èº«å­çš„$n.....\n"NOR, me, snake);
 		me->add("neili", -jiali);
 		snake->add("jingli", -jiali*2 );
 		me->add_temp("struggle_snake", 1);

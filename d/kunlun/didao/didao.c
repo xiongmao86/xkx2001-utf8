@@ -1,15 +1,15 @@
 //Cracked by Roath
-// Room: didao.c µØµÀÈë¿Ú
+// Room: didao.c åœ°é“å…¥å£
 // Zhangchi 3/00
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "µØµÀÈë¿Ú");
+	set("short", "åœ°é“å…¥å£");
 	set("long", @LONG
-ÕâÀïÊÇºñÍÁÆìÍÚµÄµØµÀÈë¿Ú£¬Ò»×ùĞ¡ÍÁ¶ÑµÄºóÃæ£¬ÊÇÒ»¸öºÚÆáÆáµÄ¶´
-Ñ¨Í¨ÍùµØÏÂ¡£
+è¿™é‡Œæ˜¯åšåœŸæ——æŒ–çš„åœ°é“å…¥å£ï¼Œä¸€åº§å°åœŸå †çš„åé¢ï¼Œæ˜¯ä¸€ä¸ªé»‘æ¼†æ¼†çš„æ´
+ç©´é€šå¾€åœ°ä¸‹ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
@@ -25,9 +25,9 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if ((!me->query("family") || me->query("family/family_name")!="Ã÷½Ì") &&
+	if ((!me->query("family") || me->query("family/family_name")!="æ˜æ•™") &&
 		dir == "down")
-		return notify_fail("¼¸ÃûºñÍÁÆì×³ººµ²×¡Äã£¬ËµµÀ£ºÍâÈË²»µÃ½øÈëµØµÀ£¡\n");
+		return notify_fail("å‡ ååšåœŸæ——å£®æ±‰æŒ¡ä½ä½ ï¼Œè¯´é“ï¼šå¤–äººä¸å¾—è¿›å…¥åœ°é“ï¼\n");
 	
 	return ::valid_leave(me,dir);
 }

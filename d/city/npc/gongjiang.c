@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ¹¤½³
+// å·¥åŒ 
 // ssy
 
 #include <ansi.h>
@@ -11,11 +11,11 @@ int do_repair(string arg);
 
 void create()
 {
-        set_name("¹¤½³", ({ "gong jiang", "jiang", "worker"}));
+        set_name("å·¥åŒ ", ({ "gong jiang", "jiang", "worker"}));
      
         set("long",
-"Ò»Î»×¨ÃÅ¿¿¸ø±øÆ÷¶ÆÉ«(setcolor)¿Ì×Ö(setname)ÎªÉúµÄ¹¤½³¡£\n");
-        set("gender", "ÄÐÐÔ");
+"ä¸€ä½ä¸“é—¨é ç»™å…µå™¨é•€è‰²(setcolor)åˆ»å­—(setname)ä¸ºç”Ÿçš„å·¥åŒ ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -58,12 +58,12 @@ string ask_me()
         object me = this_player();
 
         if (query_temp("busy"))
-                return "Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n";
+                return "å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n";
         if (!me->query_temp("allow_set"))
-                return "ÕâÎ»"+RANK_D->query_respect(me)+"ÄúÇëÏÈ¸¶Ê®Á½°×Òø¡£\n";
+                return "è¿™ä½"+RANK_D->query_respect(me)+"æ‚¨è¯·å…ˆä»˜åä¸¤ç™½é“¶ã€‚\n";
 
         me->set_temp("pending/sewing", 1);
-        return "²»ÖªµÀÕâÎ»"+RANK_D->query_respect(me)+"ÐèÒªÎÒ×öÐ©Ê²÷á£¿
+        return "ä¸çŸ¥é“è¿™ä½"+RANK_D->query_respect(me)+"éœ€è¦æˆ‘åšäº›ä»€éº½ï¼Ÿ
 (setcolor weapon_name color) (setname weapon_name)\n";
 }
 
@@ -76,20 +76,20 @@ int do_setcolor(string arg)
         me = this_player();
 
         if (!me->query_temp("allow_set"))
-	  return notify_fail("ÕâÎ»"+RANK_D->query_respect(me)+"ÄúÇëÏÈ¸¶Ê®Á½°×Òø¡£\n");
+	  return notify_fail("è¿™ä½"+RANK_D->query_respect(me)+"æ‚¨è¯·å…ˆä»˜åä¸¤ç™½é“¶ã€‚\n");
           
 	if(!arg)
-	  return notify_fail("Ê²Ã´£¿\n");
+	  return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	else if (sscanf(arg, "%s %s", target, thecolor)!=2)
-          return notify_fail("Ê²Ã´£¿\n");
+          return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
         if( !objectp(obj = present(target, me)) )
-                return notify_fail("ÄãÒªÔÚÊ²Ã´±øÆ÷ÉÏ¿ÌÃû×Ö£¿\n");
+                return notify_fail("ä½ è¦åœ¨ä»€ä¹ˆå…µå™¨ä¸Šåˆ»åå­—ï¼Ÿ\n");
 
         if (!obj->query("weapon_prop/damage") || obj->query("weapon_prop/damage")<1)
-                return notify_fail("Õâ¶«Î÷ÊÇ±øÆ÷Âð£¿\n");
+                return notify_fail("è¿™ä¸œè¥¿æ˜¯å…µå™¨å—ï¼Ÿ\n");
 
         if (query_temp("busy"))
-	  return notify_fail("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+	  return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 
 	if (thecolor=="HIY")
 	  obj->set("name",HIY+obj->query("name")+NOR);
@@ -119,9 +119,9 @@ int do_setcolor(string arg)
           obj->set("name",CYN+obj->query("name")+NOR);
         else if (thecolor=="WHT")
           obj->set("name",WHT+obj->query("name")+NOR);
-	else return notify_fail("ÑÕÉ«±ØÐëÊÇ help color ÖÐµÄÒ»ÖÖ\n");
+	else return notify_fail("é¢œè‰²å¿…é¡»æ˜¯ help color ä¸­çš„ä¸€ç§\n");
 
-        write("¹¤½³Ä¨ÁËÒ»°Ñº¹£¬ËµµÀ£º¡°¶ÆºÃÁË£¬ÄÃÈ¥°É¡£¡±\n");
+        write("å·¥åŒ æŠ¹äº†ä¸€æŠŠæ±—ï¼Œè¯´é“ï¼šâ€œé•€å¥½äº†ï¼Œæ‹¿åŽ»å§ã€‚â€\n");
         me->delete_temp("allow_set");
 
         remove_call_out("enough_rest");
@@ -138,32 +138,32 @@ int do_setname(string arg)
         me = this_player();
 
 	if (!me->query_temp("allow_set"))
-	  return notify_fail("ÕâÎ»"+RANK_D->query_respect(me)+"ÄúÇëÏÈ¸¶Ê®Á½°×Òø¡£\n");
+	  return notify_fail("è¿™ä½"+RANK_D->query_respect(me)+"æ‚¨è¯·å…ˆä»˜åä¸¤ç™½é“¶ã€‚\n");
 	  
-	if (!arg) return notify_fail("ÄãÒªÔÚÊ²Ã´±øÆ÷ÉÏ¿ÌÃû×Ö£¿\n");        
+	if (!arg) return notify_fail("ä½ è¦åœ¨ä»€ä¹ˆå…µå™¨ä¸Šåˆ»åå­—ï¼Ÿ\n");        
 
 	if( !objectp(obj = present(arg, me)) )
-                return notify_fail("ÄãÒªÔÚÊ²Ã´±øÆ÷ÉÏ¿ÌÃû×Ö£¿\n");
+                return notify_fail("ä½ è¦åœ¨ä»€ä¹ˆå…µå™¨ä¸Šåˆ»åå­—ï¼Ÿ\n");
 
         if (!obj->query("weapon_prop/damage") || obj->query("weapon_prop/damage")<1)
-                return notify_fail("Õâ¶«Î÷ÊÇ±øÆ÷Âð£¿\n");
+                return notify_fail("è¿™ä¸œè¥¿æ˜¯å…µå™¨å—ï¼Ÿ\n");
 //	if (obj->query("value")>=1000000)
-	//        return notify_fail("ÕâÑù±øÆ÷Ì«¹óÖØÁË£¬²»ÄÜ±»¿Ì×Ö¡£\n");
+	//        return notify_fail("è¿™æ ·å…µå™¨å¤ªè´µé‡äº†ï¼Œä¸èƒ½è¢«åˆ»å­—ã€‚\n");
         if (query_temp("busy"))
-                return notify_fail("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+                return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 
         if (obj->query("owner"))
-                return notify_fail(obj->query("name")+"ÉÏ²»ÊÇÒÑ¾­ÓÐ×ÖÁËÂð£¿\n");
+                return notify_fail(obj->query("name")+"ä¸Šä¸æ˜¯å·²ç»æœ‰å­—äº†å—ï¼Ÿ\n");
 
 
         set_temp("busy",1);
         start_busy(2);
 
-	obj->set("long",obj->query("long")+"\n"+obj->query("name")+"ÉÏ¿ÌÓÐ£º"+me->query("name")+"Ö®±øÆ÷¡£\n");
+	obj->set("long",obj->query("long")+"\n"+obj->query("name")+"ä¸Šåˆ»æœ‰ï¼š"+me->query("name")+"ä¹‹å…µå™¨ã€‚\n");
         obj->set("short",obj->query("short"));
         obj->set("owner",me->query("id"));
 
-        write("¹¤½³Ä¨ÁËÒ»°Ñº¹£¬ËµµÀ£º¡°¿ÌºÃÁË£¬ÄÃÈ¥°É¡£¡±\n");
+        write("å·¥åŒ æŠ¹äº†ä¸€æŠŠæ±—ï¼Œè¯´é“ï¼šâ€œåˆ»å¥½äº†ï¼Œæ‹¿åŽ»å§ã€‚â€\n");
 
 	me->delete_temp("allow_set");
 
@@ -181,7 +181,7 @@ void enough_rest()
 int accept_object(object me, object ob)
 {
         command("smile");
-	command("say ÕæÊÇ¶àÐ»" + RANK_D->query_respect(me) + "ÄúÁË £¡");
+	command("say çœŸæ˜¯å¤šè°¢" + RANK_D->query_respect(me) + "æ‚¨äº† ï¼");
 
         if(ob->query("money_id") && ob->value() >= 1000)
                 me->set_temp("allow_set", 1);

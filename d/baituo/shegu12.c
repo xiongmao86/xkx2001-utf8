@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�߹�����");
+	set("short", "蛇谷树林");
 	set("long", @LONG
-���ǰ���ɽ���߹�֮�У���ľ�������ݴ��в�ʱ����ɳɳ֮����
-�ƺ���ʲ���ڲ������شܶ������洫��һ�󵭵������⡣
+这是白驼山的蛇谷之中，林木葱郁，草丛中不时响起沙沙之声，
+似乎有什麽在草里来回窜动。北面传来一阵淡淡的凉意。
 LONG
 	);
 

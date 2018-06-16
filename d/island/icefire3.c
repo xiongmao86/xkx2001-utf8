@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "冰火岛");
         set("long", @LONG
-���ǵ��ϻ�ɽ�����緢��Ȼ�γɵ�һ��ʯ�壬ɽ�Ŵ���һ��ʯ����������
-��һ������������֮����ֻ�ǿ������ƺ���һ����ζ��
+这是岛上火山熔岩喷发自然形成的一个石峰，山脚处有一个石洞，看起来
+像一个不错的栖身之所，只是空气中似乎有一股异味。
 LONG
         );
         set("exits", ([

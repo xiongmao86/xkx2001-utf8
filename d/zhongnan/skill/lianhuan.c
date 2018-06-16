@@ -1,5 +1,5 @@
 //Cracked by Roath
-///kungfu/skill/chunyang-quan/lianhuan.c Á¬»·ÈýÕÐ
+///kungfu/skill/chunyang-quan/lianhuan.c è¿žçŽ¯ä¸‰æ‹›
 // sdong 07/98
 
 #include <ansi.h>
@@ -17,34 +17,34 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Á¬»·ÈýÕÐÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("è¿žçŽ¯ä¸‰æ‹›åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("Á¬»·ÈýÕÐÐè¿ÕÊÖ²ÅÄÜÊ©Õ¹£¡\n");
+		return notify_fail("è¿žçŽ¯ä¸‰æ‹›éœ€ç©ºæ‰‹æ‰èƒ½æ–½å±•ï¼\n");
 
 	if( me->query_skill_mapped("cuff") != "chunyang-quan" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç´¿ÑôÈ­£¬²»ÄÜÊ©Õ¹Á¬»·ÈýÕÐ£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éžçº¯é˜³æ‹³ï¼Œä¸èƒ½æ–½å±•è¿žçŽ¯ä¸‰æ‹›ï¼\n");
 
 	if( me->query_skill_prepared("cuff") != "chunyang-quan" )
-                return notify_fail("ÄãËù±¸µÄ²¢·Ç´¿ÑôÈ­£¬²»ÄÜÊ©Õ¹Á¬»·ÈýÕÐ£¡\n");
+                return notify_fail("ä½ æ‰€å¤‡çš„å¹¶éžçº¯é˜³æ‹³ï¼Œä¸èƒ½æ–½å±•è¿žçŽ¯ä¸‰æ‹›ï¼\n");
 
 	if( me->query_skill_mapped("force") != "xiantian-gong" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÐþÃÅÏÈÌì¹¦£¬Ê©Õ¹²»³öÁ¬»·ÈýÕÐ£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éžçŽ„é—¨å…ˆå¤©åŠŸï¼Œæ–½å±•ä¸å‡ºè¿žçŽ¯ä¸‰æ‹›ï¼\n");
 
 	if( me->query_skill("force") < 140 )
-		return notify_fail("ÄãµÄÐþÃÅÏÈÌì¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹Á¬»·ÈýÕÐ£¡\n");
+		return notify_fail("ä½ çš„çŽ„é—¨å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•è¿žçŽ¯ä¸‰æ‹›ï¼\n");
 
 	if( me->query_skill("cuff") < 135 )
-		return notify_fail("Á¬»·ÈýÕÐÐèÒª¾«Õ¿µÄ´¿ÑôÈ­·½ÄÜÓÐÐ§Ê©Õ¹£¡\n");
+		return notify_fail("è¿žçŽ¯ä¸‰æ‹›éœ€è¦ç²¾æ¹›çš„çº¯é˜³æ‹³æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	if( me->query("neili") <= 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÁ¬»·ÈýÕÐ£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨è¿žçŽ¯ä¸‰æ‹›ï¼\n");
 	if( me->query("jingli") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÁ¬»·ÈýÕÐ£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨è¿žçŽ¯ä¸‰æ‹›ï¼\n");
 
 
-	message_vision(HIR "$NÅ­ºÈÒ»Éù£¬ÞÕ¾¡È«Á¦£¬Í»È»ÉÁµç°ã¹¥³öÁ¬»·ÈýÕÐ£¡\n\n" NOR, me, target);
+	message_vision(HIR "$Næ€’å–ä¸€å£°ï¼Œæ‹šå°½å…¨åŠ›ï¼Œçªç„¶é—ªç”µèˆ¬æ”»å‡ºè¿žçŽ¯ä¸‰æ‹›ï¼\n\n" NOR, me, target);
 
 	str = me->query_str();
 	//me->add_temp("apply/strength", str/2);

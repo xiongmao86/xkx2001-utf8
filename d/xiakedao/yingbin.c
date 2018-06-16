@@ -13,11 +13,11 @@ string* foods = ({
 
 void create()
 {
-        set("short", "Ó­±ö¹İ");
+        set("short", "è¿å®¾é¦†");
         set("long", @LONG
-×ß½øÓñÊ¯¶´ÃÅ£¬Ö»¼û¶´ÖĞ×ÀÒÎ¾ãÈ«£¬µØÉÏÊÇÕûÆëµÄÇàÊ¯°åÂ·¡£Èı
-Ö¦´ÖÈç¶ù±ÛµÄºìÖòÒ»×ÖÅÅ¿ª£¬ÕÕÒ«µÃÂú¶´Í¨Ã÷¡£¼¸ÃûÇàÒÂĞ¡Ù××ßÀ´×ß
-È¥£¬¸ø±ö¿Í·îÉÏÇå²èºÍµãĞÄ¡£
+èµ°è¿›ç‰çŸ³æ´é—¨ï¼Œåªè§æ´ä¸­æ¡Œæ¤…ä¿±å…¨ï¼Œåœ°ä¸Šæ˜¯æ•´é½çš„é’çŸ³æ¿è·¯ã€‚ä¸‰
+æç²—å¦‚å„¿è‡‚çš„çº¢çƒ›ä¸€å­—æ’å¼€ï¼Œç…§è€€å¾—æ»¡æ´é€šæ˜ã€‚å‡ åé’è¡£å°åƒ®èµ°æ¥èµ°
+å»ï¼Œç»™å®¾å®¢å¥‰ä¸Šæ¸…èŒ¶å’Œç‚¹å¿ƒã€‚
 LONG );
 
         set("exits", ([
@@ -48,14 +48,14 @@ int do_serve()
 
 	room = environment(me);
 	if( !objectp(xiaotong = present("xiao tong", room)) )
-	 	return notify_fail("ÄãËÄ´¦ÕÅÍû£¬²»ÖªĞ¡Ù×¶¼ÅÜÄÄÈ¥ÁË¡£\n");
+	 	return notify_fail("ä½ å››å¤„å¼ æœ›ï¼Œä¸çŸ¥å°åƒ®éƒ½è·‘å“ªå»äº†ã€‚\n");
 
 	if (objectp(curtea = present("wan", room)))
-	{	message_vision("Ğ¡Ù×°ÑÊ£²è¶Ë×ß£¬ÔÙ¶ËÉÏÒ»Íë²è·ÅÔÚ$NµÄ×ÀÉÏ\n", me);
+	{	message_vision("å°åƒ®æŠŠå‰©èŒ¶ç«¯èµ°ï¼Œå†ç«¯ä¸Šä¸€ç¢—èŒ¶æ”¾åœ¨$Nçš„æ¡Œä¸Š\n", me);
 		destruct(curtea);
 	}
 	else
-		message_vision("Ğ¡Ù×¶ËÉÏÒ»Íë²è·ÅÔÚ$NµÄ×ÀÉÏ¡£\n", me);
+		message_vision("å°åƒ®ç«¯ä¸Šä¸€ç¢—èŒ¶æ”¾åœ¨$Nçš„æ¡Œä¸Šã€‚\n", me);
 
 	newtea = new("d/wudang/obj/dawancha");
 	newtea->move(room);
@@ -70,11 +70,11 @@ int do_serve()
 	if (flag != 1)
 	{	newfood = new(foods[random(total)]);
 		newfood->move(room);
-		message_vision("Ğ¡Ù×¶ËÉÏÒ»" + newfood->query("unit") + newfood->query("name") 
-					+ "£¬·ÅÔÚ$NµÄ×ÀÉÏ¡£\n", me);
+		message_vision("å°åƒ®ç«¯ä¸Šä¸€" + newfood->query("unit") + newfood->query("name") 
+					+ "ï¼Œæ”¾åœ¨$Nçš„æ¡Œä¸Šã€‚\n", me);
 	}
 	else
-	{	message_vision("Ğ¡Ù×¶Ô$NĞ¦ÁËĞ¦ËµµÀ£ºÏÈ³ÔÍêÔÙÒª°É¡£\n", me);
+	{	message_vision("å°åƒ®å¯¹$Nç¬‘äº†ç¬‘è¯´é“ï¼šå…ˆåƒå®Œå†è¦å§ã€‚\n", me);
 	}
 	return 1;
 }

@@ -6,12 +6,12 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "�㳡");
+        set("short", "广场");
         set("long", @LONG
-��ǰͻȻ���������Ǹ���������ǧ�˵Ĵ�㳡����ɫ�ű����ı�
-�����ܣ��ڷ������Է��裬ɷ�Ǻÿ��������Զ�������µ��Ӱ�����
-�������ޱ��顣�㳡�а���������(table)������(chair)����λ��������
-����ǰ����Ӧ��
+眼前突然开阔，这是个能容下上千人的大广场。各色信标旗帜遍
+插四周，在风中猎猎飞舞，煞是好看。相隔不远即有青衣弟子按剑侍
+立，面无表情。广场中摆满了桌子(table)和椅子(chair)，几位黄衣仆人
+正在前后照应。
 LONG );
 
         set("exits", ([

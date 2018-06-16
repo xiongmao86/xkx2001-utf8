@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ÓùÇ°ÊÌÎÀ·ş
+// å¾¡å‰ä¾å«æœ
 
 #include <ansi.h>
 #include <armor.h>
@@ -7,15 +7,15 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÓùÇ°ÊÌÎÀ·ş", ({ "shiwei cloth", "cloth" }));
+        set_name("å¾¡å‰ä¾å«æœ", ({ "shiwei cloth", "cloth" }));
         set_color("$BLU$");
-        set("long", "ÕâÊÇÒ»¼şÓùÇ°ÊÌÎÀÍ³Ò»´©×ÅµÄ¾ü·ş¡£\n");
+        set("long", "è¿™æ˜¯ä¸€ä»¶å¾¡å‰ä¾å«ç»Ÿä¸€ç©¿ç€çš„å†›æœã€‚\n");
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 0);
                 set("armor_prop/armor", 20);
         }

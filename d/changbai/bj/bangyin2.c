@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/changbai/bj/bangyin2.c °ïÓ¡
+// /d/changbai/bj/bangyin2.c å¸®å°
 // by aln 1 / 98
 // modified by aln 4 / 98
 
@@ -9,16 +9,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name("°ïÓ¡", ({ "bangyin" }) );
+        set_name("å¸®å°", ({ "bangyin" }) );
         set("weight", 30);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 30);
                 set("material", "wood");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+                set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
         }
 
         setup();
@@ -96,12 +96,12 @@ void message_killer()
 
                 bangname = (string)query("bangname");
                 killer_ob->set("bangname", bangname);
-                killer_ob->set("inquiry/" + bangname,  "ÀÏ×ÓÏëµ±" + bangname + "°ïÖ÷¶¼¿ìÏë·èÁË£¡£¡£¡");
-                killer_ob->set("inquiry/" + "°ïÓ¡", "ÀÏ×ÓÒªµÄ¾ÍÊÇ" + bangname + "µÄ°ïÓ¡£¡");
+                killer_ob->set("inquiry/" + bangname,  "è€å­æƒ³å½“" + bangname + "å¸®ä¸»éƒ½å¿«æƒ³ç–¯äº†ï¼ï¼ï¼");
+                killer_ob->set("inquiry/" + "å¸®å°", "è€å­è¦çš„å°±æ˜¯" + bangname + "çš„å¸®å°ï¼");
                 killer_ob->set("combat_exp", (int)owner->query("combat_exp") - 1000);
                 killer_ob->move(env);
-                say(killer_ob->name() + "×ßÁË¹ýÀ´¡£\n");
-                message_vision("$N¶¢ÁË$nÒ»ÑÛ¡£\n", killer_ob, owner);
+                say(killer_ob->name() + "èµ°äº†è¿‡æ¥ã€‚\n");
+                message_vision("$Nç›¯äº†$nä¸€çœ¼ã€‚\n", killer_ob, owner);
                 killer_ob->set_leader(owner);
                 remove_call_out("do_kill");
                 call_out("do_kill", 1, killer_ob, owner);
@@ -126,13 +126,13 @@ void message_killer()
         bonus += random(bonus);
 
         if( bonus > 100 )
-                log_file("ShanJob2", sprintf("%sÓÚ%sÊ±ÄÃÁË%s¾­Ñéµã\n", owner->query("name"), ctime(time()), chinese_number(bonus)));
+                log_file("ShanJob2", sprintf("%säºŽ%sæ—¶æ‹¿äº†%sç»éªŒç‚¹\n", owner->query("name"), ctime(time()), chinese_number(bonus)));
 
         owner->add("combat_exp", bonus);
 }
 
 void do_kill(object killer_ob, object owner)
 {
-        message_vision("$N¶Ô$n´óÉùºÈµÀ£º" + RANK_D->query_rude(owner) + "£¡¸Ï¿ì°Ñ°ïÓ¡½»¸øÀÏ×Ó£¡£¡£¡\n", killer_ob, owner);
+        message_vision("$Nå¯¹$nå¤§å£°å–é“ï¼š" + RANK_D->query_rude(owner) + "ï¼èµ¶å¿«æŠŠå¸®å°äº¤ç»™è€å­ï¼ï¼ï¼\n", killer_ob, owner);
         killer_ob->kill_ob(owner);
 }

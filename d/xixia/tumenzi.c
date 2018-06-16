@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "ÍÁÃÅ×Ó");
+	set("short", "åœŸé—¨å­");
 	set("long", @LONG
-ÍÁÃÅ×ÓÒ²ÊÇÒÔÇ°×¤¾üµÄµØ·½£¬ÖÜÎ§È«ÊÇÉ³Ä®£¬ÖÐ¼äÒ»¿éÐ¡Ð¡µÄÂÌÖÞ£¬±¾À´Õâ
-ÀïÓÐµ±µØµÄÄÁÃñ¾Ó×¡£¬¿ÉÊÇÇ°²»¾ÍÀ´ÁËÒ»»ïÂíÔôÕ¼¾ÝÁËÕâÀïÒÔÕâÀïÎª´ó±¾ÓªËÄ³ö
-½ÙÂÓ£¬ÎÞ¶ñ²»×ö¡£
+åœŸé—¨å­ä¹Ÿæ˜¯ä»¥å‰é©»å†›çš„åœ°æ–¹ï¼Œå‘¨å›´å…¨æ˜¯æ²™æ¼ ï¼Œä¸­é—´ä¸€å—å°å°çš„ç»¿æ´²ï¼Œæœ¬æ¥è¿™
+é‡Œæœ‰å½“åœ°çš„ç‰§æ°‘å±…ä½ï¼Œå¯æ˜¯å‰ä¸å°±æ¥äº†ä¸€ä¼™é©¬è´¼å æ®äº†è¿™é‡Œä»¥è¿™é‡Œä¸ºå¤§æœ¬è¥å››å‡º
+åŠ«æŽ ï¼Œæ— æ¶ä¸åšã€‚
 LONG
 	);
 	set("cost", 2);
@@ -36,7 +36,7 @@ void init()
         if ( interactive(ob=this_player())
         && me->query_temp("rob_victim") && random(3)==1) {
 
-                message_vision(HIR"Í»È»Ò»¸ö´óººÓÉÎ÷±ßµÄÊ÷ÁÖÌøÁË³öÀ´£¬À¹×¡ÁË$N¡£\n"NOR, me);
+                message_vision(HIR"çªç„¶ä¸€ä¸ªå¤§æ±‰ç”±è¥¿è¾¹çš„æ ‘æž—è·³äº†å‡ºæ¥ï¼Œæ‹¦ä½äº†$Nã€‚\n"NOR, me);
 	 robber = new(__DIR__"npc/mazei");
                 robber->move(environment(ob));
         }
@@ -44,7 +44,7 @@ void init()
 int valid_leave(object me, string dir)
 {
         if ( me->query_temp("rob_victim") && present("ma zei", environment(me) ))
-                return notify_fail("ÂíÔôÐ×°Í°ÍµØ½ÐµÀ£º·Å´ÏÃ÷µã£¬¿ì½«±¦±´½»³öÀ´£¡ \n");
+                return notify_fail("é©¬è´¼å‡¶å·´å·´åœ°å«é“ï¼šæ”¾èªæ˜Žç‚¹ï¼Œå¿«å°†å®è´äº¤å‡ºæ¥ï¼ \n");
         else { me->delete_temp("rob_victim"); }
 
         return ::valid_leave(me, dir);

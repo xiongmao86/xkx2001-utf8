@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "海滨");
 	set("long", @LONG
-������һƬ�����ĺ�̲��һ���Ǻ���һ����һƬ�һ��֡�һЩ����ʯ��һ�飬
-��һ���ɢ���ں�̲�ϡ�������һ����̨��
+这里是一片空阔的海滩。一面是海，一面是一片桃花林。一些大青石东一块，
+西一块的散放在海滩上。北面是一座高台。
 LONG
 	);
 	 set("exits", ([

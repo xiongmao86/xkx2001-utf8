@@ -1,15 +1,15 @@
 //Cracked by Roath
-// hongniang.c ºìÄï
+// hongniang.c çº¢å¨˜
 
 inherit NPC;
 
 void create()
 {
-	set_name("ºìÄï", ({ "hong niang", "hong" }));
+	set_name("çº¢å¨˜", ({ "hong niang", "hong" }));
 	set("long", 
-		"ËıÊÇÒ»¸ö³¤µÃºÜºÃ¿´µÄĞ¡¹ÃÄï¡£\n"
-		"ÒòÎª±»¹ØÔÚ´Ë´¦£¬Á³ÉÏÂ¶³öÒ»Ë¿¾ëÈİ¡£\n");
-	set("gender", "Å®ĞÔ");
+		"å¥¹æ˜¯ä¸€ä¸ªé•¿å¾—å¾ˆå¥½çœ‹çš„å°å§‘å¨˜ã€‚\n"
+		"å› ä¸ºè¢«å…³åœ¨æ­¤å¤„ï¼Œè„¸ä¸Šéœ²å‡ºä¸€ä¸å€¦å®¹ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 16);
 
 	set_skill("unarmed", 20);

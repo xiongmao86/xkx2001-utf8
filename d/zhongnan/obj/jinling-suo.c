@@ -1,21 +1,21 @@
-// jinling-suo½ğÁåË÷
+// jinling-suoé‡‘é“ƒç´¢
 
 #include <ansi.h>
 #include <weapon.h>
 inherit WHIP;
 void create()
 {
-	set_name(HIY "½ğÁåË÷" NOR, ({ "jinling suo", "suo" }));
-       	set("long", "ÕâÊÇÒ»¶Ô½ğÁåË÷£¬ÊÇ½ğË¿´ò×öµÄÈí±øÆ÷¡£\n");
+	set_name(HIY "é‡‘é“ƒç´¢" NOR, ({ "jinling suo", "suo" }));
+       	set("long", "è¿™æ˜¯ä¸€å¯¹é‡‘é“ƒç´¢ï¼Œæ˜¯é‡‘ä¸æ‰“åšçš„è½¯å…µå™¨ã€‚\n");
 	set("weight", 300);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-                set("unit", "Ìõ");
+                set("unit", "æ¡");
 		set("value", 50000);
                 set("material", "gold");
-                set("wield_msg", "$N´ÓÑü¼ä½âÏÂ$nÄÃÔÚÊÖÖĞ£¬Ë÷ÉÏµÄ½ğÇòÖĞ·¢³öçàçàÉùÏì¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¾í»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nä»è…°é—´è§£ä¸‹$næ‹¿åœ¨æ‰‹ä¸­ï¼Œç´¢ä¸Šçš„é‡‘çƒä¸­å‘å‡ºççå£°å“ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nå·å›è…°é—´ã€‚\n");
 		set("female_only", 1);
 	}
         init_whip(40);

@@ -1,16 +1,16 @@
 //Cracked by Roath
-// su quan ËÕÜõ
+// su quan è‹èƒ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("ËÕÜõ", ({ "su quan","su", "furen" }));
-	set("title", "ÉñÁú½Ì½ÌÖ÷·òÈË");
+	set_name("è‹èƒ", ({ "su quan","su", "furen" }));
+	set("title", "ç¥é¾™æ•™æ•™ä¸»å¤«äºº");
 	set("long",
-		"ÃÀÃ²ÉÙ¸¾£¬¿´Ä£Ñù²»¹ı¶şÊ®ÈıËÄËêÄê¼Í£¬Î¢Î¢Ò»Ğ¦£¬ÃÄÌ¬ºáÉú£¬ÑŞÀöÎŞ±È¡£\n");
-	set("gender", "Å®ĞÔ");
+		"ç¾è²Œå°‘å¦‡ï¼Œçœ‹æ¨¡æ ·ä¸è¿‡äºŒåä¸‰å››å²å¹´çºªï¼Œå¾®å¾®ä¸€ç¬‘ï¼Œåªšæ€æ¨ªç”Ÿï¼Œè‰³ä¸½æ— æ¯”ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 23);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -81,7 +81,7 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say ½ÌÖ÷°¡£¬Õâ¾ä¡¸ÍÑ½£Ï¥Ç°ºá¡¹ËÆºõºÏÃÀÈËÈıÕĞÖ®Àí£¬³öÆä²»±¸£¬·À²»Ê¤·À¡£");
+                {		command("say æ•™ä¸»å•Šï¼Œè¿™å¥ã€Œè„±å‰‘è†å‰æ¨ªã€ä¼¼ä¹åˆç¾äººä¸‰æ‹›ä¹‹ç†ï¼Œå‡ºå…¶ä¸å¤‡ï¼Œé˜²ä¸èƒœé˜²ã€‚");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
 				opp->set("jingli", maxjingli);

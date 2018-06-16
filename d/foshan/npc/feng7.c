@@ -5,14 +5,14 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("·ïÆß", ({ "feng qi", "feng" }));
-	set("title", "¾ÆÂ¥ÀÏ°å");
+	set_name("å‡¤ä¸ƒ", ({ "feng qi", "feng" }));
+	set("title", "é…’æ¥¼è€æ¿");
 	set("shen_type", -1);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("long",
-		"·ïÆßÊÇ·ïÌìÄÏµÄÔ¶·¿×æµÜ£¬ÔÚÕâÓ¢ĞÛÂ¥µ±ÕÆ¹ñ¡£Îä¹¦Ã»ÓĞÊ²Ã´£¬ÎªÈËÈ´¼«ÊÇ»úÁé¡£\n");
+		"å‡¤ä¸ƒæ˜¯å‡¤å¤©å—çš„è¿œæˆ¿ç¥–å¼Ÿï¼Œåœ¨è¿™è‹±é›„æ¥¼å½“æŒæŸœã€‚æ­¦åŠŸæ²¡æœ‰ä»€ä¹ˆï¼Œä¸ºäººå´ææ˜¯æœºçµã€‚\n");
 
 	set("combat_exp", 200);
 	set("attitude", "friendly");
@@ -44,6 +44,6 @@ void greeting(object ob)
 {
 	if (!ob || environment(ob) != environment())
 		return;
-	say("·ïÆßĞ¦ÃĞÃĞµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-		"£¬¿ìÇë½øÀ´¡£\n");
+	say("å‡¤ä¸ƒç¬‘çœ¯çœ¯åœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) +
+		"ï¼Œå¿«è¯·è¿›æ¥ã€‚\n");
 }

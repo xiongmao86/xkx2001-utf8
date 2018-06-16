@@ -9,11 +9,11 @@ string look_gaoshi();
 
 void create()
 {
-	set("short", "ÄÏÃÅ");
+	set("short", "å—é—¨");
 	set("long",
-"ÕâÊÇÄÏÃÅ¡£³ÇÇ½±»µ±³ÉÁË¹ã¸æÅÆ£¬ÌùÂúÁË»¨»¨ÂÌÂÌ¸÷ĞĞ¸÷ÒµµÄ¹ã¸æ£¬¹Ù¸®µÄ
-"+HIW"¸æÊ¾"NOR+"(gaoshi)Òò´Ë²»Ì«ÏÔÑÛ¡£¹Ù±øÃÇ±»½ü´¦µÄ»¶ÉùĞ¦ÓïËùÎüÒı£¬ËÆºõ²»ÊÇºÜÈÏÕæ
-ÔÚÖ´ÇÚ¡£Ò»Ìõ±ÊÖ±µÄÇàÊ¯°å´óµÀÏòÄÏ±±Á½±ßÑÓÉì¡£\n"
+"è¿™æ˜¯å—é—¨ã€‚åŸå¢™è¢«å½“æˆäº†å¹¿å‘Šç‰Œï¼Œè´´æ»¡äº†èŠ±èŠ±ç»¿ç»¿å„è¡Œå„ä¸šçš„å¹¿å‘Šï¼Œå®˜åºœçš„
+"+HIW"å‘Šç¤º"NOR+"(gaoshi)å› æ­¤ä¸å¤ªæ˜¾çœ¼ã€‚å®˜å…µä»¬è¢«è¿‘å¤„çš„æ¬¢å£°ç¬‘è¯­æ‰€å¸å¼•ï¼Œä¼¼ä¹ä¸æ˜¯å¾ˆè®¤çœŸ
+åœ¨æ‰§å‹¤ã€‚ä¸€æ¡ç¬”ç›´çš„é’çŸ³æ¿å¤§é“å‘å—åŒ—ä¸¤è¾¹å»¶ä¼¸ã€‚\n"
 	);
         set("outdoors", "city");
 
@@ -38,7 +38,7 @@ void create()
 
 string look_gaoshi()
 {
-	return FINGER_D->get_killer() + "\nÕã½­Ìá¶½\nÀî¿ËĞã\n";
+	return FINGER_D->get_killer() + "\næµ™æ±Ÿæç£\næå…‹ç§€\n";
 }
 
 int valid_leave(object me, string dir)
@@ -46,6 +46,6 @@ int valid_leave(object me, string dir)
         if (dir =="north" )
         if(present("guan bing", (environment(me)))
         && me->query_condition("killer") > 0)
-                return notify_fail("¹Ù±øÊÖÖĞµÄµ¶µ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+                return notify_fail("å®˜å…µæ‰‹ä¸­çš„åˆ€æŒ¡ä½äº†ä½ çš„å»è·¯ã€‚\n");
         return ::valid_leave(me, dir);
 }

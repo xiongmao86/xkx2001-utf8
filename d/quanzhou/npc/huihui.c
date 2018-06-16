@@ -1,15 +1,15 @@
 //Cracked by Roath
-// huihui »Ø»Ø
+// huihui å›å›
 
 inherit NPC;
 
 void create()
 {
-        set_name("»Ø»Ø", ({ "huihui", "hui", "muslim" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å›å›", ({ "huihui", "hui", "muslim" }));
+        set("gender", "ç”·æ€§");
         set("age", 20 + random(40));
 
-        set("long", "Ò»¸öò¯³Ï»Ø»Ø£¬Õı¹òÔÚµØÉÏÏòÎ÷·½Ä¤°İ¡£\n");
+        set("long", "ä¸€ä¸ªè™”è¯šå›å›ï¼Œæ­£è·ªåœ¨åœ°ä¸Šå‘è¥¿æ–¹è†œæ‹œã€‚\n");
 
         set("attitude", "friendly");
 
@@ -28,7 +28,7 @@ void create()
 
         set("chat_chance", 15);
         set("chat_msg", ({
-		"»Ø»ØËµ£ºÄÂº±Ä¬µÂÈğËØ°¢À­£¬Î°´óÖÁ×ğµÄ°¢À­¡£\n",
+		"å›å›è¯´ï¼šç©†ç½•é»˜å¾·ç‘ç´ é˜¿æ‹‰ï¼Œä¼Ÿå¤§è‡³å°Šçš„é˜¿æ‹‰ã€‚\n",
         }) );
 }
 

@@ -5,17 +5,17 @@ inherit ROOM;
 #include "room.h"
 void create()
 {
-	set("short", "²ñ·¿");
+	set("short", "æŸ´æˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇ¼ä²»Ğ¡µÄ²ñ·¿£¬ÕûÆëµÄÂë×ÅÁ½ÈË¸ßµÄÉÏºÃÄ¾²ñ£¬É¢·¢×ÅÄ¾
-Í·ÌØÓĞµÄÇåÏã£¬¹¬ÀïµÄ²ñ»ğÒ»Ïò¶¼ÊÇÃ¿ÔÂÒ»´Î´Ó³ÇÍâµÄÂäÈÕÁÖÔËÀ´¡£
+è¿™é‡Œæ˜¯é—´ä¸å°çš„æŸ´æˆ¿ï¼Œæ•´é½çš„ç ç€ä¸¤äººé«˜çš„ä¸Šå¥½æœ¨æŸ´ï¼Œæ•£å‘ç€æœ¨
+å¤´ç‰¹æœ‰çš„æ¸…é¦™ï¼Œå®«é‡Œçš„æŸ´ç«ä¸€å‘éƒ½æ˜¯æ¯æœˆä¸€æ¬¡ä»åŸå¤–çš„è½æ—¥æ—è¿æ¥ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
   "south" : __DIR__"yushanfang",
   "east" : __DIR__"bianmen",
 ]));
-	create_door("east","Ä¾ÃÅ","west",DOOR_CLOSED);
+	create_door("east","æœ¨é—¨","west",DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }

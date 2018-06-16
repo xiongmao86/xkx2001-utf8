@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ͨ��");
+  set ("short", "通道");
   set ("long", @LONG
-ͨ������ɽ���п���������ᴩ����ʯ�ߡ�ͨ�����������и���
-��ĵıڻ��͸���
+通道是在山腹中开凿出来，贯穿各个石窟。通道的两壁上有各种
+题材的壁画和浮雕。
 LONG);
 
   set("exits", ([ 

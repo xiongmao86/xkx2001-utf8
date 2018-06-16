@@ -6,10 +6,10 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "Ð¡Â·");
+        set("short", "å°è·¯");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÓÃÇàÊ¯ÆÌ³ÉµÄÐ¡Â·¡£Â·Á½ÅÔ³¤×ÅÐ©°«°«µÄÐ¡Ê÷(bush)£¬
-Ò»Õóº£·ç´µ¹ý£¬Ê÷´ÔÀïºÃÏóÓÐÊ²÷á¶«Î÷ÔÚÉÁÉÁ·¢¹â¡£
+è¿™æ˜¯ä¸€æ¡ç”¨é’çŸ³é“ºæˆçš„å°è·¯ã€‚è·¯ä¸¤æ—é•¿ç€äº›çŸ®çŸ®çš„å°æ ‘(bush)ï¼Œ
+ä¸€é˜µæµ·é£Žå¹è¿‡ï¼Œæ ‘ä¸›é‡Œå¥½è±¡æœ‰ä»€éº½ä¸œè¥¿åœ¨é—ªé—ªå‘å…‰ã€‚
 LONG );
 
       set("exits", ([
@@ -18,8 +18,8 @@ LONG );
       ]));
 
 	set("item_desc",([
-	    "bush" : "ÕâÊÇÐ©²»ÖªÃûµÄÐ¡Ê÷¡£ÒòÎª³¤ÔÚº£±ß£¬ËùÒÔ¶¼ºÜ°«¡£Èç¹ûÄãÏëÒª¿´Ê÷\n"
-			 "´ÔÏÂÓÐÊ²÷á£¬ÄãÐèÒª²¦¿ªÊ÷´Ô(push bush)¡£\n",
+	    "bush" : "è¿™æ˜¯äº›ä¸çŸ¥åçš„å°æ ‘ã€‚å› ä¸ºé•¿åœ¨æµ·è¾¹ï¼Œæ‰€ä»¥éƒ½å¾ˆçŸ®ã€‚å¦‚æžœä½ æƒ³è¦çœ‹æ ‘\n"
+			 "ä¸›ä¸‹æœ‰ä»€éº½ï¼Œä½ éœ€è¦æ‹¨å¼€æ ‘ä¸›(push bush)ã€‚\n",
 	]));
 
 	set("outdoors", "xiakedao");
@@ -40,11 +40,11 @@ int do_push(string arg)
 	object jian;
 
 	if ( !arg )
-		return notify_fail( "ÄãÒªÍÆÊ²Ã´£¿\n");
+		return notify_fail( "ä½ è¦æŽ¨ä»€ä¹ˆï¼Ÿ\n");
 	if ( arg != "bush" )
-		return notify_fail( "ÒªÄã push bush£¬Äã push " + arg + " ¸ÉÂï£¿\n");
+		return notify_fail( "è¦ä½  push bushï¼Œä½  push " + arg + " å¹²å˜›ï¼Ÿ\n");
 		
-	message_vision("$NÔÚÊ÷´ÔÖÐ·¢ÏÖÁËÒ»°Ñ¶Ì½£¡£\n", this_player());
+	message_vision("$Nåœ¨æ ‘ä¸›ä¸­å‘çŽ°äº†ä¸€æŠŠçŸ­å‰‘ã€‚\n", this_player());
 	jian = new("/clone/weapon/duanjian.c");
 	jian->move(this_object());
 

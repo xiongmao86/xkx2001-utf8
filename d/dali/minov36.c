@@ -7,17 +7,17 @@ inherit ROOM;
 
 void create()
 {
-	set("short", WHT"ÓñÏ¼É½"NOR);
+	set("short", WHT"çŽ‰éœžå±±"NOR);
 	set("long","
-ÓñÏ¼É½¶«ÕòÐÇÔÆºþ£¬É½ÇåÁÖÐã£¬Ðí¶àÓÎÈËÀ´´ËÐÀÉÍºþ¹âÉ½É«£¬ÎÞ²»ÎªÖ®Çãµ¹¡£
+çŽ‰éœžå±±ä¸œé•‡æ˜Ÿäº‘æ¹–ï¼Œå±±æ¸…æž—ç§€ï¼Œè®¸å¤šæ¸¸äººæ¥æ­¤æ¬£èµæ¹–å…‰å±±è‰²ï¼Œæ— ä¸ä¸ºä¹‹å€¾å€’ã€‚
 
-¡¡¡¡¡¡¹ÅÈËÓÐÊ«Ô»£º
-¡¡¡¡¡¡"HIC"ÓñÏ¼ÆàÇåÇïÆøÁ¹£¬
-¡¡¡¡¡¡ÐÇÔÆºþË®³ÎÃ÷¹â£¬
-¡¡¡¡¡¡½üÓìº¬ÑÌÄý×Ï´ä£¬
-¡¡¡¡¡¡Ô¶É½ÇÍ±ÚÄ¦Çà²Ô£¬
-¡¡¡¡¡¡Ë®¹âÉ½É«Ïà»ÔÓ³£¬
-¡¡¡¡¡¡ÍòÀïÎÞÔÆ±ÌÌì¾»¡£\n"NOR
+ã€€ã€€ã€€å¤äººæœ‰è¯—æ›°ï¼š
+ã€€ã€€ã€€"HIC"çŽ‰éœžå‡„æ¸…ç§‹æ°”å‡‰ï¼Œ
+ã€€ã€€ã€€æ˜Ÿäº‘æ¹–æ°´æ¾„æ˜Žå…‰ï¼Œ
+ã€€ã€€ã€€è¿‘å±¿å«çƒŸå‡ç´«ç¿ ï¼Œ
+ã€€ã€€ã€€è¿œå±±å³­å£æ‘©é’è‹ï¼Œ
+ã€€ã€€ã€€æ°´å…‰å±±è‰²ç›¸è¾‰æ˜ ï¼Œ
+ã€€ã€€ã€€ä¸‡é‡Œæ— äº‘ç¢§å¤©å‡€ã€‚\n"NOR
 );
 	set("objects", ([
 		__DIR__"npc/youke1.c" : 1,
@@ -25,7 +25,7 @@ void create()
 	set("exits", ([
 		"westdown" : __DIR__"minov35",
 		]));
-	set("area", "²½ÐÛ²¿");
+	set("area", "æ­¥é›„éƒ¨");
 	set("cost", 3);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

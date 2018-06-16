@@ -1,15 +1,15 @@
 //Cracked by Roath
-// yelin Ұ��
+// yelin 野林
 // Ssy
 
 inherit __DIR__"no_pk_room";
 
 void create()
 {
-    	set("short", "Ұ��");
+    	set("short", "野林");
     	set("long", @LONG
-һƬ��ɭɭ��Ұ�֣���֪ͨ��η���żȻ�м�ֻ��ѻ�ɹ�������
-�ؽм������㲻�ɵ�ֻ�뾡���߳���ƬҰ�֡�
+一片阴森森的野林，不知通向何方。偶然有几只乌鸦飞过，凄凉
+地叫几声．你不由得只想尽快走出这片野林。
 LONG
     	);
 

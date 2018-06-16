@@ -7,14 +7,14 @@ inherit STICK;
 
 void create()
 {
-    set_name(YEL"³¤Ê÷Ö¦"NOR, ({"shuzhi", "zhi", "branch"}));
+    set_name(YEL"é•¿æ ‘æ"NOR, ({"shuzhi", "zhi", "branch"}));
     set_weight(500+random(500)); 
     if( clonep() )
       set_default_object(__FILE__);
     else {
-      set("long", "ÕâÊÇÒ»¸ù³¤Ê÷Ö¦¡£\n");
-	set("unit","¸ù");
-	set("wield_msg","$N°Î³öÒ»¸ù³¤Ê÷Ö¦ÎÕÔÚÊÖÖĞ¡£\n");
+      set("long", "è¿™æ˜¯ä¸€æ ¹é•¿æ ‘æã€‚\n");
+	set("unit","æ ¹");
+	set("wield_msg","$Næ‹”å‡ºä¸€æ ¹é•¿æ ‘ææ¡åœ¨æ‰‹ä¸­ã€‚\n");
 	set("material", "wood");
     }
     init_stick(random(2)+1);

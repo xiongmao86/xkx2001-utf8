@@ -8,18 +8,18 @@ inherit HEAD;
 
 void create()
 {
-        set_name( "·ï¹Ú" , ({ "feng guan", "headress", "fengguan", "guan" }) );
+        set_name( "å‡¤å† " , ({ "feng guan", "headress", "fengguan", "guan" }) );
         set_color("$HIY$");
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-                set("long", "ÕâÊÇÒ»¸ö·ï¹Ú£¬½ğÖéÁğÁ§£¬Òø³áÂÒ²ü£¬ÊÇĞÂÄïµÄÍ·¹Ú¡£\n");
+                set("unit", "é¡¶");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªå‡¤å† ï¼Œé‡‘ç ç‰ç’ƒï¼Œé“¶ç¿…ä¹±é¢¤ï¼Œæ˜¯æ–°å¨˜çš„å¤´å† ã€‚\n");
                 set("value", 10000);
                 set("material", "cloth");
-       		set("wear_msg", HIY "$Nº¬Àá´©´÷ÉÏ·ï¹Ú£¬»óËµµÀ£ºÎÒ¼ŞµÄÈËÊÇË­£¬ËûÄÜ°®ÎÒÒ»ÉúÒ»ÊÀÂğ£¿\n" NOR);
-		set("unequip_msg", HIY "$NÇáÇáµØÕªÏÂ·ï¹Ú¡£\n" NOR);
+       		set("wear_msg", HIY "$Nå«æ³ªç©¿æˆ´ä¸Šå‡¤å† ï¼Œæƒ‘è¯´é“ï¼šæˆ‘å«çš„äººæ˜¯è°ï¼Œä»–èƒ½çˆ±æˆ‘ä¸€ç”Ÿä¸€ä¸–å—ï¼Ÿ\n" NOR);
+		set("unequip_msg", HIY "$Nè½»è½»åœ°æ‘˜ä¸‹å‡¤å† ã€‚\n" NOR);
                 set("armor_prop/armor", 4);
 		set("female_only", 1);
         }

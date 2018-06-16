@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tykid.c Ì¨ÒÄĞ¡º¢
+// tykid.c å°å¤·å°å­©
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡º¢", ({ "taiyi kid", "kid" }) );
-	set("long", "Ò»¸öÓ×Ğ¡µÄÌ¨ÒÄ¶ùÍ¯¡£\n");
+	set_name("å°å­©", ({ "taiyi kid", "kid" }) );
+	set("long", "ä¸€ä¸ªå¹¼å°çš„å°å¤·å„¿ç«¥ã€‚\n");
 
 	set("age", 5);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 15);

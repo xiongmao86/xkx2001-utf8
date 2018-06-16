@@ -1,18 +1,18 @@
 //Cracked by Roath
-// shegeng.c Éß¸ş
+// shegeng.c è›‡ç¾¹
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Éß¸ş", ({"shegeng", "geng"}));
+	set_name("è›‡ç¾¹", ({"shegeng", "geng"}));
 	set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-		set("long", "Ò»ÍëÅ¨Å¨µÄÉß¸ş¡£¡¸ÍÛ!¡¹\n");
-		set("unit", "Íë");
+		set("long", "ä¸€ç¢—æµ“æµ“çš„è›‡ç¾¹ã€‚ã€Œå“‡!ã€\n");
+		set("unit", "ç¢—");
 		set("value", 150);
 		set("food_remaining", 3);
 		set("food_supply", 60);

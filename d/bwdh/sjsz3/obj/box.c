@@ -1,17 +1,17 @@
 //Cracked by Roath
-// box.c ÌúºĞ
+// box.c é“ç›’
 
 #include <ansi.h>
 inherit ITEM;
 
 void create() {
-    set_name("ÌúÏä", ({"box"}));
+    set_name("é“ç®±", ({"box"}));
     set_weight(100);
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "Ö»");
-        set("long", "´ËºĞ¸ßÔ¼Ò»³ß¼û·½£¬²»ÖªµÀÀïÃæ×°×ÅÊ²Ã´¶«Î÷¡£\n");
+        set("unit", "åª");
+        set("long", "æ­¤ç›’é«˜çº¦ä¸€å°ºè§æ–¹ï¼Œä¸çŸ¥é“é‡Œé¢è£…ç€ä»€ä¹ˆä¸œè¥¿ã€‚\n");
         set("material", "steel");
         set("value", 100);
         set("no_get", 1);
@@ -30,12 +30,12 @@ int do_open(string arg) {
     object ob = this_object(), flag, npc, me=this_player();
 
     if ( !arg || arg != "box" )
-        return notify_fail("ÄãÒª½«Ê²Ã´´ò¿ª£¿\n");
+        return notify_fail("ä½ è¦å°†ä»€ä¹ˆæ‰“å¼€ï¼Ÿ\n");
 
     if ( me->query_skill("dodge") > 200 && me->query("jingli") > me->query("max_jingli")/2 ) {
         if (ob->query("flag") == 1) {
-            message_vision("$N´ò¿ªÌúÏä£¬·¢ÏÖÏäÖĞÓĞÒ»ÃæÆìÖÄ¡£\n", me);
-            message_vision(HIR"$N¡°»©À²¡±Ò»ÏÂÕ¹¿ªÁËÎäÁÖ´óÆì£¡\n"NOR, me);
+            message_vision("$Næ‰“å¼€é“ç®±ï¼Œå‘ç°ç®±ä¸­æœ‰ä¸€é¢æ——å¸œã€‚\n", me);
+            message_vision(HIR"$Nâ€œå“—å•¦â€ä¸€ä¸‹å±•å¼€äº†æ­¦æ—å¤§æ——ï¼\n"NOR, me);
             me->start_busy(7 + random(5));
             flag = new(__DIR__"flag");
             flag->move(me);
@@ -43,16 +43,16 @@ int do_open(string arg) {
             return 1;
         }
         else {
-            message_vision("$N´ò¿ªÌúÏä£¬·¢ÏÖÀïÃæÊÇ¿ÕµÄ¡£\n", me);
+            message_vision("$Næ‰“å¼€é“ç®±ï¼Œå‘ç°é‡Œé¢æ˜¯ç©ºçš„ã€‚\n", me);
             me->start_busy(7 + random(5));
             return 1;
         }
     }
     else {
-        message_vision(HIR"$N´ò¿ªÌúÏä£¬Í»È»ÌúÏäÖĞÉä³öÈıÖ§Ó²Å¬£¬È«²¿ÉäÔÚÁË$NÉíÉÏ£¡\n"NOR, me);
+        message_vision(HIR"$Næ‰“å¼€é“ç®±ï¼Œçªç„¶é“ç®±ä¸­å°„å‡ºä¸‰æ”¯ç¡¬åŠªï¼Œå…¨éƒ¨å°„åœ¨äº†$Nèº«ä¸Šï¼\n"NOR, me);
         me->receive_wound("qi", me->query("max_qi")+ 1);
         return 1;
     }
 
-        return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 }

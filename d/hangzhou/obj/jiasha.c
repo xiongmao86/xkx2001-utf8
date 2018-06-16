@@ -8,21 +8,21 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ºìÒÂôÂôÄ", ({"jiasha", "jia", "sha"}));
+        set_name("çº¢è¡£è¢ˆè£Ÿ", ({"jiasha", "jia", "sha"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¼þÕ¸ÐÂµÄ´óºìôÂôÄ£¬¾«¹¤ÖÆ×÷¶ø³É¡£\n");
-                set("unit", "¼þ");
+                set("long", "ä¸€ä»¶å´­æ–°çš„å¤§çº¢è¢ˆè£Ÿï¼Œç²¾å·¥åˆ¶ä½œè€Œæˆã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("armor_prop/armor", 10);
 		  }
 
 			if( !wizardp(this_player()) )
 			{
-				set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-				set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+				set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
+				set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 			}
 		  setup();
 }
@@ -36,40 +36,40 @@ int do_quan(string arg)
 {
 		  object ob, me = this_player();
 
-		  if( me->query("family/family_name") != "ÉÙÁÖÅÉ" )
-					 return notify_fail("Äã²»ÊÇÉÙÁÖ·ðÃÅµÜ×Ó£¬×ö²»µ½ÒÔÉíËÇ»¢¡£\n");
+		  if( me->query("family/family_name") != "å°‘æž—æ´¾" )
+					 return notify_fail("ä½ ä¸æ˜¯å°‘æž—ä½›é—¨å¼Ÿå­ï¼Œåšä¸åˆ°ä»¥èº«é¥²è™Žã€‚\n");
 
         if( (int)me->query_skill("buddhism", 1) < 160 )
-                return notify_fail("ÄãµÄ·ðÑ§ÐÞÎª»¹²»×ãÓÚÊ¹ÄãÒÔÉíËÇ»¢¡£\n");
+                return notify_fail("ä½ çš„ä½›å­¦ä¿®ä¸ºè¿˜ä¸è¶³äºŽä½¿ä½ ä»¥èº«é¥²è™Žã€‚\n");
 
         if( me->is_fighting() || me->is_busy() )
-	        return notify_fail("ÄãÕýÃ¦×Å¡£\n");
+	        return notify_fail("ä½ æ­£å¿™ç€ã€‚\n");
 
         if( me->query_temp("sl_quan") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÈ°·þ±ðÈËÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨åŠæœåˆ«äººäº†ã€‚\n");
 
         if( !arg )
-                return notify_fail("ÄãÒª¹æÈ°Ë­£¿\n");
+                return notify_fail("ä½ è¦è§„åŠè°ï¼Ÿ\n");
 
         if( !(ob = present(arg, environment(me))) )
-                return notify_fail("Õâ¶ùÃ»ÓÐÄãÒªÈ°·þµÄÈË¡£\n");
+                return notify_fail("è¿™å„¿æ²¡æœ‰ä½ è¦åŠæœçš„äººã€‚\n");
 
-        if( ob->query("race") != "ÈËÀà" )
-                return notify_fail(ob->name() + "Ìý²»¶®ÈË»°£¡\n");
+        if( ob->query("race") != "äººç±»" )
+                return notify_fail(ob->name() + "å¬ä¸æ‡‚äººè¯ï¼\n");
 
         if( ob->query("shen") > -100000
         ||  (int)ob->query("combat_exp") < (int)me->query("combat_exp") )
-                return notify_fail("ÕâÖÖÐ¡¶ñÈË£¬ÎÞÐè´óÊ¦Äú²ÙÐÄÁË¡£\n");
+                return notify_fail("è¿™ç§å°æ¶äººï¼Œæ— éœ€å¤§å¸ˆæ‚¨æ“å¿ƒäº†ã€‚\n");
 
         if( ob->is_fighting() || ob->is_busy() )
-	        return notify_fail(ob->name() + "ÕýÃ¦×Å¡£\n");
+	        return notify_fail(ob->name() + "æ­£å¿™ç€ã€‚\n");
 
 		  if( userp(ob) )
-					 return notify_fail("ÄãÈ°²»¶¯Íæ¼Ò¡£\n");
+					 return notify_fail("ä½ åŠä¸åŠ¨çŽ©å®¶ã€‚\n");
 
-		  message_vision("$N¶Ô$n¹æÈ°µÀ£¬Ê©Ö÷×ïÄõÉîÖØ£¬»¹ÍûÔçÈÕ»ØÍ·ÊÇ°¶¡£\n", me, ob);
+		  message_vision("$Nå¯¹$nè§„åŠé“ï¼Œæ–½ä¸»ç½ªå­½æ·±é‡ï¼Œè¿˜æœ›æ—©æ—¥å›žå¤´æ˜¯å²¸ã€‚\n", me, ob);
 
-		  message_vision("$NÀäÐ¦µÀ£¬±ð¼Ù´È±¯ÁË£¬½ÓÕÐ£¡¡£\n", ob);
+		  message_vision("$Nå†·ç¬‘é“ï¼Œåˆ«å‡æ…ˆæ‚²äº†ï¼ŒæŽ¥æ‹›ï¼ã€‚\n", ob);
 
 		  if( (int)ob->query("eff_qi")*10 < (int)ob->query("max_qi")*9 ) {
 					 ob->kill_ob(me);
@@ -92,19 +92,19 @@ void hitby(object me, object ob, int period)
 
         if( environment(me) != environment(ob) ) {
                 me->delete_temp("sl_quan");
-                tell_object(me, "ÉÆÔÕ£¬" + ob->name() + "ÒÑ¾­×ßÁË¡£\n");
+                tell_object(me, "å–„å“‰ï¼Œ" + ob->name() + "å·²ç»èµ°äº†ã€‚\n");
 					 return;
 		  }
 
 		  if( me->is_fighting() ) {
 					 me->delete_temp("sl_quan");
-					 tell_object(me, "Äã×Ô¹Ë²»åÚ£¬Ö»µÃÖÐÖ¹ÁË¹æÈ°¡£\n");
+					 tell_object(me, "ä½ è‡ªé¡¾ä¸éï¼Œåªå¾—ä¸­æ­¢äº†è§„åŠã€‚\n");
 					 return;
 		  }
 
 		  if( ob->is_fighting() ) {
 					 me->delete_temp("sl_quan");
-					 tell_object(me, ob->name() + "ÕýÃ¦×Å¡£\n");
+					 tell_object(me, ob->name() + "æ­£å¿™ç€ã€‚\n");
 					 return;
 		  }
 
@@ -133,23 +133,23 @@ void hitby(object me, object ob, int period)
         if( (int)me->query("qi")*10 < (int)me->query("max_qi")*2 
         ||  (int)me->query("eff_qi") * 10 < (int)me->query("max_qi")*3 ) {
                 me->delete_temp("sl_quan");
-                message_vision("$N¹þ¹þ´óÐ¦µÀ£¬Äã»¹ÊÇÉÙ¹ÜÏÐÊÂ°É¡£\n", ob);
+                message_vision("$Nå“ˆå“ˆå¤§ç¬‘é“ï¼Œä½ è¿˜æ˜¯å°‘ç®¡é—²äº‹å§ã€‚\n", ob);
                 return;
         }        
 
         period--;
         if( !period ) {
                 me->delete_temp("sl_quan");
-                message_vision("$N³¤¹òÐ»×ïµÀ£¬ÎÒ" + ob->query("name") + "Íü¶÷¸ºÒå£¬Öí¹·²»Èç£¡\n", ob);
-                message_vision("$NËµÍêÑï³¤¶øÈ¥¡£\n", ob);
+                message_vision("$Né•¿è·ªè°¢ç½ªé“ï¼Œæˆ‘" + ob->query("name") + "å¿˜æ©è´Ÿä¹‰ï¼ŒçŒªç‹—ä¸å¦‚ï¼\n", ob);
+                message_vision("$Nè¯´å®Œæ‰¬é•¿è€ŒåŽ»ã€‚\n", ob);
 
                 switch(ob->query("name")) {
-		case "Å·Ñô·æ" : bonus = 5; break;
-                case "¶¡´ºÇï" : bonus = 5; break;
-                case "½ðÂÖ·¨Íõ" : bonus = 3; break;
-                case "ð¯Ä¦ÖÇ" : bonus = 3; break;
-                case "Ñªµ¶ÀÏ×æ" : bonus = 3; break;
-                case "ºé°²Í¨" : bonus = 5; break;
+		case "æ¬§é˜³é”‹" : bonus = 5; break;
+                case "ä¸æ˜¥ç§‹" : bonus = 5; break;
+                case "é‡‘è½®æ³•çŽ‹" : bonus = 3; break;
+                case "é¸ æ‘©æ™º" : bonus = 3; break;
+                case "è¡€åˆ€è€ç¥–" : bonus = 3; break;
+                case "æ´ªå®‰é€š" : bonus = 5; break;
                 default : bonus = 1; break;
                 }
 
@@ -173,7 +173,7 @@ void hitby(object me, object ob, int period)
 				exp = bonus/3+random(bonus/4);
                 me->add("combat_exp", exp);
 
-                write_file("/log/test/ShaolinQuan", sprintf("%sÓÚ%sÊ±È°%s»ØÍ·ÊÇ°¶µÃ%s¾­ÑéµãºÍ%sÇ±ÄÜand%sBuddhism\n", me->query("name"), ctime(time()), ob->query("name"), chinese_number(exp),chinese_number(pot),chinese_number(bud)));
+                write_file("/log/test/ShaolinQuan", sprintf("%säºŽ%sæ—¶åŠ%så›žå¤´æ˜¯å²¸å¾—%sç»éªŒç‚¹å’Œ%sæ½œèƒ½and%sBuddhism\n", me->query("name"), ctime(time()), ob->query("name"), chinese_number(exp),chinese_number(pot),chinese_number(bud)));
 
                 destruct(ob);
                 return;

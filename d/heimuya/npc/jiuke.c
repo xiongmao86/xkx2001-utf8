@@ -1,15 +1,15 @@
 //Cracked by Roath
-// jiuke.c ¾Æ¿Í
+// jiuke.c é…’å®¢
 #include <ansi.h>
 inherit NPC;
 inherit F_SKILL;
 
 void create()
 {
-        set_name("¾Æ¿Í", ({ "jiu ke", "ke", "jiuke" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é…’å®¢", ({ "jiu ke", "ke", "jiuke" }));
+        set("gender", "ç”·æ€§");
         set("age", 20);
-        set("long", "Ò»¸öºÈµÃ×íõ¸õ¸µÄ¾Æ¿Í¡£\n");
+        set("long", "ä¸€ä¸ªå–å¾—é†‰é†ºé†ºçš„é…’å®¢ã€‚\n");
 
         set("chat_chance", 3);
         set("chat_msg", ({ 

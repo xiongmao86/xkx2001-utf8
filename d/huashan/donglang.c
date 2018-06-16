@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: donglang.c ¶«ÀÈ
+// Room: donglang.c ä¸œå»Š
 // qfy July 7, 1996.
 
 #include <room.h>
@@ -10,10 +10,10 @@ int valid_leave(object, string);
 
 void create()
 {
-    set("short", "¶«ÀÈ");
+    set("short", "ä¸œå»Š");
     set("long", @LONG
-¶«±ßÊÇ»ªÉ½ÅÉµÄ²ØÊéÊÒ£¬×¨¹©»ªÉ½µÜ×Ó¶ÁÊéĞ´×Ö¡£´æÓĞÒ»Ğ©½£Æ×ºÍ¾­
-Êé¡£Î÷ÃæÁ¬×Å»¨Ô°£¬±±±ßÊÇ¸öÆ«Ìü¡£
+ä¸œè¾¹æ˜¯åå±±æ´¾çš„è—ä¹¦å®¤ï¼Œä¸“ä¾›åå±±å¼Ÿå­è¯»ä¹¦å†™å­—ã€‚å­˜æœ‰ä¸€äº›å‰‘è°±å’Œç»
+ä¹¦ã€‚è¥¿é¢è¿ç€èŠ±å›­ï¼ŒåŒ—è¾¹æ˜¯ä¸ªåå…ã€‚
 LONG
     );
 
@@ -45,11 +45,11 @@ int valid_leave(object me, string dir)
     myfam = (mapping)me->query("family");
 
     if (dir == "east" && objectp(present("liang fa", environment(me)))) {
-	if ( !myfam || myfam["family_name"] != "»ªÉ½ÅÉ" )
-	   return notify_fail("Áº·¢µ²×¡ÄãËµµÀ£ººóÃæÊÇ±¾ÅÉÊéÔº£¬ÕâÎ»"+RANK_D->query_respect(me)+"ÇëÁô²½¡£\n");
+	if ( !myfam || myfam["family_name"] != "åå±±æ´¾" )
+	   return notify_fail("æ¢å‘æŒ¡ä½ä½ è¯´é“ï¼šåé¢æ˜¯æœ¬æ´¾ä¹¦é™¢ï¼Œè¿™ä½"+RANK_D->query_respect(me)+"è¯·ç•™æ­¥ã€‚\n");
 
-	if ( (int)me->query_temp("huashan/Êé") )
-	   return notify_fail("Áº·¢µ²×¡ÄãËµµÀ£ºÄãÒÑÄÃÁËÊé£¬µÃÏÈ»¹ÎÒ²ÅÈÃÄãÔÙÄÃ£¡\n");    
+	if ( (int)me->query_temp("huashan/ä¹¦") )
+	   return notify_fail("æ¢å‘æŒ¡ä½ä½ è¯´é“ï¼šä½ å·²æ‹¿äº†ä¹¦ï¼Œå¾—å…ˆè¿˜æˆ‘æ‰è®©ä½ å†æ‹¿ï¼\n");    
     }
 
     return ::valid_leave(me, dir);

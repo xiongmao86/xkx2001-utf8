@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/shenlong/milin.c ÃÜÁÖ
+// /d/shenlong/milin.c å¯†æ—
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜÁÖ");
+        set("short", "å¯†æ—");
         set("long", @LONG
-ÕâÊÇÇåÔ´É½ÇøÉî´¦µÄÒ»Æ¬ÃÜÁÖ¡£Õâ¶ùÁÖÄ¾Ã¯Ê¢£¬ÕÚÌì±ÎÈÕ£¬ºÜÈİÒ×
-ÈÃÈËÃÔÂ·¡£ÄãËÆºõÌıµ½Ò»Õó¡°Ö¨Ö¨¡±½ĞÉù£¬Ïë±ØÊÇÒ»Èººï×ÓÔÚ¸½½üÍæË£¡£
+è¿™æ˜¯æ¸…æºå±±åŒºæ·±å¤„çš„ä¸€ç‰‡å¯†æ—ã€‚è¿™å„¿æ—æœ¨èŒ‚ç››ï¼Œé®å¤©è”½æ—¥ï¼Œå¾ˆå®¹æ˜“
+è®©äººè¿·è·¯ã€‚ä½ ä¼¼ä¹å¬åˆ°ä¸€é˜µâ€œå±å±â€å«å£°ï¼Œæƒ³å¿…æ˜¯ä¸€ç¾¤çŒ´å­åœ¨é™„è¿‘ç©è€ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -42,7 +42,7 @@ void monkeyshowup()
         ob = new("/clone/beast/bmonkey");
         ob->move(this_object());
         set("lastshow", time());
-        message_vision("Ö»¼ûÒ»Ö»ÀÏºï×Ó´óÒ¡´ó°ÚµØ×ßÁË¹ıÀ´¡£\n", ob);
+        message_vision("åªè§ä¸€åªè€çŒ´å­å¤§æ‘‡å¤§æ‘†åœ°èµ°äº†è¿‡æ¥ã€‚\n", ob);
 
         remove_call_out("monkeydisappear");
         call_out("monkeydisappear", 20 + random(10), ob);
@@ -58,6 +58,6 @@ void monkeydisappear(object ob)
                 return;
         }
 
-        message("vision", "Ö»¼ûÀÏºï×Ó·É¿ìµØÌø×ßÁË¡£\n", this_object());
+        message("vision", "åªè§è€çŒ´å­é£å¿«åœ°è·³èµ°äº†ã€‚\n", this_object());
         destruct(ob);
 }

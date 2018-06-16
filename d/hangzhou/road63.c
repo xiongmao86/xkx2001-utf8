@@ -1,5 +1,5 @@
 //Cracked by Roath
- // ÑÌÏ¼¶´
+ // çƒŸéœžæ´ž
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -8,12 +8,12 @@
 inherit ROOM;
 
 void create()
-{   set("short", MAG"ÑÌÏ¼¶´"NOR);
+{   set("short", MAG"çƒŸéœžæ´ž"NOR);
     set("long", @LONG
-¾ÝËµÕ¾ÔÚÉ½Í·£¬Çå³¿¹Û¿´É½´åçÔÈÆ´¶ÑÌ£¬°øÍíÑöÍûÀ¶Ìì²ÊÏ¼£¬¾°
-É«ÓÅÃÀ£¬¹Ê³Æ¡°ÑÌÏ¼¡±¡£¶´¿ÚÁ½ÅÔÓÐ¾«ÃÀµÄ¡°¹ÛÒô¡±ºÍ¡°´óÊÆÖÁÆÐÈø¡±
-¶´ÄÚÁ½±ÚµÄÌìÈ»ÑÒÑ¨ÀïÓÐ¸÷´úµÄÊ¯¿Ì¡£Íù¶«ÊÇÏÂÉ½µÄÂ·¡£Î÷±ßÊÇÈ¥Áú
-¾®¡£
+æ®è¯´ç«™åœ¨å±±å¤´ï¼Œæ¸…æ™¨è§‚çœ‹å±±æ‘ç¼­ç»•ç‚ŠçƒŸï¼Œå‚æ™šä»°æœ›è“å¤©å½©éœžï¼Œæ™¯
+è‰²ä¼˜ç¾Žï¼Œæ•…ç§°â€œçƒŸéœžâ€ã€‚æ´žå£ä¸¤æ—æœ‰ç²¾ç¾Žçš„â€œè§‚éŸ³â€å’Œâ€œå¤§åŠ¿è‡³è©è¨â€
+æ´žå†…ä¸¤å£çš„å¤©ç„¶å²©ç©´é‡Œæœ‰å„ä»£çš„çŸ³åˆ»ã€‚å¾€ä¸œæ˜¯ä¸‹å±±çš„è·¯ã€‚è¥¿è¾¹æ˜¯åŽ»é¾™
+äº•ã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */ 

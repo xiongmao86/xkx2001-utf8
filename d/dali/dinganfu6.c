@@ -8,14 +8,14 @@ int do_find(string);
 
 void create()
 {
-	set("short", "¿â·¿");
+	set("short", "åº“æˆ¿");
 	set("long", @LONG
-´óÀí¹Ù¸®µÄ¿â·¿£¬´æ·ÅÎäÆ÷ºÍ·À¾ßµÈÎïÆ·£¬´óÀíµÄ¹ÙÔ±¡¢²îÈËµÈ¿ÉÒÔµ½ÕâÀï
-À´È¡³£ÓÃµÄÎäÆ÷¹¤¾ßµÈÎïÆ·¡£¿¿½üÃÅ¿ÚµÄµØ·½ÓĞÒ»ÕÅĞ¡×À×Ó£¬¹Ü¿âµÄÈË×øÔÚÄÇÀï
-¼ÇÂ¼ºÍ¹ÜÀí¡£Ò»ÉÈĞ¡ÃÅ(door)Í¨ÍùÊÒÍâ¡£
+å¤§ç†å®˜åºœçš„åº“æˆ¿ï¼Œå­˜æ”¾æ­¦å™¨å’Œé˜²å…·ç­‰ç‰©å“ï¼Œå¤§ç†çš„å®˜å‘˜ã€å·®äººç­‰å¯ä»¥åˆ°è¿™é‡Œ
+æ¥å–å¸¸ç”¨çš„æ­¦å™¨å·¥å…·ç­‰ç‰©å“ã€‚é è¿‘é—¨å£çš„åœ°æ–¹æœ‰ä¸€å¼ å°æ¡Œå­ï¼Œç®¡åº“çš„äººååœ¨é‚£é‡Œ
+è®°å½•å’Œç®¡ç†ã€‚ä¸€æ‰‡å°é—¨(door)é€šå¾€å®¤å¤–ã€‚
 LONG);
 	set("item_desc", ([
-		"door" : "ÕâÊÇÒ»ÉÈĞ¡Ä¾ÃÅ¡£\n",
+		"door" : "è¿™æ˜¯ä¸€æ‰‡å°æœ¨é—¨ã€‚\n",
         ]));	
 	set("objects", ([
 		"/kungfu/class/dali/guducheng" : 1,
@@ -23,7 +23,7 @@ LONG);
 	set("exits", ([
 		"out" : __DIR__"dinganfu2",
 		]));
-	create_door("out","Ä¾ÃÅ","enter",DOOR_CLOSED);
+	create_door("out","æœ¨é—¨","enter",DOOR_CLOSED);
 	set("cost", 1);
 	set("no_clean_up", 0);
 	set("no_sleep_room",1);
@@ -49,21 +49,21 @@ int do_find(string arg)
 		&& arg!="guanxue"
 		&& arg!="junfu"
 		&& arg!="gangzhang"
-		&& arg!="gangjian")) return notify_fail("ÄãÒªÕÒÊ²Ã´£¿\n");
-	if (me->query("family/family_name")!= "´óÀí¶Î¼Ò" && !me->query("dali/employee"))
-		return notify_fail("¼Ü×ÓÉÏ¸÷ÖÖÆ÷¾ß°Ú·ÅµÃÂÒÆß°ËÔã£¬Äã²»ÖªµÀ´ÓºÎÕÒÆğ¡£:(\n");
+		&& arg!="gangjian")) return notify_fail("ä½ è¦æ‰¾ä»€ä¹ˆï¼Ÿ\n");
+	if (me->query("family/family_name")!= "å¤§ç†æ®µå®¶" && !me->query("dali/employee"))
+		return notify_fail("æ¶å­ä¸Šå„ç§å™¨å…·æ‘†æ”¾å¾—ä¹±ä¸ƒå…«ç³Ÿï¼Œä½ ä¸çŸ¥é“ä»ä½•æ‰¾èµ·ã€‚:(\n");
 	if (ob=present(arg, me))
-		return notify_fail("ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞÕâ¼ş¶«Î÷Âğ£¬Ôõ÷á»¹ÏëÄÃ£¿¹Ü¿â·¿µÄ¿É¶¢×ÅÄãÄÄ¡£\n");
+		return notify_fail("ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰è¿™ä»¶ä¸œè¥¿å—ï¼Œæ€éº½è¿˜æƒ³æ‹¿ï¼Ÿç®¡åº“æˆ¿çš„å¯ç›¯ç€ä½ å“ªã€‚\n");
 	if (arg=="huachu" || arg=="zhitao" || arg=="guanxue")
 	{
 		log = room->query_temp("tool");
 		if (mapp(log) && log[me->query("id")])
-			return notify_fail("Äã¸Õ²Å²»ÊÇÀ´ÄÃ¹ıÕâ¶«Î÷ÁËÂğ£¬Ôõ÷áÓÖÒªÁË£¿¹Ü¿â·¿µÄ²»»á´ğÓ¦µÄ¡£\n");
+			return notify_fail("ä½ åˆšæ‰ä¸æ˜¯æ¥æ‹¿è¿‡è¿™ä¸œè¥¿äº†å—ï¼Œæ€éº½åˆè¦äº†ï¼Ÿç®¡åº“æˆ¿çš„ä¸ä¼šç­”åº”çš„ã€‚\n");
 		if (query("tool_count") >= 30)
-			return notify_fail("ÄãÕÒÁË°ëÌì£¬Ê²Ã´Ò²Ã»ÕÒµ½¡£\n");
+			return notify_fail("ä½ æ‰¾äº†åŠå¤©ï¼Œä»€ä¹ˆä¹Ÿæ²¡æ‰¾åˆ°ã€‚\n");
 		room->set_temp("tool/"+me->query("id"),1);
 		ob=new(__DIR__"obj/"+arg);
-		tell_object(me, "Äã×óÓÒ·­¿´£¬ÕÒµ½ÁË"+ob->name()+"¡£\n");
+		tell_object(me, "ä½ å·¦å³ç¿»çœ‹ï¼Œæ‰¾åˆ°äº†"+ob->name()+"ã€‚\n");
 		ob->move(me);
 		add("tool_count", 1);
 		return 1;
@@ -72,12 +72,12 @@ int do_find(string arg)
 	{
 		log = room->query_temp("junfu");
 		if (mapp(log) && log[me->query("id")])
-			return notify_fail("Äã¸Õ²Å²»ÊÇÀ´ÄÃ¹ıÕâ¶«Î÷ÁËÂğ£¬Ôõ÷áÓÖÒªÁË£¿¹Ü¿â·¿µÄ²»»á´ğÓ¦µÄ¡£\n");
+			return notify_fail("ä½ åˆšæ‰ä¸æ˜¯æ¥æ‹¿è¿‡è¿™ä¸œè¥¿äº†å—ï¼Œæ€éº½åˆè¦äº†ï¼Ÿç®¡åº“æˆ¿çš„ä¸ä¼šç­”åº”çš„ã€‚\n");
 		if (query("junfu_count") >= 15)
-			return notify_fail("ÄãÕÒÁË°ëÌì£¬Ê²Ã´Ò²Ã»ÕÒµ½¡£\n");
+			return notify_fail("ä½ æ‰¾äº†åŠå¤©ï¼Œä»€ä¹ˆä¹Ÿæ²¡æ‰¾åˆ°ã€‚\n");
 		room->set_temp("junfu/"+me->query("id"),1);
 		ob=new(__DIR__"obj/"+arg);
-		tell_object(me, "Äã×óÓÒ·­¿´£¬ÕÒµ½ÁË"+ob->name()+"¡£\n");
+		tell_object(me, "ä½ å·¦å³ç¿»çœ‹ï¼Œæ‰¾åˆ°äº†"+ob->name()+"ã€‚\n");
 		ob->move(me);
 		add("junfu_count", 1);
 		return 1;
@@ -86,12 +86,12 @@ int do_find(string arg)
 	{
 		log = room->query_temp("weapon");
 		if (mapp(log) && log[me->query("id")])
-			return notify_fail("Äã¸Õ²Å²»ÊÇÀ´ÄÃ¹ıÕâ¶«Î÷ÁËÂğ£¬Ôõ÷áÓÖÒªÁË£¿¹Ü¿â·¿µÄ²»»á´ğÓ¦µÄ¡£\n");
+			return notify_fail("ä½ åˆšæ‰ä¸æ˜¯æ¥æ‹¿è¿‡è¿™ä¸œè¥¿äº†å—ï¼Œæ€éº½åˆè¦äº†ï¼Ÿç®¡åº“æˆ¿çš„ä¸ä¼šç­”åº”çš„ã€‚\n");
 		if (query("weapon_count") >= 10)
-			return notify_fail("ÄãÕÒÁË°ëÌì£¬Ê²Ã´Ò²Ã»ÕÒµ½¡£\n");
+			return notify_fail("ä½ æ‰¾äº†åŠå¤©ï¼Œä»€ä¹ˆä¹Ÿæ²¡æ‰¾åˆ°ã€‚\n");
 		room->set_temp("weapon/"+me->query("id"),1);
 		ob=new(__DIR__"obj/"+arg);
-		tell_object(me, "Äã×óÓÒ·­¿´£¬ÕÒµ½ÁË"+ob->name()+"¡£\n");
+		tell_object(me, "ä½ å·¦å³ç¿»çœ‹ï¼Œæ‰¾åˆ°äº†"+ob->name()+"ã€‚\n");
 		ob->move(me);
 		add("weapon_count", 1);
 		return 1;
@@ -101,35 +101,35 @@ int do_find(string arg)
 int do_drop(string arg)
 {
 	object ob,me=this_player(),room=find_object("/d/dali/dinganfu6.c");
-	if ((me->query("family/family_name")!="´óÀí¶Î¼Ò"
+	if ((me->query("family/family_name")!="å¤§ç†æ®µå®¶"
 		&& !me->query("dali/employee"))
 		|| !arg
 		|| !ob=present(arg,me)) return 0;
 	if (arg=="huachu" || arg=="zhitao" || arg=="guanxue")
 	{
-		tell_object(me, "Äã°Ñ"+ob->query("name")+"·Å»Ø¼Ü×ÓÉÏ¡£\n");
+		tell_object(me, "ä½ æŠŠ"+ob->query("name")+"æ”¾å›æ¶å­ä¸Šã€‚\n");
 		destruct(ob);
 		room->delete_temp("tool/"+me->query("id"));
 		add("tool_count", -1);
-		tell_object(me,"¹Ü¿â·¿µÄÔŞĞíµØ¶ÔÄãµãÁËµãÍ·¡£\n");
+		tell_object(me,"ç®¡åº“æˆ¿çš„èµè®¸åœ°å¯¹ä½ ç‚¹äº†ç‚¹å¤´ã€‚\n");
 		return 1;
 	}
 	if (arg=="junfu")
 	{
-		tell_object(me, "Äã°Ñ"+ob->query("name")+"·Å»Ø¼Ü×ÓÉÏ¡£\n");
+		tell_object(me, "ä½ æŠŠ"+ob->query("name")+"æ”¾å›æ¶å­ä¸Šã€‚\n");
 		destruct(ob);
 		room->delete_temp("junfu/"+me->query("id"));
 		add("junfu_count", -1);
-		tell_object(me,"¹Ü¿â·¿µÄÔŞĞíµØ¶ÔÄãµãÁËµãÍ·¡£\n");
+		tell_object(me,"ç®¡åº“æˆ¿çš„èµè®¸åœ°å¯¹ä½ ç‚¹äº†ç‚¹å¤´ã€‚\n");
 		return 1;
 	}
 	if (arg=="gangzhang" || arg=="gangjian")
 	{
-		tell_object(me, "Äã°Ñ"+ob->query("name")+"·Å»Ø¼Ü×ÓÉÏ¡£\n");
+		tell_object(me, "ä½ æŠŠ"+ob->query("name")+"æ”¾å›æ¶å­ä¸Šã€‚\n");
 		destruct(ob);
 		room->delete_temp("weapon/"+me->query("id"));
 		add("weapon_count", -1);
-		tell_object(me,"¹Ü¿â·¿µÄÔŞĞíµØ¶ÔÄãµãÁËµãÍ·¡£\n");
+		tell_object(me,"ç®¡åº“æˆ¿çš„èµè®¸åœ°å¯¹ä½ ç‚¹äº†ç‚¹å¤´ã€‚\n");
 		return 1;
 	}
 	return 0;

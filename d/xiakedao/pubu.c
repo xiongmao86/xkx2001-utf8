@@ -6,11 +6,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "ÆÙ²¼");
+        set("short", "ç€‘å¸ƒ");
         set("long", @LONG
-É½Â·µÄ¾¡Í·£¬Ó­ÃæÊÇÒ»µÀÆÙ²¼(fall)´ÓÊ®ÓàÕÉµÄ¸ß´¦Ö±¹ÒÏÂÀ´¡£
-·ÉÁ÷¶øÏÂµÄË®Öù»÷´ò×ÅÆÙ²¼ÏÂµÄĞ¡Ì¶£¬·¢³öÕğ¶úÓûÁûµÄÏìÉù¡£Ğ¡Ì¶ÅÔ
-ÓĞÒ»¿Ã´óÊ÷(tree)¡£
+å±±è·¯çš„å°½å¤´ï¼Œè¿é¢æ˜¯ä¸€é“ç€‘å¸ƒ(fall)ä»åä½™ä¸ˆçš„é«˜å¤„ç›´æŒ‚ä¸‹æ¥ã€‚
+é£æµè€Œä¸‹çš„æ°´æŸ±å‡»æ‰“ç€ç€‘å¸ƒä¸‹çš„å°æ½­ï¼Œå‘å‡ºéœ‡è€³æ¬²è‹çš„å“å£°ã€‚å°æ½­æ—
+æœ‰ä¸€æ£µå¤§æ ‘(tree)ã€‚
 LONG );
 
       set("exits", ([
@@ -18,8 +18,8 @@ LONG );
       ]));
 
 	set("item_desc",([
-	    "fall" : "ÆÙ²¼ááÃæºÃÏñÓĞ¸ö¶´£¬Äã¿ÉÒÔÌø(jump)½øÈ¥¿´¿´¡£\n",
-	    "tree" : "ÕâÊÇÒ»Öê°ÙÄêÀÏËÉ£¬Ê÷ÉÏ¹Ò×ÅĞ©ÓÍ²¼ÓêÒÂ¡£Ì«¸ßÄãÄÃ²»×Å¡£\n",
+	    "fall" : "ç€‘å¸ƒå¾Œé¢å¥½åƒæœ‰ä¸ªæ´ï¼Œä½ å¯ä»¥è·³(jump)è¿›å»çœ‹çœ‹ã€‚\n",
+	    "tree" : "è¿™æ˜¯ä¸€æ ªç™¾å¹´è€æ¾ï¼Œæ ‘ä¸ŠæŒ‚ç€äº›æ²¹å¸ƒé›¨è¡£ã€‚å¤ªé«˜ä½ æ‹¿ä¸ç€ã€‚\n",
 	]));
 	set("objects", ([ 
 	    __DIR__ + "npc/master2" : 1,
@@ -44,26 +44,26 @@ int do_jump(string arg)
 	object coat;
 
 	if ( (!arg )|| ((arg != "fall") && (arg != "tree")))
-	{	write("ÍùÄÄÌø£¿(jump tree)\n");
+	{	write("å¾€å“ªè·³ï¼Ÿ(jump tree)\n");
 		return 1;
 	}
 	if( (arg == "tree") )
-	{	message_vision("$NÊ¹¾¢ÍùÉÏÒ»Ìø£¬»¹ÊÇÄÃ²»µ½¹ÒÔÚÊ÷ÉÏµÄÓêÒÂ¡£ÊÔÊÔÅÀ(climb)Ê÷°É¡£\n", me);
+	{	message_vision("$Nä½¿åŠ²å¾€ä¸Šä¸€è·³ï¼Œè¿˜æ˜¯æ‹¿ä¸åˆ°æŒ‚åœ¨æ ‘ä¸Šçš„é›¨è¡£ã€‚è¯•è¯•çˆ¬(climb)æ ‘å§ã€‚\n", me);
 		return 1;
 	}
 	if (!present("rain coat", me))
-	{	write("Ë®ÄÇ÷á´ó£¬Äã»¹ÊÇÕÒ¼şÓêÒÂ°É¡£\n");
+	{	write("æ°´é‚£éº½å¤§ï¼Œä½ è¿˜æ˜¯æ‰¾ä»¶é›¨è¡£å§ã€‚\n");
 		return 1;
 	}
 	coat = present("rain coat", me);
 	if  (coat->query("equipped") == 0)
-	{	write("Ë®ÄÇ÷á´ó£¬Äã»¹ÊÇ°ÑÓêÒÂ´©ÉÏ°É¡£\n");
+	{	write("æ°´é‚£éº½å¤§ï¼Œä½ è¿˜æ˜¯æŠŠé›¨è¡£ç©¿ä¸Šå§ã€‚\n");
 		return 1;
 	}
 	else
-	{	message_vision("$N×ß½üÆÙ²¼£¬×İÉíÔ¾ÁË½øÈ¥¡£\n", me);
+	{	message_vision("$Nèµ°è¿‘ç€‘å¸ƒï¼Œçºµèº«è·ƒäº†è¿›å»ã€‚\n", me);
 		me->move(__DIR__"yongdao1");
-		message("vision", me->name() + "×İÉíÌøÁË½øÀ´¡£\n",environment(me), ({me}) );
+		message("vision", me->name() + "çºµèº«è·³äº†è¿›æ¥ã€‚\n",environment(me), ({me}) );
 	}
 
 	return 1;
@@ -75,12 +75,12 @@ int do_climb(string arg)
 		return 0;
 
 	if (!(present("rain coat", me)) || !(present("rain coat", environment(me))))
-	{	message_vision("$NÅÀÉÏÊ÷£¬´ÓÊ÷ÉÏÄÃÏÂÒ»¼şÓêÒÂ¡£\n", me);
+	{	message_vision("$Nçˆ¬ä¸Šæ ‘ï¼Œä»æ ‘ä¸Šæ‹¿ä¸‹ä¸€ä»¶é›¨è¡£ã€‚\n", me);
 		coat = new(__DIR__+ "obj/coat.c");
 		coat->move(me);
 	}
 	else
-		write ("Õâ÷áÌ°ĞÄ£¬ÓĞÁË»¹ÄÃ¡£\n");
+		write ("è¿™éº½è´ªå¿ƒï¼Œæœ‰äº†è¿˜æ‹¿ã€‚\n");
 
 	return 1;
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sjqiao.c ˳����
+// sjqiao.c 顺济桥
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "˳����");
+        set("short", "顺济桥");
 	set("long", @LONG
-���Ǻ����ӵ�һ��ʯ���š��ſ�ˮ�ˮ½��ͨ��ݣ�����ȥ��Ψһ��
-�ڡ�һ�ӹٱ�פ�������
+这是横跨晋河的一座石拱桥。桥宽水深，水陆交通便捷，是南去的唯一出
+口。一队官兵驻扎在这里。
 LONG
         );
 

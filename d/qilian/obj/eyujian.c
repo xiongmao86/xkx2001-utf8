@@ -12,17 +12,17 @@ void init()
 
 void create()
 {
-        set_name("öù×ì¼ô", ({"ezui jian", "jian"}));
+        set_name("é³„å˜´å‰ª", ({"ezui jian", "jian"}));
         set_weight(7000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ³ßĞí³¤µÄ´ó¼ôµ¶£¬µ¶±ú³ÊÆæ¹ÖµÄÍäÇú×´£¬µ¶¿ÚÊÇÒ»ÅÅÌú³İ£¬ÏóöùÓãµÄÑÀ³İÒ»Ñù¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠå°ºè®¸é•¿çš„å¤§å‰ªåˆ€ï¼Œåˆ€æŸ„å‘ˆå¥‡æ€ªçš„å¼¯æ›²çŠ¶ï¼Œåˆ€å£æ˜¯ä¸€æ’é“é½¿ï¼Œè±¡é³„é±¼çš„ç‰™é½¿ä¸€æ ·ã€‚\n");
                 set("value", 1000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°ÑöùÓã¼ôÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄöùÓã¼ô¼ô·ÅÏÂ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠé³„é±¼å‰ªæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„é³„é±¼å‰ªå‰ªæ”¾ä¸‹ã€‚\n");
         }
 	init_blade(100);
 	setup();
@@ -36,31 +36,31 @@ int do_cut(string arg)
 //        if( !target ) target = offensive_target(me);
 
 	if (!arg)
-        return notify_fail("ÄãÒª¼ôÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦å‰ªä»€ä¹ˆï¼Ÿ\n");
 
 	target = present(arg,environment(me));
 
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Ê²÷á£¿\n");
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
 
         if( !objectp(weapon = target->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "whip" )
-                return notify_fail("Ê²÷á£¿\n");
-	message_vision(HIW "$N¾ÙÆğÊÖÖĞöùÓã¼ôÍù$nµÄ" + weapon->name()
-			+ "¼ôÈ¥¡£\n" NOR, me, target);
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
+	message_vision(HIW "$Nä¸¾èµ·æ‰‹ä¸­é³„é±¼å‰ªå¾€$nçš„" + weapon->name()
+			+ "å‰ªå»ã€‚\n" NOR, me, target);
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/3 ) {
-	message_vision(HIW "Ö»Ìı¼û¡¸¿¦àê¡¹µØÒ»Éù£¬$nÊÖÖĞµÄ" + weapon->name()
-                                + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me, target);
+	message_vision(HIW "åªå¬è§ã€Œå–€åš“ã€åœ°ä¸€å£°ï¼Œ$næ‰‹ä¸­çš„" + weapon->name()
+                                + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me, target);
                         weapon->unequip();
                         weapon->move(environment(target));
-                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                        weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
                         weapon->set("value", 0);
                         weapon->set("weapon_prop", 0);
                         target->reset_action();
         } else {
-        message_vision(HIW"¿ÉÊÇ$n¿´ÆÆÁË$NµÄÒâÍ¼£¬»¹ÕĞµ²¿ª¡£\n" NOR, me, target);
+        message_vision(HIW"å¯æ˜¯$nçœ‹ç ´äº†$Nçš„æ„å›¾ï¼Œè¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR, me, target);
         }
 
         return 1;

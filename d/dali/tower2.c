@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ڶ���");
+	set("short", "第二层");
 	set("long", @LONG
-Ϊ�������񣬸��б��飬����¡�𣬽�ڱ��֣����Ⱪ�𣬼�������С�
+为四神坐像，各有表情，衣褶隆起，筋节毕现，肌肉暴起，极富立体感。
 LONG);
 	set("exits", ([
 		"up" : __DIR__"tower3",

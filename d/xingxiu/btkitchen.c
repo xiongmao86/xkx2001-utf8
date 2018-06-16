@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "厨房");
         set("long", @LONG
-���ǰ���ɽׯ�ĳ�����������һ�������һ��ˮ�ף�����ɽׯ��
-�����ǿ����������ˮ(drink)�������Ů��æ��������
+这是白驼山庄的厨房，里面有一个大灶和一口水缸，白驼山庄的
+弟子们可以在这儿喝水(drink)。几个婢女在忙着做饭。
 LONG
         );
         set("exits", ([ 
@@ -43,11 +43,11 @@ int do_drink(string arg)
         max_water = me->query("str")*10 + 100;
         if (current_water<max_water) {
             me->set("water", current_water+30);
-            message("vision", me->name()+"ſ�ڴ�ˮ���Ϲ�ཹ�ཹ��˼���ˮ��\n"
+            message("vision", me->name()+"趴在大水缸上咕嘟咕嘟灌了几口水。\n"
             , environment(me), ({me}) );
-            write("��ſ�ڴ�ˮ���Ϲ�ཹ�ཹ��˼���ˮ��\n");
+            write("你趴在大水缸上咕嘟咕嘟灌了几口水。\n");
         }
-        else write("С�Ů��ֵص����㣬�������ֿ��죬������Ц���������Ӷ����˻��ȣ�\n");
+        else write("小婢女奇怪地瞪着你，慢慢地咧开嘴，捧腹大笑起来：肚子都大了还喝！\n");
 
         return 1;
 }

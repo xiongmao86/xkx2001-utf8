@@ -1,12 +1,12 @@
 //Cracked by Roath
-// biaotou.c ²ÆÖ÷¹Ü¼Ò
+// biaotou.c è´¢ä¸»ç®¡å®¶
 
 inherit NPC;
 
 void create()
 {
-	set_name("ïÚÍ·", ({ "biao tou", "biao" }));
-	set("gender", "ÄÐÐÔ");
+	set_name("é•–å¤´", ({ "biao tou", "biao" }));
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 
 	set("combat_exp", 5000);

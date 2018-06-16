@@ -1,16 +1,16 @@
 //Cracked by Roath
-// ma.c ÂíÇàĞÛ
+// ma.c é©¬é’é›„
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÂíÇàĞÛ", ({ "ma qingxiong", "ma" }));
-	set("nickname", "¶áÆÇ±Ş");
+	set_name("é©¬é’é›„", ({ "ma qingxiong", "ma" }));
+	set("nickname", "å¤ºé­„é­");
 	set("long", 
-"ÂíÇàĞÛÊÇ»ÆºÓËÄ¹íµÄÀÏÈı£¬ÊÇ¹íÃÅÁúÍõÉ³Í¨ÌìµÄÈıµÜ×Ó£¬ÉÃÓÚ±Ş·¨¡£\n");
-	set("title", "»ÆºÓËÄ¹íÀÏÈı");
-	set("gender", "ÄĞĞÔ");
+"é©¬é’é›„æ˜¯é»„æ²³å››é¬¼çš„è€ä¸‰ï¼Œæ˜¯é¬¼é—¨é¾™ç‹æ²™é€šå¤©çš„ä¸‰å¼Ÿå­ï¼Œæ“…äºé­æ³•ã€‚\n");
+	set("title", "é»„æ²³å››é¬¼è€ä¸‰");
+	set("gender", "ç”·æ€§");
 	set("age", 32);
 	set("attitude", "peaceful");
 	set("shen_type", -1);

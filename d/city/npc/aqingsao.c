@@ -1,5 +1,5 @@
 //Cracked by Roath
-// aqingsao.c °¢ÇìÉ©
+// aqingsao.c é˜¿åº†å«‚
 
 inherit NPC;
 //inherit F_VENDOR;
@@ -7,22 +7,22 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("°¢ÇìÉ©", ({ "aqing sao", "sao" }));
-	set("title", "²è¹İÀÏ°åÄï");
-	set("nickname", "ÑïÖİÒ»Ö§»¨");
+	set_name("é˜¿åº†å«‚", ({ "aqing sao", "sao" }));
+	set("title", "èŒ¶é¦†è€æ¿å¨˜");
+	set("nickname", "æ‰¬å·ä¸€æ”¯èŠ±");
 	set("shen_type", 1);
 
 	set("str", 30);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("age", 25);
 	set("long",
-		"°¢ÇìÉ©ÊÇÑïÖİ³ÇÀïÓĞÃûµÄ´óÃÀÈË£¬ÒòÎªÒ¯¶ùÃÇ×ÜÏ²»¶ÍùËıÕâ¶ù¹ä£¬\n"
-		"ËùÒÔËı¶Ô³ÇÀïµÄÒ»¾ÙÒ»¶¯¶¼ÁËÈçÖ´ÕÆ¡£\n");
+		"é˜¿åº†å«‚æ˜¯æ‰¬å·åŸé‡Œæœ‰åçš„å¤§ç¾äººï¼Œå› ä¸ºçˆ·å„¿ä»¬æ€»å–œæ¬¢å¾€å¥¹è¿™å„¿é€›ï¼Œ\n"
+		"æ‰€ä»¥å¥¹å¯¹åŸé‡Œçš„ä¸€ä¸¾ä¸€åŠ¨éƒ½äº†å¦‚æ‰§æŒã€‚\n");
 	set("combat_exp", 500);
 	set("attitude", "friendly");
 	set("inquiry", ([
-		"°¢Çì" : "ÎÒÃÇ¼Ò°¢ÇìÈ¥±±±ß×öÉúÒâÈ¥ÁËÒ®¡£\n",
-		"ÉúÒâ" : "Õâ¸öÃ´¡­¡­¡£\n",
+		"é˜¿åº†" : "æˆ‘ä»¬å®¶é˜¿åº†å»åŒ—è¾¹åšç”Ÿæ„å»äº†è€¶ã€‚\n",
+		"ç”Ÿæ„" : "è¿™ä¸ªä¹ˆâ€¦â€¦ã€‚\n",
 	]));
 	
 	set("vendor_goods", ({
@@ -53,17 +53,17 @@ void greeting(object ob)
 		return;
 	switch(random(2)) {
 	case 0 :
-		say("°¢ÇìÉ©Ğ¦ÃĞÃĞµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-			"£¬¿ìÇë½øÀ´ºÈ±­ÈÈ²è¡£\n");
+		say("é˜¿åº†å«‚ç¬‘çœ¯çœ¯åœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob) +
+			"ï¼Œå¿«è¯·è¿›æ¥å–æ¯çƒ­èŒ¶ã€‚\n");
 		break;
 	case 1 :
-		say("°¢ÇìÉ©ËµµÀ£ºÓ´£¡ÕâÎ»" + RANK_D->query_respect(ob) + 
-			"ÄúÀ´ÁË°¡£¡±¾µêÓĞ¸ÕÕ¨ºÃµÄÎåÏã»¨Éú³öÊÛ¡£\n");
+		say("é˜¿åº†å«‚è¯´é“ï¼šå“Ÿï¼è¿™ä½" + RANK_D->query_respect(ob) + 
+			"æ‚¨æ¥äº†å•Šï¼æœ¬åº—æœ‰åˆšç‚¸å¥½çš„äº”é¦™èŠ±ç”Ÿå‡ºå”®ã€‚\n");
 		break;
 	}
 }
 
 int accept_kill(object obj)
 {
-        command("chat ºúË¾Áî£¬¾ÈÃü°¡£¡ " + obj->name() + "Õâ¸ö" + RANK_D->query_rude(obj) + "ÒªÉ±ÁËÎÒ£¡");
+        command("chat èƒ¡å¸ä»¤ï¼Œæ•‘å‘½å•Šï¼ " + obj->name() + "è¿™ä¸ª" + RANK_D->query_rude(obj) + "è¦æ€äº†æˆ‘ï¼");
 }

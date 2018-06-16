@@ -1,5 +1,5 @@
 //Cracked by Roath
-// taizipo.c Îäµ±Ì«×ÓÆÂ
+// taizipo.c æ­¦å½“å¤ªå­å¡
 // by Fang 8/19/96
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", YEL"Ì«×ÓÆÂ"NOR);
+	set("short", YEL"å¤ªå­å¡"NOR);
 	set("long", @LONG
-	´Ë´¦µØ´¦ÆÂÍÓÖ®°¯£¬ÐÎÊÆÏÕÒª£¬Ãû½ÐÌ«×ÓÆÂ£¬ºÃÏóÒ»¶ä³öË®Ü½ÈØ£¬Ó¿³ö
-ÂÌ²¨£¬°êÝàÀúÀú¿ÉÊý¡£Ô¶´¦·å»ØÂ·×ª£¬ºöÃ÷ºöÃð£¬¾¡ÔÚÔÆÎíÖ®ÖÐ¡£
+	æ­¤å¤„åœ°å¤„å¡é™€ä¹‹éš˜ï¼Œå½¢åŠ¿é™©è¦ï¼Œåå«å¤ªå­å¡ï¼Œå¥½è±¡ä¸€æœµå‡ºæ°´èŠ™è“‰ï¼Œæ¶Œå‡º
+ç»¿æ³¢ï¼Œç“£è¼åŽ†åŽ†å¯æ•°ã€‚è¿œå¤„å³°å›žè·¯è½¬ï¼Œå¿½æ˜Žå¿½ç­ï¼Œå°½åœ¨äº‘é›¾ä¹‹ä¸­ã€‚
 LONG
 	);
         set("outdoors", "wudang");

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shizhu.c Ê¯Öù 
+// shizhu.c çŸ³æŸ± 
 // by Fang 8/19/96
 // modified by Ryu 6/15/97;
 // xQin 8/00
@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ê¯Öù");
+	set("short", "çŸ³æŸ±");
 	set("long", @LONG
-ÕâÊÇÄÏÑÒ¹¬Ç°µÄÒ»¸ùÊ¯Öù£¬µñ³ÉÁúÐÎ£¬×ÔÇÍ±ÚÉÏºá³ö£¬ÓÌÈç·ÉÁúÔÚÌì¡£ÁúÊ×
-¿ÌÒ»ÏãÂ¯£¬ÔÚ´ËÉÏÏã³ÆÎª¡°ÉÏÁúÍ·Ïã¡±£¬ÊÇÏã¿ÍµÄ×î´óÐÄÔ¸¡£Ê¯Öù½ö´ÖÈçÎÝÁº£¬
-ÅÔÎÞ·öÀ¸£¬Ç°ÓÐ°×ÔÆçÔÈÆ£¬ÏÂÓÐÍòÕÉÉîÔ¨£¬ÉÔÒ»Ê§×ã£¬¼´Ê¬¹ÇÎÞ´æ¡£
+è¿™æ˜¯å—å²©å®«å‰çš„ä¸€æ ¹çŸ³æŸ±ï¼Œé›•æˆé¾™å½¢ï¼Œè‡ªå³­å£ä¸Šæ¨ªå‡ºï¼ŒçŠ¹å¦‚é£žé¾™åœ¨å¤©ã€‚é¾™é¦–
+åˆ»ä¸€é¦™ç‚‰ï¼Œåœ¨æ­¤ä¸Šé¦™ç§°ä¸ºâ€œä¸Šé¾™å¤´é¦™â€ï¼Œæ˜¯é¦™å®¢çš„æœ€å¤§å¿ƒæ„¿ã€‚çŸ³æŸ±ä»…ç²—å¦‚å±‹æ¢ï¼Œ
+æ—æ— æ‰¶æ ï¼Œå‰æœ‰ç™½äº‘ç¼­ç»•ï¼Œä¸‹æœ‰ä¸‡ä¸ˆæ·±æ¸Šï¼Œç¨ä¸€å¤±è¶³ï¼Œå³å°¸éª¨æ— å­˜ã€‚
 LONG
 	);
         set("outdoors", "wudang");
@@ -25,7 +25,7 @@ LONG
 }
 void init()
 {
-	add_action("do_mianbi","Ãæ±Ú");
+	add_action("do_mianbi","é¢å£");
         add_action("do_mianbi","mianbi");
 }
 int do_mianbi()
@@ -39,12 +39,12 @@ int do_mianbi()
         if (me->is_busy()
         || me->query_temp("pending/exercising")
         || me->query_temp("exit_blocked"))
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if (me->query("jing") < 200 || me->query("jingli") < 200)
-	return notify_fail("Äã¾õµÃ·³Ôê²»°²£¬ÄÑÒÔ¾Û¾«Èë¶¨¡£\n");
+	return notify_fail("ä½ è§‰å¾—çƒ¦èºä¸å®‰ï¼Œéš¾ä»¥èšç²¾å…¥å®šã€‚\n");
 	
-        message_vision("$NÃæ¶Ô×ÅÊ¯Öùµø×ø¾²Ë¼£¬Á¼¾Ã£¬ËÆÓÐËùÎò¡£\n", me);
+        message_vision("$Né¢å¯¹ç€çŸ³æŸ±è·Œåé™æ€ï¼Œè‰¯ä¹…ï¼Œä¼¼æœ‰æ‰€æ‚Ÿã€‚\n", me);
 
 	me->start_busy(8);
         me->set("jing",1);
@@ -64,12 +64,12 @@ int do_mianbi()
 
 	if (gain > 20) gain = 20;
 
-	if (me->query("family/family_name") != "Îäµ±ÅÉ") gain = gain/4;
+	if (me->query("family/family_name") != "æ­¦å½“æ´¾") gain = gain/4;
 
 	me->add("combat_exp", gain * 8 + random(gain*4));
 	me->set("shen", me->query("combat_exp"));
 
-	if (me->query("family/family_name") == "Îäµ±ÅÉ")
+	if (me->query("family/family_name") == "æ­¦å½“æ´¾")
 	me->add("potential", gain * me->query_skill("taoism") / 25
 	+ random(gain*me->query_skill("taoism")/60));
 

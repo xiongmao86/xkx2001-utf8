@@ -1,5 +1,5 @@
 //Cracked by Roath
-// �����
+// 白玉峰
 // maco
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��ʯ��");
+	set("short", "山腹石室");
 	set("long", @LONG
-���ǰ�����е�ʯ�ң�ֻ������ʯ�ڶ��Ǿ�Ө���񣬾�ɫ
-��������·��ż������Σ����Ǽ�����̣�ԭ��ɽ���ܱգ���
-�ܷ��֣����Զ������²������á�
+这是白玉峰中的石室，只见四面石壁都是晶莹白玉，景色
+绮丽。地下放着几张桌椅，仍是坚牢完固，原来山洞密闭，不
+受风侵，是以洞中物事并不朽烂。
 LONG
 	);
 

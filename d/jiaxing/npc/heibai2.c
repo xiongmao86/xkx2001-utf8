@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºÚ°××Ó",({ "heibai zi","zi","heibai" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("é»‘ç™½å­",({ "heibai zi","zi","heibai" }) );
+        set("gender", "ç”·æ€§");
         set("age", 55);
 	set("long",
-		"ËûÃ¼Ä¿ÇåÐã£¬Í··¢¼«ºÚ¶øÆ¤·ô¼«°×£¬"
-		"ËÆºõÒ»¾ß½©Ê¬Ä£Ñù¡£\n");
+		"ä»–çœ‰ç›®æ¸…ç§€ï¼Œå¤´å‘æžé»‘è€Œçš®è‚¤æžç™½ï¼Œ"
+		"ä¼¼ä¹Žä¸€å…·åƒµå°¸æ¨¡æ ·ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯¶þ×¯Ö÷");
+        set("title","æ¢…åº„äºŒåº„ä¸»");
         set("combat_exp", 47000);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -47,24 +47,24 @@ void init()
 void check_sangong(object me)
 {
 
-	if (environment(me)->query("short")!="µØÀÎ")
+	if (environment(me)->query("short")!="åœ°ç‰¢")
 	return;
 	if (me->query("max_neili")>0 || !me->query("mz_neili")) {
 		command("look "+me->query("id"));
-		command("say ÄãºÃ´óµÄµ¨×Ó£¬¾¹¸ÒÃ°³äÈÎÎÒÐÐ£¡");
-		tell_object(me,"ºÚ°××ÓÊÖ³ÖÆåèÒÏòÄã»ÓÀ´£¬Õý´òÖÐÄãµÄÄÔáá£¡\n\n");
+		command("say ä½ å¥½å¤§çš„èƒ†å­ï¼Œç«Ÿæ•¢å†’å……ä»»æˆ‘è¡Œï¼");
+		tell_object(me,"é»‘ç™½å­æ‰‹æŒæ£‹æž°å‘ä½ æŒ¥æ¥ï¼Œæ­£æ‰“ä¸­ä½ çš„è„‘å¾Œï¼\n\n");
 		me->set("startroom","/d/city/kedian");
 		me->set_temp("tieslept",0);
 		me->move("/d/jiaxing/mzgate1");
-		message_vision("ºÚ°××Ó°Ñ"+me->name()+"¼ÜÁË³öÈ¥¡£\n",
+		message_vision("é»‘ç™½å­æŠŠ"+me->name()+"æž¶äº†å‡ºåŽ»ã€‚\n",
 			this_object());
 		destruct(this_object());
 		return;
 	}
-	command("say ÇëÈÎÀÏÏÈÉú´«ÎÒÉñ¹¦ÃØ¾÷¡£");
+	command("say è¯·ä»»è€å…ˆç”Ÿä¼ æˆ‘ç¥žåŠŸç§˜è¯€ã€‚");
 	command("bow "+me->query("id"));
-	tell_object(me,"ÄãÒ»¿´ºÚ°××Ó½øÁËÎÝ£¬Í»È»Áé»úÒ»¶¯£¬ÏëÆð¿ÉÒÔÎüËû(suck heibai zi)"
-			"µÄÄÚÁ¦¡£\n\n");
+	tell_object(me,"ä½ ä¸€çœ‹é»‘ç™½å­è¿›äº†å±‹ï¼Œçªç„¶çµæœºä¸€åŠ¨ï¼Œæƒ³èµ·å¯ä»¥å¸ä»–(suck heibai zi)"
+			"çš„å†…åŠ›ã€‚\n\n");
 
 	me->set_temp("suck/can",1);
 	return;
@@ -78,18 +78,18 @@ int do_suck(string arg)
 	return 0;
 
 	if (present("liaokao",me)) {
-		write("ÄãµÃÏÈÏë°ì·¨È¥µôÁÍîí¡£\n");
+		write("ä½ å¾—å…ˆæƒ³åŠžæ³•åŽ»æŽ‰é•£é“ã€‚\n");
 		return 1;
 	}
 
-	message("vision",me->name()+"Í»È»ÉìÊÖ×¥×¡ÁËºÚ°××ÓµÄÊÖÍó£¡\n",
+	message("vision",me->name()+"çªç„¶ä¼¸æ‰‹æŠ“ä½äº†é»‘ç™½å­çš„æ‰‹è…•ï¼\n",
 		environment(me),({me}));
-	write("ÄãÍ»È»ÉìÊÖ×¥×¡ÁËºÚ°××ÓµÄÊÖÍó£¡\n");
+	write("ä½ çªç„¶ä¼¸æ‰‹æŠ“ä½äº†é»‘ç™½å­çš„æ‰‹è…•ï¼\n");
 	command("fear");
 
 	me->set("max_neili",me->query("mz_neili"));
-	write("Äã¸Ð¾õÄÚÁ¦´ÓºÚ°××ÓµÄÊÖÍó¡¸ÄÚ¹Ø¡¹¡¸Íâ¹Ø¡¹Á½´¦Ñ¨µÀÔ´Ô´Á÷Èë£¬"
-		"ÄãµÄÄÚÁ¦ÓÖ»Ö¸´ÁË£¡\n");
+	write("ä½ æ„Ÿè§‰å†…åŠ›ä»Žé»‘ç™½å­çš„æ‰‹è…•ã€Œå†…å…³ã€ã€Œå¤–å…³ã€ä¸¤å¤„ç©´é“æºæºæµå…¥ï¼Œ"
+		"ä½ çš„å†…åŠ›åˆæ¢å¤äº†ï¼\n");
 	this_object()->unconcious();
 	return 1;
 }

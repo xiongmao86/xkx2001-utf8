@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wglou1.c �������¥
+// wglou1.c 万国烟雨楼
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�������¥");
+        set("short", "万国烟雨楼");
 	set("long", @LONG
-���˵���˼�飬�������ߡ���������������Ȥ��Ȼ���������¥�����
-¥��ʵ��Զ��������һ����¥�����㣬һ�����ţ����ɼ�԰����̨ͤ¥鿣���
-ɽ��ˮ��һ�ر�ˮ����źӳ�졣�����������ͷ����ӡ�
+「人道不思归，烟雨伴君眠」，傍湖而建，情趣盎然的万国烟雨楼名虽酒
+楼，实是远近闻名的一景。楼分两层，一进大门，即可见园林中亭台楼榭，假
+山流水，一池碧水，荷藕映红。环池漫步，客房绵延。
 LONG
         );
 
@@ -34,7 +34,7 @@ LONG
 int valid_leave(object me, string dir)
 {
         if( present("xiao er", me) && dir="west" )
-                return notify_fail("�ö˶˵��������С��������ȥ����\n");
+                return notify_fail("好端端地你想带店小二到那里去？！\n");
 
         return ::valid_leave(me, dir);
 }

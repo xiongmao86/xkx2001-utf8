@@ -1,15 +1,15 @@
 //Cracked by Roath
-// weishi5.c ¸±½«
+// weishi5.c å‰¯å°†
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("¸±½«", ({ "fu jiang", "jiang", "general" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("å‰¯å°†", ({ "fu jiang", "jiang", "general" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "¡¡¡¡ÕâÊÇÎ»´óÀí¹úÓùÁÖ¾üµÄ½«Áì£¬Î»¾Ó¸±½«Ö®Ö°£¬Æ½Ê±¸ºÔð»Ê³ÇµÄÖÎ°²¡£Ëû¿´Æð\nÀ´Éí»³¾ø¼¼¡£\n");
+	set("long", "ã€€ã€€è¿™æ˜¯ä½å¤§ç†å›½å¾¡æž—å†›çš„å°†é¢†ï¼Œä½å±…å‰¯å°†ä¹‹èŒï¼Œå¹³æ—¶è´Ÿè´£çš‡åŸŽçš„æ²»å®‰ã€‚ä»–çœ‹èµ·\næ¥èº«æ€€ç»æŠ€ã€‚\n");
 	set("combat_exp", 300000);
 	set("shen_type", 1);
 	set("attitude", "heroism");
@@ -44,7 +44,7 @@ void create()
     map_skill("dodge","duanshi-shenfa");
     map_skill("force","kurong-changong");
     prepare_skill("cuff","jinyu-quan");
-	set("no_get", "Äã¿¸²»¶¯");
+	set("no_get", "ä½ æ‰›ä¸åŠ¨");
 	setup();
 	carry_object("/d/city/obj/gangjian")->wield();
 	carry_object("/d/city/obj/tiejia")->wear();

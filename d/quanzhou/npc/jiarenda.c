@@ -5,11 +5,11 @@
 inherit NPC;
 void create()
 {
-	set_name("¼ÖÈË´ï", ({ "jia renda","jia","renda" }));
+	set_name("è´¾äººè¾¾", ({ "jia renda","jia","renda" }));
 	set("long", 
-		"ËûÍ·ÉÏ²øÁË°×²¼£¬Ò»ÉíÇàÅÛ£¬ËÆÊÇË¹ÎÄ´ò°ç£¬È´¹âÖøÁ½ÌõÍÈ¶ù£¬½ÅÏÂ³à×ã£¬´©ÖøÎÞ¶úÂéÐ¬¡£\n"
-		"´¨ÈËÈç´Ë×°Êø£¬ÄËÊÇµ±ÄêÖî¸ðÁÁÊÅÊÀ£¬´¨ÈËÎªËû´÷Ð¢£¬ÎäºîÒÅ°®ÉõÉî£¬ÊÇÒÔÇ§ÄêÖ®ÏÂ£¬°×²¼ÈÔ²»È¥Ê×¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"ä»–å¤´ä¸Šç¼ äº†ç™½å¸ƒï¼Œä¸€èº«é’è¢ï¼Œä¼¼æ˜¯æ–¯æ–‡æ‰“æ‰®ï¼Œå´å…‰è‘—ä¸¤æ¡è…¿å„¿ï¼Œè„šä¸‹èµ¤è¶³ï¼Œç©¿è‘—æ— è€³éº»éž‹ã€‚\n"
+		"å·äººå¦‚æ­¤è£…æŸï¼Œä¹ƒæ˜¯å½“å¹´è¯¸è‘›äº®é€ä¸–ï¼Œå·äººä¸ºä»–æˆ´å­ï¼Œæ­¦ä¾¯é—çˆ±ç”šæ·±ï¼Œæ˜¯ä»¥åƒå¹´ä¹‹ä¸‹ï¼Œç™½å¸ƒä»ä¸åŽ»é¦–ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "heroism");
 	set("shen_type", -1);
@@ -46,7 +46,7 @@ void create()
 
 	prepare_skill("claw", "sanyin-zhua");
 
-	create_family("Çà³ÇÅÉ", 5, "µÜ×Ó");
+	create_family("é’åŸŽæ´¾", 5, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/emeici")->wield();
@@ -55,7 +55,7 @@ void create()
 
 void attempt_apprentice(object me)
 {
-	command("say Çà³ÇÅÉµÜ×Ó²»ÄÜËæ±ãÊÕÍ½¡£");
+	command("say é’åŸŽæ´¾å¼Ÿå­ä¸èƒ½éšä¾¿æ”¶å¾’ã€‚");
 }
 
 void init()
@@ -73,7 +73,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         if (present("pixie jianpu",ob)) {
            message_vision(
-           HIY "$NÍ»È»¾Ù½ÅºáÉ¨£¬½«$n°íµ¹£¬ÄüÐ¦µÀ£ºÔ­À´ÄãÒ²ÏëÒª±ÙÐ°½£Æ×£¡\n"
+           HIY "$Nçªç„¶ä¸¾è„šæ¨ªæ‰«ï¼Œå°†$nç»Šå€’ï¼Œç‹žç¬‘é“ï¼šåŽŸæ¥ä½ ä¹Ÿæƒ³è¦è¾Ÿé‚ªå‰‘è°±ï¼\n"
             NOR, this_object(), ob );
 	   command("follow " + ob->query("id"));
            kill_ob(ob);

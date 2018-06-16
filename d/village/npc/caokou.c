@@ -1,15 +1,15 @@
 //Cracked by Roath
-//caokou ²İ¿Ü
+//caokou è‰å¯‡
 
 inherit NPC;
 
 void create()
 {
-	set_name("²İ¿Ü", ({ "cao kou","kou","robber" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è‰å¯‡", ({ "cao kou","kou","robber" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35+random(5));
 	set("long",
-		"Õâ¼Ò»ïÉí²ÃË¶×³£¬¸ßÍ·´óÂí£¬×¨¸É´ò¼Ò½ÙÉáµÄ¹´µ±¡£\n");
+		"è¿™å®¶ä¼™èº«è£ç¡•å£®ï¼Œé«˜å¤´å¤§é©¬ï¼Œä¸“å¹²æ‰“å®¶åŠ«èˆçš„å‹¾å½“ã€‚\n");
 	set("combat_exp", 4500);
         set("shen_type", -1);
 	set("attitude", "heroism");

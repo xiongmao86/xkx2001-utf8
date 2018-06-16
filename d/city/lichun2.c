@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", GRN"Àö´ºÔº"NOR);
+	set("short", GRN"ä¸½æ˜¥é™¢"NOR);
 	set("long", @LONG
-ÕâÊÇÀö´ºÔº¶þÂ¥£¬²»Ê±ÓÐÑ¾÷ß´Ó¸÷·¿´©½ø´©³ö£¬¶Ë²èËÍË®£¬µÝËÍ²ËëÈ¡£
-ÓÐµÄÏá·¿Àï²»Ê±´«³ö´òÇéÂîÇÎÖ®Éù£¬ÒùÉùÀËÓï²»Ò»¶ø×ã£»ÓÐµÄÏá·¿È´ÃÅ´°½ô
-±Õ£¬Å¼¶øÓÐ¼¸ÂÆÏú»ê¶áÆÇµÄÉëÒ÷ÉùÆ®³ö¡£
+è¿™æ˜¯ä¸½æ˜¥é™¢äºŒæ¥¼ï¼Œä¸æ—¶æœ‰ä¸«é¬Ÿä»Žå„æˆ¿ç©¿è¿›ç©¿å‡ºï¼Œç«¯èŒ¶é€æ°´ï¼Œé€’é€èœè‚´ã€‚
+æœ‰çš„åŽ¢æˆ¿é‡Œä¸æ—¶ä¼ å‡ºæ‰“æƒ…éª‚ä¿ä¹‹å£°ï¼Œæ·«å£°æµªè¯­ä¸ä¸€è€Œè¶³ï¼›æœ‰çš„åŽ¢æˆ¿å´é—¨çª—ç´§
+é—­ï¼Œå¶è€Œæœ‰å‡ ç¼•é”€é­‚å¤ºé­„çš„å‘»åŸå£°é£˜å‡ºã€‚
 LONG
 	);
 
@@ -23,16 +23,16 @@ LONG
 
 	set("item_desc", ([
 		"tu" :
-"                                      ¦¯        ¦¯          ¦¯             
-                                    ©°©¦        ©¦          ©¦
-      ©°¡ª¦¯©°¡ª  ¡ª©Ð¡ª¡ª¦¯        ©¦©È      ©°©¼          ©¸©´
-    ¡ª©¼¦¯¡ª©¼    ¡ª¡ª¡ª¡ª¦¯  ¦¯¡ª¡ª©¼©¦  ¦¯¡ª©à©Ø¡ª  ¦¯¡ª¡ª©Ø©à
+"                                      ÎŸ        ÎŸ          ÎŸ             
+                                    â”Œâ”‚        â”‚          â”‚
+      â”Œâ€”ÎŸâ”Œâ€”  â€”â”¬â€”â€”ÎŸ        â”‚â”¤      â”Œâ”˜          â””â”
+    â€”â”˜ÎŸâ€”â”˜    â€”â€”â€”â€”ÎŸ  ÎŸâ€”â€”â”˜â”‚  ÎŸâ€”â”¼â”´â€”  ÎŸâ€”â€”â”´â”¼
 
 
-   ¦¯       ¦¯    ¦¯¦¯¦¯                 ¦¯                  ¡ð
-   ©¦       ©¦    ©¦©À©à       ©°¡ª¦¯  ©°©à                  ©¦
-   ©À ¦¯©Ð©´©È    ©À©¸©à©´   ¡ª©¼¦¯¡ª¡ª©¼©È          ¡ð©Ð¡ª©´©È
-   ©¦   ©¼©¸©¦    ©¦  ©¦                 ©¸            ©¦  ©¦©¦
+   ÎŸ       ÎŸ    ÎŸÎŸÎŸ                 ÎŸ                  â—‹
+   â”‚       â”‚    â”‚â”œâ”¼       â”Œâ€”ÎŸ  â”Œâ”¼                  â”‚
+   â”œ ÎŸâ”¬â”â”¤    â”œâ””â”¼â”   â€”â”˜ÎŸâ€”â€”â”˜â”¤          â—‹â”¬â€”â”â”¤
+   â”‚   â”˜â””â”‚    â”‚  â”‚                 â””            â”‚  â”‚â”‚
 	\n"]));
 */
 	set("exits", ([
@@ -52,7 +52,7 @@ int valid_leave(object me, string dir)
 {
     if (present("guinu",environment(me)) && 
                 me->query("hooker")) {
-       message_vision("¹êÅ«Ò»°Ñ¾¾×¡$NµÄÈ¹±ß£ºÄãÒÑ¾­ÊÇÀö´ºÔºµÄÈËÁË£¬²»½Ó¿Í±ðÏëåÞ£¡\n",
+       message_vision("é¾Ÿå¥´ä¸€æŠŠæªä½$Nçš„è£™è¾¹ï¼šä½ å·²ç»æ˜¯ä¸½æ˜¥é™¢çš„äººäº†ï¼Œä¸æŽ¥å®¢åˆ«æƒ³é›ï¼\n",
                 me);
        return notify_fail("\n");
     }

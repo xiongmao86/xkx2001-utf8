@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ���");
+        set("short", "佛山镇街");
         set("long", @LONG
-��ɽ��ֵ���ب�������ϱ���һ���ưܵ����������һ��
-�ĳ���������д�š�Ӣ�ۻ�ݡ��ĸ����֡�
+佛山镇街道横亘东西。南边有一座破败的庙宇，里面是一家
+赌场，大门上写着“英雄会馆”四个大字。
 LONG
         );
         set("exits", ([

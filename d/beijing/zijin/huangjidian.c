@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ʼ���");
+	set("short", "皇极殿");
 	set("long", @LONG
-������Ǭ¡�ʵ�׼����̫�ϻʾ��е���ĵط�������Ԫ�꣬Ǭ¡
-̫�ϻ����ڴ˵����ǧ���硣
+这里是乾隆皇帝准备当太上皇举行典礼的地方。嘉庆元年，乾隆
+太上皇曾在此殿举行千叟宴。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

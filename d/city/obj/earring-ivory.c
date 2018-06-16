@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIW "ÏóÑÀ¶úÊÎ" NOR, ({ "ivory earring", "earring" }));
+        set_name(HIW "è±¡ç‰™è€³é¥°" NOR, ({ "ivory earring", "earring" }));
         set("weight", 50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
+                set("unit", "å¯¹");
                 set("value", 5000);
-                set("long", "Ò»¶ÔÒÔÏóÑÀ×ö³ÉµÄ¶úÊÎ£¬ĞÎ×´·Ç³£¾Ş´ó¡£\n");
+                set("long", "ä¸€å¯¹ä»¥è±¡ç‰™åšæˆçš„è€³é¥°ï¼Œå½¢çŠ¶éå¸¸å·¨å¤§ã€‚\n");
                 set("material", "ivory");
                 set("armor_prop/armor", 4);
 				set("female_only", 1);

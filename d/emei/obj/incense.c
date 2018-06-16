@@ -1,18 +1,18 @@
 //Cracked by Roath
-// incense.c Ïã»ğ
+// incense.c é¦™ç«
 // xbc 97/02/03
 
 inherit ITEM;
 
 void create()
 {
-        set_name("Ïã»ğ",({"incense"}));
+        set_name("é¦™ç«",({"incense"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ö¦Ïã»ğ£¬»¹´ø×ÅËÉÖ¦µÄÏãÆø¡£\n");
-                set("unit", "Ö¦");
+                set("long", "è¿™æ˜¯ä¸€æé¦™ç«ï¼Œè¿˜å¸¦ç€æ¾æçš„é¦™æ°”ã€‚\n");
+                set("unit", "æ");
                 set("value", 0);
         }
         setup();

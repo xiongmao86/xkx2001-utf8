@@ -2,11 +2,11 @@
 // Room: /d/beijing/xizhimen.c
 
 inherit ROOM;
-string GATE_DESC_SHORT="��ֱ��";
+string GATE_DESC_SHORT="西直门";
 string GATE_DESC_LONG=@LONG
-���Ǳ���������ĳ��ţ�һ����·ͨ��ɽ����ת������ɽ
-������������ĳ�ǽ������������䣬ȫ����ש�������ɣ�
-���Ŷ�ҲΪש��Ͳ�ǣ�ʮ�ּ�����ۡ��ſ����Ÿ�ʾ(gaoshi).
+这是北京城西面的城门，一条大路通往山西，转至祈连山
+乃至西域。这里的城墙建于明永乐年间，全部用砖包砌而成，
+城门洞也为砖砌筒壳，十分坚固美观。门口有张告示(gaoshi).
 LONG;
 
 mapping GATE_EXITS=([

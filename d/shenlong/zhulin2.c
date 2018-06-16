@@ -1,5 +1,5 @@
 //Cracked by Roath
-//ÖñÁÖ1 /d/shenlong/zhulin1
+//ç«¹æž—1 /d/shenlong/zhulin1
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÖñÁÖ");
+        set("short", "ç«¹æž—");
         set("long", @LONG
-Õâ¶ùÊÇÒ»Æ¬ÃÜÊµµÄÖñÁÖ£¬¹âÏß°µµ­£¬ÄãÒ»²»Ð¡ÐÄ¾Í»á±»½ÅÏÂµÄÖ¦Ìõ°í¸ö¸úÍ·¡£
-¸½½üËÆºõÓÐÇáÎ¢µÄÉ³É³Éù£¬ºÃÏóÊÇº£·ç´µ¹ýÓÖºÃÏóÊÇ³æ×ÓÅÀ¹ý£¬Äã¾õµÃÓÐµã²»¶Ô
-¾¢£¬µ«ÓÖËµ²»³öÊÇÊ²Ã´¡£
+è¿™å„¿æ˜¯ä¸€ç‰‡å¯†å®žçš„ç«¹æž—ï¼Œå…‰çº¿æš—æ·¡ï¼Œä½ ä¸€ä¸å°å¿ƒå°±ä¼šè¢«è„šä¸‹çš„æžæ¡ç»Šä¸ªè·Ÿå¤´ã€‚
+é™„è¿‘ä¼¼ä¹Žæœ‰è½»å¾®çš„æ²™æ²™å£°ï¼Œå¥½è±¡æ˜¯æµ·é£Žå¹è¿‡åˆå¥½è±¡æ˜¯è™«å­çˆ¬è¿‡ï¼Œä½ è§‰å¾—æœ‰ç‚¹ä¸å¯¹
+åŠ²ï¼Œä½†åˆè¯´ä¸å‡ºæ˜¯ä»€ä¹ˆã€‚
 LONG
         );
 

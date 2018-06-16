@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���ٹ���԰");
+	set("short", "宁寿宫花园");
 	set("long", @LONG
-������Ǭ¡�ʵ�׼����λ����Ϊ����԰��Ϊ�Լ����ġ� 
-԰�ڲ���ͤ��̨��¥���󣬲��ɴ�أ�����ͨ�ġ�
+这里是乾隆皇帝准备退位后，作为御花园而为自己建的。 
+园内布满亭、台、楼、阁，苍松翠柏，曲径通幽。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// incense.c Ïã»ğ
+// incense.c é¦™ç«
 // By Marz 11/11/96
 // Ryu 12/5/96
 inherit ITEM;
@@ -11,13 +11,13 @@ int worn;
 
 void create()
 {
-	set_name("Ïã",({"incense"}));
+	set_name("é¦™",({"incense"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ö¦¸ÕÔì³öÀ´µÄÏã£¬»¹´ø×ÅËÉÖ¦µÄÏãÆø¡£\n");
-		set("unit", "Ö¦");
+		set("long", "è¿™æ˜¯ä¸€æåˆšé€ å‡ºæ¥çš„é¦™ï¼Œè¿˜å¸¦ç€æ¾æçš„é¦™æ°”ã€‚\n");
+		set("unit", "æ");
 		set("value", 10000);
     	}
 	
@@ -37,9 +37,9 @@ int do_light(string arg)
 
     if (!present("fire", me) || !present("incense", me))  return 0;
     
-               message("vision",this_player()->name() + "ÌÍ³ö»îÕÛ°ÑÏãµãÈ¼¡£\n",
+               message("vision",this_player()->name() + "æå‡ºæ´»æŠ˜æŠŠé¦™ç‚¹ç‡ƒã€‚\n",
                         environment(me), ({me}) );
-               write("ÄãÌÍ³ö»îÕÛ°ÑÏãµãÈ¼¡£\n");
+               write("ä½ æå‡ºæ´»æŠ˜æŠŠé¦™ç‚¹ç‡ƒã€‚\n");
 		ob = new("/d/xingxiu/obj/incense2");
 		ob->move(me);
 		destruct(this_object());
@@ -52,11 +52,11 @@ void wear(int phase)
 	worn = phase;
 	switch(phase) {
 	case 1:
-		set("long", "ÕâÊÇÒ»Ö¦Ïã£¬µ«ÒÑ¾­¿ªÊ¼Ê§È¥ÏãÎ¶ÁË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æé¦™ï¼Œä½†å·²ç»å¼€å§‹å¤±å»é¦™å‘³äº†ã€‚\n");
 		call_out("wear", 120, phase+1); 
 		break;
 	case 2:
-		set("long", "ÕâÊÇÒ»Ö¦·ÅÁËºÜ¾ÃµÄÏã£¬¼¸ºõÍêÈ«Ê§È¥ÏãÆøÁË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€ææ”¾äº†å¾ˆä¹…çš„é¦™ï¼Œå‡ ä¹å®Œå…¨å¤±å»é¦™æ°”äº†ã€‚\n");
 		call_out("wear", 120, phase+1); 
 		break;
 	case 3:

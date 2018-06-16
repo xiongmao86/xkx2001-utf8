@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("×¿Âê", ({ "zhuoma" }));
+	set_name("å“çŽ›", ({ "zhuoma" }));
 	set("long", 
-"ÕâÊÇ¸öÌåÌ¬ÇáÓ¯µÄÄêÇá²ØÄá£¬ÉÏ×Å¶ÌÐä½ôÉíÒÂ£¬Ë«ÈéÌ»ËÊ£¬¸¹²¿Î¢Â¶£¬\n"
-"³à×ã£¬ÏÂ×Å³¤È¹¡£\n");
-	set("gender", "Å®ÐÔ");
+"è¿™æ˜¯ä¸ªä½“æ€è½»ç›ˆçš„å¹´è½»è—å°¼ï¼Œä¸Šç€çŸ­è¢–ç´§èº«è¡£ï¼ŒåŒä¹³è¢’è€¸ï¼Œè…¹éƒ¨å¾®éœ²ï¼Œ\n"
+"èµ¤è¶³ï¼Œä¸‹ç€é•¿è£™ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 20);
 	set("attitude", "heroism");
 	set("class","bonze");
@@ -56,7 +56,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say("×¿ÂêºÏÊ²ÎªÀñ£¬ËµµÀ£º°¢åôÙ¢·ð£¡" + RANK_D->query_respect(ob)
-        + "£¬Æ¶ÄáÕâÏáÓÐÀñÁË¡£\n");
+        say("å“çŽ›åˆä»€ä¸ºç¤¼ï¼Œè¯´é“ï¼šé˜¿å¼­ä½—ä½›ï¼" + RANK_D->query_respect(ob)
+        + "ï¼Œè´«å°¼è¿™åŽ¢æœ‰ç¤¼äº†ã€‚\n");
         return;
 }

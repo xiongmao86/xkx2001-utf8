@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ů�Ʒ�");
+        set("short", "淑女牌坊");
         set("long", @LONG
-�������ǰ��һ���ߴ��ʯ��������д�š���Ů�Ʒ����ĸ��ֽ�
-���֣����������Զ���þ���ɹ���ܣ��Ѿ��Ե���Щ�����ˡ�
+在你的面前是一座高大的石坊，上面写着“淑女牌坊”四个镏金
+大字，由于年代久远，久经日晒雨淋，已经显得有些黯淡了。
 LONG
         );
         set("exits", ([

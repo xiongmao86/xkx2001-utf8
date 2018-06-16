@@ -13,11 +13,11 @@ string show_data();
 
 void create()
 {
-	set("short", HIR"Ã÷½ÌÖ¸»ÓÖĞĞÄ"NOR);
+	set("short", HIR"æ˜æ•™æŒ‡æŒ¥ä¸­å¿ƒ"NOR);
 	set("long", @LONG
-ÕâÀïÊÇÃ÷½ÌÖ¸»ÓÖĞĞÄ¡£ËÄÖÜ°ÚÂúÁË¸÷ÖÖ¸÷ÑùµÄÒÇÆ÷¡£Ç½ÉÏÃæ»¹ÓĞ
-Ò»ĞĞĞ¡×Ö(word)¡£ÕıÃæÒ»¸öÒ»°ÙÁã°Ë´çµÄ´óÆÁÄ»(screen)ÉÏÏÔÊ¾×ÅÒ»
-Ğ©Êı¾İ¡£º
+è¿™é‡Œæ˜¯æ˜æ•™æŒ‡æŒ¥ä¸­å¿ƒã€‚å››å‘¨æ‘†æ»¡äº†å„ç§å„æ ·çš„ä»ªå™¨ã€‚å¢™ä¸Šé¢è¿˜æœ‰
+ä¸€è¡Œå°å­—(word)ã€‚æ­£é¢ä¸€ä¸ªä¸€ç™¾é›¶å…«å¯¸çš„å¤§å±å¹•(screen)ä¸Šæ˜¾ç¤ºç€ä¸€
+äº›æ•°æ®ã€‚
 LONG
 );
 	set("exits", ([
@@ -55,7 +55,7 @@ void init()
 
 int do_check()
 {
-	write("ÏÖÓĞ"+query("jingtie")+"¿é¾«Ìú\n");
+	write("ç°æœ‰"+query("jingtie")+"å—ç²¾é“\n");
 	return 1;
 }
 
@@ -66,10 +66,10 @@ int f_set_jingtie(string arg)
 	if (arg)
 	{	
 		if (sscanf(arg, "%d",num) != 1)
-			return notify_fail("Ö¸Áî¸ñÊ½£ºset_jingtie <num>\n");
+			return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šset_jingtie <num>\n");
 	}
 	else
-		return notify_fail("Ö¸Áî¸ñÊ½£ºset_jingtie <num>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šset_jingtie <num>\n");
 	set("jingtie",num);
 	write("OK!\n");
 	return 1;
@@ -83,10 +83,10 @@ int f_set_didao(string arg)
 	if (arg)
 	{
 		if (sscanf(arg, "%s %d", dir, num) != 2)
-			return notify_fail("Ö¸Áî¸ñÊ½£ºset_didao <dir> <num>\n");
+			return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šset_didao <dir> <num>\n");
 	}
 	else
-		return notify_fail("Ö¸Áî¸ñÊ½£ºset_didao <dir> <num>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šset_didao <dir> <num>\n");
 	set("didao/"+dir, num);
 	write("OK!\n");
 	return 1;
@@ -95,21 +95,21 @@ int f_set_didao(string arg)
 string word_string()
 {
 	return HIC
-		"²é¾«Ìú´¢²ØÁ¿:		check_jingtie\n"+
-		"ÉèÖÃ¾«Ìú´¢²Ø:		set_jingtie <num>\n"+
-		"ÉèÖÃºñÍÁµØµÀ:		set_didao <dir> <num>\n"
+		"æŸ¥ç²¾é“å‚¨è—é‡:		check_jingtie\n"+
+		"è®¾ç½®ç²¾é“å‚¨è—:		set_jingtie <num>\n"+
+		"è®¾ç½®åšåœŸåœ°é“:		set_didao <dir> <num>\n"
 		NOR
-		HIR"\n\nÕıÔÚ½¨ÉèÖĞ¡£\n"NOR;
+		HIR"\n\næ­£åœ¨å»ºè®¾ä¸­ã€‚\n"NOR;
 }
 
 string show_data()
 {	return HIY
 "\n    *-------------------------------------------*"+
-	"\n\t¾«Ìú´¢²ØÁ¿		"+query("jingtie")+
-	"\n\tºñÍÁµØµÀ£º"+
-	"\n\t		¶«£º	"+query("didao/east")+
-	"\n\t		Î÷£º	"+query("didao/west")+
-	"\n\t		±±£º	"+query("didao/north")+
-	"\n\t		ÄÏ£º	"+query("didao/south")+
+	"\n\tç²¾é“å‚¨è—é‡		"+query("jingtie")+
+	"\n\tåšåœŸåœ°é“ï¼š"+
+	"\n\t		ä¸œï¼š	"+query("didao/east")+
+	"\n\t		è¥¿ï¼š	"+query("didao/west")+
+	"\n\t		åŒ—ï¼š	"+query("didao/north")+
+	"\n\t		å—ï¼š	"+query("didao/south")+
 "\n    *-------------------------------------------*\n\n"+NOR;
 }

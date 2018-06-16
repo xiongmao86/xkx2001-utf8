@@ -19,11 +19,11 @@ void fix_exits_for_night(int is_night)
 
 void create()
 {
-	set("short", "Ê®×ÖÂ·¿Ú");
+	set("short", "åå­—è·¯å£");
 	set("long", @LONG
-ÕâÊÇÒ»¸öÆÕÍ¨µÄÊ®×ÖÂ·¿Ú£¬Â·ÉÏÐÐÈËÀ´À´ÍùÍù£¬ÖÜÎ§ÓÐÐ©Ð¡··£¬
-¶µÊÛ¸÷ÖÖÁãËé°Ù»õ¡£¶«Ãæ¿ÉÒÔ¿´µ½ÌìÌ³ÆíÄêµîµÄµî¶¥£¬Î÷ÃæÊÇÉ½´¨
-Ì³£¬ÄÏÃæÊÇÓÀ°²ÃÅ£¬±±ÃæÊÇÕýÑôÃÅÍâ´ó½Ö¡£
+è¿™æ˜¯ä¸€ä¸ªæ™®é€šçš„åå­—è·¯å£ï¼Œè·¯ä¸Šè¡Œäººæ¥æ¥å¾€å¾€ï¼Œå‘¨å›´æœ‰äº›å°è´©ï¼Œ
+å…œå”®å„ç§é›¶ç¢Žç™¾è´§ã€‚ä¸œé¢å¯ä»¥çœ‹åˆ°å¤©å›ç¥ˆå¹´æ®¿çš„æ®¿é¡¶ï¼Œè¥¿é¢æ˜¯å±±å·
+å›ï¼Œå—é¢æ˜¯æ°¸å®‰é—¨ï¼ŒåŒ—é¢æ˜¯æ­£é˜³é—¨å¤–å¤§è¡—ã€‚
 LONG
 	);
 	fix_exits_for_night(0);

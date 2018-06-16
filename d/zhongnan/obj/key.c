@@ -1,15 +1,15 @@
 //Cracked by Roath
 // /d/zhongnan/obj/key.c
-// key.c µ¤·¿Ô¿³×
+// key.c ä¸¹æˆ¿é’¥åŒ™
 // sdong 08/01/98
 
 inherit ITEM;
 
 void create()
 {
-		  set_name("µ¤·¿Ô¿³×", ({"danfang key", "key"}));
+		  set_name("ä¸¹æˆ¿é’¥åŒ™", ({"danfang key", "key"}));
 		  set("long",
-					 "ÕâÊÇÒ»°ÑÍ­ÖÆµÄÔ¿³×£¬´òÔìµÄ·Ç³£¾«ÖÂ¡£\n");
-		  set("unit", "°Ñ");
+					 "è¿™æ˜¯ä¸€æŠŠé“œåˆ¶çš„é’¥åŒ™ï¼Œæ‰“é€ çš„éå¸¸ç²¾è‡´ã€‚\n");
+		  set("unit", "æŠŠ");
 		  set("weight", 10);
 }

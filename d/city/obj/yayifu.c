@@ -6,14 +6,14 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(CYN"ÑÃÒÛ·ş"NOR, ({ "yayi cloth", "cloth" }));
-	set("long", "ÕâÊÇÒ»¼şÕ¸ĞÂµÄ°×ÃŞ²¼ÑÃÒÛ·ş¡£\n");
+	set_name(CYN"è¡™å½¹æœ"NOR, ({ "yayi cloth", "cloth" }));
+	set("long", "è¿™æ˜¯ä¸€ä»¶å´­æ–°çš„ç™½æ£‰å¸ƒè¡™å½¹æœã€‚\n");
 	set_weight(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("material", "cloth");
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("value", 200);
 		set("armor_prop/armor", 4);
 	}

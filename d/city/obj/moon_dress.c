@@ -1,5 +1,5 @@
 //Cracked by Roath
-// moon_dress.c Çí»¨ğ¨ÔÂÉÑ
+// moon_dress.c ç¼èŠ±çšæœˆè£³
 // xQin 8/00 
 
 #include <ansi.h>
@@ -8,22 +8,22 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( HIW "Çí»¨ğ¨ÔÂÉÑ" NOR, ({ "dress" }) );
+        set_name( HIW "ç¼èŠ±çšæœˆè£³" NOR, ({ "dress" }) );
         set("long",
-        "ÕâÊÇÒ»¼şÓÃÉÏºÃ²¼ÁÏÇÉÖÆ¶ø³ÉµÄÇí»¨ğ¨ÔÂÉÑ¡£\n");
+        "è¿™æ˜¯ä¸€ä»¶ç”¨ä¸Šå¥½å¸ƒæ–™å·§åˆ¶è€Œæˆçš„ç¼èŠ±çšæœˆè£³ã€‚\n");
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 2000);
                 set("material", "cloth");
                 set("armor_type", "cloth");
                 set("armor_prop/personality", 2);
                 set("armor_prop/armor", 3);
                 set("female_only", 1);
-                set("wear_msg","$N´©ÉÏÒ»¼ş$n£¬Ö»¼û$NÎ¢Î¢Ò»Ğ¦£¬½¿ÀöÈç»¨¡£\n");
-                set("remove_msg","$½«$nÍÑÁËÏÂÀ´¡£\n");
+                set("wear_msg","$Nç©¿ä¸Šä¸€ä»¶$nï¼Œåªè§$Nå¾®å¾®ä¸€ç¬‘ï¼Œå¨‡ä¸½å¦‚èŠ±ã€‚\n");
+                set("remove_msg","$å°†$nè„±äº†ä¸‹æ¥ã€‚\n");
         }
 }
 

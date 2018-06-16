@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "���۲�");
+	set("short", "步雄部");
 	set("long", @LONG
-����������·���ǰ��ĵ�һ֧--Щôͽ���۾ӵĵط����˵ؽ�ƫԶ������Ҳ
-��������һƬ����������ƺ�������ɽ��ˮ�㣬ɣ���ܲ�������һƬСƽԭ��
-��Щũ��˼�ɣ���࣬��˿������񸾶��÷�˿֯�顣
+这里属江川路，是摆夷的一支--些么徒蛮聚居的地方。此地较偏远，镇子也
+不大，南面一片汪洋叫做星云湖，四面山清水秀，桑林密布。镇北是一片小平原，
+有些农田。此间桑树多，产丝，乡间民妇多擅纺丝织麻。
 LONG);
 	set("objects", ([
 		__DIR__"npc/byshang" : 1,
@@ -21,7 +21,7 @@ LONG);
 		"south" : __DIR__"minov35",
 		"east" : __DIR__"minov37",
 		]));
-	set("area", "���۲�");
+	set("area", "步雄部");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

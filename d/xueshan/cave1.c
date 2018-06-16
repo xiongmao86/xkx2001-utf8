@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "洞口");
         set("long", @LONG
-ɽ�����ѩ��£�ɼ���ѩ�ѣ�����ʱ������ɨ����ѩ����
-ǰ����ͱ�������ԼԼ��һ��ɽ����
+山谷里积雪被拢成几个雪堆，这里时常有人扫除积雪。你
+前面的峭壁下隐隐约约有一个山洞。
 LONG
         );
         set("exits", ([

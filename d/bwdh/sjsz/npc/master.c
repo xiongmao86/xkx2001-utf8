@@ -10,10 +10,10 @@ int auto_perform();
 
 void create()
 {
-		  set_name("ÎäÁÖÃËÖ÷", ({ "master" }));
-		  set("long","Ëû¾ÍÊÇĞÛ¾áÎäÁÖ£¬ºÅÕÙÌìÏÂ£¬Íş·çºÕºÕµÄµ±½ñÎäÁÖÃËÖ÷¡£\n");
+		  set_name("æ­¦æ—ç›Ÿä¸»", ({ "master" }));
+		  set("long","ä»–å°±æ˜¯é›„è¸æ­¦æ—ï¼Œå·å¬å¤©ä¸‹ï¼Œå¨é£èµ«èµ«çš„å½“ä»Šæ­¦æ—ç›Ÿä¸»ã€‚\n");
 
-		  set("gender", "ÄĞĞÔ");
+		  set("gender", "ç”·æ€§");
 		  set("age", 50);
 		  set("attitude", "peaceful");
 		  set("shen_type", 1);
@@ -68,11 +68,11 @@ void create()
 		  }) );
 
 		  set("inquiry", ([
-						"ÎåÔÀ½£ÅÉ" : "ÎåÔÀ½£ÅÉÓÉÌ©É½ÅÉ¡¢ºâÉ½ÅÉ¡¢»ªÉ½ÅÉ¡¢ºãÉ½ÅÉ¡¢áÔÉ½ÅÉºÏ²¢¶ø³É¡£",
-                  "áÔÉ½ÅÉ" : "×Ô´ÓºÏ²¢ÎåÔÀ½£ÅÉºó£¬¾ÍÃ»ÓĞáÔÉ½ÅÉÁË¡£",
-                  "Ğ°ÅÉ" : "ÌìÏÂĞ°ÅÉÓĞĞÇËŞÅÉ£¬°×ÍÕÉ½£¬Ñ©É½ÅÉºÍÑªµ¶ÃÅ¡£",
-                  "ÕıÅÉ" : "ÌìÏÂÃûÃÅÕıÅÉÓĞÉÙÁÖÅÉ£¬Îäµ±ÅÉ£¬»ªÉ½ÅÉ£¬´óÀí¶Î¼ÒºÍ¶ëáÒÅÉ¡£",
-                  "ÃûÃÅÕıÅÉ" : "ÌìÏÂÃûÃÅÕıÅÉÓĞÉÙÁÖÅÉ£¬Îäµ±ÅÉ£¬»ªÉ½ÅÉ£¬´óÀí¶Î¼ÒºÍ¶ëáÒÅÉ¡£",
+						"äº”å²³å‰‘æ´¾" : "äº”å²³å‰‘æ´¾ç”±æ³°å±±æ´¾ã€è¡¡å±±æ´¾ã€åå±±æ´¾ã€æ’å±±æ´¾ã€åµ©å±±æ´¾åˆå¹¶è€Œæˆã€‚",
+                  "åµ©å±±æ´¾" : "è‡ªä»åˆå¹¶äº”å²³å‰‘æ´¾åï¼Œå°±æ²¡æœ‰åµ©å±±æ´¾äº†ã€‚",
+                  "é‚ªæ´¾" : "å¤©ä¸‹é‚ªæ´¾æœ‰æ˜Ÿå®¿æ´¾ï¼Œç™½é©¼å±±ï¼Œé›ªå±±æ´¾å’Œè¡€åˆ€é—¨ã€‚",
+                  "æ­£æ´¾" : "å¤©ä¸‹åé—¨æ­£æ´¾æœ‰å°‘æ—æ´¾ï¼Œæ­¦å½“æ´¾ï¼Œåå±±æ´¾ï¼Œå¤§ç†æ®µå®¶å’Œå³¨åµ‹æ´¾ã€‚",
+                  "åé—¨æ­£æ´¾" : "å¤©ä¸‹åé—¨æ­£æ´¾æœ‰å°‘æ—æ´¾ï¼Œæ­¦å½“æ´¾ï¼Œåå±±æ´¾ï¼Œå¤§ç†æ®µå®¶å’Œå³¨åµ‹æ´¾ã€‚",
         ]));
 
 
@@ -95,7 +95,7 @@ void init()
 		  if( !living(me) ) return;
 
 		  if( interactive(ob) && ob->query("sjsz/fighting") ) {
-					  message_vision(HIR"\n$N¶Ô$nºÈµÀ£º" + RANK_D->query_rude(ob) + "¾ÓÈ»¸ÒÉÃ´³±¾É½×¯£¬ÊµÔÚÊÇËÀÓĞÓà¹¼¡£\n"NOR, me, ob);
+					  message_vision(HIR"\n$Nå¯¹$nå–é“ï¼š" + RANK_D->query_rude(ob) + "å±…ç„¶æ•¢æ“…é—¯æœ¬å±±åº„ï¼Œå®åœ¨æ˜¯æ­»æœ‰ä½™è¾œã€‚\n"NOR, me, ob);
 					  kill_ob(ob);
 					  return;
 		  }
@@ -113,14 +113,14 @@ int accept_fight(object ob)
 		  }
 
 		  command("sneer");
-		  message_vision("$NºÈµÀ£º" + RANK_D->query_rude(ob) + "£¡ÄãÒ²ÅäºÍÎÒ½»ÊÖ£¿\n", me);
+		  message_vision("$Nå–é“ï¼š" + RANK_D->query_rude(ob) + "ï¼ä½ ä¹Ÿé…å’Œæˆ‘äº¤æ‰‹ï¼Ÿ\n", me);
 		  return 1;
 }
 
 int accept_kill(object ob)
 {
 		  command("hehe");
-		  command("say µ¨¸ÒÄ±º¦±¾ÃËÖ÷£¬ÄÃÃüÀ´£¡");
+		  command("say èƒ†æ•¢è°‹å®³æœ¬ç›Ÿä¸»ï¼Œæ‹¿å‘½æ¥ï¼");
 		  return 1;
 }
 
@@ -194,29 +194,29 @@ int auto_perform()
 
 		  if( objectp(w = me->query_temp("weapon")) ) {
 					 if( w == w1 && n < 5 ) {
-                        message_vision(HIR"\nÍ»È»¼ä$NºÙºÙÀäĞ¦¼¸Éù¡£\nËæ¼´ÊÖÖĞ" + w->name() + "ËÆÇúËÆÖ±£¬±ãÈçÒ»¼ş»îÎïÒ»°ã£¬¶ÙÊ±ÕĞÊ½´ó±ä£¡£¡£¡\n"NOR, me);
+                        message_vision(HIR"\nçªç„¶é—´$Nå˜¿å˜¿å†·ç¬‘å‡ å£°ã€‚\néšå³æ‰‹ä¸­" + w->name() + "ä¼¼æ›²ä¼¼ç›´ï¼Œä¾¿å¦‚ä¸€ä»¶æ´»ç‰©ä¸€èˆ¬ï¼Œé¡¿æ—¶æ‹›å¼å¤§å˜ï¼ï¼ï¼\n"NOR, me);
                 } else if( w == w1 && n == 5 ) {
                         w->unequip();
                         message_vision(w->query("unwield_msg"), me, w);
 								w2->wield();
                         message_vision(w2->query("wield_msg"), me, w2);
-								message_vision(HIR"\nÍ»È»¼ä$N½£·¨Ò»±ä£¬ÊÖÖĞ" + w2->name() + "ºöÉìºöËõ£¬ÕĞÊ½¹îÆæ¾øÂ×¡£\n"NOR, me);
+								message_vision(HIR"\nçªç„¶é—´$Nå‰‘æ³•ä¸€å˜ï¼Œæ‰‹ä¸­" + w2->name() + "å¿½ä¼¸å¿½ç¼©ï¼Œæ‹›å¼è¯¡å¥‡ç»ä¼¦ã€‚\n"NOR, me);
                 } else if( w == w2 && n < 5) {
                         w->unequip();
 								message_vision(w->query("unwield_msg"), me, w);
 								w1->wield();
 								message_vision(w1->query("wield_msg"), me, w1);
-								message_vision(HIG"\n$NËÆºõÓĞÒâ·ÅÂıÁË½ø¹¥£¬È»¡£¡£¡£\n"NOR, me);
+								message_vision(HIG"\n$Nä¼¼ä¹æœ‰æ„æ”¾æ…¢äº†è¿›æ”»ï¼Œç„¶ã€‚ã€‚ã€‚\n"NOR, me);
 					 }
 		  } else {
 					 if( n < 5 ) {
 								w1->wield();
 								message_vision(w1->query("wield_msg"), me, w1);
-								message_vision(HIG"\n$NËÆºõÓĞÒâ·ÅÂıÁË½ø¹¥£¬È»¡£¡£¡£\n"NOR, me);
+								message_vision(HIG"\n$Nä¼¼ä¹æœ‰æ„æ”¾æ…¢äº†è¿›æ”»ï¼Œç„¶ã€‚ã€‚ã€‚\n"NOR, me);
 					 } else {
 								w2->wield();
 								message_vision(w2->query("wield_msg"), me, w2);
-								message_vision(HIR"\nÍ»È»¼ä$N½£·¨Ò»±ä£¬ÊÖÖĞ" + w2->name() + "ºöÉìºöËõ£¬ÕĞÊ½¹îÆæ¾øÂ×¡£\n"NOR, me);
+								message_vision(HIR"\nçªç„¶é—´$Nå‰‘æ³•ä¸€å˜ï¼Œæ‰‹ä¸­" + w2->name() + "å¿½ä¼¸å¿½ç¼©ï¼Œæ‹›å¼è¯¡å¥‡ç»ä¼¦ã€‚\n"NOR, me);
 					 }
 		  }
 

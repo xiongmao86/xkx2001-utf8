@@ -1,16 +1,16 @@
 //Cracked by Roath
-// /d/emei/jieyin.c ½ÓÒýµî
+// /d/emei/jieyin.c æŽ¥å¼•æ®¿
 // Shan: 96/06/22
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "½ÓÒýµî");
+        set("short", "æŽ¥å¼•æ®¿");
 	set("long", @LONG
-½ÓÒýµîÓÒ±ß±ôÑÂ£¬ÊÇ½ð¸Ö×ì¡£ÑÂÏÂÓÐÒ»¿é¾ÞÊ¯£¬ÐÎ×´ËÆÖÓ£¬¹ÊÃû¡¸ÖÓÊ¯¡¹¡£
-¶ÔÃæÓÐÒ»Ê¯£¬¸ßËÊÊ®ÓàÕÉ£¬½Ð¡¸ÏÉÈËÊ¯¡¹¡£ÓÉ´ËÏòÉÏÑöÅÊ¼´µ½ÍòÐÐâÖ£¬±±ÏÂ¾­
-¡¸°ËÊ®ËÄÅÌ¡¹ÖÁÏ´Ïó³Ø¡£
+æŽ¥å¼•æ®¿å³è¾¹æ¿’å´–ï¼Œæ˜¯é‡‘é’¢å˜´ã€‚å´–ä¸‹æœ‰ä¸€å—å·¨çŸ³ï¼Œå½¢çŠ¶ä¼¼é’Ÿï¼Œæ•…åã€Œé’ŸçŸ³ã€ã€‚
+å¯¹é¢æœ‰ä¸€çŸ³ï¼Œé«˜è€¸åä½™ä¸ˆï¼Œå«ã€Œä»™äººçŸ³ã€ã€‚ç”±æ­¤å‘ä¸Šä»°æ”€å³åˆ°ä¸‡è¡Œåºµï¼ŒåŒ—ä¸‹ç»
+ã€Œå…«åå››ç›˜ã€è‡³æ´—è±¡æ± ã€‚
 LONG
 	);
 	set("exits", ([

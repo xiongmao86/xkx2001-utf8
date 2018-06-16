@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zhou.c À°°ËÖà
+// zhou.c è…Šå…«ç²¥
 // updated by sdong 6/1999
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "À°°ËÖà" NOR, ({"laba zhou", "zhou"}));
+        set_name(HIG "è…Šå…«ç²¥" NOR, ({"laba zhou", "zhou"}));
         set_weight(90);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Íë");
+                set("unit", "ç¢—");
                 set("value", 20000);
                 set("food_supply", 30);
         }
@@ -28,16 +28,16 @@ int do_eat(string arg)
 	
 	if( !it->id(arg) ) return 0;
 	if( me->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	if( (int)me->query("food") 
 			>= (int)me->max_food_capacity() )
-		return notify_fail("ÄãÒÑ¾­³Ô±¥ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åƒé¥±äº†ã€‚\n");
 	me->add("food", (int)query("food_supply"));
 
 	if( base_name(environment(me)) != "/d/xiakedao/dadong" )
 	{
-		message_vision(HIY "$NºÈÏÂÒ»ÍëÀ°°ËÖà¡£\n", me);
-		write("ÖàÀäÁË£¬Ò©Î¶ÓÖÅ¨£¬ÕæÄÑºÈ¡£\n");
+		message_vision(HIY "$Nå–ä¸‹ä¸€ç¢—è…Šå…«ç²¥ã€‚\n", me);
+		write("ç²¥å†·äº†ï¼Œè¯å‘³åˆæµ“ï¼ŒçœŸéš¾å–ã€‚\n");
 		destruct(it);
 		return 1;
 	}
@@ -50,8 +50,8 @@ int do_eat(string arg)
 	me->set("neili", (int)me->query("max_neili"));
 	if (random(2)==1) me->add("max_neili", 2);
 
-	message_vision(HIG "$NºÈÏÂÒ»ÍëÀ°°ËÖà¡£\n", me);
-	write("ËäÈ»Ò©Æø´Ì±Ç£¬µ«²¢²»ÄÑºÈ¡£Ò»ÍëÖàÏÂ¶Ç£¬½«Æ£·¦Ò»É¨¶ø¿Õ¡£\n");
+	message_vision(HIG "$Nå–ä¸‹ä¸€ç¢—è…Šå…«ç²¥ã€‚\n", me);
+	write("è™½ç„¶è¯æ°”åˆºé¼»ï¼Œä½†å¹¶ä¸éš¾å–ã€‚ä¸€ç¢—ç²¥ä¸‹è‚šï¼Œå°†ç–²ä¹ä¸€æ‰«è€Œç©ºã€‚\n");
 	destruct(it);
 	return 1;
 }

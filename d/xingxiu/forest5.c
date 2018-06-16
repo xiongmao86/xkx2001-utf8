@@ -10,11 +10,11 @@ void setup_npc(object me, object ob);
 
 void create()
 {
-        set("short", "��������");
+        set("short", "星宿密林");
         set("long", @LONG
-���������޺��Աߵ�ɭ�֣��ߴ���������������еĹ��߶�����ס�ˡ�
-���ϵ������ǲ�֦��Ҷ��ÿ̤��һ�����ᷢ��֨֨�����죬Զ����ʱ��
-��һ����������ʹ��ë���Ȼ��
+这里是星宿海旁边的森林，高大的松树几乎把所有的光线都遮掩住了。
+地上到处都是残枝败叶，每踏出一步都会发出吱吱的声响，远处不时传
+来一阵阵枭鸣，使人毛骨悚然。
 LONG);
 
         set("exits", ([ 	

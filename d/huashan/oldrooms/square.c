@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·Îä³¡");
+	set("short", "ç»ƒæ­¦åœº");
 	set("long", @LONG
-ÕâÀïÊÇ»ªÉ½ÅÉµÄÁ·Îä³¡£¬ÓĞĞí¶à»ªÉ½ÅÉµÜ×ÓÔÚ´ËÏ°ÎäÁ·½£¡£ÄÏ±ßµÄ·¿
-ÎİÃÅÉÏ¹Ò×ÅÒ»¿éØÒ£¬ÉÏÊé¡¸ÓĞËù²»ÎªĞù¡¹£¬ÊÇ»ªÉ½ÕÆÃÅ¼°ÖÚµÜ×ÓµÄ¾ÓËù¡£
-Î÷±ßÓĞ¸ö±øÆ÷·¿¡£
+è¿™é‡Œæ˜¯åå±±æ´¾çš„ç»ƒæ­¦åœºï¼Œæœ‰è®¸å¤šåå±±æ´¾å¼Ÿå­åœ¨æ­¤ä¹ æ­¦ç»ƒå‰‘ã€‚å—è¾¹çš„æˆ¿
+å±‹é—¨ä¸ŠæŒ‚ç€ä¸€å—åŒ¾ï¼Œä¸Šä¹¦ã€Œæœ‰æ‰€ä¸ä¸ºè½©ã€ï¼Œæ˜¯åå±±æŒé—¨åŠä¼—å¼Ÿå­çš„å±…æ‰€ã€‚
+è¥¿è¾¹æœ‰ä¸ªå…µå™¨æˆ¿ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -38,17 +38,17 @@ int valid_leave(object me, string dir)
 	myfam = (mapping)me->query("family");
 
 	if ( objectp(obj=present("lao denuo", environment(me))) && living(obj) ) {
-	   if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir == "west" )
-	   	return notify_fail("ÀÍµÂÅµÇ·ÉíËµµÀ£ºÕâÎ»"+RANK_D->query_respect(me)+"ÇëÖ¹²½£¡ÄÇÀïÊÇ±¾ÅÉµÄ±øÆ÷·¿¡£\n");
+	   if ( (!myfam || myfam["family_name"] != "åå±±æ´¾") && dir == "west" )
+	   	return notify_fail("åŠ³å¾·è¯ºæ¬ èº«è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(me)+"è¯·æ­¢æ­¥ï¼é‚£é‡Œæ˜¯æœ¬æ´¾çš„å…µå™¨æˆ¿ã€‚\n");
 
-	   if ( myfam && myfam["family_name"] != "»ªÉ½ÅÉ" && !me->query_temp("marks/Ìû") && dir == "south" )
-		return notify_fail("ÀÍµÂÅµÇ·ÉíËµµÀ£ºÕâÎ»"+RANK_D->query_respect(me)+"¿ÉÓĞ°İÌû³ÊÓè¼ÒÊ¦£¿\n");
+	   if ( myfam && myfam["family_name"] != "åå±±æ´¾" && !me->query_temp("marks/å¸–") && dir == "south" )
+		return notify_fail("åŠ³å¾·è¯ºæ¬ èº«è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(me)+"å¯æœ‰æ‹œå¸–å‘ˆäºˆå®¶å¸ˆï¼Ÿ\n");
 	
-	   if ( me->query_temp("marks/½£") && dir == "west" )
-		return notify_fail("ÀÍµÂÅµÅ­ÊÓ×ÅÄãËµµÀ£º²»ÊÇ¸ÕÈ¡ÁË½£Âğ£¿ÔõÃ´ÓÖÏëÔÙÈ¡£¿\n");
+	   if ( me->query_temp("marks/å‰‘") && dir == "west" )
+		return notify_fail("åŠ³å¾·è¯ºæ€’è§†ç€ä½ è¯´é“ï¼šä¸æ˜¯åˆšå–äº†å‰‘å—ï¼Ÿæ€ä¹ˆåˆæƒ³å†å–ï¼Ÿ\n");
 
 	   if ( present("zixia book", me) )
-		return notify_fail("ÀÍµÂÅµ¹¥ÊÆÁèÀú£¬ÄãÎŞ·¨ÌÓÍÑ£¡\n"); 
+		return notify_fail("åŠ³å¾·è¯ºæ”»åŠ¿å‡Œå†ï¼Œä½ æ— æ³•é€ƒè„±ï¼\n"); 
 	}
 
 	return ::valid_leave(me, dir);

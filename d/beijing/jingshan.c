@@ -3,11 +3,11 @@
 
 inherit ROOM;
 
-string GATE_DESC_SHORT="¾°É½";
+string GATE_DESC_SHORT="æ™¯å±±";
 string GATE_DESC_LONG = @LONG
-ÕâÊÇÒ»ÌõÎ»ÓÚ¹ÄÂ¥Î÷ÄÏÃæµÄ±³½Ö£¬Ê®·ÖÆ§¾²ÀäÂä£¬Â·ÉÏ¼¸ºõ¼û²»
-µ½Ê²÷áÐÐÈË£¬¶«±±Ãæ¹ÄÂ¥´ó½ÖÐú»©Éù²»Ê±´«µ½ÕâÀïÀ´¡£½Ö±ßÓÐÒ»¼äÐ¡
-Ãí£¬ÉÏÓÐ¼¸¸ö´ó×Ö¡º»ðÉñÃí¡»¡£
+è¿™æ˜¯ä¸€æ¡ä½äºŽé¼“æ¥¼è¥¿å—é¢çš„èƒŒè¡—ï¼Œååˆ†åƒ»é™å†·è½ï¼Œè·¯ä¸Šå‡ ä¹Žè§ä¸
+åˆ°ä»€éº½è¡Œäººï¼Œä¸œåŒ—é¢é¼“æ¥¼å¤§è¡—å–§å“—å£°ä¸æ—¶ä¼ åˆ°è¿™é‡Œæ¥ã€‚è¡—è¾¹æœ‰ä¸€é—´å°
+åº™ï¼Œä¸Šæœ‰å‡ ä¸ªå¤§å­—ã€Žç«ç¥žåº™ã€ã€‚
 LONG;
 mapping GATE_EXITS = ([ /* sizeof() == 2 */
   "north" : __DIR__"dianmen",

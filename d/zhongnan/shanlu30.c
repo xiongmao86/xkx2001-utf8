@@ -8,13 +8,13 @@ int do_climb(string arg);
 
 void create()
 {
-                  set("short",HIC"ĞüÑÂ"NOR);
+                  set("short",HIC"æ‚¬å´–"NOR);
 
                   set("long",@LONG
-ÄãÑÛÇ°ÊÇÒ»×ùĞüÑÂ£¬ÕâĞüÑÂ¸ß´ïÊıÊ®ÕÉ£¬¸ßËÊ½ÓÔÆ£¬ÓĞĞ©µØ·½Ö±ÈçÇ½±ÚÒ»°ã
-¶¸ÇÍ£¬ĞüÑÂËÄÃæ¶¼ÊÇÏÕÑÒ¹ÖÊ¯£¬ÎŞ¿ÉÅÊÔ® (climb)¡£¼¸Ö»¾Ş´óµÄºÚµñÅÌĞıÔÚ¿ÕÖĞ¡£
-´Ë¶ÎĞ¡Â·Á½±ß¶¼ÊÇÔÓ²İ£¬¿´À´×ßµÄÈË²»¶à£¬ËÄÖÜµÄ¾°É«¶¼Ô½À´Ô½ÏôÌõ£¬¿´À´ÒÑ¾­
-¿ìµ½É³Ä®ÁË¡£Íù¶«ÄÏÓĞÒ»ÌõĞ¡Â·£¬ÍùÎ÷Í¨ÍùÉ³Ä®¡£
+ä½ çœ¼å‰æ˜¯ä¸€åº§æ‚¬å´–ï¼Œè¿™æ‚¬å´–é«˜è¾¾æ•°åä¸ˆï¼Œé«˜è€¸æ¥äº‘ï¼Œæœ‰äº›åœ°æ–¹ç›´å¦‚å¢™å£ä¸€èˆ¬
+é™¡å³­ï¼Œæ‚¬å´–å››é¢éƒ½æ˜¯é™©å²©æ€ªçŸ³ï¼Œæ— å¯æ”€æ´ (climb)ã€‚å‡ åªå·¨å¤§çš„é»‘é›•ç›˜æ—‹åœ¨ç©ºä¸­ã€‚
+æ­¤æ®µå°è·¯ä¸¤è¾¹éƒ½æ˜¯æ‚è‰ï¼Œçœ‹æ¥èµ°çš„äººä¸å¤šï¼Œå››å‘¨çš„æ™¯è‰²éƒ½è¶Šæ¥è¶Šè§æ¡ï¼Œçœ‹æ¥å·²ç»
+å¿«åˆ°æ²™æ¼ äº†ã€‚å¾€ä¸œå—æœ‰ä¸€æ¡å°è·¯ï¼Œå¾€è¥¿é€šå¾€æ²™æ¼ ã€‚
 LONG);
 
                   set("exits",([ "west" : __DIR__"desert1",
@@ -37,13 +37,13 @@ int do_climb(string arg)
         int gain,cost;
 
         if(me->is_busy())
-                return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ã€‚\n");
 
         cost = ( 300-me->query_dex()*me->query_skill("dodge")/20 )/10;
         if ( cost<5 )cost = 5;
 
         if( me->query("jingli") < 30)
-                return notify_fail("ÄãÀÛµÄÊµÔÚÅÀ²»¶¯ÁË¡£\n");
+                return notify_fail("ä½ ç´¯çš„å®åœ¨çˆ¬ä¸åŠ¨äº†ã€‚\n");
 
         me->add("jingli",-cost);
         gain = me->query("con",1)*2;
@@ -54,9 +54,9 @@ int do_climb(string arg)
 
         if(arg == "up" )
         {
-                message_vision( HIY"\n$NÔÚĞüÑÂÉÏÅÊÌÙ¸½¸ğ£¬Ò»²½²½µØÅÀÉÏÈ¥¡£\n"NOR, me);
+                message_vision( HIY"\n$Nåœ¨æ‚¬å´–ä¸Šæ”€è—¤é™„è‘›ï¼Œä¸€æ­¥æ­¥åœ°çˆ¬ä¸Šå»ã€‚\n"NOR, me);
                 me->move("/d/zhongnan/xuanya1");
-                message_vision( HIY"\n$NÅÀÁËÉÏÀ´¡£\n"NOR, me);
+                message_vision( HIY"\n$Nçˆ¬äº†ä¸Šæ¥ã€‚\n"NOR, me);
                 me->start_busy( 1 );
                 me->improve_skill( "dodge",gain+random( gain ) );
                 if( me->query_skill( "jinyangong",1) > 0 )
@@ -64,5 +64,5 @@ int do_climb(string arg)
                 return 1;
         }
 
-        return notify_fail("ÄÇ¸ö·½ÏòÃ»·¨ÅÀ¡£\n");
+        return notify_fail("é‚£ä¸ªæ–¹å‘æ²¡æ³•çˆ¬ã€‚\n");
 }

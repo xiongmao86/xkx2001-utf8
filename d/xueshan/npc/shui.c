@@ -7,9 +7,9 @@ inherit NPC;
 
 void create()
 {
-	set_name("ˮ�", ({ "shui dai","shui" }) );
-	set("nickname","���½�");
-	set("gender", "����");
+	set_name("水岱", ({ "shui dai","shui" }) );
+	set("nickname","冷月剑");
+	set("gender", "男性");
 	set("age", 45);
 	set("str", 24);
 	set("max_neili", 1000);
@@ -17,8 +17,8 @@ void create()
 	set("con", 27);
 	set("dex", 31);
 	set("long",
-		"���Ǹ�����������ò���ŵ����ߡ�\n");
-//	set("title","�仨��ˮ����");
+		"这是个须如银，相貌俊雅的老者。\n");
+//	set("title","落花流水老三");
 	set("combat_exp", 600000);
         set("shen_type", 1);
 	set("attitude", "heroism");
@@ -26,8 +26,8 @@ void create()
 	set("chat_chance", 3);
 	set("chat_msg", ({
 
-//	"ˮ᷺޺޵�˵����Ѫ�����������������֪����ʲ��ط����ҵ����ǰ�����ʬ��Σ�\n",
-	"ˮᷳ����е����仨��ˮ�����⣬ˮ���������䣡\n",
+//	"水岱恨恨地说道：血刀老祖这个老贼，不知藏在什麽地方。找到他非把他碎尸万段！\n",
+	"水岱长声叫道：落花流水──兮，水──流花落！\n",
         }) );
 
 
@@ -72,7 +72,7 @@ void die()
                 killer->improve_skill("blade",
 		(int)(killer->query_skill("blade", 1)+1) * 10);
                 killer->add("shen", -6000);
-	tell_object(killer,HIR"��ֻ����ɲ�Ǽ�����һ��ɱ����ӿ��������Ѫ����Ϊһ�壡\n",NOR);
+	tell_object(killer,HIR"你只觉得刹那间心中一股杀气上涌，似是与血刀融为一体！\n",NOR);
                 }
         }
 	::die();

@@ -1,5 +1,5 @@
 //Cracked by Roath
-///kungfu/skill/yunu-xinjing ÓñÅ®ĞÄ¾­
+///kungfu/skill/yunu-xinjing ç‰å¥³å¿ƒç»
 
 #include <combat.h>
 
@@ -30,31 +30,31 @@ int valid_learn(object me)
 
         if ( k >=2 )
         return notify_fail
-("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÎä¹¦¡£\n");
+("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥é¢†ä¼šæ›´é«˜æ·±çš„æ­¦åŠŸã€‚\n");
         }
 
 
 
-//	if ( me->query("gender") == "ÎŞĞÔ" )
-//		return notify_fail("ÏÈÌìÉñ¹¦Á·µÄÊÇÌìµØÕıÆø£¬½²µÄÊÇÒõÑôµ÷ºÏ£¬ÒÔ¹«¹«ÎŞ¸ùÎŞĞÔÖ®Éí£¬ÈçºÎĞŞµÃ£¡\n");
+//	if ( me->query("gender") == "æ— æ€§" )
+//		return notify_fail("å…ˆå¤©ç¥åŠŸç»ƒçš„æ˜¯å¤©åœ°æ­£æ°”ï¼Œè®²çš„æ˜¯é˜´é˜³è°ƒåˆï¼Œä»¥å…¬å…¬æ— æ ¹æ— æ€§ä¹‹èº«ï¼Œå¦‚ä½•ä¿®å¾—ï¼\n");
 
-	if ( me->query("gender") == "ÎŞĞÔ" && lvl > 49)
-		return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÓñÅ®ĞÄ¾­¡£\n");
+	if ( me->query("gender") == "æ— æ€§" && lvl > 49)
+		return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„ç‰å¥³å¿ƒç»ã€‚\n");
 
-	if ( me->query("gender") == "ÄĞĞÔ" && lvl > 80)
-		return notify_fail("ÄãÉíÎªÄĞ×Ó£¬ÄÑÒÔÁì»á¸ßÉîµÄÓñÅ®ĞÄ¾­¡£\n");
+	if ( me->query("gender") == "ç”·æ€§" && lvl > 80)
+		return notify_fail("ä½ èº«ä¸ºç”·å­ï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„ç‰å¥³å¿ƒç»ã€‚\n");
 
 	if ( me->query("class") == "bonze" )
-		return notify_fail("ÓñÅ®ĞÄ¾­½²¾¿ÒõÑôµ÷ºÏ£¬ÓĞÎ¥·ğ¼ÒÁù¸ùÇå¾»Ö®Òâ£¬"
-			+RANK_D->query_respect(me)+"ÓûĞŞ´Ë¹¦£¬ÒÑÊÇ×ï¹ı¡£\n");
+		return notify_fail("ç‰å¥³å¿ƒç»è®²ç©¶é˜´é˜³è°ƒåˆï¼Œæœ‰è¿ä½›å®¶å…­æ ¹æ¸…å‡€ä¹‹æ„ï¼Œ"
+			+RANK_D->query_respect(me)+"æ¬²ä¿®æ­¤åŠŸï¼Œå·²æ˜¯ç½ªè¿‡ã€‚\n");
 
 	if ((int)me->query_skill("force", 1) < 10 
 	  || (int)me->query_skill("force", 1)/2 < lvl/3 )
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if (lvl > 10 && (int)me->query("shen") < t * 100
 	     && me->query_skill("taoism", 1) < 100) 
-		return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
 
 	return 1;
 }
@@ -62,19 +62,19 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if ( me->query_skill("yunu-xinjing", 1) < 150 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ¾­ĞŞÎª²»¹»£¬Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒç»ä¿®ä¸ºä¸å¤Ÿï¼Œåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
         if ( me->query_temp("weapon") )
-                return notify_fail("Á·Ï°ÓñÅ®ĞÄ¾­±ØĞë¿ÕÊÖ£¬¾²×ø³ÏĞÄ·½¿É¡£\n");
+                return notify_fail("ç»ƒä¹ ç‰å¥³å¿ƒç»å¿…é¡»ç©ºæ‰‹ï¼Œé™åè¯šå¿ƒæ–¹å¯ã€‚\n");
         if ( (int)me->query("qi") < 70 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ï°ÓñÅ®ĞÄ¾­¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒä¹ ç‰å¥³å¿ƒç»ã€‚\n");
         if ( (int)me->query("jingli") < 70 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·Ï°ÓñÅ®ĞÄ¾­¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒä¹ ç‰å¥³å¿ƒç»ã€‚\n");
         if ( (int)me->query("neili") < 70 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ï°ÓñÅ®ĞÄ¾­¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹ ç‰å¥³å¿ƒç»ã€‚\n");
 
         me->add("neili", -60);
-        me->receive_damage("jingli", 60, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
-        me->receive_damage("qi", 60, "ÌåÁ¦Í¸Ö§¹ı¶ÈËÀÁË");
+        me->receive_damage("jingli", 60, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+        me->receive_damage("qi", 60, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
         return 1;
 }
 

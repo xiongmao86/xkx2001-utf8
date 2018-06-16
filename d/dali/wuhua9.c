@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�����");
+	set("short", "贵宾房");
 	set("long", @LONG
-����ͨ�����Ϸ������������ʱ��ס��������İ�������䶴����£�����
-���˼��Ż�Ƥ����Ƥ��ǽ������һ����̴ľ�Ĵ󴲣������Ϲ��˼����䵶��ǹ��
-��֮�
+这里通常是南方部族首领进都时的住所。这里的摆设多与其洞中相仿，地上
+垫了几张虎皮，豹皮。墙边则是一张乌檀木的大床，东壁上挂了几把弯刀，枪，
+铲之物。
 LONG);
 	set("objects", ([
 		__DIR__"npc/leader1" : 1,

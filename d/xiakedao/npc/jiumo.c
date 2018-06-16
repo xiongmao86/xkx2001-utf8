@@ -6,12 +6,12 @@ int auto_perform();
 
 void create()
 {
-        set_name("ð¯Ä¦ÖÇ", ({ "jiumozhi", "jiu" }));
-        set("nickname", "´óÂÖÃ÷Íõ");
+        set_name("é¸ æ‘©æ™º", ({ "jiumozhi", "jiu" }));
+        set("nickname", "å¤§è½®æ˜ŽçŽ‹");
         set("long", 
-"ÕâÊÇÒ»¸öÖÐÄêÉ®ÈË£¬¿´ÆðÀ´Ò»Á³×¯ÑÏ±¦Ïó£¬Ãæ´÷Î¢Ð¦£¬ÉíÅûÇ³»ÆôÂôÄ¡£\n"
-"Ëû¾ÍÊÇÍÂÞ¬¹ú»¤¹ú·¨Íõ¡¢´óÑ©É½´óÂÖËÂµÄÖ÷³Ö¡£ \n");
-        set("gender", "ÄÐÐÔ");
+"è¿™æ˜¯ä¸€ä¸ªä¸­å¹´åƒ§äººï¼Œçœ‹èµ·æ¥ä¸€è„¸åº„ä¸¥å®è±¡ï¼Œé¢æˆ´å¾®ç¬‘ï¼Œèº«æŠ«æµ…é»„è¢ˆè£Ÿã€‚\n"
+"ä»–å°±æ˜¯åè•ƒå›½æŠ¤å›½æ³•çŽ‹ã€å¤§é›ªå±±å¤§è½®å¯ºçš„ä¸»æŒã€‚ \n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("class","lama");
@@ -60,14 +60,14 @@ void create()
         set("chat_msg_combat", ({
                 (: auto_perform :),
         }) );
-        create_family("Ñ©É½ÅÉ", 6, "ÕÆÃÅÈË");
+        create_family("é›ªå±±æ´¾", 6, "æŽŒé—¨äºº");
 
         setup();
         carry_object("/d/qilian/obj/lamajiasha")->wear();
 }
 void attempt_apprentice(object ob)
 {
-        command ("say ¿ì¹öÀÏ×ÓÃ»¿Õ±ðÀ´·³ÎÒ");
+        command ("say å¿«æ»šè€å­æ²¡ç©ºåˆ«æ¥çƒ¦æˆ‘");
         return;
 }
 
@@ -95,7 +95,7 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say ÕÔ¿ÍçÏºúÓ§£¬ºúÓ§µÄÑù×ÓÓ¦¸ÃÊÇÕâÑùµÄ£¬ÕâÊÇ·ñ°µÖ¸ÐÐÕÆÖ®ÊÆ£¿");
+                {		command("say èµµå®¢ç¼¦èƒ¡ç¼¨ï¼Œèƒ¡ç¼¨çš„æ ·å­åº”è¯¥æ˜¯è¿™æ ·çš„ï¼Œè¿™æ˜¯å¦æš—æŒ‡è¡ŒæŽŒä¹‹åŠ¿ï¼Ÿ");
 				command("consider ");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );

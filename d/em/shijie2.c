@@ -1,15 +1,15 @@
 //Cracked by Roath
-// shijie2.c ��ʯ��
+// shijie2.c 青石阶
 // Shan: 96/06/23
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ��");
+        set("short", "青石阶");
         set("long", @LONG
-�쵽����ɽ�ˡ�����һ��ͨ������ɽ����ʯ�ף�����������Σ�����ʮ��
-���¡�ʱ���ܼ���Щ������͡�
+快到峨嵋山了。这是一条通往峨嵋山的青石阶，两旁绿树荫蔽，空气十分
+清新。时常能见到些游人香客。
 LONG
         );
         set("exits", ([

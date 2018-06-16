@@ -7,13 +7,13 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("°¢ÃÜÌØ", ({ "amite", "seller", "man" }) );
+	set_name("é˜¿å¯†ç‰¹", ({ "amite", "seller", "man" }) );
 	set_max_encumbrance(100000000);
 	set_color("$YEL$");
-	set("title", "»Ø×åÉÌÈË");
-	set("gender", "ÄĞĞÔ" );
+	set("title", "å›æ—å•†äºº");
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "Ò»Î»Ê±³£ÔÚ°ÍÔú½»Ò×»õÎïµÄÄêÇàÉÌÈË£¬Äã¿ÉÒÔÕÒËûÂòÂô¸÷ÖÖÉÌÆ·¡£\n°¢ÃÜÌØÊÇ»ØÈË×î³£ÓÃµÄÄĞÈËÃû×Ö¡£\n");
+	set("long", "ä¸€ä½æ—¶å¸¸åœ¨å·´æ‰äº¤æ˜“è´§ç‰©çš„å¹´é’å•†äººï¼Œä½ å¯ä»¥æ‰¾ä»–ä¹°å–å„ç§å•†å“ã€‚\né˜¿å¯†ç‰¹æ˜¯å›äººæœ€å¸¸ç”¨çš„ç”·äººåå­—ã€‚\n");
 	set("shen_type", 1);
 	set("combat_exp", 10000);
 	set("no_get_from", 1);
@@ -38,12 +38,12 @@ void init()
 
 void unconcious()
 {
-	message_vision("\n°¢ÃÜÌØ²Ö»ÌµØÌÓÈë°ÍÔúµÄÈËÈºÖĞ£¬ºÜ¿ìµØÔÚÈË³±ÖĞ²»¼ûÁË¡£\n", this_object());
+	message_vision("\né˜¿å¯†ç‰¹ä»“æƒ¶åœ°é€ƒå…¥å·´æ‰çš„äººç¾¤ä¸­ï¼Œå¾ˆå¿«åœ°åœ¨äººæ½®ä¸­ä¸è§äº†ã€‚\n", this_object());
 	destruct(this_object());
 }
 
 void die()
 {
-	message_vision("\n°¢ÃÜÌØ²Ö»ÌµØÌÓÈë°ÍÔúµÄÈËÈºÖĞ£¬ºÜ¿ìµØÔÚÈË³±ÖĞ²»¼ûÁË¡£\n", this_object());
+	message_vision("\né˜¿å¯†ç‰¹ä»“æƒ¶åœ°é€ƒå…¥å·´æ‰çš„äººç¾¤ä¸­ï¼Œå¾ˆå¿«åœ°åœ¨äººæ½®ä¸­ä¸è§äº†ã€‚\n", this_object());
 	destruct(this_object());
 }

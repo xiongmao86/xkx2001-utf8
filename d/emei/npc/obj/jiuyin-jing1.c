@@ -1,17 +1,17 @@
 //Cracked by Roath
-// jiuyin-jing1.c ¾ÅÒõÕæ¾­ÉÏ¾í
+// jiuyin-jing1.c ä¹é˜´çœŸç»ä¸Šå·
 inherit F_UNIQUE;
 inherit ITEM;
 
 void create()
 {
-	set_name("ÑòÆ¤", ({ "skin", "yangpi" }));
+	set_name("ç¾Šçš®", ({ "skin", "yangpi" }));
 	set_weight(10000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿é");
-		set("long", "ÕâÊÇÒ»¿é·¢»ÆµÄÑòÆ¤£¬ÀïÃæÃÜÃÜÂéÂéĞ´ÁËĞí¶àĞ¡×Ö¡£\n");
+		set("unit", "å—");
+		set("long", "è¿™æ˜¯ä¸€å—å‘é»„çš„ç¾Šçš®ï¼Œé‡Œé¢å¯†å¯†éº»éº»å†™äº†è®¸å¤šå°å­—ã€‚\n");
 		set("value", 10);
 		set("material", "paper");
 		set("skill", ([

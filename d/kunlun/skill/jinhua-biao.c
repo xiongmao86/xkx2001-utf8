@@ -1,16 +1,16 @@
 //Cracked by Roath
-// jinhua-biao.c ½ğ»¨ïÚ
+// jinhua-biao.c é‡‘èŠ±é•–
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$NÍ»È»Ò»¸ö¿Õ·­£¬ÊÖÖĞ½ğ»¨ïÚÈç½ğ¹âÍòµÀ£¬Ïò$nÉä³ö¡£",
+([      "action": "$Nçªç„¶ä¸€ä¸ªç©ºç¿»ï¼Œæ‰‹ä¸­é‡‘èŠ±é•–å¦‚é‡‘å…‰ä¸‡é“ï¼Œå‘$nå°„å‡ºã€‚",
         "lvl" : 0,
         "cost": 120,
         "attack" : 20,
         "damage" : 5,
         "weapon" : "biao",
-        "damage_type": "´ÌÉË"
+        "damage_type": "åˆºä¼¤"
 ]),
 	// add more actions
 });

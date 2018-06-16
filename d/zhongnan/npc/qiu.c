@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/qiu.c
-// qiu.c Çğ´¦»ú
+// qiu.c ä¸˜å¤„æœº
 // sdong 08/01/98
 
 inherit NPC;
@@ -15,12 +15,12 @@ int auto_perform();
 
 void create()
 {
-	set_name("Çğ´¦»ú", ({ "qiu chuji", "qiu" }));
-	set("nickname", "³¤´º×Ó");
+	set_name("ä¸˜å¤„æœº", ({ "qiu chuji", "qiu" }));
+	set("nickname", "é•¿æ˜¥å­");
 	set("long",
-		"Ëû¾ÍÊÇÈ«ÕæÆß×ÓÖĞ×î¸ºÊ¢ÃûµÄÇğ´¦»ú£¬µÀºÅ³¤´º×Ó£¬ÏÖÈÎÈ«Õæ½ÌÕÆ½ÌÕæÈË¡£\n"
-		"ËûÒÑÄê½üÆßÊ®£¬Éí²Ä¿ıÎà£¬ÂúÁ³ºì¹â£¬ÆøÓî²»·²¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–å°±æ˜¯å…¨çœŸä¸ƒå­ä¸­æœ€è´Ÿç››åçš„ä¸˜å¤„æœºï¼Œé“å·é•¿æ˜¥å­ï¼Œç°ä»»å…¨çœŸæ•™æŒæ•™çœŸäººã€‚\n"
+		"ä»–å·²å¹´è¿‘ä¸ƒåï¼Œèº«æé­æ¢§ï¼Œæ»¡è„¸çº¢å…‰ï¼Œæ°”å®‡ä¸å‡¡ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 69);
 	set("attitude", "heroic");
 	set("shen_type", 1);
@@ -65,12 +65,12 @@ void create()
 
 	set("class","taoist");
 
-	create_family("È«Õæ½Ì", 2, "µÜ×Ó¡¢ÕÆ½ÌÕæÈË");
+	create_family("å…¨çœŸæ•™", 2, "å¼Ÿå­ã€æŒæ•™çœŸäºº");
 
 	set("inquiry", ([
-		"ÃØ¼®" : (: ask_me :),
+		"ç§˜ç±" : (: ask_me :),
 		"miji" : (: ask_me :),
-		"ÈÎÎñ" : (: ask_job :),
+		"ä»»åŠ¡" : (: ask_job :),
 		"job" : (: ask_job :),
 	]));
 
@@ -94,31 +94,31 @@ void attempt_apprentice(object ob)
 	mapping fam;
 	string name,new_name;
 
-	if( mapp(fam = ob->query("family")) && fam["family_name"] != "È«Õæ½Ì" )
+	if( mapp(fam = ob->query("family")) && fam["family_name"] != "å…¨çœŸæ•™" )
 	{
 		command ("say " + RANK_D->query_respect(this_player())
-			+ "²¢·ÇÎÒÃÅÖĞÈË£¬Ï°Îä»¹ÊÇÏÈ´Ó¸÷Î»µÀ³¤Æğ°É£¡");
+			+ "å¹¶éæˆ‘é—¨ä¸­äººï¼Œä¹ æ­¦è¿˜æ˜¯å…ˆä»å„ä½é“é•¿èµ·å§ï¼");
 		return;
 	}
 
 	if ((int)ob->query_skill("xiantian-gong", 1) < 80) {
-		command("say ÎÒÈ«Õæ½ÌÄËÄÚ¼ÒÎä¹¦£¬×îÖØÊÓÄÚ¹¦ĞÄ·¨¡£");
+		command("say æˆ‘å…¨çœŸæ•™ä¹ƒå†…å®¶æ­¦åŠŸï¼Œæœ€é‡è§†å†…åŠŸå¿ƒæ³•ã€‚");
 		command("say " + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹Ó¦¸ÃÔÚĞşÃÅÏÈÌì¹¦ÉÏ¶àÏÂµã¹¦·ò£¿");
+			"æ˜¯å¦è¿˜åº”è¯¥åœ¨ç„é—¨å…ˆå¤©åŠŸä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
 		return;
 	}
 
 	if ((int)ob->query("shen") < 50000) {
-		command("say ÎÒÈ«Õæ½ÌÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-		command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-			"ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+		command("say æˆ‘å…¨çœŸæ•™ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æä¸¥ã€‚");
+		command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+			"æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
 		return;
 	}
 
-	command("say ºÃ°É£¬Æ¶µÀ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œè´«é“å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	name = ob->query("name");
-	new_name = name[0..01]+"Ö¾" + name[4..5];
-	command("say ´Ó½ñÒÔºóÄã¾Í½Ğ×ö" + new_name + "¡£");
+	new_name = name[0..01]+"å¿—" + name[4..5];
+	command("say ä»ä»Šä»¥åä½ å°±å«åš" + new_name + "ã€‚");
 	ob->set("name",new_name);
 	command("recruit " + ob->query("id"));
 }
@@ -128,22 +128,22 @@ string ask_me()
 	mapping fam;
 	object ob, *obs,ob2 ;
 
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "È«Õæ½Ì")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "å…¨çœŸæ•™")
 		return RANK_D->query_respect(this_player()) +
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (query("book_count") < 1)
-		return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄÄÚ¹¦ĞÄ·¨²»ÔÚ´Ë´¦¡£";
+		return "ä½ æ¥æ™šäº†ï¼Œæœ¬æ´¾çš„å†…åŠŸå¿ƒæ³•ä¸åœ¨æ­¤å¤„ã€‚";
 
 	obs = filter_array(children(__DIR__"force_book.c"), (: clonep :));
 		  if (sizeof(obs) > 2)
-		return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄÄÚ¹¦ĞÄ·¨²»ÔÚ´Ë´¦¡£";
+		return "ä½ æ¥æ™šäº†ï¼Œæœ¬æ´¾çš„å†…åŠŸå¿ƒæ³•ä¸åœ¨æ­¤å¤„ã€‚";
 
 	ob=new(__DIR__"force_book");
 	ob->move(this_player());
 	add("book_count", -1);
-	command ("rumor "+this_player()->query("name")+"Åªµ½ÁËÒ»²áĞşÃÅÄÚ¹¦ĞÄ·¨¡£");
-	return "ºÃ°É£¬Õâ±¾¡¸ĞşÃÅÄÚ¹¦ĞÄ·¨¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+	command ("rumor "+this_player()->query("name")+"å¼„åˆ°äº†ä¸€å†Œç„é—¨å†…åŠŸå¿ƒæ³•ã€‚");
+	return "å¥½å§ï¼Œè¿™æœ¬ã€Œç„é—¨å†…åŠŸå¿ƒæ³•ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
 }
 
 
@@ -156,28 +156,28 @@ string ask_job()
 
 	  job_stat = ob->query_temp("qz_caiyao");
 
-	  if ( ob->query("family/family_name") != "È«Õæ½Ì" )
-					 return "ÕâÎ»"+RANK_D->query_respect(ob)+"·ÇÎÒÈ«Õæ½ÌµÜ×Ó£¬Æñ¸ÒÀÍ·³¡£\n";
+	  if ( ob->query("family/family_name") != "å…¨çœŸæ•™" )
+					 return "è¿™ä½"+RANK_D->query_respect(ob)+"éæˆ‘å…¨çœŸæ•™å¼Ÿå­ï¼Œå²‚æ•¢åŠ³çƒ¦ã€‚\n";
 
 	  if(job_stat){
 				command("hmm "+ob->query("id"));
-				return "Äã»¹Ã»Íê³ÉÈÎÎñ£¬¾ÍÓÖÏëÒªĞÂµÄ£¿\n";
+				return "ä½ è¿˜æ²¡å®Œæˆä»»åŠ¡ï¼Œå°±åˆæƒ³è¦æ–°çš„ï¼Ÿ\n";
 	  }
 
 	  if ( me->query_temp("job_pos") == 0 ) {
-					 return "ÏÖÔÚÃ»Ê²Ã´Òª½ôµÄÊÂÈ¥×÷£¬ÄãÈ¥ĞİÏ¢°É¡£\n";
+					 return "ç°åœ¨æ²¡ä»€ä¹ˆè¦ç´§çš„äº‹å»ä½œï¼Œä½ å»ä¼‘æ¯å§ã€‚\n";
 	  }
 
 	  me->add_temp("job_pos", -1);
 
 	  command("nod");
-	  command("say ºÃ£¬×î½üÁ¶µ¤ÓÃµÄ²İÒ©¶¼ÓÃÍêÁË£¬ÄãÈ¥É½ÏÂÊ÷ÁÖÀïÈ¥²ÉÒ»Ğ©»ØÀ´¡£");
+	  command("say å¥½ï¼Œæœ€è¿‘ç‚¼ä¸¹ç”¨çš„è‰è¯éƒ½ç”¨å®Œäº†ï¼Œä½ å»å±±ä¸‹æ ‘æ—é‡Œå»é‡‡ä¸€äº›å›æ¥ã€‚");
 	  ob2 = new("/d/zhongnan/obj/yaochu");
 	  ob2->move(me);
 	  ob->set_temp("qz_caiyao",1);
 	  command("give yao chu to "+ob->query("id"));
 
-	  return "ÔçÈ¥Ôç»Ø£¬Â·ÉÏÒªĞ¡ĞÄÒ»Ğ©£¡\n";
+	  return "æ—©å»æ—©å›ï¼Œè·¯ä¸Šè¦å°å¿ƒä¸€äº›ï¼\n";
 }
 
 int accept_object(object me, object obj)
@@ -198,7 +198,7 @@ int accept_object(object me, object obj)
 			)
 			{
 
-			  if ( ob->query("family/family_name") == "È«Õæ½Ì" ) {
+			  if ( ob->query("family/family_name") == "å…¨çœŸæ•™" ) {
 					 remove_call_out("reward_dest");
 					 call_out("reward_dest", 1, obj, ob);
 			  }
@@ -211,7 +211,7 @@ int accept_object(object me, object obj)
 		  }
 
 		  command( "hmm" );
-		  command( "say Äã¸øÎÒÕâ¶«Î÷×öÊ²÷á£¿" );
+		  command( "say ä½ ç»™æˆ‘è¿™ä¸œè¥¿åšä»€éº½ï¼Ÿ" );
 
 		  return 0;
 }
@@ -221,7 +221,7 @@ void reward_dest(object obj,object ob)
 	object yaochu = present("yao chu",this_player() );
    if(yaochu)destruct(yaochu);
 	command( "pat "+ob->query("id"));
-	command( "say "+ob->query("name")+"¸ÉµÄ²»´í£¬ÏÂÈ¥ĞİÏ¢Ò»ÏÂ°É£¡\n");
+	command( "say "+ob->query("name")+"å¹²çš„ä¸é”™ï¼Œä¸‹å»ä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
 	if(ob->query_temp("qz_caiyao",1) )
 	{
 		ob->delete_temp("qz_caiyao");
@@ -234,7 +234,7 @@ void reward_dest(object obj,object ob)
 void thank_dest(object obj,object ob)
 {
 	command( "jump");
-	command( "say ÎÒÃÇºÜĞèÒªÕâĞ©Ò©²Ä£¬¶àĞ»À²£¡\n");
+	command( "say æˆ‘ä»¬å¾ˆéœ€è¦è¿™äº›è¯æï¼Œå¤šè°¢å•¦ï¼\n");
 	destruct(obj);
 }
 

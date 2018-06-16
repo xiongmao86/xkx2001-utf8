@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ÆÖÓ¹«",({ "huangzhong gong","gong" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("é»„é’Ÿå…¬",({ "huangzhong gong","gong" }) );
+        set("gender", "ç”·æ€§");
         set("age", 65);
 	set("long",
-		"Ëû¹ÇÊİÈç²ñ£¬Á³ÉÏµÄ¼¡Èâ¶¼°¼ÁË½øÈ¥£¬Ö±ÈçÒ»¾ß÷¼÷Ã£¬"
-		"Ë«Ä¿È´¾¼¾¼ÓĞÉñ¡£\n");
+		"ä»–éª¨ç˜¦å¦‚æŸ´ï¼Œè„¸ä¸Šçš„è‚Œè‚‰éƒ½å‡¹äº†è¿›å»ï¼Œç›´å¦‚ä¸€å…·éª·é«…ï¼Œ"
+		"åŒç›®å´ç‚¯ç‚¯æœ‰ç¥ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯´ó×¯Ö÷");
+        set("title","æ¢…åº„å¤§åº„ä¸»");
         set("combat_exp", 90000);
         set("shen_type", 0);
         set("attitude", "friendly");

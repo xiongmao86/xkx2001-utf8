@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/forest/npc/cl_huoji.c  ³¤ÀÖ°ï»ï¼Æ
+// /d/forest/npc/cl_huoji.c  é•¿ä¹å¸®ä¼™è®¡
 // by aln 2 / 98
 
 inherit NPC;
@@ -7,11 +7,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("³¤ÀÖ°ï»ï¼Æ", ({ "huoji", "keeper" }));
+        set_name("é•¿ä¹å¸®ä¼™è®¡", ({ "huoji", "keeper" }));
         set("str", 20);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "ËûÊÇ¸öÇÚÀÍµÄ»ï¼Æ£¬¶Ç×ÓÀïÒ²ÓĞĞ©Ä«Ë®¡£\n");
+        set("long", "ä»–æ˜¯ä¸ªå‹¤åŠ³çš„ä¼™è®¡ï¼Œè‚šå­é‡Œä¹Ÿæœ‰äº›å¢¨æ°´ã€‚\n");
         set("combat_exp", 2500);
         set("attitude", "friendly");
 

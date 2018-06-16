@@ -12,14 +12,14 @@ void create()
 		string file;
 		object new_box;
 
-        set_name("¾èÄÉÏä", ({"xiang", "juan na xiang"}));
+        set_name("æçº³ç®±", ({"xiang", "juan na xiang"}));
         set_weight(80000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö°ëÈË¸ßµÄÄ¾ºĞ×Ó£¬¶¥ÉÏ¿ªÁË¸ö¶´£¬ÏäÄÚ×°×ÅÀ®ÂïÃÇºÍĞÅÍ½ÃÇ¾èÔù
-µÄ½ğÒøÖé±¦¡£ÏäÉÏÃú¿Ì×Å¼¸¸ö´ó×Ö£­ÖÚÖ¾³É³Ç£¬ÔÙËÜÎÒ·ğ½ğÉí¡£\n");
-                set("unit", "Ö»");
+                set("long", "ä¸€ä¸ªåŠäººé«˜çš„æœ¨ç›’å­ï¼Œé¡¶ä¸Šå¼€äº†ä¸ªæ´ï¼Œç®±å†…è£…ç€å–‡å˜›ä»¬å’Œä¿¡å¾’ä»¬æèµ 
+çš„é‡‘é“¶ç å®ã€‚ç®±ä¸Šé“­åˆ»ç€å‡ ä¸ªå¤§å­—ï¼ä¼—å¿—æˆåŸï¼Œå†å¡‘æˆ‘ä½›é‡‘èº«ã€‚\n");
+                set("unit", "åª");
                 set("material", "wood");
                 set("value", 100000000);
         }
@@ -62,24 +62,24 @@ int do_donate(string arg)
         me = this_player();
 
         if (!arg || sscanf(arg, "%d %s", amount, what) != 2)
-        return notify_fail("ÃüÁî¸ñÊ½£ºdonate <ÊıÁ¿> <»õ±Òµ¥Î»>\n");
+        return notify_fail("å‘½ä»¤æ ¼å¼ï¼šdonate <æ•°é‡> <è´§å¸å•ä½>\n");
 
         what_ob = present(what + "_money", me);
         if (!what_ob)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ´øÕâÖÖÇ®¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰å¸¦è¿™ç§é’±ã€‚\n");
 
         if (amount < 1)
-        return notify_fail("ÄãÏë¾´Ï×¶àÉÙ" + what_ob->query("name") + "£¿\n");
+        return notify_fail("ä½ æƒ³æ•¬çŒ®å¤šå°‘" + what_ob->query("name") + "ï¼Ÿ\n");
 
         if ((int)what_ob->query_amount() < amount)
-        return notify_fail("Äã´øµÄ" + what_ob->query("name") + "²»¹»¡£\n");
+        return notify_fail("ä½ å¸¦çš„" + what_ob->query("name") + "ä¸å¤Ÿã€‚\n");
 
         // donate the Money
 
         what_ob->add_amount(-amount);
 		real_value = what_ob->query("base_value") * amount;
       
-        message_vision(sprintf("$N¶Ô×ÅÊÍåÈÄ²Äá½ğÏñĞĞ¹ıÎåÌåÍ¶µØ´óÀñºóò¯³ÏµØ½«%s%s%s¾´Ï×µ½¾èÄÉÏäÖĞ¡£\n", 
+        message_vision(sprintf("$Nå¯¹ç€é‡Šè¿¦ç‰Ÿå°¼é‡‘åƒè¡Œè¿‡äº”ä½“æŠ•åœ°å¤§ç¤¼åè™”è¯šåœ°å°†%s%s%sæ•¬çŒ®åˆ°æçº³ç®±ä¸­ã€‚\n", 
         chinese_number(amount), what_ob->query("base_unit"), 
         what_ob->query("name")), me);
 		names = keys(box);
@@ -121,20 +121,20 @@ int do_withdraw (string arg)
 
         me = this_player();
 
-        if (!wizardp(me)) return notify_fail("¾èÄÉÏäËø×ÅÄØ£¬´ò²»¿ª¡£\n");
+        if (!wizardp(me)) return notify_fail("æçº³ç®±é”ç€å‘¢ï¼Œæ‰“ä¸å¼€ã€‚\n");
         
         if (!arg || sscanf(arg, "%d %s", amount, what) != 2)
-        return notify_fail("ÃüÁî¸ñÊ½£ºwithdraw <ÊıÁ¿> <»õ±Òµ¥Î»>\n");
+        return notify_fail("å‘½ä»¤æ ¼å¼ï¼šwithdraw <æ•°é‡> <è´§å¸å•ä½>\n");
 
         if (amount < 1)
-        return notify_fail("Äã·¢·èÀ²£¬È¡¸ºÊı£¿\n");
+        return notify_fail("ä½ å‘ç–¯å•¦ï¼Œå–è´Ÿæ•°ï¼Ÿ\n");
 
         if (file_size("/clone/money/" + what + ".c") < 0)
-        return notify_fail("ÄãÏëÈ¡³öÊ²Ã´Ç®£¿\n");
+        return notify_fail("ä½ æƒ³å–å‡ºä»€ä¹ˆé’±ï¼Ÿ\n");
 
         what = "/clone/money/" + what;
         if ((v = amount * what->query("base_value")) > box["current_value"])
-              return notify_fail("¾èÄÉÏäÀïµÄÇ®²»¹»È¡¡£\n");
+              return notify_fail("æçº³ç®±é‡Œçš„é’±ä¸å¤Ÿå–ã€‚\n");
 
         box["current_value"] -= v;
         MONEY_D->pay_player(me, v);
@@ -148,7 +148,7 @@ int do_withdraw (string arg)
 		new_box->save_box_count(box);
         destruct(new_box);
 
-        message_vision(sprintf("$N´Ó¾èÄÉÏäÀïÈ¡³ö%s¡£\n", MONEY_D->money_str(v)),
+        message_vision(sprintf("$Nä»æçº³ç®±é‡Œå–å‡º%sã€‚\n", MONEY_D->money_str(v)),
                 me);
 
         return 1;
@@ -162,7 +162,7 @@ int do_reset()
 
    	me = this_player();
 
-    if (!wizardp(me)) return notify_fail("ÄãÎŞÈ¨Ê¹ÓÃ´Ë¹¦ÄÜ£¡\n");
+    if (!wizardp(me)) return notify_fail("ä½ æ— æƒä½¿ç”¨æ­¤åŠŸèƒ½ï¼\n");
 
     file = "/data/box/xueshan.o";
     assure_file( file );

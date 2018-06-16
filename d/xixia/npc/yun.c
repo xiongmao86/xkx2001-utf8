@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÔÆÖĞº×", ({ "yun zhonghe", "yun", "zhonghe"}));
-	set("nickname", "ÇîĞ×¼«¶ñ");
+	set_name("äº‘ä¸­é¹¤", ({ "yun zhonghe", "yun", "zhonghe"}));
+	set("nickname", "ç©·å‡¶ææ¶");
 	set("long", 
-"´ËÈËÉí²Ä¼«¸ß£¬È´ÓÖ¼«Êİ£¬±ãËÆÊÇ¸ùÖñ¸Í£¬Ò»ÕÅÁ³³¤µÃ¼«ÊÇĞ×¶ñ¡£\n");
-	set("gender", "ÄĞĞÔ");
+"æ­¤äººèº«ææé«˜ï¼Œå´åˆæç˜¦ï¼Œä¾¿ä¼¼æ˜¯æ ¹ç«¹ç«¿ï¼Œä¸€å¼ è„¸é•¿å¾—ææ˜¯å‡¶æ¶ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "heroism");
 	set("shen_type", -1);
@@ -26,12 +26,12 @@ void create()
 	set("combat_exp", 700000);
 	set("chat_chance_combat", 15);
 	set("chat_msg_combat", ({
-                "ÔÆÖĞº×ÉíĞÎÆ®Òİ£¬´Ü×İÖ®ÊÆÑ¸½İÒì³£¡£\n"
+                "äº‘ä¸­é¹¤èº«å½¢é£˜é€¸ï¼Œçªœçºµä¹‹åŠ¿è¿…æ·å¼‚å¸¸ã€‚\n"
         }) );
 
  set("inquiry", ([
-        "²âÊÔ" : (: ask_me :),
-        "²âÊÔÎä¹¦" : (: ask_me :),
+        "æµ‹è¯•" : (: ask_me :),
+        "æµ‹è¯•æ­¦åŠŸ" : (: ask_me :),
         ]));
 
 	set_temp("apply/armor", 50);
@@ -65,15 +65,15 @@ void init()
 int ask_me()
 {
 object me=this_player();
-if ((int)me->query_temp("marks/Î÷ÏÄyun")) 
+if ((int)me->query_temp("marks/è¥¿å¤yun")) 
         {
-say("ÔÆÖĞº×¿´ÁË¿´Äã£¬ßıÁËÒ»¿Ú£ºÄÌÄÌµÄ£¬Õâ¹íµØ·½Ã»¸öÆ¯ÁÁĞ¡Äï¶ù£¬¾ÍÊÔÊÔ(accept
-test)£¬¿´ÀÏ×Ó²»Ô×ÁËÄã£¿\n");
+say("äº‘ä¸­é¹¤çœ‹äº†çœ‹ä½ ï¼Œå•äº†ä¸€å£ï¼šå¥¶å¥¶çš„ï¼Œè¿™é¬¼åœ°æ–¹æ²¡ä¸ªæ¼‚äº®å°å¨˜å„¿ï¼Œå°±è¯•è¯•(accept
+test)ï¼Œçœ‹è€å­ä¸å®°äº†ä½ ï¼Ÿ\n");
        return 1;
         }
 /* else {
 
-say("ÄÏº£öùÉñÅ­ºÈµÀ£º¹ö£¬ÀÏ×ÓĞÄ·³£¬²»¹ö¿´ÀÏ×ÓÒ»ÏÂÅ¡¶ÏÄãµÄ²±×Ó£¡\n");
+say("å—æµ·é³„ç¥æ€’å–é“ï¼šæ»šï¼Œè€å­å¿ƒçƒ¦ï¼Œä¸æ»šçœ‹è€å­ä¸€ä¸‹æ‹§æ–­ä½ çš„è„–å­ï¼\n");
         return 1;
         }
 */
@@ -84,11 +84,11 @@ int do_accept(string arg)
 object me=this_player();
         mapping guild;
 
-if (!(int)me->query_temp("marks/Î÷ÏÄyun"))
- return notify_fail ("ÄãÏ¹ÊÔÊ²Ã´£¿\n");
+if (!(int)me->query_temp("marks/è¥¿å¤yun"))
+ return notify_fail ("ä½ çè¯•ä»€ä¹ˆï¼Ÿ\n");
 
         if( arg== "test" ) {
-                say("\nÔÆÖĞº×µãÁËµãÍ·£¬ËµµÀ£ººÜºÃ£¬ÕâÊÇµÚÒ»ÕĞ....\n\n");
+                say("\näº‘ä¸­é¹¤ç‚¹äº†ç‚¹å¤´ï¼Œè¯´é“ï¼šå¾ˆå¥½ï¼Œè¿™æ˜¯ç¬¬ä¸€æ‹›....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
 query_temp("weapon"));
 COMBAT_D->do_attack(this_object(), this_player(),
@@ -97,10 +97,10 @@ query_temp("weapon"));
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-say("ÔÆÖĞº×Ì¾ÁË¿ÚÆø£¬ËµµÀ£ºÁ¬µÚÒ»ÕĞ¶¼³Å²»¹ı£¬ÕæÊÇ×Ô²»Á¿Á¦....\n");
+say("äº‘ä¸­é¹¤å¹äº†å£æ°”ï¼Œè¯´é“ï¼šè¿ç¬¬ä¸€æ‹›éƒ½æ’‘ä¸è¿‡ï¼ŒçœŸæ˜¯è‡ªä¸é‡åŠ›....\n");
                         return 1;
                 }
-                say("\nÔÆÖĞº×ËµµÀ£ºÕâÊÇµÚ¶şÕĞ....\n\n");
+                say("\näº‘ä¸­é¹¤è¯´é“ï¼šè¿™æ˜¯ç¬¬äºŒæ‹›....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
 query_temp("weapon"));
 COMBAT_D->do_attack(this_object(), this_player(),
@@ -109,10 +109,10 @@ query_temp("weapon"));
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-say("ÔÆÖĞº×¡¸ºß¡¹µØÒ»Éù£¬ËµµÀ£º±ãÊÇÓĞÕâĞí¶à²»ÅÂËÀµÄ¼Ò»ï....\n");
+say("äº‘ä¸­é¹¤ã€Œå“¼ã€åœ°ä¸€å£°ï¼Œè¯´é“ï¼šä¾¿æ˜¯æœ‰è¿™è®¸å¤šä¸æ€•æ­»çš„å®¶ä¼™....\n");
 return 1;
                 }
-                say("\nÔÆÖĞº×ËµµÀ£ºµÚÈıÕĞÀ´ÁË....\n\n");
+                say("\näº‘ä¸­é¹¤è¯´é“ï¼šç¬¬ä¸‰æ‹›æ¥äº†....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
 query_temp("weapon"));
                 COMBAT_D->do_attack(this_object(), this_player(),
@@ -121,13 +121,13 @@ query_temp("weapon"));
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-say("ÔÆÖĞº×Ì¾µÀ£ºÃ»ÓĞÆ¯ÁÁĞ¡Äï¶ù£¬ÎÒ¾ÍÔ×ÁËÄã....\n");
+say("äº‘ä¸­é¹¤å¹é“ï¼šæ²¡æœ‰æ¼‚äº®å°å¨˜å„¿ï¼Œæˆ‘å°±å®°äº†ä½ ....\n");
                         return 1;
                 }
 
-say("\nÔÆÖĞº×·­ÁË·­°×ÑÛËµµÀ£º¿´²»³öÄã»¹ÓĞÁ©ÏÂ×Ó....\n");
+say("\näº‘ä¸­é¹¤ç¿»äº†ç¿»ç™½çœ¼è¯´é“ï¼šçœ‹ä¸å‡ºä½ è¿˜æœ‰ä¿©ä¸‹å­....\n");
                 this_player()->set_temp("xixia/testpass", 2);
-                this_player()->delete_temp("marks/Î÷ÏÄyun");
+                this_player()->delete_temp("marks/è¥¿å¤yun");
                 return 1;
         }
         return 0;

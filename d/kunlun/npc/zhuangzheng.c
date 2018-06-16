@@ -12,20 +12,20 @@ void create()
 		mapping S_skills= ([ ]);
 		mapping I_inquiry=([ ]);
 		mixed Skill_name;
-        set_name("ׯ�",({"zhuang zheng","zhuang"}));
-        set("title", "�������������ʹ");
-        set("long", "�д����ӡ�\n");
+        set_name("庄铮",({"zhuang zheng","zhuang"}));
+        set("title", "明教锐金旗掌旗使");
+        set("long", "有待添加。\n");
         set("age", 37);
         set("attitude", "peaceful");
         set("shen", 1000000);
-        create_family("����",37,"����ʹ");
+        create_family("明教",37,"掌旗使");
 
 		Skill_name=({"guangming-xinfa","wuxing-bu","bagua-dao",
 			     "riyue-shenzhang","shenghuo-quan"});
-		I_inquiry["name"]="���¾����������������ʹׯ���֪�����к�ָ�̡�";
-		I_inquiry["����"]=(: ask_job :);
+		I_inquiry["name"]="在下就是明教锐金旗掌旗使庄铮，不知阁下有何指教。";
+		I_inquiry["任务"]=(: ask_job :);
 		I_inquiry["job"]=(: ask_job :);
-		I_inquiry["����"]=(: ask_abandon :);
+		I_inquiry["放弃"]=(: ask_abandon :);
 		I_inquiry["abandon"]=(: ask_abandon :);
 		Set_Inquiry(I_inquiry,Skill_name);
 		Set_Npcattrib(23,5,2000,300,4000,400,4000,300,3000,1000,700000,50000);
@@ -57,14 +57,14 @@ string ask_job()
      mapping fam ;
      object ling,qiao;
 
-    if (!(fam = this_player()->query("family")) || fam["family_name"] != "����")
-        return "��λ"+RANK_D->query_respect(player)+"�����ҽ̵��֣��Ǹ������Ǹҷ��ɸ���ʲô�����ء�\n";
+    if (!(fam = this_player()->query("family")) || fam["family_name"] != "明教")
+        return "这位"+RANK_D->query_respect(player)+"并非我教弟兄，那敢在下那敢分派阁下什么任务呢。\n";
 
 	if(!objectp(ling = present("tieyan ling", player)) )
-		return "��λ"+RANK_D->query_respect(player)+"û���ҽ��������������μ�¼���͹�ʧ��\n";
+		return "这位"+RANK_D->query_respect(player)+"没有我教信物铁焰令，我如何记录奖赏过失？\n";
 
 //	if (fam["generation"] <37)
-//		 return "��λ"+RANK_D->query_respect(player)+"�ѹ�Ϊ�ҽ�"+fam["title"]+"������ͷ���ܡ�\n";
+//		 return "这位"+RANK_D->query_respect(player)+"已贵为我教"+fam["title"]+"，岂敢劳烦大架。\n";
 
 	if(player->query("mingjiao/job"))
 		return judge_jobmsg(player,0);
@@ -75,11 +75,11 @@ string ask_job()
 	
 	qiao=new(OBJ_PATH"/qiao");
 	qiao->move(player);
-	tell_object(player,"ׯ���һ�����¡�\n");
+	tell_object(player,"庄铮给你一把铁锹。\n");
 	
-	return "��������ڽ��ڸ���ɿ�����������ϵȾ����������ˣ���ȥ\n"
-		"������ɽ����Щ����Ȼ�󵽾���������ʯ���Ƴɾ�����\n"
-		"����ɽ�ϳ������޳�û�����Լ����С�ġ�\n";
+	return "我锐金旗在教内负责采矿炼铁，最近上等精铁快用完了，你去\n"
+		"附近的山上找些铁矿，然后到精练场将矿石炼制成精铁。\n"
+		"附近山上常有猛兽出没，你自己多加小心。\n";
 
 
 		 

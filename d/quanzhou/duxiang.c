@@ -1,5 +1,5 @@
 //Cracked by Roath
-// duxiang.c ������
+// duxiang.c 都督巷
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "都督巷");
 	set("long", @LONG
-����Ȫ�ݵ�һ��С��徻���ࡣԶԶ�ɼ���׺�ǽ����������ɭ�ϣ���
-Ȼ������ͨ��ס�ҡ�
+这是泉州的一条小巷，清净整洁。远远可见巷底红墙高砌，把守森严，显
+然不是普通的住家。
 LONG
         );
 

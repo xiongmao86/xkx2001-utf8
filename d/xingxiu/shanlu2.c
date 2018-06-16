@@ -6,10 +6,10 @@ inherit ROOM;
 void create()
 {
     int i;
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-�˴�����ȺɽΧ�ƣ��м�һ������߷�������ֻ�����
-�������ʣ��������ס�
+此处地势群山围绕，中间一座白玉高峰参天而起。只见玉峰
+隐隐泛彩，奇丽无伦。
 LONG
 	);
 

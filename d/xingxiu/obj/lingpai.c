@@ -9,13 +9,13 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("ÁîÅÆ", ({ "ling pai", "ling", "pai" }));
+        set_name("ä»¤ç‰Œ", ({ "ling pai", "ling", "pai" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿éÃ÷ÃÅÕıÅÉÉùÌÖĞ°½ÌµÄÁîÅÆ¡£\n"NOR);
+                set("unit", "å—");
+                set("long", "è¿™æ˜¯ä¸€å—æ˜é—¨æ­£æ´¾å£°è®¨é‚ªæ•™çš„ä»¤ç‰Œã€‚\n"NOR);
                 set("material", "stone");
         }
         setup();

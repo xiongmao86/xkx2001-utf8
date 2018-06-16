@@ -13,14 +13,14 @@ void create()
 {
 		object suyou;
 
-        set_name("ËÖÓÍ¹Ş", ({"suyou guan", "guan", "bottle"}));
+        set_name("é…¥æ²¹ç½", ({"suyou guan", "guan", "bottle"}));
         set_max_encumbrance(2000);
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÓÃÀ´×°ËÖÓÍµÄ¹Ş×Ó\n");
+                set("unit", "ä¸ª");
+                set("long", "ä¸€ä¸ªç”¨æ¥è£…é…¥æ²¹çš„ç½å­\n");
                 set("value", 1);
         }
 

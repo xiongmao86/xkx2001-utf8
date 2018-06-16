@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "��Ǭ��");
+    set("short", "承乾宫");
 	set("long", @LONG
-���Ƕ�����֮һ��ԭ�������Ǿ�ס�ĵط������������������ᣬ
-��δ���䡣�����ʱ���˾�ס����Щ�ط��Ѿ������˻ҳ���
+这是东六宫之一，原本后妃们居住的地方。但当今皇上年纪尚轻，
+尚未婚配。因此暂时无人居住。有些地方已经积起了灰尘。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

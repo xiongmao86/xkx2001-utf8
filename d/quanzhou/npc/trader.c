@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("°¢À­²®ÉÌÈË", ({ "alabo shangren", "shangren", "trader" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é˜¿æ‹‰ä¼¯å•†äºº", ({ "alabo shangren", "shangren", "trader" }));
+        set("gender", "ç”·æ€§");
         set("age", 40 + random(10));
 
-        set("long", "Ò»¸ö°¢À­²®ÉÌÈË¡£Í·ÉÏ°ü×ÅÒ»¿é°×½í¡£\n");
+        set("long", "ä¸€ä¸ªé˜¿æ‹‰ä¼¯å•†äººã€‚å¤´ä¸ŠåŒ…ç€ä¸€å—ç™½å·¾ã€‚\n");
 
         set("attitude", "friendly");
 
@@ -29,7 +29,7 @@ void create()
         setup();
         set("chat_chance", 15);
         set("chat_msg", ({
-		"²¨Ë¹ÉÌÈË¶ÔÄãËµ£º°¢ÈøÀ¼ÂíÀë¹±£¬ÄÂº±Ä¬µÂÈğËØ°¢À­¡£\n",
+		"æ³¢æ–¯å•†äººå¯¹ä½ è¯´ï¼šé˜¿è¨å…°é©¬ç¦»è´¡ï¼Œç©†ç½•é»˜å¾·ç‘ç´ é˜¿æ‹‰ã€‚\n",
         }) );
 
         add_money("silver", 20);

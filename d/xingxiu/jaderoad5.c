@@ -1,5 +1,5 @@
 //Cracked by Roath
-// �����
+// 白玉峰
 // maco
 #include <ansi.h>
 
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����ſ�");
+	set("short", "大殿门口");
 	set("long", @LONG
-���ǰ��������ſڣ�ֻ������е������Ǻ��ǣ�����ɢ
-����һ�أ��������ձ����й�һ����ս��
+这是白玉峰大殿的门口，只见大殿中到处都是骸骨，刀剑散
+满了一地，想来当日必曾有过一场激战。
 LONG
         );
 

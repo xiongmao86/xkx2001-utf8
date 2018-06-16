@@ -15,17 +15,17 @@ int do_back(object);
 
 void create()
 {
-	set_name("Ð¡Æ¼", ({
+	set_name("å°è", ({
 		"xiao ping",
 		"ping",
 	}));
 	set("long",
-		"ÕâÊÇÒ»¸ö¿´ÆðÀ´Ê®·ÖÁæÀþ¹ÔÇÉµÄÐ¡Ñ¾»·£¬ÁøÒ¶Ã¼£¬Ï÷¼ç°ò£¬Ë®ÉßÑü£¬Ê®×ãÒ»¸öÃÀÈËÅß×Ó£¬µ«¾ÙÊÖÍ¶×ãÖ®¼äËÆºõÉíÓÐÎä¹¦¡£\n"
-		"¾ÝËµËý±¾ÊÇáÔÉ½½ÅÏÂÒ»¸ö¹ÂÅ®£¬±»Â½ÀÏ×¯Ö÷ÊÕÑø£¬¾­³£ÊÌ·îÂ½ÉÙ×¯Ö÷Ï°Á·ÎäÒÕ¡£\n"
+		"è¿™æ˜¯ä¸€ä¸ªçœ‹èµ·æ¥ååˆ†ä¼¶ä¿ä¹–å·§çš„å°ä¸«çŽ¯ï¼ŒæŸ³å¶çœ‰ï¼Œå‰Šè‚©è†€ï¼Œæ°´è›‡è…°ï¼Œåè¶³ä¸€ä¸ªç¾Žäººèƒšå­ï¼Œä½†ä¸¾æ‰‹æŠ•è¶³ä¹‹é—´ä¼¼ä¹Žèº«æœ‰æ­¦åŠŸã€‚\n"
+		"æ®è¯´å¥¹æœ¬æ˜¯åµ©å±±è„šä¸‹ä¸€ä¸ªå­¤å¥³ï¼Œè¢«é™†è€åº„ä¸»æ”¶å…»ï¼Œç»å¸¸ä¾å¥‰é™†å°‘åº„ä¸»ä¹ ç»ƒæ­¦è‰ºã€‚\n"
 	);
 
 
-	set("gender", "Å®ÐÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "friendly");
 
 	set("age", 18);
@@ -51,9 +51,9 @@ void create()
 
 
 	set("inquiry", ([
-		"Ä¾ÈË"     : (: ask_me :),
-		"ÐÞÀí"	   : (: ask_me :),
-		"ÐÞÄ¾ÈË"   : (: ask_me :)
+		"æœ¨äºº"     : (: ask_me :),
+		"ä¿®ç†"	   : (: ask_me :),
+		"ä¿®æœ¨äºº"   : (: ask_me :)
 	]));
 
 	setup();
@@ -80,7 +80,7 @@ int repairing_1(object me, object ob)
 {
 	if ( !present(ob, environment()) ) return 1; 
 
-	command("say ÊÇÕâ¸öÄ¾ÈË°É£¿ ßí£¬ÎÒÀ´ÇÆÇÆ£¡ ÄãÔÚ±ßÉÏÀÏÊµ´ô×Å£¬±ð´ò²í¡£");
+	command("say æ˜¯è¿™ä¸ªæœ¨äººå§ï¼Ÿ å””ï¼Œæˆ‘æ¥çž§çž§ï¼ ä½ åœ¨è¾¹ä¸Šè€å®žå‘†ç€ï¼Œåˆ«æ‰“å²”ã€‚");
 	
 	remove_call_out("repairing_2");
 	call_out("repairing_2", 2+random(3), me, ob);
@@ -94,16 +94,16 @@ int repairing_2(object me, object ob)
 
 	if( ob->query("damaged") )
 	{
-		message_vision(GRN "\nÐ¡Æ¼¶Ô×ÅÄ¾ÈËÇÆÁËÒ»»á£¬ÓÖÊÔ×Å°â¶¯Ä¾ÈËµÄËÄÖ«ºÍÄÔ´ü£¬Öå×ÅÃ¼Í·ÏëÁËÒ»»á¶ù¡£\n\n" NOR, me);
+		message_vision(GRN "\nå°èå¯¹ç€æœ¨äººçž§äº†ä¸€ä¼šï¼Œåˆè¯•ç€æ‰³åŠ¨æœ¨äººçš„å››è‚¢å’Œè„‘è¢‹ï¼Œçš±ç€çœ‰å¤´æƒ³äº†ä¸€ä¼šå„¿ã€‚\n\n" NOR, me);
 		remove_call_out("repairing_3");
 		call_out("repairing_3", 2+random(2), me, ob);
 	}
 	else
 	{
-		command("say ´ó±¿¹Ï£¬ÕâÄ¾ÈËºÃ¶Ë¶ËµØÓÖÃ»»µ£¡ »¹´óÀÏÔ¶µØÍÏ×ÅÎÒ¹ýÀ´£¡");
+		command("say å¤§ç¬¨ç“œï¼Œè¿™æœ¨äººå¥½ç«¯ç«¯åœ°åˆæ²¡åï¼ è¿˜å¤§è€è¿œåœ°æ‹–ç€æˆ‘è¿‡æ¥ï¼");
 		command("follow none");
 
-		message_vision(GRN "\nÐ¡Æ¼à½×Å×ì£¬Æø¹Ä¹ÄµØ×ßÁË¡£\n" NOR, me);
+		message_vision(GRN "\nå°èå˜Ÿç€å˜´ï¼Œæ°”é¼“é¼“åœ°èµ°äº†ã€‚\n" NOR, me);
 		me->move("/d/taihu/liangong");
 
 		remove_call_out("do_back");
@@ -115,8 +115,8 @@ int repairing_2(object me, object ob)
 	
 int repairing_3(object me, object ob)
 {
-	command("say ßí£¬ÊÇÕâÑùÒ®£¬ÎÒÀ´ÐÞÐÞ¿´°É£¡");
-	message_vision(GRN "\nÐ¡Æ¼½Ó×Å´Ó»³ÀïÌÍ³öÒ»´ó¶Ñ¹¤¾ßÀ´£¬´ò¿ªÄ¾ÈËµÄÉíÌå£¬°ÚÅªÁË¼¸ÏÂ¡£\n\n" NOR, me);
+	command("say å””ï¼Œæ˜¯è¿™æ ·è€¶ï¼Œæˆ‘æ¥ä¿®ä¿®çœ‹å§ï¼");
+	message_vision(GRN "\nå°èæŽ¥ç€ä»Žæ€€é‡ŒæŽå‡ºä¸€å¤§å †å·¥å…·æ¥ï¼Œæ‰“å¼€æœ¨äººçš„èº«ä½“ï¼Œæ‘†å¼„äº†å‡ ä¸‹ã€‚\n\n" NOR, me);
 
 	remove_call_out("repairing_4");
 	call_out("repairing_4", 3+random(3), me, ob);
@@ -128,19 +128,19 @@ int repairing_4(object me, object ob)
 {
 	if( random(1) == 0 ) 
 	{		
-		command("say ºÃ£¬ÐÞºÃÁË£¡");
+		command("say å¥½ï¼Œä¿®å¥½äº†ï¼");
 		ob->delete("damaged");
 		ob->set("fight_times", 0);	
-		message_vision(GRN "\nÄ¾ÈËµÄÉíÌåÖ¨Ö¨µØÅ¤¶¯ÁË¼¸ÏÂ£¬»Ö¸´ÁËÕý³£Õ¾Á¢µÄ×ËÌ¬¡£\n\n" NOR, me);
+		message_vision(GRN "\næœ¨äººçš„èº«ä½“å±å±åœ°æ‰­åŠ¨äº†å‡ ä¸‹ï¼Œæ¢å¤äº†æ­£å¸¸ç«™ç«‹çš„å§¿æ€ã€‚\n\n" NOR, me);
 	}
 	else 
-		message_vision(GRN "\nÐ¡Æ¼Ì¾ÁË¿ÚÆø£¬ËµµÀ£º¿´À´²»ÐÐ£¬ÕâÄ¾ÈËËð»µµÃÌ«À÷º¦ÁË£¬Ã»·¨×ÓÐÞÁË£¡\n" NOR, me);
+		message_vision(GRN "\nå°èå¹äº†å£æ°”ï¼Œè¯´é“ï¼šçœ‹æ¥ä¸è¡Œï¼Œè¿™æœ¨äººæŸåå¾—å¤ªåŽ‰å®³äº†ï¼Œæ²¡æ³•å­ä¿®äº†ï¼\n" NOR, me);
 
-	command("say ºÃ£¬ÄÇÎÒ×ßÁË£¡");
+	command("say å¥½ï¼Œé‚£æˆ‘èµ°äº†ï¼");
 	command("wave");
 	command("follow none");
 
-	message_vision(GRN "\nÐ¡Æ¼×ßÁË³öÈ¥¡£\n" NOR, me);
+	message_vision(GRN "\nå°èèµ°äº†å‡ºåŽ»ã€‚\n" NOR, me);
 	me->move("/d/taihu/liangong");
 
 	remove_call_out("do_back");
@@ -162,20 +162,20 @@ string ask_me()
 
 	ob = this_player();
 	
-	if ((!(fam = ob->query("family")) || fam["family_name"] != "ÌÒ»¨µº") && !ob->query_temp("allow_repair") )
+	if ((!(fam = ob->query("family")) || fam["family_name"] != "æ¡ƒèŠ±å²›") && !ob->query_temp("allow_repair") )
 		return RANK_D->query_respect(ob) + 
-		"Óë±¾×¯ËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+		"ä¸Žæœ¬åº„ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
 
-	command("say Ä¾ÈËÓÖ´ò»µÁËÊÇ°É£¿ Äã¿ÉÕæÂé·³£¬ºÃ°É£¬ÎÒÕâ¾Í¸úÄãÈ¥¿´¿´¡£");
+	command("say æœ¨äººåˆæ‰“åäº†æ˜¯å§ï¼Ÿ ä½ å¯çœŸéº»çƒ¦ï¼Œå¥½å§ï¼Œæˆ‘è¿™å°±è·Ÿä½ åŽ»çœ‹çœ‹ã€‚");
 	command("follow " + ob->query("id"));
 
-	return "ÎÒÃÇ×ß°Õ£¡\n";
+	return "æˆ‘ä»¬èµ°ç½¢ï¼\n";
 }
 /*
 int accept_object(object me, object ob)
 {
 	command("smile");
-	command("say °¢åôÍÓ·ð£¬¶àÐ»" + RANK_D->query_respect(me) + "ÁË £¡");
+	command("say é˜¿å¼­é™€ä½›ï¼Œå¤šè°¢" + RANK_D->query_respect(me) + "äº† ï¼");
 
 	if(ob->query("money_id") && ob->value() >= 10000 && me->query("class") != "bonze" )
 	me->set_temp("allow_repair", 1);

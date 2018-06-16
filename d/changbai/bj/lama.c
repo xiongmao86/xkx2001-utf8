@@ -16,11 +16,11 @@ void destroy(object);
 
 void create()
 {
-        set_name("ÃÜ×Ú´óÀÏ", ({ "dalama" }));
+        set_name("å¯†å®—å¤§è€", ({ "dalama" }));
         set("long",
-"ËûÉí´©»ÆÉ«ôÂôÄ£¬Ä¿¹â¾¼¾¼Ë«È­½ôÎÕ£¬È«Éí¼¡Èâ½ôÔÑµÃ¼¸ºõ¿ìÒª±¬ÁÑ¡£\n"
-"Ëû¹ÂÂª¹ÑÎÅ£¬Ö»ÖªµÀÀ®Âï£¬À­Èø£¬Î÷²ØºÍÃÜ×Ú¡£\n");
-        set("gender", "ÄÐÐÔ");
+"ä»–èº«ç©¿é»„è‰²è¢ˆè£Ÿï¼Œç›®å…‰ç‚¯ç‚¯åŒæ‹³ç´§æ¡ï¼Œå…¨èº«è‚Œè‚‰ç´§åŒå¾—å‡ ä¹Žå¿«è¦çˆ†è£‚ã€‚\n"
+"ä»–å­¤é™‹å¯¡é—»ï¼ŒåªçŸ¥é“å–‡å˜›ï¼Œæ‹‰è¨ï¼Œè¥¿è—å’Œå¯†å®—ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30 + random(20));
         set("attitude", "heroism");
         set("class","bonze");
@@ -74,10 +74,10 @@ void create()
         }) );
 
         set("inquiry",([
-                  "À®Âï" : (: ask_lama, "lama" :),
-                  "À­Èø" : (: ask_lama, "lasa" :),
-                  "Î÷²Ø" : (: ask_lama, "lasa" :),
-                  "ÃÜ×Ú" : (: ask_lama, "flirt" :),
+                  "å–‡å˜›" : (: ask_lama, "lama" :),
+                  "æ‹‰è¨" : (: ask_lama, "lasa" :),
+                  "è¥¿è—" : (: ask_lama, "lasa" :),
+                  "å¯†å®—" : (: ask_lama, "flirt" :),
         ]));
 
         setup();
@@ -123,7 +123,7 @@ void die()
                         ob = new("/d/changbai/bj/sword");
                         ob->move(environment(this_object()));
                         ob->set("my_killer", killer->query("id"));
-                        message_vision(HIR"\nÍ»È»´Ó$NÒÂ´üÖÐµôÏÂÒ»" + ob->query("unit") + ob->name() + "¡£\n"NOR, this_object());
+                        message_vision(HIR"\nçªç„¶ä»Ž$Nè¡£è¢‹ä¸­æŽ‰ä¸‹ä¸€" + ob->query("unit") + ob->name() + "ã€‚\n"NOR, this_object());
 
                         bonus = 100 + (int)query("combat_exp")/3000;
 

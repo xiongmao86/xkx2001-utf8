@@ -2,17 +2,17 @@
 // Room: /city/zhulin2.c
 // xbc June, 1997
 // rewritten, fixed crash bug, xuy, 8/11/97
-// ×ö·¨¼°Ô­ÁÏÓĞÏêÏ¸ËµÃ÷
+// åšæ³•åŠåŸæ–™æœ‰è¯¦ç»†è¯´æ˜
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÖñÁÖĞ¡µÀ");
+        set("short", "ç«¹æ—å°é“");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÖñÁÖĞ¡µÀ£¬Á½ÅÔ¾¡ÊÇÕÚÌì±ÎÈÕµÄÃ¯ÃÜµÄÖñÁÖ¡£ÆË±Ç¶øÀ´ÊÇÒ»Õó¹·
-ÈâÏãÎ¶¡£ÓĞÁ½¸öĞ¡½Ğ»¯ÕıÔÚÒ»¿é´óÊ¯±ßÕâÀï¿¾Èâ¡£¿´À´ÕâÀïÊÇØ¤°ïµÜ×ÓÎªÑïÖİ
-³ÇÄÚµÄ°ïÖĞ³¤ÀÏÃÇÉÕ²Ë×ö·¹µÄµØ·½¡£
+è¿™æ˜¯ä¸€æ¡ç«¹æ—å°é“ï¼Œä¸¤æ—å°½æ˜¯é®å¤©è”½æ—¥çš„èŒ‚å¯†çš„ç«¹æ—ã€‚æ‰‘é¼»è€Œæ¥æ˜¯ä¸€é˜µç‹—
+è‚‰é¦™å‘³ã€‚æœ‰ä¸¤ä¸ªå°å«åŒ–æ­£åœ¨ä¸€å—å¤§çŸ³è¾¹è¿™é‡Œçƒ¤è‚‰ã€‚çœ‹æ¥è¿™é‡Œæ˜¯ä¸å¸®å¼Ÿå­ä¸ºæ‰¬å·
+åŸå†…çš„å¸®ä¸­é•¿è€ä»¬çƒ§èœåšé¥­çš„åœ°æ–¹ã€‚
 LONG
 	);
 
@@ -46,38 +46,38 @@ int do_cook(string arg)
 	string cooking;
 	
 	if( !objectp(present("fire", me)) ) 
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞ»ğÕÛ£¬Éú²»ÁË»ğ£¬Ã»·¨ÉÕ²Ë×ö·¹¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰ç«æŠ˜ï¼Œç”Ÿä¸äº†ç«ï¼Œæ²¡æ³•çƒ§èœåšé¥­ã€‚\n");
 
 	if( !arg || arg == "") return 0;
 
 	if( stringp(cooking = me->query_temp("cooking")) )
-		return notify_fail("ÄãÕıÔÚ×ö"+cooking+"£¡\n");
+		return notify_fail("ä½ æ­£åœ¨åš"+cooking+"ï¼\n");
 
 	switch (arg) {
-	case "Å£ÈâÌõ":
+	case "ç‰›è‚‰æ¡":
 		if ( !objectp(ob = present("niu rou", me)) ) 
-			return notify_fail("ÄãÄÃÊ²Ã´À´ÉÕÅ£ÈâÌõ°¡£¿\n");
+			return notify_fail("ä½ æ‹¿ä»€ä¹ˆæ¥çƒ§ç‰›è‚‰æ¡å•Šï¼Ÿ\n");
 		break;
-	case "ºÃåÏÌÀ":
+	case "å¥½é€‘æ±¤":
 		if ( !objectp(ob = present("he ye", me)) ) 
-			return notify_fail("ÄãÄÃÊ²Ã´À´ÉÕÌÀ°¡£¿\n");
+			return notify_fail("ä½ æ‹¿ä»€ä¹ˆæ¥çƒ§æ±¤å•Šï¼Ÿ\n");
 		break;
-	case "³´°×²Ë":
-		// clone/food/baicai, buy a °×²Ë from the seller in yangzhou at Ë®¹ûÌ¯
+	case "ç‚’ç™½èœ":
+		// clone/food/baicai, buy a ç™½èœ from the seller in yangzhou at æ°´æœæ‘Š
 		if ( !objectp(ob = present("baicai", me)) ) 
-                        return notify_fail("ÄãÄÃÊ²Ã´À´³´°×²Ë°¡£¿\n");
+                        return notify_fail("ä½ æ‹¿ä»€ä¹ˆæ¥ç‚’ç™½èœå•Šï¼Ÿ\n");
 		break;
-	case "Õô¶¹¸¯":
-		// clone/food/tofu, buy from ÇúÈı's tea shop
+	case "è’¸è±†è…":
+		// clone/food/tofu, buy from æ›²ä¸‰'s tea shop
 		if ( !objectp(ob = present("doufu", me)) ) 
-                        return notify_fail("ÄãÄÃÊ²Ã´À´×öÕô¶¹¸¯°¡£¿\n");
+                        return notify_fail("ä½ æ‹¿ä»€ä¹ˆæ¥åšè’¸è±†è…å•Šï¼Ÿ\n");
 		break;
 	default:
-		return notify_fail("ÄãÒªÉÕÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦çƒ§ä»€ä¹ˆï¼Ÿ\n");
 		break;
 	}
 
-	message_vision("$N´ò×Å»ğÕÛ¿ªÊ¼Éú»ğ×ö²Ë¡£\n", me);
+	message_vision("$Næ‰“ç€ç«æŠ˜å¼€å§‹ç”Ÿç«åšèœã€‚\n", me);
 	destruct(ob);
 	me->set_temp("cooking", arg);
 	call_out("cooking", 1, me, arg);
@@ -93,7 +93,7 @@ private int cooking(object me, string arg)
 	me->delete_temp("cooking");
 
 	switch (arg) {
-	case "Å£ÈâÌõ":
+	case "ç‰›è‚‰æ¡":
 		if( objectp(aux = present("yang rou", me)) ) {
 			++aux_count;
 			destruct(aux);
@@ -111,11 +111,11 @@ private int cooking(object me, string arg)
 			destruct(aux);
 		}
 		cooked = new(__DIR__"obj/niurou-tiao");
-               	message_vision("$NÉÕÁËÒ»ÍëÏãÅçÅçµÄÅ£ÈâÌõÀ´¡£\n", me);
+               	message_vision("$Nçƒ§äº†ä¸€ç¢—é¦™å–·å–·çš„ç‰›è‚‰æ¡æ¥ã€‚\n", me);
 		if (aux_count != 4)
 			cooked->set("fake", 1);
 		break;
-	case "ºÃåÏÌÀ":
+	case "å¥½é€‘æ±¤":
 		if( objectp(aux = present("zhu sun", me)) ) {
 			++aux_count;
 			destruct(aux);
@@ -133,11 +133,11 @@ private int cooking(object me, string arg)
 			destruct(aux);
 		}
 		cooked = new(__DIR__"obj/haoqiu-tang");
-               	message_vision("$NÉÕÁËÒ»ÍëÏãÅçÅçµÄºÃåÏÌÀÀ´¡£\n", me);
+               	message_vision("$Nçƒ§äº†ä¸€ç¢—é¦™å–·å–·çš„å¥½é€‘æ±¤æ¥ã€‚\n", me);
 		if (aux_count != 4)
 			cooked->set("fake", 1);
 		break;
-	case "³´°×²Ë":
+	case "ç‚’ç™½èœ":
 		if( objectp(aux = present("ya zhang", me)) ) {
 			++aux_count;
 			destruct(aux);
@@ -146,17 +146,17 @@ private int cooking(object me, string arg)
 			++aux_count;
 			destruct(aux);
 		}
-               	message_vision("$N³´ÁËÒ»µúÏãÅçÅçµÄ°×²ËÀ´¡£\n", me);
+               	message_vision("$Nç‚’äº†ä¸€ç¢Ÿé¦™å–·å–·çš„ç™½èœæ¥ã€‚\n", me);
 		cooked = new(__DIR__"obj/chao-baicai");
 		if (aux_count != 2)
 			cooked->set("fake", 1);
 		break;
-	case "Õô¶¹¸¯":
+	case "è’¸è±†è…":
 		if( objectp(aux = present("huo tui", me)) ) {
 			++aux_count;
 			destruct(aux);
 		}
-               	message_vision("$NÕôÁËÒ»µú¶¹¸¯À´¡£\n", me);
+               	message_vision("$Nè’¸äº†ä¸€ç¢Ÿè±†è…æ¥ã€‚\n", me);
 		cooked = new(__DIR__"obj/zheng-doufu");
 		if (aux_count != 1)
 			cooked->set("fake", 1);

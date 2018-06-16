@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������԰");
+	set("short", "慈宁花园");
 	set("long", @LONG
-����һ����԰���м���̫�����ڽ���������Ʒ�ֺܶ࣬ÿ�괺
-���������ٻ���ţ�ɷ�Ǻÿ����Ա���һ�Ż��ܡ�
+这是一个大花园，有几个太监正在浇花。花的品种很多，每逢春
+秋两季，百花齐放，煞是好看。旁边有一排花架。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

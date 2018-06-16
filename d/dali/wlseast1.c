@@ -8,10 +8,10 @@ int do_drop(object);
 
 void create()
 {
-	set("short", "É½ÆÂ");
+	set("short", "å±±å¡");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¸öÐ¡É½ÆÂ£¬¼¸¸öÉñÅ©°ï°ïÖÚÔÚÊØÎÀ£¬²»Ô¶´¦µÄÇàÑÌ£¬
-ÊÇÉñÅ©°ïÔÚÖóÁ¶¶¾Ò©¡£
+è¿™é‡Œæ˜¯ä¸€ä¸ªå°å±±å¡ï¼Œå‡ ä¸ªç¥žå†œå¸®å¸®ä¼—åœ¨å®ˆå«ï¼Œä¸è¿œå¤„çš„é’çƒŸï¼Œ
+æ˜¯ç¥žå†œå¸®åœ¨ç…®ç‚¼æ¯’è¯ã€‚
 LONG );
 
 	set("exits", ([

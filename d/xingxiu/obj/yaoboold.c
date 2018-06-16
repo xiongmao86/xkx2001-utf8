@@ -12,14 +12,14 @@ void setup()
 
 void create()
 {
-        set_name(BLU "À¶Óñ²§" NOR, ({"lanyu bo", "yao bo", "bo"}));
+        set_name(BLU "è“ç‰é’µ" NOR, ({"lanyu bo", "yao bo", "bo"}));
         set_weight(15000);
         set_max_encumbrance(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "Ò»Ö»À¶ÓñÖÆÒ©²§£¬ÓñÖÊ¼ä·º×ÅÒõÉ­É­µÄÀ¶¹â¡£\n");
+                set("unit", "åª");
+                set("long", "ä¸€åªè“ç‰åˆ¶è¯é’µï¼Œç‰è´¨é—´æ³›ç€é˜´æ£®æ£®çš„è“å…‰ã€‚\n");
                 set("value", 7000000);
         }
 	::create();
@@ -41,23 +41,23 @@ int do_put(string arg)
         int check, wait_time = 0;
 	remove_call_out("open_up");
         if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
         if( item == "all" ) {
-                write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+                write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
                 return 1;
         }
 
         sscanf(item, "%d %s", amount, item);
 
         if( !objectp(obj = present(item, me)) )
-                return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 	if( obj->query("no_drop") ) {
-                write("ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                write("è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
                 return 1;
         }
-	if( obj->name()=="¶¾Éßµ¨"){ 
-                message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+	if( obj->name()=="æ¯’è›‡èƒ†"){ 
+                message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(),
                         this_object()->name()),me );
 		call_out("destroy_it", 1, obj);
@@ -67,7 +67,7 @@ int do_put(string arg)
 		return 1;
 	}
 	if( obj->query("id")=="shachong ke" ){
-                message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+                message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(),
                         this_object()->name()),me );
                 call_out("destroy_it", 1, obj);
@@ -78,7 +78,7 @@ int do_put(string arg)
                 return 1;
         }
 	if( obj->query("id")=="xiezi ke" ){
-                message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+                message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(),
                         this_object()->name()),me );
                 call_out("destroy_it", 1, obj);
@@ -88,8 +88,8 @@ int do_put(string arg)
                 }
                 return 1;
         }
-	if( obj->name()=="¶¾ÖëË¿" ){
-                message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+	if( obj->name()=="æ¯’è››ä¸" ){
+                message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(),
                         this_object()->name()),me );
 		call_out("destroy_it", 1, obj);
@@ -99,8 +99,8 @@ int do_put(string arg)
 		}
 		return 1;
         }
-	if( obj->name()=="òÚò¼¿Ç" ){
-                message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+	if( obj->name()=="èœˆèš£å£³" ){
+                message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(),
                         this_object()->name()),me );
 		call_out("destroy_it", 1, obj);
@@ -114,7 +114,7 @@ int do_put(string arg)
 	return 1;
 	}
 	else if (present(item, me) != this_object()){
-                write(obj->name()+"¶ÔÀ¶Óñ²§¶øÀ´ËµÌ«ÖØÁË¡£\n");
+                write(obj->name()+"å¯¹è“ç‰é’µè€Œæ¥è¯´å¤ªé‡äº†ã€‚\n");
                 return 1;
         }
 }
@@ -134,19 +134,19 @@ int do_squeeze(string arg)
         if( !arg
         ||      sscanf(arg, "%s to %s", what, me)!=2
         ||      !id(me) )
-                return notify_fail("ÃüÁî¸ñÊ½: squeeze <ÎïÆ·> to <ÎïÆ·>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: squeeze <ç‰©å“> to <ç‰©å“>ã€‚\n");
 
         ob = present(what, this_player());
         if( !ob )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + what + "ÕâÑù¶«Î÷¡£\n");
-	if( ob->query("name") != "òóÉß")
-		return notify_fail("ÄãÏë´ÓÕâÑù¶«Î÷Àï¼·³öÊ²Ã´£¿\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰" + what + "è¿™æ ·ä¸œè¥¿ã€‚\n");
+	if( ob->query("name") != "è®è›‡")
+		return notify_fail("ä½ æƒ³ä»è¿™æ ·ä¸œè¥¿é‡ŒæŒ¤å‡ºä»€ä¹ˆï¼Ÿ\n");
 	obj=new("/d/xingxiu/obj/fushe-xian");
 	obj->move(this_object());
 	add("venom", 1);
-	message_vision(GRN"$NÆş×¡òóÉßµÄÉÏò¦£¬¼·³öÒ»Ğ©ÉßÏÑ£¬ÓÃÀ¶Óñ²§½Ó×¡¡£\n"NOR, this_player());
+	message_vision(GRN"$Næä½è®è›‡çš„ä¸Šé¢šï¼ŒæŒ¤å‡ºä¸€äº›è›‡æ¶ï¼Œç”¨è“ç‰é’µæ¥ä½ã€‚\n"NOR, this_player());
 	if (query("venom")>random(7)){
-	message_vision("òóÉß±»$NÆşËÀÁË¡£\n", this_player());
+	message_vision("è®è›‡è¢«$Nææ­»äº†ã€‚\n", this_player());
 	ob->die();
 	}
 	return 1;
@@ -157,24 +157,24 @@ int do_coat(string arg)
 	function f;
 
         if (!arg || !(ob = present(arg, this_player())))
-                return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
 	if (!present("venom", this_object()))
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
         if (! ob->query("weapon_prop/damage"))
-                return notify_fail("òóÉßÏÑ¿É²»ÄÜÏ¹Í¿¡£\n");
+                return notify_fail("è®è›‡æ¶å¯ä¸èƒ½çæ¶‚ã€‚\n");
 
 	if ( ob->query("poison_applied") > 0)
-		return notify_fail("ÕâÑù¶«Î÷ÉÏÒÑ¾­Î¹ÓĞ¶¾Ò©ÁË¡£\n");
+		return notify_fail("è¿™æ ·ä¸œè¥¿ä¸Šå·²ç»å–‚æœ‰æ¯’è¯äº†ã€‚\n");
 
 	if (this_player()->query_skill("poison", 1) < 100)
-		return notify_fail("Äã»¹Ã»ÓĞÕÆÎÕÔÚÎäÆ÷ÉÏÎ¹¶¾µÄ¼¼ÄÜ¡£\n");
+		return notify_fail("ä½ è¿˜æ²¡æœ‰æŒæ¡åœ¨æ­¦å™¨ä¸Šå–‚æ¯’çš„æŠ€èƒ½ã€‚\n");
 
-	message_vision(RED"$NĞ¡ĞÄÒíÒíµØ°ÑÒ»Ğ©òóÉßÏÑÍ¿ÔÚ" +ob->query("name")+"ÉÏ¡£\n"NOR, this_player());
+	message_vision(RED"$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€äº›è®è›‡æ¶æ¶‚åœ¨" +ob->query("name")+"ä¸Šã€‚\n"NOR, this_player());
 	ob->set("poison_applied", this_player()->query_skill("poison", 1)/3);
 	ob->set("no_sell");
-	ob->set("long", ob->query("long") + BLU"ÉÏÃæËÆºõÎ¹ÓĞ¾ç¶¾¡£\n"NOR);
+	ob->set("long", ob->query("long") + BLU"ä¸Šé¢ä¼¼ä¹å–‚æœ‰å‰§æ¯’ã€‚\n"NOR);
 	obj = present("venom", this_object());	
 	call_out("destroy_it", 1, obj);
 	return 1;

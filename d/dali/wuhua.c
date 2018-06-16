@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIC"Îå»ªÂ¥´óÃÅ"NOR);
-	set("long","ÕâÀïÊÇÎå»ªÂ¥µÄ´óÃÅ£¬Á½ÉÈºìÄ¾ÃÅÉÏµñÂúÁË¸÷ÖÖÄÏ½®µÄÕäÇÝÒìÊÞ¡£ÕâÀïÊÇÄÏ
-Ú¯´óÍõ½Ó´ýÎ÷ÄÏ¸÷×åÊ×ÁìµÄµØ·½£¬ÃÅÉÏÒ»¿éÎÚÄ¾´óÅÆ£¬ÓÐÈýÕÉÀ´³¤£¬Ò»ÕÉ°Ë³ß¸ß£¬
-ÉÏÃæÓÃ½ð·ÛÆáÁËÈý¸ö´ó×Ö"HIY"¡¸Îå»ªÂ¥¡¹"NOR"¡£¾ÝÎÅÊÇÄÏÚ¯ÍõÈ°·áÓÓµÄÊÖ¼£¡£\n"
+	set("short", HIC"äº”åŽæ¥¼å¤§é—¨"NOR);
+	set("long","è¿™é‡Œæ˜¯äº”åŽæ¥¼çš„å¤§é—¨ï¼Œä¸¤æ‰‡çº¢æœ¨é—¨ä¸Šé›•æ»¡äº†å„ç§å—ç–†çš„çç¦½å¼‚å…½ã€‚è¿™é‡Œæ˜¯å—
+è¯å¤§çŽ‹æŽ¥å¾…è¥¿å—å„æ—é¦–é¢†çš„åœ°æ–¹ï¼Œé—¨ä¸Šä¸€å—ä¹Œæœ¨å¤§ç‰Œï¼Œæœ‰ä¸‰ä¸ˆæ¥é•¿ï¼Œä¸€ä¸ˆå…«å°ºé«˜ï¼Œ
+ä¸Šé¢ç”¨é‡‘ç²‰æ¼†äº†ä¸‰ä¸ªå¤§å­—"HIY"ã€Œäº”åŽæ¥¼ã€"NOR"ã€‚æ®é—»æ˜¯å—è¯çŽ‹åŠä¸°ä½‘çš„æ‰‹è¿¹ã€‚\n"
 );
 	set("objects", ([
 		__DIR__"npc/weishi4" : 2,

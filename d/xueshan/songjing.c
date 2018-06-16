@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�о���");
+        set("short", "诵经堂");
         set("long", @LONG
-������ɮ���Ƕ��о���ĵط������ص����š���ǰ���Ǽ��ܡ���η��ʤ��
-�����յĵ��񣬵�����ɢ����һЩ���顣
+这里是僧人们读诵经书的地方，满地的菩团。正前方是集密、怖畏、胜乐
+三大金刚的雕像，地上则散放了一些经书。
 LONG
         );
         set("exits", ([

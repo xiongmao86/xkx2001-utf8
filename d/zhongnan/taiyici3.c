@@ -13,12 +13,12 @@ int do_exercise(string arg);
 
 void create()
 {
-		  set("short",HIC"Ì«ÒÒ³Ø"NOR);
+		  set("short",HIC"å¤ªä¹™æ± "NOR);
 		  set("long",@LONG
-ÄãÉíÔÚºşË®Àï£¬Ö»¾õµÃºşË®±ùÁ¹Í¸¹Ç¡£µ«¼ûËÄÖÜ¸ß·å»·ÁĞ£¬³ØÃæ±Ì²¨µ´Ñú£¬
-É½¹âË®Ó°£¬·ç¾°êİÈË¡£ÕâÀïÔ­À´ÊÇÌ«ÒÒ³ØµÄÎ÷°¶£¬Ì«ÀÛµÄ»°£¬Äã¿ÉÒÔÅÀ(climb)
-ÉÏ°¶¡£Ô¶Ô¶ÍûÈ¥£¬¶«±ßµÄ°¶ÉÏÓĞÒ»ÌõĞ¡Â·Í¨ÍùÖÕÄÏÉ½Ö÷·å¡£Ïë²»ÏëÓÎ(swim)¹ı
-È¥¿´£¿
+ä½ èº«åœ¨æ¹–æ°´é‡Œï¼Œåªè§‰å¾—æ¹–æ°´å†°å‡‰é€éª¨ã€‚ä½†è§å››å‘¨é«˜å³°ç¯åˆ—ï¼Œæ± é¢ç¢§æ³¢è¡æ¼¾ï¼Œ
+å±±å…‰æ°´å½±ï¼Œé£æ™¯è´»äººã€‚è¿™é‡ŒåŸæ¥æ˜¯å¤ªä¹™æ± çš„è¥¿å²¸ï¼Œå¤ªç´¯çš„è¯ï¼Œä½ å¯ä»¥çˆ¬(climb)
+ä¸Šå²¸ã€‚è¿œè¿œæœ›å»ï¼Œä¸œè¾¹çš„å²¸ä¸Šæœ‰ä¸€æ¡å°è·¯é€šå¾€ç»ˆå—å±±ä¸»å³°ã€‚æƒ³ä¸æƒ³æ¸¸(swim)è¿‡
+å»çœ‹ï¼Ÿ
 LONG);
 
 
@@ -49,21 +49,21 @@ void init()
 int do_exercise(string arg)
 {
 		  object me = this_player();
-		  tell_object(me, "ÕâÃ´ÉîµÄË®£¬²È¶¼²È²»µ½µ×£¬ÔõÃ´Á·¹¦°¡£¿\n");
+		  tell_object(me, "è¿™ä¹ˆæ·±çš„æ°´ï¼Œè¸©éƒ½è¸©ä¸åˆ°åº•ï¼Œæ€ä¹ˆç»ƒåŠŸå•Šï¼Ÿ\n");
 		  return 1;
 }
 
 int do_practice(string arg)
 {
 		  object me = this_player();
-		  tell_object(me, "ÕâÃ´ÉîµÄË®£¬²È¶¼²È²»µ½µ×£¬ÔõÃ´Á·¹¦°¡£¿\n");
+		  tell_object(me, "è¿™ä¹ˆæ·±çš„æ°´ï¼Œè¸©éƒ½è¸©ä¸åˆ°åº•ï¼Œæ€ä¹ˆç»ƒåŠŸå•Šï¼Ÿ\n");
 		  return 1;
 }
 
 int do_study(string arg)
 {
 		  object me = this_player();
-		  tell_object(me, "ÕâÃ´ÉîµÄË®£¬²È¶¼²È²»µ½µ×£¬ÔõÃ´¶ÁÊé°¡£¿\n");
+		  tell_object(me, "è¿™ä¹ˆæ·±çš„æ°´ï¼Œè¸©éƒ½è¸©ä¸åˆ°åº•ï¼Œæ€ä¹ˆè¯»ä¹¦å•Šï¼Ÿ\n");
 		  return 1;
 }
 
@@ -75,7 +75,7 @@ int do_swim(string arg)
 	int cost;
 
 	if(me->is_busy())
-		return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ã€‚\n");
 	cost = (200-me->query_skill("swimming",1))/10;
 	if ( cost<3 )cost = 3;
 	me->add("jingli",-cost);
@@ -84,17 +84,17 @@ int do_swim(string arg)
 
 	if (arg == "west")
 	{
-		return notify_fail("ÄãÒÑ¾­ÔÚÎ÷°¶ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¥¿å²¸äº†ã€‚\n");
 	}
 	else if (arg == "east")
 	{
-		message_vision( HIY"\n$NÔÚÌ«ÒÒ³ØÖĞ»®ÁË»®Ë®£¬Íù¶«ÓÎÁËÆğÀ´¡£\n"NOR, me);
+		message_vision( HIY"\n$Nåœ¨å¤ªä¹™æ± ä¸­åˆ’äº†åˆ’æ°´ï¼Œå¾€ä¸œæ¸¸äº†èµ·æ¥ã€‚\n"NOR, me);
 		me->move("/d/zhongnan/taiyici2");
-		message_vision( HIY"\n$NÓÎÁË¹ıÀ´¡£\n"NOR, me);
+		message_vision( HIY"\n$Næ¸¸äº†è¿‡æ¥ã€‚\n"NOR, me);
 		return 1;
 	}
 
-	message_vision( HIY"\n$NÔÚÌ«ÒÒ³ØÖĞ»®ÁË»®Ë®£¬ÓÃÁ¦ÓÎÁËÆğÀ´¡£\n"NOR, me);
+	message_vision( HIY"\n$Nåœ¨å¤ªä¹™æ± ä¸­åˆ’äº†åˆ’æ°´ï¼Œç”¨åŠ›æ¸¸äº†èµ·æ¥ã€‚\n"NOR, me);
 	return 1;
 }
 
@@ -103,14 +103,14 @@ int do_climb(string arg)
 	object me = this_player();
 
 	if(me->is_busy())
-		return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ã€‚\n");
 	if(arg == "up" || arg=="west" )
 	{
-		message_vision( HIY"\n$NÔÚÌ«ÒÒ³ØÖĞÍù°¶ÉÏÅÀÁËÉÏÈ¥¡£\n"NOR, me);
+		message_vision( HIY"\n$Nåœ¨å¤ªä¹™æ± ä¸­å¾€å²¸ä¸Šçˆ¬äº†ä¸Šå»ã€‚\n"NOR, me);
 		me->move("/d/zhongnan/hubing");
-		message_vision( HIY"\n$N´ÓÌ«ÒÒ³ØÖĞÅÀÁËÉÏÀ´¡£\n"NOR, me);
+		message_vision( HIY"\n$Nä»å¤ªä¹™æ± ä¸­çˆ¬äº†ä¸Šæ¥ã€‚\n"NOR, me);
 		return 1;
 	}
 
-	return notify_fail("ÄÇ¸ö·½ÏòÃ»·¨ÅÀ¡£\n");
+	return notify_fail("é‚£ä¸ªæ–¹å‘æ²¡æ³•çˆ¬ã€‚\n");
 }

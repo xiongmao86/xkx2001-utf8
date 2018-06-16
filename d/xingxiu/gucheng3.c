@@ -1,15 +1,15 @@
 //Cracked by Roath
-// �ų�
+// 古城
 // maco
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "�ų�");
+	set("short", "古城");
 	set("long", @LONG
-���е�·�������Թ��������ۻ����ҡ�·�����Ӷ����໵��
-�������ؿɲ���͸��һ�ɼž������ա�
+城中道路曲折如迷宫，令人眼花缭乱。路上屋子多已朽坏，
+景象奇特可怖，透着一股寂静的气氛。
 LONG
 	);
 

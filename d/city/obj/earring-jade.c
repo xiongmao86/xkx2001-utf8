@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIG "±ÌÓñ¶úÊÎ" NOR, ({ "jade earring", "earring" }));
+        set_name(HIG "ç¢§ç‰è€³é¥°" NOR, ({ "jade earring", "earring" }));
         set("weight", 50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
+                set("unit", "å¯¹");
                 set("value", 7000);
-                set("long", "Ò»¶ÔÒÔ±ÌÓñ×ö³ÉµÄ¶úÊÎ£¬ÄıÊÓ×ÅËü£¬ÓĞÈÃÈËĞÄ¹ãÉñâùµÄ¸Ğ¾õ¡£\n");
+                set("long", "ä¸€å¯¹ä»¥ç¢§ç‰åšæˆçš„è€³é¥°ï¼Œå‡è§†ç€å®ƒï¼Œæœ‰è®©äººå¿ƒå¹¿ç¥æ€¡çš„æ„Ÿè§‰ã€‚\n");
                 set("material", "jade");
                 set("armor_prop/armor", 6);
 				set("female_only", 1);

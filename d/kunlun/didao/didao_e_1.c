@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: didao_e.c µØµÀ¶«
+// Room: didao_e.c åœ°é“ä¸œ
 // Zhangchi 3/00
 
 inherit ROOM;
@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "µØµÀ");
+	set("short", "åœ°é“");
 	set("long", @LONG
-ÕâÊÇÒ»Ìõ¸Õ¸ÕÍÚ³ÉµÄµØµÀ£¬¿´Ñù×ÓÊÇÍù¶«ÑÓÉì¡£
+è¿™æ˜¯ä¸€æ¡åˆšåˆšæŒ–æˆçš„åœ°é“ï¼Œçœ‹æ ·å­æ˜¯å¾€ä¸œå»¶ä¼¸ã€‚
 LONG
 	);
 	set("exits", ([

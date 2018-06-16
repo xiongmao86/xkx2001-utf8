@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "У��");
+        set("short", "校场");
         set("long", @LONG
-�����������������ĵط����㳡�����в�����������������
-վ׮��������ͷ���м�Ѳ�ӣ���ʱ��ָ�����ǡ������᷿������
-�ǳԷ�˯���ĵط����������ܹܰ칫֮����
+这里是侍卫们练功的地方，广场四周有不少侍卫们在扎马，
+站桩，侍卫教头在中间巡视，不时的指点他们。两边厢房是侍卫
+们吃饭睡觉的地方，往里是总管办公之处。
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -37,7 +37,7 @@ int valid_leave(object me, string dir)
     if (dir == "enter") {
 	if (!IS_SHIWEI(me) && !wizardp(me)) {
 	    if (present("shiwei", environment(me))) {
-		return notify_fail("�űߵ��������ְ������ס�ˡ�\n");
+		return notify_fail("门边的侍卫伸手把你给拦住了。\n");
 	    }
 	}
     }

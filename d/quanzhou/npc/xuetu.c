@@ -1,13 +1,13 @@
 //Cracked by Roath
-// xuetu.c Îä¹İÑ§Í½
+// xuetu.c æ­¦é¦†å­¦å¾’
 // qfy July 30, 1996
 inherit NPC;
 
 void create()
 {
-	set_name("Îä¹İÑ§Í½", ({ "xue tu", "tu" }));
-	set("long", "ËûÊÇ³ÇÖĞµÄ×ÓµÜ£¬ÕıÇÚ·ÜµØÁ·¹¦¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ­¦é¦†å­¦å¾’", ({ "xue tu", "tu" }));
+	set("long", "ä»–æ˜¯åŸä¸­çš„å­å¼Ÿï¼Œæ­£å‹¤å¥‹åœ°ç»ƒåŠŸã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 
 	set_skill("unarmed", 30);

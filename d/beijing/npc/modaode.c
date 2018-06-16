@@ -10,11 +10,11 @@ string ask_mo();
 
 void create()
 {
-        set_name("Ä¥µ¶½³", ({ "modao jiang","jiang"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç£¨åˆ€åŒ ", ({ "modao jiang","jiang"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
         set("long",
-                "ÕâÊÇ¸ö±¥¾­·çËªµÄºº×Ó£¬¼çÍ·Ìô×ÅÄ¥µ¶µÄ¹¤¾ß£¬×ß½Ö´®ÏïßººÈ×Å¡£\n");
+                "è¿™æ˜¯ä¸ªé¥±ç»é£éœœçš„æ±‰å­ï¼Œè‚©å¤´æŒ‘ç€ç£¨åˆ€çš„å·¥å…·ï¼Œèµ°è¡—ä¸²å··å†å–ç€ã€‚\n");
         set("combat_exp", 3000);
         set("str", 26);
         set("dex", 20);
@@ -23,7 +23,7 @@ void create()
         set("attitude", "friendly");
         set("chat_chance", 40);
         set("chat_msg", ({
-                  "Ä¥µ¶½³×İÉù³ªµÀ£ºÄ¥¼ô×ÓàÏ£¬ê¨²Ëµ¶£¡\n",
+                  "ç£¨åˆ€åŒ çºµå£°å”±é“ï¼šç£¨å‰ªå­å˜ï¼Œæˆ—èœåˆ€ï¼\n",
 		  (: random_walk :)
 	}) );
 
@@ -37,7 +37,7 @@ void create()
 
 	set("inquiry", ([
 	       "modao" : (: ask_mo :),
-	       "Ä¥µ¶" :  (: ask_mo :),
+	       "ç£¨åˆ€" :  (: ask_mo :),
         ]));
 }
 
@@ -53,13 +53,13 @@ string ask_mo()
         object me = this_player();
 	object obj;
         if (query_temp("busy"))
-                return "Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n";
+                return "å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n";
         if (me->query_temp("allow_modao")!=1)
-                return "ÕâÎ»"+RANK_D->query_respect(me)+"ÄúÇëÏÈ¸¶Ò»Á½°×Òø¡£\n";
+                return "è¿™ä½"+RANK_D->query_respect(me)+"æ‚¨è¯·å…ˆä»˜ä¸€ä¸¤ç™½é“¶ã€‚\n";
         me->delete_temp("allow_modao");
 
         if( !objectp(obj = present("cai dao", me)) )
-                return "ÄúÃ»ÓĞ²Ëµ¶£¬Ä¥Ê²Ã´°¡£¿\n";
+                return "æ‚¨æ²¡æœ‰èœåˆ€ï¼Œç£¨ä»€ä¹ˆå•Šï¼Ÿ\n";
 
         set_temp("busy",1);
         start_busy(2);
@@ -69,7 +69,7 @@ string ask_mo()
         remove_call_out("enough_rest");
         call_out("enough_rest", 2);
 
-        return "Ä¥µ¶½³²ÁÁË²Áº¹£¬µÀ£º¡°ºÃÁË£¬Õâ°Ñµ¶±ÈÒÔÇ°¿ì¶àÁË£¡¡±\n";
+        return "ç£¨åˆ€åŒ æ“¦äº†æ“¦æ±—ï¼Œé“ï¼šâ€œå¥½äº†ï¼Œè¿™æŠŠåˆ€æ¯”ä»¥å‰å¿«å¤šäº†ï¼â€\n";
 }
 
 void enough_rest()
@@ -100,11 +100,11 @@ void enough(int i, object me)
         if (i==1)
 	  {
 	    command("bow");
-	    command("say ¶àĞ»" + RANK_D->query_respect(me) + "ÄúÁË £¡");
+	    command("say å¤šè°¢" + RANK_D->query_respect(me) + "æ‚¨äº† ï¼");
 	    me->set_temp("allow_modao", 1);
 	  }
 	else
-	  command("say ±§Ç¸£¬ÄúÖÁÉÙÒª¸¶Ò»Á½°×Òø¡£");
+	  command("say æŠ±æ­‰ï¼Œæ‚¨è‡³å°‘è¦ä»˜ä¸€ä¸¤ç™½é“¶ã€‚");
 }
 
 void destroy_ob(object ob)

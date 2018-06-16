@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾Þòþ", ({ "ju mang", "she", "mang", "ju mang" }) );
-        set("race", "ÉßÀà");
+        set_name("å·¨èŸ’", ({ "ju mang", "she", "mang", "ju mang" }) );
+        set("race", "è›‡ç±»");
         set("age", 100);
-        set("long", "Ò»ÌõÍë¿Ú´ÖÏ¸µÄÈý½ÇÍ·¾Þòþ£¬ÓÐÁ½ÕÉ¶à³¤¡£\n");
+        set("long", "ä¸€æ¡ç¢—å£ç²—ç»†çš„ä¸‰è§’å¤´å·¨èŸ’ï¼Œæœ‰ä¸¤ä¸ˆå¤šé•¿ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 32);
@@ -16,7 +16,7 @@ void create()
 	set("max_jing", 1000);
 	set("max_qi", 2000);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 500000);
@@ -32,7 +32,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$NÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎè£¬ÖÕì¶½©Ö±¶øËÀÁË¡£\n", this_object());
+        message_vision("$Nå…¨èº«æ‰­æ›²ï¼Œç¿»è…¾æŒ¥èˆžï¼Œç»ˆæ–¼åƒµç›´è€Œæ­»äº†ã€‚\n", this_object());
         ob = new(__DIR__"obj/shedan");
         ob->move(environment(this_object()));
         destruct(this_object());

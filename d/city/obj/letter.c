@@ -6,7 +6,7 @@
 #include <localtime.h>
 
 inherit ITEM;
-static string *sym_di = ({ "×Ó","³ó","Òú","Ã®","³½","ËÈ","Îç","Î´","Éê","ÓÏ","Ğç","º¥" });
+static string *sym_di = ({ "å­","ä¸‘","å¯…","å¯","è¾°","å·³","åˆ","æœª","ç”³","é…‰","æˆŒ","äº¥" });
 string chinese_time(int date)
 {
     mixed *local;
@@ -14,24 +14,24 @@ string chinese_time(int date)
 
     local = localtime(date);
     i = (local[LT_HOUR]+1) % 2 * 2 + local[LT_MIN] / 30;
-    return sprintf("ÎìÒúÄê%sÔÂ%sÈÕ%sÊ±%s",
+    return sprintf("æˆŠå¯…å¹´%sæœˆ%sæ—¥%sæ—¶%s",
     chinese_number(local[LT_MON] + 1),
     chinese_number(local[LT_MDAY]),
     sym_di[((local[LT_HOUR] + 1) % 24) / 2],
     i?chinese_number((local[LT_HOUR]+1) % 2 * 2 + 
-    local[LT_MIN] / 30 ) + "¿Ì":"Õı");
+    local[LT_MIN] / 30 ) + "åˆ»":"æ­£");
 }
 
 void create()
 {       
-    set_name("ĞÅº¯", ({"letter","xin han"}));
-    set("long", "ÕâÊÇÒ»Ö»ÒÑ¾­·âºÃµÄĞÅº¯¡£\n");
+    set_name("ä¿¡å‡½", ({"letter","xin han"}));
+    set("long", "è¿™æ˜¯ä¸€åªå·²ç»å°å¥½çš„ä¿¡å‡½ã€‚\n");
 
     set_weight(5);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "·â");
+        set("unit", "å°");
         set("can_shi", 1);
 
     }
@@ -48,14 +48,14 @@ int do_shi(string arg)
 {
     object ob;
     string str_time;
-    if(!arg) return notify_fail("ÄãÒª²ğ¿ªÊ²Ã´£¿\n");
+    if(!arg) return notify_fail("ä½ è¦æ‹†å¼€ä»€ä¹ˆï¼Ÿ\n");
 
     ob = present(arg, this_player());
 
-    if(!ob)  return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÕâ·âĞÅº¯¡£\n");
+    if(!ob)  return notify_fail("ä½ èº«ä¸Šå¹¶æ²¡æœ‰è¿™å°ä¿¡å‡½ã€‚\n");
 
     if(!ob->query("can_shi"))
-        return notify_fail("¶Ô²»Æğ£¬Äã²»ÄÜ²ğ¿ªÕâ¼şÎïÆ·¡£\n");
+        return notify_fail("å¯¹ä¸èµ·ï¼Œä½ ä¸èƒ½æ‹†å¼€è¿™ä»¶ç‰©å“ã€‚\n");
         
     str_time=chinese_time(ob->query("letter/time"));
 
@@ -63,37 +63,37 @@ int do_shi(string arg)
     {
         case 1:
         {
-            message_vision("Ö»¼û$N´Ó»³ÖĞÄÃ³öÒ»·âĞÅÀ´£¬½«ÉÏÃæµÄ·âÆáËºµô£¬³é³öÀïÃæµÄĞÅ¼ş¡£\n", this_player());
+            message_vision("åªè§$Nä»æ€€ä¸­æ‹¿å‡ºä¸€å°ä¿¡æ¥ï¼Œå°†ä¸Šé¢çš„å°æ¼†æ’•æ‰ï¼ŒæŠ½å‡ºé‡Œé¢çš„ä¿¡ä»¶ã€‚\n", this_player());
             ob->set("long", 
-                "ÕâÊÇÒ»·â±ğÈËĞ´¸øÄãµÄĞÅ£¬Äã¿É¶Á(read)ËüµÄÄÚÈİ¡£ÉÏÃæĞ´×Å£º\n"
-                +this_player()->query("name")+"      Ç×Æô¡£\n"+
-                ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
-                "ÑïÖİæäÕ¾Ç©·¢ÓÚ"+str_time+"¡£\n");
-            ob->set_name("ĞÅ", ({"xin","letter"}));
+                "è¿™æ˜¯ä¸€å°åˆ«äººå†™ç»™ä½ çš„ä¿¡ï¼Œä½ å¯è¯»(read)å®ƒçš„å†…å®¹ã€‚ä¸Šé¢å†™ç€ï¼š\n"
+                +this_player()->query("name")+"      äº²å¯ã€‚\n"+
+                ob->query("letter/from")+"æ‰˜æ‰¬å·é©¿ç«™è½¬ã€‚\n"
+                "æ‰¬å·é©¿ç«™ç­¾å‘äº"+str_time+"ã€‚\n");
+            ob->set_name("ä¿¡", ({"xin","letter"}));
         }
 
         break;
         case 2:
         {
-            message_vision("Ö»¼û$N´ÓÉíÉÏÄÃ³öÒ»·âĞÅÀ´£¬ÂıÂıµÄ½«ÉÏÃæµÄ·âÆáËºµô£¬È¡³öÀïÃæµÄĞÅ¼ş¡£\n", this_player());
+            message_vision("åªè§$Nä»èº«ä¸Šæ‹¿å‡ºä¸€å°ä¿¡æ¥ï¼Œæ…¢æ…¢çš„å°†ä¸Šé¢çš„å°æ¼†æ’•æ‰ï¼Œå–å‡ºé‡Œé¢çš„ä¿¡ä»¶ã€‚\n", this_player());
             ob->set("long", 
-                "ÕâÊÇÒ»·â±ğÈËĞ´¸øÄãµÄĞÅ£¬Äã¿É¶Á(read)ËüµÄÄÚÈİ¡£ÉÏÃæĞ´×Å£º\n"
-                +this_player()->query("name")+"      Ç×Æô¡£\n"+
-                ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
-                "ÑïÖİæäÕ¾Ç©·¢ÓÚ"+str_time+"¡£\n");
-            ob->set_name(YEL"ĞÅ"NOR, ({"xin","letter"}));
+                "è¿™æ˜¯ä¸€å°åˆ«äººå†™ç»™ä½ çš„ä¿¡ï¼Œä½ å¯è¯»(read)å®ƒçš„å†…å®¹ã€‚ä¸Šé¢å†™ç€ï¼š\n"
+                +this_player()->query("name")+"      äº²å¯ã€‚\n"+
+                ob->query("letter/from")+"æ‰˜æ‰¬å·é©¿ç«™è½¬ã€‚\n"
+                "æ‰¬å·é©¿ç«™ç­¾å‘äº"+str_time+"ã€‚\n");
+            ob->set_name(YEL"ä¿¡"NOR, ({"xin","letter"}));
         }
 
         break;
         case 3:
         {
-            message_vision("Ö»¼û$N´ÓÌùÉí´¦È¡³öÒ»¸ö²¯ÄÒ£¬Ğ¡ĞÄÒíÒíµÄ½«ÉÏÃæµÄ·âÆáËºµô£¬È¡³öÀïÃæµÄĞÅ¼ş¡£\n", this_player());
+            message_vision("åªè§$Nä»è´´èº«å¤„å–å‡ºä¸€ä¸ªå¸›å›Šï¼Œå°å¿ƒç¿¼ç¿¼çš„å°†ä¸Šé¢çš„å°æ¼†æ’•æ‰ï¼Œå–å‡ºé‡Œé¢çš„ä¿¡ä»¶ã€‚\n", this_player());
             ob->set("long", 
-                "ÕâÊÇÒ»·â±ğÈËĞ´¸øÄãµÄĞÅ£¬Äã¿É¶Á(read)ËüµÄÄÚÈİ¡£ÉÏÃæĞ´×Å£º\n"
-                +this_player()->query("name")+"      Ç×Æô¡£\n"+
-                ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
-                "ÑïÖİæäÕ¾Ç©·¢ÓÚ"+str_time+"¡£\n");
-            ob->set_name(HIR"ĞÅ"NOR, ({"xin","letter"}));
+                "è¿™æ˜¯ä¸€å°åˆ«äººå†™ç»™ä½ çš„ä¿¡ï¼Œä½ å¯è¯»(read)å®ƒçš„å†…å®¹ã€‚ä¸Šé¢å†™ç€ï¼š\n"
+                +this_player()->query("name")+"      äº²å¯ã€‚\n"+
+                ob->query("letter/from")+"æ‰˜æ‰¬å·é©¿ç«™è½¬ã€‚\n"
+                "æ‰¬å·é©¿ç«™ç­¾å‘äº"+str_time+"ã€‚\n");
+            ob->set_name(HIR"ä¿¡"NOR, ({"xin","letter"}));
         }
         break;
 
@@ -112,13 +112,13 @@ int do_read(string arg)
      mapping letter;
 
 
-     if(!arg) return notify_fail("ÄãÒª¶ÁÊ²Ã´ĞÅ¼ş£¿\n");
+     if(!arg) return notify_fail("ä½ è¦è¯»ä»€ä¹ˆä¿¡ä»¶ï¼Ÿ\n");
         ob_letter = present(arg, this_player());
 
     if(!ob_letter)
-        return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÕâ·âĞÅ¼ş¡£\n");
+        return notify_fail("ä½ èº«ä¸Šå¹¶æ²¡æœ‰è¿™å°ä¿¡ä»¶ã€‚\n");
     if(!ob_letter->query("can_read_letter"))
-        return notify_fail("¶Ô²»Æğ£¬ÄãÎŞ·¨´ÓÕâÀïÃæ¶Áµ½ÈÎºÎ¶«Î÷¡£\n");
+        return notify_fail("å¯¹ä¸èµ·ï¼Œä½ æ— æ³•ä»è¿™é‡Œé¢è¯»åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
         
         
     //letter=ob->query("letter");
@@ -127,7 +127,7 @@ int do_read(string arg)
         {
         letter["time"]=chinese_time(letter["time"]);
     }
-    printf("¡¾ÊéĞÅ±êÌâ¡¿£º%s\n¡¾ÊÕĞÅÈË¡¿£º%s\n¡¾ĞÅ¼şÄÚÈİ¡¿£º\n%s\n\t\t%sĞ´ÓÚ%s\n\n\n",
+    printf("ã€ä¹¦ä¿¡æ ‡é¢˜ã€‘ï¼š%s\nã€æ”¶ä¿¡äººã€‘ï¼š%s\nã€ä¿¡ä»¶å†…å®¹ã€‘ï¼š\n%s\n\t\t%så†™äº%s\n\n\n",
     letter["title"],
     letter["to"],
     letter["text"],

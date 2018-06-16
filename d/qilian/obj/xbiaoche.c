@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /clone/npc/obj/xbiaoche.c ïÚ³µ
+// /clone/npc/obj/xbiaoche.c é•–è½¦
 // sdong,12/05/98 created
 
 #include <ansi.h>
@@ -7,32 +7,32 @@
 inherit ITEM;
 
 string *Robber_Name = ({
-					 "ÍÁ·Ë","É½´óÍõ","Â·°Ô","É½Ôô","Ã«Ôô","Õ¯Ö÷","°ï·Ë"
+					 "åœŸåŒª","å±±å¤§çŽ‹","è·¯éœ¸","å±±è´¼","æ¯›è´¼","å¯¨ä¸»","å¸®åŒª"
 });
 
 
 
 mapping default_dirs = ([
-		  "north":        "±±",
-		  "south":        "ÄÏ",
-		  "east":         "¶«",
-		  "west":         "Î÷",
-		  "northup":      "±±±ß",
-		  "southup":      "ÄÏ±ß",
-		  "eastup":       "¶«±ß",
-		  "westup":       "Î÷±ß",
-		  "northdown":    "±±±ß",
-		  "southdown":    "ÄÏ±ß",
-		  "eastdown":     "¶«±ß",
-		  "westdown":     "Î÷±ß",
-		  "northeast":    "¶«±±",
-		  "northwest":    "Î÷±±",
-		  "southeast":    "¶«ÄÏ",
-		  "southwest":    "Î÷ÄÏ",
-		  "up":           "ÉÏ",
-		  "down":         "ÏÂ",
-		  "out":          "Íâ",
-		  "enter":        "Àï",
+		  "north":        "åŒ—",
+		  "south":        "å—",
+		  "east":         "ä¸œ",
+		  "west":         "è¥¿",
+		  "northup":      "åŒ—è¾¹",
+		  "southup":      "å—è¾¹",
+		  "eastup":       "ä¸œè¾¹",
+		  "westup":       "è¥¿è¾¹",
+		  "northdown":    "åŒ—è¾¹",
+		  "southdown":    "å—è¾¹",
+		  "eastdown":     "ä¸œè¾¹",
+		  "westdown":     "è¥¿è¾¹",
+		  "northeast":    "ä¸œåŒ—",
+		  "northwest":    "è¥¿åŒ—",
+		  "southeast":    "ä¸œå—",
+		  "southwest":    "è¥¿å—",
+		  "up":           "ä¸Š",
+		  "down":         "ä¸‹",
+		  "out":          "å¤–",
+		  "enter":        "é‡Œ",
 ]);
 
 
@@ -53,10 +53,10 @@ void destroy_it(object ob);
 void create()
 {
 	seteuid(getuid());
-	set_name(HIB"ïÚ³µ"NOR, ({"biao che", "che"}));
+	set_name(HIB"é•–è½¦"NOR, ({"biao che", "che"}));
 	set("long",
-		"ÕâÊÇÒ»Á¾·Ç³£½áÊµµÄïÚ³µ£¬ÓÉÁ½Æ¥´óÂâ×ÓÀ­×Å£¬²»Öª×°×ÅÊ²Ã´¶«Î÷¡£ïÚ³µÉÏÊú×ÅÒ»Ãæ´óÆì£¬ÉÏÊé¡°ÉñÓ¥ïÚ¾Ö¡±ËÄ¸ö´ó×Ö¡£\n");
-	set("unit", "Á¾");
+		"è¿™æ˜¯ä¸€è¾†éžå¸¸ç»“å®žçš„é•–è½¦ï¼Œç”±ä¸¤åŒ¹å¤§éª¡å­æ‹‰ç€ï¼Œä¸çŸ¥è£…ç€ä»€ä¹ˆä¸œè¥¿ã€‚é•–è½¦ä¸Šç«–ç€ä¸€é¢å¤§æ——ï¼Œä¸Šä¹¦â€œç¥žé¹°é•–å±€â€å››ä¸ªå¤§å­—ã€‚\n");
+	set("unit", "è¾†");
 	set_weight(10000);
 	set_max_encumbrance(5000);
 	set("value", 1000000);
@@ -119,7 +119,7 @@ void greeting(object ob)
 	}
 	else if( query_temp("biao/dest2") && here && (base_name(here) == query_temp("biao/dest2") )&& owner && userp( owner ) )
 	{
-		message_vision(HIG"\n$N"+HIG"ÀÛµÃ°ëËÀ£¬×ÜËã¸Ïµ½Ä¿µÄµØ£¡\n\n",owner);
+		message_vision(HIG"\n$N"+HIG"ç´¯å¾—åŠæ­»ï¼Œæ€»ç®—èµ¶åˆ°ç›®çš„åœ°ï¼\n\n",owner);
 
 		if( (target = present( query_temp("biao/dest"),here)  ) )
 		{
@@ -127,16 +127,16 @@ void greeting(object ob)
 		}
 		else
 		{
-			message_vision(RED"¿ÉÊÇ$N"+RED"È´ÕÒ²»µ½Ö÷ÈË£¬°Ñ$P¼±µÃÖ±Ã°º¹£¡\n\n"NOR,owner);
+			message_vision(RED"å¯æ˜¯$N"+RED"å´æ‰¾ä¸åˆ°ä¸»äººï¼ŒæŠŠ$Pæ€¥å¾—ç›´å†’æ±—ï¼\n\n"NOR,owner);
 			remove_call_out("host_appear");
 			call_out("host_appear", 2 + random(3) );
 		}
 	}
 	else if( query_temp("biao/dest") && here && (target = present( query_temp("biao/dest"),here)  ) )
 	{
-			message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË£¡\n",target);
+			message_vision("$Næ€¥æ€¥å¿™å¿™ç¦»å¼€äº†ï¼\n",target);
 			target->move( query_temp("biao/dest2")+".c" );
-			message_vision("$N¼±¼±Ã¦Ã¦×ßÁË¹ýÀ´£¡\n",target);
+			message_vision("$Næ€¥æ€¥å¿™å¿™èµ°äº†è¿‡æ¥ï¼\n",target);
 	}
 }
 
@@ -156,12 +156,12 @@ void host_appear()
 		return; //call_other(query_temp("biao/dest2")+".c", "???");
 	}
 	else
-		message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË£¡\n",target);
+		message_vision("$Næ€¥æ€¥å¿™å¿™ç¦»å¼€äº†ï¼\n",target);
 
 	if(target)
 	{
 		target->move( query_temp("biao/dest2")+".c" );
-		message_vision("$N¼±¼±Ã¦Ã¦×ßÁË¹ýÀ´£¡\n",target);
+		message_vision("$Næ€¥æ€¥å¿™å¿™èµ°äº†è¿‡æ¥ï¼\n",target);
 	}
 
 }
@@ -177,7 +177,7 @@ void award2(object dest,object owner)
 		wage=new("/clone/money/gold");
 		wage->set_amount( 1 + random(5) );
 		wage->move(owner);
-		message_vision(HIY"$N"+HIY"µÝ¸ø$n¼¸¶§»Æ½ð£¬Ëµ£º¡°Ò»µãÐ¡ÒâË¼£¬"+RANK_D->query_respect(owner)+"ÇëÐ¦ÄÉ£¡¡±\n"NOR,dest,owner);
+		message_vision(HIY"$N"+HIY"é€’ç»™$nå‡ é”­é»„é‡‘ï¼Œè¯´ï¼šâ€œä¸€ç‚¹å°æ„æ€ï¼Œ"+RANK_D->query_respect(owner)+"è¯·ç¬‘çº³ï¼â€\n"NOR,dest,owner);
 		owner->delete_temp("biao/dest");
 		owner->delete_temp("biao/dest2");
 		owner->delete_temp("riding");
@@ -193,10 +193,10 @@ void award(object dest,object owner)
 
 	if(userp(owner))
 	{
-		message_vision(HIY"$N"+HIY"ÌøÏÂÁËïÚ³µ£¡\n"NOR,owner);
+		message_vision(HIY"$N"+HIY"è·³ä¸‹äº†é•–è½¦ï¼\n"NOR,owner);
 		owner->delete_temp("riding");
-		message_vision("$NÉÏÇ°¶Ô×Å$n±§È­µÀ£º¡°ÕâÎ»"+RANK_D->query_respect(dest)+"ÇëÁË¡£"+RANK_D->query_self(owner)+"×ÜËã²»¸ºËùÍÐ£¬ÏÖ½«ïÚ»õÔ­Îï·îÉÏ¡£ÇëÄúÇåµã£¡¡±\n",owner,dest);
-		message_vision("$NÂúÁ³¶ÑÐ¦µÄËµ£º¡°ÕâÎ»ÉñÓ¥ïÚ¾ÖµÄ"+RANK_D->query_respect(owner)+"¹ûÈ»Ó¢ÐÛÁËµÃ¡£"+RANK_D->query_self(dest)+"¶àÐ»ÁË£¡¡±\n",dest);
+		message_vision("$Nä¸Šå‰å¯¹ç€$næŠ±æ‹³é“ï¼šâ€œè¿™ä½"+RANK_D->query_respect(dest)+"è¯·äº†ã€‚"+RANK_D->query_self(owner)+"æ€»ç®—ä¸è´Ÿæ‰€æ‰˜ï¼ŒçŽ°å°†é•–è´§åŽŸç‰©å¥‰ä¸Šã€‚è¯·æ‚¨æ¸…ç‚¹ï¼â€\n",owner,dest);
+		message_vision("$Næ»¡è„¸å †ç¬‘çš„è¯´ï¼šâ€œè¿™ä½ç¥žé¹°é•–å±€çš„"+RANK_D->query_respect(owner)+"æžœç„¶è‹±é›„äº†å¾—ã€‚"+RANK_D->query_self(dest)+"å¤šè°¢äº†ï¼â€\n",dest);
 		call_out("award2",1,dest,owner);
 
 
@@ -219,9 +219,9 @@ void award(object dest,object owner)
 void destroy_cart(object cart)
 {
 	if( !objectp(cart) )return;
-	if( cart->query("race") != "ÈËÀà" )
-		message_vision("ÆÍÈËÉÏÇ°°Ñ$NÀ­×ßÁË¡£\n",cart);
-	else message_vision("Ñ¾»·ÉÏÇ°°Ñ$NÇë½øÈ¥ÁË¡£\n",cart);
+	if( cart->query("race") != "äººç±»" )
+		message_vision("ä»†äººä¸Šå‰æŠŠ$Næ‹‰èµ°äº†ã€‚\n",cart);
+	else message_vision("ä¸«çŽ¯ä¸Šå‰æŠŠ$Nè¯·è¿›åŽ»äº†ã€‚\n",cart);
 
 	destruct(cart);
 }
@@ -246,15 +246,15 @@ int do_ride(string arg)
 	object cart = this_object();
 
 
-	if (!arg) return notify_fail("ÄãÒªÉÏÊ²Ã´£¿\n");
+	if (!arg) return notify_fail("ä½ è¦ä¸Šä»€ä¹ˆï¼Ÿ\n");
 
-	if( me->query_temp("riding") )  return notify_fail("ÄãÒÑ¾­ÔÚïÚ³µÉÏ£¡\n");
+	if( me->query_temp("riding") )  return notify_fail("ä½ å·²ç»åœ¨é•–è½¦ä¸Šï¼\n");
 
 	if( cart = present("biao che",environment()) );
 
-	if( query("owner") != me->query("id") && query("owner2") != me->query("id"))return notify_fail("²»ÊÇÄãµÄ³µ¡£\n");
+	if( query("owner") != me->query("id") && query("owner2") != me->query("id"))return notify_fail("ä¸æ˜¯ä½ çš„è½¦ã€‚\n");
 
-	message_vision(HIY"$N"+HIY"ÉñÆøµØÌøÉÏÁËïÚ³µ£¬Ò»ÊÖÄÃÆð±Þ×Ó£¬Ò»ÊÖÎÕ×¡çÖÉþ£¬ßººÈÁËÆðÀ´£¡\n"NOR,me);
+	message_vision(HIY"$N"+HIY"ç¥žæ°”åœ°è·³ä¸Šäº†é•–è½¦ï¼Œä¸€æ‰‹æ‹¿èµ·éž­å­ï¼Œä¸€æ‰‹æ¡ä½ç¼°ç»³ï¼Œå†å–äº†èµ·æ¥ï¼\n"NOR,me);
 	me->set_leader( cart );
 	me->set_temp("riding",1);
 	return 1;
@@ -264,9 +264,9 @@ int do_unride(string arg)
 {
 	object me = this_player();
 
-	if( !me->query_temp("riding") )  return notify_fail("ÄãÒÑ¾­²»ÔÚïÚ³µÉÏ£¡\n");
+	if( !me->query_temp("riding") )  return notify_fail("ä½ å·²ç»ä¸åœ¨é•–è½¦ä¸Šï¼\n");
 
-	message_vision(HIY"$N"+HIY"ÌøÏÂÁËïÚ³µ£¡\n"NOR,me);
+	message_vision(HIY"$N"+HIY"è·³ä¸‹äº†é•–è½¦ï¼\n"NOR,me);
 	me->delete_temp("riding");
 	return 1;
 }
@@ -305,15 +305,15 @@ void do_leave(object ob)
 		{
 			if( ob->is_busy() || ob->is_fighting())
 			{
-				message_vision("$NÏòºóÒ»Ìø£¬Ìø³öÕ½È¦£¡\n",ob);
+				message_vision("$Nå‘åŽä¸€è·³ï¼Œè·³å‡ºæˆ˜åœˆï¼\n",ob);
 				if( random(2)==0 )
-					message_vision("$NËµµÀ£ºÃ»Ïëµ½ÉñÓ¥ïÚ¾ÖµÄ»¹ÕæÓÐÁ½ÏÂ×Ó¡£"+RANK_D->query_self(ob)+"½ñÌìÔÝÇÒÈÄÄãÒ»Ìõ¹·Ãü£¡\n",ob);
+					message_vision("$Nè¯´é“ï¼šæ²¡æƒ³åˆ°ç¥žé¹°é•–å±€çš„è¿˜çœŸæœ‰ä¸¤ä¸‹å­ã€‚"+RANK_D->query_self(ob)+"ä»Šå¤©æš‚ä¸”é¥¶ä½ ä¸€æ¡ç‹—å‘½ï¼\n",ob);
 				else
-					message_vision("$NËµµÀ£º½ñÌìÀÏ×ÓÊÖÆø²»ºÃ£¬ËãÄãºÝ£¬¸ÄÈÕÔÙÀ´ÅãÄãÍæ£¡\n",ob);
+					message_vision("$Nè¯´é“ï¼šä»Šå¤©è€å­æ‰‹æ°”ä¸å¥½ï¼Œç®—ä½ ç‹ ï¼Œæ”¹æ—¥å†æ¥é™ªä½ çŽ©ï¼\n",ob);
 			}
 
 			if(!living(ob))ob->revive(0);
-			message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË¡£\n",ob);
+			message_vision("$Næ€¥æ€¥å¿™å¿™ç¦»å¼€äº†ã€‚\n",ob);
 			destruct(ob);
 		}
 }
@@ -335,9 +335,9 @@ void action(object me, object ob)
 
 	if( !ob->is_busy() && !ob->is_fighting() )
 	{
-	  if( random(3) ) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(ob)+"ÎÒÕýºÃÈ±¼¸¸öÇ®»¨¡£ÏàºÃµÄ£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄãÒ»ÌõÈ«Ê¬£¡\n"NOR, ob);
-	  else if( random(3) )  message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(ob)+"ÎÒÌæÌìÐÐµÀ£¬½Ù¸»¼ÃÆ¶£¬¹·ÍÈ×Ó£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄã²»ËÀ£¡\n"NOR, ob);
-	  else message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(ob)+"ÌýËµÊ²Ã´Æ¨Ó¥ïÚ¾ÖµÄÎª»¢×÷Øö£¬¹·ÍÈ×Ó£¬Ê¶È¤µãÔçµã¹öµ°£¬¾ÍÈÄÄã²»ËÀ£¡\n"NOR, ob);
+	  if( random(3) ) message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(ob)+"æˆ‘æ­£å¥½ç¼ºå‡ ä¸ªé’±èŠ±ã€‚ç›¸å¥½çš„ï¼Œè¯†è¶£ç‚¹äº¤å‡ºå®è´ï¼Œå°±é¥¶ä½ ä¸€æ¡å…¨å°¸ï¼\n"NOR, ob);
+	  else if( random(3) )  message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(ob)+"æˆ‘æ›¿å¤©è¡Œé“ï¼ŒåŠ«å¯ŒæµŽè´«ï¼Œç‹—è…¿å­ï¼Œè¯†è¶£ç‚¹äº¤å‡ºå®è´ï¼Œå°±é¥¶ä½ ä¸æ­»ï¼\n"NOR, ob);
+	  else message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(ob)+"å¬è¯´ä»€ä¹ˆå±é¹°é•–å±€çš„ä¸ºè™Žä½œä¼¥ï¼Œç‹—è…¿å­ï¼Œè¯†è¶£ç‚¹æ—©ç‚¹æ»šè›‹ï¼Œå°±é¥¶ä½ ä¸æ­»ï¼\n"NOR, ob);
 	  ob->kill_ob(me);
 	}
 
@@ -382,7 +382,7 @@ private int is_suitable(object victim, object killer)
 		  });
 
 		  if(  !clonep(victim) || userp(victim)
-			|| victim->query("race") != "ÈËÀà"
+			|| victim->query("race") != "äººç±»"
 			|| victim->query("shen") <= 0
 			|| victim->query("winner")
 			|| strsrch(base_name(victim), "/kunfu/skill/") != -1
@@ -434,11 +434,11 @@ void setup_skill(object me,object obj)
 	else
 		level = level/2 + random(level/5);
 
-	if( me->query("family/family_name") == "¶ëáÒÅÉ" ) // their qi short, so lower robber's skill a bit
+	if( me->query("family/family_name") == "å³¨åµ‹æ´¾" ) // their qi short, so lower robber's skill a bit
 	{
 		level = level*2/3 + random( level/3);
 	}
-	else if( me->query("family/family_name") == "ÉÙÁÖÅÉ" || me->query("family/family_name") == "Ñ©É½ÅÉ" )
+	else if( me->query("family/family_name") == "å°‘æž—æ´¾" || me->query("family/family_name") == "é›ªå±±æ´¾" )
 	{
 		level = level*3/4 + random( level/4);
 	}
@@ -500,7 +500,7 @@ void killer_show(object me)
 
   ob->move(here);
   setup_skill(me,ob);
-  message_vision("\n$NÍ»È»ÌøÁË³öÀ´!\n", ob);
+  message_vision("\n$Nçªç„¶è·³äº†å‡ºæ¥!\n", ob);
 
   ob->set_leader(me);
   call_out("action",random(3),me,ob);
@@ -519,23 +519,23 @@ int do_attack(string arg)
 	string victim;
 	int i;
 
-	if (!arg) return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+	if (!arg) return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
 
 	victim = arg;
-	if ( victim == me->query("id") ) return notify_fail("Äã·¢·èÀ²£¿\n");
+	if ( victim == me->query("id") ) return notify_fail("ä½ å‘ç–¯å•¦ï¼Ÿ\n");
 	here = environment(me);
 
 	target = present(victim, here);
-	if (!target) return notify_fail("ÕâÀï²¢ÎÞ´ËÈË£¡\n");
+	if (!target) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
-	if ( target->query("race") != "ÈËÀà" )
+	if ( target->query("race") != "äººç±»" )
 	{
-		return notify_fail("Äã·¢·èÀ²£¿\n");
+		return notify_fail("ä½ å‘ç–¯å•¦ï¼Ÿ\n");
 	}
 
 	obj = all_inventory(here);
 
-	message_vision(HIR "$N¶Ô×Å$n"+HIR"ºÈµÀ£º"+RANK_D->query_rude(target)+HIR"Ò²Ïë½ÙïÚ£¿µÜÐÖÃÇ£¬¸øÎÒºÝºÝµØ½ÌÑµ$p£¡\n\n" NOR, me, target);
+	message_vision(HIR "$Nå¯¹ç€$n"+HIR"å–é“ï¼š"+RANK_D->query_rude(target)+HIR"ä¹Ÿæƒ³åŠ«é•–ï¼Ÿå¼Ÿå…„ä»¬ï¼Œç»™æˆ‘ç‹ ç‹ åœ°æ•™è®­$pï¼\n\n" NOR, me, target);
 
 	if( me->query_temp("biao/dest") )
 	{
@@ -547,15 +547,15 @@ int do_attack(string arg)
 					|| obj[i]->query_temp("biao/owner2") == me->query("id")
 				)  && obj[i] != me && obj[i]->query("id") != "robber" && target->query("id") != obj[i]->query("id") )
 			{
-				message_vision(HIY "Ö»¼û$NÓ¦Éù³å×Å$nÆËÁË¹ýÈ¥£¡ºÈµÀ£º"+RANK_D->query_rude(target)+HIY"ÄÃÃüÀ´°É£¡\n" NOR, obj[i], target);
+				message_vision(HIY "åªè§$Nåº”å£°å†²ç€$næ‰‘äº†è¿‡åŽ»ï¼å–é“ï¼š"+RANK_D->query_rude(target)+HIY"æ‹¿å‘½æ¥å§ï¼\n" NOR, obj[i], target);
 				obj[i]->kill_ob(target);
 			}
 		}
 	}
 
 	if(random(2)==0)
-		message_vision( HIR "\n$N¶Ô×Å$n"+HIR"ÀäÐ¦Ò»Éù£º¹·ÍÈ×Ó±ãÊÇÈ«ÉÏ£¬°³ÓÖÓÐºÎ¾å£¬¿´ÕÐ£¡\n\n" NOR, target,me );
-	else message_vision( HIR "\n$N¶Ô×Å$n"+HIR"ÀäÐ¦Ò»Éù£ºÏëÒÐ¶àÎªÊ¤£¿¿´ÕÐ£¡\n\n" NOR, target,me );
+		message_vision( HIR "\n$Nå¯¹ç€$n"+HIR"å†·ç¬‘ä¸€å£°ï¼šç‹—è…¿å­ä¾¿æ˜¯å…¨ä¸Šï¼Œä¿ºåˆæœ‰ä½•æƒ§ï¼Œçœ‹æ‹›ï¼\n\n" NOR, target,me );
+	else message_vision( HIR "\n$Nå¯¹ç€$n"+HIR"å†·ç¬‘ä¸€å£°ï¼šæƒ³å€šå¤šä¸ºèƒœï¼Ÿçœ‹æ‹›ï¼\n\n" NOR, target,me );
 	target->kill_ob(me);
 
 	return 1;
@@ -570,11 +570,11 @@ int do_check()
 	object ppl = this_player();
 	object obj = this_object();
 
-	if ( obj->query_temp("biao/dest") == "dao baifeng" ) write("ÕâÊÇÓÉ"+obj->query("owner")+"Ñ¹ÔËµÄ´óÀíÍõåúµ¶°×·ïµÄïÚ»õ¡£\n");
-	else if ( obj->query_temp("biao/dest") == "hu laoye" ) write("ÕâÊÇÓÉ"+obj->query("owner")+"Ñ¹ÔËµÄ±±½®Ð¡Õò°ÍÒÀÍÐËÍµÄÖØïÚ£¬Òª¾¡¿ìËÍµ½¡£\n");
-	else if ( obj->query_temp("biao/dest") == "ye erniang" ) write("ÕâÊÇÎ÷ÏÄÒ¶¶þÄïÍÐËÍµÄÖØïÚ£¬ÓÉ"+obj->query("owner")+"Ñ¹ÔË£¬Òª¾¡¿ìËÍµ½¡£\n");
-	else if ( obj->query_temp("biao/dest") == "feng yiming" ) write("ÕâÊÇ·ðÉ½Ó¢ÐÛ»á¹Ý·ïÒ»ÃùµÄÖØïÚ£¬ÓÉ"+obj->query("owner")+"Ñ¹ÔË¡£\n");
-	else if ( obj->query_temp("biao/dest") == "wang tongzhi" ) write("ÕâÊÇÈªÖÝ¼ÃÊÀÌÃÀÏµêµÄÖØïÚ£¬ÓÉ"+obj->query("owner")+"Ñ¹ÔË£¬Îñ±Ø½»µ½Ò©ÆÌÕÆ¹ñÍõÍ¨ÖÎÊÖÀï¡£\n");
+	if ( obj->query_temp("biao/dest") == "dao baifeng" ) write("è¿™æ˜¯ç”±"+obj->query("owner")+"åŽ‹è¿çš„å¤§ç†çŽ‹å¦ƒåˆ€ç™½å‡¤çš„é•–è´§ã€‚\n");
+	else if ( obj->query_temp("biao/dest") == "hu laoye" ) write("è¿™æ˜¯ç”±"+obj->query("owner")+"åŽ‹è¿çš„åŒ—ç–†å°é•‡å·´ä¾æ‰˜é€çš„é‡é•–ï¼Œè¦å°½å¿«é€åˆ°ã€‚\n");
+	else if ( obj->query_temp("biao/dest") == "ye erniang" ) write("è¿™æ˜¯è¥¿å¤å¶äºŒå¨˜æ‰˜é€çš„é‡é•–ï¼Œç”±"+obj->query("owner")+"åŽ‹è¿ï¼Œè¦å°½å¿«é€åˆ°ã€‚\n");
+	else if ( obj->query_temp("biao/dest") == "feng yiming" ) write("è¿™æ˜¯ä½›å±±è‹±é›„ä¼šé¦†å‡¤ä¸€é¸£çš„é‡é•–ï¼Œç”±"+obj->query("owner")+"åŽ‹è¿ã€‚\n");
+	else if ( obj->query_temp("biao/dest") == "wang tongzhi" ) write("è¿™æ˜¯æ³‰å·žæµŽä¸–å ‚è€åº—çš„é‡é•–ï¼Œç”±"+obj->query("owner")+"åŽ‹è¿ï¼ŒåŠ¡å¿…äº¤åˆ°è¯é“ºæŽŒæŸœçŽ‹é€šæ²»æ‰‹é‡Œã€‚\n");
 
 	return 1;
 }
@@ -597,10 +597,10 @@ void destroy_it( object obj)
 	{
 		if( userp(ppl) && ppl->query_temp("riding") )
 		{
-			message_vision( HIR"Ââ×ÓÍ»È»·¢·èËÆµÄÀ­×Å$N"+HIR"¾ÍÅÜ£¬°Ñ$n"+HIR"Ò»Æ¨¹ÉË¦ÔÚµØÉÏ£¬×ªÑÛ¾ÍÅÜÃ»Ó°ÁË¡££¡\n",obj,ppl);
+			message_vision( HIR"éª¡å­çªç„¶å‘ç–¯ä¼¼çš„æ‹‰ç€$N"+HIR"å°±è·‘ï¼ŒæŠŠ$n"+HIR"ä¸€å±è‚¡ç”©åœ¨åœ°ä¸Šï¼Œè½¬çœ¼å°±è·‘æ²¡å½±äº†ã€‚ï¼\n",obj,ppl);
 		}
 		else
-			message_vision( HIR"Ââ×ÓÍ»È»·¢·èËÆµÄÀ­×Å$N"+HIR"ÅÜ£¬×ªÑÛ¾ÍÅÜÃ»Ó°ÁË¡££¡\n",obj );
+			message_vision( HIR"éª¡å­çªç„¶å‘ç–¯ä¼¼çš„æ‹‰ç€$N"+HIR"è·‘ï¼Œè½¬çœ¼å°±è·‘æ²¡å½±äº†ã€‚ï¼\n",obj );
 		destruct(obj);
 	}
 }
@@ -611,28 +611,28 @@ int do_rob(string arg)
 	string victim;
 	int i;
 
-	if (!arg) return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+	if (!arg) return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
 
 	victim = arg;
-	if ( victim == me->query("id") ) return notify_fail("Äã·¢·èÀ²£¿\n");
+	if ( victim == me->query("id") ) return notify_fail("ä½ å‘ç–¯å•¦ï¼Ÿ\n");
 	here = environment(me);
 
 	target = present(victim, here);
-	if (!target) return notify_fail("ÕâÀï²¢ÎÞ´ËÈË£¡\n");
+	if (!target) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
-	if ( target->query("race") != "ÈËÀà" )
+	if ( target->query("race") != "äººç±»" )
 	{
-		return notify_fail("Äã·¢·èÀ²£¿\n");
+		return notify_fail("ä½ å‘ç–¯å•¦ï¼Ÿ\n");
 	}
 
 	obj = all_inventory(here);
 
-  if(random(3)) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º´ËÊ÷ÊÇÎÒÔÔ£¬´ËÂ·ÊÇÎÒ¿ª£¬Òª´Ó´Ë´¦¹ý£¬ÁôÏÂÂòÂ·Ç®¡£ÏàºÃµÄ£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄãÒ»Ìõ¹·Ãü£¡\n"NOR, me);
-  else if( random(3) ) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(me)+"ÎÒÕýºÃÈ±¼¸¸öÇ®»¨¡£ÏàºÃµÄ£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄãÒ»ÌõÈ«Ê¬£¡\n"NOR, me);
-  else message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(me)+"ÎÒÌæÌìÐÐµÀ£¬½Ù¸»¼ÃÆ¶£¬¹·ÍÈ×Ó£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄã²»ËÀ£¡\n"NOR, me);
+  if(random(3)) message_vision(HIR"\n$N"+HIR"å–é“ï¼šæ­¤æ ‘æ˜¯æˆ‘æ ½ï¼Œæ­¤è·¯æ˜¯æˆ‘å¼€ï¼Œè¦ä»Žæ­¤å¤„è¿‡ï¼Œç•™ä¸‹ä¹°è·¯é’±ã€‚ç›¸å¥½çš„ï¼Œè¯†è¶£ç‚¹äº¤å‡ºå®è´ï¼Œå°±é¥¶ä½ ä¸€æ¡ç‹—å‘½ï¼\n"NOR, me);
+  else if( random(3) ) message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(me)+"æˆ‘æ­£å¥½ç¼ºå‡ ä¸ªé’±èŠ±ã€‚ç›¸å¥½çš„ï¼Œè¯†è¶£ç‚¹äº¤å‡ºå®è´ï¼Œå°±é¥¶ä½ ä¸€æ¡å…¨å°¸ï¼\n"NOR, me);
+  else message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(me)+"æˆ‘æ›¿å¤©è¡Œé“ï¼ŒåŠ«å¯ŒæµŽè´«ï¼Œç‹—è…¿å­ï¼Œè¯†è¶£ç‚¹äº¤å‡ºå®è´ï¼Œå°±é¥¶ä½ ä¸æ­»ï¼\n"NOR, me);
 
 	//me->kill_ob(me);
-	//message_vision(HIR "$N¶Ô×Å$n"+HIR"ºÈµÀ£º"+RANK_D->query_rude(target)+HIR"Ò²Ïë½ÙïÚ£¿µÜÐÖÃÇ£¬¸øÎÒºÝºÝµØ½ÌÑµ$p£¡\n\n" NOR, me, target);
+	//message_vision(HIR "$Nå¯¹ç€$n"+HIR"å–é“ï¼š"+RANK_D->query_rude(target)+HIR"ä¹Ÿæƒ³åŠ«é•–ï¼Ÿå¼Ÿå…„ä»¬ï¼Œç»™æˆ‘ç‹ ç‹ åœ°æ•™è®­$pï¼\n\n" NOR, me, target);
 
 	if( me->query_temp("biao/dest") )
 	{
@@ -644,15 +644,15 @@ int do_rob(string arg)
 					|| obj[i]->query_temp("biao/owner2") == me->query("id")
 				)  && obj[i] != me && obj[i]->query("id") != "robber" && target->query("id") != obj[i]->query("id") )
 			{
-				message_vision(HIY "Ö»¼û$NÓ¦Éù³å×Å$nÆËÁË¹ýÈ¥£¡ºÈµÀ£º"+RANK_D->query_rude(target)+HIY"ÄÃÃüÀ´°É£¡\n" NOR, obj[i], target);
+				message_vision(HIY "åªè§$Nåº”å£°å†²ç€$næ‰‘äº†è¿‡åŽ»ï¼å–é“ï¼š"+RANK_D->query_rude(target)+HIY"æ‹¿å‘½æ¥å§ï¼\n" NOR, obj[i], target);
 				obj[i]->kill_ob(target);
 			}
 		}
 	}
 
 	if(random(2)==0)
-		message_vision( HIR "\n$N¶Ô×Å$n"+HIR"ÀäÐ¦Ò»Éù£º¹·ÍÈ×Ó±ãÊÇÈ«ÉÏ£¬°³ÓÖÓÐºÎ¾å£¬¿´ÕÐ£¡\n\n" NOR, target,me );
-	else message_vision( HIR "\n$N¶Ô×Å$n"+HIR"ÀäÐ¦Ò»Éù£ºÏëÒÐ¶àÎªÊ¤£¿¿´ÕÐ£¡\n\n" NOR, target,me );
+		message_vision( HIR "\n$Nå¯¹ç€$n"+HIR"å†·ç¬‘ä¸€å£°ï¼šç‹—è…¿å­ä¾¿æ˜¯å…¨ä¸Šï¼Œä¿ºåˆæœ‰ä½•æƒ§ï¼Œçœ‹æ‹›ï¼\n\n" NOR, target,me );
+	else message_vision( HIR "\n$Nå¯¹ç€$n"+HIR"å†·ç¬‘ä¸€å£°ï¼šæƒ³å€šå¤šä¸ºèƒœï¼Ÿçœ‹æ‹›ï¼\n\n" NOR, target,me );
 	target->kill_ob(me);
 
 	return 1;
@@ -780,12 +780,12 @@ int do_open()
 		  }
 
 	obn->move(ppl);
-		  tell_object(ppl, "Äã´ò¿ªºìïÚ£¬·¢ÏÖÀïÍ·×°µÄÔ­À´ÊÇ"+obn->name()+"¡£\n");
+		  tell_object(ppl, "ä½ æ‰“å¼€çº¢é•–ï¼Œå‘çŽ°é‡Œå¤´è£…çš„åŽŸæ¥æ˜¯"+obn->name()+"ã€‚\n");
 
 	if ( ppl->query("id") == obj->query("owner") ) {
 					 ppl->add("biao_stealer", 1);
 					 ppl->delete("biao");
-					 CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%s¼àÊØ×ÔµÁÁËºìïÚ£¡¾ÝÎÅºìïÚÊÇ%s£¡", ppl->name(), obn->name()));
+					 CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%sç›‘å®ˆè‡ªç›—äº†çº¢é•–ï¼æ®é—»çº¢é•–æ˜¯%sï¼", ppl->name(), obn->name()));
 	}
 	else {
 		if ( userp(sender) ) {
@@ -793,7 +793,7 @@ int do_open()
 								sender->delete_temp("biao");
 								sender->set_temp("biao/fail", 1);
 					 }
-					 CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%sÏ´½ÙÁËºìïÚ£¡¾ÝÎÅºìïÚÊÇ%s£¡", ppl->name(), obn->name()));
+					 CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%sæ´—åŠ«äº†çº¢é•–ï¼æ®é—»çº¢é•–æ˜¯%sï¼", ppl->name(), obn->name()));
 	}
 
 	destruct(obj);
@@ -809,59 +809,59 @@ int do_drive(string arg)
 	mapping exit;
 	object here = environment(me),robber = present("robber",here);
 
-	if (!arg) return notify_fail("ÄãÒªÇý¸ÏÊ²Ã´£¿\n");
+	if (!arg) return notify_fail("ä½ è¦é©±èµ¶ä»€ä¹ˆï¼Ÿ\n");
 
-	if( sscanf(arg, "%s %s", victim, dir) != 2 ) return notify_fail("Ö¸Áî´íÎó£¡\n");
+	if( sscanf(arg, "%s %s", victim, dir) != 2 ) return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼\n");
 
 
-	if ( victim == me->query("id") ) return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+	if ( victim == me->query("id") ) return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
 
-	if( !me->query_temp("riding") )  return notify_fail("ÄãÓÖ²»ÔÚïÚ³µÉÏ£¡ÔõÃ´¸Ï³µ£¿\n");
+	if( !me->query_temp("riding") )  return notify_fail("ä½ åˆä¸åœ¨é•–è½¦ä¸Šï¼æ€Žä¹ˆèµ¶è½¦ï¼Ÿ\n");
 
-	if ( victim != "che" && victim != "da che" ) return notify_fail("ÄãÒªÇý¸ÏÊ²Ã´£¿\n");
+	if ( victim != "che" && victim != "da che" ) return notify_fail("ä½ è¦é©±èµ¶ä»€ä¹ˆï¼Ÿ\n");
 
 	ob = present(victim, environment(me));
 
-	if (!ob) return notify_fail("ÕâÀï²¢ÎÞ´ËÈË£¡\n");
+	if (!ob) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
-	if ( me->is_busy() ) return notify_fail("ÄãÔÚÃ¦×ÅÄØ£¡\n");
+	if ( me->is_busy() ) return notify_fail("ä½ åœ¨å¿™ç€å‘¢ï¼\n");
 
 	env = environment(me);
 	if( !mapp(exit = env->query("exits")) || undefinedp(exit[dir]) )
-		return notify_fail("ÎÞ´Ë·½Ïò¿ÉÈ¥£¡\n");
+		return notify_fail("æ— æ­¤æ–¹å‘å¯åŽ»ï¼\n");
 
 	dest = exit[dir];
 
 	if( !(obj = find_object(dest)) )
 					 call_other(dest, "???");
 		  if( !(obj = find_object(dest)) )
-					 return notify_fail("ÎÞ·¨×ß£¡\n");
-	if( !wizardp(ob) && obj->query("short") == "Î×Ê¦ÐÝÏ¢ÊÒ" )
-		return notify_fail("ÎÞ·¨×ß£¡\n");
+					 return notify_fail("æ— æ³•èµ°ï¼\n");
+	if( !wizardp(ob) && obj->query("short") == "å·«å¸ˆä¼‘æ¯å®¤" )
+		return notify_fail("æ— æ³•èµ°ï¼\n");
 
 	if( !undefinedp(default_dirs[dir]) )
 					 target_dir = default_dirs[dir];
 		  else
 					 target_dir = dir;
 
-	message_vision( HIG"$N"+HIG"ÑïÁËÑï±Þ×Ó£¬¸ßÉùÇý¸ÏÂâ×Ó¼Ý×Å$n"+HIG"³¯"+target_dir+"Ê»È¥¡£\n" , me, ob);
+	message_vision( HIG"$N"+HIG"æ‰¬äº†æ‰¬éž­å­ï¼Œé«˜å£°é©±èµ¶éª¡å­é©¾ç€$n"+HIG"æœ"+target_dir+"é©¶åŽ»ã€‚\n" , me, ob);
 
 	if( robber && ( robber->query("owner") == me->query("id") || robber->query("owner2") == me->query("id"))  )
 	{
-		message_vision( HIR"$NºÈµÀ£ºÏëÁï£¿Ã»ÃÅ£¡\n"NOR,robber);
+		message_vision( HIR"$Nå–é“ï¼šæƒ³æºœï¼Ÿæ²¡é—¨ï¼\n"NOR,robber);
 		return 1;
 	}
 
 	if( ob->query("owner") != me->query("id") && ob->query("owner2") != me->query("id") )
 	{
-		message_vision( HIW"¿ÉÊÇÂâ×ÓÀí¶¼²»Àí$N¡£\n" NOR,me);
+		message_vision( HIW"å¯æ˜¯éª¡å­ç†éƒ½ä¸ç†$Nã€‚\n" NOR,me);
 		return 1;
 	}
 
-	message("vision", HIY "Ö»¼û"+ob->name()+HIY"ºäÂ¡Â¡³ÁÖØµÄÏò"+target_dir+"Ê»¹ýÈ¥¡£\n" NOR, environment(ob), ({ob}));
+	message("vision", HIY "åªè§"+ob->name()+HIY"è½°éš†éš†æ²‰é‡çš„å‘"+target_dir+"é©¶è¿‡åŽ»ã€‚\n" NOR, environment(ob), ({ob}));
 
 	if( ob->move(obj) ) {
-			message( "vision", HIY "Ö»¼ûÒ»Á¾"+ob->name()+HIY"ºäÂ¡Â¡³ÁÖØµÄÊ»ÁË¹ýÀ´¡£\n" NOR, environment(ob), ({ob}));
+			message( "vision", HIY "åªè§ä¸€è¾†"+ob->name()+HIY"è½°éš†éš†æ²‰é‡çš„é©¶äº†è¿‡æ¥ã€‚\n" NOR, environment(ob), ({ob}));
 			all_inventory(env)->follow_me(this_object(), dir);
 			me->start_busy( 2 + random(4) );
 			return 1;

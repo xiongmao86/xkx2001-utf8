@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "³ø·¿");
+	set("short", "å¨æˆ¿");
 	set("long", @LONG
-ÕâÀï³£ÄêÓĞ¼¸¸öÑÆÆÍÔÚÅëµ÷Ê³Îï£¬µÈºò´«»½¡£¶Ô´ıÕâĞ©ÈË²»ÓÃÌ«¿ÍÆø£¬
-ÃüÁî(order)ËûÃÇ¾Í¿ÉÒÔÁË¡£
+è¿™é‡Œå¸¸å¹´æœ‰å‡ ä¸ªå“‘ä»†åœ¨çƒ¹è°ƒé£Ÿç‰©ï¼Œç­‰å€™ä¼ å”¤ã€‚å¯¹å¾…è¿™äº›äººä¸ç”¨å¤ªå®¢æ°”ï¼Œ
+å‘½ä»¤(order)ä»–ä»¬å°±å¯ä»¥äº†ã€‚
 LONG
 	);
 	 set("exits", ([
@@ -40,8 +40,8 @@ int do_order()
         mapping myfam;
 
         myfam = (mapping)me->query("family");
-        if ( !myfam || myfam["family_name"] != "ÌÒ»¨µº" )
-                return notify_fail("Äã·ÇÌÒ»¨µÜ×Ó£¬²»ÄÜÄÃÈ¡Ê³Îï£¡\n");
+        if ( !myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›" )
+                return notify_fail("ä½ éæ¡ƒèŠ±å¼Ÿå­ï¼Œä¸èƒ½æ‹¿å–é£Ÿç‰©ï¼\n");
 
         inv = all_inventory(me);
         for (i=0; i<sizeof(inv); i++) {
@@ -54,9 +54,9 @@ int do_order()
 
         if ( (int)me->max_food_capacity()-food_ind < 10
         && (int)me->max_water_capacity()-water_ind < 10 )
-                return notify_fail("ÄãÒÑ³Ô±¥ºÈ×ã£¬»¹ÊÇµÈ»á¶ùÔÙÒª°É£¡\n");
+                return notify_fail("ä½ å·²åƒé¥±å–è¶³ï¼Œè¿˜æ˜¯ç­‰ä¼šå„¿å†è¦å§ï¼\n");
 
-        message_vision("$N´òÊÖÊÆÃüÁîÒ»¸öÑÆÆÍÄÃĞ©Ê³Îï³ÔºÈ¡£\n", me);
+        message_vision("$Næ‰“æ‰‹åŠ¿å‘½ä»¤ä¸€ä¸ªå“‘ä»†æ‹¿äº›é£Ÿç‰©åƒå–ã€‚\n", me);
 
         if ( (int)me->max_food_capacity()-food_ind >= 40 && !f
         && !present( "chicken", environment(me) )
@@ -74,21 +74,21 @@ int do_order()
                 break;
            }
                 ob1->move(me);
-                message_vision("ÑÆÆÍÃæÎŞ±íÇéµØÄÃ³ö"+ob1->name()+"¸ø$N¡£\n", me);
+                message_vision("å“‘ä»†é¢æ— è¡¨æƒ…åœ°æ‹¿å‡º"+ob1->name()+"ç»™$Nã€‚\n", me);
         }
         else if ( (int)me->max_food_capacity()-food_ind >= 40 )
-                message_vision("ÑÆÆÍÖ¸ÁËÖ¸$NÄÃ×ÅµÄÊ³Îï£¬Ò¡ÁËÒ¡Í·¡£\n", me);
-        else message_vision("ÑÆÆÍÖ¸ÁËÖ¸$NµÄ¶Ç×Ó£¬Ò¡ÁËÒ¡ÊÖ¡£\n", me);
+                message_vision("å“‘ä»†æŒ‡äº†æŒ‡$Næ‹¿ç€çš„é£Ÿç‰©ï¼Œæ‘‡äº†æ‘‡å¤´ã€‚\n", me);
+        else message_vision("å“‘ä»†æŒ‡äº†æŒ‡$Nçš„è‚šå­ï¼Œæ‘‡äº†æ‘‡æ‰‹ã€‚\n", me);
 
         if ( (int)me->max_water_capacity()-water_ind >= 40 && !w
         && !present("tea", environment(me)) ) {
                 ob2 = new(__DIR__"obj/xiangcha");
                 ob2->move(me);
-                message_vision("ÑÆÆÍÃæÎŞ±íÇéµØÄÃ³ö"+ob2->name()+"¸ø$N¡£\n", me);
+                message_vision("å“‘ä»†é¢æ— è¡¨æƒ…åœ°æ‹¿å‡º"+ob2->name()+"ç»™$Nã€‚\n", me);
         }
         else if ( (int)me->max_water_capacity()-water_ind >= 40 )
-                message_vision("ÑÆÆÍÖ¸ÁËÖ¸$NÄÃ×ÅµÄÊ³Îï£¬Ò¡ÁËÒ¡Í·¡£\n", me);
-        else message_vision("ÑÆÆÍÖ¸ÁËÖ¸$NµÄ¶Ç×Ó£¬Ò¡ÁËÒ¡ÊÖ¡£\n", me);
+                message_vision("å“‘ä»†æŒ‡äº†æŒ‡$Næ‹¿ç€çš„é£Ÿç‰©ï¼Œæ‘‡äº†æ‘‡å¤´ã€‚\n", me);
+        else message_vision("å“‘ä»†æŒ‡äº†æŒ‡$Nçš„è‚šå­ï¼Œæ‘‡äº†æ‘‡æ‰‹ã€‚\n", me);
 
         return 1;
 }
@@ -104,7 +104,7 @@ int valid_leave(object me, string dir)
         }
 
         if ( (f>0 || w>0) && present("ya pu", environment(me)) ) 
-		return notify_fail("ÑÆÆÍÀ¹×ÅÄã£¬Ö¸ÁËÖ¸ÄãÄÃ×ÅµÄÊ³Îï£¬Ò¡ÁËÒ¡Í·¡£\n");
+		return notify_fail("å“‘ä»†æ‹¦ç€ä½ ï¼ŒæŒ‡äº†æŒ‡ä½ æ‹¿ç€çš„é£Ÿç‰©ï¼Œæ‘‡äº†æ‘‡å¤´ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

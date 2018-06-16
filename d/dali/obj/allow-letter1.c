@@ -1,17 +1,17 @@
 //Cracked by Roath
-// allow-letter3.c ´óÀí½ú¼¶ÓÃ¹«ÎÄ
+// allow-letter3.c å¤§ç†æ™‹çº§ç”¨å…¬æ–‡
 inherit ITEM;
 
 void create()
 {
-	set_name("ÊÖÚÍ", ({"shou yu", "yu", "letter"}));
+	set_name("æ‰‹è°•", ({"shou yu", "yu", "letter"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "·â");
-		set("long","ÕâÊÇÒ»·âÓÉ¸µË¼¹éÇ©·¢µÄÊÖÚÍ£¬Æ¾´Ë¿ÉÏòÎÀÊ¿³¤ÌôÕ½²¢ÉêÇëÉı¼¶¡£\n");
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+		set("unit", "å°");
+		set("long","è¿™æ˜¯ä¸€å°ç”±å‚…æ€å½’ç­¾å‘çš„æ‰‹è°•ï¼Œå‡­æ­¤å¯å‘å«å£«é•¿æŒ‘æˆ˜å¹¶ç”³è¯·å‡çº§ã€‚\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
 		set("material", "paper");
 	}
 }

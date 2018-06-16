@@ -7,10 +7,10 @@ inherit ROOM;
 #include "sjsz_room.h"
 
 void create() {
-	 set("short", BLU"������"NOR);
+	 set("short", BLU"地下室"NOR);
 	 set("long", @LONG
-������ҹ��߰������������˺ܶ���飬Ѫ���߰ߣ�������
-��͸��Ѫ�����͸�ʬζ��ʹ���ܵ��쳣�Ĵ̼�������סѪ�����š�
+这地下室光线暗淡，地上铺了很多冰块，血迹斑斑，空气中
+渗透着血腥气和腐尸味，使你受到异常的刺激，禁不住血脉忿张。
 LONG
 	 );
 	 set("exits", ([

@@ -8,20 +8,20 @@ inherit __DIR__"bow.c";
 
 void create()
 {
-	set_name("¶Ìåó", ({ "short bow", "bow"}) );
+	set_name("çŸ­å¼©", ({ "short bow", "bow"}) );
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "ÕÅ");
+		set("unit", "å¼ ");
 		set("value", 500);
 		set("bow_power", 22);
 		set("str_requirement", 20);
 		set("material", "wood");
-		set("long", "ÕâÊÇÒ»ÕÅÆÕÍ¨µÄÄ¾ÖÆ¶Ìåó¡£\n");
-		set("wield_msg", "$N´Ó±³ºó³é³öÒ»ÕÅ$nÍìÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø±³ºó¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø±³ºó¡£\n");
+		set("long", "è¿™æ˜¯ä¸€å¼ æ™®é€šçš„æœ¨åˆ¶çŸ­å¼©ã€‚\n");
+		set("wield_msg", "$Nä»èƒŒåæŠ½å‡ºä¸€å¼ $næŒ½åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›èƒŒåã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›èƒŒåã€‚\n");
 		
 	}	
 	init_bow(8);

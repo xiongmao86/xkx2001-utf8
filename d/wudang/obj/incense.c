@@ -1,5 +1,5 @@
 //Cracked by Roath
-// incense.c Ïã»ğ
+// incense.c é¦™ç«
 // By Marz 11/11/96
 
 inherit ITEM;
@@ -10,13 +10,13 @@ int worn;
 
 void create()
 {
-	set_name("Ïã»ğ",({"incense"}));
+	set_name("é¦™ç«",({"incense"}));
 	set_weight(50);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»Ö¦¸ÕÔì³öÀ´µÄÏã»ğ£¬»¹´ø×ÅËÉÖ¦µÄÏãÆø¡£\n");
-		set("unit", "Ö¦");
+		set("long", "è¿™æ˜¯ä¸€æåˆšé€ å‡ºæ¥çš„é¦™ç«ï¼Œè¿˜å¸¦ç€æ¾æçš„é¦™æ°”ã€‚\n");
+		set("unit", "æ");
 		set("value", 10000);
 		if (this_player()->query("id") != "xqin")
 		{
@@ -41,11 +41,11 @@ void wear(int phase)
 	worn = phase;
 	switch(phase) {
 	case 1:
-		set("long", "ÕâÊÇÒ»Ö¦¹±·îÓÃµÄÏã»ğ£¬µ«ÒÑ¾­¿ªÊ¼Ê§È¥ÏãÎ¶ÁË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æè´¡å¥‰ç”¨çš„é¦™ç«ï¼Œä½†å·²ç»å¼€å§‹å¤±å»é¦™å‘³äº†ã€‚\n");
 		call_out("wear", 120, phase+1); 
 		break;
 	case 2:
-		set("long", "ÕâÊÇÒ»Ö¦·ÅÁËºÜ¾ÃµÄÏã»ğ£¬¼¸ºõÍêÈ«Ê§È¥ÏãÆøÁË¡£\n");
+		set("long", "è¿™æ˜¯ä¸€ææ”¾äº†å¾ˆä¹…çš„é¦™ç«ï¼Œå‡ ä¹å®Œå…¨å¤±å»é¦™æ°”äº†ã€‚\n");
 		call_out("wear", 120, phase+1); 
 		break;
 	case 3:

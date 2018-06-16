@@ -1,15 +1,15 @@
 //Cracked by Roath
-///d/zhongnan/c_xilang.c Î÷Á·¹¦³¡
+///d/zhongnan/c_xilang.c è¥¿ç»ƒåŠŸåœº
 // sdong: 07/23/98
 
 inherit ROOM;
 
 void create()
 {
-		  set("short", "Á·¹¦³¡");
+		  set("short", "ç»ƒåŠŸåœº");
 		  set("long", @LONG
-ÕâÀïÊÇÖØÑô¹¬µÄÁ·¹¦³¡£¬µØÉÏÆÌ×ÅÇà×©¡£ÖĞÑëÁ¢×Å¼¸¸öÄ¾Í·ÈË(mutouren)¡£
-ÓĞ¼¸¸öĞ¡µÀÊ¿ÕıÔÚÁ·¹¦¡£Íù¶«ÊÇ¹ã³¡¡£
+è¿™é‡Œæ˜¯é‡é˜³å®«çš„ç»ƒåŠŸåœºï¼Œåœ°ä¸Šé“ºç€é’ç –ã€‚ä¸­å¤®ç«‹ç€å‡ ä¸ªæœ¨å¤´äºº(mutouren)ã€‚
+æœ‰å‡ ä¸ªå°é“å£«æ­£åœ¨ç»ƒåŠŸã€‚å¾€ä¸œæ˜¯å¹¿åœºã€‚
 LONG
 		  );
 		  set("exits", ([
@@ -24,7 +24,7 @@ LONG
 
 		  set("cost", 1);
 		  set("item_desc",([
-				"mutouren" : "ÕâÊÇÒ»¸öÁù³ß¸ßµÄÄ¾Í·ÈË£¬ĞÎ×´´óĞ¡ÓÌÈçÒ»Î»ÕæÈË¡£È«Éí¹ü×ÅºñºñµÄÅ£Æ¤Ö½¡£ºÃÏóÊÇÓÃÀ´Á·ÕÆ·¨µÄ£¬Äã¿ÉÒÔ´ò´ò¿´(strike mutouren)¡£\n",
+				"mutouren" : "è¿™æ˜¯ä¸€ä¸ªå…­å°ºé«˜çš„æœ¨å¤´äººï¼Œå½¢çŠ¶å¤§å°çŠ¹å¦‚ä¸€ä½çœŸäººã€‚å…¨èº«è£¹ç€åšåšçš„ç‰›çš®çº¸ã€‚å¥½è±¡æ˜¯ç”¨æ¥ç»ƒæŒæ³•çš„ï¼Œä½ å¯ä»¥æ‰“æ‰“çœ‹(strike mutouren)ã€‚\n",
 		  ]));
 
 		  setup();
@@ -41,26 +41,26 @@ int do_strike(string arg)
 {       object me = this_player();
 		  int check;
 		  if ( !arg )
-					 return notify_fail( "ÄãÏë»÷Ê²÷á?\n");
+					 return notify_fail( "ä½ æƒ³å‡»ä»€éº½?\n");
 		  if ( arg != "mutouren" )
-					 return notify_fail( "ÄãÏë»÷Ê²÷á?\n");
+					 return notify_fail( "ä½ æƒ³å‡»ä»€éº½?\n");
 
 
 		if ((int)me->query("qi") < 30 || me->query("jingli") < 30 )
-					 return notify_fail("ÄãÀÛµÄ°ëËÀ£¬ĞÄÓĞÓà¶øÁ¦²»×ã£¬ÊÖÕÆ¶¼Ì§²»ÆğÀ´ÁË¡£\n");
+					 return notify_fail("ä½ ç´¯çš„åŠæ­»ï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ï¼Œæ‰‹æŒéƒ½æŠ¬ä¸èµ·æ¥äº†ã€‚\n");
 		  me->receive_damage("qi", 25);
 		  me->receive_damage("jingli", 25);
 
-		  message_vision("$N¶×ÁËÒ»¸öÂí²½£¬»ÓÕÆ»÷ÏòÄ¾Í·ÈË¡£\n", me);
+		  message_vision("$Nè¹²äº†ä¸€ä¸ªé©¬æ­¥ï¼ŒæŒ¥æŒå‡»å‘æœ¨å¤´äººã€‚\n", me);
 
 		  check = (int)me->query_skill("strike",1)*(int)me->query_skill("strike",1)*(int)me->query_skill("strike",1);
 		  if (check > (int)me->query("combat_exp") * 10)
-		  {       write ("Äã´òÁËÒ»»á£¬·¢ÏÖ×Ô¼ºÃ»ÓĞÊ²Ã´½ø²½£¬¿´À´¸ÃÈ¥ÅªµãÊµÕ½¾­ÑéÁË¡£\n");
+		  {       write ("ä½ æ‰“äº†ä¸€ä¼šï¼Œå‘ç°è‡ªå·±æ²¡æœ‰ä»€ä¹ˆè¿›æ­¥ï¼Œçœ‹æ¥è¯¥å»å¼„ç‚¹å®æˆ˜ç»éªŒäº†ã€‚\n");
 					 return 1;
 		  }
 
 		  if ((int)me->query_skill("strike", 1) >= 101)
-		  {       write("Äã´òÁËÒ»»á£¬·¢ÏÖºÁÎŞÊÕ»ñ¡£\n");
+		  {       write("ä½ æ‰“äº†ä¸€ä¼šï¼Œå‘ç°æ¯«æ— æ”¶è·ã€‚\n");
 					 return 1;
 		  }
 

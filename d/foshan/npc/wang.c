@@ -6,16 +6,16 @@ string ask_me(object who);
 void create()
 {
 	int skill = random(2);
-	set_name("ÍõÀÏºº", ({ "wang laohan", "wang", "laohan" }));
+	set_name("ç‹è€æ±‰", ({ "wang laohan", "wang", "laohan" }));
 	set("shen_type", 0);
 
 	set("str", 30);
 	set("con", 30);
 	set("dex", 18);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 	set("long",
-		"ËûÊÇÒ»¸öÍ··¢»¨°×µÄÀÏÍ·£¬Ã¦×Å¿¾ÉÕ±ı£¬Í·Ò²²»Ì§¡£\n");
+		"ä»–æ˜¯ä¸€ä¸ªå¤´å‘èŠ±ç™½çš„è€å¤´ï¼Œå¿™ç€çƒ¤çƒ§é¥¼ï¼Œå¤´ä¹Ÿä¸æŠ¬ã€‚\n");
 	set("combat_exp", 400000 + 100000*skill); //Ryu: random its skill to give highhand some risk if wants to get the cake.
 	set("PKS", 1000000);     //RYU: to avoid cake being begged away.
         set("max_qi", 1000);
@@ -44,11 +44,11 @@ void create()
 	set("env/wimpy",70);
 
 	set("inquiry", ([
-		"ĞşÌúÁî" : "°¡¡­¡­Ã»ÌıËµ¹ı¡£\n",
-		"Ğ»ÑÌ¿Í" : "ÌıËµÊÇ¸ö¹¦·òÆæ¸ßµÄ¹ÖÈË¡£\n",
-		"ÉÕ±ı" : "ÎÒµÄÉÕ±ıÓÖºÃ³ÔÓÖ±ãÒËµÄ¡£\n",
-		"ÓÍÌõ" : "ÎÒµÄÓÍÌõÓÖºÃ³ÔÓÖ±ãÒËµÄ¡£\n",
-		"ÎâµÀÍ¨" : (: ask_me :),
+		"ç„é“ä»¤" : "å•Šâ€¦â€¦æ²¡å¬è¯´è¿‡ã€‚\n",
+		"è°¢çƒŸå®¢" : "å¬è¯´æ˜¯ä¸ªåŠŸå¤«å¥‡é«˜çš„æ€ªäººã€‚\n",
+		"çƒ§é¥¼" : "æˆ‘çš„çƒ§é¥¼åˆå¥½åƒåˆä¾¿å®œçš„ã€‚\n",
+		"æ²¹æ¡" : "æˆ‘çš„æ²¹æ¡åˆå¥½åƒåˆä¾¿å®œçš„ã€‚\n",
+		"å´é“é€š" : (: ask_me :),
 	]));
 	
 	set("vendor_goods", ({
@@ -76,29 +76,29 @@ int do_sale(string arg)
         object ob, obj;
 
 	if (query("asked"))
-		return notify_fail("ÀÏ×Ó¼ÈÈ»±»ÈËÈÏ³öÀ´ÁË£¬¾Í²»ÔÚÕâ×°Ëï×ÓÂôÉÕ±ıÓÍÌõÁË£¡\n");
+		return notify_fail("è€å­æ—¢ç„¶è¢«äººè®¤å‡ºæ¥äº†ï¼Œå°±ä¸åœ¨è¿™è£…å­™å­å–çƒ§é¥¼æ²¹æ¡äº†ï¼\n");
 
         if (!arg)
-                return notify_fail("ÄãÏëÂòÊ²Ã´£¿ \n");
+                return notify_fail("ä½ æƒ³ä¹°ä»€ä¹ˆï¼Ÿ \n");
         else if ((ob_file = is_vendor_good(arg)) == "")
-                return notify_fail("ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+                return notify_fail("ä½ æƒ³ä¹°çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
 
 	ob = new(ob_file);
 
         if (query_temp("busy"))
-                return notify_fail("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+                return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 
 
         switch (MONEY_D->player_pay(this_player(), ob->query("value") *  val_factor / 10)) {
         case 0:
-					 return notify_fail("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+					 return notify_fail("ç©·å…‰è›‹ï¼Œä¸€è¾¹å‘†ç€å»ï¼\n");
         case 2:
-                return notify_fail("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+                return notify_fail("æ‚¨çš„é›¶é’±ä¸å¤Ÿäº†ï¼Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
         default:
                 file = resolve_path(this_object()->query("cwd"), arg);
                 set_temp("busy", 1);
-					 message_vision("$N´Ó$nÄÇÀïÂòÏÂÁËÒ»" + ob->query("unit") +
-                ob->query("name") + "¡£\n", this_player(), this_object());
+					 message_vision("$Nä»$né‚£é‡Œä¹°ä¸‹äº†ä¸€" + ob->query("unit") +
+                ob->query("name") + "ã€‚\n", this_player(), this_object());
 					 ob->add("quantity", -1);
                 if (ob->query("quantity") < 1){
                 ob->move(this_player());
@@ -120,21 +120,21 @@ string ask_me(object who)
 {
         int i;
 	object cake;
-	if (query("asked")) return ("ÉÙ·Ï»°£¡\n");
+	if (query("asked")) return ("å°‘åºŸè¯ï¼\n");
 
 		  if( (random(10) < 5) || is_fighting() )
-					 return "ÎÒ¡­²»ÖªµÀ¡£\n";
+					 return "æˆ‘â€¦ä¸çŸ¥é“ã€‚\n";
 
 		  message("vision",
-		"ÍõÀÏººµÀ£ºÄã¼ÈÈ»ÖªµÀÀÏ×ÓµÄÃû×Ö£¬¾Í¸Ã¶ÔÎÒ×ğÖØĞ©£¡ÄÉÃüÀ´°É£¡\n"
-					 "ÎâµÀÍ¨´óºÈÒ»Éù£¬½ĞµÀ£º¡°¼ÈÈ»Èç´Ë£¬ÀÏ×Ó½ñÌì·´Õı»í³öÈ¥£¬¸úÄãÆ´ÁË¡£¡±\n"
-					 "ÎâµÀÍ¨È¡³öÒ»¸±ÅĞ¹Ù±ÊÎÕÔÚÊÖÖĞ¡£\n" ,
+		"ç‹è€æ±‰é“ï¼šä½ æ—¢ç„¶çŸ¥é“è€å­çš„åå­—ï¼Œå°±è¯¥å¯¹æˆ‘å°Šé‡äº›ï¼çº³å‘½æ¥å§ï¼\n"
+					 "å´é“é€šå¤§å–ä¸€å£°ï¼Œå«é“ï¼šâ€œæ—¢ç„¶å¦‚æ­¤ï¼Œè€å­ä»Šå¤©åæ­£è±å‡ºå»ï¼Œè·Ÿä½ æ‹¼äº†ã€‚â€\n"
+					 "å´é“é€šå–å‡ºä¸€å‰¯åˆ¤å®˜ç¬”æ¡åœ¨æ‰‹ä¸­ã€‚\n" ,
 					 environment(), this_object() );
 
 		  set("attitude", "aggressive");
 	remove_action("do_buy", "buy");
 		  remove_action("do_list","list");
-		  set_name("ÎâµÀÍ¨", ({ "wu daotong", "wu", "daotong" }));
+		  set_name("å´é“é€š", ({ "wu daotong", "wu", "daotong" }));
 	kill_ob(this_player());
 	//command("follow " + this_player()->query("id"));
 		  carry_object("/clone/weapon/panguanbi")->wield();
@@ -142,7 +142,7 @@ string ask_me(object who)
 	else cake = new(__DIR__"obj/shaobing");
 	cake->move(this_object());
 	set("asked",1);
-		  return "Äã¼ÈÈ»ÖªµÀÀÏ×ÓµÄÃû×Ö£¬¾Í¸Ã¶ÔÎÒ×ğÖØĞ©£¡ÄÉÃüÀ´°É£¡\n";
+		  return "ä½ æ—¢ç„¶çŸ¥é“è€å­çš„åå­—ï¼Œå°±è¯¥å¯¹æˆ‘å°Šé‡äº›ï¼çº³å‘½æ¥å§ï¼\n";
 }
 
 void unconcious()
@@ -150,11 +150,11 @@ void unconcious()
 	object ob = this_object();
 	object cake;
 
-		  message_vision("\nÍ»È»£¬Ö»¼û$NÌÍ³öÒ»ÕÅÉÕ±ıÍÌ½ø¶ÇÀï£¡\n",
+		  message_vision("\nçªç„¶ï¼Œåªè§$Næå‡ºä¸€å¼ çƒ§é¥¼åè¿›è‚šé‡Œï¼\n",
 					 ob);
 	if (cake = present("shaobing",ob)) destruct(cake);
 //	ob->die();
-	ob->disable_player(" <»èÃÔ²»ĞÑ>");
+	ob->disable_player(" <æ˜è¿·ä¸é†’>");
 		  ob->set("jing", 0);
         ob->set("qi", 0);
 		  COMBAT_D->announce(ob, "unconcious");

@@ -44,9 +44,9 @@ void add_amount(int v)  { set_amount(amount+v); }
 string query_chinese_amount()
 {
 
-   //   ºÏ¡¢Éı¡¢¶·¡¢õú¡£is the base,
-   // 10 ºÏ = 1 Éı, 10 Éı = 1 ¶· 
-   // 10 ¶· = 1 õú
+   //   åˆã€å‡ã€æ–—ã€æ–›ã€‚is the base,
+   // 10 åˆ = 1 å‡, 10 å‡ = 1 æ–— 
+   // 10 æ–— = 1 æ–›
    int base1, base2, base3, base4;
    string str1, str2, str3, str4;
    base1 = (int)(query_amount()/1000);
@@ -55,10 +55,10 @@ string query_chinese_amount()
    base4 = (int)(query_amount() - base1*1000 - base2*100 - base3*10);
 
 
-   str1 = base1 ? chinese_number(base1) + "õú" : "";
-   str2 = base2 ? chinese_number(base2) + "¶·" : "";
-   str3 = base3 ? chinese_number(base3) + "Éı" : "";
-   str4 = base4 ? chinese_number(base4) + "ºÏ" : "";
+   str1 = base1 ? chinese_number(base1) + "æ–›" : "";
+   str2 = base2 ? chinese_number(base2) + "æ–—" : "";
+   str3 = base3 ? chinese_number(base3) + "å‡" : "";
+   str4 = base4 ? chinese_number(base4) + "åˆ" : "";
 
    return str1 + str2 + str3 + str4;
 
@@ -100,7 +100,7 @@ int move_liquid (object target)
  	 if (target->query("liquid/unique"))
 	    if ( obj->query("id") != target->query("liquid/uniqueid") )
 			// you can't pour some liquid into this bottle
-    		return notify_fail("Äã¿É²»ÄÜ°ÑÕâ¶«Î÷µ¹ÈëÄÇ¶ù¡£\n");
+    		return notify_fail("ä½ å¯ä¸èƒ½æŠŠè¿™ä¸œè¥¿å€’å…¥é‚£å„¿ã€‚\n");
 
 	 // you should only find at most 1 liquid inside the bottle
 	 // and nothing else
@@ -124,7 +124,7 @@ int move_liquid (object target)
 			// how much can if be filled
 			remain = target->query_max_liquid() - liquid->query_amount();
 			if (remain < 1)
-        		return notify_fail("ÒÑ¾­ÂúÁË£¬Ã»·¨ÍùÀïµ¹ÁË¡£\n");
+        		return notify_fail("å·²ç»æ»¡äº†ï¼Œæ²¡æ³•å¾€é‡Œå€’äº†ã€‚\n");
 			// if more than it can be filled
 			if( obj->query_amount() > remain) {
 		  		obj->add_amount(-remain);
@@ -141,7 +141,7 @@ int move_liquid (object target)
 		}
 		// maybe later on we can mix two kinds of liquid here
 		else
-		    return notify_fail("ÕâÁ½Ñù¶«Î÷²»ÄÜ»ì¡£\n");
+		    return notify_fail("è¿™ä¸¤æ ·ä¸œè¥¿ä¸èƒ½æ··ã€‚\n");
 	 }
 	 // no liquid found
 	 {

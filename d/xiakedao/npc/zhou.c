@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/xiakedao/npc/zhou.c ÖÜÜÆÈô
+// /d/xiakedao/npc/zhou.c å‘¨èŠ·è‹¥
 // xbc: 97/02/01
 
 #include <ansi.h>
@@ -9,10 +9,10 @@ string ask_me();
 
 void create()
 {
-        set_name("ÖÜÜÆÈô", ({ "zhou zhiruo", "zhou"}));
+        set_name("å‘¨èŠ·è‹¥", ({ "zhou zhiruo", "zhou"}));
         set("long", 
-		"ËıÇåÀöĞãÑÅ£¬ÈİÉ«¼«ÃÀ£¬Ñü¼äĞü×ÅÒ»±ú¶Ì½£¡£\n");
-	set("gender", "Å®ĞÔ");
+		"å¥¹æ¸…ä¸½ç§€é›…ï¼Œå®¹è‰²æç¾ï¼Œè…°é—´æ‚¬ç€ä¸€æŸ„çŸ­å‰‘ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 28);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -62,7 +62,7 @@ void create()
 	prepare_skill("finger", "tiangang-zhi");
 
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
 	setup();
         carry_object("/d/emei/npc/obj/hui-cloth")->wear();
@@ -92,10 +92,10 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say Í½¶ù¶¨»á½÷¼ÇÓÚĞÄµÄ¡£");
+                {		command("say å¾’å„¿å®šä¼šè°¨è®°äºå¿ƒçš„ã€‚");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
-				command("say ÕâÒ»¾äÊÇ·ñÖ¸³öÕÆ±Ø¾¡È«Á¦£¬ÉËµĞÎŞÂÇ£¿");
+				command("say è¿™ä¸€å¥æ˜¯å¦æŒ‡å‡ºæŒå¿…å°½å…¨åŠ›ï¼Œä¼¤æ•Œæ— è™‘ï¼Ÿ");
 				opp->set("jingli", maxjingli);
 				opp->set("eff_qi", maxqi);
 				opp->set("qi", maxqi);
@@ -105,5 +105,5 @@ void greeting(object me)
 }
 void attempt_apprentice(object ob)
 {
-        command ("say Äã»¹ÊÇÈ¥°İÎÒÊ¦¸¸°É¡£");
+        command ("say ä½ è¿˜æ˜¯å»æ‹œæˆ‘å¸ˆçˆ¶å§ã€‚");
 }

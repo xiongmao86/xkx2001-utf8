@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("µ¤ÇàÉú",({ "danqing sheng","sheng" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¸¹é’ç”Ÿ",({ "danqing sheng","sheng" }) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
 	set("long",
-		"Ëû÷×³¤¼°¸¹£¬×óÊÖÒ»Ö»¾Æ±­£¬Á³ÉÏõ¸õ¸È»´óÓÐ×íÒâ¡£\n");
+		"ä»–é«¯é•¿åŠè…¹ï¼Œå·¦æ‰‹ä¸€åªé…’æ¯ï¼Œè„¸ä¸Šé†ºé†ºç„¶å¤§æœ‰é†‰æ„ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯ËÄ×¯Ö÷");
+        set("title","æ¢…åº„å››åº„ä¸»");
         set("combat_exp", 78000);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -26,10 +26,10 @@ void create()
 	set("jiali",40);
 
 
-	set("mz/toy","ÐÐÂÃÍ¼");
+	set("mz/toy","è¡Œæ—…å›¾");
 	set("mz/need","ding");
 	set("mz/set","danqing");
-	set("mz/needname","¶¡¹Ü¼Ò");
+	set("mz/needname","ä¸ç®¡å®¶");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 	carry_object("/clone/weapon/changjian")->wield();

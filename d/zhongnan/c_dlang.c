@@ -1,5 +1,5 @@
 //Cracked by Roath
-///d/zhongnan/c_dlang.c ¶«Á·¹¦³¡
+///d/zhongnan/c_dlang.c ä¸œç»ƒåŠŸåœº
 // sdong: 07/23/98
 
 inherit ROOM;
@@ -8,10 +8,10 @@ int do_hit(string arg);
 
 void create()
 {
-		  set("short", "Á·¹¦³¡");
+		  set("short", "ç»ƒåŠŸåœº");
 		  set("long", @LONG
-ÕâÀïÊÇÖØÑô¹¬µÄÁ·¹¦³¡£¬µØÉÏÆÌ×ÅÇà×©¡£Á·¹¦³¡µõ×Å¼¸¸öÉ³´ü(shadai)¡£
-ÓĞ¼¸¸öĞ¡µÀÊ¿ÕıÔÚÁ·¹¦¡£ÍùÎ÷ÊÇ¹ã³¡¡£
+è¿™é‡Œæ˜¯é‡é˜³å®«çš„ç»ƒåŠŸåœºï¼Œåœ°ä¸Šé“ºç€é’ç –ã€‚ç»ƒåŠŸåœºåŠç€å‡ ä¸ªæ²™è¢‹(shadai)ã€‚
+æœ‰å‡ ä¸ªå°é“å£«æ­£åœ¨ç»ƒåŠŸã€‚å¾€è¥¿æ˜¯å¹¿åœºã€‚
 LONG
 		  );
 		  set("exits", ([
@@ -26,7 +26,7 @@ LONG
 
 		  set("cost", 1);
 		  set("item_desc",([
-				"shadai" : "ÕâÊÇÒ»¸ö´óÉ³´ü£¬¿´ÆğÀ´·Ç³£½áÊµ¡£ºÃÏóÊÇÓÃÀ´Á·È­·¨µÄ£¬Äã¿ÉÒÔ´ò´ò¿´(da shadai)¡£\n",
+				"shadai" : "è¿™æ˜¯ä¸€ä¸ªå¤§æ²™è¢‹ï¼Œçœ‹èµ·æ¥éå¸¸ç»“å®ã€‚å¥½è±¡æ˜¯ç”¨æ¥ç»ƒæ‹³æ³•çš„ï¼Œä½ å¯ä»¥æ‰“æ‰“çœ‹(da shadai)ã€‚\n",
 		  ]));
 
 		  setup();
@@ -43,26 +43,26 @@ int do_hit(string arg)
 {       object me = this_player();
 		  int check;
 		  if ( !arg )
-					 return notify_fail( "ÄãÏë»÷Ê²÷á?\n");
+					 return notify_fail( "ä½ æƒ³å‡»ä»€éº½?\n");
 		  if ( arg != "shadai" )
-					 return notify_fail( "ÄãÏë»÷Ê²÷á?\n");
+					 return notify_fail( "ä½ æƒ³å‡»ä»€éº½?\n");
 
 
 		if ((int)me->query("qi") < 26 || me->query("jingli") < 30 )
-					 return notify_fail("ÄãÀÛµÄ°ëËÀ£¬ĞÄÓĞÓà¶øÁ¦²»×ã£¬ÊÖ¶¼Ì§²»ÆğÀ´ÁË¡£\n");
+					 return notify_fail("ä½ ç´¯çš„åŠæ­»ï¼Œå¿ƒæœ‰ä½™è€ŒåŠ›ä¸è¶³ï¼Œæ‰‹éƒ½æŠ¬ä¸èµ·æ¥äº†ã€‚\n");
 		  me->receive_damage("qi", 25);
 		  me->receive_damage("jingli", 25);
 
-		  message_vision("$NÎÕÈ­ºİºİµØ»÷ÏòÉ³´ü£¬¾õµÃÈ­Í·Î¢Î¢ÓĞĞ©Í´¡£\n", me);
+		  message_vision("$Næ¡æ‹³ç‹ ç‹ åœ°å‡»å‘æ²™è¢‹ï¼Œè§‰å¾—æ‹³å¤´å¾®å¾®æœ‰äº›ç—›ã€‚\n", me);
 
 		  check = (int)me->query_skill("cuff",1)*(int)me->query_skill("cuff",1)*(int)me->query_skill("strike",1);
 		  if (check > (int)me->query("combat_exp") * 10)
-		  {       write ("Äã´òÁËÒ»»á£¬·¢ÏÖ×Ô¼ºÃ»ÓĞÊ²Ã´½ø²½£¬¿´À´¸ÃÈ¥ÅªµãÊµÕ½¾­ÑéÁË¡£\n");
+		  {       write ("ä½ æ‰“äº†ä¸€ä¼šï¼Œå‘ç°è‡ªå·±æ²¡æœ‰ä»€ä¹ˆè¿›æ­¥ï¼Œçœ‹æ¥è¯¥å»å¼„ç‚¹å®æˆ˜ç»éªŒäº†ã€‚\n");
 					 return 1;
 		  }
 
 		  if ((int)me->query_skill("cuff", 1) >= 101)
-		  {       write("Äã´òÁËÒ»»á£¬·¢ÏÖºÁÎŞÊÕ»ñ¡£\n");
+		  {       write("ä½ æ‰“äº†ä¸€ä¼šï¼Œå‘ç°æ¯«æ— æ”¶è·ã€‚\n");
 					 return 1;
 		  }
 

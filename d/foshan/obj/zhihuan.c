@@ -5,13 +5,13 @@ inherit FINGER;
 
 void create()
 {
-	set_name("Ö¸»·", ({ "zhi huan", "huan", "ring" }));
+	set_name("æŒ‡ç¯", ({ "zhi huan", "huan", "ring" }));
 	set("weight", 400);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long","Ò»Ã¶½ğÖ¸»·£¬ÉÏÃæÓĞÒ»Ğ©Ï¸Ï¸µÄ»¨ÎÆ¡£\n");
-		set("unit", "Ã¶");
+		set("long","ä¸€æšé‡‘æŒ‡ç¯ï¼Œä¸Šé¢æœ‰ä¸€äº›ç»†ç»†çš„èŠ±çº¹ã€‚\n");
+		set("unit", "æš");
 		set("value", 500);
 		set("material", "gold");
 		set("armor_prop/armor", 1);

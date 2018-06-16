@@ -1,24 +1,24 @@
 //Cracked by Roath
-// Carriage2: /clone/obj/car2.c ´ó³µÀï
+// Carriage2: /clone/obj/car2.c å¤§è½¦é‡Œ
 // Date: xbc /04/14/97
 
 inherit ITEM;
 
 void create()
 {
-        set_name("´ó³µÀï", ({ "da che", "che", "carriage" }) );
+        set_name("å¤§è½¦é‡Œ", ({ "da che", "che", "carriage" }) );
         set_weight(3000000);
         set_max_encumbrance(5000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("long", @LONG
 
-´ó³µÀï - 
-¡¡¡¡³µÀï¸É¸É¾»¾»£¬·ÅÁËÁ½ÕÅÊæ·þµÄ´óÒÎ×Ó¡£´°Á±À­ÁËÏÂÀ´£¬Ñô¹â´Ó·ìÏ¶ÖÐÍ¸
-½øÀ´£¬²»ÖªµÀ³µ×Ó×ßµ½ÄÄÀïÁË¡£ÃÅÍâ¹ÒÁËÒ»´®·çÁå£¬¶£ßÊßÊÏì×Å¡£³µ·ò×øÔÚÇ°
-Ãæ£¬Ò»Â·¸Ï×ÅÂí£¬Ò»Â·µÃÒâµØºß×ÅÊ²Ã´Ð¡µ÷¡£
+å¤§è½¦é‡Œ - 
+ã€€ã€€è½¦é‡Œå¹²å¹²å‡€å‡€ï¼Œæ”¾äº†ä¸¤å¼ èˆ’æœçš„å¤§æ¤…å­ã€‚çª—å¸˜æ‹‰äº†ä¸‹æ¥ï¼Œé˜³å…‰ä»Žç¼éš™ä¸­é€
+è¿›æ¥ï¼Œä¸çŸ¥é“è½¦å­èµ°åˆ°å“ªé‡Œäº†ã€‚é—¨å¤–æŒ‚äº†ä¸€ä¸²é£Žé“ƒï¼Œå®å‘¤å‘¤å“ç€ã€‚è½¦å¤«ååœ¨å‰
+é¢ï¼Œä¸€è·¯èµ¶ç€é©¬ï¼Œä¸€è·¯å¾—æ„åœ°å“¼ç€ä»€ä¹ˆå°è°ƒã€‚
 
 LONG
 	);
@@ -32,11 +32,11 @@ int is_container() { return 1; }
 
 /*
 
-	set("short", "´ó³µÀï");
+	set("short", "å¤§è½¦é‡Œ");
 	set("long", @LONG
-³µÀï¸É¸É¾»¾»£¬·ÅÁËÁ½ÕÅÊæ·þµÄ´óÒÎ×Ó¡£´°Á±À­ÁËÏÂÀ´£¬Ñô¹â´Ó·ìÏ¶ÖÐÍ¸
-½øÀ´£¬²»ÖªµÀ³µ×Ó×ßµ½ÄÄÀïÁË¡£ÃÅÍâ¹ÒÁËÒ»´®·çÁå£¬¶£ßÊßÊÏì×Å¡£³µ·ò×øÔÚÇ°
-Ãæ£¬Ò»Â·¸Ï×ÅÂí£¬Ò»Â·µÃÒâµØºß×ÅÊ²Ã´Ð¡µ÷¡£
+è½¦é‡Œå¹²å¹²å‡€å‡€ï¼Œæ”¾äº†ä¸¤å¼ èˆ’æœçš„å¤§æ¤…å­ã€‚çª—å¸˜æ‹‰äº†ä¸‹æ¥ï¼Œé˜³å…‰ä»Žç¼éš™ä¸­é€
+è¿›æ¥ï¼Œä¸çŸ¥é“è½¦å­èµ°åˆ°å“ªé‡Œäº†ã€‚é—¨å¤–æŒ‚äº†ä¸€ä¸²é£Žé“ƒï¼Œå®å‘¤å‘¤å“ç€ã€‚è½¦å¤«ååœ¨å‰
+é¢ï¼Œä¸€è·¯èµ¶ç€é©¬ï¼Œä¸€è·¯å¾—æ„åœ°å“¼ç€ä»€ä¹ˆå°è°ƒã€‚
 LONG
 	);
 

@@ -1,15 +1,15 @@
 //Cracked by Roath
-// qiangdao.c Ç¿µÁ
+// qiangdao.c å¼ºç›—
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÍÁ·Ë", ({ "tu fei","fei","robber" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("åœŸåŒª", ({ "tu fei","fei","robber" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35+random(5));
 	set("long",
-		"Õâ¼Ò»ïÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬Ê±²»Ê±·¢³öĞ°¶ñµÄÒõĞ¦¡£\n");
+		"è¿™å®¶ä¼™æ»¡è„¸æ€æ°”ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ï¼Œæ—¶ä¸æ—¶å‘å‡ºé‚ªæ¶çš„é˜´ç¬‘ã€‚\n");
 	set("combat_exp", 5000);
         set("shen_type", -1);
 	set("attitude", "heroism");

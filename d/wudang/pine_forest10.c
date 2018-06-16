@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pine_forest10.c ËÉÁÖĞ¡Ïª
+// pine_forest10.c æ¾æ—å°æºª
 // by Marz@XKX 11/11/96
 #include <localtime.h>
 #include <ansi.h>
@@ -13,10 +13,10 @@ void create()
         object *ob;
         local = localtime(time()*60);
 
-	set("short", HIM"ËÉÖĞ²İµØ"NOR);
+	set("short", HIM"æ¾ä¸­è‰åœ°"NOR);
 	set("long", @LONG
-	ÑÛÇ°»ô»íÈ»¿ªÀÊ£¬ÃÜÁÖÖĞÂ¶³öÒ»Æ¬¿ÕµØ£¬ÖĞ¼äÒ»ÌõÏªË®äı
-äıÁ÷¹ı¡£Ïª±ßÆæ»¨Òì²İ£¬³¤µÃÌØ±ğÏÊÑŞ¡£
+	çœ¼å‰éœè±ç„¶å¼€æœ—ï¼Œå¯†æ—ä¸­éœ²å‡ºä¸€ç‰‡ç©ºåœ°ï¼Œä¸­é—´ä¸€æ¡æºªæ°´æ½º
+æ½ºæµè¿‡ã€‚æºªè¾¹å¥‡èŠ±å¼‚è‰ï¼Œé•¿å¾—ç‰¹åˆ«é²œè‰³ã€‚
 LONG
 	);
 	
@@ -45,7 +45,7 @@ void init()
 	object me = this_player();
 	
 	if ( !objectp(me->query_temp("armor/boots")) )
-		me->receive_damage("qi", 10, "±»ËÉÕëÔúËÀÁË");  
+		me->receive_damage("qi", 10, "è¢«æ¾é’ˆæ‰æ­»äº†");  
 
 }
 

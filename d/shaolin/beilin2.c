@@ -16,14 +16,14 @@ string look_stone();
 
 void create()
 {
-	set("short", "Î÷±®ÁÖ");
+	set("short", "è¥¿ç¢‘æž—");
 	set("long", @LONG
-ÕâÀïÊÇÒ»´óÆ¬±®ÁÖ¡£ËäËµÊÇ±®ÁÖ£¬Ö÷ÒªÊÇÉÙÁÖÀú´ú¸ßÉ®µÄ
-·ðËþÁé²Ø(tower)¡£Ò»×ù×ù·ðËþÔ¼ÓÐ¶þÈýÈË¸ß£¬ÓÐºº°×ÓñµÄ£¬
-»¨¸ÔÊ¯µÄ£¬¾«¹¤µñÔä£¬±¡±¡µÄ¸¡µñÃæÉÏ·ÉÇÝ×ßÊÞ£¬·ðÚËìøÊ«£¬
-Öî·ðÖÚÉú£¬¿ÉÎ½ÎÞËù²»°ü¡£µ××ùÓÐÐëÃÖ×ùµÄ£¬Ò²ÓÐÁ«»¨×ùµÄ£¬
-¸÷Ì¬·×³Ê¡£·ðËþ¼äÊèÊèÂäÂäµÄÁ¢×Å¼¸¿é±®(stone)£¬ÓÐµÄÌâ×Å
-¼¸¾äÊ«¡£
+è¿™é‡Œæ˜¯ä¸€å¤§ç‰‡ç¢‘æž—ã€‚è™½è¯´æ˜¯ç¢‘æž—ï¼Œä¸»è¦æ˜¯å°‘æž—åŽ†ä»£é«˜åƒ§çš„
+ä½›å¡”çµè—(tower)ã€‚ä¸€åº§åº§ä½›å¡”çº¦æœ‰äºŒä¸‰äººé«˜ï¼Œæœ‰æ±‰ç™½çŽ‰çš„ï¼Œ
+èŠ±å†ˆçŸ³çš„ï¼Œç²¾å·¥é›•å‡¿ï¼Œè–„è–„çš„æµ®é›•é¢ä¸Šé£žç¦½èµ°å…½ï¼Œä½›è°’ç¦…è¯—ï¼Œ
+è¯¸ä½›ä¼—ç”Ÿï¼Œå¯è°“æ— æ‰€ä¸åŒ…ã€‚åº•åº§æœ‰é¡»å¼¥åº§çš„ï¼Œä¹Ÿæœ‰èŽ²èŠ±åº§çš„ï¼Œ
+å„æ€çº·å‘ˆã€‚ä½›å¡”é—´ç–ç–è½è½çš„ç«‹ç€å‡ å—ç¢‘(stone)ï¼Œæœ‰çš„é¢˜ç€
+å‡ å¥è¯—ã€‚
 LONG
 	);
 
@@ -56,14 +56,14 @@ void check_trigger()
 	if( (int)query("up_trigger")==4
 	&&	(int)query("down_trigger")==3
 	&&	!query("exits/down") ) {
-		message("vision", "·ðËþºöÈ»·¢³öÔþÔþµÄÉùÒô£¬ÏòÒ»²à»º»ºÒÆ¿ª£¬"
-			"ÏòÏÂÂ¶³öÒ»¸öºÚ¶´¶´µÄÈë¿Ú¡£\n", this_object() );
+		message("vision", "ä½›å¡”å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œå‘ä¸€ä¾§ç¼“ç¼“ç§»å¼€ï¼Œ"
+			"å‘ä¸‹éœ²å‡ºä¸€ä¸ªé»‘æ´žæ´žçš„å…¥å£ã€‚\n", this_object() );
 		set("exits/down", __DIR__"beilin3");
 		if( room = find_object(__DIR__"beilin3") ) {
 		        room->set("exits/up", __FILE__);
 		        message("vision", 
-"Í·¶¥ÉÏµÄÊ¯°åºöÈ»·¢³öÔþÔþµÄÉùÒô£¬Â¶³öÒ»¸ö¹âÁÁÁÁµÄ¶´¿Ú¡£"
-"Ò»¿é¿éÌ¤½ÅÊ¯´ÓÇ½±ÚÖÐÍ¹ÁË³öÀ´£¬ÐÎ³ÉÒ»¸öÏòÉÏµÄ½×ÌÝ¡£\n",room );
+"å¤´é¡¶ä¸Šçš„çŸ³æ¿å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œéœ²å‡ºä¸€ä¸ªå…‰äº®äº®çš„æ´žå£ã€‚"
+"ä¸€å—å—è¸è„šçŸ³ä»Žå¢™å£ä¸­å‡¸äº†å‡ºæ¥ï¼Œå½¢æˆä¸€ä¸ªå‘ä¸Šçš„é˜¶æ¢¯ã€‚\n",room );
 		}
 		delete("poem_said");
 		delete("up_trigger");
@@ -78,12 +78,12 @@ void close_passage()
 	object room;
 
 	if( !query("exits/down") ) return;
-	message("vision", "·ðËþºöÈ»·¢³öÔþÔþµÄÉùÒô£¬»º»ºµØÒÆ»ØÔ­´¦£¬"
-		"½«ÏòÏÂµÄ¶´¿Ú¸Ç×¡ÁË¡£\n", this_object() );
+	message("vision", "ä½›å¡”å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œç¼“ç¼“åœ°ç§»å›žåŽŸå¤„ï¼Œ"
+		"å°†å‘ä¸‹çš„æ´žå£ç›–ä½äº†ã€‚\n", this_object() );
 	if( room = find_object(__DIR__"beilin3") ) {
 		room->delete("exits/up");
-		message("vision", "Í·¶¥ÉÏµÄÊ¯°åºöÈ»·¢³öÔþÔþµÄÉùÒô£¬"
-			"Ç½ÉÏµÄÊ¯¿éÓÖ»º»ºµØÊÕÁË»ØÈ¥£¬½×ÌÝÏûÊ§ÁË¡£\n", room );
+		message("vision", "å¤´é¡¶ä¸Šçš„çŸ³æ¿å¿½ç„¶å‘å‡ºè½§è½§çš„å£°éŸ³ï¼Œ"
+			"å¢™ä¸Šçš„çŸ³å—åˆç¼“ç¼“åœ°æ”¶äº†å›žåŽ»ï¼Œé˜¶æ¢¯æ¶ˆå¤±äº†ã€‚\n", room );
 	}
 	delete("exits/down");
 }
@@ -96,18 +96,18 @@ int do_pull(string arg)
 	if( !arg || arg=="" ) return 0;
 
 	if( arg=="stone" && (int)query("poem_said")==1 ) {
-		write("ÄãÊÔ×Å°â¶¯Õâ¿éÊ¯±®£¬·¢ÏÖ¿ÉÒÔÍùÉÏÌ§......\n");
+		write("ä½ è¯•ç€æ‰³åŠ¨è¿™å—çŸ³ç¢‘ï¼Œå‘çŽ°å¯ä»¥å¾€ä¸ŠæŠ¬......\n");
 		return 1;
 	}
 	if( sscanf(arg, "stone %s", dir)==1 && (int)query("poem_said")==1 ) {
 		if( dir=="up" ) {
-			message_vision("$N½«Ê¯±®ÍùÉÏÌ§...£¬ºöÈ»¡¸¿¦¡¹Ò»ÉùÊ¯±®ÓÖÒÆ»ØÔ­Î»¡£\n",
+			message_vision("$Nå°†çŸ³ç¢‘å¾€ä¸ŠæŠ¬...ï¼Œå¿½ç„¶ã€Œå–€ã€ä¸€å£°çŸ³ç¢‘åˆç§»å›žåŽŸä½ã€‚\n",
 				this_player());
 			add("up_trigger", 1);
 			check_trigger();
 			return 1;
 		} else {
-			write("ÄãÒª½«Ê¯±®ÍÆÏòÄÇ¸ö·½Ïò£¿\n");
+			write("ä½ è¦å°†çŸ³ç¢‘æŽ¨å‘é‚£ä¸ªæ–¹å‘ï¼Ÿ\n");
 			return 1;
 		}
 	}
@@ -120,18 +120,18 @@ int do_push(string arg)
 	if( !arg || arg=="" ) return 0;
 
 	if( arg=="stone" && (int)query("poem_said")==1 ) {
-		write("ÄãÊÔ×Å°â¶¯Õâ¿éÊ¯±®£¬·¢ÏÖ¿ÉÒÔÍùÏÂÑ¹......\n");
+		write("ä½ è¯•ç€æ‰³åŠ¨è¿™å—çŸ³ç¢‘ï¼Œå‘çŽ°å¯ä»¥å¾€ä¸‹åŽ‹......\n");
 		return 1;
 	}
 	if( sscanf(arg, "stone %s", dir)==1 && (int)query("poem_said")==1 ) {
 		if( dir=="down" ) {
-			message_vision("$N½«Ê¯±®ÍùÏÂÑ¹...£¬ºöÈ»¡¸¿¦¡¹Ò»ÉùÊ¯±®ÓÖÒÆ»ØÔ­Î»¡£\n",
+			message_vision("$Nå°†çŸ³ç¢‘å¾€ä¸‹åŽ‹...ï¼Œå¿½ç„¶ã€Œå–€ã€ä¸€å£°çŸ³ç¢‘åˆç§»å›žåŽŸä½ã€‚\n",
 				this_player());
 			add("down_trigger", 1);
 			check_trigger();
 			return 1;
 		} else {
-			write("ÄãÒª½«Ê¯±®ÍÆÏòÄÇ¸ö·½Ïò£¿\n");
+			write("ä½ è¦å°†çŸ³ç¢‘æŽ¨å‘é‚£ä¸ªæ–¹å‘ï¼Ÿ\n");
 			return 1;
 		}
 	}
@@ -143,13 +143,13 @@ int do_say(string arg)
 
 	if( !arg || arg=="" ) return 0;
 
-	if( arg=="Çå³¿Èë¹ÅËÂ£¬³õÈÕÕÕ¸ßÁÖ" ) {
-		write("Äã¿ÉÕæÓÐÊ«ÐË !\n");
+	if( arg=="æ¸…æ™¨å…¥å¤å¯ºï¼Œåˆæ—¥ç…§é«˜æž—" ) {
+		write("ä½ å¯çœŸæœ‰è¯—å…´ !\n");
 		return 1;
 	}
 
-	if( arg=="ÉÏ±¨ËÄÖØ¶÷£¬ÏÂ¼ÃÈýÍ¾¿à" ) {
-		write("Ö»ÌýËÄÖÜµÄ·ðËþ£¬Ê¯±®·¢³öÂ¡Â¡Â¡µÄÏìÉù£¬µØÃæÃÍÁÒÕð¶¯ÆðÀ´¡£\n");
+	if( arg=="ä¸ŠæŠ¥å››é‡æ©ï¼Œä¸‹æµŽä¸‰é€”è‹¦" ) {
+		write("åªå¬å››å‘¨çš„ä½›å¡”ï¼ŒçŸ³ç¢‘å‘å‡ºéš†éš†éš†çš„å“å£°ï¼Œåœ°é¢çŒ›çƒˆéœ‡åŠ¨èµ·æ¥ã€‚\n");
 		add("poem_said", 1);
 		return 1;
 	}
@@ -167,35 +167,35 @@ string look_tower()
 {
 	return
 	"\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Ò»ÇÐÊÀ½ç·ð£¬Ï¤·¢ÆÐÌáÐÄ£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÉÏ±¨ËÄÖØ¶÷£¬ÏÂ¼ÃÈýÍ¾¿à£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡ÎÞ±ß´ó·¨Á¦£¬¶É½ÙÉý¼«ÀÖ£¬¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Ô¸ÒÔ´Ë¹¦µÂ£¬×¯ÑÏ·ð¾»ÍÁ¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä¸€åˆ‡ä¸–ç•Œä½›ï¼Œæ‚‰å‘è©æå¿ƒï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä¸ŠæŠ¥å››é‡æ©ï¼Œä¸‹æµŽä¸‰é€”è‹¦ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ— è¾¹å¤§æ³•åŠ›ï¼Œæ¸¡åŠ«å‡æžä¹ï¼Œã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ„¿ä»¥æ­¤åŠŸå¾·ï¼Œåº„ä¸¥ä½›å‡€åœŸã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 
 string look_stone()
 {
 	return
 	"\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Çå³¿Èë¹ÅËÂ£¬³õÈÕÕÕ¸ßÁÖ¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Çú¾¶Í¨ÓÄ´¦£¬ìø·¿»¨Ä¾Éî¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡É½¹âÔÃÄñÐÔ£¬Ì¶Ó°¿ÕÈËÐÄ¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡Íòô¥´Ë¾ã¼Å£¬Î©ÎÅÖÓÅÍÒô¡£¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-	"    ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ¸…æ™¨å…¥å¤å¯ºï¼Œåˆæ—¥ç…§é«˜æž—ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€æ›²å¾„é€šå¹½å¤„ï¼Œç¦…æˆ¿èŠ±æœ¨æ·±ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€å±±å…‰æ‚¦é¸Ÿæ€§ï¼Œæ½­å½±ç©ºäººå¿ƒã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ä¸‡ç±æ­¤ä¿±å¯‚ï¼ŒæƒŸé—»é’Ÿç£éŸ³ã€‚ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+	"    â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 

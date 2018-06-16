@@ -1,16 +1,16 @@
 //Cracked by Roath
-// shijie2.c Ê¯½×
+// shijie2.c çŸ³é˜¶
 // by Xiang
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "Ê¯½×");
+	set("short", "çŸ³é˜¶");
 	set("long", @LONG
-	Äã×ßÔÚÒ»Ìõ¼áÊµµÄÊ¯½×ÉÏ£¬²»Ê±µØÓÐ½øÏã¿Í´ÓÄãµÄÉí±ß×ß¹ý¡£Ò»±ßÊÇÇÍ
-±Ú£¬Ò»±ßÊÇÐüÑÂ£¬Ì§Í·ÒþÔ¼¿É¼ûÁýÕÖÔÚÔÆÎíÖÐµÄÌìÖù·å£¬Ìý×ÅÁ÷Ë®äÈäÈ£¬ÁîÈËÐÄ
-¿õÉñâù¡£
+	ä½ èµ°åœ¨ä¸€æ¡åšå®žçš„çŸ³é˜¶ä¸Šï¼Œä¸æ—¶åœ°æœ‰è¿›é¦™å®¢ä»Žä½ çš„èº«è¾¹èµ°è¿‡ã€‚ä¸€è¾¹æ˜¯å³­
+å£ï¼Œä¸€è¾¹æ˜¯æ‚¬å´–ï¼ŒæŠ¬å¤´éšçº¦å¯è§ç¬¼ç½©åœ¨äº‘é›¾ä¸­çš„å¤©æŸ±å³°ï¼Œå¬ç€æµæ°´æ·™æ·™ï¼Œä»¤äººå¿ƒ
+æ—·ç¥žæ€¡ã€‚
 LONG
 	);
         set("outdoors", "wudang");

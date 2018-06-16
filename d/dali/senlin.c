@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ɭ��");
+	set("short", "大森林");
 	set("long", @LONG
-��ȥ��������ɽ���ʹ�ɭ�֣������Ѿ���ľï���˼������ˣ������Ǵ���
-����ԭ�Ĺٵ���·��
+此去向北是无量山区和大森林，这里已经林木茂密人迹罕至了，南面是大理
+到中原的官道大路。
 LONG);
 	set("exits", ([
 		"southdown" : __DIR__"minov15",

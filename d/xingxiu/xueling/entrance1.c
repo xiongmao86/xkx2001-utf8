@@ -11,11 +11,11 @@ int do_cun();
 
 void create()
 {
-  set("short", HIG"ÈºÓ¢ÌÃ"NOR);
+  set("short", HIG"ç¾¤è‹±å ‚"NOR);
   set("long", @LONG
-ÕâÀïÊÇÀ´ÊÔ½£É½×¯µÄÓ¢ĞÛÃÇĞİÏ¢ÏĞÌ¸µÄµØ·½£¬´Ë¼äÖ÷ÈË»¹Î´ÏÖÉí£¬
-¿ÉÊÇÈºĞÛ¶¼ÒÑ¾­¼±²»¿É´ı¡£´ÓÕâÀïÍùÀï¾ÍÊÇÊÔ½£Í¤£¬ÌıËµÓĞ²»ÉÙÕä²Ø
-µÄÃûÆ÷¡£ÃÅ±ßÓĞ¼¸¸öĞ¡ØË°ï¿ÍÈËÃÇÊÕÆğËæÉíĞ¯´øµÄÎïÆ·¡£
+è¿™é‡Œæ˜¯æ¥è¯•å‰‘å±±åº„çš„è‹±é›„ä»¬ä¼‘æ¯é—²è°ˆçš„åœ°æ–¹ï¼Œæ­¤é—´ä¸»äººè¿˜æœªç°èº«ï¼Œ
+å¯æ˜¯ç¾¤é›„éƒ½å·²ç»æ€¥ä¸å¯å¾…ã€‚ä»è¿™é‡Œå¾€é‡Œå°±æ˜¯è¯•å‰‘äº­ï¼Œå¬è¯´æœ‰ä¸å°‘çè—
+çš„åå™¨ã€‚é—¨è¾¹æœ‰å‡ ä¸ªå°å®å¸®å®¢äººä»¬æ”¶èµ·éšèº«æºå¸¦çš„ç‰©å“ã€‚
 LONG
   );
   set("no_fight", 1);
@@ -41,7 +41,7 @@ int valid_leave(object who, string dir) {
   int i;
 
   if (player->query_all_condition())
-    return notify_fail("ÃÅ¿ÚµÄĞ¡ØË¿´ÁËÄãÒ»ÑÛµÀ£ºÄúÀÏÉíÓĞ²»ÊÊ£¬»¹ÊÇ¸ÄÈÕÔÙÀ´°É¡£\n");
+    return notify_fail("é—¨å£çš„å°å®çœ‹äº†ä½ ä¸€çœ¼é“ï¼šæ‚¨è€èº«æœ‰ä¸é€‚ï¼Œè¿˜æ˜¯æ”¹æ—¥å†æ¥å§ã€‚\n");
 
   inv = all_inventory(player);
   basket = allocate(sizeof(inv));
@@ -50,7 +50,7 @@ int valid_leave(object who, string dir) {
   if (! objectp(cangku)) {
     cangku = load_object(CANGKU);
     if (!objectp(cangku)) {
-      message_vision("$NÇë¸æËß wiz: cangku not found\n", player);
+      message_vision("$Nè¯·å‘Šè¯‰ wiz: cangku not found\n", player);
       return 0;
     }
   }
@@ -59,9 +59,9 @@ int valid_leave(object who, string dir) {
     if (! inv[i]->query_autoload()) { // leave yudi etc.
       basket[i] = inv[i];
       inv[i]->move(cangku);
-      message_vision("$N½«Ò»"+
+      message_vision("$Nå°†ä¸€"+
 	inv[i]->query("unit")+
-	inv[i]->query("name")+"½»¸øĞ¡ØË¡£\n", player);
+	inv[i]->query("name")+"äº¤ç»™å°å®ã€‚\n", player);
     }else{
       basket[i] = 0;
     }

@@ -7,18 +7,18 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÈıµÈÊÌÎÀ", ({
+	set_name("ä¸‰ç­‰ä¾å«", ({
 		"sandeng shiwei",
 		"shiwei",
 		"wei",
 	}));
-//	set("title", "Ò»µÈÊÌÎÀ");
+//	set("title", "ä¸€ç­‰ä¾å«");
 	set("long",
-		"ÕâÊÇÒ»¸öÆ·¼¶²»µÍµÄÓùÇ°ÊÌÎÀ£¬Õı¾¯¾õµÄ¶¢×ÅËÄÖÜ¡£\n"
+		"è¿™æ˜¯ä¸€ä¸ªå“çº§ä¸ä½çš„å¾¡å‰ä¾å«ï¼Œæ­£è­¦è§‰çš„ç›¯ç€å››å‘¨ã€‚\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "heroism");
 
 	set("age", 35);

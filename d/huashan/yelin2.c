@@ -1,15 +1,15 @@
 //Cracked by Roath
-// »ªÉ½»ÄÉ½Ò°ÁÖ£²
+// åå±±è’å±±é‡æ—ï¼’
 // qfy 26/6/1996
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "»ÄÉ½Ò°ÁÖ");
+        set("short", "è’å±±é‡æ—");
 	set("long", @LONG
-ÕâÊÇ»ªÉ½ºóÉ½µÄÒ»Æ¬»ÄÉ½Ò°ÁÖ£¬ËÄÖÜ¶¼ÊÇÒ»ÖêÖê¸ß¾ŞÎŞ±ÈµÄ´óÊ÷¡£´ó
-Ê÷Ã¯ÃÜµÄÖ¦Ò¶£¬»¥Ïà½»Ö¯×Å£¬ÊÇÒÔÑô¹âÄÑÒÔÉøÍ¸£¬Ê¹ÈËÓĞ²»±æÌìÈÕÖ®¸Ğ¡£
+è¿™æ˜¯åå±±åå±±çš„ä¸€ç‰‡è’å±±é‡æ—ï¼Œå››å‘¨éƒ½æ˜¯ä¸€æ ªæ ªé«˜å·¨æ— æ¯”çš„å¤§æ ‘ã€‚å¤§
+æ ‘èŒ‚å¯†çš„æå¶ï¼Œäº’ç›¸äº¤ç»‡ç€ï¼Œæ˜¯ä»¥é˜³å…‰éš¾ä»¥æ¸—é€ï¼Œä½¿äººæœ‰ä¸è¾¨å¤©æ—¥ä¹‹æ„Ÿã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -25,10 +25,10 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	me->add_temp("marks/²½", 1);
+	me->add_temp("marks/æ­¥", 1);
 	me->add("jingli", -10);
 
-	if ( me->query_temp("marks/²½") == 3 ) {
+	if ( me->query_temp("marks/æ­¥") == 3 ) {
 	   set("exits/northeast", __DIR__"yelin2");
 	   set("exits/northwest", __DIR__"yelin2");
 	   set("exits/southeast", __DIR__"yelin2");
@@ -38,13 +38,13 @@ int valid_leave(object me, string dir)
 	   delete("exits/north");
 	   delete("exits/south");
 	}
-	else if( me->query_temp("marks/²½") == 6 ) {
+	else if( me->query_temp("marks/æ­¥") == 6 ) {
 	  set("exits/west", __DIR__"yelin2");
 	  set("exits/north", __DIR__"yelin2");
 	  delete("exits/northeast");
 	  delete("exits/southeast");
 	}
-	else if( me->query_temp("marks/²½") == 9 ) {
+	else if( me->query_temp("marks/æ­¥") == 9 ) {
 	  set("exits/east", __DIR__"yelin2");
 	  set("exits/south", __DIR__"yelin1");
           set("exits/northeast", __DIR__"yelin2");
@@ -53,11 +53,11 @@ int valid_leave(object me, string dir)
 	  delete("exits/west");
 	  delete("exits/north");
 	  delete("exits/northwest");
-	  write("ÄãÔÚ»ÄÉ½Ò°ÁÖÀïÂÒ×ßÂÒ´³£¬È´ÕÒ²»µ½³öÂ·£¬¾õµÃºÜÀÛ¡£\n" );
+	  write("ä½ åœ¨è’å±±é‡æ—é‡Œä¹±èµ°ä¹±é—¯ï¼Œå´æ‰¾ä¸åˆ°å‡ºè·¯ï¼Œè§‰å¾—å¾ˆç´¯ã€‚\n" );
 	}
-	else if( me->query_temp("marks/²½") == 10 && dir == "southeast" ) {
-	  write( "Äã¼¸¾­¼èÄÑ£¬ÖÕÓÚ×ß³öÁË»ÄÉ½Ò°ÁÖ¡£Äã¸Ğµ½Ê®·ÖÆ£±¹£¬»¹ÊÇ¸Ï¿éĞİÏ¢°É¡£\n" ); 
-	  me->delete_temp("marks/²½");
+	else if( me->query_temp("marks/æ­¥") == 10 && dir == "southeast" ) {
+	  write( "ä½ å‡ ç»è‰°éš¾ï¼Œç»ˆäºèµ°å‡ºäº†è’å±±é‡æ—ã€‚ä½ æ„Ÿåˆ°ååˆ†ç–²æƒ«ï¼Œè¿˜æ˜¯èµ¶å—ä¼‘æ¯å§ã€‚\n" ); 
+	  me->delete_temp("marks/æ­¥");
           set("exits/east", __DIR__"yelin2");
           set("exits/west", __DIR__"yelin2");
           set("exits/south", __DIR__"yelin2");
@@ -66,8 +66,8 @@ int valid_leave(object me, string dir)
           delete("exits/southwest");
           delete("exits/southeast");
 	}
-	else if( me->query_temp("marks/²½") == 10 && dir != "southeast" ) {
-	  me->delete_temp("marks/²½");
+	else if( me->query_temp("marks/æ­¥") == 10 && dir != "southeast" ) {
+	  me->delete_temp("marks/æ­¥");
 	  set("exits/east", __DIR__"yelin2");
 	  set("exits/west", __DIR__"yelin2");
 	  set("exits/south", __DIR__"yelin2");
@@ -75,10 +75,10 @@ int valid_leave(object me, string dir)
 	  delete("exits/northeast");
 	  delete("exits/southwest");
 	  delete("exits/southeast");
-	  write("ÄãÔÚ»ÄÉ½Ò°ÁÖÀïÂÒ×ßÂÒ´³£¬È´ÕÒ²»µ½³öÂ·£¬¾õµÃºÜÀÛ¡£\n" );
+	  write("ä½ åœ¨è’å±±é‡æ—é‡Œä¹±èµ°ä¹±é—¯ï¼Œå´æ‰¾ä¸åˆ°å‡ºè·¯ï¼Œè§‰å¾—å¾ˆç´¯ã€‚\n" );
 	}
 	else {
-	  write("ÄãÔÚ»ÄÉ½Ò°ÁÖÀïÂÒ×ßÂÒ´³£¬È´ÕÒ²»µ½³öÂ·£¬¾õµÃºÜÀÛ¡£\n" );
+	  write("ä½ åœ¨è’å±±é‡æ—é‡Œä¹±èµ°ä¹±é—¯ï¼Œå´æ‰¾ä¸åˆ°å‡ºè·¯ï¼Œè§‰å¾—å¾ˆç´¯ã€‚\n" );
 	}
 	
 	return 1;
@@ -95,13 +95,13 @@ int do_drop(string arg)
         int i, amount;
         string item;
 
-        if(!arg) return notify_fail("ÄãÒª¶ªÏÂÊ²Ã´¶«Î÷£¿\n");
+        if(!arg) return notify_fail("ä½ è¦ä¸¢ä¸‹ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
         if(!objectp(obj = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
-	message_vision( sprintf("$N¶ªÏÂÒ»%s$n¡£\n", obj->query("unit")), me, obj );
-	message_vision("Ò»Ö»ºï×Ó¡°à²¡±µØÒ»ÉùÅÜÁË¹ıÀ´£¬¼ñÆğ"+(string)obj->name()+"±ãÅÜ½øÃÜÁÖ²»¼ûÀ²¡£\n", me);
+	message_vision( sprintf("$Nä¸¢ä¸‹ä¸€%s$nã€‚\n", obj->query("unit")), me, obj );
+	message_vision("ä¸€åªçŒ´å­â€œå—–â€åœ°ä¸€å£°è·‘äº†è¿‡æ¥ï¼Œæ¡èµ·"+(string)obj->name()+"ä¾¿è·‘è¿›å¯†æ—ä¸è§å•¦ã€‚\n", me);
 	destruct(obj);
 
 	return 1;

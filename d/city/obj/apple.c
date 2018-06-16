@@ -1,18 +1,18 @@
 //Cracked by Roath
-// letter-job.c ÍÆ¼öĞÅ 
+// letter-job.c æ¨èä¿¡ 
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ÍÆ¼öĞÅ", ({"tuijian xin", "xin", "letter"}));
+        set_name("æ¨èä¿¡", ({"tuijian xin", "xin", "letter"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·â");
-                set("long", "ÕâÊÇÒ»·âĞş´È·½ÕÉĞ´¸øÁúÃÅïÚ¾Ö¶¼×ÜïÚÍ·µÄÍÆ¼öĞÅ¡£\n");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("unit", "å°");
+                set("long", "è¿™æ˜¯ä¸€å°ç„æ…ˆæ–¹ä¸ˆå†™ç»™é¾™é—¨é•–å±€éƒ½æ€»é•–å¤´çš„æ¨èä¿¡ã€‚\n");
+                set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
                 set("material", "paper");
         }
 }

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ɹŴ��ԭ");
+        set("short", "蒙古大草原");
         set("long", @LONG
-ͻȻһ�����µĲݷ�����ӭ�洵��������߳��˸�赣�����������ǰ
-����һƬһ���޼ʵĴ��ԭ��
+突然一阵清新的草风向你迎面吹来，终於走出了戈璧，出现在你眼前
+的是一片一望无际的大草原。
 LONG
         );
         set("exits", ([

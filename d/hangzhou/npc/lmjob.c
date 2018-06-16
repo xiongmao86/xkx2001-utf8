@@ -20,7 +20,7 @@ int update_condition(object me, int duration)
 
         if( duration < 1 ) {
                 me->set_temp("lmjob/ok", 1);
-                message_vision(HIR"\n一名镖头过来对$N说道：大师辛苦了，您休息一下吧。\n"NOR, me);
+                message_vision(HIR"\n涓�鍚嶉晼澶磋繃鏉ュ$N璇撮亾锛氬ぇ甯堣緵鑻︿簡锛屾偍浼戞伅涓�涓嬪惂銆俓n"NOR, me);
                 return 0;
         }
 

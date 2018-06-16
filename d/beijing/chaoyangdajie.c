@@ -23,10 +23,10 @@ void fix_exits_for_night(int is_night)
 
 void create()
 {
-	set("short", "�����Ŵ��");
+	set("short", "朝阳门大街");
 	set("long", @LONG
-���Ƿ������ֵĳ����Ŵ�֣���ֽ����������ˮ������������Ϣ����Ⱥ��
-�������������������ֱ���ˣǹ���ա��ٻ�С�ԣ�Ӧ�о��У��۶���ò�ɼ�һ�ߡ�
+这是繁华热闹的朝阳门大街，大街街面宽阔，车水马龙，川流不息，人群熙
+熙攘攘，来来往往。街边上耍枪买艺、百货小吃，应有尽有，帝都风貌可见一斑。
 LONG
 	);
 	fix_exits_for_night(0);

@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶¡¼á",({ "ding jian","ding" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¸åš",({ "ding jian","ding" }) );
+        set("gender", "ç”·æ€§");
         set("age", 55);
 	set("long",
-		"ËûÄ¿¹â¾¼¾¼£¬²½ÂÄÎÈÖØ£¬ÏÔÊÇÎä¹¦²»µÍ¡£\n");
-        set("nickname","Ò»×Öµç½£");
-        set("title","Ã·×¯¼ÒÈË");
+		"ä»–ç›®å…‰ç‚¯ç‚¯ï¼Œæ­¥å±¥ç¨³é‡ï¼Œæ˜¾æ˜¯æ­¦åŠŸä¸ä½Žã€‚\n");
+        set("nickname","ä¸€å­—ç”µå‰‘");
+        set("title","æ¢…åº„å®¶äºº");
         set("combat_exp", 60000);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -41,10 +41,10 @@ int accept_fight()
         ob = this_player();
 
         if( ob->query_temp("ding")) {
-		command("say ¸óÏÂÎä¹¦³öÖÚ£¬ÔÚÏÂºÜÊÇÅå·þ¡£ÄãÎÒ²»±ØÔÚ¶¯ÊÖÁË¡£");
+		command("say é˜ä¸‹æ­¦åŠŸå‡ºä¼—ï¼Œåœ¨ä¸‹å¾ˆæ˜¯ä½©æœã€‚ä½ æˆ‘ä¸å¿…åœ¨åŠ¨æ‰‹äº†ã€‚");
 		return 0;
 	}
-	command("say ºÃ°É£¬ÄãÎÒ¾Í±È»®±È»®£¬µãµ½ÎªÖ¹¡£");
+	command("say å¥½å§ï¼Œä½ æˆ‘å°±æ¯”åˆ’æ¯”åˆ’ï¼Œç‚¹åˆ°ä¸ºæ­¢ã€‚");
 	me->set_temp("challenger", ob);
 	return 1;
 }
@@ -70,7 +70,7 @@ int chat()
 
         if (( (int)me->query("qi")*100 / my_max_qi) <= 50 )
         {
-		command("say ¸óÏÂ¹ûÈ»¸ßÃ÷£¬ÎÒÈÏÊäÁË¡£");
+		command("say é˜ä¸‹æžœç„¶é«˜æ˜Žï¼Œæˆ‘è®¤è¾“äº†ã€‚");
 		ob->set_temp("ding",1);
 		return ::chat();
 	}

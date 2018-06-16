@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short", HIG"±ÈÎä³¡"NOR);
+  set("short", HIG"æ¯”æ­¦åœº"NOR);
   set("long", @LONG
-ÕâÀï¾ÍÊÇ±ÈÎä³¡ÁË£¬¸÷Â·Ó¢ĞÛÃÇÕı´ó´ò³öÊÖ£¬×£ÄãºÃÔË£¡
-µ±ÄãÉ±ËÀÒ»¸öÍæ¼Òºó²»ÒªÍûÁË½«Æä½á¹û (finish)£¬Ìß³ö±ÈÎä³¡¡£
+è¿™é‡Œå°±æ˜¯æ¯”æ­¦åœºäº†ï¼Œå„è·¯è‹±é›„ä»¬æ­£å¤§æ‰“å‡ºæ‰‹ï¼Œç¥ä½ å¥½è¿ï¼
+å½“ä½ æ€æ­»ä¸€ä¸ªç©å®¶åä¸è¦æœ›äº†å°†å…¶ç»“æœ (finish)ï¼Œè¸¢å‡ºæ¯”æ­¦åœºã€‚
 LONG
   );
 
@@ -31,18 +31,18 @@ void init()
 int do_jump(string arg)
 {
   if (!arg || arg!="out")
-	return notify_fail("ÄãÒªÍùÄÄ¶ùÌø£¿\n");
-  message_vision("$N×İÉíÒ»Ô¾£¬´Ó±ÈÎä³¡ÌøÁË³öÈ¥£®\n", this_player());
+	return notify_fail("ä½ è¦å¾€å“ªå„¿è·³ï¼Ÿ\n");
+  message_vision("$Nçºµèº«ä¸€è·ƒï¼Œä»æ¯”æ­¦åœºè·³äº†å‡ºå»ï¼\n", this_player());
   this_player()->move("/d/xingxiu/xueling/exit1");
 
-  message_vision("$N´Ó±ÈÎä³¡ÀïÌøÁË³öÀ´£®\n", this_player());
+  message_vision("$Nä»æ¯”æ­¦åœºé‡Œè·³äº†å‡ºæ¥ï¼\n", this_player());
   return 1;
 }
 
 int valid_leave(object who, string dir)
 {
   if (!wizardp(who) && dir == "out") 
-    return notify_fail("ÄãÒªÊÇÕæÏë³öÈ¥¾Í jump out\n");
+    return notify_fail("ä½ è¦æ˜¯çœŸæƒ³å‡ºå»å°± jump out\n");
   return ::valid_leave(who, dir);
 }
 

@@ -3,10 +3,10 @@ inherit ROOM;
 string look_note();
 
 void create() {
-    set("short", "���ܽ�����");
+    set("short", "秘密交流室");
     set("long", @LONG
-�����ǹ��������ʦ���ܽ����ĵط�����ҿ�������������ʦ����£գǣ�
-�ṩ���飬���й㷺�����ۡ������ǽ�����Ÿ�ʾ��note����
+这里是供玩家与巫师秘密交流的地方。玩家可以在这里向巫师报告ＢＵＧ，
+提供建议，进行广泛的讨论。南面的墙上贴着告示（note）。
 LONG
     );
 
@@ -30,12 +30,12 @@ LONG
 
 string look_note() {
     return "
-����������������£�ֻ���ɱ���Һ���ʦ�Ķ���
-��Һ���ʦ������re xx  (xxΪ����ƪĿ) ������
-��������ǰ���µĻ�Ӧ����Ӧ����Ҳֻ�ܱ���һƪ
-���µ����ߺ���ʦ�Ķ����������԰�����䡣
+玩家在这里贴的文章，只能由本玩家和巫师阅读。
+玩家和巫师可以用re xx  (xx为文章篇目) 命令来
+张贴对以前文章的回应。回应文章也只能被第一篇
+文章的作者和巫师阅读。其它留言板命令不变。
 
-�ҹ�ˮ�ߴ���ʮ�˲������
+乱灌水者打入十八层地狱。
 \n";
 }
 
@@ -52,6 +52,6 @@ void init() {
 
 int do_null(string arg) {
         object me = this_player();
-        tell_object(me, "��Ϣ����Ϣ����Ϣһ����ɡ�\n");
+        tell_object(me, "休息，休息，休息一会儿吧。\n");
         return 1;
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// gtxiang.c ¹ðÌ³Ïï
+// gtxiang.c æ¡‚å›å··
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¹ðÌ³Ïï");
+        set("short", "æ¡‚å›å··");
 	set("long", @LONG
-¹ðÌ³ÏïË³×ÅÊ©¸®¸ßÇ½òêÑÑ¶ø³ö£¬Ò»ÃæÊÇäýäýÁ÷Ë®µÄ¹µÇþ£¬ÓÄ°µÄþ¾²¡£¹ðÌ³
-ÏïÎ÷ÄÏÃæ±ãÊÇ³ÐÌìËÂ¡£
+æ¡‚å›å··é¡ºç€æ–½åºœé«˜å¢™èœ¿èœ’è€Œå‡ºï¼Œä¸€é¢æ˜¯æ½ºæ½ºæµæ°´çš„æ²Ÿæ¸ ï¼Œå¹½æš—å®é™ã€‚æ¡‚å›
+å··è¥¿å—é¢ä¾¿æ˜¯æ‰¿å¤©å¯ºã€‚
 LONG
         );
 

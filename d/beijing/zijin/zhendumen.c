@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�����");
+	set("short", "贞度门");
 	set("long",  @LONG
-����������̫�͵�����Ǿſװ����š�
+从这里向北是太和殿，向南是九孔白玉桥。
 LONG
 	);
 

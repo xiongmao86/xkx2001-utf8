@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÊÔÐÄÊ¯");
+	set("short", "è¯•å¿ƒçŸ³");
 	set("long", @LONG
-ÕâÀï±ãÊÇÁ«»¨·åµÄ·å¶¥£¬ÓÉÁ½¿é¾ÞÊ¯¹´Á¬ÔÚÒ»Æð£¬¾ÝËµÈô¹ûÄã
-ÐÄ´æ³ÏÒâ£¬µÇÉÏÊÔÐÄÊ¯Ê±Ê¯¿ì±ã²»»á¶¯Ò¡£¬·´Ö®ÔòÒ¡¶¯²»Ö¹¡£
+è¿™é‡Œä¾¿æ˜¯èŽ²èŠ±å³°çš„å³°é¡¶ï¼Œç”±ä¸¤å—å·¨çŸ³å‹¾è¿žåœ¨ä¸€èµ·ï¼Œæ®è¯´è‹¥æžœä½ 
+å¿ƒå­˜è¯šæ„ï¼Œç™»ä¸Šè¯•å¿ƒçŸ³æ—¶çŸ³å¿«ä¾¿ä¸ä¼šåŠ¨æ‘‡ï¼Œåä¹‹åˆ™æ‘‡åŠ¨ä¸æ­¢ã€‚
 LONG
 	);
 
@@ -28,21 +28,21 @@ void init()
 	object me = this_player();
 	int check, wait_time = 0;
 
-        me->delete_temp("marks/Ä¹");
-        me->delete_temp("marks/¹ò");
-	me->delete_temp("marks/Ç½");
-	me->delete_temp("marks/Ð¡");
+        me->delete_temp("marks/å¢“");
+        me->delete_temp("marks/è·ª");
+	me->delete_temp("marks/å¢™");
+	me->delete_temp("marks/å°");
 
-	if ( me->query_temp("marks/·ç") && interactive(me) && !me->is_fighting() ) {
+	if ( me->query_temp("marks/é£Ž") && interactive(me) && !me->is_fighting() ) {
            call_out("open_up", 1200, me);
 	}
 }
 
 int open_up(object me)
 {
-        message_vision("$NÐÄ³ÏÒâÕæµØµÈÁËÁ¼¾Ã£¬Í»È»´óµØÒ»ÕóÕð¶¯£¬Á½¿éÊÔÐÄÊ¯·Ö\n", me);
-	message_vision("ÁÑ¿ªÀ´£¬Â¶³öÒ»ÌõÕ­Õ­µÄÃÜ¾¶¡£\n", me);
-	me->set_temp("marks/µÈ", 1);
+        message_vision("$Nå¿ƒè¯šæ„çœŸåœ°ç­‰äº†è‰¯ä¹…ï¼Œçªç„¶å¤§åœ°ä¸€é˜µéœ‡åŠ¨ï¼Œä¸¤å—è¯•å¿ƒçŸ³åˆ†\n", me);
+	message_vision("è£‚å¼€æ¥ï¼Œéœ²å‡ºä¸€æ¡çª„çª„çš„å¯†å¾„ã€‚\n", me);
+	me->set_temp("marks/ç­‰", 1);
 	set("exits/enter", __DIR__"mijing");
 	call_out("close_up", 5, me);
 	return 1;
@@ -50,17 +50,17 @@ int open_up(object me)
 
 int close_up(object me)
 {
-	message_vision("ÓÖÊÇÒ»ÕóÉ½Ò¡µØ¶¯£¬Á½¿éÊÔÐÄÊ¯Öð½¥ºÏÂ£ÆðÀ´¡£\n", me);
+	message_vision("åˆæ˜¯ä¸€é˜µå±±æ‘‡åœ°åŠ¨ï¼Œä¸¤å—è¯•å¿ƒçŸ³é€æ¸åˆæ‹¢èµ·æ¥ã€‚\n", me);
 	delete("exits/enter");
-	me->delete_temp("marks/µÈ");
+	me->delete_temp("marks/ç­‰");
 	return 1;
 }
 
 int valid_leave(object me, string dir)
 {
-	if ( !me->query_temp("marks/µÈ") && dir == "enter" )
-	   return notify_fail("ÄãÐÄÒâ²»³Ï£¬²»ÄÜ½øÈëÃÜ¾¶¡£\n");
-	else if ( me->query_temp("marks/·ç") && dir == "southdown" ) {
+	if ( !me->query_temp("marks/ç­‰") && dir == "enter" )
+	   return notify_fail("ä½ å¿ƒæ„ä¸è¯šï¼Œä¸èƒ½è¿›å…¥å¯†å¾„ã€‚\n");
+	else if ( me->query_temp("marks/é£Ž") && dir == "southdown" ) {
 	   remove_call_out("open_up");
 	}
 

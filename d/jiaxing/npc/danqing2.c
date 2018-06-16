@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("µ¤ÇàÉú",({ "danqing sheng","sheng" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ä¸¹é’ç”Ÿ",({ "danqing sheng","sheng" }) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
 	set("long",
-		"Ëû÷×³¤¼°¸¹£¬×óÊÖÒ»Ö»¾Æ±­£¬Á³ÉÏõ¸õ¸È»´óÓĞ×íÒâ¡£\n");
+		"ä»–é«¯é•¿åŠè…¹ï¼Œå·¦æ‰‹ä¸€åªé…’æ¯ï¼Œè„¸ä¸Šé†ºé†ºç„¶å¤§æœ‰é†‰æ„ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯ËÄ×¯Ö÷");
+        set("title","æ¢…åº„å››åº„ä¸»");
         set("combat_exp", 78000);
         set("shen_type", 0);
         set("attitude", "friendly");

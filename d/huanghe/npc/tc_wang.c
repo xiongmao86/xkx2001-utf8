@@ -9,11 +9,11 @@ string ask_join();
 
 void create()
 {
-        set_name("������", ({ "wang laoliu", "wang" }));
-        set("title", "�����СͷĿ");
+        set_name("王老六", ({ "wang laoliu", "wang" }));
+        set("title", "铁叉帮小头目");
         set("long",
-"����һλ��ʮ����ı��δ󺺡�\n");
-        set("gender", "����");
+"他是一位三十多岁的彪形大汉。\n");
+        set("gender", "男性");
         set("age", 35);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -52,12 +52,12 @@ void create()
         prepare_skill("cuff", "wuxing-quan");
 
         set("inquiry", ([
-                "�����" : "�����������лƺ��������첻�£��ز��£����ʵ��϶������������ʡ�",
-                "�ȵ�ʤ" : "�ҼҰ����ȴ�ү����ɽ���������š���Ωһ���ˣ��淨������˫��",
-                "���Ʒ���ʹ��" : "���Ʒ���ʹ�����뽭�����������ŵü���β�ͣ��㵽�����ȥ����ͷ�ڹ꣡",
-                "���͵�" : "��������͵�ʲô���Ʒ���ʹ�ߣ����Ӳ��£�",
-                "�����" : "������ڱװ��Ϳ๦�ߣ��ĵð������Ρ�",
-                "���" : (: ask_join :),
+                "铁叉帮" : "咱们铁叉帮横行黄河两岸，天不怕，地不怕，连皇帝老儿都不买他的帐。",
+                "尤得胜" : "我家帮主尤大爷乃是山西‘伏虎门’的惟一传人，叉法绝世无双。",
+                "赏善罚恶使者" : "赏善罚恶使者重入江湖，大伙儿便吓得夹起尾巴，躲到渔村中去做缩头乌龟！",
+                "侠客岛" : "他妈的侠客岛什么赏善罚恶使者，老子不怕！",
+                "胡大哥" : "胡大哥在弊帮劳苦功高，颇得帮主信任。",
+                "入帮" : (: ask_join :),
         ]));
 
         setup();
@@ -72,19 +72,19 @@ int accept_object(object who, object ob)
         if( base_name(ob) != CORPSE_OB ) return 0;
 
         if( ob->query("my_killer") != who->query("id") ) {
-                say("��������ŭ�����㵱���Ƕ���ӣ�����������\n");
+                say("王老六大怒道：你当我是二愣子？！滚！！！\n");
                 return 0;
         }
 
         if( ob->query("combat_exp") < who->query("combat_exp") ) {
                 command("sigh");
-                command("say ������Ӳ�Ķ������㻹�ǹ��ɣ�");
+                command("say 欺软怕硬的东西，你还是滚吧！");
                 return 0;
         }
 
-        if( who->query_temp("bangs/fam") == "�����" ) {
+        if( who->query_temp("bangs/fam") == "铁叉帮" ) {
                 command("bored " + who->query("id"));
-                command("say ���Ѿ����ֵ��ˣ�˭����֪��˭��");
+                command("say 都已经是兄弟了，谁还不知道谁？");
                 return 0;
         }
 
@@ -93,8 +93,8 @@ int accept_object(object who, object ob)
         obj = new(TIECHA);
         obj->move(who);
         who->set_temp("tc_wang", 1);
-        message_vision("$N��һֻС���潻��$n��\n", this_object(), who);
-        command("say �����ģ�ƾ��С������Ϳ���ȥ��������ˡ�\n");
+        message_vision("$N将一只小铁叉交给$n。\n", this_object(), who);
+        command("say 好样的！凭这小铁叉你就可以去求见帮主了。\n");
         call_out("do_destroy", 1, ob);
         return 1;
 }
@@ -108,14 +108,14 @@ string ask_join()
 {
         object me  = this_player();
 
-        if( me->query_temp("bangs/fam") == "�����" )
-	        return "�����Ĳ����ģ���";
+        if( me->query_temp("bangs/fam") == "铁叉帮" )
+	        return "你无聊不无聊？！";
 
         if( (int)me->query("combat_exp") > 100000 ) 
-                return "��Ī���ǿ���Ц�ɣ���";
+                return "你莫非是开玩笑吧？！";
 
         if( me->query_temp("tc_wang") )
-                return "�Ҳ����Ѿ������������ȥ���������𣿣�";
+                return "我不是已经给你信物，让你去见帮主了吗？！";
 
-        return "Ҳ��֪���㵨�Ӵ󲻴�ȥɱ����Ū��ʬ������";
+        return "也不知道你胆子大不大，去杀个人弄具尸体来。";
 }

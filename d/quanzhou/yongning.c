@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yongning.c ������
+// yongning.c 永宁港
 // qfy Nov 3, 1996
 // modified by aln
 
@@ -9,11 +9,11 @@ inherit HARBOR;
 
 void create()
 {
-        set("short", "������");
+        set("short", "永宁港");
 	set("long", @LONG
-��������Ȫ������ۿ�֮һ���������ˮ���ƽ�˾�����ĿԶ��������
-һɫ��ε����Ͼ������ͣ������������ĸ��ִ�ֻ���ϱߵĹ�ɩ��������һ��
-���˵Ĺ��¡�
+永宁港是泉州三大港口之一。这里港阔水深，风平浪静。极目远眺，海天
+一色，蔚蓝无暇。岸边停靠着密密麻麻的各种船只。南边的姑嫂塔流传着一个
+感人的故事。
 LONG
         );
 

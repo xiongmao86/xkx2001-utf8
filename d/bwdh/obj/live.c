@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÏÖ³¡Ö±²¥", ({ "zhi bo", "broadcaster" }) );
-        set("long", "Ò»¸ö¾«ÖÂµÄĞ¡ÍæÒâ¡£\n");
+        set_name("ç°åœºç›´æ’­", ({ "zhi bo", "broadcaster" }) );
+        set("long", "ä¸€ä¸ªç²¾è‡´çš„å°ç©æ„ã€‚\n");
         set_weight(100);
 	set_max_encumbrance(100000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("material", "steel");
 		set("value", "100");
         }
@@ -33,8 +33,8 @@ void receive_message(string msgclass, string msg)
 	if(last != -1 ) 
 		msg = msg[0..(last-1)];
 
-	if (msg[0..0] != "\n")msg = GRN"¡¾"+where+"¡¿"NOR + msg;
-	else msg = replace_string(msg, "\n", "\n"GRN"¡¾"+where+"¡¿"NOR);
+	if (msg[0..0] != "\n")msg = GRN"ã€"+where+"ã€‘"NOR + msg;
+	else msg = replace_string(msg, "\n", "\n"GRN"ã€"+where+"ã€‘"NOR);
 	tell_room(exits["down"], msg+"\n", this_object());
 	tell_room(exits["northdown"], msg+"\n", this_object());
 }

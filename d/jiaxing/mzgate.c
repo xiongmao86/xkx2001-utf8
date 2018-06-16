@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "÷ׯ����");
+        set("short", "梅庄大门");
         set("long", @LONG
-����һ��Ƭ÷�֣�����һ����ʯ����������һ�����Ű�ǽ�Ĵ�ׯ
-Ժ�⣬����������������(door)��д�š�÷ׯ���������֣��Ա�����
-�������Ĺ��⡹���֡�
+穿过一大片梅林，走上一条青石板大道，来到一座朱门白墙的大庄
+院外，行至近处，见大门(door)外写着「梅庄」两个大字，旁边署着
+「虞允文公题」四字。
 LONG
         );
         set("exits", ([
@@ -19,9 +19,9 @@ LONG
 	]));
 
         set("item_desc", ([
-                "door" : "�����ƺ���δ������\n",
+                "door" : "门上似乎并未上锁。\n",
         ]));
-        create_door("north","����","south", DOOR_CLOSED);
+        create_door("north","大门","south", DOOR_CLOSED);
         set("no_clean_up", 0);
 
 	set("cost", 1);

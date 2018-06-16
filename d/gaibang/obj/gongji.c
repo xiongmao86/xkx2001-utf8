@@ -1,5 +1,5 @@
 //Cracked by Roath
-// gongji.c ¹«¼¦
+// gongji.c å…¬é¸¡
 
 inherit ITEM;
 inherit F_FOOD;
@@ -13,13 +13,13 @@ int do_clean(string);
 
 void create()
 {
-	set_name("¹«¼¦", ({"gong ji", "ji", "chicken"}));
+	set_name("å…¬é¸¡", ({"gong ji", "ji", "chicken"}));
 	set_weight(3000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»·Ê´óµÄ¹«¼¦¡£\n");
-		set("unit", "Ö»");
+		set("long", "ä¸€åªè‚¥å¤§çš„å…¬é¸¡ã€‚\n");
+		set("unit", "åª");
 		set("value", 50);
                 set("food_remaining", 2);
                 set("food_supply", 40);
@@ -42,7 +42,7 @@ void init()
 	add_action("do_clean", "bo");
 }
 
-// step1 ÆÊ¹«¼¦
+// step1 å‰–å…¬é¸¡
 int do_cut(string arg)
 {
 	object ji = this_object(), me = this_player();
@@ -50,28 +50,28 @@ int do_cut(string arg)
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "¹«¼¦" || arg == "chicken" ) {
+	if ( arg == "å…¬é¸¡" || arg == "chicken" ) {
 
 		if ( objectp(weapon) 
 		&& ((string)weapon->query("skill_type") != "sword" 
                 || (string)weapon->query("skill_type") != "blade" )) {
-			message_vision( "$NÓÃ" + weapon->query("name") + "ÆÊ¿ª" + ji->query("name") + "¶Ç×Ó¡£\n", me);
+			message_vision( "$Nç”¨" + weapon->query("name") + "å‰–å¼€" + ji->query("name") + "è‚šå­ã€‚\n", me);
 			ji->set("step", 1);
-			ji->set("long", "Ò»Ö»ÆÊ¿ª¶Ç×ÓµÄ´ó¹«¼¦¡£\n");
+			ji->set("long", "ä¸€åªå‰–å¼€è‚šå­çš„å¤§å…¬é¸¡ã€‚\n");
 			return 1;
 		}
 
 		else {
-			message_vision( "$NÓÃÊÖ³¶¿ªÒ»Ö»´ó¹«¼¦¡£\n", me);
+			message_vision( "$Nç”¨æ‰‹æ‰¯å¼€ä¸€åªå¤§å…¬é¸¡ã€‚\n", me);
 			ji->set("fake", 1);
 			return 1;
 		} 
 	}
-	tell_object( me, "ÄãÒªÇĞÊ²Ã´£¿\n");
+	tell_object( me, "ä½ è¦åˆ‡ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
 }
 
-// step2 Ï´ÄÚÔà
+// step2 æ´—å†…è„
 
 int do_wash(string arg)
 {
@@ -79,39 +79,39 @@ int do_wash(string arg)
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "¹«¼¦" || arg == "chicken" || arg == "ÄÚÔà" || arg == "intestine" ) {
-		message_vision( "$N½«" + ji->query("name") + "ÄÚÔàÏ´°ş¸É¾»¡£\n", me);
-		ji->set("long", "Ò»Ö»¶Ç×ÓÆÊ¿ª£¬ÄÚÔàÏ´¸É¾»µÄ´ó¹«¼¦¡£\n");
+	if ( arg == "å…¬é¸¡" || arg == "chicken" || arg == "å†…è„" || arg == "intestine" ) {
+		message_vision( "$Nå°†" + ji->query("name") + "å†…è„æ´—å‰¥å¹²å‡€ã€‚\n", me);
+		ji->set("long", "ä¸€åªè‚šå­å‰–å¼€ï¼Œå†…è„æ´—å¹²å‡€çš„å¤§å…¬é¸¡ã€‚\n");
 
 		if ( ji->query("step") != 1) 
 			ji->set("fake", 1);
 		else ji->set("step", 2);
 		return 1;
 	}
-	tell_object( me, "ÄãÒªÏ´Ê²Ã´£¿\n");
+	tell_object( me, "ä½ è¦æ´—ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
 }
 
-// step3 ¹üË®Äà
+// step3 è£¹æ°´æ³¥
 int do_wrap(string arg)
 {
 	object ji = this_object(), me = this_player(), ni = present("shi ni", me);
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "¹«¼¦" || arg == "chicken" || arg == "Äà" || arg == "mud" ) {
+	if ( arg == "å…¬é¸¡" || arg == "chicken" || arg == "æ³¥" || arg == "mud" ) {
 		ji->set("mud", 1);
 
 		if (!objectp(ni)) {
-			message_vision( "$NÓÃË®ºÍÁËÒ»ÍÅÄà¹üÔÚ" + ji->query("name") + "Íâ¡£\n", me);
+			message_vision( "$Nç”¨æ°´å’Œäº†ä¸€å›¢æ³¥è£¹åœ¨" + ji->query("name") + "å¤–ã€‚\n", me);
 			ji->set("fake", 1);
 		}
 		else {
-			message_vision( "$NÈ¡³öÉíÉÏµÄÊªÄà£¬¹üÔÚ" + ji->query("name") + "Íâ¡£\n", me);
+			message_vision( "$Nå–å‡ºèº«ä¸Šçš„æ¹¿æ³¥ï¼Œè£¹åœ¨" + ji->query("name") + "å¤–ã€‚\n", me);
 			destruct(ni);
 		}
 			
-		ji->set("long", "Ò»Ö»¹üÔÚÊªÄàÀïµÄ¹«¼¦¡£\n");
+		ji->set("long", "ä¸€åªè£¹åœ¨æ¹¿æ³¥é‡Œçš„å…¬é¸¡ã€‚\n");
 
 		if ( ji->query("step") != 2) 
 			ji->set("fake", 1);
@@ -120,11 +120,11 @@ int do_wrap(string arg)
 		return 1;
 	}
 
-	tell_object( me, "ÄãÒª¹üÊ²Ã´£¿\n");
+	tell_object( me, "ä½ è¦è£¹ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
 }
 
-// step4 ¿¾¼¦
+// step4 çƒ¤é¸¡
 int do_bake(string arg)
 {
 	object ji = this_object(), fire, me = this_player();
@@ -132,15 +132,15 @@ int do_bake(string arg)
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "¹«¼¦" || arg == "chicken" ) {
+	if ( arg == "å…¬é¸¡" || arg == "chicken" ) {
 		if ( !objectp(present("fire", me)) ) {
-			tell_object( me, "ÄãÉíÉÏÃ»ÓĞ»ğÕÛ£¬Éú²»ÁË»ğ¡£\n");
+			tell_object( me, "ä½ èº«ä¸Šæ²¡æœ‰ç«æŠ˜ï¼Œç”Ÿä¸äº†ç«ã€‚\n");
 			return 1;
 		} 
  
 		else {
 			fire = present("fire", me);
-			message_vision( "$NÉú»ğ¿¾Æğ" + ji->query("name") + "À´¡£\n", me);
+			message_vision( "$Nç”Ÿç«çƒ¤èµ·" + ji->query("name") + "æ¥ã€‚\n", me);
 			if ( ji->query("step") != 3) 
                 		ji->set("fake", 1);
         		else ji->set("step", 4);
@@ -150,32 +150,32 @@ int do_bake(string arg)
 			return 1;
 		}
 	}
-	tell_object( me, "ÄãÒª¿¾Ê²Ã´£¿\n");
+	tell_object( me, "ä½ è¦çƒ¤ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
 }
 
-// step5 µÈ
+// step5 ç­‰
 int cooking(object me, object ji, int cook_time)
 {
 	ji->set("cook_time", cook_time);
 //	message_vision( cook_time + "\n", me);
 	if ( cook_time == 25 ) {
 		if ( !ji->query("mud")) {
-			message_vision( "¿¾µÃÒ»»á¶ù£¬¼¦ÖĞÍ¸³öÏãÌğ¡£\n", me);
-			ji->set("long", "Ò»Ö»¿¾µÃÏãÌğµÄ¹«¼¦¡£\n");
+			message_vision( "çƒ¤å¾—ä¸€ä¼šå„¿ï¼Œé¸¡ä¸­é€å‡ºé¦™ç”œã€‚\n", me);
+			ji->set("long", "ä¸€åªçƒ¤å¾—é¦™ç”œçš„å…¬é¸¡ã€‚\n");
 		}
 		else {
-			message_vision( "¿¾µÃÒ»»á¶ù£¬ÄàÖĞÍ¸³öÏãÌğ£¬ÊªÄà½¥½¥¸ÉÍ¸¡£\n", me);
-			ji->set("long", "Ò»Ö»¹ü×Å¸ÉÄà£¬¿¾µÃÏãÌğµÄ¹«¼¦¡£\n");
+			message_vision( "çƒ¤å¾—ä¸€ä¼šå„¿ï¼Œæ³¥ä¸­é€å‡ºé¦™ç”œï¼Œæ¹¿æ³¥æ¸æ¸å¹²é€ã€‚\n", me);
+			ji->set("long", "ä¸€åªè£¹ç€å¹²æ³¥ï¼Œçƒ¤å¾—é¦™ç”œçš„å…¬é¸¡ã€‚\n");
 		}
 	}
 
 	if ( cook_time == 50 ) {
-		message_vision( "ÔÙ¿¾µÃÒ»»á¶ù£¬ÄãËÆºõĞáµ½Ê²÷á¶«Î÷¿¾ºıÁË¡£\n", me);
+		message_vision( "å†çƒ¤å¾—ä¸€ä¼šå„¿ï¼Œä½ ä¼¼ä¹å—…åˆ°ä»€éº½ä¸œè¥¿çƒ¤ç³Šäº†ã€‚\n", me);
 		if ( !ji->query("mud")) 
-			ji->set("long", "Ò»Ö»¿¾ºıÁËµÄ¹«¼¦¡£\n");
+			ji->set("long", "ä¸€åªçƒ¤ç³Šäº†çš„å…¬é¸¡ã€‚\n");
 		else
-			ji->set("long", "Ò»Ö»¹ü×Å¸ÉÄà£¬¿¾ºıÁËµÄ¹«¼¦¡£\n");
+			ji->set("long", "ä¸€åªè£¹ç€å¹²æ³¥ï¼Œçƒ¤ç³Šäº†çš„å…¬é¸¡ã€‚\n");
 	}
 
 	if ( cook_time < 50) {
@@ -187,7 +187,7 @@ int cooking(object me, object ji, int cook_time)
 	return 1;
 }
 
-// step6 °ş¸ÉÄà 
+// step6 å‰¥å¹²æ³¥ 
 int do_clean(string arg)
 {
 	object ji = this_object(), me = this_player();
@@ -196,18 +196,18 @@ int do_clean(string arg)
 	if ( !arg || arg == "") return 0;
 
 	if ( !ji->query("mud", 1) ) {
-		if ( arg == "¼¦Ã«" || arg == "hair" ) {
-			message_vision( "$N°şÈ¥¼¦Ã«¡£\n", me);
+		if ( arg == "é¸¡æ¯›" || arg == "hair" ) {
+			message_vision( "$Nå‰¥å»é¸¡æ¯›ã€‚\n", me);
                 	ob->move(me);
 			ob->set("fake", 1);
 			return 1;
 		}
-		tell_object(me, "ÄãÒª°şÊ²Ã´£¿\n");
+		tell_object(me, "ä½ è¦å‰¥ä»€ä¹ˆï¼Ÿ\n");
 		return 1;
 	}
 			
-	if ( arg == "¸ÉÄà" || arg == "mud" ) {
-		message_vision( "$N°şÈ¥¸ÉÄà£¬¼¦Ã«ËæÄà¶øÂä¡£\n", me);
+	if ( arg == "å¹²æ³¥" || arg == "mud" ) {
+		message_vision( "$Nå‰¥å»å¹²æ³¥ï¼Œé¸¡æ¯›éšæ³¥è€Œè½ã€‚\n", me);
                 ob->move(me);
 
 		if ( ji->query("step") != 4 )
@@ -223,7 +223,7 @@ int do_clean(string arg)
                 destruct(ji);
 		return 1;
 	}
-	tell_object( me, "ÄãÒª°şÊ²Ã´£¿\n");
+	tell_object( me, "ä½ è¦å‰¥ä»€ä¹ˆï¼Ÿ\n");
 	return 1;
 }
 

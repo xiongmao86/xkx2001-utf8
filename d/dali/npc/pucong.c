@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Åã´Ó", ({ "pei cong" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("é™ªä»", ({ "pei cong" }));
+	set("gender", "ç”·æ€§");
 	set("age", 20 + random(40));
 
-	set("long", "Ò»¸ö²¿×åÍ·ÁìµÄÅã´Ó¡£\n");
+	set("long", "ä¸€ä¸ªéƒ¨æ—å¤´é¢†çš„é™ªä»ã€‚\n");
 
 	set("attitude", "friendly");
 
@@ -26,7 +26,7 @@ void create()
 
 	set("chat_chance", 2);
 	set("chat_msg", ({
-		"Åã´Ó£ºÃ÷ÌìÔÛÃÇ³öÈ¥´òÁÔ½âÃÆ¡£\n",
+		"é™ªä»ï¼šæ˜å¤©å’±ä»¬å‡ºå»æ‰“çŒè§£é—·ã€‚\n",
 		}) );
 }
 

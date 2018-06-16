@@ -6,12 +6,12 @@ inherit NPC;
 int do_fashi();
 void create()
 {
-	set_name("¸ðÂ×²¼", ({ "ge lunbu", "ge", "lunbu" }));
+	set_name("è‘›ä¼¦å¸ƒ", ({ "ge lunbu", "ge", "lunbu" }));
 	set_weight(3000000);
 	set("long", 
-"ËûÊÇÃÜ×ÚµÄ½äÂÉÉ®£¬³¤µÃ°ò´óÑü£¬ÊÖÖÐÌá×Å·¨Æ÷£¬Éí×Å»ÆÅÛ£¬Í·´÷»ÆÃ±£¬\n"
-"ÂúÃæËàÉ±Ö®Æø¡£\n");
-	set("gender", "ÄÐÐÔ");
+"ä»–æ˜¯å¯†å®—çš„æˆ’å¾‹åƒ§ï¼Œé•¿å¾—è†€å¤§è…°ï¼Œæ‰‹ä¸­æç€æ³•å™¨ï¼Œèº«ç€é»„è¢ï¼Œå¤´æˆ´é»„å¸½ï¼Œ\n"
+"æ»¡é¢è‚ƒæ€ä¹‹æ°”ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("attitude", "heroism");
 	set("class","lama");
@@ -37,7 +37,7 @@ void create()
         map_skill("staff", "jingang-chu");
 
         set("inquiry", ([
-                "×¼±¸·¨ÊÂ" : (: do_fashi :),
+                "å‡†å¤‡æ³•äº‹" : (: do_fashi :),
 		"preparation" : (: do_fashi :),
         ]) );
 
@@ -66,18 +66,18 @@ int do_fashi()
 	
 	
 	if (! present("fa tan", (environment(this_object())))){
-	command("say ÎÒÕýÃ¦×ÅÄØ£¬ÄãÈ¥ÎÊÖµÈÕµÄ¸ðÂ×²¼°É¡£");
+	command("say æˆ‘æ­£å¿™ç€å‘¢ï¼Œä½ åŽ»é—®å€¼æ—¥çš„è‘›ä¼¦å¸ƒå§ã€‚");
 	return 1;
 	}
 
 	if (me->query("class") != "lama"){
-	command("say ÄãÊÇÏëÈÃÎÒÃÇ´óÀ®Âï°ÑÄã³¬¶ÈÁË£¬ÊÇ°É£¿");
+	command("say ä½ æ˜¯æƒ³è®©æˆ‘ä»¬å¤§å–‡å˜›æŠŠä½ è¶…åº¦äº†ï¼Œæ˜¯å§ï¼Ÿ");
         return 1;
         }
 
-	if ( me->query("family/family_name") != "Ñ©É½ÅÉ"
-	&& me->query("family/family_name") != "Ñªµ¶ÃÅ"){
-	command("say ÄãÊÇÏëÈÃÎÒÃÇ´óÀ®Âï°ÑÄã³¬¶ÈÁË£¬ÊÇ°É£¿");
+	if ( me->query("family/family_name") != "é›ªå±±æ´¾"
+	&& me->query("family/family_name") != "è¡€åˆ€é—¨"){
+	command("say ä½ æ˜¯æƒ³è®©æˆ‘ä»¬å¤§å–‡å˜›æŠŠä½ è¶…åº¦äº†ï¼Œæ˜¯å§ï¼Ÿ");
 	return 1;
 	}
 
@@ -87,12 +87,12 @@ int do_fashi()
         if( !objectp(mengzhu = present("mengzhu", room)) )
         mengzhu = new("/clone/npc/meng-zhu");
         if (userp(me) && me->query("id") == mengzhu->query("winner") ){
-	command("say ÉÏÈËÉíÎªÎäÁÖÃËÖ÷£¬Õâ·¨ÊÂÄúÀÏ¾Í±ð²ÙÐÄÀ²£¡");
+	command("say ä¸Šäººèº«ä¸ºæ­¦æž—ç›Ÿä¸»ï¼Œè¿™æ³•äº‹æ‚¨è€å°±åˆ«æ“å¿ƒå•¦ï¼");
 	return 1;
 	}
 
 	if (me->query_skill("lamaism", 1) < 60){
-	command("say ºÜºÃ£¡ÄãÈ¥ÅªÐ©×ö·¨ÊÂÓÃµÄËÖÓÍÀ´°É¡£");
+	command("say å¾ˆå¥½ï¼ä½ åŽ»å¼„äº›åšæ³•äº‹ç”¨çš„é…¥æ²¹æ¥å§ã€‚");
 	return 1;
 	}
 
@@ -100,12 +100,12 @@ int do_fashi()
 	if(!( room1 = find_object("/d/xueshan/dumudian")) )
 		room1 = load_object("/d/xueshan/dumudian");
 	if ( !objectp(gang = present("tong gang", room1)) ) {
-    	command("say ×ö·¨ÊÂÓÃµÄËÖÓÍ²»¼ûÁË£¬ÉÏÈË¸Ï¿ìÈ¥²éÒ»ÏÂ°É£¡");
+    	command("say åšæ³•äº‹ç”¨çš„é…¥æ²¹ä¸è§äº†ï¼Œä¸Šäººèµ¶å¿«åŽ»æŸ¥ä¸€ä¸‹å§ï¼");
 		return 1;
 	}
 
 	if (gang->query_current_liquid() < 40) {
-	    command("say ×ö·¨ÊÂÓÃµÄËÖÓÍ²»¹»ÓÃÁË£¬ÇëÉÏÈËÅªÐ©ËÖÓÍÀ´°É¡£");
+	    command("say åšæ³•äº‹ç”¨çš„é…¥æ²¹ä¸å¤Ÿç”¨äº†ï¼Œè¯·ä¸Šäººå¼„äº›é…¥æ²¹æ¥å§ã€‚");
 		return 1;
 	}
 
@@ -113,46 +113,46 @@ int do_fashi()
 	obj = all_inventory(environment());
         for(i=0; i<sizeof(obj); i++){
         if( obj[i]->query("name") == ob->query("pending") ){
-	command("say " +ob->query("pending") + "ÉÏÈËÕýÔÚ×ö·¨ÊÂ£¬ÕâÎ»" 
-	+ RANK_D->query_respect(me) + "ÇëÒ»ÅÔÉÔºò¡£\n");
+	command("say " +ob->query("pending") + "ä¸Šäººæ­£åœ¨åšæ³•äº‹ï¼Œè¿™ä½" 
+	+ RANK_D->query_respect(me) + "è¯·ä¸€æ—ç¨å€™ã€‚\n");
 	return 1;
 	}
 	}
-	command("say " +ob->query("pending") + "ÉÏÈË·¨ÊÂ×öµ½Ò»°ëáá²»ÖªÅÜÄÄÀïÈ¥ÁË£¿Õæ²»Ïó»°£¡"
-	+me->query("name") + "ÉÏÈËÌæ" + ob->query("pending") + "ÉÏÈË°ÑÓàÏÂµÄ·¨ÊÂ×öÍê°É¡£\n");
+	command("say " +ob->query("pending") + "ä¸Šäººæ³•äº‹åšåˆ°ä¸€åŠå¾Œä¸çŸ¥è·‘å“ªé‡ŒåŽ»äº†ï¼ŸçœŸä¸è±¡è¯ï¼"
+	+me->query("name") + "ä¸Šäººæ›¿" + ob->query("pending") + "ä¸ŠäººæŠŠä½™ä¸‹çš„æ³•äº‹åšå®Œå§ã€‚\n");
 	ob->set("pending", me->query("name"));
 	return 1;
 	}
 /*
 	if (me->query("name") == ob->query("last_burner")){
-	command("say  ÉÏÈË²»ÊÇ¸Õ×öÍê·¨ÊÂÂð£¿Äã»¹ÊÇÏÈÐªÒ»»á¶ù°É¡£");
+	command("say  ä¸Šäººä¸æ˜¯åˆšåšå®Œæ³•äº‹å—ï¼Ÿä½ è¿˜æ˜¯å…ˆæ­‡ä¸€ä¼šå„¿å§ã€‚");
 	return 1;
 	} 
 */
 	if (ob->query("pending")){
-        command("say " + ob->query("pending") + "ÉÏÈË¸Õ×öÍê·¨ÊÂ£¬¼ÀÌ³»¹Î´Ï¨£¬´ýÎÒµÈÇåÀíÍêáá"
-	 + RANK_D->query_respect(me) + "ÔÙÀ´×ö·¨ÊÂ°É¡£\n");
+        command("say " + ob->query("pending") + "ä¸Šäººåˆšåšå®Œæ³•äº‹ï¼Œç¥­å›è¿˜æœªç†„ï¼Œå¾…æˆ‘ç­‰æ¸…ç†å®Œå¾Œ"
+	 + RANK_D->query_respect(me) + "å†æ¥åšæ³•äº‹å§ã€‚\n");
 	return 1;
 	}
 	
 	else{
 	command("say " + me->query("name") + RANK_D->query_respect(me) +
-	"ÊÇÒª¸øÄÄÎ»Ê©Ö÷×ö·¨ÊÂÑ½£¿\n");
-	me->set_temp("marks/¸ð", 1);	
+	"æ˜¯è¦ç»™å“ªä½æ–½ä¸»åšæ³•äº‹å‘€ï¼Ÿ\n");
+	me->set_temp("marks/è‘›", 1);	
 	return 1;
 	}
 }
 int accept_object(object me, object ob)
 {
 	if (ob->query("beheaded")){
-	command("say Ôõ÷áÃ»ÓÐÍ·£¿");
+	command("say æ€Žéº½æ²¡æœ‰å¤´ï¼Ÿ");
 	return 0;
 	}
 
 	if (ob->query("id") == "corpse" && present("fa tan", (environment(this_object())))
-	&& me->query_temp("marks/¸ð") == 1) {
-	write("¸ðÂ×²¼¼±¼±Ã¦Ã¦·Ô¸À×óÓÒÍù¼ÀÌ³ÀïÌî²ñ£¬µ¹ËÖÓÍ¡£\n");
-	me->delete_temp("marks/¸ð");
+	&& me->query_temp("marks/è‘›") == 1) {
+	write("è‘›ä¼¦å¸ƒæ€¥æ€¥å¿™å¿™å©å’å·¦å³å¾€ç¥­å›é‡Œå¡«æŸ´ï¼Œå€’é…¥æ²¹ã€‚\n");
+	me->delete_temp("marks/è‘›");
 	if (ob->query("combat_exp") > me->query("combat_exp")
 	&& ob->query("my_killer") == me->query("id")){
 	me->set_temp("award_pending", ob->query("combat_exp"));
@@ -169,12 +169,12 @@ int accept_object(object me, object ob)
         return 1;
 	}
 
-	if (ob->name()=="ËÖÓÍ¹Þ"
+	if (ob->name()=="é…¥æ²¹ç½"
         && me->query("class") == "lama"){
         if (me->query_skill("lamaism", 1) < 30){
 	me->set("lama_butter",me->query("mud_age"));
         command ("bow");
-        command ("say ·ðÖ÷±£ÓÓÊ©Ö÷£¡");
+        command ("say ä½›ä¸»ä¿ä½‘æ–½ä¸»ï¼");
 //        remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
         return 1;
@@ -183,15 +183,15 @@ int accept_object(object me, object ob)
         && me->query_skill("lamaism", 1) < 60){
         me->set("lama_butter",me->query("mud_age") + 7600);
         command ("bow");
-        command ("say ·ðÖ÷±£ÓÓÊ©Ö÷£¡");
+        command ("say ä½›ä¸»ä¿ä½‘æ–½ä¸»ï¼");
         remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
         return 1;
         }
    }
-//	else if (ob->name()!="ËÖÓÍ" && ob->query("id") != "corpse") {
+//	else if (ob->name()!="é…¥æ²¹" && ob->query("id") != "corpse") {
 	else {
-        write("¸ðÂ×²¼Á³ÉÏÂ¶³öÃÔ»óµÄ±íÇé¡£\n");
+        write("è‘›ä¼¦å¸ƒè„¸ä¸Šéœ²å‡ºè¿·æƒ‘çš„è¡¨æƒ…ã€‚\n");
         command ("shake");
 //	remove_call_out("destroy_it");  // if player #10 give him some stuff,
 					// 1 got dest but others 9 still on him   
@@ -214,11 +214,11 @@ void preparing(object me)
 	ob->set("pending", me->query("name"));
 	ob->set("in_use", 1);
 
-	write("²»Ò»»á¶ù£¬Ò»ÇÐ×¼±¸Í£µ±¡£\n");
-	command("say " + me->query("name") + "ÉÏÈËÇëÎªÍöÁé³¬¶È°É£¡\n");
+	write("ä¸ä¸€ä¼šå„¿ï¼Œä¸€åˆ‡å‡†å¤‡åœå½“ã€‚\n");
+	command("say " + me->query("name") + "ä¸Šäººè¯·ä¸ºäº¡çµè¶…åº¦å§ï¼\n");
 /*	command("chat " + me->query("title") + me->query("name") +
-                "ÉÏÈË£¬ÓÚ½ñÈÕ" + NATURE_D->game_time() + "³¬¶È" 
-		+ obj->query("victim_name") + "£¡\n");
+                "ä¸Šäººï¼ŒäºŽä»Šæ—¥" + NATURE_D->game_time() + "è¶…åº¦" 
+		+ obj->query("victim_name") + "ï¼\n");
 */
 	command("put corpse in fa tan");
 	obj->set_weight(ob->query_weight()*10);

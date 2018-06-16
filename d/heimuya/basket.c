@@ -13,9 +13,9 @@ void reset();
 
 void create()
 {
-        set("short","´óÖñÂ¨");
+        set("short","å¤§ç«¹ç¯“");
 	set("long",@LONG
-ÕâÊÇÒ»Ö»´óÖñÂ¨£¬×ã¿É×°µÃÊ®À´Ê¯Ã×¡£ÅÔ±ß¹Ò×ÅÒ»¸öĞ¡Í­Âà¡£
+è¿™æ˜¯ä¸€åªå¤§ç«¹ç¯“ï¼Œè¶³å¯è£…å¾—åæ¥çŸ³ç±³ã€‚æ—è¾¹æŒ‚ç€ä¸€ä¸ªå°é“œé”£ã€‚
 LONG);
 	set("no_clean_up",0);
 	setup();
@@ -33,14 +33,14 @@ void on_basket()
 
     if( !query("exits/enter") ) return;
 
-    message("vision", "Ö»¾õÖñÂ¨Ò»¶¯,¿ªÊ¼»º»ºÒÆ¶¯¡£\n",
+    message("vision", "åªè§‰ç«¹ç¯“ä¸€åŠ¨,å¼€å§‹ç¼“ç¼“ç§»åŠ¨ã€‚\n",
         this_object() );
 
     if( room = find_object(__DIR__"basket") )
     {
         room->delete("exits/out");
-        message("vision", "ÖñÂ¨²»×¡ÒÆ¶¯£¬Ò»Æ¬Æ¬ÇáÔÆ´ÓÍ·¶¥Æ®¹ı£¬ÄãÉíÈëÔÆ
-Îí£¬¸©ÊÓÂ¨µ×£¬È´Ê²Ã´Ò²Íû²»µ½¡£\n", room );
+        message("vision", "ç«¹ç¯“ä¸ä½ç§»åŠ¨ï¼Œä¸€ç‰‡ç‰‡è½»äº‘ä»å¤´é¡¶é£˜è¿‡ï¼Œä½ èº«å…¥äº‘
+é›¾ï¼Œä¿¯è§†ç¯“åº•ï¼Œå´ä»€ä¹ˆä¹Ÿæœ›ä¸åˆ°ã€‚\n", room );
     }
     delete("exits/enter");
 
@@ -54,7 +54,7 @@ void arrive()
     if( room = find_object(__DIR__"basket") )
     {
         room->set("exits/out", __DIR__"clifftop");
-        message("vision", "Ö»¾õµÃ½ÅÏÂÒ»Õğ£¬ÖñÂ¨ÒÑÍ£ÁËÏÂÀ´¡£ÔÙÒ²Ã»°ë·Ö¶¯¾²¡£\n",room );
+        message("vision", "åªè§‰å¾—è„šä¸‹ä¸€éœ‡ï¼Œç«¹ç¯“å·²åœäº†ä¸‹æ¥ã€‚å†ä¹Ÿæ²¡åŠåˆ†åŠ¨é™ã€‚\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 1);
@@ -65,7 +65,7 @@ void close_passage()
     object room;
     if( room = find_object(__DIR__"basket") ) {
         room->delete("exits/out");
-        message("vision","´óÖñÂ¨Õı¿ªÊ¼»º»ºÒÆ¶¯¡£\n", room);
+        message("vision","å¤§ç«¹ç¯“æ­£å¼€å§‹ç¼“ç¼“ç§»åŠ¨ã€‚\n", room);
         room->delete("yell_trigger"); 
     }
 }
@@ -76,16 +76,16 @@ int do_knock(string arg)
 
     if( !arg || arg=="" ) return 0;
 
-    if( arg=="tongluo" ) arg = "Í­Âà";
-        message_vision("îõîõîõ£¬$NÊ¹³ö³ÔÄÌµÄÁ¦ÆøÇÃÁËÍ­ÂàÈıÏÂ¡£\n",
+    if( arg=="tongluo" ) arg = "é“œé”£";
+        message_vision("é“›é“›é“›ï¼Œ$Nä½¿å‡ºåƒå¥¶çš„åŠ›æ°”æ•²äº†é“œé”£ä¸‰ä¸‹ã€‚\n",
             this_player());
-    if( arg=="Í­Âà")
+    if( arg=="é“œé”£")
     {
         check_trigger();
         return 1;
     }
     else
-        message_vision("ÄãÒªÇÃÊ²Ã´£¿\n", this_player());
+        message_vision("ä½ è¦æ•²ä»€ä¹ˆï¼Ÿ\n", this_player());
     return 1;
 }
 

@@ -1,15 +1,15 @@
 //Cracked by Roath
-// /d/emei/npc/dizi2.c ÄĞµÜ×Ó 
+// /d/emei/npc/dizi2.c ç”·å¼Ÿå­ 
 // Shan: 96/07/09
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÄĞµÜ×Ó", ({ "dizi", "nan dizi" }));
+	set_name("ç”·å¼Ÿå­", ({ "dizi", "nan dizi" }));
 	set("long", 
-        "ËûÊÇ¶ëáÒÉ½µÄµÚÎå´úµÜ×Ó£¬ÊÇÔÚ»ªÑÏâÖÊØâÖµÄ¡£\n");
-	set("gender", "ÄĞĞÔ");
+        "ä»–æ˜¯å³¨åµ‹å±±çš„ç¬¬äº”ä»£å¼Ÿå­ï¼Œæ˜¯åœ¨åä¸¥åºµå®ˆåºµçš„ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 18+random(5));
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -35,7 +35,7 @@ void create()
         set_temp("apply/defense", 15+random(3));
         set_temp("apply/damage", 5+random(2));
 
-	create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
 	setup();
 	

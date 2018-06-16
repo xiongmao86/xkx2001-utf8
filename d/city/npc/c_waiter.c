@@ -1,5 +1,5 @@
 //Cracked by Roath
-// c_waiter.c ���С��
+// c_waiter.c 茶馆小二
 // xQin 6/00
 
 inherit NPC;
@@ -7,15 +7,15 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("���С��", ({ "chaguan xiaoer", "xiao", "waiter" }) );
-        set("gender", "����" );
+        set_name("茶馆小二", ({ "chaguan xiaoer", "xiao", "waiter" }) );
+        set("gender", "男性" );
         set("age", 22);
         set("long",
-                "��λ���С����Ц�����æ��������ʱ������ڲ����ϵ�Ĩ��������\n");
+                "这位茶馆小二正笑咪咪地忙著，还不时拿起挂在脖子上的抹布擦脸。\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("no_get", "1");
-        set("rank_info/respect", "С����");
+        set("rank_info/respect", "小二哥");
         set("vendor_goods", ({
         	__DIR__"tea/qimen_hongcha",
         	__DIR__"tea/tie_guanyin",
@@ -45,7 +45,7 @@ void init()
         ::init();
         if( interactive(ob) && !is_fighting() ) {
                 if ( (myfam = ob->query("family")) 
-                && myfam["family_name"] == "ؤ��" 
+                && myfam["family_name"] == "丐帮" 
                 && ob->query_skill("begging",1) > 10 )
                 {
                         remove_call_out("saying");
@@ -67,12 +67,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "���С��Ц�����˵������λ" + RANK_D->query_respect(ob)
-                                + "����ʲô�Ը���\n");
+                        say( "茶馆小二笑咪咪地说道：这位" + RANK_D->query_respect(ob)
+                                + "，有什么吩咐？\n");
                         break;
                 case 1:
-                        say( "���С���ò����ϵ�ë��Ĩ��Ĩ�֣�˵������λ" + RANK_D->query_respect(ob)
-                                + "�������ⶼ�Ǽ�Ʒ�ò裬��Ҫ��ʲô��\n");
+                        say( "茶馆小二用脖子上的毛巾抹了抹手，说道：这位" + RANK_D->query_respect(ob)
+                                + "，我们这都是极品好茶，您要点什么？\n");
                         break;
         }
 }

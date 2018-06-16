@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ºóÌü");
+	set("short", "åŽåŽ…");
 	set("long", @LONG
-ÒéÊÂÌüºóÊÇºóÌü£¬ÊÇÒ»Â¥Ò»µ×µÄÖÐÊ½½¨Öþ¡£ÎÝ½Çµñ¿ÌÏ¸ÃÜ£¬ÎÆÊÎ¾«ÃÀ£¬¸÷ÖÖ
-Í¼°¸ºÍÇÝÊÞ»¨Ä¾µÄµñ¿Ì£¬èòèòÈçÉú£¬ÎÆÂ·ÐÂÓ±¡£ÕâÊÇÔÆÄÏÊ®°Ë×ùÍÁË¾¸®ÖÐ±£Áô×î
-ºÃµÄÒ»×ù¡£
+è®®äº‹åŽ…åŽæ˜¯åŽåŽ…ï¼Œæ˜¯ä¸€æ¥¼ä¸€åº•çš„ä¸­å¼å»ºç­‘ã€‚å±‹è§’é›•åˆ»ç»†å¯†ï¼Œçº¹é¥°ç²¾ç¾Žï¼Œå„ç§
+å›¾æ¡ˆå’Œç¦½å…½èŠ±æœ¨çš„é›•åˆ»ï¼Œæ ©æ ©å¦‚ç”Ÿï¼Œçº¹è·¯æ–°é¢–ã€‚è¿™æ˜¯äº‘å—åå…«åº§åœŸå¸åºœä¸­ä¿ç•™æœ€
+å¥½çš„ä¸€åº§ã€‚
 LONG);
 	set("exits", ([
 		"south" : __DIR__"tusi3",

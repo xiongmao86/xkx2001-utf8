@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sjsz/square.c ÊÔ½£É½×¯
+// sjsz/square.c è¯•å‰‘å±±åº„
 // Apache for Group BWDH 09/98
 
 #include <ansi.h>
@@ -10,7 +10,7 @@ inherit ROOM;
 string long_desc();
 
 void create() {
-	 set("short", HIC"ÊÔ½£É½×¯"NOR);
+	 set("short", HIC"è¯•å‰‘å±±åº„"NOR);
 	 set("long", (: long_desc :));
 	 set("exits", ([
 		  "south" : __DIR__"kantai_s",
@@ -43,21 +43,21 @@ string long_desc() {
 	 int i, exchange, j;
 	 string id, sTeam;
 
-	 desc = "ÕâÀï¾ÍÊÇÎÅÃûÌìÏÂµÄÊÔ½£É½×¯¡£\n";
+	 desc = "è¿™é‡Œå°±æ˜¯é—»åå¤©ä¸‹çš„è¯•å‰‘å±±åº„ã€‚\n";
 
 	 board =  find_object(BOARD);
 	 if (!objectp(board)) {
 		  board = load_object(BOARD);
 		  if (!objectp(board))
-				//return notify_fail("ÕÒ²»µ½ÍÅÌåÈü³É¼¨°æ¡£\n");
+				//return notify_fail("æ‰¾ä¸åˆ°å›¢ä½“èµ›æˆç»©ç‰ˆã€‚\n");
 				return desc;
 	 }
 
 
 	 desc = desc + HIG"
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡¾ÎäÁÖ´ó»áÍÅÌåÈü¡¿¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­
-¶Ó±ğ  ¶ÓÃû     »ı·Ö  Ê¤  Æ½  ¸º ³ÉÔ±                                      \n";
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»ã€æ­¦æ—å¤§ä¼šå›¢ä½“èµ›ã€‘â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+é˜Ÿåˆ«  é˜Ÿå     ç§¯åˆ†  èƒœ  å¹³  è´Ÿ æˆå‘˜                                      \n";
 
 	 desc_temp = "";
 
@@ -88,7 +88,7 @@ string long_desc() {
 					desc_temp += sprintf("%8s(%5d)",board->query(sTeam + "/names/"+sprintf("%d",j+1)),player->query("sjsz/bw_score") );
 				}
 				else
-					desc_temp += sprintf("%8s(²» ÔÚ)",board->query(sTeam + "/names/"+sprintf("%d",j+1)));
+					desc_temp += sprintf("%8s(ä¸ åœ¨)",board->query(sTeam + "/names/"+sprintf("%d",j+1)));
 		  }
 		  desc_temp += "\n";
 	 }
@@ -98,9 +98,9 @@ ________________________________________________________________________________
 	//write(desc);
 
 	 desc += HIY"
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡¾µ±Ç°±ÈÈü³É¼¨¡¿¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»ã€å½“å‰æ¯”èµ›æˆç»©ã€‘â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
 ________________________________________________________________________________
-¶Ó±ğ  ¶ÓÃû     »ı·Ö  ³ÉÔ±                                                \n";
+é˜Ÿåˆ«  é˜Ÿå     ç§¯åˆ†  æˆå‘˜                                                \n";
 
 		  sTeam ="team/" + board->query("west");
 		  entry = board->query(sTeam);
@@ -124,7 +124,7 @@ ________________________________________________________________________________
 					desc_temp += sprintf("%8s(%5d)",board->query(sTeam+"/names/"+sprintf("%d",i+1) ),player->query("sjsz/this_score") );
 				}
 				else
-					desc_temp += sprintf("%8s(²» ÔÚ)",board->query(sTeam+"/names/"+sprintf("%d",i+1) ));
+					desc_temp += sprintf("%8s(ä¸ åœ¨)",board->query(sTeam+"/names/"+sprintf("%d",i+1) ));
 
 			  }
 		  }
@@ -152,7 +152,7 @@ ________________________________________________________________________________
 					desc_temp += sprintf("%8s(%5d)",board->query(sTeam+"/names/"+sprintf("%d",i+1) ),player->query("sjsz/this_score") );
 				}
 				else
-					desc_temp += sprintf("%8s(²» ÔÚ)",board->query(sTeam+"/names/"+sprintf("%d",i+1) ));
+					desc_temp += sprintf("%8s(ä¸ åœ¨)",board->query(sTeam+"/names/"+sprintf("%d",i+1) ));
 			}
 		  }
 		  desc_temp += "\n";
@@ -171,12 +171,12 @@ int valid_leave(object player, string dir) {
         inv = all_inventory(player);
 
 		if (!wizardp(player) && dir == "up")
-			  return notify_fail("´Ë¼äÖ÷ÈË²¢Ã»ÓĞÑûÇëÄãÈ¥ÄÇÀï£¡\n");
+			  return notify_fail("æ­¤é—´ä¸»äººå¹¶æ²¡æœ‰é‚€è¯·ä½ å»é‚£é‡Œï¼\n");
 
 		if ( dir == "out" ) {
                 for (i=0; i<sizeof(inv); i++) {
                         if (inv[i]->is_character())
-                        return notify_fail("Äã²»ÄÜ´ø×ÅÆäËûÍæ¼ÒÀë¿ª¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½å¸¦ç€å…¶ä»–ç©å®¶ç¦»å¼€ã€‚\n");
                 }
         }
 

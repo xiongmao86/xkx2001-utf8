@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ïá·¿");
+	set("short", "å¢æˆ¿");
 	set("long", @LONG
-ÕâÊÇ´óÀí¹úÅ®×Ó¹ÙÔ±µÄÎÔÊÒ£¬Îä½«¼°ÒÔÏÂ¼¶±ğµÄ¹ÙÔ±¿ÉÔÚ´ËĞİÏ¢Ë¯¾õ£¬¼¸ÕÅ
-ÕÅÊÕÊ°µÃ¸É¸É¾»¾»µÄ´²ÆÌÑØÇ½°ÚÁËÒ»È¦¡£
+è¿™æ˜¯å¤§ç†å›½å¥³å­å®˜å‘˜çš„å§å®¤ï¼Œæ­¦å°†åŠä»¥ä¸‹çº§åˆ«çš„å®˜å‘˜å¯åœ¨æ­¤ä¼‘æ¯ç¡è§‰ï¼Œå‡ å¼ 
+å¼ æ”¶æ‹¾å¾—å¹²å¹²å‡€å‡€çš„åºŠé“ºæ²¿å¢™æ‘†äº†ä¸€åœˆã€‚
 LONG);
 	set("exits", ([
 		"west" : __DIR__"dinganfu2",
@@ -29,14 +29,14 @@ int do_get(string arg)
 
 	if (arg && objectp(obj = present(arg, environment(this_player()))) && obj->is_character())
 	{
-		write("Äã²»ÄÜ°á¶¯Íæ¼ÒµÄÉíÌå¡£\n");
+		write("ä½ ä¸èƒ½æ¬åŠ¨ç©å®¶çš„èº«ä½“ã€‚\n");
 		return 1;
 	}
 	if (!arg || sscanf(arg, "%s %s %s", a, b, c) != 3 ) return 0;
 	if (b != "from") return 0;
 	if (objectp(obj = present(c, environment(this_player()))) && obj->is_character())
 	{
-		write("Äã²»ÄÜ´ÓË¯×ÅÁËµÄÍæ¼ÒÉíÉÏÍµ¶«Î÷¡£\n");
+		write("ä½ ä¸èƒ½ä»ç¡ç€äº†çš„ç©å®¶èº«ä¸Šå·ä¸œè¥¿ã€‚\n");
 		return 1;
 	}
 	return 0;

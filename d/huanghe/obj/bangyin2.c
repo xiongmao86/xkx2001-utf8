@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/changbai/bj/bangyin2.c °ïÓ¡
+// /d/changbai/bj/bangyin2.c å¸®å°
 // by aln 1 / 98
 // modified by aln 4 / 98
 
@@ -9,16 +9,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name("°ïÓ¡", ({ "bangyin" }) );
+        set_name("å¸®å°", ({ "bangyin" }) );
         set("weight", 30);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "ä¸ª");
                 set("value", 30);
                 set("material", "wood");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
+                set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
         }
 
         setup();
@@ -42,15 +42,15 @@ void message_killer()
         if( !(ling = present("taishan ling", owner)) ) {
                 owner->delete_temp("apply/short");
                 owner->delete_temp("fam");
-                tell_object(owner, HIR"\nÄã°ÑÌ©É½Áî¸ã¶ªÁË£¬Ì©É½ÅÐ¹Ù¸®ÊÕ»Ø°ïÓ¡£¡\n\n"NOR);
+                tell_object(owner, HIR"\nä½ æŠŠæ³°å±±ä»¤æžä¸¢äº†ï¼Œæ³°å±±åˆ¤å®˜åºœæ”¶å›žå¸®å°ï¼\n\n"NOR);
                 destruct(this_object());
                 return;
         }
 
-        if( (string)ling->query("job/type") != "Õû±à" ) {
+        if( (string)ling->query("job/type") != "æ•´ç¼–" ) {
                 owner->delete_temp("apply/short");
                 owner->delete_temp("fam");
-                tell_object(owner, HIR"\nÄãÉÃ×Ôµ£ÈÎ°ïÖ÷£¬Ì©É½ÅÐ¹Ù¸®ÊÕ»Ø°ïÓ¡£¡\n\n"NOR);
+                tell_object(owner, HIR"\nä½ æ“…è‡ªæ‹…ä»»å¸®ä¸»ï¼Œæ³°å±±åˆ¤å®˜åºœæ”¶å›žå¸®å°ï¼\n\n"NOR);
                 destruct(this_object());
                 return;
         }
@@ -60,7 +60,7 @@ void message_killer()
                 owner->delete_temp("fam");
                 ling->delete("job");
                 if( environment()->is_character() )
-                tell_object(environment(), HIR"\nÄãÍ»È»·¢¾õ°ïÓ¡²»¼ûÁË£¡\n\n"NOR);
+                tell_object(environment(), HIR"\nä½ çªç„¶å‘è§‰å¸®å°ä¸è§äº†ï¼\n\n"NOR);
                 destruct(this_object());
                 return;
         }
@@ -85,7 +85,7 @@ void message_killer()
                 owner->delete_temp("apply/short");
                 owner->delete_temp("fam");
                 ling->delete("job");
-                tell_object(owner, HIR"\nÄãÍ»È»·¢¾õ°ïÓ¡²»¼ûÁË£¡\n\n"NOR);
+                tell_object(owner, HIR"\nä½ çªç„¶å‘è§‰å¸®å°ä¸è§äº†ï¼\n\n"NOR);
                 destruct(this_object()); 
                 return;
         }
@@ -117,12 +117,12 @@ void message_killer()
 
                 bang = (string)query("fam");
                 killer_ob->set("bang", bang);
-                killer_ob->set("inquiry/" + bang,  "ÀÏ×ÓÏëµ±" + bang + "°ïÖ÷¶¼¿ìÏë·èÁË£¡£¡£¡");
-                killer_ob->set("inquiry/" + "°ïÓ¡", "ÀÏ×ÓÒªµÄ¾ÍÊÇ" + "µÄ°ïÓ¡£¡");
+                killer_ob->set("inquiry/" + bang,  "è€å­æƒ³å½“" + bang + "å¸®ä¸»éƒ½å¿«æƒ³ç–¯äº†ï¼ï¼ï¼");
+                killer_ob->set("inquiry/" + "å¸®å°", "è€å­è¦çš„å°±æ˜¯" + "çš„å¸®å°ï¼");
                 killer_ob->set("combat_exp", (int)owner->query("combat_exp") - 1000);
                 killer_ob->move(env);
-                message_vision("$N×ßÁË¹ýÀ´¡£\n", killer_ob);
-                message_vision("$N¶¢ÁË$nÒ»ÑÛ¡£\n", killer_ob, owner);
+                message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n", killer_ob);
+                message_vision("$Nç›¯äº†$nä¸€çœ¼ã€‚\n", killer_ob, owner);
                 killer_ob->set_leader(owner);
                 remove_call_out("do_kill");
                 call_out("do_kill", 1, killer_ob, owner);
@@ -138,6 +138,6 @@ void message_killer()
 
 void do_kill(object killer_ob, object owner)
 {
-        message_vision("$N¶Ô$n´óÉùºÈµÀ£º" + RANK_D->query_rude(owner) + "£¡¸Ï¿ì°Ñ°ïÓ¡½»¸øÀÏ×Ó£¡£¡£¡\n", killer_ob, owner);
+        message_vision("$Nå¯¹$nå¤§å£°å–é“ï¼š" + RANK_D->query_rude(owner) + "ï¼èµ¶å¿«æŠŠå¸®å°äº¤ç»™è€å­ï¼ï¼ï¼\n", killer_ob, owner);
         killer_ob->kill_ob(owner);
 }

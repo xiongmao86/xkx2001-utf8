@@ -1,14 +1,14 @@
 //Cracked by Roath
-// louluo.c ĞÇËŞÅÉµÜ×Ó
+// louluo.c æ˜Ÿå®¿æ´¾å¼Ÿå­
 inherit NPC;
 
 void create()
 {
-	set_name("ĞÇËŞÅÉµÜ×Ó", ({ "xingxiu dizi","dizi","robber" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("æ˜Ÿå®¿æ´¾å¼Ÿå­", ({ "xingxiu dizi","dizi","robber" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35+random(10));
 	set("long",
-		"ÕâÊÇĞÇËŞÅÉµÄµÜ×Ó£¬Æ½ÈÕÕÌ×ÅĞÇËŞÅÉµÄÊÆÁ¦£¬Îª·Ç×÷´õ£¬ÆÛÑ¹ÀÏ°ÙĞÕ¡£\n");
+		"è¿™æ˜¯æ˜Ÿå®¿æ´¾çš„å¼Ÿå­ï¼Œå¹³æ—¥ä»—ç€æ˜Ÿå®¿æ´¾çš„åŠ¿åŠ›ï¼Œä¸ºéä½œæ­¹ï¼Œæ¬ºå‹è€ç™¾å§“ã€‚\n");
 	set("combat_exp", 4500);
         set("shen_type", -1);
 	set("attitude", "heroism");

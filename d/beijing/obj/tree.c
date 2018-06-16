@@ -6,14 +6,14 @@ int do_climb(string arg);
 
 void create()
 {
-        set_name("°×ÑîÊ÷", ({ "baiyang shu", "tree" }) );
-        set("long", "Ò»¿Ã±ÊÖ±µÄ°×ÑîÊ÷£¬Ê÷¶¥Ö¦Ò¶Ã¯Ê¢£®\n");
+        set_name("ç™½æ¨æ ‘", ({ "baiyang shu", "tree" }) );
+        set("long", "ä¸€æ£µç¬”ç›´çš„ç™½æ¨æ ‘ï¼Œæ ‘é¡¶æå¶èŒ‚ç››ï¼\n");
         set_weight(999999999);
         set_max_encumbrance(999999999);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
+                set("unit", "æ£µ");
                 set("material", "wood");
                 set("value", 0);
         }
@@ -59,22 +59,22 @@ int do_climb(string arg)
     if (!arg || arg == "") return 0;
     if (arg == "down") {
 	if (environment(player) == me) {
- 	    message_vision("$NÍùÊ÷ÏÂÌøÈ¥£®\n", player);
+ 	    message_vision("$Nå¾€æ ‘ä¸‹è·³å»ï¼\n", player);
 	    player->move(environment(me));
- 	    message_vision("$NÊ÷ÉÏÌøÁËÏÂÀ´£®\n", player);
+ 	    message_vision("$Næ ‘ä¸Šè·³äº†ä¸‹æ¥ï¼\n", player);
 	    return 1;
 	}
     }
     if (present(arg, environment(me)) != me) return 0;
     
-    message_vision("$NÌáÆø×İÉí£¬Íù"+me->query("name")+ "ÉÏÔ¾È¥£®\n", 	
+    message_vision("$Nææ°”çºµèº«ï¼Œå¾€"+me->query("name")+ "ä¸Šè·ƒå»ï¼\n", 	
 		player);
     inv = all_inventory(me);
     if (sizeof(inv) > 1) {
 	return notify_fail(player->query("name")+
-	    "¸ÕÀëµØ²»µ½Ò»³ß£¬±ã±»Ê÷²æÉÏµÄÈËÒ»ÕÆÍÆÁËÏÂÀ´£®\n");
+	    "åˆšç¦»åœ°ä¸åˆ°ä¸€å°ºï¼Œä¾¿è¢«æ ‘å‰ä¸Šçš„äººä¸€æŒæ¨äº†ä¸‹æ¥ï¼\n");
     }
     player->move(me);
-    message_vision("$N´ÓÊ÷ÏÂÌøÁËÉÏÀ´£®\n", player);
+    message_vision("$Nä»æ ‘ä¸‹è·³äº†ä¸Šæ¥ï¼\n", player);
     return 1;
 }

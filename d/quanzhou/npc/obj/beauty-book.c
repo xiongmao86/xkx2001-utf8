@@ -3,13 +3,13 @@
 inherit ITEM;
 void create()
 {
-	set_name("³ÂÔ²Ô²ÊÖÅÁ", ({ "shoupa" }));
+	set_name("é™ˆåœ†åœ†æ‰‹å¸•", ({ "shoupa" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "·½");
-		set("long", "ÕâÊÇÒ»·½³ÂÔ²Ô²ÓÃ¹ıµÄÊÖÅÁ£¬ÉÏÃæÓĞµ­µ­µÄÏãÆø£¬¿ÉÒÔÓÃÀ´²Á(ca)º¹£¬ÉÏÃæĞå×Å¡°çæ¶ùÕäÖØ¡±ËÄ×Ö¡£\n");
+		set("unit", "æ–¹");
+		set("long", "è¿™æ˜¯ä¸€æ–¹é™ˆåœ†åœ†ç”¨è¿‡çš„æ‰‹å¸•ï¼Œä¸Šé¢æœ‰æ·¡æ·¡çš„é¦™æ°”ï¼Œå¯ä»¥ç”¨æ¥æ“¦(ca)æ±—ï¼Œä¸Šé¢ç»£ç€â€œç‚å„¿çé‡â€å››å­—ã€‚\n");
 		set("value", 10000);
 		set("material", "paper");
 		set("skill", ([
@@ -33,20 +33,20 @@ int do_ca(string arg)
 	object me = this_player();
 
 	if (!arg) {
-		message_vision("$NÓÃ" + query("name")+"¸ø×Ô¼º²Á²Áº¹¡£\n", me);
+		message_vision("$Nç”¨" + query("name")+"ç»™è‡ªå·±æ“¦æ“¦æ±—ã€‚\n", me);
 		return 1;
 	}
 	if (!(who = present(arg, environment(me))) ||
 		! who->is_character()) {
-		write("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+		write("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 		return 1;
 	}
 
 	if (who == me) {
-                message_vision("$NÓÃ" + query("name")+"¸ø×Ô¼º²Á²Áº¹¡£\n", me);
+                message_vision("$Nç”¨" + query("name")+"ç»™è‡ªå·±æ“¦æ“¦æ±—ã€‚\n", me);
                 return 1;
         }
-	message_vision("$NÓÃ" + query("name")+"¸ø$n²Á²Áº¹¡£\n", me,who);
-	tell_object(who,"ÄãÎÅµ½Ò»¹Éµ­µ­µÄÏãÆø£¬Äª·ÇÓĞ¶¾£¡£¿\n");
+	message_vision("$Nç”¨" + query("name")+"ç»™$næ“¦æ“¦æ±—ã€‚\n", me,who);
+	tell_object(who,"ä½ é—»åˆ°ä¸€è‚¡æ·¡æ·¡çš„é¦™æ°”ï¼Œè«éæœ‰æ¯’ï¼ï¼Ÿ\n");
 	return 1;
 }

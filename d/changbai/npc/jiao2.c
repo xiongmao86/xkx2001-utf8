@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("½¹ÎÄÆÚ", ({ "jiao wenqi", "jiao" }));
-        set("nickname", "¹Ø¶«ÈıÄ§");
+        set_name("ç„¦æ–‡æœŸ", ({ "jiao wenqi", "jiao" }));
+        set("nickname", "å…³ä¸œä¸‰é­”");
         set("long",
-"Ëû¾ÍÊÇ¹Ø¶«ÁùÄ§ÖĞµÄµÚÈıÄ§¡£\n"
-"ÓÖ°«ÓÖÊİ£¬ºÚ÷î÷îÒ»ÕÅÁ³£¬Á½Æ²ÑàÎ²Ğë£¬³¤²»Ó¯´ç£¬¾«¸É½Ã½¡¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–å°±æ˜¯å…³ä¸œå…­é­”ä¸­çš„ç¬¬ä¸‰é­”ã€‚\n"
+"åˆçŸ®åˆç˜¦ï¼Œé»‘é»é»ä¸€å¼ è„¸ï¼Œä¸¤æ’‡ç‡•å°¾é¡»ï¼Œé•¿ä¸ç›ˆå¯¸ï¼Œç²¾å¹²çŸ«å¥ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 54);
         set("attitude", "heroism");
         set("shen_type", -1);
@@ -59,5 +59,5 @@ void create()
 
 void do_dying(object ob)
 {
-        if(ob)  ob->receive_wound("qi", 10000, "Á÷Ñª¹ı¶à¶øËÀ");
+        if(ob)  ob->receive_wound("qi", 10000, "æµè¡€è¿‡å¤šè€Œæ­»");
 }

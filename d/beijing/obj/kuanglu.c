@@ -1,5 +1,5 @@
 //Cracked by Roath
-// kuanglu.c ¡¸¿ïÂ®Í¼Öá¡¹
+// kuanglu.c ã€ŒåŒ¡åºå›¾è½´ã€
 
 inherit ITEM;
 
@@ -13,13 +13,13 @@ void init()
 
 void create()
 {
-	set_name("¡¸¿ïÂ®Í¼Öá¡¹", ({"picture", "hua"}));
+	set_name("ã€ŒåŒ¡åºå›¾è½´ã€", ({"picture", "hua"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "·ù");
+		set("unit", "å¹…");
 		set("long", 
-"ÕâÊÇºóÁ»¾£ºÆËù»­µÄÂ®É½È«¾°Í¼£¬ÆøÊÆ°õíç£¬Îª»­ÖĞ¾«Æ·¡£\n");
+"è¿™æ˜¯åç²±è†æµ©æ‰€ç”»çš„åºå±±å…¨æ™¯å›¾ï¼Œæ°”åŠ¿ç£…ç¤´ï¼Œä¸ºç”»ä¸­ç²¾å“ã€‚\n");
 		set("value", 10000);
 	}
 	setup();
@@ -28,10 +28,10 @@ void create()
 int do_eat(string arg)
 {
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	this_player()->add("neili", 200);
-	message_vision("$N³ÔÏÂÒ»¿Å¹éÔªµ¤£¬Ö»¾õµÃËÄÖ«°Ùº¡ÕæÆø³äÓ¯ÎŞ±È !\n", this_player());
+	message_vision("$Nåƒä¸‹ä¸€é¢—å½’å…ƒä¸¹ï¼Œåªè§‰å¾—å››è‚¢ç™¾éª¸çœŸæ°”å……ç›ˆæ— æ¯” !\n", this_player());
 	destruct(this_object());
 	return 1;
 }

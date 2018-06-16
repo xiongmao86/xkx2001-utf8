@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ɹŴ��ԭ");
+        set("short", "蒙古大草原");
         set("long", @LONG
-һ���޼ʵĴ��ԭ�ϣ���Ⱥ��ţ��ǰ����һ�����һ���ɹŰ�����������
-Ȼ�����ʮ���������ӳ������Ĵ����
+一望无际的大草原上，成群的牛羊。前面是一个大於一般蒙古包五六倍的庞
+然巨物，由十六根大柱子撑起来的大帐棚。
 LONG
         );
         set("exits", ([

@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("É±ÊÖ", ({ "shashou" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ€æ‰‹", ({ "shashou" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long", 
-	     "Ò»¸öÉ±ÆøÌÚÌÚµÄÉ±ÊÖ¡£\n");
+	     "ä¸€ä¸ªæ€æ°”è…¾è…¾çš„æ€æ‰‹ã€‚\n");
         set("shen_type", -1);
 
         set("combat_exp", 10000);
@@ -39,7 +39,7 @@ void init()
 
 void greeting(object me)
 {
-	say("É±ÊÖ´óºÈÒ»Éù£ºÏòÎÊÌìĞİ×ß£¡\n");
+	say("æ€æ‰‹å¤§å–ä¸€å£°ï¼šå‘é—®å¤©ä¼‘èµ°ï¼\n");
 	kill_ob(me);
 }
 

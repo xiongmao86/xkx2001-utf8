@@ -9,11 +9,11 @@ inherit ROOM;
 
 void create()
 {
-  set("short", HIG"ĞİÏ¢ÊÒ"NOR);
+  set("short", HIG"ä¼‘æ¯å®¤"NOR);
   set("long", @LONG
-ÕâÀïÊÇ±ÈÊÔÍê±ÏµÄÓ¢ĞÛÃÇĞİÏ¢µÄµØ·½£¬Á½±ßµÄĞ¡ØËÊÖÅõ×Å
-±ÈÎäÇ°´æ·ÅµÄ¸÷ÖÖÎïÊÂ£¬¹§¾´µØµÈ×Å´ó¼ÒÀ´ÈÏÁì¡£´ÓÕâÀï³öÈ¥
-¾ÍÊÇÊÔ½£É½×¯µÄ´óÃÅÁË£®
+è¿™é‡Œæ˜¯æ¯”è¯•å®Œæ¯•çš„è‹±é›„ä»¬ä¼‘æ¯çš„åœ°æ–¹ï¼Œä¸¤è¾¹çš„å°å®æ‰‹æ§ç€
+æ¯”æ­¦å‰å­˜æ”¾çš„å„ç§ç‰©äº‹ï¼Œæ­æ•¬åœ°ç­‰ç€å¤§å®¶æ¥è®¤é¢†ã€‚ä»è¿™é‡Œå‡ºå»
+å°±æ˜¯è¯•å‰‘å±±åº„çš„å¤§é—¨äº†ï¼
 LONG
   );
 
@@ -45,7 +45,7 @@ void init()
     inv = all_inventory(player);
     for (i=0; i<sizeof(inv); i++) {
       if (inv[i]->query_temp("xueling")) { // created by us
-        message_vision("$N°Ñ´ÓÊÔ½£Í¤È¡µÄ"+inv[i]->query("name")+"»¹¸øĞ¡ØË¡£\n", 
+        message_vision("$NæŠŠä»è¯•å‰‘äº­å–çš„"+inv[i]->query("name")+"è¿˜ç»™å°å®ã€‚\n", 
 	player);
 	destruct(inv[i]);
       }
@@ -56,7 +56,7 @@ void init()
   if (! objectp(cangku)) {
     cangku = load_object(CANGKU);
     if (!objectp(cangku)) {
-      message_vision("$NÇë¸æËß wiz: cangku not found\n", player);
+      message_vision("$Nè¯·å‘Šè¯‰ wiz: cangku not found\n", player);
       return 0;
     }
   }
@@ -66,9 +66,9 @@ void init()
     for (i=0; i<sizeof(basket); i++) {
       if (objectp(basket[i])) {
 	basket[i]->move(player);
-        message_vision("$N´ÓĞ¡ØËÊÖÀïÄÃ»ØÒ»"+
+        message_vision("$Nä»å°å®æ‰‹é‡Œæ‹¿å›ä¸€"+
 		basket[i]->query("unit")+ 
-		basket[i]->query("name")+"¡£\n", player);
+		basket[i]->query("name")+"ã€‚\n", player);
       }
     }
     cangku->delete("basket/"+player->query("id"));

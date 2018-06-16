@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ string look_cave();
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山壁");
 
 	if(random(3) != 0 ) {
 		set("long", @LONG
-���ǰ���ɽ���߹�֮�У���������ɽ�ڣ���������ʯ����ʯ����
-ϡϡ����س��ż���С�����紵��������ʱ��һЩСʯͷ�ӱ��ϻ���
-������ɽ��һ���и�С��(cave)��
+这是白驼山的蛇谷之中，附近紧邻山壁，到处都是石砾。石壁上
+稀稀疏疏地长着几棵小树，风吹过来，不时有一些小石头从壁上滑落
+下来。山壁一角有个小洞(cave)。
 LONG
 		);
 
@@ -27,9 +27,9 @@ LONG
 	}
 	else {
 		set("long", @LONG
-���ǰ���ɽ���߹�֮�У���������ɽ�ڣ���������ʯ����ʯ����
-ϡϡ����س��ż���С�����紵��������ʱ��һЩСʯͷ�ӱ��ϻ���
-������
+这是白驼山的蛇谷之中，附近紧邻山壁，到处都是石砾。石壁上
+稀稀疏疏地长着几棵小树，风吹过来，不时有一些小石头从壁上滑落
+下来。
 LONG
 		);
 		set("objects", ([

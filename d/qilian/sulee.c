@@ -6,18 +6,18 @@ inherit ROOM;
 
 void create()
 {
-  set ("short", "ÊèÀÕºÓ¶«°¶");
+  set ("short", "ç–å‹’æ²³ä¸œå²¸");
   set ("long", @LONG
-ºÓË®ÑØ×Å´óÈªµÄ±ùºÓºÓ´²ÏÂµ½¸ÊËà£¬Ë®ÊÆ½¥»º£¬ÔÚÃùÉ³É½ºÍÈıÎ£
-É½¼ä³åË¢³öÒ»µÀÉ½ÑÂ¶Ï²ã¡£Äª¸ß¿ß¾Í×ùÂäÔÚÎ÷ÃæÃùÉ³É½µÄ¶Ï²ãÉÏ¡£±ß
-ÉÏÓĞÒ»´ÔĞ¡Ê÷ÁÖ£¬Ê÷Ö¦(shuzhi)Ö¦Ò¶²»ÊÇºÜÃ¯ÃÜ¡£
+æ²³æ°´æ²¿ç€å¤§æ³‰çš„å†°æ²³æ²³åºŠä¸‹åˆ°ç”˜è‚ƒï¼Œæ°´åŠ¿æ¸ç¼“ï¼Œåœ¨é¸£æ²™å±±å’Œä¸‰å±
+å±±é—´å†²åˆ·å‡ºä¸€é“å±±å´–æ–­å±‚ã€‚è«é«˜çªŸå°±åº§è½åœ¨è¥¿é¢é¸£æ²™å±±çš„æ–­å±‚ä¸Šã€‚è¾¹
+ä¸Šæœ‰ä¸€ä¸›å°æ ‘æ—ï¼Œæ ‘æ(shuzhi)æå¶ä¸æ˜¯å¾ˆèŒ‚å¯†ã€‚
 LONG);
 
 	set("exits", ([
                 "northeast" : __DIR__"loulan",
         ]));
 	set("item_desc", ([
-                "shuzhi" : "Ò»Ğ©²»ÊÇºÜ´Ö×³µÄÊ÷Ö¦£¬¿ÉÒÔ°ÑËüÃÇ¿³(chop)ÏÂÀ´×ö³ÉÒ»¸öÄ¾·¤¡£\n"
+                "shuzhi" : "ä¸€äº›ä¸æ˜¯å¾ˆç²—å£®çš„æ ‘æï¼Œå¯ä»¥æŠŠå®ƒä»¬ç (chop)ä¸‹æ¥åšæˆä¸€ä¸ªæœ¨ç­ã€‚\n"
         ]));
 	set("mufa_count", 3);
 	set("outdoors", "/d/qilian");
@@ -34,22 +34,22 @@ int do_chop(string arg)
 	object weapon, me = this_player();
 	
 	if( !arg || arg!="shuzhi" )
-        return notify_fail("ÄãÒª¿³ÉõÃ´£¿\n");
+        return notify_fail("ä½ è¦ç ç”šä¹ˆï¼Ÿ\n");
 	
 	if( !objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword"
 	&& (string)weapon->query("skill_type") != "blade" )
 
-	return notify_fail("¿ÕÊÖ¿³Ê÷¿ÖÅÂ²»ĞĞ°É£¿\n"); 
+	return notify_fail("ç©ºæ‰‹ç æ ‘ææ€•ä¸è¡Œå§ï¼Ÿ\n"); 
 	
 	if (query("mufa_count") < 1)
-                return notify_fail("Õâ¶ùµÄÊ÷Ö¦¶¼±»¿³¹âÁË£¬µÈËüÃÇ³¤³öÀ´Ê±ÔÙ¿³°É¡£\n");
+                return notify_fail("è¿™å„¿çš„æ ‘æéƒ½è¢«ç å…‰äº†ï¼Œç­‰å®ƒä»¬é•¿å‡ºæ¥æ—¶å†ç å§ã€‚\n");
 
 	me->receive_damage("jingli", 5);
-	message_vision("$N²ÙÉÏÊÖÖĞµÄ¼Ò»ï£¬´ÓÊ÷ÉÏ¿³ÏÂÒ»Ğ©Ê÷Ö¦¡£\n", me);
+	message_vision("$Næ“ä¸Šæ‰‹ä¸­çš„å®¶ä¼™ï¼Œä»æ ‘ä¸Šç ä¸‹ä¸€äº›æ ‘æã€‚\n", me);
 	if ( random(10) >= 7) {
-        write("Äã¿³ÏÂµÄÊ÷Ö¦ËÆºõ×ã¹»×ö(make)Ò»¸öÄ¾·¤(raft)ÁË¡£\n");
-        me->set_temp("marks/¿³", 1);
+        write("ä½ ç ä¸‹çš„æ ‘æä¼¼ä¹è¶³å¤Ÿåš(make)ä¸€ä¸ªæœ¨ç­(raft)äº†ã€‚\n");
+        me->set_temp("marks/ç ", 1);
         }
         me->start_busy(10);
 	return 1;
@@ -59,15 +59,15 @@ int do_make(string arg)
 	object ob, me = this_player();
 
         if( !arg || arg!="raft" )
-        return notify_fail("ÄãÒª×öÉõÃ´£¿\n");
+        return notify_fail("ä½ è¦åšç”šä¹ˆï¼Ÿ\n");
 
-	if( !me->query_temp("marks/¿³") )	
-	return notify_fail("ÄãÒª×öÉõÃ´£¿\n");
+	if( !me->query_temp("marks/ç ") )	
+	return notify_fail("ä½ è¦åšç”šä¹ˆï¼Ÿ\n");
 
 	ob = new("/d/qilian/obj/raft");
         ob->move("/d/qilian/sulee");	
-	write("ÄãÓÃ¿³ÏÂµÄÊ÷Ö¦×öÁËÒ»¸öÄ¾·¤¡£\n");
-	me->delete_temp("marks/¿³");
+	write("ä½ ç”¨ç ä¸‹çš„æ ‘æåšäº†ä¸€ä¸ªæœ¨ç­ã€‚\n");
+	me->delete_temp("marks/ç ");
 	add("mufa_count", -1);
 	return 1;
 }

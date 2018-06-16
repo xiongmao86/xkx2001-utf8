@@ -8,11 +8,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石洞");
         set("long", @LONG
-�˶�ͨ��ڶ���ʯ�ҡ�����ˮ�����ȣ�����ǡ��һ��ɽȪ������
-�м��ĸ������������ʯ�ڡ�Ʈ�����ơ������������ɫ�᣻��ơ���
-�����µ���������
+此洞通向第二组石室。洞中水声淙淙，右面恰巧一道山泉流过。
+中间四个草书大字深入石壁「飘渺烟云」，两侧均是蓝色帷幔环绕。几
+名蓝衣弟子侍立。
 LONG );
 
       set("exits", ([

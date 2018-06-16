@@ -1,15 +1,15 @@
 //Cracked by Roath
-// Room: ÈªÖİÍÁµØÃí
+// Room: æ³‰å·åœŸåœ°åº™
 // qfy August 17, 1996.
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ÍÁµØÃí");
+	set("short", "åœŸåœ°åº™");
 	set("long", @LONG
-ÕâÊÇÒ»¼äÊ®·ÖÆÆ¾ÉµÄÍÁµØÃí£¬Ò²²»Öª»Ä·ÏÁË¶à¾Ã£¬ÁºÉÏµØÏÂ²¼ÂúÁË»Ò³¾¡£
-ÍÁµØÉñÏñááÃæµÄÇ½ÉÏÓĞ¸ö¶´¿Ú£¬ÀÏÊóÅÀ½øÅÀ³ö£¬¶ñĞÄ¼«ÁË¡£
+è¿™æ˜¯ä¸€é—´ååˆ†ç ´æ—§çš„åœŸåœ°åº™ï¼Œä¹Ÿä¸çŸ¥è’åºŸäº†å¤šä¹…ï¼Œæ¢ä¸Šåœ°ä¸‹å¸ƒæ»¡äº†ç°å°˜ã€‚
+åœŸåœ°ç¥åƒå¾Œé¢çš„å¢™ä¸Šæœ‰ä¸ªæ´å£ï¼Œè€é¼ çˆ¬è¿›çˆ¬å‡ºï¼Œæ¶å¿ƒæäº†ã€‚
 LONG
 	);
 
@@ -45,13 +45,13 @@ int do_enter(string arg)
 
         if( arg=="hole" || arg=="dong" )
         {
-           if( myfam["family_name"] == "Ø¤°ï" ) {
-                message("vision", me->name()+"ÔËÆğØ¤°ïËõ¹Ç¹¦£¬Ò»ÍäÑüÍù¶´Àï×êÁË½øÈ¥¡£\n", environment(me), ({me}) );
+           if( myfam["family_name"] == "ä¸å¸®" ) {
+                message("vision", me->name()+"è¿èµ·ä¸å¸®ç¼©éª¨åŠŸï¼Œä¸€å¼¯è…°å¾€æ´é‡Œé’»äº†è¿›å»ã€‚\n", environment(me), ({me}) );
 		me->move("/d/gaibang/underqz");
-		message("vision", me->name() + "´Ó¶´¿Ú×êÁË½øÀ´¡£\n", environment(me), ({me}) );
+		message("vision", me->name() + "ä»æ´å£é’»äº†è¿›æ¥ã€‚\n", environment(me), ({me}) );
 		return 1;
                 }
-           else return notify_fail("ÕâÃ´Ğ¡µÄ¶´£¬Äã×êµÃ½øÈ¥Âğ£¿\n");
+           else return notify_fail("è¿™ä¹ˆå°çš„æ´ï¼Œä½ é’»å¾—è¿›å»å—ï¼Ÿ\n");
 	}
 
 }

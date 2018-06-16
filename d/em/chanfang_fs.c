@@ -1,15 +1,15 @@
 //Cracked by Roath
-// chanfang.c ìø·¿
+// chanfang.c ç¦…æˆ¿
 
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", "ìø·¿");
+        set("short", "ç¦…æˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇÒ»¼ä°²¾²¿í³¨µÄìø·¿£¬ÄËÊÇ¸£ÊÙâÖÖĞµÜ×Ó´ò×øĞŞĞĞÖ®Ëù¡£µØÏÂÕûÕû
-ÆëÆëµØ·Å×ÅĞí¶àÆÑÍÅ¡£¼¸Î»ÄêÇáÊ¦Ì«ºÍË×¼ÒÅ®µÜ×ÓÕıËàÈİÈë¶¨¡£
+è¿™é‡Œæ˜¯ä¸€é—´å®‰é™å®½æ•çš„ç¦…æˆ¿ï¼Œä¹ƒæ˜¯ç¦å¯¿åºµä¸­å¼Ÿå­æ‰“åä¿®è¡Œä¹‹æ‰€ã€‚åœ°ä¸‹æ•´æ•´
+é½é½åœ°æ”¾ç€è®¸å¤šè’²å›¢ã€‚å‡ ä½å¹´è½»å¸ˆå¤ªå’Œä¿—å®¶å¥³å¼Ÿå­æ­£è‚ƒå®¹å…¥å®šã€‚
 LONG
 	);
 	set("exits", ([
@@ -31,11 +31,11 @@ void init()
 int do_jingzuo(string arg)
 {
 	object me = this_player();
-	if ( me->query("family/family_name") != "¶ëáÒÅÉ" || me->is_busy() )
+	if ( me->query("family/family_name") != "å³¨åµ‹æ´¾" || me->is_busy() )
 		return 0;
 	if(random(9) == 3) {
-		tell_object(me, "ºöÈ»ÍâÃæ´«À´Ò»ÕóÔëÔÓÉù£¬ÄãÖ»¾õĞÄ·³ÒâÂÒ£¬²»ÄÜ¾²ĞÄĞŞÁ·£¬\nÖ»ºÃ¸ÄÈ¥±ğâÖìø·¿¼ÌĞøĞŞĞĞ¡£\n");
-		tell_room(environment(me),(string)me->query("name")+"×ßÀ²£¬È¥±ğâÖìø·¿¼ÌĞøĞŞĞĞÁË¡£\n", me); 
+		tell_object(me, "å¿½ç„¶å¤–é¢ä¼ æ¥ä¸€é˜µå™ªæ‚å£°ï¼Œä½ åªè§‰å¿ƒçƒ¦æ„ä¹±ï¼Œä¸èƒ½é™å¿ƒä¿®ç»ƒï¼Œ\nåªå¥½æ”¹å»åˆ«åºµç¦…æˆ¿ç»§ç»­ä¿®è¡Œã€‚\n");
+		tell_room(environment(me),(string)me->query("name")+"èµ°å•¦ï¼Œå»åˆ«åºµç¦…æˆ¿ç»§ç»­ä¿®è¡Œäº†ã€‚\n", me); 
 		switch (random(3)) {
 			case 0: me->move("/d/emei/hz_chanfang");
 				break;
@@ -44,7 +44,7 @@ int do_jingzuo(string arg)
 			case 2: me->move("/d/emei/chanfang_qf");
 				break;
 		}
-		tell_room(environment(me),(string)me->query("name")+"´Ó±ğâÖìø·¿À´ÕâÀï¼ÌĞøĞŞĞĞÀ²¡£\n", me); 
+		tell_room(environment(me),(string)me->query("name")+"ä»åˆ«åºµç¦…æˆ¿æ¥è¿™é‡Œç»§ç»­ä¿®è¡Œå•¦ã€‚\n", me); 
 		return 1;
 	}
 	return command("jingzuo "+arg);

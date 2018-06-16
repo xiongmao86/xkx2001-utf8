@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "³ø·¿");
+	set("short", "å¨æˆ¿");
 	set("long", @LONG
-³ø·¿ËÄÖÜ°ÚÓĞ¼¸ÕÅ×À×ÓºÍÒÎ×Ó£¬¼¸¸öÀÏÂè×ÓºÍÑ¾»·ÕıÃ¦×ÅÉÕ·¹Öó²Ë¡£·¹²Ë
-µÄÏãÆøËæ·çÆ®ËÍ£¬ÀÏÔ¶±ãÄÜÎÅµ½£¬ÁíÈË´¹ÏÑÓûµÎ¡£ÄãÒªÏë³Ô¶«Î÷¾¡¹ÜÏòÀÏÂè×Ó
-Òª(serve)£¬ÏëºÈË®±ã×Ô¸ö¶ùµ½ÍâÃæµÄ¾®È¥´ò(fill)¡£
+å¨æˆ¿å››å‘¨æ‘†æœ‰å‡ å¼ æ¡Œå­å’Œæ¤…å­ï¼Œå‡ ä¸ªè€å¦ˆå­å’Œä¸«ç¯æ­£å¿™ç€çƒ§é¥­ç…®èœã€‚é¥­èœ
+çš„é¦™æ°”éšé£é£˜é€ï¼Œè€è¿œä¾¿èƒ½é—»åˆ°ï¼Œå¦äººå‚æ¶æ¬²æ»´ã€‚ä½ è¦æƒ³åƒä¸œè¥¿å°½ç®¡å‘è€å¦ˆå­
+è¦(serve)ï¼Œæƒ³å–æ°´ä¾¿è‡ªä¸ªå„¿åˆ°å¤–é¢çš„äº•å»æ‰“(fill)ã€‚
 LONG
 	);
 
@@ -20,8 +20,8 @@ LONG
 	]));
 	
         set("item_desc", ([
-	    "table" : "Ò»ÕÅ³¤·½ĞÎµÄÄ¾×À£¬ÉÏÃæ·Å×ÅË®¹û£¬²èË®ºÍÊ³Îï¡£\n",
-	    "chair" : "Ò»Ö»ÆÕÍ¨µÄÄ¾ÖÆ¿¿ÒÎ¡£\n",
+	    "table" : "ä¸€å¼ é•¿æ–¹å½¢çš„æœ¨æ¡Œï¼Œä¸Šé¢æ”¾ç€æ°´æœï¼ŒèŒ¶æ°´å’Œé£Ÿç‰©ã€‚\n",
+	    "chair" : "ä¸€åªæ™®é€šçš„æœ¨åˆ¶é æ¤…ã€‚\n",
 	]));
 	                                
 
@@ -44,8 +44,8 @@ int do_serve()
 	object ob1, ob2, *inv, me = this_player();
 	int food_ind, f, i;
 
-	if ( !me->query_temp("mark/Âí") )
-		return notify_fail("Äã·ÇÎä¹İµÜ×Ó£¬²»ÄÜÄÃÈ¡Ê³Îï£¡\n");
+	if ( !me->query_temp("mark/é©¬") )
+		return notify_fail("ä½ éæ­¦é¦†å¼Ÿå­ï¼Œä¸èƒ½æ‹¿å–é£Ÿç‰©ï¼\n");
 
 	inv = all_inventory(me);
 	for (i=0; i<sizeof(inv); i++) {
@@ -55,9 +55,9 @@ int do_serve()
 	food_ind = me->query("food");
 
 	if ( (int)me->max_food_capacity()-food_ind < 10 )
-		return notify_fail("ÄãÒÑ³Ô±¥ºÈ×ã£¬»¹ÊÇµÈ»á¶ùÔÙÒª°É£¡\n");	
+		return notify_fail("ä½ å·²åƒé¥±å–è¶³ï¼Œè¿˜æ˜¯ç­‰ä¼šå„¿å†è¦å§ï¼\n");	
 
-	message_vision("$NÏòÎ»ÀÏÂè×ÓÒªĞ©Ê³Îï³ÔºÈ¡£\n", me);
+	message_vision("$Nå‘ä½è€å¦ˆå­è¦äº›é£Ÿç‰©åƒå–ã€‚\n", me);
 
 	if ( (int)me->max_food_capacity()-food_ind >= 40 && !f ) {
 	   switch(random(2)) {
@@ -72,11 +72,11 @@ int do_serve()
 		break;
 	   }	
 		ob1->move(me);
-		message_vision("ÀÏÂè×ÓµØÄÃ³ö"+ob1->name()+"¸ø$N¡£\n", me);
+		message_vision("è€å¦ˆå­åœ°æ‹¿å‡º"+ob1->name()+"ç»™$Nã€‚\n", me);
 	}
 	else if ( (int)me->max_food_capacity()-food_ind >= 40 )
-		message_vision("ÀÏÂè×Ó¶Ô$NËµµÀ£ºÄã²»ÊÇÓĞ¶«Î÷³ÔÂğ£¿³ÔÍêÔÙËµ°É¡£\n", me); 
-	else message_vision("ÀÏÂè×Ó¶Ô$NËµµÀ£ºÄã±ğÀÏÏë×Å³Ô£¬Ì«±¥¿É²»ºÃ¡£\n", me);
+		message_vision("è€å¦ˆå­å¯¹$Nè¯´é“ï¼šä½ ä¸æ˜¯æœ‰ä¸œè¥¿åƒå—ï¼Ÿåƒå®Œå†è¯´å§ã€‚\n", me); 
+	else message_vision("è€å¦ˆå­å¯¹$Nè¯´é“ï¼šä½ åˆ«è€æƒ³ç€åƒï¼Œå¤ªé¥±å¯ä¸å¥½ã€‚\n", me);
 	
 	return 1;
 }
@@ -91,7 +91,7 @@ int valid_leave(object me, string dir)
                 if (inv[i]->query("food_supply") && inv[i]->value() >= 0) f++;
         }
 
-	if ( f>0 ) return notify_fail("Ñ¾»·À¹×ÅÄãËµ£º±ğ×Å¼±£¬»¹ÊÇ°Ñ¶«Î÷³ÔÍêÔÙ×ß°É¡£\n");
+	if ( f>0 ) return notify_fail("ä¸«ç¯æ‹¦ç€ä½ è¯´ï¼šåˆ«ç€æ€¥ï¼Œè¿˜æ˜¯æŠŠä¸œè¥¿åƒå®Œå†èµ°å§ã€‚\n");
 
 	return ::valid_leave(me, dir);
 }

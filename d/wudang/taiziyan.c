@@ -1,14 +1,14 @@
 //Cracked by Roath
-// taiziyan.c  Ì«×ÓÑÒ
+// taiziyan.c  å¤ªå­å²©
 // by Fang 8/19/96
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "Ì«×ÓÑÒ");
+	set("short", "å¤ªå­å²©");
 	set("long", @LONG
-	ÕâÀïÊÇÈºÉ½»·±§ÖĞµÄÌ«×ÓÑÒ£¬ÑÒÉÏÓĞÒ»¿éÈıÇåÊ¯ºÍÒ»×ùÌ«×ÓÍ¤¡£
+	è¿™é‡Œæ˜¯ç¾¤å±±ç¯æŠ±ä¸­çš„å¤ªå­å²©ï¼Œå²©ä¸Šæœ‰ä¸€å—ä¸‰æ¸…çŸ³å’Œä¸€åº§å¤ªå­äº­ã€‚
 LONG
 	);
         set("outdoors", "wudang");

@@ -5,7 +5,7 @@ string long_desc();
 
 void create()
 {
-        set("short", "ø¯ÊÒ");
+        set("short", "î‰‚å®¤");
 	set("long", (: long_desc :));
 
 	set("exits", ([
@@ -28,23 +28,23 @@ string long_desc()
 {
         string desc;
 
-        desc  = "ÕâÊÇÃ©ÎÝÖÐÒ»¼äø¯ÊÒ£¬°å´²Ä¾µÊ£¬¾ã½Ô¼òÂª£¬ËÄ±ÚÏôÈ»£¬È´ÊÇÒ»Ó¦²»È¾£¬Çå
-ÓÄ¾øË×£¬";
+        desc  = "è¿™æ˜¯èŒ…å±‹ä¸­ä¸€é—´î‰‚å®¤ï¼Œæ¿åºŠæœ¨å‡³ï¼Œä¿±çš†ç®€é™‹ï¼Œå››å£è§ç„¶ï¼Œå´æ˜¯ä¸€åº”ä¸æŸ“ï¼Œæ¸…
+å¹½ç»ä¿—ï¼Œ";
 
         if (present("zhu xiao", this_object()) && present("yao qin", this_object())  ){
-desc += "´²±ßÖñøÀÉÏ²¢ÁÐÖøÒ»ÕÅÑþÇÙ£¬Ò»¹ÜÖñóï¡£ÊÒÖÐ¼Å¾²ÎÞÉù¡£½ÏÖ®³¾ÊÀÐúÏù
-£¬¾¹ËÆµ½ÁËÁíÒ»ÊÀ½ç¡£\n" ;
+desc += "åºŠè¾¹ç«¹î‰“ä¸Šå¹¶åˆ—è‘—ä¸€å¼ ç‘¶ç´ï¼Œä¸€ç®¡ç«¹ç®«ã€‚å®¤ä¸­å¯‚é™æ— å£°ã€‚è¾ƒä¹‹å°˜ä¸–å–§åš£
+ï¼Œç«Ÿä¼¼åˆ°äº†å¦ä¸€ä¸–ç•Œã€‚\n" ;
 	}
 	else if (present("zhu xiao", this_object())){
-desc += "´²±ßÖñøÀÉÏ·ÅÖÃÖøÒ»¹ÜÖñóï¡£ÊÒÖÐ¼Å¾²ÎÞÉù¡£½ÏÖ®³¾ÊÀÐúÏù£¬¾¹ËÆµ½ÁË
-ÁíÒ»ÊÀ½ç¡£\n" ;
+desc += "åºŠè¾¹ç«¹î‰“ä¸Šæ”¾ç½®è‘—ä¸€ç®¡ç«¹ç®«ã€‚å®¤ä¸­å¯‚é™æ— å£°ã€‚è¾ƒä¹‹å°˜ä¸–å–§åš£ï¼Œç«Ÿä¼¼åˆ°äº†
+å¦ä¸€ä¸–ç•Œã€‚\n" ;
 	}
         else if (present("yao qin", this_object())){
-desc += "´²±ßÖñøÀÉÏ·ÅÖÃÖøÒ»ÕÅÑþÇÙ¡£ÊÒÖÐ¼Å¾²ÎÞÉù¡£½ÏÖ®³¾ÊÀÐúÏù£¬¾¹ËÆµ½ÁË
-ÁíÒ»ÊÀ½ç¡£\n";
+desc += "åºŠè¾¹ç«¹î‰“ä¸Šæ”¾ç½®è‘—ä¸€å¼ ç‘¶ç´ã€‚å®¤ä¸­å¯‚é™æ— å£°ã€‚è¾ƒä¹‹å°˜ä¸–å–§åš£ï¼Œç«Ÿä¼¼åˆ°äº†
+å¦ä¸€ä¸–ç•Œã€‚\n";
 	}
-	else desc += "´²±ß°ÚÉèÖøÒ»ÕÅÖñøÀ¡£ÊÒÖÐ¼Å¾²ÎÞÉù¡£½ÏÖ®³¾ÊÀÐúÏù£¬¾¹ËÆµ½ÁËÁíÒ»ÊÀ
-½ç¡£\n";
+	else desc += "åºŠè¾¹æ‘†è®¾è‘—ä¸€å¼ ç«¹î‰“ã€‚å®¤ä¸­å¯‚é™æ— å£°ã€‚è¾ƒä¹‹å°˜ä¸–å–§åš£ï¼Œç«Ÿä¼¼åˆ°äº†å¦ä¸€ä¸–
+ç•Œã€‚\n";
 
         return desc;
 }

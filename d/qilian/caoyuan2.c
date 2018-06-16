@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ɹŴ��ԭ");
+        set("short", "蒙古大草原");
         set("long", @LONG
-һ���޼ʵĴ��ԭ�ϣ���Ⱥ��ţ��ϡϡ�����м����ɹŰ���
+一望无际的大草原上，成群的牛羊。稀稀落落有几处蒙古包。
 LONG
         );
         set("exits", ([

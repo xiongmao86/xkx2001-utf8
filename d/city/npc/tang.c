@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tang.c ÌÆÀÏ°å 
+// tang.c å”è€æ¿ 
 #include <ansi.h>
 inherit NPC;
 //inherit F_VENDOR;
@@ -7,16 +7,16 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("ÌÆéª", ({ "tang nan", "tang" }));
+	set_name("å”æ¥ ", ({ "tang nan", "tang" }));
         set_color("$YEL$");
-	set("title", "µ±ÆÌÀÏ°å");
+	set("title", "å½“é“ºè€æ¿");
 	set("shen_type", 0);
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set_max_encumbrance(100000000);
 	set("age", 35);
 	set("long",
-		"¾İËµÌÆéªÊÇËÄ´¨ÌÆ¼ÒµÄºó´ú¡£\n");
+		"æ®è¯´å”æ¥ æ˜¯å››å·å”å®¶çš„åä»£ã€‚\n");
 	set("no_get_from", 1);
 
 	set("dex", 80);
@@ -48,19 +48,19 @@ void init()
 
 void unconcious()
 {
-	message_vision("\nÍ»È»£¬Ö»¼û$NÉÁÉíÀ­¿ª¹ñÌ¨ÏÂÒ»µÀ°µÃÅ£¬×êÁË½øÈ¥£¬ßÇàê´ÓÀï±ß°ÑÃÅËøÉÏÁË¡£\n",
+	message_vision("\nçªç„¶ï¼Œåªè§$Né—ªèº«æ‹‰å¼€æŸœå°ä¸‹ä¸€é“æš—é—¨ï¼Œé’»äº†è¿›å»ï¼Œå’”åš“ä»é‡Œè¾¹æŠŠé—¨é”ä¸Šäº†ã€‚\n",
 		this_object());
 	destruct(this_object());
 }
 
 void die()
 {
-	message_vision("\n$NËÀÁË¡£\n", this_object());
+	message_vision("\n$Næ­»äº†ã€‚\n", this_object());
 	destruct(this_object());
 }
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         return 1;
 }

@@ -10,18 +10,18 @@ void create()
 {
         int i;
         i=random(2);
-        set_name("Ë×¼ÒµÜ×Ó", ({ "sujia dizi", "guide"}));
+        set_name("ä¿—å®¶å¼Ÿå­", ({ "sujia dizi", "guide"}));
         if (i==0) {
 	        set("long", 
-		        "ÕâÊÇÒ»Ãû¶ëáÒÅÉË×¼ÒÅ®µÜ×Ó¡£\n"
-		"Ö»¼ûËıÇÓÉúÉúµÄ£¬Ò»¸±Èõ²»½û·çµÄÑù×Ó¡£\n");
-        	set("gender", "Å®ĞÔ");
+		        "è¿™æ˜¯ä¸€åå³¨åµ‹æ´¾ä¿—å®¶å¥³å¼Ÿå­ã€‚\n"
+		"åªè§å¥¹æ€¯ç”Ÿç”Ÿçš„ï¼Œä¸€å‰¯å¼±ä¸ç¦é£çš„æ ·å­ã€‚\n");
+        	set("gender", "å¥³æ€§");
         }
         if (i==1) {
 	        set("long", 
-		        "ÕâÊÇÒ»Ãû¶ëáÒÅÉË×¼ÒÄĞµÜ×Ó¡£\n"
-		"È´¼ûËûÃ¼ÇåÄ¿Ğã£¬¾ÙÖ¹ÉõÊÇË¹ÎÄ¡£\n");
-        	set("gender", "ÄĞĞÔ");
+		        "è¿™æ˜¯ä¸€åå³¨åµ‹æ´¾ä¿—å®¶ç”·å¼Ÿå­ã€‚\n"
+		"å´è§ä»–çœ‰æ¸…ç›®ç§€ï¼Œä¸¾æ­¢ç”šæ˜¯æ–¯æ–‡ã€‚\n");
+        	set("gender", "ç”·æ€§");
         }
         set("age", 14);
 	set("attitude", "peaceful");
@@ -37,11 +37,11 @@ void create()
 	set("max_jing", 400);
 	set("combat_exp", 0);
 	set("inquiry", ([
-	    "³ö·¢" : (: ask_job_begin :),
-	    "½áÊø" : (: ask_job_finish :),
+	    "å‡ºå‘" : (: ask_job_begin :),
+	    "ç»“æŸ" : (: ask_job_finish :),
 	]));
         i=this_player()->query("family/generation");
-        create_family("¶ëáÒÅÉ", i, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", i, "å¼Ÿå­");
 	setup();
 	carry_object("/d/emei/npc/obj/hui-cloth")->wear();
 }

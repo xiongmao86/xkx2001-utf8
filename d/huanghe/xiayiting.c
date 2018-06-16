@@ -1,16 +1,16 @@
 //Cracked by Roath
-// xiayiting.c �ƺӰ��������
+// xiayiting.c 黄河帮「侠义厅」
 // qfy Sept 7, 96
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "侠义厅");
         set("long", @LONG
-���ǻƺӰ����µĴ��������Ϲ��š��������������Ҷ���￿
-�����Ϸ���һ�Ż�Ƥ���Σ����߰����ż�����ľ���Σ��ǳ������ɡ�
-ǽ�ϸ�ӹ���ŵع��˼��������鷨��
+这是黄河帮议事的大厅，厅上挂着「侠义厅」三字匾额。厅里靠
+北朝南放着一张虎皮交椅，两边摆设着几副红木桌椅，非常有气派。
+墙上附庸风雅地挂了几幅丹青书法。
 LONG
         );
 

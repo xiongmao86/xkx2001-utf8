@@ -24,39 +24,39 @@ int do_dz(string arg)
 	where = environment(me);
 	
 	if (where->query("pigging"))
-		return notify_fail("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+		return notify_fail("ä½ è¿˜æ˜¯ä¸“å¿ƒæ‹±çŒªå§ï¼\n");
 
 	if (me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
     	
-    	if (me->is_exert()) return notify_fail("ÄãÕıÔÚÊ¹ÓÃ"+me->query_exert()+"¡£\n");
+    	if (me->is_exert()) return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨"+me->query_exert()+"ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞ²»ÄÜÁ·ÄÚ¹¦£¬»á×ß»ğÈëÄ§¡£\n");
+		return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç»ƒå†…åŠŸï¼Œä¼šèµ°ç«å…¥é­”ã€‚\n");
 
 	if (where->query("sleep_room"))
-		return notify_fail("ÎÔÊÒ²»ÄÜ´ò×ø£¬»áÓ°Ïì±ğÈËĞİÏ¢¡£\n");
+		return notify_fail("å§å®¤ä¸èƒ½æ‰“åï¼Œä¼šå½±å“åˆ«äººä¼‘æ¯ã€‚\n");
 
         if (where->query("no_fight"))
-                return notify_fail("ÕâÀï²»×¼Õ½¶·£¬Ò²²»×¼´ò×ø¡£\n");
+                return notify_fail("è¿™é‡Œä¸å‡†æˆ˜æ–—ï¼Œä¹Ÿä¸å‡†æ‰“åã€‚\n");
 
         if( !(force = me->query_skill_mapped("force")) )
-		return notify_fail("Äã±ØĞëÏÈÓÃ enable Ñ¡ÔñÄãÒªÓÃµÄÌØÊâÄÚ¹¦¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆç”¨ enable é€‰æ‹©ä½ è¦ç”¨çš„ç‰¹æ®Šå†…åŠŸã€‚\n");
 
 	if( !arg || !sscanf(arg, "%d", exercise_cost))
-		return notify_fail("ÄãÒª»¨¶àÉÙÆøÁ·¹¦£¿\n");
+		return notify_fail("ä½ è¦èŠ±å¤šå°‘æ°”ç»ƒåŠŸï¼Ÿ\n");
 	if (exercise_cost < 10)
-		return notify_fail("ÄãÎŞ·¨¿ØÖÆÄÚÏ¢ÔËĞĞµ½Èç´Ë¾«Ï¸µÄ³Ì¶È£¡\n");
+		return notify_fail("ä½ æ— æ³•æ§åˆ¶å†…æ¯è¿è¡Œåˆ°å¦‚æ­¤ç²¾ç»†çš„ç¨‹åº¦ï¼\n");
 
 	if( (int)me->query("qi") < exercise_cost )
-		return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄÆøÀ´²úÉúÄÚÏ¢ÔËĞĞÈ«Éí¾­Âö¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„æ°”æ¥äº§ç”Ÿå†…æ¯è¿è¡Œå…¨èº«ç»è„‰ã€‚\n");
 
 	if( (int)me->query("jing") * 100 / (int)me->query("max_jing") < 70 )
-		return notify_fail("ÄãÏÖÔÚ¾«²»¹»£¬ÎŞ·¨¿ØÖÆÄÚÏ¢µÄÁ÷¶¯£¡\n");
+		return notify_fail("ä½ ç°åœ¨ç²¾ä¸å¤Ÿï¼Œæ— æ³•æ§åˆ¶å†…æ¯çš„æµåŠ¨ï¼\n");
 
 	msg = SKILL_D(force)->exercise_msg(me);
 	if (!msg || undefinedp(msg["start_my_msg"]))
-		write("Äã×øÏÂÀ´ÔËÆøÓÃ¹¦£¬Ò»¹ÉÄÚÏ¢¿ªÊ¼ÔÚÌåÄÚÁ÷¶¯¡£\n");
+		write("ä½ åä¸‹æ¥è¿æ°”ç”¨åŠŸï¼Œä¸€è‚¡å†…æ¯å¼€å§‹åœ¨ä½“å†…æµåŠ¨ã€‚\n");
 	else
 		write(msg["start_my_msg"]);
 
@@ -64,7 +64,7 @@ int do_dz(string arg)
 	me->set_temp("exercise_cost", exercise_cost);
 	if (!msg || undefinedp(msg["start_other_msg"]))
 		tell_room(environment(me),
-			me->name() + "ÅÌÏ¥×øÏÂ£¬¿ªÊ¼ÔË¹¦´ò×ø¡£\n", ({ me }));
+			me->name() + "ç›˜è†åä¸‹ï¼Œå¼€å§‹è¿åŠŸæ‰“åã€‚\n", ({ me }));
 	else
 		tell_room(environment(me),
 			msg["start_other_msg"], ({ me }));
@@ -99,12 +99,12 @@ int exercising(object me)
 
 	me->delete_temp("pending/exercise");
 	if (!msg || undefinedp(msg["end_my_msg"]))
-		tell_object(me, "ÄãÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n");
+		tell_object(me, "ä½ è¿åŠŸå®Œæ¯•ï¼Œæ·±æ·±å¸äº†å£æ°”ï¼Œç«™äº†èµ·æ¥ã€‚\n");
 	else
 		tell_object(me, msg["end_my_msg"]);
 	if (!msg || undefinedp(msg["end_other_msg"]))
 		tell_room(environment(me),
-			me->name()+"ÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n", ({me}));
+			me->name()+"è¿åŠŸå®Œæ¯•ï¼Œæ·±æ·±å¸äº†å£æ°”ï¼Œç«™äº†èµ·æ¥ã€‚\n", ({me}));
 	else
 		tell_room(environment(me),
 			msg["end_other_msg"], ({me}));
@@ -112,12 +112,12 @@ int exercising(object me)
 	if (me->query("neili") < me->query("max_neili") * 2)
 		return 0;
 	if (me->query("max_neili") >= max){
-		tell_object(me, "ÄãµÄÄÚÁ¦ĞŞÎªÒÑ¾­ÎŞ·¨¿¿´ò×øÀ´ÌáÉıÁË¡£\n");
+		tell_object(me, "ä½ çš„å†…åŠ›ä¿®ä¸ºå·²ç»æ— æ³•é æ‰“åæ¥æå‡äº†ã€‚\n");
 		me->set("neili", me->query("max_neili") * 2);
 		return 0;
 	        }
 	me->set("neili", me->add("max_neili", 1));
-	tell_object(me, "ÄãµÄÄÚÁ¦Ôö¼ÓÁË£¡\n");
+	tell_object(me, "ä½ çš„å†…åŠ›å¢åŠ äº†ï¼\n");
 	return 0;
 }
 
@@ -133,7 +133,7 @@ int halt_exercise(object me)
 	if (force) msg = SKILL_D(force)->exercise_msg(me);
 	if (!msg || undefinedp(msg["halt_msg"]))
 		message_vision(
-			"$N°ÑÕıÔÚÔËĞĞµÄÕæÆøÇ¿ĞĞÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆğÀ´¡£\n", me);
+			"$NæŠŠæ­£åœ¨è¿è¡Œçš„çœŸæ°”å¼ºè¡Œå‹å›ä¸¹ç”°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
 	else
 		message_vision(msg["halt_msg"], me);
 	return 1;

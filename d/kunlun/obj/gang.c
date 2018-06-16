@@ -1,5 +1,5 @@
 //Cracked by Roath
-// gang.c Ë®¸×
+// gang.c æ°´ç¼¸
 // zhangchi 7/00
 
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ë®¸×", ({ "shui gang", "gang" }) );
+        set_name("æ°´ç¼¸", ({ "shui gang", "gang" }) );
         set_weight(90000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ö¼«´óµÄË®¸×£¬¿ÉÒÔÓÃÀ´´¢´æÀäË®¡£\n");
-                set("unit", "¸ö");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªæå¤§çš„æ°´ç¼¸ï¼Œå¯ä»¥ç”¨æ¥å‚¨å­˜å†·æ°´ã€‚\n");
+                set("unit", "ä¸ª");
 		set("no_get", 1);
 		set("value",1);
 		set("amount", 0);
@@ -24,5 +24,5 @@ string extra_long()
 {
 	int amount=query("amount");
 
-	return "ÀïÃæÓĞ"+chinese_number(amount)+"ÉıË®¡£\n";
+	return "é‡Œé¢æœ‰"+chinese_number(amount)+"å‡æ°´ã€‚\n";
 }	

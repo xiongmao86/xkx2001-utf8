@@ -1,16 +1,16 @@
 //Cracked by Roath
-// niuxin.c Å£ĞÄÊ¯
+// niuxin.c ç‰›å¿ƒçŸ³
 // haowen 10/10/00 add busy check in jump
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", "Å£ĞÄÊ¯");
+        set("short", "ç‰›å¿ƒçŸ³");
 	set("long", @LONG
-ÄãÂä½Å´¦ÄËÊÇ¿éºÚºÖÉ«µÄ¾ŞÊ¯£¬ºÚÁú°×Áú¶ş½­ÔÚ´ËºÍÁ÷¡£Ë®ÅÄÅ£ĞÄ£¬
-ÀË»¨·É½¦£¬ÉùÕğÉ½¹È¡£ÄãÁ¢ÓÚ´Ë£¬ÑÛÍûÁ½½­Ö®Ë®´Ó½ÅÏÂ±¼ÌÚ¶ø¹ı£¬²»ÓÉĞÄ
-»ê·Éµ´£¬Á½ÍÈ·¢Èí£¬²»¿É×Ô³Ö¡£
+ä½ è½è„šå¤„ä¹ƒæ˜¯å—é»‘è¤è‰²çš„å·¨çŸ³ï¼Œé»‘é¾™ç™½é¾™äºŒæ±Ÿåœ¨æ­¤å’Œæµã€‚æ°´æ‹ç‰›å¿ƒï¼Œ
+æµªèŠ±é£æº…ï¼Œå£°éœ‡å±±è°·ã€‚ä½ ç«‹äºæ­¤ï¼Œçœ¼æœ›ä¸¤æ±Ÿä¹‹æ°´ä»è„šä¸‹å¥”è…¾è€Œè¿‡ï¼Œä¸ç”±å¿ƒ
+é­‚é£è¡ï¼Œä¸¤è…¿å‘è½¯ï¼Œä¸å¯è‡ªæŒã€‚
 LONG
 	);
 
@@ -32,12 +32,12 @@ int do_jump(string arg)
 		return 0;
 	if(me->is_busy())
 		{
-             	tell_object(me,"ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");    
+             	tell_object(me,"ä½ ç°åœ¨æ­£å¿™ç€å‘¢ï¼\n");    
 		return 0;
 		}
-	message_vision("$NÃÍÌáÒ»¿ÚÆø£¬Ò»×İÉíÏò°¶±ßÌøÈ¥¡£\n", me);
+	message_vision("$NçŒ›æä¸€å£æ°”ï¼Œä¸€çºµèº«å‘å²¸è¾¹è·³å»ã€‚\n", me);
 	me->move(__DIR__"qingyin");
-	message("vision", me->name() + "ÃÍÌáÒ»¿ÚÆø£¬´ÓÅ£ĞÄÊ¯ÉÏÌøÁË»ØÀ´¡£\n",
+	message("vision", me->name() + "çŒ›æä¸€å£æ°”ï¼Œä»ç‰›å¿ƒçŸ³ä¸Šè·³äº†å›æ¥ã€‚\n",
 		environment(me), ({me}) );
 	
 	return 1;
@@ -53,24 +53,24 @@ int do_dazuo(string arg)
 	seteuid(geteuid(me));
 
 	if (me->is_busy() || me->query_temp("pending/exercising"))
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞ²»ÄÜÁ·ÄÚ¹¦£¬»á×ß»ğÈëÄ§¡£\n");
+                return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç»ƒå†…åŠŸï¼Œä¼šèµ°ç«å…¥é­”ã€‚\n");
 
         if( !stringp(force_skill = me->query_skill_mapped("force")) )
-                return notify_fail("Äã±ØĞëÏÈÓÃ enable Ñ¡ÔñÄãÒªÓÃµÄÄÚ¹¦ĞÄ·¨¡£\n");
+                return notify_fail("ä½ å¿…é¡»å…ˆç”¨ enable é€‰æ‹©ä½ è¦ç”¨çš„å†…åŠŸå¿ƒæ³•ã€‚\n");
 
         if( !arg || !sscanf(arg, "%d", exercise_cost))
-                return notify_fail("ÄãÒª»¨¶àÉÙÆøÁ·¹¦£¿\n");
+                return notify_fail("ä½ è¦èŠ±å¤šå°‘æ°”ç»ƒåŠŸï¼Ÿ\n");
         if (exercise_cost < 10)
-                return notify_fail("ÄãµÄÄÚ¹¦»¹Ã»ÓĞ´ïµ½ÄÇ¸ö¾³½ç£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸè¿˜æ²¡æœ‰è¾¾åˆ°é‚£ä¸ªå¢ƒç•Œï¼\n");
 
         if( (int)me->query("qi") < exercise_cost )
-                return notify_fail("ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎŞ·¨²úÉúÄÚÏ¢ÔËĞĞÈ«Éí¾­Âö¡£\n");
+                return notify_fail("ä½ ç°åœ¨çš„æ°”å¤ªå°‘äº†ï¼Œæ— æ³•äº§ç”Ÿå†…æ¯è¿è¡Œå…¨èº«ç»è„‰ã€‚\n");
 
         if( (int)me->query("jing") * 100 / (int)me->query("max_jing") < 70 )
-                return notify_fail("ÄãÏÖÔÚ¾«²»¹»£¬ÎŞ·¨¿ØÖÆÄÚÏ¢µÄÁ÷¶¯£¡\n");
+                return notify_fail("ä½ ç°åœ¨ç²¾ä¸å¤Ÿï¼Œæ— æ³•æ§åˆ¶å†…æ¯çš„æµåŠ¨ï¼\n");
 
 	level = me->query_skill("linji-zhuang", 1);
 
@@ -81,7 +81,7 @@ int do_dazuo(string arg)
 		me->improve_skill("linji-zhuang", 
 			random(me->query_int()+me->query_con()) );
 		me->add("jing", -20-random(20));
-		tell_object(me, HIY"´Ë´¦´ò×ø£¬Õı°µºÏÊ®¶ş×¯ĞŞĞĞÖ®¶¯¾²Ïà¸¨ÒªÖ¼£¬¾ªÌÎº§ÀËÉùÖĞ£¬\nÄã¶Ô¡¸ÁÙ¼ÃÊ®¶ş×¯¡¹ÓĞËùÁìÎò¡£\n"NOR);
+		tell_object(me, HIY"æ­¤å¤„æ‰“åï¼Œæ­£æš—åˆåäºŒåº„ä¿®è¡Œä¹‹åŠ¨é™ç›¸è¾…è¦æ—¨ï¼ŒæƒŠæ¶›éª‡æµªå£°ä¸­ï¼Œ\nä½ å¯¹ã€Œä¸´æµåäºŒåº„ã€æœ‰æ‰€é¢†æ‚Ÿã€‚\n"NOR);
 	}
 	return 0;
 }

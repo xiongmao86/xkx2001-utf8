@@ -8,17 +8,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(YEL"ÌÒÄ¾"NOR,({ "taomu"}) );
+        set_name(YEL"æ¡ƒæœ¨"NOR,({ "taomu"}) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 0);
                 set("material", "wood");
-                set("long", "ÕâÊÇÒ»¸ùÈı³ßÀ´³¤£¬¸Õ¿³ÏÂµÄÌÒÄ¾£¬ÂÔ¼Óµñ×Á(cut)¼È¿É×ö³ÉÒ»°ÑÌÒÄ¾½£¡£\n");
-                set("wield_msg", "$NÄÃ³öÒ»¸ú$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("long", "è¿™æ˜¯ä¸€æ ¹ä¸‰å°ºæ¥é•¿ï¼Œåˆšç ä¸‹çš„æ¡ƒæœ¨ï¼Œç•¥åŠ é›•ç¢(cut)æ—¢å¯åšæˆä¸€æŠŠæ¡ƒæœ¨å‰‘ã€‚\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€è·Ÿ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_sword(2);
         setup();
@@ -38,27 +38,27 @@ int do_cut(string arg)
         if (me->is_busy()
         || me->query_temp("pending/exercising")
         || me->query_temp("exit_blocked"))
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         if (!arg || arg != "taomu")
-                return notify_fail("ÄãÒªµñ¿ÌÊ²÷á£¿\n");
+                return notify_fail("ä½ è¦é›•åˆ»ä»€éº½ï¼Ÿ\n");
 
         if( !objectp(ob1 = me->query_temp("weapon"))
-        || (string)ob1->query("name") != "Ğ¡Ìú¸«")
-                return notify_fail("ÄãÃ»ÓĞ¹¤¾ßÈçºÎµñ¿Ì£¿£¡\n"); 
+        || (string)ob1->query("name") != "å°é“æ–§")
+                return notify_fail("ä½ æ²¡æœ‰å·¥å…·å¦‚ä½•é›•åˆ»ï¼Ÿï¼\n"); 
 
-        message_vision(CYN"$NÄÃÆğĞ¡Ìú¸«ÔÚÌÒÄ¾ÉÏÏ¸ĞÄµÄÅüÏ÷×Å......\n"NOR, me);
+        message_vision(CYN"$Næ‹¿èµ·å°é“æ–§åœ¨æ¡ƒæœ¨ä¸Šç»†å¿ƒçš„åŠˆå‰Šç€......\n"NOR, me);
 
         if (random(2) == 1) {
-        message_vision(CYN"$NÃ¦ÁË°ëÌì£¬ÖÕÓÚµñ³öÒ»°Ñ´Ö²ÚµÄÌÒÄ¾½££¬²¢ÔÚ½£±úÉÏ¿ÌÉÏÃû×Ö¡£\n"NOR, me);
+        message_vision(CYN"$Nå¿™äº†åŠå¤©ï¼Œç»ˆäºé›•å‡ºä¸€æŠŠç²—ç³™çš„æ¡ƒæœ¨å‰‘ï¼Œå¹¶åœ¨å‰‘æŸ„ä¸Šåˆ»ä¸Šåå­—ã€‚\n"NOR, me);
         ob2 = new(__DIR__"taomujian");
-        ob2->set("long", "ÕâÊÇÒ»±úÈı³ßÀ´³¤£¬ÊÖ¹¤ÖÆ³ÉµÄÌÒÄ¾½££¬ËÆºõ²»ÊÇÒ»¼şºÃ±øÆ÷¡£\n"
-                         "½£±úÉÏ¿Ì×Å¡°"+me->name()+"¡±¼¸¸ö×Ö¡£\n");
+        ob2->set("long", "è¿™æ˜¯ä¸€æŸ„ä¸‰å°ºæ¥é•¿ï¼Œæ‰‹å·¥åˆ¶æˆçš„æ¡ƒæœ¨å‰‘ï¼Œä¼¼ä¹ä¸æ˜¯ä¸€ä»¶å¥½å…µå™¨ã€‚\n"
+                         "å‰‘æŸ„ä¸Šåˆ»ç€â€œ"+me->name()+"â€å‡ ä¸ªå­—ã€‚\n");
         ob2->set("owner", me->query("id"));
         ob2->move(me);
         destruct(this_object());
         } else {
-        message_vision(CYN"$NÒ»¸ö²»Ğ¡ĞÄ£¬¡°°£Ñ½£¡¿¦àê£¡¡±£¬ÌÒÄ¾¶ÏµôÁË£¡\n"NOR,me);
+        message_vision(CYN"$Nä¸€ä¸ªä¸å°å¿ƒï¼Œâ€œåŸƒå‘€ï¼å–€åš“ï¼â€ï¼Œæ¡ƒæœ¨æ–­æ‰äº†ï¼\n"NOR,me);
         destruct(this_object());
         }
 

@@ -20,10 +20,10 @@ string *walkrooms = ({
 
 void create()
 {
-        set_name("¶«±±»¢", ({ "dongbei hu", "hu" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("ä¸œåŒ—è™Ž", ({ "dongbei hu", "hu" }) );
+        set("race", "é‡Žå…½");
         set("age", 30);
-        set("long", "Ò»Ö»Ð×ÃÍµÄ¶«±±»¢¡£ÄËÊÇ´ÔÁÖÖ®ÖÐµÄÊÞÖÐÖ®Íõ¡£\n");
+        set("long", "ä¸€åªå‡¶çŒ›çš„ä¸œåŒ—è™Žã€‚ä¹ƒæ˜¯ä¸›æž—ä¹‹ä¸­çš„å…½ä¸­ä¹‹çŽ‹ã€‚\n");
         set("attitude", "aggressive");
         set("max_qi", 1500);
         set("max_jing", 600);
@@ -57,7 +57,7 @@ void die()
         ob = new(DRUG_D("hugu"));
         ob->move(environment());
 
-        message_vision("\n$NÑöÌì²Òº¿ÁËÒ»Éù£¬Å¿ÔÚµØÉÏ²»¶¯ÁË¡£\n", this_object());
+        message_vision("\n$Nä»°å¤©æƒ¨åšŽäº†ä¸€å£°ï¼Œè¶´åœ¨åœ°ä¸Šä¸åŠ¨äº†ã€‚\n", this_object());
         destruct(this_object());
 }
 
@@ -96,15 +96,15 @@ void do_attacking(object me)
         if( !me || environment(me) != environment()  || !living(me) )
                 return;
 
-        say(HIR "\nÖ»¼û·¢ÆðÒ»Õó¿ñ·ç¡£\n" NOR);
-        say(HIR "Ö»ÌýµÃÂÒÊ÷±³ááÆËµØÒ»ÉùÏì£¬Ìø³öÒ»Ö»µõ¾¦°×¶î´ó³æÀ´¡£\n" NOR);
-        message_vision(HIR "ÄÇ´ó³æÓÖ¶ö£¬ÓÖ¿Ê£¬°ÑÁ½Ö»×¦ÔÚµØÉÏÂÔ°´Ò»°´£¬ºÍÉíÍû$NÒ»ÆË£¬´Ó°ë¿ÕÀïß¥½«ÏÂÀ´¡£\n" NOR, me);
+        say(HIR "\nåªè§å‘èµ·ä¸€é˜µç‹‚é£Žã€‚\n" NOR);
+        say(HIR "åªå¬å¾—ä¹±æ ‘èƒŒå¾Œæ‰‘åœ°ä¸€å£°å“ï¼Œè·³å‡ºä¸€åªåŠç›ç™½é¢å¤§è™«æ¥ã€‚\n" NOR);
+        message_vision(HIR "é‚£å¤§è™«åˆé¥¿ï¼Œåˆæ¸´ï¼ŒæŠŠä¸¤åªçˆªåœ¨åœ°ä¸Šç•¥æŒ‰ä¸€æŒ‰ï¼Œå’Œèº«æœ›$Nä¸€æ‰‘ï¼Œä»ŽåŠç©ºé‡Œæ’ºå°†ä¸‹æ¥ã€‚\n" NOR, me);
 
         ap = COMBAT_D->skill_power(ob, "strike", SKILL_USAGE_ATTACK);
         dp = COMBAT_D->skill_power(me, "dodge", SKILL_USAGE_DEFENSE);
 
         if( wizardp(me) )
-                write("ap = " + ap + "; dp = " + dp + "¡£\n");
+                write("ap = " + ap + "; dp = " + dp + "ã€‚\n");
 
         if( is_busy() ) dp /=3;
         if( dp < 1 ) dp = 1;
@@ -118,21 +118,21 @@ void do_attacking(object me)
                 result = SKILL_D(dodge_skill)->query_dodge_msg(limb);
                 message_vision(result, ob, me);
 
-                message_vision(HIR "ÄÇ´ó³æ±³áá¿´ÈË×îÄÑ£¬±ã°ÑÇ°×¦´îÔÚµØÏÂ£¬°ÑÑü¿èÏò$NÒ»ÏÆ£¬ÏÆ½«ÆðÀ´¡£\n" NOR, me);
+                message_vision(HIR "é‚£å¤§è™«èƒŒå¾Œçœ‹äººæœ€éš¾ï¼Œä¾¿æŠŠå‰çˆªæ­åœ¨åœ°ä¸‹ï¼ŒæŠŠè…°èƒ¯å‘$Nä¸€æŽ€ï¼ŒæŽ€å°†èµ·æ¥ã€‚\n" NOR, me);
 
                 if( !tigercatch(ap, dp) ) {
                         limb = limbs[random(sizeof(limbs))];
                         result = SKILL_D(dodge_skill)->query_dodge_msg(limb);
                         message_vision(result, ob, me);
 
-                        message_vision(HIR "´ó³æ¼ûÏÆ$NËû²»×Å£¬ºðÒ»Éù£¬È´ËÆ°ëÌìÀïÆð¸öÅùö¨£¬°ÑÕâÌú°ôÒ²ËÆ»¢Î²µ¹ÊúÆðÀ´Ö»Ò»¼ô¡£\n" NOR, ob);
+                        message_vision(HIR "å¤§è™«è§æŽ€$Nä»–ä¸ç€ï¼Œå¼ä¸€å£°ï¼Œå´ä¼¼åŠå¤©é‡Œèµ·ä¸ªéœ¹é›³ï¼ŒæŠŠè¿™é“æ£’ä¹Ÿä¼¼è™Žå°¾å€’ç«–èµ·æ¥åªä¸€å‰ªã€‚\n" NOR, ob);
 
                         if( !tigercatch(ap, dp) ) {
                                 limb = limbs[random(sizeof(limbs))];
                                 result = SKILL_D(dodge_skill)->query_dodge_msg(limb);
                                 message_vision(result, ob, me);
 
-                                say(HIR "Ô­À´ÄÇ´ó³æÄÃÈËÖ»ÊÇÒ»ÆË£¬Ò»ÏÆ£¬Ò»¼ô£»Èý°ã×½²»×ÅÊ±£¬ÆøÐÔÏÈ×ÔÃ»ÁËÒ»°ë¡£\n\n" NOR);
+                                say(HIR "åŽŸæ¥é‚£å¤§è™«æ‹¿äººåªæ˜¯ä¸€æ‰‘ï¼Œä¸€æŽ€ï¼Œä¸€å‰ªï¼›ä¸‰èˆ¬æ‰ä¸ç€æ—¶ï¼Œæ°”æ€§å…ˆè‡ªæ²¡äº†ä¸€åŠã€‚\n\n" NOR);
                                 kill_ob(me);
                                 me->fight(ob);
                                 if( (int)me->query("combat_exp") < 100000 )
@@ -143,7 +143,7 @@ void do_attacking(object me)
                 }
         }
 
-        message_vision(HIR "$NÕâÒ»ÏÂÃ»ÓÐ¶ã¿ª£¬Îª»¢ËùÉËÔÎÁË¹ýÈ¥¡£\n\n" NOR, me);
+        message_vision(HIR "$Nè¿™ä¸€ä¸‹æ²¡æœ‰èº²å¼€ï¼Œä¸ºè™Žæ‰€ä¼¤æ™•äº†è¿‡åŽ»ã€‚\n\n" NOR, me);
 
         me->receive_wound("qi", (int)me->query("max_qi") + 100, this_object());
 }
@@ -162,7 +162,7 @@ int random_walk()
         string *dirs, dir;
 
         if( member_array(base_name(environment()), walkrooms) == -1 ) {
-                message_vision("$NÒ»ÁïÑÌÅÜµôÁË¡£\n", this_object());
+                message_vision("$Nä¸€æºœçƒŸè·‘æŽ‰äº†ã€‚\n", this_object());
                 destruct(this_object());
         }
 

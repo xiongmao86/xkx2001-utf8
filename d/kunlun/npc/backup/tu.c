@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tu.c ºñÍÁÆì½ÌÍ½
+// tu.c åšåœŸæ——æ•™å¾’
 
 #include <ansi.h>
 inherit NPC;
@@ -7,12 +7,12 @@ string check();
 
 void create()
 {
-	set_name("ºñÍÁÆì½ÌÍ½", ({"Houtu jiaotu", "jiaotu"}));
+	set_name("åšåœŸæ——æ•™å¾’", ({"Houtu jiaotu", "jiaotu"}));
 	set("long", 
 		"\n"
 		"\n");
 	set("age",  );
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "heroism");
 
 	set("str", 24);

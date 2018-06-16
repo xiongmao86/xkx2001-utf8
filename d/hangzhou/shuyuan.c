@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ·ï³ØÊéÔº
+// å‡¤æ± ä¹¦é™¢
 // modified by aln  2 / 98
 
 // NTD:  NPC and object. 
@@ -10,10 +10,10 @@
 inherit ROOM;
 
 void create()
-{       set("short", "ÓñÈªÊéÔº");
+{       set("short", "çŽ‰æ³‰ä¹¦é™¢");
         set("long", @LONG
-ÊéÔºÕýÖÐÓÐÒ»ØÒ¡°ÓñÈªÊéÔº¡±¡£ÊéÔºÀï×ø×ÅÁ½Î»ÀÏÕß£¬ËûÃÇÕýÔÚ
-Ò÷Ê«×÷¶Ô¡£ËûÃÇÉíÅÔµÄ×ÀÉÏÆÌ×ÅÐûÖ½ºÍ±ÊÄ«¡£
+ä¹¦é™¢æ­£ä¸­æœ‰ä¸€åŒ¾â€œçŽ‰æ³‰ä¹¦é™¢â€ã€‚ä¹¦é™¢é‡Œåç€ä¸¤ä½è€è€…ï¼Œä»–ä»¬æ­£åœ¨
+åŸè¯—ä½œå¯¹ã€‚ä»–ä»¬èº«æ—çš„æ¡Œä¸Šé“ºç€å®£çº¸å’Œç¬”å¢¨ã€‚
 LONG);
 
         set("objects", ([

@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Öª¿ÍÉ®", ({"zhike seng", "seng"}));
+        set_name("çŸ¥å®¢åƒ§", ({"zhike seng", "seng"}));
         set("long",
-	    "ËûÊÇÒ»Î»ÀÏºÍÉĞ£¬¹ÇÊİÈç²ñ£¬ÉíÉÏµÄôÂôÄ´òÂúÁË²¹¶¡¡£\n");
-	 set("gender", "ÄĞĞÔ");
+	    "ä»–æ˜¯ä¸€ä½è€å’Œå°šï¼Œéª¨ç˜¦å¦‚æŸ´ï¼Œèº«ä¸Šçš„è¢ˆè£Ÿæ‰“æ»¡äº†è¡¥ä¸ã€‚\n");
+	 set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 

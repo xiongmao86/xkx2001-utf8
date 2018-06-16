@@ -8,11 +8,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃÉÃæÈË", ({ "mengmian ren", "mengmian", "figure" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("è’™é¢äºº", ({ "mengmian ren", "mengmian", "figure" }) );
+        set("gender", "ç”·æ€§");
         set("age", 23);
         set("long",
-                "Ò»¸öºÚ²¼ÃÉÃæ£¬ÉñÃØÙâÙâµÄ¼Ò»ï¡£\n");
+                "ä¸€ä¸ªé»‘å¸ƒè’™é¢ï¼Œç¥ç§˜å…®å…®çš„å®¶ä¼™ã€‚\n");
         set("combat_exp", 300000 + random(200000));
         set("shen_type", -1);
         set("attitude", "heroism");
@@ -85,7 +85,7 @@ void greeting(object me)
 {
         if( is_fighting(me) ) return;
 
-        say("ÃÉÃæÈË¶Ô¶¼´ó½õºÈµÀ£º¶¼´ó½õ£¡Ã÷ÄêµÄ½ñÌìÊÇÄãµÄ¼ÉÈÕ£¡\n");
+        say("è’™é¢äººå¯¹éƒ½å¤§é”¦å–é“ï¼šéƒ½å¤§é”¦ï¼æ˜å¹´çš„ä»Šå¤©æ˜¯ä½ çš„å¿Œæ—¥ï¼\n");
 
         kill_ob(me);
 }

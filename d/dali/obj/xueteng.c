@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xueteng.c ´óÑªÌÙ
+// xueteng.c å¤§è¡€è—¤
 
 #include <ansi.h>
 
@@ -10,13 +10,13 @@ void init();
 
 void create()
 {
-        set_name( GRN "´óÑªÌÙ" NOR , ({"da xueteng", "xueteng"}));
+        set_name( GRN "å¤§è¡€è—¤" NOR , ({"da xueteng", "xueteng"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
-                set("long", "ÕâÊÇÒ»¿ÃÄÏÚ¯ÌØ²úµÄ´óÑªÌÙ£¬¿´ÆğÀ´ÊÇºÚºõºõµÄ¿İÄ¾£¬µ«ÓĞ²¹ÑªÕñÆøµÄÉñĞ§¡£\n");
+                set("unit", "æ£µ");
+                set("long", "è¿™æ˜¯ä¸€æ£µå—è¯ç‰¹äº§çš„å¤§è¡€è—¤ï¼Œçœ‹èµ·æ¥æ˜¯é»‘ä¹ä¹çš„æ¯æœ¨ï¼Œä½†æœ‰è¡¥è¡€æŒ¯æ°”çš„ç¥æ•ˆã€‚\n");
                 set("value", 10000);
                 set("medicine", 1);
         }
@@ -29,14 +29,14 @@ int cure_ob(object me)
                 me->add("max_neili", -1);
                 me->set("neili", 0);
                 me->apply_condition("bonze_drug", 30);
-        message_vision(HIR "$N³ÔÏÂÒ»¿Å´óÑªÌÙ£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+        message_vision(HIR "$Nåƒä¸‹ä¸€é¢—å¤§è¡€è—¤ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
                 destruct(this_object());
         }
         
         me->set("qi", (int)me->query("max_qi"));
         me->add("max_neili", 1);
         me->set("neili", (int)me->query("max_neili")*2);
-        tell_object(me, HIY"Äã³ÔÏÂÒ»¿Ã´óÑªÌÙ£¬¶ÙÊ±ÑªÆø·­Ó¿ÑªÂöÅòÕÍ£¬ÆøÁ¦´ó³¤¡£\n" NOR);
+        tell_object(me, HIY"ä½ åƒä¸‹ä¸€æ£µå¤§è¡€è—¤ï¼Œé¡¿æ—¶è¡€æ°”ç¿»æ¶Œè¡€è„‰è†¨èƒ€ï¼Œæ°”åŠ›å¤§é•¿ã€‚\n" NOR);
         destruct(this_object());
         return 1;
 }

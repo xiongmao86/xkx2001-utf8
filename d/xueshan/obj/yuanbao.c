@@ -1,16 +1,16 @@
 //Cracked by Roath
-// necklace.c ½ğÏîÁ´
+// necklace.c é‡‘é¡¹é“¾
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-	set_name(HIY"½ğÔª±¦"NOR, ({ "jin yuanbao", "jin", "yuanbao" }));
+	set_name(HIY"é‡‘å…ƒå®"NOR, ({ "jin yuanbao", "jin", "yuanbao" }));
 	set("weight", 9000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 400000);
 		set("material", "gold");
 	}

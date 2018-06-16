@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-    set("short", HIR"Ã÷½ÌÉ½ÃÅ"NOR);
+    set("short", HIR"æ˜æ•™å±±é—¨"NOR);
     set("long",@LONG    
-´Ë´¦ÄËÃ÷½ÌÉ½ÃÅ£¬µØÊÆËäÂÔÏÔÆ½Ì¹µ«¸üÔö¹îÒì¡£É½ÃÅÁ½ÅÔËÊÁ¢Êı¿Ã²Î
-Ìì¹ÅËÉ£¬ÏÔ³öÃ÷½ÌÆøÊÆ·Ç·²¡£ÔÚ×ó±ßÒ»¿éÍ¹ÆğµÄ´óÉ½ÑÒÉÏ¿ÌÓĞ×ÅÁú·É·ïÎè
-µÄÁ½¸öºìÉ«´ó×Ö£º¡ºÃ÷½Ì¡»¡£
+æ­¤å¤„ä¹ƒæ˜æ•™å±±é—¨ï¼Œåœ°åŠ¿è™½ç•¥æ˜¾å¹³å¦ä½†æ›´å¢è¯¡å¼‚ã€‚å±±é—¨ä¸¤æ—è€¸ç«‹æ•°æ£µå‚
+å¤©å¤æ¾ï¼Œæ˜¾å‡ºæ˜æ•™æ°”åŠ¿éå‡¡ã€‚åœ¨å·¦è¾¹ä¸€å—å‡¸èµ·çš„å¤§å±±å²©ä¸Šåˆ»æœ‰ç€é¾™é£å‡¤èˆ
+çš„ä¸¤ä¸ªçº¢è‰²å¤§å­—ï¼šã€æ˜æ•™ã€ã€‚
 LONG
 	);
 		set("objects",([
@@ -35,10 +35,10 @@ int valid_leave(object me, string dir)
         if (dir == "northup" 
 			&& objectp(ob=present("mingjiao shouwei", environment(me)))
 			&&living(ob))
-//			if (fam["family_name"] != "Ã÷½Ì")
-			if (this_player()->query("family/family_name") != "Ã÷½Ì")
+//			if (fam["family_name"] != "æ˜æ•™")
+			if (this_player()->query("family/family_name") != "æ˜æ•™")
                 return notify_fail(
-				"Ã÷½ÌÊØÎÀºÈµÀ£ºÀïÃæÊÇÃ÷½ÌÊ¥µØ£¬ÕâÎ»" + 	RANK_D->query_respect(me)+"²¢·ÇÎÒ½ÌĞÅÍ½£¬ÇëÖ¹²½!\n");
+				"æ˜æ•™å®ˆå«å–é“ï¼šé‡Œé¢æ˜¯æ˜æ•™åœ£åœ°ï¼Œè¿™ä½" + 	RANK_D->query_respect(me)+"å¹¶éæˆ‘æ•™ä¿¡å¾’ï¼Œè¯·æ­¢æ­¥!\n");
         return ::valid_leave(me, dir);
 }
 

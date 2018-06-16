@@ -3,8 +3,8 @@ inherit NPC_TRAINEE;
 
 void create()
 {
-    set_name("Ğ¡Ã«Â¿", ({"donkey", "maolu", "lu"}));
-    set("race", "¼ÒĞó");
+    set_name("å°æ¯›é©´", ({"donkey", "maolu", "lu"}));
+    set("race", "å®¶ç•œ");
     set("age", 10);
     set("auto_follow",1);
     set("attitude", "peaceful");
@@ -18,8 +18,8 @@ void create()
     set("combat_exp", 1000);
 
     set_weight(15000);
-    set("unit", "Æ¥");
-    set("long", "Ò»Æ¥ºÚÉ«µÄĞ¡Ã«Â¿£¬¿ÉÒÔÆï£¬Ò²¿ÉÒÔÍÔ¶«Î÷¡£\n");
+    set("unit", "åŒ¹");
+    set("long", "ä¸€åŒ¹é»‘è‰²çš„å°æ¯›é©´ï¼Œå¯ä»¥éª‘ï¼Œä¹Ÿå¯ä»¥é©®ä¸œè¥¿ã€‚\n");
     setup();
 }
 
@@ -37,7 +37,7 @@ int do_ride(string arg)
     ob = this_player();
 
     if (!id(arg))
-        return notify_fail("ÄãÒªÆïÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦éª‘ä»€ä¹ˆï¼Ÿ\n");
     if( me->query_lord() == ob )  {
         if( !ob->query_temp("riding") ) {
             if( !me->query_temp("rider") )  {
@@ -45,17 +45,17 @@ int do_ride(string arg)
                 me->set_temp("rider",  ob->name());
                 me->set_leader(ob);
 
-                message("vision",this_player()->name() + "·­ÉíÉÏÂ¿¡£Ã«Â¿Ò»ÁÃÌã×Ó£¬"
-                       "²îÒ»µã°Ñ"+this_player()->name() + "ÏÆÏÂÂ¿±³¡£\n",
+                message("vision",this_player()->name() + "ç¿»èº«ä¸Šé©´ã€‚æ¯›é©´ä¸€æ’©è¹„å­ï¼Œ"
+                       "å·®ä¸€ç‚¹æŠŠ"+this_player()->name() + "æ€ä¸‹é©´èƒŒã€‚\n",
                         environment(me), ({me}) );
-                write("Äã·­ÉíÆïÉÏÃ«Â¿£¬ËüÒ»ÁÃÌã×Ó£¬°ÑÄãÏÅ³öÒ»ÉíÀäº¹¡£\n");
+                write("ä½ ç¿»èº«éª‘ä¸Šæ¯›é©´ï¼Œå®ƒä¸€æ’©è¹„å­ï¼ŒæŠŠä½ å“å‡ºä¸€èº«å†·æ±—ã€‚\n");
                 return 1;
             }
-            else return notify_fail( me->query_temp("rider") + "ÒÑ¾­ÆïÔÚËüÉíÉÏÉÏÁË£¡\n");
+            else return notify_fail( me->query_temp("rider") + "å·²ç»éª‘åœ¨å®ƒèº«ä¸Šä¸Šäº†ï¼\n");
         }
-        else return notify_fail("ÄãÒÑ¾­ÆïÔÚ" + ob->query_temp("riding") + "ÉÏÁË£¡\n");
+        else return notify_fail("ä½ å·²ç»éª‘åœ¨" + ob->query_temp("riding") + "ä¸Šäº†ï¼\n");
     }
-    else return notify_fail("Äã²»ÊÇËüµÄÖ÷ÈË£¡\n");
+    else return notify_fail("ä½ ä¸æ˜¯å®ƒçš„ä¸»äººï¼\n");
 
     return 0;
 }
@@ -69,10 +69,10 @@ int do_unride()
         {
                 ob->delete_temp("riding");
                 me->delete_temp("rider" );
-                message_vision("\n$NÒ»×İÉí£¬´Ó" + me->name() +"ÉíÉÏÔ¾ÁËÏÂÀ´¡£\n", ob);
+                message_vision("\n$Nä¸€çºµèº«ï¼Œä»" + me->name() +"èº«ä¸Šè·ƒäº†ä¸‹æ¥ã€‚\n", ob);
                 return 1;
         }
-        else return notify_fail("Äã»¹Ã»ÆïËüÄØ£¡\n");
+        else return notify_fail("ä½ è¿˜æ²¡éª‘å®ƒå‘¢ï¼\n");
 
         return 0;
 }

@@ -1,29 +1,29 @@
 //Cracked by Roath
-// wuyu-zhangfa.c ÎåÓüÕÆ·¨
+// wuyu-zhangfa.c äº”ç‹±æŒæ³•
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÍ»È»Ò»×ªÉí±³¶Ô$nÑöÌìµ¹ÏÂ£¬Ò»ÕĞ¡¸ÏĞ¹ıĞÅÁêÒû¡¹³Ë$n²»ÖªËù´ëÊ±£¬Ë«È­Ïò$nµÄ$l»÷È¥",
+([      "action" : "$Nçªç„¶ä¸€è½¬èº«èƒŒå¯¹$nä»°å¤©å€’ä¸‹ï¼Œä¸€æ‹›ã€Œé—²è¿‡ä¿¡é™µé¥®ã€ä¹˜$nä¸çŸ¥æ‰€æªæ—¶ï¼ŒåŒæ‹³å‘$nçš„$lå‡»å»",
         "dodge": 10,
         "force": 40,
         "damage": 0,
         "lvl" : 0,  
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([      "action" : "$NÌÚ¿Õ¶øÆğ£¬Ò»ÕĞ¡¸ÎåÓüµ¹ÎªÇá¡¹Éí×ÓÔÚ¿ÕÖĞµ¹×ª£¬Í·ÏÂ½ÅÉÏ£¬Ë«ÕÆÏò$nµÄ$l»÷È¥",
+([      "action" : "$Nè…¾ç©ºè€Œèµ·ï¼Œä¸€æ‹›ã€Œäº”ç‹±å€’ä¸ºè½»ã€èº«å­åœ¨ç©ºä¸­å€’è½¬ï¼Œå¤´ä¸‹è„šä¸Šï¼ŒåŒæŒå‘$nçš„$lå‡»å»",
         "dodge": 10,
         "force": 40,
         "damage": 0,
         "lvl" : 0,  
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([      "action" : "$NÒ»ÕĞ¡¸×İËÀÏÀ¹ÇÏã¡¹ÉáÉíÓ­Ïò$n£¬Ë«ÕÆÒ»ÏÂÒ»ÉÏÏò$nµÄ$l»÷È¥",
+([      "action" : "$Nä¸€æ‹›ã€Œçºµæ­»ä¾ éª¨é¦™ã€èˆèº«è¿å‘$nï¼ŒåŒæŒä¸€ä¸‹ä¸€ä¸Šå‘$nçš„$lå‡»å»",
         "dodge": 10,
         "force": 40,
         "damage": 0,
         "lvl" : 0,  
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
 
 });
@@ -32,7 +32,7 @@ int valid_enable(string usage) { return usage=="cuff" || usage=="parry"; }
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-      	return notify_fail("Á·ÏÀ¿ÍÈ­±ØĞë¿ÕÊÖ¡£\n");
+      	return notify_fail("ç»ƒä¾ å®¢æ‹³å¿…é¡»ç©ºæ‰‹ã€‚\n");
 	return 1;
 }
 mapping query_action(object me, object weapon)
@@ -43,9 +43,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query_skill("xiake-quan", 1) >= 50)
-		return notify_fail("ÄãµÄÏÀ¿ÍÈ­ÒÑ¾­ÎŞ·¨ÔÙÓÃÁ·À´Ìá¸ßÁË¡£\n");
+		return notify_fail("ä½ çš„ä¾ å®¢æ‹³å·²ç»æ— æ³•å†ç”¨ç»ƒæ¥æé«˜äº†ã€‚\n");
       if ((int)me->query("jingli") < 30)
-		return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
 
 	me->receive_damage("jingli", 30);
 	me->add("neili", -5);

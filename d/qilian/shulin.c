@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Ğ¡Ê÷ÁÖ
+// å°æ ‘æ—
 // Ryu, 10/28/96.
 #include <room.h>
 inherit ROOM;
@@ -8,9 +8,9 @@ int do_chop();
 int do_make();
 void create()
 {
-  set ("short", "Ğ¡Ê÷ÁÖ");
+  set ("short", "å°æ ‘æ—");
   set ("long", @LONG
-Ò»Æ¬Ğ¡Ğ¡Ê÷ÁÖ£¬ÕâÀïµÄÊ÷Ö¦(shuzhi)Ö¦Ò¶²»ÊÇºÜÃ¯ÃÜ¡£
+ä¸€ç‰‡å°å°æ ‘æ—ï¼Œè¿™é‡Œçš„æ ‘æ(shuzhi)æå¶ä¸æ˜¯å¾ˆèŒ‚å¯†ã€‚
 
 LONG);
 
@@ -18,7 +18,7 @@ LONG);
                 "northth" : __DIR__"sulee",
         ]));
 	set("item_desc", ([
-                "shuzhi" : "Ò»Ğ©²»ÊÇºÜ´Ö×³µÄÊ÷Ö¦£¬¿ÉÒÔ°ÑËüÃÇ¿³(chop)ÏÂÀ´×ö³ÉÒ»¸öÄ¾·¤¡£\n"
+                "shuzhi" : "ä¸€äº›ä¸æ˜¯å¾ˆç²—å£®çš„æ ‘æï¼Œå¯ä»¥æŠŠå®ƒä»¬ç (chop)ä¸‹æ¥åšæˆä¸€ä¸ªæœ¨ç­ã€‚\n"
         ]));
 	set("outdoors", "/d/qilian");
 	set("cost", 2);
@@ -34,19 +34,19 @@ int do_chop(string arg)
 	object weapon, me = this_player();
 	
 	if( !arg || arg!="shuzhi" )
-        return notify_fail("ÄãÒª¿³ÉõÃ´£¿£¡\n");
+        return notify_fail("ä½ è¦ç ç”šä¹ˆï¼Ÿï¼\n");
 	
 	if( !objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword"
 	&& (string)weapon->query("skill_type") != "blade" )
 
-	return notify_fail("¿ÕÊÖ¿³Ê÷¿ÖÅÂ²»ĞĞ°É£¿£¡\n"); 
+	return notify_fail("ç©ºæ‰‹ç æ ‘ææ€•ä¸è¡Œå§ï¼Ÿï¼\n"); 
 	
 	me->receive_damage("jingli", 5);
-	message_vision("$NÓÃÊÖÖĞµÄ¼Ò»ï£¬´ÓÊ÷ÉÏ¿³ÏÂÒ»Ğ©Ê÷Ö¦¡£\n", me);
+	message_vision("$Nç”¨æ‰‹ä¸­çš„å®¶ä¼™ï¼Œä»æ ‘ä¸Šç ä¸‹ä¸€äº›æ ‘æã€‚\n", me);
 	if ( random(15) == 9) {
-        write("Äã¿³ÏÂµÄÊ÷Ö¦ËÆºõ×ã¹»×ö(make)Ò»¸öÄ¾·¤(raft)ÁË¡£\n");
-        me->set_temp("marks/¿³", 1);
+        write("ä½ ç ä¸‹çš„æ ‘æä¼¼ä¹è¶³å¤Ÿåš(make)ä¸€ä¸ªæœ¨ç­(raft)äº†ã€‚\n");
+        me->set_temp("marks/ç ", 1);
         }
         me->set_busy(10);
 	return 1;
@@ -56,14 +56,14 @@ int do_make(string arg)
 	object ob, me = this_player();
 
         if( !arg || arg!="raft" )
-        return notify_fail("ÄãÒª×öÉõÃ´£¿\n");
+        return notify_fail("ä½ è¦åšç”šä¹ˆï¼Ÿ\n");
 
-	if( !me->query_temp("marks/¿³") )	
-	return notify_fail("ÄãÒª×öÉõÃ´£¿\n");
+	if( !me->query_temp("marks/ç ") )	
+	return notify_fail("ä½ è¦åšç”šä¹ˆï¼Ÿ\n");
 
 	ob = new("/d/qilian/obj/raft");
         ob->move("/d/qilian/shulin");	
-	me->delete_temp("marks/¿³");
+	me->delete_temp("marks/ç ");
 
 	return 1;
 }

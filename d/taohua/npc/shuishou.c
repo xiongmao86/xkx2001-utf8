@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÑÆ°ÍË®ÊÖ", ({ "shui shou","shou" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å“‘å·´æ°´æ‰‹", ({ "shui shou","shou" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
         set("long",
-		"ËûÓÖÁûÓÖÑÆ£¬µ«Éí×Ó¹ÇÉõÎª½áÊµ£¬Á³ÉÏ±»º£·ç´µµÄÓÖºìÓÖºÚ¡£¡£\n");
+		"ä»–åˆè‹åˆå“‘ï¼Œä½†èº«å­éª¨ç”šä¸ºç»“å®ï¼Œè„¸ä¸Šè¢«æµ·é£å¹çš„åˆçº¢åˆé»‘ã€‚ã€‚\n");
 	set("combat_exp", 10000);
 	set("shen_type", 0);
 	set("attitude", "friendly");

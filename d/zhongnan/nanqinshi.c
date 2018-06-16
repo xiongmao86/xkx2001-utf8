@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "男厢房");
         set("long", @LONG
-��������᷿����ܣ�ļ��Ǹɾ�����Ȼ���ü򵥣�ȴҲ����һ����ů
-�ĸо������м���ľ����һ�����ӣ���������������ͷ��˯������������
-����
+这ㄦ是男厢房，打埽的极是干净。虽然布置简单，却也给人一种温暖
+的感觉。房中几张木床和一张桌子，几个弟子正在蒙头大睡。往西是演武
+厅。
 LONG
         );
 
@@ -39,7 +39,7 @@ int valid_leave(object me, string dir)
         if ( dir == "west" || dir == "north" ) {
                 for (i=0; i<sizeof(inv); i++) {
                         if (inv[i]->is_character())
-                        return notify_fail("�㲻�ܴ�����������뿪��Ϣ�ҡ�\n");
+                        return notify_fail("你不能带着其他玩家离开休息室。\n");
                 }
         }
 

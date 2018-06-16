@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÏÄÀ­");
+        set("short", "å¤æ‹‰");
         set("long", @LONG
-Ì§ÑÛÍûÈ¥£¬»ÆÃ£Ã£Ò»Æ¬É³Ä®£¬ËÆÎŞ¾¡Í·£¬Ö±Á¬Ìì±ß¡£ÕâÀï¾¡ÊÇ
-»ÆÉ³Ê¯Àù£¬Ã»ÓĞÒ»µãÉúÆø£¬ÃÉ¹ÅÓï³ÆÎªÏÄÀ­¡£
+æŠ¬çœ¼æœ›å»ï¼Œé»„èŒ«èŒ«ä¸€ç‰‡æ²™æ¼ ï¼Œä¼¼æ— å°½å¤´ï¼Œç›´è¿å¤©è¾¹ã€‚è¿™é‡Œå°½æ˜¯
+é»„æ²™çŸ³ç ¾ï¼Œæ²¡æœ‰ä¸€ç‚¹ç”Ÿæ°”ï¼Œè’™å¤è¯­ç§°ä¸ºå¤æ‹‰ã€‚
 LONG
         );
         set("exits", ([
@@ -51,7 +51,7 @@ int valid_leave(object me, string dir)
 	}
 	me->move("/d/qilian/shamo");
            me->delete_temp("mark/steps");
-	 return notify_fail("Äã×ß³öÁËÏÄÀ­¡£\n");
+	 return notify_fail("ä½ èµ°å‡ºäº†å¤æ‹‰ã€‚\n");
          }
 
      if (me->query_temp("mark/steps") == -3)
@@ -64,7 +64,7 @@ int valid_leave(object me, string dir)
 	}
 	me->move("/d/qilian/gebi7");
            me->delete_temp("mark/steps");
-         return notify_fail("Äã×ß³öÁËÏÄÀ­¡£\n");
+         return notify_fail("ä½ èµ°å‡ºäº†å¤æ‹‰ã€‚\n");
 }
  return ::valid_leave(me,dir);
 }

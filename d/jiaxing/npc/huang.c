@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ÆÖÓ¹«",({ "huangzhong gong","gong" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("é»„é’Ÿå…¬",({ "huangzhong gong","gong" }) );
+        set("gender", "ç”·æ€§");
         set("age", 65);
 	set("long",
-		"Ëû¹ÇÊİÈç²ñ£¬Á³ÉÏµÄ¼¡Èâ¶¼°¼ÁË½øÈ¥£¬Ö±ÈçÒ»¾ß÷¼÷Ã£¬"
-		"Ë«Ä¿È´¾¼¾¼ÓĞÉñ¡£\n");
+		"ä»–éª¨ç˜¦å¦‚æŸ´ï¼Œè„¸ä¸Šçš„è‚Œè‚‰éƒ½å‡¹äº†è¿›å»ï¼Œç›´å¦‚ä¸€å…·éª·é«…ï¼Œ"
+		"åŒç›®å´ç‚¯ç‚¯æœ‰ç¥ã€‚\n");
        // set("nickname","");
-        set("title","Ã·×¯´ó×¯Ö÷");
+        set("title","æ¢…åº„å¤§åº„ä¸»");
         set("combat_exp", 90000);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -27,10 +27,10 @@ void create()
 	set("jiali",45);
 
 
-	set("mz/toy","¹ãÁêÉ¢");
+	set("mz/toy","å¹¿é™µæ•£");
 	set("mz/set","huang");
 	set("mz/need","heibai");
-	set("mz/needname","¶ş×¯Ö÷");
+	set("mz/needname","äºŒåº„ä¸»");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 	carry_object(__DIR__"obj/yaoqin")->wield();
@@ -40,9 +40,9 @@ void fightwin(object who)
 {
 	object where = environment(this_object());
 
-	message_vision("»ÆÖÓ¹«ÏÆÆğ´²ÉÏµÄ±»çÈ£¬½ÒÆğ´²°å£¬Â¶³öÒ»¸ö³¤·½´ó¶´¡£\n\n",
+	message_vision("é»„é’Ÿå…¬æ€èµ·åºŠä¸Šçš„è¢«ç¼›ï¼Œæ­èµ·åºŠæ¿ï¼Œéœ²å‡ºä¸€ä¸ªé•¿æ–¹å¤§æ´ã€‚\n\n",
 		who);
-        command("say ÄãÈôÓĞ±¾ÊÂ£¬ÇëºÍÎÒÃÇÃ·×¯ÀïµÄÕâÎ»ÔÚµØÏÂÒş¾ÓµÄ¸ßÊÖ±È±È¡£");
+        command("say ä½ è‹¥æœ‰æœ¬äº‹ï¼Œè¯·å’Œæˆ‘ä»¬æ¢…åº„é‡Œçš„è¿™ä½åœ¨åœ°ä¸‹éšå±…çš„é«˜æ‰‹æ¯”æ¯”ã€‚");
 
 	call_out("create_exit",1,where);
 }

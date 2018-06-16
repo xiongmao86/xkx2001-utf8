@@ -2,9 +2,9 @@
 inherit NPC;
 void create()
 {
-        set_name("ÆÍÒÛ", ({ "pu yi" }));
+        set_name("ä»†å½¹", ({ "pu yi" }));
         set("str", 20);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 18);
         set_max_encumbrance(100000000);
         set("combat_exp", 250);
@@ -16,12 +16,12 @@ void create()
 int accept_object(object who,object ob)
 {
         string *money_list= ({
-        "°×Òø",
-	"»Æ½ð",
-	"½ðÔª±¦"
+        "ç™½é“¶",
+	"é»„é‡‘",
+	"é‡‘å…ƒå®"
         });
 if (who->query("combat_exp") < 5000)
-        return notify_fail("Äã»¹Ì«Ð¡£¬ÏÈÉú²»»áÊÕÄãµÄ£¡\n");
+        return notify_fail("ä½ è¿˜å¤ªå°ï¼Œå…ˆç”Ÿä¸ä¼šæ”¶ä½ çš„ï¼\n");
 
  if ( member_array(ob->query("name"), money_list) != -1 )
 	{
@@ -31,7 +31,7 @@ if (who->query("combat_exp") < 5000)
         {
  	who->set_temp("dalibook",2);
 	who->add_temp("dalibookimprove", (int)ob->value()/2000);
-	log_file("QUESTS", sprintf("%s(%s) paid %d Á½»Æ½ð to learn from teacher.\n",
+	log_file("QUESTS", sprintf("%s(%s) paid %d ä¸¤é»„é‡‘ to learn from teacher.\n",
         who->query("name"), getuid(who), (int)ob->value()/10000));
 
 	return 1;

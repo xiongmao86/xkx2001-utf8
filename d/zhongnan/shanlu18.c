@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-		  set("short","�綴��");
+		  set("short","风洞口");
 
 		  set("long",@LONG
-����ǰ����һ���󶴣������󻨸��Ҽ��Ŷ��ɡ��������ϰϰ�������쬣�
-�ʳƷ綴���˶�ɽ·�������ͱڶ���������ģ��ر�������С���������ͨ��
-����������ͨ���嶥��
+你眼前出现一个大洞，由两大花岗岩夹峙而成。洞内清风习习，凉气飕飕，
+故称风洞。此段山路是沿着峭壁而开凿出来的，特别崎岖难行。往东向下通往
+湖滨，北上通往峰顶。
 LONG);
 
 		  set("exits",([ "eastdown" : __DIR__"shanlu17",

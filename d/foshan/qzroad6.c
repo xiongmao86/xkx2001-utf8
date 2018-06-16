@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ּ��");
+        set("short", "林间道");
         set("long", @LONG
-������һ���ּ�С���������������ѡ�����ɽ��ï
-�ܣ�������棬��λ��·Ҫʮ��С�ġ�
+这里是一条林间小道，在树丛中蜿蜒。闽西山林茂
+密，多产毒虫，各位行路要十分小心。
 LONG
         );
         set("exits", ([

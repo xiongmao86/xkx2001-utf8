@@ -1,5 +1,5 @@
 //Cracked by Roath
-//sanqing.c Ò»½£»¯ÈýÇå
+//sanqing.c ä¸€å‰‘åŒ–ä¸‰æ¸…
 //by sdong
 
 #include <ansi.h>
@@ -18,25 +18,25 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ò»½£»¯ÈýÇåÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ä¸€å‰‘åŒ–ä¸‰æ¸…åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("sanqing",1) )
-		return notify_fail("ÄãÒÑÔÚÊ¹ÓÃÒ»½£»¯ÈýÇå£¡\n");
+		return notify_fail("ä½ å·²åœ¨ä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	if( me->query_skill_mapped("force") != "xiantian-gong" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·ÇÏÈÌì¹¦£¬ÎÞ·¨Ê©Õ¹Ò»½£»¯ÈýÇå£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éžå…ˆå¤©åŠŸï¼Œæ— æ³•æ–½å±•ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	if( me->query_skill("xiantian-gong", 1) < 60 )
-		return notify_fail("ÄãµÄÏÈÌì¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹Ò»½£»¯ÈýÇå£¡\n");
+		return notify_fail("ä½ çš„å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 
 	if( me->query_skill("sword") < 135 )
-		return notify_fail("ÄãµÄÈ«Õæ½£·¨ÐÞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÒ»½£»¯ÈýÇå£¡\n");
+		return notify_fail("ä½ çš„å…¨çœŸå‰‘æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	if( me->query("neili") <= 200 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÒ»½£»¯ÈýÇå£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 	if( me->query("jingli") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÒ»½£»¯ÈýÇå£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 
 	weapon = me->query_temp("weapon");
@@ -46,7 +46,7 @@ int perform(object me, object target)
 	skill =  ( me->query_skill("quanzhen-jian")
 		+ me->query_skill("force") ) / 2;
 
-	message_vision(HIY "$N´óºÈÒ»Éù£¬½£ÕÐÍ»±ä£¬"+(me->query_temp("weapon"))->query("name")+HIY"±Æ³öÑ©ÁÁ¹âÃ¢£¬Ò»½£»¯ÎªÈý½££¬½£½£¿ìËÆÉÁµç£¡\n\n" NOR, me, target);
+	message_vision(HIY "$Nå¤§å–ä¸€å£°ï¼Œå‰‘æ‹›çªå˜ï¼Œ"+(me->query_temp("weapon"))->query("name")+HIY"é€¼å‡ºé›ªäº®å…‰èŠ’ï¼Œä¸€å‰‘åŒ–ä¸ºä¸‰å‰‘ï¼Œå‰‘å‰‘å¿«ä¼¼é—ªç”µï¼\n\n" NOR, me, target);
 
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
@@ -66,7 +66,7 @@ int remove_effect(object me, object target)
 	me->set_temp("apply/attack", me->query_temp("apply/attack",1)-10);
 	me->delete_temp("sanqing");
 	message_vision(
-	HIG "\n$NÎüÁËÒ»¿ÚÆø£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï£¬½£ÕÐÒ²»Ö¸´Õý³££¡\n\n" NOR, me);
+	HIG "\n$Nå¸äº†ä¸€å£æ°”ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ï¼Œå‰‘æ‹›ä¹Ÿæ¢å¤æ­£å¸¸ï¼\n\n" NOR, me);
 
 	if( objectp(target) )
 		target->set_temp("apply/speed", target->query_temp("apply/speed",1)+50);

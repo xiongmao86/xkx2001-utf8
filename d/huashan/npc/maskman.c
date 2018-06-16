@@ -1,15 +1,15 @@
 //Cracked by Roath
-// maskman.c ÃÉÃæÈË
+// maskman.c è’™é¢äºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÃÉÃæÈË", ({ "mengmian ren","ren","mengmian" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è’™é¢äºº", ({ "mengmian ren","ren","mengmian" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 25+random(25));
 	set("long",
-		"Õâ¼Ò»ïºÚ½íÃÉÃæ£¬Ë«íø¾ùÓĞÉ±Æø£¬Ê±²»Ê±µÍ³ÁµØÒõĞ¦¡£\n");
+		"è¿™å®¶ä¼™é»‘å·¾è’™é¢ï¼ŒåŒçœ¸å‡æœ‰æ€æ°”ï¼Œæ—¶ä¸æ—¶ä½æ²‰åœ°é˜´ç¬‘ã€‚\n");
 	set("combat_exp", 5000);
 	set("shen_type", -1);
 	set("attitude", "heroism");

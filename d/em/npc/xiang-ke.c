@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiang-ke.c ½øÏã¿Í
+// xiang-ke.c è¿›é¦™å®¢
 
 inherit NPC;
 
@@ -9,8 +9,8 @@ void create()
 
 	value = random(10);
 
-	set_name("½øÏã¿Í", ({ "jingxiang ke", "ke", "guest" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("è¿›é¦™å®¢", ({ "jingxiang ke", "ke", "guest" }));
+	set("gender", "ç”·æ€§");
 	set("age", 15 + value * 3 );
 
 	set("combat_exp", 500 + 10 * value);

@@ -6,13 +6,13 @@ inherit NECK;
 
 void create()
 {
-	set_name(HIW"Ö¬ÓñÏîÁ´"NOR, ({ "jade necklace", "necklace", "lace" }));
+	set_name(HIW"è„‚ç‰é¡¹é“¾"NOR, ({ "jade necklace", "necklace", "lace" }));
 	set("weight", 500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»´®ÓÉºÍãÙÖ¬Óñ´®³ÉµÄÏîÁ´£¬ÓñÉ«ÎÂÈóÈçÑòÖ¬£¬½à°×ÎŞè¦¡£\n");
-		set("unit", "´®");
+		set("long", "ä¸€ä¸²ç”±å’Œé˜—è„‚ç‰ä¸²æˆçš„é¡¹é“¾ï¼Œç‰è‰²æ¸©æ¶¦å¦‚ç¾Šè„‚ï¼Œæ´ç™½æ— ç‘•ã€‚\n");
+		set("unit", "ä¸²");
 		set("value", 6000);
 		set("material", "jade");
 		set("armor_prop/armor", 2);

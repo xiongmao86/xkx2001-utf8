@@ -3,8 +3,8 @@ inherit ROOM;
 
 void create()
 {
-	set("short","第十八层地狱");
-	set("long","这里是地狱的最底层...\n");
+	set("short","绗崄鍏眰鍦扮嫳");
+	set("long","杩欓噷鏄湴鐙辩殑鏈�搴曞眰...\n");
 	set("valid_startroom",1);
 	set("cost", 0);
 	setup();

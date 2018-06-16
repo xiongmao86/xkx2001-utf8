@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaofei.c Ïô·É
+// xiaofei.c è§é£ž
 // qfy July 30, 1996
 // modified by ryu, 10/4/97
 
@@ -7,10 +7,10 @@ inherit NPC;
 int auto_throw();
 void create()
 {
-	set_name("Ïô·É", ({ "xiao fei", "xiao", "fei" }));
-	set("long", "Ïô·ÉÊÇÑïÍþÎä¹ÝµÄ°µÆ÷²¿½ÌÍ·£¬ÎªÈË»ú¾¯¶àÄ±¡£\n");
-	set("nickname", "ÂþÌì»¨Óê");
-	set("gender", "ÄÐÐÔ");
+	set_name("è§é£ž", ({ "xiao fei", "xiao", "fei" }));
+	set("long", "è§é£žæ˜¯æ‰¬å¨æ­¦é¦†çš„æš—å™¨éƒ¨æ•™å¤´ï¼Œä¸ºäººæœºè­¦å¤šè°‹ã€‚\n");
+	set("nickname", "æ¼«å¤©èŠ±é›¨");
+	set("gender", "ç”·æ€§");
 	set("age", 32);
 
 	set_skill("literate", 50);
@@ -40,7 +40,7 @@ void init()
         object ob;
 
         ::init();
-        if ( interactive(ob=this_player()) && (int)ob->query_temp("mark/Âí") ) {
+        if ( interactive(ob=this_player()) && (int)ob->query_temp("mark/é©¬") ) {
                 remove_call_out("greeting");
                 call_out("greeting", 1, ob);
         }
@@ -50,13 +50,13 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-	command("say »¶Ó­ÕâÎ»"+RANK_D->query_respect(ob)+"£¬Äã¿ÉÏòÎÒÑ§°µÆ÷(throwing)£¬Ö¸·¨(finger)£¬ÄÚ¹¦(force)£¬ÕÐ¼Ü(parry)¼°Çá¹¦(dodge)¡£");
+	command("say æ¬¢è¿Žè¿™ä½"+RANK_D->query_respect(ob)+"ï¼Œä½ å¯å‘æˆ‘å­¦æš—å™¨(throwing)ï¼ŒæŒ‡æ³•(finger)ï¼Œå†…åŠŸ(force)ï¼Œæ‹›æž¶(parry)åŠè½»åŠŸ(dodge)ã€‚");
 }
 
 
 int recognize_apprentice(object ob)
 {
-	if (!(int)ob->query_temp("mark/Âí"))
+	if (!(int)ob->query_temp("mark/é©¬"))
 		return 0; 
 	return 1;
 }

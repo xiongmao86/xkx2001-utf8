@@ -7,17 +7,17 @@ string do_tear(string);
 
 void create()
 {
-    set_name("°×Ö½", ({"paper"}));
+    set_name("ç™½çº¸", ({"paper"}));
     set_weight(30);
     if (clonep())
 	set_default_object(__FILE__);
     else {
-	set("long", "Ò»ÕÅ¸Õ´ÓÊéµêÂòÀ´µÄĞûÖ½¡£\n");
-	set("unit", "ÕÅ");
+	set("long", "ä¸€å¼ åˆšä»ä¹¦åº—ä¹°æ¥çš„å®£çº¸ã€‚\n");
+	set("unit", "å¼ ");
 	set("material", "paper");
 	set("value", 30);
 	set("create_time", time());
-	set("freshness", "¸Õ´ÓÊéµêÂòÀ´µÄĞûÖ½");
+	set("freshness", "åˆšä»ä¹¦åº—ä¹°æ¥çš„å®£çº¸");
     }
     remove_call_out("aging");
     call_out("aging", 600);
@@ -35,8 +35,8 @@ int do_tear(string arg)
     object me = this_object(), player = this_player();
 
     if (arg != "paper") return 0;
-    if (player->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
-    message_vision("$NÒ»°Ñ½«Ö½ËºµÄÏ¡ÀÃ¡£\n", player);
+    if (player->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
+    message_vision("$Nä¸€æŠŠå°†çº¸æ’•çš„ç¨€çƒ‚ã€‚\n", player);
     destruct(me);
     return 1;
 }
@@ -47,15 +47,15 @@ int do_write(string arg)
 
     if (arg != "paper") return 0;
     if (player->is_busy())
-	return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+	return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
     if (me->query("content"))
-	return notify_fail("ÕâÕÅÖ½ÉÏÒÑ¾­Ğ´ÂúÁË×Ö£¬ÄãÕÒ²»µ½µØ·½ÏÂ±Ê¡£\n");
+	return notify_fail("è¿™å¼ çº¸ä¸Šå·²ç»å†™æ»¡äº†å­—ï¼Œä½ æ‰¾ä¸åˆ°åœ°æ–¹ä¸‹ç¬”ã€‚\n");
 
-    message_vision("$NÔÚÖ½ÉÏĞ´Æğ¶«Î÷À´¡£¡£¡£\n", player);
+    message_vision("$Nåœ¨çº¸ä¸Šå†™èµ·ä¸œè¥¿æ¥ã€‚ã€‚ã€‚\n", player);
 
     me->set("writer", player->query("name"));
-    write("Ö½ÉÏ¿ÉÒÔĞ´ºÃ¼¸ĞĞ£¬Ğ´ÍêÁËÓÃ . ±íÊ¾½áÊø¡£\n");
-    write("£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n");
+    write("çº¸ä¸Šå¯ä»¥å†™å¥½å‡ è¡Œï¼Œå†™å®Œäº†ç”¨ . è¡¨ç¤ºç»“æŸã€‚\n");
+    write("ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n");
     input_to("get_msg");
     return 1;
 }
@@ -86,14 +86,14 @@ int do_look(string arg)
     if (arg != "paper") return 0;
 
     if(! me->query("content")) {
-	write("ÕâÊÇÒ»ÕÅ"+query("freshness")+"£¬ÉÏÃæÊ²Ã´Ò²Ã»Ğ´¡£\n");
+	write("è¿™æ˜¯ä¸€å¼ "+query("freshness")+"ï¼Œä¸Šé¢ä»€ä¹ˆä¹Ÿæ²¡å†™ã€‚\n");
 	return 1;
     }
     
-    write("ÕâÊÇÒ»ÕÅ"+me->query("freshness")+"£¬ÉÏÃæ" + 
-	(age<36000?"Ğ´×Å":"ÒşÔ¼¿É±æµØÓĞĞ©×Ö¼£") + "£º\n\n");
+    write("è¿™æ˜¯ä¸€å¼ "+me->query("freshness")+"ï¼Œä¸Šé¢" + 
+	(age<36000?"å†™ç€":"éšçº¦å¯è¾¨åœ°æœ‰äº›å­—è¿¹") + "ï¼š\n\n");
     write(me->query("content")+"\n");
-    write("\n´Ó×Ö¼£À´¿´ËÆºõÊÇ"+me->query("writer")+"µÄÇ×±Ê¡£\n");
+    write("\nä»å­—è¿¹æ¥çœ‹ä¼¼ä¹æ˜¯"+me->query("writer")+"çš„äº²ç¬”ã€‚\n");
     return 1;
 }
 
@@ -106,20 +106,20 @@ int aging()
     
     age = time() - query("create_time");
     if (age > 600 && age < 3600) {
-	set("freshness", "»¹ÁôÕâÖ½ÏãµÄĞûÖ½");
+	set("freshness", "è¿˜ç•™è¿™çº¸é¦™çš„å®£çº¸");
     }else if (age < 7200) {
-	set("freshness", "Ñ©°×µÄĞûÖ½");
+	set("freshness", "é›ªç™½çš„å®£çº¸");
     }else if (age < 21600) { // 5 hours
-	set("freshness", "ÓĞµã·¢»ÆµÄĞûÖ½");
+	set("freshness", "æœ‰ç‚¹å‘é»„çš„å®£çº¸");
     }else if (age < 36000) { // 10 hours
-	set("freshness", "ÓĞµã·¢Ã¹µÄĞûÖ½");
+	set("freshness", "æœ‰ç‚¹å‘éœ‰çš„å®£çº¸");
     }else if (age < 72000) { // 20 hours
-	set("freshness", "ÒÑ¾­·¢Ã¹µÄĞûÖ½");
+	set("freshness", "å·²ç»å‘éœ‰çš„å®£çº¸");
     }else if (age < 144000) { // 40 hours
-	set("freshness", "±»³æÖûÁËĞ©¶´µÄĞûÖ½");
+	set("freshness", "è¢«è™«è›€äº†äº›æ´çš„å®£çº¸");
     }else{
-        message("vision", "Ò»Õó·ç´µÀ´£¬°Ñ"+query("name")+
-		"´µÉ¢²»¼ûÁË¡£\n", environment());
+        message("vision", "ä¸€é˜µé£å¹æ¥ï¼ŒæŠŠ"+query("name")+
+		"å¹æ•£ä¸è§äº†ã€‚\n", environment());
 	destruct(this_object());
     }
     return 1;

@@ -5,12 +5,12 @@ inherit NPC;
 int do_huanyuan();
 void create()
 {
-	set_name("¸ğÂ×²¼", ({ "ge lunbu", "ge", "lunbu" }));
+	set_name("è‘›ä¼¦å¸ƒ", ({ "ge lunbu", "ge", "lunbu" }));
 	set_weight(300000000);
 	set("long", 
-"ËûÊÇÃÜ×ÚµÄ½äÂÉÉ®£¬³¤µÃ°ò´óÑü£¬ÊÖÖĞÌá×Å·¨èÆ£¬Éí×Å»ÆÅÛ£¬Í·´÷»ÆÃ±£¬\n"
-"ÂúÃæËàÉ±Ö®Æø¡£\n");
-	set("gender", "ÄĞĞÔ");
+"ä»–æ˜¯å¯†å®—çš„æˆ’å¾‹åƒ§ï¼Œé•¿å¾—è†€å¤§è…°ï¼Œæ‰‹ä¸­æç€æ³•æµï¼Œèº«ç€é»„è¢ï¼Œå¤´æˆ´é»„å¸½ï¼Œ\n"
+"æ»¡é¢è‚ƒæ€ä¹‹æ°”ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("attitude", "heroism");
 	set("class","lama");
@@ -42,9 +42,9 @@ void create()
 	prepare_skill("cuff", "yujiamu-quan");
 
         set("inquiry", ([
-                "»¹Ô¸" : (: do_huanyuan :),
-		"ÉÕÏã" : (: do_huanyuan :),
-		"¹©·ğ" : (: do_huanyuan :),
+                "è¿˜æ„¿" : (: do_huanyuan :),
+		"çƒ§é¦™" : (: do_huanyuan :),
+		"ä¾›ä½›" : (: do_huanyuan :),
         ]) );
 
         setup();
@@ -55,19 +55,19 @@ void create()
 
 int do_huanyuan()
 {
-        say("¸ğÂ×²¼ËµµÀ£ºÄãÄÃÊ²÷áĞ¢¾´·ğÒ¯Ñ½? \n");
+        say("è‘›ä¼¦å¸ƒè¯´é“ï¼šä½ æ‹¿ä»€éº½å­æ•¬ä½›çˆ·å‘€? \n");
 	return 1;
 }
 int accept_object(object who, object ob)
 {
-	if (ob->name()!="ËÖÓÍ¹Ş") {
-	write("¸ğÂ×²¼Á³ÉÏÂ¶³öÃÔ»óµÄ±íÇé¡£\n");
+	if (ob->name()!="é…¥æ²¹ç½") {
+	write("è‘›ä¼¦å¸ƒè„¸ä¸Šéœ²å‡ºè¿·æƒ‘çš„è¡¨æƒ…ã€‚\n");
 	command ("shake");
         return 1;
 	}
 	write(
-	"¸ğÂ×²¼Ò»¹şÑü£º·ğÒ¯±£ÓÓÊ©Ö÷£¬Àï±ßÇë¡£\n");
-        this_player()->set_temp("marks/ËÖ", 1);
+	"è‘›ä¼¦å¸ƒä¸€å“ˆè…°ï¼šä½›çˆ·ä¿ä½‘æ–½ä¸»ï¼Œé‡Œè¾¹è¯·ã€‚\n");
+        this_player()->set_temp("marks/é…¥", 1);
         return 1;
 }
 void init()
@@ -85,11 +85,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
 	
 	if (ob->query_temp("mark/comin"))
-                say( "¸ğÂ×²¼Ë«ÊÖºÏÊ²Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÔúÎ÷µÂÀÕ£¡\n");
+                say( "è‘›ä¼¦å¸ƒåŒæ‰‹åˆä»€ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæ‰è¥¿å¾·å‹’ï¼\n");
 	else
-                say( "¸ğÂ×²¼Ë«ÊÖºÏÊ²Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬¿¦ÁĞ±ğ£¡\n");
+                say( "è‘›ä¼¦å¸ƒåŒæ‰‹åˆä»€ç¬‘å’ªå’ªåœ°è¯´é“ï¼šè¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œå–€åˆ—åˆ«ï¼\n");
 }
 void destroy (object ob)
 {

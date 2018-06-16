@@ -1,18 +1,18 @@
 //Cracked by Roath
-// /d/quanzhou/leitai_gate ÀŞÌ¨´óÃÅ
+// /d/quanzhou/leitai_gate æ“‚å°å¤§é—¨
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÀŞÌ¨´óÃÅ");
+        set("short", "æ“‚å°å¤§é—¨");
         set("long", @LONG
-Ç°Ãæ¾ÍÊÇ±ÈÎäÀŞÌ¨ÁË¡£ÎªÁË°ìºÃ½üÆÚµÄÎäÁÖ´ó»á£¬¡¸ÑïÍşÎä¹İ¡¹ÌØÔÚ
-ÀŞÌ¨ÍâÁÙÊ±´îÁËÒ»¸ö´óÃÅ¡£ÃÅÉÏÒ»¿é´óÄ¾ØÒ£¬ÉÏÊé¡¸ÎäÁÖ´ó»á¡¹ËÄ×Ö£¬Æø
-ÊÆ°õíç¡£ÀŞÌ¨Ç°ÓĞ¼¸ÈË´©×ÅÎä¹İÒÂ·şµÄ´óººÔÚÊÕ·Ñ£¬ÌıËµÊÕÀ´µÄ½ğÒø½«ÓÃ
-ÓÚ½±ÀøÔÚ´Ë´Î¡¸ÎäÁÖ´ó»á¡¹»ñÊ¤µÄ½­ºşÓ¢ĞÛ¡£ÕâÀïÈËÀ´ÈËÍù£¬È¥±ÈÎäµÄ£¬
-È¥¹ÛÕ½µÄ£¬¶¼ÀÏÀÏÊµÊµµØ°ÑÇ®·ÅÔÚÃÅÇ°µÄÒ»Ö»´óÏä×Ó(xiang) Àï¡£ÀŞÌ¨¶«
-±ßÓĞÒ»¿é¿ÕµØ£¬ºÃÏóÒ²¾ÛÁËĞ©ÈË¡£
+å‰é¢å°±æ˜¯æ¯”æ­¦æ“‚å°äº†ã€‚ä¸ºäº†åŠå¥½è¿‘æœŸçš„æ­¦æ—å¤§ä¼šï¼Œã€Œæ‰¬å¨æ­¦é¦†ã€ç‰¹åœ¨
+æ“‚å°å¤–ä¸´æ—¶æ­äº†ä¸€ä¸ªå¤§é—¨ã€‚é—¨ä¸Šä¸€å—å¤§æœ¨åŒ¾ï¼Œä¸Šä¹¦ã€Œæ­¦æ—å¤§ä¼šã€å››å­—ï¼Œæ°”
+åŠ¿ç£…ç¤´ã€‚æ“‚å°å‰æœ‰å‡ äººç©¿ç€æ­¦é¦†è¡£æœçš„å¤§æ±‰åœ¨æ”¶è´¹ï¼Œå¬è¯´æ”¶æ¥çš„é‡‘é“¶å°†ç”¨
+äºå¥–åŠ±åœ¨æ­¤æ¬¡ã€Œæ­¦æ—å¤§ä¼šã€è·èƒœçš„æ±Ÿæ¹–è‹±é›„ã€‚è¿™é‡Œäººæ¥äººå¾€ï¼Œå»æ¯”æ­¦çš„ï¼Œ
+å»è§‚æˆ˜çš„ï¼Œéƒ½è€è€å®å®åœ°æŠŠé’±æ”¾åœ¨é—¨å‰çš„ä¸€åªå¤§ç®±å­(xiang) é‡Œã€‚æ“‚å°ä¸œ
+è¾¹æœ‰ä¸€å—ç©ºåœ°ï¼Œå¥½è±¡ä¹Ÿèšäº†äº›äººã€‚
 LONG
         );
 	set("exits", ([
@@ -21,16 +21,16 @@ LONG
 		"south" : __DIR__"enyuan", 
 	]));
 	set("item_desc", ([
-		"xiang" : "´óÏä×ÓÉÏĞ´×Å²Î¼ÓÎäÁÖ´ó»áµÄÊÕ·Ñ¹æ¾Ø£º\n"
-			"¡¡¡¡±¾´ó»á°´¸÷ÈËÊµÕ½¾­ÀúÊÕÈ¡Èë³¡·Ñ¡£\n"
+		"xiang" : "å¤§ç®±å­ä¸Šå†™ç€å‚åŠ æ­¦æ—å¤§ä¼šçš„æ”¶è´¹è§„çŸ©ï¼š\n"
+			"ã€€ã€€æœ¬å¤§ä¼šæŒ‰å„äººå®æˆ˜ç»å†æ”¶å–å…¥åœºè´¹ã€‚\n"
 			"-----------------------------------------\n"
-			"¡¡¡¡¡¡ÊµÕ½¾­Àú£¨exp£©¡¡¡¡¡¡¡¡¡¡ Èë³¡·Ñ\n"
-			"¡¡¡¡¡¡¡¡£¼ 100	                 ²»×¼Èë³¡\n"
-			"¡¡¡¡¡¡¡¡100 - 50k      £¨exp/100£©Á½°×Òø\n"
-			"¡¡¡¡¡¡¡¡£¾ 50k	                 ÎåÁ½»Æ½ğ\n"        
-			"       ÎŞÏŞÖÆÈë³¡¾í 		 Ê®Á½»Æ½ğ\n"
-			"ÀıÈç£º¾­Ñé 25423 Ğè¸¶ 254 Á½°×Òø£¬´òÖ¸Áî£ºpay 254 silver¡£\n\n"
-			"Ìá¹©»»Ç®·şÎñ£¬Ë¡²»ÉèÕÒÊê¡£\n\n",
+			"ã€€ã€€ã€€å®æˆ˜ç»å†ï¼ˆexpï¼‰ã€€ã€€ã€€ã€€ã€€ å…¥åœºè´¹\n"
+			"ã€€ã€€ã€€ã€€ï¼œ 100	                 ä¸å‡†å…¥åœº\n"
+			"ã€€ã€€ã€€ã€€100 - 50k      ï¼ˆexp/100ï¼‰ä¸¤ç™½é“¶\n"
+			"ã€€ã€€ã€€ã€€ï¼ 50k	                 äº”ä¸¤é»„é‡‘\n"        
+			"       æ— é™åˆ¶å…¥åœºå· 		 åä¸¤é»„é‡‘\n"
+			"ä¾‹å¦‚ï¼šç»éªŒ 25423 éœ€ä»˜ 254 ä¸¤ç™½é“¶ï¼Œæ‰“æŒ‡ä»¤ï¼špay 254 silverã€‚\n\n"
+			"æä¾›æ¢é’±æœåŠ¡ï¼Œæ•ä¸è®¾æ‰¾èµã€‚\n\n",
 	]));
 	set("no_fight", 1);
         set("no_sleep_room",1);
@@ -65,21 +65,21 @@ int do_pay(string arg)
 		fee = (me->query("combat_exp"))/100;
 
         if( !arg || sscanf(arg, "%d %s", amount, item) != 2 )
-                return notify_fail("ÄãÒª¸¶¶àÉÙÈë³¡·Ñ£¿\n");
+                return notify_fail("ä½ è¦ä»˜å¤šå°‘å…¥åœºè´¹ï¼Ÿ\n");
 
 	if (!objectp(obj = present(item, me)) || !obj->query("money_id") )
-		return notify_fail("ÄãÒª¸¶Ê²Ã´Ç®¡£\n");
+		return notify_fail("ä½ è¦ä»˜ä»€ä¹ˆé’±ã€‚\n");
 	if (amount > obj->query_amount() )
-		return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
 
 	obj->set_amount(obj->query_amount() - amount);
-	message_vision( sprintf("$N½«Ò»%s%s·Å½ø´óÏä×ÓÀï¡£\n", 
+	message_vision( sprintf("$Nå°†ä¸€%s%sæ”¾è¿›å¤§ç®±å­é‡Œã€‚\n", 
 		obj->query("unit"), obj->name()), me );
 
 	me->add_temp("amount_paid",amount*(int)obj->query("base_value")/100);
 
 	if (me->query_temp("paid") )
-		tell_object(me, "Ğ»Ğ»¾èÏ×¡£\n");
+		tell_object(me, "è°¢è°¢æçŒ®ã€‚\n");
         if( me->query_temp("amount_paid") >= fee) 
                	me->set_temp("paid", 1);
 	if( me->query_temp("amount_paid") >= 100000) 
@@ -93,17 +93,17 @@ int valid_leave(object me, string dir)
 	if (dir == "north" || dir == "northeast")
 	{
 		if( me->query("combat_exp") < 100)
-			return notify_fail("Ğ¡¼Ò»ï²»ÒªÂÒÅÜ£¬±ÈÎä¿É²»ÊÇÄÖ×ÅÍêµÄ£¬ÄãµùÄïÄØ£¿\n");
+			return notify_fail("å°å®¶ä¼™ä¸è¦ä¹±è·‘ï¼Œæ¯”æ­¦å¯ä¸æ˜¯é—¹ç€å®Œçš„ï¼Œä½ çˆ¹å¨˜å‘¢ï¼Ÿ\n");
 
 		if( !me->query_temp("paid") && !me->query_temp("apply/pass") && !wizardp(me))
-			return notify_fail("Ò»¸ö¿´ÃÅµÄ×³ººÀ¹×¡ÁËÄã£ººÙ£¬²Î¼ÓÎäÁÖ´ó»á£¬Äã¸øÇ®ÁËÂğ£¿\n");
+			return notify_fail("ä¸€ä¸ªçœ‹é—¨çš„å£®æ±‰æ‹¦ä½äº†ä½ ï¼šå˜¿ï¼Œå‚åŠ æ­¦æ—å¤§ä¼šï¼Œä½ ç»™é’±äº†å—ï¼Ÿ\n");
 
 		me->delete_temp("amount_paid");
 		me->delete_temp("paid");
 
 		if( me->query_temp("apply/pass") || wizardp(me))
 			message_vision(
-			"$NÏò¿´ÃÅµÄÎäÊ¦ÃÇµãÁËµãÍ·¡£\n",me);
+			"$Nå‘çœ‹é—¨çš„æ­¦å¸ˆä»¬ç‚¹äº†ç‚¹å¤´ã€‚\n",me);
         }
 
         return ::valid_leave(me, dir);
@@ -112,7 +112,7 @@ int valid_leave(object me, string dir)
 int valid_leave(object me, string dir)
 {
         if( dir=="north" && !wizardp(me) )
-                return notify_fail("ÄÇÀïÖ»ÓĞÎ×Ê¦²ÅÄÜ½øÈ¥¡£\n");
+                return notify_fail("é‚£é‡Œåªæœ‰å·«å¸ˆæ‰èƒ½è¿›å»ã€‚\n");
         return ::valid_leave(me, dir);
 }
 
@@ -125,34 +125,34 @@ int do_convert(string arg)
 	object me;
 	
 	if (query_temp("busy"))
-		return notify_fail("Ó´£¬±§Ç¸°¡£¬Õâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+		return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œè¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 
 	me = this_player();
 
 	if (!arg || sscanf(arg, "%d %s to %s", amount, from, to) != 3)
-	return notify_fail("ÃüÁî¸ñÊ½£ºconvert|duihuan <ÊıÁ¿> <»õ±Òµ¥Î»> to <ĞÂ»õ±Òµ¥Î»>\n");
+	return notify_fail("å‘½ä»¤æ ¼å¼ï¼šconvert|duihuan <æ•°é‡> <è´§å¸å•ä½> to <æ–°è´§å¸å•ä½>\n");
 
 	if ( to == "thousand-cash" || to == "cash" || to == "thousand-cash_money" )
-	return notify_fail("Îä¹İ´óººËµµÀ£º°¦Ñ½£¡Ç°Ğ©Ê±ºòÓĞÈËË½Ôì¼ÙÒøÆ±£¬ÊÇÒÔÒøÆ±ÒÑ×÷·ÏÁË¡£\n");
+	return notify_fail("æ­¦é¦†å¤§æ±‰è¯´é“ï¼šå”‰å‘€ï¼å‰äº›æ—¶å€™æœ‰äººç§é€ å‡é“¶ç¥¨ï¼Œæ˜¯ä»¥é“¶ç¥¨å·²ä½œåºŸäº†ã€‚\n");
 
 	from_ob = present(from + "_money", me);
 	to_ob = present(to + "_money", me);
 
 	if (!to_ob && file_size("/clone/money/" + to + ".c") < 0)
-	return notify_fail("ÄãÏë¶Ò»»³ÉÊ²Ã´£¿\n");
+	return notify_fail("ä½ æƒ³å…‘æ¢æˆä»€ä¹ˆï¼Ÿ\n");
 
 	if (!from_ob)
-	return notify_fail("ÄãÉíÉÏÃ»ÓĞ´øÕâÖÖÇ®¡£\n");
+	return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰å¸¦è¿™ç§é’±ã€‚\n");
 
 	if (amount < 1)
-	return notify_fail("ÄãÏë°××¬°¡£¿\n");
+	return notify_fail("ä½ æƒ³ç™½èµšå•Šï¼Ÿ\n");
 
 	if ((int)from_ob->query_amount() < amount)
-	return notify_fail("Äã´øµÄ" + from_ob->query("name") + "²»¹»¡£\n");
+	return notify_fail("ä½ å¸¦çš„" + from_ob->query("name") + "ä¸å¤Ÿã€‚\n");
 	
 	bv1 = from_ob->query("base_value");
 	if (!bv1)
-	return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+	return notify_fail("è¿™æ ·ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
 
 	bv2 = to_ob ? to_ob->query("base_value") : call_other("/clone/money/" + to, "query", "base_value" );
 	
@@ -160,7 +160,7 @@ int do_convert(string arg)
 		amount -= amount % (bv2 / bv1);	
 
 	if (amount == 0)
-	return notify_fail("ÕâĞ©" + from_ob->query("name") + "²»¹»»»¡£\n");
+	return notify_fail("è¿™äº›" + from_ob->query("name") + "ä¸å¤Ÿæ¢ã€‚\n");
 
 	// allowed to convert now
 	set_temp("busy", 1);	
@@ -175,7 +175,7 @@ int do_convert(string arg)
 	else
 		to_ob->add_amount(amount * bv1 / bv2);
 	
-	message_vision(sprintf("$N´ÓÉíÉÏÈ¡³ö%s%s%s£¬»»³ÉÁË%s%s%s¡£\n",
+	message_vision(sprintf("$Nä»èº«ä¸Šå–å‡º%s%s%sï¼Œæ¢æˆäº†%s%s%sã€‚\n",
 	chinese_number(amount), from_ob->query("base_unit"), from_ob->query("name"),
 	chinese_number(amount * bv1 / bv2), to_ob->query("base_unit"), 
 	to_ob->query("name")), me);

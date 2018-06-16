@@ -9,9 +9,9 @@ int do_zuan(string);
 
 void create()
 {
-        set("short", "¾®ÖĞ");
+        set("short", "äº•ä¸­");
         set("long", @LONG
-ÕâÊÇÔÚÒ»¿Ú¿İ¾®ÖĞ¡£¹âÏß¼«°µ£¬Ê²Ã´Ò²¿´²»Çå¡£
+è¿™æ˜¯åœ¨ä¸€å£æ¯äº•ä¸­ã€‚å…‰çº¿ææš—ï¼Œä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€‚
 LONG
         );
 	switch(random(2)){
@@ -48,9 +48,9 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
              write(
-             "ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖ¾®±ÚÉÏÓĞÒ»µÀÁÑ·ì£¬ËÆºõ¿ÉÒÔ×ê(zuan)³öÈ¥¡£\n"
+             "ä½ ç‚¹ç‡ƒäº†ç«æŠ˜ï¼Œå‘ç°äº•å£ä¸Šæœ‰ä¸€é“è£‚ç¼ï¼Œä¼¼ä¹å¯ä»¥é’»(zuan)å‡ºå»ã€‚\n"
              );
-             this_player()->set_temp("marks/×ê1", 1);
+             this_player()->set_temp("marks/é’»1", 1);
              return 1;
        }
 }
@@ -60,18 +60,18 @@ int do_zuan(string arg)
         object me;
         me = this_player();
 
-        if (me->query_temp("marks/×ê1") ) {
-            message("vision", me->name() + "×ÌÁïÒ»ÏÂ²»¼ûÁË¡£\n",
+        if (me->query_temp("marks/é’»1") ) {
+            message("vision", me->name() + "æ»‹æºœä¸€ä¸‹ä¸è§äº†ã€‚\n",
                     environment(me), ({me}) );
             me->move(__DIR__"midao");
-            message("vision", me->name() + "´Ó¾®Àï×êÁË³öÀ´¡£\n",
+            message("vision", me->name() + "ä»äº•é‡Œé’»äº†å‡ºæ¥ã€‚\n",
                     environment(me), ({me}) );
-            this_player()->delete_temp("marks/×ê1");
+            this_player()->delete_temp("marks/é’»1");
 
             return 1;
         }
         else {
-            write("ÄãÏëÍùÄÄ¶ù×ê?!\n");
+            write("ä½ æƒ³å¾€å“ªå„¿é’»?!\n");
             return 1;
         }
 }

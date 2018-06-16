@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-	set_name("ÖÓÁé", ({ "zhong ling","ling" }) );
-	set("gender", "Å®ÐÔ");
+	set_name("é’Ÿçµ", ({ "zhong ling","ling" }) );
+	set("gender", "å¥³æ€§");
 	set("age", 16);
 	set("long",
-		"Ëý¾ÍÊÇÖÓÍò³ðµÄÅ®¶ù£¬ÖÓÁé£¬¹Ï×ÓÁ³£¬Ð¦÷ÊÈç»¨£¬Ê®·ÖÐãÆø¡£\n·¢ÏÖÄãÇÆ×ÅËý£¬ËýÒ²ÓÃÔ²Ô²µÄ´óÑÛ¾¦ÉÏÏÂ´òÁ¿Äã¡£\n");
+		"å¥¹å°±æ˜¯é’Ÿä¸‡ä»‡çš„å¥³å„¿ï¼Œé’Ÿçµï¼Œç“œå­è„¸ï¼Œç¬‘é­‡å¦‚èŠ±ï¼Œååˆ†ç§€æ°”ã€‚\nå‘çŽ°ä½ çž§ç€å¥¹ï¼Œå¥¹ä¹Ÿç”¨åœ†åœ†çš„å¤§çœ¼ç›ä¸Šä¸‹æ‰“é‡ä½ ã€‚\n");
 	set("combat_exp", 10000);
 	set("shen_type", 1);
 	set("attitude", "peaceful");
@@ -26,9 +26,9 @@ void create()
 	set("bm_hints", random(10)+1);
         
 	set("inquiry", ([
-		"¶ÎÓþ"   : "ÎÒÉÏ´ÎÍµÅÜ³öÈ¥Íæ£¬ÔÚÎÞÁ¿É½Óöµ½ÁË¶Î´ó¸ç£¬ÂÒÄÖÁËÒ»³¡£¬ÎûÎû£¬¿ÉÓÐÈ¤ÁË¡£",
-		"ÎÞÁ¿É½" : "¾ÍÊÇ±±ÃæÄÇÆ¬É½ÁË£¬Ã»É¶ºÃÍæµÄ£¬Ò»ÈºÉñÅ©°ïµÜ×ÓÕýÔÚºÍÎÞÁ¿½£×÷¶Ô¡£àÅ ... ÄÇ¶ùµÄÂ·ºÜÄÑ×ß¡£",
-//		"µÀÂ·"   : (: ask_me :),
+		"æ®µèª‰"   : "æˆ‘ä¸Šæ¬¡å·è·‘å‡ºåŽ»çŽ©ï¼Œåœ¨æ— é‡å±±é‡åˆ°äº†æ®µå¤§å“¥ï¼Œä¹±é—¹äº†ä¸€åœºï¼Œå˜»å˜»ï¼Œå¯æœ‰è¶£äº†ã€‚",
+		"æ— é‡å±±" : "å°±æ˜¯åŒ—é¢é‚£ç‰‡å±±äº†ï¼Œæ²¡å•¥å¥½çŽ©çš„ï¼Œä¸€ç¾¤ç¥žå†œå¸®å¼Ÿå­æ­£åœ¨å’Œæ— é‡å‰‘ä½œå¯¹ã€‚å—¯ ... é‚£å„¿çš„è·¯å¾ˆéš¾èµ°ã€‚",
+//		"é“è·¯"   : (: ask_me :),
 		]));
 
 	setup();
@@ -47,12 +47,12 @@ string ask_me()
 
 	if (me->query("bm_hints")==1) {
 		command("nod "+getuid(who));
-		command("say Äã¿´ÆðÀ´ÏóÊÇ¸öºÃÈË£¬ÄÇÎÒ¾Í¸æËßÄã°É¡£");
-		command("whisper "+getuid(who)+" ÎÒÃÇ×ßÄÏ£¬Î÷£¬ÄÏ£¬±±£¬·¢ÏÖÁËÉñÅ©°ï¾Û¼¯µÄµØ·½¡£");
+		command("say ä½ çœ‹èµ·æ¥è±¡æ˜¯ä¸ªå¥½äººï¼Œé‚£æˆ‘å°±å‘Šè¯‰ä½ å§ã€‚");
+		command("whisper "+getuid(who)+" æˆ‘ä»¬èµ°å—ï¼Œè¥¿ï¼Œå—ï¼ŒåŒ—ï¼Œå‘çŽ°äº†ç¥žå†œå¸®èšé›†çš„åœ°æ–¹ã€‚");
 		who->set_temp("bmquest/got_hint1",1);
-		return "ÄÇµØ·½²»ÈÝÒ×ÕÒ£¬ÄãÊÔÊÔ¿´£¿¿ÉÇ§Íò±ð¸æËß±ðÈËÓ´¡£ÎûÎû¡£\n";
+		return "é‚£åœ°æ–¹ä¸å®¹æ˜“æ‰¾ï¼Œä½ è¯•è¯•çœ‹ï¼Ÿå¯åƒä¸‡åˆ«å‘Šè¯‰åˆ«äººå“Ÿã€‚å˜»å˜»ã€‚\n";
 	}
 	else {
-		return "ÄãËæ±ã´³½ø±ðÈËµÄÎÔÊÒÀïÀ´£¬²»ÏóÊÇ¸öºÃ¶«Î÷£¬¿ì×ß¿ª£¬ÎÒÊ²Ã´Ò²²»»á¸æËßÄãµÄ£¡";
+		return "ä½ éšä¾¿é—¯è¿›åˆ«äººçš„å§å®¤é‡Œæ¥ï¼Œä¸è±¡æ˜¯ä¸ªå¥½ä¸œè¥¿ï¼Œå¿«èµ°å¼€ï¼Œæˆ‘ä»€ä¹ˆä¹Ÿä¸ä¼šå‘Šè¯‰ä½ çš„ï¼";
 	}
 }

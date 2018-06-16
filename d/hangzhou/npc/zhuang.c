@@ -10,12 +10,12 @@ string ask_book();
 
 void create()
 {
-        set_name("×¯ÔÊ³Ç", ({ "zhuang yuncheng" , "zhuang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("åº„å…åŸ", ({ "zhuang yuncheng" , "zhuang" }));
+        set("gender", "ç”·æ€§");
         set("age", 65);
         set("long", 
-"Ëû¾ÍÊÇÄÏä±ÕòµÄ¸»»§£¬ËØÀ´¿¶¿®¡£\n"       
-"ËûĞÄÉË°®×ÓÖ®ÊÅ£¬ÕĞÇë¹¤½³£¬¿¯Ó¡¡¶Ã÷Êé¼­ÂÔ¡·¡£\n");
+"ä»–å°±æ˜¯å—æµ”é•‡çš„å¯Œæˆ·ï¼Œç´ æ¥æ…·æ…¨ã€‚\n"       
+"ä»–å¿ƒä¼¤çˆ±å­ä¹‹é€ï¼Œæ‹›è¯·å·¥åŒ ï¼ŒåˆŠå°ã€Šæ˜ä¹¦è¾‘ç•¥ã€‹ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 200);
 
@@ -32,8 +32,8 @@ void create()
         set_skill("dodge", 10);
 
         set("inquiry", ([
-                 "¡¶Ã÷Êé¼­ÂÔ¡·" : (: ask_book :),
-		 "Ã÷Êé¼­ÂÔ" : (: ask_book :),
+                 "ã€Šæ˜ä¹¦è¾‘ç•¥ã€‹" : (: ask_book :),
+		 "æ˜ä¹¦è¾‘ç•¥" : (: ask_book :),
                  "book" : (: ask_book :),
         ]));
 
@@ -45,16 +45,16 @@ string ask_book()
         object ob, me = this_player();
 
         if( time() < (int)me->query("mh_time") + 1200 )
-                return RANK_D->query_respect(me) + "²»ÊÇ¸ÕÎÊ¹ıÎÒÂğ£¿";
+                return RANK_D->query_respect(me) + "ä¸æ˜¯åˆšé—®è¿‡æˆ‘å—ï¼Ÿ";
 
         if( (int)me->query_skill("literate", 1) < 30 )
-                return RANK_D->query_respect(me) + "×Ö²»Ê¶Ò»¶·£¬Òª´ËÊéºÎ¸É£¿";
+                return RANK_D->query_respect(me) + "å­—ä¸è¯†ä¸€æ–—ï¼Œè¦æ­¤ä¹¦ä½•å¹²ï¼Ÿ";
 
 	return;
         command("nod");
         me->set("mh_time", time());
         ob = new("/d/hangzhou/obj/mh_book");
         ob->move(me);
-        message_vision("$N½«Ò»" + ob->query("unit") + ob->name() + "½»¸ø$n¡£\n", this_object(), me);
-        return "´ËÄË¹Ê×ÓÖ®ÒÅ×÷£¬ÃıÔŞÁË¡£ÈçÓöµ½¹ËÏÈÉú£¬Îñ±ØÀÍËûĞŞ×«¡£";
+        message_vision("$Nå°†ä¸€" + ob->query("unit") + ob->name() + "äº¤ç»™$nã€‚\n", this_object(), me);
+        return "æ­¤ä¹ƒæ•…å­ä¹‹é—ä½œï¼Œè°¬èµäº†ã€‚å¦‚é‡åˆ°é¡¾å…ˆç”Ÿï¼ŒåŠ¡å¿…åŠ³ä»–ä¿®æ’°ã€‚";
 }

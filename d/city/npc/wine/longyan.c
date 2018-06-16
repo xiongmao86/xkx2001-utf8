@@ -1,5 +1,5 @@
 //Cracked by Roath
-// longyanjiu.c ÁúÑÒ¾Æ
+// longyanjiu.c é¾™å²©é…’
 
 #include <ansi.h>
 inherit ITEM;
@@ -7,17 +7,17 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name(RED"¾ÆÆ¿"NOR, ({"longyan jiu", "longyan", "jiuping",}));
+	set_name(RED"é…’ç“¶"NOR, ({"longyan jiu", "longyan", "jiuping",}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("long", @LONG
-Ò»¸öÓÃÀ´×°ÁúÑÒ¾ÆµÄ¾ÆÆ¿¡£´Ë¾Æ²»¼ÓÌÇ¶øÌğ£¬²»×ÅÉ«¶øÑÕºì£¬²»µ÷Ïã¶ø·Ò·¼¡£
-¾ÆÖÊ³Êçú²££¬¸ÊÌğ´¼ºó£¬·ç¸ñ¶ÀÌØ¡£
+ä¸€ä¸ªç”¨æ¥è£…é¾™å²©é…’çš„é…’ç“¶ã€‚æ­¤é…’ä¸åŠ ç³–è€Œç”œï¼Œä¸ç€è‰²è€Œé¢œçº¢ï¼Œä¸è°ƒé¦™è€ŒèŠ¬èŠ³ã€‚
+é…’è´¨å‘ˆç¥ç»ï¼Œç”˜ç”œé†‡åï¼Œé£æ ¼ç‹¬ç‰¹ã€‚
 LONG
         );
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 300);
 		set("max_liquid", 20);
 	}
@@ -26,7 +26,7 @@ LONG
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "ÁúÑÒ¾Æ",
+		"name": "é¾™å²©é…’",
 		"remaining": 20,
 		"drunk_apply": 7,
 	]));

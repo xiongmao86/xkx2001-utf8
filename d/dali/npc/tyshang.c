@@ -1,15 +1,15 @@
 //Cracked by Roath
-// tyshang.c Ì¨ÒÄÉÌ··
+// tyshang.c å°å¤·å•†è´©
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ì¨ÒÄÉÌ··", ({ "shang fan", "fan", "shang" }) );
-	set("long", "Ò»Î»Ì¨ÒÄ×åµÄÉÌ··£¬ÕıÔÚ··ÂôÒ»ÖñÂ¨¸Õ´òÉÏÀ´µÄ»î±ÄÂÒÌøµÄÏÊÓã¡£\n");
+	set_name("å°å¤·å•†è´©", ({ "shang fan", "fan", "shang" }) );
+	set("long", "ä¸€ä½å°å¤·æ—çš„å•†è´©ï¼Œæ­£åœ¨è´©å–ä¸€ç«¹ç¯“åˆšæ‰“ä¸Šæ¥çš„æ´»è¹¦ä¹±è·³çš„é²œé±¼ã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

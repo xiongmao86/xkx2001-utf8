@@ -8,14 +8,14 @@ int is_container() { return 1; }
 int do_put(string);
 void create()
 {
-        set_name("ÓñµÑ", ({"yu di", "flute", "di"}));
+        set_name("çŽ‰ç¬›", ({"yu di", "flute", "di"}));
         set_weight(80);
 	set_max_encumbrance(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-         set("long", "ÕâÓñµÑ¶ÌµÃ³öÆæ£¬Ö»²»À´Æß´çÀ´³¤¡¢Í¨Ìå½à°×£¬¾§Ó¨¿É°®¡£\n");
-                set("unit", "Ö§");
+         set("long", "è¿™çŽ‰ç¬›çŸ­å¾—å‡ºå¥‡ï¼Œåªä¸æ¥ä¸ƒå¯¸æ¥é•¿ã€é€šä½“æ´ç™½ï¼Œæ™¶èŽ¹å¯çˆ±ã€‚\n");
+                set("unit", "æ”¯");
                 set("value", 1000);
 		set("no_sell", 1);
 		set("fire_source", 3);
@@ -38,14 +38,14 @@ int do_blow(string arg)
 	if (!id(arg)) return 0;
 	
 	if (me->is_busy())
-        return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓÐ×öÍê¡£\n");
+        return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰åšå®Œã€‚\n");
 
-	message_vision("$N°ÑÓñµÑ·Åµ½¿Ú±ß£¬ÇáÇáÒ»´µ£¬Ö»ÌýÒ»Õó¼«¼â¼«Ï¸µÄÉÚ×ÓÉùÔ¶Ô¶´«ÁË³öÈ¥¡£\n", me);
+	message_vision("$NæŠŠçŽ‰ç¬›æ”¾åˆ°å£è¾¹ï¼Œè½»è½»ä¸€å¹ï¼Œåªå¬ä¸€é˜µæžå°–æžç»†çš„å“¨å­å£°è¿œè¿œä¼ äº†å‡ºåŽ»ã€‚\n", me);
 
 	if( !environment(me)->query("no_fight") 
 	&& query("fire_source") > 0 && me->query_skill("poison", 1) > 99){	
 
-	message_vision(HIR"Ëæ×ÅÉÚ×ÓÉù£¬ÓñµÑÀïÍ»È»·É³öÀ¶Ó¡Ó¡µÄÒ»µã»ðÐÇ£¬»ðÐÇ¶¸µØÏ¨Ãð£¬Ëæ¼´´óÁÁ£¬ÅîµÄÒ»ÉùÏì£¬ÌÚÏò°ë¿Õ£¬ÉýÆðÓÐÕÉÐí£¬Õâ²Å»º»º½µÂä¡£\n"NOR, me);
+	message_vision(HIR"éšç€å“¨å­å£°ï¼ŒçŽ‰ç¬›é‡Œçªç„¶é£žå‡ºè“å°å°çš„ä¸€ç‚¹ç«æ˜Ÿï¼Œç«æ˜Ÿé™¡åœ°ç†„ç­ï¼Œéšå³å¤§äº®ï¼Œè“¬çš„ä¸€å£°å“ï¼Œè…¾å‘åŠç©ºï¼Œå‡èµ·æœ‰ä¸ˆè®¸ï¼Œè¿™æ‰ç¼“ç¼“é™è½ã€‚\n"NOR, me);
 
 	add("fire_source", -1);
 	ob=new("/d/xingxiu/obj/flute_fire");
@@ -60,22 +60,22 @@ int do_put(string arg)
         int amount;
 
         if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 	
 	if( !objectp(obj = present(item, me)) )
-                return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if (!id(target)) return 0;
 
 	if( item == "all" ) {
-                write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+                write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
                 return 1;
         }
 	if( obj->query("id") != "liuhuang"){
-                write(obj->query("name")+"¶ÔÓñµÑ¶øÑÔÌ«ÖØÁË¡£\n");
+                write(obj->query("name")+"å¯¹çŽ‰ç¬›è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 return 1;
         }
-                message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+                message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(),
                         this_object()->name()),me );
                 destruct(obj);

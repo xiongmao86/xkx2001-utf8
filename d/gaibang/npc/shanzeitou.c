@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("É½ÔôÍ·", ({ "shanzei tou","bandit leader","tou","shanzei" }) );
+        set_name("å±±è´¼å¤´", ({ "shanzei tou","bandit leader","tou","shanzei" }) );
         set_color("$RED$");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35 + random(20));
         set("long",
-                "Õâ¼Ò»ïÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬ÁîÈËÍû¶øÉúÎ·¡£\n");
+                "è¿™å®¶ä¼™æ»¡è„¸æ€æ°”ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚\n");
         set("combat_exp", 100000 + random(25000));
         set("shen_type", -100);
         set("attitude", "aggressive");
@@ -29,7 +29,7 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "É½ÔôÍ·ºÙºÙµØÀäĞ¦×Å: ´ËÉ½ÊÇÎÒ¿ª£¬´ËÊ÷ÊÇÎÒÔÔ£¬ÈôÒª´Ó´Ë¹ı£¬ÁôÏÂÂòÂ·²Æ£¡\n",
+                "å±±è´¼å¤´å˜¿å˜¿åœ°å†·ç¬‘ç€: æ­¤å±±æ˜¯æˆ‘å¼€ï¼Œæ­¤æ ‘æ˜¯æˆ‘æ ½ï¼Œè‹¥è¦ä»æ­¤è¿‡ï¼Œç•™ä¸‹ä¹°è·¯è´¢ï¼\n",
         	(: random_move :)
 	}) );
 

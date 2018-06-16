@@ -1,12 +1,12 @@
 //Cracked by Roath
-// guanjia.c ²ÆÖ÷¹Ü¼Ò
+// guanjia.c è´¢ä¸»ç®¡å®¶
 
 inherit NPC;
 
 void create()
 {
-	set_name("¹Ü¼Ò", ({ "guan jia", "guan" }));
-	set("gender", "ÄÐÐÔ");
+	set_name("ç®¡å®¶", ({ "guan jia", "guan" }));
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 
 	set("combat_exp", 7500);

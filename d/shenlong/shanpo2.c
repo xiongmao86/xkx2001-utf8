@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ɽ��2 /d/shenlong/shanpo2
+// 山坡2 /d/shenlong/shanpo2
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山坡");
         set("long", @LONG
-����һ��ɽ�£�ͨ�򱱷���һ��ɽ�壬���Ѿ��������������ˣ�����ͣ
-������Ϣ��Ϣ��ͻȻ�䣬�㿴�����ϡ����ϡ�·�ϣ���һ������һ��ȫ�Ƕ�
-�ߣ����¼��ˣ�... �Ƿ�֮�أ����ɾ��������ǸϿ��뿪�ɡ�������һ����
-խ��ɽ����������һ��ɽ�¡�
+这是一个山坡，通向北方的一座山峰，你已经爬的气喘嘘嘘了，真想停
+下来休息休息，突然间，你看见树上、草上、路上，东一条，西一条全是毒
+蛇，可怕极了！... 是非之地，不可久留，还是赶快离开吧。北面是一个狭
+窄的山道，往南是一个山坡。
 LONG
         );
 	set("cost", 6);

@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡Ñ¾»·", ({ "xiao yahuan", "xiao", "yahuan" }) );
-	set("gender", "Å®ĞÔ");
+	set_name("å°ä¸«ç¯", ({ "xiao yahuan", "xiao", "yahuan" }) );
+	set("gender", "å¥³æ€§");
 	set("age", 15);
 	set("long",
-		"ÕâÊÇ½«¾ü¸®µÄĞ¡Ñ¾»·¡£\n");
+		"è¿™æ˜¯å°†å†›åºœçš„å°ä¸«ç¯ã€‚\n");
 	set("combat_exp", 100);
         set("shen_type", 0);
 	set("attitude", "peaceful");

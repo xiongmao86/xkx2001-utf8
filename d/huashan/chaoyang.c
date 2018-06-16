@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "³¯Ñô·å");
+	set("short", "æœé˜³å³°");
 	set("long", @LONG
-ÕâÀï¾ÍÊÇ»ªÉ½µÄ¶«·å¡ª³¯Ñô·å£¬ì¶´Ë¸©î«£¬»ÆºÓÒþÏÔ¶«åÆÈç´ø£¬ÄÏÍû
-Ð¡¹Â·å±³ÒÐÉ½ºÓ¡£¶«±ÚÐüÑÂÉÏ£¬¸üÓÐÒ»¸ö¾ÞÐÍÕÆÓ¡£¬Ïà´«Îª¡¸ºÓÉñ¾ÞÁé¡¹
-ÅüÉ½Ê±ËùÁôÏÂµÄ¡£Ò»ÅÔÓÐ¼¸¿Ã´óÊ÷¡£
+è¿™é‡Œå°±æ˜¯åŽå±±çš„ä¸œå³°â€”æœé˜³å³°ï¼Œæ–¼æ­¤ä¿¯çž°ï¼Œé»„æ²³éšæ˜¾ä¸œè¿¤å¦‚å¸¦ï¼Œå—æœ›
+å°å­¤å³°èƒŒå€šå±±æ²³ã€‚ä¸œå£æ‚¬å´–ä¸Šï¼Œæ›´æœ‰ä¸€ä¸ªå·¨åž‹æŽŒå°ï¼Œç›¸ä¼ ä¸ºã€Œæ²³ç¥žå·¨çµã€
+åŠˆå±±æ—¶æ‰€ç•™ä¸‹çš„ã€‚ä¸€æ—æœ‰å‡ æ£µå¤§æ ‘ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */
@@ -43,10 +43,10 @@ int do_gofeng()
 {
 	object me = this_player();
 
-	if ( me->query("family/master_name") != "·çÇåÑï" )
-		return notify_fail("Ê²Ã´£¿\n");
+	if ( me->query("family/master_name") != "é£Žæ¸…æ‰¬" )
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$N¿ì²½±¼ÏÂºóÉ½µÄ´ÔÁÖÀï¡£\n", me);
+	message_vision("$Nå¿«æ­¥å¥”ä¸‹åŽå±±çš„ä¸›æž—é‡Œã€‚\n", me);
 	me->move("/d/huashan/xiaojing1");
 
 	return 1;
@@ -59,16 +59,16 @@ int do_shout(string arg)
 
 	if( !arg || arg=="" ) return 0;
 
-	message_vision("$N¸ßÉù½ÐµÀ£º"+arg+"¡£\n", me);
+	message_vision("$Né«˜å£°å«é“ï¼š"+arg+"ã€‚\n", me);
 
-	if( ( arg == "·çÇåÑïÇ°±²" || arg == "·çÇ°±²" || arg == "·çÀÏÇ°±²" ) 
-	&& query("tian_count") >= 1 && me->query_temp("marks/¼û") == 1
+	if( ( arg == "é£Žæ¸…æ‰¬å‰è¾ˆ" || arg == "é£Žå‰è¾ˆ" || arg == "é£Žè€å‰è¾ˆ" ) 
+	&& query("tian_count") >= 1 && me->query_temp("marks/è§") == 1
 	&& !present("tian boguang", environment(me)) ) {
 	    add("call_times", 1);
 
 	    if( (int)query("call_times") == 3 ) {
-		message_vision("Ö»ÌýµÃÉíÅÔµÄÊ÷ÉÏ´«À´Ò»ÕóßëÉ§£ºË­ÒªÕÒ·çÀÏÇ°±²°¡£¿\n", me);
-		message_vision("½Ó×ÅÒ»¸öÎ¢×íµÄ´óºº´ÓÊ÷ÉÏÅÀÁËÏÂÀ´£¬¶¢×ÅÄã¿´ÁËÒ»»á¶ù¡£\n", me);
+		message_vision("åªå¬å¾—èº«æ—çš„æ ‘ä¸Šä¼ æ¥ä¸€é˜µå” éªšï¼šè°è¦æ‰¾é£Žè€å‰è¾ˆå•Šï¼Ÿ\n", me);
+		message_vision("æŽ¥ç€ä¸€ä¸ªå¾®é†‰çš„å¤§æ±‰ä»Žæ ‘ä¸Šçˆ¬äº†ä¸‹æ¥ï¼Œç›¯ç€ä½ çœ‹äº†ä¸€ä¼šå„¿ã€‚\n", me);
 		add("tian_count", -1);
 		ob = new(__DIR__"npc/boguang.c");
 		ob->move(environment(me));

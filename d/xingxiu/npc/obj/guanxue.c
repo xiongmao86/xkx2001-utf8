@@ -7,13 +7,13 @@ inherit BOOTS;
 
 void create()
 {
-	set_name( CYN "¹ÙÑ¥" NOR , ({ "guan xue", "xue" }) );
+	set_name( CYN "å®˜é´" NOR , ({ "guan xue", "xue" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ë«");
-		set("long", "Ò»Ë«´óÀí¹ÙÔ±µÄ±ê×¼¹ÙÑ¥£¬Ğ¬µ×ºÜºñ£¬×ßÔ¶Â·Ê±£¬¿ÉÒÔºÜºÃµØ±£»¤Ë«½Å¡£");
+		set("unit", "åŒ");
+		set("long", "ä¸€åŒå¤§ç†å®˜å‘˜çš„æ ‡å‡†å®˜é´ï¼Œé‹åº•å¾ˆåšï¼Œèµ°è¿œè·¯æ—¶ï¼Œå¯ä»¥å¾ˆå¥½åœ°ä¿æŠ¤åŒè„šã€‚");
 		set("value", 300);
 		set("material", "boots");
 		set("armor_prop/armor", 6);

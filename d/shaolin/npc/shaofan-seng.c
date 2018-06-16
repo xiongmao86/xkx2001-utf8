@@ -12,17 +12,17 @@ string ask_piao();
 string ask_tong();
 void create()
 {
-        set_name("ÉÕ·¹É®", ({
+        set_name("çƒ§é¥­åƒ§", ({
                 "shaofan seng",
                 "shaofan",
                 "seng",
         }));
         set("long",
-                "ÕâÊÇÎ»ÅÖÅÖµÄÖĞÄêÉ®ÈË£¬´ó¸ÅÊÇÒòÎª³¤ÄêÉÕ·¹×÷²ËµÄÔµ¹Ê£¬²ÅÈç´Ë·¢¸£µÄ°É¡£\n"
+                "è¿™æ˜¯ä½èƒ–èƒ–çš„ä¸­å¹´åƒ§äººï¼Œå¤§æ¦‚æ˜¯å› ä¸ºé•¿å¹´çƒ§é¥­ä½œèœçš„ç¼˜æ•…ï¼Œæ‰å¦‚æ­¤å‘ç¦çš„å§ã€‚\n"
         );
 
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("class", "bonze");
 
@@ -45,10 +45,10 @@ void create()
         set_skill("unarmed", 12);
         set_skill("parry", 12);
       set("inquiry", ([
-                "here" : "ÕâÀïÊÇÉÙÁÖËÂµÄ³ø·¿¡£\n",
-                "Ë®Í°" : (: ask_tong:),
+                "here" : "è¿™é‡Œæ˜¯å°‘æ—å¯ºçš„å¨æˆ¿ã€‚\n",
+                "æ°´æ¡¶" : (: ask_tong:),
                 "tong": (: ask_tong :),
-            "Ë®Æ°" : (: ask_piao:),
+            "æ°´ç“¢" : (: ask_piao:),
                 "piao": (: ask_piao :),
                   ]) );
         setup();
@@ -59,9 +59,9 @@ private void go_home()
 {
 
         if( !living(this_object()) ) return;
-        message_vision("$NÉñÉ«»ÅÕÅµØÀë¿ªÁË¡£\n", this_object());
+        message_vision("$Nç¥è‰²æ…Œå¼ åœ°ç¦»å¼€äº†ã€‚\n", this_object());
         this_object()->move("/d/shaolin/chufang");
-        message_vision("$N¿ì²½×ßÁË¹ıÀ´¡£\n", this_object());
+        message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", this_object());
 }
         
 

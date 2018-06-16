@@ -10,10 +10,10 @@ void out_player(object ob);
 void create()
 {
 	
-	set("short", "ÂÒÊ¯¶Ñ");
+	set("short", "ä¹±çŸ³å †");
 	set("long", @LONG
-´Ë´¦ÂÒÊ¯½»´í£¬ÔÙ×ßÏÂÈ¥¿ÖÅÂ»áÃÔÂ·¡£ËÄÖÜÒ²Ã»Ê²Ã´»¨²ÝÊ÷Ä¾£¬Ò»Ð©
-ÆæÐÎ¹Ö×´µÄ´óÊ¯Í·ÂÒ¶ÑÔÚÅÔ¡£
+æ­¤å¤„ä¹±çŸ³äº¤é”™ï¼Œå†èµ°ä¸‹åŽ»ææ€•ä¼šè¿·è·¯ã€‚å››å‘¨ä¹Ÿæ²¡ä»€ä¹ˆèŠ±è‰æ ‘æœ¨ï¼Œä¸€äº›
+å¥‡å½¢æ€ªçŠ¶çš„å¤§çŸ³å¤´ä¹±å †åœ¨æ—ã€‚
 LONG
 	);
 	set("no_clean_up", 0);
@@ -32,7 +32,7 @@ void init ()
 	
 */
 }
-//³öÈ¥Ê±£¬ÏûÈ¥ÔÚÀïÃæµÄ³É¹û
+//å‡ºåŽ»æ—¶ï¼Œæ¶ˆåŽ»åœ¨é‡Œé¢çš„æˆæžœ
 void out_player(object ob)
 {
 	string file_name,file_end;
@@ -42,7 +42,7 @@ void out_player(object ob)
 	if (!ob->is_busy())
 	if(file_name=="d/mingjiao/tiekuangshan"||file_end=="d/mingjiao/tiekuang")
 	{
-		tell_object(ob,HIW"\n\nÄãÖ»¾õÑÛÇ°ÂÒÊ¯¶Ñ×Ýºá½»´í£¬¸ù±¾¿´²»ÇåÄÇÀï³ö¿ÚÔÚºÎ´¦£¬Ö»µÃÓÉÔ­Â·ÍË»Ø¡£\n\n"NOR);
+		tell_object(ob,HIW"\n\nä½ åªè§‰çœ¼å‰ä¹±çŸ³å †çºµæ¨ªäº¤é”™ï¼Œæ ¹æœ¬çœ‹ä¸æ¸…é‚£é‡Œå‡ºå£åœ¨ä½•å¤„ï¼Œåªå¾—ç”±åŽŸè·¯é€€å›žã€‚\n\n"NOR);
 		ob->move("/d/mingjiao/luanshidui");
 		return;
 	}
@@ -59,7 +59,7 @@ void out_message(object ob)
 
 	file_name = implode(explode(file_end, "/")[0..<2], "/");
 	if(file_name=="d/mingjiao/tiekuangshan"||file_end=="d/mingjiao/tiekuang")
-		tell_object(ob,HIW"\n\nÄãÖ»¾õÑÛÇ°ÂÒÊ¯¶Ñ×Ýºá½»´í£¬ÒÑ¾­¿ì¿´²»Çå³ö¿ÚÔÚºÎ´¦£¬ÐÄÖªÈç¹û²»¸Ï¿ì×ß³öÕâÂÒÊ¯ÃÔÕó£¬±ØÈ»´ó´óµÄ²»Í×¡£\n\n"NOR);
+		tell_object(ob,HIW"\n\nä½ åªè§‰çœ¼å‰ä¹±çŸ³å †çºµæ¨ªäº¤é”™ï¼Œå·²ç»å¿«çœ‹ä¸æ¸…å‡ºå£åœ¨ä½•å¤„ï¼Œå¿ƒçŸ¥å¦‚æžœä¸èµ¶å¿«èµ°å‡ºè¿™ä¹±çŸ³è¿·é˜µï¼Œå¿…ç„¶å¤§å¤§çš„ä¸å¦¥ã€‚\n\n"NOR);
 
 	return;
 
@@ -88,7 +88,7 @@ int valid_leave(object ob,string dir)
 		 if(sizeof(inv))
 			 for(i=0; i<sizeof(inv); i++) 
 				 if(userp(inv[i])) 
-					 return notify_fail("ÄãÖ»¾õÇ°ÃæÂÒÊ¯¶Ñ×Ýºá½»´í£¬ÊµÓÐËµ²»³öµÄÎ£ÏÕ¡£¼ÓÉÏÄãÉíÉÏ±³×Å±ðÈË£¬ÈçºÎ¸ÒÍùÇ°×ß¡£\n");
+					 return notify_fail("ä½ åªè§‰å‰é¢ä¹±çŸ³å †çºµæ¨ªäº¤é”™ï¼Œå®žæœ‰è¯´ä¸å‡ºçš„å±é™©ã€‚åŠ ä¸Šä½ èº«ä¸ŠèƒŒç€åˆ«äººï¼Œå¦‚ä½•æ•¢å¾€å‰èµ°ã€‚\n");
 
 				 remove_call_out("out_player");
 				 call_out("out_player", 200, ob);

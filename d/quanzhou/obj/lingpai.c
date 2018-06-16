@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("Ê©½«¾üÁîÅÆ", ({ "shi lingpai", "lingpai", "pai" }));
+	set_name("æ–½å°†å†›ä»¤ç‰Œ", ({ "shi lingpai", "lingpai", "pai" }));
 	set("weight", 400);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long","ÕâÊÇÒ»Ö§Ä¾ÁîÅÆ£¬ÉÏÊéÒ»¸ö¡¸Ê©¡¹×Ö¡£\n");
-		set("unit", "Ö§");
+		set("long","è¿™æ˜¯ä¸€æ”¯æœ¨ä»¤ç‰Œï¼Œä¸Šä¹¦ä¸€ä¸ªã€Œæ–½ã€å­—ã€‚\n");
+		set("unit", "æ”¯");
 		set("material", "wood");
 	}
 	setup();

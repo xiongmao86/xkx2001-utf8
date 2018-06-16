@@ -1,15 +1,15 @@
 //Cracked by Roath
-// »ªÉ½Ð¡¾¶
+// åŽå±±å°å¾„
 // qfy 30/8/1997
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "»ÄÉ½Ð¡¾¶");
+	set("short", "è’å±±å°å¾„");
 	set("long", @LONG
-ÕâÊÇ»ªÉ½ºóÉ½µÄÒ»ÌõÐ¡¾¶£¬ÈË¼£ÄÑÖÁ¡£Á½ÅÔÒ°²ÝÉúµÃÃÜÃÜÂéÂé£¬Òª²»
-ÊÇ´ÓÃÜÊÒÀï³öÀ´£¬Ë­Ò²²»»áµ½ÕâÀïÀ´¡£
+è¿™æ˜¯åŽå±±åŽå±±çš„ä¸€æ¡å°å¾„ï¼Œäººè¿¹éš¾è‡³ã€‚ä¸¤æ—é‡Žè‰ç”Ÿå¾—å¯†å¯†éº»éº»ï¼Œè¦ä¸
+æ˜¯ä»Žå¯†å®¤é‡Œå‡ºæ¥ï¼Œè°ä¹Ÿä¸ä¼šåˆ°è¿™é‡Œæ¥ã€‚
 LONG
 	);
 

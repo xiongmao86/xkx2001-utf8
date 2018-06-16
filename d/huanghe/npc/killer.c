@@ -16,10 +16,10 @@ void create()
         string killer_name = killer_names[random(sizeof(killer_names))];
 
         set_name(killer_name, ({ info_killer[killer_name] }));
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 50 + random(20));
         set("long",
-"Ò»Ãû°×ÐëÀÏÕß£¬Á½±ßÌ«ÑôÑ¨¸ß¸ßÍ»Æð£¬±ãÈç²ØÁËÒ»Ã¶ºËÌÒÏàËÆ¡£\n");
+"ä¸€åç™½é¡»è€è€…ï¼Œä¸¤è¾¹å¤ªé˜³ç©´é«˜é«˜çªèµ·ï¼Œä¾¿å¦‚è—äº†ä¸€æžšæ ¸æ¡ƒç›¸ä¼¼ã€‚\n");
         set("attitude", "heroism");
         set("shen_type", -1);
 
@@ -145,11 +145,11 @@ int do_ask(string arg)
                  return notify_fail("");
 
         if( !this_object()->is_killing(this_player()->query("id")) ) {
-                 command("say ÄãÕÒËÀ£¿£¡»¹²»¸øÎÒ¿ìµã¹ö¿ª£¡£¡£¡");
+                 command("say ä½ æ‰¾æ­»ï¼Ÿï¼è¿˜ä¸ç»™æˆ‘å¿«ç‚¹æ»šå¼€ï¼ï¼ï¼");
                  return 1;
         }
 
-        command("say ·Ï»°ÉÙËµ£¬ÄÃÃüÀ´°É£¡£¡£¡");
+        command("say åºŸè¯å°‘è¯´ï¼Œæ‹¿å‘½æ¥å§ï¼ï¼ï¼");
         return 1;
 }
 
@@ -182,7 +182,7 @@ void unconcious()
         if( objectp(killer = query_temp("last_damage_from")) ) {
                 if( killer == query("victim") ) {
                         killer->add("combat_exp", 10 + random(10));
-                        say(name() + "³¤Ì¾Ò»Éù±ãÑï³¤¶øÈ¥¡£\n");
+                        say(name() + "é•¿å¹ä¸€å£°ä¾¿æ‰¬é•¿è€ŒåŽ»ã€‚\n");
                         this_object()->remove_all_killer();
                         all_inventory(environment())->remove_killer(this_object());
                         this_object()->dismiss_team();
@@ -195,7 +195,7 @@ int do_destroy(object ob)
 {
         COMMAND_DIR"std/halt"->main(ob);
         message("vision",
-                ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+                ob->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                 environment(ob), ({ob}));
         destruct(ob);
         return 1;
@@ -234,14 +234,14 @@ int auto_check()
         if( room == dest ) return 1;
 
         message("vision",
-                ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+                ob->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                 room, ({ob}));
         ob->move(dest);
         message("vision",
-                ob->name() + "×ßÁË¹ýÀ´¡£\n",
+                ob->name() + "èµ°äº†è¿‡æ¥ã€‚\n",
                 dest, ({ob}));
 
-        message_vision(HIR"$N¶Ô$n´óÉùºÈµÀ£º" + RANK_D->query_rude(victim) + "ÎÒ¿´ÄãÕâ´Î»¹ÍùÄÄÀïÅÜ£¿£¡\n\n"NOR, ob, victim);
+        message_vision(HIR"$Nå¯¹$nå¤§å£°å–é“ï¼š" + RANK_D->query_rude(victim) + "æˆ‘çœ‹ä½ è¿™æ¬¡è¿˜å¾€å“ªé‡Œè·‘ï¼Ÿï¼\n\n"NOR, ob, victim);
         ob->set_leader(victim);
         ob->kill_ob(victim);
         return 1;

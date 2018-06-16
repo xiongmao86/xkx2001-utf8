@@ -5,18 +5,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Ø°Ê×", ({ "bishou", "dagger" }));
+        set_name("åŒ•é¦–", ({ "bishou", "dagger" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("long", 
-"ÕâÊÇÒ»±úÆÕÍ¨µÄ¾«¸ÖØ°Ê×¡£\n");
+"è¿™æ˜¯ä¸€æŸ„æ™®é€šçš„ç²¾é’¢åŒ•é¦–ã€‚\n");
                 set("value", 250);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø»³Àï¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›æ€€é‡Œã€‚\n");
         }
         init_sword(5);
         setup();

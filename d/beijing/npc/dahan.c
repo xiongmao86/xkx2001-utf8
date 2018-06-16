@@ -6,11 +6,11 @@ void create()
 {
 	seteuid(getuid());
 
-	set_name("´óºº", ({"dahan",
+	set_name("å¤§æ±‰", ({"dahan",
 			     "han"}));
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "ÕâÊÇÒ»ÃûÉí²Ä×³ÊµµÄÃÉ¹Å´óºº");
+	set("long", "è¿™æ˜¯ä¸€åèº«æå£®å®çš„è’™å¤å¤§æ±‰");
 	set("attitude","heroism");
 	set("generation",0);
 	set("winner","none");

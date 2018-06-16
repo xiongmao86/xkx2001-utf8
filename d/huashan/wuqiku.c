@@ -1,14 +1,14 @@
 //Cracked by Roath
-// wuqiku.c »ªÉ½±øÆ÷·¿
+// wuqiku.c åå±±å…µå™¨æˆ¿
 // qfy July 7, 1996
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "±øÆ÷·¿");
+	set("short", "å…µå™¨æˆ¿");
 	set("long", @LONG
-ÕâÀïÊÇ»ªÉ½ÅÉµÄ±øÆ÷·¿£¬Ç½ÉÏ¸÷´¦¹ÒÁËĞí¶à³¤½££¬¶Ì½£ºÍÖñ½£¡£
+è¿™é‡Œæ˜¯åå±±æ´¾çš„å…µå™¨æˆ¿ï¼Œå¢™ä¸Šå„å¤„æŒ‚äº†è®¸å¤šé•¿å‰‘ï¼ŒçŸ­å‰‘å’Œç«¹å‰‘ã€‚
 LONG
 	);
 
@@ -38,8 +38,8 @@ int valid_leave(object me, string dir)
 		if ((string)inv[i]->query("skill_type")=="sword") j++;
         }
 	
-	if ( j == 1 ) me->set_temp("marks/½£", 1);
-	if ( j > 1 ) return notify_fail("±ğÄÇÃ´×ÔË½£¡Äã²»ÄÜ´ø×ß³¬¹ıÒ»°Ñ±øÆ÷¡£\n");
+	if ( j == 1 ) me->set_temp("marks/å‰‘", 1);
+	if ( j > 1 ) return notify_fail("åˆ«é‚£ä¹ˆè‡ªç§ï¼ä½ ä¸èƒ½å¸¦èµ°è¶…è¿‡ä¸€æŠŠå…µå™¨ã€‚\n");
 
 	return ::valid_leave(me, dir);
 }

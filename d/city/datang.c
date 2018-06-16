@@ -6,12 +6,12 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", HIC"×íÏÉÂ¥´óÌÃ"NOR);
+	set("short", HIC"é†‰ä»™æ¥¼å¤§å ‚"NOR);
 	set("long", @LONG
-ÕâÊÇ±ãÊÇÐÂ¿ªµÄ×íÏÉÂ¥´óÌÃ£¬½øÀ´ºóÈÃÈË²»ÓÉ×ÔÖ÷µÄ¸Ð¾õÑÛÇ°Ò»ÁÁ¡£´óÌÃÄÚ      
-µÄ²¼ÖÃ´øÓÐÈý·Ö¹óÆø£¬ÏÔÈ»ÊÇÕÐ´ý¹ó±öºÍÏ²ÇìÖ®ÓÃ¡£Ö»¼ûÇ½ÉÏ¹Ò×ÅÒ»·ù¶ÔÁª(dui
-lian)£¬±ÊÖÂÆÄÎªäìÈ÷µ«ÑÚ²»×¡¼¸·ÖÈáÈõÖ®Æø¡£Íù¶«ÊÇÃµ¹åÌü£¬³¯ÄÏµÄÊÇÄµµ¤Ìü£¬
-Ïò±±ÊÇÜ½ÈØÌü¡£
+è¿™æ˜¯ä¾¿æ˜¯æ–°å¼€çš„é†‰ä»™æ¥¼å¤§å ‚ï¼Œè¿›æ¥åŽè®©äººä¸ç”±è‡ªä¸»çš„æ„Ÿè§‰çœ¼å‰ä¸€äº®ã€‚å¤§å ‚å†…      
+çš„å¸ƒç½®å¸¦æœ‰ä¸‰åˆ†è´µæ°”ï¼Œæ˜¾ç„¶æ˜¯æ‹›å¾…è´µå®¾å’Œå–œåº†ä¹‹ç”¨ã€‚åªè§å¢™ä¸ŠæŒ‚ç€ä¸€å¹…å¯¹è”(dui
+lian)ï¼Œç¬”è‡´é¢‡ä¸ºæ½‡æ´’ä½†æŽ©ä¸ä½å‡ åˆ†æŸ”å¼±ä¹‹æ°”ã€‚å¾€ä¸œæ˜¯çŽ«ç‘°åŽ…ï¼Œæœå—çš„æ˜¯ç‰¡ä¸¹åŽ…ï¼Œ
+å‘åŒ—æ˜¯èŠ™è“‰åŽ…ã€‚
 LONG);
 	set("exits", ([
 		"east"   : __DIR__"meigui",
@@ -22,16 +22,16 @@ LONG);
 	set("item_desc", ([
 	"duilian" : HIG"
        * * * * * * *
-       * ´º	¶« *\n
-       * ÏÄ	ÄÏ *\n
-       * Çï	Î÷ *\n
-       * ¶¬	±± *\n
-       * Ò»	ËÄ *\n
-       * Ëê	·½ *\n
-       * ´¨	±ö *\n
-       * Á÷	ÖÁ *\n
-       * ²»	Èç *\n
-       * Ï¢	¹é *\n
+       * æ˜¥	ä¸œ *\n
+       * å¤	å— *\n
+       * ç§‹	è¥¿ *\n
+       * å†¬	åŒ— *\n
+       * ä¸€	å›› *\n
+       * å²	æ–¹ *\n
+       * å·	å®¾ *\n
+       * æµ	è‡³ *\n
+       * ä¸	å¦‚ *\n
+       * æ¯	å½’ *\n
        * * * * * * *
 \n"NOR
 	]) );

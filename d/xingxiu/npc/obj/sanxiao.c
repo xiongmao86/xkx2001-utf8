@@ -5,11 +5,11 @@ inherit ITEM;
 int throw_ob(object me, object victim);
 void create()
 {
-   set_name(BLU"åÐÒ£ÈýÐ¦É¢"NOR, ({"sanxiao san", "san", "sanxiao", "zhuihun"}));
+   set_name(BLU"é€é¥ä¸‰ç¬‘æ•£"NOR, ({"sanxiao san", "san", "sanxiao", "zhuihun"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "°ü");
+      set("unit", "åŒ…");
       set("value", 10);
       set("skill", "feixing-shu");
    }
@@ -21,29 +21,29 @@ int throw_ob(object me, object victim)
    int skill, skill2, thr, dod, poi, my_neili, u_neili;
 
    if( me->query("neili") <= 600 ){
-	write("ÄãµÄÄÚÁ¦²»¹»´ÝÆÈåÐÒ£ÈýÐ¦É¢¶¾£¡\n");
+	write("ä½ çš„å†…åŠ›ä¸å¤Ÿæ‘§è¿«é€é¥ä¸‰ç¬‘æ•£æ¯’ï¼\n");
 	return 1;
 	}
 
    if (me->query_skill("poison", 1) < 100){
-	write("µ±ÐÄ¶¾ËÀÄã×Ô¼º£¡\n");
+	write("å½“å¿ƒæ¯’æ­»ä½ è‡ªå·±ï¼\n");
 	return 1;
 	}
    if (victim->query_temp("sanxiao")){
-	write("´ËÈËÒÑÖÐÁËÈýÐ¦×·»êÉ¢£¬Ãü²»¾ÃÒÓ£¡\n");
+	write("æ­¤äººå·²ä¸­äº†ä¸‰ç¬‘è¿½é­‚æ•£ï¼Œå‘½ä¸ä¹…çŸ£ï¼\n");
 	return 1;
 	}
    if (me->query_condition("pker") > 240 && userp(victim)){
-	write("Äã¸Ðµ½Ò»Ë¿ÄÚ¾Î£¬ÊÖÍ»È»ÈíÁËÏÂÀ´¡£\n");
+	write("ä½ æ„Ÿåˆ°ä¸€ä¸å†…ç–šï¼Œæ‰‹çªç„¶è½¯äº†ä¸‹æ¥ã€‚\n");
 	return 1;
 	}
-   message_vision(BLU"$NÇáÇáÒ»µ¯Ö¸£¬½«åÐÒ£ÈýÐ¦É¢Íù$nÉíÉÏµ¯È¥¡£\n" NOR, me, victim);
+   message_vision(BLU"$Nè½»è½»ä¸€å¼¹æŒ‡ï¼Œå°†é€é¥ä¸‰ç¬‘æ•£å¾€$nèº«ä¸Šå¼¹åŽ»ã€‚\n" NOR, me, victim);
    if (me->query_skill("poison", 1) < 100){
    me->set_temp("sanxiao", 1);
    this_object()->set_temp("used", 1);
    this_object()->move("/u/ryu/workroom");
    call_out("smile", 20, me);
-        tell_object(me, "Äã¶¾Á¶µÃ»ðºî²»¹»£¬¶¾×Å×Ô¼ºÁË£¡\n");
+        tell_object(me, "ä½ æ¯’ç‚¼å¾—ç«ä¾¯ä¸å¤Ÿï¼Œæ¯’ç€è‡ªå·±äº†ï¼\n");
 	return 1;
    }
    if (me->query_skill("poison", 1) < victim->query_skill("poison", 1) + 30){
@@ -76,7 +76,7 @@ int throw_ob(object me, object victim)
    }
    else
         {
-        message_vision(HIR"$nÅÛÐäÒ»·÷£¬Ò»¹ÉÄÚ¾¢·¢³ö£¬½«ÄÇÈýÐ¦É¢¾¡Êý³¯$N·÷½«»ØÈ¥¡£\n" NOR, me, victim);
+        message_vision(HIR"$nè¢è¢–ä¸€æ‹‚ï¼Œä¸€è‚¡å†…åŠ²å‘å‡ºï¼Œå°†é‚£ä¸‰ç¬‘æ•£å°½æ•°æœ$Næ‹‚å°†å›žåŽ»ã€‚\n" NOR, me, victim);
 	me->set_temp("sanxiao", 1);
         this_object()->set_temp("used", 1);
 	this_object()->set("value", 10);
@@ -89,12 +89,12 @@ int throw_ob(object me, object victim)
 
 int smile(object victim, object me)
 {
-   message("vision",victim->name()+"Í»È»ÏòÄã¹îÒìµØÒ»Ð¦¡£\n", environment(victim),({victim}) );
+   message("vision",victim->name()+"çªç„¶å‘ä½ è¯¡å¼‚åœ°ä¸€ç¬‘ã€‚\n", environment(victim),({victim}) );
    victim->add_temp("smile", 1);
    if ( victim->query_temp("sanxiao")){
    if ( victim->query_temp("smile") >= 3 ) {
 	remove_call_out("smile");
-        tell_object(victim,"ÄãÍ»È»È«Éí½©Ó²£¬ºôÎüÒì³£À§ÄÑ£¬Ô­À´ÔÚ²»Öª²»¾õÖÐÖÐÁË±ðÈËµÄ¶¾ÊÖ£¡\n");
+        tell_object(victim,"ä½ çªç„¶å…¨èº«åƒµç¡¬ï¼Œå‘¼å¸å¼‚å¸¸å›°éš¾ï¼ŒåŽŸæ¥åœ¨ä¸çŸ¥ä¸è§‰ä¸­ä¸­äº†åˆ«äººçš„æ¯’æ‰‹ï¼\n");
 	victim->receive_wound("jing", victim->query("max_jing")*2, me);
         victim->delete_temp("sanxiao");
 	victim->delete_temp("smile");

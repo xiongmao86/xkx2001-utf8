@@ -1,17 +1,17 @@
 //Cracked by Roath
-// boguang.c Ìï²®¹â
+// boguang.c ç”°ä¼¯å…‰
 // qfy July 21, 1996
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ìï²®¹â", ({ "tian boguang", "tian", "boguang" }));
-	set("nickname", "ÍòÀï¶ÀĞĞ");
+	set_name("ç”°ä¼¯å…‰", ({ "tian boguang", "tian", "boguang" }));
+	set("nickname", "ä¸‡é‡Œç‹¬è¡Œ");
 	set("long", 
-"Ìï²®¹âÎôÄêÎª½­ºşÖĞ³ôÃûÕÑÕÃµÄ²É»¨Ôô£¬µ«½áÊ¶»ªÉ½Áîºü³åºóÒÑ\n"
-"¸ÄĞ°¹éÕı¡£Ò»ÊÖ¿ìµ¶¾ø¼¼£¬ÌìÏÂÎŞË«¡£Çá¹¦ÔÚÎäÁÖÖĞÒ²ÊÇÒ»µÈµÄ¡£\n");
-	set("gender", "ÄĞĞÔ");
+"ç”°ä¼¯å…‰æ˜”å¹´ä¸ºæ±Ÿæ¹–ä¸­è‡­åæ˜­å½°çš„é‡‡èŠ±è´¼ï¼Œä½†ç»“è¯†åå±±ä»¤ç‹å†²åå·²\n"
+"æ”¹é‚ªå½’æ­£ã€‚ä¸€æ‰‹å¿«åˆ€ç»æŠ€ï¼Œå¤©ä¸‹æ— åŒã€‚è½»åŠŸåœ¨æ­¦æ—ä¸­ä¹Ÿæ˜¯ä¸€ç­‰çš„ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -44,10 +44,10 @@ void create()
 	map_skill("parry", "luan-blade");
 	map_skill("blade", "luan-blade");
 	set("inquiry", ([
-		"Áîºü³å" : "ÁîºüĞÖÊÇÎÒÉúÆ½µÚÒ»Öª¼º¡£\n",
-		"·çÇåÑï" : "Äã´òµÃ¹ıÎÒ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£\n",
-		"·çÇ°±²" : "Äã´òµÃ¹ıÎÒ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£\n",
-		"·çÇåÑïÇ°±²" : "Äã´òµÃ¹ıÎÒ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£\n",
+		"ä»¤ç‹å†²" : "ä»¤ç‹å…„æ˜¯æˆ‘ç”Ÿå¹³ç¬¬ä¸€çŸ¥å·±ã€‚\n",
+		"é£æ¸…æ‰¬" : "ä½ æ‰“å¾—è¿‡æˆ‘ï¼Œæˆ‘è‡ªç„¶ä¼šå¸¦ä½ å»è§ä»–ã€‚\n",
+		"é£å‰è¾ˆ" : "ä½ æ‰“å¾—è¿‡æˆ‘ï¼Œæˆ‘è‡ªç„¶ä¼šå¸¦ä½ å»è§ä»–ã€‚\n",
+		"é£æ¸…æ‰¬å‰è¾ˆ" : "ä½ æ‰“å¾—è¿‡æˆ‘ï¼Œæˆ‘è‡ªç„¶ä¼šå¸¦ä½ å»è§ä»–ã€‚\n",
 	]));
 
 	setup();
@@ -62,7 +62,7 @@ void init()
 	::init();
 	if ( interactive(ob = this_player()) && !is_fighting() && !me->query_temp("said") ) {
 	   me->set_temp("said", 1);
-	   command( "say ÏëÕÒ·çÇ°±²£¿Äã¿ÉµÃÊ¤¹ıÎÒµÄ¿ìµ¶ÔÙËµ¡£");
+	   command( "say æƒ³æ‰¾é£å‰è¾ˆï¼Ÿä½ å¯å¾—èƒœè¿‡æˆ‘çš„å¿«åˆ€å†è¯´ã€‚");
 	   remove_call_out("climb_tree");
 	   call_out("climb_tree", 45, me); 	
 	}
@@ -110,21 +110,21 @@ int checking(object me, object ob)
 	}
 
 	if (me->query("qi")*2 <= me->query("max_qi") 
-	&& environment(me)->query("short") == "³¯Ñô·å" ) {
+	&& environment(me)->query("short") == "æœé˜³å³°" ) {
              me->remove_enemy(ob);
 	     ob->remove_enemy(me);
 	     environment(me)->add("tian_count", 1);
-	     command( "say "+RANK_D->query_respect(ob)+"¹ûÈ»¸ßÃ÷£¬ÔÚÏÂ¶àÓĞµÃ×ï¡£ÔÚÏÂÕâ±ã´øÄãÈ¥¼û·çÇ°±²¡£");
-	     message("vision", ob->name() + "Ëæ×ÅÌï²®¹â×ß½ø»ÄÉ½Àï¡£\n", environment(ob), ({ob}));
+	     command( "say "+RANK_D->query_respect(ob)+"æœç„¶é«˜æ˜ï¼Œåœ¨ä¸‹å¤šæœ‰å¾—ç½ªã€‚åœ¨ä¸‹è¿™ä¾¿å¸¦ä½ å»è§é£å‰è¾ˆã€‚");
+	     message("vision", ob->name() + "éšç€ç”°ä¼¯å…‰èµ°è¿›è’å±±é‡Œã€‚\n", environment(ob), ({ob}));
 	     me->move("/d/huashan/yelin1");
 	     ob->move("/d/huashan/yelin1");
-	     tell_object(ob,"Ìï²®¹âÁìÄã×ß¹ı»ªÉ½ºóÉ½µÄÒ»Æ¬»ÄÉ½Ò°ÁÖ£¬Äã×¢Òâµ½ÄÇ¶ùËÆºõÓĞ¸öÉ½¶´¡£\n");
+	     tell_object(ob,"ç”°ä¼¯å…‰é¢†ä½ èµ°è¿‡åå±±åå±±çš„ä¸€ç‰‡è’å±±é‡æ—ï¼Œä½ æ³¨æ„åˆ°é‚£å„¿ä¼¼ä¹æœ‰ä¸ªå±±æ´ã€‚\n");
 	     me->move("/d/huashan/xiaojing1");
 	     ob->move("/d/huashan/xiaojing1");
-   	     tell_object(ob,"Äã¸ú×ÅÌï²®¹â×ßÁËÁ¼¾Ã£¬À´µ½Ò»ÌõĞ¡Â·¡£\n");
+   	     tell_object(ob,"ä½ è·Ÿç€ç”°ä¼¯å…‰èµ°äº†è‰¯ä¹…ï¼Œæ¥åˆ°ä¸€æ¡å°è·¯ã€‚\n");
 	     command( "bow" );
-	     command( "say ·çÇ°±²×¡´¦ÓÉ´ËÂ·¹ıÈ¥±ãÊÇ£¬ÔÚÏÂÊ§ÅãÁË¡£");
-	     say("Ìï²®¹âËµÍê±ãÍ·Ò²²»»ØµØ×ßÁË¡£\n");	
+	     command( "say é£å‰è¾ˆä½å¤„ç”±æ­¤è·¯è¿‡å»ä¾¿æ˜¯ï¼Œåœ¨ä¸‹å¤±é™ªäº†ã€‚");
+	     say("ç”°ä¼¯å…‰è¯´å®Œä¾¿å¤´ä¹Ÿä¸å›åœ°èµ°äº†ã€‚\n");	
 	     destruct(me);
 	}
 
@@ -144,7 +144,7 @@ int fast_attack(object me, object ob)
 	me->delete_temp("attack_pending");
 	num = random(2)+3;
 
-	message_vision("Ìï²®¹â´óº°Ò»Éù£¬Ê¹³öÆä¿ìµ¶¾ø¼¼·è¿ñ°ãÏò$NÁ¬ÅüÁË"+chinese_number(num)+"µ¶¡£\n", ob);
+	message_vision("ç”°ä¼¯å…‰å¤§å–Šä¸€å£°ï¼Œä½¿å‡ºå…¶å¿«åˆ€ç»æŠ€ç–¯ç‹‚èˆ¬å‘$Nè¿åŠˆäº†"+chinese_number(num)+"åˆ€ã€‚\n", ob);
 
 	for (i=1; i<num+1; i++) {
 	    COMBAT_D->do_attack(me, ob, me->query_temp("weapon"));
@@ -155,21 +155,21 @@ int fast_attack(object me, object ob)
 
 int climb_tree(object me)
 {
-	if ( environment(me)->query("short") == "³¯Ñô·å" ) {
+	if ( environment(me)->query("short") == "æœé˜³å³°" ) {
 	   if ( !me->query_temp("fought") ) {
 	      environment(me)->add("tian_count", 1);	
-	      message_vision("Ìï²®¹âÅ­»ğ´óÕÇ£¬ÆÃ¿Ú´óÂîµÀ£º¡°Äã¼ÈÈ»ÎŞÒâ°İ¼û·çÇ°±²£¬¸É°Í°ÍµØ½ĞÀÏ×ÓÏÂÀ´¸ÉÂï£¿¡±\n", me);
-	      message_vision("Ìï²®¹â½Ó×Å±ãÅÀ»ØÊ÷ÉÏ£¬°İ¼ûÖÜ¹«È¥ÁË¡£\n", me);		
+	      message_vision("ç”°ä¼¯å…‰æ€’ç«å¤§æ¶¨ï¼Œæ³¼å£å¤§éª‚é“ï¼šâ€œä½ æ—¢ç„¶æ— æ„æ‹œè§é£å‰è¾ˆï¼Œå¹²å·´å·´åœ°å«è€å­ä¸‹æ¥å¹²å˜›ï¼Ÿâ€\n", me);
+	      message_vision("ç”°ä¼¯å…‰æ¥ç€ä¾¿çˆ¬å›æ ‘ä¸Šï¼Œæ‹œè§å‘¨å…¬å»äº†ã€‚\n", me);		
 	   }
 	   else {
-	      message_vision("Ìï²®¹â´òÁË¸öºÇÇ·¡£\n", me);
-	      command("say Ë¡ÎÒ²»ÄÜ·îÅã¡£");
+	      message_vision("ç”°ä¼¯å…‰æ‰“äº†ä¸ªå‘µæ¬ ã€‚\n", me);
+	      command("say æ•æˆ‘ä¸èƒ½å¥‰é™ªã€‚");
 	      environment(me)->add("tian_count", 1);
-	      message_vision("Ìï²®¹â½Ó×Å±ãÅÀ»ØÊ÷ÉÏ£¬°İ¼ûÖÜ¹«È¥ÁË¡£\n", me);
+	      message_vision("ç”°ä¼¯å…‰æ¥ç€ä¾¿çˆ¬å›æ ‘ä¸Šï¼Œæ‹œè§å‘¨å…¬å»äº†ã€‚\n", me);
 	   }
 	}
 	else {
-	   message_vision("Ìï²®¹â´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n", me);
+	   message_vision("ç”°ä¼¯å…‰åŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n", me);
 	}
 
 	destruct(me);

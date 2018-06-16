@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ի��");
+	set("short", "斋宫");
 	set("long", @LONG
-�����ǻʵ��ڼ��죬���صȴ���֮ǰ������ի��ĵط���
+这里是皇帝在祭天，祭地等大祀之前，来此斋戒的地方。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

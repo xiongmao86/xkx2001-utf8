@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¶¾µ¤", ({ "du dan", "dan"}));
+        set_name("æ¯’ä¸¹", ({ "du dan", "dan"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", HIR"Ò»¿éĞÈºìÈçÑªµÄµ¤Íè¡£\n"NOR);
+                set("unit", "å—");
+                set("long", HIR"ä¸€å—è…¥çº¢å¦‚è¡€çš„ä¸¹ä¸¸ã€‚\n"NOR);
                 set("material", "stone");
         }
         setup();

@@ -10,10 +10,10 @@ string ask_me();
 
 void create()
 {
-        set_name("С�", ({ "shan", "xiao shan" }) );
-        set("long", "�������ݳ�����ͤ�﹩Ӧ��ˮ��С橹��������һ�Զ��顣\n");
-	set("title", "��Ů");
-        set("gender", "Ů��");
+        set_name("小姗", ({ "shan", "xiao shan" }) );
+        set("long", "这是扬州城月老亭里供应茶水的小姗姑娘，正坐在一旁读书。\n");
+	set("title", "民女");
+        set("gender", "女性");
         set("age", 16);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -34,27 +34,27 @@ void create()
 	set_skill("unarmed", 30);
 
         set("inquiry", ([
-                "name" : "�Ҿ���С橡�" ,
-                "here" : "��������ͤ��������������д����ָ�ϵĻ������Ҷ���ģ�",
-		"marriage" : "������˵�ˣ��������ǰ�ˮ����Ů�˺�ʯͷ�������˷���һ����ͣ����Ǻ��ࡣ" ,
-		"����" : "������˵�ˣ��������ǰ�ˮ����Ů�˺�ʯͷ�������˷���һ����ͣ����Ǻ��ࡣ" ,
-		"���" : "������˵�ˣ��������ǰ�ˮ����Ů�˺�ʯͷ�������˷���һ����ͣ����Ǻ��ࡣ" ,
-		"kiss" : "�����Ĳ����İ������ǻ��������������ߴ��ط��˰ɡ�",
+                "name" : "我就是小姗。" ,
+                "here" : "这是月老亭，请问是来帮着写婚姻指南的还是来找对象的？",
+		"marriage" : "火星人说了，婚姻就是把水做的女人和石头做的男人放在一起搅和，就是和泥。" ,
+		"婚姻" : "火星人说了，婚姻就是把水做的女人和石头做的男人放在一起搅和，就是和泥。" ,
+		"结婚" : "火星人说了，婚姻就是把水做的女人和石头做的男人放在一起搅和，就是和泥。" ,
+		"kiss" : "你无聊不无聊啊，这是婚姻介绍所，你走错地方了吧。",
 		"sex" : (: ask_me :),
 		"make love" : (: ask_me :),
-		"love" : "�̣ϣ֣ţ����������˿��̶�������������" ,
-		"����" : "���飿���������˿��̶�������������" ,
-		"boyfriend" : "�����ѣ�����˵�ˣ���ǧ��Ҫ��˵��ϲ������" ,
-		"������" : "�����ѣ�����˵�ˣ���ǧ��Ҫ��˵��ϲ������" ,
-		"girlfriend" : "����˵�ˣ��뽻Ů���ѣ�����ȶ�ѧЩ�Ļ���װ����һ����С�" ,
-		"Ů����" : "����˵�ˣ��뽻Ů���ѣ�����ȶ�ѧЩ�Ļ���װ����һ����С�" ,
-		"wife" : "��֪��˭˵�ģ����Ӿ���һ������ǰ����Ҫ������������ò����˵�Ů�ˡ�" ,
-		"����" : "��֪��˭˵�ģ����Ӿ���һ������ǰ����Ҫ������������ò����˵�Ů�ˡ�" ,
-		"husband" : "�ұ�����˵�ˣ��ɷ����һ�������ް���" ,
-		"�ɷ�" : "�ұ�����˵�ˣ��ɷ����һ�������ް���" ,
-		"divorce" : "��˵�ˣ���飬����������Ŀ�ʼ�ˡ�" ,
-		"���" : "��˵�ˣ���飬����������Ŀ�ʼ�ˡ�" ,
-		"��ˮͰ" : "�ޣ���Ͱ�������ˮ�Ǹ����õģ����Լ�ȥ��ɡ�",
+		"love" : "ＬＯＶＥ？嘻嘻，王八看绿豆，看对眼啦。" ,
+		"爱情" : "爱情？嘻嘻，王八看绿豆，看对眼啦。" ,
+		"boyfriend" : "男朋友？愁烟说了，你千万不要先说你喜欢他。" ,
+		"男朋友" : "男朋友？愁烟说了，你千万不要先说你喜欢他。" ,
+		"girlfriend" : "愁烟说了，想交女朋友，你得先多学些文化，装得甜一点才行。" ,
+		"女朋友" : "愁烟说了，想交女朋友，你得先多学些文化，装得甜一点才行。" ,
+		"wife" : "不知听谁说的，妻子就是一个你结婚前爱得要命，结婚后讨厌得不得了的女人。" ,
+		"妻子" : "不知听谁说的，妻子就是一个你结婚前爱得要命，结婚后讨厌得不得了的女人。" ,
+		"husband" : "我表舅妈说了，丈夫就是一个大娃娃啊。" ,
+		"丈夫" : "我表舅妈说了，丈夫就是一个大娃娃啊。" ,
+		"divorce" : "人说了，离婚，就是新生活的开始了。" ,
+		"离婚" : "人说了，离婚，就是新生活的开始了。" ,
+		"大水桶" : "噢，那桶里的凉开水是刚凉好的，你自己去灌吧。",
         ]) );
 
         setup();
@@ -98,14 +98,14 @@ int ask_me()
         switch( random(5) ) {
                 case 0:
 	                message("vision",
-   "С���" + me->name() +"ŭ���������Ĳ�����ѽ����å�����ȥ��\n", me );
+   "小姗向" + me->name() +"怒道：你无聊不无聊呀。流氓！你出去！\n", me );
                         command("slap " + me->query("id"));
                         remove_call_out("kicking");
                         call_out("kicking", 1, me);
                         break;
                 case 1:
 		        message("vision",
-   "С���" + me->name() +"ŭ���������Ĳ�����ѽ����å�����ȥ��\n", me );
+   "小姗向" + me->name() +"怒道：你无聊不无聊呀。流氓！你出去！\n", me );
                         command("kick " + me->query("id"));
                         remove_call_out("kicking");
                         call_out("kicking", 1, me);
@@ -131,9 +131,9 @@ int do_look(string target)
  
         me = this_player();
         if (target=="shan" || target=="xiao shan") 
-        if ((string)me->query("gender") != "Ů��") {
+        if ((string)me->query("gender") != "女性") {
                    message("vision",
-   "С���" + me->name() +"���������Ĳ�����ѽ��\n", me );
+   "小姗向" + me->name() +"道：你无聊不无聊呀。\n", me );
 
 	switch( random(5) ) {
 		case 0:
@@ -171,18 +171,18 @@ void greeting(object ob)
 
         switch( random(2) ) {
                 case 0:
-                say( "С橹�������һ�Զ��飬���������ˣ�̧��ͷ������һ�ۣ�ָ��ָǽ�ϵ�
-���ܵ����ӵ������Լ����ɣ������Եľ��Ҹ���λ���ɡ�˵������ͷ����ȥ�ˡ�\n");
+                say( "小姗姑娘坐在一旁读书，见有人来了，抬起头来望了一眼，指了指墙上的
+四周的柱子道：你自己看吧，想留言的就找个空位留吧。说完又埋头读书去了。\n");
           	break;
 
                 case 1:
-                say( "С橹�������һ�Զ��飬���������ˣ������������˵����λ" + RANK_D->query_respect(ob) + "��
-���������ȱ�ˮ���������ɣ������Ͽ������в�����ʾ�š�\n");
+                say( "小姗姑娘坐在一旁读书，见有人来了，放下手里的书说：这位" + RANK_D->query_respect(ob) + "，
+请进请进，喝杯水，慢慢看吧，柱子上可贴了有不少启示呐。\n");
 		break;
         }
         zhn = new("/u/xbc/obj/zhinan");
         zhn->move(ob);
-        message_vision("С橸���$Nһ��С���ӡ�\n", ob);
+        message_vision("小姗给了$N一本小册子。\n", ob);
 
 	return;
 }
@@ -195,7 +195,7 @@ void kicking(object me)
                 return;
 
         me->move("/d/city/dongdajie3");
-         message("vision","ֻ�����ء���һ����������" +  me->query("name") +
-                "������ͤ����˳���������һ������ӡ��ƨ������һ��СЬӡ��\n", environment(me), me);
+         message("vision","只听“嘭”地一声，紧接着" +  me->query("name") +
+                "从月老亭里飞了出来，脸上一个红手印，屁股上有一个小鞋印。\n", environment(me), me);
 }
 

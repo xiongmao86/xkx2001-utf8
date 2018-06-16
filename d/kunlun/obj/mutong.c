@@ -1,18 +1,18 @@
 //Cracked by Roath
-// mutong.c Ä¾Í°
+// mutong.c æœ¨æ¡¶
 
 #define max_volume 3
 inherit ITEM;
 
 void create()
 {
-	set_name("Ä¾Í°", ({"mu tong", "tong", "bucket"}));
+	set_name("æœ¨æ¡¶", ({"mu tong", "tong", "bucket"}));
 	set_weight(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÀ´×°Ë®µÄÄ¾Í°¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨æ¥è£…æ°´çš„æœ¨æ¡¶ã€‚\n");
+		set("unit", "ä¸ª");
 		set("amount", 0);
 		set("no_drop",1);
 	}
@@ -26,16 +26,16 @@ string extra_long()
 	switch(query("amount"))
 	{
 		case 0: 
-			str="ÀïÃæÊ²Ã´Ò²Ã»ÓÐ¡£\n";
+			str="é‡Œé¢ä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n";
 			break;
 		case 1:
-			str="ÀïÃæÓÐÉÙÐíµÄ±ùË®¡£\n";
+			str="é‡Œé¢æœ‰å°‘è®¸çš„å†°æ°´ã€‚\n";
 			break;
 		case 2:
-			str="ÀïÃæµÄ±ùË®¿ìÂúÁË¡£\n";
+			str="é‡Œé¢çš„å†°æ°´å¿«æ»¡äº†ã€‚\n";
 			break;
 		case 3:
-			str="ÀïÃæ×°ÂúÁË±ùË®¡£\n";
+			str="é‡Œé¢è£…æ»¡äº†å†°æ°´ã€‚\n";
 			break;
 	}
 	
@@ -59,24 +59,24 @@ int do_fill(string arg)
 	if (arg!="tong"&& arg!="bucket") return 0;
 
 	if (me->is_busy()||me->is_fighting())
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
-	if (environment(me)->query("short")!="±ÌË®º®Ì¶")
-		return notify_fail("ÕâÀïÃ»ÓÐÀäË®¡£\n");
+	if (environment(me)->query("short")!="ç¢§æ°´å¯’æ½­")
+		return notify_fail("è¿™é‡Œæ²¡æœ‰å†·æ°´ã€‚\n");
 
 	if (query("amount") >= max_volume)
-		return notify_fail("Ä¾Í°ÒÑ¾­×°ÂúË®ÁË¡£\n");
+		return notify_fail("æœ¨æ¡¶å·²ç»è£…æ»¡æ°´äº†ã€‚\n");
 
 	if (me->query("neili") < 50)
-		return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦½ßÁË¡£\n");
+		return notify_fail("ä½ å·²ç»ç²¾ç–²åŠ›ç«­äº†ã€‚\n");
 
-	message_vision("$NÐ¡ÐÄÒíÒíµØ´Ó±ÌË®º®Ì¶ÀïÒ¨ÁËÐ©±ùË®ÉÏÀ´¡£\n",me);
+	message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°ä»Žç¢§æ°´å¯’æ½­é‡Œèˆ€äº†äº›å†°æ°´ä¸Šæ¥ã€‚\n",me);
 	add("amount",1);
 	if ( random(me->query_con()) > 20)
 	{
-		message_vision("Ò»¹Éº®Æø´ÓÌ¶µ×Ö±Ã°ÉÏÀ´£¬¶³µÃ$N´òÁË¸ö¶ßàÂ£¡\n",me);
-		me->receive_wound("qi",random(50),"±»¶³ËÀÁË£¡");
-		me->receive_damage("qi",random(100),"±»¶³ËÀÁË£¡");
+		message_vision("ä¸€è‚¡å¯’æ°”ä»Žæ½­åº•ç›´å†’ä¸Šæ¥ï¼Œå†»å¾—$Næ‰“äº†ä¸ªå“†å—¦ï¼\n",me);
+		me->receive_wound("qi",random(50),"è¢«å†»æ­»äº†ï¼");
+		me->receive_damage("qi",random(100),"è¢«å†»æ­»äº†ï¼");
 	}
 	me->add("neili",-30);
 	me->start_busy(3);
@@ -97,18 +97,18 @@ int do_pour(string arg)
 		return 0;
 
 	if (me->is_busy() || me->is_fighting() )
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-	if ((item != "Ë®" && item!="water") || (target!="Ë®¸×" && target!="gang"))
-		return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷µ¹½øÄÄÀï£¿\n");
+	if ((item != "æ°´" && item!="water") || (target!="æ°´ç¼¸" && target!="gang"))
+		return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿å€’è¿›å“ªé‡Œï¼Ÿ\n");
 
 	if (!(gang=present("shui gang",environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓÐË®¸×¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰æ°´ç¼¸ã€‚\n");
 	
 	if (!(amount = query("amount")))
-		return notify_fail("Ä¾Í°ÀïÊ²Ã´¶¼Ã»ÓÐ¡£\n");
+		return notify_fail("æœ¨æ¡¶é‡Œä»€ä¹ˆéƒ½æ²¡æœ‰ã€‚\n");
 
-	message_vision("$N°ÑÄ¾Í°ÀïµÄË®È«²¿µ¹½ø´óË®¸×Àï¡£\n",me);
+	message_vision("$NæŠŠæœ¨æ¡¶é‡Œçš„æ°´å…¨éƒ¨å€’è¿›å¤§æ°´ç¼¸é‡Œã€‚\n",me);
 	set("amount",0);
 	gang->add("amount",amount);
 	me->add_temp("water_amount",amount);

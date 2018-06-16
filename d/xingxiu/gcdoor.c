@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÃÔ¹¬¶´¿Ú");
+	set("short", "è¿·å®«æ´å£");
 	set("long", @LONG
-×ª¹ıÁËÒ»ÅÅÊ÷Ä¾£¬Ö»¼û¶ÔÃæÒ»×ùÊ¯É½ÉÏÇ¶×ÅÁ½ÉÈÌúÖıµÄ´óÃÅ(door)¡£
-ÃÅÉÏÌúĞâ°ß°ß£¬ÏÔÊÇÀúÊ±ÒÑ¾ÃµÄ¾ÉÎï¡£
+è½¬è¿‡äº†ä¸€æ’æ ‘æœ¨ï¼Œåªè§å¯¹é¢ä¸€åº§çŸ³å±±ä¸ŠåµŒç€ä¸¤æ‰‡é“é“¸çš„å¤§é—¨(door)ã€‚
+é—¨ä¸Šé“é”ˆæ–‘æ–‘ï¼Œæ˜¾æ˜¯å†æ—¶å·²ä¹…çš„æ—§ç‰©ã€‚
 LONG
 	);
 	switch(random(2)){
@@ -22,14 +22,14 @@ LONG
                 break;
 	}
 	set("item_desc", ([
-		"door" : "ÃÅÉÏËÆºõ²¢Î´ÉÏËø¡£\n",
+		"door" : "é—¨ä¸Šä¼¼ä¹å¹¶æœªä¸Šé”ã€‚\n",
 	]));
 
 	set("exits", ([
 		"southeast" : __DIR__"shangu",
                 "enter" : __DIR__"gcmaze1",
 	]));
-	create_door("enter","´óÌúÃÅ","out",DOOR_CLOSED);
+	create_door("enter","å¤§é“é—¨","out",DOOR_CLOSED);
 
 	set("cost", 1);
 	setup();

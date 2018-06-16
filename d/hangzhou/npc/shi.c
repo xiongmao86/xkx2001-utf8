@@ -1,12 +1,12 @@
 //Cracked by Roath
-// /d/hangzhou/npc/shi.c Ê·
+// /d/hangzhou/npc/shi.c å²
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ê·ïÚÍ·", ({ "shi biaotou", "shi", "biaotou" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å²é•–å¤´", ({ "shi biaotou", "shi", "biaotou" }));
+        set("gender", "ç”·æ€§");
         set("age", 35);
 
         set("combat_exp", 100000);

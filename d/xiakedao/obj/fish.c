@@ -7,9 +7,9 @@ int decayed;
 
 void create()
 {
-	set_name("»îÓã", ({ "fish", "yu" }) );
-	set("long", "ÕâÊÇÒ»Ìõ»î±ÄÂÒÌøµÄ´ó»îÓã¡£\n");
-	set("unit", "Ìõ" );
+	set_name("æ´»é±¼", ({ "fish", "yu" }) );
+	set("long", "è¿™æ˜¯ä¸€æ¡æ´»è¹¦ä¹±è·³çš„å¤§æ´»é±¼ã€‚\n");
+	set("unit", "æ¡" );
 	set("speical", 0);
 	decayed = 0;
 	if( clonep(this_object()) ) call_out("decay", 120, 1);
@@ -26,14 +26,14 @@ void decay(int phase)
 	decayed = phase;
 	switch(phase) {
 		case 1:
-			message("vision", query("name") + "´ó¸ÅÀë¿ªË®Ì«¾ÃÁË£¬ºÃÏó¿ìËÀÁË¡£\n", environment() );
-			set("long",	"ÕâÌõÓãÒòÎªÀë¿ªË®Ì«¾ÃÁË£¬¿´¹ıÈ¥ºÃÏó¿ìËÀÁË¡£\n");
+			message("vision", query("name") + "å¤§æ¦‚ç¦»å¼€æ°´å¤ªä¹…äº†ï¼Œå¥½è±¡å¿«æ­»äº†ã€‚\n", environment() );
+			set("long",	"è¿™æ¡é±¼å› ä¸ºç¦»å¼€æ°´å¤ªä¹…äº†ï¼Œçœ‹è¿‡å»å¥½è±¡å¿«æ­»äº†ã€‚\n");
 			call_out("decay", 60, phase + 1);
 			break;
 		case 2:
-			message("vision", query("name") + "ËÀÁË£¬¿ªÊ¼É¢·¢³öÒ»¹É³ôÆø¡£\n", environment() );
-			set_name("ËÀÓã", ({ "si yu", "fish" }) );
-			set("long", "Ò»Ìõ³ôÁËµÄÓã£¬¿ìÈÓÁË°É¡£\n");
+			message("vision", query("name") + "æ­»äº†ï¼Œå¼€å§‹æ•£å‘å‡ºä¸€è‚¡è‡­æ°”ã€‚\n", environment() );
+			set_name("æ­»é±¼", ({ "si yu", "fish" }) );
+			set("long", "ä¸€æ¡è‡­äº†çš„é±¼ï¼Œå¿«æ‰”äº†å§ã€‚\n");
 			break;
 	}
 }

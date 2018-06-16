@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-	set_name("ÔÂÑÀ¶ú×¹", ({ "yueya erzhui", "erzhui", "zhui", "earring" }));
+	set_name("æœˆç‰™è€³å ", ({ "yueya erzhui", "erzhui", "zhui", "earring" }));
 	set("weight", 100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶Ô");
+		set("unit", "å¯¹");
 		set("value", 5000);
-		set("long", "Ò»¶Ô¾«ÖÂµÄ¶ú×¹£¬ÔÂÑÀĞÎÈ¦»·ÖĞ¼äÏâÓĞÒ»¿Å°×ÈçÍ¸Ã÷µÄÔ²±¦Ê¯¡£¡£\n");
+		set("long", "ä¸€å¯¹ç²¾è‡´çš„è€³å ï¼Œæœˆç‰™å½¢åœˆç¯ä¸­é—´é•¶æœ‰ä¸€é¢—ç™½å¦‚é€æ˜çš„åœ†å®çŸ³ã€‚ã€‚\n");
 		set("material", "jade");
 		set("armor_prop/armor", 2);
 		set("female_only", 1);

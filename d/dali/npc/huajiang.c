@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dali »¨½³
+// dali èŠ±åŒ 
 // by acep , mantian , mantian
 // edit by mantian
 
@@ -10,11 +10,11 @@ string ask_me();
 
 void create()
 {
-        set_name("»¨½³", ({ "hua jiang","huajiang" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("èŠ±åŒ ", ({ "hua jiang","huajiang" }) );
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("long",
-                "ÕâÊÇÒ»Î»ÀÏ»¨½³£¬ÔÚÍõ¸®Àí´ÓÊÂÑø»¤»¨²ÝµÄ¹¤×÷£¬ÓÉÓÚ´óÀí»ÊÊÒ¿á°®²è»¨£¬ËûµÄ¹¤×÷ºÜÊÜÖØÊÓ¡£\n");
+                "è¿™æ˜¯ä¸€ä½è€èŠ±åŒ ï¼Œåœ¨çŽ‹åºœç†ä»Žäº‹å…»æŠ¤èŠ±è‰çš„å·¥ä½œï¼Œç”±äºŽå¤§ç†çš‡å®¤é…·çˆ±èŒ¶èŠ±ï¼Œä»–çš„å·¥ä½œå¾ˆå—é‡è§†ã€‚\n");
         set("combat_exp", 3000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -28,9 +28,9 @@ void create()
         set_skill("dodge", 35);
         
         set("inquiry", ([
-                "²è»¨" : "ÎÒ¾ÍÊÇÕâÀï×¨ÃÅ¸ºÔðÖÖ²è»¨µÄ£¬ÕâÀï´ó²¿·ÖµÄÃû¹óÆ·ÖÖ¶¼ÊÇÎÒÖÖµÄ¡£",
-                "¹¤×÷" : "´óÀíµÜ×ÓÊÇÓ¦¸ÃÎªÍõ¸®ÒåÎñ×öÊÂµÄ£¬²»ÉÙµÜ×Ó¾­³£ÔÚÕâ»¨Ô°Àï¸Éµã¶ù»î¡£",
-                "¸É»î" : (: ask_me :),
+                "èŒ¶èŠ±" : "æˆ‘å°±æ˜¯è¿™é‡Œä¸“é—¨è´Ÿè´£ç§èŒ¶èŠ±çš„ï¼Œè¿™é‡Œå¤§éƒ¨åˆ†çš„åè´µå“ç§éƒ½æ˜¯æˆ‘ç§çš„ã€‚",
+                "å·¥ä½œ" : "å¤§ç†å¼Ÿå­æ˜¯åº”è¯¥ä¸ºçŽ‹åºœä¹‰åŠ¡åšäº‹çš„ï¼Œä¸å°‘å¼Ÿå­ç»å¸¸åœ¨è¿™èŠ±å›­é‡Œå¹²ç‚¹å„¿æ´»ã€‚",
+                "å¹²æ´»" : (: ask_me :),
                 ]));
 
         setup();
@@ -51,29 +51,29 @@ string ask_me()
         me=this_player();
 
         if (strsrch(file_name(environment(me)), "/d/dali/garden3") == -1)
-                return "Òª¸É»îµ½»¨Ô°È¥ÕÒÎÒ°É¡£";
-        if (me->query("family/family_name")!="´óÀí¶Î¼Ò")
-                return "¶Ô²»Æð£¬ÄãÎÊµÄÎÊÌâÎÒÒ»µã¶ù¶¼Ìý²»¶®¡£";
+                return "è¦å¹²æ´»åˆ°èŠ±å›­åŽ»æ‰¾æˆ‘å§ã€‚";
+        if (me->query("family/family_name")!="å¤§ç†æ®µå®¶")
+                return "å¯¹ä¸èµ·ï¼Œä½ é—®çš„é—®é¢˜æˆ‘ä¸€ç‚¹å„¿éƒ½å¬ä¸æ‡‚ã€‚";
         if (me->query_temp("garden_working"))
-                return "ÄãÏÈ°ÑÊÖÍ·µÄ»î¸ÉÍêÔÙËµ°É¡£";
+                return "ä½ å…ˆæŠŠæ‰‹å¤´çš„æ´»å¹²å®Œå†è¯´å§ã€‚";
         if (me->query("dali/rank")==5)
-                return "ÄúÀÏ¹óÎªÍõÒ¯£¬ÔõÃ´ÄÜºÍÎÒÃÇÏÂÈËÒ»Æð¸É»îÄØ£¬»¹ÊÇ±ð¸úÐ¡µÄ¿ªÍæÐ¦ÁË¡£";
+                return "æ‚¨è€è´µä¸ºçŽ‹çˆ·ï¼Œæ€Žä¹ˆèƒ½å’Œæˆ‘ä»¬ä¸‹äººä¸€èµ·å¹²æ´»å‘¢ï¼Œè¿˜æ˜¯åˆ«è·Ÿå°çš„å¼€çŽ©ç¬‘äº†ã€‚";
 
         if (me->query("dali/worktimes",1) > 7)
                 {
 				me->apply_condition("work", 100);
 				me->delete("dali/worktimes"); 
 				me->set("dali/garden_worked",me->query("dali/arrestmade"));
-                return "Äú¸ÉÁË²»ÉÙ»îÁË£¬ÏÈÈ¥×öµã±ðµÄ°É¡£";
+                return "æ‚¨å¹²äº†ä¸å°‘æ´»äº†ï¼Œå…ˆåŽ»åšç‚¹åˆ«çš„å§ã€‚";
                 }
         if (me->query("dali/arrestmade") - me->query("dali/garden_worked") >=5){
 			if (me->query_condition("work",1) >0)
-                return "Äú¸ÉÁË²»ÉÙ»îÁË£¬ÏÈÈ¥ÐÝÏ¢Ò»Õó°É¡£";
+                return "æ‚¨å¹²äº†ä¸å°‘æ´»äº†ï¼Œå…ˆåŽ»ä¼‘æ¯ä¸€é˜µå§ã€‚";
 			me->set_temp("garden_working",random(10)+20);
 		    me->set_temp("working_times",0);
-			return "ºÃ¼«ÁË¡£ÎÒÕâÀïÕýÐèÒªÈËÊÖÐÞÕûÔ°×Ó£¬Äã°ïÎÒ³ý²ÝËÉÍÁ°É¡£";
+			return "å¥½æžäº†ã€‚æˆ‘è¿™é‡Œæ­£éœ€è¦äººæ‰‹ä¿®æ•´å›­å­ï¼Œä½ å¸®æˆ‘é™¤è‰æ¾åœŸå§ã€‚";
 			}
-			else return "Äú¸ÉÁË²»ÉÙ»îÁË£¬ÏÈÈ¥×öµã±ðµÄ°É¡£";
+			else return "æ‚¨å¹²äº†ä¸å°‘æ´»äº†ï¼Œå…ˆåŽ»åšç‚¹åˆ«çš„å§ã€‚";
 }
 int do_work()
 {
@@ -81,25 +81,25 @@ int do_work()
         me=this_player();
 
         if( strsrch(file_name(environment(me)), "/d/dali/garden3") == -1 )
-                return notify_fail("²»ÊÇÔÚ´óÀí»¨ÔºÀï£¬²»ÄÜ¸É»î¡£");
+                return notify_fail("ä¸æ˜¯åœ¨å¤§ç†èŠ±é™¢é‡Œï¼Œä¸èƒ½å¹²æ´»ã€‚");
 
         if (me->query_temp("garden_working")) {
                 if (me->is_busy())
-                        return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+                        return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-                tell_object(me, "ÄãÍäÏÂÑüÈ¥³ý²ÝÍÚÄà¡£\n");
+                tell_object(me, "ä½ å¼¯ä¸‹è…°åŽ»é™¤è‰æŒ–æ³¥ã€‚\n");
 
                 if (!objectp(weapon=me->query_temp("weapon"))
                         || weapon->query("id")!="huachu")
                 {
-                        message_vision("$NÓÃÊÖÈ¥°Î²ÝÍÚÄà£¬¸ãµÄÂúÊÖÊÇ´Ì£¬ÏÊÑªÁÜÁÜ¡£\n", me);
+                        message_vision("$Nç”¨æ‰‹åŽ»æ‹”è‰æŒ–æ³¥ï¼Œæžçš„æ»¡æ‰‹æ˜¯åˆºï¼Œé²œè¡€æ·‹æ·‹ã€‚\n", me);
                         me->add("jingli",-20);
                         me->add("qi", -10);
                         me->set_temp("working_times",me->query_temp("working_times")+1);
                         me->start_busy(1);
                 }
                 else {
-                        message_vision("$NÓÃ»¨³úÇáËÉµØ¶Ô¸¶×ÅÔÓ²ÝºÍÄàÍÁ¡£\n", me);
+                        message_vision("$Nç”¨èŠ±é”„è½»æ¾åœ°å¯¹ä»˜ç€æ‚è‰å’Œæ³¥åœŸã€‚\n", me);
                         me->add("jingli",-10);
                         me->set_temp("working_times",me->query_temp("working_times")+1);
                         me->start_busy(1);
@@ -120,15 +120,15 @@ int do_work()
                                 ob=new(DRUG_D("swjing"));
                                 break;
                         }
-                        message_vision("$NÓÃÐÄµØ¸É×Å»î£¬Í»È»¼ä·¢ÏÖÔÓ²ÝÏÂÄà°ÍÖÐËÆºõÓÐÊ²Ã´ÌØ±ðµÄ¶«Î÷¡£\n", me);
-                        message_vision("$N´ÓÄàÀïÍÚ³öÒ»¸ö"+ob->name()+"£¡\n", me);
+                        message_vision("$Nç”¨å¿ƒåœ°å¹²ç€æ´»ï¼Œçªç„¶é—´å‘çŽ°æ‚è‰ä¸‹æ³¥å·´ä¸­ä¼¼ä¹Žæœ‰ä»€ä¹ˆç‰¹åˆ«çš„ä¸œè¥¿ã€‚\n", me);
+                        message_vision("$Nä»Žæ³¥é‡ŒæŒ–å‡ºä¸€ä¸ª"+ob->name()+"ï¼\n", me);
                         ob->move(me);
                 }
 
                 if (me->query_temp("working_times")>=me->query_temp("garden_working"))
                 {
-                        message_vision("»¨½³¶Ô$NµãµãÍ·£¬ÂúÒâµØËµ£º¡°¹»ÁË£¬¹»ÁË£¬½ñÌìµÄ»î¾Í¸Éµ½ÕâÀï°É¡£\n", me);
-                        message_vision("»¨½³¶Ô$NÊúÆð´óÄ´Ö¸£º¡°ÄãÈç´ËÇÚÃã£¬ÓÐ³¯Ò»ÈÕ±Ø³ÉÒ»¸ö´ó»¨½³¡£\n", me);
+                        message_vision("èŠ±åŒ å¯¹$Nç‚¹ç‚¹å¤´ï¼Œæ»¡æ„åœ°è¯´ï¼šâ€œå¤Ÿäº†ï¼Œå¤Ÿäº†ï¼Œä»Šå¤©çš„æ´»å°±å¹²åˆ°è¿™é‡Œå§ã€‚\n", me);
+                        message_vision("èŠ±åŒ å¯¹$Nç«–èµ·å¤§æ‹‡æŒ‡ï¼šâ€œä½ å¦‚æ­¤å‹¤å‹‰ï¼Œæœ‰æœä¸€æ—¥å¿…æˆä¸€ä¸ªå¤§èŠ±åŒ ã€‚\n", me);
                         me->delete_temp("working_times");
                         me->delete_temp("garden_working");
                         me->add("dali/jobdone", 1);
@@ -144,7 +144,7 @@ int accept_object(object who, object ob)
         if (ob->query("id")=="cha hua"
                 && ob->query("material")=="wood")
         {
-                message_vision("»¨½³ÐË¸ß²ÊÁÒµØ´Ó$NÊÖÀï½Ó¹ý²è»¨£¬¡°ºÃ¼«ÁË£¬ÕýÊÇÕâÀïÐèÒªµÄÆ·ÖÖ£¡¡±\n",who);
+                message_vision("èŠ±åŒ å…´é«˜å½©çƒˆåœ°ä»Ž$Næ‰‹é‡ŒæŽ¥è¿‡èŒ¶èŠ±ï¼Œâ€œå¥½æžäº†ï¼Œæ­£æ˜¯è¿™é‡Œéœ€è¦çš„å“ç§ï¼â€\n",who);
                 command("thank "+getuid(who));
                 who->set("dali/jobdone", who->query("dali/jobdone")+1);
 //              remove_call_out("destroying");

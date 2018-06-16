@@ -1,17 +1,17 @@
 //Cracked by Roath
-// box.c ÌúºĞ
+// box.c é“ç›’
 
 #include <ansi.h>
 inherit ITEM;
 
 void create() {
-    set_name("ÌúÏä", ({"box"}));
+    set_name("é“ç®±", ({"box"}));
     set_weight(100);
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "Ö»");
-        set("long", "´ËºĞ¸ßÔ¼Ò»³ß¼û·½£¬²»ÖªµÀÀïÃæ×°×ÅÊ²Ã´¶«Î÷¡£\n");
+        set("unit", "åª");
+        set("long", "æ­¤ç›’é«˜çº¦ä¸€å°ºè§æ–¹ï¼Œä¸çŸ¥é“é‡Œé¢è£…ç€ä»€ä¹ˆä¸œè¥¿ã€‚\n");
         set("material", "steel");
         set("value", 100);
         set("no_get", 1);
@@ -39,14 +39,14 @@ int do_open(string arg) {
     object ob = this_object(), flag, npc, me=this_player();
 
     if ( !arg || arg != "box" )
-        return notify_fail("ÄãÒª½«Ê²Ã´´ò¿ª£¿\n");
+        return notify_fail("ä½ è¦å°†ä»€ä¹ˆæ‰“å¼€ï¼Ÿ\n");
 
-	if( me->is_busy() )return notify_fail("»¹ÔÚÃ¦×ÅÄØ£¡\n") ;
+	if( me->is_busy() )return notify_fail("è¿˜åœ¨å¿™ç€å‘¢ï¼\n") ;
 
     if ( me->query_skill("dodge") > 200 && me->query("jingli") > me->query("max_jingli")/2 ) {
         if (ob->query("flag") == 1) {
-            message_vision("$N´ò¿ªÌúÏä£¬·¢ÏÖÏäÖĞÓĞÒ»ÃæÆìÖÄ¡£\n", me);
-            message_vision(HIR"$N¡°»©À²¡±Ò»ÏÂÕ¹¿ªÁËÎäÁÖ´óÆì£¡\n"NOR, me);
+            message_vision("$Næ‰“å¼€é“ç®±ï¼Œå‘ç°ç®±ä¸­æœ‰ä¸€é¢æ——å¸œã€‚\n", me);
+            message_vision(HIR"$Nâ€œå“—å•¦â€ä¸€ä¸‹å±•å¼€äº†æ­¦æ—å¤§æ——ï¼\n"NOR, me);
             me->start_busy(7 + random(5));
             flag = new(__DIR__"flag");
             flag->move(me);
@@ -54,8 +54,8 @@ int do_open(string arg) {
             return 1;
         }
         else if (ob->query("bomb") > 0 ) {
-            message_vision(HIY"$N´ò¿ªÌúÏä£¬·¢ÏÖÏäÖĞÓĞÒ»Ã¶Åùö¨µ¯¡£\n"NOR, me);
-            message_vision(HIW"$N¡°¸Ï½ô°ÑÅùö¨µ¯°üµ½»³Àï£¡\n"NOR, me);
+            message_vision(HIY"$Næ‰“å¼€é“ç®±ï¼Œå‘ç°ç®±ä¸­æœ‰ä¸€æšéœ¹é›³å¼¹ã€‚\n"NOR, me);
+            message_vision(HIW"$Nâ€œèµ¶ç´§æŠŠéœ¹é›³å¼¹åŒ…åˆ°æ€€é‡Œï¼\n"NOR, me);
             me->start_busy(16 + random(10));
             flag = new(__DIR__"bomb");
             flag->move(me);
@@ -65,8 +65,8 @@ int do_open(string arg) {
         else if (ob->query("hunterbow") > 0 ) {
             flag = new(__DIR__"hunterbow");
             flag->move(me);
-            message_vision(HIY"$N´ò¿ªÌúÏä£¬·¢ÏÖÏäÖĞÓĞÒ»$n¡£\n"NOR, me,flag);
-            message_vision(HIW"$N¡°¸Ï½ô°Ñ$n°üµ½»³Àï£¡\n"NOR, me,flag);
+            message_vision(HIY"$Næ‰“å¼€é“ç®±ï¼Œå‘ç°ç®±ä¸­æœ‰ä¸€$nã€‚\n"NOR, me,flag);
+            message_vision(HIW"$Nâ€œèµ¶ç´§æŠŠ$nåŒ…åˆ°æ€€é‡Œï¼\n"NOR, me,flag);
             me->start_busy(8 + random(10));
             ob->add("hunterbow", -1);
             return 1;
@@ -74,8 +74,8 @@ int do_open(string arg) {
         else if (ob->query("shortbow") > 0 ) {
             flag = new(__DIR__"shortbow");
             flag->move(me);
-            message_vision(HIY"$N´ò¿ªÌúÏä£¬·¢ÏÖÏäÖĞÓĞÒ»$n¡£\n"NOR, me,flag);
-            message_vision(HIW"$N¡°¸Ï½ô°Ñ$n°üµ½»³Àï£¡\n"NOR, me,flag);
+            message_vision(HIY"$Næ‰“å¼€é“ç®±ï¼Œå‘ç°ç®±ä¸­æœ‰ä¸€$nã€‚\n"NOR, me,flag);
+            message_vision(HIW"$Nâ€œèµ¶ç´§æŠŠ$nåŒ…åˆ°æ€€é‡Œï¼\n"NOR, me,flag);
             me->start_busy(8 + random(5));
             ob->add("shortbow", -1);
             return 1;
@@ -84,23 +84,23 @@ int do_open(string arg) {
             flag = new(__DIR__"arrow");
             flag->move(me);
 			flag->set_amount(10);
-            message_vision(HIY"$N´ò¿ªÌúÏä£¬·¢ÏÖÏäÖĞÓĞÒ»$n¡£\n"NOR, me,flag);
-            message_vision(HIW"$N¡°¸Ï½ô°Ñ$n°üµ½»³Àï£¡\n"NOR, me,flag);
+            message_vision(HIY"$Næ‰“å¼€é“ç®±ï¼Œå‘ç°ç®±ä¸­æœ‰ä¸€$nã€‚\n"NOR, me,flag);
+            message_vision(HIW"$Nâ€œèµ¶ç´§æŠŠ$nåŒ…åˆ°æ€€é‡Œï¼\n"NOR, me,flag);
             me->start_busy(4 + random(6));
             ob->add("arrow", -1);
             return 1;
 		}
         else {
-            message_vision("$N´ò¿ªÌúÏä£¬·¢ÏÖÀïÃæÊÇ¿ÕµÄ¡£\n", me);
+            message_vision("$Næ‰“å¼€é“ç®±ï¼Œå‘ç°é‡Œé¢æ˜¯ç©ºçš„ã€‚\n", me);
             me->start_busy(8 + random(8));
             return 1;
         }
     }
     else {
-        message_vision(HIR"$N´ò¿ªÌúÏä£¬Í»È»ÌúÏäÖĞÉä³öÈıÖ§Ó²Å¬£¬È«²¿ÉäÔÚÁË$NÉíÉÏ£¡\n"NOR, me);
+        message_vision(HIR"$Næ‰“å¼€é“ç®±ï¼Œçªç„¶é“ç®±ä¸­å°„å‡ºä¸‰æ”¯ç¡¬åŠªï¼Œå…¨éƒ¨å°„åœ¨äº†$Nèº«ä¸Šï¼\n"NOR, me);
         me->receive_wound("qi", me->query("max_qi")+ 1);
         return 1;
     }
 
-        return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 }

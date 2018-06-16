@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������·");
+	set("short", "村外土路");
 	set("long", @LONG
-�������ׯ��Զ�����ҵ��Զ������֣��ڵ�·��Ͷ�´�Ƭ��Ӱ���о�
-������ˬ��һ���������м�Ƭ��Ҷ���衣·����ϡ�м���С��ͨ�����С�
+这里离村庄很远，左右道旁都是密林，在道路上投下大片阴影，感觉
+甚是凉爽。一阵风紧，空中几片落叶飞舞。路旁依稀有几条小径通往林中。
 LONG
 	);
 
@@ -35,21 +35,21 @@ int valid_leave(object me, string dir)
 
 	if ( dir == "northeast" || dir == "southeast" )  {
 		if ( objectp(ob=me->query("rided")) )
-			return notify_fail(ob->name()+"����̫���ˣ����������֣�\n");
+			return notify_fail(ob->name()+"身子太大了，进不了树林！\n");
 		else {
 			inv = all_inventory(me);
 			for (i=0; i<sizeof(inv); i++) {
                 		if ( (string)inv[i]->query("ridable") )
-					return notify_fail(inv[i]->name()+"����̫���ˣ��㱳�������֣�\n");
+					return notify_fail(inv[i]->name()+"身子太大了，你背不进树林！\n");
 			}
         	}
 
 		if ( me->query("ridable") ) {
 			if ( objectp(master=me->query_lord()) ) {
-				tell_object(master, me->name()+"����̫���ˣ����������֣�\n");
+				tell_object(master, me->name()+"身子太大了，进不了树林！\n");
 			}
 
-			return notify_fail(me->name()+"����̫���ˣ����������֣�\n");
+			return notify_fail(me->name()+"身子太大了，进不了树林！\n");
 		}
         }
 

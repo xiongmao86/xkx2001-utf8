@@ -7,17 +7,17 @@ inherit NPC;
 
 void create()
 {
-	set_name("¹Ù±ø", ({
+	set_name("å®˜å…µ", ({
 		"guan bing",
 		"bing",
 	}));
-//	set("title", "ÊØÃÅ¹Ù±ø");
+//	set("title", "å®ˆé—¨å®˜å…µ");
 	set("long",
-		"ÕâÊÇÒ»¸ö¿´ÊØ³ÇÃÅµÄ¹Ù±ø£¬ÕıÅÌ²é×Å¹ıÍùµÄĞĞÈË¡£\n"
+		"è¿™æ˜¯ä¸€ä¸ªçœ‹å®ˆåŸé—¨çš„å®˜å…µï¼Œæ­£ç›˜æŸ¥ç€è¿‡å¾€çš„è¡Œäººã€‚\n"
 	);
 
 
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "heroism");
 
 	set("age", 35);

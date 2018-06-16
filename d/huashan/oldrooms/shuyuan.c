@@ -1,15 +1,15 @@
 //Cracked by Roath
-// shuyuan.c »ªÉ½ÊéÔº
+// shuyuan.c åå±±ä¹¦é™¢
 // qfy July 7, 1996
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "»ªÉ½ÊéÔº");
+	set("short", "åå±±ä¹¦é™¢");
 	set("long", @LONG
-ÕâÀïÊÇ»ªÉ½ÊéÔº£¬¿¿Ç½ÊÇÒ»ÅÅÊé¼Ü£¬°ÚÂúÁËÊé¼®¡£ÓÒ²àÓĞÕÅÊé×À£¬×À
-ÉÏËÄ±¦¾ã±¸¡£ÊéÔº¾­³¤ÓĞÈË´òÉ¨£¬Ê®·Ö¸É¾»ÕûÆë¡£
+è¿™é‡Œæ˜¯åå±±ä¹¦é™¢ï¼Œé å¢™æ˜¯ä¸€æ’ä¹¦æ¶ï¼Œæ‘†æ»¡äº†ä¹¦ç±ã€‚å³ä¾§æœ‰å¼ ä¹¦æ¡Œï¼Œæ¡Œ
+ä¸Šå››å®ä¿±å¤‡ã€‚ä¹¦é™¢ç»é•¿æœ‰äººæ‰“æ‰«ï¼Œååˆ†å¹²å‡€æ•´é½ã€‚
 LONG
 	);
 
@@ -60,9 +60,9 @@ int valid_leave(object me, string dir)
         }
 
         if ( j == (int)me->query_temp("possbooks")+1 ) 
-		me->set_temp("huashan/Êé", 1);
+		me->set_temp("huashan/ä¹¦", 1);
         if ( j > (int)me->query_temp("possbooks")+1 ) 
-		return notify_fail("Äã¿¼×´Ôª°¡£¿Ò»ÏÂÄÃÄÇÃ´¶àÊé£¡\n");
+		return notify_fail("ä½ è€ƒçŠ¶å…ƒå•Šï¼Ÿä¸€ä¸‹æ‹¿é‚£ä¹ˆå¤šä¹¦ï¼\n");
 
         return ::valid_leave(me, dir);
 }

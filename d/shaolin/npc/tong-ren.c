@@ -1,5 +1,5 @@
 //Cracked by Roath
-// mu-ren.c Í­ÈË
+// mu-ren.c é“œäºº
 
 #include <combat.h>
 
@@ -16,10 +16,10 @@ int do_fight(string);
 
 void create()
 {
-	set_name("Í­ÈË", ({ "tong ren", "tong", "copper man", "copper" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é“œäºº", ({ "tong ren", "tong", "copper man", "copper" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 30);
-	set("long", "Ò»¸öÁ·¹¦ÓÃµÄ±ÈÎäÍ­ÈË£¬ÖÆ×÷¾«ÇÉ£¬ÈçÍ¬ÕæÈËÒ»°ã¡£\n");
+	set("long", "ä¸€ä¸ªç»ƒåŠŸç”¨çš„æ¯”æ­¦é“œäººï¼Œåˆ¶ä½œç²¾å·§ï¼Œå¦‚åŒçœŸäººä¸€èˆ¬ã€‚\n");
 	set("attitude", "heroism");
 
 	set("str", 25);
@@ -68,7 +68,7 @@ int do_kill(string arg)
 	
 	if( present(arg, environment(me)) != me ) return 0;
 
-	tell_object(ob, "ÄãÏëÉ±Í­ÈË£¿£¡ Äª·ÇÍ·ÄÔÓĞµã²»Õı³£ÁË£¿£¡\n");
+	tell_object(ob, "ä½ æƒ³æ€é“œäººï¼Ÿï¼ è«éå¤´è„‘æœ‰ç‚¹ä¸æ­£å¸¸äº†ï¼Ÿï¼\n");
 	return 1;
 }
 
@@ -93,7 +93,7 @@ int do_tune(string arg)
 
 	this_object()->set("fight_times", times);
 
-	message_vision("$N½«Í­ÈË¹¥»÷´ÎÊıÉèÎª" + chinese_number(times) + "´Î¡£\n", this_player());
+	message_vision("$Nå°†é“œäººæ”»å‡»æ¬¡æ•°è®¾ä¸º" + chinese_number(times) + "æ¬¡ã€‚\n", this_player());
 	return 1;
 }
 
@@ -226,7 +226,7 @@ int do_fight(string arg)
 		me->set("death_count",hp_status["death_count"]);
 
 
-	message_vision("Í­ÈËÒ»ºÏÕÆ£¬¿ªÊ¼½ø¹¥£¡\n\n", me);
+	message_vision("é“œäººä¸€åˆæŒï¼Œå¼€å§‹è¿›æ”»ï¼\n\n", me);
 
 	remove_call_out("killing");
 	call_out("killing", 1, me, ob, 0);	

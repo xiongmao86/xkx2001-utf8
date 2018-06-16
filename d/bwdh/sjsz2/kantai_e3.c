@@ -7,11 +7,11 @@ inherit ROOM;
 #include "kantai.h"
 
 void create() {
-    set("short", "����̨��");
+    set("short", "东看台三");
     set("long", @LONG
-�����Ǳ��䳡�Ķ���̨���������Ѿ���������
-�У�Ⱥ�����۷׷ף����ڲ²��ĸ��Ŷ����۹���
-����Щ����(desk)��
+这里是比武场的东看台三。现在已经是人声鼎
+沸，群雄议论纷纷，都在猜测哪个团队能折桂。四
+周有些桌子(desk)。
 LONG
     );
     set("exits", ([

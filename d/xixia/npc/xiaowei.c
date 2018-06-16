@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ð£Î¾", ({ "xiao wei", "wei" }));
+	set_name("æ ¡å°‰", ({ "xiao wei", "wei" }));
         set_color("$YEL$");
 	set_weight(1000000);
 	set("age", 22);
-	set("gender", "ÄÐÐÔ");
-	set("long", "Ò»¸ö¿ýÎäµÄÎ÷ÏÄ¾ü¹Ù¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "ä¸€ä¸ªé­æ­¦çš„è¥¿å¤å†›å®˜ã€‚\n");
 	set("attitude", "heroism");
 
 	set("str", 24);
@@ -29,8 +29,8 @@ void create()
 	set_temp("apply/armor", 50);
 
 	set("chat_msg_combat", ({
-		"Ð£Î¾ºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÔì·´²»³É£¿\n",
-		"Ð£Î¾ºÈµÀ£ºÅÜµÃÁËºÍÉÐÅÜ²»ÁËÃí£¬Äã»¹ÊÇ¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+		"æ ¡å°‰å–é“ï¼šå¤§èƒ†åˆæ°‘ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
+		"æ ¡å°‰å–é“ï¼šè·‘å¾—äº†å’Œå°šè·‘ä¸äº†åº™ï¼Œä½ è¿˜æ˜¯å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
 	}));
 	setup();
 	carry_object("/clone/weapon/langya-bang")->wield();
@@ -50,7 +50,7 @@ void init()
 
 int accept_fight(object me)
 {
-	command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 	me->apply_condition("xakiller", 100);
 	kill_ob(me);
 	return 1;
@@ -58,7 +58,7 @@ int accept_fight(object me)
 
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("xakiller", 100);
         kill_ob(me);
         return 1;

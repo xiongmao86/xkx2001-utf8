@@ -1,5 +1,5 @@
 //Cracked by Roath
-// d/emei/npc/wenying.c ÎÄÓ±Ğ¡Ê¦Ì«
+// d/emei/npc/wenying.c æ–‡é¢–å°å¸ˆå¤ª
 // Shan 96/06/29
 
 inherit NPC;
@@ -8,12 +8,12 @@ void greeting(object);
 
 void create()
 {
-	set_name("ÎÄÓ±Ğ¡Ê¦Ì«", ({"wenying", "wen ying"}) );
-	set("rank_info/respect", "Ğ¡Ê¦Ì«");
-	set("gender", "Å®ĞÔ" );
+	set_name("æ–‡é¢–å°å¸ˆå¤ª", ({"wenying", "wen ying"}) );
+	set("rank_info/respect", "å°å¸ˆå¤ª");
+	set("gender", "å¥³æ€§" );
 	set("age", 14+random(6));
 	set("long",
-	  "ÕâÊÇ¸öÄêÁä²»´ó£¬Ã¼ÇåÄ¿ĞãµÄĞ¡Ê¦Ì«¡£Ëı¼ûÓĞÈËÀ´µ½£¬ÇáÇáµãÍ·Ğ¦ÁËĞ¦¡£\n");
+	  "è¿™æ˜¯ä¸ªå¹´é¾„ä¸å¤§ï¼Œçœ‰æ¸…ç›®ç§€çš„å°å¸ˆå¤ªã€‚å¥¹è§æœ‰äººæ¥åˆ°ï¼Œè½»è½»ç‚¹å¤´ç¬‘äº†ç¬‘ã€‚\n");
 	set("attitude", "friendly");
         set("shen_type", 1);
         set("class", "bonze");
@@ -39,10 +39,10 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 3);
 
-        create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
 //        set("inquiry", ([
-//            "³ö¼Ò" : "ÄúÈ¥ÎÊÄÇ±ßµÄ¾²ºÍÊ¦Êå°É¡£\n",
+//            "å‡ºå®¶" : "æ‚¨å»é—®é‚£è¾¹çš„é™å’Œå¸ˆå”å§ã€‚\n",
 //        ]));
 
         setup();
@@ -67,6 +67,6 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 
-	say("ÎÄÓ±Ğ¡Ê¦Ì«ÇáÉùËµµÀ£º»¶Ó­À´±£¹úËÂ²Ø¾­Â¥¡£ÄúÒª¶Á¾­ÊéÂğ£¿\n");
+	say("æ–‡é¢–å°å¸ˆå¤ªè½»å£°è¯´é“ï¼šæ¬¢è¿æ¥ä¿å›½å¯ºè—ç»æ¥¼ã€‚æ‚¨è¦è¯»ç»ä¹¦å—ï¼Ÿ\n");
 }
 

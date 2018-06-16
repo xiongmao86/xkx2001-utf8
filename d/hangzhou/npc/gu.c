@@ -10,12 +10,12 @@ string ask_book();
 
 void create()
 {
-        set_name("¹ËÑ×Îä", ({ "gu yanwu" , "gu" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é¡¾ç‚æ­¦", ({ "gu yanwu" , "gu" }));
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("long", 
-"ËûÓÖ¸ßÓÖÊİ£¬ÃæÄ¿÷îºÚ¡£\n"
-"Ëû×ÖÍ¤ÁÖ£¬½­ËÕÀ¥É½ÈËÊ¿¡£\n");
+"ä»–åˆé«˜åˆç˜¦ï¼Œé¢ç›®é»é»‘ã€‚\n"
+"ä»–å­—äº­æ—ï¼Œæ±Ÿè‹æ˜†å±±äººå£«ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 2000);
 
@@ -33,9 +33,9 @@ void create()
         set_skill("sword", 30);
 
         set("inquiry", ([
-                 "¡¶Ã÷Êé¼­ÂÔ¡·" : (: ask_book :),
-                 "Ã÷Êé¼­ÂÔ" : (: ask_book :),
-                 "ĞŞ×«" : (: ask_book :),
+                 "ã€Šæ˜ä¹¦è¾‘ç•¥ã€‹" : (: ask_book :),
+                 "æ˜ä¹¦è¾‘ç•¥" : (: ask_book :),
+                 "ä¿®æ’°" : (: ask_book :),
                  "book" : (: ask_book :),
         ]));
 
@@ -49,16 +49,16 @@ string ask_book()
         object ob;
 
         if( !(ob = present("mingshi", this_player())) )
-                return "Ã»ÓĞÔ­¸å£¬ÎÒÔõÃ´ĞŞ×«£¿";
+                return "æ²¡æœ‰åŸç¨¿ï¼Œæˆ‘æ€ä¹ˆä¿®æ’°ï¼Ÿ";
 
         if( ob->query("checked") )
-                return "ÎÒÒÑ¾­ĞŞ×«¹ı´ËÊéÁË¡£";
+                return "æˆ‘å·²ç»ä¿®æ’°è¿‡æ­¤ä¹¦äº†ã€‚";
 
         ob->set("checked", 1);
-        message_vision("¹ËÑ×Îä½«ÊéÔÄºóĞŞ¸ÄÁË¼¸´¦ÃıÎó£¬Í¬Ê±Ò²¸ø$N½²½âÁËÒ»ÏÂ¡£\n", this_player());
+        message_vision("é¡¾ç‚æ­¦å°†ä¹¦é˜…åä¿®æ”¹äº†å‡ å¤„è°¬è¯¯ï¼ŒåŒæ—¶ä¹Ÿç»™$Nè®²è§£äº†ä¸€ä¸‹ã€‚\n", this_player());
         if( (int)this_player()->query_skill("literate", 1) < 60 )
                 this_player()->improve_skill("literate", 
                           10 * this_player()->query("int"));
 
-        return "ĞŞ×«Ã÷Ê·ÄËÊÇÒ»¼şÃÀÊÂ£¬ÀÏ·òÒÑ¾¡Á¦¶øÎªÁË¡£";
+        return "ä¿®æ’°æ˜å²ä¹ƒæ˜¯ä¸€ä»¶ç¾äº‹ï¼Œè€å¤«å·²å°½åŠ›è€Œä¸ºäº†ã€‚";
 }

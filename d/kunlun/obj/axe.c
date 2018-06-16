@@ -1,18 +1,18 @@
 //Cracked by Roath
-// axe.c ¸«Í·
+// axe.c æ–§å¤´
 
 #include <weapon.h>
 inherit AXE;
 
 void create()
 {
-	set_name("¸«Í·", ({ "axe","fu" }));
+	set_name("æ–§å¤´", ({ "axe","fu" }));
 	set_weight(9000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñ¸«Í·£¬¿ÉÒÔÓÃÀ´¿³Ê÷¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠæ–§å¤´ï¼Œå¯ä»¥ç”¨æ¥ç æ ‘ã€‚\n");
 		set("value", 1000);
 		set("material", "steel");
 		set("no_drop",1);

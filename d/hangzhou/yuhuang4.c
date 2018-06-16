@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ���ɽ·
+// 玉皇山路
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -10,11 +10,11 @@ inherit ROOM;
 void create()
 {
 	int i;
-   set("short", "ɽ·");
+   set("short", "山路");
    set("long", @LONG
-ɽ·��᫣��������ӡ�������ľ�Դ䣬����ï�ܡ�ɽ·����һɽ
-������˵������ʱ�ᴫ���������������ϻ�������������ɽ��·����
-����ɽ�㵽��ɽ�ס�
+山路崎岖，曲折蜿延。四周林木苍翠，修竹茂密。山路旁有一山
+洞，据说洞里有时会传出虎哮声，故名老虎洞。西边是下山的路，往
+东下山便到了山底。
 LONG
         );
 

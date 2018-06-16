@@ -1,16 +1,16 @@
 //Cracked by Roath
-// /d/emei/emroad6.c С·
+// /d/emei/emroad6.c 小路
 // Shan: 96/06/22
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-�������������ڵ�һ�������ĵĻ���·��������ЩС���ݣ���������ġ�·
-�����˺��٣�����ɫ�Ҵҵ���ǰ��·��������һ��С��ׯ������С�����������
-ɽ�ˡ�
+这里是陕西境内的一条静悄悄的黄土路，两旁有些小土屋，疏疏落落的。路
+上行人很少，都行色匆匆地向前赶路。北边有一座小村庄，过了小村就是西岳华
+山了。
 LONG
         );
         set("exits", ([

@@ -13,9 +13,9 @@ void init()
 
 void create()
 {
-        set_name("òÚò¼¿Ç", ({"wugong ke", "ke", "shell"}));
-        set("unit", "Ö»");
-        set("long", "ÕâÊÇÒ»Ö»òÚò¼µÄ¸É¿Ç£¬ÊÇÖÆ±¸¶¾Ò©µÄÔ­ÁÏ¡£\n");
+        set_name("èœˆèš£å£³", ({"wugong ke", "ke", "shell"}));
+        set("unit", "åª");
+        set("long", "è¿™æ˜¯ä¸€åªèœˆèš£çš„å¹²å£³ï¼Œæ˜¯åˆ¶å¤‡æ¯’è¯çš„åŸæ–™ã€‚\n");
         set("value", 200);
 	set("medicine", 1);
 //        setup();
@@ -24,7 +24,7 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        return notify_fail("ÄãÕÒËÀ°¡¡£\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+        return notify_fail("ä½ æ‰¾æ­»å•Šã€‚\n");
 }
 

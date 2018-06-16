@@ -13,9 +13,9 @@ void init()
 
 void create()
 {
-        set_name("¶¾ÖëË¿", ({"Du zhusi", "zhusi", "silk"}));
-        set("unit", "ÍÅ");
-        set("long", "ÕâÊÇÒ»ÍÅÒ»Ö»¶¾Ö©ÖëËÀááÍÂ³öµÄË¿£¬ÊÇÖÆ±¸¶¾Ò©µÄÔ­ÁÏ¡£\n");
+        set_name("æ¯’è››ä¸", ({"Du zhusi", "zhusi", "silk"}));
+        set("unit", "å›¢");
+        set("long", "è¿™æ˜¯ä¸€å›¢ä¸€åªæ¯’èœ˜è››æ­»å¾Œåå‡ºçš„ä¸ï¼Œæ˜¯åˆ¶å¤‡æ¯’è¯çš„åŸæ–™ã€‚\n");
         set("value", 200);
 	set("medicine", 1);
 //        setup();
@@ -24,7 +24,7 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        return notify_fail("ÄãÕÒËÀ°¡¡£\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+        return notify_fail("ä½ æ‰¾æ­»å•Šã€‚\n");
 }
 

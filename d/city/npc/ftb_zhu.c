@@ -25,11 +25,11 @@ void create()
 {
 	int exp, force;
 
-        set_name("³Ì½ğ¸«", ({ "cheng jinfu", "bangzhu", "cheng" }) );
-        set("gender", "ÄĞĞÔ" );
-	set("title", "¸«Í·°ï°ïÖ÷");
+        set_name("ç¨‹é‡‘æ–§", ({ "cheng jinfu", "bangzhu", "cheng" }) );
+        set("gender", "ç”·æ€§" );
+	set("title", "æ–§å¤´å¸®å¸®ä¸»");
         set("age", 32);
-        set("long",  "´ËÈËÄËÊÇ¸«Í·°ï¿ª°ï°ïÖ÷, Îä¹¦ÆÄÎªÁËµÃ.\n");
+        set("long",  "æ­¤äººä¹ƒæ˜¯æ–§å¤´å¸®å¼€å¸®å¸®ä¸», æ­¦åŠŸé¢‡ä¸ºäº†å¾—.\n");
         set("str", 25);
         set("dex", 25);
         set("con", 25);
@@ -40,12 +40,12 @@ void create()
 
         set("attitude", "friendly");
  	set("inquiry", ([
-		"¸«Í·°ï" : "¸«Í·°ïÄËÊÇ½­ºşÎÅÃûµÄ´ó°ï»á, ÏÖÏÂÓĞĞ©¹¤×÷, Äã¿ÉÔ¸Òâ¸É?\n",
-		"¹¤×÷" : (: ask_job :),
+		"æ–§å¤´å¸®" : "æ–§å¤´å¸®ä¹ƒæ˜¯æ±Ÿæ¹–é—»åçš„å¤§å¸®ä¼š, ç°ä¸‹æœ‰äº›å·¥ä½œ, ä½ å¯æ„¿æ„å¹²?\n",
+		"å·¥ä½œ" : (: ask_job :),
 		"job"  : (: ask_job :),
-		"´Ì¿Í"  : (: ask_cike :),
-		"°ïÃ¦" : (: ask_freq :),
-		"ÖúÈ­"  : (: ask_freq :)
+		"åˆºå®¢"  : (: ask_cike :),
+		"å¸®å¿™" : (: ask_freq :),
+		"åŠ©æ‹³"  : (: ask_freq :)
 	]));
 
 	set_skills("shaolin", 500000, 100);
@@ -78,7 +78,7 @@ int init() {
  
     obs = filter_array(children("/d/city/npc/ftb_zhu"), (: clonep :));
     if (sizeof(obs) > 1) {
-	message("vision", me->name(1)+"¼±¼±Ã¦Ã¦µØÀë¿ªÁË.\n", environment(me), me);
+	message("vision", me->name(1)+"æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†.\n", environment(me), me);
 	destruct(me);
 	return 0;
     }
@@ -120,7 +120,7 @@ object put_object(string room_path, object player) {
     killer=new("/d/city/npc/ftb_killer");
     killer->set_status(player);
     killer->move(room);
-    message("vision", killer->name(1)+"¿ì²½×ßÁË¹ıÀ´.\n", room, killer);
+    message("vision", killer->name(1)+"å¿«æ­¥èµ°äº†è¿‡æ¥.\n", room, killer);
     return killer;
 }
 
@@ -248,7 +248,7 @@ string get_room_msg(string room_path) {
     exits = room->query("exits");
     dirs = keys(exits);
     if (sizeof(dirs) > 1) {
-	room_msg += "(¸Ã´¦¿¿½ü";
+	room_msg += "(è¯¥å¤„é è¿‘";
 	for (i=0; i<sizeof(dirs); i++) {
 	    if (i>2) break;
 	    room_path = exits[dirs[i]];
@@ -281,7 +281,7 @@ string tell_job(object player) {
 	JOB_SERVER->abort_job(player, JOB_NAME);
   	command("kick "+player->query("id"));
 	player->delete(JOB_NAME);
-  	return "È¥ÁËÕâÃ´¾Ã²Å»ØÀ´, ÈË¼ÒÔçµÃÊÖÀ².";
+  	return "å»äº†è¿™ä¹ˆä¹…æ‰å›æ¥, äººå®¶æ—©å¾—æ‰‹å•¦.";
     }
 
     // case 2: just got assignment
@@ -291,7 +291,7 @@ string tell_job(object player) {
 	    return;
 	}
 	if (player->query(JOB_NAME+"/last_ask_time") > 0) { // not first time
-	    command("say ÎÒÔç¾Í¸æËß¹ıÄãÁË:");
+	    command("say æˆ‘æ—©å°±å‘Šè¯‰è¿‡ä½ äº†:");
 	}
 	player->set(JOB_NAME+"/last_ask_time", time());
 	room_msg = player->query(JOB_NAME+"/target_room");
@@ -304,9 +304,9 @@ string tell_job(object player) {
 	num_msg = CHINESE_D->chinese_number(obj_num);
 	range_msg = CHINESE_D->chinese_number(range);
 
-	command("say ÌıËµÓĞ"+num_msg+"¸ö¼Ò»ïÏë¶Ô±¾°ï²»Àû.");
-	command("say ¾İËµËûÃÇÒÑ¾­µ½ÁË"+region+room_msg+"·½Ô²"+range_msg+"ÀïÖ®ÄÚ.");
-	return "Âé·³"+RANK_D->query_respect(player)+"È¥²éÒ»²é, ÈôÕæÊÇ´Ì¿Í±ãÌæ±¾°ïÖ÷³ıÈ´ÁË°É.";
+	command("say å¬è¯´æœ‰"+num_msg+"ä¸ªå®¶ä¼™æƒ³å¯¹æœ¬å¸®ä¸åˆ©.");
+	command("say æ®è¯´ä»–ä»¬å·²ç»åˆ°äº†"+region+room_msg+"æ–¹åœ†"+range_msg+"é‡Œä¹‹å†….");
+	return "éº»çƒ¦"+RANK_D->query_respect(player)+"å»æŸ¥ä¸€æŸ¥, è‹¥çœŸæ˜¯åˆºå®¢ä¾¿æ›¿æœ¬å¸®ä¸»é™¤å´äº†å§.";
     }
 
     // case 3: done job, reward:
@@ -358,7 +358,7 @@ string tell_job(object player) {
     }
 
     // Gaibang player can use midao, so give fewer reward
-    if (player->query("family/family_name") == "Ø¤°ï") {
+    if (player->query("family/family_name") == "ä¸å¸®") {
 	rate = rate * 2 / 3;
 	exp_rate = exp_rate *2 / 3;
     }
@@ -376,7 +376,7 @@ string tell_job(object player) {
 		gold->set_amount(rate/30);
 	    }
 	    gold->move(player);
-	    message_vision("$N½»¸ø$n¼¸¶§»Æ½ğ\n", this_object(), player);
+	    message_vision("$Näº¤ç»™$nå‡ é”­é»„é‡‘\n", this_object(), player);
 	}
     }
     if (random(exp_rate) > 90) {
@@ -384,7 +384,7 @@ string tell_job(object player) {
 	player->add("eff_jingli", 1);
     }
 
-    command("say ºÃÑùµÄ, ¸«Í·°ï¾Í¿¿ÄãÕâÑùµÄ´ó²Å°¡!\n");
+    command("say å¥½æ ·çš„, æ–§å¤´å¸®å°±é ä½ è¿™æ ·çš„å¤§æ‰å•Š!\n");
     command("thumb "+player->query("id"));
 
     // destruct the killers that hasn't been killed
@@ -392,12 +392,12 @@ string tell_job(object player) {
     for (i=0; i<obj_num; i++) {
 	killer = obj_list[i];
 	if (objectp(killer)) {
-	    message("vision", killer->name(1)+"¼±¼±Ã¦Ã¦µØÀë¿ªÁË.\n", environment(killer), killer);
+	    message("vision", killer->name(1)+"æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†.\n", environment(killer), killer);
 	    destruct(killer);
 	}
     }
     player->delete(JOB_NAME);
-    return "Ò»µãĞ¡ÒâË¼, ÇëĞ¦ÄÉ.";
+    return "ä¸€ç‚¹å°æ„æ€, è¯·ç¬‘çº³.";
 }
 
 string ask_job() {
@@ -423,25 +423,25 @@ string ask_cike() {
     exp_limit = JOB_SERVER->get_exp_limit(JOB_NAME);
     if (exp_limit > 9000) {
   	command("shout");
-	return "°¦, ×î½ü´Ì¿Í²şâ±, ±¾°ï³¤ÀÏ¶àÓĞ±»º¦, Á¬±¾°ïÖ÷¶¼²îµã±»´Ì.";
+	return "å”‰, æœ€è¿‘åˆºå®¢çŒ–ç—, æœ¬å¸®é•¿è€å¤šæœ‰è¢«å®³, è¿æœ¬å¸®ä¸»éƒ½å·®ç‚¹è¢«åˆº.";
     }else if (exp_limit > 8000) {
   	command("sigh");
-	return "Õâ¸ö... ×î½ü´Ì¿ÍÊ±ÓĞĞĞ¶¯, ĞÒºÃ»¹Ã»°Ñ±¾°ïÖ÷¸øÉËÁË.";
+	return "è¿™ä¸ª... æœ€è¿‘åˆºå®¢æ—¶æœ‰è¡ŒåŠ¨, å¹¸å¥½è¿˜æ²¡æŠŠæœ¬å¸®ä¸»ç»™ä¼¤äº†.";
     }else if (exp_limit > 7000) {
   	command("nod");
-	return "¶à¿÷½­ºşÅóÓÑÃÇÖúÈ­, ×î½ü´Ì¿ÍÓĞËùÊÕÁ².";
+	return "å¤šäºæ±Ÿæ¹–æœ‹å‹ä»¬åŠ©æ‹³, æœ€è¿‘åˆºå®¢æœ‰æ‰€æ”¶æ•›.";
     }else if (exp_limit > 6000) {
   	command("hehehe");
-	return "Õâ¶àºÃÅóÓÑÃÇÀ´°ïÃ¦, ÄÄÀï»¹ÄÜÓĞ¶àÉÙ´Ì¿Í.";
+	return "è¿™å¤šå¥½æœ‹å‹ä»¬æ¥å¸®å¿™, å“ªé‡Œè¿˜èƒ½æœ‰å¤šå°‘åˆºå®¢.";
     }else if (exp_limit > 5000) {
   	command("haha");
-	return "¾ı²»¼û±¾°ïºÃÉúĞËÍú, ¾ÍËãÅ¼¶ûÓĞ¸ö°Ñ´Ì¿Í, Ò²´ÓÃ»µÃ¹ıÊÖ°¡.";
+	return "å›ä¸è§æœ¬å¸®å¥½ç”Ÿå…´æ—º, å°±ç®—å¶å°”æœ‰ä¸ªæŠŠåˆºå®¢, ä¹Ÿä»æ²¡å¾—è¿‡æ‰‹å•Š.";
     }else if (exp_limit > 4000) {
   	command("yawn");
-	return "Õâ¶¼ÄÄ±²×ÓµÄÊÂÁË, »¹À´ÎÊ. Èç½ñ¸«Í·°ïÀëÒ»Í³ÌìÏÂÒ²Ã»¶àÔ¶ÁË, »¹ÄÜÓĞ´Ì¿Í?";
+	return "è¿™éƒ½å“ªè¾ˆå­çš„äº‹äº†, è¿˜æ¥é—®. å¦‚ä»Šæ–§å¤´å¸®ç¦»ä¸€ç»Ÿå¤©ä¸‹ä¹Ÿæ²¡å¤šè¿œäº†, è¿˜èƒ½æœ‰åˆºå®¢?";
     }else {
   	command("en");
-	return "¸«Í·°ïÒ»Í³ÌìÏÂ, ÏëÉ±Ë­Ò²²»ÓÃĞĞ´Ì°É?";
+	return "æ–§å¤´å¸®ä¸€ç»Ÿå¤©ä¸‹, æƒ³æ€è°ä¹Ÿä¸ç”¨è¡Œåˆºå§?";
     }
 }
 
@@ -458,13 +458,13 @@ string ask_freq() {
     len = time()-last_job;
     if (len > 3600) {
 	command("sigh");
-	return "Ğí¾ÃÃ»¼û½­ºşÅóÓÑÃÇÉÍÁ³ÁË.";
+	return "è®¸ä¹…æ²¡è§æ±Ÿæ¹–æœ‹å‹ä»¬èµè„¸äº†.";
     }else if (len > 1200) {
 	command("bow");
-	return "½­ºşÅóÓÑÃÇÊ±ÓĞÀ´ÖúÈ­µÄ, ±¾°ïÖ÷ÕæÊÇ¸Ğ¼¤²»¾¡.";
+	return "æ±Ÿæ¹–æœ‹å‹ä»¬æ—¶æœ‰æ¥åŠ©æ‹³çš„, æœ¬å¸®ä¸»çœŸæ˜¯æ„Ÿæ¿€ä¸å°½.";
     }else {
 	command("thumb");
-	return "½­ºşÅóÓÑÃÇ¼«ÊÇÌ§¾Ù, ¸«Í·°ï²»ÈÕÒ»Í³ÌìÏÂ!";
+	return "æ±Ÿæ¹–æœ‹å‹ä»¬ææ˜¯æŠ¬ä¸¾, æ–§å¤´å¸®ä¸æ—¥ä¸€ç»Ÿå¤©ä¸‹!";
     }
 }
 
@@ -472,31 +472,31 @@ int random_chat() {
 
     switch (random(200)) {
     case 0:
-        command("say ±¾°ï×Ô¿ªÉ½Á¢ÅÉÒÔÀ´¾­Àú¶àÉÙ·ç·çÓêÓê, ±¾°ïÖ÷×Ôµ±·Ü·¢Í¼Ç¿.");
+        command("say æœ¬å¸®è‡ªå¼€å±±ç«‹æ´¾ä»¥æ¥ç»å†å¤šå°‘é£é£é›¨é›¨, æœ¬å¸®ä¸»è‡ªå½“å¥‹å‘å›¾å¼º.");
 	return 1;
     case 1:
-        command("say ´óÕÉ·òÕ½ËÀÉ³³¡, Âí¸ïÄÇ¸öÊ²Ã´Ê¬, Ô­ÊÇÓ¢ĞÛ±¾É«.");
+        command("say å¤§ä¸ˆå¤«æˆ˜æ­»æ²™åœº, é©¬é©é‚£ä¸ªä»€ä¹ˆå°¸, åŸæ˜¯è‹±é›„æœ¬è‰².");
 	return 1;
     case 2:
-        command("say Ë×»°Ëµ, ³ÔµÃ¿àÖĞ¿à, ·½ÎªÈËÉÏÈË, ÄÄ¸ö³ÉÃûºÃºº²»ÊÇÕâÃ´¹ıÀ´µÄ.");
+        command("say ä¿—è¯è¯´, åƒå¾—è‹¦ä¸­è‹¦, æ–¹ä¸ºäººä¸Šäºº, å“ªä¸ªæˆåå¥½æ±‰ä¸æ˜¯è¿™ä¹ˆè¿‡æ¥çš„.");
 	return 1;
     case 3:
-        command("say ½üÀ´ÌìÆø×ÜËûÂèµÄ²»·ÅÇç, ÊÇ²»ÊÇÓĞÊ²Ã´ÔÖ»öÒªÁÙÍ·?");
+        command("say è¿‘æ¥å¤©æ°”æ€»ä»–å¦ˆçš„ä¸æ”¾æ™´, æ˜¯ä¸æ˜¯æœ‰ä»€ä¹ˆç¾ç¥¸è¦ä¸´å¤´?");
 	return 1;
     case 4:
-        command("say ±¾°ïÖ÷×î°®µÄÊÇÓ²ºº, Îª±¾°ï³öÉúÈëËÀµÄÓ¢ĞÛ.");
+        command("say æœ¬å¸®ä¸»æœ€çˆ±çš„æ˜¯ç¡¬æ±‰, ä¸ºæœ¬å¸®å‡ºç”Ÿå…¥æ­»çš„è‹±é›„.");
 	return 1;
     case 5:
-        command("say ÌìÏÂ´óÊÆ, Õâ¸öÊÇºÏ¾Ã±Ø·Ö·Ö¾Ã±ØºÏ, µ«¿´ÄãÄÜ·ñ×¥×¡»ú»á.");
+        command("say å¤©ä¸‹å¤§åŠ¿, è¿™ä¸ªæ˜¯åˆä¹…å¿…åˆ†åˆ†ä¹…å¿…åˆ, ä½†çœ‹ä½ èƒ½å¦æŠ“ä½æœºä¼š.");
 	return 1;
     case 6:
-        command("say Ïëµ±³õÀÏ×Ó¸Õ³öµÀÊ±, »¹²»ÊÇ¼ûÉ½°İÉ½¼û·ğ°İ·ğ?");
+        command("say æƒ³å½“åˆè€å­åˆšå‡ºé“æ—¶, è¿˜ä¸æ˜¯è§å±±æ‹œå±±è§ä½›æ‹œä½›?");
 	return 1;
     case 7:
-        command("say ÈËÉúµÃÒâĞë¾¡»¶ÄÄ.");
+        command("say äººç”Ÿå¾—æ„é¡»å°½æ¬¢å“ª.");
 	return 1;
     case 8:
-        command("say ÈËÉúµÃÒâĞë¾¡»¶ÄÄ.");
+        command("say äººç”Ÿå¾—æ„é¡»å°½æ¬¢å“ª.");
 	return 1;
     default:
 	return 0;

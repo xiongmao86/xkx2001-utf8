@@ -9,9 +9,9 @@ string ask_me(object who);
 
 void create()
 {
-	set_name("Ô²Õæ´óÊ¦", ({ "yuanzhen dashi", "yuanzhen" }) );
-	set("title", "ÉÙÁÖÅÉµÚÈıÊ®Áù´úµÜ×Ó");
-	set("gender", "ÄĞĞÔ" );
+	set_name("åœ†çœŸå¤§å¸ˆ", ({ "yuanzhen dashi", "yuanzhen" }) );
+	set("title", "å°‘æ—æ´¾ç¬¬ä¸‰åå…­ä»£å¼Ÿå­");
+	set("gender", "ç”·æ€§" );
 	set("shen_type", -1);
 	set("age", 70);
 	set("str", 30);
@@ -19,7 +19,7 @@ void create()
 	set("dex", 30);
 	set("int", 25);
 	set("long",
-		"ÕâÊÇÒ»¸öÉí²ÄÊİÏ÷µÄÀÏÉ®£¬Ò»Á³ÒõğºÏÕ¿ÌÖ®Æø¡£\n" );
+		"è¿™æ˜¯ä¸€ä¸ªèº«æç˜¦å‰Šçš„è€åƒ§ï¼Œä¸€è„¸é˜´é¸·é™©åˆ»ä¹‹æ°”ã€‚\n" );
 
 	set("combat_exp", 1800000);
 	set("attitude", "peaceful");
@@ -29,7 +29,7 @@ void create()
         }) );
 
 	set("inquiry", ([
-		"³ÉÀ¥"   : (: ask_me :),
+		"æˆæ˜†"   : (: ask_me :),
 		"chengkun" : (: ask_me :),
 	]) );
 
@@ -70,27 +70,27 @@ string ask_me(object who)
 
 	if( query("revealed") ) {
 		if( is_killing(who) ) 
-			return "Äã¼ÈÈ»ÖªµÀÁËÎÒµÄÉí·Ö£¬½ñÈÕĞİÏë»îÃü£¡\n";
+			return "ä½ æ—¢ç„¶çŸ¥é“äº†æˆ‘çš„èº«åˆ†ï¼Œä»Šæ—¥ä¼‘æƒ³æ´»å‘½ï¼\n";
 		else {
 			kill_ob(who);
 			who->fight_ob(this_object());
-			return "ÎÒ¾ÍÊÇÎôÄê½­ºşÉÏÈË³ÆµÄ£¢»ìÔªÅùö¨ÊÖ£¢³ÉÀ¥£¡\n";
+			return "æˆ‘å°±æ˜¯æ˜”å¹´æ±Ÿæ¹–ä¸Šäººç§°çš„ï¼‚æ··å…ƒéœ¹é›³æ‰‹ï¼‚æˆæ˜†ï¼\n";
 		}
 	}
 
 	if( (random(10) < 7) || is_fighting() )
-		return "Æ¶É®ÊµÔÚ¶ÔÊ©Ö÷ËùÎÊÖ®ÊÂÒ»ÎŞËùÖª¡£\n";
+		return "è´«åƒ§å®åœ¨å¯¹æ–½ä¸»æ‰€é—®ä¹‹äº‹ä¸€æ— æ‰€çŸ¥ã€‚\n";
 
 	set_temp("apply/armor", 100);
 	set_temp("apply/dodge", 100);
 //	set_temp("apply/damage",  100);
 
-        set_name("³ÉÀ¥", ({ "cheng kun", "cheng", "kun" }) );
-	set("nickname", HIY "»ìÔªÅùö¨ÊÖ" NOR);
+        set_name("æˆæ˜†", ({ "cheng kun", "cheng", "kun" }) );
+	set("nickname", HIY "æ··å…ƒéœ¹é›³æ‰‹" NOR);
 
 	message("vision",
-		HIW"Ô²ÕæÑÛÖĞÍ»È»·Å³öÒìÑùµÄ¹âÃ¢£¬ÀäĞ¦Ò»Éù£º¼ÈÈ»ÄãÒÑ¿´ÁË³öÀ´£¿\n"
-		"ÄÇÄãÒ²²»ÓÃÔÙÕÒÁË£¬Ã÷Äê½ñÈÕ¾ÍÊÇÄãµÄÖÜÄê£¡\n" NOR,
+		HIW"åœ†çœŸçœ¼ä¸­çªç„¶æ”¾å‡ºå¼‚æ ·çš„å…‰èŠ’ï¼Œå†·ç¬‘ä¸€å£°ï¼šæ—¢ç„¶ä½ å·²çœ‹äº†å‡ºæ¥ï¼Ÿ\n"
+		"é‚£ä½ ä¹Ÿä¸ç”¨å†æ‰¾äº†ï¼Œæ˜å¹´ä»Šæ—¥å°±æ˜¯ä½ çš„å‘¨å¹´ï¼\n" NOR,
 		environment(), this_object() );
 
 	set("pursuer", 1);
@@ -108,7 +108,7 @@ string ask_me(object who)
 	}
 
 	set("revealed", 1);
-	return "ÎÒ¾ÍÊÇÎôÄê½­ºşÉÏÈË³ÆµÄ£¢»ìÔªÅùö¨ÊÖ£¢³ÉÀ¥£¡\n";
+	return "æˆ‘å°±æ˜¯æ˜”å¹´æ±Ÿæ¹–ä¸Šäººç§°çš„ï¼‚æ··å…ƒéœ¹é›³æ‰‹ï¼‚æˆæ˜†ï¼\n";
 }
 
 void unconcious()

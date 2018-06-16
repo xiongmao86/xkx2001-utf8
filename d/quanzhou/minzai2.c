@@ -1,5 +1,5 @@
 //Cracked by Roath
-// minzai.c լ��
+// minzai.c 宅区
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "լ��");
+        set("short", "宅区");
 	set("long", @LONG
-����Ȫ�ݾ�����������С���ݺᣬ��ͨ�˴һʽ��ʯ�����ݣ��춥��ǽ��
-�����Գƣ�����������ɫ����ν�������У�С�����硣���ߺ��ϱ߶���լ����
-��������Ȫ�����ġ�������ݡ������Ͽ�ͨ��Դ���á�
+这是泉州居民区。区内小巷纵横，四通八达。一式的石砌矮屋，红顶青墙，
+方正对称，极具闽南特色，可谓错致落有，小巧玲珑。北边和南边都是宅区。
+西边则是泉州最大的「扬威武馆」。西南可通至源和堂。
 LONG
         );
 

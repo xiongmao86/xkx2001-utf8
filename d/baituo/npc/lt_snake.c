@@ -1,5 +1,5 @@
 //Cracked by Roath
-// lt_snake.c Á½Í·Éß ( ??? )
+// lt_snake.c ä¸¤å¤´è›‡ ( ??? )
 // by maco
 
 #include <ansi.h>
@@ -11,10 +11,10 @@ int auto_perform_double();
 void create()
 {
 	int poison = 10;
-	set_name("Á½Í·Éß", ({ "liangtou she", "she", "snake" }) );
-	set("race", "ÉßÀà");
+	set_name("ä¸¤å¤´è›‡", ({ "liangtou she", "she", "snake" }) );
+	set("race", "è›‡ç±»");
 	set("age", 100);
-	set("long", "ÕâÌõÉß»¨ÎÆ°ßìµ£¬¾±×ÓÁ½±ß·Ö²í£¬¾¹È»ÓĞÁ½¸öÍ·£¬¼«ÊÇÕøÄü¡£\n¾İËµ¿´µ½Á½Í·ÉßµÄÈË£¬Ò»¶¨»áËÀ¡£\n");
+	set("long", "è¿™æ¡è›‡èŠ±çº¹æ–‘æ–“ï¼Œé¢ˆå­ä¸¤è¾¹åˆ†å²”ï¼Œç«Ÿç„¶æœ‰ä¸¤ä¸ªå¤´ï¼Œææ˜¯ç‹°ç‹ã€‚\næ®è¯´çœ‹åˆ°ä¸¤å¤´è›‡çš„äººï¼Œä¸€å®šä¼šæ­»ã€‚\n");
 	set("attitude", "aggressive");
 
 	set_weight(poison*600 + 9000);
@@ -27,7 +27,7 @@ void create()
 	set("max_qi", 9000);
 	set("max_jingli", 9000);
 
-	set("limbs", ({ "×ó¾±", "ÓÒ¾±", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+	set("limbs", ({ "å·¦é¢ˆ", "å³é¢ˆ", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´" }) );
 
 	set("combat_exp", 1200000);
 

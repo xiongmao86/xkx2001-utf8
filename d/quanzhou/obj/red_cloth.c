@@ -8,14 +8,14 @@ inherit CLOTH;
 
 void create()
 {
-	set_name("ºìç±°À", ({ "red cloth", "cloth" }) );
+	set_name("çº¢ç»«è¢„", ({ "red cloth", "cloth" }) );
         set_color("$HIR$");
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "Õâ¼şºìÉ«µÄç±°ÀĞå¹¤¾«ÃÀ£¬ÎÅÆğÀ´»¹ÓĞÒ»¹Éµ­Ïã¡£\n");
-		set("unit", "¼ş");
+		set("long", "è¿™ä»¶çº¢è‰²çš„ç»«è¢„ç»£å·¥ç²¾ç¾ï¼Œé—»èµ·æ¥è¿˜æœ‰ä¸€è‚¡æ·¡é¦™ã€‚\n");
+		set("unit", "ä»¶");
 		set("value", 500);
 		set("material", "cloth");
 		set("armor_prop/armor", 8);

@@ -6,20 +6,20 @@ inherit F_EQUIP;
 int throw_ob(object me, object victim);
 void create()
 {
-   set_name(HIG"±ÌÁ×Õë"NOR, ({"bilin zhen", "zhen", "bilin"}));
+   set_name(HIG"ç¢§ç£·é’ˆ"NOR, ({"bilin zhen", "zhen", "bilin"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "°Ñ");
-      set("base_unit", "Ã¶");
+      set("unit", "æŠŠ");
+      set("base_unit", "æžš");
       set("skill", "feixing-shu");
-      set("long", HIG"Ò»Ã¶·¢³öÂÌÓÍÓÍ¹âÃ£µÄÏ¸Õë£¬Ò»Íû¶øÖªÎ¹ÓÐ¾ç¶¾¡£\n" NOR);
+      set("long", HIG"ä¸€æžšå‘å‡ºç»¿æ²¹æ²¹å…‰èŒ«çš„ç»†é’ˆï¼Œä¸€æœ›è€ŒçŸ¥å–‚æœ‰å‰§æ¯’ã€‚\n" NOR);
 		set("damage", 5);
                 set("armor_type", "embed");
                 set("armor_prop/armor",1);
                 set("armor_prop/attack", -50);
                 set("armor_prop/defense", -50);
-      set("unequip_msg", HIR"$NÒ»Ò§ÑÀ½«$n"+HIR+"´ÓÉË¿ÚÉÏ°ÎÁËÏÂÀ´£¬Ò»¹ÉÏÊÑªÃÍµØÓ¿ÁË³öÀ´¡£\n"NOR);
+      set("unequip_msg", HIR"$Nä¸€å’¬ç‰™å°†$n"+HIR+"ä»Žä¼¤å£ä¸Šæ‹”äº†ä¸‹æ¥ï¼Œä¸€è‚¡é²œè¡€çŒ›åœ°æ¶Œäº†å‡ºæ¥ã€‚\n"NOR);
    }
    set_amount(1);
    setup();
@@ -49,7 +49,7 @@ int throw_ob(object me, object victim)
 	string limbs, dodge_skill, str;
 	object ob2, ob = this_object();
 
-   message_vision(HIG"$N×óÊÖÔÚÐäµ×ÇáÇáÒ»Ñï£¬Ò»Åî±ÌÂÌµÄÉÁ¹â£¬Ïò$n¼¤Éä¶øÈ¥¡£\n" NOR, me, victim);
+   message_vision(HIG"$Nå·¦æ‰‹åœ¨è¢–åº•è½»è½»ä¸€æ‰¬ï¼Œä¸€è“¬ç¢§ç»¿çš„é—ªå…‰ï¼Œå‘$næ¿€å°„è€ŒåŽ»ã€‚\n" NOR, me, victim);
    ap = me->query_skill("feixing-shu", 1);
    dp = (int)victim->query_skill("dodge");
    ap *= me->query("combat_exp")/1000;
@@ -59,8 +59,8 @@ int throw_ob(object me, object victim)
    limbs = victim->query("limbs");
 
 	if (ap > dp && !victim->query_temp("armor/embed")){
-                message_vision(CYN"\n½á¹û$NÒ»Éù²Ò½Ð£¬±ÌÁ×ÕëÒÑÈ»´©½øÁË$NµÄ"+limbs[random(sizeof(limbs))]
-                          +"¡£\n"NOR, victim, ob);
+                message_vision(CYN"\nç»“æžœ$Nä¸€å£°æƒ¨å«ï¼Œç¢§ç£·é’ˆå·²ç„¶ç©¿è¿›äº†$Nçš„"+limbs[random(sizeof(limbs))]
+                          +"ã€‚\n"NOR, victim, ob);
                                  ob2=new(__FILE__);
                                  ob2->set_amount(1);
                                  ob2->set("embedded", 1);
@@ -76,7 +76,7 @@ int throw_ob(object me, object victim)
    }
    else{
 	if (victim->query("neili") > me->query("neili"))
-        message_vision(RED"$nÅÛÐäÒ»·÷£¬Ò»¹ÉÄÚ¾¢·¢³ö£¬½«ÄÇÂÌÕë¼¤µÃÐ±ÔÚÒ»ÅÔ£¬²åÔÚµØÉÏ¡£\n" NOR, me, victim);
+        message_vision(RED"$nè¢è¢–ä¸€æ‹‚ï¼Œä¸€è‚¡å†…åŠ²å‘å‡ºï¼Œå°†é‚£ç»¿é’ˆæ¿€å¾—æ–œåœ¨ä¸€æ—ï¼Œæ’åœ¨åœ°ä¸Šã€‚\n" NOR, me, victim);
 
 	else {
 	dodge_skill = victim->query_skill_mapped("dodge");

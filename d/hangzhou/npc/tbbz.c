@@ -1,17 +1,17 @@
 //Cracked by Roath
-// /d/hangzhou/npc/tbbz ÌÁ°ï°ïÖÚ
+// /d/hangzhou/npc/tbbz å¡˜å¸®å¸®ä¼—
 // by aln 2 / 98
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÌÁ¹¤", 
+        set_name("å¡˜å·¥", 
               ({ "tanggong", }) );
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("long",
-"ÕâÊÇÒ»Î»ĞŞÖşº£µÌµÄÌÁ¹¤¡£\n");
+"è¿™æ˜¯ä¸€ä½ä¿®ç­‘æµ·å ¤çš„å¡˜å·¥ã€‚\n");
         set("combat_exp", 4000);
         set("shen_type",  -1);
 

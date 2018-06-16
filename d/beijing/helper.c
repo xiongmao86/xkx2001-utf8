@@ -16,17 +16,17 @@ int speed_base(int rank) { return speed_base_a[rank]; }
 static int *exp_base_a = ({20000, 50000, 100000, 200000, 
 	    400000, 700000, 1000000});
 static string *RANK_NAME = ({
-    "³ÇÃÅÇ§×Ü",
-    "³ÇÃÅÊØ±¸",
-    "æçÆïÓª×ôÁì",
-    "ÊÌÎÀÓª²ÎÁì",
-    "ÊÌÎÀÓªÒ»µÈÊÌÎÀ",
-    "¸±¶¼Í³",
-    "¶¼Í³",
+    "åŸé—¨åƒæ€»",
+    "åŸé—¨å®ˆå¤‡",
+    "éªéª‘è¥ä½é¢†",
+    "ä¾å«è¥å‚é¢†",
+    "ä¾å«è¥ä¸€ç­‰ä¾å«",
+    "å‰¯éƒ½ç»Ÿ",
+    "éƒ½ç»Ÿ",
 });
 static string *DEPT_NAME = ({
-	"æçÆïÓª",
-	"ÊÌÎÀÓª",
+	"éªéª‘è¥",
+	"ä¾å«è¥",
 });
 string dept_name(int dept) { return DEPT_NAME[dept]; }
 string rank_name(int rank) { return RANK_NAME[rank]; }
@@ -40,14 +40,14 @@ string player_title(object player) {
 }
 
 static string *JUEWEI_NAME = ({
-    "ÔÆÆïÎ¾",
-    "Æï¶¼Î¾",
-    "ÈıµÈÇá³µ¶¼Î¾", "¶şµÈÇá³µ¶¼Î¾", "Ò»µÈÇá³µ¶¼Î¾",
-    "ÈıµÈÄĞ¾ô", "¶şµÈÄĞ¾ô", "Ò»µÈÄĞ¾ô",
-    "ÈıµÈ×Ó¾ô", "¶şµÈ×Ó¾ô", "Ò»µÈ×Ó¾ô",
-    "ÈıµÈ²®¾ô", "¶şµÈ²®¾ô", "Ò»µÈ²®¾ô",
-    "ÈıµÈºî¾ô", "¶şµÈºî¾ô", "Ò»µÈºî¾ô",
-    "ÈıµÈ¹«¾ô", "¶şµÈ¹«¾ô", "Ò»µÈ¹«¾ô",
+    "äº‘éª‘å°‰",
+    "éª‘éƒ½å°‰",
+    "ä¸‰ç­‰è½»è½¦éƒ½å°‰", "äºŒç­‰è½»è½¦éƒ½å°‰", "ä¸€ç­‰è½»è½¦éƒ½å°‰",
+    "ä¸‰ç­‰ç”·çˆµ", "äºŒç­‰ç”·çˆµ", "ä¸€ç­‰ç”·çˆµ",
+    "ä¸‰ç­‰å­çˆµ", "äºŒç­‰å­çˆµ", "ä¸€ç­‰å­çˆµ",
+    "ä¸‰ç­‰ä¼¯çˆµ", "äºŒç­‰ä¼¯çˆµ", "ä¸€ç­‰ä¼¯çˆµ",
+    "ä¸‰ç­‰ä¾¯çˆµ", "äºŒç­‰ä¾¯çˆµ", "ä¸€ç­‰ä¾¯çˆµ",
+    "ä¸‰ç­‰å…¬çˆµ", "äºŒç­‰å…¬çˆµ", "ä¸€ç­‰å…¬çˆµ",
 });
 string juewei_name(int job_total) { 	
     if ((job_total/50) >= sizeof(JUEWEI_NAME)) {
@@ -161,7 +161,7 @@ object find_mizheng()
     }
     mizheng = present("mi zheng", room);
     if (! mizheng) {
-	write("BUG: Çë¸æËß¸ºÔğ±±¾©µÄÎ×Ê¦£ºjob_reward: mizheng=0.\n");
+	write("BUG: è¯·å‘Šè¯‰è´Ÿè´£åŒ—äº¬çš„å·«å¸ˆï¼šjob_reward: mizheng=0.\n");
 	return 0;
     }
     return mizheng;
@@ -179,7 +179,7 @@ void job_reward(object player, int rank, int kill_num, int fail_num)
 
     // sanity check 
     if (!player || rank<0 || rank>6 || kill_num < 0 || fail_num < 0) {
-	write("BUG: Çë¸æËß¸ºÔğ±±¾©µÄÎ×Ê¦£ºjob_reward sanity check.\n");
+	write("BUG: è¯·å‘Šè¯‰è´Ÿè´£åŒ—äº¬çš„å·«å¸ˆï¼šjob_reward sanity check.\n");
 	return;
     }
 
@@ -255,11 +255,11 @@ void job_reward(object player, int rank, int kill_num, int fail_num)
  
     if (player->query("id") != "chu") {	// no need to log my testing
 	log_file("beijing/reward",
-	    sprintf("%s : %sµÃÁË %d µã¾­Ñé¡£kill_num=%d, fail_num=%d\n",
+	    sprintf("%s : %så¾—äº† %d ç‚¹ç»éªŒã€‚kill_num=%d, fail_num=%d\n",
 	    ctime(time()), player->name(), exp_reward, 
 	    kill_num, fail_num));
     }
-    tell_object(player, "ÄãµÄ¾­ÑéÔö¼ÓÁË "+exp_reward+" µã£¡\n", exp_reward);
+    tell_object(player, "ä½ çš„ç»éªŒå¢åŠ äº† "+exp_reward+" ç‚¹ï¼\n", exp_reward);
     if (player->query("id") == "chu") { // tell me more details
 	tell_object(player, "speed_cur = "+speed_cur+"\n");
 	tell_object(player, "job_finish = "+job_finish+"\n");
@@ -283,9 +283,9 @@ int random_walk()
 
 	if ( strsrch(base_name(here), "/d/beijing") != 0) {
                 message("vision", me->name() + 
-		    "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", here, me);
+		    "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n", here, me);
                 me->move(START_ROOM);
-                message("vision", me->name() + "×ßÁË¹ıÀ´¡£\n",
+                message("vision", me->name() + "èµ°äº†è¿‡æ¥ã€‚\n",
 		    here, me);
         }
 

@@ -6,10 +6,10 @@ inherit ROOM;
 void create()
 {
     int i;
-        set("short", "ɽ��");
+        set("short", "山洞");
         set("long", @LONG
-ɽ������һЩ�򵥵������þߣ���ʾ����������˹��ż��ӵ�
-����������Ŵ�����˯����
+山洞里有一些简单的生活用具，显示出这里的主人过着简朴的
+生活。洞角有张床可以睡觉。
 LONG
         );
 

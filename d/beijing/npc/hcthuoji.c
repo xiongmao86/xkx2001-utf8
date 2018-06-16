@@ -1,5 +1,5 @@
 //Cracked by Roath
-// bankhuoji  »Ø´ºÌÃ»ï¼Æ
+// bankhuoji  å›æ˜¥å ‚ä¼™è®¡
 // Ssy
 
 inherit NPC;
@@ -7,11 +7,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("»Ø´ºÌÃ»ï¼Æ", ({ "huoji", "keeper" }));
+        set_name("å›æ˜¥å ‚ä¼™è®¡", ({ "huoji", "keeper" }));
         set("str", 20);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "ËûÊÇ¸öÇÚÀÍµÄ»ï¼Æ£¬¶Ç×ÓÀïÒ²ÓĞĞ©Ä«Ë®¡£\n");
+        set("long", "ä»–æ˜¯ä¸ªå‹¤åŠ³çš„ä¼™è®¡ï¼Œè‚šå­é‡Œä¹Ÿæœ‰äº›å¢¨æ°´ã€‚\n");
         set("combat_exp", 8000);
         set("attitude", "friendly");
 

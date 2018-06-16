@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-		  set("short",HIM"�ؾ���"NOR);
+		  set("short",HIM"藏经阁"NOR);
 
 		  set("long",@LONG
-������������ⲻԶ�Ĳؾ��󣬲��ٽ��ڵ������Ǵ���ڴˡ�ֻ��
-������ߵĽ������ܽǸ߾��������������������Ǿ������ۡ�������һ��
-С����
+这ㄦ是重阳宫外不远的藏经阁，不少教内的书典便是存放在此。只见
+这三层高的建筑，檐角高卷，恍如临流画舫，甚是精巧美观。往南是一条
+小径。
 LONG);
 
 		  set("exits",([ "south" : __DIR__"yuanneixiaojing3",

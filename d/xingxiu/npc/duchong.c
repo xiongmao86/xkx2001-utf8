@@ -8,39 +8,39 @@ void create()
 {
         switch( random(6) ){
         	case 0:
-        	set_name(RED"ÐÇËÞ¶¾Öë"NOR, ({ "du zhu", "spider", "zhu" }) );
-        	set("long", "Ò»Ö»ÐÎÈçÄ´Ö¸´óÐ¡£¬ÑÕÉ«³Ê°µºìÉ«µÄÖ©Öë£¬ËÆºõÌåº¬¾ç¶¾¡£\n");
+        	set_name(RED"æ˜Ÿå®¿æ¯’è››"NOR, ({ "du zhu", "spider", "zhu" }) );
+        	set("long", "ä¸€åªå½¢å¦‚æ‹‡æŒ‡å¤§å°ï¼Œé¢œè‰²å‘ˆæš—çº¢è‰²çš„èœ˜è››ï¼Œä¼¼ä¹Žä½“å«å‰§æ¯’ã€‚\n");
         	break;
         	case 1:
-        	set_name(HIG"ÂÌÖñÐ«"NOR, ({ "scorpion", "xie", "xie zi" }) );
-        	set("long", "ÉíÈçÖñ½Ú£¬Ìå³É±ÌÂÌ£¬ÐÇËÞº£¶ÀÓÐ¡£\n");
+        	set_name(HIG"ç»¿ç«¹èŽ"NOR, ({ "scorpion", "xie", "xie zi" }) );
+        	set("long", "èº«å¦‚ç«¹èŠ‚ï¼Œä½“æˆç¢§ç»¿ï¼Œæ˜Ÿå®¿æµ·ç‹¬æœ‰ã€‚\n");
         	break;
         	case 2:
-        	set_name(HIR"Öì¾¦ÍÜ"NOR, ({ "zhu wa", "wa", "frog" }) );
-        	set("long", "Ò»Ö»»îÆÃ¿É°®µÄÐ¡ÍÜ£¬Á½ÑÛ³ÉÖìºìÉ«¡£\n");
+        	set_name(HIR"æœ±ç›è›™"NOR, ({ "zhu wa", "wa", "frog" }) );
+        	set("long", "ä¸€åªæ´»æ³¼å¯çˆ±çš„å°è›™ï¼Œä¸¤çœ¼æˆæœ±çº¢è‰²ã€‚\n");
         	break;
         	case 3:
-        	set_name(HIC"¶¾¶ê"NOR, ({ "e", "du e"}) );
-        	set("long", "Ò»Ö»Ìåº¬¾ç¶¾µÄ¶ê×Ó¡£\n");
+        	set_name(HIC"æ¯’è›¾"NOR, ({ "e", "du e"}) );
+        	set("long", "ä¸€åªä½“å«å‰§æ¯’çš„è›¾å­ã€‚\n");
         	break;
         	case 4:
-        	set_name(HIR"ÆßÐÄ¼×³æ"NOR, ({ "beetle", "jia chong", "chong" }) );
-        	set("long", "Ò»Ö»Ìåº¬¾ç¶¾µÄÓ²¿Ç¼×³æ¡£\n");
+        	set_name(HIR"ä¸ƒå¿ƒç”²è™«"NOR, ({ "beetle", "jia chong", "chong" }) );
+        	set("long", "ä¸€åªä½“å«å‰§æ¯’çš„ç¡¬å£³ç”²è™«ã€‚\n");
         	break;
         	case 5:
-        	set_name(YEL"Ò°·ä"NOR, ({ "bee", "ye feng", "feng" }) );
-        	set("long", "Ò»Ö»Ò°É½·ä£¬½ÌÕÝÒ»ÏÂ¿ÉÊÇ²»ºÃÊÜµÄ¡£\n");
+        	set_name(YEL"é‡Žèœ‚"NOR, ({ "bee", "ye feng", "feng" }) );
+        	set("long", "ä¸€åªé‡Žå±±èœ‚ï¼Œæ•™è›°ä¸€ä¸‹å¯æ˜¯ä¸å¥½å—çš„ã€‚\n");
         	break;
         	case 6:
-        	set_name(HIB"À¶¶¦Ö©Öë"NOR, ({ "bee", "ye feng", "feng" }) );
+        	set_name(HIB"è“é¼Žèœ˜è››"NOR, ({ "bee", "ye feng", "feng" }) );
         	break;
         }
         
         set("sub", "xx_job");
-        set("race", "À¥³æ");
-        set("subrace", "ÅÀ³æ");
+        set("race", "æ˜†è™«");
+        set("subrace", "çˆ¬è™«");
         set("age", 3);
-        //set("limbs", ({ "Í·²¿", "ÉíÌå", "´¥½Ç", "Ç°òü" }) );
+        //set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è§¦è§’", "å‰èž¯" }) );
 
         set("combat_exp", 100);
         //set_color("$HIY$");
@@ -79,7 +79,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 
 void dest_bug(object ob){
 		
-	message_vision (HIC+ob->query("name")+"Í»È»×êµ½Ò»Æ¬Ê÷Ò¶ÏÂÃæ£¬×ÙÓ°È«ÎÞ¡£\n"NOR, this_player());
+	message_vision (HIC+ob->query("name")+"çªç„¶é’»åˆ°ä¸€ç‰‡æ ‘å¶ä¸‹é¢ï¼Œè¸ªå½±å…¨æ— ã€‚\n"NOR, this_player());
         this_player()->delete_temp("bug_out");
 	destruct(ob);
 	

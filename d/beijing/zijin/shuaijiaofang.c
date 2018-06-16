@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ˤ�ӷ�");
+	set("short", "摔跤房");
 	set("long", @LONG
-������տն�����ǽ�ڱ����ż���ţƤ�Ƶ����Σ����ϴ�������
-ֻ�󲼴��������ƺ�װ���������ɳ��������һ�����ӣ��������ʮ
-�������ġ�
+屋子里空空洞洞，墙壁边倚着几个牛皮制的人形，梁上垂下来几
+只大布袋，里面似乎装着米麦或是沙土。正中一张桌子，上面放了十
+来碟点心。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

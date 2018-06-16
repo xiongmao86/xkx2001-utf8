@@ -1,5 +1,5 @@
 //Cracked by Roath
-// langren.c ÈÕ±¾ÀËÈË
+// langren.c æ—¥æœ¬æµªäºº
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÈÕ±¾ÀËÈË", ({ "lang ren", "wu shi", "lang", "ren" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("æ—¥æœ¬æµªäºº", ({ "lang ren", "wu shi", "lang", "ren" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 20+random(30));
 	set("long",
-		"ÕâÊÇ¸öÉñÌ¬ÙÆ°ÁµÄ¶«ÑóÎäÊ¿£¬Í·´÷¶·óÒ£¬Éí×Å»ÒºÚÉ«µÄºÍ·ş£¬ÑüÀï¿æ×Å°Ñ³¤³¤µÄÎäÊ¿µ¶¡£\n");
+		"è¿™æ˜¯ä¸ªç¥æ€å€¨å‚²çš„ä¸œæ´‹æ­¦å£«ï¼Œå¤´æˆ´æ–—ç¬ ï¼Œèº«ç€ç°é»‘è‰²çš„å’Œæœï¼Œè…°é‡ŒæŒç€æŠŠé•¿é•¿çš„æ­¦å£«åˆ€ã€‚\n");
 	set("combat_exp", 150000+random(5000));
         set("shen_type", -1);
 	set("attitude", "heroism");
@@ -50,11 +50,11 @@ void init()
 {
 	::init();
 	if( this_player()->query("combat_exp") <= 5000 & random(5) == 0) {
-		message_vision("ÈÕ±¾ÀËÈËÇáÃïµØµÉÁË$NÒ»ÑÛ£¬ËµµÀ£ºÖĞ¹úÈË¶¼ÏóÄãÕâ°ãÃ»ÓÃ°É£¬¹ş¹ş¹ş£¡\n", 
+		message_vision("æ—¥æœ¬æµªäººè½»è”‘åœ°çªäº†$Nä¸€çœ¼ï¼Œè¯´é“ï¼šä¸­å›½äººéƒ½è±¡ä½ è¿™èˆ¬æ²¡ç”¨å§ï¼Œå“ˆå“ˆå“ˆï¼\n", 
 		this_player());
 	}	
 	else if( this_player()->query("combat_exp") <= 10000 & random(5) == 0) {
-		message_vision("ÈÕ±¾ÀËÈË¶ÔÖø$NÀäĞ¦µÀ£º¿´ÄãÕâ÷á²î¾¢£¬ÄÃÄãµÄÑªÀ´Ï´ÎÒµÄµ¶¶¼²»Åä£¡\n", 
+		message_vision("æ—¥æœ¬æµªäººå¯¹è‘—$Nå†·ç¬‘é“ï¼šçœ‹ä½ è¿™éº½å·®åŠ²ï¼Œæ‹¿ä½ çš„è¡€æ¥æ´—æˆ‘çš„åˆ€éƒ½ä¸é…ï¼\n", 
 		this_player());
 	}	
 }

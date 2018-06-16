@@ -6,11 +6,11 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "ð®µÀ");
+        set("short", "ç”¬é“");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ³¤³¤µÄð®µÀ£¬Á½²àÇ½ÉÏµã×ÅÓÍµÆ£¬¹âÏßËä°µ£¬µÀÂ·È´Ò²
-ÇåÎú¿É±æ¡£ÍâÃæÆÙ²¼ºäºäÖ®Éù²»¾øÓÚ¶ú£¬¶´¿ÚË®»¨·É½¦£¬µØÉÏÉõÊÇÊª
-»¬¡£ÃæÇ°ÓÐ¼¸Ìõ²íµÀ¡£
+è¿™æ˜¯ä¸€æ¡é•¿é•¿çš„ç”¬é“ï¼Œä¸¤ä¾§å¢™ä¸Šç‚¹ç€æ²¹ç¯ï¼Œå…‰çº¿è™½æš—ï¼Œé“è·¯å´ä¹Ÿ
+æ¸…æ™°å¯è¾¨ã€‚å¤–é¢ç€‘å¸ƒè½°è½°ä¹‹å£°ä¸ç»äºŽè€³ï¼Œæ´žå£æ°´èŠ±é£žæº…ï¼Œåœ°ä¸Šç”šæ˜¯æ¹¿
+æ»‘ã€‚é¢å‰æœ‰å‡ æ¡å²”é“ã€‚
 LONG );
 
       set("exits", ([

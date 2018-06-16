@@ -1,22 +1,22 @@
 //Cracked by Roath
-// gangzhang.c ¸ÖÕÈ
+// gangzhang.c é’¢æ–
 
 #include <weapon.h>
 inherit STAFF;
 
 void create()
 {
-	set_name("¸ÖÕÈ", ({ "gangzhang", "staff", "zhang" }));
+	set_name("é’¢æ–", ({ "gangzhang", "staff", "zhang" }));
 	set_weight(10000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ùÆÕÍ¨µÄ¸ÖÖÆÊÖÕÈ£¬¿Éµ±ÎäÆ÷ÓÃ¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹æ™®é€šçš„é’¢åˆ¶æ‰‹æ–ï¼Œå¯å½“æ­¦å™¨ç”¨ã€‚\n");
 		set("value", 250);
 		set("material", "steel");
-		set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
 	}
   	init_staff(25);
 	setup();

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ�ٵ�");
+        set("short", "青石官道");
         set("long", @LONG
-������һ����ʯ�ٵ��ϣ�����������ϡ�٣����ж�ʮ�������
-����ɽ���ˡ�
+你走在一条青石官道上，来往行人逐渐稀少，北行二十余里，便是
+博南山区了。
 LONG
         );
         set("exits", ([

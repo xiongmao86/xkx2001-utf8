@@ -6,28 +6,28 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "»¨Ìü");
+	set("short", "èŠ±å…");
 	set("long", @LONG
-ÕâÊÇÒ»¼äËÄ·½ĞÍµÄÌüÍ¤£¬Ã»ÓĞÅÆØÒ£¬ÕıÃæÁ½·½Ä¾Öù£¬ÖùÉÏ¹ÒÁË
-·ùÈ±ÁË°ëãÚµÄ¡ºÊ«´Ê¡»(poem)¡£ÌüÄÚ°ÚÉèÁË¼¸ÕÅ×ÀÒÎ¡£Ò»¸öÑ¾»·Õı
-ÔÚÄ¨ÊÃ×ÀÃæ¡£
+è¿™æ˜¯ä¸€é—´å››æ–¹å‹çš„å…äº­ï¼Œæ²¡æœ‰ç‰ŒåŒ¾ï¼Œæ­£é¢ä¸¤æ–¹æœ¨æŸ±ï¼ŒæŸ±ä¸ŠæŒ‚äº†
+å¹…ç¼ºäº†åŠé˜™çš„ã€è¯—è¯ã€(poem)ã€‚å…å†…æ‘†è®¾äº†å‡ å¼ æ¡Œæ¤…ã€‚ä¸€ä¸ªä¸«ç¯æ­£
+åœ¨æŠ¹æ‹­æ¡Œé¢ã€‚
 LONG
 	);
 
 	set("item_desc", ([
 	"poem" : "\n
-      ©°©¤©´             ©°©¤©´
-      ©¦±ø©¦             ©¦  ©¦
-      ©¦»ğ©¦             ©¦  ©¦
-      ©¦ÓĞ©¦             ©¦  ©¦
-      ©¦âÅ©¦             ©¦  ©¦
-      ©¦½ı©¦             ©¦  ©¦
-      ©¦Æ¶©¦             ©¦  ©¦
-      ©¦´å©¦             ©¦  ©¦
-      ©¦²Å©¦             ©¦  ©¦
-      ©¦Êı©¦             ©¦  ©¦
-      ©¦¼Ò©¦             ©¦  ©¦
-      ©¸©¤©¼             ©¸©¤©¼
+      â”Œâ”€â”             â”Œâ”€â”
+      â”‚å…µâ”‚             â”‚  â”‚
+      â”‚ç«â”‚             â”‚  â”‚
+      â”‚æœ‰â”‚             â”‚  â”‚
+      â”‚é¦€â”‚             â”‚  â”‚
+      â”‚çƒ¬â”‚             â”‚  â”‚
+      â”‚è´«â”‚             â”‚  â”‚
+      â”‚æ‘â”‚             â”‚  â”‚
+      â”‚æ‰â”‚             â”‚  â”‚
+      â”‚æ•°â”‚             â”‚  â”‚
+      â”‚å®¶â”‚             â”‚  â”‚
+      â””â”€â”˜             â””â”€â”˜
 
 \n",
 	]));
@@ -52,19 +52,19 @@ int valid_leave(object me, string dir)
     mapping myfam;
     myfam = (mapping)me->query("family");
 
-    if ( (!myfam || myfam["family_name"] != "ÌÒ»¨µº") && dir != "south" ) {
-	if ( (!myfam || myfam["family_name"] != "ÌÒ»¨µº") && dir != "north" )
-	   return notify_fail("¹éÔÆ×¯²»ÁôÍâ¿Í£¬Äã²»ÄÜ×¡ÔÚÕâÀï£¡\n");
+    if ( (!myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›") && dir != "south" ) {
+	if ( (!myfam || myfam["family_name"] != "æ¡ƒèŠ±å²›") && dir != "north" )
+	   return notify_fail("å½’äº‘åº„ä¸ç•™å¤–å®¢ï¼Œä½ ä¸èƒ½ä½åœ¨è¿™é‡Œï¼\n");
     }
 
-    if ( me->query("gender") == "ÄĞĞÔ" && dir == "west" && present("xiao lan", environment(me)))
-	return notify_fail("Ğ¡À¼´óÉù½ĞµÀ£º´óÉ«ÀÇ£¡¿´Çå³şµã£¬ÄĞµÜ×ÓĞİÏ¢ÊÒÔÚ¶«±ß£¡\n");
+    if ( me->query("gender") == "ç”·æ€§" && dir == "west" && present("xiao lan", environment(me)))
+	return notify_fail("å°å…°å¤§å£°å«é“ï¼šå¤§è‰²ç‹¼ï¼çœ‹æ¸…æ¥šç‚¹ï¼Œç”·å¼Ÿå­ä¼‘æ¯å®¤åœ¨ä¸œè¾¹ï¼\n");
 
-    if ( me->query("gender") == "Å®ĞÔ" && dir == "east" && present("xiao lan", environment(me)))
-	message_vision("Ğ¡À¼ËÆĞ¦·ÇĞ¦µÄËµµÀ£ºÕâÎ»"+RANK_D->query_respect(me)+"¸Ï¿ì½øÈ¥°É£¬Õâ¶ùÓĞÎÒ°ïÄã¿´×Å¡£\n", me);
+    if ( me->query("gender") == "å¥³æ€§" && dir == "east" && present("xiao lan", environment(me)))
+	message_vision("å°å…°ä¼¼ç¬‘éç¬‘çš„è¯´é“ï¼šè¿™ä½"+RANK_D->query_respect(me)+"èµ¶å¿«è¿›å»å§ï¼Œè¿™å„¿æœ‰æˆ‘å¸®ä½ çœ‹ç€ã€‚\n", me);
 
-    if ( me->query("gender") == "ÎŞĞÔ" && (dir=="east" || dir=="west") && present("xiao lan", environment(me)))
-	return notify_fail("Ğ¡À¼ÇáÃïµØÒ»Æ²×ì£¬ËµµÀ£º¹«¹«²»ÄÜ×¡ÔÚÕâÀï£¡\n");
+    if ( me->query("gender") == "æ— æ€§" && (dir=="east" || dir=="west") && present("xiao lan", environment(me)))
+	return notify_fail("å°å…°è½»è”‘åœ°ä¸€æ’‡å˜´ï¼Œè¯´é“ï¼šå…¬å…¬ä¸èƒ½ä½åœ¨è¿™é‡Œï¼\n");
 
     return ::valid_leave(me, dir);
 }

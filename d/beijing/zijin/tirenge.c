@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "���ʸ�");
+    set("short", "体仁阁");
 	set("long",  @LONG
- �����ż�,��������,Ժ��ʽ�ݶ�,����������Ľ���,�念��ʱ,
- ���ٲ�ѧ���������ڴ�.��Ϊ��͢�ⷿ.
+ 面阔九间,进深三间,院殿式屋顶,是三大殿的陪衬建筑,清康熙时,
+ 荐举博学鸿儒召试于此.后为宫廷库房.
 LONG
 	);
 

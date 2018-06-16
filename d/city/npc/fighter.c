@@ -13,7 +13,7 @@ void quit(object ob);
 void create()
 {
 	::create();
-	set_name("´òÀÞÕß", ({ "user object", "fighter dummy" }) );
+	set_name("æ‰“æ“‚è€…", ({ "user object", "fighter dummy" }) );
 	seteuid(getuid());
 }
 
@@ -43,15 +43,15 @@ void die()
 	this_object()->remove_all_killer();
 	all_inventory(environment())->remove_killer(this_object());
 	if(objectp(ob)){
-		message_vision(me->query("family/family_name")+"$N±»"+
-							  ob->query("family/family_name")+"$n»÷°Ü¡£\n", me, ob);
+		message_vision(me->query("family/family_name")+"$Nè¢«"+
+							  ob->query("family/family_name")+"$nå‡»è´¥ã€‚\n", me, ob);
 
 		rum_ob = load_object("/d/huashan/npc/referee");
 
 
 //		if(objectp(rum_ob))
-//			CHANNEL_D->do_channel(rum_ob, "chat", me->short(1)+HIC+" ±»"+
-//										 ob->short(1)+HIC+" »÷°Ü¡£");
+//			CHANNEL_D->do_channel(rum_ob, "chat", me->short(1)+HIC+" è¢«"+
+//										 ob->short(1)+HIC+" å‡»è´¥ã€‚");
 	}
 
 //	if(objectp(ob)) quit(ob);
@@ -64,7 +64,7 @@ void quit(object ob)
 	object link_ob = ob->query_temp("link_ob");
 	if(objectp(link_ob) ) {
 		if(link_ob->is_character()) {
-			tell_object(ob, "ÄãÍË³öÀÞÌ¨¡£\n");
+			tell_object(ob, "ä½ é€€å‡ºæ“‚å°ã€‚\n");
 			if(!interactive(link_ob) && interactive(ob) ) {
 				exec(link_ob, ob);
 				link_ob->setup();
@@ -119,9 +119,9 @@ private void net_dead()
 	if( objectp(link_ob = query_temp("link_ob")) ) {
 
 		 if( userp(this_object()) ) {
-			  tell_room(environment(), query("name") + "¶ÏÏßÁË¡£\n", this_object());
-			  tell_room(environment(link_ob), link_ob->query("name") + "¶ÏÏßÁË¡£\n", link_ob);
-			CHANNEL_D->do_channel(this_object(), "sys", "¶ÏÏßÁË¡£");
+			  tell_room(environment(), query("name") + "æ–­çº¿äº†ã€‚\n", this_object());
+			  tell_room(environment(link_ob), link_ob->query("name") + "æ–­çº¿äº†ã€‚\n", link_ob);
+			CHANNEL_D->do_channel(this_object(), "sys", "æ–­çº¿äº†ã€‚");
 			disconnect(this_object());
 			//destruct(this_object());
 		 }

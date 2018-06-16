@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Í­¹Ä", ({ "tonggu" }) );
+        set_name("é“œé¼“", ({ "tonggu" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
 		set("material", "iron");
-                set("long", "ÕâÊÇÒ»Ö»½ğ¹âÉÁÁÁµÄÍ­¹Ä¡£\n");
+                set("long", "è¿™æ˜¯ä¸€åªé‡‘å…‰é—ªäº®çš„é“œé¼“ã€‚\n");
                 set("value", 10);
         }
         setup();

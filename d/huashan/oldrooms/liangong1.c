@@ -1,5 +1,5 @@
 //Cracked by Roath
-// liangong1.c Á·¹¦·¿
+// liangong1.c ç»ƒåŠŸæˆ¿
 // by qfy
 
 #include <room.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿");
+	set("short", "ç»ƒåŠŸæˆ¿");
 	set("long", @LONG
-Á·¹¦·¿ÊÇ¹©»ªÉ½µÜ×ÓĞŞÁ·ÄÚ¹¦£¬»òÑĞ¶ÁÎäÑ§Êé¼®Ö®´¦¡£·¿ÄÚ²¢ÎŞÌØ±ğ
-°ÚÉè£¬ÒÔÃâµÜ×ÓĞĞ¹¦Ê±·ÖĞÄ£¬µ¢ÎóÁË½ø¶È¡£ÄÏ±ßÊÇÄĞµÜ×ÓĞİÏ¢ÊÒ£¬±±±ßÓĞ
-ÉÈÄ¾ÃÅÍ¨Ïò¶«ÀÈ¡£
+ç»ƒåŠŸæˆ¿æ˜¯ä¾›åå±±å¼Ÿå­ä¿®ç»ƒå†…åŠŸï¼Œæˆ–ç ”è¯»æ­¦å­¦ä¹¦ç±ä¹‹å¤„ã€‚æˆ¿å†…å¹¶æ— ç‰¹åˆ«
+æ‘†è®¾ï¼Œä»¥å…å¼Ÿå­è¡ŒåŠŸæ—¶åˆ†å¿ƒï¼Œè€½è¯¯äº†è¿›åº¦ã€‚å—è¾¹æ˜¯ç”·å¼Ÿå­ä¼‘æ¯å®¤ï¼ŒåŒ—è¾¹æœ‰
+æ‰‡æœ¨é—¨é€šå‘ä¸œå»Šã€‚
 LONG
 	);
 
@@ -22,8 +22,8 @@ LONG
 	]));
 
 
-	create_door("north", "Ä¾ÃÅ", "south", DOOR_CLOSED);
-	create_door("south", "ÖñÃÅ", "north", DOOR_CLOSED);
+	create_door("north", "æœ¨é—¨", "south", DOOR_CLOSED);
+	create_door("south", "ç«¹é—¨", "north", DOOR_CLOSED);
 	
 	set("cost", 0);
 	setup();
@@ -36,14 +36,14 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir == "south" )
-                return notify_fail("»ªÉ½²»ÁôÍâ¿Í£¬Äã²»ÄÜ×¡ÔÚÕâÀï£¡\n");
+        if ( (!myfam || myfam["family_name"] != "åå±±æ´¾") && dir == "south" )
+                return notify_fail("åå±±ä¸ç•™å¤–å®¢ï¼Œä½ ä¸èƒ½ä½åœ¨è¿™é‡Œï¼\n");
 
-        if ( me->query("gender") == "Å®ĞÔ" && dir == "south" && !wizardp(me) )
-                return notify_fail("¿´Çå³şµã£¬ÄÇÊÇÄĞµÜ×ÓĞİÏ¢ÊÒ£¡\n");
+        if ( me->query("gender") == "å¥³æ€§" && dir == "south" && !wizardp(me) )
+                return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œé‚£æ˜¯ç”·å¼Ÿå­ä¼‘æ¯å®¤ï¼\n");
 
-        if ( me->query("gender") == "ÎŞĞÔ" && dir == "south" )
-                return notify_fail("Äã²»ÄÜ×¡ÔÚÕâÀï£¡\n");
+        if ( me->query("gender") == "æ— æ€§" && dir == "south" )
+                return notify_fail("ä½ ä¸èƒ½ä½åœ¨è¿™é‡Œï¼\n");
 
         return ::valid_leave(me, dir);
 }

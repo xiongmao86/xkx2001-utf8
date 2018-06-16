@@ -1,5 +1,5 @@
 //Cracked by Roath
-// budai.c ²¼´ü
+// budai.c å¸ƒè¢‹
 
 #include <armor.h>
 
@@ -57,23 +57,23 @@ varargs int move(mixed dest, int silent)
 
 void create()
 {
-	set_name("²¼´ü", ({ "bu dai", "dai", "bag" }));
+	set_name("å¸ƒè¢‹", ({ "bu dai", "dai", "bag" }));
 	set_amount(1);
 	set_weight(500);
 	set_max_encumbrance(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("base_unit", "¸ö");
+		set("unit", "ä¸ª");
+		set("base_unit", "ä¸ª");
 		set("base_weight", 500);
 
-		set("long", "Ò»Ö»ÓÃ´ÖÂé²¼Ö¯³ÉµÄ´ü×Ó£¬ÉíÉÏËù´ø²¼´üµÄ¶àÉÙ£¬ÊÇØ¤°ïµÜ×Ó½­ºşµØÎ»µÄ±êÖ¾¡£\n");
+		set("long", "ä¸€åªç”¨ç²—éº»å¸ƒç»‡æˆçš„è¢‹å­ï¼Œèº«ä¸Šæ‰€å¸¦å¸ƒè¢‹çš„å¤šå°‘ï¼Œæ˜¯ä¸å¸®å¼Ÿå­æ±Ÿæ¹–åœ°ä½çš„æ ‡å¿—ã€‚\n");
                 set("material", "cloth");
                 set("base_armor", 5);
-		set("no_drop", "ÉíÎªØ¤°ïµÜ×Ó£¬´üÔÚÔòÈËÔÚ£¬´üÍöÔòÈËÍö¡£\n");
-		set("no_get",  "Õâ¸ö²¼´ü½ô½ôµØ°óÔÚËûÉíÉÏ£¬ÄãÄÃ²»µ½ÊÖ¡£\n");
-		set("no_steal", "Õâ¸ö²¼´ü½ô½ôµØ°óÔÚËûÉíÉÏ£¬ÄãÍµ²»µ½ÊÖ¡£\n");
+		set("no_drop", "èº«ä¸ºä¸å¸®å¼Ÿå­ï¼Œè¢‹åœ¨åˆ™äººåœ¨ï¼Œè¢‹äº¡åˆ™äººäº¡ã€‚\n");
+		set("no_get",  "è¿™ä¸ªå¸ƒè¢‹ç´§ç´§åœ°ç»‘åœ¨ä»–èº«ä¸Šï¼Œä½ æ‹¿ä¸åˆ°æ‰‹ã€‚\n");
+		set("no_steal", "è¿™ä¸ªå¸ƒè¢‹ç´§ç´§åœ°ç»‘åœ¨ä»–èº«ä¸Šï¼Œä½ å·ä¸åˆ°æ‰‹ã€‚\n");
 	}
 
 	setup();
@@ -94,7 +94,7 @@ int do_remove(string arg)
 {
 	if( (arg && present(arg, this_player()) == this_object())
 	  || arg == "all" ) {
-		tell_object(this_player(), "Ø¤°ïµÜ×Ó£¬´üÔÚÈËÔÚ£¬´üÍöÈËÍö£¬Äã²»ÄÜ½â³ı²¼´ü£¡\n");
+		tell_object(this_player(), "ä¸å¸®å¼Ÿå­ï¼Œè¢‹åœ¨äººåœ¨ï¼Œè¢‹äº¡äººäº¡ï¼Œä½ ä¸èƒ½è§£é™¤å¸ƒè¢‹ï¼\n");
 		return 1;
 	}
 

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yang_xiao.c ÑîåĞ
+// yang_xiao.c æ¨é€
 
 #include <ansi.h>
 inherit NPC;
@@ -7,13 +7,13 @@ string check();
 
 void create()
 {
-	set_name("·¶Ò£", ({"yang xiao", "yang"}));
-	set("nickname", "¹âÃ÷ÓÒÊ¹");
+	set_name("èŒƒé¥", ({"yang xiao", "yang"}));
+	set("nickname", "å…‰æ˜å³ä½¿");
 	set("long", 
-		"ËûÊÇÒ»¸ö³¤·¢Åû¼çµÄÍ·ÍÓ£¬Éí²Ä¿ıÎ°£¬ÂúÃæºáÆßÊú°ËµÄ¶¼ÊÇµ¶°Ì£¬\n"
-		"³óÂª¿É²À¡£ËûÍ··¢×÷ºì×ØÖ®É«£¬×Ô·ÇÖĞÍÁÈËÊÏ¡£);\n"
+		"ä»–æ˜¯ä¸€ä¸ªé•¿å‘æŠ«è‚©çš„å¤´é™€ï¼Œèº«æé­ä¼Ÿï¼Œæ»¡é¢æ¨ªä¸ƒç«–å…«çš„éƒ½æ˜¯åˆ€ç–¤ï¼Œ\n"
+		"ä¸‘é™‹å¯æ€–ã€‚ä»–å¤´å‘ä½œçº¢æ£•ä¹‹è‰²ï¼Œè‡ªéä¸­åœŸäººæ°ã€‚);\n"
 	set("age",  45);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("long", "\n");
 	set("attitude", "heroism");
 

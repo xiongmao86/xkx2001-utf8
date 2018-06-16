@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: zoulang.c ×ßÀÈ
+// Room: zoulang.c èµ°å»Š
 // qfy July 7, 1996.
 
 #include <room.h>
@@ -9,10 +9,10 @@ void reset();
 
 void create()
 {
-    set("short", "×ßÀÈ");
+    set("short", "èµ°å»Š");
     set("long", @LONG
-×ßÀÈÏòÎ÷ÉìÑÓ¹ıÈ¥¡£ÅÔ±ßÓĞÒ»´óÆ¬Ê¢¿ªµÄ»¨¶ä£¬Ëæ·çÒ¡Ò·£¬É¢·¢ÕóÕó
-ÓÄÏã¡£²»Ô¶´¦±ßÊÇ»ªÉ½Å®µÜ×ÓµÄĞİÏ¢ÊÒ¡£
+èµ°å»Šå‘è¥¿ä¼¸å»¶è¿‡å»ã€‚æ—è¾¹æœ‰ä¸€å¤§ç‰‡ç››å¼€çš„èŠ±æœµï¼Œéšé£æ‘‡æ›³ï¼Œæ•£å‘é˜µé˜µ
+å¹½é¦™ã€‚ä¸è¿œå¤„è¾¹æ˜¯åå±±å¥³å¼Ÿå­çš„ä¼‘æ¯å®¤ã€‚
 LONG
     );
 
@@ -22,7 +22,7 @@ LONG
 	"south" : __DIR__"liangong2",
     ]));
 
-    create_door("south", "Ä¾ÃÅ", "north", DOOR_CLOSED);
+    create_door("south", "æœ¨é—¨", "north", DOOR_CLOSED);
 
     set("no_clean_up", 0);
 

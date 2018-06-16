@@ -12,10 +12,10 @@ void death_stage(object ob, int stage);
 void setup_weishi(object weishi,object ob);
 
 void create() {
-	 set("short", "Î÷Ïá·¿");
+	 set("short", "è¥¿å¢æˆ¿");
 	 set("long", @LONG
-ÕâÀïÊÇÎ÷Ïá·¿¡£±ÈÎä½ÏÁ¿µÄÑ¡ÊÖÔÚÕâÀï×é¶Ó×¼±¸Èë³¡¡£
-Ïá·¿ÀïÃæ·ÅÕß¼¸¸ö±øÆ÷¼Ü(jia)£¬°ÚÂúÁË±øÆ÷¡£
+è¿™é‡Œæ˜¯è¥¿å¢æˆ¿ã€‚æ¯”æ­¦è¾ƒé‡çš„é€‰æ‰‹åœ¨è¿™é‡Œç»„é˜Ÿå‡†å¤‡å…¥åœºã€‚
+å¢æˆ¿é‡Œé¢æ”¾è€…å‡ ä¸ªå…µå™¨æ¶(jia)ï¼Œæ‘†æ»¡äº†å…µå™¨ã€‚
 LONG
 	 );
 
@@ -46,8 +46,8 @@ void death_stage(object ob, int stage)
 
 	if( !ob || !objectp(ob) || !userp(ob) ) return;
 
-	tell_object(ob, HIW "Ò»¹ÉÒõÀäµÄÅ¨ÎíÍ»È»³öÏÖ£¬ºÜ¿ìµØ°üÎ§ÁËÄã¡£\n\n" NOR );
-	//if( !ob->query("sjsz/team_name") ) ob->set("sjsz/team_name",HIR"»ğÁú¶Ó"NOR);
+	tell_object(ob, HIW "ä¸€è‚¡é˜´å†·çš„æµ“é›¾çªç„¶å‡ºç°ï¼Œå¾ˆå¿«åœ°åŒ…å›´äº†ä½ ã€‚\n\n" NOR );
+	//if( !ob->query("sjsz/team_name") ) ob->set("sjsz/team_name",HIR"ç«é¾™é˜Ÿ"NOR);
 	ob->set("sjsz/fighting",1);
 	ob->set("sjsz/red",1);
 	ob->delete("sjsz/white");
@@ -66,7 +66,7 @@ void death_stage(object ob, int stage)
 	ob->set_temp("apply/short", ({HIW""+ob->query("sjsz/team_name")+"  "NOR+ob->name()+"("+ob->query("id")+")"}));
 	ob->move("/d/bwdh/sjsz/wgate.c");
 	message("vision",
-					 "ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°¡£\n", environment(ob), ob);
+					 "ä½ å¿½ç„¶å‘ç°å‰é¢å¤šäº†ä¸€ä¸ªäººå½±ã€‚\n", environment(ob), ob);
 
 	weishis = filter_array(children(__DIR__"npc/weishi.c"), (: clonep :));
 
@@ -90,7 +90,7 @@ void death_stage(object ob, int stage)
 
 	setup_weishi(weishi,ob);
 	message("vision",
-					 "ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°¡£\n", environment(weishi), weishi);
+					 "ä½ å¿½ç„¶å‘ç°å‰é¢å¤šäº†ä¸€ä¸ªäººå½±ã€‚\n", environment(weishi), weishi);
 }
 
 void setup_weishi(object me,object obj)
@@ -137,12 +137,12 @@ void setup_weishi(object me,object obj)
 	}
 
 	me->set("sjsz/team_name",obj->query("sjsz/team_name"));
-	if(exp > 8000000)me->set("name","ÌØ¼¶ÎäÊ¿");
-	else if(exp > 6000000)me->set("name","Ò»¼¶ÎäÊ¿");
-	else if(exp > 4000000)me->set("name","¶ş¼¶ÎäÊ¿");
-	else if(exp > 2000000)me->set("name","Èı¼¶ÎäÊ¿");
-	else if(exp > 500000)me->set("name","ËÄ¼¶ÎäÊ¿");
-	else me->set("name","Îå¼¶ÎäÊ¿");
+	if(exp > 8000000)me->set("name","ç‰¹çº§æ­¦å£«");
+	else if(exp > 6000000)me->set("name","ä¸€çº§æ­¦å£«");
+	else if(exp > 4000000)me->set("name","äºŒçº§æ­¦å£«");
+	else if(exp > 2000000)me->set("name","ä¸‰çº§æ­¦å£«");
+	else if(exp > 500000)me->set("name","å››çº§æ­¦å£«");
+	else me->set("name","äº”çº§æ­¦å£«");
 
 	me->set_temp("apply/short", ({HIW""+obj->query("sjsz/team_name")+"  "NOR+me->name()+"(wu shi)"}));
 }
@@ -150,22 +150,22 @@ void setup_weishi(object me,object obj)
 
 int do_open(string arg) {
 	 if ( !wizardp(this_player()) )
-		  return notify_fail("Äã²»ÊÇÎ×Ê¦¡£\n");
+		  return notify_fail("ä½ ä¸æ˜¯å·«å¸ˆã€‚\n");
 	 if (!arg || (arg != "entrance" && arg != "exit") )
-		  return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+		  return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 	 if( arg == "entrance" )
 	 {
 		 if ( query("exits/east") )
-		  return notify_fail("±ÈÎä³¡Èë¿ÚÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+		  return notify_fail("æ¯”æ­¦åœºå…¥å£å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
 		 set("exits/east", __DIR__"wgate");
 	 }
 	 else
 	 {
 		 if ( query("exits/west") )
-			  return notify_fail("±ÈÎä³¡Èë¿ÚÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+			  return notify_fail("æ¯”æ­¦åœºå…¥å£å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
 		 set("exits/west", __DIR__"kantai_w1");
 	 }
-	 message_vision("$NÓÃÊÖÖ¸Áè¿ÕÒ»µã£¬Ö¨µØÒ»Éù£¬´ò¿ªÁË±ÈÎä³¡Èë¿Ú¡£\n", this_player());
+	 message_vision("$Nç”¨æ‰‹æŒ‡å‡Œç©ºä¸€ç‚¹ï¼Œå±åœ°ä¸€å£°ï¼Œæ‰“å¼€äº†æ¯”æ­¦åœºå…¥å£ã€‚\n", this_player());
 	 remove_call_out("close");
 	 call_out("close", 60);
 	 return 1;
@@ -173,7 +173,7 @@ int do_open(string arg) {
 
 
 int close() {
-	 message("vision", "±ÈÎä³¡Èë¿ÚÂıÂıµØ¹ØÉÏÁË¡£\n", this_object());
+	 message("vision", "æ¯”æ­¦åœºå…¥å£æ…¢æ…¢åœ°å…³ä¸Šäº†ã€‚\n", this_object());
 	 delete("exits/west");
 	 delete("exits/east");
 	 return 1;
@@ -181,9 +181,9 @@ int close() {
 
 int auto_open() {
 	 if ( query("exits/east"))
-		  return notify_fail("±ÈÎä³¡Èë¿ÚÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+		  return notify_fail("æ¯”æ­¦åœºå…¥å£å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
 	 set("exits/east", __DIR__"wgate");
-	 message("vision", "¡°Ö¨¡«Ö¨¡«Ñ½¡«¡±£¬±ÈÎä³¡Èë¿ÚÂıÂı´ò¿ªÁË¡£\n", this_object());
+	 message("vision", "â€œå±ï½å±ï½å‘€ï½â€ï¼Œæ¯”æ­¦åœºå…¥å£æ…¢æ…¢æ‰“å¼€äº†ã€‚\n", this_object());
 	 remove_call_out("close");
 	 call_out("close", 60);
 	 return 1;
@@ -191,9 +191,9 @@ int auto_open() {
 
 int auto_out_open() {
 	 if ( query("exits/west") )
-		  return notify_fail("±ÈÎä³¡Èë¿ÚÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+		  return notify_fail("æ¯”æ­¦åœºå…¥å£å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
 	 set("exits/west", __DIR__"kantai_w1");
-	 message("vision", "¡°Ö¨¡«Ö¨¡«Ñ½¡«¡±£¬±ÈÎä³¡Èë¿ÚÂıÂı´ò¿ªÁË¡£\n", this_object());
+	 message("vision", "â€œå±ï½å±ï½å‘€ï½â€ï¼Œæ¯”æ­¦åœºå…¥å£æ…¢æ…¢æ‰“å¼€äº†ã€‚\n", this_object());
 	 remove_call_out("close");
 	 call_out("close", 60);
 	 return 1;
@@ -202,6 +202,6 @@ int auto_out_open() {
 
 int valid_leave(object player, string dir) {
 	 if (!wizardp(player) && dir == "up")
-		  return notify_fail("´Ë¼äÖ÷ÈË²¢Ã»ÓĞÑûÇëÄãÈ¥ÄÇÀï£¡\n");
+		  return notify_fail("æ­¤é—´ä¸»äººå¹¶æ²¡æœ‰é‚€è¯·ä½ å»é‚£é‡Œï¼\n");
 	 return ::valid_leave(player, dir);
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jinchuang.c ½ğ´´Ò©
+// jinchuang.c é‡‘åˆ›è¯
 
 //inherit ITEM;
 inherit COMBINED_ITEM;
@@ -9,13 +9,13 @@ void setup()
 int cure_ob(string);
 void create()
 {
-	set_name("½ğ´´Ò©", ({"jinchuang yao", "jin", "jinchuang"}));
+	set_name("é‡‘åˆ›è¯", ({"jinchuang yao", "jin", "jinchuang"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ğ©");
-		set("base_unit", "°ü");
-		set("long", "ÕâÊÇÒ»°üÎäÁÖÈËÊ¿±Ø±¸µÄ½ğ´´Ò©¡£\n");
+		set("unit", "äº›");
+		set("base_unit", "åŒ…");
+		set("long", "è¿™æ˜¯ä¸€åŒ…æ­¦æ—äººå£«å¿…å¤‡çš„é‡‘åˆ›è¯ã€‚\n");
 		set("value", 5000);
 		set("medicine", 1);
 	}
@@ -26,10 +26,10 @@ int cure_ob(object me)
 {
 	if ((int)this_player()->query("eff_qi") == 
 	    (int)this_player()->query("max_qi"))
-		return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ½ğ´´Ò©¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸éœ€è¦ç”¨é‡‘åˆ›è¯ã€‚\n");
 	else {
 		this_player()->receive_curing("qi", 50);
-		message_vision("$NĞ¡ĞÄÒíÒíµØ°ÑÒ»°ü½ğ´´Ò©·óÔÚÉË¿ÚÉÏ£¬Ö»¾õÉËÊÆ´óÎªºÃ×ª£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n", this_player());
+		message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€åŒ…é‡‘åˆ›è¯æ•·åœ¨ä¼¤å£ä¸Šï¼Œåªè§‰ä¼¤åŠ¿å¤§ä¸ºå¥½è½¬ï¼Œæ°”è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n", this_player());
 		add_amount(-1);
 		return 1;
 	}

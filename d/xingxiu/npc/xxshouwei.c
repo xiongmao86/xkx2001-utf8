@@ -1,13 +1,13 @@
 //Cracked by Roath
-// tianlang.c ÌìÀÇ×Ó
+// tianlang.c å¤©ç‹¼å­
 inherit NPC;
 void create()
 {
-	set_name("ĞÇËŞÊØÎÀ", ({ "xingxiu shouwei", "shouwei" }));
+	set_name("æ˜Ÿå®¿å®ˆå«", ({ "xingxiu shouwei", "shouwei" }));
 	set("long", 
-		"ËûÊÇĞÇËŞÅÉµÄÆÕÍ¨µÜ×Ó¡£\n"
-		"ËûÉíĞÎÉÔ³¤£¬Á³É«ÑÏËà¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–æ˜¯æ˜Ÿå®¿æ´¾çš„æ™®é€šå¼Ÿå­ã€‚\n"
+		"ä»–èº«å½¢ç¨é•¿ï¼Œè„¸è‰²ä¸¥è‚ƒã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -44,10 +44,10 @@ void create()
 
 	prepare_skill("strike", "chousui-zhang");
 
-	create_family("ĞÇËŞÅÉ", 3, "µÜ×Ó");
+	create_family("æ˜Ÿå®¿æ´¾", 3, "å¼Ÿå­");
         set("inquiry",
            ([
-           "°İÌû" : "ÎÒÃÇÎäÁÖÖĞÈË³öÃÅ°İ»áÌìÏÂÍ¬µÀ£¬°İÌûÊÇ»ù±¾µÄÀñ½Ú£®",
+           "æ‹œå¸–" : "æˆ‘ä»¬æ­¦æ—ä¸­äººå‡ºé—¨æ‹œä¼šå¤©ä¸‹åŒé“ï¼Œæ‹œå¸–æ˜¯åŸºæœ¬çš„ç¤¼èŠ‚ï¼",
            ]));
 	setup();
   	carry_object("/clone/weapon/gangzhang")->wield();
@@ -61,30 +61,30 @@ int accept_object(object who,object ob)
 {
         if( !who || environment(who) != environment() ) return 0;
         if ( !objectp(ob) ) return 0;
-        if ( !present(ob, who) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£\n");
+        if ( !present(ob, who) ) return notify_fail("ä½ æ²¡æœ‰è¿™ä»¶ä¸œè¥¿ã€‚\n");
 
-        if (  (string)ob->query("name") == "°İÌû")
-           {    tell_object(who,"ĞÇËŞÊØÎÀ¿´ÁËÒ»ÏÂ°İÌû£¬ÓÖ¿´ÁËÄãÁ½ÑÛ¡£\n");
+        if (  (string)ob->query("name") == "æ‹œå¸–")
+           {    tell_object(who,"æ˜Ÿå®¿å®ˆå«çœ‹äº†ä¸€ä¸‹æ‹œå¸–ï¼Œåˆçœ‹äº†ä½ ä¸¤çœ¼ã€‚\n");
                 if(who->query("name")!=ob->query_temp("owner"))
-                        return notify_fail("ĞÇËŞÊØÎÀ¶ÔÄã´óºÈ£º£¢Õâ²»ÊÇÄã×Ô¼ºµÄ°İÌû£¬Äãµ½µ×ÓĞºÎÆóÍ¼£¡£¢\n");
+                        return notify_fail("æ˜Ÿå®¿å®ˆå«å¯¹ä½ å¤§å–ï¼šï¼‚è¿™ä¸æ˜¯ä½ è‡ªå·±çš„æ‹œå¸–ï¼Œä½ åˆ°åº•æœ‰ä½•ä¼å›¾ï¼ï¼‚\n");
                 else
                 {       switch(random(4)){
                         case(0):
-                                tell_object(who,"ĞÇËŞÊØÎÀ¶ÔÄãËµµÀ£º£¢±¾ÅÉ½ñÈÕ²»»¶Ó­°İ·Ã£¬Äã»¹ÊÇÇë»Ø°É¡££¢\n");
+                                tell_object(who,"æ˜Ÿå®¿å®ˆå«å¯¹ä½ è¯´é“ï¼šï¼‚æœ¬æ´¾ä»Šæ—¥ä¸æ¬¢è¿æ‹œè®¿ï¼Œä½ è¿˜æ˜¯è¯·å›å§ã€‚ï¼‚\n");
                                 break;
                         case(1):
-                                tell_object(who,"ĞÇËŞÊØÎÀ°®Àí²»ÀíµÄËµ£º£¢´óÒ¯ÎÒ½ñÌì²»¸ßĞË´«»°£¬Äã¹ıÁ½ÌìÔÙÀ´¡££¢\n");
+                                tell_object(who,"æ˜Ÿå®¿å®ˆå«çˆ±ç†ä¸ç†çš„è¯´ï¼šï¼‚å¤§çˆ·æˆ‘ä»Šå¤©ä¸é«˜å…´ä¼ è¯ï¼Œä½ è¿‡ä¸¤å¤©å†æ¥ã€‚ï¼‚\n");
                                 break;
                         case(2):
-                                tell_object(who,"ĞÇËŞÊØÎÀ¶ÔÄãËµµÀ£º£¢¸óÏÂ¼ÈÈ»ÊÇ" + ob->query_temp("fam") +"µÄÅóÓÑ£¬ÄÇ¾ÍÇë±ã°É¡££¢ \n");
+                                tell_object(who,"æ˜Ÿå®¿å®ˆå«å¯¹ä½ è¯´é“ï¼šï¼‚é˜ä¸‹æ—¢ç„¶æ˜¯" + ob->query_temp("fam") +"çš„æœ‹å‹ï¼Œé‚£å°±è¯·ä¾¿å§ã€‚ï¼‚ \n");
                                 who->set_temp("xx_pass");
                                 break;
                         case(3):
-                                tell_object(who,"ĞÇËŞÊØÎÀ×ğ¾´µÄ¶ÔÄãËµµÀ£º£¢" + ob->query_temp("fam") + "Ãû¶¯ÌìÏÂ£¬¹ó¿ÍÇë×Ô±ã°É¡££¢ \n");
+                                tell_object(who,"æ˜Ÿå®¿å®ˆå«å°Šæ•¬çš„å¯¹ä½ è¯´é“ï¼šï¼‚" + ob->query_temp("fam") + "ååŠ¨å¤©ä¸‹ï¼Œè´µå®¢è¯·è‡ªä¾¿å§ã€‚ï¼‚ \n");
                                 who->set_temp("xx_pass");
                                 break;
                         case(4):
-                                tell_object(who,"ĞÇËŞÊØÎÀ¶ñºİºİµÄ¶ÔÄãËµµÀ£º£¢ÄãÃÇ" + ob->query_temp("fam") +"ºÍÎÒÃÇ½áÏÂµÄÁº×Ó»¹Ã»Çå£¬½ñÌì¾ÍÄÃÄã¿ªµ¶£¡£¢ \n");
+                                tell_object(who,"æ˜Ÿå®¿å®ˆå«æ¶ç‹ ç‹ çš„å¯¹ä½ è¯´é“ï¼šï¼‚ä½ ä»¬" + ob->query_temp("fam") +"å’Œæˆ‘ä»¬ç»“ä¸‹çš„æ¢å­è¿˜æ²¡æ¸…ï¼Œä»Šå¤©å°±æ‹¿ä½ å¼€åˆ€ï¼ï¼‚ \n");
                                 kill_ob(who);
                                 ob->stat_busy(1);
                                 break;

@@ -7,9 +7,9 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-	set("short", "»ÆÍÁÂ·");
+	set("short", "é»„åœŸè·¯");
 	set("long", @LONG
-Ò»Ìõ¿Ó¿ÓÍÝÍÝµÄÍÁÂ·£¬ÍäÍäÇúÇúµÄÍ¨ÏòÉ½Àï¡£Á½ÅÔÊÇ¸ß¼°°ëÉíµÄ²ÝÔ­¡£
+ä¸€æ¡å‘å‘æ´¼æ´¼çš„åœŸè·¯ï¼Œå¼¯å¼¯æ›²æ›²çš„é€šå‘å±±é‡Œã€‚ä¸¤æ—æ˜¯é«˜åŠåŠèº«çš„è‰åŽŸã€‚
 LONG
 	);
         set("outdoors", "wudang");
@@ -40,7 +40,7 @@ void init()
         if ( interactive(ob=this_player()) && ob->query_temp("biao/ma")
         && present("hong biao", ob) && random(5)==1
 	|| me->query_temp("rob_victim") && random(3)==1) {
-                message_vision(HIR"Ö»ÌýµÃÒ»Õó²¥²ÝÉù£¬Ò»¸ö²Ý¿Ü×Ô²Ý¶ÑÀï×êÁË³öÀ´À¹×¡$N¡£\n"NOR, ob);
+                message_vision(HIR"åªå¬å¾—ä¸€é˜µæ’­è‰å£°ï¼Œä¸€ä¸ªè‰å¯‡è‡ªè‰å †é‡Œé’»äº†å‡ºæ¥æ‹¦ä½$Nã€‚\n"NOR, ob);
 		robber = new(__DIR__"npc/caokou");
                 robber->move(environment(ob));
         }
@@ -50,7 +50,7 @@ int valid_leave(object me, string dir)
 {
         if ( me->query_temp("biao/li") && present("cao kou", environment(me)) 
 	|| me->query_temp("rob_victim") && present("cao kou", environment(me)))
-		return notify_fail("²Ý¿ÜÏòÄãÒ»ÕóÒõÐ¦£ºË¬¿ìµÄ½«±¦±´½»³öÀ´£¬²»È»½ÐÄãºó»ÚÄª¼°£¡\n");
+		return notify_fail("è‰å¯‡å‘ä½ ä¸€é˜µé˜´ç¬‘ï¼šçˆ½å¿«çš„å°†å®è´äº¤å‡ºæ¥ï¼Œä¸ç„¶å«ä½ åŽæ‚”èŽ«åŠï¼\n");
 	else { me->delete_temp("rob_victim"); }
 
 	return ::valid_leave(me, dir);

@@ -1,15 +1,15 @@
 //Cracked by Roath
-// xiake-zhua.c ÏÀ¿Í×¦
+// xiake-zhua.c ä¾ å®¢çˆª
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÒ»ÕĞ¡¸½«ÖËà¢Öìº¥¡¹£¬Ë«ÊÖÒ»»Ó£¬ÕóÕó×¦Ó°Ïò$nµÄ$lÕÖÈ¥",
+([      "action" : "$Nä¸€æ‹›ã€Œå°†ç‚™å•–æœ±äº¥ã€ï¼ŒåŒæ‰‹ä¸€æŒ¥ï¼Œé˜µé˜µçˆªå½±å‘$nçš„$lç½©å»",
         "dodge": 10,
         "force": 40,
         "damage": 0,
         "lvl" : 0,  
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
 
 });
@@ -18,7 +18,7 @@ int valid_enable(string usage) { return usage=="claw" || usage=="parry"; }
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-      	return notify_fail("Á·ÏÀ¿Í×¦±ØĞë¿ÕÊÖ¡£\n");
+      	return notify_fail("ç»ƒä¾ å®¢çˆªå¿…é¡»ç©ºæ‰‹ã€‚\n");
 	return 1;
 }
 mapping query_action(object me, object weapon)
@@ -29,11 +29,11 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query_skill("xiake-zhua", 1) >= 100)
-		return notify_fail("ÄãµÄÏÀ¿Í×¦ÒÑ¾­ÎŞ·¨ÔÙÓÃÁ·À´Ìá¸ßÁË¡£\n");
+		return notify_fail("ä½ çš„ä¾ å®¢çˆªå·²ç»æ— æ³•å†ç”¨ç»ƒæ¥æé«˜äº†ã€‚\n");
       if ((int)me->query("jingli") < 30)
-		return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªä½äº†ã€‚\n");
 
 	me->receive_damage("jingli", 30);
 	me->add("neili", -5);

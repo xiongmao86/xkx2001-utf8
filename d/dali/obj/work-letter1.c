@@ -1,5 +1,5 @@
 //Cracked by Roath
-// work-letter1.c ´óÀí½ú¼¶ÓÃ¹«ÎÄ
+// work-letter1.c å¤§ç†æ™‹çº§ç”¨å…¬æ–‡
 // mantian
 #include <ansi.h>
 
@@ -8,15 +8,15 @@ string long_desc();
 
 void create()
 {
-	set_name(RED "¹¦¼¨±í" NOR, ({"gongji biao", "biao", "book"}));
+	set_name(RED "åŠŸç»©è¡¨" NOR, ({"gongji biao", "biao", "book"}));
 	set_weight(100);
 	if( clonep() ) set_default_object(__FILE__);
 	else
 	{
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long", (: long_desc :));
-//		set("long","ÕâÊÇÒ»±¾¶ÎÚêÓÃÀ´¼ÇÂ¼´óÀí³¼×Ó¹¦¼¨µÄ²á×Ó£¬ÓÃÒÔ³Ê±¨Ê¥ÉÏ¡£\n");
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+//		set("long","è¿™æ˜¯ä¸€æœ¬æ®µé™‰ç”¨æ¥è®°å½•å¤§ç†è‡£å­åŠŸç»©çš„å†Œå­ï¼Œç”¨ä»¥å‘ˆæŠ¥åœ£ä¸Šã€‚\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 		set("material", "paper");
 	}
 }
@@ -26,18 +26,18 @@ string long_desc()
 	string descrp;
 	object me = this_player();
 
-	descrp = RED"ÕâÊÇÒ»±¾¶ÎÚêÓÃÀ´¼ÇÂ¼´óÀí³¼×Ó¹¦¼¨µÄ²á×Ó£¬ÓÃÒÔ³Ê±¨Ê¥ÉÏ¡£\n\n"NOR;
+	descrp = RED"è¿™æ˜¯ä¸€æœ¬æ®µé™‰ç”¨æ¥è®°å½•å¤§ç†è‡£å­åŠŸç»©çš„å†Œå­ï¼Œç”¨ä»¥å‘ˆæŠ¥åœ£ä¸Šã€‚\n\n"NOR;
 	if (me->query_temp("dali/uprank"))
 	{
-		descrp += "´óÀí¹úÉÏ¸®¸±½«"+me->query("name");
-		descrp += "£¬¹¦ÔÚÉçæ÷£¬¹¤×÷ÇÚ·Ü£¬²Å¿°´óÓÃ¡£\n\n";
-		descrp += "Æä¹¦¼¨ÈçÏÂ£º\n";
-		descrp += RED"¹¦ÀÍµã£º"NOR;
-		descrp += chinese_number(me->query_temp("dali/trust"))+"µã¡£\n";
-		descrp += HIC"¹¤×÷Á¿£º"NOR;
-		descrp += chinese_number(me->query_temp("dali/arrestmade"))+"µã¡£\n";
-		descrp += MAG"ÇÚÀÍ¶È£º"NOR;
-		descrp += chinese_number(me->query_temp("dali/jobdone"))+"µã¡£\n\n¡¡¡¡¡¡¡¡¡¡¡¡¡¡";
+		descrp += "å¤§ç†å›½ä¸Šåºœå‰¯å°†"+me->query("name");
+		descrp += "ï¼ŒåŠŸåœ¨ç¤¾éª¥ï¼Œå·¥ä½œå‹¤å¥‹ï¼Œæ‰å ªå¤§ç”¨ã€‚\n\n";
+		descrp += "å…¶åŠŸç»©å¦‚ä¸‹ï¼š\n";
+		descrp += RED"åŠŸåŠ³ç‚¹ï¼š"NOR;
+		descrp += chinese_number(me->query_temp("dali/trust"))+"ç‚¹ã€‚\n";
+		descrp += HIC"å·¥ä½œé‡ï¼š"NOR;
+		descrp += chinese_number(me->query_temp("dali/arrestmade"))+"ç‚¹ã€‚\n";
+		descrp += MAG"å‹¤åŠ³åº¦ï¼š"NOR;
+		descrp += chinese_number(me->query_temp("dali/jobdone"))+"ç‚¹ã€‚\n\nã€€ã€€ã€€ã€€ã€€ã€€ã€€";
 		descrp += me->query_temp("allowtime");
 	}
 	return descrp;

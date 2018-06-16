@@ -1,17 +1,17 @@
 //Cracked by Roath
-// /d/changbai/npc/club_book.c  ¹÷·¨Í¼½â
+// /d/changbai/npc/club_book.c  æ£æ³•å›¾è§£
 // by aln  2 / 98
 
 inherit ITEM;
 
 void create()
 {
-        set_name("¹÷·¨Í¼½â", ({ "club book", "book" }));
+        set_name("æ£æ³•å›¾è§£", ({ "club book", "book" }));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "²á");
-                set("long", "ÕâÊÇÒ»±¾Ïß×°Êé£¬ÀïÃæÃÜÃÜÂéÂéµÄ»­ÁË²»ÉÙÎè¹÷µÄ×ËÊÆ¡£\n");
+                set("unit", "å†Œ");
+                set("long", "è¿™æ˜¯ä¸€æœ¬çº¿è£…ä¹¦ï¼Œé‡Œé¢å¯†å¯†éº»éº»çš„ç”»äº†ä¸å°‘èˆæ£çš„å§¿åŠ¿ã€‚\n");
                 set("value", 200);
                 set("material", "paper");
                 set("skill", ([

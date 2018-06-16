@@ -8,10 +8,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("¸ğ¹âÅå", ({ "Ge guangpei","ge" }) );
-	set("gender", "Å®ĞÔ");
+	set_name("è‘›å…‰ä½©", ({ "Ge guangpei","ge" }) );
+	set("gender", "å¥³æ€§");
 	set("age", 25);
-	set("long", "ÕâÎ»ÊÇÎŞÁ¿½£Î÷×ÚÕÆÃÅË«ÇåµÄµÜ×Ó£¬Ãû½Ğ¸ğ¹âÅå¡£\n");
+	set("long", "è¿™ä½æ˜¯æ— é‡å‰‘è¥¿å®—æŒé—¨åŒæ¸…çš„å¼Ÿå­ï¼Œåå«è‘›å…‰ä½©ã€‚\n");
 	set("combat_exp", 30000);
 	set("shen_type", -1);
 

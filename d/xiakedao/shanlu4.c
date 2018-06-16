@@ -6,10 +6,10 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-����ͨ��ɽ����С·��·���Ӳݴ�����������һЩ��֪����Ұ����
-���ܾ����ĵ�û����������������������һ��ɽҰ�ķҷ�ֱ�����顣
+这是通往山顶的小路，路旁杂草丛生，夹杂着一些不知名的野花。
+四周静悄悄地没有人声。你深深吸口气，一阵山野的芬芳直入心扉。
 LONG );
 
       set("exits", ([

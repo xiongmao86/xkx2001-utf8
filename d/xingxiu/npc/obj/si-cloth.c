@@ -1,5 +1,5 @@
 //Cracked by Roath
-// si-cloth.c Ë¿¾î
+// si-cloth.c ä¸ç»¢
 //
 
 #include <armor.h>
@@ -8,14 +8,14 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("Ë¿¾î", ({ "si juan","si" }) );
+        set_name("ä¸ç»¢", ({ "si juan","si" }) );
         set_weight(2000);
 	
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-	        set("unit", "¼ş");
-		set("long", "Ò»¿é½à°×µÄË¿¾î£¬¿ÉÒÔÓÃÀ´°ü(bao)¶«Î÷¡£\n");
+	        set("unit", "ä»¶");
+		set("long", "ä¸€å—æ´ç™½çš„ä¸ç»¢ï¼Œå¯ä»¥ç”¨æ¥åŒ…(bao)ä¸œè¥¿ã€‚\n");
                 set("material", "cloth");
                 set("value", 500);
                 set("armor_prop/armor", 5);
@@ -36,25 +36,25 @@ int do_bao(string arg)
 	object ob,temp,obj=this_object();
 
         if(!arg || sscanf(arg,"%s",what)!=1)
-                return notify_fail("ÄãÒªÍùÊ²Ã´¶«Î÷ÉÏ°üË¿¾î£¿\n");
+                return notify_fail("ä½ è¦å¾€ä»€ä¹ˆä¸œè¥¿ä¸ŠåŒ…ä¸ç»¢ï¼Ÿ\n");
 
         if (!arg || !(ob = present(arg, this_player())))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + what + "£¡\n");
+                return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰" + what + "ï¼\n");
 
         if (! ob->query("armor_prop/armor"))
-                return notify_fail("ÕâÃ´ĞÁ¿àµÃÀ´µÄË¿¾î¿É²»ÄÜÏ¹°ü¡£\n");
+                return notify_fail("è¿™ä¹ˆè¾›è‹¦å¾—æ¥çš„ä¸ç»¢å¯ä¸èƒ½çåŒ…ã€‚\n");
 
 	if (ob->query("id")=="si juan")
-		return notify_fail("ËüÒÑ¾­°üÉÏË¿¾îÁË£¡\n");
+		return notify_fail("å®ƒå·²ç»åŒ…ä¸Šä¸ç»¢äº†ï¼\n");
 
 	if ( ob->is_unique() ) // added by sdong so that unique stuff cannot be duplicated
-		return notify_fail("ËüÌ«´óÁË£¬°ü²»×¡£¡\n");
+		return notify_fail("å®ƒå¤ªå¤§äº†ï¼ŒåŒ…ä¸ä½ï¼\n");
 
 
-        message_vision(GRN"$NĞ¡ĞÄÒíÒíµØ°ÑË¿¾î°üÔÚ" +ob->query("name")+"ÉÏ¡£\n"NOR, this_player());
+        message_vision(GRN"$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸ç»¢åŒ…åœ¨" +ob->query("name")+"ä¸Šã€‚\n"NOR, this_player());
 	obj->weight(ob->weight());
-	obj->set("name","Ë¿¾î°ü¹üµÄ"+ob->query("name"));
-	obj->set("long",ob->query("long")+"ÏÖÔÚÍâÃæ°ü¹ü×ÅÒ»²ãË¿¾î¡£\n");
+	obj->set("name","ä¸ç»¢åŒ…è£¹çš„"+ob->query("name"));
+	obj->set("long",ob->query("long")+"ç°åœ¨å¤–é¢åŒ…è£¹ç€ä¸€å±‚ä¸ç»¢ã€‚\n");
 	obj->set("armor_prop/armor",ob->query("armor_prop/armor"));
 //	obj->set("no_sell");
 	obj->set("value",0);

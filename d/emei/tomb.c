@@ -1,5 +1,5 @@
 //Cracked by Roath
-// d/emei/tomb.c ¹ùÏåÖ®Ä¹
+// d/emei/tomb.c éƒ­è¥„ä¹‹å¢“
 // xbc 1997/02/03
 
 #include <ansi.h>
@@ -13,12 +13,12 @@ int dig_times;
 
 void create()
 {
-	set("short", "¹ùÏåÖ®Ä¹");
+	set("short", "éƒ­è¥„ä¹‹å¢“");
 	set("long", @LONG
-ÕâÀïÊÇÒ»×ù¹æÄ£²»´óµÄÄ¹£¬Ä¹±®ÉÏ¿Ì×Å¼¸¸ö´ó×Ö£º¶ëáÒÅÉ×æÊ¦¹ùÏåÖ®Ä¹¡£
-Ô­À´ÕâÊÇ¶ëáÒÅÉ´´ÅÉ×æÊ¦¹ùÏåµÄÄ¹¡£¹ùÅ®ÏÀÄËÊÇ´óÏÀ¹ù¾¸µÄĞ¡Å®¶ù¡£ËıÍíÄê
-ÔÚ¶ëáÒÉ½¶¨¾Ó£¬´´Á¢ÁË¶ëáÒÅÉ£¬ËÀºó¶ëáÒµÜ×Ó½«Ëı°²ÔáÔÚ´Ë´¦¡£ÕâÀïËÄ¼¾Èç
-´º£¬³£ÄêÏÊ»¨Ê¢¿ª£¬Ê®·ÖÓÄ¾²¡£
+è¿™é‡Œæ˜¯ä¸€åº§è§„æ¨¡ä¸å¤§çš„å¢“ï¼Œå¢“ç¢‘ä¸Šåˆ»ç€å‡ ä¸ªå¤§å­—ï¼šå³¨åµ‹æ´¾ç¥–å¸ˆéƒ­è¥„ä¹‹å¢“ã€‚
+åŸæ¥è¿™æ˜¯å³¨åµ‹æ´¾åˆ›æ´¾ç¥–å¸ˆéƒ­è¥„çš„å¢“ã€‚éƒ­å¥³ä¾ ä¹ƒæ˜¯å¤§ä¾ éƒ­é–çš„å°å¥³å„¿ã€‚å¥¹æ™šå¹´
+åœ¨å³¨åµ‹å±±å®šå±…ï¼Œåˆ›ç«‹äº†å³¨åµ‹æ´¾ï¼Œæ­»åå³¨åµ‹å¼Ÿå­å°†å¥¹å®‰è‘¬åœ¨æ­¤å¤„ã€‚è¿™é‡Œå››å­£å¦‚
+æ˜¥ï¼Œå¸¸å¹´é²œèŠ±ç››å¼€ï¼Œååˆ†å¹½é™ã€‚
 LONG
 	);
 	
@@ -63,21 +63,21 @@ string look_tomb()
 	if ( !query("tomb_door")) {
 		switch (visited) {
 		case 0:
-			return(GRN"Ä¹ÅÔµÄ²İ¼ôµÃÕûÕûÆëÆë£¬Ä¹±®Ò²ÏË³¾²»È¾¡£\n"NOR);
+			return(GRN"å¢“æ—çš„è‰å‰ªå¾—æ•´æ•´é½é½ï¼Œå¢“ç¢‘ä¹Ÿçº¤å°˜ä¸æŸ“ã€‚\n"NOR);
 			break;
 		case 1:
-			return(YEL"Ä¹Ç°²åÁË¼¸ÖùÏã£¬ÏãÑÌçÔÈÆ¡£\n"NOR);
+			return(YEL"å¢“å‰æ’äº†å‡ æŸ±é¦™ï¼Œé¦™çƒŸç¼­ç»•ã€‚\n"NOR);
 			break;
 		case 2:
-			return(MAG"Ä¹Ç°·Å×Å¼¸¶äĞ¡Ò°»¨¡£\n"NOR);
+			return(MAG"å¢“å‰æ”¾ç€å‡ æœµå°é‡èŠ±ã€‚\n"NOR);
 			break;
 		default:
-			return(WHT"Ä¹ÅÔÔÓ²İ´ÔÉú£¬ºÃ¾ÃÃ»ÓĞÈËÀ´´òÉ¨¹ıÁË¡£\n"NOR);
+			return(WHT"å¢“æ—æ‚è‰ä¸›ç”Ÿï¼Œå¥½ä¹…æ²¡æœ‰äººæ¥æ‰“æ‰«è¿‡äº†ã€‚\n"NOR);
 			break;
 		}
 	}
 	else 
-		return("Ä¹ºó¸øÈË¾ò¿ªÒ»¸ö¶´£¬Ò»µÀ´óÊ¯ÃÅÂ¶³öÀ´¡£\n");
+		return("å¢“åç»™äººæ˜å¼€ä¸€ä¸ªæ´ï¼Œä¸€é“å¤§çŸ³é—¨éœ²å‡ºæ¥ã€‚\n");
 } 
 
 void visit(int phase)
@@ -93,18 +93,18 @@ int do_jing(string arg)
 	object obj, me;
 	
 	if ( !objectp(me = this_player()) ) return 0;	
-	if (!arg ) return notify_fail("ÄãÒª¾´Ê²Ã´£¿\n");  
+	if (!arg ) return notify_fail("ä½ è¦æ•¬ä»€ä¹ˆï¼Ÿ\n");  
 	if( !objectp(obj = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	if ( !(obj->id( "incense")) && !(obj->id( "flower")) ) 
-		return notify_fail("Äã¾´Õâ¸ö×öÊ²Ã´£¿\n");  
+		return notify_fail("ä½ æ•¬è¿™ä¸ªåšä»€ä¹ˆï¼Ÿ\n");  
 	
 	visited = 0;
 	remove_call_out("visit");
 	call_out("visit", 120, 1);
 	
-	message_vision("$NÄÃ³öÒ»"+obj->query("unit")+obj->query("name")
-		+"£¬¹§¹§¾´¾´µØ·ÅÔÚÄ¹Ç°¡£\n", me);
+	message_vision("$Næ‹¿å‡ºä¸€"+obj->query("unit")+obj->query("name")
+		+"ï¼Œæ­æ­æ•¬æ•¬åœ°æ”¾åœ¨å¢“å‰ã€‚\n", me);
 		
 	me->add_temp("visit_tomb", 1);	                                         		                              		
 	destruct(obj);
@@ -119,7 +119,7 @@ int do_clean(string arg)
         if ( !arg || arg == "" ) return 0;
 
         if ( arg == "tomb" ) {
-                message_vision("$N½«Ä¹±ßµÄÔÓ²İÇåÀí¸É¾»¡£\n", me);
+                message_vision("$Nå°†å¢“è¾¹çš„æ‚è‰æ¸…ç†å¹²å‡€ã€‚\n", me);
 		me->add_temp("visit_tomb", 1);
                 return 1;
 	}
@@ -136,14 +136,14 @@ int do_dig(string arg)
 
 	if ( arg == "tomb" || arg == "mu") {
 		if ( query("tomb_door")) {
-			write("Ä¹ÒÑ¾­¾ò¿ªÁË£¬Ò»µÀ´óÊ¯ÃÅºáÔÚµØÉÏ¡£\n");
+			write("å¢“å·²ç»æ˜å¼€äº†ï¼Œä¸€é“å¤§çŸ³é—¨æ¨ªåœ¨åœ°ä¸Šã€‚\n");
 			return 1;
 		}
 		if( me->is_fighting() ){
-			return notify_fail("ÄãÕıÃ¦×ÅÄÅ£¡\n");
+			return notify_fail("ä½ æ­£å¿™ç€å‘ï¼\n");
 		}
 		if( !objectp(weapon = me->query_temp("weapon")) ) {
-			message_vision(HIR"$NÏò·ØÄ¹ÂÒÍÚÒ»Í¨£¬ÅªµÃË«ÊÖÏÊÑªÁÜÁÜ¡£\n"NOR, me);
+			message_vision(HIR"$Nå‘åŸå¢“ä¹±æŒ–ä¸€é€šï¼Œå¼„å¾—åŒæ‰‹é²œè¡€æ·‹æ·‹ã€‚\n"NOR, me);
 			me->add("jingli", -random(30));
 			me->add("qi", -random(30));
                 	return 1;
@@ -152,20 +152,20 @@ int do_dig(string arg)
                 	&& (string)weapon->query("skill_type") != "blade" 
                 	&& (string)weapon->query("skill_type") != "axe" 
 			&& (string)weapon->query("id") != "tie qiao") {
-        		message_vision(WHT"$N²ÙÆğÊÖÖĞ" + weapon->name() +WHT"³¯·ØÄ¹ÂÒÍÚÒ»Í¨¡£\n"NOR, me);
-                	message_vision(WHT"½á¹û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖĞµÄ" + weapon->name()
-                        	+ "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n"NOR , me );
+        		message_vision(WHT"$Næ“èµ·æ‰‹ä¸­" + weapon->name() +WHT"æœåŸå¢“ä¹±æŒ–ä¸€é€šã€‚\n"NOR, me);
+                	message_vision(WHT"ç»“æœã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name()
+                        	+ "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n"NOR , me );
                 	weapon->unequip();
                 	weapon->move(environment(me));
-                	weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                	weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
                 	weapon->set("value", 0);
                 	return 1;
         	}
 
-        	message_vision(WHT"$N²ÙÆğÊÖÖĞ" + weapon->name() + WHT"£¬¿Ô³Ô¿Ô³ÔµØÍÚÆğÄ¹À´¡£\n"NOR, me);
+        	message_vision(WHT"$Næ“èµ·æ‰‹ä¸­" + weapon->name() + WHT"ï¼Œå­åƒå­åƒåœ°æŒ–èµ·å¢“æ¥ã€‚\n"NOR, me);
 		me->add("jingli", -(8+random(36-(int)me->query("str"))));
         	me->receive_damage("jingli", 8+random(36-(int)me->query("str")),
-                 	"¾òÄ¹ÀÛËÀÁË");
+                 	"æ˜å¢“ç´¯æ­»äº†");
 
 		dig_times++;
 
@@ -175,8 +175,8 @@ int do_dig(string arg)
 			guard = new(__DIR__"npc/guard2.c");
 			guard->move(__FILE__);
 			me->set_temp("digger/myname", 1);
-			message_vision(RED"ºöÈ»¼äÒ»¸öÇàÒÂÅ®×ÓÓÉ²àµØÀï³å³öÀ´£¬À÷ÉùµÀ£º´óµ¨µÁÔô£¬³ÔÎÒÒ»½££¡\n"NOR,me); 
-			message_vision(YEL"$NÒ»ÏÂ×ÓÂúÁ³É±Æø£¬¾ö¶¨É±ÈËÃğ¿Ú£¡\n\n"NOR,me);
+			message_vision(RED"å¿½ç„¶é—´ä¸€ä¸ªé’è¡£å¥³å­ç”±ä¾§åœ°é‡Œå†²å‡ºæ¥ï¼Œå‰å£°é“ï¼šå¤§èƒ†ç›—è´¼ï¼Œåƒæˆ‘ä¸€å‰‘ï¼\n"NOR,me); 
+			message_vision(YEL"$Nä¸€ä¸‹å­æ»¡è„¸æ€æ°”ï¼Œå†³å®šæ€äººç­å£ï¼\n\n"NOR,me);
 			if( !guard->is_killing(me->query("id")) )
 			guard->kill_ob(me);
 			if( !me->is_killing(me->query("id")))
@@ -186,8 +186,8 @@ int do_dig(string arg)
 
 		if ( objectp(guard=present("guard", environment(me)) )) {
 			guard->set_temp("digger/myname", 1);
-			message_vision(RED"ÊØÄ¹µÜ×ÓÀ÷ÉùµÀ£º´óµ¨µÁÔô£¬³ÔÎÒÒ»½££¡\n"NOR,me); 
-			message_vision(YEL"$NÒ»ÏÂ×ÓÂúÁ³É±Æø£¬¾ö¶¨É±ÈËÃğ¿Ú£¡\n\n"NOR,me);
+			message_vision(RED"å®ˆå¢“å¼Ÿå­å‰å£°é“ï¼šå¤§èƒ†ç›—è´¼ï¼Œåƒæˆ‘ä¸€å‰‘ï¼\n"NOR,me); 
+			message_vision(YEL"$Nä¸€ä¸‹å­æ»¡è„¸æ€æ°”ï¼Œå†³å®šæ€äººç­å£ï¼\n\n"NOR,me);
 			if( !guard->is_killing(me->query("id")) )
 			guard->kill_ob(me);
 			if( !me->is_killing(me->query("id")))
@@ -195,11 +195,11 @@ int do_dig(string arg)
 			return 1;
 		}
 		if ( dig_times > (15+random(5)) ) {
-			message_vision("Ä¹±®ºóÃæ±»¾ò¿ª¸ö´ó¶´£¬ÑÛÇ°³öÏÖÁËÒ»µÀÊ¯ÃÅ¡£\n",me); 
+			message_vision("å¢“ç¢‘åé¢è¢«æ˜å¼€ä¸ªå¤§æ´ï¼Œçœ¼å‰å‡ºç°äº†ä¸€é“çŸ³é—¨ã€‚\n",me); 
 			set("tomb_door", 1);
 			set("exits/down", __DIR__"tomb2");
 			room->set("exits/up", __FILE__);
-			tell_room(room, "ÃÅÍâ´«À´É³É³Éù£¬ËÆºõÓĞÈË½«ÄàÍÁ¾ò¿ªÀ´ÁË¡£\n");
+			tell_room(room, "é—¨å¤–ä¼ æ¥æ²™æ²™å£°ï¼Œä¼¼ä¹æœ‰äººå°†æ³¥åœŸæ˜å¼€æ¥äº†ã€‚\n");
 			delete("dig_times");
 			remove_call_out("close_tomb");
 			call_out("close_tomb", 30, me);
@@ -217,10 +217,10 @@ void close_tomb()
 
 	if( !query("tomb_door") ) return;
 
-	message("vision", "ºöÈ»£¬ÃÅÅÔµÄÄàÍÁËúÁËÏÂÀ´£¬°Ñ¾ò¿ªµÄÊ¯ÃÅ¸ø¸Ç×¡ÁË¡£\n", this_object() );
+	message("vision", "å¿½ç„¶ï¼Œé—¨æ—çš„æ³¥åœŸå¡Œäº†ä¸‹æ¥ï¼ŒæŠŠæ˜å¼€çš„çŸ³é—¨ç»™ç›–ä½äº†ã€‚\n", this_object() );
 	delete("exits/down");
 	room->delete("exits/up");
-	tell_room(room, "ÃÅÍâÓÖ´«À´É³É³Éù£¬ËÆºõÄàÍÁËúÏÂÀ´£¬°ÑÊ¯ÃÅ¸ø¸Ç×¡ÁË¡£\n");
+	tell_room(room, "é—¨å¤–åˆä¼ æ¥æ²™æ²™å£°ï¼Œä¼¼ä¹æ³¥åœŸå¡Œä¸‹æ¥ï¼ŒæŠŠçŸ³é—¨ç»™ç›–ä½äº†ã€‚\n");
 	dig_times = 0;
 	set("tomb_door", 0);
 }

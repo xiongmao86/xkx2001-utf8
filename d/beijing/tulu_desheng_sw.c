@@ -4,9 +4,9 @@
 inherit ROOM;
 
 string TULU_DESC_LONG=@LONG
-ÕâÊÇ¾©³ÇÎ÷±±µÄÍÁÂ·£¬Á¬½Ó×ÅµÃÊ¤ÃÅºÍÎ÷Ö±ÃÅ¡£ÍÁÂ·Á½
-²àÂÌÊ÷³ÉÒñ£¬ÏÄÌìÖªÁËµÄ½ÐÉùÒ»ÕóÕóµÄ´«À´£¬ÈÃÈËÐÄÍ·Ñ÷Ñ÷
-µÄ¡£¶«ÄÏÃæÊÇ¾©³ÇµÄ³ÇÇ½£¬ºñÊµ¶ø¸ß´ó¡£
+è¿™æ˜¯äº¬åŸŽè¥¿åŒ—çš„åœŸè·¯ï¼Œè¿žæŽ¥ç€å¾—èƒœé—¨å’Œè¥¿ç›´é—¨ã€‚åœŸè·¯ä¸¤
+ä¾§ç»¿æ ‘æˆè«ï¼Œå¤å¤©çŸ¥äº†çš„å«å£°ä¸€é˜µé˜µçš„ä¼ æ¥ï¼Œè®©äººå¿ƒå¤´ç—’ç—’
+çš„ã€‚ä¸œå—é¢æ˜¯äº¬åŸŽçš„åŸŽå¢™ï¼ŒåŽšå®žè€Œé«˜å¤§ã€‚
 LONG;
 
 mapping TULU_EXITS=([

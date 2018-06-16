@@ -1,17 +1,17 @@
 //Cracked by Roath
-// peng-lianhu ÅíÁ¬»¢
+// peng-lianhu å½­è¿è™
 
 inherit NPC;
 int auto_throw();
 void create()
 {
-	set_name("ÅíÁ¬»¢", ({ "peng lianhu", "peng" }));
-	set("nickname", "Ç§ÊÖÈËÍÀ");
+	set_name("å½­è¿è™", ({ "peng lianhu", "peng" }));
+	set("nickname", "åƒæ‰‹äººå± ");
 	set("long", 
-"ÅíÁ¬»¢Îå¶ÌÉí²Ä£¬ÂúÑÛºìË¿£¬Ä¿¹âÈçµç£¬ÉÏ´½¶ÌĞëÇÌÆğ¡£ËûÉúĞÔ
-²Ğ±©£¬ºÍÉ³Í¨ÌìÓĞÉîºñµÄ½»Çé¡£\n");
+"å½­è¿è™äº”çŸ­èº«æï¼Œæ»¡çœ¼çº¢ä¸ï¼Œç›®å…‰å¦‚ç”µï¼Œä¸Šå”‡çŸ­é¡»ç¿˜èµ·ã€‚ä»–ç”Ÿæ€§
+æ®‹æš´ï¼Œå’Œæ²™é€šå¤©æœ‰æ·±åšçš„äº¤æƒ…ã€‚\n");
 //	set("title", "");
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 49);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -58,8 +58,8 @@ void create()
 
 /*void unconcious()
 {
-        command("say ÖÚĞÖµÜ£¬µã×Ó×¦×ÓÌ«Ó²£¬·ç½ô³¶ºô£¡");
-        message_vision("\n$NÉìÊÖÔÚÇ½ÉÏÒ»°´£¬×İÉíÉÁÈëÏÖ³öµÄ°µÃÅÀï¡£\n", this_object());
+        command("say ä¼—å…„å¼Ÿï¼Œç‚¹å­çˆªå­å¤ªç¡¬ï¼Œé£ç´§æ‰¯å‘¼ï¼");
+        message_vision("\n$Nä¼¸æ‰‹åœ¨å¢™ä¸Šä¸€æŒ‰ï¼Œçºµèº«é—ªå…¥ç°å‡ºçš„æš—é—¨é‡Œã€‚\n", this_object());
         destruct(this_object());
 }
 */

@@ -24,11 +24,11 @@ void dropoff(object);
 
 void create()
 {
-        set("short", "¾ŞÊ¯");
+        set("short", "å·¨çŸ³");
         set("long", @LONG
-ÄãÕ¾ÔÚĞüÑÂÉÏµÄ¾ŞÊ¯ÉÏ£¬ËÄÖÜÉ½·çÕóÕó£¬ÄãÍ··¢ÁèÂÒ¡£¾ŞÊ¯Ò¡Ò¡»Î»Î£¬Äã
-ÄıÆøÊØÖĞ£¬Ë«×ãÎÈÎÈÕ¾¶¨¡£»·¹ËËÄÖÜ£¬Ò»Æ¬¼Å¾²£¬¾ŞÊ¯µ×ÏÂÊÇÍòÕÉÉîÔ¨£¬ËÆºõ
-ÔÚ´ËºÜÊÊÒËÁ·¹¦¡£
+ä½ ç«™åœ¨æ‚¬å´–ä¸Šçš„å·¨çŸ³ä¸Šï¼Œå››å‘¨å±±é£é˜µé˜µï¼Œä½ å¤´å‘å‡Œä¹±ã€‚å·¨çŸ³æ‘‡æ‘‡æ™ƒæ™ƒï¼Œä½ 
+å‡æ°”å®ˆä¸­ï¼ŒåŒè¶³ç¨³ç¨³ç«™å®šã€‚ç¯é¡¾å››å‘¨ï¼Œä¸€ç‰‡å¯‚é™ï¼Œå·¨çŸ³åº•ä¸‹æ˜¯ä¸‡ä¸ˆæ·±æ¸Šï¼Œä¼¼ä¹
+åœ¨æ­¤å¾ˆé€‚å®œç»ƒåŠŸã€‚
 LONG
         );
 
@@ -65,12 +65,12 @@ int do_practice(string arg)
         int w, *cost, times;
 
         if( me->is_busy() ) {
-                tell_object(me, "ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                tell_object(me, "ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
                 return 1;
         }
 
         if( me->is_fighting() ) {
-                tell_object(me, "ÄãÒÑ¾­ÔÚÕ½¶·ÖĞÁË£¬Ñ§Ò»µãÊµÕ½¾­Ñé°É¡£\n");
+                tell_object(me, "ä½ å·²ç»åœ¨æˆ˜æ–—ä¸­äº†ï¼Œå­¦ä¸€ç‚¹å®æˆ˜ç»éªŒå§ã€‚\n");
                 return 1;
         }
 
@@ -80,27 +80,27 @@ int do_practice(string arg)
                 skillarg = arg;
 
         if( (w = member_array(skillarg, practice_types)) == -1 ) {
-                tell_object(me, "ÕâÏî¼¼ÄÜ²»ÄÜÔÚÕâ¶ùÁ·Ï°¡£\n");
+                tell_object(me, "è¿™é¡¹æŠ€èƒ½ä¸èƒ½åœ¨è¿™å„¿ç»ƒä¹ ã€‚\n");
                 return 1;
         }
 
         if( w < 6 ) {
                 if( !objectp(weapon = me->query_temp("weapon")) ) {
-                        tell_object(me, "ÄãÃ»ÓĞÄÃÎäÆ÷ÔõÃ´Á·Ï°£¿\n");
+                        tell_object(me, "ä½ æ²¡æœ‰æ‹¿æ­¦å™¨æ€ä¹ˆç»ƒä¹ ï¼Ÿ\n");
                         return 1;
                 } else if( weapon->query("skill_type") != skillarg ) {
-                        tell_object(me, "ÄãÊÖÖĞµÄÎäÆ÷²»ÊÊºÏÁ·ÄãÏëÁ·Ï°µÄ¼¼ÄÜ¡£\n");
+                        tell_object(me, "ä½ æ‰‹ä¸­çš„æ­¦å™¨ä¸é€‚åˆç»ƒä½ æƒ³ç»ƒä¹ çš„æŠ€èƒ½ã€‚\n");
                         return 1;
                 }
         }
 
         if( (int)me->query_skill(skillarg, 1) < 30 ) {
-                tell_object(me, "Äã»¹ÊÇÏÈÈ¥¸úÊ¦¸µ¶à¶àÑ§Ï°¡£\n");
+                tell_object(me, "ä½ è¿˜æ˜¯å…ˆå»è·Ÿå¸ˆå‚…å¤šå¤šå­¦ä¹ ã€‚\n");
                 return 1;
         }
 
         if( (int)me->query_skill(skillarg, 1) > 100 ) {
-                tell_object(me, "ÄãÒÑ¾­²»ÓÃÔÚÕâ¶ù»¯Ê±¼äÁ·Ï°ÕâÏî¼¼ÄÜÁË¡£\n");
+                tell_object(me, "ä½ å·²ç»ä¸ç”¨åœ¨è¿™å„¿åŒ–æ—¶é—´ç»ƒä¹ è¿™é¡¹æŠ€èƒ½äº†ã€‚\n");
                 return 1;
         }                
 
@@ -108,7 +108,7 @@ int do_practice(string arg)
                 times = 1;
                 multiple="";
         }
-        else    multiple="·´¸´";
+        else    multiple="åå¤";
 
         switch(skillarg) {
 	        case "blade" :
@@ -116,19 +116,19 @@ int do_practice(string arg)
                 case "staff" :
                 case "stick" :
                 case "sword" : 
-                case "whip"  : str = "»ÓÎè" + weapon->name();  break;
-                case "cuff"  : str = "»ÓÎèË«È­"; break;
-                case "strike": str = "»ÓÎèË«ÕÆ"; break;
-                case "parry" : str = "·ÜÁ¦ŞÕ²©"; break;
-                case "dodge" : str = "×İÉÁÌøÔ¾"; break;
+                case "whip"  : str = "æŒ¥èˆ" + weapon->name();  break;
+                case "cuff"  : str = "æŒ¥èˆåŒæ‹³"; break;
+                case "strike": str = "æŒ¥èˆåŒæŒ"; break;
+                case "parry" : str = "å¥‹åŠ›æ‹šåš"; break;
+                case "dodge" : str = "çºµé—ªè·³è·ƒ"; break;
         }                
-        message_vision("$NÔÚ¿ñ·çÖĞ" + str + multiple + "Á·Ï°×Å" + to_chinese(skillarg) + "¡£\n", me);
+        message_vision("$Nåœ¨ç‹‚é£ä¸­" + str + multiple + "ç»ƒä¹ ç€" + to_chinese(skillarg) + "ã€‚\n", me);
 
         for(times; times > 0; times--) {
                 cost = cost(me, skillarg);
                 if( (int)me->query("jing") < cost[0]
                 ||  (int)me->query("jingli") < cost[1] ) {
-                        tell_object(me, "ÒÀÄãµ±Ç°µÄ×´¿öÀ´¿´Äã²»ÄÜÈç´ËÁ·Ï°¡£\n");
+                        tell_object(me, "ä¾ä½ å½“å‰çš„çŠ¶å†µæ¥çœ‹ä½ ä¸èƒ½å¦‚æ­¤ç»ƒä¹ ã€‚\n");
                         return 1;
                 }
                 me->receive_damage("jing", cost[0]);
@@ -150,25 +150,25 @@ int do_jump(string arg)
         int mydodge = me->query_skill("dodge", 1);
 
         if( !arg || arg != "down" )
-                return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
-        tell_object(me, "·ÜÁ¦Ò»Ìø£¬Éí×ÓËæ¼´Ö±ÂäÏÂÈ¥¡£\n");
-        message("vision", me->name() + "·ÜÁ¦Ò»Ìø£¬±ãÖ±Âäº£Àï¡£\n", environment(me), ({me}));
+        tell_object(me, "å¥‹åŠ›ä¸€è·³ï¼Œèº«å­éšå³ç›´è½ä¸‹å»ã€‚\n");
+        message("vision", me->name() + "å¥‹åŠ›ä¸€è·³ï¼Œä¾¿ç›´è½æµ·é‡Œã€‚\n", environment(me), ({me}));
       
         if( random(mydodge - 30 ) < 10 ) {       
                 for(int i = 0; i < sizeof(inv); i++)
                         if( userp(inv[i]) )
-                                inv[i]->receive_wound("qi", 50 + inv[i]->query("max_qi"), "µô½øº£ÀïÑÍËÀÁË");
+                                inv[i]->receive_wound("qi", 50 + inv[i]->query("max_qi"), "æ‰è¿›æµ·é‡Œæ·¹æ­»äº†");
                         else    destruct(inv[i]);
                 me->unconcious();
                 me->move("/d/shenlong/beach");
 
-                message("vision", "Äã·¢ÏÖÒ»¸ö»ëÉíË®ÁÜÁÜµÄ¼Ò»ï±»º£Ë®³åÉÏ°¶À´£¬²»ÓÉµÃ×ß½üÒ»¿´£¬Ô­À´ÊÇ" + me->name() + "\241\243\n", environment(me), ({me}));
+                message("vision", "ä½ å‘ç°ä¸€ä¸ªæµ‘èº«æ°´æ·‹æ·‹çš„å®¶ä¼™è¢«æµ·æ°´å†²ä¸Šå²¸æ¥ï¼Œä¸ç”±å¾—èµ°è¿‘ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯" + me->name() + "\241\243\n", environment(me), ({me}));
                 return 1;}
 
         me->move("/d/shenlong/sea");
-        tell_object(me, "ÄãÒ»ÕõÑÛ±ã·¢¾õÒÑÕ¾¶¨ÔÚº£Ë®Àï¡£\n");
-        message("vision", "Ö»¼û" + me->name() + "´Ó¸ß´¦ÌøÁËÏÂÀ´¡£\n", environment(me), ({me}));
+        tell_object(me, "ä½ ä¸€æŒ£çœ¼ä¾¿å‘è§‰å·²ç«™å®šåœ¨æµ·æ°´é‡Œã€‚\n");
+        message("vision", "åªè§" + me->name() + "ä»é«˜å¤„è·³äº†ä¸‹æ¥ã€‚\n", environment(me), ({me}));
         return 1;
 }
 
@@ -176,19 +176,19 @@ void dropoff(object me)
 {
         object *inv = all_inventory(me);
 
-        tell_object(me, "¾ŞÊ¯Ò»»ÎÄãÁ¢×ã²»ÎÈµôÏÂº£ÀïÁË¡£\n");
-        message("vision", me->name() + "Ê§×ãµôÁËÏÂÈ¥¡£\n", environment(me), ({me}));
+        tell_object(me, "å·¨çŸ³ä¸€æ™ƒä½ ç«‹è¶³ä¸ç¨³æ‰ä¸‹æµ·é‡Œäº†ã€‚\n");
+        message("vision", me->name() + "å¤±è¶³æ‰äº†ä¸‹å»ã€‚\n", environment(me), ({me}));
 
         for(int i = 0; i < sizeof(inv); i++)
                 if( userp(inv[i]) )
-                        inv[i]->receive_wound("qi", 50 + inv[i]->query("max_qi"), "µô½øº£ÀïÑÍËÀÁË");
+                        inv[i]->receive_wound("qi", 50 + inv[i]->query("max_qi"), "æ‰è¿›æµ·é‡Œæ·¹æ­»äº†");
                 else    destruct(inv[i]);
 
         me->move("/d/shenlong/sea");
         me->unconcious();
         me->move("/d/shenlong/beach");
 
-        message("vision", "Äã·¢ÏÖÒ»¸ö»ëÉíË®ÁÜÁÜµÄ¼Ò»ï±»º£Ë®³åÉÏ°¶À´£¬²»ÓÉµÃ×ß½üÒ»¿´£¬Ô­À´ÊÇ" + me->name() + "\241\243\n", environment(me), ({me}));
+        message("vision", "ä½ å‘ç°ä¸€ä¸ªæµ‘èº«æ°´æ·‹æ·‹çš„å®¶ä¼™è¢«æµ·æ°´å†²ä¸Šå²¸æ¥ï¼Œä¸ç”±å¾—èµ°è¿‘ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯" + me->name() + "\241\243\n", environment(me), ({me}));
 }
 
 int *cost(object ob, string skill)

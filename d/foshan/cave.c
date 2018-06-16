@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Сɽ��");
+        set("short", "小山洞");
         set("long", @LONG
-һ��Сɽ������߻谵��������Щ������õ��������룬����
-�����˳�����
+一个小山洞里光线昏暗。洞内有些杂物放置得整整齐齐，但都
+积满了尘土。
 LONG
         );
         set("exits", ([

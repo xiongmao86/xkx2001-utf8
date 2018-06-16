@@ -1,6 +1,6 @@
 //Cracked by Roath
-// mizheng.c ±ø²¿ÉĞÊé
-// ¸ºÔğ¾©çÜÎä¹Ù£¬»Ê¹¬ÊÌÎÀµÄÉÍ·££¬¼ÇÂ¼£¬ÉıÇ¨£¬½µ¼¶µÈ	-chu
+// mizheng.c å…µéƒ¨å°šä¹¦
+// è´Ÿè´£äº¬ç•¿æ­¦å®˜ï¼Œçš‡å®«ä¾å«çš„èµç½šï¼Œè®°å½•ï¼Œå‡è¿ï¼Œé™çº§ç­‰	-chu
 
 #include <ansi.h>
 #ifndef NPCDATA
@@ -18,12 +18,12 @@ void create()
 {
     seteuid(getuid());
     if (! restore()) {
-	set_name("Ã×Õı", ({"mi zheng", "mi"}));
-	set("title", "±ø²¿ÉĞÊé");
-	set("gender", "ÄĞĞÔ");
+	set_name("ç±³æ­£", ({"mi zheng", "mi"}));
+	set("title", "å…µéƒ¨å°šä¹¦");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
-	set("long", "Ëû¾ÍÊÇµ±½ñ³¯Í¢µÄ±ø²¿ÉĞÊé£¬\n"
-	"¾©çÜÊÌÎÀ£¬Îä¹ÙµÄÉıÇ¨¾ÍÈ«¿´ËûÁË¡£\n");
+	set("long", "ä»–å°±æ˜¯å½“ä»Šæœå»·çš„å…µéƒ¨å°šä¹¦ï¼Œ\n"
+	"äº¬ç•¿ä¾å«ï¼Œæ­¦å®˜çš„å‡è¿å°±å…¨çœ‹ä»–äº†ã€‚\n");
 	set("attitude","heroism");
 	set("generation",0);
 
@@ -45,11 +45,11 @@ void create()
 int init()
 {
 	set("inquiry", ([
-	"Ëæ´Ó" : "Õâ¸öÄãÈ¥ÎÊ¾üÓªµÄ¶à×Ü¹Ü°É¡£\n",
-	"ÈÎÎñ" : "Õâ¸öÄãÈ¥ÎÊ¾üÓªµÄ¶à×Ü¹Ü°É¡£\n",
-	"Í¶¾ü" : (: do_toujun :),
-	"ÉıÇ¨" : (: do_shengqian :),
-	"ÍËÒÛ" : (: do_tuiyi :),
+	"éšä»" : "è¿™ä¸ªä½ å»é—®å†›è¥çš„å¤šæ€»ç®¡å§ã€‚\n",
+	"ä»»åŠ¡" : "è¿™ä¸ªä½ å»é—®å†›è¥çš„å¤šæ€»ç®¡å§ã€‚\n",
+	"æŠ•å†›" : (: do_toujun :),
+	"å‡è¿" : (: do_shengqian :),
+	"é€€å½¹" : (: do_tuiyi :),
 	]));
 }
 
@@ -60,15 +60,15 @@ string query_save_file()
 
 string do_shengqian()
 {
-    return "µÈµÈ";
+    return "ç­‰ç­‰";
 }
 
 string do_tuiyi()
 {
-    return "µÈµÈ";
+    return "ç­‰ç­‰";
 }
 
 string do_toujun()
 {
-    return "µÈµÈ";
+    return "ç­‰ç­‰";
 }

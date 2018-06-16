@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: zoulang.c ×ßÀÈ
+// Room: zoulang.c èµ°å»Š
 // qfy July 7, 1996.
 
 #include <room.h>
@@ -9,11 +9,11 @@ void reset();
 
 void create()
 {
-    set("short", "×ßÀÈ");
+    set("short", "èµ°å»Š");
     set("long", @LONG
-ÕâÀïÊÇÎ÷Ïò×ßÀÈµÄ¾¡Í·£¬ÄÏ±ßµÄ·¿¼ä±ãÅ®µÜ×ÓµÄĞİÏ¢ÊÒ¡£Î÷±ßÔ¶Íû¹ı
-È¥ÊÇÒ»Æ¬Æ¬°ü¹üÔÚ°×ÔÆÀïµÄ³ç¾şÇÍ±Ú£¬ÒşÔ¼¿É¼ûÓĞÌõÆÙ²¼×Ô·å¶¥Ò»Ğº¶øÏÂ£¬
-¾°É«ÆøÏóÍòÇ§¡£
+è¿™é‡Œæ˜¯è¥¿å‘èµ°å»Šçš„å°½å¤´ï¼Œå—è¾¹çš„æˆ¿é—´ä¾¿å¥³å¼Ÿå­çš„ä¼‘æ¯å®¤ã€‚è¥¿è¾¹è¿œæœ›è¿‡
+å»æ˜¯ä¸€ç‰‡ç‰‡åŒ…è£¹åœ¨ç™½äº‘é‡Œçš„å´‡å³»å³­å£ï¼Œéšçº¦å¯è§æœ‰æ¡ç€‘å¸ƒè‡ªå³°é¡¶ä¸€æ³»è€Œä¸‹ï¼Œ
+æ™¯è‰²æ°”è±¡ä¸‡åƒã€‚
 LONG
     );
 
@@ -22,7 +22,7 @@ LONG
 	"south" : __DIR__"nushi",
     ]));
 
-    create_door("south", "Ä¾ÃÅ", "north", DOOR_CLOSED);
+    create_door("south", "æœ¨é—¨", "north", DOOR_CLOSED);
 
     set("no_clean_up", 0);
 
@@ -34,8 +34,8 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if ( me->query("gender") == "ÄĞĞÔ" && dir == "south" && !wizardp(me) )
-		return notify_fail("¿´Çå³şµã£¬ÄÇÊÇÅ®µÜ×ÓĞİÏ¢ÊÒ£¡\n");
+	if ( me->query("gender") == "ç”·æ€§" && dir == "south" && !wizardp(me) )
+		return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œé‚£æ˜¯å¥³å¼Ÿå­ä¼‘æ¯å®¤ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

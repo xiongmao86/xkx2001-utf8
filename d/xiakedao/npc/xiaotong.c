@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaotong.c Ğ¡Í¯
+// xiaotong.c å°ç«¥
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -10,9 +10,9 @@ void greeting(object);
 
 void create()
 {
-	set_name("Ğ¡Ù×", ({ "xiao tong", "tong"}));
-	set("long", "ËûÊÇ¸öÄêÁä²»´óµÄĞ¡ÄĞº¢£¬µ«ÒÑºÜ½¡×³ÁË¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("å°åƒ®", ({ "xiao tong", "tong"}));
+	set("long", "ä»–æ˜¯ä¸ªå¹´é¾„ä¸å¤§çš„å°ç”·å­©ï¼Œä½†å·²å¾ˆå¥å£®äº†ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 14);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -20,7 +20,7 @@ void create()
 	set("int", 20);
 	set("con", 20);
 	set("dex", 20);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 150);
 	set("eff_qi", 150);
 	set("qi", 150);
@@ -63,7 +63,7 @@ void init()
 
 void greeting(object me)
 {	command("bow " + me->query("id"));
-	command("say ÄãÈç¹ûÒªĞ©³ÔµÄ»òºÈµÄÖ»Òª½ĞÎÒÒ»Éù"+HBRED+HIW"(serve)"NOR+"¡£");
+	command("say ä½ å¦‚æœè¦äº›åƒçš„æˆ–å–çš„åªè¦å«æˆ‘ä¸€å£°"+HBRED+HIW"(serve)"NOR+"ã€‚");
 }
 
 int accept_object(object me, object obj)
@@ -75,10 +75,10 @@ int accept_object(object me, object obj)
 int accept_obj(object me, object obj)
 {
         object ke;
-        if( obj->query("name")=="Ò¬×Ó") 
+        if( obj->query("name")=="æ¤°å­") 
 	  {
 	     command("xixi "+ me->query("id"));
-	     message_vision("$N½Ó¹ıÒ¬×Ó£¬ÌÍ³öÒ»°ÑĞ¡µ¶£¬ÊìÁ·µØÍÚÁË¸ö¶´£¬Ğ¦ÃĞÃĞµØ°ÑÒ¬×Ó¿Ç»¹¸øÁËÄã¡£\n", this_object());
+	     message_vision("$Næ¥è¿‡æ¤°å­ï¼Œæå‡ºä¸€æŠŠå°åˆ€ï¼Œç†Ÿç»ƒåœ°æŒ–äº†ä¸ªæ´ï¼Œç¬‘çœ¯çœ¯åœ°æŠŠæ¤°å­å£³è¿˜ç»™äº†ä½ ã€‚\n", this_object());
 	     ke = new("/d/xiakedao/obj/yezike");
 	     ke->move(this_player());
 	     return 1;

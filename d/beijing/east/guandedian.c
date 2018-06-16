@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�۵µ�");
+	set("short", "观德殿");
 	set("long", @LONG
-�����ǻʵۡ��ʺ�������ʱͣ�ŹײĴ������ܵ��ų����ơ�
-��紵�������ҡ�������ܺ�Ӱ�㿣���ı����ϲ�������
-һ˿���⡣
+这里是皇帝、皇后死后暂时停放棺材处。四周点着长明灯。
+冷风吹来，烛光摇动，四周黑影憧憧，你的背心上不禁起了
+一丝凉意。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

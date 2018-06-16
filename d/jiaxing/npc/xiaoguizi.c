@@ -7,13 +7,13 @@ string ask_for_zigong();
 
 void create()
 {
-        set_name("Ğ¡¹ğ×Ó", ({"xiao guizi", "guizi"}));
-        set("title", "ÓùÉÅ·¿Ğ¡Ì«¼à");
+        set_name("å°æ¡‚å­", ({"xiao guizi", "guizi"}));
+        set("title", "å¾¡è†³æˆ¿å°å¤ªç›‘");
         set("long",
-                "ÕâÊÇÓùÉÅ·¿Ğ¡Ì«¼à£¬ÓĞÊ®ËÄÎåËêµÄÑù×Ó£¬ÊÇº£ÀÏ¹«µÄ¸ú°à¡£\n"
+                "è¿™æ˜¯å¾¡è†³æˆ¿å°å¤ªç›‘ï¼Œæœ‰åå››äº”å²çš„æ ·å­ï¼Œæ˜¯æµ·è€å…¬çš„è·Ÿç­ã€‚\n"
         );
 
-        set("gender", "ÎŞĞÔ");
+        set("gender", "æ— æ€§");
 
         set("attitude", "friendly");
         set("class", "eunach");

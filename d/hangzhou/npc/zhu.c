@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/hangzhou/npc/zhu.c  ×£ïÚÍ·
+// /d/hangzhou/npc/zhu.c  ç¥é•–å¤´
 // by aln  4 / 98
 // modified by sdong 07/98 add badman
 
@@ -83,41 +83,41 @@ mapping *wskills = ({
 
 
 mapping bt_ids = ([
-        "ÕÔ" : "zhao",
-        "Ç®" : "qian",
-        "Ëï" : "sun",
-        "Àî" : "li",
-        "ÖÜ" : "zhou",
-        "Îâ" : "wu",
-        "Ö£" : "zheng",
-        "Íõ" : "wang",
-        "·ë" : "feng",
-        "³Â" : "chen",
-        "ÎÀ" : "wei",
-        "¸ß" : "gao",
-        "ÔÆ" : "yun",
-        "ÕÅ" : "zhang",
-        "Áõ" : "liu",
-        "Âí" : "ma",
+        "èµµ" : "zhao",
+        "é’±" : "qian",
+        "å­™" : "sun",
+        "æ" : "li",
+        "å‘¨" : "zhou",
+        "å´" : "wu",
+        "éƒ‘" : "zheng",
+        "ç‹" : "wang",
+        "å†¯" : "feng",
+        "é™ˆ" : "chen",
+        "å«" : "wei",
+        "é«˜" : "gao",
+        "äº‘" : "yun",
+        "å¼ " : "zhang",
+        "åˆ˜" : "liu",
+        "é©¬" : "ma",
 
-        "ÍÀ" : "tu",
-        "Óá" : "yu",
-        "Òó" : "yin",
-        "×£" : "zhu",
-        "Ê·" : "shi",
-        "ËÎ" : "song",
-        "Äª" : "mo",
-        "Áú" : "long",
-        "ÁÖ" : "lin",
-        "¼Ö" : "jia",
-        "°ü" : "bao",
-        "³Ì" : "cheng",
-        "¶¡" : "ding",
-        "»Æ" : "huang",
-        "½­" : "jiang",
-        "Äş" : "ning",
-        "ÏÄ" : "xia",
-        "ÎÌ" : "weng",
+        "å± " : "tu",
+        "ä¿" : "yu",
+        "æ®·" : "yin",
+        "ç¥" : "zhu",
+        "å²" : "shi",
+        "å®‹" : "song",
+        "è«" : "mo",
+        "é¾™" : "long",
+        "æ—" : "lin",
+        "è´¾" : "jia",
+        "åŒ…" : "bao",
+        "ç¨‹" : "cheng",
+        "ä¸" : "ding",
+        "é»„" : "huang",
+        "æ±Ÿ" : "jiang",
+        "å®" : "ning",
+        "å¤" : "xia",
+        "ç¿" : "weng",
 ]);
 
 #define TIMEOUT 10
@@ -145,17 +145,17 @@ void create()
         }
 */
         if( !sizeof(bt_names) ) {
-                bt_name = "ïÚÍ·",
+                bt_name = "é•–å¤´",
                 bt_id = ({ "biaotou" });
         } else {
                 bt_name = bt_names[random(sizeof(bt_names))];
                 bt_id = ({ bt_ids[bt_name] + " biaotou", "biaotou" });
-                bt_name += "ïÚÍ·";
+                bt_name += "é•–å¤´";
         }
 
 
         set_name(bt_name, bt_id);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 20 + random(40));
 	set("jiali", 50);
 
@@ -283,10 +283,10 @@ mapping find_target(object me)
       return 0;
     }
     ret["msg_out"] = me->query("name")+
-		"¼±µÀ£º¶¼×ÜïÚÍ·¸øÎäµ±ÅÉµÄ³ôµÀÊ¿¸øÆÛ¸ºÁË£¬"+
-		"ÎÒµÃÈ¥°ïÃ¦£®\n";
-    ret["msg_in"] = me->query("name") + "¶Ô×ÅÖª¿ÍµÀ³¤ºÈµÀ£º³ôÅ£±Ç×Ó£¬Äã¸Ò"+
-		"ÆÛ¸ºÎÒÃÇ¶¼×ÜïÚÍ·£¬ÎÒ¸úÄãÃ»Íê£®!\n";
+		"æ€¥é“ï¼šéƒ½æ€»é•–å¤´ç»™æ­¦å½“æ´¾çš„è‡­é“å£«ç»™æ¬ºè´Ÿäº†ï¼Œ"+
+		"æˆ‘å¾—å»å¸®å¿™ï¼\n";
+    ret["msg_in"] = me->query("name") + "å¯¹ç€çŸ¥å®¢é“é•¿å–é“ï¼šè‡­ç‰›é¼»å­ï¼Œä½ æ•¢"+
+		"æ¬ºè´Ÿæˆ‘ä»¬éƒ½æ€»é•–å¤´ï¼Œæˆ‘è·Ÿä½ æ²¡å®Œï¼!\n";
     debug("got target.\n");
   }else{
     debug("skill not enough.\n");
@@ -326,7 +326,7 @@ string go_kill()
     if (ret["msg_out"]) {
       message("info", ret["msg_out"], environment(me), 0);
     }
-    message_vision("$N¼±¼±Ã¦Ã¦µØÀë¿ªÁË£®\n", me);
+    message_vision("$Næ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ï¼\n", me);
 
     me->set("killing/origin", environment(me));
     me->set("killing/target", target);
@@ -334,7 +334,7 @@ string go_kill()
 
     me->move(env);
     debug(sprintf("I am at %O", environment(me)));
-    message_vision("$N¿ì²½×ßÁË¹ıÀ´£®\n", me);
+    message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ï¼\n", me);
     if (ret["msg_in"]) {
       message("info", ret["msg_in"], environment(me), 0);
     }
@@ -356,10 +356,10 @@ string go_back()
   if (! objectp(target) || ! objectp(env) ||
       environment(target) != env) {  // target is gone somehow
 
-    message_vision("$N¼±¼±Ã¦Ã¦µØÀë¿ªÁË£®\n", me);
+    message_vision("$Næ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ï¼\n", me);
     me->move(me->query("killing/origin"));
     me->delete("killing");
-    message_vision("$N¿ì²½×ßÁË¹ıÀ´£®\n", me);
+    message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ï¼\n", me);
 
   }else{ // make sure we kill each other
 
@@ -376,7 +376,7 @@ void init()
 
   if ( interactive(me) && living(me) && me->query_condition("lmjob") ) {
     if (random(20) == 1) {
-      message_vision("Í»È»Í·¶¥ÉÏÒ»Õó¾¢·ç£¬Ò»¸ö´óººÓÉÇ½ÉÏÌøÁË½øÀ´£¡\n", me);
+      message_vision("çªç„¶å¤´é¡¶ä¸Šä¸€é˜µåŠ²é£ï¼Œä¸€ä¸ªå¤§æ±‰ç”±å¢™ä¸Šè·³äº†è¿›æ¥ï¼\n", me);
       badman = new(__DIR__"badman");
       badman->move(environment(me));
       /* don't let badman kill biaotou
@@ -413,17 +413,17 @@ int do_teach(string arg)
   if( !me->query_condition("lmjob") && 
       me->query("id") != "sdong" && 
       !wizardp(this_player()))
-    return notify_fail("Äã±ØĞëÏÈµÃµ½¶¼×ÜïÚÍ·µÄÔÊĞí¡£\n");
+    return notify_fail("ä½ å¿…é¡»å…ˆå¾—åˆ°éƒ½æ€»é•–å¤´çš„å…è®¸ã€‚\n");
 
   if( !arg || (sscanf(arg, "%s %s", who, skill) != 2) )
-    return notify_fail("Ö¸Áî¸ñÊ½£ºteach <Ä³ÈË> <¼¼ÄÜ>\n");
+    return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šteach <æŸäºº> <æŠ€èƒ½>\n");
 
   if( who != "biaotou" )
     return 1;
 
 /*
   if( member_array(skill, slskills) == -1 )
-  return notify_fail(query("name") + "ËµµÀ£º¶Ô²»Æğ£¬ÎÒÖ»Ñ§ÉÙÁÖÊ®°Ë¾ø¼¼¡£\n");
+  return notify_fail(query("name") + "è¯´é“ï¼šå¯¹ä¸èµ·ï¼Œæˆ‘åªå­¦å°‘æ—åå…«ç»æŠ€ã€‚\n");
 */
 
 /*
@@ -436,24 +436,24 @@ int do_teach(string arg)
 */
 
   if( skill != query("learning") )
-    return notify_fail(query("name") + "ËµµÀ£º¶Ô²»Æğ£¬ÎÒÔÚÑ§" + 
-		       to_chinese(query("learning")) + "¡£\n");
+    return notify_fail(query("name") + "è¯´é“ï¼šå¯¹ä¸èµ·ï¼Œæˆ‘åœ¨å­¦" + 
+		       to_chinese(query("learning")) + "ã€‚\n");
 
   level1 = query_skill(skill, 1);
   level2 = (int)me->query_skill(skill, 1);
 
   if( level1 > level2 )
-    return notify_fail(query("name") + "ËµµÀ£º¶Ô²»Æğ£¬ÎÒÒÑ¾­Ñ§»á" + 
-		       to_chinese(skill) + "¡£\n");
+    return notify_fail(query("name") + "è¯´é“ï¼šå¯¹ä¸èµ·ï¼Œæˆ‘å·²ç»å­¦ä¼š" + 
+		       to_chinese(skill) + "ã€‚\n");
 
   if( me->is_busy() || me->is_fighting() )
-    return notify_fail("ÄãÕıÃ¦×Å¡£\n");
+    return notify_fail("ä½ æ­£å¿™ç€ã€‚\n");
 
   if( is_busy() || is_fighting() )
-    return notify_fail(query("name") + "ÕıÃ¦×Å¡£\n");
+    return notify_fail(query("name") + "æ­£å¿™ç€ã€‚\n");
 
-  message_vision("$NÀÛµÃÂúÍ·´óº¹Ïò$nÖ¸µãÁËÒ»ÏÂ" + 
-		 to_chinese(skill) + "¡£\n", me, this_object());
+  message_vision("$Nç´¯å¾—æ»¡å¤´å¤§æ±—å‘$næŒ‡ç‚¹äº†ä¸€ä¸‹" + 
+		 to_chinese(skill) + "ã€‚\n", me, this_object());
 
   bonus = (level1 + level2)/2;
 
@@ -544,7 +544,7 @@ int do_check(string arg)
 
   if( !this_player()->query_condition("lmjob") && 
       this_player()->query("id") != "sdong" && !wizardp(this_player()) ) {
-    write("Äã±ØĞëÏÈµÃµ½¶¼×ÜïÚÍ·µÄÔÊĞí¡£\n");
+    write("ä½ å¿…é¡»å…ˆå¾—åˆ°éƒ½æ€»é•–å¤´çš„å…è®¸ã€‚\n");
     return 1;
   }
 
@@ -556,7 +556,7 @@ int do_check(string arg)
   lrn = query("learned");
   if( !mapp(lrn) ) lrn = ([]);
 
-  write("\n" + name() + "ËùÑ§¹ıµÄ¼¼ÄÜ£º\n\n");
+  write("\n" + name() + "æ‰€å­¦è¿‡çš„æŠ€èƒ½ï¼š\n\n");
   for(i = 0; i < sizeof(sname); i++)
     printf("%-50s   %3d/%5d\n",
 	   (to_chinese(sname[i]) + " (" + sname[i] + ")"),

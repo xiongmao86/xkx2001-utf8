@@ -6,9 +6,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name("·ä³²", ({ "fengchao", "chao" }));
-        set("unit", "Ö»");
-        set("long", "ÕâÊÇÒ»Ö»Áù½ÇĞÎµÄ¶¾·ä³²£¬ÊÇÏ¡ÓĞµÄÒ©²Ä¡£\n");
+        set_name("èœ‚å·¢", ({ "fengchao", "chao" }));
+        set("unit", "åª");
+        set("long", "è¿™æ˜¯ä¸€åªå…­è§’å½¢çš„æ¯’èœ‚å·¢ï¼Œæ˜¯ç¨€æœ‰çš„è¯æã€‚\n");
         set("value", 2000);
         setup();
 }

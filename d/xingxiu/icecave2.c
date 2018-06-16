@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±ù¶´");
+	set("short", "å†°æ´");
 	set("long", @LONG
-½øµ½±ù¶´ÀïÃæ£¬ÄÇ¶´¶¥ÉÏ½ô½ô´¹¹Ò×Å±ù×¶(icicle)£¬³¤¶Ì²»Æë£¬
-´ÖÏ¸²»Ò»£»¶´µ×ÏÂ±ùÊ÷´ÔÉú£¬Ç§×ËÍòÌ¬¡£´©ĞĞ¶´ÄÚ£¬ºÃËÆ½øÁË¹â¹Ö
-Â½ÀëµÄÉñ»°ÊÀ½ç¡£¶´¶¥ÓĞ¸ö¿ßÁşËÆºõ¿ÉÒÔÅÀ³öÈ¥(out)¡£
+è¿›åˆ°å†°æ´é‡Œé¢ï¼Œé‚£æ´é¡¶ä¸Šç´§ç´§å‚æŒ‚ç€å†°é”¥(icicle)ï¼Œé•¿çŸ­ä¸é½ï¼Œ
+ç²—ç»†ä¸ä¸€ï¼›æ´åº•ä¸‹å†°æ ‘ä¸›ç”Ÿï¼Œåƒå§¿ä¸‡æ€ã€‚ç©¿è¡Œæ´å†…ï¼Œå¥½ä¼¼è¿›äº†å…‰æ€ª
+é™†ç¦»çš„ç¥è¯ä¸–ç•Œã€‚æ´é¡¶æœ‰ä¸ªçªŸçª¿ä¼¼ä¹å¯ä»¥çˆ¬å‡ºå»(out)ã€‚
 LONG
 	);
 	set("exits", ([
@@ -36,24 +36,24 @@ int do_flick(string arg)
                 return 0;
 
         if (me->query_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if (query("icicle") < 1)
-		return notify_fail("ÕâÀïµÄ±ù×¶Äã¶¼¹»²»×ÅÁË¡£\n");
+		return notify_fail("è¿™é‡Œçš„å†°é”¥ä½ éƒ½å¤Ÿä¸ç€äº†ã€‚\n");
 
 	if ( (int)me->query("jing") < 30 || (int)me->query("jingli") < 30)
-                return notify_fail("ÄãµÄ¾«Éñ²»ÄÜ¼¯ÖĞ¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸èƒ½é›†ä¸­ã€‚\n");
 
         if( arg=="icicle")
         {
 	me->receive_damage("jing", 15);	
 	me->receive_damage("jingli", 15);
 	add("icicle", -1);
-        message_vision("$NÇáÇáµØÓÃÊÖÖ¸µ¯¶ÏÁËÒ»¸ù±ù×¶¡£\n", me);
+        message_vision("$Nè½»è½»åœ°ç”¨æ‰‹æŒ‡å¼¹æ–­äº†ä¸€æ ¹å†°é”¥ã€‚\n", me);
 	if (random(me->query_skill("feixing-shu", 1)) > 30){
 	me->improve_skill("feixing-shu", me->query("int"));
-	message_vision("$Nµ¯·É³öÈ¥µÄ±ù×¶×²¶ÏÁËÁíÒ»¸ù±ù×¶£¬Æ¹Æ¹ÅÒÅÒÂÒÏì¡£\n", me);
-	tell_object(me, "ÄãËÆºõÁìÎòÁËÒ»²ã°µÆ÷µÄ¼¼ÄÜ¡£\n");
+	message_vision("$Nå¼¹é£å‡ºå»çš„å†°é”¥æ’æ–­äº†å¦ä¸€æ ¹å†°é”¥ï¼Œä¹’ä¹’ä¹“ä¹“ä¹±å“ã€‚\n", me);
+	tell_object(me, "ä½ ä¼¼ä¹é¢†æ‚Ÿäº†ä¸€å±‚æš—å™¨çš„æŠ€èƒ½ã€‚\n");
 	if (me->query_skill("feixing-shu", 1) > 100)
 	me->receive_damage("jing", 15);
 	if (me->query_skill("feixing-shu", 1) > 150)
@@ -75,9 +75,9 @@ int do_out(string arg)
         object me;
 	me = this_player();
 
-	message_vision("$NÅÊÉÏ¶´±Ú´Ó¿ßÁşÀïÅÀÁË³öÈ¥£¬\n", me);
+	message_vision("$Næ”€ä¸Šæ´å£ä»çªŸçª¿é‡Œçˆ¬äº†å‡ºå»ï¼Œ\n", me);
         me->move(__DIR__"shanluan");
-	message("vision", me->name() + "Ë®ÁÜÁÜµÄ²»Öª´ÓÊ²Ã´µØ·½ÅÀÁËÉÏÀ´¡£\n",
+	message("vision", me->name() + "æ°´æ·‹æ·‹çš„ä¸çŸ¥ä»ä»€ä¹ˆåœ°æ–¹çˆ¬äº†ä¸Šæ¥ã€‚\n",
                     environment(me), ({me}) );
 	return 1;
 }

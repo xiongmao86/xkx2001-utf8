@@ -1,15 +1,15 @@
 //Cracked by Roath
-// donglang1.c ¶«Ïá×ßÀÈ
+// donglang1.c ä¸œåŽ¢èµ°å»Š
 // xQin 11/00
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¶«Ïá×ßÀÈ");
+        set("short", "ä¸œåŽ¢èµ°å»Š");
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõÓÄ¾²µÄ×ßÀÈÉÏ£¬¶«±ß¿ÉÍ¨Íù²èÊÒºÍÎäµ±µÜ×ÓµÄÐÝÏ¢ÊÒ¡£Íù±±
-±ãÊÇÎäµ±µÜ×ÓµÄÁ·¹¦·¿¡£
+ä½ èµ°åœ¨ä¸€æ¡å¹½é™çš„èµ°å»Šä¸Šï¼Œä¸œè¾¹å¯é€šå¾€èŒ¶å®¤å’Œæ­¦å½“å¼Ÿå­çš„ä¼‘æ¯å®¤ã€‚å¾€åŒ—
+ä¾¿æ˜¯æ­¦å½“å¼Ÿå­çš„ç»ƒåŠŸæˆ¿ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"donglang2",

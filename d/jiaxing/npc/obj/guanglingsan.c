@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-	set_name("¹ãÁêÉ¢", ({ "guangling san", "san" }));
+	set_name("å¹¿é™µæ•£", ({ "guangling san", "san" }));
 	set("weight", 1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("long",
-		"ÕâÊÇÇúÑóÔÚ¶«ºº²ÌÒØÄ¹ÖĞËùµÃµÃ¹ÅÈËÃûÆ×£¬"
-		"¸ÃÆ×ÒòÎ÷½úïú¿µËù×à¶øÎÅÃûÌìÏÂ¡£\n");
-		set("unit", "²á");
+		"è¿™æ˜¯æ›²æ´‹åœ¨ä¸œæ±‰è”¡é‚‘å¢“ä¸­æ‰€å¾—å¾—å¤äººåè°±ï¼Œ"
+		"è¯¥è°±å› è¥¿æ™‹åµ‡åº·æ‰€å¥è€Œé—»åå¤©ä¸‹ã€‚\n");
+		set("unit", "å†Œ");
 		set("value",1000);
 	}
 	setup();

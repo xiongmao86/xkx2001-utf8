@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/bwdh/square.c
-// ¿´Ì¨
+// çœ‹å°
 // by sdong 09/25/98
 
 #include <ansi.h>
@@ -17,7 +17,7 @@ void enter_sjsz();
 
 void create()
 {
-	set("short", HIR"ÊÔ½£É½×¯´ó¹ã³¡"NOR);
+	set("short", HIR"è¯•å‰‘å±±åº„å¤§å¹¿åœº"NOR);
 	set("long", (: long_desc :));
 	set("invalid_startroom", 1);
 
@@ -51,7 +51,7 @@ string long_desc()
 		           /I______________I\\               
 		         //||||||||||||||||||\\\\            
 		     T\\//IIIIIIIIIIIIIIIIIIIIII\\\\/T       
-	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ ÊÔ½£É½×¯ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
+	             ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ è¯•å‰‘å±±åº„ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
 		         "+HIG"||"NOR+HIY"__________________"+HIG"||"NOR+HIY"             "+HIC"
 	  []___[]___[]__|[]___[]___||___[]___[]|__[]___[]___[]
 	  |__________________|_|________|_|__________________|"+HIB"
@@ -82,7 +82,7 @@ void enter_sjsz()
 	 if (! objectp(cangku)) {
 		  cangku = load_object(CANGKU);
 		  if (!objectp(cangku)) {
-				message_vision("$NÇë¸æËß wiz: cangku not found\n", me);
+				message_vision("$Nè¯·å‘Šè¯‰ wiz: cangku not found\n", me);
 				return;
 		  }
 	 }
@@ -90,7 +90,7 @@ void enter_sjsz()
 	 for (i=0; i<sizeof(inv); i++) {
 				basket[i] = inv[i];
 				inv[i]->move(cangku);
-				message_vision("$N½«Ò»" + inv[i]->query("unit")+ inv[i]->query("name")+"½»¸øĞ¡ØË¡£\n", me);
+				message_vision("$Nå°†ä¸€" + inv[i]->query("unit")+ inv[i]->query("name")+"äº¤ç»™å°å®ã€‚\n", me);
 	 }
 
 	 old_basket = cangku->query("basket/" + me->query("id"));
@@ -109,7 +109,7 @@ void out_sjsz() {
   if (! objectp(cangku)) {
 	 cangku = load_object(CANGKU);
 	 if (!objectp(cangku)) {
-		message_vision("$NÇë¸æËß wiz: cangku not found\n", player);
+		message_vision("$Nè¯·å‘Šè¯‰ wiz: cangku not found\n", player);
 		return 0;
 	 }
   }
@@ -120,14 +120,14 @@ void out_sjsz() {
 	 for (i=0; i<sizeof(basket); i++) {
 		if (objectp(basket[i])) {
 		  basket[i]->move(player);
-		  message_vision("$N´ÓÖ÷³ÖÈËÊÖÀïÄÃ»ØÒ»"+
+		  message_vision("$Nä»ä¸»æŒäººæ‰‹é‡Œæ‹¿å›ä¸€"+
 					 basket[i]->query("unit")+
-					 basket[i]->query("name")+"¡£\n", player);
+					 basket[i]->query("name")+"ã€‚\n", player);
 		}
 	 }
 	 cangku->delete("basket/"+player->query("id"));
   }
-  else message_vision("Ö÷³ÖÈËËµ£º$NÊ²Ã´Ò²Ã»´æÔÚÎÒÕâÀï£¬¿É±ğÀµÎÒÌ°ÎÛà¸£¡\n", player);
+  else message_vision("ä¸»æŒäººè¯´ï¼š$Nä»€ä¹ˆä¹Ÿæ²¡å­˜åœ¨æˆ‘è¿™é‡Œï¼Œå¯åˆ«èµ–æˆ‘è´ªæ±¡å–”ï¼\n", player);
 
   return;
 }
@@ -145,7 +145,7 @@ int valid_leave(object player, string dir) {
 	 {
           for (i=0; i<sizeof(inv); i++) {
                   if (inv[i]->is_character())
-                  return notify_fail("Äã²»ÄÜ´ø×ÅÆäËûÍæ¼ÒÀë¿ª¡£\n");
+                  return notify_fail("ä½ ä¸èƒ½å¸¦ç€å…¶ä»–ç©å®¶ç¦»å¼€ã€‚\n");
           }
 		 out_sjsz();
 	 }

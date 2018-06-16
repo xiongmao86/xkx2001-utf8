@@ -1,18 +1,18 @@
 //Cracked by Roath
-// mabudai.c Âé²¼´ü
+// mabudai.c éº»å¸ƒè¢‹
 
 inherit ITEM;
 
 void create()
 {
-	set_name("Ê³ºĞ", ({ "shi he", "he", "box" }));
+	set_name("é£Ÿç›’", ({ "shi he", "he", "box" }));
 	set_weight(500);
 	set_max_encumbrance(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "Ò»Ö»ÓÃÏ¸Öñ±àÖ¯³ÉµÄÊ³ºĞ¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "ä¸€åªç”¨ç»†ç«¹ç¼–ç»‡æˆçš„é£Ÿç›’ã€‚\n");
 		set("value", 50);
 	}
 }
@@ -22,6 +22,6 @@ int is_container() { return 1; }
 int reject(object ob)
 {
         if (ob && ob->query("food_supply") ) return 0;
-        notify_fail("ÄãÖ»ÄÜ°ÑÊ³Îï·Å½øÊ³ºĞ¡£\n");
+        notify_fail("ä½ åªèƒ½æŠŠé£Ÿç‰©æ”¾è¿›é£Ÿç›’ã€‚\n");
         return 1;
 }

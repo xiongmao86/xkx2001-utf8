@@ -1,15 +1,15 @@
 //Cracked by Roath
-// huanghebang2.c �ƺӰ�㳡
+// huanghebang2.c 黄河帮广场
 // qfy Sept 7, 96
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "�㳡");
+        set("short", "广场");
         set("long", @LONG
-�㳡ռ�����󣬲����Ͻ���������ȥ�ɴ�ƺӰ�ġ�����������
-��Χ����Щ���ᣬ�����ھ�ס��
+广场占地甚大，部置严谨。往西过去可达黄河帮的「侠义厅」。
+周围则是些房舍，供帮众居住。
 LONG
         );
 

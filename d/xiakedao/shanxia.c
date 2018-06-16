@@ -6,10 +6,10 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "É½½ÅÏÂ");
+        set("short", "å±±è„šä¸‹");
         set("long", @LONG
-É½½ÅÏÂÊÇÒ»¿éÆ½µØ£¬ËÄÖÜ°ÚÁË¼¸¸öÄ¾×®(muzhuang)¡£ÕâÀïºÃÏóÊÇ¸ö
-Á·Îä³¡£¬ÓĞÒ»Î»ÉÙÄêÕıÔÚÁ·¹¦¡£¼¸¸ùÊ÷Ö¦´ÓÍ·¶¥ÉÏĞ¡É½°¼ÖĞ´¹ÁËÏÂÀ´¡£
+å±±è„šä¸‹æ˜¯ä¸€å—å¹³åœ°ï¼Œå››å‘¨æ‘†äº†å‡ ä¸ªæœ¨æ¡©(muzhuang)ã€‚è¿™é‡Œå¥½è±¡æ˜¯ä¸ª
+ç»ƒæ­¦åœºï¼Œæœ‰ä¸€ä½å°‘å¹´æ­£åœ¨ç»ƒåŠŸã€‚å‡ æ ¹æ ‘æä»å¤´é¡¶ä¸Šå°å±±å‡¹ä¸­å‚äº†ä¸‹æ¥ã€‚
 LONG );
 
       set("exits", ([
@@ -18,8 +18,8 @@ LONG );
 		     "southup"  : __DIR__"shanlu4",
       ]));
 	set("item_desc",([
-	    "muzhuang" : "ÕâÊÇÒ»¸ùÁù³ß¸ßµÄÄ¾×®£¬ÖĞ¼ä¹ü×ÅºñºñµÄÅ£Æ¤Ö½¡£ÕâÊÇÓÃÀ´Á·ÕÆ
-·¨µÄ£¬Äã¿ÉÒÔ´ò´ò¿´(strike muzhuang)¡£\n",
+	    "muzhuang" : "è¿™æ˜¯ä¸€æ ¹å…­å°ºé«˜çš„æœ¨æ¡©ï¼Œä¸­é—´è£¹ç€åšåšçš„ç‰›çš®çº¸ã€‚è¿™æ˜¯ç”¨æ¥ç»ƒæŒ
+æ³•çš„ï¼Œä½ å¯ä»¥æ‰“æ‰“çœ‹(strike muzhuang)ã€‚\n",
 	]));
 	set("objects", ([ 
 		       __DIR__ + "npc/taohua" : 1,
@@ -41,23 +41,23 @@ int do_play(string arg)
 {	object me = this_player();
 	int check;
 	if ( !arg )
-		return notify_fail( "ÄãÏëÍæÊ²÷á?\n");
+		return notify_fail( "ä½ æƒ³ç©ä»€éº½?\n");
 	if ( arg != "shiqiu" )
-		return notify_fail( "ÄÇÓĞÊ²÷áºÃÍæµÄ¡£ play shiqiu °É¡£\n");
+		return notify_fail( "é‚£æœ‰ä»€éº½å¥½ç©çš„ã€‚ play shiqiu å§ã€‚\n");
 
 	check = (int)me->query_skill("parry",1)*(int)me->query_skill("parry",1)*(int)me->query_skill("parry",1);
 	if (check > (int)me->query("combat_exp") * 10)
-	{	write ("ÄãÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎò¡£\n");
+	{	write ("ä½ å®æˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†æ‚Ÿã€‚\n");
 		return 1;
 	}
 
       if ((int)me->query("qi") < 30)
-		return notify_fail("Ã»Á¦Æø£¬±§²»ÆğÄÇÊ¯Çò¡£\n");
+		return notify_fail("æ²¡åŠ›æ°”ï¼ŒæŠ±ä¸èµ·é‚£çŸ³çƒã€‚\n");
 	me->receive_damage("qi", 20);
 
-	message_vision("$N±§ÆğÒ»¸öÊ¯Çò£¬°ÑÊ¯ÇòÔÚÊÖÖĞ×ªÀ´×ªÈ¥µÄÍæ¡£\n", me);
+	message_vision("$NæŠ±èµ·ä¸€ä¸ªçŸ³çƒï¼ŒæŠŠçŸ³çƒåœ¨æ‰‹ä¸­è½¬æ¥è½¬å»çš„ç©ã€‚\n", me);
 	if ((int)me->query_skill("parry", 1) >= 30)
-	{	write("ÄãÍæÁËÒ»»á¶ù¾«Æ£Á¦¾¡£¬È´ÎŞ·¨ÁìÎò³öÊ²÷á¡£\n");
+	{	write("ä½ ç©äº†ä¸€ä¼šå„¿ç²¾ç–²åŠ›å°½ï¼Œå´æ— æ³•é¢†æ‚Ÿå‡ºä»€éº½ã€‚\n");
 		return 1;
 	}
 
@@ -70,27 +70,27 @@ int do_strike(string arg)
 {	object me = this_player();
 	int check;
 	if ( !arg )
-		return notify_fail( "ÄãÏë»÷Ê²÷á?\n");
+		return notify_fail( "ä½ æƒ³å‡»ä»€éº½?\n");
 	if ( arg != "muzhuang" )
-		return notify_fail( "ÀÏÀÏÊµÊµ»÷Ä¾×®°É¡£\n");
+		return notify_fail( "è€è€å®å®å‡»æœ¨æ¡©å§ã€‚\n");
 
 	check = (int)me->query_skill("strike",1)*(int)me->query_skill("strike",1)*(int)me->query_skill("strike",1);
 	if (check > (int)me->query("combat_exp") * 10)
-	{	write ("ÄãÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎò¡£\n");
+	{	write ("ä½ å®æˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†æ‚Ÿã€‚\n");
 		return 1;
 	}
 
       if ((int)me->query("qi") < 30)
-		return notify_fail("ÄãÀÛµÄÁ¬Õ¾¶¼Õ¾²»ÆğÀ´ÁË£¬Ôõ÷á»÷Ä¾×®¡£\n");
+		return notify_fail("ä½ ç´¯çš„è¿ç«™éƒ½ç«™ä¸èµ·æ¥äº†ï¼Œæ€éº½å‡»æœ¨æ¡©ã€‚\n");
 	me->receive_damage("qi", 20);
 
-	message_vision("$NÕ¾ÁËÒ»¸öÂí²½£¬»ÓÕÆ»÷ÏòÄ¾×®¡£\n", me);
+	message_vision("$Nç«™äº†ä¸€ä¸ªé©¬æ­¥ï¼ŒæŒ¥æŒå‡»å‘æœ¨æ¡©ã€‚\n", me);
 	if ((int)me->query_skill("strike", 1) >= 30)
-	{	write("Äã´òÁËÒ»»á£¬·¢ÏÖÒÑ¾­ÎŞ·¨ÁìÎò³öÊ²÷á¶«Î÷ÁË¡£\n");
+	{	write("ä½ æ‰“äº†ä¸€ä¼šï¼Œå‘ç°å·²ç»æ— æ³•é¢†æ‚Ÿå‡ºä»€éº½ä¸œè¥¿äº†ã€‚\n");
 		return 1;
 	}
 
-//	write("»÷´ò×ÅÄ¾×®ÄãÁìÎòÁË¼¸¸ö»ù±¾ÕÆ·¨ÖĞµÄÄÑÌâ¡£\n");
+//	write("å‡»æ‰“ç€æœ¨æ¡©ä½ é¢†æ‚Ÿäº†å‡ ä¸ªåŸºæœ¬æŒæ³•ä¸­çš„éš¾é¢˜ã€‚\n");
 	me->improve_skill("strike", me->query("int"));
 	return 1;
 }
@@ -101,11 +101,11 @@ int do_jump(string arg)
 	if ( arg != "up" )
 		return 0;
 	if (me->query_skill("dodge") > 20) 
-	{	message_vision("$NÒ»×İÉí£¬À­×Å´ÓÉ½ÆÂÉÏ´¹ÏÂµÄÊ÷Ö¦ÅÀÁËÉÏÈ¥¡£\n", me);
+	{	message_vision("$Nä¸€çºµèº«ï¼Œæ‹‰ç€ä»å±±å¡ä¸Šå‚ä¸‹çš„æ ‘æçˆ¬äº†ä¸Šå»ã€‚\n", me);
 		me->move(__DIR__"shibi");
-		message("vision", me->name() + "´ÓÉ½½ÅÏÂÅÀÁËÉÏÀ´¡£\n",environment(me), me );
+		message("vision", me->name() + "ä»å±±è„šä¸‹çˆ¬äº†ä¸Šæ¥ã€‚\n",environment(me), me );
 	}
 	else
-		message_vision("$NÌøÆğÀ´È´¹»²»×Å´¹×ÅµÄÊ÷Ö¦¡£\n", me);
+		message_vision("$Nè·³èµ·æ¥å´å¤Ÿä¸ç€å‚ç€çš„æ ‘æã€‚\n", me);
 	return 1;
 }

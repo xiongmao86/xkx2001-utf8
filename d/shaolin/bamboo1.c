@@ -8,11 +8,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����");
+	set("short", "竹林");
 	set("long", @LONG
-����һƬ���ܵ����֡������˼�������Ω�����ߵ��·�棬��ɮ
-��ľ������΢�紵����Ҷ�������������������˳���Ϊ֮һ�ӣ�
-���Ǿ��ѵ��������ڡ�
+这是一片密密的竹林。这里人迹罕至，惟闻足底叩击路面，有僧
+敲木鱼声；微风吹拂竹叶，又如簌簌禅唱。令人尘心为之一涤，
+真是绝佳的禅修所在。
 LONG
 	);
 
@@ -24,7 +24,7 @@ LONG
 		"south" : __DIR__"qfdian",
 	]));
 
-	create_door("south","ľ��","north",DOOR_CLOSED);
+	create_door("south","木门","north",DOOR_CLOSED);
 
 	set("outdoors", "shaolin");
 

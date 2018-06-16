@@ -1,5 +1,5 @@
 //Cracked by Roath
-// puren.c ÏÀ¿ÍµºØËÆÍ
+// puren.c ä¾ å®¢å²›åŽ®ä»†
 // Long, 6/13/97
 // Update Ssy 5/3/98
 
@@ -14,9 +14,9 @@ void greeting(object);
 
 void create()
 {
-	set_name("ØËÆÍ", ({ "si pu", "pu"}));
-	set("long", "ËûÊÇµºÉÏµÄÒ»¸öÆÍÈË£¬ÊÖµ×ÏÂËÆºõºÜÓÐÁ½ÏÂ×Ó¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("åŽ®ä»†", ({ "si pu", "pu"}));
+	set("long", "ä»–æ˜¯å²›ä¸Šçš„ä¸€ä¸ªä»†äººï¼Œæ‰‹åº•ä¸‹ä¼¼ä¹Žå¾ˆæœ‰ä¸¤ä¸‹å­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 24);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -24,7 +24,7 @@ void create()
 	set("int", 25);
 	set("con", 25);
 	set("dex", 25);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 200);
 	set("eff_qi", 200);
 	set("qi", 200);
@@ -47,9 +47,9 @@ void create()
 	set_skill("sword", 70);
 	
 	set("inquiry", ([
-			"À°°ËÖà"   :  (: ask_food :),
-			"ÖÐÔ­"   : 	(: ask_leave :),
-			"µºÖ÷"   : 	(: ask_daozhu :), 
+			"è…Šå…«ç²¥"   :  (: ask_food :),
+			"ä¸­åŽŸ"   : 	(: ask_leave :),
+			"å²›ä¸»"   : 	(: ask_daozhu :), 
 		]));
 	set("food_count", 3);
 	setup();
@@ -72,15 +72,15 @@ void greeting(object me)
 {	if (me->query_temp(this_object()->query("id")) == 0 )
 	{
 		command("bow " + me->query("id"));
-		command("say ÕâÎ»" + RANK_D->query_respect(me) + 
-			"ÄãÀ´³ÙÒ»²½£¬ÔçÐ©Äã¾Í¿É¸ÏÉÏÊ®ÄêÒ»´ÎµÄÀ°°Ë\n" +
-			"Öà´ó»á¡£");
+		command("say è¿™ä½" + RANK_D->query_respect(me) + 
+			"ä½ æ¥è¿Ÿä¸€æ­¥ï¼Œæ—©äº›ä½ å°±å¯èµ¶ä¸Šåå¹´ä¸€æ¬¡çš„è…Šå…«\n" +
+			"ç²¥å¤§ä¼šã€‚");
 		me->set_temp(this_object()->query("id"), 1);
 	}
 }
 int ask_leave()
 {	command("shake ");
-	command("say Ã»ÓÐµºÖ÷Í¬Òâ£¬Äã¿É²»ÄÜË½×ÔÀëµº¡£");
+	command("say æ²¡æœ‰å²›ä¸»åŒæ„ï¼Œä½ å¯ä¸èƒ½ç§è‡ªç¦»å²›ã€‚");
 	return 1;
 }
 int ask_food()
@@ -89,24 +89,24 @@ int ask_food()
 	object food;
 	object here = environment(this_object());
 	if (here->query("food_count") < 1)
-	{	say("ØËÆÍ×ªÉí×ßµ½¼¸ÕÅ×À×ÓÇ°ÕÒÁËÕÒ£¬»ØÍ·±¨Ç¸µØÐ¦ÁËÐ¦ËµµÀ£º¶Ô²»Æð£¬\n" +
-			"¶¼±»ÈËºÈ¹âÁË¡£\n");
+	{	say("åŽ®ä»†è½¬èº«èµ°åˆ°å‡ å¼ æ¡Œå­å‰æ‰¾äº†æ‰¾ï¼Œå›žå¤´æŠ¥æ­‰åœ°ç¬‘äº†ç¬‘è¯´é“ï¼šå¯¹ä¸èµ·ï¼Œ\n" +
+			"éƒ½è¢«äººå–å…‰äº†ã€‚\n");
 		return 1;
 	}
 	
 	if (  present("laba zhou", you) )
-	{	say("ØËÆÍÖåÁËÖåÃ¼Í·ËµµÀ£ºÓÐÁË»¹Òª£¬ÄãÌ«Ì°ÐÄÁË°É¡£\n");
+	{	say("åŽ®ä»†çš±äº†çš±çœ‰å¤´è¯´é“ï¼šæœ‰äº†è¿˜è¦ï¼Œä½ å¤ªè´ªå¿ƒäº†å§ã€‚\n");
 		return 1;
 	}
 	else if (present("laba zhou", environment(you)))
-	{	say("ØËÆÍÍùµØÉÏÒ»Ö¸£ºµØÉÏ²»ÊÇÓÐÒ»ÍëÂð£¬ÄãÒªºÈµÄ»°¾Í¼ñÆðÀ´°É¡£\n");
+	{	say("åŽ®ä»†å¾€åœ°ä¸Šä¸€æŒ‡ï¼šåœ°ä¸Šä¸æ˜¯æœ‰ä¸€ç¢—å—ï¼Œä½ è¦å–çš„è¯å°±æ¡èµ·æ¥å§ã€‚\n");
 		return 1;
 	}
 	food = new("/d/xiakedao/obj/zhou");
 	food->move(this_object());
 
-//	say("ØËÆÍ×ªÉí´ÓÅÔ±ßµÄ×ÀÉÏ¶ËÆðÒ»" + food->query("unit") + food->query("name") + "£¬µÝÁË¸øÄã¡£\n");
-	say("ØËÆÍ×ªÉí´ÓÅÔ±ßµÄ×ÀÉÏ¶ËÆðÒ»" + food->query("unit") + food->query("name") + "¡£\n");
+//	say("åŽ®ä»†è½¬èº«ä»Žæ—è¾¹çš„æ¡Œä¸Šç«¯èµ·ä¸€" + food->query("unit") + food->query("name") + "ï¼Œé€’äº†ç»™ä½ ã€‚\n");
+	say("åŽ®ä»†è½¬èº«ä»Žæ—è¾¹çš„æ¡Œä¸Šç«¯èµ·ä¸€" + food->query("unit") + food->query("name") + "ã€‚\n");
 	command("give " + food->query("id") + " to " + you->query("id"));
 	//food->move(you);
 	here->add("food_count", -1);
@@ -118,16 +118,16 @@ int ask_daozhu()
 	here = environment(me);
 	desc = here->query("long");
 	if ( (int)here->query_temp("opened") == 0)
-	{	say("ØËÆÍÎ¢Ò»¹ªÉíËµµÀ£ºÁ½Î»µºÖ÷ÕýÔÚÊ¯ÊÒÖÐ¿àË¼¡£\n");
-		say("ØËÆÍÕÐÁËÕÐÊÖ£¬ÆäËû¼¸Î»ØËÆÍ×ßÁË¹ýÀ´£¬ËÄÈË×¥×¡Á½¿é´óÆÁ·çµÄ±ßÔµ\n");
-		say("ÏòÅÔ»º»ºÀ­¿ª£¬Â¶³öÒ»Ìõ³¤³¤µÄð®µÀ¡£\n");
+	{	say("åŽ®ä»†å¾®ä¸€èº¬èº«è¯´é“ï¼šä¸¤ä½å²›ä¸»æ­£åœ¨çŸ³å®¤ä¸­è‹¦æ€ã€‚\n");
+		say("åŽ®ä»†æ‹›äº†æ‹›æ‰‹ï¼Œå…¶ä»–å‡ ä½åŽ®ä»†èµ°äº†è¿‡æ¥ï¼Œå››äººæŠ“ä½ä¸¤å—å¤§å±é£Žçš„è¾¹ç¼˜\n");
+		say("å‘æ—ç¼“ç¼“æ‹‰å¼€ï¼Œéœ²å‡ºä¸€æ¡é•¿é•¿çš„ç”¬é“ã€‚\n");
 		here->set("exits/enter", "/d/xiakedao/yongdao10");
 		here->set_temp("opened", 1);
-		desc = sprintf(desc + "    ÆÁ·çÒÑ±»À­¿ª£¬Â¶³öÒ»Ìõ³¤³¤µÄð®µÀ¡£\n");
+		desc = sprintf(desc + "    å±é£Žå·²è¢«æ‹‰å¼€ï¼Œéœ²å‡ºä¸€æ¡é•¿é•¿çš„ç”¬é“ã€‚\n");
 		here->set("long", desc);
 	}
 	else
-	{	say("ØËÆÍÎ¢Ò»¹ªÉíËµµÀ£ºÁ½Î»µºÖ÷ÕýÔÚÊ¯ÊÒÖÐ¿àË¼£¬Äã½øÈ¥ÕÒËûÃÇ°É¡£\n");
+	{	say("åŽ®ä»†å¾®ä¸€èº¬èº«è¯´é“ï¼šä¸¤ä½å²›ä¸»æ­£åœ¨çŸ³å®¤ä¸­è‹¦æ€ï¼Œä½ è¿›åŽ»æ‰¾ä»–ä»¬å§ã€‚\n");
 	}
 	return 1;
 }

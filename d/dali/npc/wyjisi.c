@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wyjisi.c ÎÚÒÄ¼ÀË¾
+// wyjisi.c ä¹Œå¤·ç¥­å¸
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÎÚÒÄÀÏ¼ÀË¾", ({ "lao jisi", "jisi", "ji" }) );
-	set("long", "Ò»¸öÎÚÒÄ×åµÄ¼ÀË¾£¬ÉíÅûÎÚÒÄ´ó÷â£¬´÷×ÅÆÄ¶à½ğÒøÊÎÎï£¬ÏÔÊ¾ÆäµØÎ»²»·²¡£\n");
+	set_name("ä¹Œå¤·è€ç¥­å¸", ({ "lao jisi", "jisi", "ji" }) );
+	set("long", "ä¸€ä¸ªä¹Œå¤·æ—çš„ç¥­å¸ï¼Œèº«æŠ«ä¹Œå¤·å¤§éº¾ï¼Œæˆ´ç€é¢‡å¤šé‡‘é“¶é¥°ç‰©ï¼Œæ˜¾ç¤ºå…¶åœ°ä½ä¸å‡¡ã€‚\n");
 
 	set("age", 60);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����̨��");
+        set("short", "钓鱼台岛");
         set("long", @LONG
-������ǵ��㣨̨����������С�����ܶ��Ǵ󺣡�������һ��
-����(dengta)�����»�����̫���졣
+这里就是钓鱼（台）岛。岛很小，四周都是大海。岛上有一座
+灯塔(dengta)，塔下还画着太阳旗。
 LONG
         );
         
@@ -15,7 +15,7 @@ LONG
 	]));
 
 	set("item_desc", ([
-		"dengta" : "һ������бб�ĵ���������ը(zha)����\n"
+		"dengta" : "一座歪歪斜斜的灯塔，可以炸(zha)掉。\n"
 	]));
 
         set("objects", ([
@@ -36,17 +36,17 @@ int do_dagu(string arg)
 {
 	object me = this_player();
 
-	if ( !arg ) return notify_fail("��Ҫըʲô��\n");
+	if ( !arg ) return notify_fail("你要炸什么？\n");
 	if (arg != "dengta") 
-		return notify_fail("�������ը��\n");
+		return notify_fail("这个不能炸。\n");
 	if (objectp(present("lang ren",environment(me))))
-                return notify_fail("�ձ����˰ε���ס����\n");
+                return notify_fail("日本浪人拔刀挡住了你\n");
         CHANNEL_D->do_channel(me,"rumor",
-           sprintf("%s��ըҩ���ڵ����£�ֻ�����䡹��һ�����죬�������ձ������������졣", 
+           sprintf("%s把炸药堆在灯塔下，只听「轰」的一声巨响，钓岛的日本灯塔飞上了天。", 
            me->name()));
         set("long", @LONG
-������ǵ��㣨̨����������С�����ܶ��Ǵ󺣡����ϵĵ���
-��ը���ˡ�
+这里就是钓鱼（台）岛。岛很小，四周都是大海。岛上的灯塔
+被炸烂了。
 LONG
         );
 

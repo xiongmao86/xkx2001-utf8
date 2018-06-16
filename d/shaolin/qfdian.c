@@ -10,12 +10,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ç§·ğµî");
+	set("short", "åƒä½›æ®¿");
 	set("long", @LONG
-ÕâÊÇÇ§·ğµî¡£´óµîÈë¿ÚÊÇÖìºì¸ñÉÈ£¬Æß±¦Ááçç¡£ÄÚÀï¹©·îµÄÎ÷
-ÌìÖî·ğ£¬¼ÆÓĞ°ËÆĞÈø£¬ËÄ½ğ¸Õ£¬Îå°Ù°¢ÂŞ£¬ÈıÇ§½ÒÚĞ£¬Ê®Ò»´óê×£¬
-Ê®°ËÙ¤À¶£¬ÒÔ¼°ÖÚÓÅÆÅÈû£¬ÓÅÆÅÒÄµÈ¡£Ö±¿´µÃÄãÑÛ»¨çÔÂÒ¡£±ßÉÏ
-ÓĞµÀĞ¡Ä¾ÃÅ¡£
+è¿™æ˜¯åƒä½›æ®¿ã€‚å¤§æ®¿å…¥å£æ˜¯æœ±çº¢æ ¼æ‰‡ï¼Œä¸ƒå®ç²ç‘ã€‚å†…é‡Œä¾›å¥‰çš„è¥¿
+å¤©è¯¸ä½›ï¼Œè®¡æœ‰å…«è©è¨ï¼Œå››é‡‘åˆšï¼Œäº”ç™¾é˜¿ç½—ï¼Œä¸‰åƒæ­è°›ï¼Œåä¸€å¤§æ›œï¼Œ
+åå…«ä¼½è“ï¼Œä»¥åŠä¼—ä¼˜å©†å¡ï¼Œä¼˜å©†å¤·ç­‰ã€‚ç›´çœ‹å¾—ä½ çœ¼èŠ±ç¼­ä¹±ã€‚è¾¹ä¸Š
+æœ‰é“å°æœ¨é—¨ã€‚
 LONG
 	);
 
@@ -28,7 +28,7 @@ LONG
 		CLASS_D("shaolin") + "/qing-guan" : 1,
 	]));
 
-	create_door("north","Ä¾ÃÅ","south",DOOR_CLOSED);
+	create_door("north","æœ¨é—¨","south",DOOR_CLOSED);
 
 	set("cost", 1);
 	setup();
@@ -37,10 +37,10 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if (me->query("family/family_name") != "ÉÙÁÖÅÉ" 
+	if (me->query("family/family_name") != "å°‘æ—æ´¾" 
 	&& dir == "north" 
 	&& objectp(present("qingguan biqiu", environment(me))))
-		return notify_fail("Çå¹ÛºÈµÀ£ºÄã²»ÊÇÉÙÁÖµÜ×Ó£¬²»µÃ½øÈëºóÉ½ÖñÁÖ£¡\n");
+		return notify_fail("æ¸…è§‚å–é“ï¼šä½ ä¸æ˜¯å°‘æ—å¼Ÿå­ï¼Œä¸å¾—è¿›å…¥åå±±ç«¹æ—ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

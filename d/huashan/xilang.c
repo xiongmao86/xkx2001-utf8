@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: xilang.c Î÷ÀÈ
+// Room: xilang.c è¥¿å»Š
 // qfy July 7, 1996.
 
 #include <room.h>
@@ -9,11 +9,11 @@ void reset();
 
 void create()
 {
-    set("short", "Î÷ÀÈ");
+    set("short", "è¥¿å»Š");
     set("long", @LONG
-×ßÀÈÎ÷±ß´«À´ÕóÕó·¹²ËÏãÆø£¬²»ÎÊ¿ÉÖªÄÇ¶ù±ãÊÇ»ªÉ½ÅÉµÄ³ø·¿¡£¼¸¸ö
-»ªÉ½µÜ×ÓÕıĞË¸ß²ÊÁÒµØÌ¸ÂÛ×Å×Ô¼ºµÄ·ç¹âÊ·¼°ÎäÁÖÖĞµÄ¼¸¼ş´óÊÂ¡£ÁíÓĞ¼¸
-¸öÅ®µÜ×ÓÕıÃ¦×Å×ö·¹ÉÕ²Ë¡£
+èµ°å»Šè¥¿è¾¹ä¼ æ¥é˜µé˜µé¥­èœé¦™æ°”ï¼Œä¸é—®å¯çŸ¥é‚£å„¿ä¾¿æ˜¯åå±±æ´¾çš„å¨æˆ¿ã€‚å‡ ä¸ª
+åå±±å¼Ÿå­æ­£å…´é«˜å½©çƒˆåœ°è°ˆè®ºç€è‡ªå·±çš„é£å…‰å²åŠæ­¦æ—ä¸­çš„å‡ ä»¶å¤§äº‹ã€‚å¦æœ‰å‡ 
+ä¸ªå¥³å¼Ÿå­æ­£å¿™ç€åšé¥­çƒ§èœã€‚
 LONG
     );
 
@@ -41,8 +41,8 @@ int valid_leave(object me, string dir)
 
 
     if (dir == "west" && objectp(present("yue lingshan", environment(me)))) {
-	if ( !myfam || myfam["family_name"] != "»ªÉ½ÅÉ")
-	   return notify_fail("ÔÀÁéæ©À¹ÉíËµµÀ£ººóÃæÊÇ±¾ÅÉ³ø·¿£¬"+RANK_D->query_respect(me)+"ÇëÍùÇ°Ìü·î²è¡£\n");
+	if ( !myfam || myfam["family_name"] != "åå±±æ´¾")
+	   return notify_fail("å²³çµå§—æ‹¦èº«è¯´é“ï¼šåé¢æ˜¯æœ¬æ´¾å¨æˆ¿ï¼Œ"+RANK_D->query_respect(me)+"è¯·å¾€å‰å…å¥‰èŒ¶ã€‚\n");
     }
 
     return ::valid_leave(me, dir);

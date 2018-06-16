@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¹ÄÂ¥Ò»²ã");
+	set("short", "é¼“æ¥¼ä¸€å±‚");
 	set("long", @LONG
-ÕâÀïÊÇËşÂ¥µÄµ×²ã£¬Ò»ÂÆÂÆÑô¹â´ÓÇ½ÉÏµÄ»¨×©·ìÏ¶ÀïÍ¸Éä
-½øÀ´£¬ÔÚÇà×©µØÉÏÍ¶ÏÂ±ğÖÂµÄ¹âÓ°£¬ÈçÍ¬Ò»¸ñ¸ñÆåÅÌÏàËÆ¡£Íù
-ÉÏ¿´£¬³¤³¤µÄÄ¾Â¥ÌİÅÌÈÆ¶øÉÏ£¬ËÆºõÓÀÎŞ¾¡Í·¡£Ç½½Ç£¬Ìİ¼¶¶¼
-Ïàµ±½à¾»£¬¿´À´¾­³£ÓĞÉ®ÈË´òÉ¨¡£
+è¿™é‡Œæ˜¯å¡”æ¥¼çš„åº•å±‚ï¼Œä¸€ç¼•ç¼•é˜³å…‰ä»å¢™ä¸Šçš„èŠ±ç –ç¼éš™é‡Œé€å°„
+è¿›æ¥ï¼Œåœ¨é’ç –åœ°ä¸ŠæŠ•ä¸‹åˆ«è‡´çš„å…‰å½±ï¼Œå¦‚åŒä¸€æ ¼æ ¼æ£‹ç›˜ç›¸ä¼¼ã€‚å¾€
+ä¸Šçœ‹ï¼Œé•¿é•¿çš„æœ¨æ¥¼æ¢¯ç›˜ç»•è€Œä¸Šï¼Œä¼¼ä¹æ°¸æ— å°½å¤´ã€‚å¢™è§’ï¼Œæ¢¯çº§éƒ½
+ç›¸å½“æ´å‡€ï¼Œçœ‹æ¥ç»å¸¸æœ‰åƒ§äººæ‰“æ‰«ã€‚
 LONG
 	);
 
@@ -38,10 +38,10 @@ void init()
 
 	if( !userp(me) ) return;
 
-	if( (me->query("family/family_name") != "ÉÙÁÖÅÉ"
+	if( (me->query("family/family_name") != "å°‘æ—æ´¾"
 	||  me->query("family/generation") > 36
 	||  me->query_temp("win_times") < 3)
-	&& me->query( "family/master_name") != "¾õĞÄ" ) {
+	&& me->query( "family/master_name") != "è§‰å¿ƒ" ) {
 		if( objectp(ob = present("juexin", this_object())) )	
 			destruct(ob);
 		else {
@@ -70,7 +70,7 @@ int make_juexin()
 
 	ob=new("/kungfu/class/shaolin/jue-xin");
 	ob->move("/d/shaolin/gulou1");
-	message_vision(HIW "\n¾õĞÄ´óÊ¦×ßÁË¹ıÀ´£¬ÅÌÍÈ×øÏÂ£¬ÏòÄãÎ¢Ğ¦ÖøµãµãÍ·£¬¿ªÊ¼Èë¶¨¡£\n" NOR, ob); 
+	message_vision(HIW "\nè§‰å¿ƒå¤§å¸ˆèµ°äº†è¿‡æ¥ï¼Œç›˜è…¿åä¸‹ï¼Œå‘ä½ å¾®ç¬‘è‘—ç‚¹ç‚¹å¤´ï¼Œå¼€å§‹å…¥å®šã€‚\n" NOR, ob); 
 	call_out("dest_juexin", random(600), ob);
 	return 1;
 }
@@ -78,7 +78,7 @@ int make_juexin()
 int dest_juexin(object ob)
 {
 	if (!ob) return 1;
-	message_vision(HIW "\n¾õĞÄ´óÊ¦Õ¾ÆğÉí£¬»ÓÁË»ÓÊÖ£¬ÍùÉÏÀë¿ª¡£\n" NOR, ob); 
+	message_vision(HIW "\nè§‰å¿ƒå¤§å¸ˆç«™èµ·èº«ï¼ŒæŒ¥äº†æŒ¥æ‰‹ï¼Œå¾€ä¸Šç¦»å¼€ã€‚\n" NOR, ob); 
 	remove_call_out("make_juexin");
 	//call_out("make_juexin", random(600));
 	destruct(ob);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tengjia.c ÌÙ¼×
+// tengjia.c è—¤ç”²
 //
 #include <ansi.h>
 #include <armor.h>
@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(YEL"ÌÙ¼×"NOR, ({ "tengjia", "armor" }) );
+	set_name(YEL"è—¤ç”²"NOR, ({ "tengjia", "armor" }) );
 	set_weight(2000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
-		set("long", "ÕâÊÇÒ»¼şÓÃ´óÀíÄ³´¦É½ÇøÌØ²úµÄÌÙÌõ±àÖ¯³ÉµÄÌÙ¼×£¬ÓÖÇáÓÖ½áÊµ£¬ÊÇ»¤Éí¼ÑÆ·¡£\n");
+		set("unit", "ä»¶");
+		set("long", "è¿™æ˜¯ä¸€ä»¶ç”¨å¤§ç†æŸå¤„å±±åŒºç‰¹äº§çš„è—¤æ¡ç¼–ç»‡æˆçš„è—¤ç”²ï¼Œåˆè½»åˆç»“å®ï¼Œæ˜¯æŠ¤èº«ä½³å“ã€‚\n");
 		set("material", "wood");
 		set("value", 10);
 		set("armor_prop/armor", 75);

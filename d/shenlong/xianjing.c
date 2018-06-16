@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ÏÝÚå  /d/shenlong/xianjing
+// é™·é˜±  /d/shenlong/xianjing
 // ywz 09/30/96
 // Mongol: All non shelong people die at once, that's not reasonable.
 //         Just disabled, and needs more polishments.
@@ -9,9 +9,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÏÝÚå");
+	set("short", "é™·é˜±");
 	set("long", @LONG
-Í»È»£¬ËÄÖÜµÄÇ½±ÚÃ°³öÐí¶à·æÀûµÄ¸Ö°å£¬ÏòÄãÔúÁË¹ýÀ´¡£ÍêÁË¡£¡£¡£
+çªç„¶ï¼Œå››å‘¨çš„å¢™å£å†’å‡ºè®¸å¤šé”‹åˆ©çš„é’¢æ¿ï¼Œå‘ä½ æ‰Žäº†è¿‡æ¥ã€‚å®Œäº†ã€‚ã€‚ã€‚
 LONG
 	);
 
@@ -52,9 +52,9 @@ void dropping()
 	d = me->query_skill("dodge",1);
 	p = me->query_skill("parry",1);
 	if( interactive(me = this_player()) ) {
-		message_vision( HIR "$NµÄÑÛÇ°Í»È»³öÏÖÒ»¸öÎÞµ×µÄÉîÔ¨...$NµôÈëÁËÏÝÚåÖ®ÖÐ¡£\n" NOR, me);
-		message_vision( HIR "ÏÝÚåÖÐµÄ¸Ö°åÍ»È»Ã°³öÐí¶à·æÀûµÄ¸ÖÕë£¬ÉîÉîµØÔúÈëÁË$NµÄÉíÌåÖÐ...\n" NOR, me);
-//		message_vision( HIR "Ò»Éù²Òº¿£¬$N±»ÔúËÀÔÚÏÝÚåÖÐ¡£\n" NOR, me);
+		message_vision( HIR "$Nçš„çœ¼å‰çªç„¶å‡ºçŽ°ä¸€ä¸ªæ— åº•çš„æ·±æ¸Š...$NæŽ‰å…¥äº†é™·é˜±ä¹‹ä¸­ã€‚\n" NOR, me);
+		message_vision( HIR "é™·é˜±ä¸­çš„é’¢æ¿çªç„¶å†’å‡ºè®¸å¤šé”‹åˆ©çš„é’¢é’ˆï¼Œæ·±æ·±åœ°æ‰Žå…¥äº†$Nçš„èº«ä½“ä¸­...\n" NOR, me);
+//		message_vision( HIR "ä¸€å£°æƒ¨åšŽï¼Œ$Nè¢«æ‰Žæ­»åœ¨é™·é˜±ä¸­ã€‚\n" NOR, me);
 //              if (f>=2)
 //              me->set_skill("force",f-2);
 //              if (d>=2)
@@ -62,7 +62,7 @@ void dropping()
 //              if (p>=2)
 //              me->set_skill("parry",p-2);
 //              me->set("shen",sn);
-//		me->receive_wound("qi", me->query("max_qi")+10, "µôÈëÏÝÚåËÀÁË¡£");
+//		me->receive_wound("qi", me->query("max_qi")+10, "æŽ‰å…¥é™·é˜±æ­»äº†ã€‚");
 		me->unconcious();
 
 	}

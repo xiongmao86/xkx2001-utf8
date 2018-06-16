@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÁéÖİÄÏÃÅ");
+        set("short", "çµå·å—é—¨");
         set("long", @LONG
-ÕâÊÇÁéÖİµÄÄÏ³ÇÃÅ£¬³ÇÃÅÕıÉÏ·½¿ÌµÃÓĞ¼¸¸öÎ÷ÏÄÎÄ×Ö¡£³ÇÇ½ÉÏÌù×Å¼¸ÕÅ¹Ù¸®
-¸æÊ¾¡£Ò»Ìõ´óÂ·ÍùÄÏÍ¨Ïò»ÆÑòÌ²¡£
+è¿™æ˜¯çµå·çš„å—åŸé—¨ï¼ŒåŸé—¨æ­£ä¸Šæ–¹åˆ»å¾—æœ‰å‡ ä¸ªè¥¿å¤æ–‡å­—ã€‚åŸå¢™ä¸Šè´´ç€å‡ å¼ å®˜åºœ
+å‘Šç¤ºã€‚ä¸€æ¡å¤§è·¯å¾€å—é€šå‘é»„ç¾Šæ»©ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
@@ -30,6 +30,6 @@ int valid_leave(object me, string dir)
         if (dir =="north" )
         if(present("guan bing", (environment(me)))
         && me->query_condition("xakiller") > 0)
-                return notify_fail("Î÷ÏÄ±øÊÖÖĞµÄ³¤Ç¹µ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+                return notify_fail("è¥¿å¤å…µæ‰‹ä¸­çš„é•¿æªæŒ¡ä½äº†ä½ çš„å»è·¯ã€‚\n");
         return ::valid_leave(me, dir);
 }

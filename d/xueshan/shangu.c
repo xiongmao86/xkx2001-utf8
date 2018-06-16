@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ȿ�");
+        set("short", "谷口");
         set("long", @LONG
-������ɽ��ǰ���һ��ƽ�ء���ɽ��·ʮ�ֶ��Σ����˵ػ�ʱ��
-����ѩ����
+这里是山谷前面的一块平地。下山的路十分陡跷，而此地还时有
+发生雪崩。
 LONG
         );
         set("exits", ([

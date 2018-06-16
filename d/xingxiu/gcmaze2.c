@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¸ß²ıÃÔ¹¬");
+	set("short", "é«˜æ˜Œè¿·å®«");
 	set("long", @LONG
-×ßÔÚºÚÆáÆáµÄğ®µÀÀï£¬Äã²»½ûÓĞĞ©·¢¶¶¡£²»ÖªµÀÊ²÷áÊ±ºò
-²ÅÄÜ×ßµ½Í·¡£
+èµ°åœ¨é»‘æ¼†æ¼†çš„ç”¬é“é‡Œï¼Œä½ ä¸ç¦æœ‰äº›å‘æŠ–ã€‚ä¸çŸ¥é“ä»€éº½æ—¶å€™
+æ‰èƒ½èµ°åˆ°å¤´ã€‚
 LONG
 	);
 
@@ -28,21 +28,21 @@ int valid_leave(object me, string dir)
 	if (dir=="out") me->add_temp("marks/step",-1);
 	if (me->query_temp("marks/step")==5)
 	return notify_fail(
-"Í»È»Ö®¼ä£¬Ç°ÃæÒ»¸öÒõÉ­É­µÄÉù"+
-"ÒôºÈµÀ£º¡¸ÎÒÔÚÕâÀï\nÒÑ°²°²¾²¾²µÄ×¡ÁËÒ»Ç§Äê£¬Ë­Ò²²»¸ÒÀ´´òÈÅÎÒ¡£ÄÇÒ»¸ö"
-+"\n´óµ¨¹ıÀ´£¬Á¢¿Ì¾ÍËÀ£¡¡¹\n");
+"çªç„¶ä¹‹é—´ï¼Œå‰é¢ä¸€ä¸ªé˜´æ£®æ£®çš„å£°"+
+"éŸ³å–é“ï¼šã€Œæˆ‘åœ¨è¿™é‡Œ\nå·²å®‰å®‰é™é™çš„ä½äº†ä¸€åƒå¹´ï¼Œè°ä¹Ÿä¸æ•¢æ¥æ‰“æ‰°æˆ‘ã€‚é‚£ä¸€ä¸ª"
++"\nå¤§èƒ†è¿‡æ¥ï¼Œç«‹åˆ»å°±æ­»ï¼ã€\n");
 
 	if (me->query_temp("marks/step")==10) {
 	  me->move("/d/xingxiu/gcmaze3");
 	  me->delete_temp("marks/step");
-//	  return notify_fail("\n"£©£»
+//	  return notify_fail("\n"ï¼‰ï¼›
 return notify_fail("\n");
 	}
 
         if (me->query_temp("marks/step")==-10) {
           me->move("/d/xingxiu/gcmaze1");
           me->delete_temp("marks/step");
-//          return notify_fail("ÄãÖÕì¶×ß³öğ®µÀ¡£\n"£©£»
+//          return notify_fail("ä½ ç»ˆæ–¼èµ°å‡ºç”¬é“ã€‚\n"ï¼‰ï¼›
 return notify_fail("\n");
         }
 

@@ -10,15 +10,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ӻ���");
+        set("short", "杂货铺");
         set("long", @LONG
-�����Ǽ����ӻ���С���ӣ���������˸���ʽ����
-���������Ŀ��ǽ�Ϲ���һ���¾ɵ�ľ��(mupai)��
+这里是家卖杂货的小铺子，里面摆满了各种式样的
+货物，琳琅满目。墙上挂有一个陈旧的木牌(mupai)。
 LONG
         );
 
         set("item_desc", ([
-                "mupai": HIG"��Ǯ������ͯ�����ۡ�\n"NOR,
+                "mupai": HIG"价钱公道，童叟无欺。\n"NOR,
         ]));
 
         set("exits", ([

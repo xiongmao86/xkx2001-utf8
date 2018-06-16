@@ -10,11 +10,11 @@ string look_gaoshi();
 
 void create()
 {
-        set("short", "±±ÃÅ");
+        set("short", "åŒ—é—¨");
         set("long", 
-"ÕâÀï±ãÊÇÔ¶½üÎÅÃûµÄÑïÖİ³ÇÁË¡£Ğí¶àÄÏÀ´±±ÍùµÄÈË´ÓÕâÀï½ø½ø³ö³ö¡£ÊØÃÅµÄ
-¹Ù±øÕıÉÏÏÂ¶¢×ÅÄã¡£ÄãÍù³ÇÀïÍûÈ¥£¬Ò»Æ¬·±»ªµÄ¾°Ïó¡£±±±ßÊÇÒ»ÌõÇàÊ¯´óµÀ£¬ÈË
-À´ÈËÍù¡£³ÇÇ½ÉÏ¹ÒÁËÒ»¸ö¸æÊ¾(gaoshi)¡£\n"
+"è¿™é‡Œä¾¿æ˜¯è¿œè¿‘é—»åçš„æ‰¬å·åŸäº†ã€‚è®¸å¤šå—æ¥åŒ—å¾€çš„äººä»è¿™é‡Œè¿›è¿›å‡ºå‡ºã€‚å®ˆé—¨çš„
+å®˜å…µæ­£ä¸Šä¸‹ç›¯ç€ä½ ã€‚ä½ å¾€åŸé‡Œæœ›å»ï¼Œä¸€ç‰‡ç¹åçš„æ™¯è±¡ã€‚åŒ—è¾¹æ˜¯ä¸€æ¡é’çŸ³å¤§é“ï¼Œäºº
+æ¥äººå¾€ã€‚åŸå¢™ä¸ŠæŒ‚äº†ä¸€ä¸ªå‘Šç¤º(gaoshi)ã€‚\n"
         );
 
         set("item_desc", ([
@@ -38,13 +38,13 @@ void create()
 
 string look_gaoshi()
 {
-        return FINGER_D->get_killer() + "\nÕã½­Ìá¶½\nÀî¿ËĞã\n";
+        return FINGER_D->get_killer() + "\næµ™æ±Ÿæç£\næå…‹ç§€\n";
 }
 int valid_leave(object me, string dir)
 {
         if (dir =="south" )
         if(present("guan bing", (environment(me)))
         && me->query_condition("killer") > 0)
-                return notify_fail("¹Ù±øÊÖÖĞµÄµ¶µ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+                return notify_fail("å®˜å…µæ‰‹ä¸­çš„åˆ€æŒ¡ä½äº†ä½ çš„å»è·¯ã€‚\n");
         return ::valid_leave(me, dir);
 }

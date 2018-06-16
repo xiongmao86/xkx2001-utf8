@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ñ©¿Ó");
+        set("short", "é›ªå‘");
         set("long", @LONG
-ÕâÊÇ´óÑ©É½½ÅÏÂµÄÒ»¸öÑ©¿Ó¡£¶ªÂúÁË¸÷ÖÖÔÓÎï£¬ »¹ÓĞØ¤°ïµÜ
-×ÓÊÕ¼¯µÄÆÆÍ­ÀÃÌúµÈ¡£¿Ó±ßÉÏÓĞÒ»¸öĞ¡¶´¡£
+è¿™æ˜¯å¤§é›ªå±±è„šä¸‹çš„ä¸€ä¸ªé›ªå‘ã€‚ä¸¢æ»¡äº†å„ç§æ‚ç‰©ï¼Œ è¿˜æœ‰ä¸å¸®å¼Ÿ
+å­æ”¶é›†çš„ç ´é“œçƒ‚é“ç­‰ã€‚å‘è¾¹ä¸Šæœ‰ä¸€ä¸ªå°æ´ã€‚
 LONG
         );
 	 switch(random(3)){
@@ -38,8 +38,8 @@ int valid_leave(object me, string dir)
         myfam = (mapping)me->query("family");
 
         if (dir =="enter" ) {
-            if (!myfam || myfam["family_name"] != "Ø¤°ï")
-                return notify_fail("ÄÇ÷áĞ¡µÄ¶´Äã×¨µÃ½øÈ¥Âğ£¿\n");
+            if (!myfam || myfam["family_name"] != "ä¸å¸®")
+                return notify_fail("é‚£éº½å°çš„æ´ä½ ä¸“å¾—è¿›å»å—ï¼Ÿ\n");
 
         return 1;
     }

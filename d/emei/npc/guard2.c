@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /kungfu/class/emei/guard2.c ÊØÄ¹µÜ×Ó
+// /kungfu/class/emei/guard2.c å®ˆå¢“å¼Ÿå­
 // shan: 96/08/22
 
 #include <ansi.h>
@@ -9,10 +9,10 @@ string ask_me();
 
 void create()
 {
-        set_name("ÊØÄ¹µÜ×Ó", ({ "guard", "shoumu dizi", "dizi"}));
+        set_name("å®ˆå¢“å¼Ÿå­", ({ "guard", "shoumu dizi", "dizi"}));
         set("long", 
-		"ËıÊÇÔÚ¶ëÃ¼ºóÉ½ÊØÄ¹µÄµÜ×Ó¡£\n");
-	set("gender", "Å®ĞÔ");
+		"å¥¹æ˜¯åœ¨å³¨çœ‰åå±±å®ˆå¢“çš„å¼Ÿå­ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 32);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -46,11 +46,11 @@ void create()
         map_skill("parry", "huifeng-jian");
         map_skill("dodge", "zhutian-bu");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-		"³ö¼Ò" : "ÄãÈ¥±¾É½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦½ã°É¡£ËıÃÇÔÚ¸£ÊÙâÖ¡¢Ç§·ğâÖ¡¢\nÍòÄêâÖ¡¢ÍòĞĞâÖºÍÎÔÔÆâÖĞŞĞĞ¡£\n",
-            "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
+		"å‡ºå®¶" : "ä½ å»æœ¬å±±çš„åºµå ‚é‡Œæ‰¾æˆ‘é™å­—è¾ˆå¸ˆå§å§ã€‚å¥¹ä»¬åœ¨ç¦å¯¿åºµã€åƒä½›åºµã€\nä¸‡å¹´åºµã€ä¸‡è¡Œåºµå’Œå§äº‘åºµä¿®è¡Œã€‚\n",
+            "ç­ç»å¸ˆå¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé—¨äººï¼Œåœ¨åè—åºµä¿®è¡Œã€‚\n",
 //Add more here:
         ]));
 
@@ -69,13 +69,13 @@ void init()
 
 	::init();
         if (interactive(me) && ob->query_temp("digger/myname")) {
-        	message_vision("$n³å$N½ĞµÀ£ºÓÖÊÇÄã£¡¿´½££¡\n", me, ob);
+        	message_vision("$nå†²$Nå«é“ï¼šåˆæ˜¯ä½ ï¼çœ‹å‰‘ï¼\n", me, ob);
         	command("kill " + me->query("id"));
 		return;
         }
         if (interactive(me) && present("ruanwei-jia", me)) {
         	message_vision(
-                	"$n¿´×Å$NËµµÀ£ºÄãÈçºÎÍµÁË×æÊ¦Ä¹ÖĞµÄ±¦Îï£¿¿´½££¡\n",
+                	"$nçœ‹ç€$Nè¯´é“ï¼šä½ å¦‚ä½•å·äº†ç¥–å¸ˆå¢“ä¸­çš„å®ç‰©ï¼Ÿçœ‹å‰‘ï¼\n",
         		me, ob);
         	command("kill " + me->query("id"));
 		return;

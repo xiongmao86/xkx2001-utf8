@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Â¥ÍâÂ¥
+// æ¥¼å¤–æ¥¼
 // Dong  11/03/1996.
 
 //  NTA : Need to add npc here and food.
@@ -10,11 +10,11 @@
 inherit ROOM;
 
 void create()
-{   set("short", HIR"Â¥ÍâÂ¥"NOR);
+{   set("short", HIR"æ¥¼å¤–æ¥¼"NOR);
     set("long", @LONG
-ÌáÆð¡°Â¥ÍâÂ¥¡±·½Ô²°ÙÀïÎÞÈË²»Öª¡£ÕâÀï¸÷Ê½Ãû²ËÊÇº¼ÖÝÒ»¾ø¡£
-À´ÓÎºþµÄÈËÃÇ¶¼Ò»¶¨»áÀ´ÕâÀï³¢³¢¡£Õû¸ö´óÌÃÄÖºåºåµÄ¼·ÂúÁË¸÷Ê½ÈË
-µÈ¡£µêÐ¡¶ùÅÜÀ´ÅÜÈ¥£¬Ã¦×ÅÕÐºô¿ÍÈË¡£Ç½ÉÏ¹Ò×Å¼Û¸ñÅÆ×Ó(paizi)¡£
+æèµ·â€œæ¥¼å¤–æ¥¼â€æ–¹åœ†ç™¾é‡Œæ— äººä¸çŸ¥ã€‚è¿™é‡Œå„å¼åèœæ˜¯æ­å·žä¸€ç»ã€‚
+æ¥æ¸¸æ¹–çš„äººä»¬éƒ½ä¸€å®šä¼šæ¥è¿™é‡Œå°å°ã€‚æ•´ä¸ªå¤§å ‚é—¹å“„å“„çš„æŒ¤æ»¡äº†å„å¼äºº
+ç­‰ã€‚åº—å°å„¿è·‘æ¥è·‘åŽ»ï¼Œå¿™ç€æ‹›å‘¼å®¢äººã€‚å¢™ä¸ŠæŒ‚ç€ä»·æ ¼ç‰Œå­(paizi)ã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */ 
@@ -27,13 +27,13 @@ LONG);
    set("item_desc", 
     	   ([
       	"paizi" : 
-		"±¾µê³öÊÛº¼ÖÝÃû²ËÃûµã\n"
-		"  ¶«ÆÂÈâ(pork)\n"
-		"  Î÷ºþ´×Óã(fish)\n"
-		"  Áú¾®ÏºÈÊ(shrimp)\n"
-		"  ½Ð»¯Í¯¼¦(chicken)\n"
-		"  ¹ð»¨ÏÊÀõ¸þ(soup)\n"
-		"  °Ù¹ûÓÍ°ü(baozi)\n"
+		"æœ¬åº—å‡ºå”®æ­å·žåèœåç‚¹\n"
+		"  ä¸œå¡è‚‰(pork)\n"
+		"  è¥¿æ¹–é†‹é±¼(fish)\n"
+		"  é¾™äº•è™¾ä»(shrimp)\n"
+		"  å«åŒ–ç«¥é¸¡(chicken)\n"
+		"  æ¡‚èŠ±é²œæ —ç¾¹(soup)\n"
+		"  ç™¾æžœæ²¹åŒ…(baozi)\n"
    	   ])
 	);
 

@@ -1,16 +1,16 @@
 //Cracked by Roath
-// d/emei/grassland.c ¹ùÏåÄ¹Ç°²İµØ
+// d/emei/grassland.c éƒ­è¥„å¢“å‰è‰åœ°
 // xbc: 96/02/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "²İµØ");
+        set("short", "è‰åœ°");
 	set("long", @LONG
-ÑÛÇ°³öÏÖÒ»Æ¬²İµØ£¬²İµØÉÏ¿ª×Å¸÷É«Ğ¡»¨£¬Î¢·ç´µ¹ı£¬ÆµÆµµãÍ·¡£Ò»ÌõÉ½
-½§´ÓÊ¯±ÚÁ÷ÏÂ£¬¼¸Öê¹ûÊ÷ÉÏ¹ÒÂúºìºìÂÌÂÌµÄ¹Ï¹û¡£²İµØ¾¡Í·ÓĞÒ»×ùÄ¹£¬ºóÃæºÃ
-ÏóÓĞ¼äĞ¡Ã©Îİ¡£
+çœ¼å‰å‡ºç°ä¸€ç‰‡è‰åœ°ï¼Œè‰åœ°ä¸Šå¼€ç€å„è‰²å°èŠ±ï¼Œå¾®é£å¹è¿‡ï¼Œé¢‘é¢‘ç‚¹å¤´ã€‚ä¸€æ¡å±±
+æ¶§ä»çŸ³å£æµä¸‹ï¼Œå‡ æ ªæœæ ‘ä¸ŠæŒ‚æ»¡çº¢çº¢ç»¿ç»¿çš„ç“œæœã€‚è‰åœ°å°½å¤´æœ‰ä¸€åº§å¢“ï¼Œåé¢å¥½
+è±¡æœ‰é—´å°èŒ…å±‹ã€‚
 LONG
 	);
 
@@ -48,11 +48,11 @@ int do_drink(string arg)
         max_water = me->query("str")*10 + 100;
         if (current_water<me->max_water_capacity()) {
             me->set("water", current_water+random(30));
-            message("vision", me->name()+"ÅõÁËÒ»°ÑÉ½½§µÄÈªË®ºÈÁËÏÂÈ¥¡£\n"
+            message("vision", me->name()+"æ§äº†ä¸€æŠŠå±±æ¶§çš„æ³‰æ°´å–äº†ä¸‹å»ã€‚\n"
             , environment(me), ({me}) );
-	    write("ÄãÅõÁËÒ»°ÑÉ½½§µÄÈªË®ºÈÁËÏÂÈ¥¡£\n");
+	    write("ä½ æ§äº†ä¸€æŠŠå±±æ¶§çš„æ³‰æ°´å–äº†ä¸‹å»ã€‚\n");
 	}
-        else write("ÄãÒ»¿ÚÆøºÈÁËºÃ¶àÈªË®£¬ÔÙÒ²ºÈ²»ÏÂÁË¡£\n");
+        else write("ä½ ä¸€å£æ°”å–äº†å¥½å¤šæ³‰æ°´ï¼Œå†ä¹Ÿå–ä¸ä¸‹äº†ã€‚\n");
         return 1;
 }
 
@@ -65,11 +65,11 @@ int do_pick(string arg)
 
 	if ( arg == "fruit" ){
 		if (query("fruit_count") < 1) {
-			tell_object(me, "ÄÜÕªµÄÒ°¹ûÒÑ¾­Õª¹âÁË¡£\n", me);
+			tell_object(me, "èƒ½æ‘˜çš„é‡æœå·²ç»æ‘˜å…‰äº†ã€‚\n", me);
 			return 1;
 		}
 		else {
-                	message_vision("$NÕªÏÂÒ»Ö»Ò°¹û¡£\n", me);
+                	message_vision("$Næ‘˜ä¸‹ä¸€åªé‡æœã€‚\n", me);
 			fruit->move(me);
 			add("fruit_count", -1);
 	        	return 1;

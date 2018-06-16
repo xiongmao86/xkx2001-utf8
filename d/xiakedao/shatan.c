@@ -13,11 +13,11 @@ void reset();
 
 void create()
 {
-    set("short", "É³Ì²");
+    set("short", "æ²™æ»©");
     set("long", @LONG
-À¶À¶µÄ´óº£Ò»ÍûÎŞ±ß¡£°¶±ß²»Ô¶´¦Í£×Å¼¸Ö»Ğ¡´¬£¬Ï¸Ï¸µÄ°×É³£¬
-²ÈÔÚ½ÅÏÂÈíÈíµÄºÃ²»Êæ·ş¡£²»Ê±ÓĞ¼¸Ö»Ğ¡Ğ·ºáĞĞ¶ø¹ı¡£Ò»ÅÅÇ³Ç³µÄ×ã
-¼£Ö¸Ïò±±±ß¡£Ò»¸öÓæ·ò´ò°çµÄÈËÕı¶Ô×ÅÄãÎ¢Ğ¦¡£
+è“è“çš„å¤§æµ·ä¸€æœ›æ— è¾¹ã€‚å²¸è¾¹ä¸è¿œå¤„åœç€å‡ åªå°èˆ¹ï¼Œç»†ç»†çš„ç™½æ²™ï¼Œ
+è¸©åœ¨è„šä¸‹è½¯è½¯çš„å¥½ä¸èˆ’æœã€‚ä¸æ—¶æœ‰å‡ åªå°èŸ¹æ¨ªè¡Œè€Œè¿‡ã€‚ä¸€æ’æµ…æµ…çš„è¶³
+è¿¹æŒ‡å‘åŒ—è¾¹ã€‚ä¸€ä¸ªæ¸”å¤«æ‰“æ‰®çš„äººæ­£å¯¹ç€ä½ å¾®ç¬‘ã€‚
 LONG
     );
 
@@ -41,7 +41,7 @@ void init()
         ::init();
 
         me->set("xkd/set", 1);
-//        if ((int)me->query_temp("marks/Àë") > 0)
+//        if ((int)me->query_temp("marks/ç¦»") > 0)
 //		  {       call_out("check_trigger", 1);
 //        }
 		call_out("check_trigger", 1);
@@ -59,19 +59,19 @@ void check_trigger()
 					 room->set("yell_trigger", 1);
 					 set("exits/enter", __DIR__"chuan");
 					 room->set("exits/out", __FILE__);
-					 message("vision", "Óæ·òÕĞÁËÕĞÊÖÒ»ÌõĞ¡´¬Ê»ÁË¹ıÀ´\n", this_object());
-					 message("vision", "´¬ÂıÂıµØ¿¿ÏòÁË°¶±ß¡£\n", room);
+					 message("vision", "æ¸”å¤«æ‹›äº†æ‹›æ‰‹ä¸€æ¡å°èˆ¹é©¶äº†è¿‡æ¥\n", this_object());
+					 message("vision", "èˆ¹æ…¢æ…¢åœ°é å‘äº†å²¸è¾¹ã€‚\n", room);
 					 remove_call_out("on_board");
 					 call_out("on_board", 15);
 				}
 				else
-					 message("vision", "Óæ·ò±§Ç¸µØËµµÀ£º´¬¶¼³öº£ÁË£¬Äã´ı»á¶ùÔÙÀ´°É¡£\n",this_object() );
+					 message("vision", "æ¸”å¤«æŠ±æ­‰åœ°è¯´é“ï¼šèˆ¹éƒ½å‡ºæµ·äº†ï¼Œä½ å¾…ä¼šå„¿å†æ¥å§ã€‚\n",this_object() );
 		  }
 		  else
 				message("vision", "ERROR: boat not found\n", this_object() );
 	 }
 	 else
-		  message("vision", "Óæ·òËµµÀ£º´¬ÕıµÈ×ÅÄãÄØ£¬ÉÏÈ¥°É¡£\n", this_object() );
+		  message("vision", "æ¸”å¤«è¯´é“ï¼šèˆ¹æ­£ç­‰ç€ä½ å‘¢ï¼Œä¸Šå»å§ã€‚\n", this_object() );
 }
 
 void on_board()
@@ -80,13 +80,13 @@ void on_board()
 
 	 if( !query("exits/enter") ) return;
 
-	 message("vision", "´¬ÂıÂıµØÏòº£ÉÏÊ»È¥¡£\n",
+	 message("vision", "èˆ¹æ…¢æ…¢åœ°å‘æµ·ä¸Šé©¶å»ã€‚\n",
 		  this_object() );
 
 	 if( room = find_object(__DIR__"chuan") )
 	 {
 		  room->delete("exits/out");
-		  message("vision", "´¬ÉíÎ¢Î¢Ò»¶¯£¬Àë°¶Ïòº£ÉÏÊ»È¥¡£\n", room );
+		  message("vision", "èˆ¹èº«å¾®å¾®ä¸€åŠ¨ï¼Œç¦»å²¸å‘æµ·ä¸Šé©¶å»ã€‚\n", room );
 	 }
 	 delete("exits/enter");
 
@@ -100,7 +100,7 @@ void arrive()
 	 if( room = find_object(__DIR__"chuan") )
 	 {
 		  room->set("exits/out", __DIR__"shatan3");
-		  message("vision", "´¬ÉíÎ¢Î¢Ò»Õğ£¬´¬¿¿°¶ÁË¡£\n",room );
+		  message("vision", "èˆ¹èº«å¾®å¾®ä¸€éœ‡ï¼Œèˆ¹é å²¸äº†ã€‚\n",room );
 	 }
 	 remove_call_out("close_passage");
 	 call_out("close_passage", 20);
@@ -111,7 +111,7 @@ void close_passage()
 	 object room;
     if( room = find_object(__DIR__"chuan") ) {
         room->delete("exits/out");
-        message("vision","´¬ÂıÂıµØÀë°¶£¬Ê»Ïòº£ÉÏ¡£\n", room);
+        message("vision","èˆ¹æ…¢æ…¢åœ°ç¦»å²¸ï¼Œé©¶å‘æµ·ä¸Šã€‚\n", room);
         room->delete("yell_trigger"); 
     }
 }
@@ -129,15 +129,15 @@ int valid_leave(object me, string dir)
 	object *iv;
 	int i;
 
-//        if ( (! me->query_temp("marks/Àë") ) && (dir =="enter"))
-//					 return notify_fail("Óæ·ò°ÑÊÖÒ»À¹ËµµÀ£ºÃ»ÓĞµºÖ÷Í¬Òâ£¬Äã²»¿ÉÀëµº¡£\n");
+//        if ( (! me->query_temp("marks/ç¦»") ) && (dir =="enter"))
+//					 return notify_fail("æ¸”å¤«æŠŠæ‰‹ä¸€æ‹¦è¯´é“ï¼šæ²¡æœ‰å²›ä¸»åŒæ„ï¼Œä½ ä¸å¯ç¦»å²›ã€‚\n");
 
 	iv = all_inventory(me);
 
 		  if ( dir == "enter") {
 					 for (i=0; i<sizeof(iv); i++) {
 								if (iv[i]->is_character())
-		return notify_fail("Äã²»ÄÜ´ø×ÅÆäËûÍæ¼ÒÀë¿ªÏÀ¿Íµº¡£\n");
+		return notify_fail("ä½ ä¸èƒ½å¸¦ç€å…¶ä»–ç©å®¶ç¦»å¼€ä¾ å®¢å²›ã€‚\n");
 					 }
 	}
 		  return ::valid_leave(me, dir);

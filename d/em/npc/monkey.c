@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/npc/monkey.c Ğ¡ºï×Ó
+// /d/emei/npc/monkey.c å°çŒ´å­
 // Shan 6/26/96
 
 inherit NPC;
@@ -8,13 +8,13 @@ void create()
 {
         seteuid(getuid());
 
-        set_name("Ğ¡ºï×Ó", ({ "monkey", "hou", "houzi" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("å°çŒ´å­", ({ "monkey", "hou", "houzi" }) );
+        set("race", "é‡å…½");
         set("age", 2+random(3));
-        set("long", "Ò»Ö»»úÁéµÄĞ¡ºï×Ó£¬ÑÛ°Í°ÍµÄ¿´×ÅÄã£¬´ó¸ÅÏëÌÖĞ©³ÔµÄ¡£\n");
+        set("long", "ä¸€åªæœºçµçš„å°çŒ´å­ï¼Œçœ¼å·´å·´çš„çœ‹ç€ä½ ï¼Œå¤§æ¦‚æƒ³è®¨äº›åƒçš„ã€‚\n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå",  "Ç°ÍÈ", "ºóÍÈ", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“",  "å‰è…¿", "åè…¿", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("thief", 0);
@@ -31,10 +31,10 @@ void create()
 
         set("chat_chance", 8);
         set("chat_msg", ({
-                "Ò»Ö»Ğ¡ºï×ÓºöÈ»ÅÜ¹ıÀ´£¬ÏòÄã×÷ÁË¸öÒ¾¡£\n",
-		"Ò»Ö»Ğ¡ºï×Óß´ß´ÔûÔûÅÜÁË¹ıÀ´¡£\n",
-		"Ğ¡ºï×Ó±Ä±ÄÌøÌøµØÅÜ¿ªÁË¡£\n",
-                "Ğ¡ºï×ÓÒ¡Ò¡Î²°ÍÅÜ¿ªÁË¡£\n",
+                "ä¸€åªå°çŒ´å­å¿½ç„¶è·‘è¿‡æ¥ï¼Œå‘ä½ ä½œäº†ä¸ªæ–ã€‚\n",
+		"ä¸€åªå°çŒ´å­å½å½å–³å–³è·‘äº†è¿‡æ¥ã€‚\n",
+		"å°çŒ´å­è¹¦è¹¦è·³è·³åœ°è·‘å¼€äº†ã€‚\n",
+                "å°çŒ´å­æ‘‡æ‘‡å°¾å·´è·‘å¼€äº†ã€‚\n",
                 (: random_move :)
         }) );
 }
@@ -45,9 +45,9 @@ int accept_object(object me, object obj)
 
         if ( obj->query("food_supply") && obj->value() >= 0 ) {
            command("drop"+obj->query("id"));
-           message_vision("Ğ¡ºï×Ó¸ßĞËµØ´Ó$NÉí±ßÅÜ¿ªÁË¡£\n", me);
+           message_vision("å°çŒ´å­é«˜å…´åœ°ä»$Nèº«è¾¹è·‘å¼€äº†ã€‚\n", me);
            set_leader(me);
-           say("Ğ¡ºï×ÓÈıÁ½ÏÂ±ã°Ñ"+(string)obj->query("name")+"³ÔµÃ¸É¸É¾»¾»¡£\n");
+           say("å°çŒ´å­ä¸‰ä¸¤ä¸‹ä¾¿æŠŠ"+(string)obj->query("name")+"åƒå¾—å¹²å¹²å‡€å‡€ã€‚\n");
            me->add("monkey", 1);
 
            remove_call_out("destroy_it");
@@ -55,13 +55,13 @@ int accept_object(object me, object obj)
            return 1;
         }
         else {
-           say("Ğ¡ºï×Ó°Ñ"+(string)obj->query("name")+"½ÓÁË¹ıÀ´£¬ÍæÅªÁË¼¸ÏÂ£¬ËÆºõ²»¶®ÓĞÊ²Ã´ÓÃ¡£\n");
+           say("å°çŒ´å­æŠŠ"+(string)obj->query("name")+"æ¥äº†è¿‡æ¥ï¼Œç©å¼„äº†å‡ ä¸‹ï¼Œä¼¼ä¹ä¸æ‡‚æœ‰ä»€ä¹ˆç”¨ã€‚\n");
            command("shake");
            if (obj->query("money_id")) {
               obj2 = new(base_name(obj));
               obj2->set_amount((int)obj->query_amount());
               obj2->move(environment(me));
-              say("Ğ¡ºï×Ó°Ñ"+(string)obj->query("name")+"¶ªµ½µØÉÏ¡£\n");
+              say("å°çŒ´å­æŠŠ"+(string)obj->query("name")+"ä¸¢åˆ°åœ°ä¸Šã€‚\n");
            }
            remove_call_out("drop_it");
            call_out("drop_it", 1, obj);
@@ -97,7 +97,7 @@ void stealing(object ob)
 	mapping fam; 
  
 	if( !ob || environment(ob) != environment() 
-                || ((fam = ob->query("family")) && fam["family_name"] == "¶ëáÒ")
+                || ((fam = ob->query("family")) && fam["family_name"] == "å³¨åµ‹")
           ) return;
 
 	switch( random(10) ) {
@@ -145,7 +145,7 @@ int is_grpfight()
 	object ob;
 	int i;
 	
-	message_vision("ÖÜÎ§µÄ"+me->name()+"¶Ô$nÈºÆğ¶ø¹¥Ö®£¡£¡\n\n", me, this_player());
+	message_vision("å‘¨å›´çš„"+me->name()+"å¯¹$nç¾¤èµ·è€Œæ”»ä¹‹ï¼ï¼\n\n", me, this_player());
 	for (i=0;i<sizeof(all_inventory(environment(me)));i++)
 		if (objectp(ob=present("monkey "+(i+1), environment(me))))
 			ob->kill_ob(this_player());

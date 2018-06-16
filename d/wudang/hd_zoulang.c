@@ -1,5 +1,5 @@
 //Cracked by Roath
-// hd_zoulang.c ºóµî×ßÀÈ
+// hd_zoulang.c åæ®¿èµ°å»Š
 // xQin 11/00
 
 inherit ROOM;
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ºóµî×ßÀÈ" );
+	set("short", "åæ®¿èµ°å»Š" );
 	set("long", @LONG
-ÕâÀïÊÇÈıÇåµîºóµÄ×ßÀÈ£¬À´ÍùĞĞÈËÖğ½¥Ï¡ÉÙ¡£À´ÍùÓÎÈËÒ»°ã×ßµ½ÕâÀï¶¼
-»áÖ¹²½¡£×ßÀÈ¶«Î÷Á½Í·¿ÉÍ¬Íùµ¤Ò©·¿µÈµØ£¬ÄÏÃæ±ãÊÇºóÔº¡£
+è¿™é‡Œæ˜¯ä¸‰æ¸…æ®¿åçš„èµ°å»Šï¼Œæ¥å¾€è¡Œäººé€æ¸ç¨€å°‘ã€‚æ¥å¾€æ¸¸äººä¸€èˆ¬èµ°åˆ°è¿™é‡Œéƒ½
+ä¼šæ­¢æ­¥ã€‚èµ°å»Šä¸œè¥¿ä¸¤å¤´å¯åŒå¾€ä¸¹è¯æˆ¿ç­‰åœ°ï¼Œå—é¢ä¾¿æ˜¯åé™¢ã€‚
 LONG
 	);
 	set("exits", ([
@@ -32,11 +32,11 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ((!myfam || myfam["family_name"] != "Îäµ±ÅÉ") 
+        if ((!myfam || myfam["family_name"] != "æ­¦å½“æ´¾") 
         && objectp(present("zhang songxi", environment(me))) ) {
         	
         if (dir == "east" || dir == "west" || dir == "south") 
-           return notify_fail("ÕÅËÉÏªºÈµÀ£ºÀïÃæÊÇÎäµ±ÖØµØ£¬ÏĞÈËÇëÖ¹²½¡£\n");
+           return notify_fail("å¼ æ¾æºªå–é“ï¼šé‡Œé¢æ˜¯æ­¦å½“é‡åœ°ï¼Œé—²äººè¯·æ­¢æ­¥ã€‚\n");
         }        
         return ::valid_leave(me, dir);
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pine.c ËÉÊ÷
+// pine.c æ¾æ ‘
 
 inherit ITEM;
 
@@ -9,13 +9,13 @@ int do_chop(string);
 
 void create()
 {
-        set_name("ËÉÊ÷", ({ "pine", "song shu", "tree" }) );
+        set_name("æ¾æ ‘", ({ "pine", "song shu", "tree" }) );
         set_weight(40000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿ÃÃÜÁÖÀï³£¼ûµÄËÉÊ÷¡£\n");
-                set("unit", "¿Ã");
+                set("long", "è¿™æ˜¯ä¸€æ£µå¯†æž—é‡Œå¸¸è§çš„æ¾æ ‘ã€‚\n");
+                set("unit", "æ£µ");
 		set("no_get", 1);
 		set("tree_str", 100);
 
@@ -37,19 +37,19 @@ int do_chop(string arg)
 	if (!arg) return 0;
 
 	if (me->is_busy() || me->is_fighting() )
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 	
 	if (arg != "tree" && arg != "pine")
-		return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦ç ä»€ä¹ˆï¼Ÿ\n");
 	
 	if (!objectp(weapon = me->query_temp("weapon")) || 
 		(string)weapon->query("id") != "axe")
-		return notify_fail("ÄãÐèÒªÒ»°Ñ´ó¸«×Ó¡£\n");
+		return notify_fail("ä½ éœ€è¦ä¸€æŠŠå¤§æ–§å­ã€‚\n");
 
 	if (me->query("neili") < 30)
-		return notify_fail("ÄãµÄÁ¦Æø²»¹»ÁË¡£\n");
+		return notify_fail("ä½ çš„åŠ›æ°”ä¸å¤Ÿäº†ã€‚\n");
 
-	message_vision("$N»Ó¶¯´ó¸«£¬ºÝºÝµØ³¯ËÉÊ÷¸É¿³ÁËÏÂÈ¥¡£\n",me);
+	message_vision("$NæŒ¥åŠ¨å¤§æ–§ï¼Œç‹ ç‹ åœ°æœæ¾æ ‘å¹²ç äº†ä¸‹åŽ»ã€‚\n",me);
 	me->add("neili",-30);
 	me->add("jingli",-50);
 	me->start_busy(3);
@@ -70,7 +70,7 @@ int do_chop(string arg)
 
 int shaking()
 {
-	message_vision("ËÉÊ÷ÒÑ¾­Ò¡»ÎµÄºÜÀ÷º¦ÁË¡£\n",this_object());
+	message_vision("æ¾æ ‘å·²ç»æ‘‡æ™ƒçš„å¾ˆåŽ‰å®³äº†ã€‚\n",this_object());
 	return 1;
 }
 
@@ -78,7 +78,7 @@ int collapse(object me)
 {
 	object ob=this_object();
 	object shugan;
-	message_vision("Ö»Ìý¿¦àêÒ»Éù£¬ËÉÊ÷´Ó¸ù´¦ÕÛ¶Ï£¬½ô½Ó×ÅºäÂ¡Ò»Éù¾ÞÏì£¬µ¹ÁËÏÂÀ´¡£\n",ob);
+	message_vision("åªå¬å–€åš“ä¸€å£°ï¼Œæ¾æ ‘ä»Žæ ¹å¤„æŠ˜æ–­ï¼Œç´§æŽ¥ç€è½°éš†ä¸€å£°å·¨å“ï¼Œå€’äº†ä¸‹æ¥ã€‚\n",ob);
 	shugan=new(__DIR__"shugan");
 	shugan->move(environment(ob));
 	shugan->set("owner",me->query("id"));

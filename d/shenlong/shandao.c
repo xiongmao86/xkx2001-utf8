@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ɽ�� /d/shenlong/shandao
+// 山道 /d/shenlong/shandao
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ��");
+	set("short", "山道");
         set("long", @LONG
-ת������ɽ�£�����������һ��ɽ��֮�У�ɽ���ı����Ƿ嶥��������
-ɽ�¡�̧ͷң���嶥���ż��������ݣ���������ԼԼ���������ϡ��ĵ���ײ
-���������˸���������������������ɽ����Զ�ˡ�ɽ����խ��ֻ����һ��ͨ
-����
+转过两个山坡，你已行走在一个山道之中，山道的北面是峰顶，向下是
+山坡。抬头遥见峰顶建着几座大竹屋，耳边隐隐约约传来「锵锵」的刀剑撞
+击声和有人高声喧哗的声音，看来离山顶不远了。山道狭窄，只能容一人通
+过。
 LONG
         );
 	set("cost", 6);

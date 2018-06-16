@@ -11,12 +11,12 @@ void setup()
 int cure_ob(string);
 void create()
 {
-        set_name("Ñ©Á«", ({"xuelian", "lian", "lotus"}));
+        set_name("é›ªè²", ({"xuelian", "lian", "lotus"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
-                set("long", "ÕâÊÇÒ»Ö§Ö»ÓĞÔÚº®ÀäµÄµØ·½²ÅÄÜÉú³¤µÄÑ©Á«¡£\n");
+                set("unit", "æ”¯");
+                set("long", "è¿™æ˜¯ä¸€æ”¯åªæœ‰åœ¨å¯’å†·çš„åœ°æ–¹æ‰èƒ½ç”Ÿé•¿çš„é›ªè²ã€‚\n");
                 set("value", 10000);
 		set("medicine", 1);
         }
@@ -25,7 +25,7 @@ void create()
 
 int cure_ob(object me)
 {
-   message_vision("$N³ÔÏÂÒ»Ö§" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€æ”¯" + name() + "ã€‚\n", me);
    if ((int)me->query_condition("snake_poison") > 0) {
       me->apply_condition("snake_poison", 0);
    }
@@ -40,7 +40,7 @@ int cure_ob(object me)
       me->apply_condition("xx_poison", (int)me->query_condition("xx_poison") - 10);
    }
    if ((int)me->query_condition("xx_poison") > 50)
-   tell_object(me, "ÄãÖĞµÄĞÇËŞÕÆ¶¾Ì«Éî£¬ÏÖÔÚ·ş´ËÎïÃ»Ê²Ã´Ğ§¡£\n");
+   tell_object(me, "ä½ ä¸­çš„æ˜Ÿå®¿æŒæ¯’å¤ªæ·±ï¼Œç°åœ¨æœæ­¤ç‰©æ²¡ä»€ä¹ˆæ•ˆã€‚\n");
    destruct(this_object());
    return 1;
 }

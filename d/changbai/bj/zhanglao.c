@@ -32,7 +32,7 @@ void create()
         }
 
         if( !sizeof(zl_names) ) {
-                zl_name = "Ä§½Ì³¤ÀÏ",
+                zl_name = "é­”æ•™é•¿è€",
                 zl_id = ({ "mojiao zhanglao", "zhanglao" });
         } else {
                 zl_name = zl_names[random(sizeof(zl_names))];
@@ -40,11 +40,11 @@ void create()
         }
 
         set_name(zl_name, zl_id);
-        set("title", "Ä§½Ì³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set("title", "é­”æ•™é•¿è€");
+        set("gender", "ç”·æ€§");
         set("age", 60 + random(20));
         set("long",
-"Ò»Ãû°×ĞëÀÏÕß£¬Á½±ßÌ«ÑôÑ¨¸ß¸ßÍ»Æğ£¬±ãÈç²ØÁËÒ»Ã¶ºËÌÒÏàËÆ¡£\n");
+"ä¸€åç™½é¡»è€è€…ï¼Œä¸¤è¾¹å¤ªé˜³ç©´é«˜é«˜çªèµ·ï¼Œä¾¿å¦‚è—äº†ä¸€æšæ ¸æ¡ƒç›¸ä¼¼ã€‚\n");
         set("attitude", "heroism");
         set("shen_type", -1);
 
@@ -102,8 +102,8 @@ void create()
         map_skill("parry", "mo-bang");
 
         set("inquiry", ([
-                  "Ä§½Ì" : (: ask_me, "Ä§½Ì" :),
-                  "³¤ÀÏ" : (: ask_me, "³¤ÀÏ" :),
+                  "é­”æ•™" : (: ask_me, "é­”æ•™" :),
+                  "é•¿è€" : (: ask_me, "é•¿è€" :),
         ]));
 
         setup();
@@ -114,12 +114,12 @@ void create()
 string ask_me(string arg)
 {
         switch(arg) {
-        case "Ä§½Ì":
+        case "é­”æ•™":
                 command("stare " + this_player()->query("id"));
-                return "Ê²Ã´Ä§½Ì²»Ä§½Ì£¿£¡ÔÙËµÄ§½ÌÁ©×ÖÎÒÉ±ÁËÄã£¡£¡£¡";
-        case "³¤ÀÏ":
+                return "ä»€ä¹ˆé­”æ•™ä¸é­”æ•™ï¼Ÿï¼å†è¯´é­”æ•™ä¿©å­—æˆ‘æ€äº†ä½ ï¼ï¼ï¼";
+        case "é•¿è€":
                 command("haha");
-                return "Ïëµ±ÄêÎÒÃÇÊ®³¤ÀÏÉ±¾¡ÎåÔÀ½£ÅÉÊÇºÎµÈÆøÊÆ£¡¹ş£¡¹ş£¡¹ş£¡";
+                return "æƒ³å½“å¹´æˆ‘ä»¬åé•¿è€æ€å°½äº”å²³å‰‘æ´¾æ˜¯ä½•ç­‰æ°”åŠ¿ï¼å“ˆï¼å“ˆï¼å“ˆï¼";
 	}
 }
 
@@ -130,7 +130,7 @@ int auto_perform()
 
         inv = all_inventory(environment(ob));
         for(i = 0; i < sizeof(inv); i++ ) {
-                if( strsrch(inv[i]->query("name"), "¶ÏµôµÄ") == 0 )
+                if( strsrch(inv[i]->query("name"), "æ–­æ‰çš„") == 0 )
                           destruct(inv[i]);
         }
 
@@ -153,7 +153,7 @@ int auto_perform()
                         weapon = new(zl_weapons[random(sizeof(zl_weapons))]);
                         weapon->move(ob);
                         COMMAND_DIR"std/halt"->main(ob);
-                        message_vision(HIR"$N´Ó±³´üÖĞ³é³öÒ»" + weapon->query("unit") + weapon->name() + "À´¡£\n"NOR, ob);
+                        message_vision(HIR"$Nä»èƒŒè¢‹ä¸­æŠ½å‡ºä¸€" + weapon->query("unit") + weapon->name() + "æ¥ã€‚\n"NOR, ob);
                         "/cmds/std/wield"->do_wield(ob, weapon);
                         victim = offensive_target(ob);
                         ob->kill_ob(victim);
@@ -243,7 +243,7 @@ int auto_check()
 
         ob->add("combat_exp", bonus);
         if( bonus > 100 )
-                log_file("ShanJob3", sprintf("%sÓÚ%sÊ±ÄÃÁË%s¾­Ñéµã\n", ob->query("name"), ctime(time()), chinese_number(bonus)));
+                log_file("ShanJob3", sprintf("%säº%sæ—¶æ‹¿äº†%sç»éªŒç‚¹\n", ob->query("name"), ctime(time()), chinese_number(bonus)));
 
         if( objectp(weapon) ) {
                 attack_skill = weapon->query("skill_type");
@@ -286,7 +286,7 @@ void die()
 
                                 killer->set("shan/s3time", time());
 
-          log_file("ShanBonus", sprintf("%sÓÚ%sÊ±É±%sÄÃÁË%s¾­Ñéµã\n", killer->query("name"), ctime(time()), me->name(), chinese_number(bonus)));
+          log_file("ShanBonus", sprintf("%säº%sæ—¶æ€%sæ‹¿äº†%sç»éªŒç‚¹\n", killer->query("name"), ctime(time()), me->name(), chinese_number(bonus)));
 
                                 bonus /= 4;
                                 killer->add("potential", bonus);
@@ -324,7 +324,7 @@ void unconcious()
                         if( random(dp + ap) > ap ) {
                                 command("fear " + killer->query("id"));
                                 message("vision",
-                                        me->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+                                        me->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                                         environment(me), ({me}));
                                 destruct(me);
                                 return;
@@ -332,7 +332,7 @@ void unconcious()
                 }
 	}
 
-        me->disable_player(" <»èÃÔ²»ĞÑ>");
+        me->disable_player(" <æ˜è¿·ä¸é†’>");
         me->set("jing", 0);
         me->set("qi", 0);
         COMBAT_D->announce(me, "unconcious");

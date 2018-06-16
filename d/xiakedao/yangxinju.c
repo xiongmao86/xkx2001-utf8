@@ -1,15 +1,15 @@
 //Cracked by Roath
-// xiakedao/yangxinju.c ���ľ�
+// xiakedao/yangxinju.c 养心居
 // Ssy
 
 inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "���ľ�");
+        set("short", "养心居");
         set("long", @LONG
-���С���г����˲�ҩζ��ϸ��ʱ����ǽ�Ǳ��в���ҩ�䣬����
-װ���˲�ҩ��С��������һ�ŷ�������������һλ���ߡ�
+这间小室中充满了草药味，细看时发现墙角边有不少药箱，里面
+装满了草药。小室正中是一张方桌，桌后坐了一位老者。
 LONG );
 
 	set("exits", ([

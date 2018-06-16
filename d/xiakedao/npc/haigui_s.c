@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ğ¡º£¹ê", ({ "small haigui", "haigui", "gui"}));
-        set("race", "Ò°ÊŞ");
+	set_name("å°æµ·é¾Ÿ", ({ "small haigui", "haigui", "gui"}));
+        set("race", "é‡å…½");
         set("age", 20);
-	set("long", "ÕâÊÇÖ»Ğ¡º£¹ê£¬Í¦¿É°®µÄÑù×Ó¡£\n");
+	set("long", "è¿™æ˜¯åªå°æµ·é¾Ÿï¼ŒæŒºå¯çˆ±çš„æ ·å­ã€‚\n");
 	set("attitude", "peaceful");
 
 	set("str", 13);

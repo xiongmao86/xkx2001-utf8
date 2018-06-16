@@ -1,17 +1,17 @@
 //Cracked by Roath
-// yetu.c Ò°ÍÃ
+// yetu.c é‡Žå…”
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ã·»¨Â¹", ({ "meihua lu", "lu", "deer" }) );
-	set("race", "¼ÒÐó");
+	set_name("æ¢…èŠ±é¹¿", ({ "meihua lu", "lu", "deer" }) );
+	set("race", "å®¶ç•œ");
 	set("age", 5);
-	set("long","Ò»Ö»ÎÂË³µÄÃ·»¨Â¹£¬Õö×ÅÔ²Ô²µÄÑÛÖéÍû×ÅÄã£¬ÏÔµÃÊ®·ÖºÃÆæ¡£\n");
+	set("long","ä¸€åªæ¸©é¡ºçš„æ¢…èŠ±é¹¿ï¼Œçç€åœ†åœ†çš„çœ¼ç æœ›ç€ä½ ï¼Œæ˜¾å¾—ååˆ†å¥½å¥‡ã€‚\n");
 	set("attitude", "peaceful");
 	
-//	set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+//	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "å‰è„š", "åŽè„š", "å°¾å·´" }) );
 //	set("verbs", ({ "bite", "claw" }) );
 
 	set("combat_exp", 500);
@@ -33,7 +33,7 @@ void create()
 void die()
 {
 	object ob;
-	message_vision("$NÆà²ÒµÄº¿ÁË¼¸Éù£¬ËÀÁË¡£\n", this_object());
+	message_vision("$Nå‡„æƒ¨çš„åšŽäº†å‡ å£°ï¼Œæ­»äº†ã€‚\n", this_object());
 	ob = new(__DIR__"lurou");
 	ob->move(environment(this_object()));
 	destruct(this_object());

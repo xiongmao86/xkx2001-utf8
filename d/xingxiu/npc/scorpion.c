@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ð«×Ó", ({ "scorpion", "xiezi" }) );
+        set_name("èŽå­", ({ "scorpion", "xiezi" }) );
 	set_color("$RED$");
-        set("race", "À¥³æ");
-        set("subrace", "ÅÀ³æ");
+        set("race", "æ˜†è™«");
+        set("subrace", "çˆ¬è™«");
         set("age", 3);
-        set("long", "Ò»Ö»ºÖÉ«µÄÐ«×Ó£¬Î²°ÍÉÏÓÐ»ÆÀ¶Ïà¼äµÄ»·ÎÆ¡£\n");
+        set("long", "ä¸€åªè¤è‰²çš„èŽå­ï¼Œå°¾å·´ä¸Šæœ‰é»„è“ç›¸é—´çš„çŽ¯çº¹ã€‚\n");
         set("attitude", "peaceful");
 
-//        set("limbs", ({ "Í·²¿", "ÉíÌå", "´¥½Ç", "Ç°òü", "Î²°Í" }) );
+//        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "è§¦è§’", "å‰èž¯", "å°¾å·´" }) );
 //        set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 900);
@@ -37,7 +37,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("\n$NÎ²°ÍÒ»ÇÌ£¬ËÀÁË¡£\n", this_object());
+        message_vision("\n$Nå°¾å·´ä¸€ç¿˜ï¼Œæ­»äº†ã€‚\n", this_object());
         ob = new(__DIR__"scorp_shell");
         ob->move(environment(this_object()));
         destruct(this_object());

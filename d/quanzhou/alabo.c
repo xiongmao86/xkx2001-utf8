@@ -1,5 +1,5 @@
 //Cracked by Roath
-// alabo.c ������լ��
+// alabo.c 阿拉伯宅区
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������լ��");
+        set("short", "阿拉伯宅区");
 	set("long", @LONG
-����Ȫ�����������ó���������ఢ�����������˵ؾ�ס���������ö���
-֮�γ�����۾ӵء�ԶԶ��ȥ��ɫ��Բ�μⶥͻأ�����Եø������ۡ�
+由于泉州与世界的商贸往来，许多阿拉伯人来到此地居住和劳作，久而久
+之形成了这聚居地。远远望去白色的圆形尖顶突兀而起，显得格外抢眼。
 LONG
         );
 

@@ -2,7 +2,7 @@
 // seller.c
 // ryu added garbage collecting on 3/20/1997
 // Mongol modifed him to be a charactor of Jin's novels.
-// xbc added remove ÌúÁ´ on 1/21/99
+// xbc added remove é“é“¾ on 1/21/99
 
 inherit NPC;
 inherit F_VENDOR;
@@ -11,12 +11,12 @@ int do_removelian(string);
 string ask_liancost();
 void create()
 {
-	set_name("ÍõÌú½³", ({ "wang tiejiang", "wang" }) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ç‹é“åŒ ", ({ "wang tiejiang", "wang" }) );
+	set("gender", "ç”·æ€§" );
 	set("age", 40);
 	set("long",
-		"Ëû´ò×Å³à²²£¬½áÊµµÄ¼¡Èâ¸ß¸ß·ßÆğ£¬Á½÷ŞÎ¢°×£¬ÏÔÈ»¾­Àú·çËª£¬±¥³¢ÀäÅ¯¡£"
-		+ "\nËûÔ­ÊÇ¶´Í¥ºşÒ»´øµÄÒ»¸öÌú½³£¬ÔÚ³ÌÁéËØµÄ°ïÖúÏÂ±¨ÁË¶Ô½ªÌúÉ½·ò¸¾µÄ³ğ£¬ÌÓµ½ÕâÀï¡£\n");
+		"ä»–æ‰“ç€èµ¤è†Šï¼Œç»“å®çš„è‚Œè‚‰é«˜é«˜æ„¤èµ·ï¼Œä¸¤é¬“å¾®ç™½ï¼Œæ˜¾ç„¶ç»å†é£éœœï¼Œé¥±å°å†·æš–ã€‚"
+		+ "\nä»–åŸæ˜¯æ´åº­æ¹–ä¸€å¸¦çš„ä¸€ä¸ªé“åŒ ï¼Œåœ¨ç¨‹çµç´ çš„å¸®åŠ©ä¸‹æŠ¥äº†å¯¹å§œé“å±±å¤«å¦‡çš„ä»‡ï¼Œé€ƒåˆ°è¿™é‡Œã€‚\n");
 	set("combat_exp", 3000);
         set("str", 25);
         set("dex", 20);
@@ -30,21 +30,21 @@ void create()
 		"/d/taohua/obj/xiaotiefu",
 	}) );
         set("inquiry", ([
-		"½ªÌúÉ½" : "½ªÌúÉ½±ÆÀÏ×Ó¸øËûÔìÌúÎİ£¬»¹´ò¶ÏÀÏ×ÓÈı¸ùÀß¹Ç£¬¹·ÄïÑøµÄ£¡",
-		"Ñ¦Èµ" : "½ªÌúÉ½µÄÀÏÆÅ¡£\n",
-		"ÌúÎİ" : "ÔÚ¶´Í¥ºşÅÏ¡£\n",
-                "¶´Í¥ºş" : "ÎÒ¿É²»»ØÈ¥ÁË¡£\n",
-		"³ÌÁéËØ" : "³Ì¹ÃÄï¿ÉÊÇÌìÏÂµÚÒ»ºÃÈË¡£\n",
-		"ÌúÁ´" : "ÏëÄÃµôÌúÁ´£¿¿ÉµÃ»¯Ò»·¬¹¦·ò£¨ask ÌúÁ´¼ÛÇ®£©¡£\n",
-                "ÌúÁ´¼ÛÇ®" : (:ask_liancost:),
+		"å§œé“å±±" : "å§œé“å±±é€¼è€å­ç»™ä»–é€ é“å±‹ï¼Œè¿˜æ‰“æ–­è€å­ä¸‰æ ¹è‚‹éª¨ï¼Œç‹—å¨˜å…»çš„ï¼",
+		"è–›é¹Š" : "å§œé“å±±çš„è€å©†ã€‚\n",
+		"é“å±‹" : "åœ¨æ´åº­æ¹–ç•”ã€‚\n",
+                "æ´åº­æ¹–" : "æˆ‘å¯ä¸å›å»äº†ã€‚\n",
+		"ç¨‹çµç´ " : "ç¨‹å§‘å¨˜å¯æ˜¯å¤©ä¸‹ç¬¬ä¸€å¥½äººã€‚\n",
+		"é“é“¾" : "æƒ³æ‹¿æ‰é“é“¾ï¼Ÿå¯å¾—åŒ–ä¸€ç•ªåŠŸå¤«ï¼ˆask é“é“¾ä»·é’±ï¼‰ã€‚\n",
+                "é“é“¾ä»·é’±" : (:ask_liancost:),
 	]));	
 
 	set("chat_chance", 5);
         set("chat_msg", ({
-	"ÍõÌú½³³ªµÀ£ºĞ¡ÃÃ×Ó´ıÇéÀÉ ¡ª¡ª ¶÷ÇéÉî¡£\n",
-	"ÍõÌú½³³ªµÀ£ºÄãÄª¹¼¸ºÁËÃÃ×Ó ¡ª¡ª Ò»¶ÎÇé¡£\n",
-        "ÍõÌú½³³ªµÀ£ºÄã¼ûËıÃæÊ± ¡ª¡ª Òª´ıËıºÃ¡£\n",
-        "ÍõÌú½³³ªµÀ£ºÄã²»¼ûËıÃæÊ± ¡ª¡ª ÌìÌìÒªÊ®Æß°Ë±é¹ÒÔÚĞÄ£¡\n",
+	"ç‹é“åŒ å”±é“ï¼šå°å¦¹å­å¾…æƒ…éƒ â€”â€” æ©æƒ…æ·±ã€‚\n",
+	"ç‹é“åŒ å”±é“ï¼šä½ è«è¾œè´Ÿäº†å¦¹å­ â€”â€” ä¸€æ®µæƒ…ã€‚\n",
+        "ç‹é“åŒ å”±é“ï¼šä½ è§å¥¹é¢æ—¶ â€”â€” è¦å¾…å¥¹å¥½ã€‚\n",
+        "ç‹é“åŒ å”±é“ï¼šä½ ä¸è§å¥¹é¢æ—¶ â€”â€” å¤©å¤©è¦åä¸ƒå…«éæŒ‚åœ¨å¿ƒï¼\n",
         }) );
 
 	set_skill("dodge", 25);
@@ -76,21 +76,21 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-	command("say »¶Ó­ÕâÎ»"+RANK_D->query_respect(ob)+"¹âÁÙ£¬ÇëËæ±ã²Î¹Û¡£");
+	command("say æ¬¢è¿è¿™ä½"+RANK_D->query_respect(ob)+"å…‰ä¸´ï¼Œè¯·éšä¾¿å‚è§‚ã€‚");
 }
 int do_sell(string arg)
 {
     object ob;
 
 	if (!arg || !(ob = present(arg, this_player())))
-                return notify_fail("ÄãÒªÂôÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å–ä»€ä¹ˆï¼Ÿ\n");
 
 	if (ob->query("material") != "steel" && ob->query("material") != "iron")
-		return notify_fail("ÎÒÕâÀïÖ»ÊÕ·ÏÌú¡£\n");
+		return notify_fail("æˆ‘è¿™é‡Œåªæ”¶åºŸé“ã€‚\n");
 
 	else {
-                message_vision("$NÂôµôÁËÒ»" + ob->query("unit") +
-                ob->query("name") + "¸ø$n¡£\n", this_player(), this_object());
+                message_vision("$Nå–æ‰äº†ä¸€" + ob->query("unit") +
+                ob->query("name") + "ç»™$nã€‚\n", this_player(), this_object());
                 MONEY_D->pay_player(this_player(), ob->query_weight()/70);
                         destruct(ob);
         }
@@ -103,16 +103,16 @@ int do_removelian(string arg)
 	object me = this_player();
 
         if (!arg || !(ob = present(arg, this_player())))
-                return notify_fail("ÄãÒªÄÃµôÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‹¿æ‰ä»€ä¹ˆï¼Ÿ\n");
 
-	if (ob->query("name") != "ÌúÁ´" && ob->query("id") != "tie lian") 
-                return notify_fail("Õâ¸öÎÒ²»»áÄÃ¡£\n");
+	if (ob->query("name") != "é“é“¾" && ob->query("id") != "tie lian") 
+                return notify_fail("è¿™ä¸ªæˆ‘ä¸ä¼šæ‹¿ã€‚\n");
 
 	if (!me->query_temp("lianpaid"))
-		return notify_fail("Õâ¸ö£¬Òª»¨ºÃÒ»±ÊÇ®µÄ£¨ask liancost£©¡£\n");
+		return notify_fail("è¿™ä¸ªï¼Œè¦èŠ±å¥½ä¸€ç¬”é’±çš„ï¼ˆask liancostï¼‰ã€‚\n");
 
         else {
-                message_vision("$n°Ñ$NÀ­µ½ÅÔ±ßÇÃÇÃ´ò´òÁËºÃÒ»Õó£¬ÖÕÓÚÄÃµôÁËÌúÁ´¡£\n", 
+                message_vision("$næŠŠ$Næ‹‰åˆ°æ—è¾¹æ•²æ•²æ‰“æ‰“äº†å¥½ä¸€é˜µï¼Œç»ˆäºæ‹¿æ‰äº†é“é“¾ã€‚\n", 
 			this_player(), this_object());
                 destruct(ob);
 		me->delete_temp("liancost");
@@ -129,8 +129,8 @@ string ask_liancost()
 	liancost = me->query("PKS")*2;
 	me->set_temp("liancost", liancost);
 
-	return "Õâ¼şÊÂ¿ÉÒªĞ¡ĞÄ²ÅĞĞ¡£ÕâÑù°É£¬Äã¸øÎÒ " + liancost +
-		" Á½»Æ½ğ£¬ÎÒÍµÍµ°ïÄãÄÃµô¡£\n";
+	return "è¿™ä»¶äº‹å¯è¦å°å¿ƒæ‰è¡Œã€‚è¿™æ ·å§ï¼Œä½ ç»™æˆ‘ " + liancost +
+		" ä¸¤é»„é‡‘ï¼Œæˆ‘å·å·å¸®ä½ æ‹¿æ‰ã€‚\n";
 
 }
 
@@ -139,19 +139,19 @@ int accept_object(object who, object ob)
 
         if (!ob->query("money_id")) {
                 command(":(");
-                command("say Õâ¸ö£¬¸øÎÒ×öÊ²Ã´£¿");
+                command("say è¿™ä¸ªï¼Œç»™æˆ‘åšä»€ä¹ˆï¼Ÿ");
                 return 0;
         }
 
         else if (ob->value() < who->query_temp("liancost")) {
                 command("hmm");
-                command("say ÕâĞ©²»¹»£¬ÅÂ²»ÄÜ°ïÄúµ£µ±¡£");
+                command("say è¿™äº›ä¸å¤Ÿï¼Œæ€•ä¸èƒ½å¸®æ‚¨æ‹…å½“ã€‚");
                 return 0;
         }
 
         command("look " + who->query("id"));
         command("secret " + who->query("id"));
-        command("whisper " + who->query("id")+ "ºÃ£¬Ë¬¿ì£¡±ğÅÂ£¬¸ÉÕâ¸öÎÒÄÃÊÖ£¨removelian tie lian£©¡£");
+        command("whisper " + who->query("id")+ "å¥½ï¼Œçˆ½å¿«ï¼åˆ«æ€•ï¼Œå¹²è¿™ä¸ªæˆ‘æ‹¿æ‰‹ï¼ˆremovelian tie lianï¼‰ã€‚");
 	who->set_temp("lianpaid", 1);
 
         return 1;

@@ -7,18 +7,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "µ±ÆÌ");
+        set("short", "å½“é“º");
         set("long", @LONG
-ÕâÊÇÒ»¼ÒÒÔÂòÂô¹«Æ½Öø³ÆµÄµ±ÆÌ£¬Ò»¸öÎå³ß¸ßµÄ¹ñÌ¨µ²ÔÚÄãµÄÃæÇ°£¬¹ñÌ¨ÉÏ
-°Ú×ÅÒ»¸öÅÆ×Ó(paizi)£¬¹ñÌ¨ºóÃæÓÐÎå¸ö´ó¹ñ×Ó£¬·Ö±ð³ÂÁÐ×Å¸÷Ê½ÎäÆ÷(weapon)¡¢
-»¤¾ß´©´÷(armor)¡¢Ò©Îï(drug)¡¢Êé½å(book)¡¢ºÍÆäËü¸÷Ê½ÔÓÎï(misc)¡£¹ñÌ¨ºó
-×ø×ÅÌÆÀÏ°å£¬Ò»Ë«¾«Ã÷µÄÑÛ¾¦ÉÏÉÏÏÂÏÂ´òÁ¿×ÅÄã¡£¬¹
+è¿™æ˜¯ä¸€å®¶ä»¥ä¹°å–å…¬å¹³è‘—ç§°çš„å½“é“ºï¼Œä¸€ä¸ªäº”å°ºé«˜çš„æŸœå°æŒ¡åœ¨ä½ çš„é¢å‰ï¼ŒæŸœå°ä¸Š
+æ‘†ç€ä¸€ä¸ªç‰Œå­(paizi)ï¼ŒæŸœå°åŽé¢æœ‰äº”ä¸ªå¤§æŸœå­ï¼Œåˆ†åˆ«é™ˆåˆ—ç€å„å¼æ­¦å™¨(weapon)ã€
+æŠ¤å…·ç©¿æˆ´(armor)ã€è¯ç‰©(drug)ã€ä¹¦è—‰(book)ã€å’Œå…¶å®ƒå„å¼æ‚ç‰©(misc)ã€‚æŸœå°åŽ
+åç€å”è€æ¿ï¼Œä¸€åŒç²¾æ˜Žçš„çœ¼ç›ä¸Šä¸Šä¸‹ä¸‹æ‰“é‡ç€ä½ ã€‚îƒ”
 LONG
         );
         set("no_beg",1);
         set("no_sleep_room", "1");
         set("item_desc", ([
-                "paizi" : "¹«Æ½½»Ò×\n",
+                "paizi" : "å…¬å¹³äº¤æ˜“\n",
         ]));
         set("objects", ([
                 __DIR__"npc/tang" : 1,

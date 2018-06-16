@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����ɴ�����");
+        set("short", "星宿派储藏室");
         set("long", @LONG
-����ԭ����һ������ɽ���ϵ���Ȼ�ܶ�����Ϊ�ص����ܶ��Ҷ��п���ʮ��
-��������ɰ�����������һ���ֿ⡣
+这里原来是一个长在山壁上的天然溶洞，因为地点隐密而且洞中空气十分
+干燥，星宿派把这里改造成了一个仓库。
 LONG
         );
         set("exits", ([

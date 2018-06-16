@@ -6,11 +6,11 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("»¨Ã±Ì¯··", ({ "tan fan", "seller", "fan" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("èŠ±å¸½æ‘Šè´©", ({ "tan fan", "seller", "fan" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 45);
         set("long",
-                "ÕâÊÇ¸öÖĞÄê»Ø×åÄĞ×Ó£¬ÔÚ°ÍÔú··Âô¸÷ÖÖÊÖ¹¤»¨Ã±¡£\n");
+                "è¿™æ˜¯ä¸ªä¸­å¹´å›æ—ç”·å­ï¼Œåœ¨å·´æ‰è´©å–å„ç§æ‰‹å·¥èŠ±å¸½ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 1000);
         set("str", 17);

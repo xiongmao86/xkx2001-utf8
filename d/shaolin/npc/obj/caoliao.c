@@ -1,21 +1,21 @@
 //Cracked by Roath
-// caoliao.c ²İÁÏ
+// caoliao.c è‰æ–™
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("²İÁÏ", ({"cao", "cao liao"}));
+	set_name("è‰æ–™", ({"cao", "cao liao"}));
 	set_weight(200+random(200));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»À¦Î¹Ñø¼ÒĞóÓÃµÄ²İÁÏ¡£\n");
-		set("unit", "À¦");
+		set("long", "ä¸€æ†å–‚å…»å®¶ç•œç”¨çš„è‰æ–™ã€‚\n");
+		set("unit", "æ†");
 		set("value", 20+random(50));
 		set("food_remaining", 1);
-		set("food_race","¼ÒĞó");
+		set("food_race","å®¶ç•œ");
 		set("food_supply", random(100));
 	}
 }

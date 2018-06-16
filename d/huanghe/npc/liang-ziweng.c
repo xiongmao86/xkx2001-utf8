@@ -1,17 +1,17 @@
 //Cracked by Roath
-// liang-ziweng.c Áº×ÓÎÌ
+// liang-ziweng.c æ¢å­ç¿
 
 inherit NPC;
 int auto_throw();
 void create()
 {
-	set_name("Áº×ÓÎÌ", ({ "liang ziweng", "liang" }));
-	set("nickname", "²ÎÏÉÀÏ¹Ö");
+	set_name("æ¢å­ç¿", ({ "liang ziweng", "liang" }));
+	set("nickname", "å‚ä»™è€æ€ª");
 	set("long", 
-"Áº×ÓÎÌÉí²ÄÖĞµÈ£¬ÂúÍ·°×·¢ÈçÒø£¬µ«Á³É«¹âÈó£¬Éñ²ÉŞÄŞÄ£¬´©Ò»\n"
-"¼ş¸ğ²¼³¤ÅÛ£¬´ò°ç·ÇµÀ·ÇË×¡£ËûÊÇ³¤°×É½ÎäÑ§µÄÒ»ÅÉ×ÚÊ¦¡£\n");
+"æ¢å­ç¿èº«æä¸­ç­‰ï¼Œæ»¡å¤´ç™½å‘å¦‚é“¶ï¼Œä½†è„¸è‰²å…‰æ¶¦ï¼Œç¥é‡‡å¼ˆå¼ˆï¼Œç©¿ä¸€\n"
+"ä»¶è‘›å¸ƒé•¿è¢ï¼Œæ‰“æ‰®éé“éä¿—ã€‚ä»–æ˜¯é•¿ç™½å±±æ­¦å­¦çš„ä¸€æ´¾å®—å¸ˆã€‚\n");
 //	set("title", "");
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -56,8 +56,8 @@ void create()
 /*
 void unconcious()
 {
-        command("say ÖÚĞÖµÜ£¬µã×Ó×¦×ÓÌ«Ó²£¬·ç½ô³¶ºô£¡");
-        message_vision("\n$NÉìÊÖÔÚÇ½ÉÏÒ»°´£¬×İÉíÉÁÈëÏÖ³öµÄ°µÃÅÀï¡£\n", this_object());
+        command("say ä¼—å…„å¼Ÿï¼Œç‚¹å­çˆªå­å¤ªç¡¬ï¼Œé£ç´§æ‰¯å‘¼ï¼");
+        message_vision("\n$Nä¼¸æ‰‹åœ¨å¢™ä¸Šä¸€æŒ‰ï¼Œçºµèº«é—ªå…¥ç°å‡ºçš„æš—é—¨é‡Œã€‚\n", this_object());
         destruct(this_object());
 }
 */

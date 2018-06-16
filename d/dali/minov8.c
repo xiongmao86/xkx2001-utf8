@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "����С��");
+	set("short", "林荫小道");
 	set("long", @LONG
-������С������ǰ��Լ��ʮ���ߣ�ֻ������������Ũ����죬һ����ȪǶ��
-��䣬������ʯ��Ȫˮ��������������Ǯ���ڳ��У����仺�����䣬���������
-ɸ�£��ص�������˸������Ȫˮ�������ر߾����Լ�����ߵĵط���һ�ֿɺϱ�
-�����ɣ����Ȫ�ϣ����Խ���Сͤ��С��������ʮ�����ġ�
+沿林荫小道曲折前行约四十公尺，只见古树林立，浓荫蔽天，一方清泉嵌于
+其间，底铺青石，泉水明澈，常有人掷钱币于池中，观其缓缓旋落，阳光从树顶
+筛下，池底银光闪烁，倍感泉水清冽。池边距地面约二三尺的地方有一粗可合抱
+的树干，伸过泉上，池旁建有小亭，小坐生凉，十分清幽。
 LONG);
 	set("objects", ([
 		"/d/city/npc/maque" : 2,
@@ -21,7 +21,7 @@ LONG);
 		"northup" : __DIR__"minov6",
 		"south" : __DIR__"minov10",
 		]));
-	set("area", "������");
+	set("area", "黑龙岭");
 	set("cost", 2);
 	set("no_clean_up", 0);
 	set("outdoors", "dali");

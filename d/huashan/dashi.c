@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ´óÊ¯ÉÏ
+// å¤§çŸ³ä¸Š
 // qfy July 8, 1996.
 
 inherit ROOM;
@@ -7,18 +7,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÊ¯ÉÏ");
+        set("short", "å¤§çŸ³ä¸Š");
 	set("long", @LONG
-ÄãÕ¾ÔÚÉ½ºéÖÐµÄ¾ÞÊ¯ÉÏ£¬ËÄÖÜË®»¨·É½¦£¬ÄãÒÂÂÄ¾¡Êª¡£ÄãÄýÆøÊØÖÐ£¬
-Ë«×ãÎÈÎÈÕ¾¶¨¡£Ë®Î»Öð½¥ÉÏÉý£¬ºÜ¿ìµØÉ½ºé±ã´ÓÄãÍ·¶¥ºäÂ¡ºäÂ¡µÄ³å¹ý¡£
-ÄãµÄÉí×ÓÈ´ÈçÖÐÁ÷íÆÖù°ãÔÚË®ÖÐÒÙÁ¢²»¶¯¡£ÏªÁ÷ÖÐ´øÏÂÊ÷Ö¦É½Ê¯(stone)
-£¬ÔÚÄãÉíÅÔ¼±ËÙÁ÷¹ý¡£°¶±ß(bank)Ò²¿ªÊ¼·ºÀÄÁË¡£
+ä½ ç«™åœ¨å±±æ´ªä¸­çš„å·¨çŸ³ä¸Šï¼Œå››å‘¨æ°´èŠ±é£žæº…ï¼Œä½ è¡£å±¥å°½æ¹¿ã€‚ä½ å‡æ°”å®ˆä¸­ï¼Œ
+åŒè¶³ç¨³ç¨³ç«™å®šã€‚æ°´ä½é€æ¸ä¸Šå‡ï¼Œå¾ˆå¿«åœ°å±±æ´ªä¾¿ä»Žä½ å¤´é¡¶è½°éš†è½°éš†çš„å†²è¿‡ã€‚
+ä½ çš„èº«å­å´å¦‚ä¸­æµç ¥æŸ±èˆ¬åœ¨æ°´ä¸­å±¹ç«‹ä¸åŠ¨ã€‚æºªæµä¸­å¸¦ä¸‹æ ‘æžå±±çŸ³(stone)
+ï¼Œåœ¨ä½ èº«æ—æ€¥é€Ÿæµè¿‡ã€‚å²¸è¾¹(bank)ä¹Ÿå¼€å§‹æ³›æ»¥äº†ã€‚
 LONG
         );
         
 	set("item_desc",([
-	    "stone" : "Ò»¿é¿éµÄÉ½Ê¯£¬ÕýÑ¸¼±µØ±»É½ºé´ø¶¯ÏòÄã³åÀ´¡£\n",
-	    "bank" : "Ë®Î»Öð½¥Éý¸ß£¬¿ªÊ¼·ºÀÄÁË¡£\n",
+	    "stone" : "ä¸€å—å—çš„å±±çŸ³ï¼Œæ­£è¿…æ€¥åœ°è¢«å±±æ´ªå¸¦åŠ¨å‘ä½ å†²æ¥ã€‚\n",
+	    "bank" : "æ°´ä½é€æ¸å‡é«˜ï¼Œå¼€å§‹æ³›æ»¥äº†ã€‚\n",
 	]));
 	
         set("no_clean_up", 0);
@@ -41,11 +41,11 @@ int do_jump(string arg)
 	object me = this_player();
 
 	if ( !arg || arg != "bank" )
-	     return notify_fail( "Ê²Ã´£¿\n");
+	     return notify_fail( "ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$N×ÝÉíÌø»Ø°¶ÉÏ¡£\n\n", me);
+	message_vision("$Nçºµèº«è·³å›žå²¸ä¸Šã€‚\n\n", me);
 	me->move(__DIR__"shanhong");
-	message("vision", me->name() + "×ÝÉíÓÉ¾ÞÑÒÉÏÌøÁË¹ýÀ´¡£\n",environment(me), ({me}) );
+	message("vision", me->name() + "çºµèº«ç”±å·¨å²©ä¸Šè·³äº†è¿‡æ¥ã€‚\n",environment(me), ({me}) );
 
 	return 1;
 }
@@ -55,7 +55,7 @@ int do_da(string arg)
 	object weapon, me = this_player();
 
 	if ( !arg || arg != "stone" )
-	     return notify_fail( "Ê²Ã´£¿\n");
+	     return notify_fail( "ä»€ä¹ˆï¼Ÿ\n");
 
 	if ( !objectp(weapon = me->query_temp("weapon"))
    	|| (string)weapon->query("skill_type") != "sword"){ 
@@ -65,114 +65,114 @@ int do_da(string arg)
 	  else {
 	     me->set("neili", 0);
           }
-	  me->receive_wound("qi", 50, "±»É½Ê¯ÔÒËÀÁË");   	
-	  me->receive_damage("qi", 70, "±»É½Ê¯ÔÒËÀÁË");
+	  me->receive_wound("qi", 50, "è¢«å±±çŸ³ç ¸æ­»äº†");   	
+	  me->receive_damage("qi", 70, "è¢«å±±çŸ³ç ¸æ­»äº†");
 	  message_vision(
-	  "$NÔËÆðÄÚÁ¦£¬Ë«ÕÆÍ¬Ê±ÅÄÏòÉ½Ê¯£¬½á¹û¾¢Á¦·´Õð£¬×Ô¼º·´¶øÊÜÉË¡£\n", me);
+	  "$Nè¿èµ·å†…åŠ›ï¼ŒåŒæŽŒåŒæ—¶æ‹å‘å±±çŸ³ï¼Œç»“æžœåŠ²åŠ›åéœ‡ï¼Œè‡ªå·±åè€Œå—ä¼¤ã€‚\n", me);
 	  return 1;
 	}
 
 	if ( (int)me->query("neili") < 50 )
-		return notify_fail( "ÄãÄÚÁ¦²»×ã£¬²»ÄÜ»÷Ê¯Á·½£¡£\n"); 
+		return notify_fail( "ä½ å†…åŠ›ä¸è¶³ï¼Œä¸èƒ½å‡»çŸ³ç»ƒå‰‘ã€‚\n"); 
 	if ( (int)me->query("jingli") < 50 )
-                return notify_fail( "Äã¾«Á¦²»×ã£¬²»ÄÜ»÷Ê¯Á·½£¡£\n");
+                return notify_fail( "ä½ ç²¾åŠ›ä¸è¶³ï¼Œä¸èƒ½å‡»çŸ³ç»ƒå‰‘ã€‚\n");
 
 
-	if ( weapon->name() == "Ð¡Ê÷Ö¦" && weapon->query_temp("marks/»÷") >= 1 ) {
-	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	if ( weapon->name() == "å°æ ‘æž" && weapon->query_temp("marks/å‡»") >= 1 ) {
+	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
 	  weapon->unequip();
           weapon->move(environment(me));
-          weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+          weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
           weapon->set("value", 0);
           weapon->set("weapon_prop", 0);
         }
-	else if ( weapon->name() == "Ðå»¨Õë" && weapon->query_temp("marks/»÷") >=3 ) {
-	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "ç»£èŠ±é’ˆ" && weapon->query_temp("marks/å‡»") >=3 ) {
+	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
 	  weapon->unequip();
           weapon->move(environment(me));
-          weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+          weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
           weapon->set("value", 0);
           weapon->set("weapon_prop", 0);
         }
-	else if ( weapon->name() == "Öñ½£" && weapon->query_temp("marks/»÷") >= 3 ) {
-	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "ç«¹å‰‘" && weapon->query_temp("marks/å‡»") >= 3 ) {
+	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
 	  weapon->unequip();
 	  weapon->move(environment(me));
-	  weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+	  weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
 	  weapon->set("value", 0);
 	  weapon->set("weapon_prop", 0);
 	}
-	else if ( weapon->name() == "¶Ì½£" && weapon->query_temp("marks/»÷") >= 5 ) {
-	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "çŸ­å‰‘" && weapon->query_temp("marks/å‡»") >= 5 ) {
+	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
           weapon->unequip();
           weapon->move(environment(me));
-          weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+          weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
           weapon->set("value", 0);
           weapon->set("weapon_prop", 0);
         }
-	else if ( weapon->name() == "¶ëÃ¼´Ì" && weapon->query_temp("marks/»÷") >= 6 ) {
-  	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "å³¨çœ‰åˆº" && weapon->query_temp("marks/å‡»") >= 6 ) {
+  	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
   	  weapon->unequip();
   	  weapon->move(environment(me));
-  	  weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+  	  weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
   	  weapon->set("value", 0);
   	  weapon->set("weapon_prop", 0);
 	}
-	else if ( weapon->name() == "³¤½£" && weapon->query_temp("marks/»÷") >= 8 ) {
-	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "é•¿å‰‘" && weapon->query_temp("marks/å‡»") >= 8 ) {
+	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
           weapon->unequip();
           weapon->move(environment(me));
-          weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+          weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
           weapon->set("value", 0);
           weapon->set("weapon_prop", 0);
         }
-	else if ( weapon->name() == "¸Ö½£" && weapon->query_temp("marks/»÷") >= 15 ) {
-  	  message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "é’¢å‰‘" && weapon->query_temp("marks/å‡»") >= 15 ) {
+  	  message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
   	  weapon->unequip();
   	  weapon->move(environment(me));
-  	  weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+  	  weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
   	  weapon->set("value", 0);
   	  weapon->set("weapon_prop", 0);
 	}
-	else if ( weapon->name() == "ÓÎÁú½£" && weapon->query_temp("marks/»÷") >= 20 ) {
-          message_vision(HIW "Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ" + weapon->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me);
+	else if ( weapon->name() == "æ¸¸é¾™å‰‘" && weapon->query_temp("marks/å‡»") >= 20 ) {
+          message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me);
           weapon->unequip();
           weapon->move(environment(me));
-          weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+          weapon->set("name", "æ–­æŽ‰çš„" + weapon->name());
           weapon->set("value", 0);
           weapon->set("weapon_prop", 0);
 	}
 	else {
-	  if ( weapon->name() != "ÐþÌúÖØ½£" && weapon->name() != "ÒÐÌì½£" ) { 
-	     weapon->add_temp("marks/»÷",1);
+	  if ( weapon->name() != "çŽ„é“é‡å‰‘" && weapon->name() != "å€šå¤©å‰‘" ) { 
+	     weapon->add_temp("marks/å‡»",1);
 	  }
-	  message_vision("$N¾Ù½£ÍùÊ¯¿éÌôÈ¥£¬½«É½Ê¯´òÁË»ØÈ¥£¬Ê¹É½Ê¯Á÷²»¹ýÉí±ß¡£\n", me);
+	  message_vision("$Nä¸¾å‰‘å¾€çŸ³å—æŒ‘åŽ»ï¼Œå°†å±±çŸ³æ‰“äº†å›žåŽ»ï¼Œä½¿å±±çŸ³æµä¸è¿‡èº«è¾¹ã€‚\n", me);
 	  
 	  if ( (int)me->query_skill("strike",1) >= 30 
 	  && (int)me->query_skill("strike",1) <= 100 ) {
 	     me->improve_skill("strike", me->query("int"));
-	     write( "ÄãµÄ»ù±¾ÕÆ·¨½ø²½ÁË¡£\n");
+	     write( "ä½ çš„åŸºæœ¬æŽŒæ³•è¿›æ­¥äº†ã€‚\n");
 	  }
 
 	  if ( (int)me->query_skill("sword",1)  >= 30
 	  && (int)me->query_skill("sword",1) <= 100 ) {
              me->improve_skill("sword", me->query("int"));
-	     write( "ÄãµÄ»ù±¾½£·¨½ø²½ÁË¡£\n");
+	     write( "ä½ çš„åŸºæœ¬å‰‘æ³•è¿›æ­¥äº†ã€‚\n");
 	  }
 
 	  if ( (int)me->query_skill("force",1) >= 30
 	  && (int)me->query_skill("force",1) <= 100 ) {
   	     me->improve_skill("force", me->query("int"));
-	     write( "ÄãµÄ»ù±¾ÄÚ¹¦½ø²½ÁË¡£\n");
+	     write( "ä½ çš„åŸºæœ¬å†…åŠŸè¿›æ­¥äº†ã€‚\n");
 	  }	
 
 	  if ( me->query_skill("dugu-jiujian",1) >= 1 ) {
 	     me->improve_skill("dugu-jiujian", me->query("int")+20);
-	     write( "ÄãµÄ¶À¹Â¾Å½£½ø²½ÁË¡£\n");
+	     write( "ä½ çš„ç‹¬å­¤ä¹å‰‘è¿›æ­¥äº†ã€‚\n");
 	  }
 
-	  me->receive_damage("jingli", 30, "ÌåÁ¦Í¸Ö§¹ý¶ÈËÀÁË");
-	  me->receive_damage("qi", 10, "ÌåÁ¦Í¸Ö§¹ý¶ÈËÀÁË");
+	  me->receive_damage("jingli", 30, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+	  me->receive_damage("qi", 10, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
           me->add("neili",-50);
 	  return 1;
 	}	  

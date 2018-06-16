@@ -1,5 +1,5 @@
 //Cracked by Roath
-// liangong1.c Á·¹¦·¿
+// liangong1.c ç»ƒåŠŸæˆ¿
 // by qfy
 
 #include <room.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·¹¦·¿");
+	set("short", "ç»ƒåŠŸæˆ¿");
 	set("long", @LONG
-Á·¹¦·¿ÊÇ¹©»ªÉ½µÜ×ÓĞŞÁ·ÄÚ¹¦£¬»òÑĞ¶ÁÎäÑ§Êé¼®Ö®´¦¡£·¿ÄÚ²¢ÎŞÌØ±ğ
-°ÚÉè£¬ÒÔÃâµÜ×ÓĞĞ¹¦Ê±·ÖĞÄ£¬µ¢ÎóÁË½ø¶È¡£¶«±ßÊÇÄĞµÜ×ÓĞİÏ¢ÊÒ¡£
+ç»ƒåŠŸæˆ¿æ˜¯ä¾›åå±±å¼Ÿå­ä¿®ç»ƒå†…åŠŸï¼Œæˆ–ç ”è¯»æ­¦å­¦ä¹¦ç±ä¹‹å¤„ã€‚æˆ¿å†…å¹¶æ— ç‰¹åˆ«
+æ‘†è®¾ï¼Œä»¥å…å¼Ÿå­è¡ŒåŠŸæ—¶åˆ†å¿ƒï¼Œè€½è¯¯äº†è¿›åº¦ã€‚ä¸œè¾¹æ˜¯ç”·å¼Ÿå­ä¼‘æ¯å®¤ã€‚
 LONG
 	);
 
@@ -21,8 +21,8 @@ LONG
 	]));
 
 
-	create_door("north", "Ä¾ÃÅ", "south", DOOR_CLOSED);
-	create_door("east", "ÖñÃÅ", "west", DOOR_CLOSED);
+	create_door("north", "æœ¨é—¨", "south", DOOR_CLOSED);
+	create_door("east", "ç«¹é—¨", "west", DOOR_CLOSED);
 	
 	set("cost", 0);
 	setup();
@@ -32,8 +32,8 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if ( me->query("gender") == "Å®ĞÔ" && dir == "east" && !wizardp(me) )
-		return notify_fail("¿´Çå³şµã£¬ÄÇÊÇÄĞµÜ×ÓĞİÏ¢ÊÒ£¡\n");
+	if ( me->query("gender") == "å¥³æ€§" && dir == "east" && !wizardp(me) )
+		return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œé‚£æ˜¯ç”·å¼Ÿå­ä¼‘æ¯å®¤ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

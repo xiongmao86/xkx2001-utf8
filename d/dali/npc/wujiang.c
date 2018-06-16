@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 #include <ansi.h>
 inherit NPC;
@@ -7,14 +7,14 @@ inherit F_SKILL;
 
 void create()
 {
-	set_name("Îä½«", ({ "wu jiang", "wu", "jiang" }));
+	set_name("æ­¦å°†", ({ "wu jiang", "wu", "jiang" }));
 	set_color("$YEL$");
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 30);
 	set("weight", 100000);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "¡¡¡¡ËûÊÇ´óÀí¹ú½ûÎÀ¾üµÄ½«Áì£¬Æ½Ê±¸ºÔğÁì¶ÓÑ²ÂßÊØÎÀ¡£Õ¾ÔÚÄÇÀïÓĞËµ²»³ö\nµÄÍş·ç¡£\n");
+	set("long", "ã€€ã€€ä»–æ˜¯å¤§ç†å›½ç¦å«å†›çš„å°†é¢†ï¼Œå¹³æ—¶è´Ÿè´£é¢†é˜Ÿå·¡é€»å®ˆå«ã€‚ç«™åœ¨é‚£é‡Œæœ‰è¯´ä¸å‡º\nçš„å¨é£ã€‚\n");
 	set("combat_exp", 75000);
 	set("shen_type", 0);
 	set("attitude", "peaceful");

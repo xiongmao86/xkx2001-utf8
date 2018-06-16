@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "慈宁宫");
 	set("long", @LONG
-�����ǻ�̫���ס�ĵط����������ź��ĵ�̺��������һ����
-����ƽʱ��δ��̫�����٣��ǲ���������ġ��Ա���һ���ǳ�����
-�Ļ�԰��
+这里是皇太后居住的地方，地上铺着厚厚的地毯。正中有一道珠
+帘。平时若未得太后宣召，是不能随便进入的。旁边是一座非常美丽
+的花园。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */

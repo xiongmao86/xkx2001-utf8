@@ -7,17 +7,17 @@ inherit BLADE;
 
 void create()
 {
-	set_name(RED"ÁîÅÆ"NOR, ({ "lingpai", "pai" }) );
+	set_name(RED"ä»¤ç‰Œ"NOR, ({ "lingpai", "pai" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö§");
+		set("unit", "æ”¯");
 		set("value", 50);
 		set("material", "wood");
-		set("long", "ÕâÊÇÒ»Ö§Ä¾ÁîÅÆ£¬ÉÏÃæÓÃÖìÆáĞ´×ÅÒ»¸ö¡¸ÉñÁú¡¹Á½×Ö¡£\n");
-//		set("wield_msg", "$N³é³öÒ»Ö§$nÎÕÔÚÊÖÖĞ¡£\n");
-//		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø»³Àï¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æ”¯æœ¨ä»¤ç‰Œï¼Œä¸Šé¢ç”¨æœ±æ¼†å†™ç€ä¸€ä¸ªã€Œç¥é¾™ã€ä¸¤å­—ã€‚\n");
+//		set("wield_msg", "$NæŠ½å‡ºä¸€æ”¯$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+//		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›æ€€é‡Œã€‚\n");
 	}
 //	init_blade(4);
 	setup();

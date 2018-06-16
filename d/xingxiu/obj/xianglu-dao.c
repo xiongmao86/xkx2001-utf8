@@ -1,5 +1,5 @@
 //Cracked by Roath
-// weapon: ¡¸ÂÌ²¨ÏãÂ¶µ¶¡¹ (Xianglu dao)
+// weapon: ã€Œç»¿æ³¢é¦™éœ²åˆ€ã€ (Xianglu dao)
 // wsky 4/7/00
 
 #include <ansi.h>
@@ -11,18 +11,18 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIG "ÂÌ²¨ÏãÂ¶µ¶" NOR, ({ "xianglu dao", "xianglu", "blade" }));
+        set_name(HIG "ç»¿æ³¢é¦™éœ²åˆ€" NOR, ({ "xianglu dao", "xianglu", "blade" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIG"ÕâÊÇÒ»±úºñ±³±¡ÈĞ£¬·æÈñÒì³£µÄ¹íÍ·µ¶£¬µ¶¿ÚÏòÍâ¡£\nµ¶ÈĞÉÏÒşÒşÇà¹âÎ¢ÉÁ£¬È´ÊÇ³ôÆøÑ¬Ìì¡£\n"NOR);
+                set("unit", "æŸ„");
+                set("long", HIG"è¿™æ˜¯ä¸€æŸ„åšèƒŒè–„åˆƒï¼Œé”‹é”å¼‚å¸¸çš„é¬¼å¤´åˆ€ï¼Œåˆ€å£å‘å¤–ã€‚\nåˆ€åˆƒä¸Šéšéšé’å…‰å¾®é—ªï¼Œå´æ˜¯è‡­æ°”ç†å¤©ã€‚\n"NOR);
                 set("value", 10000);
                 set("material", "steel");
                 set("rigidity", 2000);
-                set("wield_msg", HIG"$NÒ»ÉùÀäĞ¦£¬¡°²¨¡±µÄÒ»Éù£¬ºáµ¶µ±ĞØ£¬ÉíÇ°ÂÌ¹âÉÁÉÁ¡£\nÖÚÈËËæ×Å±ÇÖĞÎÊµ½Ò»ÕóĞÈ³ô£¬¼¸ºõ×÷Å»£¬ÖªµÀÕâµ¶ÉÏÎ¹ÓĞ¾ç¶¾£¬Ğ°ÃÅÏÕ¶ñÖ®¼«£¡\n"NOR);
-                set("unwield_msg", "Çà¹â»ÎÉÁ£¬ÑªĞÈ³ôÎ¶ÏûÊ§ÎŞ×Ù£¡¡¸ÂÌ²¨ÏãÂ¶µ¶¡¹ ÒÑÊÕ»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", HIG"$Nä¸€å£°å†·ç¬‘ï¼Œâ€œæ³¢â€çš„ä¸€å£°ï¼Œæ¨ªåˆ€å½“èƒ¸ï¼Œèº«å‰ç»¿å…‰é—ªé—ªã€‚\nä¼—äººéšç€é¼»ä¸­é—®åˆ°ä¸€é˜µè…¥è‡­ï¼Œå‡ ä¹ä½œå‘•ï¼ŒçŸ¥é“è¿™åˆ€ä¸Šå–‚æœ‰å‰§æ¯’ï¼Œé‚ªé—¨é™©æ¶ä¹‹æï¼\n"NOR);
+                set("unwield_msg", "é’å…‰æ™ƒé—ªï¼Œè¡€è…¥è‡­å‘³æ¶ˆå¤±æ— è¸ªï¼ã€Œç»¿æ³¢é¦™éœ²åˆ€ã€ å·²æ”¶å›åˆ€é˜ã€‚\n");
         }
         init_blade(88);
         setup();
@@ -36,9 +36,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         
         if(random(me->query("combat_exp"))>random(victim->query("combat_exp"))){
                 victim->apply_condition("xianglu-du", 250);   
-                return HIG "$n±ÇÖĞÎÊµ½Ò»ÕóĞÈ³ô£¬¸ù×Å¾õµÃÉË¿ÚÉÏÒ»Âé£¡\n" NOR;
+                return HIG "$né¼»ä¸­é—®åˆ°ä¸€é˜µè…¥è‡­ï¼Œæ ¹ç€è§‰å¾—ä¼¤å£ä¸Šä¸€éº»ï¼\n" NOR;
         } else {
-                return HIM "$n±ÇÖĞÎÊµ½Ò»ÕóĞÈ³ô£¬¼±ÔËÄÚ¹¦ºÍ¶¾ÆøÏà¿¹¡£" NOR;
+                return HIM "$né¼»ä¸­é—®åˆ°ä¸€é˜µè…¥è‡­ï¼Œæ€¥è¿å†…åŠŸå’Œæ¯’æ°”ç›¸æŠ—ã€‚" NOR;
         }
         
 }

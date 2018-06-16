@@ -6,11 +6,11 @@ inherit NPC;
 void create()
 {
 	int i = random(5)+2;
-	set_name("ÃÉÃæ´óºº", ({ "bandit" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è’™é¢å¤§æ±‰", ({ "bandit" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("long",
-		"Õâ¼Ò»ïÁ³ÉÏÃÉÁË¿é²¼ª¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬ÁîÈËÍû¶øÉúÎ·¡£\n");
+		"è¿™å®¶ä¼™è„¸ä¸Šè’™äº†å—å¸ƒî€‹ä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚\n");
 	set("combat_exp", 20000*i);
         set("shen_type", -1);
 	set("attitude", "aggressive");

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", HIW"ÏóÆåÆåÔ·"NOR);
+	set("short", HIW"è±¡æ£‹æ£‹è‹‘"NOR);
 	set("long", @LONG
-ÕâÀïÊÇÏÀ¿ÍÐÐÏóÆåÆåÔ·£¬ÊÇÒ»¼ä°ÚÉèÕûÆëµÄ·¿¼ä£¬´óÃÅÃæ¶ÔµÄÇ½
-±ÚÉÏ¹Ò×ÅÒ»¸±Õý¿¬ÊéÐ´µÄÌõ·ù(tiaofu)¡£Î÷¡¢ÄÏ¡¢±±±ßµÄÔÂ¶´ÃÅÍ¨Íù
-¿É¹©ÏÂÆåµÄÍ¥Ô°¡£
+è¿™é‡Œæ˜¯ä¾ å®¢è¡Œè±¡æ£‹æ£‹è‹‘ï¼Œæ˜¯ä¸€é—´æ‘†è®¾æ•´é½çš„æˆ¿é—´ï¼Œå¤§é—¨é¢å¯¹çš„å¢™
+å£ä¸ŠæŒ‚ç€ä¸€å‰¯æ­£æ¥·ä¹¦å†™çš„æ¡å¹…(tiaofu)ã€‚è¥¿ã€å—ã€åŒ—è¾¹çš„æœˆæ´žé—¨é€šå¾€
+å¯ä¾›ä¸‹æ£‹çš„åº­å›­ã€‚
 LONG
 	);
 	set("exits", ([
@@ -23,10 +23,10 @@ LONG
 	]));
 	set("item_desc", ([
 		"tiaofu" : 
-			"		¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù		\n"
-			"		¡ù¡ù¡ù¹ÛÆå²»ÓïÕæ¾ý×Ó¡ù¡ù¡ù		\n"
-			"		¡ù¡ù¡ùÆðÊÖÎÞ»Ø´óÕÉ·ò¡ù¡ù¡ù		\n"
-			"		¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù		\n\n",
+			"		â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»		\n"
+			"		â€»â€»â€»è§‚æ£‹ä¸è¯­çœŸå›å­â€»â€»â€»		\n"
+			"		â€»â€»â€»èµ·æ‰‹æ— å›žå¤§ä¸ˆå¤«â€»â€»â€»		\n"
+			"		â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»		\n\n",
 	]));
 	set("cost", 1);
     setup();

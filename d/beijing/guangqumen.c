@@ -3,11 +3,11 @@
 
 inherit ROOM;
 
-string GATE_DESC_SHORT="������";
+string GATE_DESC_SHORT="广渠门";
 string GATE_DESC_LONG=@LONG
-���Ǿ�����ǳ�����ĳ��š�����ĳ�ǽ����Ե���΢
-�ƾɣ��ر�Ҳ�����ڳ�ɭ�ϣ����Ͼ������صأ����Ȳ�����
-���������˶���Χ��һ�Ÿ�ʾ(gaoshi).
+这是京城外城朝东向的城门。这里的城墙相比显得略微
+破旧，守备也不如内城森严，但毕竟京畿重地，气度不凡；
+过往的行人都在围看一张告示(gaoshi).
 LONG;
 
 mapping GATE_EXITS=([

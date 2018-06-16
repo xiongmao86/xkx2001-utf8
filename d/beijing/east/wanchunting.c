@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��ͤ");
+	set("short", "万春亭");
 	set("long", @LONG
-������ȫ��������ߵ㡣���Ͽ��Ը�������Ͻ��ǣ��򱱿�
-�Կ�����¥�͹�¥��ͤ������һ��ʯ��������ʯ�ʣ���������Ϣ��
+这里是全北京的最高点。向南可以俯瞰整个紫禁城，向北可
+以看到钟楼和鼓楼。亭子里有一张石桌，几张石凳，供游人休息。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 4 */

@@ -3,10 +3,10 @@
 
 inherit ROOM;
 
-string GATE_DESC_SHORT = "��ֱ��";
+string GATE_DESC_SHORT = "东直门";
 string GATE_DESC_LONG = @LONG
-���Ǿ��Ƕ�����һ�����ţ��ſڹ���һ�Ÿ�ʾ (gaoshi)��
-�������Ͼ��ǳ����ţ����ǵĶ�ֱ�Ŵ��ֱͨ��¥��
+这是京城东北的一座城门，门口挂这一张告示 (gaoshi)。
+这里往南就是朝阳门，进城的东直门大街直通鼓楼。
 LONG;
 
 mapping GATE_EXITS=([ /* sizeof() == 2 */

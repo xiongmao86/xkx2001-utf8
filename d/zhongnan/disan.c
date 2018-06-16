@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/zhongnan/disan.c
-//¹ãÄþµî
+//å¹¿å®æ®¿
 // sdong 08/04/98
 
 #include <ansi.h>
@@ -9,11 +9,11 @@ inherit ROOM;
 
 void create()
 {
-		  set("short", HIC"¹ãÄþµî"NOR);
+		  set("short", HIC"å¹¿å®æ®¿"NOR);
 		  set("long", @LONG
-ÕâÀïÊÇÖØÑô¹¬µÄ¹ãÄþµî£¬ÊÇÈ«ÕæÆß×Ó¼¯ÒéÖ®Ëù¡£ÕýÖÐ¼äÊÇ¸ö¾´ÏãµÄ´óÏã
-°¸£¬¿¿Ç½·Å×ÅÆßÕÅÌ«Ê¦ÒÎ£¬µØÉÏ·Å×Å¼¸¸öÆÑÍÅ¡£¶«Î÷Á½²àÊÇ×ßÀÈ£¬±±±ßÊÇ¹ã
-³¡£¬ÄÏ±ßÍ¨ÍùÈýÇåµî¡£
+è¿™é‡Œæ˜¯é‡é˜³å®«çš„å¹¿å®æ®¿ï¼Œæ˜¯å…¨çœŸä¸ƒå­é›†è®®ä¹‹æ‰€ã€‚æ­£ä¸­é—´æ˜¯ä¸ªæ•¬é¦™çš„å¤§é¦™
+æ¡ˆï¼Œé å¢™æ”¾ç€ä¸ƒå¼ å¤ªå¸ˆæ¤…ï¼Œåœ°ä¸Šæ”¾ç€å‡ ä¸ªè’²å›¢ã€‚ä¸œè¥¿ä¸¤ä¾§æ˜¯èµ°å»Šï¼ŒåŒ—è¾¹æ˜¯å¹¿
+åœºï¼Œå—è¾¹é€šå¾€ä¸‰æ¸…æ®¿ã€‚
 LONG
 		  );
 		  set("valid_startroom", 1);

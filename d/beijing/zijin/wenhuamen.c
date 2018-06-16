@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�Ļ���");
+	set("short", "文华门");
 	set("long",  @LONG
-�������򶫾Ϳ��Գ������ţ�������Э���ţ������Ǻ챾�⣬��
-�����Ļ��
+从这里向东就可以出东华门，向西是协和门，向南是红本库，向
+北是文华殿。
 LONG
 	);
 

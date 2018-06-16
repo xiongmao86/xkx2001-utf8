@@ -23,9 +23,9 @@ void destroy_ob(object);
 
 void create()
 {
-        set("short", "ÉñÁú½Ì´¢²ØÊÒ");
+        set("short", "ç¥žé¾™æ•™å‚¨è—å®¤");
         set("long", @LONG
-ÕâÀïÔ­À´ÊÇÒ»¸ö³¤ÔÚÉ½±ÚÉÏµÄÌìÈ»ÈÜ¶´£¬ÉñÁú½Ì°ÑÕâÀï¸ÄÔì³ÉÁËÒ»¸ö²Ö¿â¡£
+è¿™é‡ŒåŽŸæ¥æ˜¯ä¸€ä¸ªé•¿åœ¨å±±å£ä¸Šçš„å¤©ç„¶æº¶æ´žï¼Œç¥žé¾™æ•™æŠŠè¿™é‡Œæ”¹é€ æˆäº†ä¸€ä¸ªä»“åº“ã€‚
 LONG
         );
 
@@ -90,7 +90,7 @@ void refresh_stuff()
                         if( !objectp(rum_ob = find_object("/d/city/npc/aqingsao")) )
                                 rum_ob = load_object("/d/city/npc/aqingsao");
                         CHANNEL_D->do_channel(rum_ob, "rumor",
-                        sprintf( "ÌýËµ%s"+HIM+"ºÃÏóÂäÔÚ%sµÄ%sÊÖÀïÁË£¡"NOR,
+                        sprintf( "å¬è¯´%s"+HIM+"å¥½è±¡è½åœ¨%sçš„%sæ‰‹é‡Œäº†ï¼"NOR,
                                 inv[i]->name(),
                  region_names[explode(base_name(environment(keeper)), "/")[1]],
                                 keeper->name()));
@@ -126,7 +126,7 @@ void destroy_ob(object ob)
         }
 
         message("vision",
-                ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+                ob->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                 environment(ob), ({ob}));
 
         destruct(ob);

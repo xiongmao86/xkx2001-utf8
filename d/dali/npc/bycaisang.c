@@ -1,15 +1,15 @@
 //Cracked by Roath
-// bycaisang.c °ÚÒÄ¸¾Å®
+// bycaisang.c æ‘†å¤·å¦‡å¥³
 
 inherit NPC;
 
 void create()
 {
-	set_name("²ÉÉ£Å®", ({ "caisang nu", "nu", "girl" }) );
-	set("long", "Ò»¸öÄêÇáµÄ°ÚÒÄ²ÉÉ£¹ÃÄï¡£\n");
+	set_name("é‡‡æ¡‘å¥³", ({ "caisang nu", "nu", "girl" }) );
+	set("long", "ä¸€ä¸ªå¹´è½»çš„æ‘†å¤·é‡‡æ¡‘å§‘å¨˜ã€‚\n");
 
 	set("age", 18);
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("dalivictim",1);
 
 	set("str", 15);

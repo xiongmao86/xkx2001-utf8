@@ -1,5 +1,5 @@
 //Cracked by Roath
-// greenrobe.c ÇàÉ«µÀÅÛ
+// greenrobe.c é’è‰²é“è¢
 // By Marz
 
 #include <ansi.h>
@@ -9,14 +9,14 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(GRN"ÇàÉ«µÀÅÛ"NOR, ({"pao", "cloth", "dao pao"}) );
+	set_name(GRN"é’è‰²é“è¢"NOR, ({"pao", "cloth", "dao pao"}) );
     set_weight(1500);
     if( clonep() )
        set_default_object(__FILE__);
     else {
 	    set("female_only", 1);
-        set("unit", "¼ş");
-		set("long", "ÕâÊÇ¼şÖÊµØÇáÈíµÄÇàÉ«µÀÅÛ£¬±ßÉÏ»¹ïÎ×Å»¨ÄØ¡£\n");
+        set("unit", "ä»¶");
+		set("long", "è¿™æ˜¯ä»¶è´¨åœ°è½»è½¯çš„é’è‰²é“è¢ï¼Œè¾¹ä¸Šè¿˜é•‚ç€èŠ±å‘¢ã€‚\n");
         set("material", "cloth");
         set("armor_prop/armor", 1);
     }

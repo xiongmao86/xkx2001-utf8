@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("海龟", ({ "haigui", "gui"}));
-        set("race", "野兽");
+	set_name("娴烽緹", ({ "haigui", "gui"}));
+        set("race", "閲庡吔");
         set("age", 100+random(100));
-	set("long", "这是只很老的海龟，龟壳又厚又大。\n");
+	set("long", "杩欐槸鍙緢鑰佺殑娴烽緹锛岄緹澹冲張鍘氬張澶с�俓n");
 	set("attitude", "peaceful");
 
 	set("str", 15);

@@ -5,12 +5,12 @@ inherit ROOM;
 string look_shibei();
 void create()
 {
-	set("short", "ÌÒ»¨¹È");
+	set("short", "æ¡ƒèŠ±è°·");
 	set("long", @LONG
-Ë³ÏªÁ÷¶øÉÏ£¬Á½±ßÉ½ÊÆ½¥¸ß£¬Á÷Ë®½¥¼±£¬ÌÒÁÖÒ²Óú¼ûÃÜ¼¯£¬²ã
-²ãÌÒ»¨ÓµÔÜ³ÉÒ»Æ¬ÍíÏ¼£¬ÁôÐÄ´¦£¬Ê±Ê±¿É¼ûÐüÈª·ÉÆÙ£¬µ¹¹ÒÑÂ¼ä¡£
-ÌÒ»¨ÏªË®Ìøµ´Æð·ü£¬ÇàÁÛ³àÀðÒþÒþÏàÏ·¡£ÕâÀï¾ÍÊÇÌÒ»¨¹ÈÁË¡£¹È¿Ú
-Ò»¸ö³ßÐí¸ßµÄÐ¡×­Ê¯±®(shibei)Ð±²àÂ·ÅÔ¡£
+é¡ºæºªæµè€Œä¸Šï¼Œä¸¤è¾¹å±±åŠ¿æ¸é«˜ï¼Œæµæ°´æ¸æ€¥ï¼Œæ¡ƒæž—ä¹Ÿæ„ˆè§å¯†é›†ï¼Œå±‚
+å±‚æ¡ƒèŠ±æ‹¥æ”’æˆä¸€ç‰‡æ™šéœžï¼Œç•™å¿ƒå¤„ï¼Œæ—¶æ—¶å¯è§æ‚¬æ³‰é£žç€‘ï¼Œå€’æŒ‚å´–é—´ã€‚
+æ¡ƒèŠ±æºªæ°´è·³è¡èµ·ä¼ï¼Œé’é³žèµ¤é²¤éšéšç›¸æˆã€‚è¿™é‡Œå°±æ˜¯æ¡ƒèŠ±è°·äº†ã€‚è°·å£
+ä¸€ä¸ªå°ºè®¸é«˜çš„å°ç¯†çŸ³ç¢‘(shibei)æ–œä¾§è·¯æ—ã€‚
 LONG );
 	set("outdoors", "city");
 	set("no_clean_up", 0);
@@ -28,9 +28,9 @@ LONG );
 string look_shibei()
 {
         return
-        "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù                      ¡ù¡ù\n"
-        "¡ù¡ù        ÌÒ»¨´å        ¡ù¡ù\n"
-        "¡ù¡ù                      ¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+        "â€»â€»                      â€»â€»\n"
+        "â€»â€»        æ¡ƒèŠ±æ‘        â€»â€»\n"
+        "â€»â€»                      â€»â€»\n"
+        "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }

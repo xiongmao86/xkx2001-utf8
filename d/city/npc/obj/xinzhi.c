@@ -11,14 +11,14 @@ void get_letter_text(mapping letter, string str);
 
 void create()
 {
-	set_name("°×Ö½", ({"paper"}));
+	set_name("ç™½çº¸", ({"paper"}));
 	set_weight(10);
 	set_weight(1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÕÅ¸ÕÂòÀ´µÄĞûÖ½£¬¿ÉÒÔÓÃÀ´Ğ´ĞÅ(write letter)¡£\n");
-		set("unit", "ÕÅ");
+		set("long", "ä¸€å¼ åˆšä¹°æ¥çš„å®£çº¸ï¼Œå¯ä»¥ç”¨æ¥å†™ä¿¡(write letter)ã€‚\n");
+		set("unit", "å¼ ");
 		set("material", "paper");
 		set("value", 10);
 	}
@@ -36,13 +36,13 @@ int do_write(string arg)
            object ob_letter;
             me=this_player();
           	if (arg != "letter") 
-				 return  notify_fail("ÄãÒªĞ´Ê²Ã´£¿\n");
+				 return  notify_fail("ä½ è¦å†™ä»€ä¹ˆï¼Ÿ\n");
           if(!ob_bi=present("mao bi",me))
-                 return  notify_fail("ÄãºÃÏñÃ»ÓĞĞ´ĞÅµÄ¹¤¾ß°É£¿×îºÃÈ¥ÂòÖ§Ã«±Ê£¡\n");
+                 return  notify_fail("ä½ å¥½åƒæ²¡æœ‰å†™ä¿¡çš„å·¥å…·å§ï¼Ÿæœ€å¥½å»ä¹°æ”¯æ¯›ç¬”ï¼\n");
 		  if (this_player()->is_busy())
-				return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡µÈÄãÓĞ¹¦·òÊ±ÔÚĞ´°É¡£\n");
+				return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼ç­‰ä½ æœ‰åŠŸå¤«æ—¶åœ¨å†™å§ã€‚\n");
 
-          message_vision("Ö»¼û$NÄÃ³öÒ»Ö§Ã«±Ê£¬Õ¹¿ª°×Ö½£¬·Ü±Ê¼²Êé......\n"NOR,me);
+          message_vision("åªè§$Næ‹¿å‡ºä¸€æ”¯æ¯›ç¬”ï¼Œå±•å¼€ç™½çº¸ï¼Œå¥‹ç¬”ç–¾ä¹¦......\n"NOR,me);
           //destruct(ob_paper);
           start_letter(me);
           return 1;
@@ -50,7 +50,7 @@ int do_write(string arg)
 
 int start_letter(object me)
 {
-  tell_object(me,"¡¾ÊÕĞÅÈË¡¿(Ó¢ÎÄĞÕÃû):\n");
+  tell_object(me,"ã€æ”¶ä¿¡äººã€‘(è‹±æ–‡å§“å):\n");
   input_to( (: get_send_name :), me );
 
 }
@@ -62,19 +62,19 @@ void get_send_name(string username, object ob)
         me=ob;
         ob = FINGER_D->acquire_login_ob(username);
         if( !ob ) {
-                write("Ã»ÓĞÕâ¸öÈË¡£\n");
-          tell_object(this_player(),"¡¾ÊÕĞÅÈË¡¿(Ó¢ÎÄĞÕÃû):\n");
+                write("æ²¡æœ‰è¿™ä¸ªäººã€‚\n");
+          tell_object(this_player(),"ã€æ”¶ä¿¡äººã€‘(è‹±æ–‡å§“å):\n");
       input_to( (: get_send_name :),  me);
           return;
         }
         letter = ([
                 "from": me->name(1) + "(" + me->query("id") + ")",
-                "title": "ÎŞ±êÌâ",
+                "title": "æ— æ ‡é¢˜",
                 "to": username,
                 "time": time(),
                 "text": ""
         ]);
-        write("¡¾ÊéĞÅ±êÌâ¡¿:");
+        write("ã€ä¹¦ä¿¡æ ‡é¢˜ã€‘:");
     input_to("get_letter_title", letter,me);
         
 }
@@ -84,7 +84,7 @@ void get_letter_title(string str, mapping letter,object me)
 {
         if( str!="" ) 
                 letter["title"] = str;
-        write("¡¾ÊéĞÅÄÚÈİ¡¿:\n");
+        write("ã€ä¹¦ä¿¡å†…å®¹ã€‘:\n");
         me->edit( (: get_letter_text, letter:) );
 }
 
@@ -94,12 +94,12 @@ void get_letter_text(mapping letter, string str)
                 
         
         letter["text"] = str;
-        message_vision("Ö»¼û$N³¤ÊæÒ»¿ÚÆø£¬½«Ã«±Ê·Åµ½Ò»ÅÔ£¬½«Ğ´ºÃµÄÊéº¯µşÆğÀ´·ÅÔÚ»³Àï¡£\n"NOR,this_player());
+        message_vision("åªè§$Né•¿èˆ’ä¸€å£æ°”ï¼Œå°†æ¯›ç¬”æ”¾åˆ°ä¸€æ—ï¼Œå°†å†™å¥½çš„ä¹¦å‡½å èµ·æ¥æ”¾åœ¨æ€€é‡Œã€‚\n"NOR,this_player());
         
 		/*ob_letter=new("/clone/misc/xin");
         ob_letter->set_owner(letter["to"]);
-		ob_letter->set("long", "Ò»·âÒÑ¾­Ğ´ºÃµÄĞÅ£¬Äã¿ÉÓÃ¶Á(read letter)À´¿´ËüµÄÄÚÈİ¡£\n");
-		ob_letter->set_name(HIW"ĞÅ"NOR, ({"letter", "xin"}));
+		ob_letter->set("long", "ä¸€å°å·²ç»å†™å¥½çš„ä¿¡ï¼Œä½ å¯ç”¨è¯»(read letter)æ¥çœ‹å®ƒçš„å†…å®¹ã€‚\n");
+		ob_letter->set_name(HIW"ä¿¡"NOR, ({"letter", "xin"}));
         ob_letter->set("can_feng",1);
 		ob_letter->set("can_send",0);
 		ob_letter->send_letter(letter);

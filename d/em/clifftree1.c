@@ -1,15 +1,15 @@
 //Cracked by Roath
-// d/emei/clifftree1.c ÉáÉíÑÂÏÂÂŞººËÉ
+// d/emei/clifftree1.c èˆèº«å´–ä¸‹ç½—æ±‰æ¾
 // xbc: 96/02/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÂŞººËÉ");
+        set("short", "ç½—æ±‰æ¾");
 	set("long", @LONG
-ÕâÊÇÒ»Ö»´óÊ÷Ö¦£¬ÓÉÒ»¿ÃÂŞººËÉÉì³öÀ´¡£Õâ¿ÃÂŞººËÉÑù×ÓÏóÉ¼Ê÷£¬Ò¶×ÓÔ²
-¶øÏ¸¡£ÄãÌ§Í·ÍûÈ¥£¬ÉÏÃæÀëÉáÉíÑÂ¶¥²»Ô¶£¬ÏÂÃæÈ´ÊÇÍòÕÉÉîÔ¨¡£
+è¿™æ˜¯ä¸€åªå¤§æ ‘æï¼Œç”±ä¸€æ£µç½—æ±‰æ¾ä¼¸å‡ºæ¥ã€‚è¿™æ£µç½—æ±‰æ¾æ ·å­è±¡æ‰æ ‘ï¼Œå¶å­åœ†
+è€Œç»†ã€‚ä½ æŠ¬å¤´æœ›å»ï¼Œä¸Šé¢ç¦»èˆèº«å´–é¡¶ä¸è¿œï¼Œä¸‹é¢å´æ˜¯ä¸‡ä¸ˆæ·±æ¸Šã€‚
 LONG
 	);
 
@@ -17,9 +17,9 @@ LONG
 
         set("item_desc",([
             "up"        :
-"ÉÏÃæºÃÏóÀëÑÂ¶¥²»Ô¶£¬²»ÖªÓĞÃ»ÓĞÈËÄÜ´ÓÉÏÃæ°ÑÄãÀ­ÉÏÈ¥ÄØ£¿\n",
+"ä¸Šé¢å¥½è±¡ç¦»å´–é¡¶ä¸è¿œï¼Œä¸çŸ¥æœ‰æ²¡æœ‰äººèƒ½ä»ä¸Šé¢æŠŠä½ æ‹‰ä¸Šå»å‘¢ï¼Ÿ\n",
 	    "down"	:
-"ÏÂÃæÊÇÍòÕÉÉîÔ¨£¬Äã´óÄÑ²»ËÀ£¬»¹ÏëÔÙÌøÂğ£¿\n"
+"ä¸‹é¢æ˜¯ä¸‡ä¸ˆæ·±æ¸Šï¼Œä½ å¤§éš¾ä¸æ­»ï¼Œè¿˜æƒ³å†è·³å—ï¼Ÿ\n"
         ]));
 
 	set("cost", 0);
@@ -41,11 +41,11 @@ int do_jump(string arg)
         if ( !arg || arg == "" ) return 0;
 
         if ( arg == "down" ) {
-		message_vision("$N×İÉíÌøÁËÏÂÈ¥¡£\n", me);
+		message_vision("$Nçºµèº«è·³äº†ä¸‹å»ã€‚\n", me);
                 if (me->query("kar") > 15+random(15) 
 		&& me->query_str() > 28 && me->query("dex") < 17
 		&& me->query("con") > 18 && me->query("int") < 25) {
-//require a low int here. ÉµÈËÓĞÉµ¸£¡£
+//require a low int here. å‚»äººæœ‰å‚»ç¦ã€‚
 			call_out("to_branch2", 1, me);
 	                return 1;
                 }
@@ -64,10 +64,10 @@ int do_climb(string arg)
 	int k;
 
 	if ( arg && arg != "down" && arg != "up")
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 	if ( arg == "down" ){
-		message_vision("$NÏòÏÂÅÀ£¬ºöÈ»Ò»¸öÊ§ÊÖ£¬Ö±Ë¤ÁËÏÂÈ¥¡£\n", me);
+		message_vision("$Nå‘ä¸‹çˆ¬ï¼Œå¿½ç„¶ä¸€ä¸ªå¤±æ‰‹ï¼Œç›´æ‘”äº†ä¸‹å»ã€‚\n", me);
 		call_out("to_pool", 1, me);
 	        return 1;
 	}
@@ -76,14 +76,14 @@ int do_climb(string arg)
 
 	if ( arg == "up" ) {
 		if (( random(k) > 40) && (me->query("jingli") > 60)) {
-			message_vision("$NĞ¡ĞÄµØÏòÉÏÅÀÈ¥¡£\n", me);
+			message_vision("$Nå°å¿ƒåœ°å‘ä¸Šçˆ¬å»ã€‚\n", me);
 			me->move(__DIR__"duguang2");
-			message_vision("$NĞ¡ĞÄÒíÒíµØ´ÓÑÂÏÂÅÀÉÏÀ´¡£\n", me);
+			message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°ä»å´–ä¸‹çˆ¬ä¸Šæ¥ã€‚\n", me);
 			me->add("jingli",-random(60));
 			return 1;
 		}
 		else {
-			message_vision("$NÏëÏòÉÏÅÀ£¬¿ÉÊÇÃ»ÅÀÉÏÈ¥£¬ÓÖµôÏÂÀ´ÁË¡£\n", me);
+			message_vision("$Næƒ³å‘ä¸Šçˆ¬ï¼Œå¯æ˜¯æ²¡çˆ¬ä¸Šå»ï¼Œåˆæ‰ä¸‹æ¥äº†ã€‚\n", me);
 			me->add("jingli",-random(10));
 			return 1;
 		}

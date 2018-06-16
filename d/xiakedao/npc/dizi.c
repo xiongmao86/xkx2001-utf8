@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dizi.c ÏÀ¿ÍµºµÜ×Ó
+// dizi.c ä¾ å®¢å²›å¼Ÿå­
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -13,9 +13,9 @@ void greeting(object);
 
 void create()
 {
-	set_name("»ÆÉÀµÜ×Ó", ({ "dizi"}));
-	set("long", "ËûÊÇÏÀ¿ÍµºµºÖ÷ÖÚ¶àµÜ×ÓÖ®Ò»¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("é»„è¡«å¼Ÿå­", ({ "dizi"}));
+	set("long", "ä»–æ˜¯ä¾ å®¢å²›å²›ä¸»ä¼—å¤šå¼Ÿå­ä¹‹ä¸€ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", random(50) + 30);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -23,7 +23,7 @@ void create()
 	set("int", 25);
 	set("con", 25);
 	set("dex", 25);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 1500);
 	set("eff_qi", 1500);
 	set("qi", 1500);
@@ -57,7 +57,7 @@ void create()
       prepare_skill("strike", "wuyu-zhangfa");
 
 	set("inquiry", ([
-			"É±ÈË"   :  "É±ÈËÕß£¬ÈËÉ±Ö®",
+			"æ€äºº"   :  "æ€äººè€…ï¼Œäººæ€ä¹‹",
 		]));
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
@@ -92,10 +92,10 @@ int do_chase(object killer)
 		return 1;
 	}
 	
-	message_vision("$N×ßÁË¹ıÀ´¡£\n" NOR, killer);
+	message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n" NOR, killer);
 	callname = RANK_D->query_rude(target);
-	message_vision(HIR "\n$N¶ÔÖø$nºÈµÀ£º¡¸" 
-                + callname + "£¡µ¨¸ÒÔÚÏÀ¿ÍµºÉ±ÈË£¬ÄÃÃüÀ´£¡¡¹\n\n" NOR, killer, target);
+	message_vision(HIR "\n$Nå¯¹è‘—$nå–é“ï¼šã€Œ" 
+                + callname + "ï¼èƒ†æ•¢åœ¨ä¾ å®¢å²›æ€äººï¼Œæ‹¿å‘½æ¥ï¼ã€\n\n" NOR, killer, target);
 	killer->set_leader(target);
 	killer->kill_ob(target);
 	call_out("checking", 1, killer);
@@ -131,7 +131,7 @@ int waiting(object killer)
 	if ( objectp(target) )
 	{	
 		if (target->is_ghost())
-		{	message_vision("$NµôÍ·×ßÁË¡£\n" NOR, killer);
+		{	message_vision("$Næ‰å¤´èµ°äº†ã€‚\n" NOR, killer);
 			killer->delete("target_name");
 			//command("kick corpse", killer);
 			destruct(killer);
@@ -147,7 +147,7 @@ int waiting(object killer)
 		}
 	}		
 	else
-	{	message_vision("$NµôÍ·×ßÁË¡£\n" NOR, killer);
+	{	message_vision("$Næ‰å¤´èµ°äº†ã€‚\n" NOR, killer);
 		destruct(killer);
 		return 1;
 	}

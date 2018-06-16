@@ -7,10 +7,10 @@ inherit ROOM;
 void create()
 {
     int i;
-	set("short", "������");
+	set("short", "胡杨林");
 	set("long", @LONG
-��·�������������������һƬ����ľ������Խ��ïʢ����ȥ
-·�Ͻ���������ԶԶ�ɼ�������ɳ�ѻ��ɵ�ɽ��
+道路两边疏疏落落地生长着一片胡杨木，往东越渐茂盛，西去
+路上渐渐荒凉，远远可见两座白沙堆积成的山丘。
 LONG
 	);
 

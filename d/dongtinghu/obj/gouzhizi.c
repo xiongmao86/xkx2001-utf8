@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIR"èÛè××Ó"NOR, ({"gouzhi zi","gouzhi","zi"}));
+        set_name(HIR"æ¸æ³å­"NOR, ({"gouzhi zi","gouzhi","zi"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "°ü");
-                set("long","èÛè××Ó£¬Î¶¸Ê£¬É«ºì£¬²¹ÑªÁ¼Ò©¡£\n");
+                set("unit", "åŒ…");
+                set("long","æ¸æ³å­ï¼Œå‘³ç”˜ï¼Œè‰²çº¢ï¼Œè¡¥è¡€è‰¯è¯ã€‚\n");
                 set("value", 100);
 				set("yaocai", 1);
         		set("cure_s",5);

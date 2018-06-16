@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cangjingge.c ²Ø¾­¸ó
+// cangjingge.c è—ç»é˜
 // by Xiang
 // 05/30/96 Marz
 // xQin 11/00
@@ -23,11 +23,11 @@ string* books = ({
 
 void create()
 {
-	set("short", "²Ø¾­¸ó");
+	set("short", "è—ç»é˜");
 	set("long", @LONG
-Äã×ßÉÏÁË¸óÂ¥£¬Ì§Í·¿´¼ûÕýÇ°·½ÖÐÑë¹ÒÕâÒ»¿éÄ¾ØÒ£¨bian£©¡£¿¿Ç½ÊÇÒ»
-ÅÅÊé¼Ü£¬°ÚÂúÁËµÀ½ÌµÄµä¼®¡£ÖÐÑëÓÐÒ»¸ö³¤·½ÐÎµÄ´ó×À×Ó£¬ÉÏÃæÒ²¶ÑÂúÁËÊé
-¡£Ò»¸öµÀÍ¯ÕýÔÚÅÔÕûÀíÊé¼®¡£
+ä½ èµ°ä¸Šäº†é˜æ¥¼ï¼ŒæŠ¬å¤´çœ‹è§æ­£å‰æ–¹ä¸­å¤®æŒ‚è¿™ä¸€å—æœ¨åŒ¾ï¼ˆbianï¼‰ã€‚é å¢™æ˜¯ä¸€
+æŽ’ä¹¦æž¶ï¼Œæ‘†æ»¡äº†é“æ•™çš„å…¸ç±ã€‚ä¸­å¤®æœ‰ä¸€ä¸ªé•¿æ–¹å½¢çš„å¤§æ¡Œå­ï¼Œä¸Šé¢ä¹Ÿå †æ»¡äº†ä¹¦
+ã€‚ä¸€ä¸ªé“ç«¥æ­£åœ¨æ—æ•´ç†ä¹¦ç±ã€‚
 LONG
 	);
 
@@ -37,11 +37,11 @@ LONG
 	
 	set("item_desc", ([
 		"bian" : YEL"
-		¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-		¡ù                ¡ù
-		¡ù   ²Ø  ¾­  ¸ó   ¡ù
-		¡ù                ¡ù
-		¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n"NOR,
+		â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+		â€»                â€»
+		â€»   è—  ç»  é˜   â€»
+		â€»                â€»
+		â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n"NOR,
 	]));
 
 	set("objects", ([

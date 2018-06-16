@@ -8,25 +8,25 @@
 inherit NPC;
 
 string *death_msg = ({
-	HIW "���޳�˵����ι�������ģ����ʲô���֣�\n\n" NOR,
-	HIW "���޳���������۹ⶢ���㣬����Ҫ�������һ���Ƶġ�\n\n" NOR,
-	HIW "���޳����ߡ���һ�����������ͳ�һ�����ʲ�Ķ�����������\n\n" NOR,
-	HIW "���޳����ϲ��ӣ�˵�����ף�����δ������ô���ܣ�\n\n" NOR,
-	HIW "���޳�ɦ��ɦͷ��̾�������˰��ˣ����߰ɡ�\n\n"
-		"һ�������Ũ��ͻȻ���֣��ܿ�ذ�Χ���㡣\n\n" NOR,
+	HIW "白无常说道：喂！新来的，你叫什么名字？\n\n" NOR,
+	HIW "白无常用奇异的眼光盯著你，好像要看穿你的一切似的。\n\n" NOR,
+	HIW "白无常「哼」的一声，从袖中掏出一本像帐册的东西翻看著。\n\n" NOR,
+	HIW "白无常合上册子，说道：咦？阳寿未尽？怎么可能？\n\n" NOR,
+	HIW "白无常搔了搔头，叹道：罢了罢了，你走吧。\n\n"
+		"一股阴冷的浓雾突然出现，很快地包围了你。\n\n" NOR,
 });
 
 void create()
 {
-	set_name("���޳�", ({ "white gargoyle", "gargoyle" }) );
+	set_name("白无常", ({ "white gargoyle", "gargoyle" }) );
 	set("long",
-		"���޳�������������ͷ�����㣬���׵����Ͽ������κ�ϲŭ���֡�\n");
+		"白无常伸著长长的舌头瞪著你，死白的脸上看不出任何喜怒哀乐。\n");
 	set("attitude", "peaceful");
 	set("chat_chance", 15);
 	set("chat_msg", ({
 //		(: this_object(), "random_move" :),
-		"���޳�����һ����������������������������ע��������ʱ�򣬵�����һ�ۡ�\n",
-		"���޳��ѳ�������ͷ��������������������Լ��ְ��ֳ�����ָ��\n"
+		"白无常发出一阵像呻吟的声音，当他发现你正注视著他的时候，瞪了你一眼。\n",
+		"白无常把长长的舌头伸出来，缓缓地舔了舔自己又白又长的手指。\n"
 	}) );
 	set("age", 217);
 	set("combat_exp", 20000);
@@ -72,8 +72,8 @@ void death_stage(object ob, int stage)
 	if(ob->query("xkd/set", 1)) ob->move("/d/xiakedao/shatan");
 	else ob->move(REVIVE_ROOM);
 	message("vision",
-		"���Ȼ����ǰ�����һ����Ӱ����������Ӱ�ֺ����Ѿ�������\n"
-		"�ܾ��ˣ�ֻ����һֱû������\n", environment(ob), ob);
+		"你忽然发现前面多了一个人影，不过那人影又好像已经在那里\n"
+		"很久了，只是你一直没发觉。\n", environment(ob), ob);
 }
 
 

@@ -6,13 +6,13 @@ inherit FINGER;
 
 void create()
 {
-        set_name(HIW"×êÊ¯½äÖ¸"NOR, ({ "diamond ring", "ring" }));
+        set_name(HIW"é’»çŸ³æˆ’æŒ‡"NOR, ({ "diamond ring", "ring" }));
         set("weight", 400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ã¶°×ÒøÎª»·£¬×êÊ¯ÎªÌå£¬ÓÉ¶¥¼¶¹¤½³ÇĞÄ¥³É°Ë±ß²ã½×ĞÎµÄ»ªÀö×êÊ¯½äÖ¸¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€æšç™½é“¶ä¸ºç¯ï¼Œé’»çŸ³ä¸ºä½“ï¼Œç”±é¡¶çº§å·¥åŒ åˆ‡ç£¨æˆå…«è¾¹å±‚é˜¶å½¢çš„åä¸½é’»çŸ³æˆ’æŒ‡ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 18000);
                 set("material", "diamond");
                 set("armor_prop/armor", 5);

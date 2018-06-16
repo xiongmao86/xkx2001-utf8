@@ -7,12 +7,12 @@ inherit NPC;
 #include "/kungfu/class/shaolin/auto_perform.h";
 void create()
 {
-        set_name("¶É½Ù", ({ "du jie", "jie" }) );
-        set("title", "ÉÙÁÖ³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¸¡åŠ«", ({ "du jie", "jie" }) );
+        set("title", "å°‘æ—é•¿è€");
+        set("gender", "ç”·æ€§");
         set("age", 90);
         set("long",
-                "ÕâÊÇÒ»¸öÃæ¼ÕÉîÏİ£¬Êİ¹ÇÁã¶¡µÄÀÏÉ®£¬ËûÁ³É«²Ò°×£¬ÏóÒ»ÕÅÖ½Ò»Ñù¡£\n");
+                "è¿™æ˜¯ä¸€ä¸ªé¢é¢Šæ·±é™·ï¼Œç˜¦éª¨é›¶ä¸çš„è€åƒ§ï¼Œä»–è„¸è‰²æƒ¨ç™½ï¼Œè±¡ä¸€å¼ çº¸ä¸€æ ·ã€‚\n");
 
         set("attitude", "peaceful");
         set("combat_exp", 1500000);
@@ -29,9 +29,9 @@ void create()
         set("neili", 3000);
         set("max_neili", 3000);
 
-        create_family("ÉÙÁÖÅÉ", 35, "³¤ÀÏ");
+        create_family("å°‘æ—æ´¾", 35, "é•¿è€");
         set("class", "bonze");
-        assign_apprentice("µÜ×Ó", 0);
+        assign_apprentice("å¼Ÿå­", 0);
 
         set_skill("force", 150);
         set_skill("cuff", 180);

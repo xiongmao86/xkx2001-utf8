@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ´óÌü¿Ú /d/shenlong/datingkou
+// å¤§å…å£ /d/shenlong/datingkou
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "´óÌü¿Ú");
+	set("short", "å¤§å…å£");
 	set("long", @LONG
-ÕâÊÇ´óÌüµÄÃÅ¿Ú£¬ÏòÄÚ¿É½øÈëÉñÁú½ÌµÄ´óÌü£¬ÃÅ¿ÚÕ¾×ÅĞí¶àÉñÁú½ÌµÄ½ÌÍ½£¬
-È«¸±Îä×°£¬¾¯ÌèµØ×¢ÊÓËÄÖÜ£¬´ÓÌüÄÚÒÀÏ¡´«À´Ò»¸ö»ëºñµÄÉùÒô£¬ËÆºõÀïÃæÕıÔÚ
-ÕÙ¿ªÊ²Ã´ÖØÒª»áÒé¡£
+è¿™æ˜¯å¤§å…çš„é—¨å£ï¼Œå‘å†…å¯è¿›å…¥ç¥é¾™æ•™çš„å¤§å…ï¼Œé—¨å£ç«™ç€è®¸å¤šç¥é¾™æ•™çš„æ•™å¾’ï¼Œ
+å…¨å‰¯æ­¦è£…ï¼Œè­¦æƒ•åœ°æ³¨è§†å››å‘¨ï¼Œä»å…å†…ä¾ç¨€ä¼ æ¥ä¸€ä¸ªæµ‘åšçš„å£°éŸ³ï¼Œä¼¼ä¹é‡Œé¢æ­£åœ¨
+å¬å¼€ä»€ä¹ˆé‡è¦ä¼šè®®ã€‚
 LONG
 	);
 
@@ -40,16 +40,16 @@ int valid_leave(object me, string dir)
         object *inv;
         int haveguarder;
 
-	if( !(me->query("sg/spy") || me->query("family/family_name") == "ÉñÁú½Ì") && dir == "enter" ) {
+	if( !(me->query("sg/spy") || me->query("family/family_name") == "ç¥é¾™æ•™") && dir == "enter" ) {
                 inv = all_inventory(this_object());
                 for(int i = 0; i < sizeof(inv); i++ )
-                        if( inv[i]->query("family/family_name") == "ÉñÁú½Ì" || inv[i]->query("sg/spy") ) {
+                        if( inv[i]->query("family/family_name") == "ç¥é¾™æ•™" || inv[i]->query("sg/spy") ) {
                                  haveguarder++;
                                  if( living(inv[i]) ) inv[i]->kill_ob(me);
                         }
 
                 if( haveguarder > 0 )
-		        return notify_fail("ÄãÒ²Ì«Ä¿ÖĞÎŞÈËÁË°É£¬Õâ¶ù»¹ÓĞÈËÊØ×ÅÄØ¡£\n");
+		        return notify_fail("ä½ ä¹Ÿå¤ªç›®ä¸­æ— äººäº†å§ï¼Œè¿™å„¿è¿˜æœ‰äººå®ˆç€å‘¢ã€‚\n");
          }
 
 	 return ::valid_leave(me, dir);

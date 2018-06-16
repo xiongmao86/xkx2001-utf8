@@ -1,5 +1,5 @@
 //Cracked by Roath
-// °×Óñ·å
+// ç™½ç‰å³°
 // maco
 #include <ansi.h>
 
@@ -10,9 +10,9 @@ void close_cave();
 
 void create()
 {
-	set("short", HIW"°×Óñ·åÉ½±Ú"NOR);
+	set("short", HIW"ç™½ç‰å³°å±±å£"NOR);
 	set("long", @LONG
-ÕâÊÇ°×Óñ·åµÄÉ½±ÚÉÏÒ»´¦Í¹ÑÒ£¬É½±ÚÉÏËÆºõÓĞ¸ö¶´¿Ú(cave)¡£
+è¿™æ˜¯ç™½ç‰å³°çš„å±±å£ä¸Šä¸€å¤„å‡¸å²©ï¼Œå±±å£ä¸Šä¼¼ä¹æœ‰ä¸ªæ´å£(cave)ã€‚
 LONG
 	);
 
@@ -43,16 +43,16 @@ int do_dig(string arg)
 	if( arg == "cave" && !query("exits/enter")) {
 
 	if (me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-	message_vision("$N×óÊÖ½ô×¥·å±ÚÉÏÒ»¿éÍ¹³öµÄÓñÑÒ£¬ÓÒÊÖ²¦È¥É³×Ó£¬½«¶´ÅÔËé¿éÓñÊ¯Ò»¿é¿é³é³öÀ´£¬Å×ÏòÏÂÃæ¡£\n²»¶àÒ»¿Ì£¬³é¿ÕµÄ¶´¿ÚÒÑ¿ÉÈİÉí¡£\n", me);
+	message_vision("$Nå·¦æ‰‹ç´§æŠ“å³°å£ä¸Šä¸€å—å‡¸å‡ºçš„ç‰å²©ï¼Œå³æ‰‹æ‹¨å»æ²™å­ï¼Œå°†æ´æ—ç¢å—ç‰çŸ³ä¸€å—å—æŠ½å‡ºæ¥ï¼ŒæŠ›å‘ä¸‹é¢ã€‚\nä¸å¤šä¸€åˆ»ï¼ŒæŠ½ç©ºçš„æ´å£å·²å¯å®¹èº«ã€‚\n", me);
 
 	me->add("jingli", -50);
 
 	set("exits/enter", __DIR__"jadecave");
 		if( room = find_object(__DIR__"jadecave") ) {
 			room->set("exits/out", __FILE__);
-			message("vision", "Ò»ÕóÏ¤Ï¤óùóùµÄÉùÒô´«À´£¬ÓĞÈË´ÓÍâÃæ°Ñ¶´¿ÚÍÚ¿ªÁË¡£\n",room );
+			message("vision", "ä¸€é˜µæ‚‰æ‚‰ç°Œç°Œçš„å£°éŸ³ä¼ æ¥ï¼Œæœ‰äººä»å¤–é¢æŠŠæ´å£æŒ–å¼€äº†ã€‚\n",room );
 		}
 	remove_call_out("close_cave");
 	call_out("close_cave", 10);
@@ -66,11 +66,11 @@ void close_cave()
 	object room;
 
 	if( !query("exits/enter") ) return;
-	message("vision", "ìóÌıµÃºäÂ¡¡¢ºäÂ¡¼¸Éù£¬¶´¿ÚÓÖ±ÀËúÁË¡£\n", this_object() );
+	message("vision", "ç¥—å¬å¾—è½°éš†ã€è½°éš†å‡ å£°ï¼Œæ´å£åˆå´©å¡Œäº†ã€‚\n", this_object() );
 		delete("exits/enter");
 	if( room = find_object(__DIR__"jadecave") ) {
 		room->delete("exits/out");
-		message("vision", "Äã¾õµÃ½ÅÏÂÎ¢Î¢Õğ¶¯£¬ÌıµÃºäÂ¡¡¢ºäÂ¡¼¸Éù£¬¶´¿ÚÓÖ±ÀËúÁË¡£\n", room );
+		message("vision", "ä½ è§‰å¾—è„šä¸‹å¾®å¾®éœ‡åŠ¨ï¼Œå¬å¾—è½°éš†ã€è½°éš†å‡ å£°ï¼Œæ´å£åˆå´©å¡Œäº†ã€‚\n", room );
 	}
 }
 
@@ -86,18 +86,18 @@ int do_jump(string arg)
 	if( arg=="down" )
 	{
 		if (me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 		if(me->query("rided"))
-		return notify_fail("ÄãÆï×ÅÂí£¬²»ÄÜÕâ÷á¸É£¡\n");
+		return notify_fail("ä½ éª‘ç€é©¬ï¼Œä¸èƒ½è¿™éº½å¹²ï¼\n");
 
-		message_vision("$N×İÉíÍù°×Óñ·åÉ½½ÅÌøÁËÏÂÈ¥¡£\n", me);
+		message_vision("$Nçºµèº«å¾€ç™½ç‰å³°å±±è„šè·³äº†ä¸‹å»ã€‚\n", me);
 		me->move("/d/xingxiu/gucheng5");
-		message("vision", me->name() + "´ÓÉ½ÉÏÌøÁËÏÂÀ´¡£\n", environment(me), ({me}) );
+		message("vision", me->name() + "ä»å±±ä¸Šè·³äº†ä¸‹æ¥ã€‚\n", environment(me), ({me}) );
 
 		if( me->query_skill("dodge") < 200 ) {
-		message_vision("ìóÌı¡°Åé¡±µØÒ»Éù£¬$NË¤ÁË¸öÆß»ç°ËËØ¡£\n", me);
-		me->receive_damage("qi", 50+random(20), "ÌøÏÂ°×Óñ·åË¤ËÀÁË");
+		message_vision("ç¥—å¬â€œç °â€åœ°ä¸€å£°ï¼Œ$Næ‘”äº†ä¸ªä¸ƒè¤å…«ç´ ã€‚\n", me);
+		me->receive_damage("qi", 50+random(20), "è·³ä¸‹ç™½ç‰å³°æ‘”æ­»äº†");
 		}
 
 		me->start_busy(1);
@@ -109,6 +109,6 @@ int do_jump(string arg)
 
 string look_cave()
 {
-	if( !query("exits/enter") ) return "É½±ÚÉÏ¶´¿ÚµÄºÛ¼£ºÜÊÇÃ÷ÏÔ£¬Ö»ÊÇÄêÉîÔÂ¾Ã£¬¶´¿ÚÒÑ±»É³×Ó¶ÂÈû£¬¿´À´µÃÏÈÍÚ¿ª(dig)ÕâĞ©É°Ê¯¡£\n";
-	else return "É½¶´ÄÚºÚ³Á³ÁµÄ£¬ÉõÃ´Ò²ÇÆ²»¼û¡£\n";
+	if( !query("exits/enter") ) return "å±±å£ä¸Šæ´å£çš„ç—•è¿¹å¾ˆæ˜¯æ˜æ˜¾ï¼Œåªæ˜¯å¹´æ·±æœˆä¹…ï¼Œæ´å£å·²è¢«æ²™å­å µå¡ï¼Œçœ‹æ¥å¾—å…ˆæŒ–å¼€(dig)è¿™äº›ç ‚çŸ³ã€‚\n";
+	else return "å±±æ´å†…é»‘æ²‰æ²‰çš„ï¼Œç”šä¹ˆä¹Ÿç§ä¸è§ã€‚\n";
 }

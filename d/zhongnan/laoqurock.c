@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ÀÏåıÑÒ");
+        set("short","è€å¦ªå²©");
 
         set("long",@LONG
-Ò»Â·¹ıÀ´£¬É½Â·ÊÇÔ½À´Ô½ÏÕ¡£Ö»¼ûÒ»¿é´óÑÒÊ¯µ²ÔÚÂ·ÖĞ£¬×Ô¿ÕÆ¾ÁÙ£¬
-ÍğËÆÒ»¸öÀÏ¸¾ÍäÑü¸©ÊÓ£¬µ«ĞÎ×´ÒõÉ­¿É²À£¬ÁîÈËÍû¶øÉúÎ·¡£²»ÉÙÓÎ¿ÍÔÚ
-´Ë×¤×ã¹Û¿´£¬ÍùÄÏÊÇÒ»Æ¬Ã¯ÃÜµÄËÉÁÖ¡£Íù±±ÉÏÊÇÒ»Ìõ¶¸ÇÍµÄÉ½Â·¡£
+ä¸€è·¯è¿‡æ¥ï¼Œå±±è·¯æ˜¯è¶Šæ¥è¶Šé™©ã€‚åªè§ä¸€å—å¤§å²©çŸ³æŒ¡åœ¨è·¯ä¸­ï¼Œè‡ªç©ºå‡­ä¸´ï¼Œ
+å®›ä¼¼ä¸€ä¸ªè€å¦‡å¼¯è…°ä¿¯è§†ï¼Œä½†å½¢çŠ¶é˜´æ£®å¯æ€–ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚ä¸å°‘æ¸¸å®¢åœ¨
+æ­¤é©»è¶³è§‚çœ‹ï¼Œå¾€å—æ˜¯ä¸€ç‰‡èŒ‚å¯†çš„æ¾æ—ã€‚å¾€åŒ—ä¸Šæ˜¯ä¸€æ¡é™¡å³­çš„å±±è·¯ã€‚
 LONG);
 
         set("exits",([ "southdown" : __DIR__"shulin3",
@@ -32,7 +32,7 @@ void init()
 		  object ob = this_player(), robber, *inv;
 		  int i, j=0;
 
-		  if ( interactive(ob) &&  ob->query("family/family_name")=="È«Õæ½Ì" && random(15)==1 &&
+		  if ( interactive(ob) &&  ob->query("family/family_name")=="å…¨çœŸæ•™" && random(15)==1 &&
 				  (
 					present("chuanbei", ob) ||
 					present("fuling", ob) ||
@@ -45,7 +45,7 @@ void init()
 					)
 			)
 			{
-					 message_vision(HIR"Ö»ÌıµÃÒ»Õó·çÏì£¬Ò»¸öÃ«Ôô×Ô²İ¶ÑÀï×êÁË³öÀ´À¹×¡$N¡£\n"NOR, ob);
+					 message_vision(HIR"åªå¬å¾—ä¸€é˜µé£å“ï¼Œä¸€ä¸ªæ¯›è´¼è‡ªè‰å †é‡Œé’»äº†å‡ºæ¥æ‹¦ä½$Nã€‚\n"NOR, ob);
 					 robber = new(__DIR__"npc/maozei");
 					 robber->move(environment(ob));
 					 ob->set_temp("herb_victim", 1);
@@ -63,7 +63,7 @@ void init()
 		  if ( interactive(ob) && ob->query_temp("biao/ma")
 		  && present("hong biao", ob) && random(5)==1 || j>0 && random(30) ==0
 			) {
-					 message_vision(HIR"Ö»ÌıµÃÒ»Õó²¦²İÉù£¬Ò»¸ö²İ¿Ü×Ô²İ¶ÑÀï×êÁË³öÀ´À¹×¡$N¡£\n"NOR, ob);
+					 message_vision(HIR"åªå¬å¾—ä¸€é˜µæ‹¨è‰å£°ï¼Œä¸€ä¸ªè‰å¯‡è‡ªè‰å †é‡Œé’»äº†å‡ºæ¥æ‹¦ä½$Nã€‚\n"NOR, ob);
 					 robber = new("/d/village/npc/caokou");
 					 robber->move(environment(ob));
 					 return;
@@ -80,15 +80,15 @@ int valid_leave(object me, string dir)
 		 {
 			  return ::valid_leave(me, dir);
 		 }
-		 message_vision(HIR"$N±»µ²×¡ÁËÈ¥Â·¡£\n"NOR, me);
-		 return notify_fail("Ã«ÔôºÈµÀ£ºÏëÁï£¿Ã»ÃÅ£¡\n");
+		 message_vision(HIR"$Nè¢«æŒ¡ä½äº†å»è·¯ã€‚\n"NOR, me);
+		 return notify_fail("æ¯›è´¼å–é“ï¼šæƒ³æºœï¼Ÿæ²¡é—¨ï¼\n");
 	}
 
 
 	 if( me->query_temp("rob_victim", 1)==1 && caokou && ( me->query("id") == caokou->query_temp("victim") ) )
 	 {
-		 message_vision(HIR"$N±»²İ¿Üµ²×¡ÁËÈ¥Â·¡£\n"NOR, me);
-		 return notify_fail("²İ¿ÜºÈµÀ£ºÏëÁï£¿Ã»ÃÅ£¡\n");
+		 message_vision(HIR"$Nè¢«è‰å¯‡æŒ¡ä½äº†å»è·¯ã€‚\n"NOR, me);
+		 return notify_fail("è‰å¯‡å–é“ï¼šæƒ³æºœï¼Ÿæ²¡é—¨ï¼\n");
 	 }
 
 	 return 1;

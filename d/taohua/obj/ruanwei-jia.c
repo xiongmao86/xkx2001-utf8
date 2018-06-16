@@ -8,17 +8,17 @@ inherit CLOTH;
 
 void create()
 {
-	set_name(YEL"Èíâ¬¼×"NOR, ({ "ruanwei jia", "jia" }));
+	set_name(YEL"è½¯çŒ¬ç”²"NOR, ({ "ruanwei jia", "jia" }));
 	set_weight(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", MAG"ÕâÊÇÒ»¼þºÚ÷î÷îµÄ¼×ÒÂ£¬¿´ÉÏÈ¥¼«Çá¼«Èí£¬µ«È´ÉúÂúµ¹´Ì£¬µ¶½£²»Ëð£¬ÕýÊÇÌÒ»¨µºÕòµºÖ®±¦Èíâ¬¼×¡£\n"NOR);
+		set("long", MAG"è¿™æ˜¯ä¸€ä»¶é»‘é»é»çš„ç”²è¡£ï¼Œçœ‹ä¸ŠåŽ»æžè½»æžè½¯ï¼Œä½†å´ç”Ÿæ»¡å€’åˆºï¼Œåˆ€å‰‘ä¸æŸï¼Œæ­£æ˜¯æ¡ƒèŠ±å²›é•‡å²›ä¹‹å®è½¯çŒ¬ç”²ã€‚\n"NOR);
 		set("material", "steel");
-		set("unit", "¼þ");
+		set("unit", "ä»¶");
 		set("value", 7000000);
-		set("wear_msg", HIY "$N´©ÉÏÒ»¼þÈíâ¬¼×¡£\n" NOR);
-		set("unequip_msg", HIY "$N½«Èíâ¬¼×ÍÑÁËÏÂÀ´¡£\n" NOR);
+		set("wear_msg", HIY "$Nç©¿ä¸Šä¸€ä»¶è½¯çŒ¬ç”²ã€‚\n" NOR);
+		set("unequip_msg", HIY "$Nå°†è½¯çŒ¬ç”²è„±äº†ä¸‹æ¥ã€‚\n" NOR);
 		set("armor_prop/armor", 260);
 		set("armor_prop/armor_vs_force", 200);
 //		set("no_drop", 1);
@@ -38,7 +38,7 @@ mixed hit_by(object me, object victim, int damage, object weapon)
 		damage = damage/2;
 		if (damage > 0)
 		    me->receive_wound("qi", damage/4, victim);
-		result = "Ö»¼û$N´ó½ÐÒ»Éù¼±Ã¦ÊÕÊÖ£¬ÊÖÉÏÒÑ±»Èíâ¬¼×´ÌµÃÏÊÑªÁÜÀì¡£\n";
+		result = "åªè§$Nå¤§å«ä¸€å£°æ€¥å¿™æ”¶æ‰‹ï¼Œæ‰‹ä¸Šå·²è¢«è½¯çŒ¬ç”²åˆºå¾—é²œè¡€æ·‹æ¼“ã€‚\n";
 		result+= "( $N"+ COMBAT_D->eff_status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
 		return ([ "result": result, "damage": damage+random(damage) ]);
 	}

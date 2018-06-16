@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ÀŞÌ¨
+// æ“‚å°
 //changed by Wzfeng@xkx 2000 6 2
 //fixed full lian skills bug!
 
@@ -15,9 +15,9 @@ int do_study(string arg);
 
 void create()
 {
-	set("short", HIG"ÕĞÇ×ÀŞÌ¨"NOR);
-	set("long", "ÕâÀïÊÇ¸ö·½ĞÎµÄÀŞÌ¨£¬ÕıÖĞµØÃæÉÏÁ¢×ÅÒ»Ãæ´óÆì£¬ÉÏÊé¡º"+HIR"±ÈÎäÕĞÇ×"NOR+"¡»ËÄ¸ö´ó×Ö¡£
-ÕıÇ°·½Êú×ÅÒ»ÅÅ±øÆ÷¼Ü(jia)£¬Ì¨ÏÂÎ§ÂúÁË¿´ÈÈÄÖµÄÈË¡£\n"
+	set("short", HIG"æ‹›äº²æ“‚å°"NOR);
+	set("long", "è¿™é‡Œæ˜¯ä¸ªæ–¹å½¢çš„æ“‚å°ï¼Œæ­£ä¸­åœ°é¢ä¸Šç«‹ç€ä¸€é¢å¤§æ——ï¼Œä¸Šä¹¦ã€"+HIR"æ¯”æ­¦æ‹›äº²"NOR+"ã€å››ä¸ªå¤§å­—ã€‚
+æ­£å‰æ–¹ç«–ç€ä¸€æ’å…µå™¨æ¶(jia)ï¼Œå°ä¸‹å›´æ»¡äº†çœ‹çƒ­é—¹çš„äººã€‚\n"
 	);
 	set("invalid_startroom", 1);
         set("no_sleep_room", "1");
@@ -71,21 +71,21 @@ void init()
 int do_practice(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÕâÀï²»×¼Á·¹¦!\n");
+                  tell_object(me, "è¿™é‡Œä¸å‡†ç»ƒåŠŸ!\n");
                   return 1;
 }
 
 int do_study(string arg)
 {
                   object me = this_player();
-                  tell_object(me, "ÕâÀï²»×¼¶ÁÊé!\n");
+                  tell_object(me, "è¿™é‡Œä¸å‡†è¯»ä¹¦!\n");
         return 1;
 }
 
 int do_giveup()
 {
 	object me = this_player();
-	message_vision(me->query("family/family_name")+"$N×Ô¶¯ÈÏÊä¡£\n", me);
+	message_vision(me->query("family/family_name")+"$Nè‡ªåŠ¨è®¤è¾“ã€‚\n", me);
 	me->quit(me);
 	return 1;
 }
@@ -97,7 +97,7 @@ int do_kickout(string arg)
 	if(!arg) return 0;
 	if(objectp(ob = present(arg, this_object())) ) {
 		if(base_name(ob) == "/d/city/npc/fighter") {
-			message_vision("$N½«$nÌß³öÀŞÌ¨¡£\n", this_player(), ob);
+			message_vision("$Nå°†$nè¸¢å‡ºæ“‚å°ã€‚\n", this_player(), ob);
 			ob->quit(ob);
 			return 1;
 		}
@@ -107,7 +107,7 @@ int do_kickout(string arg)
 
 int do_disable(string arg)
 {
-	tell_object(this_player(), "²»ÄÜÔÚÀŞÌ¨ÉÏÕâÑù¡£\n");
+	tell_object(this_player(), "ä¸èƒ½åœ¨æ“‚å°ä¸Šè¿™æ ·ã€‚\n");
 	return 1;
 }
 
@@ -116,19 +116,19 @@ int do_start(string arg)
 	object ob1, ob2;
 	if(objectp(ob1 = present("fighter dummy 1", this_object()))
 	&& objectp(ob2 = present("fighter dummy 2", this_object())) ) {
-		message_vision("Ò»ÉùÂàÏì£¬$NĞû²¼"+ob1->name()+"ºÍ"+ob2->name()+"±ÈÈü¿ªÊ¼¡£\n", this_player());
+		message_vision("ä¸€å£°é”£å“ï¼Œ$Nå®£å¸ƒ"+ob1->name()+"å’Œ"+ob2->name()+"æ¯”èµ›å¼€å§‹ã€‚\n", this_player());
 		ob1->kill_ob(ob2);
 		ob2->kill_ob(ob1);
 		return 1;
 	}
-	return notify_fail("ÈËÃ»µ½Æë£¡\n");
+	return notify_fail("äººæ²¡åˆ°é½ï¼\n");
 }
 
 int do_guo(string arg)
 {
 	object guo = new("/d/quanzhou/obj/renshen-guo");
 	guo->move(this_player());
-	message_vision("$N±ä³öÒ»ÈË²Î¹û¡£\n", this_player());
+	message_vision("$Nå˜å‡ºä¸€äººå‚æœã€‚\n", this_player());
 	return 1;
 }
 
@@ -140,7 +140,7 @@ int do_get(string arg)
 	if(me->is_busy()) return 0;
 	if (sscanf(arg, "%s from jia", type) != 1) return 0;
 	switch (type) {
-	case "sword":	if(this_player()->query("gender") == "ÎŞĞÔ")
+	case "sword":	if(this_player()->query("gender") == "æ— æ€§")
 				weapon = new("/clone/test/xiuhua");
 			else    weapon = new("/clone/weapon/gangjian");
 			break;
@@ -157,10 +157,10 @@ int do_get(string arg)
 			break;
 	case "armor":	weapon = new("/clone/armor/tiejia");
 			break;
-	default:	return notify_fail("ÕÒ²»µ½"+type+"\n");
+	default:	return notify_fail("æ‰¾ä¸åˆ°"+type+"\n");
 	}
 	if(weapon->move(me)) {
-		message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»"+weapon->query("unit")+weapon->name()+"¡£\n", me);
+		message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€"+weapon->query("unit")+weapon->name()+"ã€‚\n", me);
 		if (me->is_fighting()) me->start_busy(2);
 	} else {
 		destruct(weapon);
@@ -181,23 +181,23 @@ int do_let(string arg)
 	}
 
 	if(objectp(present("fighter dummy 2", this_object())) ) {
-		return notify_fail("ÒÑ¾­ÓĞÁ½Î»Ñ¡ÊÖÁË¡£\n");
+		return notify_fail("å·²ç»æœ‰ä¸¤ä½é€‰æ‰‹äº†ã€‚\n");
 	}
 	
 	ob = find_player(pl1);
-	if(!ob) return notify_fail("Ã»ÓĞ"+pl1+"Õâ¸öÍæ¼Ò£¡\n");
+	if(!ob) return notify_fail("æ²¡æœ‰"+pl1+"è¿™ä¸ªç©å®¶ï¼\n");
 	seteuid(getuid());
 	dummy = new("/clone/test/dummy");
 	dummy->set("id", pl2);
 	if(!dummy->restore()) {
 		destruct(dummy);
-		return notify_fail("Ã»ÓĞ"+pl2+"Õâ¸öÍæ¼Ò£¡\n");
+		return notify_fail("æ²¡æœ‰"+pl2+"è¿™ä¸ªç©å®¶ï¼\n");
 	}
 	dummy->set_temp("link_ob", ob);
 	ob->set_temp("body_ob", dummy);
 	ob->set_temp("netdead", 1);
-	message_vision("$N½øÈëÀŞÌ¨´ú±í$n¡£\n", ob, dummy);
-	message_vision("$NÈÃ"+ob->name()+"½øÈëÀŞÌ¨´ú±í"+dummy->name()+"¡£\n", this_player());
+	message_vision("$Nè¿›å…¥æ“‚å°ä»£è¡¨$nã€‚\n", ob, dummy);
+	message_vision("$Nè®©"+ob->name()+"è¿›å…¥æ“‚å°ä»£è¡¨"+dummy->name()+"ã€‚\n", this_player());
 	exec(dummy, ob);
 	dummy->set_name(dummy->name(1), ({pl2, "fighter dummy"}));
 	dummy->setup();
@@ -209,9 +209,9 @@ int do_let(string arg)
 string look_jia()
 {
 	string msg;
-	msg = "ÕâÊÇÒ»¸ö±øÆ÷¼Ü£¬Ê®°Ë°ãÎäÆ÷ÊÇÓ¦ÓĞ¾¡ÓĞ¡£\n";
-	msg+= "Ä¿Ç°´æ·ÅÓĞ½£(sword)£¬µ¶(blade)£¬°ô(stick)£¬ÕÈ(staff)£¬ÂÖ(falun)£¬\n±Ş(whip)¡£»¹ÓĞÒ»Ğ©Ìú¼×(armor)¡£\n";
-	msg+= "ÇëÓÃÖ¸Áî¡°get ÖÖÀà from jia¡±ÄÃÈ¡Äã³ÆÊÖµÄ±øÆ÷»ò¼×ëĞ¡£\n";
+	msg = "è¿™æ˜¯ä¸€ä¸ªå…µå™¨æ¶ï¼Œåå…«èˆ¬æ­¦å™¨æ˜¯åº”æœ‰å°½æœ‰ã€‚\n";
+	msg+= "ç›®å‰å­˜æ”¾æœ‰å‰‘(sword)ï¼Œåˆ€(blade)ï¼Œæ£’(stick)ï¼Œæ–(staff)ï¼Œè½®(falun)ï¼Œ\né­(whip)ã€‚è¿˜æœ‰ä¸€äº›é“ç”²(armor)ã€‚\n";
+	msg+= "è¯·ç”¨æŒ‡ä»¤â€œget ç§ç±» from jiaâ€æ‹¿å–ä½ ç§°æ‰‹çš„å…µå™¨æˆ–ç”²èƒ„ã€‚\n";
 	return msg;
 }
 

@@ -15,47 +15,47 @@ string look_room(object me, object env);
 int do_load(string arg);
 
 mapping default_dirs = ([
-	"north":	"±±",
-	"south":	"ÄÏ",
-	"east":		"¶«",
-	"west":		"Î÷",
-	"northup":	"±±±ß",
-	"southup":	"ÄÏ±ß",
-	"eastup":	"¶«±ß",
-	"westup":	"Î÷±ß",
-	"northdown":	"±±±ß",
-	"southdown":	"ÄÏ±ß",
-	"eastdown":	"¶«±ß",
-	"westdown":	"Î÷±ß",
-	"northeast":	"¶«±±",
-	"northwest":	"Î÷±±",
-	"southeast":	"¶«ÄÏ",
-	"southwest":	"Î÷ÄÏ",
-	"up":		"ÉÏ",
-	"down":		"ÏÂ",
-	"out":		"Íâ",
-	"enter":	"Àï",
-	"in":		"Àï",
-	"left":		"×ó",
-	"right":	"ÓÒ",
+	"north":	"åŒ—",
+	"south":	"å—",
+	"east":		"ä¸œ",
+	"west":		"è¥¿",
+	"northup":	"åŒ—è¾¹",
+	"southup":	"å—è¾¹",
+	"eastup":	"ä¸œè¾¹",
+	"westup":	"è¥¿è¾¹",
+	"northdown":	"åŒ—è¾¹",
+	"southdown":	"å—è¾¹",
+	"eastdown":	"ä¸œè¾¹",
+	"westdown":	"è¥¿è¾¹",
+	"northeast":	"ä¸œåŒ—",
+	"northwest":	"è¥¿åŒ—",
+	"southeast":	"ä¸œå—",
+	"southwest":	"è¥¿å—",
+	"up":		"ä¸Š",
+	"down":		"ä¸‹",
+	"out":		"å¤–",
+	"enter":	"é‡Œ",
+	"in":		"é‡Œ",
+	"left":		"å·¦",
+	"right":	"å³",
 ]);
 
 string day_event(){return NATURE_D->outdoor_room_event();}
 
 void create()
 {
-        set_name(HIY"ÇàÍ­ÅÚ"NOR, ({"pao","qingtong pao","bombgun"}));
+        set_name(HIY"é’é“œç‚®"NOR, ({"pao","qingtong pao","bombgun"}));
         set_weight(1500000);
         set("value",150000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"Ò»×ùÇàÍ­ÖýÔìµÄ´óÅÚ£¬¾Þ´óµÄÅÚ¹Ü°ºÈ»Í¦¿Õ£¬¶ËµÄÊÇÍþ·ç°ËÃæ¡£
-¾ÃÎÅÊÔ½£É½×¯Ö÷ÈËÊÕ¼¯ÌìÏÂÆæÃÅ±øÆ÷£¬Ã»Ïëµ½Á¬´óÅÚ¶¼ÓÐ£¬Ö»ÊÇ
-²»ÖªºÃÓÃ²»ºÃÓÃ¡£\n\n");
+"ä¸€åº§é’é“œé“¸é€ çš„å¤§ç‚®ï¼Œå·¨å¤§çš„ç‚®ç®¡æ˜‚ç„¶æŒºç©ºï¼Œç«¯çš„æ˜¯å¨é£Žå…«é¢ã€‚
+ä¹…é—»è¯•å‰‘å±±åº„ä¸»äººæ”¶é›†å¤©ä¸‹å¥‡é—¨å…µå™¨ï¼Œæ²¡æƒ³åˆ°è¿žå¤§ç‚®éƒ½æœ‰ï¼Œåªæ˜¯
+ä¸çŸ¥å¥½ç”¨ä¸å¥½ç”¨ã€‚\n\n");
 
-                set("unit", "×ù");
+                set("unit", "åº§");
                 set("material", "bronze");
         }
         setup();
@@ -75,20 +75,20 @@ int do_load(string arg)
 	int exp_time;
 
 	if ( !arg || (arg!="powder" && arg!="huo yao" && arg!="dan tou" ) )
-	   return notify_fail( "ÄãÏëÒª¼ÓÔØÊ²Ã´£¿\n");
+	   return notify_fail( "ä½ æƒ³è¦åŠ è½½ä»€ä¹ˆï¼Ÿ\n");
 
-	if( me->is_busy() ) return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ£¡\n") ;
+	if( me->is_busy() ) return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ï¼\n") ;
 	
 	if( arg=="powder" || arg =="huo yao" )
 	{
 		huoyao = present("huo yao");
-		if( !huoyao || !objectp(huoyao) )return notify_fail( "ÄãÏëÒª¼ÓÔØÊ²Ã´£¿\n");
+		if( !huoyao || !objectp(huoyao) )return notify_fail( "ä½ æƒ³è¦åŠ è½½ä»€ä¹ˆï¼Ÿ\n");
 
-		if( query_temp("yao_loaded") > 2 )return notify_fail("´óÅÚÒÑ¾­×°Âú»ðÒ©ÁË¡£\n");
+		if( query_temp("yao_loaded") > 2 )return notify_fail("å¤§ç‚®å·²ç»è£…æ»¡ç«è¯äº†ã€‚\n");
 		
 		if( huoyao && objectp(huoyao) && huoyao->query("load") > 0 )
 		{
-			message_vision("$NÍùÅÚÍ²Àï¼ÓÈëÒ»Ð©»ðÒ©¡£\n",me);
+			message_vision("$Nå¾€ç‚®ç­’é‡ŒåŠ å…¥ä¸€äº›ç«è¯ã€‚\n",me);
 			huoyao->set("load",huoyao->query("load")-1 );
 			if( huoyao->query("load") <=0 ) destruct(huoyao);
 			add_temp("yao_loaded",1);
@@ -98,11 +98,11 @@ int do_load(string arg)
 	else if( arg =="dan tou" )
 	{
 		dantou = present("dan tou");
-		if( !dantou || !objectp(dantou) )return notify_fail( "ÄãÏëÒª¼ÓÔØÊ²Ã´£¿\n");
+		if( !dantou || !objectp(dantou) )return notify_fail( "ä½ æƒ³è¦åŠ è½½ä»€ä¹ˆï¼Ÿ\n");
 
-		if( query_temp("dan_loaded") > 0 )return notify_fail("´óÅÚÒÑ¾­×°ÓÐµ¯Í·ÁË¡£\n");
+		if( query_temp("dan_loaded") > 0 )return notify_fail("å¤§ç‚®å·²ç»è£…æœ‰å¼¹å¤´äº†ã€‚\n");
 		
-		message_vision("$NÍùÅÚÍ²Àï¼ÓÈëÒ»Ã¶µ¯Í·¡£\n",me);
+		message_vision("$Nå¾€ç‚®ç­’é‡ŒåŠ å…¥ä¸€æžšå¼¹å¤´ã€‚\n",me);
 		destruct(dantou);
 		add_temp("dan_loaded",1);
 		me->start_busy(1);
@@ -121,7 +121,7 @@ string look_room(object me, object env)
 		  string str, *dirs;
 
 		  if( !env ) {
-					 return "ÄãµÄËÄÖÜ»ÒÃÉÃÉµØÒ»Æ¬£¬Ê²Ã´Ò²Ã»ÓÐ¡£\n";
+					 return "ä½ çš„å››å‘¨ç°è’™è’™åœ°ä¸€ç‰‡ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n";
 		  }
 		  str = sprintf( "%s - %s\n    %s%s",
 					 env->query("short"),
@@ -136,12 +136,12 @@ string look_room(object me, object env)
 										  dirs[i] = 0;
 					 dirs -= ({ 0 });
 					 if( sizeof(dirs)==0 )
-								str += "    ÕâÀïÃ»ÓÐÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£\n";
+								str += "    è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜Žæ˜¾çš„å‡ºè·¯ã€‚\n";
 					 else if( sizeof(dirs)==1 )
-								str += "    ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ " + BOLD + dirs[0] + NOR + "¡£\n";
+								str += "    è¿™é‡Œå”¯ä¸€çš„å‡ºå£æ˜¯ " + BOLD + dirs[0] + NOR + "ã€‚\n";
                 else
-                        str += sprintf("    ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ " + BOLD + "%s" + NOR + " ºÍ " + BOLD + "%s" + NOR + "¡£\n",
-                                implode(dirs[0..sizeof(dirs)-2], "¡¢"), dirs[sizeof(dirs)-1]);
+                        str += sprintf("    è¿™é‡Œæ˜Žæ˜¾çš„å‡ºå£æ˜¯ " + BOLD + "%s" + NOR + " å’Œ " + BOLD + "%s" + NOR + "ã€‚\n",
+                                implode(dirs[0..sizeof(dirs)-2], "ã€"), dirs[sizeof(dirs)-1]);
 		  }
 //      str += env->door_description();
 
@@ -152,17 +152,17 @@ string look_room(object me, object env)
 					 if( objectp(inv[i]->query("rider")) ) continue;
 					 else inv[i]->delete("rider");
 					 if( objectp(inv[i]->query("rided")) ) {
-								str += "  " + inv[i]->short() + "ÆïÔÚ" +
-								(inv[i]->query("rided"))->name() + "ÉÏ";
+								str += "  " + inv[i]->short() + "éª‘åœ¨" +
+								(inv[i]->query("rided"))->name() + "ä¸Š";
 					 if( stringp(inv[i]->query_temp("exit_blocked")))
-								str += "µ²×ÅÍù"+inv[i]->query_temp("exit_blocked")+
-								"È¥µÄÂ·";
+								str += "æŒ¡ç€å¾€"+inv[i]->query_temp("exit_blocked")+
+								"åŽ»çš„è·¯";
 								str += "\n";
 					 }
 					 else {
 								if (stringp(inv[i]->query_temp("exit_blocked")))
-								str += "  " + inv[i]->short() + "µ²×ÅÍù" + inv[i]->query_temp("exit_blocked")
-										  +"È¥µÄÂ·\n";
+								str += "  " + inv[i]->short() + "æŒ¡ç€å¾€" + inv[i]->query_temp("exit_blocked")
+										  +"åŽ»çš„è·¯\n";
 								else
 								str += "  " + inv[i]->short() + "\n";
 								inv[i]->delete("rided");
@@ -180,30 +180,30 @@ int do_aim(string arg)
 	string str, dest;
 	mapping exit;
 
-	if( me->is_busy() ) return notify_fail("Äã»¹ÔÚÃ¦×ÅÄØ£¡\n") ;
+	if( me->is_busy() ) return notify_fail("ä½ è¿˜åœ¨å¿™ç€å‘¢ï¼\n") ;
 
 	cur_target = query_temp("target");
 
 	if( !cur_target ){
 		cur_target = find_object(ORIGINAL);
 		if( !cur_target )cur_target=load_object(ORIGINAL);
-		if (!objectp(cur_target))return notify_fail("ÕÒ²»µ½Ä¿±ê¡£\n");
+		if (!objectp(cur_target))return notify_fail("æ‰¾ä¸åˆ°ç›®æ ‡ã€‚\n");
 	}
 
-	if( arg=="down" || arg=="up" || arg=="out" || arg=="enter" )return notify_fail("Õâ¸ö·½ÏòÃ»·¨´òµ½¡£\n");
+	if( arg=="down" || arg=="up" || arg=="out" || arg=="enter" )return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æ³•æ‰“åˆ°ã€‚\n");
 	
 	if( arg )
 	{
 		if( !mapp( exit = cur_target->query("exits") ) || undefinedp(exit[arg]) ) {
-			return notify_fail("Õâ¸ö·½ÏòÃ»ÓÐ³öÂ·¡£\n");
+			return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
 		}
 
-		if( !cur_target->valid_leave(me, arg) ) notify_fail("Õâ¸ö·½ÏòÌ«Ô¶ÁË¡£\n");
+		if( !cur_target->valid_leave(me, arg) ) notify_fail("è¿™ä¸ªæ–¹å‘å¤ªè¿œäº†ã€‚\n");
 
 		dest = exit[arg];
 
 		if( !(target = load_object(dest)) )
-			return notify_fail("ÎÞ·¨ÒÆ¶¯¡£\n");
+			return notify_fail("æ— æ³•ç§»åŠ¨ã€‚\n");
 	}
 	else target = cur_target;
 
@@ -212,7 +212,7 @@ int do_aim(string arg)
 	str = look_room(me, target);
 	tell_object(me, str+"\n");
 	if(arg)
-		message_vision(HIW"$N½«ÅÚ¿Ú»º»ºÏò"+ default_dirs[arg] + "×ª£¬Ãé×¼ÁË"+target->query("short")+"¡£\n"NOR,me);
+		message_vision(HIW"$Nå°†ç‚®å£ç¼“ç¼“å‘"+ default_dirs[arg] + "è½¬ï¼Œçž„å‡†äº†"+target->query("short")+"ã€‚\n"NOR,me);
 
 	me->start_busy(1);
 
@@ -225,11 +225,11 @@ int do_fire(string arg)
 	object me = this_player();
 	int exp_time;
 
-    if( ob->query_temp("fired") ) return notify_fail("ÄãÒ»À­²Å·¢ÏÖ´ËÅÚÒÑ±»ÒýÈ¼ÁË£¬¾Í¿ì·¢ÉäÁË£¡\n");
-	if( ob->query_temp( "dan_loaded" ) <=0 )return notify_fail("ÅÚ»¹Ã»ÓÐÉÏµ¯Í·ÄØ£¡\n");
-	if( ob->query_temp( "yao_loaded" ) < 3 )return notify_fail("ÅÚ»¹Ã»×°Âú\µ¯Ò©ÄØ£¡\n");
+    if( ob->query_temp("fired") ) return notify_fail("ä½ ä¸€æ‹‰æ‰å‘çŽ°æ­¤ç‚®å·²è¢«å¼•ç‡ƒäº†ï¼Œå°±å¿«å‘å°„äº†ï¼\n");
+	if( ob->query_temp( "dan_loaded" ) <=0 )return notify_fail("ç‚®è¿˜æ²¡æœ‰ä¸Šå¼¹å¤´å‘¢ï¼\n");
+	if( ob->query_temp( "yao_loaded" ) < 3 )return notify_fail("ç‚®è¿˜æ²¡è£…æ»¡\å¼¹è¯å‘¢ï¼\n");
 
-	message_vision("$NÉìÊÖÓÃÁ¦Ò»À­£¬À­¿ªÁË$nµ¼»ðË÷¡£\n", me,ob);
+	message_vision("$Nä¼¸æ‰‹ç”¨åŠ›ä¸€æ‹‰ï¼Œæ‹‰å¼€äº†$nå¯¼ç«ç´¢ã€‚\n", me,ob);
 	ob->set_temp("fired", 1);
 	ob->set_temp("owner",me);
 	call_out("explode", 1 + random(5), me, ob);
@@ -252,10 +252,10 @@ int explode(object me, object ob)
 	if( !env ){
 		env = find_object(ORIGINAL);
 		if( !env )env=load_object(ORIGINAL);
-		if (!objectp(env))return notify_fail("ÕÒ²»µ½Ä¿±ê¡£\n");
+		if (!objectp(env))return notify_fail("æ‰¾ä¸åˆ°ç›®æ ‡ã€‚\n");
 	}
 
-	message_vision(HIY"Ö»ÌýµÄÒ»Éù¾ªÌì¶¯µØµÄ±¬Ïì£¬$N"+HIY"·¢ÉäÁË£¬µ¯Í·´ø×ÅÒ»µÀ»ðÏß·ÉÏò"+env->query("short")+HIY"£¬ËÄÖÜÒ»Æ¬ÏõÑÌìòÂþ¡£\n"NOR, ob);
+	message_vision(HIY"åªå¬çš„ä¸€å£°æƒŠå¤©åŠ¨åœ°çš„çˆ†å“ï¼Œ$N"+HIY"å‘å°„äº†ï¼Œå¼¹å¤´å¸¦ç€ä¸€é“ç«çº¿é£žå‘"+env->query("short")+HIY"ï¼Œå››å‘¨ä¸€ç‰‡ç¡çƒŸç¥¢æ¼«ã€‚\n"NOR, ob);
 
 	owner = query_temp("owner");
 
@@ -266,7 +266,7 @@ int explode(object me, object ob)
 		else owner=ob;
 	}
 
-	tell_room(env,HIR"Ö»ÌýµÄÒ»Éù¾ªÌì¶¯µØµÄ±¬Ïì£¬Ò»·¢ÅÚµ¯ÂäµØ£¬ËÄÖÜÒ»ÇÐÁ¢¿Ì±»Õ¨µÃ»Ò·ÉÑÌÃð£¡\n"NOR, me);
+	tell_room(env,HIR"åªå¬çš„ä¸€å£°æƒŠå¤©åŠ¨åœ°çš„çˆ†å“ï¼Œä¸€å‘ç‚®å¼¹è½åœ°ï¼Œå››å‘¨ä¸€åˆ‡ç«‹åˆ»è¢«ç‚¸å¾—ç°é£žçƒŸç­ï¼\n"NOR, me);
 
 	if( env->query("no_fight") ){
 		return 0;
@@ -281,10 +281,10 @@ int explode(object me, object ob)
         victims[i]->receive_wound("qi", random(damage), owner);
         str = COMBAT_D->status_msg((int)victims[i]->query("qi") * 100 /(int)victims[i]->query("max_qi"));
 
-		message_vision(HIR"$N±»Õ¨µÃÈËÑöÂí·­£¡\n"NOR,victims[i]);
-		message_vision(HIR"ÄãÔ¶Ô¶¿´µ½"+victims[i]->query("name")+"±»Õ¨µÃÈËÑöÂí·­£¡\n"NOR,ob);
+		message_vision(HIR"$Nè¢«ç‚¸å¾—äººä»°é©¬ç¿»ï¼\n"NOR,victims[i]);
+		message_vision(HIR"ä½ è¿œè¿œçœ‹åˆ°"+victims[i]->query("name")+"è¢«ç‚¸å¾—äººä»°é©¬ç¿»ï¼\n"NOR,ob);
         message_vision("($N"+str+")\n", victims[i]);
-		message_vision(HIR"ÄãÔ¶Ô¶¿´µ½("+victims[i]->query("name")+str+")\n",ob);
+		message_vision(HIR"ä½ è¿œè¿œçœ‹åˆ°("+victims[i]->query("name")+str+")\n",ob);
 	}
 
         if (!env->query("th_buzhen")) return 1;

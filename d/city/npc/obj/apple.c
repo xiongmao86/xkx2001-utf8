@@ -1,18 +1,18 @@
 //Cracked by Roath
-// apple ¹ú¹âÆ»¹û
+// apple å›½å…‰è‹¹æžœ
 #include <ansi.h>
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("Æ»¹û", ({"ping guo", "guo"}));
+	set_name("è‹¹æžœ", ({"ping guo", "guo"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÐÂÏÊÏãÌðµÄ´óºìÆ»¹û¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªæ–°é²œé¦™ç”œçš„å¤§çº¢è‹¹æžœã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 20);
 		set("food_remaining", 3);
 		set("food_supply", 10);

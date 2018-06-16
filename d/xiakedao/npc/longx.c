@@ -1,5 +1,5 @@
 //Cracked by Roath
-// longx.c ÏÀ¿ÍµºÁú
+// longx.c ä¾ å®¢å²›é¾™
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -33,8 +33,8 @@ string* fname = ({
 });
 
 string* wait = ({
-	" µºÖ÷ÔÚ¶´ÖÐÏàºò£¬Çë¸ú" + RANK_D->query_self(this_object()) + "À´°É¡£",
-	" ¸óÏÂÇëÒÆ¼Ýµ½ÏÀ¿Í¶´ÖÐÔÙ·¢´ô°É¡£", 	
+	" å²›ä¸»åœ¨æ´žä¸­ç›¸å€™ï¼Œè¯·è·Ÿ" + RANK_D->query_self(this_object()) + "æ¥å§ã€‚",
+	" é˜ä¸‹è¯·ç§»é©¾åˆ°ä¾ å®¢æ´žä¸­å†å‘å‘†å§ã€‚", 	
 });
 
 int ask_leave();
@@ -46,11 +46,11 @@ void check_follow(object, int);
 void create()
 {	int i;
 	i = random(8) + 1;
-	set_name("Áú" + chinese_number(i), ({ "long" + fname[i-1]}));
-	set("long", "ËûÊÇÏÀ¿ÍµºÁúµºÖ÷ÃÅÏÂµÄÒ»¸öµÜ×Ó¡£ÉíÉÏ´©×ÅÏ´µÃ·¢°×µÄ½õÒÂ£¬
-Í·ÉÏ´ø×ÅÐã²ÅÃ±£¬Ò»Á³µÄÊé´ô×ÓÆø£¬Ôõ÷á¿´Ò²²»ÏóÊÇ¸öÎäÁÖÖÐÈË¡£\n");
-	set("nickname", "ÒýÂ·Ê¹");
-	set("gender", "ÄÐÐÔ");
+	set_name("é¾™" + chinese_number(i), ({ "long" + fname[i-1]}));
+	set("long", "ä»–æ˜¯ä¾ å®¢å²›é¾™å²›ä¸»é—¨ä¸‹çš„ä¸€ä¸ªå¼Ÿå­ã€‚èº«ä¸Šç©¿ç€æ´—å¾—å‘ç™½çš„é”¦è¡£ï¼Œ
+å¤´ä¸Šå¸¦ç€ç§€æ‰å¸½ï¼Œä¸€è„¸çš„ä¹¦å‘†å­æ°”ï¼Œæ€Žéº½çœ‹ä¹Ÿä¸è±¡æ˜¯ä¸ªæ­¦æž—ä¸­äººã€‚\n");
+	set("nickname", "å¼•è·¯ä½¿");
+	set("gender", "ç”·æ€§");
 	set("age", random(30) + 20);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -58,7 +58,7 @@ void create()
 	set("int", 25);
 	set("con", 25);
 	set("dex", 25);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 1500);
 	set("eff_qi", 1500);
 	set("qi", 1500);
@@ -118,7 +118,7 @@ void greeting()
 	if (!(me->query_leader() == this_object()))
 	{	command("hi " + query_temp("xkd/guest"));
 		command("say " + RANK_D->query_self(this_object()) + query("name") + 
-			"·îµºÖ÷Ö®ÃüÔÚ´Ë¹§Ó­´ó¼Ý£¬" + RANK_D->query_respect(me) + "Çë¸úÎÒÀ´¡£\n" +
+			"å¥‰å²›ä¸»ä¹‹å‘½åœ¨æ­¤æ­è¿Žå¤§é©¾ï¼Œ" + RANK_D->query_respect(me) + "è¯·è·Ÿæˆ‘æ¥ã€‚\n" +
 			"    "+HBRED+HIW"(follow " + query("id") + ")"NOR);	
 		remove_call_out("check_follow");
 		call_out("check_follow", 20, me, 0);
@@ -129,8 +129,8 @@ void check_follow(object me, int count)
 {	int i;
 	object long = this_object();
     	if( !(find_player(query_temp("xkd/guest"))))
-	{	command("say ÕâÈËÒ²ÕæÊÇµÄ£¬Ò»×ªÑÛ¾Í²»ÖªÅÜÄÄÈ¥ÁË¡£");
-		message_vision("$NËµÍê×ªÉíÀëÈ¥ÁË¡£\n", long);
+	{	command("say è¿™äººä¹ŸçœŸæ˜¯çš„ï¼Œä¸€è½¬çœ¼å°±ä¸çŸ¥è·‘å“ªåŽ»äº†ã€‚");
+		message_vision("$Nè¯´å®Œè½¬èº«ç¦»åŽ»äº†ã€‚\n", long);
 		remove_call_out("check_follow");
 		destruct(long);
 		return;
@@ -141,8 +141,8 @@ void check_follow(object me, int count)
 	}
 	else
 	{	if ( count > 2 )
-		{	message("vision", long->name() + "²»Öª´ÓÄÄ±äÁË³öÀ´£¬À­Æð" + me->name() + "µÄÊÖ£¬ÉíÐÎÒ»ÉÁ±ã²»¼ûÁË\n", environment(me), ({me}));
-			tell_object(me, long->name() + "²»Öª´ÓÄÄ±äÁË³öÀ´£¬À­ÆðÄãµÄÊÖ±ß×ß±ßÂñÔ¹µÀ£º½ÐÄã¸úÎÒµÄ£¬»¹ÂÒÅÜ£¬À´°É¡£\n");
+		{	message("vision", long->name() + "ä¸çŸ¥ä»Žå“ªå˜äº†å‡ºæ¥ï¼Œæ‹‰èµ·" + me->name() + "çš„æ‰‹ï¼Œèº«å½¢ä¸€é—ªä¾¿ä¸è§äº†\n", environment(me), ({me}));
+			tell_object(me, long->name() + "ä¸çŸ¥ä»Žå“ªå˜äº†å‡ºæ¥ï¼Œæ‹‰èµ·ä½ çš„æ‰‹è¾¹èµ°è¾¹åŸ‹æ€¨é“ï¼šå«ä½ è·Ÿæˆ‘çš„ï¼Œè¿˜ä¹±è·‘ï¼Œæ¥å§ã€‚\n");
 			me->move(environment(long));
 			me->set_leader(long);
 			remove_call_out("check_follow");
@@ -162,25 +162,25 @@ void check_follow(object me, int count)
 void move_next(object me, int count)
 {	object long = this_object();
     	if( !(objectp(me=find_player(query_temp("xkd/guest")))))
-	{	command("say ÕâÈËÒ²ÕæÊÇµÄ£¬Ò»×ªÑÛ¾Í²»ÖªÅÜÄÄÈ¥ÁË¡£");
-		message_vision("$NËµÍê×ªÉíÀëÈ¥ÁË¡£\n", this_object());
+	{	command("say è¿™äººä¹ŸçœŸæ˜¯çš„ï¼Œä¸€è½¬çœ¼å°±ä¸çŸ¥è·‘å“ªåŽ»äº†ã€‚");
+		message_vision("$Nè¯´å®Œè½¬èº«ç¦»åŽ»äº†ã€‚\n", this_object());
 		remove_call_out("check_follow");
 		destruct(this_object());
 		return;
 	}
 	if (count >= sizeof(commands))
-	{	command("say " + RANK_D->query_respect(me) + "ÇëÔÚÕâÀïÉÔºò£¬µºÖ÷Ò»»á±ãµ½¡£");
+	{	command("say " + RANK_D->query_respect(me) + "è¯·åœ¨è¿™é‡Œç¨å€™ï¼Œå²›ä¸»ä¸€ä¼šä¾¿åˆ°ã€‚");
 		command("bye " + me->query("id"));
 		me->set("xkd/hosted", 1);
-		message_vision("$NËµÍê»ÓÁË»ÓÊÖ£¬×ªÉíÀëÈ¥ÁË¡£\n", long);
+		message_vision("$Nè¯´å®ŒæŒ¥äº†æŒ¥æ‰‹ï¼Œè½¬èº«ç¦»åŽ»äº†ã€‚\n", long);
 		destruct(long);
 		return;
 	}
 	command(commands[count]);
 	if (!(present(me, environment(long))))
-	{	message("vision", long->name() + "²»Öª´ÓÄÄ±äÁË³öÀ´£¬À­Æð" + me->name() + "µÄÊÖ£¬ÉíÐÎÒ»ÉÁ±ã²»¼ûÁË\n", environment(me), ({me}));
-		tell_object(me, long->name() + "²»Öª´ÓÄÄ±äÁË³öÀ´£¬À­ÆðÄãµÄÊÖ±ß×ß±ßÂñÔ¹µÀ£º½ÐÄã¸úÎÒµÄ£¬»¹ÂÒÅÜ£¬À´°É¡£\n");
-		//message_vision("$N²»Öª´ÓÄÄ±äÁË³öÀ´£¬ÂñÔ¹ÄãµÀ£º½ÐÄã¸úÎÒµÄ£¬»¹ÂÒÅÜ£¬À´°É¡£\n", long);
+	{	message("vision", long->name() + "ä¸çŸ¥ä»Žå“ªå˜äº†å‡ºæ¥ï¼Œæ‹‰èµ·" + me->name() + "çš„æ‰‹ï¼Œèº«å½¢ä¸€é—ªä¾¿ä¸è§äº†\n", environment(me), ({me}));
+		tell_object(me, long->name() + "ä¸çŸ¥ä»Žå“ªå˜äº†å‡ºæ¥ï¼Œæ‹‰èµ·ä½ çš„æ‰‹è¾¹èµ°è¾¹åŸ‹æ€¨é“ï¼šå«ä½ è·Ÿæˆ‘çš„ï¼Œè¿˜ä¹±è·‘ï¼Œæ¥å§ã€‚\n");
+		//message_vision("$Nä¸çŸ¥ä»Žå“ªå˜äº†å‡ºæ¥ï¼ŒåŸ‹æ€¨ä½ é“ï¼šå«ä½ è·Ÿæˆ‘çš„ï¼Œè¿˜ä¹±è·‘ï¼Œæ¥å§ã€‚\n", long);
 		me->move(places[count]);
 		remove_call_out("move_next");
 		call_out("move_next", 10, me, count);

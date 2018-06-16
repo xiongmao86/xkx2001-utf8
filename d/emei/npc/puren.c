@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/npc/puren.c ÆÍÈË 
+// /d/emei/npc/puren.c ä»†äºº 
 // Shan: 96/07/09
 
 inherit NPC;
@@ -10,10 +10,10 @@ void create()
 
 	value = random(5);
 
-	set_name("ÆÍÈË", ({ "pu ren", "servant"}));
+	set_name("ä»†äºº", ({ "pu ren", "servant"}));
         set("long", 
-"Ò»¸öÄĞÆÍ£¬¸ö×Ó¸ß¸ßµÄ£¬±³×ÅÒ»¸ö´ó°ü£¬ÖÒĞÄ¹¢¹¢µØ¸úÔÚÉÙÄÌÄÌºóÃæ¡£\n");
-	set("gender", "ÄĞĞÔ");
+"ä¸€ä¸ªç”·ä»†ï¼Œä¸ªå­é«˜é«˜çš„ï¼ŒèƒŒç€ä¸€ä¸ªå¤§åŒ…ï¼Œå¿ å¿ƒè€¿è€¿åœ°è·Ÿåœ¨å°‘å¥¶å¥¶åé¢ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 14 + value * 2 );
 
         set("str", 20);

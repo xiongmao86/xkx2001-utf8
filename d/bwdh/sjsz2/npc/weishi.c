@@ -19,9 +19,9 @@ void create()
 {
 		  object zhenwu;
 
-		  set_name("ÎäÊ¿", ({ "wu shi", "shi" }));
-		  set("long","ÕâÊÇÎ»ÎäÊ¿£¬ÉíÅû¸Ö¼×£¬ÊÖÖ´³¤½££¬Ë«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØÑ²ÊÓ×ÅËÄÖÜµÄÇéĞÎ¡£\n");
-		  set("gender", "ÄĞĞÔ");
+		  set_name("æ­¦å£«", ({ "wu shi", "shi" }));
+		  set("long","è¿™æ˜¯ä½æ­¦å£«ï¼Œèº«æŠ«é’¢ç”²ï¼Œæ‰‹æ‰§é•¿å‰‘ï¼ŒåŒç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°å·¡è§†ç€å››å‘¨çš„æƒ…å½¢ã€‚\n");
+		  set("gender", "ç”·æ€§");
 		  set("age", 50);
 		  set("attitude", "heroism");
 		  set("shen_type", 0);
@@ -59,7 +59,7 @@ void create()
 
 		  prepare_skill("cuff", "taiji-quan");
 
-		  create_family("Îäµ±ÅÉ", 2, "");
+		  create_family("æ­¦å½“æ´¾", 2, "");
 		  set("chat_chance", 80);
 		  set("chat_msg", ({
 					 (: reset :),
@@ -72,11 +72,11 @@ void create()
 
 	set("inquiry", ([
 		"heal" : (: ask_me_heal :),
-		"ÁÆÉË" : (: ask_me_heal :),
-		"»¤Æì": (: ask_me_huqi :),
+		"ç–—ä¼¤" : (: ask_me_heal :),
+		"æŠ¤æ——": (: ask_me_huqi :),
 		"huqi": (: ask_me_huqi :),
-		"ÊÔ½£É½×¯": "ÊÔ½£É½×¯ÊÇÎÅÃûåÚåÇµÄÎäÁÖÊ¥µØ¡£¸÷Â·Ó¢ĞÛ¶¼ÕùÏàÀ´ÕâÀï±ÈÎä¡£",
-		"sjsz": "ÊÔ½£É½×¯ÊÇÎÅÃûåÚåÇµÄÎäÁÖÊ¥µØ¡£¸÷Â·Ó¢ĞÛ¶¼ÕùÏàÀ´ÕâÀï±ÈÎä¡£",
+		"è¯•å‰‘å±±åº„": "è¯•å‰‘å±±åº„æ˜¯é—»åéè¿©çš„æ­¦æ—åœ£åœ°ã€‚å„è·¯è‹±é›„éƒ½äº‰ç›¸æ¥è¿™é‡Œæ¯”æ­¦ã€‚",
+		"sjsz": "è¯•å‰‘å±±åº„æ˜¯é—»åéè¿©çš„æ­¦æ—åœ£åœ°ã€‚å„è·¯è‹±é›„éƒ½äº‰ç›¸æ¥è¿™é‡Œæ¯”æ­¦ã€‚",
 	]));
 
 
@@ -101,7 +101,7 @@ int accept_kill(object obj)
 	string *sname;
 	int i, max = 200;
 
-	command("say "+RANK_D->query_rude(obj)+"¾ÓÈ»»¹ÏëÉ±ËÀÎÒ£¡¿´ÕĞ£¡");
+	command("say "+RANK_D->query_rude(obj)+"å±…ç„¶è¿˜æƒ³æ€æ­»æˆ‘ï¼çœ‹æ‹›ï¼");
 
 	if( !objectp(obj->query_temp("weapon")) || !objectp(me->query_temp("weapon")) )
 	{
@@ -189,16 +189,16 @@ string ask_me_heal()
 	if( ob->query("sjsz/team_name") != query("sjsz/team_name") )
 	{
 		me->kill_ob(ob);
-		return RANK_D->query_rude(this_player()) + "·Ç±¾¶ÓÈËÂí£¬Äª·ÇÏëÀ´Ú¿ÎÒ£¿¿´ÕĞ£¡\n";
+		return RANK_D->query_rude(this_player()) + "éæœ¬é˜Ÿäººé©¬ï¼Œè«éæƒ³æ¥è¯³æˆ‘ï¼Ÿçœ‹æ‹›ï¼\n";
 	}
 
 	if( ob->query("eff_qi") < ob->query("max_qi") )
-		message_vision(HIG"$N¿´ÁË¿´$n£¬Í´¿ìµØËµµÀ£º¡°Ã»ÎÊÌâ£¡¡±\n"NOR,me,ob);
-	else return "ÄãÎŞÉËÎŞºÛ£¬¿ªÎÒÍæĞ¦£¿";
+		message_vision(HIG"$Nçœ‹äº†çœ‹$nï¼Œç—›å¿«åœ°è¯´é“ï¼šâ€œæ²¡é—®é¢˜ï¼â€\n"NOR,me,ob);
+	else return "ä½ æ— ä¼¤æ— ç—•ï¼Œå¼€æˆ‘ç©ç¬‘ï¼Ÿ";
 	command("halt");
 	command("exert heal "+ob->query("id"));
 
-	return "ºÃĞ©ÁËÂğ£¿";
+	return "å¥½äº›äº†å—ï¼Ÿ";
 }
 
 string ask_me_huqi()
@@ -209,22 +209,22 @@ string ask_me_huqi()
 	if( ob->query("sjsz/team_name") != query("sjsz/team_name") )
 	{
 		me->kill_ob(ob);
-		return RANK_D->query_rude(this_player()) + "·Ç±¾¶ÓÈËÂí£¬Äª·ÇÏëÀ´Ú¿ÎÒ£¿¿´ÕĞ£¡\n";
+		return RANK_D->query_rude(this_player()) + "éæœ¬é˜Ÿäººé©¬ï¼Œè«éæƒ³æ¥è¯³æˆ‘ï¼Ÿçœ‹æ‹›ï¼\n";
 	}
 
 	if( !environment(me)->query("flag") )
 	{
-		message_vision(HIG"$NÒÉ»óµØËÄÏÂÍûÍû£¬ËµµÀ£º¡°¿ÉÊÇÕâÀïÃ»ÓĞÆì¿É»¤£¡¡±\n"NOR,me);
-		return "±ğ¸ã´íÁË£¡";
+		message_vision(HIG"$Nç–‘æƒ‘åœ°å››ä¸‹æœ›æœ›ï¼Œè¯´é“ï¼šâ€œå¯æ˜¯è¿™é‡Œæ²¡æœ‰æ——å¯æŠ¤ï¼â€\n"NOR,me);
+		return "åˆ«æé”™äº†ï¼";
     }
 	else
 	{
-		message_vision(HIG"$N¿´ÁË¿´$n£¬Í´¿ìµØËµµÀ£º¡°ºÃ°É£¡ÎÒ¾ÍÁôÏÂÀ´»¤Æì¡£¡±\n"NOR,me,ob);
+		message_vision(HIG"$Nçœ‹äº†çœ‹$nï¼Œç—›å¿«åœ°è¯´é“ï¼šâ€œå¥½å§ï¼æˆ‘å°±ç•™ä¸‹æ¥æŠ¤æ——ã€‚â€\n"NOR,me,ob);
 		command("halt");
 		command("follow none");
 	}
 
-	return "´ó¼Ò¼ÓÓÍ¸É£¡";
+	return "å¤§å®¶åŠ æ²¹å¹²ï¼";
 }
 
 

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// °µµÀ to quanzhou
+// æš—é“ to quanzhou
 // qfy August 17, 1996
 
 #include <room.h>
@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "°µµÀ");
+	set("short", "æš—é“");
 	set("long", @LONG
-ÕâÊÇØ¤°ï¼«ÆäÃØÃÜµÄµØÏÂÍ¨µÀ£¬ÄËÓÃØ¤°ï¼¸±²ÈËÖ®ĞÄÑª¾ò³É¡£ 
+è¿™æ˜¯ä¸å¸®æå…¶ç§˜å¯†çš„åœ°ä¸‹é€šé“ï¼Œä¹ƒç”¨ä¸å¸®å‡ è¾ˆäººä¹‹å¿ƒè¡€æ˜æˆã€‚ 
 LONG
 	);
 

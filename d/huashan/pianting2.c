@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Æ«Ìü");
+        set("short", "åå…");
         set("long", @LONG
-ÕâÊÇ»ªÉ½ÄÚÔºµÄÆ«Ìü¡£ÌüÀï°ÚÉè¼òµ¥£¬Ö»ÓĞÒ»ÕÅ×À×ÓºÍ¼¸ÕÅÒÎ×Ó£¬Ç½
-ÉÏ¹Ò×Å¼¸·ùÍ¼»­¡£Ìü×ÓµÄ¶«Î÷±ß¸÷ÎªÁ·¹¦·¿£¬ÊÇ»ªÉ½µÜ×Ó¾²×øÁ·¹¦µÄµØ·½¡£
+è¿™æ˜¯åå±±å†…é™¢çš„åå…ã€‚å…é‡Œæ‘†è®¾ç®€å•ï¼Œåªæœ‰ä¸€å¼ æ¡Œå­å’Œå‡ å¼ æ¤…å­ï¼Œå¢™
+ä¸ŠæŒ‚ç€å‡ å¹…å›¾ç”»ã€‚å…å­çš„ä¸œè¥¿è¾¹å„ä¸ºç»ƒåŠŸæˆ¿ï¼Œæ˜¯åå±±å¼Ÿå­é™åç»ƒåŠŸçš„åœ°æ–¹ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -37,9 +37,9 @@ void init()
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && !me->query_temp("bai_ning")
+        if ( (!myfam || myfam["family_name"] != "åå±±æ´¾") && !me->query_temp("bai_ning")
            && ob=present("ning zhongze", environment(me)) ) {
-                message_vision("$NÅ­³âµÀ£ºÄãÊÇºÎÈË£¿Ôõ÷á´³ÈëÕâÀïÀ´ÁË£¿¿ì×ß£¡\n", ob);
+                message_vision("$Næ€’æ–¥é“ï¼šä½ æ˜¯ä½•äººï¼Ÿæ€éº½é—¯å…¥è¿™é‡Œæ¥äº†ï¼Ÿå¿«èµ°ï¼\n", ob);
         }
 
         add_action("do_kill","kill");
@@ -55,23 +55,23 @@ int do_kill(string arg)
 
         if ( !ob=present(arg, environment(me)) ) return 0;
 
-        if ( ob->query("family/family_name") == "»ªÉ½ÅÉ" && me->query("family/family_name") != "»ªÉ½ÅÉ" ) {
-           message_vision("$n¶ÔÖø$NºÈµÀ£º¡¸"+RANK_D->query_rude(ob)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n", ob, me);    
+        if ( ob->query("family/family_name") == "åå±±æ´¾" && me->query("family/family_name") != "åå±±æ´¾" ) {
+           message_vision("$nå¯¹è‘—$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(ob)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n", ob, me);    
         
            if ( ob1=present("ning zhongze", environment(me)) ) {
-                message_vision("$NÅ­³âµÀ£ºÆñÓĞ´ËÀí£¡¾¹¸ÒÔÚ»ªÉ½ÉÏÈöÒ°£¬ÒâÍ¼ĞĞĞ×É±ÈË£¡\n", ob1);
+                message_vision("$Næ€’æ–¥é“ï¼šå²‚æœ‰æ­¤ç†ï¼ç«Ÿæ•¢åœ¨åå±±ä¸Šæ’’é‡ï¼Œæ„å›¾è¡Œå‡¶æ€äººï¼\n", ob1);
                 ob1->kill_ob(me);
                 return 1;
            }
 
            return 0;
         }
-        else if ( ob->query("family/family_name") == "»ªÉ½ÅÉ" && ob->query("id") != "yue buqun" 
-        && ob->query("id") != "ning zhongze" && me->query("family/family_name") == "»ªÉ½ÅÉ" ) {
-           message_vision("$n¶ÔÖø$NºÈµÀ£º¡¸"+RANK_D->query_rude(ob)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n", ob, me);
+        else if ( ob->query("family/family_name") == "åå±±æ´¾" && ob->query("id") != "yue buqun" 
+        && ob->query("id") != "ning zhongze" && me->query("family/family_name") == "åå±±æ´¾" ) {
+           message_vision("$nå¯¹è‘—$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(ob)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n", ob, me);
 
            if ( ob1=present("ning zhongze", environment(me)) ) {
-                message_vision("$NÆø¼«ÂîµÀ£º×Ô¼ºÍ¬ÃÅ¾¹×ÔÏà²ĞÉ±£¡¶¼¸øÎÒµ½Ë¼¹ıÑÂÈ¥ºÃºÃÃæ±Ú·´Ê¡£¡\n", ob1);
+                message_vision("$Næ°”æéª‚é“ï¼šè‡ªå·±åŒé—¨ç«Ÿè‡ªç›¸æ®‹æ€ï¼éƒ½ç»™æˆ‘åˆ°æ€è¿‡å´–å»å¥½å¥½é¢å£åçœï¼\n", ob1);
                 return 1;
            }
 
@@ -89,23 +89,23 @@ int do_hit(string arg)
 
         if ( !ob=present(arg, environment(me)) ) return 0;
 
-        if ( ob->query("family/family_name") == "»ªÉ½ÅÉ" && me->query("family/family_name") != "»ªÉ½ÅÉ" ) {
-           message_vision("$n¶ÔÖø$N´óºÈÒ»Éù£º¿´ÕĞ£¡\n",ob, me);
+        if ( ob->query("family/family_name") == "åå±±æ´¾" && me->query("family/family_name") != "åå±±æ´¾" ) {
+           message_vision("$nå¯¹è‘—$Nå¤§å–ä¸€å£°ï¼šçœ‹æ‹›ï¼\n",ob, me);
 
            if ( ob1=present("ning zhongze", environment(me)) ) {
-                message_vision("$NÅ­³âµÀ£ºÆñÓĞ´ËÀí£¡¾¹¸ÒÔÚ»ªÉ½ÉÏÈöÒ°£¬ÒâÍ¼ĞĞĞ×É±ÈË£¡\n", ob1);
+                message_vision("$Næ€’æ–¥é“ï¼šå²‚æœ‰æ­¤ç†ï¼ç«Ÿæ•¢åœ¨åå±±ä¸Šæ’’é‡ï¼Œæ„å›¾è¡Œå‡¶æ€äººï¼\n", ob1);
                 ob1->kill_ob(me);
                 return 1;
            }
 
            return 0;
         }
-        else if ( ob->query("family/family_name") == "»ªÉ½ÅÉ" && ob->query("id") != "yue buqun"
-        && ob->query("id") != "ning zhongze" && me->query("family/family_name") == "»ªÉ½ÅÉ" ) {
-           message_vision("$n¶ÔÖø$NºÈµÀ£º¡¸"+RANK_D->query_rude(ob)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n", ob, me);
+        else if ( ob->query("family/family_name") == "åå±±æ´¾" && ob->query("id") != "yue buqun"
+        && ob->query("id") != "ning zhongze" && me->query("family/family_name") == "åå±±æ´¾" ) {
+           message_vision("$nå¯¹è‘—$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(ob)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n", ob, me);
 
            if ( ob1=present("ning zhongze", environment(me)) ) {
-                message_vision("$NÆø¼«ÂîµÀ£º×Ô¼ºÍ¬ÃÅ¾¹×ÔÏà²ĞÉ±£¡¶¼¸øÎÒµ½Ë¼¹ıÑÂÈ¥ºÃºÃÃæ±Ú·´Ê¡£¡\n", ob1);
+                message_vision("$Næ°”æéª‚é“ï¼šè‡ªå·±åŒé—¨ç«Ÿè‡ªç›¸æ®‹æ€ï¼éƒ½ç»™æˆ‘åˆ°æ€è¿‡å´–å»å¥½å¥½é¢å£åçœï¼\n", ob1);
                 return 1;
            }
 
@@ -122,41 +122,41 @@ int do_throw(string arg)
 
 	if( !arg
         ||      sscanf(arg, "%s at %s", what, who)!=2)
-                return notify_fail("ÃüÁî¸ñÊ½: throw <ÎïÆ·> at <Ä³ÈË>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: throw <ç‰©å“> at <æŸäºº>ã€‚\n");
 
 	ob = present(what, me);
         if( !ob ) ob = present(arg, environment(me));
-	if( !ob ) return notify_fail("ÄãÒªÈÓÊ²Ã´£¿\n");
+	if( !ob ) return notify_fail("ä½ è¦æ‰”ä»€ä¹ˆï¼Ÿ\n");
 
         if (ob->query("no_drop"))
-                return notify_fail("Õâ¸ö¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                return notify_fail("è¿™ä¸ªä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 
         if (!(victim = present(who, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÄãµÄÄ¿±ê¡£\n");
+                return notify_fail("è¿™é‡Œæ²¡æœ‰ä½ çš„ç›®æ ‡ã€‚\n");
 
         if (!victim)
-                return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
+                return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
         if (!living(victim))
-                return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
+                return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
 	
-	if ( victim->query("family/family_name") == "»ªÉ½ÅÉ" && me->query("family/family_name") != "»ªÉ½ÅÉ" ) {
-	   message_vision("$n¶ÔÖø$N´óºÈÒ»Éù£º¿´ÕĞ£¡\n",victim, me);
+	if ( victim->query("family/family_name") == "åå±±æ´¾" && me->query("family/family_name") != "åå±±æ´¾" ) {
+	   message_vision("$nå¯¹è‘—$Nå¤§å–ä¸€å£°ï¼šçœ‹æ‹›ï¼\n",victim, me);
 
 	   if ( ob1=present("ning zhongze", environment(me)) ) {
-		message_vision("$NÒ»ÉùÀäĞ¦£º´óµ¨¿ñÍ½£¡¾¹¸ÒÔÚ»ªÉ½ÉÏÍµÏ®ÉËÈË£¬µ±ÎÒ»ªÉ½ÅÉºÃÆÛ¸ºÃ´£¿\n", ob1);
+		message_vision("$Nä¸€å£°å†·ç¬‘ï¼šå¤§èƒ†ç‹‚å¾’ï¼ç«Ÿæ•¢åœ¨åå±±ä¸Šå·è¢­ä¼¤äººï¼Œå½“æˆ‘åå±±æ´¾å¥½æ¬ºè´Ÿä¹ˆï¼Ÿ\n", ob1);
 		ob1->kill_ob(me);
 		return 1;
 	   }
 
 	   return 0;
 	}
-	else if ( victim->query("family/family_name") == "»ªÉ½ÅÉ" && victim->query("id") != "yue buqun"
-	&& victim->query("id") != "ning zhongze" && me->query("family/family_name") == "»ªÉ½ÅÉ" ) {
-	   message_vision("$n¶ÔÖø$NºÈµÀ£º¡¸"+RANK_D->query_rude(ob)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n", victim, me);
+	else if ( victim->query("family/family_name") == "åå±±æ´¾" && victim->query("id") != "yue buqun"
+	&& victim->query("id") != "ning zhongze" && me->query("family/family_name") == "åå±±æ´¾" ) {
+	   message_vision("$nå¯¹è‘—$Nå–é“ï¼šã€Œ"+RANK_D->query_rude(ob)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n", victim, me);
 
 	   if ( ob1=present("ning zhongze", environment(me)) ) {
-		message_vision("$NÆøµÃ´óÂî£ºÕæÊÇÔ½À´Ô½ÓĞ³öÏ¢ÁË£¡×Ô¼ºÍ¬ÃÅ¾¹×ÔÏà²ĞÉ±£¡¸øÎÒ¶¼µ½Ë¼¹ıÑÂÈ¥Ãæ±Ú£¡\n", ob1);
+		message_vision("$Næ°”å¾—å¤§éª‚ï¼šçœŸæ˜¯è¶Šæ¥è¶Šæœ‰å‡ºæ¯äº†ï¼è‡ªå·±åŒé—¨ç«Ÿè‡ªç›¸æ®‹æ€ï¼ç»™æˆ‘éƒ½åˆ°æ€è¿‡å´–å»é¢å£ï¼\n", ob1);
 		return 1;
 	   }
 
@@ -171,9 +171,9 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam = (mapping)me->query("family");
 
-        if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir != "north" 
+        if ( (!myfam || myfam["family_name"] != "åå±±æ´¾") && dir != "north" 
            && present("ning zhongze", environment(me)) ) {
-                return notify_fail("ÄşÖĞÔòÀ¹ÔÚÄãÉíÇ°³âµÀ£ºÍâÈË²»ÄÜËæÒ×³öÈë±¾ÅÉÖØµØ£¡»¹²»¿ì¸øÎÒÀë¿ª£¿\n");
+                return notify_fail("å®ä¸­åˆ™æ‹¦åœ¨ä½ èº«å‰æ–¥é“ï¼šå¤–äººä¸èƒ½éšæ˜“å‡ºå…¥æœ¬æ´¾é‡åœ°ï¼è¿˜ä¸å¿«ç»™æˆ‘ç¦»å¼€ï¼Ÿ\n");
         }
 
         return ::valid_leave(me, dir);

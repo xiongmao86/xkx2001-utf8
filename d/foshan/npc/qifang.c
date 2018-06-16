@@ -5,21 +5,21 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÆÝ·¼", ({ "qi fang", "qi", "fang" }) );
-        set("gender", "Å®ÐÔ" );
+        set_name("æˆšèŠ³", ({ "qi fang", "qi", "fang" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 17);
         set("long", 
-	     "Ò»¸ö¿É°®µÄÅ©´å¹ÃÄï£¬Ô²Ô²µÄÁ³µ°£¬Ò»Ë«´óÑÛºÚÁïÁïµÄ¡£\n");
+	     "ä¸€ä¸ªå¯çˆ±çš„å†œæ‘å§‘å¨˜ï¼Œåœ†åœ†çš„è„¸è›‹ï¼Œä¸€åŒå¤§çœ¼é»‘æºœæºœçš„ã€‚\n");
         set("shen_type", 1);
 
         set("combat_exp", 15000);
 
         set("attitude", "friendly");
 	set("inquiry", ([
-            "¿ÕÐÄ²Ë" : "ºóÃæ²ËÔ°×ÓÀï¾ÍÓÐ¡£\n",
-	    "ÆÝ³¤·¢" : "ËûÊÇÎÒµù¡£\n",
-		"´ó»Æ" : "Ëü¾ÍÕ¾ÔÚÎÒÃÇ¼ÒÔºÍâ¡£\n",
-		"Ê¦ÐÖ" : "Ëû±»¹Øµ½´óÀÎÀïÁË¡£\n",
+            "ç©ºå¿ƒèœ" : "åŽé¢èœå›­å­é‡Œå°±æœ‰ã€‚\n",
+	    "æˆšé•¿å‘" : "ä»–æ˜¯æˆ‘çˆ¹ã€‚\n",
+		"å¤§é»„" : "å®ƒå°±ç«™åœ¨æˆ‘ä»¬å®¶é™¢å¤–ã€‚\n",
+		"å¸ˆå…„" : "ä»–è¢«å…³åˆ°å¤§ç‰¢é‡Œäº†ã€‚\n",
        ]) );
 
 	set("max_neili",500);
@@ -52,9 +52,9 @@ void init()
 void greeting(object me)
 {
    if (random(3)>1) {
-	command("say ÕâÎ»"+RANK_D->query_respect(me)+"£¬ÎªÁËÂòÐÂÒÂ·þ½ø³Ç£¬ÎÒµùÒª°Ñ´ó»ÆÂôÁË¡£");
+	command("say è¿™ä½"+RANK_D->query_respect(me)+"ï¼Œä¸ºäº†ä¹°æ–°è¡£æœè¿›åŸŽï¼Œæˆ‘çˆ¹è¦æŠŠå¤§é»„å–äº†ã€‚");
 	command("cry " + me->query("id"));
-	command("say ÄãÄÜ°ïÎÒÏëÏë°ì·¨Âð£¿");
+	command("say ä½ èƒ½å¸®æˆ‘æƒ³æƒ³åŠžæ³•å—ï¼Ÿ");
    }
 }
 
@@ -64,21 +64,21 @@ int accept_object(object me, object obj)
 		if (obj->query("id")=="pink cloth") {
 		     command("ah");
 		     command("thank "+me->query("id"));
-		     command("say ¿ÉÏ§ÎÒÊ¦ÐÖ²»ÔÚ¡£");
-		     command("whisper "+me->query("id")+" ´ÓÇ°ÎÒ³£ºÍÊ¦ÐÖÔÚ´å×Ó"
-			+ "ÄÏÃæµÄÐ¡É½ÉÏÍæ¡£µ½ÁËÄÇ²¦¿ªÔÓ²Ý(bocao)¾ÍÄÜ¿´¼ûÒ»¸öÉ½¶´¡£"
-			+ "ÄÇÀï³ýÁËÎÒºÍÎÒÊ¦ÐÖË­Ò²ÕÒ²»µ½µÄ¡£");
+		     command("say å¯æƒœæˆ‘å¸ˆå…„ä¸åœ¨ã€‚");
+		     command("whisper "+me->query("id")+" ä»Žå‰æˆ‘å¸¸å’Œå¸ˆå…„åœ¨æ‘å­"
+			+ "å—é¢çš„å°å±±ä¸ŠçŽ©ã€‚åˆ°äº†é‚£æ‹¨å¼€æ‚è‰(bocao)å°±èƒ½çœ‹è§ä¸€ä¸ªå±±æ´žã€‚"
+			+ "é‚£é‡Œé™¤äº†æˆ‘å’Œæˆ‘å¸ˆå…„è°ä¹Ÿæ‰¾ä¸åˆ°çš„ã€‚");
 		     me->set_temp("qi/bocao",1);
 		     return 1;
                  }
 		 command("thank "+me->query("id"));
-                 command("say ¿ÉÏ§Õâ²»ÊÇÎÒ°®´©µÄÒÂ·þ¡£");
+                 command("say å¯æƒœè¿™ä¸æ˜¯æˆ‘çˆ±ç©¿çš„è¡£æœã€‚");
 		 return 0;
 	}
 	if (obj->query("id")=="tangshi xuanji") {
                      command("ah");
                      command("cry");
-		     command("say ÕâÊÇÎÒºÍÎÒÊ¦ÐÖ´ÓÇ°ÔÚÒ»ÆðÊ±ÎÒ¼ÐÐåÑùÓÃµÄÊé¡£");
+		     command("say è¿™æ˜¯æˆ‘å’Œæˆ‘å¸ˆå…„ä»Žå‰åœ¨ä¸€èµ·æ—¶æˆ‘å¤¹ç»£æ ·ç”¨çš„ä¹¦ã€‚");
 		     remove_call_out("destbook");
 		     call_out("destbook",10,obj);
 		     remove_call_out("wet");
@@ -97,8 +97,8 @@ void wet(object me){
 	object book;
 	command("cry");
 	if (me->query_temp("qi/bocao") && objectp(present("qi fang", environment(me)))) {
-	  	tell_object(me,"ÄãÍ»È»·¢ÏÖÆÝ·¼µÄÑÛÀáµÎµ½¡¸ÌÆÊ«Ñ¡¼­¡¹ÉÏÖ®ºó£¬ÄÇÊéÉÏÏÔ³öÐ©×Ö¼£¡£\n");
-                tell_object(me,"Äã³ÃÆÝ·¼²»×¢ÒâÓÖ°Ñ¡¸ÌÆÊ«Ñ¡¼­¡¹ÍµÁË»ØÀ´¡£\n");
+	  	tell_object(me,"ä½ çªç„¶å‘çŽ°æˆšèŠ³çš„çœ¼æ³ªæ»´åˆ°ã€Œå”è¯—é€‰è¾‘ã€ä¸Šä¹‹åŽï¼Œé‚£ä¹¦ä¸Šæ˜¾å‡ºäº›å­—è¿¹ã€‚\n");
+                tell_object(me,"ä½ è¶æˆšèŠ³ä¸æ³¨æ„åˆæŠŠã€Œå”è¯—é€‰è¾‘ã€å·äº†å›žæ¥ã€‚\n");
 		book = new(__DIR__"obj/tangshi2");
 		book->move(me);
 		me->set_temp("qi/tangshi",1);

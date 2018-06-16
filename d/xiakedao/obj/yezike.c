@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yezike  Ò¬×Ó¿Ç
+// yezike  æ¤°å­å£³
 // ssy
 
 inherit ITEM;
@@ -7,20 +7,20 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("Ò¬×Ó¿Ç", ({"yezi ke", "yezi", "ke"}));
+        set_name("æ¤°å­å£³", ({"yezi ke", "yezi", "ke"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö´óÒ¬×Ó¿Ç£¬¿ÉÒÔÓÃÀ´×°Ë®¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€ä¸ªå¤§æ¤°å­å£³ï¼Œå¯ä»¥ç”¨æ¥è£…æ°´ã€‚\n");
+                set("unit", "ä¸ª");
                 set("value", 200);
                 set("max_liquid", 10);
         }
 
         set("liquid", ([
 			"type": "tea",
-			"name": "Ò¬×ÓÖ­",
+			"name": "æ¤°å­æ±",
 			"remaining": 10,
 			"drunk_apply": 0,
         ]));

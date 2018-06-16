@@ -1,12 +1,12 @@
 //Cracked by Roath
-// guest.c ÓÎ¿Í
+// guest.c æ¸¸å®¢
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÓÎ¿Í", ({ "youke" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¸¸å®¢", ({ "youke" }));
+	set("gender", "ç”·æ€§");
 	set("age", 20 + random(30));
 	set("attitude", "friendly");
 

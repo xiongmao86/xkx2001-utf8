@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huolu.c »ğÂ¯
+// huolu.c ç«ç‚‰
 // by zhangchi
 
 #include <ansi.h>
@@ -12,13 +12,13 @@ int check_busy(object me);
 
 void create()
 {
-        set_name(HIR"»ğÂ¯"NOR, ({ "huo lu", "lu" }) );
+        set_name(HIR"ç«ç‚‰"NOR, ({ "huo lu", "lu" }) );
         set_weight(9000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ×ù´ó»ğÂ¯£¬ÀïÃæĞÛ»ğÈ¼ÉÕ£¬¿ÉÒÔÓÃÀ´Á¶Ìú¡£\n");
-                set("unit", "×ù");
+                set("long", "è¿™æ˜¯åº§å¤§ç«ç‚‰ï¼Œé‡Œé¢é›„ç«ç‡ƒçƒ§ï¼Œå¯ä»¥ç”¨æ¥ç‚¼é“ã€‚\n");
+                set("unit", "åº§");
 		set("no_get", 1);
         }
 }
@@ -38,23 +38,23 @@ int do_tou(string arg)
         ob = this_object();
         
         if( me->is_busy() || me->query_temp("pending/job_busy") )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-            return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+            return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
-	if (item != "¿óÊ¯" || target != "»ğÂ¯")
-		return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+	if (item != "çŸ¿çŸ³" || target != "ç«ç‚‰")
+		return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
 
 	if ( !kuangshi=present("wujin kuangshi",me) )
-		return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞ¿óÊ¯¡£\n");
+		return notify_fail("ä½ èº«ä¸Šå¹¶æ²¡æœ‰çŸ¿çŸ³ã€‚\n");
 
 	if (query_temp("in_use"))
-		return notify_fail("Õâ¸ö»ğÂ¯ÒÑ¾­ÓĞÈËÔÚÓÃÁË£¡\n");
+		return notify_fail("è¿™ä¸ªç«ç‚‰å·²ç»æœ‰äººåœ¨ç”¨äº†ï¼\n");
 
-	message_vision("$N°ÑÒ»"+kuangshi->query("unit")+kuangshi->query("name")+"Í¶½ø»ğÂ¯¡£\n",me);
+	message_vision("$NæŠŠä¸€"+kuangshi->query("unit")+kuangshi->query("name")+"æŠ•è¿›ç«ç‚‰ã€‚\n",me);
 	destruct(kuangshi);
-	message_vision(HIC"$NÀ­¶¯·çÏä£¬»ğÑæÓÉºìÂıÂı±äÇà£¬³åÆğÒ»ÕÉ¶à¸ß£¡\n"NOR,me);
+	message_vision(HIC"$Næ‹‰åŠ¨é£ç®±ï¼Œç«ç„°ç”±çº¢æ…¢æ…¢å˜é’ï¼Œå†²èµ·ä¸€ä¸ˆå¤šé«˜ï¼\n"NOR,me);
 	
 	set_temp("in_use",1);
 	me->set_temp("pending/job_busy",1);
@@ -69,7 +69,7 @@ int do_tou(string arg)
 
 void burning(object me)
 {
-	write(HIW"¿óÊ¯ÒÑ¾­±»ÉÕµÄÍ¨ºì£¬¿´À´¿ÉÒÔ¿ªÊ¼´¸´òÁË\n"NOR);
+	write(HIW"çŸ¿çŸ³å·²ç»è¢«çƒ§çš„é€šçº¢ï¼Œçœ‹æ¥å¯ä»¥å¼€å§‹é”¤æ‰“äº†\n"NOR);
 	add_action("do_datie","da");
 	add_action("do_datie","refine");
 	me->delete_temp("pending/job_busy");
@@ -80,18 +80,18 @@ int do_datie(string arg)
 	object me=this_player();
 
         if( me->is_busy() || me->query_temp("pending/job_busy") )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
-	if (arg != "tie" && arg != "Ìú")
-		return notify_fail("ÄãÒª´òÊ²Ã´£¿\n");
+	if (arg != "tie" && arg != "é“")
+		return notify_fail("ä½ è¦æ‰“ä»€ä¹ˆï¼Ÿ\n");
 
 	if (!present("tie chui",me))
-		return notify_fail("ÄãÃ»ÓĞÌú´¸£¬ÓÃÊ²Ã´´ò£¿\n");
+		return notify_fail("ä½ æ²¡æœ‰é“é”¤ï¼Œç”¨ä»€ä¹ˆæ‰“ï¼Ÿ\n");
 
 	if (me->query("neili") < 50 || me->query("jingli") < 50)
-		return notify_fail(RED"ÄãÒÑ¾­¾«Æ£Á¦½ßÁË£¡\n"NOR);
+		return notify_fail(RED"ä½ å·²ç»ç²¾ç–²åŠ›ç«­äº†ï¼\n"NOR);
 
-	message_vision("$N»Ó¶¯´óÌú´¸£¬³¯×ÅÉÕºìµÄÌú¿óÊ¯ºİºİµØ´òÁËÏÂÈ¥£¡\n",me);
+	message_vision("$NæŒ¥åŠ¨å¤§é“é”¤ï¼Œæœç€çƒ§çº¢çš„é“çŸ¿çŸ³ç‹ ç‹ åœ°æ‰“äº†ä¸‹å»ï¼\n",me);
 	me->add("neili",-30);
 	me->set_temp("pending/job_busy",1);
 
@@ -109,7 +109,7 @@ void job_done(object me)
 
 	if (random(me->query_str()) > 20 && random(10) > 5 )
 	{
-		message_vision(HIC"¾­¹ıÇ§´¸°ÙÁ¶£¬¾«ÌúÖÕÓÚÁ¶³öÀ´ÁË£¡$N»ëÉíº¹ÈçÓêÏÂ£¬¼¸ºõÀÛµÃ´­²»¹ıÆøÀ´¡£\n"NOR,me);
+		message_vision(HIC"ç»è¿‡åƒé”¤ç™¾ç‚¼ï¼Œç²¾é“ç»ˆäºç‚¼å‡ºæ¥äº†ï¼$Næµ‘èº«æ±—å¦‚é›¨ä¸‹ï¼Œå‡ ä¹ç´¯å¾—å–˜ä¸è¿‡æ°”æ¥ã€‚\n"NOR,me);
 		jingtie=new(OBJ_PATH"/jingtie");
 		jingtie->move(me);
 		remove_action("do_datie","da");
@@ -119,7 +119,7 @@ void job_done(object me)
 	}
 	else
 	{
-		tell_object(me,HIR"Äã²ÁÁË²ÁÁ³ÉÏµÄº¹£¬¿´ÁË¿´¿óÊ¯£¬¿´À´»¹µÃÔÙ´ò£¡\n"NOR);
+		tell_object(me,HIR"ä½ æ“¦äº†æ“¦è„¸ä¸Šçš„æ±—ï¼Œçœ‹äº†çœ‹çŸ¿çŸ³ï¼Œçœ‹æ¥è¿˜å¾—å†æ‰“ï¼\n"NOR);
 	}
 	me->delete_temp("pending/job_busy");
 }

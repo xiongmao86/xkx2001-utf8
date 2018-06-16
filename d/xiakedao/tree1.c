@@ -6,15 +6,15 @@ inherit __DIR__"no_pk_room";
 
 void create()
 {
-        set("short", "Ê÷ÉÏ");
+        set("short", "æ ‘ä¸Š");
         set("long", @LONG
-´ÓÊ÷¶¥ÍùÏÂ¸©î«£¬Õû¸öº£µºÒ»ÀÀÎŞÒÅ¡£É³Ì²ÉÏÒşÔ¼¿É¼û¼¸¸öĞ¡ºÚ
-µã£¬¼¸Ö»ĞÅÌìÎÌÔÚÍ·¶¥ÓÅÑÅµØ»¬Ïè¡£ËÄÃæÍûÈ¥£¬Ö»¼ûº£ÌìÒ»É«£¬³¤¿Õ
-ÈçÏ´£¬ÁîÈËĞÄ»³´ó³©¡£
-    ÄãÖÜÎ§ËÆºõ³¤ÁËÒ»Ğ©Ò°¹û(guo)¡£
+ä»æ ‘é¡¶å¾€ä¸‹ä¿¯ç°ï¼Œæ•´ä¸ªæµ·å²›ä¸€è§ˆæ— é—ã€‚æ²™æ»©ä¸Šéšçº¦å¯è§å‡ ä¸ªå°é»‘
+ç‚¹ï¼Œå‡ åªä¿¡å¤©ç¿åœ¨å¤´é¡¶ä¼˜é›…åœ°æ»‘ç¿”ã€‚å››é¢æœ›å»ï¼Œåªè§æµ·å¤©ä¸€è‰²ï¼Œé•¿ç©º
+å¦‚æ´—ï¼Œä»¤äººå¿ƒæ€€å¤§ç•…ã€‚
+    ä½ å‘¨å›´ä¼¼ä¹é•¿äº†ä¸€äº›é‡æœ(guo)ã€‚
 LONG );
         set("item_desc",([
-			  "guo" : "ºìÑŞÑŞµÄÒ°¹û£¬²»ÖªÄÜ²»ÄÜÕªÏÂÀ´¡£\n",
+			  "guo" : "çº¢è‰³è‰³çš„é‡æœï¼Œä¸çŸ¥èƒ½ä¸èƒ½æ‘˜ä¸‹æ¥ã€‚\n",
         ]));
 
 	set("outdoors", "xiakedao" );
@@ -40,11 +40,11 @@ int do_zhai(string arg)
 
 	if (present("ye guo", me))
 	  {
-	    message("vision","ÓĞÁË»¹ÏëÒª£¿£¡\n",me);
+	    message("vision","æœ‰äº†è¿˜æƒ³è¦ï¼Ÿï¼\n",me);
 	    return 1;
 	  }
 	
-	message_vision("$N´ÓÊ÷ÉÏÕªÏÂÁËÒ»Ã¶Ò°¹û¡£\n",me);
+	message_vision("$Nä»æ ‘ä¸Šæ‘˜ä¸‹äº†ä¸€æšé‡æœã€‚\n",me);
 	if (query("guocount")>0)
 	  {
 	    ob=new(__DIR__"obj/guo1");
@@ -64,12 +64,12 @@ int do_pa(string arg)
         object me = this_player();
 
         if ( !arg )
-                return notify_fail("ÄãÒªÍùÄÄ¶ùÅÀ£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªå„¿çˆ¬ï¼Ÿ\n");
         if ( arg != "down" )
-                return notify_fail("Ê²÷á£¿\n");
-        message_vision("$N±¿ÊÖ±¿½ÅµØÅÀÁËÏÂÈ¥¡£\n",me);
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
+        message_vision("$Nç¬¨æ‰‹ç¬¨è„šåœ°çˆ¬äº†ä¸‹å»ã€‚\n",me);
         me->move(__DIR__"shanding");  
-        message_vision("$N´ÓÊ÷ÉÏÅÀÁËÏÂÀ´¡£\n",me);
+        message_vision("$Nä»æ ‘ä¸Šçˆ¬äº†ä¸‹æ¥ã€‚\n",me);
         return 1;
 }
 

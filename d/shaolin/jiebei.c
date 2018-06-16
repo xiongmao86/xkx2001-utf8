@@ -9,9 +9,9 @@ string look_jiebei();
 
 void create()
 {
-	set("short", "½ç±®");
+	set("short", "ç•Œç¢‘");
 	set("long", @LONG
-½ç±®¡ª¡ªÎ´Á¬½ÓºÃµÄÇøÓò(jiebei)¡£
+ç•Œç¢‘â€”â€”æœªè¿æ¥å¥½çš„åŒºåŸŸ(jiebei)ã€‚
 LONG
 	);
 
@@ -31,5 +31,5 @@ LONG
 
 string look_jiebei()
 {
-	return "ÓÉ´ËÍùÇ°£¬Í¨ÏòÉ½¶¥¡£µÀÂ·ÉĞÎ´ĞŞºÃ¡£}
+	return "ç”±æ­¤å¾€å‰ï¼Œé€šå‘å±±é¡¶ã€‚é“è·¯å°šæœªä¿®å¥½ã€‚}
 

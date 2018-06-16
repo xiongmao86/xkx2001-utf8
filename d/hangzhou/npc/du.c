@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/hangzhou/npc/du.c  ¶¼´ó½õ
+// /d/hangzhou/npc/du.c  éƒ½å¤§é”¦
 // by aln  2 / 98
 // modified by aln 4 / 98
 
@@ -13,13 +13,13 @@ string ask_job();
        
 void create()
 {
-        set_name("¶¼´ó½õ", ({ "du dajin", "du" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("éƒ½å¤§é”¦", ({ "du dajin", "du" }));
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("long", 
-"ËûÊÇÉÙÁÖÅÉµÄË×¼ÒµÜ×Ó£¬È­ÕÆµ¥µ¶£¬¶¼ÓĞÏàµ±ÔìÒè¡£\n"
-"ÓÈÆäÒ»ÊÖÁ¬Öé¸ÖïÚ£¬ÄÜÒ»¿ÚÆøÁ¬·¢ÆßÆßËÄÊ®¾ÅÃ¶¸ÖïÚ¡£\n"
-"Òò´Ë½­ºşÉÏËÍÁËËûÒ»¸öÍâºÅ£¬½Ğ×÷¶à±ÛĞÜ¡£\n");
+"ä»–æ˜¯å°‘æ—æ´¾çš„ä¿—å®¶å¼Ÿå­ï¼Œæ‹³æŒå•åˆ€ï¼Œéƒ½æœ‰ç›¸å½“é€ è¯£ã€‚\n"
+"å°¤å…¶ä¸€æ‰‹è¿ç é’¢é•–ï¼Œèƒ½ä¸€å£æ°”è¿å‘ä¸ƒä¸ƒå››åä¹æšé’¢é•–ã€‚\n"
+"å› æ­¤æ±Ÿæ¹–ä¸Šé€äº†ä»–ä¸€ä¸ªå¤–å·ï¼Œå«ä½œå¤šè‡‚ç†Šã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 220000);
 
@@ -65,7 +65,7 @@ void create()
         }) );
 
         set("inquiry", ([
-                "¹¤×÷" : (: ask_job :),
+                "å·¥ä½œ" : (: ask_job :),
                 "job" : (: ask_job :),
         ]));
 
@@ -93,7 +93,7 @@ int come_killer()
         ob = new(__DIR__"figure");
         ob->move(room);
         ob->set_leader(this_object());
-        say("Í»È»Ò»¸öÃÉÃæÈË¿ì²½×ßÁË¹ıÀ´¶Ô" + name() + "ºÈµÀ£º¶¼´ó½õ£¡Ã÷ÄêµÄ½ñÌìÊÇÄãµÄ¼ÉÈÕ£¡\n");
+        say("çªç„¶ä¸€ä¸ªè’™é¢äººå¿«æ­¥èµ°äº†è¿‡æ¥å¯¹" + name() + "å–é“ï¼šéƒ½å¤§é”¦ï¼æ˜å¹´çš„ä»Šå¤©æ˜¯ä½ çš„å¿Œæ—¥ï¼\n");
         command("go enter");
         command("!!!");
         ob->kill_ob(this_object());
@@ -107,24 +107,24 @@ string ask_job()
         int bonus;
 
         if( is_fighting() || is_busy() )
-                return "ÎÒÕıÃ¦×Å¡£";
+                return "æˆ‘æ­£å¿™ç€ã€‚";
 
         if( base_name(environment()) != "/d/hangzhou/biaoju" ) {
                 call_out("do_back", 1);
-                return "µÈÎÒ²éÁËÕÊÔÙËµ°É¡£";
+                return "ç­‰æˆ‘æŸ¥äº†å¸å†è¯´å§ã€‚";
         }
 
         if( !mapp(myfam = me->query("family")) )
-                return RANK_D->query_respect(me) + "²»ÊÇÉÙÁÖµÜ×Ó£¬Ë¡²»Â¼ÓÃ¡£";
+                return RANK_D->query_respect(me) + "ä¸æ˜¯å°‘æ—å¼Ÿå­ï¼Œæ•ä¸å½•ç”¨ã€‚";
 
-        if( myfam["family_name"] != "ÉÙÁÖÅÉ" )
-                return RANK_D->query_respect(me) + "²»ÊÇÉÙÁÖµÜ×Ó£¬Ë¡²»Â¼ÓÃ¡£";
+        if( myfam["family_name"] != "å°‘æ—æ´¾" )
+                return RANK_D->query_respect(me) + "ä¸æ˜¯å°‘æ—å¼Ÿå­ï¼Œæ•ä¸å½•ç”¨ã€‚";
 
         if( myfam["generation"] > 37 )
-                return RANK_D->query_respect(me) + "»¹ÊÇÔÚÉÙÁÖËÂÔÙÁ·¼¸Äê°É¡£";
+                return RANK_D->query_respect(me) + "è¿˜æ˜¯åœ¨å°‘æ—å¯ºå†ç»ƒå‡ å¹´å§ã€‚";
 
         if( me->query_condition("lmjob") )
-                return RANK_D->query_respect(me) + "ÒÑ¾­±»Â¼ÓÃÁË¡£";
+                return RANK_D->query_respect(me) + "å·²ç»è¢«å½•ç”¨äº†ã€‚";
 
         if( me->query_temp("lmjob/ok") ) {
                 bonus = (int)me->query("combat_exp") / 10000;
@@ -132,33 +132,33 @@ string ask_job()
                 wage = new("/clone/money/silver");
                 wage->set_amount(bonus);
                 wage->move(me);
-                message_vision("$N×ªÉíÄÃ³öÒ»¸öºì°üµİ¸ø$n¡£\n", this_object(), me);
+                message_vision("$Nè½¬èº«æ‹¿å‡ºä¸€ä¸ªçº¢åŒ…é€’ç»™$nã€‚\n", this_object(), me);
 
                 me->delete_temp("lmjob");
           //      me->add("combat_exp", bonus);
-                return RANK_D->query_respect(me) + "ĞÁ¿àÁË¡£";
+                return RANK_D->query_respect(me) + "è¾›è‹¦äº†ã€‚";
         }
 
         if( !(obj = present("tuijian xin", me)) )
-                return RANK_D->query_respect(me) + "Ã»ÓĞÉÙÁÖËÂ·½ÕÉµÄÍÆ¼öĞÅ£¬Ë¡²»Â¼ÓÃ¡£";
+                return RANK_D->query_respect(me) + "æ²¡æœ‰å°‘æ—å¯ºæ–¹ä¸ˆçš„æ¨èä¿¡ï¼Œæ•ä¸å½•ç”¨ã€‚";
 
         if( (string)obj->query("owner") != me->query("id") )
-                return "Õâ·âÍÆ¼öĞÅ²»ÊÇÎªÁË" + RANK_D->query_respect(me);
+                return "è¿™å°æ¨èä¿¡ä¸æ˜¯ä¸ºäº†" + RANK_D->query_respect(me);
 
-        message_vision("$N½»¸ø$nÒ»·âÍÆ¼öĞÅ¡£\n", me, this_object());
+        message_vision("$Näº¤ç»™$nä¸€å°æ¨èä¿¡ã€‚\n", me, this_object());
         destruct(obj);
 
         me->apply_condition("lmjob", 10 + random(10));
         command("nod");
 
-        return "Ì«ºÃÁË£¬ÎÒÃÇÕâ¶ùÕıĞèÒªÒ»ÃûÉÙÁÖµÜ×Ó´«ÊÚÎä¹¦¡£";
+        return "å¤ªå¥½äº†ï¼Œæˆ‘ä»¬è¿™å„¿æ­£éœ€è¦ä¸€åå°‘æ—å¼Ÿå­ä¼ æˆæ­¦åŠŸã€‚";
 }
 
 void do_back()
 {
-        say("¶¼´ó½õ¼±¼±Ã¦Ã¦Àë¿ªÁË¡£\n");
+        say("éƒ½å¤§é”¦æ€¥æ€¥å¿™å¿™ç¦»å¼€äº†ã€‚\n");
         move("/d/hangzhou/biaoju");
-        say("¶¼´ó½õ¿ì²½×ßÁË¹ıÀ´¡£\n");
+        say("éƒ½å¤§é”¦å¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n");
 }
 
 #include "/clone/npc/auto_throw.h";

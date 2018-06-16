@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ���");
+        set("short", "佛山镇街");
         set("long", @LONG
-��ɽ��ֶ������������������ţ�����һ�¸�ǽ��ǽ�����
-�����Ͽ��ġ�Ӣ�۵䵱����
+佛山镇街东西相连。东边是镇东门，南面一堵高墙，墙后便是
+凤天南开的“英雄典当”。
 LONG
         );
         set("exits", ([

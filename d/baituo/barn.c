@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÉßÉá");
+	set("short", "è›‡èˆ");
 	set("long", @LONG
-ÕâÊÇ°×ÍÕÉ½×¯µÄÉßÉá£¬ÎİÀïµ½´¦¶¼ÊÇ¶¾Éß£¬Ç½ÉÏÓĞÒ»ÕÅ¡¸Éß¾­¡¹
-(shejing)£¬½ÇÂä°ÚÁËÒ»¶Ñ²¶ÉßÓÃµÄÖñÂ¨(zhulou)¡£
+è¿™æ˜¯ç™½é©¼å±±åº„çš„è›‡èˆï¼Œå±‹é‡Œåˆ°å¤„éƒ½æ˜¯æ¯’è›‡ï¼Œå¢™ä¸Šæœ‰ä¸€å¼ ã€Œè›‡ç»ã€
+(shejing)ï¼Œè§’è½æ‘†äº†ä¸€å †æ•è›‡ç”¨çš„ç«¹ç¯“(zhulou)ã€‚
 LONG
 	);
 	set("exits", ([ 
@@ -17,9 +17,9 @@ LONG
 	]));
 	set("item_desc", ([
 		"shejing" : 
-		"°×ÍÕÉ½ÑµÉßÃÜ·¨£ºµ±Ô¦ÊŞÊõ´ïµ½ÈıÊ®¼¶ÒÔÉÏ£¬¿É³¢ÊÔ½«¶¾Éß±ä(bian)³ÉÉßÕÈ£¬\n"
-		"ÉßÕÈÄËÊÇ°×ÍÕÉ½×¯µÄ¶ÀÃÅ±øÆ÷¡£Ò²¿ÉÒÔ°ÑÉßÕÈ±ä»Ø¶¾Éß£¬ÇıÊ¹º¦ÈË¡£\n",
-		"zhulou" : "Ò»¶Ñ²¶ÉßÓÃµÄÖñÂ¨£¬°×ÍÕÉ½×¯µÄÈËÏëÒª²¶ÉßÊ±£¬¿ÉÒÔÀ´ÕâÀïÄÃ(take)¡£\n",
+		"ç™½é©¼å±±è®­è›‡å¯†æ³•ï¼šå½“é©­å…½æœ¯è¾¾åˆ°ä¸‰åçº§ä»¥ä¸Šï¼Œå¯å°è¯•å°†æ¯’è›‡å˜(bian)æˆè›‡æ–ï¼Œ\n"
+		"è›‡æ–ä¹ƒæ˜¯ç™½é©¼å±±åº„çš„ç‹¬é—¨å…µå™¨ã€‚ä¹Ÿå¯ä»¥æŠŠè›‡æ–å˜å›æ¯’è›‡ï¼Œé©±ä½¿å®³äººã€‚\n",
+		"zhulou" : "ä¸€å †æ•è›‡ç”¨çš„ç«¹ç¯“ï¼Œç™½é©¼å±±åº„çš„äººæƒ³è¦æ•è›‡æ—¶ï¼Œå¯ä»¥æ¥è¿™é‡Œæ‹¿(take)ã€‚\n",
 	]));
 	set("objects", ([ 
 		"/d/xingxiu/npc/snake" : 3,
@@ -47,26 +47,26 @@ int do_lingwu(string arg)
 	check = level*level*level;
 
 	if (!arg || arg!="shejing") 
-		return notify_fail("ÄãÒªÁìÎòÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦é¢†æ‚Ÿä»€ä¹ˆï¼Ÿ\n");
 	
-	if (!me->query("family") || me->query("family/family_name") != "°×ÍÕÉ½")
-		return notify_fail("ÄãÊÇÎ´Èë°×ÍÕ£¬ÄÑÎò°×ÍÕÉß¾­¡£\n");
+	if (!me->query("family") || me->query("family/family_name") != "ç™½é©¼å±±")
+		return notify_fail("ä½ æ˜¯æœªå…¥ç™½é©¼ï¼Œéš¾æ‚Ÿç™½é©¼è›‡ç»ã€‚\n");
 
 	if ( level < 30) 
-		return notify_fail("¾­ÖĞËùÑÔ¶ÔÄã¹ıÓÚ¸ßÉî£¬ÄãÎŞ·¨ÁìÎò¡£\n");
+		return notify_fail("ç»ä¸­æ‰€è¨€å¯¹ä½ è¿‡äºé«˜æ·±ï¼Œä½ æ— æ³•é¢†æ‚Ÿã€‚\n");
 
 	if ( level > 100) 
-		return notify_fail("¾­ÖĞËùÑÔ¶ÔÄãÌ«Ç³£¬Ã»ÓĞÈÎºÎ°ïÖú¡£\n");
+		return notify_fail("ç»ä¸­æ‰€è¨€å¯¹ä½ å¤ªæµ…ï¼Œæ²¡æœ‰ä»»ä½•å¸®åŠ©ã€‚\n");
 
 	if ( check > (int)me->query("combat_exp")*10 )
-		return notify_fail("ÄãÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎò¡£\n");
+		return notify_fail("ä½ å®æˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†æ‚Ÿã€‚\n");
 
 	if ( (int)me->query("jing") < 30 )
-		return notify_fail("Äã¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+		return notify_fail("ä½ ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 
 	me->receive_damage("jing", 20);
 	me->improve_skill("poison", me->query("int"));
-	write("Äã×êÑĞÉß¾­£¬ÁìÎòÁËÊ©¶¾µÄ·¨ÃÅ¡£\n");
+	write("ä½ é’»ç ”è›‡ç»ï¼Œé¢†æ‚Ÿäº†æ–½æ¯’çš„æ³•é—¨ã€‚\n");
 	return 1;
 }
 
@@ -74,22 +74,22 @@ int do_take(string arg)
 {
 	object me = this_player(), obj, fire;
 
-	if( me->query("family/family_name") != "°×ÍÕÉ½" ) return 0;
+	if( me->query("family/family_name") != "ç™½é©¼å±±" ) return 0;
 
 	if (!arg && arg != "zhulou" && arg != "basket" ) 
-		return notify_fail("ÄãÒªÄÃÊ²÷á£¿\n");
+		return notify_fail("ä½ è¦æ‹¿ä»€éº½ï¼Ÿ\n");
 
 	if ( this_object()->query("take/"+me->query("id") ) >= 3 )
-		return notify_fail("ÄãÒÑ¾­ÄÃÁË²»ÉÙÖñÂ¨£¬ÔİÊ±¹»ÓÃÁË°É£¿\n");
+		return notify_fail("ä½ å·²ç»æ‹¿äº†ä¸å°‘ç«¹ç¯“ï¼Œæš‚æ—¶å¤Ÿç”¨äº†å§ï¼Ÿ\n");
 
 	obj = new("/d/baituo/obj/zhulou");
 	obj->move(me);
 	obj->set("keeper", me->query("id"));
 	obj->set("long", 
-	"Ò»¸öÖñÌõ±à³ÉµÄÂ¨×Ó£¬ÊÇ°×ÍÕÉ½×¯µÄÈË×¨ÃÅÓÃÀ´²¶(catch)ÉßµÄ¡£\n"
-	"Â¨×ÓÍâ±ßÌùÁËÒ»ÕÅĞ¡Ö½Æ¬£¬ÉÏÃæĞ´×Å¡u"+me->name()+"¡v¡£\n"
+	"ä¸€ä¸ªç«¹æ¡ç¼–æˆçš„ç¯“å­ï¼Œæ˜¯ç™½é©¼å±±åº„çš„äººä¸“é—¨ç”¨æ¥æ•(catch)è›‡çš„ã€‚\n"
+	"ç¯“å­å¤–è¾¹è´´äº†ä¸€å¼ å°çº¸ç‰‡ï¼Œä¸Šé¢å†™ç€î“»"+me->name()+"î“¼ã€‚\n"
 	);
-	message_vision("$NÔÚÉßÉá½ÇÂäÕÒ³öÁËÒ»¸öÖñÂ¨¡£\n", me );
+	message_vision("$Nåœ¨è›‡èˆè§’è½æ‰¾å‡ºäº†ä¸€ä¸ªç«¹ç¯“ã€‚\n", me );
 
 	add("take/"+me->query("id"), 1);
 	fire = new("/d/xingxiu/npc/obj/fire");

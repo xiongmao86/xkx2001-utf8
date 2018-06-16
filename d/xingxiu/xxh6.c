@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê¯µÀ");
+        set("short", "çŸ³é“");
         set("long", @LONG
-ÕâÊÇĞÇËŞº£±ßÓĞÈËÓÃÊ¯Í·ÆÌ³ÉµÄÒ»ÌõĞ¡µÀ£¬ÖÜÎ§ÃÖÂş×ÅÕÓÔóµÄÕÎÆøºÍÒ»
-ÖÖËµ²»³öÀ´µÄÏãÎ¶¡£Â·±ßÓĞ¸öÊ¯¶´¡£
+è¿™æ˜¯æ˜Ÿå®¿æµ·è¾¹æœ‰äººç”¨çŸ³å¤´é“ºæˆçš„ä¸€æ¡å°é“ï¼Œå‘¨å›´å¼¥æ¼«ç€æ²¼æ³½çš„ç˜´æ°”å’Œä¸€
+ç§è¯´ä¸å‡ºæ¥çš„é¦™å‘³ã€‚è·¯è¾¹æœ‰ä¸ªçŸ³æ´ã€‚
 LONG
         );
         set("exits", ([ 
@@ -32,12 +32,12 @@ int valid_leave(object me, string dir)
 
    if (dir =="enter" ) {
 	if (present("caihua zi", environment(me))) {
-            if (!myfam || myfam["family_name"] != "ĞÇËŞÅÉ") 
-		return notify_fail("²É»¨×Óµ²×¡ÁËÄã£ºÎÒµÄĞ¡æ¤¿É²»ÊÇ¸øÄãÃÇĞ°ÅÉµÜ×Ó×¼±¸µÄ£¡\n");
-            if  (me->query("gender")=="ÎŞĞÔ") 
-                return notify_fail("²É»¨×Óµ²×¡ÁËÄã£¬Ò»Á³¼¥Ğ¦£ºÄúÕâĞ¡Éí°å»¹ÏëÍææ¤£¿±ğ¿ªÍæĞ¦ÁË¡£\n");
-            if (!(int)this_player()->query_temp("marks/»¨"))
-                return notify_fail("²É»¨×Óµ²×¡ÁËÄã£ºÎ¹£¬Äã×Ü¸ÃÒâË¼ÒâË¼°É£¿\n");
+            if (!myfam || myfam["family_name"] != "æ˜Ÿå®¿æ´¾") 
+		return notify_fail("é‡‡èŠ±å­æŒ¡ä½äº†ä½ ï¼šæˆ‘çš„å°å¦å¯ä¸æ˜¯ç»™ä½ ä»¬é‚ªæ´¾å¼Ÿå­å‡†å¤‡çš„ï¼\n");
+            if  (me->query("gender")=="æ— æ€§") 
+                return notify_fail("é‡‡èŠ±å­æŒ¡ä½äº†ä½ ï¼Œä¸€è„¸è®¥ç¬‘ï¼šæ‚¨è¿™å°èº«æ¿è¿˜æƒ³ç©å¦ï¼Ÿåˆ«å¼€ç©ç¬‘äº†ã€‚\n");
+            if (!(int)this_player()->query_temp("marks/èŠ±"))
+                return notify_fail("é‡‡èŠ±å­æŒ¡ä½äº†ä½ ï¼šå–‚ï¼Œä½ æ€»è¯¥æ„æ€æ„æ€å§ï¼Ÿ\n");
         }
 	return 1;
    }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// houyuan.c ²ÆÖ÷ºóÔº
+// houyuan.c è´¢ä¸»åé™¢
 //Jay 2/3/97
 
 #include <room.h>
@@ -7,15 +7,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÔº");
+        set("short", "åé™¢");
         set("long", @LONG
-ÕâÀïÊÇº²ÁÖ¸®µÄºóÔº¡£Ôº×ÓÀïÖÖÁË²»ÉÙµÄ¸÷ÖÖÆæ»¨Òì²İ£¬²»ÖªµÀÊÇÊ²Ã´Ô­Òò£¬
-»¨²İÖĞÓÈÒÔ¸÷É«¾Õ»¨Îª¶à¡£ÔºÎ÷ÊÇÑ¾÷ßµÄ·¿¼ä£¬¶«²àÓĞÒ»ÉÈÃÅ(men)¡£Áèº²ÁÖÕıÔÚ
-ÔºÖĞÁ·¹¦¡£
+è¿™é‡Œæ˜¯ç¿°æ—åºœçš„åé™¢ã€‚é™¢å­é‡Œç§äº†ä¸å°‘çš„å„ç§å¥‡èŠ±å¼‚è‰ï¼Œä¸çŸ¥é“æ˜¯ä»€ä¹ˆåŸå› ï¼Œ
+èŠ±è‰ä¸­å°¤ä»¥å„è‰²èŠèŠ±ä¸ºå¤šã€‚é™¢è¥¿æ˜¯ä¸«é¬Ÿçš„æˆ¿é—´ï¼Œä¸œä¾§æœ‰ä¸€æ‰‡é—¨(men)ã€‚å‡Œç¿°æ—æ­£åœ¨
+é™¢ä¸­ç»ƒåŠŸã€‚
 LONG
         );
         set("item_desc", ([
-                "men" : "ÕâÉÈÃÅºó±ãÊÇÁèĞ¡½ãµÄ¹ë·¿¡£\n",
+                "men" : "è¿™æ‰‡é—¨åä¾¿æ˜¯å‡Œå°å§çš„é—ºæˆ¿ã€‚\n",
         ]));
 
         set("exits", ([
@@ -41,13 +41,13 @@ int do_unlock(string arg)
 {
         object ob;
         if (query("exits/east"))
-                return notify_fail("ÕâÉÈÃÅÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+                return notify_fail("è¿™æ‰‡é—¨å·²ç»æ˜¯æ‰“å¼€çš„ã€‚\n");
         if (!arg || (arg != "men" && arg != "east"))
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
         if (!(ob = present("guifang key", this_player())))
-                return notify_fail("Äã²»»áÇËËø¡£\n");
+                return notify_fail("ä½ ä¸ä¼šæ’¬é”ã€‚\n");
         set("exits/east", __DIR__"dongxiang");
-        message_vision("$NÓÃÒ»°ÑÔ¿³×´ò¿ª·¿ÃÅ£¬¿ÉÊÇÔ¿³×È´¶ÏÁË¡£\n", this_player());
+        message_vision("$Nç”¨ä¸€æŠŠé’¥åŒ™æ‰“å¼€æˆ¿é—¨ï¼Œå¯æ˜¯é’¥åŒ™å´æ–­äº†ã€‚\n", this_player());
         destruct(ob);
         return 1;
 }
@@ -56,6 +56,6 @@ int valid_leave(object me, string dir)
 {
         if (!wizardp(me) && objectp(present("ling tuisi", environment(me))) && 
                 (dir == "west" || dir =="east"))
-                return notify_fail("Áèº²ÁÖµ²×¡ÁËÄã£ºÇëÎğÈëÄÚÕ¬¡£\n");
+                return notify_fail("å‡Œç¿°æ—æŒ¡ä½äº†ä½ ï¼šè¯·å‹¿å…¥å†…å®…ã€‚\n");
         return ::valid_leave(me, dir);
 }

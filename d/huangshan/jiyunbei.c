@@ -1,15 +1,15 @@
 //Cracked by Roath
-// ���㱳
+// 鲫鱼背
 // Dong  01/20/97.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 void create()
-{   set("short", "���㱳");
+{   set("short", "鲫鱼背");
     set("long", @LONG
-���㱳������Ԩ�����������һ�챡��ʯ�ڣ���ƽ�⻬��ͬ�㼹��
-�������治��������Ҫ�ľ���ս��ͷ��Ŀѣ������������Ԩ�����Ʒ�
-�ɣ����罭��ŭ�Ρ�
+鲫鱼背就是深渊中连结两峰的一快薄薄石壁，溜平光滑如同鱼脊，
+走在上面不由自主地要心惊胆战，头晕目眩。脚下万丈深渊中乱云飞
+渡，犹如江海怒涛。
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */

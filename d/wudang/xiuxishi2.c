@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiuxishi2.c ��Ϣ��
+// xiuxishi2.c 休息室
 // xQin 11/00
 
 inherit ROOM;
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ϣ��");
+        set("short", "休息室");
         set("long", @LONG
-���Ǽ������Ů�᷿�����Ŵ������ţ����ߺܻ谵������������ֻ
-���м����һ����ʰ����������Ĵ󴲣����ž�������˯�⡣
+这是间整洁的女厢房，因门窗常闭着，光线很昏暗。房里别无他物，只
+有中间放着一张收拾得舒舒服服的大床，看着就让人有睡意。
 LONG
         );
 
@@ -36,7 +36,7 @@ int do_get(string arg)
 	if( arg
 	&& objectp(obj = present(arg, environment(this_player())))
 	&& obj->is_character() ) {
-		write("�㲻�ܰᶯ��ҵ����塣\n");
+		write("你不能搬动玩家的身体。\n");
 		return 1;
 	}
 	else
@@ -53,21 +53,21 @@ void close_men()
 	if(objectp(room))
 	{
 		delete("exits/north");
-			message("vision", "��֨֨ѽѽ���Լ������ˡ�\n", this_object());
+			message("vision", "门吱吱呀呀地自己合上了。\n", this_object());
 		room->delete("exits/south");
-		message("vision", "��֨֨ѽѽ���Լ������ˡ�\n", room);
+		message("vision", "门吱吱呀呀地自己合上了。\n", room);
 	}
 }
 
 int do_close(string arg)
 {
 	if (!query("exits/north"))
-		return notify_fail("���Ѿ��ǹ��ŵ��ˡ�\n");
+		return notify_fail("门已经是关着的了。\n");
 
 	if (!arg || (arg != "men" && arg != "door"))
-		return notify_fail("��Ҫ��ʲô��\n");
+		return notify_fail("你要关什么？\n");
 
-	message_vision("$N����Ź��ϡ�\n", this_player());
+	message_vision("$N想把门关上。\n", this_player());
 
 	remove_call_out("close_men");
 	call_out("close_men", 2);
@@ -81,26 +81,26 @@ int do_open(string arg)
 	object me = this_player();
 
 	if (query("exits/north"))
-		return notify_fail("�����Ѿ��ǿ����ˡ�\n");
+		return notify_fail("大门已经是开着了。\n");
 
 	if (!arg || (arg != "men" && arg != "door" && arg != "north"))
-		return notify_fail("��Ҫ��ʲô��\n");
+		return notify_fail("你要开什么？\n");
 
 	if(!( room = find_object(__DIR__"xilang1")) )
 		room = load_object(__DIR__"xilang1");
 	if(objectp(room))
 	{
 		set("exits/north", __DIR__"xilang1");
-		message_vision("$N������ŵذ��Ŵ򿪡�\n", this_player());
+		message_vision("$N轻手轻脚地把门打开。\n", this_player());
 		room->set("exits/south", __FILE__);
 		
 		if (me->query_temp("sleeped"))
 		{
-		message("vision", "֨��һ����"+me->query("name")+"��������ش�������Ŵ��ˡ�\n",
+		message("vision", "吱地一声，"+me->query("name")+"精神焕发地从里面把门打开了。\n",
 		room);
 		} else 
 		{
-		message("vision", "���һ����"+me->query("name")+"��������Ŵ򿪣�һ���Ĳ��ͷ���\n",
+		message("vision", "梆地一声，"+me->query("name")+"从里面把门打开，一脸的不耐烦。\n",
 			 room);
 		}	
 		

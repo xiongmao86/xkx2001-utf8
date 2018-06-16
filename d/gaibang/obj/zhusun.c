@@ -1,17 +1,17 @@
 //Cracked by Roath
-// zhusun ÖñËñ
+// zhusun ç«¹ç¬‹
 
 inherit ITEM;
 
 void create()
 {
-	set_name("ÖñËñ", ({"zhu sun", "bamboo shoot", "shoot"}));
+	set_name("ç«¹ç¬‹", ({"zhu sun", "bamboo shoot", "shoot"}));
 	set_weight(80);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»°ÑĞÂÏÊÄÛÂÌµÄÖñËñ¡£\n");
-		set("unit", "°Ñ");
+		set("long", "ä¸€æŠŠæ–°é²œå«©ç»¿çš„ç«¹ç¬‹ã€‚\n");
+		set("unit", "æŠŠ");
 		set("value", 0);
 	}
 }

@@ -1,18 +1,18 @@
 //Cracked by Roath
-// zhandao1.c ºÚÁú½­Õ»µÀ
+// zhandao1.c é»‘é¾™æ±Ÿæ ˆé“
 // by Shan
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ºÚÁú½­Õ»µÀ");
+        set("short", "é»‘é¾™æ±Ÿæ ˆé“");
 	set("long", @LONG
-ºÚÁú½­Õ»µÀÑØºÚÁú½­¶ø½¨¡£ÕâÀïÒ»É½ÖÐ¿ª£¬Á½ÑÂ²¢Á¢£¬ÐÎ³ÉÒ»µÀ¿í½öÊý³ß£¬
-³¤´ï¼¸°ÙÃ×µÄÉîÏ¿¡ª¡ª°×ÔÆÏ¿¡£ºÚÁú½­Õ»µÀ¾Í´ÓÏÁÕ­µÄ°×ÔÆÏ¿ÖÐ×ªÕÛ´©¹ý£¬¼Ü
-ÉèÔÚ¾ø±ÚÉÏ¡£×ßÔÚÕ»µÀÉÏ£¬Ö»¾õµÀÕ­ÈËÎ££»¸©ÊÓÉî½§£¬¼±Á÷·ÉÐý£¬É½¾²¶ø¾õ¶¯£»
-Ñö¹ÛÍ·¶¥£¬Ìì¹âÈçÏ¶£¬ÑÂ¿ª¶øÓûºÏ¡£Õâ¾ÍÊÇÌì¿ª»­Í¼µÄ¡¸Ò»ÏßÌì¡¹¡£Õ»µÀÄÏÍ¨
-Ç§·ðâÖ£¬±±ÖÁÇåÒô¸ó¡£
+é»‘é¾™æ±Ÿæ ˆé“æ²¿é»‘é¾™æ±Ÿè€Œå»ºã€‚è¿™é‡Œä¸€å±±ä¸­å¼€ï¼Œä¸¤å´–å¹¶ç«‹ï¼Œå½¢æˆä¸€é“å®½ä»…æ•°å°ºï¼Œ
+é•¿è¾¾å‡ ç™¾ç±³çš„æ·±å³¡â€”â€”ç™½äº‘å³¡ã€‚é»‘é¾™æ±Ÿæ ˆé“å°±ä»Žç‹­çª„çš„ç™½äº‘å³¡ä¸­è½¬æŠ˜ç©¿è¿‡ï¼Œæž¶
+è®¾åœ¨ç»å£ä¸Šã€‚èµ°åœ¨æ ˆé“ä¸Šï¼Œåªè§‰é“çª„äººå±ï¼›ä¿¯è§†æ·±æ¶§ï¼Œæ€¥æµé£žæ—‹ï¼Œå±±é™è€Œè§‰åŠ¨ï¼›
+ä»°è§‚å¤´é¡¶ï¼Œå¤©å…‰å¦‚éš™ï¼Œå´–å¼€è€Œæ¬²åˆã€‚è¿™å°±æ˜¯å¤©å¼€ç”»å›¾çš„ã€Œä¸€çº¿å¤©ã€ã€‚æ ˆé“å—é€š
+åƒä½›åºµï¼ŒåŒ—è‡³æ¸…éŸ³é˜ã€‚
 LONG
 	);
 	set("exits", ([
@@ -32,12 +32,12 @@ LONG
 int valid_leave(object me, string dir)
 {
 	if ( me->query_weight() >= 70000 && dir == "south") {
-		tell_object(me, "ÄãÌ«ÅÖÁË£¬·ÑÁËÀÏ°ëÌì¾¢Ò²¼·²»¹ýÕâÒ»ÏßÌì£¬·´¶ø²ÁÆÆÁËÆ¤¡£\n");
+		tell_object(me, "ä½ å¤ªèƒ–äº†ï¼Œè´¹äº†è€åŠå¤©åŠ²ä¹ŸæŒ¤ä¸è¿‡è¿™ä¸€çº¿å¤©ï¼Œåè€Œæ“¦ç ´äº†çš®ã€‚\n");
 		me->receive_wound("qi", 5, me);
 		return notify_fail("");
 	}
 	if ( me->query_encumbrance() >= 100000 && dir == "south") {
-        	tell_object(me, "ÄãÉíÉÏ¶«Î÷´øÁËÌ«¶à£¬·ÑÁËÀÏ°ëÌì¾¢Ò²¼·²»¹ýÕâÒ»ÏßÌì£¬¿´À´µÃ¶ªµôÒ»Ð©¡£\n");
+        	tell_object(me, "ä½ èº«ä¸Šä¸œè¥¿å¸¦äº†å¤ªå¤šï¼Œè´¹äº†è€åŠå¤©åŠ²ä¹ŸæŒ¤ä¸è¿‡è¿™ä¸€çº¿å¤©ï¼Œçœ‹æ¥å¾—ä¸¢æŽ‰ä¸€äº›ã€‚\n");
         	return notify_fail("");
 	}
 

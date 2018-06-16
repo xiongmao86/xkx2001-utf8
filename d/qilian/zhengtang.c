@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "正堂");
         set("long", @LONG
-����һ��װ�޻��������ã������������ͷ��ۻ�ĵط���ǽ
-�ϴ�����ɷ����д�š�Ψ�Ҷ��𡱣������ݺᣬ�����ġ�
+这是一个装修华丽的厅堂，乃是日月神教头领聚会的地方。墙
+上大扁龙飞凤舞地写着“唯我独尊”，笔意纵横，震撼人心。
 LONG
         );
         set("exits", ([

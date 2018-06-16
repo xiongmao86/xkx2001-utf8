@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ǰԺ");
+	set("short", "前院");
 	set("long", @LONG
-����������ǰԺ��һ��Ӱ�ڽ�Ժ�ӷֳ����롣��������������������ͨ��ͨ
-�����Ǵ�������ү�ǵĸ��ڡ�
+这是王府的前院，一道影壁将院子分成两半。北面是王府正区，南面通向通
+向侯府，是大理国侯爷们的府第。
 LONG);
 	set("objects", ([
 		__DIR__"npc/xiaosi" : 2,

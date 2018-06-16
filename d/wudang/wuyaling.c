@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wuyaling.c ÎÚÑ»Áë 
+// wuyaling.c ä¹Œé¸¦å²­ 
 // by Fang 8/19/96
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ÎÚÑ»Áë");
+	set("short", "ä¹Œé¸¦å²­");
 	set("long", @LONG
-ÕâÊÇÒ»ÏÁ³¤µÄ¼¹Áë£¬Á½²àÐüÏ÷£¬Ò»ÎÞËù°ø£¬µ«¼û°×ÔÆ¶ä¶ä£¬È½È½¶ø¹ý£¬É½
-·ç·÷·÷£¬ÕóÕóÏ®À´¡£Êý°ÙÖ»ÎÚÑ»Õý°¿ÏèÔÆ¼Ê£¬ºÚ°×·ÖÃ÷£¬Îµ³ÉÆæ¹Û¡£
+è¿™æ˜¯ä¸€ç‹­é•¿çš„è„Šå²­ï¼Œä¸¤ä¾§æ‚¬å‰Šï¼Œä¸€æ— æ‰€å‚ï¼Œä½†è§ç™½äº‘æœµæœµï¼Œå†‰å†‰è€Œè¿‡ï¼Œå±±
+é£Žæ‹‚æ‹‚ï¼Œé˜µé˜µè¢­æ¥ã€‚æ•°ç™¾åªä¹Œé¸¦æ­£ç¿±ç¿”äº‘é™…ï¼Œé»‘ç™½åˆ†æ˜Žï¼Œè”šæˆå¥‡è§‚ã€‚
 LONG
 	);
         set("outdoors", "wudang");

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: nushi.c »ªÉ½Å®µÜ×ÓĞİÏ¢ÊÒ
+// Room: nushi.c åå±±å¥³å¼Ÿå­ä¼‘æ¯å®¤
 // qfy July 7, 1996 
 
 #include <room.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Å®µÜ×ÓĞİÏ¢ÊÒ");
+        set("short", "å¥³å¼Ÿå­ä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ»ªÉ½Å®µÜ×ÓµÄĞİÏ¢ÊÒ¡£´°Ã÷¼¸¾»£¬°ÚÉè¼òµ¥¡£¿¿Ç½ÉèÓĞ¼¸ÕÅÄ¾´²£¬
-½üÃÅ´¦·Å×ÅÒ»ÕÅ×À×Ó¡£×óÊ×ÓĞ¸öÊá×±Ì¨¡£¶«±ßÁ¬×Å×ßÀÈ£¬±±±ßÔòÊÇÁ·¹¦·¿¡£
+è¿™æ˜¯åå±±å¥³å¼Ÿå­çš„ä¼‘æ¯å®¤ã€‚çª—æ˜å‡ å‡€ï¼Œæ‘†è®¾ç®€å•ã€‚é å¢™è®¾æœ‰å‡ å¼ æœ¨åºŠï¼Œ
+è¿‘é—¨å¤„æ”¾ç€ä¸€å¼ æ¡Œå­ã€‚å·¦é¦–æœ‰ä¸ªæ¢³å¦†å°ã€‚ä¸œè¾¹è¿ç€èµ°å»Šï¼ŒåŒ—è¾¹åˆ™æ˜¯ç»ƒåŠŸæˆ¿ã€‚
 LONG
         );
 
@@ -22,8 +22,8 @@ LONG
 	    "north" : __DIR__"liangong2",
 	]));
 
-	create_door("north", "ÖñÃÅ", "south", DOOR_CLOSED);
-	create_door("east", "Ä¾ÃÅ", "west", DOOR_CLOSED);
+	create_door("north", "ç«¹é—¨", "south", DOOR_CLOSED);
+	create_door("east", "æœ¨é—¨", "west", DOOR_CLOSED);
 
 	set("cost", 0);
         setup();
@@ -39,7 +39,7 @@ int valid_leave(object me, string dir)
         if ( dir == "east" || dir == "north" ) {
                 for (i=0; i<sizeof(inv); i++) {
                         if (inv[i]->is_character())
-                        return notify_fail("Äã²»ÄÜ´ø×ÅÆäËûÍæ¼ÒÀë¿ªĞİÏ¢ÊÒ¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½å¸¦ç€å…¶ä»–ç©å®¶ç¦»å¼€ä¼‘æ¯å®¤ã€‚\n");
                 }
         }
 

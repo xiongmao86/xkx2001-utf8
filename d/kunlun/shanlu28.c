@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ɽ·");
+	set("short", "山路");
 	set("long", @LONG
-��ʯ·�߿���ɽ�ա��ƻ�һƬ�����ض�������ʱʱ�߹��������̵�
-�ӣ��еĻ��ﱧ�ż��ѵ����������߶�ȥ��
+青石路边开满山菊。黄黄一片，随风回动。对面时时走过几个明教弟
+子，有的怀里抱着几把刀剑。朝西边而去。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */

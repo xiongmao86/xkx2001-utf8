@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "大殿");
         set("long", @LONG
-����һ����ΰ�Ĵ�ƽʱ��ӥ�������Ǿ������﷢��ʩ���
-�����ż���������������������İ������ߡ����Ե��ŵ�ǽ�Ϲ���һ
-����ͼ��ͼ�ϻ���һֻ��ӥ�����߻���һ������(duilian)��
+这是一座宏伟的大殿，平时天鹰教首领们就在这里发号施令。殿
+上竖着几根龙柱，两行椅子整齐的摆在两边。正对殿门的墙上挂着一
+幅巨图，图上画着一只雄鹰，两边还有一幅对联(duilian)。
 LONG );
 
         set("exits", ([
@@ -22,7 +22,7 @@ LONG );
         ]));
 
 	set("item_desc", ([
-		"duilian" : HIC "\n���¹���  ��ӥչ��\n" NOR + HIC 				"ʥ������  �ջ�����\n" NOR,
+		"duilian" : HIC "\n日月光照  天鹰展翅\n" NOR + HIC 				"圣焰熊熊  普惠世人\n" NOR,
 	]));
 
         setup();

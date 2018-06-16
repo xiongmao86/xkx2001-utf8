@@ -10,16 +10,16 @@ inherit ROOM;
 int do_pigua();
 void create()
 {
-	set("short", "ÇåÒô¶´");
+	set("short", "æ¸…éŸ³æ´");
 	set("long", @LONG
-´Ë¶´ÃæÄÏ±³±±£¬¼ÓÖ®¶´¿ÚÏÁĞ¡£¬ÊÇÒÔÖÕÄê²»¼ûÑô¹â¡£µ«Ææ¹ÖµÄÊÇ¶´ÄÚÊ®·Ö¸ÉÔï£¬
-Ò²Ã»ÓĞÊ²Ã´³æõô¡£¶´±Ú(wall)ÉÏÓĞÒ»Ğ©Ä£Ä£ºıºıµÄÈËĞÎ£¬×÷ÆË»÷¸ñ¶·Ö®×´£¬ÏñÊÇÌÒ
-»¨µºµÄÒ»Ğ©»ù±¾ÎäÑ§Í¼½â¡£
+æ­¤æ´é¢å—èƒŒåŒ—ï¼ŒåŠ ä¹‹æ´å£ç‹­å°ï¼Œæ˜¯ä»¥ç»ˆå¹´ä¸è§é˜³å…‰ã€‚ä½†å¥‡æ€ªçš„æ˜¯æ´å†…ååˆ†å¹²ç‡¥ï¼Œ
+ä¹Ÿæ²¡æœ‰ä»€ä¹ˆè™«è±¸ã€‚æ´å£(wall)ä¸Šæœ‰ä¸€äº›æ¨¡æ¨¡ç³Šç³Šçš„äººå½¢ï¼Œä½œæ‰‘å‡»æ ¼æ–—ä¹‹çŠ¶ï¼Œåƒæ˜¯æ¡ƒ
+èŠ±å²›çš„ä¸€äº›åŸºæœ¬æ­¦å­¦å›¾è§£ã€‚
 LONG
 	);
 	set("item_desc", ([
-		"wall" : " ±ÚÉÏÓĞÊ®Êı¸öÈËĞÎ£¬»ò×İ¸ß·üµÍ£¬»ò´¢ÊÆ´ı·¢£¬Ã¿Ò»¸ö¶¼Äó×Å²»Í¬Ö¸¾÷£¬ÉõÎªÁé¶¯£¬\n"
-		"ËÆºõÊÇÌÒ»¨µºµÄÒ»Ì×ÆæÃÅÎäÑ§´ò¸ù»ùµÄÕĞÊ½¡£\n",
+		"wall" : " å£ä¸Šæœ‰åæ•°ä¸ªäººå½¢ï¼Œæˆ–çºµé«˜ä¼ä½ï¼Œæˆ–å‚¨åŠ¿å¾…å‘ï¼Œæ¯ä¸€ä¸ªéƒ½æç€ä¸åŒæŒ‡è¯€ï¼Œç”šä¸ºçµåŠ¨ï¼Œ\n"
+		"ä¼¼ä¹æ˜¯æ¡ƒèŠ±å²›çš„ä¸€å¥—å¥‡é—¨æ­¦å­¦æ‰“æ ¹åŸºçš„æ‹›å¼ã€‚\n",
 		]));
 	set("exits", ([
 		"out" : __DIR__"tzfeng",
@@ -41,7 +41,7 @@ int do_use(string arg)
 	if (!present("fire", me))  return 0;
 	if( arg=="fire" )
 	{
-		write("½è×Å»ğ¹âÓ³ÕÕ£¬ÄãÏò¶´ÖĞÉî´¦×ßÈ¥¡£\n");
+		write("å€Ÿç€ç«å…‰æ˜ ç…§ï¼Œä½ å‘æ´ä¸­æ·±å¤„èµ°å»ã€‚\n");
 		me->move(__DIR__"neidong");
 	}
 	return 1;
@@ -56,8 +56,8 @@ int do_tanzhi()
 	ob = present("tie bagua", me);
 	if ((ob) && (ob->query("tanzhi") < 1))
 	{
-		message_vision(CYN"ÄãÉìÖ¸ÏòÌú°ËØÔÉÏµÄØÔÏóµ¯È¥¡£\n"NOR, me);
-		message_vision(HIW"Ìú°ËØÔ¡°¿©ßê¡±Ò»Éù»µµôÁË£¡\n"NOR,me);
+		message_vision(CYN"ä½ ä¼¸æŒ‡å‘é“å…«å¦ä¸Šçš„å¦è±¡å¼¹å»ã€‚\n"NOR, me);
+		message_vision(HIW"é“å…«å¦â€œå’¯å“§â€ä¸€å£°åæ‰äº†ï¼\n"NOR,me);
 		if (ob->query_amount() > 1)
 		{
 			ob->add_amount(-1);
@@ -68,32 +68,32 @@ int do_tanzhi()
 	}
 	if ( (int)me->query_skill("finger", 1) >= 30 && (int)me->query_skill("finger", 1) <= 100 && present("bagua", me) )
 	{
-		if (me->query("jingli") <50) return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+		if (me->query("jingli") <50) return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 		check = (int)me->query_skill("finger",1)*(int)me->query_skill("finger",1)*(int)me->query_skill("finger",1);
 		if ( check < (int)me->query("combat_exp")*10 && (int)me->query("jing") > 29 )
 		{
-			me->receive_damage("jingli", random(40), "ĞÄÁ¦½Ê´áËÀÁË");
+			me->receive_damage("jingli", random(40), "å¿ƒåŠ›ç»ç˜æ­»äº†");
 			me->improve_skill("finger", me->query("int")*2);
-			write(CYN"ÄãÉìÖ¸ÏòÌú°ËØÔÉÏµÄØÔÏóµ¯È¥¡£\n"NOR);
-			write("ÄãÁìÎòÁË»ù±¾Ö¸·¨·½ÃæµÄ¼¸¸öÒÉÄÑ¡£\n");
+			write(CYN"ä½ ä¼¸æŒ‡å‘é“å…«å¦ä¸Šçš„å¦è±¡å¼¹å»ã€‚\n"NOR);
+			write("ä½ é¢†æ‚Ÿäº†åŸºæœ¬æŒ‡æ³•æ–¹é¢çš„å‡ ä¸ªç–‘éš¾ã€‚\n");
 			ob->add("tanzhi", -1);
 		}
 		else if ( check < (int)me->query("combat_exp")*10 && (int)me->query("jing") < 30 )
 		{
-			write("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+			write("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 		}	
 		else
 		{
-			write ("ÄãÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎò»ù±¾Ö¸·¨¡£\n");
+			write ("ä½ å®æˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†æ‚ŸåŸºæœ¬æŒ‡æ³•ã€‚\n");
 		}	
 	} 
 	else if ( (int)me->query_skill("finger", 1) > 120 )
 	{
-		write(HIC"Ö»Ìı¡°ï£¡±µÄÒ»Éù£¬Ìú°ËØÔ·¢³öÒ»ÉùÇåÏì\n"NOR);
+		write(HIC"åªå¬â€œé“®â€çš„ä¸€å£°ï¼Œé“å…«å¦å‘å‡ºä¸€å£°æ¸…å“\n"NOR);
 	}	  
 	else
 	{
-		write("Ê²Ã´£¿\n");
+		write("ä»€ä¹ˆï¼Ÿ\n");
 	} 
 	return 1;
 }

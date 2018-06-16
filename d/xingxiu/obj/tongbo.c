@@ -9,13 +9,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Í­îà", ({ "tongbo" }) );
+        set_name("é“œé’¹", ({ "tongbo" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
-                set("long", "ÕâÊÇÒ»¶Ô½ğ¹âÉÁÁÁµÄÍ­îà¡£\n");
+                set("unit", "å¯¹");
+                set("long", "è¿™æ˜¯ä¸€å¯¹é‡‘å…‰é—ªäº®çš„é“œé’¹ã€‚\n");
                 set("value", 10);
                 set("material", "iron");
         }
@@ -32,12 +32,12 @@ int do_flatter(string arg)
 {
 
         string* flatter = ({
-                "$NÇÃ×ÅÍ­Âà£¬´óÉùßººÈ×Å£º¡°$nÀÏÏÉ£¬µÂÅäÌìµØ£¬ÍşÕòå¾Óî£¬¹Å½ñÎŞ±È£¡¡±",
-                "$NÈÂÈÂµÀ£º¡°$nÀÏÏÉ½ñÈÕÍşÕòÖĞÔ­£¬´óÏÔÎÒĞÇËŞÅÉµÄÉùÍş¡£¡±",
-                "$NÂúÁ³ÃÄÉ«µÄ¿´×Å$n£¬´óÉùËµµÀ£º¡°ÄãÃÇÕâĞ©ÖĞÔ­Îä·ò£¬»¹²»¼°$nÀÏÏÉµÃÒ»¸ùĞ¡Ö¸¡£¡±",
-                "$NÈâÂéµÄº°µÀ£º¡°$nÀÏÏÉ×ãÒ»µÅÉ½±ÀµØÁÑ£¬ÊÖÒ»Ò£ÈÕÔÂÎŞ¹â¡£¡±",
-                "$NÍû×ÅÅÔ±ßµÄÈË£¬´óÉùËµµÀ£º¡°Ë­¸ÒµÃ×ï$nÀÏÏÉ£¬ÎÒµÚÒ»¸öºÍËûÆ´Ãü¡£¡±ËµÍê¿´ÁË¿´ºóÂ·¡£",
-                "$NËµµÀ£º¡°Ë­ºÍ$nÀÏÏÉ±ÈÎä£¬¼òÖ±ÊÇó«±Ûµ²³µ£¬×Ô²»Á¿Á¦Âğ¡£¡±",
+                "$Næ•²ç€é“œé”£ï¼Œå¤§å£°å†å–ç€ï¼šâ€œ$nè€ä»™ï¼Œå¾·é…å¤©åœ°ï¼Œå¨é•‡å¯°å®‡ï¼Œå¤ä»Šæ— æ¯”ï¼â€",
+                "$Nåš·åš·é“ï¼šâ€œ$nè€ä»™ä»Šæ—¥å¨é•‡ä¸­åŸï¼Œå¤§æ˜¾æˆ‘æ˜Ÿå®¿æ´¾çš„å£°å¨ã€‚â€",
+                "$Næ»¡è„¸åªšè‰²çš„çœ‹ç€$nï¼Œå¤§å£°è¯´é“ï¼šâ€œä½ ä»¬è¿™äº›ä¸­åŸæ­¦å¤«ï¼Œè¿˜ä¸åŠ$nè€ä»™å¾—ä¸€æ ¹å°æŒ‡ã€‚â€",
+                "$Nè‚‰éº»çš„å–Šé“ï¼šâ€œ$nè€ä»™è¶³ä¸€è¹¬å±±å´©åœ°è£‚ï¼Œæ‰‹ä¸€é¥æ—¥æœˆæ— å…‰ã€‚â€",
+                "$Næœ›ç€æ—è¾¹çš„äººï¼Œå¤§å£°è¯´é“ï¼šâ€œè°æ•¢å¾—ç½ª$nè€ä»™ï¼Œæˆ‘ç¬¬ä¸€ä¸ªå’Œä»–æ‹¼å‘½ã€‚â€è¯´å®Œçœ‹äº†çœ‹åè·¯ã€‚",
+                "$Nè¯´é“ï¼šâ€œè°å’Œ$nè€ä»™æ¯”æ­¦ï¼Œç®€ç›´æ˜¯è³è‡‚æŒ¡è½¦ï¼Œè‡ªä¸é‡åŠ›å—ã€‚â€",
         });
 
         int skill,int1,int2;
@@ -53,36 +53,36 @@ int do_flatter(string arg)
                 else if(skill>300 && skill < 600) skill==60;
                 else if(skill>600) skill==100;
 
-        if( !arg ) return notify_fail("ÄãÏëÅÄË­µÄÂíÆ¨£¿\n");
+        if( !arg ) return notify_fail("ä½ æƒ³æ‹è°çš„é©¬å±ï¼Ÿ\n");
 
-        if(arg==me->query("id")) return notify_fail("ÅÄ×Ô¼ºÂíÆ¨£¿£¿\n");
+        if(arg==me->query("id")) return notify_fail("æ‹è‡ªå·±é©¬å±ï¼Ÿï¼Ÿ\n");
 
         if( !objectp(obj = present(arg, environment(me)) ))
-                return notify_fail("¶ÔÏóÒÑ¾­Àë¿ªÕâ¸öµØ·½ÁË¡£\n");
+                return notify_fail("å¯¹è±¡å·²ç»ç¦»å¼€è¿™ä¸ªåœ°æ–¹äº†ã€‚\n");
 
-        if (me->is_fighting()) return notify_fail("´ò¼ÜÖĞ»¹ÏëÅÄÂíÆ¨£¬ÄãÕæÊÇ²»ÒªÁ³µ½¼ÒÁË¡£\n");
+        if (me->is_fighting()) return notify_fail("æ‰“æ¶ä¸­è¿˜æƒ³æ‹é©¬å±ï¼Œä½ çœŸæ˜¯ä¸è¦è„¸åˆ°å®¶äº†ã€‚\n");
 
-	if( me->is_busy() ) return notify_fail("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÊ©ÓÃÍâ¹¦¡£)\n");
+	if( me->is_busy() ) return notify_fail("( ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½æ–½ç”¨å¤–åŠŸã€‚)\n");
 
-	if( environment(me)->query("no_fight") ) return notify_fail("ÔÚÕâÀï»¹ÏëÅÄÂíÆ¨£¿\n");
+	if( environment(me)->query("no_fight") ) return notify_fail("åœ¨è¿™é‡Œè¿˜æƒ³æ‹é©¬å±ï¼Ÿ\n");
 
-        if ( (!( myfam= me->query("family")) || myfam["family_name"] != "ĞÇËŞÅÉ") && me->query("id")!="wsky")
-          return notify_fail("Ö»ÓĞĞÇËŞµÜ×Ó²ÅÓĞÕâÑùºñµÄÁ³Æ¤£¡\n");
+        if ( (!( myfam= me->query("family")) || myfam["family_name"] != "æ˜Ÿå®¿æ´¾") && me->query("id")!="wsky")
+          return notify_fail("åªæœ‰æ˜Ÿå®¿å¼Ÿå­æ‰æœ‰è¿™æ ·åšçš„è„¸çš®ï¼\n");
 
         if( me->query_temp("flattering") )
-                return notify_fail("ÄãÒÑ¾­ÔÚ¹Ä×Å¾¢´óÅÄÂíÆ¨ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨é¼“ç€åŠ²å¤§æ‹é©¬å±äº†ã€‚\n");
     
-        if ( (vtfam = obj->query("family")) && vtfam["family_name"] != "ĞÇËŞÅÉ" && me->query("id")!="wsky")
-                return notify_fail("ÄãÖ»¸ÒÅÄĞÇËŞµÜ×ÓÂíÆ¨£¡\n");
+        if ( (vtfam = obj->query("family")) && vtfam["family_name"] != "æ˜Ÿå®¿æ´¾" && me->query("id")!="wsky")
+                return notify_fail("ä½ åªæ•¢æ‹æ˜Ÿå®¿å¼Ÿå­é©¬å±ï¼\n");
         
-        if (!userp(obj) && me->query("id")!="wsky") return notify_fail("ÄãÖ»ÄÜÅÄÍæ¼ÒÂíÆ¨¡£\n");
+        if (!userp(obj) && me->query("id")!="wsky") return notify_fail("ä½ åªèƒ½æ‹ç©å®¶é©¬å±ã€‚\n");
         
-        if (obj->query("combat_exp")<(me->query("combat_exp"))/3*2 && me->query("id")!="wsky") return notify_fail("ÕâÈË¹¦·òÌ«²î£¬ÖµµÃÅÄÂğ£¿\n");
+        if (obj->query("combat_exp")<(me->query("combat_exp"))/3*2 && me->query("id")!="wsky") return notify_fail("è¿™äººåŠŸå¤«å¤ªå·®ï¼Œå€¼å¾—æ‹å—ï¼Ÿ\n");
 	
-        if (obj->query_temp("flattered")) return notify_fail("Õâ"+RANK_D->query_rude(obj)+"Õı±»ÈËÅõµÄÑ¬Ñ¬È»µÄÄØ¡£\n");
+        if (obj->query_temp("flattered")) return notify_fail("è¿™"+RANK_D->query_rude(obj)+"æ­£è¢«äººæ§çš„ç†ç†ç„¶çš„å‘¢ã€‚\n");
 
         if (obj->query_temp("angry")) {
-                message_vision(HIR"$nĞÄÖĞÅ­²»¿ÉÒÖ£¬È«ÉíÏò$NÆËÀ´£¬$NĞÄÖĞÒ»¾ª£ºÔã¸âÂíÆ¨ÅÄµ½Âí½ÅÉÏÁË¡£\n"NOR,me,obj);
+                message_vision(HIR"$nå¿ƒä¸­æ€’ä¸å¯æŠ‘ï¼Œå…¨èº«å‘$Næ‰‘æ¥ï¼Œ$Nå¿ƒä¸­ä¸€æƒŠï¼šç³Ÿç³•é©¬å±æ‹åˆ°é©¬è„šä¸Šäº†ã€‚\n"NOR,me,obj);
                 me->start_busy(random(2)+1);
 		obj->set_temp("yield",0);
                 if( !obj->is_killing(me) ) obj->kill_ob(me);
@@ -94,7 +94,7 @@ int do_flatter(string arg)
         message_vision(HIM+msg+"\n"+NOR,me, obj);
         int1=me->query("int");int2=obj->query("int");
         if(random(int1*100)>random(int2*100)){
-                message_vision(HIG"$nÌıÁËÒÔºó£¬ĞÄÖĞÓĞĞ©Æ®Æ®È»µÄ£¬ËÆºõ¶Ô¹¦·òÓĞĞ©ÍÆ²¨ÖúÀ½µÄĞ§Ó¦¡£\n"NOR,me,obj);
+                message_vision(HIG"$nå¬äº†ä»¥åï¼Œå¿ƒä¸­æœ‰äº›é£˜é£˜ç„¶çš„ï¼Œä¼¼ä¹å¯¹åŠŸå¤«æœ‰äº›æ¨æ³¢åŠ©æ¾œçš„æ•ˆåº”ã€‚\n"NOR,me,obj);
 
                 me->set_temp("flattering",1);
                 obj->add_temp("apply/damage", skill/3);
@@ -113,7 +113,7 @@ int do_flatter(string arg)
                 obj->set_temp("flattered",1);
                 call_out("remove_effect", 5, me, obj, skill); 
         } else {
-                message_vision(HIB"$nµÉÁË$NÒ»ÑÛ£¬Ò»ÉùÀäºß¡£\n"NOR,me,obj);                      
+                message_vision(HIB"$nçªäº†$Nä¸€çœ¼ï¼Œä¸€å£°å†·å“¼ã€‚\n"NOR,me,obj);                      
                 obj->set_temp("angry",1);
                 call_out("remove_effect2", 10, me, obj); 
         }
@@ -127,11 +127,11 @@ int remove_effect(object me, object obj, int skill){
         obj->add_temp("apply/damage", -skill/3);
         obj->add_temp("apply/parry", -skill/3);
         obj->add_temp("apply/dodge", -skill/3);
-        message_vision(HIY"$NÉîÉîµÄÎüÁË¿ÚÆø£¬ÇåÁËÇåÉ¤×Ó¡£\n"NOR,me,obj);
+        message_vision(HIY"$Næ·±æ·±çš„å¸äº†å£æ°”ï¼Œæ¸…äº†æ¸…å—“å­ã€‚\n"NOR,me,obj);
 }
 
 int remove_effect2(object me, object obj){
         obj->delete_temp("angry");
-        message_vision(HIY"$nÁ³É«ÂÔ¼û»ººÍ¡£\n"NOR,me,obj);
+        message_vision(HIY"$nè„¸è‰²ç•¥è§ç¼“å’Œã€‚\n"NOR,me,obj);
 }
 

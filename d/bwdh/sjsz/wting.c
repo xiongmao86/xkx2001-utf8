@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/bwdh/sjsz/wting.c
-// ÊÔ½£Í¤
+// è¯•å‰‘äº­
 // by sdong 08/8/99
 
 #include <ansi.h>
@@ -16,7 +16,7 @@ int do_plant(string arg);
 
 void create()
 {
-	set("short", HIR"ÊÔ½£Í¤"NOR);
+	set("short", HIR"è¯•å‰‘äº­"NOR);
 	set("long", (: long_desc :));
 
 
@@ -52,7 +52,7 @@ string long_desc()
 	           /I____________I\\               
 	         //||||||||||||||||\\\\            
 	     T\\//IIIIIIIIIIIIIIIIIIII\\\\/T       
-	    ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ ÊÔ½£Í¤ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
+	    ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ è¯•å‰‘äº­ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
                 "+HIG"||"NOR+HIY"________________"+HIG"||"NOR+HIY"             "+HIC"
 	 []__|[]___[]___||___[]___[]|__[]___[]
 	 |_________|_|________|_|____________|"+HIB"
@@ -62,13 +62,13 @@ string long_desc()
                ||                  ||
                ||                  ||
                ||__________________||\n
-	       "+HIC"ÕıÇ°·½Êú×ÅÒ»ÅÅ±øÆ÷¼Ü(jia)\n"NOR;
+	       "+HIC"æ­£å‰æ–¹ç«–ç€ä¸€æ’å…µå™¨æ¶(jia)\n"NOR;
 	else		
   		desc  = HIW"
-	           /I____________I\\         "+HIR"¡ï"+HIW"
+	           /I____________I\\         "+HIR"â˜…"+HIW"
 	         //||||||||||||||||\\\\       "+HIY"||"+HIW"~~~~~~~~/
-	     T\\//IIIIIIIIIIIIIIIIIIII\\\\/T   "+HIY"||   Îä   "+HIW"{
-	    ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ ÊÔ½£Í¤ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^    "+HIY"||         "+HIW"\\"+HIY"
+	     T\\//IIIIIIIIIIIIIIIIIIII\\\\/T   "+HIY"||   æ­¦   "+HIW"{
+	    ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ è¯•å‰‘äº­ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^    "+HIY"||         "+HIW"\\"+HIY"
                 "+HIG"||"NOR+HIY"________________"+HIG"||"NOR+HIY"        ||"+HIW"~~~~~~~~~~~"+HIC"
 	 []__|[]___[]___||___[]___[]|__[]___[]
 	 |_________|_|________|_|____________|"+HIB"
@@ -78,7 +78,7 @@ string long_desc()
                ||                  ||
                ||                  ||
                ||__________________||\n
-	       "+HIC"ÕıÇ°·½Êú×ÅÒ»ÅÅ±øÆ÷¼Ü(jia)\n"NOR;
+	       "+HIC"æ­£å‰æ–¹ç«–ç€ä¸€æ’å…µå™¨æ¶(jia)\n"NOR;
 
   	return desc;
 }
@@ -94,7 +94,7 @@ int do_get(string arg) {
     if (sscanf(arg, "%s from jia", type) != 1) return 0;
 
     switch (type) {
-    case "sword":   if(this_player()->query("gender") == "ÎŞĞÔ")
+    case "sword":   if(this_player()->query("gender") == "æ— æ€§")
                         weapon = new("/clone/test/xiuhua");
                     else
                         weapon = new("/clone/weapon/gangjian");
@@ -131,7 +131,7 @@ int do_get(string arg) {
                     temp = all_inventory(me);
                     for (i = 0; i < sizeof(temp); i++) {
                         if (temp[i]->query("id") == "walkie-talkie") {
-                            write("ÄãÒÑ¾­ÄÃÁË¶Ô½²»úÁË¡£\n");
+                            write("ä½ å·²ç»æ‹¿äº†å¯¹è®²æœºäº†ã€‚\n");
                             return 1;
                         }
                     }
@@ -142,12 +142,12 @@ int do_get(string arg) {
                     else if ( me->query("sjsz/red") )
                         weapon->set("channel", 2);
                     break;
-    default:        write("ÕÒ²»µ½"+type+"¡£\n");
+    default:        write("æ‰¾ä¸åˆ°"+type+"ã€‚\n");
                     return 1;
     }
 
     if(weapon->move(me)) {
-        message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»"+weapon->query("unit")+weapon->name()+"¡£\n", me);
+        message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€"+weapon->query("unit")+weapon->name()+"ã€‚\n", me);
     } else {
         destruct(weapon);
     }
@@ -158,10 +158,10 @@ int do_get(string arg) {
 string look_jia() {
     string msg;
     msg = "
-¿ÉÒÔÄÃµÄ±øÆ÷ÓĞ½£(sword)£¬µ¶(blade)£¬°ô(stick)£¬ÕÈ(staff)£¬ÂÖ(falun)£¬
-±Ş(whip)£¬¹÷(club)¡£»¹ÓĞÌú¼×(armor)£¬Ê¯¿é(stone)£¬õ®õ­Ïã(xiang)£¬Â­²§
-(lubo)£¬ÈËÍ·Á´(lian)£¬÷¼÷Ã¹Ú(guan)£¬¶Ô½²»ú(walkie-talkie)£¬óï(xiao)£¬
-Ìú°ËØÔ(bagua)¡£\n\n";
+å¯ä»¥æ‹¿çš„å…µå™¨æœ‰å‰‘(sword)ï¼Œåˆ€(blade)ï¼Œæ£’(stick)ï¼Œæ–(staff)ï¼Œè½®(falun)ï¼Œ
+é­(whip)ï¼Œæ£(club)ã€‚è¿˜æœ‰é“ç”²(armor)ï¼ŒçŸ³å—(stone)ï¼Œé†é†é¦™(xiang)ï¼Œé¢…é’µ
+(lubo)ï¼Œäººå¤´é“¾(lian)ï¼Œéª·é«…å† (guan)ï¼Œå¯¹è®²æœº(walkie-talkie)ï¼Œç®«(xiao)ï¼Œ
+é“å…«å¦(bagua)ã€‚\n\n";
     return msg;
 }
 
@@ -174,10 +174,10 @@ int do_withdraw(string arg) {
     if(me->is_busy()) return 0;
     if ( arg != "flag" && arg != "qi") return 0;
 
-	if ( query("flag") <= 0 ) return notify_fail("Ã»Æì¿É°Î¡£\n");
-	if ( me->query("sjsz/red") > 0 ) return notify_fail("Íµ×Ô¼ºµÄÆì£¿\n");
+	if ( query("flag") <= 0 ) return notify_fail("æ²¡æ——å¯æ‹”ã€‚\n");
+	if ( me->query("sjsz/red") > 0 ) return notify_fail("å·è‡ªå·±çš„æ——ï¼Ÿ\n");
 	
-	message_vision(HIY"$NÏòÆì¸ËÔ¾Æğ£¬ÏëÒ»°Ñ°ÎÏÂÆì×Ó¡£\n"NOR, me);
+	message_vision(HIY"$Nå‘æ——æ†è·ƒèµ·ï¼Œæƒ³ä¸€æŠŠæ‹”ä¸‹æ——å­ã€‚\n"NOR, me);
 
 	obj = all_inventory(environment(me));
 	for(i=0;i<sizeof(obj);i++)	 {
@@ -187,7 +187,7 @@ int do_withdraw(string arg) {
 			)
 			{
 				obj[i]->kill_ob(me);
-				message_vision(HIR"$N¼±¶Ô$nºÈµÀ£º¡°$n¾¹¸ÒÍµÆì£¬¿´ÕĞ£¡¡±\n"NOR, obj[i],me,me);
+				message_vision(HIR"$Næ€¥å¯¹$nå–é“ï¼šâ€œ$nç«Ÿæ•¢å·æ——ï¼Œçœ‹æ‹›ï¼â€\n"NOR, obj[i],me,me);
 				me->kill_ob(obj[i]);
 				bGuarded = 1;
 			}
@@ -198,13 +198,13 @@ int do_withdraw(string arg) {
 	    flag = new("/d/bwdh/sjsz/obj/flag");
 	    flag->set_name(query("flag_name"), ({ "flag" }) );
 	    if(flag->move(me)) {
-        	message_vision(HIG"$NÒ»°Ñ³¶ÏÂÁË´óÆì£¬¸ß¸ß¾ÙÆğ¡£\n"NOR, me);
+        	message_vision(HIG"$Nä¸€æŠŠæ‰¯ä¸‹äº†å¤§æ——ï¼Œé«˜é«˜ä¸¾èµ·ã€‚\n"NOR, me);
 		set("flag",0);
 	    } else {
         	destruct(flag);
 	    }
 	   CHANNEL_D->do_channel(this_object(), "rumor",
-		"ÌıËµ"+me->name()+"¶á×ßÁË"+query("flag_name")+"£¡" );		
+		"å¬è¯´"+me->name()+"å¤ºèµ°äº†"+query("flag_name")+"ï¼" );		
 
 	}
 	
@@ -224,11 +224,11 @@ int do_plant(string arg) {
 	 if (!objectp(board)) {
 		  board = load_object(BOARD);
 		  if (!objectp(board))
-				return notify_fail("ÕÒ²»µ½ÍÅÌåÈü³É¼¨°æ¡£\n");
+				return notify_fail("æ‰¾ä¸åˆ°å›¢ä½“èµ›æˆç»©ç‰ˆã€‚\n");
 	 }
 	 entryA = board->query("team/" + board->query("east"));
 	 entryB = board->query("team/" + board->query("west"));
-	 if(!entryA || !entryB )return notify_fail("ÏÖÔÚÃ»ÓĞ±ÈÈü¡£\n");
+	 if(!entryA || !entryB )return notify_fail("ç°åœ¨æ²¡æœ‰æ¯”èµ›ã€‚\n");
 	 scoreA = entryA["this_score"];
 	 scoreB = entryB["this_score"];
 
@@ -236,23 +236,23 @@ int do_plant(string arg) {
     if(me->is_busy()) return 0;
     if ( arg != "flag" && arg != "qi") return 0;
 
-	if ( query("flag") > 0 ) return notify_fail("Æì¸ËÉÏÒÑÓĞÆìÁË¡£\n");
-	if ( !me->query("sjsz/red") ) return notify_fail("Õâ¿É²»ÊÇÄãµÄµØÅÌ¡£\n");
+	if ( query("flag") > 0 ) return notify_fail("æ——æ†ä¸Šå·²æœ‰æ——äº†ã€‚\n");
+	if ( !me->query("sjsz/red") ) return notify_fail("è¿™å¯ä¸æ˜¯ä½ çš„åœ°ç›˜ã€‚\n");
 
 	flag= present("flag",me );
-	if(!flag)return notify_fail("ÄãÊÖÖĞÃ»Æì¿ÉÒÔ²å¡£\n");
+	if(!flag)return notify_fail("ä½ æ‰‹ä¸­æ²¡æ——å¯ä»¥æ’ã€‚\n");
 
-	if( flag->query("name") == query("team_name")+"´óÆì"  ) 
-		return notify_fail("×Ô¼ºµÄ¶ÓÆìÓ¦¸Ã²åÔÚ´ó±¾Óª²ÅÊÇ¡£\n");
+	if( flag->query("name") == query("team_name")+"å¤§æ——"  ) 
+		return notify_fail("è‡ªå·±çš„é˜Ÿæ——åº”è¯¥æ’åœ¨å¤§æœ¬è¥æ‰æ˜¯ã€‚\n");
 
 	
-	message_vision(HIY"$N°Ñ´óÆì»©À²À²Õ¹¿ª£¬²åÉÏÁËÆì¸Ë¡£\n"NOR, me);
+	message_vision(HIY"$NæŠŠå¤§æ——å“—å•¦å•¦å±•å¼€ï¼Œæ’ä¸Šäº†æ——æ†ã€‚\n"NOR, me);
 
 
 	set("flag",1);
 
 	CHANNEL_D->do_channel(this_object(), "rumor",
-		"ÌıËµ"+me->name()+"½«"+flag->query("name")+"²åµ½ÁËÊÔ½£Í¤£¡" );		
+		"å¬è¯´"+me->name()+"å°†"+flag->query("name")+"æ’åˆ°äº†è¯•å‰‘äº­ï¼" );		
 	set("flag_name",flag->query("name"));
 
 	destruct(flag);

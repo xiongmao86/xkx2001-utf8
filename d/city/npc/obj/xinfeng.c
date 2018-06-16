@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("·âÌ×", ({"feng tao"}));
+	set_name("å°å¥—", ({"feng tao"}));
 	set_weight(1);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öÓÃÀ´×°Êéº¯µÄ·âÌ×¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªç”¨æ¥è£…ä¹¦å‡½çš„å°å¥—ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 100);
 		set("send_level",1);
 	}
@@ -26,18 +26,18 @@ int do_feng(string arg)
 	
 	object ob_letter,me;
 	me=this_player();
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´×°½ø·âÌ×Àï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆè£…è¿›å°å¥—é‡Œï¼Ÿ\n");
 	
 	ob_letter = present(arg, me);
 	if(!ob_letter)
-		return notify_fail("ÄãÉíÉÏºÃÏñ²¢Ã»ÓĞÕâ·âÊéº¯£¿\n");
+		return notify_fail("ä½ èº«ä¸Šå¥½åƒå¹¶æ²¡æœ‰è¿™å°ä¹¦å‡½ï¼Ÿ\n");
 	if(!ob_letter->query("can_feng"))
-		return notify_fail("¶Ô²»Æğ£¡Äã²»ÄÜ½«Õâ¸ö·Å½ø·âÌ×Àï¡£\n");
+		return notify_fail("å¯¹ä¸èµ·ï¼ä½ ä¸èƒ½å°†è¿™ä¸ªæ”¾è¿›å°å¥—é‡Œã€‚\n");
 	
-	message_vision("$N´ÓÉíÉÏÌÍ³öÒ»ÕÅĞ´ºÃµÄÊéº¯×°ÔÚ·âÌ×Àï¡£\n",me);
+	message_vision("$Nä»èº«ä¸Šæå‡ºä¸€å¼ å†™å¥½çš„ä¹¦å‡½è£…åœ¨å°å¥—é‡Œã€‚\n",me);
 
-	ob_letter->set("long", "ÕâÊÇÒ»¸öÒÑ¾­·âºÃµÄ·âÌ×£¬ÀïÃæ×°ÓĞÊéº¯¡£\n");
-	ob_letter->set_name("ĞÅº¯", ({"xin han","letter"}));
+	ob_letter->set("long", "è¿™æ˜¯ä¸€ä¸ªå·²ç»å°å¥½çš„å°å¥—ï¼Œé‡Œé¢è£…æœ‰ä¹¦å‡½ã€‚\n");
+	ob_letter->set_name("ä¿¡å‡½", ({"xin han","letter"}));
 	ob_letter->set("can_feng",0);		
 	ob_letter->set("can_send",1);
 	ob_letter->set("letter/send_level",1);

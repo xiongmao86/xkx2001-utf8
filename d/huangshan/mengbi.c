@@ -1,14 +1,14 @@
 //Cracked by Roath
-// ÃÎ±ÊÉú»¨
+// æ¢¦ç¬”ç”ŸèŠ±
 // Dong  01/20/97.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 void create()
-{   set("short", "ÃÎ±ÊÉú»¨");
+{   set("short", "æ¢¦ç¬”ç”ŸèŠ±");
     set("long", @LONG
-É½Â·ÅÔÓÐÒ»¸ùÊ¯Öù´£Á¢ÔÚËÉº£Àï£¬Ò»Öê¹ÅËÉ´ÓÊ¯·ìÖÐÅÌÐý¶ø³ö£¬
-Ê¯ÖùÊÇ¡°±Ê¸Ë¡±£¬¹ÅËÉÊÇ¡°±ÊÍ·¡±£¬ÕâÒ»Ææ¾°±»½Ð×÷¡°ÃÎ±ÊÉú»¨¡±¡£
+å±±è·¯æ—æœ‰ä¸€æ ¹çŸ³æŸ±çŸ—ç«‹åœ¨æ¾æµ·é‡Œï¼Œä¸€æ ªå¤æ¾ä»ŽçŸ³ç¼ä¸­ç›˜æ—‹è€Œå‡ºï¼Œ
+çŸ³æŸ±æ˜¯â€œç¬”æ†â€ï¼Œå¤æ¾æ˜¯â€œç¬”å¤´â€ï¼Œè¿™ä¸€å¥‡æ™¯è¢«å«ä½œâ€œæ¢¦ç¬”ç”ŸèŠ±â€ã€‚
 LONG);
 
     set("exits", ([ /* sizeof() == 3 */

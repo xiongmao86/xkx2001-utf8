@@ -23,11 +23,11 @@ void fix_exits_for_night(int is_night)
 
 void create()
 {
-	set("short", "¸·³ÉÃÅ´ó½Ö");
+	set("short", "é˜œæˆé—¨å¤§è¡—");
 	set("long", @LONG
-ÕâÊÇ·±»ªÈÈÄÖµÄ¸·³ÉÃÅÍâ´ó½Ö£¬´ó½Ö½ÖÃæ¿íÀ«£¬³µË®ÂíÁú£¬´¨Á÷²»Ï¢£¬ÈËÈº
-ÎõÎõÈÁÈÁ£¬À´À´ÍùÍù¡£½Ö±ßÉÏË£Ç¹ÂòÒÕ¡¢°Ù»õÐ¡³Ô£¬Ó¦ÓÐ¾¡ÓÐ£¬µÛ¶¼·çÃ²¿É¼ûÒ»
-°ß¡£¶«±ß¿ÉÒÔ¿´¼û±±º£¡£
+è¿™æ˜¯ç¹åŽçƒ­é—¹çš„é˜œæˆé—¨å¤–å¤§è¡—ï¼Œå¤§è¡—è¡—é¢å®½é˜”ï¼Œè½¦æ°´é©¬é¾™ï¼Œå·æµä¸æ¯ï¼Œäººç¾¤
+ç†™ç†™æ”˜æ”˜ï¼Œæ¥æ¥å¾€å¾€ã€‚è¡—è¾¹ä¸Šè€æžªä¹°è‰ºã€ç™¾è´§å°åƒï¼Œåº”æœ‰å°½æœ‰ï¼Œå¸éƒ½é£Žè²Œå¯è§ä¸€
+æ–‘ã€‚ä¸œè¾¹å¯ä»¥çœ‹è§åŒ—æµ·ã€‚
 LONG
 	);
 	set("no_clean_up", 0);

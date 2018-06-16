@@ -1,16 +1,16 @@
 //Cracked by Roath
-// wu.c ÎâÇàÁÒ
+// wu.c å´é’çƒˆ
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÎâÇàÁÒ", ({ "wu qinglie", "wu" }));
-	set("nickname", "×·ÃüÇ¹");
+	set_name("å´é’çƒˆ", ({ "wu qinglie", "wu" }));
+	set("nickname", "è¿½å‘½æª");
 	set("long", 
-"ÎâÇàÁÒÊÇ»ÆºÓËÄ¹íµÄÀÏ¶ş£¬ÊÇ¹íÃÅÁúÍõÉ³Í¨ÌìµÄ¶şµÜ×Ó£¬ÉÃÊ¹³¤Ç¹¡£\n");
-	set("title", "»ÆºÓËÄ¹íÀÏ¶ş");
-	set("gender", "ÄĞĞÔ");
+"å´é’çƒˆæ˜¯é»„æ²³å››é¬¼çš„è€äºŒï¼Œæ˜¯é¬¼é—¨é¾™ç‹æ²™é€šå¤©çš„äºŒå¼Ÿå­ï¼Œæ“…ä½¿é•¿æªã€‚\n");
+	set("title", "é»„æ²³å››é¬¼è€äºŒ");
+	set("gender", "ç”·æ€§");
 	set("age", 33);
 	set("attitude", "peaceful");
 	set("shen_type", -1);

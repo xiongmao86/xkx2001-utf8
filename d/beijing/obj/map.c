@@ -5,13 +5,13 @@ string show_map();
 
 void create()
 {
-    set_name("¾©³ÇµØÍ¼", ({"map"}));
+    set_name("äº¬åŸŽåœ°å›¾", ({"map"}));
     set_weight(300);
     if (clonep())
 	set_default_object(__FILE__);
     else {
 	set("long", (: show_map :));
-	set("unit", "ÕÅ");
+	set("unit", "å¼ ");
 	set("material", "paper");
 	set("value", 300);
     }

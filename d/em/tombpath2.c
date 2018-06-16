@@ -1,16 +1,16 @@
 //Cracked by Roath
-// d/emei/tombpath2.c С��
+// d/emei/tombpath2.c 小径
 // xbc: 96/02/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小径");
 	set("long", @LONG
-����һ�����ѵ�ɽ��С������ľ�������˼�������ֻ��Щ��֪����С��
-��֨֨ߴߴ���š��ϱ�ͨ����üɽ��ɽ�����߾��Ǿ�ʮ�ŵ��ա�����ɽʯ��
-ᾣ��������ţ����ؿ����Ѿ���������·��
+这是一条蜿蜒的山间小径，草木丛生，人迹罕见，只有些不知名的小虫
+在吱吱叽叽唱着。南边通往峨眉山后山，北边就是九十九道拐。这里山石嶙
+峋，走着走着，往回看，已经见不到来路。
 LONG
 	);
 

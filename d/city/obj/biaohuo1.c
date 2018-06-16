@@ -7,10 +7,10 @@ inherit ITEM;
 void create()
 {
 	seteuid(getuid());
-	set_name(RED"ºìïÚ"NOR, ({"hong biao", "biao"}));
+	set_name(RED"çº¢é•–"NOR, ({"hong biao", "biao"}));
 	set("long",
-		"ÕâÊÇÒ»·ÝºìïÚ£¬°ü×°µØ·Ç³£×ÐÏ¸£¬²»Öª×°×ÅÊ²Ã´¶«Î÷¡£\n");
-	set("unit", "·Ý");
+		"è¿™æ˜¯ä¸€ä»½çº¢é•–ï¼ŒåŒ…è£…åœ°éžå¸¸ä»”ç»†ï¼Œä¸çŸ¥è£…ç€ä»€ä¹ˆä¸œè¥¿ã€‚\n");
+	set("unit", "ä»½");
 	set("weight", 20);
 	set("value", 30);
 }
@@ -34,18 +34,18 @@ int do_check()
 	object ppl = this_player();
 	object obj = this_object();
 	
-	if ( obj->query_temp("dest") == "li" ) write("ÕâÊÇ»ªÉ½½ÅÏÂÓñÈªÔºÀîÌú×ìµÄïÚ»õ¡£\n");
-	if ( obj->query_temp("dest") == "ma" ) write("ÕâÊÇÈªÖÝÑïÍþÎä¹Ý¹ÝÖ÷ÂíÎåµÂÀÏÊ¦ÍÐËÍµÄïÚ»õ¡£\n");
-	if ( obj->query_temp("dest") == "zhu" ) write("ÕâÊÇ°×Â¹ÊéÔºÖììäÏÈÉúµÄïÚ»õ¡£\n");
-	if ( obj->query_temp("dest") == "bayi" ) write("ÕâÊÇ±±½®Ð¡Õò°ÍÒÀÍÐËÍµÄÖØïÚ£¬Òª¾¡¿ìËÍµ½¡£\n");
-	if ( obj->query_temp("dest") == "jiang" ) write("ÕâÊÇµ±½ñÎäÁÖÃËÖ÷ËùÖØÍÐµÄºìïÚ£¬Ðë½»µ½Ç×±ø¶Ó³¤½­°ÙÊ¤ÊÖÀï¡£\n");
+	if ( obj->query_temp("dest") == "li" ) write("è¿™æ˜¯åŽå±±è„šä¸‹çŽ‰æ³‰é™¢æŽé“å˜´çš„é•–è´§ã€‚\n");
+	if ( obj->query_temp("dest") == "ma" ) write("è¿™æ˜¯æ³‰å·žæ‰¬å¨æ­¦é¦†é¦†ä¸»é©¬äº”å¾·è€å¸ˆæ‰˜é€çš„é•–è´§ã€‚\n");
+	if ( obj->query_temp("dest") == "zhu" ) write("è¿™æ˜¯ç™½é¹¿ä¹¦é™¢æœ±ç†¹å…ˆç”Ÿçš„é•–è´§ã€‚\n");
+	if ( obj->query_temp("dest") == "bayi" ) write("è¿™æ˜¯åŒ—ç–†å°é•‡å·´ä¾æ‰˜é€çš„é‡é•–ï¼Œè¦å°½å¿«é€åˆ°ã€‚\n");
+	if ( obj->query_temp("dest") == "jiang" ) write("è¿™æ˜¯å½“ä»Šæ­¦æž—ç›Ÿä¸»æ‰€é‡æ‰˜çš„çº¢é•–ï¼Œé¡»äº¤åˆ°äº²å…µé˜Ÿé•¿æ±Ÿç™¾èƒœæ‰‹é‡Œã€‚\n");
 
 	return 1;
 }
 
 void destroy_it(object ppl, object obj) 
 { 
-	tell_object( ppl, "Ê±ÏÞÒÑµ½£¬ÄãµÄÈÎÎñÊ§°ÜÁË£¡\n" );
+	tell_object( ppl, "æ—¶é™å·²åˆ°ï¼Œä½ çš„ä»»åŠ¡å¤±è´¥äº†ï¼\n" );
 	ppl->delete_temp("apply/short");
 	ppl->delete_temp("biao");	
 	ppl->set_temp("biao/fail", 1);
@@ -172,12 +172,12 @@ int do_open()
         }
 
 	obn->move(ppl);
-        tell_object(ppl, "Äã´ò¿ªºìïÚ£¬·¢ÏÖÀïÍ·×°µÄÔ­À´ÊÇ"+obn->name()+"¡£\n");
+        tell_object(ppl, "ä½ æ‰“å¼€çº¢é•–ï¼Œå‘çŽ°é‡Œå¤´è£…çš„åŽŸæ¥æ˜¯"+obn->name()+"ã€‚\n");
 
  	if ( ppl->query("id") == obj->query_temp("guard") ) {
                 ppl->add("biao_stealer", 1);
                 ppl->delete("biao");
-                CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%s¼àÊØ×ÔµÁÁËºìïÚ£¡¾ÝÎÅºìïÚÊÇ%s£¡", ppl->name(), obn->name()));
+                CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%sç›‘å®ˆè‡ªç›—äº†çº¢é•–ï¼æ®é—»çº¢é•–æ˜¯%sï¼", ppl->name(), obn->name()));
 	}
 	else {
 		if ( userp(sender) ) {
@@ -185,7 +185,7 @@ int do_open()
                         sender->delete_temp("biao");
                         sender->set_temp("biao/fail", 1);
                 }
-                CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%sÏ´½ÙÁËºìïÚ£¡¾ÝÎÅºìïÚÊÇ%s£¡", ppl->name(), obn->name()));
+                CHANNEL_D->do_channel(this_object(), "rumor",sprintf("%sæ´—åŠ«äº†çº¢é•–ï¼æ®é—»çº¢é•–æ˜¯%sï¼", ppl->name(), obn->name()));
 	}
 
 	destruct(obj);

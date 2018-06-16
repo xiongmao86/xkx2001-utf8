@@ -33,12 +33,12 @@ string* homes = ({
 
 void create()
 {
-                  set_name("ºú¹ğÄÏ", ({ "hu guinan", "hu" }) );
-                  set("nickname", "Ê¥ÊÖÉñÍµ");
+                  set_name("èƒ¡æ¡‚å—", ({ "hu guinan", "hu" }) );
+                  set("nickname", "åœ£æ‰‹ç¥å·");
                   set("long",
-"ÕâÊÇÒ»¸öÉí²ÄÊİĞ¡µÄºº×Ó¡£\n"
-"ËûÉÏ´½ÁôÁËÁ½Æ²ÊóĞë£¬íø×ÓÒ»·­£¬¾«¹â±ÆÈË¡£\n");
-                  set("gender", "ÄĞĞÔ" );
+"è¿™æ˜¯ä¸€ä¸ªèº«æç˜¦å°çš„æ±‰å­ã€‚\n"
+"ä»–ä¸Šå”‡ç•™äº†ä¸¤æ’‡é¼ é¡»ï¼Œçœ¸å­ä¸€ç¿»ï¼Œç²¾å…‰é€¼äººã€‚\n");
+                  set("gender", "ç”·æ€§" );
                   set("age", 35);
                   set("attitude", "peaceful");
                   set("shen_type", 1);
@@ -128,7 +128,7 @@ int stealing(object ob, object* inv)
 
                   if( !environment(ob)->query("no_fight") )
                   {
-                         if(tester)tell_object(tester, "ºú¹ğÄÏ¸æËßÄã£ºÕâÀï¿ÉÒÔÕ½¶·£¬ÎÒºÃÅÂÅÂ,²»ÍµÁË¡£\n");
+                         if(tester)tell_object(tester, "èƒ¡æ¡‚å—å‘Šè¯‰ä½ ï¼šè¿™é‡Œå¯ä»¥æˆ˜æ–—ï¼Œæˆ‘å¥½æ€•æ€•,ä¸å·äº†ã€‚\n");
                          return 1;
                   }
 
@@ -140,10 +140,10 @@ int stealing(object ob, object* inv)
                   dp = (int)ob->query("combat_exp");
                   ap = (int)query_skill("stealing", 1);
 
-                  if(tester)tell_object(tester, "ºú¹ğÄÏ¸æËßÄã£ºÎÒÒªÍµ"+ob->query("id")+"µÄ"+obj->query("name")+"¡£\n");
+                  if(tester)tell_object(tester, "èƒ¡æ¡‚å—å‘Šè¯‰ä½ ï¼šæˆ‘è¦å·"+ob->query("id")+"çš„"+obj->query("name")+"ã€‚\n");
 
-                  // make ÉñÕÕ¾­ harder to steal, so player can dazuo more -:)  -sdong
-                  if(obj->query("name") == "ÉñÕÕ¾­")
+                  // make ç¥ç…§ç» harder to steal, so player can dazuo more -:)  -sdong
+                  if(obj->query("name") == "ç¥ç…§ç»")
                   {
                          ap = ap * ap * ap / 1000;
                   }
@@ -152,12 +152,12 @@ int stealing(object ob, object* inv)
                   if( dp*2 + random(ap+dp)/2 >= dp*3 ) {
                                          if( obj->move(this_object()) )
                                                                 call_out("do_destroy", 1, obj);
-                                        if(tester)tell_object(tester, "ºú¹ğÄÏ¸æËßÄã£ºÎÒÍµµ½ÁË"+ob->query("id")+"µÄ"+obj->query("name")+"¡£\n");
+                                        if(tester)tell_object(tester, "èƒ¡æ¡‚å—å‘Šè¯‰ä½ ï¼šæˆ‘å·åˆ°äº†"+ob->query("id")+"çš„"+obj->query("name")+"ã€‚\n");
 
                                          return random_walk();
                   }
 
-                  if(tester)tell_object(tester, "ºú¹ğÄÏ¸æËßÄã£ºÕæµ¹Ã¹£¬Ã»Íµµ½¡£\n");
+                  if(tester)tell_object(tester, "èƒ¡æ¡‚å—å‘Šè¯‰ä½ ï¼šçœŸå€’éœ‰ï¼Œæ²¡å·åˆ°ã€‚\n");
                   remove_call_out("stealing");
                   call_out("stealing", 60, ob, inv);
                   // if fail, will try to steal again  -sdong
@@ -221,7 +221,7 @@ int random_walk()
                   command("go " + dir);
                   set_temp("last_room", base_name(here));
 
-                  if(tester)tell_object(tester, "ºú¹ğÄÏ¸æËßÄã£ºÎÒÔÚ" + base_name(here) +"¡£\n");
+                  if(tester)tell_object(tester, "èƒ¡æ¡‚å—å‘Šè¯‰ä½ ï¼šæˆ‘åœ¨" + base_name(here) +"ã€‚\n");
                   return 1;
 }
 

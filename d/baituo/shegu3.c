@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shegu.c Éß¹È
+// shegu.c è›‡è°·
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Éß¹ÈÉ½µÀ");
+	set("short", "è›‡è°·å±±é“");
 	set("long", @LONG
-ÕâÊÇ°×ÍÕÉ½Éß¹ÈÖÐµÄÉ½Â·£¬ÊÇÒ»ÌõÈËÂí²È³öÀ´µÄÐ¡µÀ£¬Ëæ×ÅµØÊÆ
-ÇúÕÛÆð·ü£¬òêÑÑÄÑÐÐ¡£
+è¿™æ˜¯ç™½é©¼å±±è›‡è°·ä¸­çš„å±±è·¯ï¼Œæ˜¯ä¸€æ¡äººé©¬è¸©å‡ºæ¥çš„å°é“ï¼Œéšç€åœ°åŠ¿
+æ›²æŠ˜èµ·ä¼ï¼Œèœ¿èœ’éš¾è¡Œã€‚
 LONG
 	);
 

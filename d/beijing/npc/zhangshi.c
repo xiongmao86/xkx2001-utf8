@@ -8,11 +8,11 @@ void set_vendor_status(int);
 
 void create()
 {
-        set_name("ÕÅÊÏ", ({ "zhang" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("å¼ æ°", ({ "zhang" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 32);
         set("long",
-                "Ëı¾ÍÊÇ¾©³Ç³ñ¶Ğ×¯µÄÀÏ°åÄï£¬³¤µÄ»¹ÓĞ¼¸·Ö×ËÉ«¡£\n");
+                "å¥¹å°±æ˜¯äº¬åŸç»¸ç¼åº„çš„è€æ¿å¨˜ï¼Œé•¿çš„è¿˜æœ‰å‡ åˆ†å§¿è‰²ã€‚\n");
         set("vendor_goods", ({
         }) );
         setup();

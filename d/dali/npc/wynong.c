@@ -1,15 +1,15 @@
 //Cracked by Roath
-// wynong.c ÎÚÒÄÅ©·ò
+// wynong.c ä¹Œå¤·å†œå¤«
 
 inherit NPC;
 
 void create()
 {
-	set_name("Å©·ò", ({ "nong fu", "nong", "farmar" }) );
-	set("long", "Ò»Î»ÎÚÒÄ×åµÄÅ©·ò£¬Êø·¢×ÜÓÚÄÔºó£¬ÓÃ²¼É´°ü×Å£¬ÉÏ°ëÉíÂãÂ¶£¬ÏÂÖøÊŞÆ¤¡£\n");
+	set_name("å†œå¤«", ({ "nong fu", "nong", "farmar" }) );
+	set("long", "ä¸€ä½ä¹Œå¤·æ—çš„å†œå¤«ï¼ŒæŸå‘æ€»äºè„‘åï¼Œç”¨å¸ƒçº±åŒ…ç€ï¼Œä¸ŠåŠèº«è£¸éœ²ï¼Œä¸‹è‘—å…½çš®ã€‚\n");
 
 	set("age", 25);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

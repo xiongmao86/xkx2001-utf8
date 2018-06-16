@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wujiang.c Îä½«
+// wujiang.c æ­¦å°†
 
 #include <ansi.h>
 
@@ -8,13 +8,13 @@ inherit F_SKILL;
 
 void create()
 {
-	set_name("Îä½«", ({ "wu jiang", "wu", "jiang" }));
+	set_name("æ­¦å°†", ({ "wu jiang", "wu", "jiang" }));
 	set_color("$YEL$");
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", random(10) + 30);
 	set("str", 25);
 	set("dex", 16);
-	set("long", "ËûÕ¾ÔÚÄÇÀï£¬µÄÈ·ÓÐËµ²»³öµÄÍþ·ç¡£\n");
+	set("long", "ä»–ç«™åœ¨é‚£é‡Œï¼Œçš„ç¡®æœ‰è¯´ä¸å‡ºçš„å¨é£Žã€‚\n");
 	set("combat_exp", 75000);
 	set("shen_type", 0);
 	set("attitude", "peaceful");
@@ -50,7 +50,7 @@ void init()
 }
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;
@@ -58,7 +58,7 @@ int accept_fight(object me)
 
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

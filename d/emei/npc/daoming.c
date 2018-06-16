@@ -1,5 +1,5 @@
 //Cracked by Roath
-// d/emei/npc/daoming.c µÀÃ÷Ğ¡Ê¦¸¸
+// d/emei/npc/daoming.c é“æ˜å°å¸ˆçˆ¶
 // Shan 96/09/24
 
 inherit NPC;
@@ -9,12 +9,12 @@ void init();
 
 void create()
 {
-	set_name("µÀÃ÷Ğ¡Ê¦¸¸", ({"daoming", "dao ming"}) );
-	set("rank_info/respect", "Ğ¡Ê¦¸¸");
-	set("gender", "ÄĞĞÔ" );
+	set_name("é“æ˜å°å¸ˆçˆ¶", ({"daoming", "dao ming"}) );
+	set("rank_info/respect", "å°å¸ˆçˆ¶");
+	set("gender", "ç”·æ€§" );
 	set("age", 14+random(6));
 	set("long",
-	  "ÕâÊÇ¸öÄêÁä²»´óµÄĞ¡Ê¦¸¸¡£Ëû¼ûÓĞÈËÀ´µ½£¬ÇáÇáµãÍ·Ğ¦ÁËĞ¦¡£\n");
+	  "è¿™æ˜¯ä¸ªå¹´é¾„ä¸å¤§çš„å°å¸ˆçˆ¶ã€‚ä»–è§æœ‰äººæ¥åˆ°ï¼Œè½»è½»ç‚¹å¤´ç¬‘äº†ç¬‘ã€‚\n");
 	set("attitude", "friendly");
         set("shen_type", 1);
         set("class", "bonze");
@@ -40,10 +40,10 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 3);
 
-        create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
 //        set("inquiry", ([
-//            "³ö¼Ò" : "ÄúÈ¥ÎÊÄÇ±ßµÄ¾²ºÍÊ¦Êå°É¡£\n",
+//            "å‡ºå®¶" : "æ‚¨å»é—®é‚£è¾¹çš„é™å’Œå¸ˆå”å§ã€‚\n",
 //        ]));
 
         setup();
@@ -67,6 +67,6 @@ void greeting(object ob)
 {
 	if( !ob || environment(ob) != environment() ) return;
 
-	say("µÀÃ÷Ğ¡Ê¦¸¸ÇáÉùËµµÀ£º»¶Ó­À´±£¹úËÂ²Ø¾­Â¥¡£ÄúÒª¶Á¾­ÊéÂğ£¿\n");
+	say("é“æ˜å°å¸ˆçˆ¶è½»å£°è¯´é“ï¼šæ¬¢è¿æ¥ä¿å›½å¯ºè—ç»æ¥¼ã€‚æ‚¨è¦è¯»ç»ä¹¦å—ï¼Ÿ\n");
 }
 

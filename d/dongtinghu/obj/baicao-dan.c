@@ -5,13 +5,13 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-   set_name("°Ù²İµ¤", ({"baicao dan", "dan"}));
+   set_name("ç™¾è‰ä¸¹", ({"baicao dan", "dan"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "¿Å");
+      set("unit", "é¢—");
       set("value", 4000);
-      set("long", "ÕâÊÇÒ»¿ÅØ¤°ïµÄ°Ù²İµ¤£¬¹¦ÄÜÁÆÉË±£¾«¡£\n");
+      set("long", "è¿™æ˜¯ä¸€é¢—ä¸å¸®çš„ç™¾è‰ä¸¹ï¼ŒåŠŸèƒ½ç–—ä¼¤ä¿ç²¾ã€‚\n");
       set("medicine", 1);
    }
    setup();
@@ -19,17 +19,17 @@ void create()
 
 int cure_ob(object me)
 {
-   message_vision("$N³ÔÏÂÒ»¿Å" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€é¢—" + name() + "ã€‚\n", me);
    
    if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 6 
    || (int)me->query("eff_jing") < (int)me->query("max_jing") / 6) {
-	write("ÄãÉËÊÆ¹ıÖØ£¬·şÊ³µ¤Ò©½öÄÜÂÔ¾¡ÈËÊÂ£¡\n");
+	write("ä½ ä¼¤åŠ¿è¿‡é‡ï¼Œæœé£Ÿä¸¹è¯ä»…èƒ½ç•¥å°½äººäº‹ï¼\n");
    }
    else if ( (int)me->query("eff_qi")==(int)me->query("max_qi")
    && (int)me->query("eff_jing")==(int)me->query("max_jing") ) {
 	me->receive_wound("qi", 50);
 	me->receive_wound("jing", 50);
-	write( HIR "ÄãÃ»ÉËºúÂÒ·şÊ³µ¤Ò©£¬·´ÓĞ´óº¦£¡\n\n" NOR );
+	write( HIR "ä½ æ²¡ä¼¤èƒ¡ä¹±æœé£Ÿä¸¹è¯ï¼Œåæœ‰å¤§å®³ï¼\n\n" NOR );
    }
    else {
 	if ( (int)me->query("eff_qi") < (int)me->query("max_qi") ) {
@@ -40,7 +40,7 @@ int cure_ob(object me)
 		me->receive_curing("jing", 50);
 	}
 	
-	message_vision(YEL "$NÖ»¾õÉËÊÆ´óÎªºÃ×ª£¬¿É¼û´Ëµ¤ÁéĞ§¡£\n\n" NOR, me);
+	message_vision(YEL "$Nåªè§‰ä¼¤åŠ¿å¤§ä¸ºå¥½è½¬ï¼Œå¯è§æ­¤ä¸¹çµæ•ˆã€‚\n\n" NOR, me);
    }
 		
    destruct(this_object());

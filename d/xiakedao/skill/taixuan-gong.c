@@ -13,13 +13,13 @@ int valid_learn(object me)
         for (j = 1; j < i / 10; j++) t*= 2;
         if ((int)me->query_skill("force", 1) < 10
           ||(int)me->query_skill("force", 1)/2 < i/3 )
-                return notify_fail("你的基本内功火候不足，不能学太玄功。\n");
+                return notify_fail("浣犵殑鍩烘湰鍐呭姛鐏�欎笉瓒筹紝涓嶈兘瀛﹀お鐜勫姛銆俓n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("太玄功无发用练来加深。\n");
+        return notify_fail("澶巹鍔熸棤鍙戠敤缁冩潵鍔犳繁銆俓n");
 }
 
 string exert_function_file(string func)

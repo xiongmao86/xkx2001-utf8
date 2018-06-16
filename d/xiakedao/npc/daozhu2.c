@@ -1,5 +1,5 @@
 //Cracked by Roath
-// daozhu1.c ÏÀ¿ÍµºÄ¾µºÖ÷
+// daozhu1.c ä¾ å®¢å²›æœ¨å²›ä¸»
 // Long, 6/13/97
 
 #include <ansi.h>
@@ -10,9 +10,9 @@ int ask_leave();
 
 void create()
 {
-	set_name("Ä¾µºÖ÷", ({ "mu daozhu", "mu", "daozhu"}));
-	set("long", "Ëû³¤÷ŞÏ¡Ï¡ÂäÂä£¬È´»¹ºÚ¶à°×ÉÙ£¬µ«Ò»ÕÅÁ³È´ÂúÊÇÖåÎÆ¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("æœ¨å²›ä¸»", ({ "mu daozhu", "mu", "daozhu"}));
+	set("long", "ä»–é•¿é¬“ç¨€ç¨€è½è½ï¼Œå´è¿˜é»‘å¤šç™½å°‘ï¼Œä½†ä¸€å¼ è„¸å´æ»¡æ˜¯çš±çº¹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 70);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -20,7 +20,7 @@ void create()
 	set("int", 35);
 	set("con", 25);
 	set("dex", 25);
-	set("race", "ÈËÀà");	
+	set("race", "äººç±»");	
 	set("max_qi", 2000);
 	set("eff_qi", 2000);
 	set("qi", 2000);
@@ -43,8 +43,8 @@ void create()
 	set_skill("sword", 200);
 	
 	set("inquiry", ([
-			"ÖĞÔ­"   : 	(: ask_leave :),
-			"Àëµº"   : 	(: ask_leave :),
+			"ä¸­åŸ"   : 	(: ask_leave :),
+			"ç¦»å²›"   : 	(: ask_leave :),
 			
 		]));
 	setup();
@@ -60,6 +60,6 @@ void init()
 
 int ask_leave()
 {	
-	say("Ä¾µºÖ÷¶ÔÄã²»Àí²»²Ç£¬Ö»ÊÇÄıÍû×ÅÊ¯±Ú³öÉñ¡£\n");
+	say("æœ¨å²›ä¸»å¯¹ä½ ä¸ç†ä¸ç¬ï¼Œåªæ˜¯å‡æœ›ç€çŸ³å£å‡ºç¥ã€‚\n");
 	return 1;
 }

@@ -1,14 +1,14 @@
 //Cracked by Roath
-// d/emei/cliffpath1.c ÑÂ±Ú
+// d/emei/cliffpath1.c å´–å£
 // xbc: 96/02/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÑÂ±Ú");
+        set("short", "å´–å£");
 	set("long", @LONG
-ÑÂ±ÚÕâ±ß²»ÄÇÃ´¹âÍºÍºµÄ£¬ÓĞĞí¶àÁ¢×ãÖ®´¦£¬Ê¯·ì¼ä³¤×ÅĞ¡»¨Ğ¡²İ¡£
+å´–å£è¿™è¾¹ä¸é‚£ä¹ˆå…‰ç§ƒç§ƒçš„ï¼Œæœ‰è®¸å¤šç«‹è¶³ä¹‹å¤„ï¼ŒçŸ³ç¼é—´é•¿ç€å°èŠ±å°è‰ã€‚
 LONG
 	);
 
@@ -16,9 +16,9 @@ LONG
 
         set("item_desc",([
 	    "down"	:
-"ÏÂÃæÊÇÍòÕÉÉîÔ¨¡£\n",
+"ä¸‹é¢æ˜¯ä¸‡ä¸ˆæ·±æ¸Šã€‚\n",
 		"cliff"	:
-"ÑÂ±Ú¶«±ßÓĞ¸ö´óÊ¯·ì£¬ÏòÏÂÉìÈ¥¡£\n",
+"å´–å£ä¸œè¾¹æœ‰ä¸ªå¤§çŸ³ç¼ï¼Œå‘ä¸‹ä¼¸å»ã€‚\n",
         ]));
 
 	set("cost", 10);
@@ -40,7 +40,7 @@ int do_jump(string arg)
         if ( !arg || arg == "" ) return 0;
 
         if ( arg == "down" ) {
-                message_vision("$N×İÉíÏòÏÂÌøÈ¥¡£\n", me);
+                message_vision("$Nçºµèº«å‘ä¸‹è·³å»ã€‚\n", me);
 		call_out("to_pool", 1, me);
                 return 1;
 	}
@@ -53,19 +53,19 @@ int do_climb(string arg)
 	int k;
 
 	if ( arg && arg != "down" && arg != "right")
-		return notify_fail("´ÓÕâÀï²»ÄÜ³¯ÄÇ¸ö·½ÏòÅÀ¡£\n");
+		return notify_fail("ä»è¿™é‡Œä¸èƒ½æœé‚£ä¸ªæ–¹å‘çˆ¬ã€‚\n");
 
 	if ( arg == "down" ){
 		k = (int)me->query_dex() + (int)me->query_kar();
 		if ( random(k) < 20 ) {
-                	message_vision("$NÏòÑÂÏÂÅÀÈ¥£¬ºöÈ»Ò»¸öÊ§ÊÖ£¬Ö±Ë¤ÁËÏÂÈ¥¡£¡£\n", me);
+                	message_vision("$Nå‘å´–ä¸‹çˆ¬å»ï¼Œå¿½ç„¶ä¸€ä¸ªå¤±æ‰‹ï¼Œç›´æ‘”äº†ä¸‹å»ã€‚ã€‚\n", me);
 			call_out("to_pool", 1, me);
 	        	return 1;
 		}
 		else {
-			message_vision("$N°Ç×ÅÑÂ±ÚÏòÏÂ±ßÅÀÈ¥¡£\n", me);
+			message_vision("$Næ‰’ç€å´–å£å‘ä¸‹è¾¹çˆ¬å»ã€‚\n", me);
 			me->move(__DIR__"cliffpath2");
-	                message_vision("$N°Ç×ÅĞüÑÂ´ÓÅÀÏÂÀ´¡£\n", me);
+	                message_vision("$Næ‰’ç€æ‚¬å´–ä»çˆ¬ä¸‹æ¥ã€‚\n", me);
 			me->add("jingli",-random(20));
 			return 1;
 		}
@@ -73,9 +73,9 @@ int do_climb(string arg)
 	}
 
 	if (arg == "right" ) {
-		message_vision("$N°Ç×ÅÑÂ±ÚÏòÓÒ±ßÅÀÈ¥¡£\n", me);
+		message_vision("$Næ‰’ç€å´–å£å‘å³è¾¹çˆ¬å»ã€‚\n", me);
 		me->move(__DIR__"clifftree3");
-		message_vision("$N°Ç×ÅÑÂ±Ú´Ó×ó±ßÅÀ¹ıÀ´¡£\n", me);
+		message_vision("$Næ‰’ç€å´–å£ä»å·¦è¾¹çˆ¬è¿‡æ¥ã€‚\n", me);
 		me->add("jingli", -random(10));
 		return 1;
 	}

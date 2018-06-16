@@ -1,5 +1,5 @@
 //Cracked by Roath
-// °×Óñ·å
+// ç™½ç‰å³°
 // maco
 #include <ansi.h>
 
@@ -9,11 +9,11 @@ string look_sword();
 
 void create()
 {
-	set("short", "°×Óñ·å´óµî");
+	set("short", "ç™½ç‰å³°å¤§æ®¿");
 	set("long", @LONG
-´óµîÉÏµ½´¦¶¼ÊÇº¡¹Ç(skeleton)£¬µîÖĞµØÏÂµ½´¦ÊÇ´ó´óĞ¡
-Ğ¡µÄÓñÖÆÎäÆ÷£¬µ¶Ç¹½£êª¶¼ÓĞ£¬Ö»ÊÇĞÎ×´ÆæÌØ£¬ÓëÖĞÍÁÏ°¼ûµÄ
-åÄÈ»²»Í¬¡£
+å¤§æ®¿ä¸Šåˆ°å¤„éƒ½æ˜¯éª¸éª¨(skeleton)ï¼Œæ®¿ä¸­åœ°ä¸‹åˆ°å¤„æ˜¯å¤§å¤§å°
+å°çš„ç‰åˆ¶æ­¦å™¨ï¼Œåˆ€æªå‰‘æˆŸéƒ½æœ‰ï¼Œåªæ˜¯å½¢çŠ¶å¥‡ç‰¹ï¼Œä¸ä¸­åœŸä¹ è§çš„
+è¿¥ç„¶ä¸åŒã€‚
 LONG
 	);
 
@@ -46,20 +46,20 @@ void init()
 			&& inv[j]->query("material") != "blacksteel" 
 			&& inv[j]->query("material") != "iron" ) continue;
 			if( inv[j]->query("equipped") && inv[j]->query("armor_type") == "cloth") {
-			message_vision(HIW"Ò»¹É¾Ş´óµÄ´ÅÁ¦Îü¶¯$NÉíÉÏËù´©"+inv[j]->name()+HIW"£¬¡°°õ¡±µØÒ»Éù£¬$NÒÑ±»´ÅÉ½ÎüµÃË¤µ¹ÔÚµØ£¬Ò»Ê±ÅÀÒ²ÅÀ²»ÆğÀ´£¡\n"NOR, obj[i]);
+			message_vision(HIW"ä¸€è‚¡å·¨å¤§çš„ç£åŠ›å¸åŠ¨$Nèº«ä¸Šæ‰€ç©¿"+inv[j]->name()+HIW"ï¼Œâ€œç£…â€åœ°ä¸€å£°ï¼Œ$Nå·²è¢«ç£å±±å¸å¾—æ‘”å€’åœ¨åœ°ï¼Œä¸€æ—¶çˆ¬ä¹Ÿçˆ¬ä¸èµ·æ¥ï¼\n"NOR, obj[i]);
 			me->add("jingli", -50);
 			me->start_busy(3);
 			}
 			else if( inv[j]->query("equipped") && inv[j] == me->query_temp("weapon"))
 			{
-				message_vision(HIW"$NÍ»¾õÒ»¹É¼«´óÁ¦Á¿À­¶¯ÊÖÖĞ"+inv[j]->name()+HIW"£¬µ±µÄÒ»Éù£¬"+inv[j]->name()+HIW"¾¹¶ûÍÑÊÖ£¬ÂäÔÚµØÉÏ£¡\n"NOR, obj[i]);
+				message_vision(HIW"$Nçªè§‰ä¸€è‚¡æå¤§åŠ›é‡æ‹‰åŠ¨æ‰‹ä¸­"+inv[j]->name()+HIW"ï¼Œå½“çš„ä¸€å£°ï¼Œ"+inv[j]->name()+HIW"ç«Ÿå°”è„±æ‰‹ï¼Œè½åœ¨åœ°ä¸Šï¼\n"NOR, obj[i]);
 			}
-			else message_vision(HIW"$NÉíÉÏ"+inv[j]->name()+HIW"ºöÈ»±»Ò»µÀÎŞĞÎÁ¦Á¿À­µÃ·É³ö£¬ï£µØÒ»Éù£¬µôÔÚµØÏÂ£¡\n"NOR, obj[i]);
+			else message_vision(HIW"$Nèº«ä¸Š"+inv[j]->name()+HIW"å¿½ç„¶è¢«ä¸€é“æ— å½¢åŠ›é‡æ‹‰å¾—é£å‡ºï¼Œé“®åœ°ä¸€å£°ï¼Œæ‰åœ¨åœ°ä¸‹ï¼\n"NOR, obj[i]);
 			inv[j]->move(environment(me));
 
 			if(inv[j]->query("weapon_prop/damage") >= 1 && inv[j]->query("weapon_prop/damage") < 30 ) {
-			message_vision(HIW "Ö»Ìı¼û¡¸Å¾¡¹µØÒ»Éù£¬"+inv[j]->name()+ HIW"ÒÑÔÚµØÉÏ×²¶Ï³ÉÁ½½Ø£¡\n" NOR,  obj[i] );
-			inv[j]->set("name", "¶ÏµôµÄ" + inv[j]->name());
+			message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ"+inv[j]->name()+ HIW"å·²åœ¨åœ°ä¸Šæ’æ–­æˆä¸¤æˆªï¼\n" NOR,  obj[i] );
+			inv[j]->set("name", "æ–­æ‰çš„" + inv[j]->name());
 			inv[j]->set("value", 0);
 			inv[j]->set("weapon_prop", 0);
 			}
@@ -72,9 +72,9 @@ string look_skeleton()
 {
 	string desc;
 	if(query("jade_sword")) 
-	desc = "Ò»¾ßÖ±Á¢µÄº¡¹Ç£¬ÉíÉÏ»¹¹Ò×ÅÆßÁã°ËÂäµÄÒÂ·ş£¬¹Ç¸ñĞÎ×´ÈÔÈ»ÍêÕû¡£\n"
-	"º¡¹ÇÓÒÊÖ×¥×ÅÒ»±ú°×É«³¤½£(white sword)£¬´ÌÔÚÁíÒ»¾ßº¡¹ÇÉíÉÏ£¬¿´À´µ±ÄêÊÇÓÃÕâ°×½£É±ËÀÁËÄÇÈË¡£\n";
-	else desc = "º¡¹ÇÔÚµØÉÏ¿å×÷Ò»¶Ñ¡£\n";
+	desc = "ä¸€å…·ç›´ç«‹çš„éª¸éª¨ï¼Œèº«ä¸Šè¿˜æŒ‚ç€ä¸ƒé›¶å…«è½çš„è¡£æœï¼Œéª¨æ ¼å½¢çŠ¶ä»ç„¶å®Œæ•´ã€‚\n"
+	"éª¸éª¨å³æ‰‹æŠ“ç€ä¸€æŸ„ç™½è‰²é•¿å‰‘(white sword)ï¼Œåˆºåœ¨å¦ä¸€å…·éª¸éª¨èº«ä¸Šï¼Œçœ‹æ¥å½“å¹´æ˜¯ç”¨è¿™ç™½å‰‘æ€æ­»äº†é‚£äººã€‚\n";
+	else desc = "éª¸éª¨åœ¨åœ°ä¸Šå®ä½œä¸€å †ã€‚\n";
 	return desc;
 
 }
@@ -85,10 +85,10 @@ string look_sword()
 	object me = this_player();
 	string desc;
 	if(query("jade_sword")) {
-	message_vision("$N½«Óñ½£ÇáÇá´Óº¡¹ÇÊÖÖĞÈ¡¹ı£¬Á½¾ßº¡¹ÇÖ§³ÅÒ»Ê§£¬µÇÊ±¿¦À®À®Ò»ÕóÏì£¬¿å×÷Ò»¶Ñ¡£\n", me);
+	message_vision("$Nå°†ç‰å‰‘è½»è½»ä»éª¸éª¨æ‰‹ä¸­å–è¿‡ï¼Œä¸¤å…·éª¸éª¨æ”¯æ’‘ä¸€å¤±ï¼Œç™»æ—¶å–€å–‡å–‡ä¸€é˜µå“ï¼Œå®ä½œä¸€å †ã€‚\n", me);
 	sword->move(this_player());
 	delete("jade_sword");
 	return "";
 	}
-	else return "ÄãÒª¿´Ê²Ã´£¿\n";
+	else return "ä½ è¦çœ‹ä»€ä¹ˆï¼Ÿ\n";
 }

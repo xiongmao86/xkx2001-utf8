@@ -5,12 +5,12 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name(MAG"Î÷ºş´×Óã"NOR, ({"fish"}));
+	set_name(MAG"è¥¿æ¹–é†‹é±¼"NOR, ({"fish"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö»");
+		set("unit", "åª");
 		set("value", 120);
 		set("food_remaining", 3);
 		set("food_supply", 80);

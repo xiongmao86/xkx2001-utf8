@@ -6,10 +6,10 @@ inherit ROOM;
 int do_rowing();
 void create()
 {
-        set("short", "Ä¾·¤ÉÏ");
+        set("short", "æœ¨ç­ä¸Š");
         set("long", @LONG
-ÄãÕ¾ÔÚÄ¾·¤ÉÏÒ¡Ò¡°Ú°ÚµØÂýÂýÏòÇ°»®(rowing)£¬ºÓË®²»Ê±½¦ÆðÀ´£¬°ÑÄãÒÂÉÑ
-¶¼ÅªÊªÁË¡£
+ä½ ç«™åœ¨æœ¨ç­ä¸Šæ‘‡æ‘‡æ‘†æ‘†åœ°æ…¢æ…¢å‘å‰åˆ’(rowing)ï¼Œæ²³æ°´ä¸æ—¶æº…èµ·æ¥ï¼ŒæŠŠä½ è¡£è£³
+éƒ½å¼„æ¹¿äº†ã€‚
 LONG
         );
 
@@ -26,28 +26,28 @@ int do_rowing()
     object ob, me = this_player();
     int check, wait_time = 0;
     remove_call_out("open_up");
-    message_vision("$NÊ¹¾¢µØ°ÑÄ¾·¤ÏòÇ°»®Ñ½£¡»®Ñ½£¡\n", me);
-    me->receive_damage("jingli", 15, "ÂäË®ÑÍËÀÁË");
-    me->set_temp("marks/»®", 1);
-    if ( me->query_temp("marks/»®") && interactive(me) && !me->is_fighting()) {
+    message_vision("$Nä½¿åŠ²åœ°æŠŠæœ¨ç­å‘å‰åˆ’å‘€ï¼åˆ’å‘€ï¼\n", me);
+    me->receive_damage("jingli", 15, "è½æ°´æ·¹æ­»äº†");
+    me->set_temp("marks/åˆ’", 1);
+    if ( me->query_temp("marks/åˆ’") && interactive(me) && !me->is_fighting()) {
            call_out("open_up", random(10)+10, me);
         }
     return 1;
 }
 int open_up(object me)
 {
-        message_vision("$N»®ÁË°ëÌì£¬Ä¾·¤ÖÕì¶¿¿°¶ÁË¡£\n", me);
+        message_vision("$Nåˆ’äº†åŠå¤©ï¼Œæœ¨ç­ç»ˆæ–¼é å²¸äº†ã€‚\n", me);
         set("exits/up", __DIR__"sulew");
 	call_out("close_up", 3, me);
            remove_call_out("open_up");
-	this_player()->delete_temp("marks/»® ");
+	this_player()->delete_temp("marks/åˆ’ ");
 	return 1;
 }
 int close_up(object me)
 {
-        message_vision("Ä¾·¤ÓÖ±»³åµ½ºÓÖÐÑëÈ¥ÁË¡£\n", me);
+        message_vision("æœ¨ç­åˆè¢«å†²åˆ°æ²³ä¸­å¤®åŽ»äº†ã€‚\n", me);
         delete("exits/up");
-        this_player()->delete_temp("marks/»® ");
+        this_player()->delete_temp("marks/åˆ’ ");
 	remove_call_out("open_up");
         return 1;
 }

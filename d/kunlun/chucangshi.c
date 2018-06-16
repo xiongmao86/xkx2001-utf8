@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: /d/mingjiao/chucangshi.c ´¢²ØÊÒ
+// Room: /d/mingjiao/chucangshi.c å‚¨è—å®¤
 // Zhangchi 3/00
 
 #include <ansi.h>
@@ -11,9 +11,9 @@ string word_string();
 
 void create()
 {
-	set("short", "´¢²ØÊÒ");
+	set("short", "å‚¨è—å®¤");
 	set("long", @LONG
-ÕâÊÇÓÃÀ´´¢²Ø¾«ÌúµÄ·¿¼ä¡£Ç½ÉÏÃæÓĞÒ»ĞĞĞ¡×Ö(word)¡£
+è¿™æ˜¯ç”¨æ¥å‚¨è—ç²¾é“çš„æˆ¿é—´ã€‚å¢™ä¸Šé¢æœ‰ä¸€è¡Œå°å­—(word)ã€‚
 LONG
 	);
 
@@ -40,7 +40,7 @@ void init()
 
 int do_check()
 {
-	write("ÏÖÓĞ"+query("jingtie")+"¿é¾«Ìú\n");
+	write("ç°æœ‰"+query("jingtie")+"å—ç²¾é“\n");
 	return 1;
 }
 
@@ -53,6 +53,6 @@ int f_set_jingtie(int num)
 
 string word_string()
 {
-	return HIC"²é¾«Ìú´¢²ØÁ¿:	check_jingtie\n"+
-		"ÉèÖÃ¾«Ìú´¢²ØÁ¿	set_jingtie\n"NOR;
+	return HIC"æŸ¥ç²¾é“å‚¨è—é‡:	check_jingtie\n"+
+		"è®¾ç½®ç²¾é“å‚¨è—é‡	set_jingtie\n"NOR;
 }

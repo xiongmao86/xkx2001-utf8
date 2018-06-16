@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xuedao.c  Ñªµ¶
+// xuedao.c  è¡€åˆ€
 
 #include <weapon.h>
 #include <ansi.h>
@@ -8,19 +8,19 @@ inherit BLADE;
 
 void create()
 {
-	set_name(RED"Ñªµ¶"NOR, ({ "xue dao", "dao" }));
+	set_name(RED"è¡€åˆ€"NOR, ({ "xue dao", "dao" }));
 	set_weight(7000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", RED"Ò»±ú³¤³¤µÄÃåµ¶£¬µ¶Éí²»×¡²ü¶¯£¬ÍğÈç»îÉßÒ»°ã¡£Òı¹âÍûÈ¥£¬µ¶ÈĞÉÏÒ»Æ¬°µ
-ºìÖ®É«¡£\n" NOR);
+		set("unit", "æŠŠ");
+		set("long", RED"ä¸€æŸ„é•¿é•¿çš„ç¼…åˆ€ï¼Œåˆ€èº«ä¸ä½é¢¤åŠ¨ï¼Œå®›å¦‚æ´»è›‡ä¸€èˆ¬ã€‚å¼•å…‰æœ›å»ï¼Œåˆ€åˆƒä¸Šä¸€ç‰‡æš—
+çº¢ä¹‹è‰²ã€‚\n" NOR);
 		set("value", 7000000);
 		set("material", "steel");
 		set("rigidity", 1000000);
-		set("wield_msg", RED "Ö»Ìı¡¸à§¡¹µÄÒ»Éù£¬Ñªµ¶ÍÑÇÊ·É³ö£¬$NÊÖÖĞËÆÊÇÎÕ×¡Ò»Ìõ³àÉß·º×Åºì¹â£¬ÃÖÂş×ÅÒ»Æ¬ÑªÆø¡£\n" NOR);
-		set("unwield_msg", RED " Éß½øµ¶ÇÊ¡£\n" NOR);
+		set("wield_msg", RED "åªå¬ã€Œå”°ã€çš„ä¸€å£°ï¼Œè¡€åˆ€è„±é˜é£å‡ºï¼Œ$Næ‰‹ä¸­ä¼¼æ˜¯æ¡ä½ä¸€æ¡èµ¤è›‡æ³›ç€çº¢å…‰ï¼Œå¼¥æ¼«ç€ä¸€ç‰‡è¡€æ°”ã€‚\n" NOR);
+		set("unwield_msg", RED " è›‡è¿›åˆ€é˜ã€‚\n" NOR);
 //		set("no_drop", 1);
 	}
 	::create();
@@ -45,7 +45,7 @@ int do_lian(string arg)
 
         if ( !objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "blade" )
-	return notify_fail( "ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+	return notify_fail( "ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	
 	if ( arg == "blade" && !me->is_fighting()
         && (int)me->query("combat_exp") >= 50000  
@@ -67,10 +67,10 @@ int do_lian(string arg)
         if( me->query_skill("xue-dao",1) > 200 ) 
 	me->receive_damage("jingli", 15);
 	me->receive_damage("qi", 5);
-                tell_object(me,"ÄãµÄÑªµ¶µ¶·¨½ø²½ÁË£¡\n", me);
+                tell_object(me,"ä½ çš„è¡€åˆ€åˆ€æ³•è¿›æ­¥äº†ï¼\n", me);
         }
 	else
-		tell_object(me,"Ê²÷á£¿\n",me);
+		tell_object(me,"ä»€éº½ï¼Ÿ\n",me);
 	
         return 1;
 }

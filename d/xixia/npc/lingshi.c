@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ê¯ÈËÎäÊ¿", ({ "wu shi", "shi", "guard" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("çŸ³äººæ­¦å£«", ({ "wu shi", "shi", "guard" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"ÕâÊÇÎ÷ÏÄ»ÆµÛµÄÊØÁêÎÀÊ¿£¬¿´ÆðºÃÏóÀ´ÉíÊÖ²»·²¡£\n");
+		"è¿™æ˜¯è¥¿å¤é»„å¸çš„å®ˆé™µå«å£«ï¼Œçœ‹èµ·å¥½è±¡æ¥èº«æ‰‹ä¸å‡¡ã€‚\n");
 	set("combat_exp", 500000);
         set("shen_type", -1);
 	set("attitude", "aggressive");
@@ -38,7 +38,7 @@ void create()
 	set_skill("parry", 150);
 	set_skill("dodge", 150);
 
-	set("no_get", "Ê¯ÈËÎäÊ¿¶ÔÄã¶øÑÔÌ«ÖØÁË¡£");
+	set("no_get", "çŸ³äººæ­¦å£«å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚");
 	setup();
 
         carry_object("/clone/weapon/qiang")->wield();

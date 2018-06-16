@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "武器库");
 	set("long", @LONG
-������һ�䲻С�ķ��䣬����һ��������İڷ��ż��ӣ����ϻ�ţ�
-�򿿣���ڣ���Ҳ��ٱ�����ʮ�˰����������ȫ�����в��ٴ�������
+这里是一间不小的房间，屋里一排排整齐的摆放着架子，架上或放，
+或靠，或摆，或挂不少兵器，十八般兵刃样样具全，还有不少大铁锤。
 LONG
 	);
 	set("exits", ([ /* sizeof() == 1 */

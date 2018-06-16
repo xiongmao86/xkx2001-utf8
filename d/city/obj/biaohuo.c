@@ -6,10 +6,10 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ºìïÚ", ({"hong biao", "biao"}));
+	set_name("çº¢é•–", ({"hong biao", "biao"}));
 	set("long",
-		"ÕâÊÇÒ»·İºìïÚ£¬°ü×°µØ·Ç³£×ĞÏ¸£¬²»Öª×°×ÅÊ²Ã´¶«Î÷¡£\n");
-	set("unit", "·İ");
+		"è¿™æ˜¯ä¸€ä»½çº¢é•–ï¼ŒåŒ…è£…åœ°éå¸¸ä»”ç»†ï¼Œä¸çŸ¥è£…ç€ä»€ä¹ˆä¸œè¥¿ã€‚\n");
+	set("unit", "ä»½");
 	set("weight", 20);
 }
 
@@ -30,18 +30,18 @@ int do_check()
 {
 	object ppl = this_player();
 	
-	if ( ppl->query_temp("biao/li") ) write("ÕâÊÇ»ªÉ½½ÅÏÂÓñÈªÔºÀîÌú×ìµÄïÚ»õ¡£\n");
-	if ( ppl->query_temp("biao/ma") ) write("ÕâÊÇÈªÖİÑïÍşÎä¹İ¹İÖ÷ÂíÎåµÂÀÏÊ¦ÍĞËÍµÄïÚ»õ¡£\n");
-	if ( ppl->query_temp("biao/zhu") ) write("ÕâÊÇ°×Â¹ÊéÔºÖììäÏÈÉúµÄïÚ»õ¡£\n");
-	if ( ppl->query_temp("biao/bayi") ) write("ÕâÊÇ±±½®Ğ¡Õò°ÍÒÀÍĞËÍµÄÖØïÚ£¬Òª¾¡¿ìËÍµ½¡£\n");
-	if ( ppl->query_temp("biao/jiang") ) write("ÕâÊÇµ±½ñÎäÁÖÃËÖ÷ËùÖØÍĞµÄºìïÚ£¬Ğë½»µ½Ç×±ø¶Ó³¤½­°ÙÊ¤ÊÖÀï¡£\n");
+	if ( ppl->query_temp("biao/li") ) write("è¿™æ˜¯åå±±è„šä¸‹ç‰æ³‰é™¢æé“å˜´çš„é•–è´§ã€‚\n");
+	if ( ppl->query_temp("biao/ma") ) write("è¿™æ˜¯æ³‰å·æ‰¬å¨æ­¦é¦†é¦†ä¸»é©¬äº”å¾·è€å¸ˆæ‰˜é€çš„é•–è´§ã€‚\n");
+	if ( ppl->query_temp("biao/zhu") ) write("è¿™æ˜¯ç™½é¹¿ä¹¦é™¢æœ±ç†¹å…ˆç”Ÿçš„é•–è´§ã€‚\n");
+	if ( ppl->query_temp("biao/bayi") ) write("è¿™æ˜¯åŒ—ç–†å°é•‡å·´ä¾æ‰˜é€çš„é‡é•–ï¼Œè¦å°½å¿«é€åˆ°ã€‚\n");
+	if ( ppl->query_temp("biao/jiang") ) write("è¿™æ˜¯å½“ä»Šæ­¦æ—ç›Ÿä¸»æ‰€é‡æ‰˜çš„çº¢é•–ï¼Œé¡»äº¤åˆ°äº²å…µé˜Ÿé•¿æ±Ÿç™¾èƒœæ‰‹é‡Œã€‚\n");
 
 	return 1;
 }
 
 void destroy_it(object ppl, object obj) 
 { 
-	tell_object( ppl, "Ê±ÏŞÒÑµ½£¬ÄãµÄÈÎÎñÊ§°ÜÁË£¡\n" );
+	tell_object( ppl, "æ—¶é™å·²åˆ°ï¼Œä½ çš„ä»»åŠ¡å¤±è´¥äº†ï¼\n" );
 	ppl->delete_temp("apply/short");
 	ppl->delete_temp("biao");	
 	ppl->set_temp("biao/fail", 1);

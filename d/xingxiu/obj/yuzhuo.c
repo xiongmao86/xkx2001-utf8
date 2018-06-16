@@ -6,13 +6,13 @@ inherit WRISTS;
 
 void create()
 {
-	set_name(HIG"´äÓñÊÖïí"NOR, ({ "jade bracelet", "bracelet", "zhuo" }));
+	set_name(HIG"ç¿ ç‰æ‰‹é•¯"NOR, ({ "jade bracelet", "bracelet", "zhuo" }));
 	set("weight", 400);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¸öºÍãÙ´äÓñÔìµÄÊÖïí£¬É«ÔóÓÌÈçôä´ä¡£\n");
-		set("unit", "¸ö");
+		set("long", "ä¸€ä¸ªå’Œé˜—ç¿ ç‰é€ çš„æ‰‹é•¯ï¼Œè‰²æ³½çŠ¹å¦‚ç¿¡ç¿ ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 6000);
 		set("material", "jade");
 		set("armor_prop/armor", 2);

@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/bwdh/leitai3.c
-// ÀŞÌ¨
+// æ“‚å°
 // by sdong 09/25/98
 
 #define KANTAI "/d/bwdh/kantai3.c"

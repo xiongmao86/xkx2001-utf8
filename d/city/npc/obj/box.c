@@ -1,5 +1,5 @@
 //Cracked by Roath
-// box.c ¹¦µÂÏä
+// box.c åŠŸå¾·ç®±
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIR"¹¦µÂÏä"NOR, ({ "gongde xiang", "xiang", "box" }) );
+	set_name(HIR"åŠŸå¾·ç®±"NOR, ({ "gongde xiang", "xiang", "box" }) );
 	set_weight(3000);
 	set_max_encumbrance(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öĞ¡ÃíÀï³£¼ûµÄ¹¦µÂÏä£¬×¨ÃÅÓÃÀ´½ÓÊÜÉÆÄĞĞÅÅ®ÃÇµÄ¾è¿î¡£\n");
+		set("unit", "ä¸ª");
+                set("long", "è¿™æ˜¯ä¸€ä¸ªå°åº™é‡Œå¸¸è§çš„åŠŸå¾·ç®±ï¼Œä¸“é—¨ç”¨æ¥æ¥å—å–„ç”·ä¿¡å¥³ä»¬çš„ææ¬¾ã€‚\n");
 		set("value", 1000);
 		set("material", "wood");
 		set("no_get",1);
@@ -39,7 +39,7 @@ void init()
 		ob=new("/clone/money/silver");
 		ob->set_amount(10);
 		ob->move(this_object());
-		tell_object(me, "\nÄãºöÈ»¿´µ½¹¦µÂÏäÀïÓĞÊ²÷á¶«Î÷ÔÚÉÁÉÁ·¢¹â£¡\n\n");
+		tell_object(me, "\nä½ å¿½ç„¶çœ‹åˆ°åŠŸå¾·ç®±é‡Œæœ‰ä»€éº½ä¸œè¥¿åœ¨é—ªé—ªå‘å…‰ï¼\n\n");
 		me->add("combat_exp", 1);
 	}
 */	
@@ -56,20 +56,20 @@ int do_put(string arg)
 	me = this_player();
 
 	if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿æ”¾è¿›å“ªé‡Œï¼Ÿ\n");
                 
         if( item == "all" ) {
-		write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+		write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
 		return 1;
 	}
                                                                 
 	sscanf(item, "%d %s", amount, item);
 	
 	if( !objectp(obj = present(item, me)) )
-		return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+		return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( obj->query("no_drop") ) {
-		write("ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+		write("è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 		return 1;
 	}
 	
@@ -77,7 +77,7 @@ int do_put(string arg)
 	&&  obj->query_amount() >= 5 && amount >= 5 
 	&&  me->query("begger") > 0 )
 	{
-		message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+		message_vision( sprintf(HIY "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
 			obj->query("unit"), obj->name(), 
 			this_object()->name()),me );
 		obj->set_amount(obj->query_amount() - amount);;
@@ -91,7 +91,7 @@ int do_put(string arg)
         &&  obj->query_amount() >= 25 && amount >= 25 
 	&&  me->query("thief") > 0) 
 	{
-                message_vision( sprintf(HIG "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+                message_vision( sprintf(HIG "$Nå°†ä¸€%s%sæ”¾è¿›%sã€‚\n" NOR,
                         obj->query("unit"), obj->name(), 
                         this_object()->name()),me );
                 obj->set_amount(obj->query_amount() - amount);;

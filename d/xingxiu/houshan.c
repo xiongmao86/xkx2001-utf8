@@ -1,5 +1,5 @@
 //Cracked by Roath
-// houshan.c °×Óñ·åááÉ½
+// houshan.c ç™½ç‰å³°å¾Œå±±
 // maco
 
 inherit ROOM;
@@ -7,9 +7,9 @@ inherit ROOM;
 void create()
 {
     int i;
-	set("short", "ááÉ½Ğ¡Â·");
+	set("short", "å¾Œå±±å°è·¯");
 	set("long", @LONG
-ÕâÊÇ°×Óñ·åÏÂµÄĞ¡Â·£¬¿ÉÒÔÓÉ´Ë´Óôä´ä³ØÈÆÈë³ÇÖĞ¡£
+è¿™æ˜¯ç™½ç‰å³°ä¸‹çš„å°è·¯ï¼Œå¯ä»¥ç”±æ­¤ä»ç¿¡ç¿ æ± ç»•å…¥åŸä¸­ã€‚
 LONG
 	);
 

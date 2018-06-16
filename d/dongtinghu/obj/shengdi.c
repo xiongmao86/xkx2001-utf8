@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(GRN"ÉúµØ"NOR, ({"shengdi"}));
+        set_name(GRN"ç”Ÿåœ°"NOR, ({"shengdi"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","ÉúµØ£º³£¼ûÖĞÒ©£¬ÁÆÄÚÉË¡£\n");
+                set("unit", "é’±");
+                set("long","ç”Ÿåœ°ï¼šå¸¸è§ä¸­è¯ï¼Œç–—å†…ä¼¤ã€‚\n");
                 set("value", 1000);
 				set("yaocai", 1);
         		set("cure_s",0);

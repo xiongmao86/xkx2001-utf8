@@ -12,16 +12,16 @@ void init()
 
 void create()
 {
-        set_name("Ä¾·¤", ({"raft", "mu fa"}));
+        set_name("æœ¨ç­", ({"raft", "mu fa"}));
         set_weight(35000);
         set_max_encumbrance(50000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÊÖ¹¤´ÖÖÆµÄÄ¾·¤£¬¿ÉÒÔ³Ë(ride)Ëü¹ýºÓ¡£\n");
+                set("unit", "ä¸ª");
+                set("long", "ä¸€ä¸ªæ‰‹å·¥ç²—åˆ¶çš„æœ¨ç­ï¼Œå¯ä»¥ä¹˜(ride)å®ƒè¿‡æ²³ã€‚\n");
                 set("value", 1000);
-		set("no_get", "ÕâÑù¶«Î÷Ì«³ÁÁË£¬ÄãÄÃ²»¶¯¡£\n");
+		set("no_get", "è¿™æ ·ä¸œè¥¿å¤ªæ²‰äº†ï¼Œä½ æ‹¿ä¸åŠ¨ã€‚\n");
         }
 }
 
@@ -29,11 +29,11 @@ int do_ride(string arg)
 {
 	object  me = this_player();
         if (!id(arg))
-                return notify_fail("ÄãÒª³ËÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ä¹˜ä»€ä¹ˆï¼Ÿ\n");
 
-               message("vision",this_player()->name() + "ÌøÉÏÄ¾·¤¡£\n",
+               message("vision",this_player()->name() + "è·³ä¸Šæœ¨ç­ã€‚\n",
                         environment(me), ({me}) );
-               write("Äã°ÑÄ¾·¤ÈÓ½øË®Àï£¬È»ááÌøÉÏÈ¥£¬ÂýÂýµØÏòÇ°»®¡£\n");
+               write("ä½ æŠŠæœ¨ç­æ‰”è¿›æ°´é‡Œï¼Œç„¶å¾Œè·³ä¸ŠåŽ»ï¼Œæ…¢æ…¢åœ°å‘å‰åˆ’ã€‚\n");
 		me->move("/d/qilian/mufa");
 		destruct(this_object());
         return 1;

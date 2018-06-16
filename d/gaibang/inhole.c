@@ -7,11 +7,11 @@ int do_say(string);
 
 void create()
 {
-	set("short", "Ê÷¶´ÄÚ²¿");
+	set("short", "æ ‘æ´å†…éƒ¨");
 	set("long", @LONG
-ÕâÊÇÑïÖİ³ÇÖĞÑë¹ã³¡µÄÀÏ»±Ê÷ÄÚ²¿£¬Ò²ÊÇØ¤°ïÃØÃÜµØÏÂÍ¨µÀµÄ×Ü½»»ã´¦¡£Ê÷
-¶´Àï¶ªÂúÁË¸÷ÖÖÀ¬»ø£¬åôÂş×ÅÒ»¹É³ôºåºåµÄÎ¶µÀ¡£Ê÷¶´±ÚÉÏ¶¤×ÅÒ»¿é·Ç³£ĞÑÄ¿µÄ
-Ä¾ÅÆ£¨board£©¡£
+è¿™æ˜¯æ‰¬å·åŸä¸­å¤®å¹¿åœºçš„è€æ§æ ‘å†…éƒ¨ï¼Œä¹Ÿæ˜¯ä¸å¸®ç§˜å¯†åœ°ä¸‹é€šé“çš„æ€»äº¤æ±‡å¤„ã€‚æ ‘
+æ´é‡Œä¸¢æ»¡äº†å„ç§åƒåœ¾ï¼Œå¼­æ¼«ç€ä¸€è‚¡è‡­å“„å“„çš„å‘³é“ã€‚æ ‘æ´å£ä¸Šé’‰ç€ä¸€å—éå¸¸é†’ç›®çš„
+æœ¨ç‰Œï¼ˆboardï¼‰ã€‚
 LONG 
 	);
 	set("exits", ([
@@ -19,7 +19,7 @@ LONG
 	]));
 
 	set("item_desc",([
-		"board"	: "¸»ÈËµØÓü£¬ÇîÈËÌìÌÃ¡£\n"
+		"board"	: "å¯Œäººåœ°ç‹±ï¼Œç©·äººå¤©å ‚ã€‚\n"
 	]));
 
 	set("objects",([
@@ -36,12 +36,12 @@ void init()
 
 	if ( me->query("eat_wan") && me->query("mud_age") < me->query("eat_age")+86400)
 	{
-	tell_object(me, "ÄãÒÑ·şÏÉÍè£¬Ó¦ÔÚÒ»ÄêÄÚÔÙ´Î·şÓÃ£¬·ñÔò¹¦Á¦´óËğ£¡£¡£¡\n");
+	tell_object(me, "ä½ å·²æœä»™ä¸¸ï¼Œåº”åœ¨ä¸€å¹´å†…å†æ¬¡æœç”¨ï¼Œå¦åˆ™åŠŸåŠ›å¤§æŸï¼ï¼ï¼\n");
 	}
 
 	if ( me->query("eat_wan") && me->query("mud_age") > me->query("eat_age")+86400)
 	{
-	tell_object(me, "ÄãÒ»ÄêÄÚÎ´·şÏÉÍè£¬¹¦Á¦´óËğ£¡£¡£¡\n");
+	tell_object(me, "ä½ ä¸€å¹´å†…æœªæœä»™ä¸¸ï¼ŒåŠŸåŠ›å¤§æŸï¼ï¼ï¼\n");
 	me->add("max_jingli", -100);
 	me->add("max_neili", -100);
 	me->set("eat_age", me->query("mud_age"));
@@ -62,25 +62,25 @@ int do_say(string arg)
 
 /*	for (i=0; i<sizeof(inv); i++) {
 		if (inv[i]->is_character() && 
-		(string)inv[i]->query("family/family_name") != "Ø¤°ï" ) count ++;
+		(string)inv[i]->query("family/family_name") != "ä¸å¸®" ) count ++;
 	}
 */
 	
-	if( (arg=="ÌìÌÃÓĞÂ·Äã²»×ßÑ½" || arg=="µØÓüÎŞÃÅÄã½øÀ´°¡" )
-	&& this_player()->query("family/family_name") == "Ø¤°ï")
+	if( (arg=="å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€" || arg=="åœ°ç‹±æ— é—¨ä½ è¿›æ¥å•Š" )
+	&& this_player()->query("family/family_name") == "ä¸å¸®")
 	{
-		write("Ö»ÌıÀïÃæÓĞÈËËµÁËÉù£ºÊÇ±¾°ïĞÖµÜ°É£¿¿ìÇë½øÀ´°É¡£\n");
-		message("vision", "Ê÷¶´±ßÉÏÒ»¶ÂÇ½»º»ºÒÆÁË¿ªÀ´£¬Ô­À´ÊÇµÀĞ¡Ä¾ÃÅ¡£\n", this_player());
+		write("åªå¬é‡Œé¢æœ‰äººè¯´äº†å£°ï¼šæ˜¯æœ¬å¸®å…„å¼Ÿå§ï¼Ÿå¿«è¯·è¿›æ¥å§ã€‚\n");
+		message("vision", "æ ‘æ´è¾¹ä¸Šä¸€å µå¢™ç¼“ç¼“ç§»äº†å¼€æ¥ï¼ŒåŸæ¥æ˜¯é“å°æœ¨é—¨ã€‚\n", this_player());
 		set("exits/down", __DIR__"undertre");
 
 		remove_call_out("close");
 		call_out("close", 3, this_object());
 		return 1;
 	}
-	else if ( (arg=="ÌìÌÃÓĞÂ·Äã²»×ßÑ½" || arg=="µØÓüÎŞÃÅÄã½øÀ´°¡" ) 
-	&& this_player()->query("family/family_name") != "Ø¤°ï" ) 
+	else if ( (arg=="å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€" || arg=="åœ°ç‹±æ— é—¨ä½ è¿›æ¥å•Š" ) 
+	&& this_player()->query("family/family_name") != "ä¸å¸®" ) 
 	{
-		write("Ö»ÌıÀïÃæÓĞÈËËµÁËÉù£º¸óÏÂ¹âÁÙ±Ö°ïÓĞºÎ¹ó¸É£¿\n");
+		write("åªå¬é‡Œé¢æœ‰äººè¯´äº†å£°ï¼šé˜ä¸‹å…‰ä¸´æ•å¸®æœ‰ä½•è´µå¹²ï¼Ÿ\n");
 		return 1;
 	}
 
@@ -92,8 +92,8 @@ void close()
 {
         object room = load_object("d/gaibang/undertre");
 
-        message("vision", "Ğ¡Ä¾ÃÅÇÄÇÄµÄ¹ØÉÏÁË¡£\n", this_object() );
+        message("vision", "å°æœ¨é—¨æ‚„æ‚„çš„å…³ä¸Šäº†ã€‚\n", this_object() );
         delete("exits/down");
-        tell_room(room, "Ğ¡Ä¾ÃÅÇÄÇÄµÄ¹ØÉÏÁË¡£\n");
+        tell_room(room, "å°æœ¨é—¨æ‚„æ‚„çš„å…³ä¸Šäº†ã€‚\n");
 }
 

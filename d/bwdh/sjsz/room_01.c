@@ -7,9 +7,9 @@ inherit ROOM;
 #include "sjsz_room.h"
 
 void create() {
-	 set("short", HIG"�ݵ�"NOR);
+	 set("short", HIG"草地"NOR);
 	 set("long", @LONG
-������һ��Ƭ�տ��Ĳݵء������ĵ�������ҫ�£�������������ƽ�͵����ա�
+这里是一大片空旷的草地。在明媚的阳光照耀下，空气中洋溢着平和的气氛。
 LONG
     );
     set("exits", ([

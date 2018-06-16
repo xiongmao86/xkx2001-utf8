@@ -1,24 +1,24 @@
 //Cracked by Roath
-//yellowbang.c »ÆÖñ°ô
+//yellowbang.c é»„ç«¹æ£’
 #include <ansi.h>
 #include <weapon.h>
 inherit STICK;
 
 void create()
 {
-        set_name("»ÆÖñ°ô", ({ "huang zhubang", "bang", "zhu bang", "zhubang", "stick", "yellow stick" }));
+        set_name("é»„ç«¹æ£’", ({ "huang zhubang", "bang", "zhu bang", "zhubang", "stick", "yellow stick" }));
         set_color("$YEL$");
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Õâ¸ùÖñ°ôËä²»Èç´ò¹·°ô¼áÈÍ£¬³¤¶ÌÇáÖØÈ´ÊÇÒ»°ãÎŞÒì£¬Ö»ÊÇÉ«×÷µ­»Æ£¬ÒÔÊ¾Óë´ò¹·°ôÓĞ±ğ¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ ¹ç«¹æ£’è™½ä¸å¦‚æ‰“ç‹—æ£’åšéŸ§ï¼Œé•¿çŸ­è½»é‡å´æ˜¯ä¸€èˆ¬æ— å¼‚ï¼Œåªæ˜¯è‰²ä½œæ·¡é»„ï¼Œä»¥ç¤ºä¸æ‰“ç‹—æ£’æœ‰åˆ«ã€‚\n");
                 set("rigidity", 2000);
                 set("value", 1000);
                 set("material", "bamboo");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
         }
         init_stick(50);
         setup();

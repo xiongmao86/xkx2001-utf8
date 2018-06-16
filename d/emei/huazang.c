@@ -1,15 +1,15 @@
 //Cracked by Roath
-// huazang.c »ª²ØâÖ
+// huazang.c åŽè—åºµ
 // Shan: 96/06/22
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "»ª²ØâÖ");
+        set("short", "åŽè—åºµ");
 	set("long", @LONG
-»ª²ØâÖÊÇ½ð¶¥µÄÖ÷Òª½¨Öþ£¬¹æÄ£ºê´ó£¬ÖÐìëÆÕÏÍÆÐÈø£¬ÅÔÁÐÍò·ð¡£
-¡¡¡¡»ª²ØâÖºó±ßÊÇ¶Ã¹âÌ¨£¬ÅÔ±ßÊÇÎÔÔÆâÖ¡£
+åŽè—åºµæ˜¯é‡‘é¡¶çš„ä¸»è¦å»ºç­‘ï¼Œè§„æ¨¡å®å¤§ï¼Œä¸­ç¥€æ™®è´¤è©è¨ï¼Œæ—åˆ—ä¸‡ä½›ã€‚
+ã€€ã€€åŽè—åºµåŽè¾¹æ˜¯ç¹å…‰å°ï¼Œæ—è¾¹æ˜¯å§äº‘åºµã€‚
 LONG
 	);
 	set("exits", ([

@@ -1,19 +1,19 @@
 //Cracked by Roath
-// work-letter2.c ´óÀí½ú¼¶ÓÃ¹«ÎÄ
+// work-letter2.c å¤§ç†æ™‹çº§ç”¨å…¬æ–‡
 #include <ansi.h>
 
 inherit ITEM;
 
 void create()
 {
-	set_name(YEL "×àÕÛ" NOR, ({"zou zhe", "letter"}));
+	set_name(YEL "å¥æŠ˜" NOR, ({"zou zhe", "letter"}));
 	set_weight(100);
 	if( clonep() ) set_default_object(__FILE__);
 	else
 	{
-		set("unit", "·İ");
-		set("long",HIB"Ò»±¾ÉÆ²ûºîÏò»ÊÉÏ³Ê±¨ÊÂÇéµÄ×àÕÛ¡£\n"NOR);
-		set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+		set("unit", "ä»½");
+		set("long",HIB"ä¸€æœ¬å–„é˜ä¾¯å‘çš‡ä¸Šå‘ˆæŠ¥äº‹æƒ…çš„å¥æŠ˜ã€‚\n"NOR);
+		set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 		set("material", "paper");
 	}
 }

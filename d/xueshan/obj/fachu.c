@@ -7,17 +7,17 @@ inherit STAFF;
 
 void create()
 {
-        set_name("·¨èÆ", ({ "fa chu", "fa","chu" }) );
+        set_name("æ³•æµ", ({ "fa chu", "fa","chu" }) );
         set_weight(25000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù×ö·¨ÊÂµÄ·¨èÆ£¬Ò²ÊÇÉ®¼ÒµÄ·ÀÉíÎäÆ÷¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ä¸€æ ¹åšæ³•äº‹çš„æ³•æµï¼Œä¹Ÿæ˜¯åƒ§å®¶çš„é˜²èº«æ­¦å™¨ã€‚\n");
                 set("value", 100);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_staff(20);

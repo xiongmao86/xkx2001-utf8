@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/hangzhou/yantian.c   ����
+// /d/hangzhou/yantian.c   盐田
 // by aln 2 / 98
 
 #include <room.h>
@@ -8,11 +8,11 @@
 inherit ROOM;
 
 void create()
-{        set("short", "����");
+{        set("short", "盐田");
          set("long", @LONG
-�������㶫Ǯ�����뺣�ڣ�������һƬƬ�⻬�羵��ƽ�أ������߰��ɼ�
-��������ˮĥ������Ҳ�޴�ƽ������Ǿ������������������ˮ�������
-ɹ���Ժ󣬹��º�������������±ˮ������ɹ��������
+这里是浙东钱塘江入海口，海岸边一片片光滑如镜的平地，往往七八丈见
+方，便是水磨的桌面也无此平整滑溜。那就是盐田。当地盐民引海水灌入盐田，
+晒干以后，刮下含盐泥土，化成卤水，再逐步晒成盐粒。
 LONG	);
 
          set("exits", ([ /* sizeof() == 2 */ 

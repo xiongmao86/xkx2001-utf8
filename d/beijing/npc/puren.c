@@ -6,10 +6,10 @@ void create()
 {
 	seteuid(getuid());
 
-	set_name("ÆÍÈË", ({"puren",}));
-	set("gender", "ÄĞĞÔ");
+	set_name("ä»†äºº", ({"puren",}));
+	set("gender", "ç”·æ€§");
 	set("age", 20);
-	set("long", "ÕâÊÇÒ»ÃûÆÍÈË");
+	set("long", "è¿™æ˜¯ä¸€åä»†äºº");
 	set("attitude","heroism");
 	set("generation",0);
 	set("winner","none");

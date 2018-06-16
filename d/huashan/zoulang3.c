@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Room: zoulang.c ×ßÀÈ
+// Room: zoulang.c èµ°å»Š
 // qfy July 7, 1996.
 
 #include <room.h>
@@ -9,10 +9,10 @@ void reset();
 
 void create()
 {
-    set("short", "×ßÀÈ");
+    set("short", "èµ°å»Š");
     set("long", @LONG
-ÕâÀïÊÇ×ßÀÈµÄ¾¡Í·£¬ÄÏ±ßÁ¬×ÅµÄ·¿¼ä±ãÊÇÄĞµÜ×ÓµÄĞİÏ¢ÊÒ¡£¶«±ßÈ´ÊÇ
-Ò»Æ¬ÏÕ¾şµÄĞüÑÂ¡£·ÅÑÛÍûÈ¥£¬ÓÌÈçÖÃÉíÔÆº£Ö®¼ä£¬ÁíÈËĞØ»³´ó³©¡£
+è¿™é‡Œæ˜¯èµ°å»Šçš„å°½å¤´ï¼Œå—è¾¹è¿ç€çš„æˆ¿é—´ä¾¿æ˜¯ç”·å¼Ÿå­çš„ä¼‘æ¯å®¤ã€‚ä¸œè¾¹å´æ˜¯
+ä¸€ç‰‡é™©å³»çš„æ‚¬å´–ã€‚æ”¾çœ¼æœ›å»ï¼ŒçŠ¹å¦‚ç½®èº«äº‘æµ·ä¹‹é—´ï¼Œå¦äººèƒ¸æ€€å¤§ç•…ã€‚
 LONG
     );
 
@@ -21,7 +21,7 @@ LONG
 	"south" : __DIR__"nanshi",
     ]));
 
-    create_door("south", "Ä¾ÃÅ", "north", DOOR_CLOSED);
+    create_door("south", "æœ¨é—¨", "north", DOOR_CLOSED);
 
     set("no_clean_up", 0);
 
@@ -33,8 +33,8 @@ LONG
 
 int valid_leave(object me, string dir)
 {
-	if ( me->query("gender") == "Å®ĞÔ" && dir == "south" && !wizardp(me) )
-		return notify_fail("¿´Çå³şµã£¬ÄÇÊÇÄĞµÜ×ÓĞİÏ¢ÊÒ£¡\n");
+	if ( me->query("gender") == "å¥³æ€§" && dir == "south" && !wizardp(me) )
+		return notify_fail("çœ‹æ¸…æ¥šç‚¹ï¼Œé‚£æ˜¯ç”·å¼Ÿå­ä¼‘æ¯å®¤ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

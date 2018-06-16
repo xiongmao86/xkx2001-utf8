@@ -1,14 +1,14 @@
 //Cracked by Roath
-// ��ɽС����
+// 华山小径２
 // qfy 25/7/1996
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "Сľ��ǰ");
+	set("short", "小木屋前");
 	set("long", @LONG
-һ���ª��Сľ��ǰ����������һ��С����
+一间简陋的小木屋前。西北另有一条小径。
 LONG
 	);
 

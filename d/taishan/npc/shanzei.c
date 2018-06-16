@@ -1,15 +1,15 @@
 //Cracked by Roath
-//shanzei É½Ôô
+//shanzei å±±è´¼
 
 inherit NPC;
 
 void create()
 {
-	set_name("É½Ôô", ({ "shan zei","zei","robber" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("å±±è´¼", ({ "shan zei","zei","robber" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35+random(10));
 	set("long",
-		"Õâ¼Ò»ïÉí²ÃË¶×³¸ß´ó£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬³£ÔÚ´Ë×÷°¸Ï´½ÙÓÎ¿Í¡£\n");
+		"è¿™å®¶ä¼™èº«è£ç¡•å£®é«˜å¤§ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ï¼Œå¸¸åœ¨æ­¤ä½œæ¡ˆæ´—åŠ«æ¸¸å®¢ã€‚\n");
 	set("combat_exp", 5000);
         set("shen_type", -1);
 	set("attitude", "heroism");

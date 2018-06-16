@@ -6,7 +6,7 @@ inherit ITEM;
 
 void create()
 {
-  set_name ("¼ÙÏó", ({ "Fake_Image" }));
+  set_name ("å‡è±¡", ({ "Fake_Image" }));
   set("env/invisibility", 10);
   setup();
 }
@@ -33,7 +33,7 @@ int do_look(string arg)
 
   env = environment(me);
   if( !env ) {
-    write("ÄãµÄËÄÖÜ»ÒÃÉÃÉµØÒ»Æ¬£¬Ê²Ã´Ò²Ã»ÓÐ¡£\n");
+    write("ä½ çš„å››å‘¨ç°è’™è’™åœ°ä¸€ç‰‡ï¼Œä»€ä¹ˆä¹Ÿæ²¡æœ‰ã€‚\n");
     return 1;
   }
   str = sprintf( "%s - %s\n    %s%s",
@@ -49,12 +49,12 @@ int do_look(string arg)
         dirs[i] = 0;
     dirs -= ({ 0 });
     if( sizeof(dirs)==0 )
-      str += "    ÕâÀïÃ»ÓÐÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£\n";
+      str += "    è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜Žæ˜¾çš„å‡ºè·¯ã€‚\n";
     else if( sizeof(dirs)==1 )
-      str += "    ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ " + BOLD + dirs[0] + NOR + "¡£\n";
+      str += "    è¿™é‡Œå”¯ä¸€çš„å‡ºå£æ˜¯ " + BOLD + dirs[0] + NOR + "ã€‚\n";
     else
-      str += sprintf("    ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ " + BOLD + "%s" + NOR + " ºÍ " + BOLD + "%s" + NOR + "¡£\n",
-    implode(dirs[0..sizeof(dirs)-2], "¡¢"), dirs[sizeof(dirs)-1]);
+      str += sprintf("    è¿™é‡Œæ˜Žæ˜¾çš„å‡ºå£æ˜¯ " + BOLD + "%s" + NOR + " å’Œ " + BOLD + "%s" + NOR + "ã€‚\n",
+    implode(dirs[0..sizeof(dirs)-2], "ã€"), dirs[sizeof(dirs)-1]);
   }
 
   inv = all_inventory(env);
@@ -74,17 +74,17 @@ int do_look(string arg)
     }
     
     if( objectp(inv[i]->query("rided")) ) {
-      str += "  " + inv[i]->short() + "ÆïÔÚ" + (inv[i]->query("rided"))->name() + "ÉÏ";
+      str += "  " + inv[i]->short() + "éª‘åœ¨" + (inv[i]->query("rided"))->name() + "ä¸Š";
       if( stringp(inv[i]->query_temp("exit_blocked")))
-        str += "µ²×ÅÍù"+inv[i]->query_temp("exit_blocked")+ "È¥µÄÂ·";
+        str += "æŒ¡ç€å¾€"+inv[i]->query_temp("exit_blocked")+ "åŽ»çš„è·¯";
         str += "\n";
     }
     else {
       if (stringp(inv[i]->query_temp("exit_blocked")))
-         str += "  " + inv[i]->short() + "µ²×ÅÍù" + inv[i]->query_temp("exit_blocked")
-               +"È¥µÄÂ·\n";
+         str += "  " + inv[i]->short() + "æŒ¡ç€å¾€" + inv[i]->query_temp("exit_blocked")
+               +"åŽ»çš„è·¯\n";
       else if( inv[i]->query_temp("riding") ) {
-        str += "  " + inv[i]->short() + "×øÔÚïÚ³µÉÏ\n";
+        str += "  " + inv[i]->short() + "ååœ¨é•–è½¦ä¸Š\n";
       }
       else
         str += "  " + inv[i]->short() + "\n";

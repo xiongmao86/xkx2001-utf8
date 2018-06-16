@@ -1,5 +1,5 @@
 //Cracked by Roath
-// »ªÉ½ğ®µÀ
+// åå±±ç”¬é“
 // qfy 16/10/1996
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ğ®µÀ");
+	set("short", "ç”¬é“");
 	set("long", @LONG
-ÕâÊÇÉ½¸¹ÄÚµÄÒ»ÌõÁÑ·ìËùĞÎ³ÉµÄÏÁÕ­µÄğ®µÀ¡£Ê®¼¸ÕÉÔ¶´¦£¬ğ®µÀ½¥¸ß
-£¬¿ÉÍ¦ÆğÉíÀ´ĞĞ×ß¡£ğ®µÀ¾¡Í·×ªÏòÓÒ±ß£¬Ê¹ÈËÎŞ·¨Ô¤Öªğ®µÀºóÊÇÊ²Ã´¡£
+è¿™æ˜¯å±±è…¹å†…çš„ä¸€æ¡è£‚ç¼æ‰€å½¢æˆçš„ç‹­çª„çš„ç”¬é“ã€‚åå‡ ä¸ˆè¿œå¤„ï¼Œç”¬é“æ¸é«˜
+ï¼Œå¯æŒºèµ·èº«æ¥è¡Œèµ°ã€‚ç”¬é“å°½å¤´è½¬å‘å³è¾¹ï¼Œä½¿äººæ— æ³•é¢„çŸ¥ç”¬é“åæ˜¯ä»€ä¹ˆã€‚
 LONG
 	);
 
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
 	object room1, room2;
 
 	if ( present("skeleton", me) && dir == "out" )
-		return notify_fail("ÄãÏë´ø×Åº¡¹Çµ½ÄÇ¶ùÈ¥Ñ½£¿\n");
+		return notify_fail("ä½ æƒ³å¸¦ç€éª¸éª¨åˆ°é‚£å„¿å»å‘€ï¼Ÿ\n");
 
 	if ( !( room1 = find_object(__DIR__"jinshedong") ) )
 		room1 = load_object(__DIR__"jinshedong");
@@ -49,8 +49,8 @@ int valid_leave(object me, string dir)
 
 int poison(object me)
 {
-	tell_object(me, HIR "ÄãÒ»¿ÚÆøÍ¸²»¹ıÀ´£¬Ô­À´ÔÚ½ğÉß¶´ÀïÖĞÁË¶¾£¬ÏÖÔÚ·¢×÷ÁË£¡\n" NOR);
-	me->receive_wound("qi", me->query("max_qi")+100, "¶¾Æø¹¥ĞÄËÀÁË");
+	tell_object(me, HIR "ä½ ä¸€å£æ°”é€ä¸è¿‡æ¥ï¼ŒåŸæ¥åœ¨é‡‘è›‡æ´é‡Œä¸­äº†æ¯’ï¼Œç°åœ¨å‘ä½œäº†ï¼\n" NOR);
+	me->receive_wound("qi", me->query("max_qi")+100, "æ¯’æ°”æ”»å¿ƒæ­»äº†");
 
 	return 1;
 }

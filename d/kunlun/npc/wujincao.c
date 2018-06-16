@@ -16,26 +16,26 @@ void create()
 		mapping I_inquiry=([ ]);
 		mixed Skill_name;
 
-        set_name("Îâ¾¢²İ", ({ "wu jincao","wu"}) );
-        set("title", "Ã÷½ÌÈñ½ğÆìÕÆÆì¸±Ê¹");
-        create_family("Ã÷½Ì",37,"ÕÆÆìÊ¹");
-        set("gender", "ÄĞĞÔ");
+        set_name("å´åŠ²è‰", ({ "wu jincao","wu"}) );
+        set("title", "æ˜æ•™é”é‡‘æ——æŒæ——å‰¯ä½¿");
+        create_family("æ˜æ•™",37,"æŒæ——ä½¿");
+        set("gender", "ç”·æ€§");
         set("age",35);
         set("long", "
-´ıÌí
+å¾…æ·»
 \n");
         set("attitude", "peaceful");
         set("shen", 1000000);
         
-	I_inquiry["name"]="ÔÚÏÂ¾ÍÊÇÃ÷½ÌÈñ½ğÆìÕÆÆì¸±Ê¹Îâ¾¢²İ£¬²»Öª¸óÏÂÓĞºÎÖ¸½Ì¡£";
+	I_inquiry["name"]="åœ¨ä¸‹å°±æ˜¯æ˜æ•™é”é‡‘æ——æŒæ——å‰¯ä½¿å´åŠ²è‰ï¼Œä¸çŸ¥é˜ä¸‹æœ‰ä½•æŒ‡æ•™ã€‚";
 	Skill_name=({"shenghuo-xuanming","wuxing-bu","duoming-bi",
 		     "riyue-shenzhang","shenghuo-quan","guangming-xinfa"});
 
-		I_inquiry["´òÌú"]=(: ask_job :);
+		I_inquiry["æ‰“é“"]=(: ask_job :);
 		I_inquiry["datie"]=(: ask_job :);
-		I_inquiry["¾«Ìú´¢²Ø"]=(: ask_jingtie_num :);
+		I_inquiry["ç²¾é“å‚¨è—"]=(: ask_jingtie_num :);
 		I_inquiry["reserve"]=(: ask_jingtie_num :);
-		I_inquiry["¾«Ìú"]=(: ask_jingtie :);
+		I_inquiry["ç²¾é“"]=(: ask_jingtie :);
 		I_inquiry["jingtie"]=(: ask_jingtie :);
 
 	Set_Inquiry(I_inquiry,Skill_name);
@@ -69,33 +69,33 @@ string ask_job()
      mapping fam ;
      object ling,chui,qiao;
 
-    if (!(fam = this_player()->query("family")) || fam["family_name"] != "Ã÷½Ì")
-        return "ÕâÎ»"+RANK_D->query_respect(player)+"²¢·ÇÎÒ½ÌµÜĞÖ£¬ÄÇ¸ÒÔÚÏÂÄÇ¸Ò·ÖÅÉ¸óÏÂÊ²Ã´ÈÎÎñÄØ¡£\n";
+    if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ˜æ•™")
+        return "è¿™ä½"+RANK_D->query_respect(player)+"å¹¶éæˆ‘æ•™å¼Ÿå…„ï¼Œé‚£æ•¢åœ¨ä¸‹é‚£æ•¢åˆ†æ´¾é˜ä¸‹ä»€ä¹ˆä»»åŠ¡å‘¢ã€‚\n";
 
 	if(!objectp(ling = present("tieyan ling", player)) )
-		return "ÕâÎ»"+RANK_D->query_respect(player)+"Ã»ÓĞÎÒ½ÌĞÅÎïÌúÑæÁî£¬ÎÒÈçºÎ¼ÇÂ¼½±ÉÍ¹ıÊ§£¿\n";
+		return "è¿™ä½"+RANK_D->query_respect(player)+"æ²¡æœ‰æˆ‘æ•™ä¿¡ç‰©é“ç„°ä»¤ï¼Œæˆ‘å¦‚ä½•è®°å½•å¥–èµè¿‡å¤±ï¼Ÿ\n";
 
 //	if (fam["generation"] <37)
-//		 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÒÑ¹óÎªÎÒ½Ì"+fam["title"]+"£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+//		 return "è¿™ä½"+RANK_D->query_respect(player)+"å·²è´µä¸ºæˆ‘æ•™"+fam["title"]+"ï¼Œå²‚æ•¢åŠ³çƒ¦å¤§æ¶ã€‚\n";
 
 	if(player->query("mingjiao/job") != "jin_caikuang")
 		return judge_jobmsg(player,0);
 
 	if( !present("wujin kuangshi",player ) )
-		return "Äã²¢Î´²ÉÀ´¿óÊ¯£¬ÈçºÎ´òÌú£¿\n";
+		return "ä½ å¹¶æœªé‡‡æ¥çŸ¿çŸ³ï¼Œå¦‚ä½•æ‰“é“ï¼Ÿ\n";
 
 // remove tie qiao from this player.
 	qiao=present("tie qiao",player );
 	if (qiao) destruct(qiao);
-	tell_object(player,"Äã°ÑÌúÇÂ½»¸øÎâ¾¢²İ¡£\n\n");	
+	tell_object(player,"ä½ æŠŠé“é”¹äº¤ç»™å´åŠ²è‰ã€‚\n\n");	
 
 	command("nod "+player->query("id"));
 
 	chui=new(OBJ_PATH"/tiechui");
 	chui->move(player);
-	tell_object(player,"Îâ¾¢²İ¸øÄãÒ»°ÑÌú´¸¡£\n");
+	tell_object(player,"å´åŠ²è‰ç»™ä½ ä¸€æŠŠé“é”¤ã€‚\n");
 	
-	return "ºÃ£¡¿ìÈ¥°Ñ²ÉÀ´µÄ¿óÊ¯Á¶³É¾«Ìú°É¡£\n";
+	return "å¥½ï¼å¿«å»æŠŠé‡‡æ¥çš„çŸ¿çŸ³ç‚¼æˆç²¾é“å§ã€‚\n";
 		 
 }   
 
@@ -112,16 +112,16 @@ int accept_object(object me, object ob)
 
 	job_flg = judge_jobmsg(me,1);
 
-	if ( job_flg !=  "²É¼¯Ìú¿ó" ) 
+	if ( job_flg !=  "é‡‡é›†é“çŸ¿" ) 
 	{
 		command("hmm "+me->query("id"));
-		command("say Ã»ÓĞÕâÏî¹¤×÷£¬¾Í²»ÒªºúÂÒ¿ª²É£¡");
+		command("say æ²¡æœ‰è¿™é¡¹å·¥ä½œï¼Œå°±ä¸è¦èƒ¡ä¹±å¼€é‡‡ï¼");
 		return 0;
 	}
 	else
 	{
 		command("thumb "+this_player()->query("id"));
-		command("say ÕâÎ»ĞÖµÜĞÁ¿àÁË!ÏÂÈ¥ºÃºÃĞİÏ¢ĞİÏ¢£¡");
+		command("say è¿™ä½å…„å¼Ÿè¾›è‹¦äº†!ä¸‹å»å¥½å¥½ä¼‘æ¯ä¼‘æ¯ï¼");
 	        tool=present("tie chui",me );
 		if (tool) destruct(tool);
 		remove_call_out("dest_ob");
@@ -154,7 +154,7 @@ int get_jingtie_num()
 
 string ask_jingtie_num()
 {
-	return "ÏÖÔÚ»¹ÓĞ"+chinese_number(get_jingtie_num())+"¿é¾«Ìú¡£\n";
+	return "ç°åœ¨è¿˜æœ‰"+chinese_number(get_jingtie_num())+"å—ç²¾é“ã€‚\n";
 }
 
 string ask_jingtie()
@@ -165,20 +165,20 @@ string ask_jingtie()
 	string job_flg;
 
 	job_flg = judge_jobmsg(me,1);
-	if (job_flg != "´òÔì»ğÇ¹")
-		return "ÕâÎ»"+RANK_D->query_respect(me)+"ºÃÏóÃ»ÓĞÔì»ğÇ¹µÄÈÎÎñ°É¡£\n";
+	if (job_flg != "æ‰“é€ ç«æª")
+		return "è¿™ä½"+RANK_D->query_respect(me)+"å¥½è±¡æ²¡æœ‰é€ ç«æªçš„ä»»åŠ¡å§ã€‚\n";
 	
 	if (present("jing tie",me) )
 	{
 		command("hmm "+me->query("id"));
-		return "Äã²»ÊÇÒÑ¾­ÓĞÒ»¿éÁËÂğ£¿»¹ÏëÒª£¬ÕæÊÇÌ°µÃÎŞÑá¡£\n";
+		return "ä½ ä¸æ˜¯å·²ç»æœ‰ä¸€å—äº†å—ï¼Ÿè¿˜æƒ³è¦ï¼ŒçœŸæ˜¯è´ªå¾—æ— åŒã€‚\n";
 	}
 
 	if ( get_jingtie_num() <= 0 )
-		return "¶Ô²»Æğ£¬ÎÒÕâÀïÒÑ¾­Ã»ÓĞ¾«ÌúÁË¡£\n";
+		return "å¯¹ä¸èµ·ï¼Œæˆ‘è¿™é‡Œå·²ç»æ²¡æœ‰ç²¾é“äº†ã€‚\n";
 
 	command("nod "+me->query("id"));
-	message_vision("Îâ¾¢²İÄÃÁËÒ»¿é¾«Ìú¸ø$N\n",me);
+	message_vision("å´åŠ²è‰æ‹¿äº†ä¸€å—ç²¾é“ç»™$N\n",me);
         if (!(room = find_object("/d/kunlun/mj_center.c")))
 		room = load_object("/d/kunlun/mj_center.c");
 	room->add("jingtie",-1);
@@ -186,7 +186,7 @@ string ask_jingtie()
 	jingtie=new(OBJ_PATH"/jingtie");
 	jingtie->move(me);
 
-	return "ÕâÊÇĞÖµÜÃÇĞÁĞÁ¿à¿àÁ¶³öÀ´µÄ¾«Ìú£¬ÄãÒªÓÃËüºÃºÃ´òÔì±øÆ÷¡£\n";
+	return "è¿™æ˜¯å…„å¼Ÿä»¬è¾›è¾›è‹¦è‹¦ç‚¼å‡ºæ¥çš„ç²¾é“ï¼Œä½ è¦ç”¨å®ƒå¥½å¥½æ‰“é€ å…µå™¨ã€‚\n";
 }
 
 void dest_ob(object ob) { destruct(ob);}

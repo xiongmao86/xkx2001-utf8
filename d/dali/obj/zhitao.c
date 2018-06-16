@@ -8,13 +8,13 @@ inherit FINGER;
 
 void create()
 {
-	set_name( CYN "ÌúÖ¸Ì×" NOR , ({ "zhitao", "zhi tao" }) );
+	set_name( CYN "é“æŒ‡å¥—" NOR , ({ "zhitao", "zhi tao" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "ÕâÊÇÒ»¸öÌúÖıµÄÖ¸Ì×£¬Ì×ÔÚÊÖÖ¸ÉÏ£¬¿ÉÒÔ±£»¤Ö¸¹Ø½Ú£¬¶ÔÁ·Ö¸¹¦µÄÈËºÜÓĞÓÃ¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "è¿™æ˜¯ä¸€ä¸ªé“é“¸çš„æŒ‡å¥—ï¼Œå¥—åœ¨æ‰‹æŒ‡ä¸Šï¼Œå¯ä»¥ä¿æŠ¤æŒ‡å…³èŠ‚ï¼Œå¯¹ç»ƒæŒ‡åŠŸçš„äººå¾ˆæœ‰ç”¨ã€‚\n");
 		set("value", 0);
 		set("material", "finger");
 		set("armor_prop/armor", 5);

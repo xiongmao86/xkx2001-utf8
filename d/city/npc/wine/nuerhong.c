@@ -1,5 +1,5 @@
 //Cracked by Roath
-// nuerhong.c  Å®¶ùºì 
+// nuerhong.c  å¥³å„¿çº¢ 
 
 #include <ansi.h>
 inherit ITEM;
@@ -7,17 +7,17 @@ inherit F_LIQUID;
 
 void create()
 {
-	set_name(RED"¾ÆÆ¿"NOR, ({"nuerhong", "jiuping",}));
+	set_name(RED"é…’ç“¶"NOR, ({"nuerhong", "jiuping",}));
 	set_weight(700);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
 		set("long", @LONG
-Ò»¸öÓÃÀ´×°Å®¶ùºìµÄ¾ÆÆ¿¡£ÉÜĞËÈË¼ÒÉúÁËÅ®¶ù£¬´ó¶à»áÄğÉÏ¼¸Ì³ºÃ¾ÆÂñÔÚµØÏÂ£¬µÈ
-µ½Å®¶ù³ö¼ŞÄÇÌì²ÅÆğ³ö£¬ËùÒÔ¾ÆÎ¶´¼ºñ¡£¾İËµºó¾¢Ò²ÌØ±ğ´ó¡£
+ä¸€ä¸ªç”¨æ¥è£…å¥³å„¿çº¢çš„é…’ç“¶ã€‚ç»å…´äººå®¶ç”Ÿäº†å¥³å„¿ï¼Œå¤§å¤šä¼šé…¿ä¸Šå‡ å›å¥½é…’åŸ‹åœ¨åœ°ä¸‹ï¼Œç­‰
+åˆ°å¥³å„¿å‡ºå«é‚£å¤©æ‰èµ·å‡ºï¼Œæ‰€ä»¥é…’å‘³é†‡åšã€‚æ®è¯´ååŠ²ä¹Ÿç‰¹åˆ«å¤§ã€‚
 LONG
         );
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 160);
 		set("max_liquid", 20);
 	}
@@ -26,7 +26,7 @@ LONG
 	// we set it to contain wine at the beginning
 	set("liquid", ([
 		"type": "alcohol",
-		"name": "Å®¶ùºì",
+		"name": "å¥³å„¿çº¢",
 		"remaining": 20,
 		"drunk_apply": 8,
 	]));

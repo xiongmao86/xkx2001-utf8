@@ -60,17 +60,17 @@ void create()
                 fam = names[random(sizeof(names))];
                 name = info_bang[fam];
         } else {
-                fam = "ÎŞÃû°ï";
-                name = "²İÉÏ·É";
+                fam = "æ— åå¸®";
+                name = "è‰ä¸Šé£";
         }
 
         set_name(name, ({ "bangzhu" }));
-        set("title", fam + "°ïÖ÷");
+        set("title", fam + "å¸®ä¸»");
         set("fam", fam);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 30 + random(20));
         set("long",
-"Ò»¸ö¿ıÎàÖ®¼«µÄ´óºº£¬Á³ÅÓ¼«¾¡²ÔÉ££¬¾«ÉñÈ´ÉõÛÇîå¡£\n");
+"ä¸€ä¸ªé­æ¢§ä¹‹æçš„å¤§æ±‰ï¼Œè„¸åºæå°½è‹æ¡‘ï¼Œç²¾ç¥å´ç”šçŸé“„ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -140,11 +140,11 @@ void create()
         }) );
 */
         set("inquiry", ([
-                "Èë°ï" : (: ask_join :),
+                "å…¥å¸®" : (: ask_join :),
                 "join" : (: ask_join :),
-                "°ïÎñ" : (: ask_job :),
+                "å¸®åŠ¡" : (: ask_job :),
                 "job" : (: ask_job :),
-		"Îä¹¦" : (: ask_skills :),
+		"æ­¦åŠŸ" : (: ask_skills :),
                 "skills" : (: ask_skills :),
         ]));
 
@@ -186,14 +186,14 @@ void checking(object ob)
         if( environment() != environment(ob) ) return;
 
         if( !random(2) )
-                message_vision("$NË«ÊÖ±§È­£¬Å£ÀïÅ£ÆøµØËµµÀ£º¼ûµ½±¾°ïÖ÷£¬ÄÑµÀÃ»ÓĞÈÎºÎ±íÊ¾Âğ£¿\n", me);
-        else    message_vision("$NËµµÀ£º»¹²»¸Ï¿ì¼ÓÈë" + query("fam") + "£¡£¡£¡\n", me);
+                message_vision("$NåŒæ‰‹æŠ±æ‹³ï¼Œç‰›é‡Œç‰›æ°”åœ°è¯´é“ï¼šè§åˆ°æœ¬å¸®ä¸»ï¼Œéš¾é“æ²¡æœ‰ä»»ä½•è¡¨ç¤ºå—ï¼Ÿ\n", me);
+        else    message_vision("$Nè¯´é“ï¼šè¿˜ä¸èµ¶å¿«åŠ å…¥" + query("fam") + "ï¼ï¼ï¼\n", me);
 }
 
 int ask_me(string arg)
 {
-        message_vision("$N¡¸¹ş¹ş¹ş¡¹´óĞ¦¼¸Éù¡£\n", this_object());
-        message_vision("$NËµµÀ£º" + arg + "ÍşÕğ½­ºş£¬Ö¸ÈÕ¿É´ı£¡¹ş£¡¹ş£¡¹ş£¡\n", this_object());
+        message_vision("$Nã€Œå“ˆå“ˆå“ˆã€å¤§ç¬‘å‡ å£°ã€‚\n", this_object());
+        message_vision("$Nè¯´é“ï¼š" + arg + "å¨éœ‡æ±Ÿæ¹–ï¼ŒæŒ‡æ—¥å¯å¾…ï¼å“ˆï¼å“ˆï¼å“ˆï¼\n", this_object());
         return 1;
 }
 
@@ -220,7 +220,7 @@ int accept_kill(object me)
         object *follower, *obj = ({}), room;
         int i, temp;
 
-        say(name() + "ËµµÀ£ºÄãÏëÄ±º¦±¾°ïÖ÷£¬µ±ÕæÊÇ³ÔÁËĞÜĞÄ±ª×Óµ¨ÁË£¡£¡\n");
+        say(name() + "è¯´é“ï¼šä½ æƒ³è°‹å®³æœ¬å¸®ä¸»ï¼Œå½“çœŸæ˜¯åƒäº†ç†Šå¿ƒè±¹å­èƒ†äº†ï¼ï¼\n");
 
         follower = query("follower");
         room = environment();
@@ -233,10 +233,10 @@ int accept_kill(object me)
 
         if( !(temp = sizeof(obj)) ) return 1;
 
-        say(name() + "ËµµÀ£º¸÷Î»°ïÖÚºÎÔÚ£¡\n");
+        say(name() + "è¯´é“ï¼šå„ä½å¸®ä¼—ä½•åœ¨ï¼\n");
 
         for(i = 0; i < temp; i++) {
-                say(obj[i]->name() + "ËµµÀ£ºÔÚ£¡\n");
+                say(obj[i]->name() + "è¯´é“ï¼šåœ¨ï¼\n");
                 obj[i]->kill_ob(me);
         }
 
@@ -273,8 +273,8 @@ int check_bang()
         if( !userp(ob) ) return 1;
         for(i = 0; i < temp; i++) {
                 if( obj[i]->is_fighting(ob) ) continue;
-                message_vision("$N¶Ô×Å$nºğµÀ£º»¹Àã×Å¸ÉÂğ£¿\n", this_object(), obj[i]);
-                message_vision("$N³Ï»Ì³Ï¿ÖµØËµµÀ£ºÍû°ïÖ÷Ë¡×ï£¡\n", obj[i]);
+                message_vision("$Nå¯¹ç€$nå¼é“ï¼šè¿˜æ¥ç€å¹²å—ï¼Ÿ\n", this_object(), obj[i]);
+                message_vision("$Nè¯šæƒ¶è¯šæåœ°è¯´é“ï¼šæœ›å¸®ä¸»æ•ç½ªï¼\n", obj[i]);
                 obj[i]->kill_ob(ob);
         }
         return 1;
@@ -295,9 +295,9 @@ void die()
 
         if( objectp(killer = query_temp("last_damage_from")) ) {
                 ob = new(BANGYIN);
-                ob->set("long", query("title") + ob->query("name") + "¡£\n");
+                ob->set("long", query("title") + ob->query("name") + "ã€‚\n");
                 ob->move(environment());
-                message_vision(HIR"\nÍ»È»´Ó$NÒÂ´üÖĞµôÏÂÒ»" + ob->query("unit") + ob->name() + "¡£\n"NOR, this_object());
+                message_vision(HIR"\nçªç„¶ä»$Nè¡£è¢‹ä¸­æ‰ä¸‹ä¸€" + ob->query("unit") + ob->name() + "ã€‚\n"NOR, this_object());
                 set_temp("my_killer", killer->query("id"));
                 ob->set("my_killer",  killer->query("id"));
                 ob->set("combat_exp", query("combat_exp"));

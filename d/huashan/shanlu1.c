@@ -1,15 +1,15 @@
 //Cracked by Roath
-// »ªÉ½ÓñÅ®·åÉ½Â·
+// åå±±ç‰å¥³å³°å±±è·¯
 // qfy 26/6/1996
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ÓñÅ®·åÉ½Â·");
+	set("short", "ç‰å¥³å³°å±±è·¯");
 	set("long", @LONG
-ÕâÊÇÒ»ÌõÍ¨ÏòÓñÅ®·å¾ø¶¥ÉÏÎ£ÑÂµÄÉ½Â·¡£Ò»Â·ÉÏÀ´£¬²İÄ¾Ô½À´Ô½ÉÙ£¬
-Óë»ªÉ½²İÄ¾Çå»ª£¬¾°É«¼«ÓÄµÄÌØÉ«³É¶Ô±È¡£
+è¿™æ˜¯ä¸€æ¡é€šå‘ç‰å¥³å³°ç»é¡¶ä¸Šå±å´–çš„å±±è·¯ã€‚ä¸€è·¯ä¸Šæ¥ï¼Œè‰æœ¨è¶Šæ¥è¶Šå°‘ï¼Œ
+ä¸åå±±è‰æœ¨æ¸…åï¼Œæ™¯è‰²æå¹½çš„ç‰¹è‰²æˆå¯¹æ¯”ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
@@ -32,9 +32,9 @@ int valid_leave(object me, string dir)
     mapping myfam;
     myfam = (mapping)me->query("family");
 
-    if ( (!myfam || myfam["family_name"] != "»ªÉ½ÅÉ") && dir == "northup" 
+    if ( (!myfam || myfam["family_name"] != "åå±±æ´¾") && dir == "northup" 
     && objectp(present("gao genming", environment(me))) )
-	   return notify_fail("¸ß¸ùÃ÷À¹×¡ÄãËµ£ºÓÉ´ËÍùÉÏÄË±¾ÅÉ½ûµØ£¬ÇëÖ¹²½¡£\n");
+	   return notify_fail("é«˜æ ¹æ˜æ‹¦ä½ä½ è¯´ï¼šç”±æ­¤å¾€ä¸Šä¹ƒæœ¬æ´¾ç¦åœ°ï¼Œè¯·æ­¢æ­¥ã€‚\n");
 
     return ::valid_leave(me, dir);
 }

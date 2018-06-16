@@ -1,16 +1,16 @@
 //Cracked by Roath
-// qian.c Ç®Çà½¡
+// qian.c é’±é’å¥
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ç®Çà½¡", ({ "qian qingjian", "qian" }));
-	set("nickname", "É¥ÃÅ¸«");
+	set_name("é’±é’å¥", ({ "qian qingjian", "qian" }));
+	set("nickname", "ä¸§é—¨æ–§");
 	set("long", 
-"Ç®Çà½¡ÊÇ»ÆºÓËÄ¹íµÄÀÏËÄ£¬ÊÇ¹íÃÅÁúÍõÉ³Í¨ÌìµÄËÄµÜ×Ó£¬ÉÃÓÚ¸«·¨¡£\n");
-        set("title", "»ÆºÓËÄ¹íÀÏËÄ");
-	set("gender", "ÄĞĞÔ");
+"é’±é’å¥æ˜¯é»„æ²³å››é¬¼çš„è€å››ï¼Œæ˜¯é¬¼é—¨é¾™ç‹æ²™é€šå¤©çš„å››å¼Ÿå­ï¼Œæ“…äºæ–§æ³•ã€‚\n");
+        set("title", "é»„æ²³å››é¬¼è€å››");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "peaceful");
 	set("shen_type", -1);

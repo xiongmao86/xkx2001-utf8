@@ -5,19 +5,19 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Î÷ÃÅ");
+	set("short", "è¥¿é—¨");
 	set("long", @LONG
-ÕâÊÇÒ»¼äÊ²÷áÒ²Ã»ÓÐµÄ¿Õ·¿¼ä¡£
+è¿™æ˜¯ä¸€é—´ä»€éº½ä¹Ÿæ²¡æœ‰çš„ç©ºæˆ¿é—´ã€‚
 LONG
 	);
         set("coordinates", ([ "x" : -6, "y" : -7 ]) );
 	set("no_clean_up", 0);
-	set("srhot", "Î÷ÃÅ");
+	set("srhot", "è¥¿é—¨");
 	set("exits", ([ /* sizeof() == 2 */
   "east" : __DIR__"djtai",
   "west" : __DIR__"tulu2",
 ]));
-	set("shoot", "Î÷ÃÅ");
+	set("shoot", "è¥¿é—¨");
 
 	setup();
 	replace_program(ROOM);

@@ -1,14 +1,14 @@
 //Cracked by Roath
-// dajiaoshi.c  ´ó½¸Ê¯
+// dajiaoshi.c  å¤§ç¤çŸ³
 // Ssy
 
 inherit __DIR__"no_pk_room";
 
 void create()
 {
-    	set("short", "´ó½¸Ê¯");
+    	set("short", "å¤§ç¤çŸ³");
     	set("long", @LONG
-Ò»¿é´ó½¸Ê¯£¬ÖÜÎ§¶¼ÊÇË®£¬Î÷±ßÊÇµº¡£
+ä¸€å—å¤§ç¤çŸ³ï¼Œå‘¨å›´éƒ½æ˜¯æ°´ï¼Œè¥¿è¾¹æ˜¯å²›ã€‚
 LONG
     	);
 
@@ -32,12 +32,12 @@ int do_tang(string arg)
         object me = this_player();
 
         if ( !arg )
-                return notify_fail("ÄãÒªÍùÄÄ¸ö·½ÏòÌË£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªä¸ªæ–¹å‘è¶Ÿï¼Ÿ\n");
         if ( arg != "west" )
-                return notify_fail("ÄÇ±ßÌË²»¹ıÈ¥¡£\n");
-        message_vision("$N¾íÆğ¿ãÍÈ£¬ÍùµºÉÏÌËÁË¹ıÈ¥¡£\n",me);
+                return notify_fail("é‚£è¾¹è¶Ÿä¸è¿‡å»ã€‚\n");
+        message_vision("$Nå·èµ·è£¤è…¿ï¼Œå¾€å²›ä¸Šè¶Ÿäº†è¿‡å»ã€‚\n",me);
         me->move(__DIR__"jiaoshi2");  
-        message_vision("$N´Ó´ó½¸Ê¯ÉÏÌËÁË¹ıÀ´¡£\n",me);
+        message_vision("$Nä»å¤§ç¤çŸ³ä¸Šè¶Ÿäº†è¿‡æ¥ã€‚\n",me);
         return 1;
 }
 

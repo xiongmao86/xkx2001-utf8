@@ -5,17 +5,17 @@ inherit STAFF;
 
 void create()
 {
-	set_name("¸Ö²ù", ({ "gang chan", "chan" }));
+	set_name("é’¢é“²", ({ "gang chan", "chan" }));
 	set_weight(20000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»±ú¾«¸Ö´òÔìµÄ²ù×Ó£¬ĞÎÊ½ºÍ·ğÃÅµÜ×ÓÓÃµÄ·½±ã²ù²î²»¶à£¬Î¨¶À²ùÍ·½Ïºñ½Ï¶ÛÇÒÂÔÓĞÍäÇú¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€æŸ„ç²¾é’¢æ‰“é€ çš„é“²å­ï¼Œå½¢å¼å’Œä½›é—¨å¼Ÿå­ç”¨çš„æ–¹ä¾¿é“²å·®ä¸å¤šï¼Œå”¯ç‹¬é“²å¤´è¾ƒåšè¾ƒé’ä¸”ç•¥æœ‰å¼¯æ›²ã€‚\n");
 		set("value", 350);
 		set("material", "steel");
-		set("wield_msg", "$N³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÁËÏÂÀ´¡£\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾äº†ä¸‹æ¥ã€‚\n");
 	}
 	init_staff(25);
 	setup();

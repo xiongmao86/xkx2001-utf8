@@ -6,16 +6,16 @@ inherit CLUB;
 
 void create()
 {
-    set_name("ºµÑÌ¹Ü", ({"han yanguan", "yanguan", "club"}));
+    set_name("æ—±çƒŸç®¡", ({"han yanguan", "yanguan", "club"}));
     set_weight(500); 
     if( clonep() )
       set_default_object(__FILE__);
     else {
-      set("long", "ÕâÊÇÒ»Ö§Í­ÖÆµÄºµÑÌ¹Ü£¬ÀïÃæ»¹Ê£µãÑÌÄ©¡£\n");
-	set("unit","Ö§");
+      set("long", "è¿™æ˜¯ä¸€æ”¯é“œåˆ¶çš„æ—±çƒŸç®¡ï¼Œé‡Œé¢è¿˜å‰©ç‚¹çƒŸæœ«ã€‚\n");
+	set("unit","æ”¯");
 	set("value",200);
-	set("wield_msg","$NÃş³öÒ»Ö§ºµÑÌ¹Ü£¬µãÉÏ»ğ£¬µğÔÚ×ì½Ç£¬ÂıÂıÅç³öÑÌÎí¡£\n");
-	set("unwield_msg","$N°ÑºµÑÌ¹ÜÔÚĞ¬µ×ÉÏà¾Ò»à¾£¬Ğ¡ĞÄµØ·Å»Ø»³Àï¡£\n");
+	set("wield_msg","$Næ‘¸å‡ºä¸€æ”¯æ—±çƒŸç®¡ï¼Œç‚¹ä¸Šç«ï¼Œå¼åœ¨å˜´è§’ï¼Œæ…¢æ…¢å–·å‡ºçƒŸé›¾ã€‚\n");
+	set("unwield_msg","$NæŠŠæ—±çƒŸç®¡åœ¨é‹åº•ä¸Šå—‘ä¸€å—‘ï¼Œå°å¿ƒåœ°æ”¾å›æ€€é‡Œã€‚\n");
 	set("material", "iron");
     }
     init_club(10);

@@ -7,13 +7,13 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("³ÂÀÏ°å", ({ "chen laoban", "lao ban", "chen", "laoban" }));
+        set_name("é™ˆè€æ¿", ({ "chen laoban", "lao ban", "chen", "laoban" }));
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("long",
-                "ËûÊÇÆ½¶¨ÖİÔÓ»õÆÌµÄÀÏ°å£¬ÔÚÕâÀï×öÁËÊ®¼¸ÄêµÄÂòÂô¡£\n");
+                "ä»–æ˜¯å¹³å®šå·æ‚è´§é“ºçš„è€æ¿ï¼Œåœ¨è¿™é‡Œåšäº†åå‡ å¹´çš„ä¹°å–ã€‚\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_temp("apply/damage", 15);

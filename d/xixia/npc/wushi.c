@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Î÷ÏÄÎäÊ¿", ({ "wu shi", "shi", "guard" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("è¥¿å¤æ­¦å£«", ({ "wu shi", "shi", "guard" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"Ò»ÃûÂúÈùò°÷×µÄÎ÷ÏÄÎäÊ¿¡£\n");
+		"ä¸€åæ»¡è…®è™¬é«¯çš„è¥¿å¤æ­¦å£«ã€‚\n");
 	set("combat_exp", 100000);
         set("shen_type", -1);
 	set("attitude", "heroism");
@@ -38,7 +38,7 @@ void create()
 	set_skill("parry", 100);
 	set_skill("dodge", 100);
 
-	set("no_get", "Äã¿¸²»¶¯");
+	set("no_get", "ä½ æ‰›ä¸åŠ¨");
 
 	setup();
 

@@ -12,11 +12,11 @@ void create()
 {
         string *bc_skills, *weapons;
         int i, level, exp = 100000 + random(200000);
-        set_name("°ïÖÚ", ({ "bang zhong" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¸®ä¼—", ({ "bang zhong" }));
+        set("gender", "ç”·æ€§");
         set("age", 20 + random(10));
         set("long",
-"Ò»ÃûÉí²Ä¸ß´óµÄ×³ºº£¬ÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù¡£\n");
+"ä¸€åèº«æé«˜å¤§çš„å£®æ±‰ï¼Œæ»¡è„¸æ€æ°”ï¼Œä¸€ä»˜å‡¶ç¥æ¶ç…çš„æ¨¡æ ·ã€‚\n");
         set("attitude", "heroism");
         set("shen_type", -1);
 
@@ -71,7 +71,7 @@ int auto_check()
         if( is_busy() || is_fighting() ) return 1;
 
         message("vision",
-                name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+                name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                 environment(me), ({me}));
         destruct(me);
         return 1;

@@ -7,13 +7,13 @@ void do_eat(string);
 
 void create()
 {
-	set_name("âÎ",({"nang"}));
+	set_name("é¦•",({"nang"}));
 	set_weight(1500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»Á³Åè°ã´óĞ¡µÄâÎ£¬ÊÇ³¤Í¾ÂÃĞĞ±Ø±¸µÄ¸ÉÁ¸¡£\n");
-		set("unit", "Ö»");
+		set("long", "ä¸€åªè„¸ç›†èˆ¬å¤§å°çš„é¦•ï¼Œæ˜¯é•¿é€”æ—…è¡Œå¿…å¤‡çš„å¹²ç²®ã€‚\n");
+		set("unit", "åª");
 		set("value", 80);
         set("remaining", 9);
 	set("food_supply", 20);
@@ -33,10 +33,10 @@ int do_eat(string arg)
 
     if( !this_object()->id(arg) ) return 0;
     if( this_player()->is_busy() )
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
     if(   (int)this_player()->query("food")
        >= (int)this_player()->max_food_capacity() )
-     return notify_fail("ÄãÒÑ¾­³ÔµÃÌ«±¥ÁË¡£\n");
+     return notify_fail("ä½ å·²ç»åƒå¾—å¤ªé¥±äº†ã€‚\n");
 
 	set("value", 0);
     this_player()->add("food", (int)query("food_supply"));
@@ -46,10 +46,10 @@ int do_eat(string arg)
     add("remaining", -1);
 	if ( query("remaining") )
 	{
-   		 message_vision("$NÄÃÆğâÎ³ÔÁË¼¸¿Ú¡£\n", this_player());
+   		 message_vision("$Næ‹¿èµ·é¦•åƒäº†å‡ å£ã€‚\n", this_player());
 	} else 
 	{ 
-   		 message_vision("$N°ÑÊ£ÏÂµÄâÎ³ÔµÃ¸É¸É¾»¾»¡£\n", this_player());
+   		 message_vision("$NæŠŠå‰©ä¸‹çš„é¦•åƒå¾—å¹²å¹²å‡€å‡€ã€‚\n", this_player());
 		
 		destruct(this_object());
 	}

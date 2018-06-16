@@ -7,13 +7,13 @@ inherit HEAD;
 
 void create()
 {
-	set_name("Ì¨ÒÄÍ·½í", ({ "tou jin","toujin","jin" }) );
-	set("long", "Ò»ÌõÌ¨ÒÄÄĞ×ÓÔúµÄÍ·½í£¬Ò»°ãºÍÉíÉÏ´©µÄ¶ÌÈ¹Í¬É«¡£\n");
+	set_name("å°å¤·å¤´å·¾", ({ "tou jin","toujin","jin" }) );
+	set("long", "ä¸€æ¡å°å¤·ç”·å­æ‰çš„å¤´å·¾ï¼Œä¸€èˆ¬å’Œèº«ä¸Šç©¿çš„çŸ­è£™åŒè‰²ã€‚\n");
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("material", "cloth");
 		set("armor_prop/armor", 1);
 	}

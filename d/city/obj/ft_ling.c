@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name( HIC "¸«Í·Áî" NOR, ({ "futou ling", "ling"}) );
+	set_name( HIC "æ–§å¤´ä»¤" NOR, ({ "futou ling", "ling"}) );
 	set_weight(10);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ã¶");
+		set("unit", "æžš");
                 set("long", 
-	"ÕâÃ¶¸«Í·ÁîÄËÊÇ¸«Í·°ïÖ÷ÓÃÀ´½ÓÄÉ (jiena) »òÕß¿ª³ý (kaichu) °ïÖÚµÄÐÅÎï£®\n"
+	"è¿™æžšæ–§å¤´ä»¤ä¹ƒæ˜¯æ–§å¤´å¸®ä¸»ç”¨æ¥æŽ¥çº³ (jiena) æˆ–è€…å¼€é™¤ (kaichu) å¸®ä¼—çš„ä¿¡ç‰©ï¼Ž\n"
 	 	   );
                 set("material", "iron");
         }
@@ -29,27 +29,27 @@ int do_jiena(string arg)
     object ob, me = this_player();
 
     if ( me->query("futou_bang") < 1 )
-         return notify_fail( "Äã²»ÊÇ¸«Í·°ïÖÚ£¬ÎÞÈ¨Ê¹ÓÃÕâ¸öÁîÅÆ¡£\n" );
+         return notify_fail( "ä½ ä¸æ˜¯æ–§å¤´å¸®ä¼—ï¼Œæ— æƒä½¿ç”¨è¿™ä¸ªä»¤ç‰Œã€‚\n" );
 
     if ( !arg )
-           return notify_fail( "Ö¸Áî£ºjiena <sb>¡£\n" );
+           return notify_fail( "æŒ‡ä»¤ï¼šjiena <sb>ã€‚\n" );
 
         if ( !(ob=present(arg,environment(me))) )
-           return notify_fail( "ÕâÀï²¢ÎÞ´ËÈË£¡\n" );
+           return notify_fail( "è¿™é‡Œå¹¶æ— æ­¤äººï¼\n" );
 
 	if (ob == me) 
-	    return notify_fail("ÄãÒÑ¾­ÊÇ¸«Í·°ïµÄÁË£®\n");
+	    return notify_fail("ä½ å·²ç»æ˜¯æ–§å¤´å¸®çš„äº†ï¼Ž\n");
 
         if ( ob->is_character() && !living(ob) )
-           return notify_fail( "µÈ´ËÈË×ªÐÑÔÙËµ°É£¡\n" );
+           return notify_fail( "ç­‰æ­¤äººè½¬é†’å†è¯´å§ï¼\n" );
 
         if ( !living(ob) )
-           return notify_fail( "ÄãÀÏÑÛ»è»¨À²£¿Õâ²¢·Ç»îÎï£¡¸ÃÍËÎ»ÈÃÏÍÁË£¡\n" );
+           return notify_fail( "ä½ è€çœ¼æ˜èŠ±å•¦ï¼Ÿè¿™å¹¶éžæ´»ç‰©ï¼è¯¥é€€ä½è®©è´¤äº†ï¼\n" );
 
 	if ( ob->query("futou_bang") )
-           return notify_fail( "´ËÈË¾­ÒÑÈë°ï£¬²»Ðè¶à´ËÒ»¾Ù£¡\n" );
+           return notify_fail( "æ­¤äººç»å·²å…¥å¸®ï¼Œä¸éœ€å¤šæ­¤ä¸€ä¸¾ï¼\n" );
 
-	message_vision( "$nÕýÊ½ÑûÇë$N¼ÓÈë¸«Í·°ï¡£\n", ob, me);
+	message_vision( "$næ­£å¼é‚€è¯·$NåŠ å…¥æ–§å¤´å¸®ã€‚\n", ob, me);
 	ob->set("futou_bang", 10);
 
 	return 1;
@@ -60,24 +60,24 @@ int do_kaichu(string arg)
 	object ob, me = this_player();
 
       if ( me->query("futou_bang") < 1 )
-         return notify_fail( "Äã²»ÊÇ¸«Í·°ïÖÚ£¬ÎÞÈ¨Ê¹ÓÃÕâ¸öÁîÅÆ¡£\n" );
+         return notify_fail( "ä½ ä¸æ˜¯æ–§å¤´å¸®ä¼—ï¼Œæ— æƒä½¿ç”¨è¿™ä¸ªä»¤ç‰Œã€‚\n" );
 
         if ( !arg )
-           return notify_fail( "Ö¸Áî£ºexpell <sb>¡£\n" );
+           return notify_fail( "æŒ‡ä»¤ï¼šexpell <sb>ã€‚\n" );
 
         if ( !(ob=present(arg,environment(me))) )
-           return notify_fail( "ÕâÀï²¢ÎÞ´ËÈË£¡\n" );
+           return notify_fail( "è¿™é‡Œå¹¶æ— æ­¤äººï¼\n" );
 
         if ( ob->is_character() && !living(ob) )
-           return notify_fail( "µÈ´ËÈË×ªÐÑÔÙËµ°É£¡\n" );
+           return notify_fail( "ç­‰æ­¤äººè½¬é†’å†è¯´å§ï¼\n" );
 
         if ( !living(ob) )
-           return notify_fail( "ÄãÀÏÑÛ»è»¨À²£¿Õâ²¢·Ç»îÎï£¡¸ÃÍËÎ»ÈÃÏÍÁË£¡\n" );
+           return notify_fail( "ä½ è€çœ¼æ˜èŠ±å•¦ï¼Ÿè¿™å¹¶éžæ´»ç‰©ï¼è¯¥é€€ä½è®©è´¤äº†ï¼\n" );
 
         if ( !ob->query("futou_bang") )
-           return notify_fail( "´ËÈË²¢·Ç°ïÖÐÖ®ÈË£¬ÎÞÐë¿ª¸ï£¡\n" );
+           return notify_fail( "æ­¤äººå¹¶éžå¸®ä¸­ä¹‹äººï¼Œæ— é¡»å¼€é©ï¼\n" );
 
-        message_vision( "$n½«$N¿ª¸ï³ö¸«Í·°ï¡£\n", ob, me);
+        message_vision( "$nå°†$Nå¼€é©å‡ºæ–§å¤´å¸®ã€‚\n", ob, me);
 	ob->delete("futou_bang");
 
 	return 1;

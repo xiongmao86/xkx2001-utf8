@@ -1,18 +1,18 @@
 //Cracked by Roath
-// chunjuan.c ´º¾í
+// chunjuan.c æ˜¥å·
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("´º¾í", ({"chun juan", "eggroll"}));
+        set_name("æ˜¥å·", ({"chun juan", "eggroll"}));
         set_weight(40);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»µúÕ¨µÄ½ğ»ÆµÄ´º¾í¡£\n");
-                set("unit", "µú");
+                set("long", "ä¸€ç¢Ÿç‚¸çš„é‡‘é»„çš„æ˜¥å·ã€‚\n");
+                set("unit", "ç¢Ÿ");
                 set("value", 10);
                 set("food_remaining", 3);
                 set("food_supply", 15);

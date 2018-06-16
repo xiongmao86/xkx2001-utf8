@@ -1,14 +1,14 @@
 //Cracked by Roath
-// niu.c 水牛
+// niu.c 姘寸墰
 
 inherit NPC;
 
 void create()
 {
-	set_name("水牛", ({ "shui niu", "niu", "cow" }) );
-	set("race", "家畜");
+	set_name("姘寸墰", ({ "shui niu", "niu", "cow" }) );
+	set("race", "瀹剁暅");
 	set("age", 10);
-	set("long", "一头南方山区常见的水牛，是耕作的主力，也用来拉车载物。由于水草茂盛，长得十分肥壮。\n");
+	set("long", "涓�澶村崡鏂瑰北鍖哄父瑙佺殑姘寸墰锛屾槸鑰曚綔鐨勪富鍔涳紝涔熺敤鏉ユ媺杞﹁浇鐗┿�傜敱浜庢按鑽夎寕鐩涳紝闀垮緱鍗佸垎鑲ュ．銆俓n");
 	set("str", 25);
 	set("cor", 25);
 	set("dalivictim",1);

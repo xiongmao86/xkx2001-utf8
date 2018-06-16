@@ -1,16 +1,16 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/zhang-zd.c
-// zhang-zd.c  ÕÅÖ¾¹â
+// zhang-zd.c  å¼ å¿—å…‰
 // sdong 08/01/98
 
 inherit NPC;
 void create()
 {
-	set_name("ÕÅÖ¾¹â", ({ "zhang zhiguang", "zhang" }));
+	set_name("å¼ å¿—å…‰", ({ "zhang zhiguang", "zhang" }));
 	set("long",
-		"ËûÊÇÒ»Î»È«Õæ½ÌµÚÈı´úµÜ×Ó¡£\n"
+		"ä»–æ˜¯ä¸€ä½å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ã€‚\n"
 		);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 46);
 	set("attitude", "heroic");
 	set("shen_type", 1);
@@ -52,7 +52,7 @@ void create()
 	prepare_skill("cuff", "chunyang-quan");
 	prepare_skill("strike", "sanhua-juding");
 
-	create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+	create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
 
 

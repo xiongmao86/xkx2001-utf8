@@ -5,10 +5,10 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÀÏÏÈÉú", ({ "lao xianshen", "xianshen" }));
+	set_name("è€å…ˆç”Ÿ", ({ "lao xianshen", "xianshen" }));
 	set_color("$YEL$");
-	set("long","ÕâÊÇÒ»Î»ÔÚ´óÀí³ÇÄÚ½ÌÊéµÄÀÏÏÈÉú¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set("long","è¿™æ˜¯ä¸€ä½åœ¨å¤§ç†åŸŽå†…æ•™ä¹¦çš„è€å…ˆç”Ÿã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 	set("max_jing", 2000);
 	set("max_qi", 2000);
@@ -37,7 +37,7 @@ void init()
 
 void greeting1(object ob)
 {
-	message_vision(HIW"ÀÏÏÈÉúÒ¡Í·»ÎÄÔµÄÒ÷µÀ£º\n\n"NOR, ob);
+	message_vision(HIW"è€å…ˆç”Ÿæ‘‡å¤´æ™ƒè„‘çš„åŸé“ï¼š\n\n"NOR, ob);
 	ob->set("potential",ob->query("max_potential"));
 	return ;
 }
@@ -52,14 +52,14 @@ int do_qingjiao(string arg)
 	object me=this_object(), who=this_player();
 	int b;
 
-	if (!arg) return notify_fail("ÄãÏëÇë½ÌÊ²Ã´¹¦·ò£¿\n");
-	if (who->is_busy()) return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
-	if (who->is_fighting()) return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
-	if (me->is_fighting() || me->is_busy()) return notify_fail("ËûÕýÃ¦×ÅÄØ£¬Ã»¹¤·ò½ÌÄã¡£\n");
-	if (!living(me)) return notify_fail("àÅ ... ÄãµÃÏÈ°ÑËûÅªÐÑÔÙËµ¡£\n");
-	if ((int)who->query("potential") < 10) return notify_fail("ÄãµÄÇ±ÄÜ²»×ã£¬ÎÞ·¨Áì»áÈÎºÎ¶«Î÷¡£\n");
-	if ((int)who->query("jing") <110 ) return notify_fail("ÄãÌ«ÀÛÁË£¬ÎÞ·¨Áì»áÈÎºÎ¶«Î÷¡£\n");
-	message_vision("$NÏò$nÇë½ÌÑ§ÎÊÉÏµÄÎÊÌâ£¬ËÆºõÓÐËùÁìÎò¡£\n", who, me);
+	if (!arg) return notify_fail("ä½ æƒ³è¯·æ•™ä»€ä¹ˆåŠŸå¤«ï¼Ÿ\n");
+	if (who->is_busy()) return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
+	if (who->is_fighting()) return notify_fail("ä¸´é˜µç£¨æžªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
+	if (me->is_fighting() || me->is_busy()) return notify_fail("ä»–æ­£å¿™ç€å‘¢ï¼Œæ²¡å·¥å¤«æ•™ä½ ã€‚\n");
+	if (!living(me)) return notify_fail("å—¯ ... ä½ å¾—å…ˆæŠŠä»–å¼„é†’å†è¯´ã€‚\n");
+	if ((int)who->query("potential") < 10) return notify_fail("ä½ çš„æ½œèƒ½ä¸è¶³ï¼Œæ— æ³•é¢†ä¼šä»»ä½•ä¸œè¥¿ã€‚\n");
+	if ((int)who->query("jing") <110 ) return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ— æ³•é¢†ä¼šä»»ä½•ä¸œè¥¿ã€‚\n");
+	message_vision("$Nå‘$nè¯·æ•™å­¦é—®ä¸Šçš„é—®é¢˜ï¼Œä¼¼ä¹Žæœ‰æ‰€é¢†æ‚Ÿã€‚\n", who, me);
 	who->improve_skill(arg, 1);
 	b = who->query_skill(arg, 1)+1;
 	who->improve_skill(arg, b*b+1);
@@ -69,8 +69,8 @@ int do_taojiao(string arg)
 {
 	object me=this_object(), who=this_player();
 
-	if (!arg) return notify_fail("ÄãÏëÇë½ÌÊ²Ã´¹¦·ò£¿\n");
-	message_vision("$NÏò$nÇë½ÌÑ§ÎÊÉÏµÄÎÊÌâ£¬ËÆºõÓÐËùÁìÎò¡£\n", who, me);
+	if (!arg) return notify_fail("ä½ æƒ³è¯·æ•™ä»€ä¹ˆåŠŸå¤«ï¼Ÿ\n");
+	message_vision("$Nå‘$nè¯·æ•™å­¦é—®ä¸Šçš„é—®é¢˜ï¼Œä¼¼ä¹Žæœ‰æ‰€é¢†æ‚Ÿã€‚\n", who, me);
 	who->set(arg, who->query(arg)+1);
 	return 1;
 }

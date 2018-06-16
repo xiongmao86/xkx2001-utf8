@@ -1,14 +1,14 @@
 //Cracked by Roath
-// hong antong ºé°²Í¨
+// hong antong æ´ªå®‰é€š
 
 inherit NPC;
 
 void create()
 {
-        set_name("ºé°²Í¨", ({ "hong antong","hong", "jiaozhu" }));
+        set_name("æ´ªå®‰é€š", ({ "hong antong","hong", "jiaozhu" }));
         set("long",
-                "Äê¼ÍÉõÀÏ£¬°×÷Ş´¹ĞØ£¬Á³ÉÏ¶¼ÊÇÉË°ÌÖåÎÆ£¬³óÂªÖ®¼«¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "å¹´çºªç”šè€ï¼Œç™½é¬“å‚èƒ¸ï¼Œè„¸ä¸Šéƒ½æ˜¯ä¼¤ç–¤çš±çº¹ï¼Œä¸‘é™‹ä¹‹æã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 51);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -45,7 +45,7 @@ void create()
 
         prepare_skill("finger", "yingxiong-sanzhao");
 
-        create_family("ÉñÁú½Ì", 1, "¿ªÉ½×æÊ¦");
+        create_family("ç¥é¾™æ•™", 1, "å¼€å±±ç¥–å¸ˆ");
         setup();
 
         carry_object("/clone/armor/cloth")->wear();
@@ -74,10 +74,10 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say ·òÈËËùËµÉõÊÇÓĞÀí£¬µ«Õâ¾äËÆ¸üº¬ÉîÒâ¡£");
+                {		command("say å¤«äººæ‰€è¯´ç”šæ˜¯æœ‰ç†ï¼Œä½†è¿™å¥ä¼¼æ›´å«æ·±æ„ã€‚");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
-				command("say ºá½£ËÆÖ¸½£ĞĞÖ®ÊÆ¡£¡£¡£");
+				command("say æ¨ªå‰‘ä¼¼æŒ‡å‰‘è¡Œä¹‹åŠ¿ã€‚ã€‚ã€‚");
 
 				opp->set("jingli", maxjingli);
 				opp->set("eff_qi", maxqi);
@@ -88,5 +88,5 @@ void greeting(object me)
 }
 void attempt_apprentice(object ob)
 {
-        command ("say ÎÒºÍ·òÈËÔÙÕâ×êÑĞÕâÎäÑ§ÃØÂ¼£¬±ğÀ´·³ÎÒÃÇ£¬¿ì¹ö¡£");
+        command ("say æˆ‘å’Œå¤«äººå†è¿™é’»ç ”è¿™æ­¦å­¦ç§˜å½•ï¼Œåˆ«æ¥çƒ¦æˆ‘ä»¬ï¼Œå¿«æ»šã€‚");
 }

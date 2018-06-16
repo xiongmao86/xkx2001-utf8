@@ -1,15 +1,15 @@
 //Cracked by Roath
-// indiman.c Ó¡¶ÈÉÌÈË
+// indiman.c å°åº¦å•†äºº
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ê¢Æ¤ÂŞ¿ÍÉÌ", ({ "ke shang", "shang" }) );
-	set("long", "ÕâÊÇÒ»Î»´ÓÓ¡¶ÈÀ´µÄ¿ÍÉÌ£¬Æ¤·ô÷îºÚ£¬°×²¼°üÍ·£¬´óÀí°ÑÓ¡¶ÈÈË½Ğ×÷Ê¢Æ¤ÂŞ¡£\n");
+	set_name("ç››çš®ç½—å®¢å•†", ({ "ke shang", "shang" }) );
+	set("long", "è¿™æ˜¯ä¸€ä½ä»å°åº¦æ¥çš„å®¢å•†ï¼Œçš®è‚¤é»é»‘ï¼Œç™½å¸ƒåŒ…å¤´ï¼Œå¤§ç†æŠŠå°åº¦äººå«ä½œç››çš®ç½—ã€‚\n");
 
 	set("age", 30);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("dalivictim",1);
 
 	set("str", 20);

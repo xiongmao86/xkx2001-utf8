@@ -14,12 +14,12 @@ int reset_to_normal();
 
 void create()
 {
-        set("short", "¶ÈÄ¸µî");
+        set("short", "åº¦æ¯æ®¿");
         set("long", @LONG
-ÕâÀïÊÇ´óÂÖËÂµÄ¶ÈÄ¸µî£¬ÕıÖĞÎå×ğ´ó×ù·ğ£¬¾ùÎª¸ßÈâ÷Ù¡¢ÍâÅû
-Ì»ÓÒôÂôÄ¡¢½áõÊõÃ×ø¡¢Ö´ÊÖÓ¡Ğëåô×ø¸÷Òì¡£µîÄÚ¶Ô³ÆÅÅÁĞËÄ¸ù´óÖù£¬
-ÉÏµñÈÌ¶¬ÎÆ£¬ÏÂ¿ÌÁ¬ÖéÎÆ¡£±±±ÚÉÏ¹©ÓĞÁ½×ğ½ğ¸ÕÏñ£ºÂíÍ·Ã÷ÍõºÍÑÖ
-Ä§»¤·¨¡£
+è¿™é‡Œæ˜¯å¤§è½®å¯ºçš„åº¦æ¯æ®¿ï¼Œæ­£ä¸­äº”å°Šå¤§åº§ä½›ï¼Œå‡ä¸ºé«˜è‚‰é«»ã€å¤–æŠ«
+è¢’å³è¢ˆè£Ÿã€ç»“è·è¶ºåã€æ‰§æ‰‹å°é¡»å¼­åå„å¼‚ã€‚æ®¿å†…å¯¹ç§°æ’åˆ—å››æ ¹å¤§æŸ±ï¼Œ
+ä¸Šé›•å¿å†¬çº¹ï¼Œä¸‹åˆ»è¿ç çº¹ã€‚åŒ—å£ä¸Šä¾›æœ‰ä¸¤å°Šé‡‘åˆšåƒï¼šé©¬å¤´æ˜ç‹å’Œé˜
+é­”æŠ¤æ³•ã€‚
 LONG
         );
         set("exits", ([
@@ -45,8 +45,8 @@ void init() {
     object challenger, me = this_player();
 
 //    printf("blah blah blah\n");
-    if ( (me->query("family/family_name") == "Ñ©É½ÅÉ" || 
-          me->query("family/family_name") == "Ñªµ¶ÃÅ")
+    if ( (me->query("family/family_name") == "é›ªå±±æ´¾" || 
+          me->query("family/family_name") == "è¡€åˆ€é—¨")
          && !(current_job) 
          && (me->query("combat_exp") > 2000000) ) {
 //        printf("hehehe\n");
@@ -69,9 +69,9 @@ int introduce_robber(object current_player)
         robber->setup_robber(current_player->query("combat_exp"));
         robber->move(this_object());    
 //        printf("test3\n");
-//        message("vision", "Ò»¸ö"+robber->name(1)+"¼±¼±Ã¦Ã¦×ßÁË¹ıÀ´¡£\n", this_object(), robber);
-        message_vision(HIC"Ò»¸ö$N¼±¼±Ã¦Ã¦×ßÁË¹ıÀ´¡£\n"NOR, robber);
-        message_vision(HIR"$NËµµÀ£ºÌıËµÕâ¸öÍ­¸×Àï´æ×ÅÀ®ÂïÓÃµÄËÖÓÍ£¬ÀÏ×Ó½ñÌìÌØµØÀ´¿´¿´£¬Ê¶ÏàµÄ¸Ï¿ì¸øÎÒ¹ö¿ª£¡\n" NOR, robber, current_player);
+//        message("vision", "ä¸€ä¸ª"+robber->name(1)+"æ€¥æ€¥å¿™å¿™èµ°äº†è¿‡æ¥ã€‚\n", this_object(), robber);
+        message_vision(HIC"ä¸€ä¸ª$Næ€¥æ€¥å¿™å¿™èµ°äº†è¿‡æ¥ã€‚\n"NOR, robber);
+        message_vision(HIR"$Nè¯´é“ï¼šå¬è¯´è¿™ä¸ªé“œç¼¸é‡Œå­˜ç€å–‡å˜›ç”¨çš„é…¥æ²¹ï¼Œè€å­ä»Šå¤©ç‰¹åœ°æ¥çœ‹çœ‹ï¼Œè¯†ç›¸çš„èµ¶å¿«ç»™æˆ‘æ»šå¼€ï¼\n" NOR, robber, current_player);
         robber->start_checking(current_player);
 //        printf("test4\n");
     }

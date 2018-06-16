@@ -9,9 +9,9 @@ void create()
 {
 	object bang;
 
-        set_name("äìÏæ×Ó", ({ "xiaoxiang zi", "xiaoxiang" }) );
+        set_name("æ½‡æ¹˜å­", ({ "xiaoxiang zi", "xiaoxiang" }) );
         set("title", "");
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("shen_type", -1);
         set("age", 30);
         set("str", 30);
@@ -19,7 +19,7 @@ void create()
         set("cps", 30);
         set("int", 30);
         set("long",
-                "Õâ±ãÊÇÏæÎ÷ÃûËŞäìÏæ×Ó¡£ËûÉí²Ä¸ßÊİ£¬Á³ÎŞÑªÉ«£¬ĞÎÈô½©Ê¬¡£\n" );
+                "è¿™ä¾¿æ˜¯æ¹˜è¥¿åå®¿æ½‡æ¹˜å­ã€‚ä»–èº«æé«˜ç˜¦ï¼Œè„¸æ— è¡€è‰²ï¼Œå½¢è‹¥åƒµå°¸ã€‚\n" );
 
         set("combat_exp", 800000);
         set("attitude", "heroism");

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/changbai/npc/a2.c °¢¶ş
+// /d/changbai/npc/a2.c é˜¿äºŒ
 // by ALN  1/98
 
 #include <ansi.h>
@@ -10,12 +10,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("°¢¶ş", ({ "a er", "er" }));
+        set_name("é˜¿äºŒ", ({ "a er", "er" }));
         set("long",
-"ÕâÈË¾«¸É¿İÊİ£¬Éí²ÄÂÔ°«£¬\n"
-"ËûÍ·¶¥ĞÄ»¬ÓÍÓÍµØ£¬ÍºµÃ²»Ê£°ë¸ùÍ··¢£¬Á½±ßÌ«ÑôÑ¨°¼ÁË½øÈ¥£¬ÉîÏİ°ë´ç¡£\n");
-        set("nickname", "ÍºÍ·");
-        set("gender", "ÄĞĞÔ");
+"è¿™äººç²¾å¹²æ¯ç˜¦ï¼Œèº«æç•¥çŸ®ï¼Œ\n"
+"ä»–å¤´é¡¶å¿ƒæ»‘æ²¹æ²¹åœ°ï¼Œç§ƒå¾—ä¸å‰©åŠæ ¹å¤´å‘ï¼Œä¸¤è¾¹å¤ªé˜³ç©´å‡¹äº†è¿›å»ï¼Œæ·±é™·åŠå¯¸ã€‚\n");
+        set("nickname", "ç§ƒå¤´");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
         set("shen_type", -1);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// hua-hegen.c »ªºÕôŞ
+// hua-hegen.c åèµ«è‰®
 
 inherit NPC;
 
@@ -10,13 +10,13 @@ void skill_set3(object, int);
 
 void create()
 {
-	set_name("»ªºÕôŞ", ({ "hua hegen", "hua"}));
-    set("long", "»ªºÕôŞ±¾Ãû°¢¸ù£¬³öÉíÆ¶¼ú£¬ÏÖ½ñ´óÀí¹úÎ»ÁĞÈı¹«£¬Î´·¢¼£Ê±£¬¸ÉµÄÈ´ÊÇµÁÄ¹¾ò·ØµÄ¹´µ±¡£\n");
-	set("title","´óÀí¹úË¾Í½");
-    set("gender", "ÄĞĞÔ");
+	set_name("åèµ«è‰®", ({ "hua hegen", "hua"}));
+    set("long", "åèµ«è‰®æœ¬åé˜¿æ ¹ï¼Œå‡ºèº«è´«è´±ï¼Œç°ä»Šå¤§ç†å›½ä½åˆ—ä¸‰å…¬ï¼Œæœªå‘è¿¹æ—¶ï¼Œå¹²çš„å´æ˜¯ç›—å¢“æ˜åŸçš„å‹¾å½“ã€‚\n");
+	set("title","å¤§ç†å›½å¸å¾’");
+    set("gender", "ç”·æ€§");
     set("age", 45);
     set("inquiry", ([
-		"ÖÎ°²" : (: ask_me :),
+		"æ²»å®‰" : (: ask_me :),
 		]));
 
 	set_skill("claw", 150);
@@ -72,33 +72,33 @@ string ask_me()
 	for (level=1;level*level*level<exp*10;level++) {}
         
 	if (who->query_temp("job_offered"))
-		return "ÎÒÕâÀïÏÖÔÚÃ»Ê²Ã´Òª½ôµÄÊÂÇé£¬"+RANK_D->query_respect(me)+"ÇëÏÈ»ØÈ¥ĞİÏ¢°É¡£";
+		return "æˆ‘è¿™é‡Œç°åœ¨æ²¡ä»€ä¹ˆè¦ç´§çš„äº‹æƒ…ï¼Œ"+RANK_D->query_respect(me)+"è¯·å…ˆå›å»ä¼‘æ¯å§ã€‚";
         
 	if (!me->query("dali/employee"))
-		return RANK_D->query_respect(me)+"ºÍÎÒ´óÀíËØÎŞ¹Ï¸ğ£¬ºÎÓĞ´ËÎÊ°¡£¿";
+		return RANK_D->query_respect(me)+"å’Œæˆ‘å¤§ç†ç´ æ— ç“œè‘›ï¼Œä½•æœ‰æ­¤é—®å•Šï¼Ÿ";
 
 	if (environment(this_object())!=find_object("/d/dali/sangong3"))
-		return "¶Ô²»Æğ£¬ÎÒÖ»ÔÚ¸®ÑÃ°ìÀí¹«Îñ£¬µÈÎÒ»Ø¸®È¥ÄãÔÙÀ´ÎÊÎÒ°É¡£";
+		return "å¯¹ä¸èµ·ï¼Œæˆ‘åªåœ¨åºœè¡™åŠç†å…¬åŠ¡ï¼Œç­‰æˆ‘å›åºœå»ä½ å†æ¥é—®æˆ‘å§ã€‚";
 
 	if (me->query("dali/trust")<0
-		|| (me->query("family/family_name") != "´óÀí¶Î¼Ò"
+		|| (me->query("family/family_name") != "å¤§ç†æ®µå®¶"
 		&& me->query("combat_exp")>3000000)) {
 		command("hmm "+me->query("id"));
-		return "ÎÒÕâÀïÏÖÔÚÃ»Ê²Ã´Òª½ôµÄÊÂÇé£¬"+RANK_D->query_respect(me)+"ÇëÏÈ»ØÈ¥ĞİÏ¢°É¡£";
+		return "æˆ‘è¿™é‡Œç°åœ¨æ²¡ä»€ä¹ˆè¦ç´§çš„äº‹æƒ…ï¼Œ"+RANK_D->query_respect(me)+"è¯·å…ˆå›å»ä¼‘æ¯å§ã€‚";
 	}
 
 	if (me->query("combat_exp")<30000) {
 		command("pat "+me->query("id"));
-		command("say ´óÀí¾³ÄÚÇ¿ÈË¶¼ÆÄÎªĞ×º·£¬"+RANK_D->query_respect(me)+"¹¦Á¦²»¹»£¬¿ÖÅÂ²»ÄÜÁ¢¹¦£¬·´¶øÎ£¼°×ÔÉíĞÔÃü¡£");
-		return RANK_D->query_respect(me)+"»¹ÊÇÏÈ»ØÈ¥Á·ºÃ»ù±¾¹¦ÔÙÀ´°É¡£";
+		command("say å¤§ç†å¢ƒå†…å¼ºäººéƒ½é¢‡ä¸ºå‡¶æ‚ï¼Œ"+RANK_D->query_respect(me)+"åŠŸåŠ›ä¸å¤Ÿï¼Œææ€•ä¸èƒ½ç«‹åŠŸï¼Œåè€Œå±åŠè‡ªèº«æ€§å‘½ã€‚");
+		return RANK_D->query_respect(me)+"è¿˜æ˜¯å…ˆå›å»ç»ƒå¥½åŸºæœ¬åŠŸå†æ¥å§ã€‚";
 	}
 
 	if (me->query_temp("dalijobon")) {
-		return "ÄãÏÈ°ÑÄãÊÖÍ·µÄ»î¸ÉÍê°É";
+		return "ä½ å…ˆæŠŠä½ æ‰‹å¤´çš„æ´»å¹²å®Œå§";
 		}
 	
 	if (me->query("mud_age") - me->query("dali/lastjob") < 120) {
-		return "ÎÒÕâÀïÏÖÔÚÃ»Ê²Ã´Òª½ôµÄÊÂÇé£¬"+RANK_D->query_respect(me)+"ÇëÏÈ»ØÈ¥ĞİÏ¢°É¡£";
+		return "æˆ‘è¿™é‡Œç°åœ¨æ²¡ä»€ä¹ˆè¦ç´§çš„äº‹æƒ…ï¼Œ"+RANK_D->query_respect(me)+"è¯·å…ˆå›å»ä¼‘æ¯å§ã€‚";
 		}
 
 	me->set("dali/lastjob",me->query("mud_age"));
@@ -177,23 +177,23 @@ string ask_me()
 
 	if (room->query("short")==room->query("area"))
 	{
-		command("say ÔÚ"+room->query("area")+"¸½½üÒ»´ø¾İ±¨ÓĞ"+ob->query("name")+"»î¶¯¡£");
+		command("say åœ¨"+room->query("area")+"é™„è¿‘ä¸€å¸¦æ®æŠ¥æœ‰"+ob->query("name")+"æ´»åŠ¨ã€‚");
 	}
 	else {
 		switch (random(3))
 		{
 			case 0 :
-				command("say "+room->query("area")+"×óÓÒ"+room->query("short")+"ÓĞ·Ç·¨Ö®Í½Òì¶¯¡£");
+				command("say "+room->query("area")+"å·¦å³"+room->query("short")+"æœ‰éæ³•ä¹‹å¾’å¼‚åŠ¨ã€‚");
 				break;
 			case 1 :
-				command("say ÔÚ"+room->query("area")+"¸½½üÒ»´ø¾İ±¨ÓĞ"+ob->query("name")+"»î¶¯¡£");
+				command("say åœ¨"+room->query("area")+"é™„è¿‘ä¸€å¸¦æ®æŠ¥æœ‰"+ob->query("name")+"æ´»åŠ¨ã€‚");
 				break;
 			case 2 :
-				command("say ¾İ±¨ÓĞ"+ob->query("name")+"ÔÚ"+room->query("area")+"µØÇø»î¶¯¡£");
+				command("say æ®æŠ¥æœ‰"+ob->query("name")+"åœ¨"+room->query("area")+"åœ°åŒºæ´»åŠ¨ã€‚");
 				break;
 		}
 	}
-	return "ÄãÈ¥ÄÇÒ»´øÑ²²éÑ²²é£¬·¢ÏÖÓĞÔÚÌÓµÄÍ¨¼©Òª·¸µÄ£¬Îñ±Ø»î×½ËÍ¶¨°²¸®¡£";
+	return "ä½ å»é‚£ä¸€å¸¦å·¡æŸ¥å·¡æŸ¥ï¼Œå‘ç°æœ‰åœ¨é€ƒçš„é€šç¼‰è¦çŠ¯çš„ï¼ŒåŠ¡å¿…æ´»æ‰é€å®šå®‰åºœã€‚";
 }
 
 void moveto(object ob, int room_no)
@@ -207,13 +207,13 @@ void moveto(object ob, int room_no)
 
 	switch (random(3)) {
 	case 0 :
-		message("vision", "Ò»¸ö"+ob->query("name")+"²»Öª´ÓÊ²Ã´µØ·½¹í¹íËîËîµØ×êÁË³öÀ´¡£\n", room, ob);
+		message("vision", "ä¸€ä¸ª"+ob->query("name")+"ä¸çŸ¥ä»ä»€ä¹ˆåœ°æ–¹é¬¼é¬¼ç¥Ÿç¥Ÿåœ°é’»äº†å‡ºæ¥ã€‚\n", room, ob);
 		break;
 	case 1 :
-		message("vision", "Ò»¸ö"+ob->query("name")+"´óÒ¡´ó°ÚµØ×ßÁË¹ıÀ´¡£\n", room, ob);
+		message("vision", "ä¸€ä¸ª"+ob->query("name")+"å¤§æ‘‡å¤§æ‘†åœ°èµ°äº†è¿‡æ¥ã€‚\n", room, ob);
 		break;
 	case 2 :
-		message("vision", "Ò»¸ö"+ob->query("name")+"É±ÆøÌÚÌÚµØ´ÓÉ½ÉÏ³åÏÂÀ´¡£\n", room, ob);
+		message("vision", "ä¸€ä¸ª"+ob->query("name")+"æ€æ°”è…¾è…¾åœ°ä»å±±ä¸Šå†²ä¸‹æ¥ã€‚\n", room, ob);
 		break;
 	}
 	return;
@@ -229,7 +229,7 @@ void skill_set1(object ob, int level)
 {
 	object weapon;
 	switch (ob->query("title")) {
-	case "ĞÇËŞÅÉÅÄÂíÊÖ" :
+	case "æ˜Ÿå®¿æ´¾æ‹é©¬æ‰‹" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -260,7 +260,7 @@ void skill_set1(object ob, int level)
 		weapon->move(ob);
 		weapon->wield();
 		break;
-	case "»ªÉ½ÅÉÆúÍ½" :
+	case "åå±±æ´¾å¼ƒå¾’" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -303,7 +303,7 @@ void skill_set1(object ob, int level)
 			break;
 		}
 		break;
-	case "Îäµ±ÅÉÅÑÍ½" :
+	case "æ­¦å½“æ´¾å›å¾’" :
 		ob->set_skill("cuff", level-45-random(10));
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
@@ -323,7 +323,7 @@ void skill_set1(object ob, int level)
 		weapon->move(ob);
 		weapon->wield();
 		break;
-	case "Ñ©É½ÅÉĞ¡À®Âï" :
+	case "é›ªå±±æ´¾å°å–‡å˜›" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -383,7 +383,7 @@ void skill_set1(object ob, int level)
 			break;
 		}
 		break;
-	case "Ø¤°ï¶ñÔô" :
+	case "ä¸å¸®æ¶è´¼" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -416,7 +416,7 @@ void skill_set1(object ob, int level)
 			break;
 		}
 		break;
-	case "Îå¶¾½Ì´òÊÖ" :
+	case "äº”æ¯’æ•™æ‰“æ‰‹" :
 		ob->set_skill("cuff", level-45-random(10));
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-random(10));
@@ -442,7 +442,7 @@ void skill_set2(object ob, int level)
 {
 	object weapon;
 	switch (ob->query("title")) {
-	case "Î÷ÓòÉÙÁÖ¶ñÉ®" :
+	case "è¥¿åŸŸå°‘æ—æ¶åƒ§" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -500,7 +500,7 @@ void skill_set2(object ob, int level)
 			break;
 		}
 		break;
-	case "»ªÉ½ÅÉÆúÍ½" :
+	case "åå±±æ´¾å¼ƒå¾’" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -543,7 +543,7 @@ void skill_set2(object ob, int level)
 			break;
 		}
 		break;
-	case "Îäµ±ÅÉÅÑÍ½" :
+	case "æ­¦å½“æ´¾å›å¾’" :
 		ob->set_skill("cuff", level-45-random(10));
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
@@ -563,7 +563,7 @@ void skill_set2(object ob, int level)
 		weapon->move(ob);
 		weapon->wield();
 		break;
-	case "Ñ©É½ÅÉÀ®Âï" :
+	case "é›ªå±±æ´¾å–‡å˜›" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -623,7 +623,7 @@ void skill_set2(object ob, int level)
 			break;
 		}
 		break;
-	case "Îå¶¾½ÌÏãÖ÷" :
+	case "äº”æ¯’æ•™é¦™ä¸»" :
 		ob->set_skill("cuff", level-45-random(10));
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-random(10));
@@ -649,7 +649,7 @@ void skill_set3(object ob, int level)
 {
 	object weapon;
 	switch (ob->query("title")) {
-	case "Î÷ÓòÉÙÁÖ¸ßÉ®" :
+	case "è¥¿åŸŸå°‘æ—é«˜åƒ§" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -707,7 +707,7 @@ void skill_set3(object ob, int level)
 			break;
 		}
 		break;
-	case "»ªÉ½ÅÉÆúÍ½" :
+	case "åå±±æ´¾å¼ƒå¾’" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -750,7 +750,7 @@ void skill_set3(object ob, int level)
 			break;
 		}
 		break;
-	case "Îäµ±ÅÉÅÑÍ½" :
+	case "æ­¦å½“æ´¾å›å¾’" :
 		ob->set_skill("cuff", level-45-random(10));
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
@@ -770,7 +770,7 @@ void skill_set3(object ob, int level)
 		weapon->move(ob);
 		weapon->wield();
 		break;
-	case "Ñ©É½ÅÉÀ®Âï" :
+	case "é›ªå±±æ´¾å–‡å˜›" :
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-45-random(10));
 		ob->set_skill("parry", level-45-random(10));
@@ -830,7 +830,7 @@ void skill_set3(object ob, int level)
 			break;
 		}
 		break;
-	case "Îå¶¾½ÌÌÃÖ÷" :
+	case "äº”æ¯’æ•™å ‚ä¸»" :
 		ob->set_skill("cuff", level-45-random(10));
 		ob->set_skill("dodge", level-45-random(10));
 		ob->set_skill("force", level-random(10));

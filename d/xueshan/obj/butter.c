@@ -1,18 +1,18 @@
 //Cracked by Roath
-// mitao.c ËÖÓÍ 
+// mitao.c é…¥æ²¹ 
 // By Summer 
 
 inherit ITEM;
 
 void create()
 {
-	set_name("ËÖÓÍ", ({"butter", "suyou"}));
+	set_name("é…¥æ²¹", ({"butter", "suyou"}));
 	set_weight(8000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¹Ş×¼±¸Ìôµ½ËÂÔºÀïÈ¥»¹Ô¸¹©·ğÓÃµÄËÖÓÍ¡£\n");
-		set("unit", "¹Ş");
+		set("long", "ä¸€ç½å‡†å¤‡æŒ‘åˆ°å¯ºé™¢é‡Œå»è¿˜æ„¿ä¾›ä½›ç”¨çš„é…¥æ²¹ã€‚\n");
+		set("unit", "ç½");
 		set("value", 500);
 	}
 }

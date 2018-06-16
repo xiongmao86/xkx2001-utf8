@@ -7,13 +7,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name( CYN"ÂåÊé"NOR, ({ "shu", "book" }));
+	set_name( CYN"æ´›ä¹¦"NOR, ({ "shu", "book" }));
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¾í");
-		set("long", "ÕâÊÇÒ»¾í³Â¾ÉµÄÖñ¾íÖá£¬ÉÏ¿ÌÓĞÁ½¸ö´ó×­¡°ÂåÊé¡±¡£\n");
+		set("unit", "å·");
+		set("long", "è¿™æ˜¯ä¸€å·é™ˆæ—§çš„ç«¹å·è½´ï¼Œä¸Šåˆ»æœ‰ä¸¤ä¸ªå¤§ç¯†â€œæ´›ä¹¦â€ã€‚\n");
 		set("value", 100);
 		set("material", "paper");
 		set("skill", ([

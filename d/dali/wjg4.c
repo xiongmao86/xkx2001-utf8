@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "С��");
+	set("short", "小厅");
 	set("long", @LONG
-һ�����µ�С�������ϵ���һ�Ծ��򣬶������ķ������������÷����գ�
-����˳��ȴ�ҳ�������÷�գ������ϵĴ����ﶬ����ҳ��˶��Ĵ�������˼�
-���˱��Ǹ����ˡ�
+一间雅致的小厅，桌上点着一对巨烛，东壁上四幅屏条，绘的是梅兰竹菊，
+可是顺序却挂成了兰竹梅菊，西壁上的春夏秋冬，则挂成了冬夏春秋。看来此间
+主人必是个武人。
 LONG);
 	set("objects", ([
 		__DIR__"npc/ganbaobao": 1,

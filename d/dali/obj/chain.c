@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/dali/obj/chain.c ÌúÁ´ Ëø²¶¹¤¾ß
+// /d/dali/obj/chain.c é“é“¾ é”æ•å·¥å…·
 // mantian may/16/2001
 
 #include <ansi.h>
@@ -10,13 +10,13 @@ inherit F_SSERVER;
 
 void create()
 {
-	set_name("ÌúÁ´", ({ "tie lian","chain" }) );
+	set_name("é“é“¾", ({ "tie lian","chain" }) );
 	if( clonep() ) set_default_object(__FILE__);
 	else
 	{
-		set("unit", "Ìõ");
+		set("unit", "æ¡");
 		set("value", 1000);
-		set("long", "ÕâÊÇÒ»ÌõÃ÷»Î»Î£¬³ÁµéµéµÄÌúÁ´¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æ¡æ˜æ™ƒæ™ƒï¼Œæ²‰ç”¸ç”¸çš„é“é“¾ã€‚\n");
 		set("material", "steel");
 	}
 	init_whip(10);
@@ -32,29 +32,29 @@ int do_arrest(string arg)
 {
 	object me=this_player(), weapon, victim, fighter;
 
-	if (!me->query("dali/employee")) return notify_fail("Ê²Ã´£¿\n");
-	if (!arg) return notify_fail("ÄãÒªËø²¶Ë­£¿\n");
-	if (environment(me)->query("no_fight")) return notify_fail("ÕâÀï²»×¼Õ½¶·¡£\n");
-	if (!objectp(weapon=me->query_temp("weapon")) || weapon->query("id")!="tie lian") return notify_fail("ÄãÄÃÊ²Ã´Ì×£¿\n");
+	if (!me->query("dali/employee")) return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
+	if (!arg) return notify_fail("ä½ è¦é”æ•è°ï¼Ÿ\n");
+	if (environment(me)->query("no_fight")) return notify_fail("è¿™é‡Œä¸å‡†æˆ˜æ–—ã€‚\n");
+	if (!objectp(weapon=me->query_temp("weapon")) || weapon->query("id")!="tie lian") return notify_fail("ä½ æ‹¿ä»€ä¹ˆå¥—ï¼Ÿ\n");
 	victim = present(arg,environment(me));
-	if (!victim) return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
-	if (victim == me) return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
-	if (userp(victim)) return notify_fail("Äã²»ÄÜËø²¶Íæ¼Ò¡£\n");
-	if (!living(victim)) return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
-	if ((int)me->query_temp("marks/arrestee")) return notify_fail("ÄãÉÏ¸öÒª×¥µÄÈË»¹Ã»×¥µ½£¬²»Òª¶àÊÂÁË£¡\n");
-	if (strsrch(file_name(environment(me)), "/d/dali/") == -1) return notify_fail("ÕâÀï²»ÊÇ´óÀí¾³ÄÚ£¬ÂÖ²»µ½ÄãÀ´¶àÊÂ£¡\n");
+	if (!victim) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
+	if (victim == me) return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
+	if (userp(victim)) return notify_fail("ä½ ä¸èƒ½é”æ•ç©å®¶ã€‚\n");
+	if (!living(victim)) return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
+	if ((int)me->query_temp("marks/arrestee")) return notify_fail("ä½ ä¸Šä¸ªè¦æŠ“çš„äººè¿˜æ²¡æŠ“åˆ°ï¼Œä¸è¦å¤šäº‹äº†ï¼\n");
+	if (strsrch(file_name(environment(me)), "/d/dali/") == -1) return notify_fail("è¿™é‡Œä¸æ˜¯å¤§ç†å¢ƒå†…ï¼Œè½®ä¸åˆ°ä½ æ¥å¤šäº‹ï¼\n");
 	if ((!victim->is_fighting() && !victim->query_temp("robbing") && !victim->query_temp("rapping"))
 		|| victim->query_temp("last_opponent") == me->query("id")
-		|| victim->query("family/family_name")=="´óÀí¶Î¼Ò"
-		|| (me->query("family/family_name") != "´óÀí¶Î¼Ò" && !me->query("dali/employee")))
-		return notify_fail("ÈË¼ÒÃ»ÔÚÈÇÊÂÉú·Ç£¬ÄãËø²¶²»ÁË£¡\n");
+		|| victim->query("family/family_name")=="å¤§ç†æ®µå®¶"
+		|| (me->query("family/family_name") != "å¤§ç†æ®µå®¶" && !me->query("dali/employee")))
+		return notify_fail("äººå®¶æ²¡åœ¨æƒ¹äº‹ç”Ÿéï¼Œä½ é”æ•ä¸äº†ï¼\n");
 	fighter = offensive_target(victim);
 	if (fighter == me) return 0;
-	if (!victim->is_killing(fighter->query("id"))) return notify_fail("´ËÈË·ÇÕØÊÂÕß¡£\n");
-	if (fighter->query("qi") > victim->query("qi")) return notify_fail("ËûÃÇÖ»ÊÇÔÚÇĞ´êÎä¹¦¡£\n");
-	if (victim->query_temp("robbing")) message_vision(HIW"$NºÈµÀ£º´óµ¨£¡¾¹¸ÒÔÚ±¾¹ÙÃæÇ°ĞĞÇÀ£¡×ß£¡¼û¹ÙÈ¥£¡\n"NOR, me);
-	else if (victim->query_temp("rapping")) message_vision(HIW"$NºÈµÀ£º¿É¶ñ£¡¾¹¸ÒÔÚ´Ëµ÷Ï·Á¼¼Ò¸¾Å®£¡¸úÎÒ»ØÈ¥¼û¹Ù£¡\n"NOR, me);
-	else message_vision(HIW"$N¸ßº°Ò»Éù£º´óÀí¾³ÄÚĞİµÃÈöÒ°£¡×ß£¡¸úÎÒ¼û¹ÙÈ¥£¡\n"NOR, me);
+	if (!victim->is_killing(fighter->query("id"))) return notify_fail("æ­¤äººéè‚‡äº‹è€…ã€‚\n");
+	if (fighter->query("qi") > victim->query("qi")) return notify_fail("ä»–ä»¬åªæ˜¯åœ¨åˆ‡æ“æ­¦åŠŸã€‚\n");
+	if (victim->query_temp("robbing")) message_vision(HIW"$Nå–é“ï¼šå¤§èƒ†ï¼ç«Ÿæ•¢åœ¨æœ¬å®˜é¢å‰è¡ŒæŠ¢ï¼èµ°ï¼è§å®˜å»ï¼\n"NOR, me);
+	else if (victim->query_temp("rapping")) message_vision(HIW"$Nå–é“ï¼šå¯æ¶ï¼ç«Ÿæ•¢åœ¨æ­¤è°ƒæˆè‰¯å®¶å¦‡å¥³ï¼è·Ÿæˆ‘å›å»è§å®˜ï¼\n"NOR, me);
+	else message_vision(HIW"$Né«˜å–Šä¸€å£°ï¼šå¤§ç†å¢ƒå†…ä¼‘å¾—æ’’é‡ï¼èµ°ï¼è·Ÿæˆ‘è§å®˜å»ï¼\n"NOR, me);
 	victim->remove_all_killer();
 	fighter->remove_all_killer();
 	victim->start_busy(1);
@@ -68,5 +68,5 @@ int do_arrest(string arg)
 
 mixed hit_ob(object me, object victim, int damage_bonus)
 {
-	if( victim->query("combat_exp",1)>50) return HIY "ÌúÁ´Çºà¥à¥µÄÍù$nµÄ²±×ÓÉÏÌ×ÁËÉÏÈ¥¡£" NOR;
+	if( victim->query("combat_exp",1)>50) return HIY "é“é“¾å‘›å•·å•·çš„å¾€$nçš„è„–å­ä¸Šå¥—äº†ä¸Šå»ã€‚" NOR;
 }

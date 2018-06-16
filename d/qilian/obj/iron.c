@@ -4,17 +4,17 @@
 inherit ITEM;
 void create()
 {
-        set_name("ÌúÊ¯", ({"iron stone", "tie shi", "stone", "iron"}));
+        set_name("é“çŸ³", ({"iron stone", "tie shi", "stone", "iron"}));
         set_weight(random(300000));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å—");
                 set("value", 0);
 		set("material", "iron");
         }
 	if (random(10) > 8){
-                set("long", "Ò»¿é·º×ÅÒ»²ã×Ï¹âµÄºÚÌú¡£\n");
+                set("long", "ä¸€å—æ³›ç€ä¸€å±‚ç´«å…‰çš„é»‘é“ã€‚\n");
                 set("for_blade", 1);
                 }
 	setup();

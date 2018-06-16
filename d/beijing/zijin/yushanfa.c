@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "���ŷ�");
+    set("short", "内膳房");
 	set("long", @LONG
-�ʵ۽��Ŷ������ĵ�.Ǭ�幬�ȴ�,���ŷ��������ĵ�ǰ�ܷ���.
+皇帝进膳多在养心殿.乾清宫等处,内膳房设在养心殿前很方便.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */

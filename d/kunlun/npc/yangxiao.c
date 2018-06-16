@@ -11,19 +11,19 @@ void create()
 		mapping S_skills= ([ ]);
 		mapping I_inquiry=([ ]);
 		mixed Skill_name;
-        set_name("ÑîåÐ",({"yang xiao","yang","xiao"}));
-        set("title", "Ã÷½Ì¹âÃ÷×óÊ¹");
+        set_name("æ¨é€",({"yang xiao","yang","xiao"}));
+        set("title", "æ˜Žæ•™å…‰æ˜Žå·¦ä½¿");
 
         set("long", "
-Ëû¾ÍÊÇÃ÷½ÌµÄ¹âÃ÷×óÊ¹£¬ºÍ·¶Ò£ºÏ³ÆåÐÒ£¶þÏÉµÄÑîåÐ¡£
-ËûÉí×ÅÒ»Éí°×ÉÀ£¬ËäÈ»ÒÑÊÇÖÐÄê£¬µ«¿´ÉÏÈ¥»¹Ê®·ÖÓ¢¿¡äìÈ÷¡£\n");
-        set("gender", "ÄÐÐÔ");
+ä»–å°±æ˜¯æ˜Žæ•™çš„å…‰æ˜Žå·¦ä½¿ï¼Œå’ŒèŒƒé¥åˆç§°é€é¥äºŒä»™çš„æ¨é€ã€‚
+ä»–èº«ç€ä¸€èº«ç™½è¡«ï¼Œè™½ç„¶å·²æ˜¯ä¸­å¹´ï¼Œä½†çœ‹ä¸ŠåŽ»è¿˜ååˆ†è‹±ä¿Šæ½‡æ´’ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 43);
         set("attitude", "peaceful");
         set("shen", 3000000);
-        create_family("Ã÷½Ì",34,"Ê¹Õß");
+        create_family("æ˜Žæ•™",34,"ä½¿è€…");
 		
-		I_inquiry["name"]="ÔÚÏÂ¾ÍÊÇÃ÷½Ì¹âÃ÷×óÊ¹ÑîåÐ£¬²»Öª¸óÏÂÓÐºÎÖ¸½Ì¡£";
+		I_inquiry["name"]="åœ¨ä¸‹å°±æ˜¯æ˜Žæ•™å…‰æ˜Žå·¦ä½¿æ¨é€ï¼Œä¸çŸ¥é˜ä¸‹æœ‰ä½•æŒ‡æ•™ã€‚";
 
 	Skill_name=({"shenghuo-xuanming","xiaoyao-piaopiao","xiaoyao-zhangfa",
 		     "xiaoyao-jianfa","riyue-shenzhang","shenghuo-quan","guangming-xinfa"});
@@ -68,34 +68,34 @@ int rujiao(object player)
 int rujiao1(object player)
 {
 	object ling;
-	command("say "+"ºÃ£¡¼ÈÈ»ÕâÎ»"+RANK_D->query_respect(player)+"Ïë¼ÓÈëÎÒ¹âÃ÷Ê¥»ð½Ì£¬ÄÇÃ´´Ó½ñÌìÆð£¬Äã¾ÍÊÇÎÒÃ÷½ÌÐÅÍ½£¡\n");
-	player->create_family("Ã÷½Ì",38,"½ÌÖÚ");
+	command("say "+"å¥½ï¼æ—¢ç„¶è¿™ä½"+RANK_D->query_respect(player)+"æƒ³åŠ å…¥æˆ‘å…‰æ˜Žåœ£ç«æ•™ï¼Œé‚£ä¹ˆä»Žä»Šå¤©èµ·ï¼Œä½ å°±æ˜¯æˆ‘æ˜Žæ•™ä¿¡å¾’ï¼\n");
+	player->create_family("æ˜Žæ•™",38,"æ•™ä¼—");
 	set_title(player,38);
-	tell_object(player,HIC"¹§Ï²Äú³ÉÎªÃ÷½Ì½ÌÖÚ£¡\n"NOR);
+	tell_object(player,HIC"æ­å–œæ‚¨æˆä¸ºæ˜Žæ•™æ•™ä¼—ï¼\n"NOR);
 
 	
-	command("say "+"ÕâÎ»"+RANK_D->query_respect(player)+"ÇëËæÎÒÀ´¡£\n");
-	message_vision("$NÍùÀï×ßÈ¥¡£\n$n¸ú×ÅÑîåÐÍùÀï×ßÈ¥¡£\n",this_object(),player);
+	command("say "+"è¿™ä½"+RANK_D->query_respect(player)+"è¯·éšæˆ‘æ¥ã€‚\n");
+	message_vision("$Nå¾€é‡Œèµ°åŽ»ã€‚\n$nè·Ÿç€æ¨é€å¾€é‡Œèµ°åŽ»ã€‚\n",this_object(),player);
 	move(MINGJIAO"/daguangchang");
 	player->move(MINGJIAO"/daguangchang");
-	message_vision("$N×ßÀ´¹ýÀ´¡£\n$n¸ú×ÅÑîåÐ×ßÀ´¹ýÀ´¡£\n",this_object(),player);	
+	message_vision("$Nèµ°æ¥è¿‡æ¥ã€‚\n$nè·Ÿç€æ¨é€èµ°æ¥è¿‡æ¥ã€‚\n",this_object(),player);	
 	//here need add later
-	message_vision("$N¶Ô$nËµµ½£ºÕâÀï¾ÍÊÇÎÒÃ÷½ÌÖØµØ¹âÃ÷¶¥¡£\n",this_object(),player);	
+	message_vision("$Nå¯¹$nè¯´åˆ°ï¼šè¿™é‡Œå°±æ˜¯æˆ‘æ˜Žæ•™é‡åœ°å…‰æ˜Žé¡¶ã€‚\n",this_object(),player);	
     if(objectp(ling = present("tieyan ling", player)) )
 	{
-		message_vision("$N¶Ô$nËµµ½£ºÄã¸ÕÈëÎÒ½Ì£¬Ôõ¿ÉÄÜÓÐÎÒ½ÌµÄÌúÑæÁî£¿Èç¹ûÊÇÊ²Ã´bugÇë»ã±¨¸øwzfeng¡£\n",this_object(),player);	
+		message_vision("$Nå¯¹$nè¯´åˆ°ï¼šä½ åˆšå…¥æˆ‘æ•™ï¼Œæ€Žå¯èƒ½æœ‰æˆ‘æ•™çš„é“ç„°ä»¤ï¼Ÿå¦‚æžœæ˜¯ä»€ä¹ˆbugè¯·æ±‡æŠ¥ç»™wzfengã€‚\n",this_object(),player);	
 		return 1;
 	}
 	ling = new(OBJ_PATH"/tieyanling");
 	ling->move(player);
-	tell_object(player,"ÑîåÐ´Ó»³ÖÐÈ¡³öÒ»¿é×´ËÆ»ðÑæµÄÁîÅÆ¡£\n");
-	tell_object(player,"ÑîåÐ¶ÔÄãËµµ½£ºÕâÊÇÎÒ½ÌÐÅÎï<ÌúÑæÁî>£¬ÄãÐèÒªËæÉíÐ¯´ø£¬²»¿É¶ªÊ§¡£\n");
-	tell_object(player,"ÑîåÐ¸øÄãÒ»¿éÌúÑæÁî¡£\n");
-	command("say "+"Äã¸ÕÈëÎÒ½Ì£¬¿ÉÒÔËæ±ã×ß×ß£¬¿´ÎÒÃ÷½ÌÉùÍþ±ÈÆë½­ºþÆäËü¸÷ÅÉÈçºÎ¡£\n");
-	command("say "+"Äã¿ÉÏÈÈ¥ÎåÐÐÆì£¬ÏòÆìÖ÷ÃÇÑ§Ð©ÈëÃÅµÄ¹¦·ò¡£\n");
-	command("say "+"ÎÒ»¹ÓÐÒªÎñÔÚÉí£¬ÏÈÐÐ¸æÍË¡£\n");
+	tell_object(player,"æ¨é€ä»Žæ€€ä¸­å–å‡ºä¸€å—çŠ¶ä¼¼ç«ç„°çš„ä»¤ç‰Œã€‚\n");
+	tell_object(player,"æ¨é€å¯¹ä½ è¯´åˆ°ï¼šè¿™æ˜¯æˆ‘æ•™ä¿¡ç‰©<é“ç„°ä»¤>ï¼Œä½ éœ€è¦éšèº«æºå¸¦ï¼Œä¸å¯ä¸¢å¤±ã€‚\n");
+	tell_object(player,"æ¨é€ç»™ä½ ä¸€å—é“ç„°ä»¤ã€‚\n");
+	command("say "+"ä½ åˆšå…¥æˆ‘æ•™ï¼Œå¯ä»¥éšä¾¿èµ°èµ°ï¼Œçœ‹æˆ‘æ˜Žæ•™å£°å¨æ¯”é½æ±Ÿæ¹–å…¶å®ƒå„æ´¾å¦‚ä½•ã€‚\n");
+	command("say "+"ä½ å¯å…ˆåŽ»äº”è¡Œæ——ï¼Œå‘æ——ä¸»ä»¬å­¦äº›å…¥é—¨çš„åŠŸå¤«ã€‚\n");
+	command("say "+"æˆ‘è¿˜æœ‰è¦åŠ¡åœ¨èº«ï¼Œå…ˆè¡Œå‘Šé€€ã€‚\n");
 	move(MINGJIAO"/shting");
-	message_vision("$N×ßÁË¹ýÀ´¡£\n",this_object());
+	message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n",this_object());
 	return 1;
 	
 

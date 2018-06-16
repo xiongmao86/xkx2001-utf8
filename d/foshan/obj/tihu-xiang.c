@@ -1,6 +1,6 @@
 //Cracked by Roath
-//tihu-xiang.c õ®õ­Ïã
-//°×»¨£¬»¨Ïã×íÈË£¬ÎÅµÃÉÔ¾Ã£¬±ãºÍÒûÁËÁÒ¾ÆÒ»°ã
+//tihu-xiang.c é†é†é¦™
+//ç™½èŠ±ï¼ŒèŠ±é¦™é†‰äººï¼Œé—»å¾—ç¨ä¹…ï¼Œä¾¿å’Œé¥®äº†çƒˆé…’ä¸€èˆ¬
 //by Apache
 
 #include <ansi.h>
@@ -8,13 +8,13 @@
 inherit ITEM;
 
 void create() {
-    set_name(HIW "õ®õ­Ïã" NOR, ({ "tihu xiang", "xiang" }) );
+    set_name(HIW "é†é†é¦™" NOR, ({ "tihu xiang", "xiang" }) );
     set("weight", 10);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("long", "Ò»¶äĞ¡°×»¨£¬»¨ÏãÅ¨Óô¡£\n");
-        set("unit", "¶ä");
+        set("long", "ä¸€æœµå°ç™½èŠ±ï¼ŒèŠ±é¦™æµ“éƒã€‚\n");
+        set("unit", "æœµ");
         set("material", "wood");
     }
     setup();
@@ -28,11 +28,11 @@ int do_smell(string arg) {
     object me = this_player();
 
     if(!id(arg))
-        return notify_fail("ÄãÒªÎÅÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦é—»ä»€ä¹ˆï¼Ÿ\n");
 
     me->apply_condition("drunk", (int)me->query_condition("drunk") + random(20));
 
-    message_vision(HIG "$NÎÅÁËÎÅõ®õ­Ïã£¬Ò»¹ÉÅ¨ÓôµÄÏãÆøÖ±³åÍ·¶¥¡£\n" NOR, me);
+    message_vision(HIG "$Né—»äº†é—»é†é†é¦™ï¼Œä¸€è‚¡æµ“éƒçš„é¦™æ°”ç›´å†²å¤´é¡¶ã€‚\n" NOR, me);
 
     return 1;
 }

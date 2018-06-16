@@ -4,13 +4,13 @@ inherit F_FOOD;
 
 void create()
 {
-	set_name("Õô¶¹¸¯", ({"zheng doufu", "steamed tofu"}));
+	set_name("è’¸è±†è…", ({"zheng doufu", "steamed tofu"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»µúÕô¶¹¸¯£¬ÓĞµãÏó»ÆÈØÉÕ¹ıµÄ¡¸¶şÊ®ËÄÇÅÃ÷ÔÂÒ¹¡¹¡£\n");
-		set("unit", "µú");
+		set("long", "ä¸€ç¢Ÿè’¸è±†è…ï¼Œæœ‰ç‚¹è±¡é»„è“‰çƒ§è¿‡çš„ã€ŒäºŒåå››æ¡¥æ˜æœˆå¤œã€ã€‚\n");
+		set("unit", "ç¢Ÿ");
 		set("value", 50);
 		set("food_remaining", 1);
 		set("food_supply", 15);

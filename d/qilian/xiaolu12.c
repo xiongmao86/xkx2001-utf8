@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��С·");
+        set("short", "羊肠小路");
         set("long", @LONG
-��ǰ��һ��һ����С·���ش�Խ��ԽƫƧ��·��Խ��Խ���ء�
+眼前是一条一条羊肠小路，地处越来越偏僻，路径越来越隐秘。
 LONG
         );
         set("exits", ([

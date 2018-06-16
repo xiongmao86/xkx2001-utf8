@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-       set("short","º£´¬");
+       set("short","æµ·èˆ¹");
        set("long", @LONG
-ÕâÊÇÁÉÀ«µÄº£Ãæ£¬º£·ç¡¸ºôºô¡¹ÔÚÄã¶ú±ß´µ¹ý£¬º£ÀËÒ»¸ö½Ó×ÅÒ»¸öÏòÄãÆÃ´ò
-¹ýÀ´£¬Í»È»Ò»¸ö¾ÞÀË´òÀ´¼¸ºõ°ÑÄãËù³ËµÄ´¬ÏÆ·­¡£Äã¿ìÒªÏÝÈëÕâ¸öÐýÎÐÖÐÁË£¬
-»¹ÊÇ´ß´ÙÓæ·ò¸Ï½ôÒ¡´¬×ß³ö×Å¹íµØ·½°É¡£
+è¿™æ˜¯è¾½é˜”çš„æµ·é¢ï¼Œæµ·é£Žã€Œå‘¼å‘¼ã€åœ¨ä½ è€³è¾¹å¹è¿‡ï¼Œæµ·æµªä¸€ä¸ªæŽ¥ç€ä¸€ä¸ªå‘ä½ æ³¼æ‰“
+è¿‡æ¥ï¼Œçªç„¶ä¸€ä¸ªå·¨æµªæ‰“æ¥å‡ ä¹ŽæŠŠä½ æ‰€ä¹˜çš„èˆ¹æŽ€ç¿»ã€‚ä½ å¿«è¦é™·å…¥è¿™ä¸ªæ—‹æ¶¡ä¸­äº†ï¼Œ
+è¿˜æ˜¯å‚¬ä¿ƒæ¸”å¤«èµ¶ç´§æ‘‡èˆ¹èµ°å‡ºç€é¬¼åœ°æ–¹å§ã€‚
 LONG
      );
 	set("cost", 5);
@@ -39,21 +39,21 @@ int valid_leave(object me, string dir)
          {
 	    me->move("/d/shenlong/tanggukou");
             me->delete_temp("mark/steps");
-	     return notify_fail("ÖÕÓÚÄã¿´¼ûÁËÇ°·½µÄÂ½µØ£¬°¡£¬Ð»ÌìÐ»µØ £¡\n");
+	     return notify_fail("ç»ˆäºŽä½ çœ‹è§äº†å‰æ–¹çš„é™†åœ°ï¼Œå•Šï¼Œè°¢å¤©è°¢åœ° ï¼\n");
          }
 
      if (me->query_temp("mark/steps") == -10)
             {
 	       me->move("/d/shenlong/haian");
            me->delete_temp("mark/steps");
-	     return notify_fail("ÖÕÓÚÄã¿´¼ûÁËÇ°·½µÄÂ½µØ£¬°¡£¬Ð»ÌìÐ»µØ £¡\n");
+	     return notify_fail("ç»ˆäºŽä½ çœ‹è§äº†å‰æ–¹çš„é™†åœ°ï¼Œå•Šï¼Œè°¢å¤©è°¢åœ° ï¼\n");
 	}
 
       if (me->query_temp("mark/nsteps") == 10)
          {
 	    me->move("/d/shenlong/lushunkou");
 	    me->delete_temp("mark/nsteps");
-	     return notify_fail("ÖÕÓÚÄã¿´¼ûÁËÇ°·½µÄÂ½µØ£¬°¡£¬Ð»ÌìÐ»µØ £¡\n");
+	     return notify_fail("ç»ˆäºŽä½ çœ‹è§äº†å‰æ–¹çš„é™†åœ°ï¼Œå•Šï¼Œè°¢å¤©è°¢åœ° ï¼\n");
          }
 
 
@@ -74,7 +74,7 @@ void init()
 
 void arrive()
 {
-	message("vision", "Óæ·òËµ£º¡°´óÂ½µ½À²£¬ÉÏ°¶°É¡±¡£\n",this_player());
+	message("vision", "æ¸”å¤«è¯´ï¼šâ€œå¤§é™†åˆ°å•¦ï¼Œä¸Šå²¸å§â€ã€‚\n",this_player());
 	this_player()->move("/d/shenlong/tanggu");
 }
 */

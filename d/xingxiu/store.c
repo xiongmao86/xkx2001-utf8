@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "°ÍÔú");
+        set("short", "å·´æ‰Ž");
         set("long", @LONG
-ÒÁÀçÊÇÅÁÃ×¶û¸ßÔ­Ö®¶«Ò»´ó¶¼»á£¬ÕâÀïµÄ°ÍÔúÉÏ£¬ÆæÕäÒì±¦£¬Íù
-ÍùÓÐÖ®¡£ÉüÐó¹ûÆ·£¬ÓÈ²»¿ÉÃ¶¾Ù¡£²»½öÓÐÀ´×Ô´¨¡¢ÉÂ¡¢½­¡¢ÕãµÄÉÌ¶Ó£¬
-Ò²ÓÐÔ¶µÀ¶øÀ´µÄÌìóÃ¡¢²¨Ë¹µÄÐÐÉÌ×ø¼Ö¡£°ÍÔúµÄÖ÷ÈË×øÔÚÆÌÔÚµØÉÏµÄ
-µØÌºÉÏ£¬ÅÔ±ß¶Ñ×ÅËûµÄ»õ¡£Ç½ÉÏÓÐ¸öÅÆ×Ó£¬ÊÇ¸ö¼ÛÄ¿±í(sign)¡£
+ä¼ŠçŠæ˜¯å¸•ç±³å°”é«˜åŽŸä¹‹ä¸œä¸€å¤§éƒ½ä¼šï¼Œè¿™é‡Œçš„å·´æ‰Žä¸Šï¼Œå¥‡çå¼‚å®ï¼Œå¾€
+å¾€æœ‰ä¹‹ã€‚ç‰²ç•œæžœå“ï¼Œå°¤ä¸å¯æžšä¸¾ã€‚ä¸ä»…æœ‰æ¥è‡ªå·ã€é™•ã€æ±Ÿã€æµ™çš„å•†é˜Ÿï¼Œ
+ä¹Ÿæœ‰è¿œé“è€Œæ¥çš„å¤©ç«ºã€æ³¢æ–¯çš„è¡Œå•†åè´¾ã€‚å·´æ‰Žçš„ä¸»äººååœ¨é“ºåœ¨åœ°ä¸Šçš„
+åœ°æ¯¯ä¸Šï¼Œæ—è¾¹å †ç€ä»–çš„è´§ã€‚å¢™ä¸Šæœ‰ä¸ªç‰Œå­ï¼Œæ˜¯ä¸ªä»·ç›®è¡¨(sign)ã€‚
 LONG
         );
         set("exits", ([ 
@@ -22,18 +22,18 @@ LONG
 		__DIR__"npc/trader": 1,
 ]));
         set("item_desc", ([ /* sizeof() == 1 */
-"sign" : "ÅÆ×ÓÉÏÐ´µÀ£º
-ÖÐÔ­Ç®±ÒÍ¨ÓÃ¡£
-        ÂíÄÌ¾Æºø(hu)       Ò»°ÙÎÄ
-        âÎ(nang)           ÎåÊ®ÎÄ
-        »ðÕÛ(fire)         Ò»°ÙÎÄ
-        ¹þÃÜ¹Ï(gua)        ËÄÊ®ÎÄ
-        ¶¬²»À­(dongbula)   Ò»°ÙÎÄ
-	±âµ£(biandan)      ËÄÊ®ÎÄ
-	Ðå»¨Õë(xiuhua zhen)Ò»Á½°×Òø
-	Áò»Ç(liu huang)    ¶þÁ½°×Òø
-	Ë¿¾î(Si juan)	   ÎåÁ½°×Òø	
-        ÒÁÀçÂí(horse)      Ò»Ç§ÎÄ ( ÊÛÍê )
+"sign" : "ç‰Œå­ä¸Šå†™é“ï¼š
+ä¸­åŽŸé’±å¸é€šç”¨ã€‚
+        é©¬å¥¶é…’å£¶(hu)       ä¸€ç™¾æ–‡
+        é¦•(nang)           äº”åæ–‡
+        ç«æŠ˜(fire)         ä¸€ç™¾æ–‡
+        å“ˆå¯†ç“œ(gua)        å››åæ–‡
+        å†¬ä¸æ‹‰(dongbula)   ä¸€ç™¾æ–‡
+	æ‰æ‹…(biandan)      å››åæ–‡
+	ç»£èŠ±é’ˆ(xiuhua zhen)ä¸€ä¸¤ç™½é“¶
+	ç¡«ç£º(liu huang)    äºŒä¸¤ç™½é“¶
+	ä¸ç»¢(Si juan)	   äº”ä¸¤ç™½é“¶	
+        ä¼ŠçŠé©¬(horse)      ä¸€åƒæ–‡ ( å”®å®Œ )
 \n"
 ]));
         set("no_clean_up", 0);

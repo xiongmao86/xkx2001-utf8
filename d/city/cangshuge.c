@@ -1,5 +1,5 @@
 //Cracked by Roath
-//  cangshuge ²ØÊé¸ó
+//  cangshuge è—ä¹¦é˜
 // modified by aln
 
 inherit ROOM;
@@ -10,27 +10,27 @@ string look_shujia();
 #define BOOKS_DIR "/doc/books/jy/"
 
 private mapping jybooks = ([
-        "bxj"   : "±ÌÑª½£",
-        "fhwz"  : "·ÉºüÍâ´«",
-        "lcj"   : "Á¬³Ç¾÷",
-        "ldj"   : "Â¹¶¦¼Ç",
-        "sdxl"  : "ÉñµñÏÀÂÂ",
-        "sdyxz" : "ÉäµñÓ¢ÐÛ´«",
-        "sjecl" : "Êé½£¶÷³ðÂ¼",
-        "tlbb"  : "ÌìÁú°Ë²¿",
-        "xajh"  : "Ð¦°Á½­ºþ",
-        "xkx"   : "ÏÀ¿ÍÐÐ",
-        "yttlj" : "ÒÐÌìÍÀÁú¼Ç",
-        "33jxt" : "ÈýÊ®Èý½£ÏÀÍ¼",
+        "bxj"   : "ç¢§è¡€å‰‘",
+        "fhwz"  : "é£žç‹å¤–ä¼ ",
+        "lcj"   : "è¿žåŸŽè¯€",
+        "ldj"   : "é¹¿é¼Žè®°",
+        "sdxl"  : "ç¥žé›•ä¾ ä¾£",
+        "sdyxz" : "å°„é›•è‹±é›„ä¼ ",
+        "sjecl" : "ä¹¦å‰‘æ©ä»‡å½•",
+        "tlbb"  : "å¤©é¾™å…«éƒ¨",
+        "xajh"  : "ç¬‘å‚²æ±Ÿæ¹–",
+        "xkx"   : "ä¾ å®¢è¡Œ",
+        "yttlj" : "å€šå¤©å± é¾™è®°",
+        "33jxt" : "ä¸‰åä¸‰å‰‘ä¾ å›¾",
 ]);
 
 void create()
 {
-	set("short", "°×Â¹²ØÊé¸ó");
+	set("short", "ç™½é¹¿è—ä¹¦é˜");
 	set("long", @LONG
-ÕâÊÇÒ»¸ö·Ç³£¿í³©µÄÂ¥¸ó£¬Ò»ÅÅÓÖÒ»ÅÅµÄÊé¼Ü(shujia)ÉÏÕûÕûÆëÆëµØ°ÚÂúÁË
-Êé£¬ÁîÈËÄ¿²»Ï¾¸ø¡£ÕÁÄ¾ÏãÎ¶¼Ð×ÅÄ«ÏãÆË±Ç¶øÀ´£¬ÕâÀï¾ÍÊÇ°×Â¹ÊéÔºµÄ²ØÊé¸ó£¬
-ÊÕ²Ø×ÅÐí¶àÎäÑ§¾­µä£¬ÎäÁÖÖÐÈË£¬Ç§Íò²»¿É´í¹ýÔÚ´ËÒ»¶ÃÎª¿ìµÄÁ¼»ú¡£
+è¿™æ˜¯ä¸€ä¸ªéžå¸¸å®½ç•…çš„æ¥¼é˜ï¼Œä¸€æŽ’åˆä¸€æŽ’çš„ä¹¦æž¶(shujia)ä¸Šæ•´æ•´é½é½åœ°æ‘†æ»¡äº†
+ä¹¦ï¼Œä»¤äººç›®ä¸æš‡ç»™ã€‚æ¨Ÿæœ¨é¦™å‘³å¤¹ç€å¢¨é¦™æ‰‘é¼»è€Œæ¥ï¼Œè¿™é‡Œå°±æ˜¯ç™½é¹¿ä¹¦é™¢çš„è—ä¹¦é˜ï¼Œ
+æ”¶è—ç€è®¸å¤šæ­¦å­¦ç»å…¸ï¼Œæ­¦æž—ä¸­äººï¼Œåƒä¸‡ä¸å¯é”™è¿‡åœ¨æ­¤ä¸€ç¹ä¸ºå¿«çš„è‰¯æœºã€‚
 LONG
 	);
         set("item_desc", ([
@@ -66,7 +66,7 @@ void init()
 int do_exercise(string arg)
 {
         object me = this_player();
-        tell_object(me, "ÄãÊÇÀ´¶ÁÊé»¹ÊÇÀ´Á·¹¦°¡£¿\n");
+        tell_object(me, "ä½ æ˜¯æ¥è¯»ä¹¦è¿˜æ˜¯æ¥ç»ƒåŠŸå•Šï¼Ÿ\n");
         return 1;
 }
 
@@ -85,32 +85,32 @@ int do_read(string arg)
 
         if( !arg ) { 
                 if( stringp(jydir) )
-                        return notify_fail("ÄãÏÖÔÚÔÚ¶Á" + jybooks[jydir] + "¡£\n");
-                else    return notify_fail("ÄãÏÈÑ¡¶¨Ò»±¾ÄãÏëÒª¶ÁµÄÊé£¬Ö¸ÁîÎª: read xxx(ÊéµÄÓ¢ÎÄËõÐ´)£¬È»¶øread n(»ØÊý)¡£\n");
+                        return notify_fail("ä½ çŽ°åœ¨åœ¨è¯»" + jybooks[jydir] + "ã€‚\n");
+                else    return notify_fail("ä½ å…ˆé€‰å®šä¸€æœ¬ä½ æƒ³è¦è¯»çš„ä¹¦ï¼ŒæŒ‡ä»¤ä¸º: read xxx(ä¹¦çš„è‹±æ–‡ç¼©å†™)ï¼Œç„¶è€Œread n(å›žæ•°)ã€‚\n");
         }
 
         if( sscanf(arg, "%d", t) != 1 || arg == "33jxt" ) {
                 if( member_array(arg, keys(jybooks)) == -1 )
-                        return notify_fail("Êé¼ÜÉÏÃ»ÓÐÕâ±¾Êé¡£\n");
+                        return notify_fail("ä¹¦æž¶ä¸Šæ²¡æœ‰è¿™æœ¬ä¹¦ã€‚\n");
                 else { 
                         this_player()->set_temp("jy/books", arg);
-                        write("ÄãÑ¡ÁË¡¶" + jybooks[arg] + "¡·¡£\n");
+                        write("ä½ é€‰äº†ã€Š" + jybooks[arg] + "ã€‹ã€‚\n");
                         return 1;
                 }
         }
 
         if( !stringp(jydir) )
-                return notify_fail("ÄãÏÈÑ¡¶¨Ò»±¾ÄãÏëÒª¶ÁµÄÊé£¬Ö¸ÁîÎª: read xxx(ÊéµÄÓ¢ÎÄËõÐ´)£¬È»¶øread n(»ØÊý)¡£\n");
+                return notify_fail("ä½ å…ˆé€‰å®šä¸€æœ¬ä½ æƒ³è¦è¯»çš„ä¹¦ï¼ŒæŒ‡ä»¤ä¸º: read xxx(ä¹¦çš„è‹±æ–‡ç¼©å†™)ï¼Œç„¶è€Œread n(å›žæ•°)ã€‚\n");
 
         filename = BOOKS_DIR + jydir + "/" + jydir + "-" + t + ".txt";
         if( file_size(filename) == -1 )
-                return notify_fail(jybooks[jydir] + "Ã»ÓÐÕâÒ»»Ø¡£\n");
+                return notify_fail(jybooks[jydir] + "æ²¡æœ‰è¿™ä¸€å›žã€‚\n");
 
 	switch (MONEY_D->player_pay(this_player(), 200)) {
 	        case 0:
-                return notify_fail("Çë´øµãÁãÓÃÇ®×ö¾è¿îÓÃ£¡\n");
+                return notify_fail("è¯·å¸¦ç‚¹é›¶ç”¨é’±åšææ¬¾ç”¨ï¼\n");
 	        case 2:
-                return notify_fail("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+                return notify_fail("æ‚¨çš„é›¶é’±ä¸å¤Ÿäº†ï¼Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
 	}
 
 	log_file("BOOKS", sprintf("%s read %s.\n", this_player()->query("name"), filename));

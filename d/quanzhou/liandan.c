@@ -1,5 +1,5 @@
 //Cracked by Roath
-// liandan.c Á·µ¨Ê¯
+// liandan.c ç»ƒèƒ†çŸ³
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -8,11 +8,11 @@ inherit F_SSERVER;
 
 void create()
 {
-        set("short", "Á·µ¨Ê¯");
+        set("short", "ç»ƒèƒ†çŸ³");
 	set("long", @LONG
-ÕâÊÇÁ¢ÑÂÉÏµÄÒ»·½Õ­Ê¯(stone)£¬ Õı´¦·ç¿Ú¡£ÈËÁ¢ÆäÉÏ£¬µ«¾õ¿ñ·çËº³¶£¬
-ÃæÈçµ¶¸î£¬Í·ÔÎÄ¿Ñ££¬Ò¡Ò¡Óû×¹¡£Ïà´«ÕâÊÇÃ÷³¯¿¹ÙÁÓ¢ĞÛÓá´óéàÉÙÄêÊ±µÄÁ·µ¨
-Ê¯£¬ÉÏÓĞËûÌâ¿ÌµÄ¡¸¶÷ÖØÈçÉ½¡¹ËÄ¸ö×Ö¡£
+è¿™æ˜¯ç«‹å´–ä¸Šçš„ä¸€æ–¹çª„çŸ³(stone)ï¼Œ æ­£å¤„é£å£ã€‚äººç«‹å…¶ä¸Šï¼Œä½†è§‰ç‹‚é£æ’•æ‰¯ï¼Œ
+é¢å¦‚åˆ€å‰²ï¼Œå¤´æ™•ç›®çœ©ï¼Œæ‘‡æ‘‡æ¬²å ã€‚ç›¸ä¼ è¿™æ˜¯æ˜æœæŠ—å€­è‹±é›„ä¿å¤§çŒ·å°‘å¹´æ—¶çš„ç»ƒèƒ†
+çŸ³ï¼Œä¸Šæœ‰ä»–é¢˜åˆ»çš„ã€Œæ©é‡å¦‚å±±ã€å››ä¸ªå­—ã€‚
 LONG
         );
 
@@ -22,7 +22,7 @@ LONG
 	]));
 
 	set("item_desc",([
-            "stone" : "Ö»¼ûÕ­Ê¯ËÊÁ¢ÔÚÑÂÉÏ£¬ÈÎ¿ñ·ç±©ÏøÊ¼ÖÕ²»µ¹£¬Äã²»½û¸ĞÌ¾ÔìÎïÖ®Ææ¡£\n"
+            "stone" : "åªè§çª„çŸ³è€¸ç«‹åœ¨å´–ä¸Šï¼Œä»»ç‹‚é£æš´å“®å§‹ç»ˆä¸å€’ï¼Œä½ ä¸ç¦æ„Ÿå¹é€ ç‰©ä¹‹å¥‡ã€‚\n"
 	]));
 
         set("no_clean_up", 0);
@@ -44,27 +44,27 @@ int do_climb(string arg)
 
 	if ( !arg || arg != "stone" ) return 0;
 
-	if ( me->query_temp("marks/climb") ) return notify_fail("Äã»¹Î´´ÓÊ¯ÉÏÏÂÀ´£¬×Å¼±Ê²Ã´£¿\n");
+	if ( me->query_temp("marks/climb") ) return notify_fail("ä½ è¿˜æœªä»çŸ³ä¸Šä¸‹æ¥ï¼Œç€æ€¥ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$N²ü²ü¾ª¾ªµØÅÀÉÏÁ·µ¨Ê¯£¬ÂíÉÏ±»·ç´µµÃ¶«Ò¡Î÷°Ú£¬ËæÊ±¿ÉÄÜÊ§×ã£¡\n", me);
+	message_vision("$Né¢¤é¢¤æƒŠæƒŠåœ°çˆ¬ä¸Šç»ƒèƒ†çŸ³ï¼Œé©¬ä¸Šè¢«é£å¹å¾—ä¸œæ‘‡è¥¿æ‘†ï¼Œéšæ—¶å¯èƒ½å¤±è¶³ï¼\n", me);
 
 	if ( random((int)me->query_kar()) < 2 ) {
-		message_vision("Í»È»¼ä¿ñ·ç´ó×÷£¬$NÒ»¸öÖ§³Ö²»×¡£¬·¢³öÒ»Éù²ÒºôÊ§×ãµøÏÂÁ·µ¨Ê¯£¡\n", me);
-		me->receive_wound( "qi", me->query("max_qi")+100, "±»¿ñ·ç´µÂäÉ½Ê¯µøËÀÁË" );
+		message_vision("çªç„¶é—´ç‹‚é£å¤§ä½œï¼Œ$Nä¸€ä¸ªæ”¯æŒä¸ä½ï¼Œå‘å‡ºä¸€å£°æƒ¨å‘¼å¤±è¶³è·Œä¸‹ç»ƒèƒ†çŸ³ï¼\n", me);
+		me->receive_wound( "qi", me->query("max_qi")+100, "è¢«ç‹‚é£å¹è½å±±çŸ³è·Œæ­»äº†" );
 	}
 	else if ( random((int)me->query_kar()) < 8 && me->query_skill("dodge") < 30 ) {
-		message_vision("Í»È»¼ä¿ñ·ç´ó×÷£¬$NÒ»¸öÖ§³Ö²»×¡£¬·¢³öÒ»Éù²ÒºôÊ§×ãµøÏÂÁ·µ¨Ê¯£¡\n", me);
+		message_vision("çªç„¶é—´ç‹‚é£å¤§ä½œï¼Œ$Nä¸€ä¸ªæ”¯æŒä¸ä½ï¼Œå‘å‡ºä¸€å£°æƒ¨å‘¼å¤±è¶³è·Œä¸‹ç»ƒèƒ†çŸ³ï¼\n", me);
 		me->unconcious();
 	}
 	else if ( random((int)me->query_kar()) < 8 ) {
-		message_vision("Í»È»¼ä¿ñ·ç´ó×÷£¬$N±»·ç´µµÃ¶«Ò¡Î÷°Ú£¬ËæÊ±¿ÉÄÜÊ§×ãµøÏÂ£¡\n", me);
-		me->receive_damage( "qi", 50, "±»¿ñ·ç´µÂäÉ½Ê¯µøËÀÁË" );
-        	me->receive_damage( "jing", 50, "±»¿ñ·ç´µÂäÉ½Ê¯µøËÀÁË" );
+		message_vision("çªç„¶é—´ç‹‚é£å¤§ä½œï¼Œ$Nè¢«é£å¹å¾—ä¸œæ‘‡è¥¿æ‘†ï¼Œéšæ—¶å¯èƒ½å¤±è¶³è·Œä¸‹ï¼\n", me);
+		me->receive_damage( "qi", 50, "è¢«ç‹‚é£å¹è½å±±çŸ³è·Œæ­»äº†" );
+        	me->receive_damage( "jing", 50, "è¢«ç‹‚é£å¹è½å±±çŸ³è·Œæ­»äº†" );
 	}
 
 	if ( living(me) ) {
-		me->receive_damage( "qi", 50, "±»¿ñ·ç´µÂäÉ½Ê¯µøËÀÁË" );
-        	me->receive_damage( "jing", 20, "±»¿ñ·ç´µÂäÉ½Ê¯µøËÀÁË" );
+		me->receive_damage( "qi", 50, "è¢«ç‹‚é£å¹è½å±±çŸ³è·Œæ­»äº†" );
+        	me->receive_damage( "jing", 20, "è¢«ç‹‚é£å¹è½å±±çŸ³è·Œæ­»äº†" );
 	}
 
 	if ( me->query("potential") - me->query("learned_points") < 100 
@@ -79,8 +79,8 @@ int do_climb(string arg)
 int check(object me)
 {
 	if ( !me->is_ghost() && living(me) ) 
-		message_vision("$NÒ»»á¶ù±ãµÖÊÜ²»×¡£¬Ö»ºÃĞ¡ĞÄÒíÒíµØÅÀÁËÏÂÀ´¡£\n", me);
-	else message_vision("$N·¢³öÒ»ÉùÆàÀúµÄ²Òºô£¬Ê§×ãµøÏÂÁ·µ¨Ê¯£¡\n", me);
+		message_vision("$Nä¸€ä¼šå„¿ä¾¿æŠµå—ä¸ä½ï¼Œåªå¥½å°å¿ƒç¿¼ç¿¼åœ°çˆ¬äº†ä¸‹æ¥ã€‚\n", me);
+	else message_vision("$Nå‘å‡ºä¸€å£°å‡„å†çš„æƒ¨å‘¼ï¼Œå¤±è¶³è·Œä¸‹ç»ƒèƒ†çŸ³ï¼\n", me);
 
 	me->delete_temp("marks/climb");
 
@@ -90,7 +90,7 @@ int check(object me)
 int valid_leave(object me, string dir)
 {
 	if ( me->query_temp("marks/climb") ) 
-		return notify_fail("Äã»¹Î´´ÓÊ¯ÉÏÏÂÀ´ÄØ£¡\n");
+		return notify_fail("ä½ è¿˜æœªä»çŸ³ä¸Šä¸‹æ¥å‘¢ï¼\n");
 
 	return ::valid_leave(me, dir);
 }

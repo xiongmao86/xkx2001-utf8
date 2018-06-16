@@ -7,13 +7,13 @@ inherit NECK;
 
 void create()
 {
-	set_name( BLU "ÈËÍ·Á´" NOR, ({ "rentou lian", "lian" }) );
+	set_name( BLU "äººå¤´é“¾" NOR, ({ "rentou lian", "lian" }) );
 	set_weight(300);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "´®");
-                set("long", "ÕâÊÇÒ»ÌõÓÃÒ»¸ö¸ö÷¼÷Ã´®ÆğÀ´µÄÈËÍ·Á´¡£\n");
+		set("unit", "ä¸²");
+                set("long", "è¿™æ˜¯ä¸€æ¡ç”¨ä¸€ä¸ªä¸ªéª·é«…ä¸²èµ·æ¥çš„äººå¤´é“¾ã€‚\n");
 		set("value", 150);
 		set("no_sell",1);
 		set("material", "neck");

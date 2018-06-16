@@ -1,5 +1,5 @@
 //Cracked by Roath
-// bossxue.c Ñ¦ÀÏ°å
+// bossxue.c è–›è€æ¿
 
 #include <ansi.h>
 #include <dbase.h>
@@ -8,10 +8,10 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("Ñ¦ÀÏ°å", ({ "xue laoban", "xue" }));
+	set_name("è–›è€æ¿", ({ "xue laoban", "xue" }));
 	set("age", 32);
-	set("gender", "ÄĞĞÔ");
-	set("long", "¡¡¡¡ÕâÊÇÒ»¸ö¾­ÑéÀÏµ½µÄÉúÒâÈË£¬Ò»Ë«¾«Ã÷µÄÑÛ¾¦²»Í£µÄ´òÁ¿×ÅÄã¡£\n");
+	set("gender", "ç”·æ€§");
+	set("long", "ã€€ã€€è¿™æ˜¯ä¸€ä¸ªç»éªŒè€åˆ°çš„ç”Ÿæ„äººï¼Œä¸€åŒç²¾æ˜çš„çœ¼ç›ä¸åœçš„æ‰“é‡ç€ä½ ã€‚\n");
 	set("attitude", "heroism");
 	set("str", 24);
 	set("dex", 16);

@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÔº");
+        set("short", "åé™¢");
         set("long", @LONG
-ÕâÀïÊÇºóÔº£¬¶«±ßÇ½½ÅÏÂÓĞÒ»¿ÚË®¾®(well)£¬ÄÏÃæÊÇÀ­ÕÂ±ğÔº¡£
+è¿™é‡Œæ˜¯åé™¢ï¼Œä¸œè¾¹å¢™è„šä¸‹æœ‰ä¸€å£æ°´äº•(well)ï¼Œå—é¢æ˜¯æ‹‰ç« åˆ«é™¢ã€‚
 LONG
         );
         set("exits", ([
@@ -19,7 +19,7 @@ LONG
 		"/clone/weapon/falun": 1,
 	]));
 	set("item_desc", ([
-                "well" : "ÕâÊÇÒ»¿ÚË®¾®¡£\n"
+                "well" : "è¿™æ˜¯ä¸€å£æ°´äº•ã€‚\n"
         ]));
         set("resource/water", 1);
 

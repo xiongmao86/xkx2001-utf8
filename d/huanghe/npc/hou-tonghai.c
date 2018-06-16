@@ -1,16 +1,16 @@
 //Cracked by Roath
-// hou-tonghai.c ºîÍ¨º£
+// hou-tonghai.c ä¾¯é€šæµ·
 
 inherit NPC;
 
 void create()
 {
-	set_name("ºîÍ¨º£", ({ "hou tonghai", "hou" }));
-	set("nickname", "ÈıÍ·òÔ");
+	set_name("ä¾¯é€šæµ·", ({ "hou tonghai", "hou" }));
+	set("nickname", "ä¸‰å¤´è›Ÿ");
 	set("long", 
-"ºîÍ¨º£ÊÇ¸öÇàÁ³Êİ×Ó£¬Ãæ¼Õ¼«³¤£¬¶î½ÇÉÏÖ×ÆğÁËÈı¸ö´óÈâÁö£¬·Ç³£ÄÑ¿´¡£\n");
+"ä¾¯é€šæµ·æ˜¯ä¸ªé’è„¸ç˜¦å­ï¼Œé¢é¢Šæé•¿ï¼Œé¢è§’ä¸Šè‚¿èµ·äº†ä¸‰ä¸ªå¤§è‚‰ç˜¤ï¼Œéå¸¸éš¾çœ‹ã€‚\n");
 //	set("title", "");
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 42);
 	set("attitude", "peaceful");
 	set("shen_type", -1);

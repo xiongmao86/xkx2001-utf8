@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huoji.c  Ò©ÆÌ»ï¼Æ
+// huoji.c  è¯é“ºä¼™è®¡
 // modified by aln  2 / 98
 
 inherit NPC;
@@ -11,11 +11,11 @@ string ask_me();
 
 void create()
 {
-	set_name("Ò©ÆÌ»ï¼Æ", ({ "yaopu huoji", "huoji" }));
+	set_name("è¯é“ºä¼™è®¡", ({ "yaopu huoji", "huoji" }));
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 18);
-	set("long", "ËûÊÇÆ½ÉñÒ½´ÓÏçÏÂÕĞÀ´°ïÃ¦µÄ¡£\n");
+	set("long", "ä»–æ˜¯å¹³ç¥åŒ»ä»ä¹¡ä¸‹æ‹›æ¥å¸®å¿™çš„ã€‚\n");
 	set("combat_exp", 250);
 	set("attitude", "peaceful");
 	set("vendor_goods", ({
@@ -25,7 +25,7 @@ void create()
 	}));
 
         set("inquiry", ([
-               "³¤°×É½ÈË²Î" : (: ask_me :),
+               "é•¿ç™½å±±äººå‚" : (: ask_me :),
                "renshen" : (: ask_me :),
         ]));
 
@@ -47,16 +47,16 @@ string ask_me()
         int price;
 
         if( !(obj = present("bang ling", me)) )
-                return RANK_D->query_respect(me) + "²»×öÉúÒâ£¬²»±Ø²ÙĞÄ²Î¼Û¡£";
+                return RANK_D->query_respect(me) + "ä¸åšç”Ÿæ„ï¼Œä¸å¿…æ“å¿ƒå‚ä»·ã€‚";
 
-        if( (string)obj->query("job/type") != "ÂòÂô" )
-                return RANK_D->query_respect(me) + "²»×öÉúÒâ£¬²»±Ø²ÙĞÄ²Î¼Û¡£";
+        if( (string)obj->query("job/type") != "ä¹°å–" )
+                return RANK_D->query_respect(me) + "ä¸åšç”Ÿæ„ï¼Œä¸å¿…æ“å¿ƒå‚ä»·ã€‚";
 
-        if( (string)obj->query("job/name") != "³¤°×É½ÈË²Î" )
-                return "ÎÒÖ»ÖªµÀ²Î¼Û£¬" + RANK_D->query_respect(me) + "»¹ÊÇÈ¥Ïò±ğÈË´òÌı°É¡£";
+        if( (string)obj->query("job/name") != "é•¿ç™½å±±äººå‚" )
+                return "æˆ‘åªçŸ¥é“å‚ä»·ï¼Œ" + RANK_D->query_respect(me) + "è¿˜æ˜¯å»å‘åˆ«äººæ‰“å¬å§ã€‚";
 
         if( !mapp(prices = obj->query("job/prices")) )
-                return "×î½ü²Î¼Û»ìÂÒ£¬ÎÒ²»ÊÇÌ«Çå³ş¡£";
+                return "æœ€è¿‘å‚ä»·æ··ä¹±ï¼Œæˆ‘ä¸æ˜¯å¤ªæ¸…æ¥šã€‚";
 
         price = 0;
         place = "city";
@@ -68,7 +68,7 @@ string ask_me()
                 }
         }
 
-        return "ÌıËµ" + region_names[place] + "Ò»´ø²Î¼Û×î¸ß¡£";
+        return "å¬è¯´" + region_names[place] + "ä¸€å¸¦å‚ä»·æœ€é«˜ã€‚";
 }
         
         

@@ -6,10 +6,10 @@ int do_jump(string);
 
 void create()
 {
-	set("short", "ÆÙ²¼ÏÂ");
+	set("short", "ç€‘å¸ƒä¸‹");
 	set("long", @LONG
-ÕâÀïÊÇÆÙ²¼Ë®µ×£¬Ë®Á÷¼±³åÖ±ÏÂ£¬ÄãË«×ãÊ¹¾¢£¬ÒÔ¡¸Ç§½ï×¹¡¹µÄ¹¦·òÀÎÀÎÕ¾
-ÎÈ£¬Ç¡ËÆÖÐÁ÷íÆÖù£¬ÆéÁ¢²»¶¯¡£
+è¿™é‡Œæ˜¯ç€‘å¸ƒæ°´åº•ï¼Œæ°´æµæ€¥å†²ç›´ä¸‹ï¼Œä½ åŒè¶³ä½¿åŠ²ï¼Œä»¥ã€Œåƒæ–¤å ã€çš„åŠŸå¤«ç‰¢ç‰¢ç«™
+ç¨³ï¼Œæ°ä¼¼ä¸­æµç ¥æŸ±ï¼Œå´Žç«‹ä¸åŠ¨ã€‚
 LONG);
 	set("objects", ([
 		__DIR__"npc/gfish" : 1,
@@ -28,9 +28,9 @@ int do_jump(string arg)
 {
 	object me = this_player();
 
-	if ( !arg || arg != "bank" ) return notify_fail( "Ê²Ã´£¿\n");
+	if ( !arg || arg != "bank" ) return notify_fail( "ä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision("$N×ÝÉíÍù°¶ÉÏÌøÈ¥¡£\n", me);
+	message_vision("$Nçºµèº«å¾€å²¸ä¸Šè·³åŽ»ã€‚\n", me);
 	me->move(__DIR__"yideng1");
 	return 1;
 }

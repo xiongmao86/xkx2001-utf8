@@ -6,7 +6,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´ó³µ");
+        set("short", "å¤§è½¦");
         set("valid_startroom",1);
         
 	set("no_clean_up", 0);

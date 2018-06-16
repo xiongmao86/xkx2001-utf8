@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ���
+// 大道
 // Dong  11/03/1996.
 
 #include <room.h>
@@ -7,10 +7,10 @@
 inherit ROOM;
 
 void create()
-{       set("short", "���");
+{       set("short", "大道");
         set("long", @LONG
-������߱�ֲ���ɣ���Ŀ�Դ䣬�ȸ���ѩ������Ϊ������ѩ�ɡ���
-�����Ǻ鴺�ţ����߱㵽�������£��ϱ�һֱ��ǰ�ɴ����Ϻ�������
+大道两边遍植青松，满目苍翠，偃盖如雪。被称为“九里雪松”。
+东边是洪春桥，西边便到了灵隐寺，南边一直向前可达浙南和闽北。
 LONG);
         set("exits", ([ /* sizeof() == 2 */ 
                   "east" : __DIR__"hongchun",

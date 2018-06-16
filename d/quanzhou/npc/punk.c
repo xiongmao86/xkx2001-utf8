@@ -7,10 +7,10 @@ int ask_me();
 
 void create()
 {
-        set_name("Ğ¡Á÷Ã¥", ({"punk"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°æµæ°“", ({"punk"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 18);
-        set("long", "ÕâÊÇÒ»¸öÓÎÊÖºÃÏĞµÄĞ¡Á÷Ã¥¡£\n");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªæ¸¸æ‰‹å¥½é—²çš„å°æµæ°“ã€‚\n");
 
         set_temp("apply/attack", 10);
         set_temp("apply/defense", 10);

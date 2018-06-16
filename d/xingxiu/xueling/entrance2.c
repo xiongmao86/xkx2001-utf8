@@ -11,11 +11,11 @@ int valid_leave(object who, string dir);
 
 void create()
 {
-  set("short", HIG"ÊÔ½£Í¤"NOR);
+  set("short", HIG"è¯•å‰‘äº­"NOR);
   set("long", @LONG
-ÕâÀï±ãÊÇ½øÊÔ½£É½×¯µÄÓ¢ĞÛÃÇÑ¡Ôñ³ÃÊÖ±øÈĞµÄµØ·½ÁË¡£Á½±ß
-¼Ü×Ó (jia) ÉÏ·ÅÂúÁË¸÷ÖÖµ¶½£¹÷°ô£¬»¹ÓĞÒ»Ğ©¿ø¼×Ê²Ã´µÄ¡£´Ó´Ë
-ÍùÍâ¾ÍÊÇ±ÈÎä³¡ÁË¡£
+è¿™é‡Œä¾¿æ˜¯è¿›è¯•å‰‘å±±åº„çš„è‹±é›„ä»¬é€‰æ‹©è¶æ‰‹å…µåˆƒçš„åœ°æ–¹äº†ã€‚ä¸¤è¾¹
+æ¶å­ (jia) ä¸Šæ”¾æ»¡äº†å„ç§åˆ€å‰‘æ£æ£’ï¼Œè¿˜æœ‰ä¸€äº›ç›”ç”²ä»€ä¹ˆçš„ã€‚ä»æ­¤
+å¾€å¤–å°±æ˜¯æ¯”æ­¦åœºäº†ã€‚
 LONG
   );
 
@@ -77,11 +77,11 @@ int do_get(string arg)
                         break;
         case "armor":   weapon = new("/clone/armor/tiejia");
                         break;
-        default:        return notify_fail("ÕÒ²»µ½"+type+"\n");
+        default:        return notify_fail("æ‰¾ä¸åˆ°"+type+"\n");
         }
  	weapon->set_temp("xueling", 1);
         if(weapon->move(me)) {
-                message_vision("$N´Ó±øÆ÷¼ÜÉÏÈ¡ÏÂÒ»"+weapon->query("unit")+weapon->name()+"¡£\n", me);
+                message_vision("$Nä»å…µå™¨æ¶ä¸Šå–ä¸‹ä¸€"+weapon->query("unit")+weapon->name()+"ã€‚\n", me);
         } else {
                 destruct(weapon);
         }
@@ -91,11 +91,11 @@ int do_get(string arg)
 string look_jia() 
 {
         string msg;
-        msg = "ÕâÊÇÒ»¸ö±øÆ÷¼Ü£¬Ê®°Ë°ãÎäÆ÷ÊÇÓ¦ÓĞ¾¡ÓĞ¡£\n";
-        msg+= "Ä¿Ç°´æ·ÅÓĞĞå»¨Õë(zhen), ¸Ö½£(sword)£¬¸Öµ¶(blade)£¬Ìú¹÷(club)\n";
-	msg+= "Öñ°ô(stick)£¬¸ÖÕÈ(staff)£¬ÉßÕÈ(shezhang), ·¨ÂÖ(falun)£¬³¤±Ş(whip)¡£\n";
-	msg+= "»¹ÓĞÒ»Ğ©Ìú¼×(armor)¡£\n";
-        msg+= "ÇëÓÃÖ¸Áî¡°get ÖÖÀà from jia¡±ÄÃÈ¡Äã³ÆÊÖµÄ±øÆ÷»ò¼×ëĞ¡£\n";
+        msg = "è¿™æ˜¯ä¸€ä¸ªå…µå™¨æ¶ï¼Œåå…«èˆ¬æ­¦å™¨æ˜¯åº”æœ‰å°½æœ‰ã€‚\n";
+        msg+= "ç›®å‰å­˜æ”¾æœ‰ç»£èŠ±é’ˆ(zhen), é’¢å‰‘(sword)ï¼Œé’¢åˆ€(blade)ï¼Œé“æ£(club)\n";
+	msg+= "ç«¹æ£’(stick)ï¼Œé’¢æ–(staff)ï¼Œè›‡æ–(shezhang), æ³•è½®(falun)ï¼Œé•¿é­(whip)ã€‚\n";
+	msg+= "è¿˜æœ‰ä¸€äº›é“ç”²(armor)ã€‚\n";
+        msg+= "è¯·ç”¨æŒ‡ä»¤â€œget ç§ç±» from jiaâ€æ‹¿å–ä½ ç§°æ‰‹çš„å…µå™¨æˆ–ç”²èƒ„ã€‚\n";
         return msg;
 }
 

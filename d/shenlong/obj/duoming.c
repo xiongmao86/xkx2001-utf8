@@ -1,5 +1,5 @@
 //Cracked by Roath
-// duoming.c  ¶áÃü½£
+// duoming.c  å¤ºå‘½å‰‘
 // ALN Sep / 97
 
 #include <ansi.h>
@@ -8,17 +8,17 @@ inherit SWORD;
 #include "/clone/weapon/edge_weapon.h"
 void create()
 {
-        set_name("¶áÃü½£", ({ "duoming jian", "jian" }));
+        set_name("å¤ºå‘½å‰‘", ({ "duoming jian", "jian" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÇáÇÉµÄ¾«¸Ö½££¬·æÀûÎŞ±È£¬Å®½£¿ÍÃÇ¶¼Ï²»¶Åä´ø´Ë½£¡£\n");
+                set("unit", "æŸ„");
+                set("long", "è¿™æ˜¯ä¸€æŸ„è½»å·§çš„ç²¾é’¢å‰‘ï¼Œé”‹åˆ©æ— æ¯”ï¼Œå¥³å‰‘å®¢ä»¬éƒ½å–œæ¬¢é…å¸¦æ­¤å‰‘ã€‚\n");
                 set("value", 1000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›å‰‘é˜ã€‚\n");
         }
         init_sword(30);
         setup();

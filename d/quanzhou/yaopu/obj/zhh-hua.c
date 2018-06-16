@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIR"²Øºì»¨"NOR, ({"zanghonghua","hua"}));
+        set_name(HIR"è—çº¢èŠ±"NOR, ({"zanghonghua","hua"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","²Øºì»¨£º²¹ÑªÖ®Îï£¬µ«¹ıÁ¿Ôò°ÜÑª¡£\n");
+                set("unit", "é’±");
+                set("long","è—çº¢èŠ±ï¼šè¡¥è¡€ä¹‹ç‰©ï¼Œä½†è¿‡é‡åˆ™è´¥è¡€ã€‚\n");
                 set("value", 2000);
 				set("yaocai", 1);
         		set("cure_s",30);

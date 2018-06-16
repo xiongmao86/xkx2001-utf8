@@ -1,14 +1,14 @@
 //Cracked by Roath
-// bian.c ØÒºó
+// bian.c åŒ¾åŽ
 // qfy July 14, 1996
 
 inherit ROOM;
 
 void create()
 {
-	set("short", "ØÒºó");
+	set("short", "åŒ¾åŽ");
 	set("long", @LONG
-ØÒºóµØ·½ÏÁÐ¡£¬ÁîÈËÄÑÒÔÐýÉí¡£ºÚÆáÆáµÄÉõÃ´Ò²¿´²»¼û¡£
+åŒ¾åŽåœ°æ–¹ç‹­å°ï¼Œä»¤äººéš¾ä»¥æ—‹èº«ã€‚é»‘æ¼†æ¼†çš„ç”šä¹ˆä¹Ÿçœ‹ä¸è§ã€‚
 LONG
 	);
 
@@ -36,27 +36,27 @@ int do_use(string arg)
 	
     if (!present("fire", me))  return 0;
 
-    if ( me->query("family/family_name") == "»ªÉ½ÅÉ" ) seed = 1;
+    if ( me->query("family/family_name") == "åŽå±±æ´¾" ) seed = 1;
     else if ( random(100) == 3 ) seed == 1;
     else seed = 0;
 
     if( arg=="fire" && seed == 1 ) {
-	if ( query("zixia_count") >= 1 && !me->query_temp("marks/×Ï") ) {
+	if ( query("zixia_count") >= 1 && !me->query_temp("marks/ç´«") ) {
 	   ob = new(__DIR__"obj/zixia_book");
 	   if (!ob) 
-	   return notify_fail("Äã·¢ÏÖÔ­À´ÕâÀïÔø¾­ÓÐÈËÀ´¹ý£¬²»ÖªÆäÈËÓÐºÎÒâÍ¼¡£\n"); 
+	   return notify_fail("ä½ å‘çŽ°åŽŸæ¥è¿™é‡Œæ›¾ç»æœ‰äººæ¥è¿‡ï¼Œä¸çŸ¥å…¶äººæœ‰ä½•æ„å›¾ã€‚\n"); 
 	   ob->move(me);
 	   add("zixia_count", -1);
-	   CHANNEL_D->do_channel(me, "rumor", sprintf("%sÅªµ½ÁË×ÏÏ¼ÃØ¼®¡£", me->query("name")));
-           me->set_temp("marks/×Ï", 1);
-	   write("ÄãÍ»È»·¢ÏÖÒ»±¾±¡±¡µÄ²á×Ó£¬×ÐÏ¸Ò»¿´Ô­À´ÊÇ»ªÉ½ÕòÉ½Ö®±¦¡¸×ÏÏ¼ÃØóÅ¡¹£¡\n");
-	   write("Äã¡¸×ÏÏ¼ÃØóÅ¡¹Ð¡ÐÄµÄÊÕºÃ¡£\n");
+	   CHANNEL_D->do_channel(me, "rumor", sprintf("%så¼„åˆ°äº†ç´«éœžç§˜ç±ã€‚", me->query("name")));
+           me->set_temp("marks/ç´«", 1);
+	   write("ä½ çªç„¶å‘çŽ°ä¸€æœ¬è–„è–„çš„å†Œå­ï¼Œä»”ç»†ä¸€çœ‹åŽŸæ¥æ˜¯åŽå±±é•‡å±±ä¹‹å®ã€Œç´«éœžç§˜ç¬ˆã€ï¼\n");
+	   write("ä½ ã€Œç´«éœžç§˜ç¬ˆã€å°å¿ƒçš„æ”¶å¥½ã€‚\n");
 	}
 	else {
-	   write("Äã·¢ÏÖÔ­À´ÕâÀïÔø¾­ÓÐÈËÀ´¹ý£¬²»ÖªÆäÈËÓÐºÎÒâÍ¼¡£\n");
+	   write("ä½ å‘çŽ°åŽŸæ¥è¿™é‡Œæ›¾ç»æœ‰äººæ¥è¿‡ï¼Œä¸çŸ¥å…¶äººæœ‰ä½•æ„å›¾ã€‚\n");
 	}
     }
-    else write("Äã·¢ÏÖÔ­À´ÕâÀïÔø¾­ÓÐÈËÀ´¹ý£¬²»ÖªÆäÈËÓÐºÎÒâÍ¼¡£\n");
+    else write("ä½ å‘çŽ°åŽŸæ¥è¿™é‡Œæ›¾ç»æœ‰äººæ¥è¿‡ï¼Œä¸çŸ¥å…¶äººæœ‰ä½•æ„å›¾ã€‚\n");
 
     return 1;
 }

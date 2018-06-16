@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tumen.c Ϳ�ż�
+// tumen.c 涂门集
 // qfy Nov 3, 1996
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ϳ�ż�");
+        set("short", "涂门集");
 	set("long", @LONG
-����Ȫ�����涫�����һ���ɵ�����ģ�����ϱ���Ȫ�������ĺ�����
-ׯ�������Ǹ����У����߱���ȥ���ۿڵ���Ҫͨ����Ϳ��ˮ�ء���
+这是泉州南面东西向的一条干道，规模不大。南边是泉州著名的鸿翔绸缎
+庄。西边是个集市，东边便是去往港口的主要通道「涂门水关」。
 LONG
         );
 

@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name("½ğîÎ", ({ "jin chai", "chai" }));
+	set_name("é‡‘é’—", ({ "jin chai", "chai" }));
 	set("weight", 400);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long","îÎÉÏÒ»¿ÅÃ÷ÖéÓÖ´óÓÖÔ²£¬±¦¹âÓ¨È»£¬ÊÇÒ»¼şÏ£ÊÀÖ®Õä¡£\n");
-		set("unit", "Ö§");
+		set("long","é’—ä¸Šä¸€é¢—æ˜ç åˆå¤§åˆåœ†ï¼Œå®å…‰è¹ç„¶ï¼Œæ˜¯ä¸€ä»¶å¸Œä¸–ä¹‹çã€‚\n");
+		set("unit", "æ”¯");
 		set("value", 3000);
 		set("material", "gold");
 		set("armor_prop/armor", 1);

@@ -6,12 +6,12 @@ string ask_me();
 
 void create()
 {
-	set_name("¼ÎÄ¾»î·ğ", ({ "jiamu huofo", "jiamu", "huofo" }));
+	set_name("å˜‰æœ¨æ´»ä½›", ({ "jiamu huofo", "jiamu", "huofo" }));
 	set("long", 
-"ËûÊÇ±¾ËÂµÄ×î×ÊÉîµÄ»î·ğ£¬Ğë·¢½Ô°×¡£Ëû´ÓĞ¡¾ÍÔÚËÂÖĞ³¤´ó£¬Ò»Ö±Ç±ĞÄ·ğ·¨£¬´ÓÎ´Ì¤\n"
-"É½ÃÅÒ»²½¡£\n");
-//	set("title","´óÂÖËÂÖ÷³Ö");
-	set("gender", "ÄĞĞÔ");
+"ä»–æ˜¯æœ¬å¯ºçš„æœ€èµ„æ·±çš„æ´»ä½›ï¼Œé¡»å‘çš†ç™½ã€‚ä»–ä»å°å°±åœ¨å¯ºä¸­é•¿å¤§ï¼Œä¸€ç›´æ½œå¿ƒä½›æ³•ï¼Œä»æœªè¸\n"
+"å±±é—¨ä¸€æ­¥ã€‚\n");
+//	set("title","å¤§è½®å¯ºä¸»æŒ");
+	set("gender", "ç”·æ€§");
 	set("age", 80);
 	set("attitude", "friendly");
 	set("class","bonze");
@@ -28,8 +28,8 @@ void create()
 	set("score", 5000);
 
 	set("inquiry", ([
-                "¹©·î" : (: ask_me :),
-		"²Ø¾­" : "ÕÒÀ­ÕÂ»î·ğÒªÈ¥¡£",
+                "ä¾›å¥‰" : (: ask_me :),
+		"è—ç»" : "æ‰¾æ‹‰ç« æ´»ä½›è¦å»ã€‚",
         ]));
 
         set("book_count", 1);
@@ -42,26 +42,26 @@ string ask_me()
 	object wage;
         object me = this_player();
 
-        if (!(fam = me->query("family")) || fam["family_name"] !="Ñ©É½ÅÉ"
-	&& fam["family_name"] !="Ñªµ¶ÃÅ" && me->query("class") !="lama")
+        if (!(fam = me->query("family")) || fam["family_name"] !="é›ªå±±æ´¾"
+	&& fam["family_name"] !="è¡€åˆ€é—¨" && me->query("class") !="lama")
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾ËÂËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "ä¸æœ¬å¯ºç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 	if (me->query_skill("lamaism", 1) < 60)
-		return "Äã²»ÄÜÒª¹©·î¡£";
+		return "ä½ ä¸èƒ½è¦ä¾›å¥‰ã€‚";
 	if (me->query("age") < 25 && me->query("lama_wage") > me->query("mud_age") - 86400)
 		return RANK_D->query_respect(this_player()) +
-                "£¬Äê¹ØÃ»¹ı£¬Ôõ÷áÓÖÀ´Òª¹©·î£¿";
+                "ï¼Œå¹´å…³æ²¡è¿‡ï¼Œæ€éº½åˆæ¥è¦ä¾›å¥‰ï¼Ÿ";
 	if (me->query("age") > 24 && me->query("lama_wage") > me->query("mud_age") - 259200)
 		return RANK_D->query_respect(this_player()) +
-                "£¬Äê¹ØÃ»¹ı£¬Ôõ÷áÓÖÀ´Òª¹©·î£¿";
+                "ï¼Œå¹´å…³æ²¡è¿‡ï¼Œæ€éº½åˆæ¥è¦ä¾›å¥‰ï¼Ÿ";
 	if (me->query_skill("lamaism", 1) >= 60
 	&& me->query_skill("lamaism", 1) < 90){
 	wage = new("/clone/money/gold"); 	
 	wage->set_amount(10);
 	wage->move(me);
 	me->set("lama_wage",me->query("mud_age"));
-	message_vision("¼ÎÄ¾»î·ğ×ªÉíÄÃ³öÒ»¸öºì°üµİ¸ø$N¡£\n", me);
-                return "ÕâÊÇÉÏÈË½ñÄêµÄ¹±·î£¬ÇëÊÕºÃ¡£";
+	message_vision("å˜‰æœ¨æ´»ä½›è½¬èº«æ‹¿å‡ºä¸€ä¸ªçº¢åŒ…é€’ç»™$Nã€‚\n", me);
+                return "è¿™æ˜¯ä¸Šäººä»Šå¹´çš„è´¡å¥‰ï¼Œè¯·æ”¶å¥½ã€‚";
 	}
 	if (me->query_skill("lamaism", 1) >= 90
         && me->query_skill("lamaism", 1) < 120){
@@ -69,8 +69,8 @@ string ask_me()
         wage->set_amount(40);
 	wage->move(me);
         me->set("lama_wage",me->query("mud_age"));
-	message_vision("¼ÎÄ¾»î·ğ×ªÉíÄÃ³öÒ»¸öºì°üµİ¸ø$N¡£\n", me);
-                return "ÕâÊÇÉÏÈË½ñÄêµÄ¹±·î£¬ÇëÊÕºÃ¡£";
+	message_vision("å˜‰æœ¨æ´»ä½›è½¬èº«æ‹¿å‡ºä¸€ä¸ªçº¢åŒ…é€’ç»™$Nã€‚\n", me);
+                return "è¿™æ˜¯ä¸Šäººä»Šå¹´çš„è´¡å¥‰ï¼Œè¯·æ”¶å¥½ã€‚";
         }
 	if (me->query_skill("lamaism", 1) >= 120
         && me->query_skill("lamaism", 1) < 150){
@@ -78,15 +78,15 @@ string ask_me()
         wage->set_amount(80);
 	wage->move(me);
         me->set("lama_wage",me->query("mud_age"));
-        message_vision("¼ÎÄ¾»î·ğ×ªÉíÄÃ³öÒ»¸öºì°üµİ¸ø$N¡£\n", me);
-                return "ÕâÊÇ·ğÒ¯½ñÄêµÄ¹±·î£¬ÇëÊÕºÃ¡£";
+        message_vision("å˜‰æœ¨æ´»ä½›è½¬èº«æ‹¿å‡ºä¸€ä¸ªçº¢åŒ…é€’ç»™$Nã€‚\n", me);
+                return "è¿™æ˜¯ä½›çˆ·ä»Šå¹´çš„è´¡å¥‰ï¼Œè¯·æ”¶å¥½ã€‚";
         }
 	if (me->query_skill("lamaism", 1) >= 150){ 
         wage = new("/clone/money/gold");
 	wage->move(me);
         wage->set_amount(120);
         me->set("lama_wage",me->query("mud_age"));
-	message_vision("¼ÎÄ¾»î·ğ×ªÉíÄÃ³öÒ»¸öºì°üµİ¸ø$N¡£\n", me);
-                return "ÕâÊÇ·¨Íõ½ñÄêµÄ¹±·î£¬ÇëÊÕºÃ¡£";
+	message_vision("å˜‰æœ¨æ´»ä½›è½¬èº«æ‹¿å‡ºä¸€ä¸ªçº¢åŒ…é€’ç»™$Nã€‚\n", me);
+                return "è¿™æ˜¯æ³•ç‹ä»Šå¹´çš„è´¡å¥‰ï¼Œè¯·æ”¶å¥½ã€‚";
         }	
 }

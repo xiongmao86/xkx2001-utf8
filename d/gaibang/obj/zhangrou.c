@@ -1,18 +1,18 @@
 //Cracked by Roath
-// zhangrou.c â¯Èâ
+// zhangrou.c çè‚‰
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-	set_name("â¯Èâ", ({"zhang rou", "zhang"}));
+	set_name("çè‚‰", ({"zhang rou", "zhang"}));
 	set_weight(300);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¿éÏÊÑªÁÜÀìµÄâ¯Èâ¡£\n");
-		set("unit", "¿é");
+		set("long", "ä¸€å—é²œè¡€æ·‹æ¼“çš„çè‚‰ã€‚\n");
+		set("unit", "å—");
 		set("value", 100);
 		set("food_remaining", 4);
 		set("food_supply", 50);

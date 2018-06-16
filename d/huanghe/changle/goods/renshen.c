@@ -1,17 +1,17 @@
 //Cracked by Roath
-// /d/changbai/renshen.c ÈË²Î
+// /d/changbai/renshen.c äººå‚
 
 inherit ITEM;
 #include <ansi.h>
 
 void create()
 {
-        set_name("³¤°×É½ÈË²Î", ({"renshen", "shen"}));
+        set_name("é•¿ç™½å±±äººå‚", ({"renshen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄ³¤°×É½ÈË²Î¡£\n");
+                set("unit", "æ ª");
+                set("long", "è¿™æ˜¯ä¸€æ ªæ²¾æ»¡å±±æ³¥çš„é•¿ç™½å±±äººå‚ã€‚\n");
                 set("value", 10000000);
                 set("medicine", 1);
         }

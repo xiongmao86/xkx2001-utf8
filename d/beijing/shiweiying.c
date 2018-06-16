@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÊÌÎÀÓª´óÃÅ");
+        set("short", "ä¾å«è¥å¤§é—¨");
         set("long", @LONG
-ÕâÀïÊÇ¾©³ÇÊÌÎÀÃÇµÄµØÅÌ¡£´óÃÅËäÈ»²»ÈçÍõ¹«´ó³¼¸®µÚµÄºÀ»ª
-À«´Â£¬¿ÉÒ²ÊÇºÁ²»º¬ºýµÄ¡£ÊÌÎÀÃÇÆ½ÈÕÓãÈâÏçÀï£¬¾©³Ç°ÙÐÕ×ßµ½Õâ¶ù
-¿É¶¼ÊÇÐ¡ÐÄ½÷É÷£¬¼ûÁËÊÌÎÀÃÇ¾ÍÅãÐ¦Á³¡£
+è¿™é‡Œæ˜¯äº¬åŸŽä¾å«ä»¬çš„åœ°ç›˜ã€‚å¤§é—¨è™½ç„¶ä¸å¦‚çŽ‹å…¬å¤§è‡£åºœç¬¬çš„è±ªåŽ
+é˜”ç»°ï¼Œå¯ä¹Ÿæ˜¯æ¯«ä¸å«ç³Šçš„ã€‚ä¾å«ä»¬å¹³æ—¥é±¼è‚‰ä¹¡é‡Œï¼Œäº¬åŸŽç™¾å§“èµ°åˆ°è¿™å„¿
+å¯éƒ½æ˜¯å°å¿ƒè°¨æ…Žï¼Œè§äº†ä¾å«ä»¬å°±é™ªç¬‘è„¸ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
     if (dir == "enter") {
 	if (!IS_SHIWEI(me) && !wizardp(me)) {
 	    if (present("shiwei", environment(me))) {
-		return notify_fail("ÃÅ±ßµÄÊÌÎÀÉìÊÖ°ÑÄã¸øÀ¹×¡ÁË¡£\n");
+		return notify_fail("é—¨è¾¹çš„ä¾å«ä¼¸æ‰‹æŠŠä½ ç»™æ‹¦ä½äº†ã€‚\n");
 	    }
 	}
     }

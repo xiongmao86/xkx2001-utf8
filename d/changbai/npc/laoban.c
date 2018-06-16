@@ -6,11 +6,11 @@ inherit F_DEALER;
 
 void create()
 {
-	set_name("¾Æ¹İÀÏ°å", ({ "lao ban"}) );
-	set("gender", "ÄĞĞÔ" );
+	set_name("é…’é¦†è€æ¿", ({ "lao ban"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 50);
 	set("long",
-		"ÕâÊÇÒ»¸öÏÊ×åÈË£¬Í·²øÒ»Ìõ°×Ã«½í£¬ÂúÁ³´ø×ÅĞ¦Èİ¡£\n");
+		"è¿™æ˜¯ä¸€ä¸ªé²œæ—äººï¼Œå¤´ç¼ ä¸€æ¡ç™½æ¯›å·¾ï¼Œæ»¡è„¸å¸¦ç€ç¬‘å®¹ã€‚\n");
 
 	set("combat_exp", 3000);
         set("str", 17);
@@ -41,7 +41,7 @@ void init()
         ::init();
         if( interactive(ob) && !is_fighting() ) {
                 if ( (myfam = ob->query("family")) 
-                && myfam["family_name"] == "Ø¤°ï" 
+                && myfam["family_name"] == "ä¸å¸®" 
                 && ob->query_skill("begging",1) > 10 )
                 {
                         remove_call_out("saying");
@@ -62,14 +62,14 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        say("¾Æ¹İÀÏ°åµÃÒâµÄËµµÀ£º¡°ÕâÃ´ÀäµÄÌì£¬ºÈÍë¹·ÈâÌÀÊÇ×îÄÜÅ¯ºÍÉí×ÓµÄ£¡\n");
+        say("é…’é¦†è€æ¿å¾—æ„çš„è¯´é“ï¼šâ€œè¿™ä¹ˆå†·çš„å¤©ï¼Œå–ç¢—ç‹—è‚‰æ±¤æ˜¯æœ€èƒ½æš–å’Œèº«å­çš„ï¼\n");
 }
 
 void saying(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
 
-        say("\n¾Æ¹İÀÏ°å´óºÈÒ»Éù£ºÄãÕâ³ôÒª·¹µÄ½øÀ´¸ÉÊ²÷á£¿ ¸øÎÒ¹ö³öÈ¥£¡\n\n");
+        say("\né…’é¦†è€æ¿å¤§å–ä¸€å£°ï¼šä½ è¿™è‡­è¦é¥­çš„è¿›æ¥å¹²ä»€éº½ï¼Ÿ ç»™æˆ‘æ»šå‡ºå»ï¼\n\n");
         remove_call_out("kicking");
         call_out("kicking", 1, ob);
 
@@ -80,12 +80,12 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
         ob->move("/d/changbai/nancheng");
-        message("vision","Ö»Ìı¡°Æ¹¡±µØÒ»Éù£¬" +  ob->query("name") +
-                "±»ÈË´ÓÏãÈâ¹İÀïÒ»½ÅÌßÁË³öÀ´£¬ÀÇ±·Íò×´µÄÌÓ¿ªÁË¡£\n", environment(ob), ob);
+        message("vision","åªå¬â€œä¹’â€åœ°ä¸€å£°ï¼Œ" +  ob->query("name") +
+                "è¢«äººä»é¦™è‚‰é¦†é‡Œä¸€è„šè¸¢äº†å‡ºæ¥ï¼Œç‹¼ç‹ˆä¸‡çŠ¶çš„é€ƒå¼€äº†ã€‚\n", environment(ob), ob);
 }
 
 int accept_kill(object obj)
 {
-        command("chat ¸÷Î»¿Í¹Ù¾ÈÃü°¡£¡ " + obj->name() + "Õâ¸ö" 
-        + RANK_D->query_rude(obj) + "ÒªÉ±ÁËÎÒ£¡");
+        command("chat å„ä½å®¢å®˜æ•‘å‘½å•Šï¼ " + obj->name() + "è¿™ä¸ª" 
+        + RANK_D->query_rude(obj) + "è¦æ€äº†æˆ‘ï¼");
 }

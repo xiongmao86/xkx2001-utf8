@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ʯ��·");
+	set("short", "石板路");
 	set("long", @LONG
-����һ����ʯ��·���������˲��ٰ������Ե�ׯ�����¡������Ǹ���԰��һ
-����Ũ���Ļ����˱Ƕ�����
+这是一条青石板路，两边种了不少柏树，显得庄严肃穆。西面是个花园，一
+阵阵浓郁的花香扑鼻而来。
 LONG);
 	set("exits", ([
 		"north" : __DIR__"wangfu4.c",

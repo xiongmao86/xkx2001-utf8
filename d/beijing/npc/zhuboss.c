@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zhuseller ÑîÕÆ¹ñ
+// zhuseller æ¨æŒæŸœ
 
 #include <ansi.h>
 #include <dbase.h>
@@ -11,15 +11,15 @@ string ask_me();
 
 void create()
 {
-	set_name("ÑîÕÆ¹ñ", ({ "yang zhanggui", "yang" }));
+	set_name("æ¨æŒæŸœ", ({ "yang zhanggui", "yang" }));
         set_color("$YEL$");
-	set("title", "Öé±¦µêÕÆ¹ñ");
+	set("title", "ç å®åº—æŒæŸœ");
 	set("shen_type", 1);
 
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long", "ÑîÕÆ¹ñÒ»¸±¾«Ã÷ÄÜ¸ÉµÄÑù×Ó£¬¸÷Ê½½ğÒøÖé±¦ËûÒ»ÑÛ±ãÄÜËµ³ö¼ÛÇ®À´¡£\n");
+	set("long", "æ¨æŒæŸœä¸€å‰¯ç²¾æ˜èƒ½å¹²çš„æ ·å­ï¼Œå„å¼é‡‘é“¶ç å®ä»–ä¸€çœ¼ä¾¿èƒ½è¯´å‡ºä»·é’±æ¥ã€‚\n");
 	set("combat_exp", 20000);
         set("qi", 300);
         set("max_qi", 300);
@@ -57,5 +57,5 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        command("say »¶Ó­¹âÁÙ£¬ÕâÎ»"+RANK_D->query_respect(ob)+"ÇëËæ±ã²Î¹Û¡£Ğ¡µê±£Ö¤»õÕæ¼ÛÊµ¡£");
+        command("say æ¬¢è¿å…‰ä¸´ï¼Œè¿™ä½"+RANK_D->query_respect(ob)+"è¯·éšä¾¿å‚è§‚ã€‚å°åº—ä¿è¯è´§çœŸä»·å®ã€‚");
 }

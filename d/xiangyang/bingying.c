@@ -5,12 +5,12 @@ inherit ROOM;
 #include <room.h>
 void create()
 {
-	set("short", "±øÓª");
+	set("short", "å…µè¥");
 	set("long", @LONG
-ÄãÕı´¦ÔÚ±øÓªÖĞ£¬ËÄÖÜÃÜÃÜÂéÂéµ½´¦¶¼ÊÇ¹Ù±ø¡£ÎªÁËÓ¦¸¶ËæÊ±¶øÀ´µÄÃÉ¹Å´ó
-¾ü£¬¶¼ÔÚ´øÍ·Îä½«µÄÖ¸»ÓÏÂÁĞ¶Ó¼Ó½ô²ÙÁ·¡£ÄÏÇ½ÏÂ×ø×ÅÖ÷½«£¬²»¶¯ÉùÉ«À´»ØÑ°ÊÓ
-×ÅËÄÖÜ¡£ÄÏ±ß¸ßÇ½ÉîÔº£¬ÓĞÒ»ÉÈÌúÃÅ(door)ÔÚÄÏÇ½Ö®ÏÂ¡£Î÷È¥¼´ÊÇ¼¯±øÈÃÖ÷Ë§¼ò
-ÔÄµÄĞ£Ê¿Ì¨¡£
+ä½ æ­£å¤„åœ¨å…µè¥ä¸­ï¼Œå››å‘¨å¯†å¯†éº»éº»åˆ°å¤„éƒ½æ˜¯å®˜å…µã€‚ä¸ºäº†åº”ä»˜éšæ—¶è€Œæ¥çš„è’™å¤å¤§
+å†›ï¼Œéƒ½åœ¨å¸¦å¤´æ­¦å°†çš„æŒ‡æŒ¥ä¸‹åˆ—é˜ŸåŠ ç´§æ“ç»ƒã€‚å—å¢™ä¸‹åç€ä¸»å°†ï¼Œä¸åŠ¨å£°è‰²æ¥å›å¯»è§†
+ç€å››å‘¨ã€‚å—è¾¹é«˜å¢™æ·±é™¢ï¼Œæœ‰ä¸€æ‰‡é“é—¨(door)åœ¨å—å¢™ä¹‹ä¸‹ã€‚è¥¿å»å³æ˜¯é›†å…µè®©ä¸»å¸…ç®€
+é˜…çš„æ ¡å£«å°ã€‚
 LONG
 	);
 	set("outdoors", "xiangyang");
@@ -23,7 +23,7 @@ LONG
   "south" : __DIR__"dalao",
 ]));
 
-	create_door("south", "ÌúÃÅ", "north", DOOR_CLOSED);
+	create_door("south", "é“é—¨", "north", DOOR_CLOSED);
 	setup();
 	replace_program(ROOM);
 }
@@ -32,6 +32,6 @@ int valid_leave(object me, string dir)
 {
 	if (!wizardp(me) && objectp(present("guan bing", environment(me))) && 
 		dir == "south")
-		return notify_fail("¹Ù±øÀ¹×¡ÁËÄãµÄÈ¥Â·¡£\n");
+		return notify_fail("å®˜å…µæ‹¦ä½äº†ä½ çš„å»è·¯ã€‚\n");
 	return ::valid_leave(me, dir);
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// fengding.c ·å¶¥
+// fengding.c å³°é¡¶
 // qfy Dec 4, 1996.
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "·å¶¥");
+	set("short", "å³°é¡¶");
 	set("long", @LONG
-·å¶¥Î÷ÃæÓĞÒ»´¦¾ø±Ú(cliff)¡£Õâ¾ø±ÚÒ»Ãæ½ÏĞ±£¬ÉĞ¿ÉÅÊÔ®£»ÁíÒ»Ãæ
-È´ÈçÒ»´ó¶ÂÆ½Ç½£¬ºÁÎŞ¿ÉÈİÊÖ×ãÖ®´¦¡£·å¶¥ÉÏÓĞ×Å¼¸Öê¹ÅËÉ(tree)¡£
+å³°é¡¶è¥¿é¢æœ‰ä¸€å¤„ç»å£(cliff)ã€‚è¿™ç»å£ä¸€é¢è¾ƒæ–œï¼Œå°šå¯æ”€æ´ï¼›å¦ä¸€é¢
+å´å¦‚ä¸€å¤§å µå¹³å¢™ï¼Œæ¯«æ— å¯å®¹æ‰‹è¶³ä¹‹å¤„ã€‚å³°é¡¶ä¸Šæœ‰ç€å‡ æ ªå¤æ¾(tree)ã€‚
 LONG
 	);
 
@@ -19,8 +19,8 @@ LONG
 	]));
 
 	set("item_desc", ([
-		"tree" : "¹ÅËÉÊ÷¸É´Ö´ó£¬ĞÎÌ¬¹Å×¾£¬ÅÂÒÑ²»ÏÂ¼¸°ÙÄêËÉÁä¡£\n",
-		"cliff": "¾ø±ÚÏÂ¸¡ÔÆÆ®Æ®£¬²»ÄÜ¼ûµ×£¬²»ÖªÓĞ¶àÉî¡£\n",
+		"tree" : "å¤æ¾æ ‘å¹²ç²—å¤§ï¼Œå½¢æ€å¤æ‹™ï¼Œæ€•å·²ä¸ä¸‹å‡ ç™¾å¹´æ¾é¾„ã€‚\n",
+		"cliff": "ç»å£ä¸‹æµ®äº‘é£˜é£˜ï¼Œä¸èƒ½è§åº•ï¼Œä¸çŸ¥æœ‰å¤šæ·±ã€‚\n",
 	])  ) ;
 
 	set("no_clean_up", 0);
@@ -56,14 +56,14 @@ int do_jump(string arg)
 	if ( arg == "cliff" ) {
 		inv = all_inventory(me);
 
-		message_vision("$N×İÉíÍù¾ø±ÚÌøÏÂ£¡\n", me);
+		message_vision("$Nçºµèº«å¾€ç»å£è·³ä¸‹ï¼\n", me);
 		me->move(__DIR__"cliff");
-		message("vision", me->name()+"ÓÉ·å¶¥ÉÏÖ±×¹ÏÂÀ´!\n", environment(me), ({me}) );
-		me->receive_wound("qi", me->query("max_qi")+100, "ÌøÏÂ¾ø±ÚË¤µÃ·ÛÉíËé¹ÇÁË");
+		message("vision", me->name()+"ç”±å³°é¡¶ä¸Šç›´å ä¸‹æ¥!\n", environment(me), ({me}) );
+		me->receive_wound("qi", me->query("max_qi")+100, "è·³ä¸‹ç»å£æ‘”å¾—ç²‰èº«ç¢éª¨äº†");
 		call_out("destroy_corpse", 1);
 
 		for (i=0; i<sizeof(inv); i++) {
-			if (inv[i]->is_character()) inv[i]->receive_wound("qi", inv[i]->query("max_qi")+100, "Ë¤ÏÂ¾ø±ÚµøµÃ·ÛÉíËé¹ÇÁË");
+			if (inv[i]->is_character()) inv[i]->receive_wound("qi", inv[i]->query("max_qi")+100, "æ‘”ä¸‹ç»å£è·Œå¾—ç²‰èº«ç¢éª¨äº†");
 		}
 
 		return 1;
@@ -80,9 +80,9 @@ int do_tie(string arg)
 
 	if ( arg == "tree" ) {
 		if ( !present("sheng zi", me) )
-			write("ÄãÄÃÊ²Ã´À´°óÊ÷°¡£¿\n");
+			write("ä½ æ‹¿ä»€ä¹ˆæ¥ç»‘æ ‘å•Šï¼Ÿ\n");
 		else {
-			message_vision("$N½«Éş×Ó×ĞÏ¸µØÔÚËÉÊ÷ÉÏÀ¦°óºÃ¡£\n", me);
+			message_vision("$Nå°†ç»³å­ä»”ç»†åœ°åœ¨æ¾æ ‘ä¸Šæ†ç»‘å¥½ã€‚\n", me);
 			me->set_temp("tied", 1);
 		}
 
@@ -97,33 +97,33 @@ int do_climb(string arg)
 	object me = this_player();
 
 	if ( arg && arg != "down" )
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 	if(me->query_encumbrance() * 10 / me->query_max_encumbrance() > 10/100)
-		return notify_fail("Äã¸ºÖØÌ«¶à£¬Éí×ÓÌÚÅ²²»¿ª¡£\n");
+		return notify_fail("ä½ è´Ÿé‡å¤ªå¤šï¼Œèº«å­è…¾æŒªä¸å¼€ã€‚\n");
 
 	if ( !me->query_temp("tied") )
-		return notify_fail("Ã»¶«Î÷Ö§³ÅÄãÔõÃ´ÅÀÑ½£¿\n");
+		return notify_fail("æ²¡ä¸œè¥¿æ”¯æ’‘ä½ æ€ä¹ˆçˆ¬å‘€ï¼Ÿ\n");
 
-	message_vision("$NÀ­×ÅÉş×Ó¿ªÊ¼ÍùÏÂÅÀ¡£\n", me);
-	message("vision", me->name()+"Ò»»á¶ù±ãÏûÊ§ÔÚÔÆÆøÀïÁË¡£\n", environment(me), ({me}) );
-	tell_object(me, "ÄãÏòÏÂÒ»Íû£¬Ö»¼û½ÅÏÂÎíÆøÒ»ÍÅÍÅµÄËæ·çÆ®¹ıÈ´¿´²»¼ûµØ£¬²»ÓÉµÃĞÄ¾ªµ¨Ìø£¡\n");
+	message_vision("$Næ‹‰ç€ç»³å­å¼€å§‹å¾€ä¸‹çˆ¬ã€‚\n", me);
+	message("vision", me->name()+"ä¸€ä¼šå„¿ä¾¿æ¶ˆå¤±åœ¨äº‘æ°”é‡Œäº†ã€‚\n", environment(me), ({me}) );
+	tell_object(me, "ä½ å‘ä¸‹ä¸€æœ›ï¼Œåªè§è„šä¸‹é›¾æ°”ä¸€å›¢å›¢çš„éšé£é£˜è¿‡å´çœ‹ä¸è§åœ°ï¼Œä¸ç”±å¾—å¿ƒæƒŠèƒ†è·³ï¼\n");
 
 	if ( !me->query("jinshe") && me->query("str") <= 15 
 	&& me->query("con") >= 25 && me->query_skill("dodge") > 50 ) {
 		me->move(__DIR__"cliff");
-		message("vision", me->name()+"ÓÉ·å¶¥ÅÀÁËÏÂÀ´¡£\n", environment(me), ({me}) );
+		message("vision", me->name()+"ç”±å³°é¡¶çˆ¬äº†ä¸‹æ¥ã€‚\n", environment(me), ({me}) );
 	}
 	else if ( me->query("jinshe") ) {
 		me->move(__DIR__"cliff");
-		message("vision", me->name()+"ÓÉ·å¶¥ÅÀÁËÏÂÀ´¡£\n", environment(me), ({me}) );
+		message("vision", me->name()+"ç”±å³°é¡¶çˆ¬äº†ä¸‹æ¥ã€‚\n", environment(me), ({me}) );
 	}
 	else {
-		tell_object(me, HIR"Í»È»¼äÉş×Ó¡°Å¾¡±µØÒ»Éù¶ÏÁË£¬Äã·¢³öÒ»Á¬´®ÆàÀúµÄ²Òº¿£¬Éí²»ÓÉÖ÷µØÍù¾ø±ÚÏÂ×¹Âä£¡\n"NOR);
+		tell_object(me, HIR"çªç„¶é—´ç»³å­â€œå•ªâ€åœ°ä¸€å£°æ–­äº†ï¼Œä½ å‘å‡ºä¸€è¿ä¸²å‡„å†çš„æƒ¨åšï¼Œèº«ä¸ç”±ä¸»åœ°å¾€ç»å£ä¸‹å è½ï¼\n"NOR);
 		me->delete_temp("tied");
 		me->move(__DIR__"cliff");
-		message("vision", me->name()+"ÓÉ·å¶¥ÉÏÖ±×¹ÏÂÀ´!\n", environment(me), ({me}) );
-		me->receive_wound("qi", me->query("max_qi")+100, "µøÏÂ¾ø±ÚË¤ËÀÁË");
+		message("vision", me->name()+"ç”±å³°é¡¶ä¸Šç›´å ä¸‹æ¥!\n", environment(me), ({me}) );
+		me->receive_wound("qi", me->query("max_qi")+100, "è·Œä¸‹ç»å£æ‘”æ­»äº†");
 		call_out("destroy_corpse", 1);
 	}
 

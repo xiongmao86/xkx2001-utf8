@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��ĵ�");
+        set("short", "山间荒地");
         set("long", @LONG
-��վ����ɽ��Ļĵ��ϣ�������ȥ�����ǿ����ܲݣ�˷����ɱ�����ó�����
-��������������һƬƽ�أ����߽���ɽ�����
+你站在两山间的荒地上，放眼望去，尽是枯树败草，朔风萧杀，吹得长草起
+伏不定。东边是一片平地，北边进入山谷深处。
 LONG
         );
 	switch(random(4)){

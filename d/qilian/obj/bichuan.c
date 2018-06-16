@@ -6,13 +6,13 @@ inherit HANDS;
 
 void create()
 {
-	set_name( HIY "±ÛîË" NOR, ({ "bi chuan", "chuan" }) );
+	set_name( HIY "è‡‚é’" NOR, ({ "bi chuan", "chuan" }) );
 	set_weight(200);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»ÒøÖÆµÄ±ÛîË£¬ÉÏÃæÅÌ×ÅÒ»ÌõĞ¡Éß¡£\n");
+		set("unit", "åª");
+                set("long", "è¿™æ˜¯ä¸€é“¶åˆ¶çš„è‡‚é’ï¼Œä¸Šé¢ç›˜ç€ä¸€æ¡å°è›‡ã€‚\n");
 		set("value", 150);
 		set("material", "hands");
 		set("armor_prop/armor", 4);

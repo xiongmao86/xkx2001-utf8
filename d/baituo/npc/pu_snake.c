@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pu_snake.c ÆĞË¹ÇúÉß
+// pu_snake.c è©æ–¯æ›²è›‡
 // by maco
 
 #include <ansi.h>
@@ -9,11 +9,11 @@ inherit NPC;
 void create()
 {
 	int poison = 8;
-	set_name("ÆĞË¹ÇúÉß", ({ "pusiqu she", "snake", "she", "pusiqu" }) );
+	set_name("è©æ–¯æ›²è›‡", ({ "pusiqu she", "snake", "she", "pusiqu" }) );
 	set_color("$HIY$");
-	set("race", "ÉßÀà");
+	set("race", "è›‡ç±»");
 	set("age", 100);
-	set("long", "ÕâÉßÉíÉÏ½ğ¹âÉÁÉÁ£¬Í·¶¥ÉúÓĞÈâ½Ç£¬ĞÎ×´Ê®·Ö¹ÖÒì¡£\n·ğ¾­ÉÏÔøÓĞ¼ÇÔØ£¬³ÆÎªÆĞË¹ÇúÉß£¬ÌıËµ´ËÉßĞĞ×ßÈç·ç£¬¼«ÄÑ²¶×½¡£\n");
+	set("long", "è¿™è›‡èº«ä¸Šé‡‘å…‰é—ªé—ªï¼Œå¤´é¡¶ç”Ÿæœ‰è‚‰è§’ï¼Œå½¢çŠ¶ååˆ†æ€ªå¼‚ã€‚\nä½›ç»ä¸Šæ›¾æœ‰è®°è½½ï¼Œç§°ä¸ºè©æ–¯æ›²è›‡ï¼Œå¬è¯´æ­¤è›‡è¡Œèµ°å¦‚é£ï¼Œæéš¾æ•æ‰ã€‚\n");
 	set("attitude", "peaceful");
 
 	set_weight(poison*600 + 9000);
@@ -26,7 +26,7 @@ void create()
 	set("max_qi", 4000);
 	set("max_jingli", 4000);
 
-	set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í", "Èâ½Ç" }) );
+	set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´", "è‚‰è§’" }) );
 	set("verbs", ({ "bite" }) );
 
 	set("combat_exp", 1000000);
@@ -56,11 +56,11 @@ void init()
 void unconcious()
 {	
 	if(random(4) == 0 ) {
-		message_vision("ÆĞË¹ÇúÉßòêÑÑÅÌĞĞ£¬ÈçÒ»Õó·ç°ã¼±´Ü¶øÌÓ£¬Çê¿ÌÖ®¼äÒÑÎŞÓ°ÎŞ×Ù¡£\n", this_object());
+		message_vision("è©æ–¯æ›²è›‡èœ¿èœ’ç›˜è¡Œï¼Œå¦‚ä¸€é˜µé£èˆ¬æ€¥çªœè€Œé€ƒï¼Œé¡·åˆ»ä¹‹é—´å·²æ— å½±æ— è¸ªã€‚\n", this_object());
 		destruct(this_object());
 	}
 	else {
-		this_object()->disable_player(" <»èÃÔ²»ĞÑ>");
+		this_object()->disable_player(" <æ˜è¿·ä¸é†’>");
 		this_object()->set("jing", 0);
 		this_object()->set("qi", 0);
 		COMBAT_D->announce(this_object(), "unconcious");
@@ -71,10 +71,10 @@ void unconcious()
 void die()
 {
 	object ob;
-	message_vision("$NÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎèÒ»Õó£¬ÂıÂı½©Ö±¶øËÀ¡£\n", this_object());
+	message_vision("$Nå…¨èº«æ‰­æ›²ï¼Œç¿»è…¾æŒ¥èˆä¸€é˜µï¼Œæ…¢æ…¢åƒµç›´è€Œæ­»ã€‚\n", this_object());
 	ob = new(DRUG_D("mangshe-dan"));
-	ob->set("name","ÆĞË¹ÇúÉßµ¨");
-	ob->set("long", "Ò»Ã¶Éî×ÏÉ«µÄÉßµ¨£¬ÉõÊÇĞÈ³ô¡£\n");
+	ob->set("name","è©æ–¯æ›²è›‡èƒ†");
+	ob->set("long", "ä¸€æšæ·±ç´«è‰²çš„è›‡èƒ†ï¼Œç”šæ˜¯è…¥è‡­ã€‚\n");
 	ob->move(environment(this_object()));
 	destruct(this_object());
 }

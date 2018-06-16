@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("¿œ∫Õ…–", ({"seng ren","heshang"}));
+	set_name("ËÄÅÂíåÂ∞ö", ({"seng ren","heshang"}));
 	set("long",
-		"À˚ «“ªŒª¿œ∫Õ…–£¨π« ›»Á≤Ò£¨…Ì…œµƒÙ¬Ùƒ¥Ú¬˙¡À≤π∂°°£\n"
+		"‰ªñÊòØ‰∏Ä‰ΩçËÄÅÂíåÂ∞öÔºåÈ™®Áò¶Â¶ÇÊü¥ÔºåË∫´‰∏äÁöÑË¢àË£üÊâìÊª°‰∫ÜË°•‰∏Å„ÄÇ\n"
 	);
 
-	set("gender", "ƒ––‘");
+	set("gender", "Áî∑ÊÄß");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -40,10 +40,10 @@ void create()
 
 int accept_object(object me, object obj)
 {
-	if( obj->query("name") == "Ω∏’æ≠" )
+	if( obj->query("name") == "ÈáëÂàöÁªè" )
 	{
 		command("smile");
-		command("say ∞¢ÂÙÕ”∑£¨∂‡–ª’‚Œª" + RANK_D->query_respect(me) + "¡À £°");
+		command("say ÈòøÂº≠ÈôÄ‰ΩõÔºåÂ§öË∞¢Ëøô‰Ωç" + RANK_D->query_respect(me) + "‰∫Ü ÔºÅ");
 	}
 
 	return 1;

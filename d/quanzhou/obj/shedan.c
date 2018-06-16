@@ -6,9 +6,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name("òşÉßµ¨", ({"shedan", "dan" }));
-        set("unit", "Ã¶");
-        set("long", "Ò»Ã¶Éî×ÏÉ«µÄòşÉßµ¨£¬ÉõÊÇĞÈ³ô¡£\n");
+        set_name("èŸ’è›‡èƒ†", ({"shedan", "dan" }));
+        set("unit", "æš");
+        set("long", "ä¸€æšæ·±ç´«è‰²çš„èŸ’è›‡èƒ†ï¼Œç”šæ˜¯è…¥è‡­ã€‚\n");
         set("value", 800);
         setup();
 }

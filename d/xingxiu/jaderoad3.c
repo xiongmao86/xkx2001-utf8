@@ -1,5 +1,5 @@
 //Cracked by Roath
-// °×Óñ·å
+// ç™½ç‰å³°
 // maco
 #include <ansi.h>
 
@@ -13,7 +13,7 @@ string look_skeleton();
 
 void create()
 {
-	set("short", "°×ÓñÍ¨µÀ");
+	set("short", "ç™½ç‰é€šé“");
 	set("long", (: look_long :));
 
 	set("exits", ([
@@ -41,9 +41,9 @@ string look_long()
 	object armor = new("/d/xingxiu/obj/jinjia");
 	string desc;
 	desc = 
-	"Ò»Ìõ³¤³¤µÄğ®µÀ£¬Ç°ÃæÉ½Ê¯×èÂ·£¬¾¡Í·´¦ÓĞÒ»µÀÊ¯ÃÅ(door)¡£\n";
+	"ä¸€æ¡é•¿é•¿çš„ç”¬é“ï¼Œå‰é¢å±±çŸ³é˜»è·¯ï¼Œå°½å¤´å¤„æœ‰ä¸€é“çŸ³é—¨(door)ã€‚\n";
 	if (armor) {
-	desc += HIY"Ö»¼û¾¡Í·´¦ÉÁÉÁÉú¹â£¬ËÆÓĞÒ»¶Ñ»Æ½ğ¡£"NOR+"×ß½ü¿´Ê±£¬È´ÊÇÒ»¸±»Æ½ğ¿ø¼×£¬\n¼×ëĞÖĞÊÇÒ»¶Ñ¿İ¹Ç(skeleton)¡£\n";
+	desc += HIY"åªè§å°½å¤´å¤„é—ªé—ªç”Ÿå…‰ï¼Œä¼¼æœ‰ä¸€å †é»„é‡‘ã€‚"NOR+"èµ°è¿‘çœ‹æ—¶ï¼Œå´æ˜¯ä¸€å‰¯é»„é‡‘ç›”ç”²ï¼Œ\nç”²èƒ„ä¸­æ˜¯ä¸€å †æ¯éª¨(skeleton)ã€‚\n";
 	destruct(armor);
 	}
 	else desc += "";
@@ -55,19 +55,19 @@ string look_door()
 	object axe = new("/clone/unique/jinfu");
 	string msg, desc;
 	if(axe) {
-	msg = HIY"½ğ¸«"NOR;
+	msg = HIY"é‡‘æ–§"NOR;
 	destruct(axe);
 	}
-	else msg = "¸Ö¸«";
+	else msg = "é’¢æ–§";
 
-	desc = "ÕâÃÅºñ´ïÕÉĞí£¬Ö±ÊÇÒ»¿é¾Ş´óµÄÑÒÊ¯¡£\n";
+	desc = "è¿™é—¨åšè¾¾ä¸ˆè®¸ï¼Œç›´æ˜¯ä¸€å—å·¨å¤§çš„å²©çŸ³ã€‚\n";
 	if(query("door_axe"))
-	desc += "Ò»°Ñ"+msg+"(axe)²åÔÚÓñÊ¯¾ŞÃÅµÄÃÅ»·(loop)Àï¡£\n";
+	desc += "ä¸€æŠŠ"+msg+"(axe)æ’åœ¨ç‰çŸ³å·¨é—¨çš„é—¨ç¯(loop)é‡Œã€‚\n";
 	if(query("door_lock")) 
-	desc += "ÉÏÏÂ×óÓÒ»¹ÓĞËÄ¸öÃÅ»·£¬¾ùÓĞÁ½³ß¶à³¤µÄ´Ö´óÌúÅ¥(lock)¿Û×¡¡£\n";
+	desc += "ä¸Šä¸‹å·¦å³è¿˜æœ‰å››ä¸ªé—¨ç¯ï¼Œå‡æœ‰ä¸¤å°ºå¤šé•¿çš„ç²—å¤§é“é’®(lock)æ‰£ä½ã€‚\n";
 
 	if(query("exits/enter"))
-	desc += "ÏÖÔÚÃÅÊÇ¿ª×ÅµÄ¡£\n";
+	desc += "ç°åœ¨é—¨æ˜¯å¼€ç€çš„ã€‚\n";
 	return desc;
 }
 
@@ -76,14 +76,14 @@ string look_axe()
 	object axe = new("/clone/unique/jinfu");
 	string msg, desc;
 	if(axe) {
-	msg = HIY"½ğ¸«"NOR;
+	msg = HIY"é‡‘æ–§"NOR;
 	destruct(axe);
 	}
-	else msg = "¸Ö¸«";
+	else msg = "é’¢æ–§";
 
 	if(!query("door_axe")) return 0;
 	
-	desc = msg+"²åÔÚÒ»¸ö´óÃÅ»·Àï¡£\n";
+	desc = msg+"æ’åœ¨ä¸€ä¸ªå¤§é—¨ç¯é‡Œã€‚\n";
 	return desc;
 }
 
@@ -91,8 +91,8 @@ string look_lock()
 {
 	string desc;
 	if(!query("door_lock"))
-	desc = "Ê¯ÃÅËÄ½ÇµÄÌúÅ¥¶¼ÏÆÆğÀ´ÁË¡£\n";
-	else desc = "ËÄ¸öÌúÅ¥¿Û×¡ÁËÊ¯ÃÅËÄ½Ç¡£\n";
+	desc = "çŸ³é—¨å››è§’çš„é“é’®éƒ½æ€èµ·æ¥äº†ã€‚\n";
+	else desc = "å››ä¸ªé“é’®æ‰£ä½äº†çŸ³é—¨å››è§’ã€‚\n";
 	return desc;
 }
 
@@ -101,13 +101,13 @@ string look_loop()
 	object axe = new("/clone/unique/jinfu");
 	string msg, desc;
 	if(axe) {
-	msg = HIY"½ğ¸«"NOR;
+	msg = HIY"é‡‘æ–§"NOR;
 	destruct(axe);
 	}
-	else msg = "¸Ö¸«";
+	else msg = "é’¢æ–§";
 
-	if(!query("door_axe")) desc = "Ò»¸ö´óÃÅ»·£¬±ãì¶ÓÃÒÔÀ­¿ª(pull)Ê¯ÃÅ¡£\n";	
-	else desc = "Ò»°Ñ"+msg+"²åÔÚÃÅ»·Àï¡£\n";
+	if(!query("door_axe")) desc = "ä¸€ä¸ªå¤§é—¨ç¯ï¼Œä¾¿æ–¼ç”¨ä»¥æ‹‰å¼€(pull)çŸ³é—¨ã€‚\n";	
+	else desc = "ä¸€æŠŠ"+msg+"æ’åœ¨é—¨ç¯é‡Œã€‚\n";
 	return desc;
 }
 
@@ -117,14 +117,14 @@ string look_skeleton()
 	object me = this_player();
 	string desc;
 	if(armor) {
-	message_vision("$N½«"+armor->name()+"´Óº¡¹ÇÉÏÈ¡ÏÂ£¬¿´ÁË¿´º¡¹Ç¡£\n", me);
+	message_vision("$Nå°†"+armor->name()+"ä»éª¸éª¨ä¸Šå–ä¸‹ï¼Œçœ‹äº†çœ‹éª¸éª¨ã€‚\n", me);
 
-	desc = "Õâº¡¹ÇÉúÇ°»òĞí»¹ÊÇ¸ö¹úÍõ»òÕßÊÇÍõ×Ó¡£Î÷Óò¹Å¹úÖĞ£¬Ö»ÓĞ¹úÍõ²ÅÄÜÒÔ·ÉÂæÍÕ×÷»Õ¼Ç¡£\n";	
-	CHANNEL_D->do_channel(me, "rumor", sprintf("%sÅªµ½ÁËÒ»¸±»Æ½ğ¿ø¼×¡£", me->query("name")));
+	desc = "è¿™éª¸éª¨ç”Ÿå‰æˆ–è®¸è¿˜æ˜¯ä¸ªå›½ç‹æˆ–è€…æ˜¯ç‹å­ã€‚è¥¿åŸŸå¤å›½ä¸­ï¼Œåªæœ‰å›½ç‹æ‰èƒ½ä»¥é£éª†é©¼ä½œå¾½è®°ã€‚\n";	
+	CHANNEL_D->do_channel(me, "rumor", sprintf("%så¼„åˆ°äº†ä¸€å‰¯é»„é‡‘ç›”ç”²ã€‚", me->query("name")));
 	armor->move(this_player());
 	return desc;
 	}
-	else return "ÄãÒª¿´Ê²Ã´£¿\n";
+	else return "ä½ è¦çœ‹ä»€ä¹ˆï¼Ÿ\n";
 }
 
 void init()
@@ -141,33 +141,33 @@ int do_scrape(string arg)
 
 	me = this_player();
 	
-	if( !arg || arg=="" ) return notify_fail("ÄãÒª¹ÎÊ²÷á¶«Î÷£¿\n");
+	if( !arg || arg=="" ) return notify_fail("ä½ è¦åˆ®ä»€éº½ä¸œè¥¿ï¼Ÿ\n");
 
 	if (me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( !objectp(weapon = me->query_temp("weapon")) ) 
-		return notify_fail("ÄãµÃÕÒĞ©³ÆÊÖµÄ¹¤¾ß¡£\n");
+		return notify_fail("ä½ å¾—æ‰¾äº›ç§°æ‰‹çš„å·¥å…·ã€‚\n");
 
 	type = weapon->query("skill_type");
 	if(type != "sword" && type != "blade" && type != "axe" ) 
-		return notify_fail(weapon->name()+"²»ÊÊºÏÓÃÀ´¹ÎÌúĞâ¡£\n");
+		return notify_fail(weapon->name()+"ä¸é€‚åˆç”¨æ¥åˆ®é“é”ˆã€‚\n");
 
 	if( arg == "door")
-		return notify_fail("ÓñÊ¯¾ŞÃÅÉÏÃ»Ê²÷áºÃ¹ÎµÄ¡£\n");
+		return notify_fail("ç‰çŸ³å·¨é—¨ä¸Šæ²¡ä»€éº½å¥½åˆ®çš„ã€‚\n");
 
 	if( arg == "loop") {
 		if(!query("loop_rust")) 
-			return notify_fail("ÃÅ»·ÉÏµÄÌúĞâÒÑ¾­¹ÎµÃÇ¬Ç¬¾»¾»ÁË¡£\n");
-	message_vision("$NÓÃ"+weapon->name()+"¹ÎÈ¥ÃÅ»·ÉÏµÄÌúĞâ¡£\n", me);
+			return notify_fail("é—¨ç¯ä¸Šçš„é“é”ˆå·²ç»åˆ®å¾—ä¹¾ä¹¾å‡€å‡€äº†ã€‚\n");
+	message_vision("$Nç”¨"+weapon->name()+"åˆ®å»é—¨ç¯ä¸Šçš„é“é”ˆã€‚\n", me);
 	me->add("jingli", -30);
 	delete("loop_rust");
 	return 1;
 	}
 	if( arg == "lock") {
 		if(!query("lock_rust")) 
-			return notify_fail("ÌúÅ¥ÉÏµÄÌúĞâÒÑ¾­¹ÎµÃÇ¬Ç¬¾»¾»ÁË¡£\n");
-	message_vision("$NÓÃ"+weapon->name()+"¹ÎÈ¥ËÄ¸öÌúÅ¥ÉÏµÄÌúĞâ¡£\n", me);
+			return notify_fail("é“é’®ä¸Šçš„é“é”ˆå·²ç»åˆ®å¾—ä¹¾ä¹¾å‡€å‡€äº†ã€‚\n");
+	message_vision("$Nç”¨"+weapon->name()+"åˆ®å»å››ä¸ªé“é’®ä¸Šçš„é“é”ˆã€‚\n", me);
 	me->add("jingli", -120);
 	me->start_busy(1);
 	delete("lock_rust");
@@ -185,29 +185,29 @@ int do_pull(string arg)
 
 	me = this_player();
 
-	if( !arg || arg=="" ) return notify_fail("ÄãÒªÀ­Ê²÷á£¿\n");
+	if( !arg || arg=="" ) return notify_fail("ä½ è¦æ‹‰ä»€éº½ï¼Ÿ\n");
 
 	if( arg=="axe" )
 	{
 		axe = new("/clone/unique/jinfu");
 
-		if(axe) msg = HIY"½ğ¸«"NOR;
+		if(axe) msg = HIY"é‡‘æ–§"NOR;
 		else {
-		msg = "¸Ö¸«";
+		msg = "é’¢æ–§";
 		axe = new("/d/dali/obj/gangfu");
 		}
 
 		if(!query("door_axe"))
-			return notify_fail("ÄãÒªÀ­Ê²÷á£¿\n");
+			return notify_fail("ä½ è¦æ‹‰ä»€éº½ï¼Ÿ\n");
 
 		if(query("loop_rust")) {
 			destruct(axe);
-			return notify_fail("ÄãÉìÊÖÈ¥°Î"+msg+"£¬µ«ÃÅ»·ÉÏµÄÌúĞâÒÑĞâ×¡¸«±ú£¬È¡²»³öÀ´£¬¿´À´µÃÏÈ¹Îµô(scrape)ÌúĞâ¡£\n");
+			return notify_fail("ä½ ä¼¸æ‰‹å»æ‹”"+msg+"ï¼Œä½†é—¨ç¯ä¸Šçš„é“é”ˆå·²é”ˆä½æ–§æŸ„ï¼Œå–ä¸å‡ºæ¥ï¼Œçœ‹æ¥å¾—å…ˆåˆ®æ‰(scrape)é“é”ˆã€‚\n");
 		}
-		message_vision("$NË«ÊÖ°Î³ö"+msg+"£¬ÈëÊÖÉõÊÇ³ÁÖØ¡£\n", me);
+		message_vision("$NåŒæ‰‹æ‹”å‡º"+msg+"ï¼Œå…¥æ‰‹ç”šæ˜¯æ²‰é‡ã€‚\n", me);
 		axe->move(me);
 		delete("door_axe");
-		if(msg == HIY"½ğ¸«"NOR) CHANNEL_D->do_channel(me, "rumor", sprintf("%sÅªµ½ÁËÒ»°Ñ»Æ½ğ¸«¡£", me->query("name")));
+		if(msg == HIY"é‡‘æ–§"NOR) CHANNEL_D->do_channel(me, "rumor", sprintf("%så¼„åˆ°äº†ä¸€æŠŠé»„é‡‘æ–§ã€‚", me->query("name")));
 
 		return 1;
 	}
@@ -215,29 +215,29 @@ int do_pull(string arg)
 	if( arg=="lock" )
 	{
 		if(!query("door_lock"))
-			return notify_fail("ÌúÅ¥ÒÑ¾­±»ÏÆÆğÀ´ÁË¡£\n");
+			return notify_fail("é“é’®å·²ç»è¢«æ€èµ·æ¥äº†ã€‚\n");
 
 		if(query("lock_rust")) 
-			return notify_fail("ÄãÉìÊÖÈ¥ÏÆÌúÅ¥£¬µ«ÌúÅ¥ÒÑ¾­ÉúĞâ£¬ÏÆ²»ÆğÀ´£¬¿´À´µÃÏÈ¹Îµô(scrape)ÌúĞâ¡£\n");
-		message_vision("$N½«ÌúÅ¥Ò»Ò»ÏÆÆğ¡£\n", me);
+			return notify_fail("ä½ ä¼¸æ‰‹å»æ€é“é’®ï¼Œä½†é“é’®å·²ç»ç”Ÿé”ˆï¼Œæ€ä¸èµ·æ¥ï¼Œçœ‹æ¥å¾—å…ˆåˆ®æ‰(scrape)é“é”ˆã€‚\n");
+		message_vision("$Nå°†é“é’®ä¸€ä¸€æ€èµ·ã€‚\n", me);
 		delete("door_lock");
 		return 1;
 	}
 	
-	if( arg=="door" ) return notify_fail("Ê¯ÃÅÉÏ¹âÁïÁïµÄÎŞ×ÅÊÖÖ®´¦£¬À­ÃÅ»·(loop)°É¡£\n");
+	if( arg=="door" ) return notify_fail("çŸ³é—¨ä¸Šå…‰æºœæºœçš„æ— ç€æ‰‹ä¹‹å¤„ï¼Œæ‹‰é—¨ç¯(loop)å§ã€‚\n");
 
 	if( arg=="loop" ) {
 		if(query("exits/enter")) {
-		message_vision("$NÊ¹¾¢À­¶¯ÃÅ»·£¬Ê¯ÃÅß´ß´µØÏìÁË¼¸Éù£¬½Ó×ÅÅîµÄÒ»Éù´óÏì£¬Ê¯ÃÅ¹ØÉÏÁË¡£\n", me);
+		message_vision("$Nä½¿åŠ²æ‹‰åŠ¨é—¨ç¯ï¼ŒçŸ³é—¨å½å½åœ°å“äº†å‡ å£°ï¼Œæ¥ç€è“¬çš„ä¸€å£°å¤§å“ï¼ŒçŸ³é—¨å…³ä¸Šäº†ã€‚\n", me);
 		delete("exits/enter");
 			if( room = find_object(__DIR__"jaderoad4") ) {
 			room->delete("exits/out");
-			message("vision", "Ö»ÌıµÃß´ß´Ö®Éù£¬½Ó×ÅÅîµÄÒ»Éù´óÏì£¬Ê¯ÃÅÒÑ´ÓÍâÃæ¸øÈË¹ØÉÏ¡£\n", room );
+			message("vision", "åªå¬å¾—å½å½ä¹‹å£°ï¼Œæ¥ç€è“¬çš„ä¸€å£°å¤§å“ï¼ŒçŸ³é—¨å·²ä»å¤–é¢ç»™äººå…³ä¸Šã€‚\n", room );
 			}
 		return 1;
 		}
 		else {
-		message_vision("$N×¥×¡ÃÅ»·ÏòÀïÒ»À­£¬ÓñÊ¯¾ŞÃÅÎÆË¿²»¶¯¡£\n", me);
+		message_vision("$NæŠ“ä½é—¨ç¯å‘é‡Œä¸€æ‹‰ï¼Œç‰çŸ³å·¨é—¨çº¹ä¸ä¸åŠ¨ã€‚\n", me);
 		return 1;
 		}
 	}
@@ -255,28 +255,28 @@ int do_push(string arg)
 	if( arg == "door") {
 
 	if (me->is_busy() || me->query_temp("pending/exercising"))
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if (query("exits/enter"))
-		return notify_fail("ÓñÊ¯¾ŞÃÅÒÑ¾­±»ÍÆ¿ªÁË¡£\n");
+		return notify_fail("ç‰çŸ³å·¨é—¨å·²ç»è¢«æ¨å¼€äº†ã€‚\n");
 
 	if(query("door_axe"))
-		return notify_fail("ÄãµÃÏÈ°Ñ´©¹ıÃÅ»·ÖĞµÄ¸«Í·°Î³ö(pull)¡£\n");
+		return notify_fail("ä½ å¾—å…ˆæŠŠç©¿è¿‡é—¨ç¯ä¸­çš„æ–§å¤´æ‹”å‡º(pull)ã€‚\n");
 
 	if(query("door_lock"))
-		return notify_fail("ÄãµÃÏÈ°Ñ¿Û×¡ÃÅµÄÌúÅ¥ÏÆÆğ(pull)¡£\n");
+		return notify_fail("ä½ å¾—å…ˆæŠŠæ‰£ä½é—¨çš„é“é’®æ€èµ·(pull)ã€‚\n");
 
-	message_vision("$NË«ÊÖ³ÅÃÅ£¬ÓÃÁ¦ÏòÍâÍÆÈ¥£¬ÓñÊ¯¾ŞÃÅß´ß´·¢Éù£¬»º»º¿ªÁË¡£\n", me);
+	message_vision("$NåŒæ‰‹æ’‘é—¨ï¼Œç”¨åŠ›å‘å¤–æ¨å»ï¼Œç‰çŸ³å·¨é—¨å½å½å‘å£°ï¼Œç¼“ç¼“å¼€äº†ã€‚\n", me);
 
 	me->add("jingli", -50);
 
 	set("exits/enter", __DIR__"jaderoad4");
 		if( room = find_object(__DIR__"jaderoad4") ) {
 			room->set("exits/out", __FILE__);
-			message("vision", "ÄãÌıµÃß´ß´¼¸Éù£¬ÓĞÈË´ÓÍâÃæ½«ÓñÊ¯¾ŞÃÅÍÆ¿ªÁË¡£\n",room );
+			message("vision", "ä½ å¬å¾—å½å½å‡ å£°ï¼Œæœ‰äººä»å¤–é¢å°†ç‰çŸ³å·¨é—¨æ¨å¼€äº†ã€‚\n",room );
 		}
 	return 1;
 	}
-	else return notify_fail("ÄãÒªÍÆÊ²÷á£¿\n");
+	else return notify_fail("ä½ è¦æ¨ä»€éº½ï¼Ÿ\n");
 }
 

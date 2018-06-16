@@ -9,11 +9,11 @@ int remove_cha();
 
 void create()
 {
-        set_name("Ğ¡··", ({ "seller" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°è´©", ({ "seller" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
         set("long",
-                "ÕâÊÇ¸öĞ¡··£¬±ğ¿´Ëû³¤µÄÀÏÀÏÊµÊµ£¬¿ÉÄã±ğÏë´ÓËûÄÇ¶ùÌÍ±ãÒË¡£\n");
+                "è¿™æ˜¯ä¸ªå°è´©ï¼Œåˆ«çœ‹ä»–é•¿çš„è€è€å®å®ï¼Œå¯ä½ åˆ«æƒ³ä»ä»–é‚£å„¿æä¾¿å®œã€‚\n");
         set("combat_exp", 300);
         set("str", 17);
         set("dex", 20);
@@ -47,9 +47,9 @@ void init()
 int do_move()
 {
         if( present("cha", this_player()) ) {
-	        message_vision("$NÒ»°ÑÀ¹×¡ÁË$n£¬ËµµÀ£ºÕâÎ»"+
+	        message_vision("$Nä¸€æŠŠæ‹¦ä½äº†$nï¼Œè¯´é“ï¼šè¿™ä½"+
 		RANK_D->query_respect(this_player()) +
-		"£¬ÄúÀÏ°ÑĞ¡ÈËµÄ²èÍëÉÍ»¹ÁË°É¡£\n",
+		"ï¼Œæ‚¨è€æŠŠå°äººçš„èŒ¶ç¢—èµè¿˜äº†å§ã€‚\n",
 		this_object(), this_player());
 	        return 1;
         }
@@ -63,7 +63,7 @@ int remove_cha()
 
         if( objectp(ob = present("cha", environment())) ) {
 	        destruct(ob);
-	        message_vision("$N°ÑµØÉÏµÄ²èÍëÊÕÊ°ÁËÆğÀ´¡£\n", this_object());
+	        message_vision("$NæŠŠåœ°ä¸Šçš„èŒ¶ç¢—æ”¶æ‹¾äº†èµ·æ¥ã€‚\n", this_object());
         }
 
         return 1;

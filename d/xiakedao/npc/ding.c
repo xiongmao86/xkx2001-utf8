@@ -1,16 +1,16 @@
 //Cracked by Roath
-// ding.c ¶¡´ºÇï
+// ding.c ä¸æ˜¥ç§‹
 #include "/kungfu/class/xingxiu/auto_perform.h"
 inherit NPC;
 int auto_perform();
 void create()
 {
-        set_name("¶¡´ºÇï", ({ "ding chunqiu", "ding" }));
-        set("nickname", "ÐÇËÞÀÏ¹Ö");
+        set_name("ä¸æ˜¥ç§‹", ({ "ding chunqiu", "ding" }));
+        set("nickname", "æ˜Ÿå®¿è€æ€ª");
         set("long", 
-                "Ëû¾ÍÊÇÐÇËÞÅÉ¿ªÉ½×æÊ¦¡¢ÁîÕýÅÉÈËÊ¿Éî¶ñÍ´¾øµÄÐÇËÞÀÏ¹Ö¶¡´ºÇï¡£\n"
-                "¿ÉÊÇËû¿´ÆðÀ´ÐÎÃ²ÇåÆæ£¬ÏÉ·çµÀ¹Ç¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯æ˜Ÿå®¿æ´¾å¼€å±±ç¥–å¸ˆã€ä»¤æ­£æ´¾äººå£«æ·±æ¶ç—›ç»çš„æ˜Ÿå®¿è€æ€ªä¸æ˜¥ç§‹ã€‚\n"
+                "å¯æ˜¯ä»–çœ‹èµ·æ¥å½¢è²Œæ¸…å¥‡ï¼Œä»™é£Žé“éª¨ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 60);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -57,7 +57,7 @@ void create()
         set("chat_msg_combat", ({
                 (: auto_perform :),
         }) );
-        create_family("ÐÇËÞÅÉ", 1, "¿ªÉ½×æÊ¦");
+        create_family("æ˜Ÿå®¿æ´¾", 1, "å¼€å±±ç¥–å¸ˆ");
         set("class", "taoist");
         set("san_count", 1);
         set("zhen_count", 7);
@@ -71,7 +71,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command ("say ÄãÊÇ²»ÊÇ»îµÃ²»ÄÍ·³ÁË£¬¸ÒÀ´·³ÎÒ¡£");
+        command ("say ä½ æ˜¯ä¸æ˜¯æ´»å¾—ä¸è€çƒ¦äº†ï¼Œæ•¢æ¥çƒ¦æˆ‘ã€‚");
 }
 
 void init()
@@ -96,7 +96,7 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say Ê®²½É±Ò»ÈË£¬ÏëÁ·³É¾øÊÀÉñ¹¦¾ÍÒª²ÐÈÌ¡£");
+                {		command("say åæ­¥æ€ä¸€äººï¼Œæƒ³ç»ƒæˆç»ä¸–ç¥žåŠŸå°±è¦æ®‹å¿ã€‚");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
 				opp->set("jingli", maxjingli);

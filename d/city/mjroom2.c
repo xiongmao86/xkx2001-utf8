@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", YEL"»Æ¾ÕÔ·"NOR);
+	set("short", YEL"é»„èŠè‹‘"NOR);
 	set("long", @LONG
-´Ë¼ä»¨ÏãÂúÌÃ£¬Ò»½øµ½ÕâÀï¾Í¾õµÃ¾«ÉñÆøË¬¡£·¿¼äÀïÄÚÍâ¿ªÂúÁËÐí¶à»Æ¾Õ£¬
-Ò»ÕÅµ­»ÆÉ«µÄ´óÀíÊ¯×ÀÉÏÆÌ×ÅÒ»¿é¶ìÈÖ²¼£¬ÉÏÃæÐ´×Å¶«£¬ÄÏ£¬Î÷£¬±±£¬×ÀÉÏ°Ú×Å
-Ò»¸±Âé½«£¬ËÄÖÜµÄÐ¡µÊ½ÔÒÔ¶ìÈÖËùÕÖ¡£Ç½ÉÏµÄ¼Æ·Ö°å(Board)ÊÇÒÔÉ½Ç¼Ä¾ËùµñÖÆ¡£
+æ­¤é—´èŠ±é¦™æ»¡å ‚ï¼Œä¸€è¿›åˆ°è¿™é‡Œå°±è§‰å¾—ç²¾ç¥žæ°”çˆ½ã€‚æˆ¿é—´é‡Œå†…å¤–å¼€æ»¡äº†è®¸å¤šé»„èŠï¼Œ
+ä¸€å¼ æ·¡é»„è‰²çš„å¤§ç†çŸ³æ¡Œä¸Šé“ºç€ä¸€å—é¹…æˆŽå¸ƒï¼Œä¸Šé¢å†™ç€ä¸œï¼Œå—ï¼Œè¥¿ï¼ŒåŒ—ï¼Œæ¡Œä¸Šæ‘†ç€
+ä¸€å‰¯éº»å°†ï¼Œå››å‘¨çš„å°å‡³çš†ä»¥é¹…æˆŽæ‰€ç½©ã€‚å¢™ä¸Šçš„è®¡åˆ†æ¿(Board)æ˜¯ä»¥å±±ç¾Œæœ¨æ‰€é›•åˆ¶ã€‚
 LONG);
 	set("exits", ([
 		"east" : __DIR__"mjroom",
@@ -21,9 +21,9 @@ LONG);
 		__DIR__"obj/ytable" : 1,
 		]));
 	set("item_desc", ([
-		"board": YEL"    Ò»¿éÒÔÉ½Ç¼Ä¾ËùµñÖÆµÄ¼Æ·Ö°å£¬ÉÏÃæ¼ÇÂúÁËÒÔÍùÅÆ¾Ö\n"
-					"µÄ·ÖÊý¡£Äã¿ÉÒ»ÓÃmjscoreÀ´²éÑ¯×Ô¼ºµÄ·ÖÊý£¬mjscore <ip>\n"
-					"À´²éÄ³ÈËµÄ·ÖÊý£¬mjscore -l¿´È«²¿µÄ×ÊÁÏ¡£\n"NOR,
+		"board": YEL"    ä¸€å—ä»¥å±±ç¾Œæœ¨æ‰€é›•åˆ¶çš„è®¡åˆ†æ¿ï¼Œä¸Šé¢è®°æ»¡äº†ä»¥å¾€ç‰Œå±€\n"
+					"çš„åˆ†æ•°ã€‚ä½ å¯ä¸€ç”¨mjscoreæ¥æŸ¥è¯¢è‡ªå·±çš„åˆ†æ•°ï¼Œmjscore <ip>\n"
+					"æ¥æŸ¥æŸäººçš„åˆ†æ•°ï¼Œmjscore -lçœ‹å…¨éƒ¨çš„èµ„æ–™ã€‚\n"NOR,
 		]) );
 	set("no_fight", 1);
 	set("no_sleep_room", 1);
@@ -44,19 +44,19 @@ void init()
 }
 int do_practice()
 {
-	if (query_verb()=="quit") write("ÄãÎÞ·¨ÔÚÂé½«ÊÒÀïÀë¿ªÓÎÏ·£¡£¡\n");
-	if (query_verb()=="kill") write("ÄãÀ´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇ´ò¼Ü¡£\n");
-    if (query_verb()=="exercise") write("À´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇ´ò×ø¡£\n");
-    if (query_verb()=="dazuo") write("À´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇ´ò×ø¡£\n");
-    if (query_verb()=="lian") write("À´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇÁ·¹¦¡£\n");
-    if (query_verb()=="practice") write("À´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇÁ·¹¦¡£\n");
-    if (query_verb()=="respirate") write("À´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇÍÂÄÅ¡£\n");
-    if (query_verb()=="tuna") write("À´ÕâÊÇÀ´´òÂé½«¶ø²»ÊÇÍÂÄÅ¡£\n");
+	if (query_verb()=="quit") write("ä½ æ— æ³•åœ¨éº»å°†å®¤é‡Œç¦»å¼€æ¸¸æˆï¼ï¼\n");
+	if (query_verb()=="kill") write("ä½ æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯æ‰“æž¶ã€‚\n");
+    if (query_verb()=="exercise") write("æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯æ‰“åã€‚\n");
+    if (query_verb()=="dazuo") write("æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯æ‰“åã€‚\n");
+    if (query_verb()=="lian") write("æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯ç»ƒåŠŸã€‚\n");
+    if (query_verb()=="practice") write("æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯ç»ƒåŠŸã€‚\n");
+    if (query_verb()=="respirate") write("æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯åå‘ã€‚\n");
+    if (query_verb()=="tuna") write("æ¥è¿™æ˜¯æ¥æ‰“éº»å°†è€Œä¸æ˜¯åå‘ã€‚\n");
 	return 1;
 }
 int valid_leave(object me, string dir)
 {
-	if (me->query_temp("´òÂé½«ÖÐ"))	return notify_fail("´òÅÆ´òÒ»°ë£¬ÏëÅÜÈ¥ÄÄ£¿\n");
-	if (this_object()->query_temp("mjstart") && dir == "east")	return notify_fail("ÅÆ¾Ö½øÐÐÖÐÄãÅÜÀ´ÅÜÈ¥»áÓ°ÏìËûÈË£¬µÈÕâ¾ÖÍêÁËÔÚ×ß°É¡£\n");
+	if (me->query_temp("æ‰“éº»å°†ä¸­"))	return notify_fail("æ‰“ç‰Œæ‰“ä¸€åŠï¼Œæƒ³è·‘åŽ»å“ªï¼Ÿ\n");
+	if (this_object()->query_temp("mjstart") && dir == "east")	return notify_fail("ç‰Œå±€è¿›è¡Œä¸­ä½ è·‘æ¥è·‘åŽ»ä¼šå½±å“ä»–äººï¼Œç­‰è¿™å±€å®Œäº†åœ¨èµ°å§ã€‚\n");
 	return ::valid_leave(me, dir);
 }

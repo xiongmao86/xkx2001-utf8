@@ -1,17 +1,17 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/shen.c
-// shen.c  ÉêÖ¾·²
+// shen.c  ç”³å¿—å‡¡
 // sdong 08/01/98
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÉêÖ¾·²", ({ "shen zhifan", "shen" }));
+	set_name("ç”³å¿—å‡¡", ({ "shen zhifan", "shen" }));
 	set("long",
-		"ËûÊÇÒ»Î»È«Õæ½ÌµÚÈý´úµÜ×Ó¡£\n"
+		"ä»–æ˜¯ä¸€ä½å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ã€‚\n"
 		);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 46);
 	set("attitude", "heroic");
 	set("shen_type", 1);
@@ -54,7 +54,7 @@ void create()
 	prepare_skill("cuff", "chunyang-quan");
 	prepare_skill("strike", "sanhua-juding");
 
-	create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+	create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();

@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ɳ̲");
+    set("short", "沙滩");
     set("long", @LONG
-�����Ĵ�һ���ޱߡ����߲�Զ��ͣ�ż�ֻС����ϸϸ�İ�ɳ��
-���ڽ��������ĺò������
+蓝蓝的大海一望无边。岸边不远处停着几只小船，细细的白沙，
+踩在脚下软软的好不舒服。
 LONG
     );
 

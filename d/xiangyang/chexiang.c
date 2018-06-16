@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "������");
+	set("short", "车巷子");
 	set("long", @LONG
-������Ƨխ�ֵ�С�����Ź������ˮ�ĳ�ζ���������ڱǶ��ˣ���Ը��
-�����Ρ������л������ڵ���ץʭ��ɹ̫��������ǽ���ƺ��и�����(dong)��
+这条遍僻窄抑的小巷充斥着狗肉与酒水的臭味，令闻者掩鼻而退，不愿接
+近这。几个叫化子坐在地上抓虱子晒太阳。东面墙角似乎有个狗洞(dong)。
 LONG
 	);
         set("coordinates", ([ "x" : 1, "y" : 5 ]) );

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huijin »Û½ð
+// huijin æ…§é‡‘
 
 inherit NPC;
 
@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-	set_name("»Û½ð×ðÕß", ({ "hui jin", "hui", "jin" }));
-	set("nickname", "À±ÊÖÃðÙÁ");
+	set_name("æ…§é‡‘å°Šè€…", ({ "hui jin", "hui", "jin" }));
+	set("nickname", "è¾£æ‰‹ç­å€­");
 //	set("long", 
 //	");
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 38);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -54,13 +54,13 @@ void create()
 	
 	prepare_skill("cuff", "jingang-quan");
 
-	create_family("ÉÙÁÖÅÉ", 38, "µÜ×Ó");
+	create_family("å°‘æž—æ´¾", 38, "å¼Ÿå­");
 
 	set("inquiry", ([
-	    "ÀËÈË" : (: ask_me :),
-	    "ÈÕ±¾ÀËÈË" : (: ask_me :),
-	    "ÃðÙÁ" : (: ask_me :),
-	    "À±ÊÖÃðÙÁ" : "Æ¶É®ÉúÆ½×îÍ´ºÞÙÁ¿Ü£¬¼ßÙÁÎÞÊý£¬³ÐÃÉÍ¬µÀ°®´÷£¬ËÍÎÒÕâ¸öÃûºÅ¡£",
+	    "æµªäºº" : (: ask_me :),
+	    "æ—¥æœ¬æµªäºº" : (: ask_me :),
+	    "ç­å€­" : (: ask_me :),
+	    "è¾£æ‰‹ç­å€­" : "è´«åƒ§ç”Ÿå¹³æœ€ç—›æ¨å€­å¯‡ï¼Œæ­¼å€­æ— æ•°ï¼Œæ‰¿è’™åŒé“çˆ±æˆ´ï¼Œé€æˆ‘è¿™ä¸ªåå·ã€‚",
 	]));
 
 	setup();
@@ -74,16 +74,16 @@ void init()
 
 	::init();
 	if( strsrch(file_name(environment()), "/d/quanzhou/") == -1 ) {
-		message_vision("$N¿ì²½×ßÁË¹ýÀ´¡£\n$NÉñÉ«»ÅÕÅµØÀë¿ªÁË¡£\n", me);
+		message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n$Nç¥žè‰²æ…Œå¼ åœ°ç¦»å¼€äº†ã€‚\n", me);
                 this_object()->move("/d/quanzhou/ganlu");
-		message_vision("$N¿ì²½×ßÁË¹ýÀ´¡£\n", me);
+		message_vision("$Nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n", me);
 		return;
 	}
 	else if( obj = present("lang ren", environment(me)) ) {
                 call_out("kill_ob", 1, obj);
 		call_out("checking", 1, me, obj);
 		me->set_leader(0);
-		if ( !me->query("said") ) message_vision("$N´óºÈµÀ£º¶«Ñó¹í×Ó£¬ÄÉÃüÀ´°É£¡\n", me);
+		if ( !me->query("said") ) message_vision("$Nå¤§å–é“ï¼šä¸œæ´‹é¬¼å­ï¼Œçº³å‘½æ¥å§ï¼\n", me);
 		me->set("said", 1);
 		remove_call_out("home2");
 	}
@@ -95,9 +95,9 @@ string ask_me()
 
 	me->set_leader(leader);
 
-	message_vision("$N²ªÈ»´óÅ­£¡\n", me);
+	message_vision("$Nå‹ƒç„¶å¤§æ€’ï¼\n", me);
 	call_out("home2", 100, me);
-	return "¿ì´øÎÒÈ¥£¡\n";
+	return "å¿«å¸¦æˆ‘åŽ»ï¼\n";
 }
 
 int accept_fight(object ob)
@@ -148,7 +148,7 @@ int checking(object me, object ob)
 
 	if (!present(ob, environment())) {
 		command("haha");
-                message_vision("$NÍ·Ò²²»»ØµØ×ßÁË¡£\n", me);
+                message_vision("$Nå¤´ä¹Ÿä¸å›žåœ°èµ°äº†ã€‚\n", me);
                 me->move("/d/quanzhou/ganlu");
 		return 1;
 	}
@@ -163,7 +163,7 @@ int home(object me)
 	obj = present("lang ren", environment(me));
 	if ( !obj && present("corpse", environment(me)) ) {
 		command("haha");
-                message_vision("$NÍ·Ò²²»»ØµØ×ßÁË¡£\n", me);
+                message_vision("$Nå¤´ä¹Ÿä¸å›žåœ°èµ°äº†ã€‚\n", me);
                 me->move("/d/quanzhou/ganlu");
         }
 	else {
@@ -179,8 +179,8 @@ int home2(object me)
 	object obj;
 
 	if ( !me->is_fighting() && !obj = present("lang ren", environment(me)) ) {
-		message_vision("$N´óÅ­ËµµÀ£ºÄãÊÇ´æÐÄ¸úÆ¶É®¿ªÍæÐ¦°É£¬ÔõÃ´×ßÁËÕâÃ´¾Ã¶¼²»¼ûÓÐÈÕ±¾ÀËÈË£¿\n", me);
-		message_vision("$NÆø¹Ä¹ÄµØ×ßÁË¡£\n", me);
+		message_vision("$Nå¤§æ€’è¯´é“ï¼šä½ æ˜¯å­˜å¿ƒè·Ÿè´«åƒ§å¼€çŽ©ç¬‘å§ï¼Œæ€Žä¹ˆèµ°äº†è¿™ä¹ˆä¹…éƒ½ä¸è§æœ‰æ—¥æœ¬æµªäººï¼Ÿ\n", me);
+		message_vision("$Næ°”é¼“é¼“åœ°èµ°äº†ã€‚\n", me);
 		me->move("/d/quanzhou/ganlu");
 	}
 

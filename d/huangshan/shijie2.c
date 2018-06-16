@@ -1,15 +1,15 @@
 //Cracked by Roath
-// ʯ��
+// 石阶
 // Dong  01/20/97.
 #include <room.h>
 #include <ansi.h>
 inherit ROOM;
 void create()
-{   set("short", "ʯ��");
+{   set("short", "石阶");
     set("long", @LONG
-����ʯ���ϣ�������ܿ�����ɽ���е����ɹ�ʯ������ʮ�˵���
-�ᣬӭ����һ��������ص�ɽ�塣��̫��һֻ�����ˣ����ӣ��۾���
-��Ͷ������һ����
+走在石阶上，起初还能看到黄山特有的奇松怪石，下了十八道弯
+後，迎面是一座嶙峋奇特的山峰。它太像一只骆驼了，鼻子，眼睛，
+嘴巴都和真的一样。
 LONG);
 
     set("exits", ([ /* sizeof() == 2 */

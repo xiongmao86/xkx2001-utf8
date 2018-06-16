@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¹ó¹«×Ó", ({ "gongzi"}));
+        set_name("è´µå…¬å­", ({ "gongzi"}));
         set("long", 
-"ÕâÊÇÒ»½éôæôæ¹ó¹«×Ó£¬³¤µÃµ½Ò²ËãÓñÊ÷ÁÙ·ç¡¢Ò»±íÈË²Å£¬¿ÉÆ«Æ«Ò»Ë«ÑÛ¾¦"
-"È´°®Ğ±×Åî©ÈË¡£\n");
-	set("gender", "ÄĞĞÔ");
+"è¿™æ˜¯ä¸€ä»‹ç¿©ç¿©è´µå…¬å­ï¼Œé•¿å¾—åˆ°ä¹Ÿç®—ç‰æ ‘ä¸´é£ã€ä¸€è¡¨äººæ‰ï¼Œå¯ååä¸€åŒçœ¼ç›"
+"å´çˆ±æ–œç€çŸäººã€‚\n");
+	set("gender", "ç”·æ€§");
         set("age", 20+random(10));
 	set("attitude", "friendly");
 
@@ -36,8 +36,8 @@ int do_kill(string arg)
         if (!arg || arg != "gongzi") return command("kill ");
 	
 	if (present("e nu", environment(this_object()))){
-	command("say ÄãÏëÄ±º¦±¾¹«×Ó£¬µ±ÕæÊÇ×ÔÕÒËÀÂ·£¡ ×óÓÒºÎÔÚ£¡");
-        message_vision("¹ó¹«×Ó×óÓÒµÄ¶ñÅ«¶Ô$N·¢¶¯¹¥»÷£¡\n", this_player());
+	command("say ä½ æƒ³è°‹å®³æœ¬å…¬å­ï¼Œå½“çœŸæ˜¯è‡ªæ‰¾æ­»è·¯ï¼ å·¦å³ä½•åœ¨ï¼");
+        message_vision("è´µå…¬å­å·¦å³çš„æ¶å¥´å¯¹$Nå‘åŠ¨æ”»å‡»ï¼\n", this_player());
 
         for(i=0; i<2; i++) {
                 if( objectp( ob = present("e nu " + (i+1), environment(this_object())) ) )

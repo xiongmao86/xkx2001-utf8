@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "��Ԫ��");
+	set("short", "体元殿");
 	set("long", @LONG
-��õ����������Ϸ̨������Ϸ̨,����̫����ʮ�ٳ�ʱ,ͬ����
-�����ɼ�����ÿ���ڴ˿�Ϸ,�������֮��.
+与该殿后檐相连的戏台即长春戏台,慈禧太后五十寿辰时,同宫内
+的妃嫔及命妇每天在此看戏,长达半月之久.
 
 LONG
 	);

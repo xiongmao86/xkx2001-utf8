@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/emei/xixiang.c Ï´Ïó³Ø
+// /d/emei/xixiang.c æ´—è±¡æ± 
 // Shan: 96/06/22
 // Re-Created by xQin on 3/00
 
@@ -11,12 +11,12 @@ string look_pool();
 
 void create()
 {
-	set("short", "Ï´Ïó³Ø");
+	set("short", "æ´—è±¡æ± ");
 	set("long", @LONG
-Ï´Ïó³ØÔ­Ö»ÊÇÒ»Í¤£¬Í¤Ç°ÓĞÒ»¸öÊ¯ÆöµÄĞ¡³Ø(pool)£¬³Ø±ß²»Ô¶¾ÍÊÇÎ£ÑÒ¡£
-Ï´Ïó³ØÔ¢ÓÚÒ»Æ¬ÀäÉ¼ÁÖÖĞ£¬ÓĞÈô°×ÔÆÉî´¦µÄÏÉÉ½Çí¸ó¡£ÈôÊÇÔÆÊÕÎíÁ²¡¢±Ì¿ÕÍò
-Àï¡¢ÔÂÀÊÖĞÌìÊ±£¬±ã¾õÍòô¥¾ã¼Å£¬Çå¹âÎŞÏŞ£¬ÍğÈôÉíÔÚÌì¹¬£¬³¹ÌåÉúÁ¹¡£ÕâÕı
-ÊÇÖøÃûµÄ¡¸Ïó³Ø³ØÒ¹¡¹¡£ÓÉ´ËÏòÄÏÉÏÅÊ£¬±ãÖÁÀ×¶´Æº£¬¶«ÏÂÖÁÁ«»¨Ê¯¡£
+æ´—è±¡æ± åŸåªæ˜¯ä¸€äº­ï¼Œäº­å‰æœ‰ä¸€ä¸ªçŸ³ç Œçš„å°æ± (pool)ï¼Œæ± è¾¹ä¸è¿œå°±æ˜¯å±å²©ã€‚
+æ´—è±¡æ± å¯“äºä¸€ç‰‡å†·æ‰æ—ä¸­ï¼Œæœ‰è‹¥ç™½äº‘æ·±å¤„çš„ä»™å±±ç¼é˜ã€‚è‹¥æ˜¯äº‘æ”¶é›¾æ•›ã€ç¢§ç©ºä¸‡
+é‡Œã€æœˆæœ—ä¸­å¤©æ—¶ï¼Œä¾¿è§‰ä¸‡ç±ä¿±å¯‚ï¼Œæ¸…å…‰æ— é™ï¼Œå®›è‹¥èº«åœ¨å¤©å®«ï¼Œå½»ä½“ç”Ÿå‡‰ã€‚è¿™æ­£
+æ˜¯è‘—åçš„ã€Œè±¡æ± æ± å¤œã€ã€‚ç”±æ­¤å‘å—ä¸Šæ”€ï¼Œä¾¿è‡³é›·æ´åªï¼Œä¸œä¸‹è‡³è²èŠ±çŸ³ã€‚
 LONG
 	);
 	set("exits", ([
@@ -28,8 +28,8 @@ LONG
 
 	set("item_desc", ([
 		"pool" : (: look_pool :),
-		"Î£ÑÒ" : "Î£ÑÒ±ß¿ÌÓĞ¡¸ÑÒ¹ÈÁé¹â¡¹ËÄ¸ö´ó×Ö¡£ÑÒÏÂÖÕÄêÎª°×ÔÆ»·ÈÆ£¬ÄÑ¼ûÆäµ×¡£\n",
-		"rock" : "Î£ÑÒ±ß¿ÌÓĞ¡¸ÑÒ¹ÈÁé¹â¡¹ËÄ¸ö´ó×Ö¡£ÑÒÏÂÖÕÄêÎª°×ÔÆ»·ÈÆ£¬ÄÑ¼ûÆäµ×¡£\n"
+		"å±å²©" : "å±å²©è¾¹åˆ»æœ‰ã€Œå²©è°·çµå…‰ã€å››ä¸ªå¤§å­—ã€‚å²©ä¸‹ç»ˆå¹´ä¸ºç™½äº‘ç¯ç»•ï¼Œéš¾è§å…¶åº•ã€‚\n",
+		"rock" : "å±å²©è¾¹åˆ»æœ‰ã€Œå²©è°·çµå…‰ã€å››ä¸ªå¤§å­—ã€‚å²©ä¸‹ç»ˆå¹´ä¸ºç™½äº‘ç¯ç»•ï¼Œéš¾è§å…¶åº•ã€‚\n"
 	]) ) ;
 
 	set("no_clean_up", 0);
@@ -54,15 +54,15 @@ int do_swim(string arg)
 	me = this_player();
 
 	if( me->is_busy() || me->is_fighting() || me->query_temp("pending") )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
-	if( !arg || (arg != "pool" && arg != "Ï´Ïó³Ø") )
-		return notify_fail("Ê²Ã´£¿\n");
+	if( !arg || (arg != "pool" && arg != "æ´—è±¡æ± ") )
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 	inv = all_inventory(environment(me));
 	for (i=0; i<sizeof(inv); i++) 
-		if ( (string)inv[i]->query("race") == "ÈËÀà" && inv[i] != me && !me->is_spouse_of(inv[i]) )
-			return notify_fail("ÖÚÄ¿î¥î¥Ö®ÏÂÍÑ¹âÒÂÉÑÏÂË®£¬Äã²»ÏÓº¦ëıÂğ£¿£¡\n");
+		if ( (string)inv[i]->query("race") == "äººç±»" && inv[i] != me && !me->is_spouse_of(inv[i]) )
+			return notify_fail("ä¼—ç›®ç½ç½ä¹‹ä¸‹è„±å…‰è¡£è£³ä¸‹æ°´ï¼Œä½ ä¸å«Œå®³è‡Šå—ï¼Ÿï¼\n");
 
 	inv = all_inventory(me);	
 	for( i=0; i<sizeof(inv); i++ )
@@ -74,29 +74,29 @@ int do_swim(string arg)
 				case "armor":
 				case "suncoats":
 					if ( inv[i]->query_weight() > 8000)
-						return notify_fail("´©×Å³ÁÖØµÄ¼×Î¸ÏÂË®£¬²»ÅÂÑÍËÀÄã°¡£¿£¡\n");
+						return notify_fail("ç©¿ç€æ²‰é‡çš„ç”²èƒƒä¸‹æ°´ï¼Œä¸æ€•æ·¹æ­»ä½ å•Šï¼Ÿï¼\n");
 					else 
 						me->receive_damage("jing", 10, me);
-						return notify_fail(BLU"ÄãÌø½øÏ´Ïó³ØÖĞ£¬ÅªµÃ»ëÉíÒÂ·şÊªäõäõµÄ£¬¸Ï½ôÅÀ»Ø³ØÍâ¡£Àä·çÒ»´µ£¬Äã²»ÓÉ\nµÃ´òÁËÒ»¸öÅçÌç¡£\n"NOR);
+						return notify_fail(BLU"ä½ è·³è¿›æ´—è±¡æ± ä¸­ï¼Œå¼„å¾—æµ‘èº«è¡£æœæ¹¿æ¼‰æ¼‰çš„ï¼Œèµ¶ç´§çˆ¬å›æ± å¤–ã€‚å†·é£ä¸€å¹ï¼Œä½ ä¸ç”±\nå¾—æ‰“äº†ä¸€ä¸ªå–·åšã€‚\n"NOR);
 				case "boots":
-					return notify_fail("´©×ÅĞ¬ÏÂË®£¿£¡\n");
+					return notify_fail("ç©¿ç€é‹ä¸‹æ°´ï¼Ÿï¼\n");
 				case "bandage":
-					return notify_fail("Äã»¹¹ü×ÅÉËÄØ£¬²»ÅÂÏÂË®ºóÉË¿Ú¸ĞÈ¾£¿£¡\n");
+					return notify_fail("ä½ è¿˜è£¹ç€ä¼¤å‘¢ï¼Œä¸æ€•ä¸‹æ°´åä¼¤å£æ„ŸæŸ“ï¼Ÿï¼\n");
 				default:
 					break;
 			}
 	}
 
 	if( me->query_encumbrance()*20 > me->query_max_encumbrance() )
-        return notify_fail("ÄãÉíÉÏµÄ¶«Î÷Ì«¶àÁË£¡\n");
+        return notify_fail("ä½ èº«ä¸Šçš„ä¸œè¥¿å¤ªå¤šäº†ï¼\n");
 
 	for( i = 0; i < sizeof(inv); i++ )
 	{
 		if( !inv[i]->query("no_drop") ) DROP_CMD->do_drop(me, inv[i]);
 		else if(inv[i]->query("equipped")) inv[i]->unequip();
-		else tell_object(me, "Äã½«"+inv[i]->name()+"ÓÃÒÂÎï×ĞÏ¸°üºÃ¡£\n");               
+		else tell_object(me, "ä½ å°†"+inv[i]->name()+"ç”¨è¡£ç‰©ä»”ç»†åŒ…å¥½ã€‚\n");               
 	}
-	message_vision(CYN"$NÍùÏ´Ïó³ØÖĞÌøÈ¥¡£\n"NOR, me);
+	message_vision(CYN"$Nå¾€æ´—è±¡æ± ä¸­è·³å»ã€‚\n"NOR, me);
 
 	if( !(room = find_object(__DIR__"pool")) )
 		room = load_object(__DIR__"pool");
@@ -115,7 +115,7 @@ string look_pool()
 	if( !(room = find_object(__DIR__"pool")) )
 		room = load_object(__DIR__"pool");
 
-	message_vision("$NÇÄÇÄ×ªµ½³Ø±ß£¬Éì³¤²±×ÓÍù³ØÀïÍûÈ¥¡£\n", me);
+	message_vision("$Næ‚„æ‚„è½¬åˆ°æ± è¾¹ï¼Œä¼¸é•¿è„–å­å¾€æ± é‡Œæœ›å»ã€‚\n", me);
 	"/cmds/std/look.c"->look_room(me, room);
 
 	ob = all_inventory(room);
@@ -124,47 +124,47 @@ string look_pool()
 	if( check )
 	{
 		check = 0;
-		if( me->query("gender") == "Å®ĞÔ" )
+		if( me->query("gender") == "å¥³æ€§" )
 		{
-			tell_object(me, "ÄãºÃÏñ¿´¼ûÓĞÈËÔÚ³ØÀïÓÎË®¡£\n");
+			tell_object(me, "ä½ å¥½åƒçœ‹è§æœ‰äººåœ¨æ± é‡Œæ¸¸æ°´ã€‚\n");
 			for( i=0; i < sizeof(ob); i++ )
-				if( ob[i]->query("gender") != "Å®ĞÔ" ) check++;
+				if( ob[i]->query("gender") != "å¥³æ€§" ) check++;
 
 			if( check )
 			{
-				tell_object(me, "ÄãÁ³ÉÏÒ»ºì£¬Ô­À´ÔÚ³ØÖĞÓÎË®µÄÈËÊÇ£®£®£®£®\n");
-				message("vision", CYN+me->name()+"Í»È»Á³ÉÏÒ»ºì£¬»Ø¹ıÍ·À´¡£\n"NOR,
+				tell_object(me, "ä½ è„¸ä¸Šä¸€çº¢ï¼ŒåŸæ¥åœ¨æ± ä¸­æ¸¸æ°´çš„äººæ˜¯ï¼ï¼ï¼ï¼\n");
+				message("vision", CYN+me->name()+"çªç„¶è„¸ä¸Šä¸€çº¢ï¼Œå›è¿‡å¤´æ¥ã€‚\n"NOR,
 					environment(me), ({ me }) );
 			}
-			else tell_object(me, "ÄãÒşÒşÔ¼Ô¼¿´µ½ÔÚ³ØÖĞÏ·Ë®µÄºÃÏñÊÇÅ®×Ó¡£\n");
+			else tell_object(me, "ä½ éšéšçº¦çº¦çœ‹åˆ°åœ¨æ± ä¸­æˆæ°´çš„å¥½åƒæ˜¯å¥³å­ã€‚\n");
 		}
-		else if( me->query("gender") == "ÄĞĞÔ" )
+		else if( me->query("gender") == "ç”·æ€§" )
 		{
-			tell_object(me, "Äã·¢ÏÖ³ØÖĞÓĞÈËÔÚÂãÉíÓÎË®£¬"NOR);
+			tell_object(me, "ä½ å‘ç°æ± ä¸­æœ‰äººåœ¨è£¸èº«æ¸¸æ°´ï¼Œ"NOR);
 			for( i=0; i < sizeof(ob); i++ )
 			{
-				if( ob[i]->query("gender") == "Å®ĞÔ" ) check++;
+				if( ob[i]->query("gender") == "å¥³æ€§" ) check++;
 				if( !living(ob[i]) ) continue;
 				if( random(5) == 1 )
 				{
 					ob[i]->enable_player();
-					tell_object(ob[i], RED"Äã²»¾­ÒâÒ»»ØÍ·£¬Í»È»·¢ÏÖÓĞÈË¶ãÔÚ³Ø±ß¶ÔÄã²»»³ºÃÒâµØ¿úÊÓ×Å£¡\n"NOR);
+					tell_object(ob[i], RED"ä½ ä¸ç»æ„ä¸€å›å¤´ï¼Œçªç„¶å‘ç°æœ‰äººèº²åœ¨æ± è¾¹å¯¹ä½ ä¸æ€€å¥½æ„åœ°çª¥è§†ç€ï¼\n"NOR);
 					ob[i]->set_temp("been_looked", 1);
-					if( ob[i]->query("gender") == "Å®ĞÔ" )
+					if( ob[i]->query("gender") == "å¥³æ€§" )
 					{
-						tell_object(ob[i], HIR"ÄãÖ»ÑªÆøÉÏ³å£¬¶ÙÊ±¸Ğµ½Ò»ÕóĞıÔÎ£¡\n"NOR);
+						tell_object(ob[i], HIR"ä½ åªè¡€æ°”ä¸Šå†²ï¼Œé¡¿æ—¶æ„Ÿåˆ°ä¸€é˜µæ—‹æ™•ï¼\n"NOR);
 						ob[i]->set("jing", 0);
 						ob[i]->start_busy(1);
 						if( random(ob[i]->query_per()/6) )
 						{
 							ob[i]->unconcious();
 							ob[i]->set_temp("apply/short", ({ ob[i]->query("title")+ " " +ob[i]->query("name")+
-							"("+capitalize(ob[i]->query("id"))+")"+HIW" <È«Âã>"NOR }) );
+							"("+capitalize(ob[i]->query("id"))+")"+HIW" <å…¨è£¸>"NOR }) );
 						}
 					}
 					else
 					{
-						tell_object(ob[i], "ÄãËä²»ÒÔÎªÒâ£¬µ«ÒÑ¾­Ã»ÓĞĞËÈ¤ÔÙ¼ÌĞøÓÎË®ÁË¡£\n");
+						tell_object(ob[i], "ä½ è™½ä¸ä»¥ä¸ºæ„ï¼Œä½†å·²ç»æ²¡æœ‰å…´è¶£å†ç»§ç»­æ¸¸æ°´äº†ã€‚\n");
 						__DIR__"pool.c"->do_halt(ob[i]);
 					}
 				}
@@ -172,19 +172,19 @@ string look_pool()
 
 			if( check )
 			{
-				tell_object(me, "¶øÇÒ»¹ÊÇÅ®×Ó£¡\n"
-						HIC"ÄãÔ¶Ô¶¿´×ÅÄÇ½üºõÈ«ÂãµÄÑ©°×ÉíÌå£¬Ò»ÕóÈÈÑªÉÏÓ¿£¬»êÁé¶ùÔç·Éµ½¾ÅÏöÔÆÍâÁË¡£\n"NOR);
-				message("vision", CYN +me->name()+"Í»È»Á½ÑÛ·¢Ö±£¬ÕÅ´óÁË¿Ú£¬¿ÚË®µÎàªµÎàªÖ±ÍùÍâÁ÷¡£\n"NOR,
+				tell_object(me, "è€Œä¸”è¿˜æ˜¯å¥³å­ï¼\n"
+						HIC"ä½ è¿œè¿œçœ‹ç€é‚£è¿‘ä¹å…¨è£¸çš„é›ªç™½èº«ä½“ï¼Œä¸€é˜µçƒ­è¡€ä¸Šæ¶Œï¼Œé­‚çµå„¿æ—©é£åˆ°ä¹éœ„äº‘å¤–äº†ã€‚\n"NOR);
+				message("vision", CYN +me->name()+"çªç„¶ä¸¤çœ¼å‘ç›´ï¼Œå¼ å¤§äº†å£ï¼Œå£æ°´æ»´å—’æ»´å—’ç›´å¾€å¤–æµã€‚\n"NOR,
 					environment(me), ({ me }) );
 			}
 			else
 			{
-				tell_object(me, "¿ÉÏ§ÆäÖĞÈ´Ã»ÓĞÅ®×Ó¡£\n");
-				message("vision", me->name()+"ÉîÉîµØÌ¾ÁË¿ÚÆø£¬»Ø¹ıÍ·À´¡£\n",
+				tell_object(me, "å¯æƒœå…¶ä¸­å´æ²¡æœ‰å¥³å­ã€‚\n");
+				message("vision", me->name()+"æ·±æ·±åœ°å¹äº†å£æ°”ï¼Œå›è¿‡å¤´æ¥ã€‚\n",
 					environment(me), ({ me }) );
 			}
 		}
-		else tell_object(me, "ÄãËÆºõ¿´¼ûÓĞÈËÔÚ³ØÖĞÓÎË®£¬¿ÉÊÇÄã¶Ô´ËÒ»µãĞËÈ¤¶¼Ã»ÓĞ¡£\n");
+		else tell_object(me, "ä½ ä¼¼ä¹çœ‹è§æœ‰äººåœ¨æ± ä¸­æ¸¸æ°´ï¼Œå¯æ˜¯ä½ å¯¹æ­¤ä¸€ç‚¹å…´è¶£éƒ½æ²¡æœ‰ã€‚\n");
 	}
 	return "";
 }

@@ -110,21 +110,21 @@ int do_gen(string arg)
    ob = this_player();
 
    if (!arg )
-        return notify_fail("ÄãÏëÈÃË­¸ú×ÅÄã×ß£¿\n");
+        return notify_fail("ä½ æƒ³è®©è°è·Ÿç€ä½ èµ°ï¼Ÿ\n");
 
    if(!objectp(me = present(arg, environment(ob))))
-        return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÉúÎï¡£\n");
+        return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªç”Ÿç‰©ã€‚\n");
 
    if( !me->is_character() || me->is_corpse() )
-        return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+        return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
    if(ob==me)
-        return notify_fail("Õâ¸öºÃ°ì¡£\n");
+        return notify_fail("è¿™ä¸ªå¥½åŠã€‚\n");
 
-    message_vision("$NÏò$nÕĞÁËÕĞÊÖ¡£\n", ob, me);
+    message_vision("$Nå‘$næ‹›äº†æ‹›æ‰‹ã€‚\n", ob, me);
     if(me->query_lord() == ob) {
 		do_follow = 1;
-         message_vision("$n³¯$N×ßÁË¹ıÀ´¡£\n", ob, me);
+         message_vision("$næœ$Nèµ°äº†è¿‡æ¥ã€‚\n", ob, me);
 
          // start the animal tick
          remove_call_out("special_check");
@@ -133,7 +133,7 @@ int do_gen(string arg)
     }
     else {
 
-          message_vision("$n¶Ô$N²ÇÒ²²»²Ç¡£\n", ob, me);
+          message_vision("$nå¯¹$Nç¬ä¹Ÿä¸ç¬ã€‚\n", ob, me);
 
     }
 
@@ -149,7 +149,7 @@ int do_ting()
     if(me->query_lord()==ob && !me->query("rider")) {
 
        do_follow = 0;
-       message_vision("$N¶Ô$n»ÓÁË»ÓÊÖ£¬$n´¹Ê××ß¿ªÁË¡£\n", ob, me);
+       message_vision("$Nå¯¹$næŒ¥äº†æŒ¥æ‰‹ï¼Œ$nå‚é¦–èµ°å¼€äº†ã€‚\n", ob, me);
 
         return 1;
 
@@ -165,12 +165,12 @@ int do_protect(string arg)
         ob = this_player();
 
         if (!arg )
-                return notify_fail("ÄãÏëÈÃÈÃËü±£»¤Ë­£¿\n");
+                return notify_fail("ä½ æƒ³è®©è®©å®ƒä¿æŠ¤è°ï¼Ÿ\n");
 
         if(me->query_lord() == ob) {
 
           if (arg == "me") {
-              message_vision("$NÎ¢Î¢Ò»ÕĞÊÖ£¬$n×ßµ½$NµÄ½Å±ß£¬¾¯ÌèµØËÄÖÜÕÅÍû×Å¡£\n", ob, me);
+              message_vision("$Nå¾®å¾®ä¸€æ‹›æ‰‹ï¼Œ$nèµ°åˆ°$Nçš„è„šè¾¹ï¼Œè­¦æƒ•åœ°å››å‘¨å¼ æœ›ç€ã€‚\n", ob, me);
 
 		        do_protect = 1;
               // start the animal tick
@@ -178,12 +178,12 @@ int do_protect(string arg)
               call_out("special_check", 1 );
 		    }
 		    if (arg == "none") {
-              message_vision("$NÏò$nÒ»»ÓÊÖ£¬$n¹Ô¹ÔµÄ×ßµ½Ò»±ßÈ¥ÁË¡£\n", ob, me);
+              message_vision("$Nå‘$nä¸€æŒ¥æ‰‹ï¼Œ$nä¹–ä¹–çš„èµ°åˆ°ä¸€è¾¹å»äº†ã€‚\n", ob, me);
 		        do_protect = 0;
 		    }
 		  }
 		else {
-            return notify_fail("Ëü¶ÔÄã²ÇÒ²²»²Ç¡£\n");
+            return notify_fail("å®ƒå¯¹ä½ ç¬ä¹Ÿä¸ç¬ã€‚\n");
 		}
 		return 1;
 }
@@ -230,7 +230,7 @@ static void animal_combat_check()
 			// choose an opponet
 			target = owner->select_opponent();
 			if (!me->is_fighting(target) && target != me) {
-    				message_vision("$N¿´¼ûÖ÷ÈËÊÜµ½¹¥»÷£¬ÃÍÏò$nÆËÁË¹ıÈ¥¡£\n", me, target);
+    				message_vision("$Nçœ‹è§ä¸»äººå—åˆ°æ”»å‡»ï¼ŒçŒ›å‘$næ‰‘äº†è¿‡å»ã€‚\n", me, target);
 					me->kill_ob(target);
 			}
 		}
@@ -247,9 +247,9 @@ static void animal_follow_check()
 	   owner = query_lord();
 	   // if master is in the same room
 	   if (!objectp(present(owner, environment(me)))) {
-            message_vision("$N¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",me);
+            message_vision("$Næ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",me);
             me->move(environment(owner));
-            message_vision("$N¸úËæ×ÅÖ÷ÈË£¬ºôµØ´ÜÁË³öÀ´£¬¾¯ÌèµØËÄÖÜÕÅÍû×Å¡£¡£\n",me);
+            message_vision("$Nè·Ÿéšç€ä¸»äººï¼Œå‘¼åœ°çªœäº†å‡ºæ¥ï¼Œè­¦æƒ•åœ°å››å‘¨å¼ æœ›ç€ã€‚ã€‚\n",me);
 	   }
 	}
 }
@@ -278,19 +278,19 @@ static void animal_add_power()
 static void animal_is_hungry()
 {
    object ob = this_object();
-   message_vision(HIG"$NĞí¾ÃÎ´Ôø½øÊ³£¬Ôê¶¯²»°²£¬ÈÆ×ÅÄã²»Í£µØõâÀ´õâÈ¥£¬²»Ê±·¢³öÒ»Éú°§º¿¡£\n"NOR, ob);
+   message_vision(HIG"$Nè®¸ä¹…æœªæ›¾è¿›é£Ÿï¼ŒèºåŠ¨ä¸å®‰ï¼Œç»•ç€ä½ ä¸åœåœ°è¸±æ¥è¸±å»ï¼Œä¸æ—¶å‘å‡ºä¸€ç”Ÿå“€åšã€‚\n"NOR, ob);
 }
 
 static void animal_very_hungry()
 {
    object ob = this_object();
-   message_vision(HIG"$N²»°²µØÎ§×ÅÄãÈÆÀ´ÈÆÈ¥£¬Á½ÑÛ·¢³öÌ°À·µÄ¹â£¬ËÆºõÒªÔñÈË¶øÊÉ¡£\n"NOR, ob);
+   message_vision(HIG"$Nä¸å®‰åœ°å›´ç€ä½ ç»•æ¥ç»•å»ï¼Œä¸¤çœ¼å‘å‡ºè´ªå©ªçš„å…‰ï¼Œä¼¼ä¹è¦æ‹©äººè€Œå™¬ã€‚\n"NOR, ob);
 }
 
 static void animal_super_hungry()
 {
    object ob = this_object();
-   message_vision(HIG"$N¼¢¶öÄÑÄÍ£¬µÍº¿Ò»Éù£¬ÓĞÆøÎŞÁ¦µØ¿´ÁËÄãÒ»ÑÛ£¬Ò»ÁïĞ¡ÅÜ²»¼ûÁË¡£\n"NOR, ob);
+   message_vision(HIG"$Né¥¥é¥¿éš¾è€ï¼Œä½åšä¸€å£°ï¼Œæœ‰æ°”æ— åŠ›åœ°çœ‹äº†ä½ ä¸€çœ¼ï¼Œä¸€æºœå°è·‘ä¸è§äº†ã€‚\n"NOR, ob);
    destruct(ob);
 
 }

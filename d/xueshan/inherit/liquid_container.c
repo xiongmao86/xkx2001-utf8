@@ -78,15 +78,15 @@ string extra_long()
 	if( (amount = query_current_liquid()) >= 0 ) {
 		max = query_max_liquid();
 		if( amount == max )
-			str = "¿´ÉÏÈ¥×°µÃÂúÂúµÄ¡£  \n";
+			str = "çœ‹ä¸Šå»è£…å¾—æ»¡æ»¡çš„ã€‚  \n";
 		else if( amount > max/3*2 )
-			str = "Æß°Ë·ÖÂúµÄÑù×Ó¡£  \n";
+			str = "ä¸ƒå…«åˆ†æ»¡çš„æ ·å­ã€‚  \n";
 		else if( amount > max/3 )
-			str = "ÎåÁù·ÖÂúµÄÑù×Ó¡£  \n";
+			str = "äº”å…­åˆ†æ»¡çš„æ ·å­ã€‚  \n";
 		else if( amount > 0  )
-			str = "¼¸ºõÒÑ¾­¿ÕÁË¡£  \n";
+			str = "å‡ ä¹å·²ç»ç©ºäº†ã€‚  \n";
 		else if( amount == 0 )
-		    str = "¿´ÉÏÈ¥¿Õ¿ÕÈçÒ²¡£  \n";
+		    str = "çœ‹ä¸Šå»ç©ºç©ºå¦‚ä¹Ÿã€‚  \n";
 		return str;
 	}
 	else return 0;
@@ -104,24 +104,24 @@ int do_pour(string arg)
 
 	if( !living(this_player()) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 
 	if( !(arg))
-	     return  notify_fail("ÃüÁî¸ñÊ½£ºpour <ÈİÆ÷> into <ÈİÆ÷>\n");
+	     return  notify_fail("å‘½ä»¤æ ¼å¼ï¼špour <å®¹å™¨> into <å®¹å™¨>\n");
 
 	// syntex is pour bottle1 into bottle2
     if( sscanf(arg, "%s into %s", arg1, arg2)!= 2 ) 
-	     return  notify_fail("ÃüÁî¸ñÊ½£ºpour <ÈİÆ÷> into <ÈİÆ÷>\n");
+	     return  notify_fail("å‘½ä»¤æ ¼å¼ï¼špour <å®¹å™¨> into <å®¹å™¨>\n");
 
 	// player has to have the bottle in his inventory to pour.
 	// so they can't pour something that's on the ground
 	if( !(bottle1 = present(arg1, me)) )
-	     return  notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+	     return  notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	// check if the destination container is in player's inventory or on the ground
 	if( !(bottle2 = present(arg2, me)) ){
 	  if(  !(bottle2 = present(arg2, environment(me))) ) 
-	     return  notify_fail("ÕÒ²»µ½ÄÇÑù¶«Î÷¡£ \n");
+	     return  notify_fail("æ‰¾ä¸åˆ°é‚£æ ·ä¸œè¥¿ã€‚ \n");
     }
 	// check I am pouring the same bottle as the action, 
 	// don't know if the check is needed, leave it out for now
@@ -151,13 +151,13 @@ int do_pour(string arg)
 		}
 		// if no liquid
 		if (!(liquid_found))
-        	return  notify_fail("ÄÇÀïÊÇ¿ÕµÄ£¬µ¹Ê²Ã´£¿\n");
+        	return  notify_fail("é‚£é‡Œæ˜¯ç©ºçš„ï¼Œå€’ä»€ä¹ˆï¼Ÿ\n");
 
 		// now check the destination bottle
 		if ( bottle2->query("liquid/container") ) {
 
 			 if (bottle1 == bottle2)
-				 return  notify_fail("µ¹»ØÔ­´¦£¬Äª·ÇÄãÓĞ²¡£¿\n");
+				 return  notify_fail("å€’å›åŸå¤„ï¼Œè«éä½ æœ‰ç—…ï¼Ÿ\n");
 
 			 liquid_name = liquid->name();
 			 // move liquid to the destination bottle
@@ -171,15 +171,15 @@ int do_pour(string arg)
 				     else
 				         bottle1->set_current_liquid(0);
 				 }
-                 message_vision("$N½«"+liquid_name+"Ğ¡ĞÄÒíÒíµÄµ¹Èë"+bottle2->name()+"ÄÚ¡£\n"NOR, me );
+                 message_vision("$Nå°†"+liquid_name+"å°å¿ƒç¿¼ç¿¼çš„å€’å…¥"+bottle2->name()+"å†…ã€‚\n"NOR, me );
 			 } 
 		}
     	else 
-	         return  notify_fail("Äã²»ÄÜÍùÄÇÀïµ¹¡£\n");
+	         return  notify_fail("ä½ ä¸èƒ½å¾€é‚£é‡Œå€’ã€‚\n");
 		
 	}
 	else 
-	   return  notify_fail("ÕâÑù¶«Î÷²»ÄÜµ¹¡£\n");
+	   return  notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½å€’ã€‚\n");
 
 
 	return 1;
@@ -189,9 +189,9 @@ int do_fill(string arg)
 {
 	if( !this_object()->id(arg) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 	if( !environment(this_player())->query("resource/water") )
-		return notify_fail("ÕâÀïÃ»ÓĞµØ·½¿ÉÒÔ×°Ë®¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰åœ°æ–¹å¯ä»¥è£…æ°´ã€‚\n");
 	return 1;
 }
 
@@ -203,10 +203,10 @@ int do_empty(string arg)
 
 	if( !this_object()->id(arg) ) return 0;
 	if( this_player()->is_busy() )
-		return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+		return notify_fail("ä½ ä¸Šä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 
 	if( !(bottle = present(arg, me)) )
-	     return  notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+	     return  notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
    	inv = all_inventory(bottle);
     for( i=0; i<sizeof(inv); i++ )
@@ -214,6 +214,6 @@ int do_empty(string arg)
 			   destruct(inv[i]);
 	}
 	bottle->set_current_liquid(0);
-    message_vision("$N½«$nµ¹µÄÒ»¸É¶ş¾»¡£\n"NOR, this_player(), this_object());
+    message_vision("$Nå°†$nå€’çš„ä¸€å¹²äºŒå‡€ã€‚\n"NOR, this_player(), this_object());
 	return 1;
 }

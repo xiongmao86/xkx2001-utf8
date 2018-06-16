@@ -1,13 +1,13 @@
 //Cracked by Roath
-// cui.c ´ÞÔ±Íâ
+// cui.c å´”å‘˜å¤–
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-	set_name("´ÞÔ±Íâ", ({ "cui yuanwai", "cui" }));
+	set_name("å´”å‘˜å¤–", ({ "cui yuanwai", "cui" }));
         set_color("$YEL$");
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
 
 	set_skill("unarmed", 50);
@@ -26,7 +26,7 @@ void create()
 	
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒÐÐÐ×É±ÈË£¬Ã»Íõ·¨ÁËÂð£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡çŽ‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

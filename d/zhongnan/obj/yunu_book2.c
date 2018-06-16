@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-	set_name("ÓñÅ®¶þÊ®ËÄ¾÷ÏÂ¾í", ({ "yunu book", "book" }));
+	set_name("çŽ‰å¥³äºŒåå››è¯€ä¸‹å·", ({ "yunu book", "book" }));
 	set_weight(600);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
-		set("long","ÓñÅ®¶þÊ®ËÄ¾÷ÊÇ¹ÅÄ¹ÅÉÐÞÉíÁ·¾«µÄÐÄ·¨Òª¾÷¡£Ê®¶þ¶à·´¾÷£º\n"
-			   "¶àË¼ÔòÉñµ¡£¬¶àÄîÔò¾«É¢£¬¶àÓûÔòÖÇËð£¬¶àÊÂÔòÐÎÆ££¬¶àÓïÔòÆø´Ù£¬\n"
-			   "¶àÐ¦Ôò¸ÎÉË£¬¶à³îÔòÐÄÉå£¬¶àÀÖÔòÒâÒç£¬¶àÏ²ÔòÍü´í»èÂÒ£¬¶àÅ­Ôò°Ù\n"
-			   "Âö²»¶¨£¬¶àºÃÔò×¨ÃÔ²»ÖÎ£¬¶à¶ñÔò½¹¼åÎÞÄþ¡£´ËÊ®¶þ¶à²»³ý£¬É¥ÉúÖ®±¾Ò²¡£\n");
+		set("unit", "æœ¬");
+		set("long","çŽ‰å¥³äºŒåå››è¯€æ˜¯å¤å¢“æ´¾ä¿®èº«ç»ƒç²¾çš„å¿ƒæ³•è¦è¯€ã€‚åäºŒå¤šåè¯€ï¼š\n"
+			   "å¤šæ€åˆ™ç¥žæ€ ï¼Œå¤šå¿µåˆ™ç²¾æ•£ï¼Œå¤šæ¬²åˆ™æ™ºæŸï¼Œå¤šäº‹åˆ™å½¢ç–²ï¼Œå¤šè¯­åˆ™æ°”ä¿ƒï¼Œ\n"
+			   "å¤šç¬‘åˆ™è‚ä¼¤ï¼Œå¤šæ„åˆ™å¿ƒæ…‘ï¼Œå¤šä¹åˆ™æ„æº¢ï¼Œå¤šå–œåˆ™å¿˜é”™æ˜ä¹±ï¼Œå¤šæ€’åˆ™ç™¾\n"
+			   "è„‰ä¸å®šï¼Œå¤šå¥½åˆ™ä¸“è¿·ä¸æ²»ï¼Œå¤šæ¶åˆ™ç„¦ç…Žæ— å®ã€‚æ­¤åäºŒå¤šä¸é™¤ï¼Œä¸§ç”Ÿä¹‹æœ¬ä¹Ÿã€‚\n");
 		set("value", 200);
 		set("material", "paper");
 		set("skill", ([

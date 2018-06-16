@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "ÄþÊÙÃÅ");
+	set("short", "å®å¯¿é—¨");
 	set("long", @LONG
-ÄãÃæÇ°ÊÇÒ»µÀÓ°±Ú(wall)£¬Ó°±Úºó¾ÍÊÇÄþÊÙ¹¬¹¬ÃÅÁË¡£ÄþÊÙ
-¹¬½¨ÓÚÇ¬Â¡ÈýÊ®ÁùÄêÖÁËÄÊ®Ò»Äê£¬·Â´óÄÚÖÐÖáÏß£¬Ç°Èýµî£¬ºóÈý
-¹¬µÄÌåÖÆ£¬ÊÇ×Ï½û³ÇÖÐ×îÆøÆÇÐÛÎ°µÄ¹¬µî¡£
+ä½ é¢å‰æ˜¯ä¸€é“å½±å£(wall)ï¼Œå½±å£åŽå°±æ˜¯å®å¯¿å®«å®«é—¨äº†ã€‚å®å¯¿
+å®«å»ºäºŽä¹¾éš†ä¸‰åå…­å¹´è‡³å››åä¸€å¹´ï¼Œä»¿å¤§å†…ä¸­è½´çº¿ï¼Œå‰ä¸‰æ®¿ï¼ŒåŽä¸‰
+å®«çš„ä½“åˆ¶ï¼Œæ˜¯ç´«ç¦åŸŽä¸­æœ€æ°”é­„é›„ä¼Ÿçš„å®«æ®¿ã€‚
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */
@@ -18,7 +18,7 @@ LONG
   "northwest" : __DIR__"gzxd5",
 ]));
 	set("item_desc", ([ /* sizeof() == 1 */
-  "wall" : "¡°¾ÅÁú±Ú¡±ÉÏÃæµñ¿Ì×Å¾ÅÌõÅÌÐý·ÉÎèµÄ¾ÞÁú¡£\n",
+  "wall" : "â€œä¹é¾™å£â€ä¸Šé¢é›•åˆ»ç€ä¹æ¡ç›˜æ—‹é£žèˆžçš„å·¨é¾™ã€‚\n",
 ]));
 	set("no_clean_up", 0);
 	set("outdoors", "beijing");

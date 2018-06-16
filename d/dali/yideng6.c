@@ -9,10 +9,10 @@ int do_pian(string);
 
 void create()
 {
-	set("short", "¾ŞÊ¯ÏÂ");
+	set("short", "å·¨çŸ³ä¸‹");
 	set("long", @LONG
-Äã´ô´ôµØÊ¹³öÈ«Á¦¶¥Æğ¾ŞÊ¯£¬ÉúÅÂÒ»ËÉÊÖÔÒËÀÁË×Ô¼º£¬Å©·òÀäÀäµØÕ¾ÔÚÒ»ÅÔ
-ĞäÊÖÅÔ¹Û£¬Ò»µãÏàÖúµÄÒâË¼Ò²Ã»ÓĞ¡£     
+ä½ å‘†å‘†åœ°ä½¿å‡ºå…¨åŠ›é¡¶èµ·å·¨çŸ³ï¼Œç”Ÿæ€•ä¸€æ¾æ‰‹ç ¸æ­»äº†è‡ªå·±ï¼Œå†œå¤«å†·å†·åœ°ç«™åœ¨ä¸€æ—
+è¢–æ‰‹æ—è§‚ï¼Œä¸€ç‚¹ç›¸åŠ©çš„æ„æ€ä¹Ÿæ²¡æœ‰ã€‚     
 LONG);
 	set("cost", 2);
 	set("no_fight", 1);
@@ -46,8 +46,8 @@ void dropjingli(object me, int losejl)
 {
 	if (environment(me)==find_object("/d/dali/yideng6.c"))
 	{
-		message_vision("$NÍĞµÃ¾ÃÁË£¬Ö»¾õµÃÁ½±Û·¢Âé£¬ÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¡\n",me);
-		me->receive_damage("jingli", losejl,"¾«Á¦Í¸Ö§¹ı¶È¶øËÀÁË");
+		message_vision("$Næ‰˜å¾—ä¹…äº†ï¼Œåªè§‰å¾—ä¸¤è‡‚å‘éº»ï¼Œçœ¼å‰ä¸€é˜µé‡‘æ˜Ÿä¹±å†’ï¼\n",me);
+		me->receive_damage("jingli", losejl,"ç²¾åŠ›é€æ”¯è¿‡åº¦è€Œæ­»äº†");
 		return;
 	}
 }
@@ -56,7 +56,7 @@ void moveout(object me)
 {
 	if (environment(me)==find_object("/d/dali/yideng6.c"))
 	{
-		message_vision("$NÑÛÇ°Ò»Õó·¢ºÚ£¬ÖÕÓÚ¼á³Ö²»×¡ÁË£¬ÊÖÒ»ËÉ£¬¡°ºäÂ¡¡±£¡ ... ...\n",me);
+		message_vision("$Nçœ¼å‰ä¸€é˜µå‘é»‘ï¼Œç»ˆäºåšæŒä¸ä½äº†ï¼Œæ‰‹ä¸€æ¾ï¼Œâ€œè½°éš†â€ï¼ ... ...\n",me);
 		me->unconcious();
 		me->move("/d/dali/droad2.c");
 		return;
@@ -65,7 +65,7 @@ void moveout(object me)
 
 int do_exert(string arg)
 {
-	tell_object(this_player(), "ÄãÕıÍĞ×Å´óÊ¯Í·ÄØ£¬ÔõÃ´ÔËÆø£¿£¡\n");
+	tell_object(this_player(), "ä½ æ­£æ‰˜ç€å¤§çŸ³å¤´å‘¢ï¼Œæ€ä¹ˆè¿æ°”ï¼Ÿï¼\n");
 	return 1;
 }
 
@@ -75,9 +75,9 @@ int do_pian(string arg)
 	me=this_player();
 	if (arg=="nong" || arg=="wu santong" || arg=="farmer" || arg=="wu")
 	{
-		message_vision("$NÇé¼±ÉúÖÇ£¬´óº°µÀ£º¡°´óÊå£¬ÎÒ»³ÀïÓĞÒ»·âºéÀÏÒ¯×Ó¸ø¶Î»ÊÒ¯µÄĞÅ£¡¡±\n",me);
-		message_vision("¡°ÄãÀ´ÔİÍĞÒ»ÏÂ£¬´ıÎÒÈ¡³ö¸øÄã¡£¡±\n",me);
-		message_vision("µÈµ½Å©·òÍĞÆğ´óÊ¯£¬$NÉíĞÎÒ»×İ£¬´ÓËûÉí±ßÂÓ¹ı£¬³åÏòºóÉ½£¡\n\n",me);
+		message_vision("$Næƒ…æ€¥ç”Ÿæ™ºï¼Œå¤§å–Šé“ï¼šâ€œå¤§å”ï¼Œæˆ‘æ€€é‡Œæœ‰ä¸€å°æ´ªè€çˆ·å­ç»™æ®µçš‡çˆ·çš„ä¿¡ï¼â€\n",me);
+		message_vision("â€œä½ æ¥æš‚æ‰˜ä¸€ä¸‹ï¼Œå¾…æˆ‘å–å‡ºç»™ä½ ã€‚â€\n",me);
+		message_vision("ç­‰åˆ°å†œå¤«æ‰˜èµ·å¤§çŸ³ï¼Œ$Nèº«å½¢ä¸€çºµï¼Œä»ä»–èº«è¾¹æ è¿‡ï¼Œå†²å‘åå±±ï¼\n\n",me);
 		me->move("/d/dali/yideng7.c");
 		return 1;
 	}

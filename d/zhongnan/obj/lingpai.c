@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /d/zhongnan/obj/lingpai.c
-// lingpai.c È«Õæ½ÌÁîÅÆ
+// lingpai.c å…¨çœŸæ•™ä»¤ç‰Œ
 // sdong 06/01/99
 
 inherit ITEM;
@@ -8,13 +8,13 @@ inherit F_AUTOLOAD;
 
 void create()
 {
-		  set_name("È«Õæ½ÌÁîÅÆ", ({"ling pai", "pai"}));
+		  set_name("å…¨çœŸæ•™ä»¤ç‰Œ", ({"ling pai", "pai"}));
 		  set("long",
-					 "ÕâÊÇÒ»°ÑÍ­ÖÆµÄ£¬´òÔìµÄ·Ç³£¾«ÖÂ¡£\n");
-		  set("unit", "°Ñ");
+					 "è¿™æ˜¯ä¸€æŠŠé“œåˆ¶çš„ï¼Œæ‰“é€ çš„éå¸¸ç²¾è‡´ã€‚\n");
+		  set("unit", "æŠŠ");
 		  set("weight", 10);
 
-		  set("no_get",   "Æ¥·òÎŞ×ï£¬»³èµÆä×ï£¬Äã»¹ÊÇËãÁË°É¡£\n");
-		  set("no_steal", "Õâ¸ö¶«Î÷ÄãÍµ²»µ½¡£\n");
+		  set("no_get",   "åŒ¹å¤«æ— ç½ªï¼Œæ€€ç’§å…¶ç½ªï¼Œä½ è¿˜æ˜¯ç®—äº†å§ã€‚\n");
+		  set("no_steal", "è¿™ä¸ªä¸œè¥¿ä½ å·ä¸åˆ°ã€‚\n");
 
 }

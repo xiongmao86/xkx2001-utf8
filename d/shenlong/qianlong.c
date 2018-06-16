@@ -1,5 +1,5 @@
 //Cracked by Roath
-//Ç±ÁúÌÃ /d/shenlong/qianlong
+//æ½œé¾™å ‚ /d/shenlong/qianlong
 // ALN Sep 9 / 97
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ç±ÁúÌÃ");
+	set("short", "æ½œé¾™å ‚");
         set("long", @LONG
-ÕâÊÇÉñÁú½ÌµÄÇ±ÁúÌÃ£¬¾ÓÖÐÁ½ÕÅ´óÖñÒÎ£¬ÏÂÃæÉèÁËÎåÕÅ°åµÊ£¬½ÌÖ÷ºÍÎåÁú
-Ê¹³£ÔÚ´ËÉÌÁ¿ÃÜÊÂ£¬Õâ¶ù·Ç½ÌÖ÷ÔÊÐíÊÇ²»¿ÉÒÔ½øÈë´ËµØµÄ¡£
+è¿™æ˜¯ç¥žé¾™æ•™çš„æ½œé¾™å ‚ï¼Œå±…ä¸­ä¸¤å¼ å¤§ç«¹æ¤…ï¼Œä¸‹é¢è®¾äº†äº”å¼ æ¿å‡³ï¼Œæ•™ä¸»å’Œäº”é¾™
+ä½¿å¸¸åœ¨æ­¤å•†é‡å¯†äº‹ï¼Œè¿™å„¿éžæ•™ä¸»å…è®¸æ˜¯ä¸å¯ä»¥è¿›å…¥æ­¤åœ°çš„ã€‚
 LONG
         );
 
@@ -32,10 +32,10 @@ void init()
         object me = this_player();
         object *inv;
 
-        if( !(me->query("family/family_name") == "ÉñÁú½Ì" || me->query("sg/spy")) ) {
+        if( !(me->query("family/family_name") == "ç¥žé¾™æ•™" || me->query("sg/spy")) ) {
                 inv = all_inventory(this_object());
                 for(int i = 0; i < sizeof(inv); i++ )
-                        if( (inv[i]->query("family/family_name") == "ÉñÁú½Ì" || inv[i]->query("sg/spy")) && living(inv[i]) )
+                        if( (inv[i]->query("family/family_name") == "ç¥žé¾™æ•™" || inv[i]->query("sg/spy")) && living(inv[i]) )
                                 inv[i]->kill_ob(me);
                 me->start_busy(1);
         }

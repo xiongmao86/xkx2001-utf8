@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huoji.c �ݵ�ⷼ�
+// huoji.c 草店夥计
 
 inherit NPC;
 inherit F_DEALER;
@@ -8,11 +8,11 @@ string ask_me(string);
 
 void create()
 {
-	set_name("��ⷼ�", ({ "dian huoji", "huoji", "waiter" }) );
-	set("gender", "����" );
+	set_name("店夥计", ({ "dian huoji", "huoji", "waiter" }) );
+	set("gender", "男性" );
 	set("age", 22);
 	set("long",
-		"��λ��ⷼ���Ц�����æ��������ʱ������ڲ����ϵ�Ĩ��������\n");
+		"这位店夥计正笑咪咪地忙著，还不时拿起挂在脖子上的抹布擦脸。\n");
 	set("combat_exp", 100);
 	set("attitude", "friendly");
 	set("vendor_goods", ({
@@ -23,8 +23,8 @@ void create()
 		"/d/village/npc/obj/bottle",
 	}));
         set("inquiry", ([
-	"�䵱ɽ" : "������꣬���Ż���·�����ϱ㵽�䵱ɽ�ˣ�ɽ�ϵķ羰���ǲ��ܲ��а���\n",
-	"�䵱��" : "�ٺ٣��������䵱�ɵ��������治С�����������䵱���������ý�����ֻ��û�˲����ɡ�\n",
+	"武当山" : "出了这店，沿着黄土路往西南便到武当山了，山上的风景可是不能不尚啊。\n",
+	"武当派" : "嘿嘿，近年来武当派的名气可真不小啊，尤其是武当七侠的名堂江湖上只怕没人不晓吧。\n",
         ]) );
 
 	setup();
@@ -53,12 +53,12 @@ void greeting(object me)
 	
 	switch( random(2) ) {
 		case 0:
-			say( "��ⷼ�Ц�����˵������λ" + RANK_D->query_respect(me)
-				+ "��·һ�����ˣ�ЪЪ�Ȱɡ�\n");
+			say( "店夥计笑咪咪地说道：这位" + RANK_D->query_respect(me)
+				+ "赶路一定累了，歇歇腿吧。\n");
 			break;
 		case 1:
-			say( "��ⷼ��ò����ϵ�ë��Ĩ��Ĩ�֣�˵������λ" + RANK_D->query_respect(me)
-				+ "����������Ҫ��Ҫ�Ұ���������Ҳιһ�£�\n");
+			say( "店夥计用脖子上的毛巾抹了抹手，说道：这位" + RANK_D->query_respect(me)
+				+ "，请进请进，要不要我帮您把牲口也喂一下？\n");
 			break;
 		}
 

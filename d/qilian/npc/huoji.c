@@ -1,17 +1,17 @@
 //Cracked by Roath
-// huoji. »ï¼Æ
+// huoji. ä¼™è®¡
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-	set_name("»ï¼Æ", ({ "huo ji" }));
+	set_name("ä¼™è®¡", ({ "huo ji" }));
 	set("str", 20);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 18);
 	set_max_encumbrance(100000000);
-	set("long", "ËûÊÇÕâ¶ùµÄ»ï¼Æ£¬ÕýÔÚµêÀïÃ¦ÀïÃ¦Íâ¡£\n");
+	set("long", "ä»–æ˜¯è¿™å„¿çš„ä¼™è®¡ï¼Œæ­£åœ¨åº—é‡Œå¿™é‡Œå¿™å¤–ã€‚\n");
 	set("combat_exp", 250);
 	set("attitude", "friendly");
 	set("vendor_goods", ({
@@ -36,26 +36,26 @@ int accept_object(object who,object ob)
         int a;
 	object money, cloth;
 	string *beast_list = ({
-	"Ã·»¨Â¹",
-	"Ò°¹·",
-	"ÀÏ»¢",
-	"ºï×Ó",
-	"Ð¡ºï",
-	"Ä¸ÀÇ",
-	"ÃàÑò"
+	"æ¢…èŠ±é¹¿",
+	"é‡Žç‹—",
+	"è€è™Ž",
+	"çŒ´å­",
+	"å°çŒ´",
+	"æ¯ç‹¼",
+	"ç»µç¾Š"
 	});
 	a = ob->query("combat_exp");
  if ( member_array(ob->query("victim_name"), beast_list) != -1 )
 
  	{
 	call_out("destroy", 1, ob);
-	command("say ÕâÍ·"+ob->query("victim_name")+"Öµ²»ÁË¼¸¸ö´óÇ®¡£");	
+	command("say è¿™å¤´"+ob->query("victim_name")+"å€¼ä¸äº†å‡ ä¸ªå¤§é’±ã€‚");	
 	money=new("/clone/money/silver");
 	money->set_amount((int)a/100);
 	if ((int)a/100 > 300)
 	money->set_amount(300);
 	money->move(who);
-	say("»ï¼ÆµÝ¸øÄã¼¸¶§Òø×Ó£¬ËµµÀ£ºÇëÊÕºÃ¡£\n");
+	say("ä¼™è®¡é€’ç»™ä½ å‡ é”­é“¶å­ï¼Œè¯´é“ï¼šè¯·æ”¶å¥½ã€‚\n");
 	return 1;	
 	}
 	if( ob->value() >= 1000 )
@@ -77,13 +77,13 @@ int do_make(string arg)
         string item; 
         int amount;
 	string *beast_list = ({
-        "Ã·»¨Â¹",
-        "Ò°¹·",
-        "ÀÏ»¢",
-        "ºï×Ó",
-        "Ð¡ºï",
-        "Ä¸ÀÇ",
-        "ÃàÑò"
+        "æ¢…èŠ±é¹¿",
+        "é‡Žç‹—",
+        "è€è™Ž",
+        "çŒ´å­",
+        "å°çŒ´",
+        "æ¯ç‹¼",
+        "ç»µç¾Š"
         });
 
 	
@@ -91,31 +91,31 @@ int do_make(string arg)
         ob = new("/d/qilian/obj/leather.c");
 
         if( !arg || sscanf(arg, "%s into cloth", item) != 1 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷×ö³ÉÒÂ·þ£¿\n");
+                return notify_fail("ä½ è¦å°†ä»€ä¹ˆä¸œè¥¿åšæˆè¡£æœï¼Ÿ\n");
 	if (me->query_temp("cloth") < 1)
-		return notify_fail("ÄãÃ»¸¶Ç®£¬ÈË¼Ò²»»á¸øÄã×öÒÂ·þ¡£\n");         
+		return notify_fail("ä½ æ²¡ä»˜é’±ï¼Œäººå®¶ä¸ä¼šç»™ä½ åšè¡£æœã€‚\n");         
         if( item == "all" ) {
-                write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+                write("è¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
                 return 1;
         }
                                                                 
         sscanf(item, "%d %s", amount, item);
         
         if( !objectp(obj = present(item, me)) )
-                return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
         if( obj->query("id") != "corpse"){
-                write("Äã²»ÄÜ½«ÕâÑù¶«Î÷×ö³ÉÒÂ·þ¡£\n");
+                write("ä½ ä¸èƒ½å°†è¿™æ ·ä¸œè¥¿åšæˆè¡£æœã€‚\n");
                 return 1;
         }
         if ( member_array(ob->query("victim_name"), beast_list) != -1  )
 	{
-        message_vision("$N°Ñ"+obj->query("name")+"½»¸øÁËµêÀïµÄ»ï¼Ç¡£\n",
+        message_vision("$NæŠŠ"+obj->query("name")+"äº¤ç»™äº†åº—é‡Œçš„ä¼™è®°ã€‚\n",
 me);
 
-        message_vision("$N´Óµê»ï¼ÇÖÐ½Ó¹ýÁËÒ»¼þÆ¤ÒÂ£¡\n",
+        message_vision("$Nä»Žåº—ä¼™è®°ä¸­æŽ¥è¿‡äº†ä¸€ä»¶çš®è¡£ï¼\n",
 me);
-        ob->set("name", obj->query("victim_name")+"Æ¤´óÒÂ");
+        ob->set("name", obj->query("victim_name")+"çš®å¤§è¡£");
         ob->set("armor_prop/armor",(int)obj->query("combat_exp")/1000);
 	ob->move(me);
         destruct(obj);

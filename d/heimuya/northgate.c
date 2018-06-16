@@ -9,10 +9,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ƽ���ݱ���");
+        set("short", "平定州北门");
         set("long", @LONG
-������ƽ���ݵı��ţ�ƽʱ������˱Ƚ��٣�����
-�����ĵġ�����ȥ���Կ���һƬ���֡�
+这里是平定州的北门，平时出入的人比较少，四周
+静悄悄的。往北去可以看见一片树林。
 LONG
         );
 

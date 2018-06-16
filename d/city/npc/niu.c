@@ -1,5 +1,5 @@
 //Cracked by Roath
-// niu. Å£ÕÆ¹ñ
+// niu. ç‰›æŽŒæŸœ
 
 #include <ansi.h>
 #include <dbase.h>
@@ -11,15 +11,15 @@ string ask_me();
 
 void create()
 {
-        set_name("Å£ÕÆ¹ñ", ({ "niu zhanggui", "niu" }));
+        set_name("ç‰›æŽŒæŸœ", ({ "niu zhanggui", "niu" }));
         set_color("$YEL$");
-        set("title", "¾Û½ð¸óÕÆ¹ñ");
+        set("title", "èšé‡‘é˜æŽŒæŸœ");
         set("shen_type", 1);
 
         set("str", 20);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long", "Å£ÕÆ¹ñÒ»¸±¾«Ã÷ÄÜ¸ÉµÄÑù×Ó£¬¸÷Ê½½ðÒøÖé±¦ËûÒ»ÑÛ±ãÄÜËµ³ö¼ÛÇ®À´¡£\n");
+        set("long", "ç‰›æŽŒæŸœä¸€å‰¯ç²¾æ˜Žèƒ½å¹²çš„æ ·å­ï¼Œå„å¼é‡‘é“¶ç å®ä»–ä¸€çœ¼ä¾¿èƒ½è¯´å‡ºä»·é’±æ¥ã€‚\n");
         set("combat_exp", 20000);
         set("qi", 300);
         set("max_qi", 300);
@@ -74,12 +74,12 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        command("say »¶Ó­¹âÁÙ£¬ÕâÎ»"+RANK_D->query_respect(ob)+"ÇëËæ±ã²Î¹Û¡£Ð¡µê±£Ö¤»õÕæ¼ÛÊµ¡£");
+        command("say æ¬¢è¿Žå…‰ä¸´ï¼Œè¿™ä½"+RANK_D->query_respect(ob)+"è¯·éšä¾¿å‚è§‚ã€‚å°åº—ä¿è¯è´§çœŸä»·å®žã€‚");
 }
 
 int accept_kill(object me)
 {
-        command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒÐÐÐ×É±ÈË£¬Ã»Íõ·¨ÁËÂð£¿\n");
+        command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡çŽ‹æ³•äº†å—ï¼Ÿ\n");
         me->apply_condition("killer", 100);
         kill_ob(me);
         return 1;

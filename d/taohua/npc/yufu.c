@@ -1,15 +1,15 @@
 //Cracked by Roath
-// yufu.c Óæ·ò
+// yufu.c æ¸”å¤«
 
 inherit NPC;
 
 void create()
 {
-	set_name("Óæ·ò", ({ "yu fu","fu" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¸”å¤«", ({ "yu fu","fu" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
         set("long",
-		"Ò»¸öÑ°³£µÄÒÔ´òÓãÎªÉúµÄÓæ·ò¡£\n");
+		"ä¸€ä¸ªå¯»å¸¸çš„ä»¥æ‰“é±¼ä¸ºç”Ÿçš„æ¸”å¤«ã€‚\n");
 	set("combat_exp", 8800);
 	set("shen_type", 0);
 	set("attitude", "friendly");

@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ò»Æ·ÌÃÎäÊ¿", ({ "wu shi", "shi", "guard" }) );
-	set("gender", "ÄÐÐÔ");
+	set_name("ä¸€å“å ‚æ­¦å£«", ({ "wu shi", "shi", "guard" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"Ò»ÃûÂúÈùò°÷×µÄÎ÷ÏÄÎäÊ¿¡£\n");
+		"ä¸€åæ»¡è…®è™¬é«¯çš„è¥¿å¤æ­¦å£«ã€‚\n");
 	set("combat_exp", 350000);
         set("shen_type", -1);
 	set("attitude", "heroism");
@@ -38,7 +38,7 @@ void create()
 	set_skill("parry", 130);
 	set_skill("dodge", 130);
 
-	set("no_get", "Ò»Æ·ÌÃÎäÊ¿¶ÔÄã¶øÑÔÌ«ÖØÁË¡£");
+	set("no_get", "ä¸€å“å ‚æ­¦å£«å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚");
 
 	setup();
 
@@ -57,7 +57,7 @@ void init()
 }
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("xakiller", 100);
         kill_ob(me);
         return 1;
@@ -65,7 +65,7 @@ int accept_fight(object me)
 
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("xakiller", 100);
         kill_ob(me);
         return 1;

@@ -10,46 +10,46 @@ inherit F_DBASE;
 inherit F_SKILL;
 
 mapping *combat_action = ({
-	([      "action":               "$N»ÓÈ­¹¥»÷$nµÄ$l",
-		"damage_type":  "ğöÉË",
+	([      "action":               "$NæŒ¥æ‹³æ”»å‡»$nçš„$l",
+		"damage_type":  "ç˜€ä¼¤",
 	]),
-	([      "action":               "$NÍù$nµÄ$lÒ»×¥",
-		"damage_type":  "²ÁÉË",
+	([      "action":               "$Nå¾€$nçš„$lä¸€æŠ“",
+		"damage_type":  "æ“¦ä¼¤",
 	]),
-	([      "action":               "$NÍù$nµÄ$lºİºİµØÌßÁËÒ»½Å",
-		"damage_type":  "ğöÉË",
+	([      "action":               "$Nå¾€$nçš„$lç‹ ç‹ åœ°è¸¢äº†ä¸€è„š",
+		"damage_type":  "ç˜€ä¼¤",
 	]),
-	([      "action":               "$NÌáÆğÈ­Í·Íù$nµÄ$l´·È¥",
-		"damage_type":  "ÄÚÉË",
+	([      "action":               "$Næèµ·æ‹³å¤´å¾€$nçš„$læ¶å»",
+		"damage_type":  "å†…ä¼¤",
 	]),
-	([      "action":               "$N¶Ô×¼$nµÄ$lÓÃÁ¦»Ó³öÒ»È­",
-		"damage_type":  "ğöÉË",
+	([      "action":               "$Nå¯¹å‡†$nçš„$lç”¨åŠ›æŒ¥å‡ºä¸€æ‹³",
+		"damage_type":  "ç˜€ä¼¤",
 	]),
 });
 
 void create()
 {
 	seteuid(getuid());
-	set("unit", "Î»");
-	set("gender", "ÄĞĞÔ");
+	set("unit", "ä½");
+	set("gender", "ç”·æ€§");
 	set("can_speak", 1);
 	set("attitude", "peaceful");
 
 	set("limbs", ({
-		"Í·¶¥", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-		"ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Á½Àß", "×óÁ³", "Ñü¼ä", "Ğ¡¸¹", 
-		"×óÍÈ", "ÓÒÍÈ", "ÓÒÁ³", "×ó½Å", "ÓÒ½Å", "×ó¶ú", "ÓÒ¶ú" 
+		"å¤´é¡¶", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+		"å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "ä¸¤è‚‹", "å·¦è„¸", "è…°é—´", "å°è…¹", 
+		"å·¦è…¿", "å³è…¿", "å³è„¸", "å·¦è„š", "å³è„š", "å·¦è€³", "å³è€³" 
 	}) );
 
-	set("dead_message",           "\n$Nµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n\n"      );
-	set("unconcious_message",     "\n$N½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ıÈ¥¡£\n\n"  );
-	set("revive_message",         "\n$NÂıÂıÕö¿ªÑÛ¾¦£¬ÇåĞÑÁË¹ıÀ´¡£\n\n"        );
-//      set("comeout_message_outdoor","¿ì²½Íù$dÀë¿ª¡£\n"                          );
-//      set("comein_message_outdoor", "¿ì²½×ßÁË¹ıÀ´¡£\n"                          );
-//      set("comeout_message_indoor", "Íù$d×ßÁË³öÈ¥¡£\n"                          );
-//      set("comein_message_indoor",  "×ßÁË¹ıÀ´¡£\n"                              );
-//      set("fleeout_message",        "Íù$dÂä»Ä¶øÌÓÁË¡£\n"                        );
-//      set("fleein_message",         "µøµø×²×²µØÅÜÁË¹ıÀ´£¬Ä£ÑùÓĞĞ©ÀÇ±·¡£\n"      );
+	set("dead_message",           "\n$Nå€’åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰äº†å‡ ä¸‹å°±æ­»äº†ã€‚\n\n"      );
+	set("unconcious_message",     "\n$Nè„šä¸‹ä¸€ä¸ªä¸ç¨³ï¼Œè·Œåœ¨åœ°ä¸Šæ˜äº†è¿‡å»ã€‚\n\n"  );
+	set("revive_message",         "\n$Næ…¢æ…¢çå¼€çœ¼ç›ï¼Œæ¸…é†’äº†è¿‡æ¥ã€‚\n\n"        );
+//      set("comeout_message_outdoor","å¿«æ­¥å¾€$dç¦»å¼€ã€‚\n"                          );
+//      set("comein_message_outdoor", "å¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n"                          );
+//      set("comeout_message_indoor", "å¾€$dèµ°äº†å‡ºå»ã€‚\n"                          );
+//      set("comein_message_indoor",  "èµ°äº†è¿‡æ¥ã€‚\n"                              );
+//      set("fleeout_message",        "å¾€$dè½è’è€Œé€ƒäº†ã€‚\n"                        );
+//      set("fleein_message",         "è·Œè·Œæ’æ’åœ°è·‘äº†è¿‡æ¥ï¼Œæ¨¡æ ·æœ‰äº›ç‹¼ç‹ˆã€‚\n"      );
 }
 
 void setup_human(object ob)
@@ -85,23 +85,23 @@ void setup_human(object ob)
 		{
 			my["max_jing"] -= (my["age"] - 70) * (my["int"] + my["con"])/7;
 
-		// µÀ¼Ò±£¾«£º
-			if ( mapp(my["family"]) && (my["family"]["family_name"] == "Îäµ±ÅÉ"
-			|| my["family"]["family_name"] == "È«Õæ½Ì")
+		// é“å®¶ä¿ç²¾ï¼š
+			if ( mapp(my["family"]) && (my["family"]["family_name"] == "æ­¦å½“æ´¾"
+			|| my["family"]["family_name"] == "å…¨çœŸæ•™")
 			&& (lvl = (int)ob->query_skill("taoism", 1)) >= 100 )
 				my["max_jing"] += (my["age"] - 70) * lvl/20 ;
 
 		}
 
-		// ·ğ¼ÒÑø¾«£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
+		// ä½›å®¶å…»ç²¾ï¼šï¼“ï¼å²å‰è¡¥ç²¾ï¼Œï¼“ï¼å²åé•¿ç²¾
 		if ( mapp(my["family"]) ) {
-			if ( my["family"]["family_name"] == "¶ëáÒÅÉ" )
+			if ( my["family"]["family_name"] == "å³¨åµ‹æ´¾" )
 				xism_age = (int)ob->query_skill("mahayana", 1);
-			else if ( my["family"]["family_name"] == "ÉÙÁÖÅÉ" )
+			else if ( my["family"]["family_name"] == "å°‘æ—æ´¾" )
 				xism_age = (int)ob->query_skill("buddhism", 1);
-			else if ( my["family"]["family_name"] == "´óÀí¶Î¼Ò" )
+			else if ( my["family"]["family_name"] == "å¤§ç†æ®µå®¶" )
 				xism_age = (int)ob->query_skill("buddhism", 1);
-			else if ( my["family"]["family_name"] == "Ñ©É½ÅÉ" || my["family"]["family_name"] == "Ñªµ¶ÃÅ" )
+			else if ( my["family"]["family_name"] == "é›ªå±±æ´¾" || my["family"]["family_name"] == "è¡€åˆ€é—¨" )
 				xism_age = (int)ob->query_skill("lamaism", 1);
 		}
 		else xism_age = 0;
@@ -120,23 +120,23 @@ void setup_human(object ob)
 				skill2 = xism_age * (skill2/10);
 				skill3 = xism_age * (skill3/10);
 				skill4 = xism_age * (skill4/10);
-				if ( my["family"]["family_name"] == "ÉÙÁÖÅÉ" )
+				if ( my["family"]["family_name"] == "å°‘æ—æ´¾" )
 					my["max_jing"] += skill1;
-				else if ( my["family"]["family_name"] == "¶ëáÒÅÉ" )
+				else if ( my["family"]["family_name"] == "å³¨åµ‹æ´¾" )
 					my["max_jing"] += skill2;
-				else if ( my["family"]["family_name"] == "´óÀí¶Î¼Ò" )
+				else if ( my["family"]["family_name"] == "å¤§ç†æ®µå®¶" )
 					my["max_jing"] += skill4;
 				else
 					my["max_jing"] += skill3;
 			} 
 		}
 
-		// µØÉ²Á¶»ê£ºÃ¿ËÀÒ»´Î£¬Ø¤°ï¾«³¤¸ù¹ÇÖµ
-		if( mapp(my["family"]) && my["family"]["family_name"] == "Ø¤°ï" )
+		// åœ°åˆ¹ç‚¼é­‚ï¼šæ¯æ­»ä¸€æ¬¡ï¼Œä¸å¸®ç²¾é•¿æ ¹éª¨å€¼
+		if( mapp(my["family"]) && my["family"]["family_name"] == "ä¸å¸®" )
 			my["max_jing"] += my["con"] * my["death_times"];
 
-		// »ªÉ½×Ïë³Ò÷£»£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
-		if( mapp(my["family"]) && my["family"]["family_name"] == "»ªÉ½ÅÉ"
+		// åå±±ç´«æ°¤åŸï¼›ï¼“ï¼å²å‰è¡¥ç²¾ï¼Œï¼“ï¼å²åé•¿ç²¾
+		if( mapp(my["family"]) && my["family"]["family_name"] == "åå±±æ´¾"
 		&& (jing_age =(int)ob->query_skill("ziyin-yin", 1)) > 39 )
 		{
 			jing_age = jing_age/2;
@@ -165,16 +165,16 @@ void setup_human(object ob)
 		{
 			my["max_qi"] -= (my["age"] - 70) * (my["con"] + my["str"])/7;
 		
-		// ·ğ¼Ò±£Æø£º
+		// ä½›å®¶ä¿æ°”ï¼š
 			if ( mapp(my["family"]) ) {
-			   if ( my["family"]["family_name"] == "ÉÙÁÖÅÉ" )
+			   if ( my["family"]["family_name"] == "å°‘æ—æ´¾" )
 				lvl = (int)ob->query_skill("buddhism", 1);
-			   else if ( my["family"]["family_name"] == "¶ëáÒÅÉ" )
+			   else if ( my["family"]["family_name"] == "å³¨åµ‹æ´¾" )
 				lvl = (int)ob->query_skill("mahayana", 1);
-			    else if ( my["family"]["family_name"] == "´óÀí¶Î¼Ò" )
+			    else if ( my["family"]["family_name"] == "å¤§ç†æ®µå®¶" )
 				lvl = (int)ob->query_skill("buddhism", 1);
-				else if ( my["family"]["family_name"] == "Ñ©É½ÅÉ"
-				|| my["family"]["family_name"] == "Ñªµ¶ÃÅ" )
+				else if ( my["family"]["family_name"] == "é›ªå±±æ´¾"
+				|| my["family"]["family_name"] == "è¡€åˆ€é—¨" )
 				lvl = (int)ob->query_skill("lamaism", 1);
 		}
 
@@ -182,8 +182,8 @@ void setup_human(object ob)
 			my["max_qi"] += (my["age"] - 70) * lvl/20;
 		}
 
-		// µÀ¼ÒÁ·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-		if ( mapp(my["family"]) && my["family"]["family_name"] == "Îäµ±ÅÉ"
+		// é“å®¶ç»ƒæ°”ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
+		if ( mapp(my["family"]) && my["family"]["family_name"] == "æ­¦å½“æ´¾"
 		&& (xism_age=(int)ob->query_skill("taoism", 1)) > 39 )
 		{
 			xism_age = xism_age/2;
@@ -196,7 +196,7 @@ void setup_human(object ob)
 				my["max_qi"] += xism_age * (skill1/10);
 		}
 
-		if ( mapp(my["family"]) && my["family"]["family_name"] == "È«Õæ½Ì"
+		if ( mapp(my["family"]) && my["family"]["family_name"] == "å…¨çœŸæ•™"
 		&& (xism_age=(int)ob->query_skill("taoism", 1)) > 39 )
 		{
 			xism_age = xism_age/2;
@@ -209,8 +209,8 @@ void setup_human(object ob)
 				my["max_qi"] += xism_age * (skill1/10);
 		}
 
-		// ĞÇËŞ¾Û¶¾Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-		  if ( mapp(my["family"]) && my["family"]["family_name"] == "ĞÇËŞÅÉ"
+		// æ˜Ÿå®¿èšæ¯’ç»ƒæ°”ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
+		  if ( mapp(my["family"]) && my["family"]["family_name"] == "æ˜Ÿå®¿æ´¾"
 		  && (xism_age=(int)ob->query_skill("poison", 1)) > 39 )
 		  {
 			  xism_age = xism_age/2;
@@ -223,12 +223,12 @@ void setup_human(object ob)
 				  my["max_qi"] += xism_age * (skill1/10);
 		  }
 
-		// ÌìÄ§½âÌå£ºÃ¿ËÀÒ»´Î£¬Ø¤°ïÆø³¤¸ù¹ÇÖµÖ®°ë
-		if( mapp(my["family"]) && my["family"]["family_name"] == "Ø¤°ï" )
+		// å¤©é­”è§£ä½“ï¼šæ¯æ­»ä¸€æ¬¡ï¼Œä¸å¸®æ°”é•¿æ ¹éª¨å€¼ä¹‹åŠ
+		if( mapp(my["family"]) && my["family"]["family_name"] == "ä¸å¸®" )
 			my["max_qi"] += my["con"] * my["death_times"];
 
-		// »ªÉ½ÕıÆø¾÷£»£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-		if( mapp(my["family"]) && my["family"]["family_name"] == "»ªÉ½ÅÉ"
+		// åå±±æ­£æ°”è¯€ï¼›ï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
+		if( mapp(my["family"]) && my["family"]["family_name"] == "åå±±æ´¾"
 		&& (qi_age =(int)ob->query_skill("zhengqi-jue", 1)) > 39 )
 		{
 			qi_age = qi_age/2;
@@ -243,8 +243,8 @@ void setup_human(object ob)
 				my["max_qi"] += qi_age * (skill1/15);
 		}
 
-		// ÌÒ»¨µºÆæÃÅ¶Ü¼×£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-			if ( mapp(my["family"]) && my["family"]["family_name"] == "ÌÒ»¨µº"
+		// æ¡ƒèŠ±å²›å¥‡é—¨ç›¾ç”²ï¼šï¼“ï¼å²å‰è¡¥æ°”ï¼Œï¼“ï¼å²åé•¿æ°”
+			if ( mapp(my["family"]) && my["family"]["family_name"] == "æ¡ƒèŠ±å²›"
 			&& (xism_age=(int)ob->query_skill("qimen-dunjia", 1)) > 39 )
 			{
 				xism_age = xism_age/2;

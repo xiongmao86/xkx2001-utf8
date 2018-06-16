@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���±�Ժ");
+        set("short", "拉章别院");
         set("long", @LONG
-���������»��͹��Ʋֹ�ʦ��ס����Ժ��С�����磬����������
-���»��͹��Ʋֹ�ʦͨ������������ͽ��
+这里是拉章活佛和贡唐仓国师的住所，院内小巧玲珑，雕梁画栋。
+拉章活佛和贡唐仓国师通常就在这里授徒。
 LONG
         );
         set("exits", ([

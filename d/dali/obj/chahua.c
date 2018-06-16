@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(RED"É½²è»¨"NOR, ({"cha hua", "cha"}));
+	set_name(RED"å±±èŒ¶èŠ±"NOR, ({"cha hua", "cha"}));
 	set_weight(1000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»ÖêÊ¢¿ªµÄ²è»¨£¬¼¸¶ä²»Í¬É«µÄ´ó»¨¿ª·ÅÔÚÒ»Ö¦£¬¿´À´¶¨È»Ê®·ÖÃû¹ó²»ÊÇ·²Æ·¡£\n");
-		set("unit", "Öê");
+		set("long", "ä¸€æ ªç››å¼€çš„èŒ¶èŠ±ï¼Œå‡ æœµä¸åŒè‰²çš„å¤§èŠ±å¼€æ”¾åœ¨ä¸€æï¼Œçœ‹æ¥å®šç„¶ååˆ†åè´µä¸æ˜¯å‡¡å“ã€‚\n");
+		set("unit", "æ ª");
         set("material", "wood");
 	}
 }

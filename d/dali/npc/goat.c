@@ -1,14 +1,14 @@
 //Cracked by Roath
-// goat.c 山羊
+// goat.c 灞辩緤
 
 inherit NPC;
 
 void create()
 {
-	set_name("山羊", ({ "shan yang", "yang", "goat" }) );
-	set("race", "家畜");
+	set_name("灞辩緤", ({ "shan yang", "yang", "goat" }) );
+	set("race", "瀹剁暅");
 	set("age", 10);
-	set("long", "一头短角山羊，大理地区常见的家畜。\n");
+	set("long", "涓�澶寸煭瑙掑北缇婏紝澶х悊鍦板尯甯歌鐨勫鐣溿�俓n");
 	set("str", 25);
 	set("cor", 25);
 	set("dalivictim",1);

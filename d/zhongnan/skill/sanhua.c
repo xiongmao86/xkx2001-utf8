@@ -1,5 +1,5 @@
 //Cracked by Roath
-//  /k  ungfu/skill/sanhua-juding/sanhua.c Èı»¨¾Û¶¥
+//  /k  ungfu/skill/sanhua-juding/sanhua.c ä¸‰èŠ±èšé¡¶
 // sdong 07/98
 #include <ansi.h>
 
@@ -12,45 +12,45 @@ int perform(object me, object target)
 	int damage,skill,wap,wdp;
 	string *limb, type, result, str,msg;
 
-	type = "ÄÚÉË";
+	type = "å†…ä¼¤";
 
 	if( !target ) target = offensive_target(me);
 
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Èı»¨¾Û¶¥Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ä¸‰èŠ±èšé¡¶åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("sanhua") )
-		return notify_fail("ÄãÒÑÔÚÊ¹ÓÃÈı»¨¾Û¶¥ÁË£¡\n");
+		return notify_fail("ä½ å·²åœ¨ä½¿ç”¨ä¸‰èŠ±èšé¡¶äº†ï¼\n");
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("¿ÕÊÖ²ÅÄÜÊ©Õ¹Èı»¨¾Û¶¥£¡\n");
+		return notify_fail("ç©ºæ‰‹æ‰èƒ½æ–½å±•ä¸‰èŠ±èšé¡¶ï¼\n");
 
 	if( me->query_skill_mapped("strike") != "sanhua-juding" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·ÇÈı»¨¾Û¶¥ÕÆ£¬²»ÄÜÊ©Õ¹Èı»¨¾Û¶¥£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éä¸‰èŠ±èšé¡¶æŒï¼Œä¸èƒ½æ–½å±•ä¸‰èŠ±èšé¡¶ï¼\n");
 
 	if( me->query_skill_prepared("strike") != "sanhua-juding" )
-                return notify_fail("ÄãËù±¸µÄ²¢·ÇÈı»¨¾Û¶¥ÕÆ£¬²»ÄÜÊ©Õ¹Èı»¨¾Û¶¥£¡\n");
+                return notify_fail("ä½ æ‰€å¤‡çš„å¹¶éä¸‰èŠ±èšé¡¶æŒï¼Œä¸èƒ½æ–½å±•ä¸‰èŠ±èšé¡¶ï¼\n");
 
 	if( me->query_skill_mapped("force") != "xiantian-gong" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÏÈÌì¹¦£¬Ê©Õ¹²»³öÈı»¨¾Û¶¥£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éå…ˆå¤©åŠŸï¼Œæ–½å±•ä¸å‡ºä¸‰èŠ±èšé¡¶ï¼\n");
 
 	if( me->query_skill("force") < 135 )
-		return notify_fail("ÄãµÄÏÈÌì¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹Èı»¨¾Û¶¥£¡\n");
+		return notify_fail("ä½ çš„å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•ä¸‰èŠ±èšé¡¶ï¼\n");
 
 	if( me->query_skill("strike") < 135 )
-		return notify_fail("Èı»¨¾Û¶¥ĞèÒª¾«Õ¿µÄÈı»¨¾Û¶¥ÕÆ·½ÄÜÓĞĞ§Ê©Õ¹£¡\n");
+		return notify_fail("ä¸‰èŠ±èšé¡¶éœ€è¦ç²¾æ¹›çš„ä¸‰èŠ±èšé¡¶æŒæ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	if( me->query("neili") <= 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÈı»¨¾Û¶¥£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨ä¸‰èŠ±èšé¡¶ï¼\n");
 	if( me->query("jingli") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÈı»¨¾Û¶¥£¡\n");	
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨ä¸‰èŠ±èšé¡¶ï¼\n");	
 	if( me->query("jing") <= 200 )
-		return notify_fail("ÄãµÄ¾«²»¹»Ê¹ÓÃÈı»¨¾Û¶¥£¡\n");	
+		return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿä½¿ç”¨ä¸‰èŠ±èšé¡¶ï¼\n");	
 
 
-	msg = HIM"$NÔËÆğĞşÃÅÏÈÌì¹¦£¬ÄÚÁ¦±é²¼È«Éí£¬Í·¶¥Ã°³öË¿Ë¿ÈÈÆø£¬¾¹È»³ÊÏÖÈı¶äÁ«»¨£¬½ô¸úÅü³öÒ»ÕÆ£¬Ò»¹ÉÆø¾¢ËÆÀË³±Ò»°ãÏò$nÏ®À´£¡\n\n"NOR;
+	msg = HIM"$Nè¿èµ·ç„é—¨å…ˆå¤©åŠŸï¼Œå†…åŠ›éå¸ƒå…¨èº«ï¼Œå¤´é¡¶å†’å‡ºä¸ä¸çƒ­æ°”ï¼Œç«Ÿç„¶å‘ˆç°ä¸‰æœµè²èŠ±ï¼Œç´§è·ŸåŠˆå‡ºä¸€æŒï¼Œä¸€è‚¡æ°”åŠ²ä¼¼æµªæ½®ä¸€èˆ¬å‘$nè¢­æ¥ï¼\n\n"NOR;
 	message_vision(msg, me, target);
 
 	me->set_temp("sanhua", 1);
@@ -84,23 +84,23 @@ int perform(object me, object target)
                 wap = wap/2 + random(wap/2);
 
                 if( wap > 3 * wdp ) {
-						message_vision(HIY"Ö»¼û$NÉíÉÏµÄ$n"+HIY+"ÒÑ±»Ò»ÕÆÕğ¶Ï¡£\n"NOR, target, weapon);
+						message_vision(HIY"åªè§$Nèº«ä¸Šçš„$n"+HIY+"å·²è¢«ä¸€æŒéœ‡æ–­ã€‚\n"NOR, target, weapon);
                         weapon->unequip();
                         weapon->move(environment(target));
-                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                        weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
                         weapon->set("value", 0);
                         weapon->set("weapon_prop", 0);
                         target->reset_action();
 						me->add("neili", -150); // to break weapon takes more neili
                 } else if( wap > 2 * wdp ) {
-                        message_vision(HIW"$NÖ»¾õµÃÊÖÖĞ" + weapon->name() + "±»Ò»ÕÆÕğµÃ°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n" NOR,
+                        message_vision(HIW"$Nåªè§‰å¾—æ‰‹ä¸­" + weapon->name() + "è¢«ä¸€æŒéœ‡å¾—æŠŠæŒä¸å®šï¼Œè„±æ‰‹é£å‡ºï¼\n" NOR,
                                 target);
                         weapon->unequip();
                         weapon->move(environment(target));
                         target->reset_action();
 						me->add("neili", -120); // to break weapon takes more neili
                 } else if( wap > wdp ) {
-                        message_vision("$NÖ»¾õµÃÊÖÖĞ" + weapon->name() + "Ò»Õğ£¬ÏÕĞ©ÍÑÊÖ£¡\n",
+                        message_vision("$Nåªè§‰å¾—æ‰‹ä¸­" + weapon->name() + "ä¸€éœ‡ï¼Œé™©äº›è„±æ‰‹ï¼\n",
                                 target);
 						me->add("neili", -100); // to break weapon takes more neili
                 } 
@@ -133,7 +133,7 @@ private int remove_effect(object me, int amount)
 	me->add_temp("apply/defense", -amount);
 	me->delete_temp("sanhua");
 	message_vision(
-	HIY "\n$NÎüÁËÒ»¿ÚÆø£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï£¡\n\n" NOR, me);
+	HIY "\n$Nå¸äº†ä¸€å£æ°”ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ï¼\n\n" NOR, me);
 
 	return 0;
 }

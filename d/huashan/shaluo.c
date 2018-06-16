@@ -1,16 +1,16 @@
 //Cracked by Roath
-// shaluo.c É¯ÂÜÆº
+// shaluo.c èŽŽèåª
 // modified by qfy July 7, 1996
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "É¯ÂÜÆº");
+        set("short", "èŽŽèåª");
 	set("long", @LONG
-ÑØ×ÅÓñÈª£¬Ì¤¹ýÀÛÀÛÊ¯½§£¬ÓÉÉ½¾¶åÆåÎ¶øÉÏ£¬¾ÍÀ´µ½ÁËÉ¯ÂÜÆº¡£´ÓÕâ
-ÀïÉ½Â·¿ªÊ¼¶¸ÇÍ£¬ÄÏÃæÒ»ÌõÓØ»ØÅÌÐýµÄÉ½µÀ£¬³Æ×÷¡¸Ê®°ËÅÌ¡¹£¬Í¨ÍùÉ½ÉÏ
-¡£¶«±±·½ÒþÒþÌýµ½ºäºäÖ®Éù£¬²»¾øì¶¶ú£¬ºÃÏóÓÐ¸öÆÙ²¼¡£
+æ²¿ç€çŽ‰æ³‰ï¼Œè¸è¿‡ç´¯ç´¯çŸ³æ¶§ï¼Œç”±å±±å¾„è¿¤é€¦è€Œä¸Šï¼Œå°±æ¥åˆ°äº†èŽŽèåªã€‚ä»Žè¿™
+é‡Œå±±è·¯å¼€å§‹é™¡å³­ï¼Œå—é¢ä¸€æ¡è¿‚å›žç›˜æ—‹çš„å±±é“ï¼Œç§°ä½œã€Œåå…«ç›˜ã€ï¼Œé€šå¾€å±±ä¸Š
+ã€‚ä¸œåŒ—æ–¹éšéšå¬åˆ°è½°è½°ä¹‹å£°ï¼Œä¸ç»æ–¼è€³ï¼Œå¥½è±¡æœ‰ä¸ªç€‘å¸ƒã€‚
 LONG
         );
 

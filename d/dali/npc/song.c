@@ -1,5 +1,5 @@
 //Cracked by Roath
-// song.c ËÎÀÏ°å
+// song.c å®‹è€æ¿
 
 #include <ansi.h>
 #include <dbase.h>
@@ -11,14 +11,14 @@ string ask_me();
 
 void create()
 {
-	set_name("ËÎÀÏ°å", ({ "song laoban", "song"}));
+	set_name("å®‹è€æ¿", ({ "song laoban", "song"}));
 	set_color("$YEL$");
-	set("title", "Ì«ºÍ¾ÓÀÏ°å");
+	set("title", "å¤ªå’Œå±…è€æ¿");
 	set("shen_type", 1);
 	set("str", 20);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 55);
-	set("long", "¡¡¡¡ËÎÀÏ°å¿´ÉÏÈ¥Ò»¸±¾«Ã÷Ç¿¸ÉµÄÑù×Ó¡£\n");
+	set("long", "ã€€ã€€å®‹è€æ¿çœ‹ä¸Šå»ä¸€å‰¯ç²¾æ˜å¼ºå¹²çš„æ ·å­ã€‚\n");
 	set("combat_exp", 60000);
 	set("qi", 300);
 	set("max_qi", 300);
@@ -44,7 +44,7 @@ void init()
 }
 int accept_kill(object me)
 {
-	command("say ¹âÌì»¯ÈÕÖ®ÏÂ¾¹¸ÒĞĞĞ×É±ÈË£¬Ã»Íõ·¨ÁËÂğ£¿\n");
+	command("say å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ç«Ÿæ•¢è¡Œå‡¶æ€äººï¼Œæ²¡ç‹æ³•äº†å—ï¼Ÿ\n");
 	me->apply_condition("killer", 100);
 	kill_ob(me);
 	return 1;

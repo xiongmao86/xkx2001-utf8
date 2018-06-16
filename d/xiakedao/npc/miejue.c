@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /d/xiakedao/npc/miejue.c Ãğ¾øÊ¦Ì«
+// Npc: /d/xiakedao/npc/miejue.c ç­ç»å¸ˆå¤ª
 // Date: xbc 96/09/24, dong 8/1/97
 
 inherit NPC;
@@ -9,13 +9,13 @@ int auto_perform();
 
 void create()
 {
-        set_name("Ãğ¾øÊ¦Ì«", ({ "miejue shitai", "miejue", "shitai" }));
+        set_name("ç­ç»å¸ˆå¤ª", ({ "miejue shitai", "miejue", "shitai" }));
         set("long", 
-"Ëı¾ÍÊÇ¶ëáÒÅÉµÚÈı´úÕÆÃÅÈËÃğ¾øÊ¦Ì«ÁË¡£\n"
-"ËıÈİÃ²ËãµÃ¼«ÃÀ£¬µ«Á½ÌõÃ¼Ã«Ğ±Ğ±ÏÂ´¹£¬Ò»¸±ÃæÏà±ã±äµÃ¼«ÊÇ¹îÒì£¬¼¸ºõ\n"
-"ÓĞµã¶ùÏ·Ì¨ÉÏµÄµõËÀ¹íÎ¶µÀ¡£\n");
+"å¥¹å°±æ˜¯å³¨åµ‹æ´¾ç¬¬ä¸‰ä»£æŒé—¨äººç­ç»å¸ˆå¤ªäº†ã€‚\n"
+"å¥¹å®¹è²Œç®—å¾—æç¾ï¼Œä½†ä¸¤æ¡çœ‰æ¯›æ–œæ–œä¸‹å‚ï¼Œä¸€å‰¯é¢ç›¸ä¾¿å˜å¾—ææ˜¯è¯¡å¼‚ï¼Œå‡ ä¹\n"
+"æœ‰ç‚¹å„¿æˆå°ä¸Šçš„åŠæ­»é¬¼å‘³é“ã€‚\n");
 
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -68,7 +68,7 @@ void create()
         prepare_skill("strike", "jinding-zhang");
         prepare_skill("finger", "tiangang-zhi");
 
-        create_family("¶ëáÒÅÉ", 3, "ÕÆÃÅÈË");
+        create_family("å³¨åµ‹æ´¾", 3, "æŒé—¨äºº");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -104,7 +104,7 @@ void greeting(object me)
       {	maxqi = opp->query("max_qi");
 		maxjingli = opp->query("max_jingli");
 		if (random(2) == 1 )
-                {		command("say ÜÆÈô£¬×İËÀÏÀ¹ÇÏã£¬³ıÄ§ÎÀµÀ¶¨Òª´Ë¾«Éñ¡£");
+                {		command("say èŠ·è‹¥ï¼Œçºµæ­»ä¾ éª¨é¦™ï¼Œé™¤é­”å«é“å®šè¦æ­¤ç²¾ç¥ã€‚");
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
                         COMBAT_D->do_attack(obj, opp, query_temp("weapon") );
 
@@ -117,6 +117,6 @@ void greeting(object me)
 }
 void attempt_apprentice(object ob)
 {
-        command ("say ÄãÊÇ²»ÊÇÅÉÀ´ÍµÑ§¶ëáÒ¹¦·òµÄ£¿¿ì¹ö¡£");
+        command ("say ä½ æ˜¯ä¸æ˜¯æ´¾æ¥å·å­¦å³¨åµ‹åŠŸå¤«çš„ï¼Ÿå¿«æ»šã€‚");
 }
 #include "/kungfu/class/emei/auto_perform.h";
