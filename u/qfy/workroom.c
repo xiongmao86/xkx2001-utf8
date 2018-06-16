@@ -10,15 +10,15 @@ int valid_leave();
 
 void create()
 {
-	set("short",GRN "ÇàÌì´óµØ" NOR);
+	set("short",GRN "é’å¤©å¤§åœ°" NOR);
 	set("long", @LONG
 	
-ÁÉÁÉÇàÌì£¬Î¡Î¡´óµØ£¬½ÔÈÎÎÒ³©ÓÎ¡£·²³¾Ë×ÊÂ£¬ÇÒÈ¥ÐÝÈ¥ÐÝ£¡
+è¾½è¾½é’å¤©ï¼Œå·å·å¤§åœ°ï¼Œçš†ä»»æˆ‘ç•…æ¸¸ã€‚å‡¡å°˜ä¿—äº‹ï¼Œä¸”åŽ»ä¼‘åŽ»ä¼‘ï¼
 
 ------------------------------------------------------        
-»ªÉ½hs£¬ÈªÖÝqz£¬ÑîÖÝyz£¬Ì©É½ts£¬ÉÙÁÖsl£¬Îäµ±wd£¬ÆíÁ¬ql
-Ø¤°ïgb£¬ÐÇËÞxx£¬¶ëáÒem£¬°×ÍÕbt£¬Ñ©É½xs£¬À¥ÂØkl£¬ÉñÁúsn  
-Î÷ÏÄxi£¬¹éÔÆgy£¬´óÀídl£¬º¼ÖÝhz£¬¼±Õïer£¬Î×Ê¦wr
+åŽå±±hsï¼Œæ³‰å·žqzï¼Œæ¨å·žyzï¼Œæ³°å±±tsï¼Œå°‘æž—slï¼Œæ­¦å½“wdï¼Œç¥ˆè¿žql
+ä¸å¸®gbï¼Œæ˜Ÿå®¿xxï¼Œå³¨åµ‹emï¼Œç™½é©¼btï¼Œé›ªå±±xsï¼Œæ˜†ä»‘klï¼Œç¥žé¾™sn  
+è¥¿å¤xiï¼Œå½’äº‘gyï¼Œå¤§ç†dlï¼Œæ­å·žhzï¼Œæ€¥è¯Šerï¼Œå·«å¸ˆwr
 ------------------------------------------------------
 
 LONG
@@ -64,7 +64,7 @@ void init()
 	object me = this_player();
 
 	if( wizardp(me) && getuid(me)!="qfy ")
-		message("vision", me->name()+"×ßÁË¹ýÀ´¡£\n", environment(me), ({me}));
+		message("vision", me->name()+"èµ°äº†è¿‡æ¥ã€‚\n", environment(me), ({me}));
 
 	add_action("do_leave", "leave");
 }
@@ -72,7 +72,7 @@ void init()
 int valid_leave(object me, string dir)
 {
 	if (!wizardp(me))
-		return notify_fail("ÓÉÃÀ×Óµ²ÔÚÄãÃæÇ°£¬¹§ÉíËµµÀ£º¡°·Ç³£±§Ç¸£¬Äú²»ÄÜµ½ÄÇ¶ùÈ¥¡£¡±\n");
+		return notify_fail("ç”±ç¾Žå­æŒ¡åœ¨ä½ é¢å‰ï¼Œæ­èº«è¯´é“ï¼šâ€œéžå¸¸æŠ±æ­‰ï¼Œæ‚¨ä¸èƒ½åˆ°é‚£å„¿åŽ»ã€‚â€\n");
 
 	return ::valid_leave(me, dir);
 }

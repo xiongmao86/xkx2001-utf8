@@ -5,16 +5,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"¹¤×÷ÊÒ"NOR);
+        set("short", HIW"å·¥ä½œå®¤"NOR);
         set("long", @LONG
 
-	baituo	°×ÍÕÉ½ 		yuelao	ÔÂÀÏÍ¤ 		dali	´óÀí¹ú
-	emei	¶ëáÒÉ½ 		gaibang	Ø¤°ï 		gbr	Ø¤°ï±¨¸æ 	
-	huashan	»ªÉ½ 		kedian	ÑïÖİ¿Íµê 	xueshan	Ñ©É½ 		
-	leitai	ÀŞÌ¨ 		prog	½ø¶È±í 		shaolin	ÉÙÁÖËÂ 		
-	shenlongÉñÁúµº 		towiz	»á¿ÍÌü 		wiz	Î×Ê¦ 		
-	wudang	Îäµ±É½ 		wuguan	ÈªÖİÎä¹İ 	wumiao	ÎäÃí 		
-	xingxiu	ĞÇËŞº£ 		xuanjie	Ğş½Ù½Ì		taohua  ÌÒ»¨
+	baituo	ç™½é©¼å±± 		yuelao	æœˆè€äº­ 		dali	å¤§ç†å›½
+	emei	å³¨åµ‹å±± 		gaibang	ä¸å¸® 		gbr	ä¸å¸®æŠ¥å‘Š 	
+	huashan	åå±± 		kedian	æ‰¬å·å®¢åº— 	xueshan	é›ªå±± 		
+	leitai	æ“‚å° 		prog	è¿›åº¦è¡¨ 		shaolin	å°‘æ—å¯º 		
+	shenlongç¥é¾™å²› 		towiz	ä¼šå®¢å… 		wiz	å·«å¸ˆ 		
+	wudang	æ­¦å½“å±± 		wuguan	æ³‰å·æ­¦é¦† 	wumiao	æ­¦åº™ 		
+	xingxiu	æ˜Ÿå®¿æµ· 		xuanjie	ç„åŠ«æ•™		taohua  æ¡ƒèŠ±
 
 LONG );
         set("valid_startroom",1);
@@ -49,6 +49,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if ( !wizardp(me) && (dir == "wiz" || dir == "prog") )
-                return notify_fail("²»ÊÇÎ×Ê¦£¬²»×¼È¥£¡\n");
+                return notify_fail("ä¸æ˜¯å·«å¸ˆï¼Œä¸å‡†å»ï¼\n");
         return ::valid_leave(me, dir);
 }
