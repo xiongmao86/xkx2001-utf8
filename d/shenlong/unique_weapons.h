@@ -2,16 +2,16 @@
 // /d/shenlong/unique_weapons.h
 
 mapping unique_weapons  = ([
-        "½µÄ§èÆ" : "/clone/weapon/xiangmo-chu.c",
-        "ÒĞÌì½£" : "/clone/weapon/yitian-jian.c",
-        "Óñóï" : "/clone/unique/yuxiao.c",
-        "·üÄ§µ¶" : "/clone/unique/fumo-dao.c",
-        "½ğÉß½£" : "/clone/unique/jinshe-jian.c",
-        "öù×ì¼ô" : "/clone/unique/eyujian.c",
-        "öùÎ²±Ş" : "/clone/unique/eweibian.c",
-        "ĞşÌúÖØ½£" : "/clone/unique/xuantie-jian.c",
- //     "½ğÉß×¶" : "/d/huashan/obj/jinshe-zhui.c",
-        "ÓñÖñÕÈ" : "/clone/unique/yuzhu-zhang.c",
-        "Æß¾øÕë" : "/clone/weapon/qijue.c",
-        "Óã³¦½£" : "/clone/unique/yuchang-jian.c",
+        "é™é­”æµ" : "/clone/weapon/xiangmo-chu.c",
+        "å€šå¤©å‰‘" : "/clone/weapon/yitian-jian.c",
+        "ç‰ç®«" : "/clone/unique/yuxiao.c",
+        "ä¼é­”åˆ€" : "/clone/unique/fumo-dao.c",
+        "é‡‘è›‡å‰‘" : "/clone/unique/jinshe-jian.c",
+        "é³„å˜´å‰ª" : "/clone/unique/eyujian.c",
+        "é³„å°¾é­" : "/clone/unique/eweibian.c",
+        "ç„é“é‡å‰‘" : "/clone/unique/xuantie-jian.c",
+ //     "é‡‘è›‡é”¥" : "/d/huashan/obj/jinshe-zhui.c",
+        "ç‰ç«¹æ–" : "/clone/unique/yuzhu-zhang.c",
+        "ä¸ƒç»é’ˆ" : "/clone/weapon/qijue.c",
+        "é±¼è‚ å‰‘" : "/clone/unique/yuchang-jian.c",
 ]);
