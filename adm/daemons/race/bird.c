@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// bird.c ·ÉÇİ
+// bird.c é£ç¦½
 
 #ifndef __BIRD__
 #define __BIRD__
@@ -12,19 +12,19 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-	"action":		"$NÓÃ×¦×ÓÍù$nµÄ$lÃÍµØÒ»×¥",
+	"action":		"$Nç”¨çˆªå­å¾€$nçš„$lçŒ›åœ°ä¸€æŠ“",
 	"damage":		10,
-	"damage_type":	"×¥ÉË",
+	"damage_type":	"æŠ“ä¼¤",
 ]),
 ([
-	"action":		"$N·É¹ıÀ´Íù$nµÄ$lºİºİµØÒ»×Ä",
+	"action":		"$Né£è¿‡æ¥å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å•„",
 	"damage":		30,
-	"damage_type":	"´ÌÉË",
+	"damage_type":	"åˆºä¼¤",
 ]),
 ([
-	"action":		"$NÓÃ³á°òÏò$nµÄ$lÅÄÁË¹ıÈ¥",
+	"action":		"$Nç”¨ç¿…è†€å‘$nçš„$læ‹äº†è¿‡å»",
 	"damage":		30,
-	"damage_type":	"´ÌÉË",
+	"damage_type":	"åˆºä¼¤",
 ])
 });
 
@@ -33,16 +33,16 @@ void create()
 	seteuid(getuid());
         set("attitude", "peaceful");
 	set("limbs", ({
-		"Í·²¿",	"¾±²¿",	"ºó±³",	"¸¹²¿",	"½Å×¦",	"³á°ò"
+		"å¤´éƒ¨",	"é¢ˆéƒ¨",	"åèƒŒ",	"è…¹éƒ¨",	"è„šçˆª",	"ç¿…è†€"
 	}) );
 
-	set("dead_message",       "\n$N·¢³öÒ»ÉùÆàÀ÷µÄÃù½Ğ£¬´Ó°ë¿ÕÖĞµøÁËÏÂÀ´¡£\n\n"    );
-	set("unconcious_message", "\n$N´Ó°ë¿ÕÖĞÅéµØµøÏÂÀ´£¬ÔÎÁË¹ıÈ¥¡£\n\n"            );
-	set("revive_message",     "\n$NĞÑ¹ıÀ´¶¯µ¯ÁËÒ»ÏÂ£¬Ë«³áÒ»Õñ£¬ÓÖ·ÉÁËÆğÀ´¡£\n\n"  );
-	set("comeout_message",    "Íù$d¼²·É¶øÈ¥¡£\n"				      );
-	set("comein_message",     "·ÉÁË¹ıÀ´¡£\n"		                      );
-	set("fleeout_message",    "Ò»ÉùÆàÃù£¬Íù$d¼²·É¶øÈ¥¡£\n"                        );
-	set("fleein_message",     "»º»ºµØ·ÉÁË¹ıÀ´£¬³ÁÖØµØÔÚ°ë¿ÕÖĞ´ò×ÅĞı¶ù¡£\n"        );
+	set("dead_message",       "\n$Nå‘å‡ºä¸€å£°å‡„å‰çš„é¸£å«ï¼Œä»åŠç©ºä¸­è·Œäº†ä¸‹æ¥ã€‚\n\n"    );
+	set("unconcious_message", "\n$Nä»åŠç©ºä¸­ç °åœ°è·Œä¸‹æ¥ï¼Œæ™•äº†è¿‡å»ã€‚\n\n"            );
+	set("revive_message",     "\n$Né†’è¿‡æ¥åŠ¨å¼¹äº†ä¸€ä¸‹ï¼ŒåŒç¿…ä¸€æŒ¯ï¼Œåˆé£äº†èµ·æ¥ã€‚\n\n"  );
+	set("comeout_message",    "å¾€$dç–¾é£è€Œå»ã€‚\n"				      );
+	set("comein_message",     "é£äº†è¿‡æ¥ã€‚\n"		                      );
+	set("fleeout_message",    "ä¸€å£°å‡„é¸£ï¼Œå¾€$dç–¾é£è€Œå»ã€‚\n"                        );
+	set("fleein_message",     "ç¼“ç¼“åœ°é£äº†è¿‡æ¥ï¼Œæ²‰é‡åœ°åœ¨åŠç©ºä¸­æ‰“ç€æ—‹å„¿ã€‚\n"        );
 }
 
 void setup_bird(object ob)
@@ -53,9 +53,9 @@ void setup_bird(object ob)
 
 	ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
 
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random(20) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random(10) + 5;
@@ -84,14 +84,14 @@ void setup_bird(object ob)
 	ob->set_default_object(__FILE__);
 	if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 5)* 1000);
 
-	if( ob->query("subrace") == "×ßÇİ" ) {
-		set("dead_message",       "\n$N·¢³öÒ»ÉùÆàÀ÷µÄÃù½Ğ£¬ÔÔµ¹ÔÚµØÉÏËÀÁË¡£\n\n"      );
-		set("unconcious_message", "\n$NÆàÃùÒ»ÉùÔÔµ¹ÔÚµØ£¬ÔÎÁË¹ıÈ¥¡£\n\n"              );
-		set("revive_message",     "\n$NĞÑ¹ıÀ´¶¯µ¯ÁËÒ»ÏÂ£¬Ë«³áÆËÌÚÁË¼¸ÏÂÕ¾ÁËÆğÀ´¡£\n\n");
-		set("comeout_message",    "Íù$d¼²±¼¶øÈ¥¡£\n"				      );
-		set("comein_message",     "ÅÜÁË¹ıÀ´¡£\n"		                      );
-		set("fleeout_message",    "Ò»ÉùÆàÃù£¬Íù$d¼²±¼¶øÈ¥¡£\n"                        );
-		set("fleein_message",     "Ò¡Ò¡°Ú°ÚµÄÅÜÁË¹ıÀ´¡£\n"                            );
+	if( ob->query("subrace") == "èµ°ç¦½" ) {
+		set("dead_message",       "\n$Nå‘å‡ºä¸€å£°å‡„å‰çš„é¸£å«ï¼Œæ ½å€’åœ¨åœ°ä¸Šæ­»äº†ã€‚\n\n"      );
+		set("unconcious_message", "\n$Nå‡„é¸£ä¸€å£°æ ½å€’åœ¨åœ°ï¼Œæ™•äº†è¿‡å»ã€‚\n\n"              );
+		set("revive_message",     "\n$Né†’è¿‡æ¥åŠ¨å¼¹äº†ä¸€ä¸‹ï¼ŒåŒç¿…æ‰‘è…¾äº†å‡ ä¸‹ç«™äº†èµ·æ¥ã€‚\n\n");
+		set("comeout_message",    "å¾€$dç–¾å¥”è€Œå»ã€‚\n"				      );
+		set("comein_message",     "è·‘äº†è¿‡æ¥ã€‚\n"		                      );
+		set("fleeout_message",    "ä¸€å£°å‡„é¸£ï¼Œå¾€$dç–¾å¥”è€Œå»ã€‚\n"                        );
+		set("fleein_message",     "æ‘‡æ‘‡æ‘†æ‘†çš„è·‘äº†è¿‡æ¥ã€‚\n"                            );
 	}
 }
 

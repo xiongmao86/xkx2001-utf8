@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// beast.c Ò°ÊŞ
+// beast.c é‡å…½
 
 #ifndef __BEAST__
 #define __BEAST__
@@ -12,19 +12,19 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-	"action":		"$NÆËÉÏÀ´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+	"action":		"$Næ‰‘ä¸Šæ¥å¼ å˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
 	"damage":		50,
-	"damage_type":	"Ò§ÉË",
+	"damage_type":	"å’¬ä¼¤",
 ]),
 ([
-	"action":		"$N¾ÙÆğ×¦×ÓÍù$nµÄ$l×¥ÁË¹ıÈ¥",
+	"action":		"$Nä¸¾èµ·çˆªå­å¾€$nçš„$læŠ“äº†è¿‡å»",
 	"damage":		30,
-	"damage_type":	"×¥ÉË",
+	"damage_type":	"æŠ“ä¼¤",
 ]),
 ([
-	"action":		"$NÔ¾ÆğÀ´ÓÃÇ°ÕÆÍù$nµÄ$lÃÍµØÒ»ÅÄ",
+	"action":		"$Nè·ƒèµ·æ¥ç”¨å‰æŒå¾€$nçš„$lçŒ›åœ°ä¸€æ‹",
 	"damage":		30,
-	"damage_type":	"ğöÉË",
+	"damage_type":	"ç˜€ä¼¤",
 ]),  
 });
 
@@ -33,17 +33,17 @@ void create()
 	seteuid(getuid());
         set("attitude", "aggressive");
 	set("limbs", ({
-		"Í·²¿",	"¾±²¿",	"ĞØ²¿",	"ºó±³",	"¸¹²¿",	
-		"Ç°ÍÈ",	"ºóÍÈ", "Ç°×¦",	"ºó×¦", "Î²°Í"
+		"å¤´éƒ¨",	"é¢ˆéƒ¨",	"èƒ¸éƒ¨",	"åèƒŒ",	"è…¹éƒ¨",	
+		"å‰è…¿",	"åè…¿", "å‰çˆª",	"åçˆª", "å°¾å·´"
 	}) );
 
-	set("dead_message",       "\n$NÑöÌì²Òº¿ÁËÒ»Éù£¬Å¿ÔÚµØÉÏ²»¶¯ÁË¡£\n\n"      );
-	set("unconcious_message", "\n$NµÍµÍµØºğÁËÒ»Éù£¬¹öµ¹ÔÚµØÉÏÔÎÁË¹ıÈ¥¡£\n\n"  );
-	set("revive_message",     "\n$NËÄÖ«ÂıÂı¶¯µ¯ÁËÒ»ÏÂ£¬Õö¿ªÑÛĞÑÁË¹ıÀ´¡£\n\n"  );
-	set("comeout_message",    "Íù$d±¼ÁË¹ıÈ¥¡£\n"				  );
-	set("comein_message",     "ºôµØ´ÜÁË³öÀ´£¬¾¯ÌèµØËÄÖÜÕÅÍû×Å¡£\n"		  );
-	set("fleeout_message",    "²Ò½ĞÒ»Éù£¬Íù$dÂä»Ä¶øÌÓ¡£\n"                    );
-	set("fleein_message",     "Ò¡Ò¡°Ú°ÚµØÅÜÁË¹ıÀ´£¬Éì³öÉàÍ·ºôºôµØ´­×Å´ÖÆø¡£\n");
+	set("dead_message",       "\n$Nä»°å¤©æƒ¨åšäº†ä¸€å£°ï¼Œè¶´åœ¨åœ°ä¸Šä¸åŠ¨äº†ã€‚\n\n"      );
+	set("unconcious_message", "\n$Nä½ä½åœ°å¼äº†ä¸€å£°ï¼Œæ»šå€’åœ¨åœ°ä¸Šæ™•äº†è¿‡å»ã€‚\n\n"  );
+	set("revive_message",     "\n$Nå››è‚¢æ…¢æ…¢åŠ¨å¼¹äº†ä¸€ä¸‹ï¼Œçå¼€çœ¼é†’äº†è¿‡æ¥ã€‚\n\n"  );
+	set("comeout_message",    "å¾€$då¥”äº†è¿‡å»ã€‚\n"				  );
+	set("comein_message",     "å‘¼åœ°çªœäº†å‡ºæ¥ï¼Œè­¦æƒ•åœ°å››å‘¨å¼ æœ›ç€ã€‚\n"		  );
+	set("fleeout_message",    "æƒ¨å«ä¸€å£°ï¼Œå¾€$dè½è’è€Œé€ƒã€‚\n"                    );
+	set("fleein_message",     "æ‘‡æ‘‡æ‘†æ‘†åœ°è·‘äº†è¿‡æ¥ï¼Œä¼¸å‡ºèˆŒå¤´å‘¼å‘¼åœ°å–˜ç€ç²—æ°”ã€‚\n");
 }
 
 void setup_beast(object ob)
@@ -54,9 +54,9 @@ void setup_beast(object ob)
 
 	ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
 
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random(40) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random(40) + 5;

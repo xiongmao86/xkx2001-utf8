@@ -38,7 +38,7 @@ void send_msg(string channel, string id, string name, string msg, int emoted)
 	if( (!this_player() && base_name(previous_object()) != REMOTE_Q)
 	||	!ACCESS_CHECK(previous_object())) return;
 #ifdef DEBUG
-	set("channel_id", "Íø¼ÊÎ×Ê¦ÆµµÀ¾«Áé");
+	set("channel_id", "ç½‘é™…å·«å¸ˆé¢‘é“ç²¾çµ");
 	CHANNEL_D->do_channel(this_object(), "sys", "prepare to send gwizmsg");
 #endif
 	muds = (mapping)DNS_MASTER->query_muds();
@@ -73,7 +73,7 @@ void incoming_request(mapping info)
 	string tmsg;
 
 #ifdef DEBUG
-	set("channel_id", "Íø¼ÊÎ×Ê¦ÆµµÀ¾«Áé");
+	set("channel_id", "ç½‘é™…å·«å¸ˆé¢‘é“ç²¾çµ");
 	CHANNEL_D->do_channel(this_object(), "sys", "gwizmsg received from " + info["NAME"]);
 #endif
 	if(!ACCESS_CHECK(previous_object())) return;

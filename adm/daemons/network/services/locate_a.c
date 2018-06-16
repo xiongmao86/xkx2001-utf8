@@ -18,7 +18,7 @@ void incoming_request(mapping info) {
     switch(info["LOCATE"]) {
         case "NO": return;
         case "YES":
-          message("info", sprintf("%s正在%s(%s)连线中。\n", 
+          message("info", sprintf("%s姝ｅ湪%s(%s)杩炵嚎涓�俓n", 
             info["TARGET"], info["CNAME"], nntoh(info["NAME"])), who);
           break;
         default: /* log bad answers here if you like */

@@ -2,7 +2,7 @@
 * [ ] convert config.xkx
 * [x] convert u/
 * [x] convert clone/
-* [ ] convert adm/
+* [x] convert adm/
 * [ ] convert cmds/
 * [ ] convert d/
 * [ ] convert data/

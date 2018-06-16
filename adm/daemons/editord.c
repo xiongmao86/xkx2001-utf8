@@ -77,14 +77,14 @@ int get_file_num(int arc, string year, string month)
 	
 	for (i = size ; i > 0; i--)
 	{
-		if ( text[i] == '\n' && text[i+1..i+2] == "¡í")
+		if ( text[i] == '\n' && text[i+1..i+2] == "â„–")
 		{
 			numb = atoi(text[i+3..i+5]);
 			break;
 		}
 	}
 
-	if ( numb < 2 && text[0..1] == "¡í" )
+	if ( numb < 2 && text[0..1] == "â„–" )
 		numb = 1;
 
 	return (numb);

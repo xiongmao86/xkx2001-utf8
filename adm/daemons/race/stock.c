@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// stock.c ¼ÒĞó
+// stock.c å®¶ç•œ
 
 #ifndef __LIVESTOCK__
 #define __LIVESTOCK__
@@ -12,19 +12,19 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-	"action":		"$NÓÃºóÍÈÍù$nµÄ$lÓÃÁ¦Ò»µÅ",
+	"action":		"$Nç”¨åè…¿å¾€$nçš„$lç”¨åŠ›ä¸€è¹¬",
 	"damage":		30,
-	"damage_type":	"ğöÉË",
+	"damage_type":	"ç˜€ä¼¤",
 ]),
 ([
-	"action":		"$NµÍÏÂÍ·Íù$nµÄ$lÃÍµØÒ»×²",
+	"action":		"$Nä½ä¸‹å¤´å¾€$nçš„$lçŒ›åœ°ä¸€æ’",
 	"damage":		30,
-	"damage_type":	"ğöÉË",
+	"damage_type":	"ç˜€ä¼¤",
 ]),
 ([
-	"action":		"$NÌ§ÆğÇ°ÍÈÍù$nµÄ$lºİºİµØÒ»Ìß",
+	"action":		"$NæŠ¬èµ·å‰è…¿å¾€$nçš„$lç‹ ç‹ åœ°ä¸€è¸¢",
 	"damage":		20,
-	"damage_type":	"ğöÉË",
+	"damage_type":	"ç˜€ä¼¤",
 ]),  
 });
 
@@ -33,17 +33,17 @@ void create()
 	seteuid(getuid());
         set("attitude", "friendly");
 	set("limbs", ({
-		"Í·²¿",	"¾±²¿",	"ĞØ²¿",	"ºó±³",	"¸¹²¿",	
-		"Ç°ÍÈ",	"ºóÍÈ", "Ç°Ìã",	"ºóÌã", "Î²°Í"
+		"å¤´éƒ¨",	"é¢ˆéƒ¨",	"èƒ¸éƒ¨",	"åèƒŒ",	"è…¹éƒ¨",	
+		"å‰è…¿",	"åè…¿", "å‰è¹„",	"åè¹„", "å°¾å·´"
 	}) );
 
-	set("dead_message",       "\n$N±¯Ë»Ò»Éù£¬µ¹µØÕõÔúÁË¼¸ÏÂ²»¶¯ÁË¡£\n\n"       );
-	set("unconcious_message", "\n$N³¤Éù±¯Ë»£¬Æ¹µØÒ»ÉùË¤µ¹ÔÚµØÉÏ¡£\n\n"         );
-	set("revive_message",     "\n$NÂıÂı¶¯µ¯ÁËÒ»ÏÂ£¬µÍË»Ò»Éù£¬Õ¾Á¢ÆğÀ´¡£\n\n"   );
-	set("comeout_message",    "Íù$d³ÛÈ¥¡£\n"                                   );
-	set("comein_message",     "Ğ¡²½ÅÜÁË¹ıÀ´£¬ÌãÉùÓĞ½Ú×àµØÌ¤»÷×ÅµØÃæ¡£\n"       );
-	set("fleeout_message",    "±¯Ë»Ò»Éù£¬Íù$dÂä»Ä¶øÌÓ¡£\n"                     );
-	set("fleein_message",     "Ò¡Ò¡°Ú°ÚµØÅÜÁË¹ıÀ´£¬±Ç¿×ÀïºôºôµØÅç×Å°×Æø¡£\n"   );
+	set("dead_message",       "\n$Næ‚²å˜¶ä¸€å£°ï¼Œå€’åœ°æŒ£æ‰äº†å‡ ä¸‹ä¸åŠ¨äº†ã€‚\n\n"       );
+	set("unconcious_message", "\n$Né•¿å£°æ‚²å˜¶ï¼Œä¹’åœ°ä¸€å£°æ‘”å€’åœ¨åœ°ä¸Šã€‚\n\n"         );
+	set("revive_message",     "\n$Næ…¢æ…¢åŠ¨å¼¹äº†ä¸€ä¸‹ï¼Œä½å˜¶ä¸€å£°ï¼Œç«™ç«‹èµ·æ¥ã€‚\n\n"   );
+	set("comeout_message",    "å¾€$dé©°å»ã€‚\n"                                   );
+	set("comein_message",     "å°æ­¥è·‘äº†è¿‡æ¥ï¼Œè¹„å£°æœ‰èŠ‚å¥åœ°è¸å‡»ç€åœ°é¢ã€‚\n"       );
+	set("fleeout_message",    "æ‚²å˜¶ä¸€å£°ï¼Œå¾€$dè½è’è€Œé€ƒã€‚\n"                     );
+	set("fleein_message",     "æ‘‡æ‘‡æ‘†æ‘†åœ°è·‘äº†è¿‡æ¥ï¼Œé¼»å­”é‡Œå‘¼å‘¼åœ°å–·ç€ç™½æ°”ã€‚\n"   );
 }
 
 void setup_stock(object ob)
@@ -54,9 +54,9 @@ void setup_stock(object ob)
 
 	ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
 
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random(30) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random(30) + 5;

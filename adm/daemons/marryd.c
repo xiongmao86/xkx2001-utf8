@@ -15,12 +15,12 @@ int setup_marriage(object p1, object p2, object r1, object r2)
 {
 	string title1, title2, id1, id2;
 	
-	if( p1->query("gender") == "Å®ĞÔ" ) {
-		title1 = "ÕÉ·ò";
-		title2 = "ÆŞ×Ó";
+	if( p1->query("gender") == "å¥³æ€§" ) {
+		title1 = "ä¸ˆå¤«";
+		title2 = "å¦»å­";
 	} else {
-		title1 = "ÆŞ×Ó";
-		title2 = "ÕÉ·ò";
+		title1 = "å¦»å­";
+		title2 = "ä¸ˆå¤«";
 	}
 	
         id1 = p1->query("id");
@@ -102,7 +102,7 @@ private int bad_news(object sb)
 {
 	object ring;
 	
-	tell_object(sb, HIB "\nÄãĞÄÖĞÍ»È»ÂÓ¹ıÒ»Ë¿²»ÏéµÄ¸Ğ¾õ......\n\n" NOR);
+	tell_object(sb, HIB "\nä½ å¿ƒä¸­çªç„¶æ è¿‡ä¸€ä¸ä¸ç¥¥çš„æ„Ÿè§‰......\n\n" NOR);
 	sb->delete("spouse");
 	if( objectp(ring = sb->query_temp("ring_worn")) ) {
 		ring->init();

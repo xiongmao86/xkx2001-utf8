@@ -81,43 +81,43 @@ void login_check(object ob)
 	family = ob->query("family/family_name");
 	clas  = ob->query("class");
 
-	if( family == "ÉÙÁÖÅÉ" && clas == "bonze" ) {
+	if( family == "å°‘æ—æ´¾" && clas == "bonze" ) {
 		cloth = new("/d/shaolin/obj/seng-cloth");
 		cloth->move(ob);
 		cloth->wear();
-	} else if( family == "¶ëáÒÅÉ" ) {
-		if( ob->query("gender") == "Å®ĞÔ" ) {
+	} else if( family == "å³¨åµ‹æ´¾" ) {
+		if( ob->query("gender") == "å¥³æ€§" ) {
 			cloth = new("/d/emei/obj/emei-shoes");
 			cloth->move(ob);
 			cloth->wear();
 		}
-		if(clas == "bonze" && ob->query("gender") == "Å®ĞÔ" ) 
+		if(clas == "bonze" && ob->query("gender") == "å¥³æ€§" ) 
 			cloth = new("/d/emei/obj/nun-cloth");
 		else 	cloth = new("/d/emei/obj/hui-cloth");
 		cloth->move(ob);
 		cloth->wear();
-	} else if( family == "Îäµ±ÅÉ" && clas == "taoist" ) {
+	} else if( family == "æ­¦å½“æ´¾" && clas == "taoist" ) {
 		cloth = new("/d/wudang/obj/greyrobe");
 		cloth->move(ob);
 		cloth->wear();
-	} else if( family == "Ø¤°ï" ) {
+	} else if( family == "ä¸å¸®" ) {
 		cloth = new("/d/gaibang/obj/budai");
 		cloth->set_amount((int)ob->query("rank"));
 		cloth->move(ob);
 		cloth->wear();
-	} else if( family == "ĞÇËŞÅÉ" ) {
+	} else if( family == "æ˜Ÿå®¿æ´¾" ) {
                 cloth = new("/d/xingxiu/obj/yellow-cloth");
                 cloth->move(ob);
                 cloth->wear();
-	} else if( family == "ÌÒ»¨µº" ) {
+	} else if( family == "æ¡ƒèŠ±å²›" ) {
                 cloth = new("/d/taohua/obj/robe");
                 cloth->move(ob);
                 cloth->wear();
-	} else if( family == "°×ÍÕÉ½" ) {
+	} else if( family == "ç™½é©¼å±±" ) {
 		cloth = new("/d/xingxiu/obj/wcloth");
                 cloth->move(ob);
                 cloth->wear();
-	} else if( family == "Ñ©É½ÅÉ" || family == "Ñªµ¶ÃÅ" && clas == "lama" ) {
+	} else if( family == "é›ªå±±æ´¾" || family == "è¡€åˆ€é—¨" && clas == "lama" ) {
                 cloth = new("/d/qilian/obj/lamajiasha");
                 cloth->move(ob);
                 cloth->wear();
@@ -144,15 +144,15 @@ int inventory_check(object ob)
 				if(base_name(inv[i]) == GOLD_OB
 				   && (amt = (int)inv[i]->query_amount()) > 50 ) {
 					amt = 1+random(amt/2);
-					tell_object(ob, "ÄãÍ»È»·¢ÏÖÉíÉÏÉÙÁË"+
-						chinese_number(amt) + "Á½»Æ½ğ£¡¿Ï¶¨ÊÇÓöµ½°ÇÊÖÁË£º£¨");
+					tell_object(ob, "ä½ çªç„¶å‘ç°èº«ä¸Šå°‘äº†"+
+						chinese_number(amt) + "ä¸¤é»„é‡‘ï¼è‚¯å®šæ˜¯é‡åˆ°æ‰’æ‰‹äº†ï¼šï¼ˆ");
 					inv[i]->add_amount(-amt);
 					return 1;
 				}
 				if(inv[i]->is_unique()) {
-					call_out("do_rumor", i+random(10), "¿´µ½ÓĞÈË¹í¹íËîËîµØ´Ó"+
-						ob->query("name") + "ÉíÉÏÍµ×ßÁËÒ»" + 
-						inv[i]->query("unit") + inv[i]->name() + "£¡");
+					call_out("do_rumor", i+random(10), "çœ‹åˆ°æœ‰äººé¬¼é¬¼ç¥Ÿç¥Ÿåœ°ä»"+
+						ob->query("name") + "èº«ä¸Šå·èµ°äº†ä¸€" + 
+						inv[i]->query("unit") + inv[i]->name() + "ï¼");
 					destruct(inv[i]);
 					return 1;
 				}
@@ -160,8 +160,8 @@ int inventory_check(object ob)
 		} 
 		if( sizeof(inv) > 30 ) {
 			i = random(sizeof(inv));
-			tell_object(ob, "ÄãÍ»È»·¢ÏÖÉíÉÏÉÙÁËÒ»"+
-					inv[i]->query("unit") + inv[i]->name() + "£¡²»ÖªµÀÊ²Ã´Ê±ºò¸ã¶ªµÄ£º£¨");
+			tell_object(ob, "ä½ çªç„¶å‘ç°èº«ä¸Šå°‘äº†ä¸€"+
+					inv[i]->query("unit") + inv[i]->name() + "ï¼ä¸çŸ¥é“ä»€ä¹ˆæ—¶å€™æä¸¢çš„ï¼šï¼ˆ");
 			destruct(inv[i]);
 			return 1;
 		}

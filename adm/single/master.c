@@ -17,7 +17,7 @@ object connect()
 	err = catch(login_ob = new(LOGIN_OB));
 
 	if (err) {
-		write("ÏÖÔÚÓĞÈËÕıÔÚĞŞ¸ÄÊ¹ÓÃÕßÁ¬Ïß²¿·İµÄ³ÌÊ½£¬Çë´ı»áÔÙÀ´¡£\n");
+		write("ç°åœ¨æœ‰äººæ­£åœ¨ä¿®æ”¹ä½¿ç”¨è€…è¿çº¿éƒ¨ä»½çš„ç¨‹å¼ï¼Œè¯·å¾…ä¼šå†æ¥ã€‚\n");
 		write(err);
 		destruct(this_object());
 	}
@@ -43,8 +43,8 @@ mixed compile_object(string file)
 // master).
 static void crash(string error, object command_giver, object current_object)
 {
-	efun::shout("ÏµÍ³ºËĞÄ·¢³öÒ»Éù²Ò½Ğ£ºÍÛ¡ªÁ¨¡ªßÖ¡ª\n");
-	efun::shout("ÏµÍ³ºËĞÄ¸æËßÄã£ºÒªµ±»úÁË£¬×Ô¼º±£ÖØ°É£¡\n");
+	efun::shout("ç³»ç»Ÿæ ¸å¿ƒå‘å‡ºä¸€å£°æƒ¨å«ï¼šå“‡â€”å“©â€”å’§â€”\n");
+	efun::shout("ç³»ç»Ÿæ ¸å¿ƒå‘Šè¯‰ä½ ï¼šè¦å½“æœºäº†ï¼Œè‡ªå·±ä¿é‡å§ï¼\n");
 	log_file("static/CRASHES", MUD_NAME + " crashed on: " + ctime(time()) +
 		", error: " + error + "\n");
 	if (command_giver)
@@ -121,10 +121,10 @@ void log_error(string file, string message)
 	if (name) home = user_path(name);
 	else home = LOG_DIR;
 
-	if(wizardp(this_player(1))&&(strsrch(message,"Warning:")==-1)) efun::write("±àÒëÊ±¶Î´íÎó£º" + message+"\n");
-//if(wizardp(this_player(1))) efun::write("±àÒëÊ±¶Î´íÎó£º" + message+"\n");	
+	if(wizardp(this_player(1))&&(strsrch(message,"Warning:")==-1)) efun::write("ç¼–è¯‘æ—¶æ®µé”™è¯¯ï¼š" + message+"\n");
+//if(wizardp(this_player(1))) efun::write("ç¼–è¯‘æ—¶æ®µé”™è¯¯ï¼š" + message+"\n");	
 
-//  ²»ÒªÏòlogÀïÃæĞ´ÁË,ÏµÍ³Òª±ÀÀ£ÁË
+//  ä¸è¦å‘logé‡Œé¢å†™äº†,ç³»ç»Ÿè¦å´©æºƒäº†
 //	efun::write_file(home + "log", message);
 }
 
@@ -163,7 +163,7 @@ void destruct_env_of(object ob)
 {
 	if (!interactive(ob))
 		return;
-	tell_object(ob, "ÄãËù´æÔÚµÄ¿Õ¼ä±»»ÙÃğÁË¡£\n");
+	tell_object(ob, "ä½ æ‰€å­˜åœ¨çš„ç©ºé—´è¢«æ¯ç­äº†ã€‚\n");
 	ob->move(VOID_OB);
 }
 
@@ -215,14 +215,14 @@ string standard_trace(mapping error, int caught)
 
     /* keep track of number of errors per object...if you're into that */
 
-    res = (caught) ? "´íÎóÑ¶Ï¢±»À¹½Ø: " : "";
-    res = sprintf("%s\nÖ´ĞĞÊ±¶Î´íÎó£º%s\n³ÌÊ½£º%s µÚ %i ĞĞ\nÎï¼ş: %O\n",
+    res = (caught) ? "é”™è¯¯è®¯æ¯è¢«æ‹¦æˆª: " : "";
+    res = sprintf("%s\næ‰§è¡Œæ—¶æ®µé”™è¯¯ï¼š%s\nç¨‹å¼ï¼š%s ç¬¬ %i è¡Œ\nç‰©ä»¶: %O\n",
     	res, error["error"],
         error["program"], error["line"],
         error["object"]);
 
     for (i=0, s = sizeof(error["trace"]); i < s; i++) {
-		res = sprintf("%sºô½ĞÀ´×Ô£º%s µÄ %s() µÚ %i ĞĞ£¬Îï¼ş£º %O\n",
+		res = sprintf("%så‘¼å«æ¥è‡ªï¼š%s çš„ %s() ç¬¬ %i è¡Œï¼Œç‰©ä»¶ï¼š %O\n",
 			res,
 			error["trace"][i]["program"],
             error["trace"][i]["function"],
@@ -239,7 +239,7 @@ string error_handler( mapping error, int caught )
 	if(wizardp(this_player(1)))
         	tell_object(this_player(1), standard_trace(error, caught));
 	else
-		tell_object(this_player(1), "[1;33mÄã·¢ÏÖÊÂÇé²»´ó¶ÔÁË£¬¿ÉÊÇÓÖËµ²»ÉÏÀ´¡£[2;37;0m\n");
+		tell_object(this_player(1), "[1;33mä½ å‘ç°äº‹æƒ…ä¸å¤§å¯¹äº†ï¼Œå¯æ˜¯åˆè¯´ä¸ä¸Šæ¥ã€‚[2;37;0m\n");
 	log_file("debug.log", (string)ALIAS_D->get_current_alias() + "\n");
     }
 

@@ -9,11 +9,11 @@ static int current_day_phase;
 mapping *day_phase;
 
 string *weather_msg = ({
-	"Ìì¿ÕÖĞÍòÀïÎŞÔÆ",
-	"¼¸¶äµ­µ­µÄÔÆ²Ê×±µãÖøÇåÀÊµÄÌì¿Õ",
-	"°×ÔÆÔÚÌì¿ÕÖĞÆ®À´Æ®È¥",
-	"ºñºñµÄÔÆ²ã¶Ñ»ıÔÚÌì±ß",
-	"Ìì¿ÕÖĞÎÚÔÆÃÜ²¼",
+	"å¤©ç©ºä¸­ä¸‡é‡Œæ— äº‘",
+	"å‡ æœµæ·¡æ·¡çš„äº‘å½©å¦†ç‚¹è‘—æ¸…æœ—çš„å¤©ç©º",
+	"ç™½äº‘åœ¨å¤©ç©ºä¸­é£˜æ¥é£˜å»",
+	"åšåšçš„äº‘å±‚å †ç§¯åœ¨å¤©è¾¹",
+	"å¤©ç©ºä¸­ä¹Œäº‘å¯†å¸ƒ",
 });
 
 mapping *read_table(string file);
@@ -143,7 +143,7 @@ void event_common()
 
 string outdoor_room_description()
 {
-	return "    " + day_phase[current_day_phase]["desc_msg"] + "¡£\n";
+	return "    " + day_phase[current_day_phase]["desc_msg"] + "ã€‚\n";
 }
 
 string outdoor_room_event()

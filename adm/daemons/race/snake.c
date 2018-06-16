@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// snake.c ÉßÀà
+// snake.c è›‡ç±»
 
 #ifndef __SNAKE__
 #define __SNAKE__
@@ -12,14 +12,14 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-	"action":		"$NÅÀÉÏÀ´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+	"action":		"$Nçˆ¬ä¸Šæ¥å¼ å˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
 	"damage":		30,
-	"damage_type":	"Ò§ÉË",
+	"damage_type":	"å’¬ä¼¤",
 ]),
 ([
-	"action":		"$NÖ§ÆğÉíÃÍµØÍù$nµÄ$l¾íÁËÉÏÀ´",
+	"action":		"$Næ”¯èµ·èº«çŒ›åœ°å¾€$nçš„$lå·äº†ä¸Šæ¥",
 	"damage":		30,
-	"damage_type":	"ğöÉË",
+	"damage_type":	"ç˜€ä¼¤",
 ]),
 });
 
@@ -28,16 +28,16 @@ void create()
 	seteuid(getuid());
         set("attitude", "agressive");
 	set("limbs", ({
-		"Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í"
+		"å¤´éƒ¨", "èº«ä½“", "ä¸ƒå¯¸", "å°¾å·´"
 	}) );
 
-	set("dead_message",       "\n$NÍ´¿àµØÅ¤¶¯ÁË¼¸ÏÂ£¬È«ÉíÈíÈíµØÉ¢ÁË¿ªÀ´¡£\n\n"  );
-	set("unconcious_message", "\n$NÍ´¿àµØÅ¤ÁË¼¸ÏÂ£¬²»¶¯ÁË¡£\n\n"                );
-	set("revive_message",     "\n$NÉíÇûÒ»µ¯Ò»¹ö£¬ÓÖÔÚµØÉÏµ½´¦ÓÎ×ß¿ªÀ´¡£\n\n"    );
-	set("comeout_message",    "à²µØÒ»Éù£¬Íù$d×êÁË³öÈ¥¡£\n"                      );
-	set("comein_message",     "òêÑÑµØÓÎÁË¹ıÀ´¡£\n"                              );
-	set("fleeout_message",    "à²µØÒ»Éù£¬Íù$d×êÁË³öÈ¥¡£\n"                      );
-	set("fleein_message",     "»º»ºµØÓÎÁË¹ıÀ´£¬ÈíŞÇŞÇµØÔÚµØÉÏÅ¿×Å¡£\n"          );
+	set("dead_message",       "\n$Nç—›è‹¦åœ°æ‰­åŠ¨äº†å‡ ä¸‹ï¼Œå…¨èº«è½¯è½¯åœ°æ•£äº†å¼€æ¥ã€‚\n\n"  );
+	set("unconcious_message", "\n$Nç—›è‹¦åœ°æ‰­äº†å‡ ä¸‹ï¼Œä¸åŠ¨äº†ã€‚\n\n"                );
+	set("revive_message",     "\n$Nèº«èº¯ä¸€å¼¹ä¸€æ»šï¼Œåˆåœ¨åœ°ä¸Šåˆ°å¤„æ¸¸èµ°å¼€æ¥ã€‚\n\n"    );
+	set("comeout_message",    "å—–åœ°ä¸€å£°ï¼Œå¾€$dé’»äº†å‡ºå»ã€‚\n"                      );
+	set("comein_message",     "èœ¿èœ’åœ°æ¸¸äº†è¿‡æ¥ã€‚\n"                              );
+	set("fleeout_message",    "å—–åœ°ä¸€å£°ï¼Œå¾€$dé’»äº†å‡ºå»ã€‚\n"                      );
+	set("fleein_message",     "ç¼“ç¼“åœ°æ¸¸äº†è¿‡æ¥ï¼Œè½¯è€·è€·åœ°åœ¨åœ°ä¸Šè¶´ç€ã€‚\n"          );
 }
 
 void setup_snake(object ob)
@@ -48,9 +48,9 @@ void setup_snake(object ob)
 
 	ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
 
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random(10) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random(20) + 5;

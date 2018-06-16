@@ -25,33 +25,33 @@ void setup_char(object ob)
 	mapping my;
 
         if( !stringp(race = ob->query("race")) ) {
-                race = "ÈËÀà";
-                ob->set("race", "ÈËÀà");
+                race = "äººç±»";
+                ob->set("race", "äººç±»");
         }
 
         switch(race) {
-                case "ÈËÀà":
+                case "äººç±»":
                         HUMAN_RACE->setup_human(ob);
                         break;
-                case "ÑıÄ§":
+                case "å¦–é­”":
                         MONSTER_RACE->setup_monster(ob);
                         break;
-                case "Ò°ÊŞ":
+                case "é‡å…½":
                         BEAST_RACE->setup_beast(ob);
                         break;
-                case "¼ÒĞó":
+                case "å®¶ç•œ":
                         STOCK_RACE->setup_stock(ob);
                         break;
-                case "·ÉÇİ":
+                case "é£ç¦½":
                         BIRD_RACE->setup_bird(ob);
                         break;
-                case "ÓÎÓã":
+                case "æ¸¸é±¼":
                         FISH_RACE->setup_fish(ob);
                         break;
-                case "ÉßÀà":
+                case "è›‡ç±»":
                         SNAKE_RACE->setup_snake(ob);
                         break;
-                case "À¥³æ":
+                case "æ˜†è™«":
                         INSECT_RACE->setup_insect(ob);
                         break;
                 default:
@@ -128,10 +128,10 @@ varargs object make_corpse(object victim, object killer)
 	}
 
 	corpse = new(CORPSE_OB);
-	corpse->set_name( victim->name(1) + "µÄÊ¬Ìå", ({ "corpse" }) );
+	corpse->set_name( victim->name(1) + "çš„å°¸ä½“", ({ "corpse" }) );
 	corpse->set("long", victim->long()
-		+ "È»¶ø£¬" + gender_pronoun(victim->query("gender")) 
-		+ "ÒÑ¾­ËÀÁË£¬Ö»Ê£ÏÂÒ»¾ßÊ¬Ìå¾²¾²µØÌÉÔÚÕâÀï¡£\n");
+		+ "ç„¶è€Œï¼Œ" + gender_pronoun(victim->query("gender")) 
+		+ "å·²ç»æ­»äº†ï¼Œåªå‰©ä¸‹ä¸€å…·å°¸ä½“é™é™åœ°èººåœ¨è¿™é‡Œã€‚\n");
 	corpse->set("age", victim->query("age"));
 	corpse->set("gender", victim->query("gender"));
 	corpse->set("victim_name", victim->name(1));
@@ -175,13 +175,13 @@ int break_relation(object player)
 	object ob, room;
 	string std_id = player->query("id");
 
-	if (player->query("family/family_name") == "»ªÉ½ÅÉ" ) {
+	if (player->query("family/family_name") == "åå±±æ´¾" ) {
 		if(!( room = find_object("/d/huashan/xiaofang")) )
 			room = load_object("/d/huashan/xiaofang");
 		ob = present("feng qingyang", room);
 		player->delete("family");
-		player->set("title","ÆÕÍ¨°ÙĞÕ");
-		tell_object(player, RED "\n\ÄãÒÑ·Ç·çÇåÑïµÄµÜ×ÓÁË£¬ºÃ×ÔÎªÖ®°É£¡\n\n" NOR);
+		player->set("title","æ™®é€šç™¾å§“");
+		tell_object(player, RED "\n\ä½ å·²éé£æ¸…æ‰¬çš„å¼Ÿå­äº†ï¼Œå¥½è‡ªä¸ºä¹‹å§ï¼\n\n" NOR);
 		ob->delete( "students/"+std_id );
 		ob->set( "pending", std_id );
 		ob->save();

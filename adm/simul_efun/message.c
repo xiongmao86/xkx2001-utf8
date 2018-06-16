@@ -134,7 +134,7 @@ int write_file( string file, string str,int flag)
   if( user && userp(user)  && geteuid(user)!= "NONAME"  &&  flag == 0 && find_object(SECURITY_D) && !SECURITY_D->valid_write(file, user, "write_file") && wizardp(user) )
   {
 		log_file("/static/WRITE_LOG", sprintf("%s %s(%s) write %s permission denied.\n", ctime(time()), geteuid(user), wizhood(user), file));
-		return notify_fail("Permission denied。\n");
+		return notify_fail("Permission denied銆俓n");
   }
 
   if( user && userp(user) && geteuid(user)!= "NONAME" && flag == 0 && wizardp(user) )
@@ -149,7 +149,7 @@ int write_buffer( string dest, int start, mixed source )
   object user = this_object();
 
   if( user && userp(user) && geteuid(user)!= "NONAME" && find_object(SECURITY_D) && !SECURITY_D->valid_write(dest, user, "write_file") && wizardp(user) )
-		return notify_fail("Permission denied。\n");
+		return notify_fail("Permission denied銆俓n");
 
   if( user && userp(user) && geteuid(user)!= "NONAME"  && wizardp(user) )
 	  log_file("/static/WRITE_LOG", sprintf("%s %s(%s) write %s.\n", ctime(time()), geteuid(user), wizhood(user), dest));
@@ -163,7 +163,7 @@ string read_file( string file )
   object user = this_object();
 
   if( user && userp(user) && find_object(SECURITY_D) && !SECURITY_D->valid_read(file, user, "read_file") && wizardp(user) )
-		return "Permission denied。\n";
+		return "Permission denied銆俓n";
 
   if( user && userp(user) && wizardp(user) )
 	  log_file("/static/READ_LOG", sprintf("%s %s(%s) read %s.\n", ctime(time()), geteuid(user), wizhood(user), file));
@@ -178,7 +178,7 @@ void cat(string file)
 
   if( user && userp(user) && find_object(SECURITY_D) && !SECURITY_D->valid_read(file, user, "read_file") && wizardp(user) )
   {
-		write("Permission denied。\n");
+		write("Permission denied銆俓n");
 		return;
   }
 	str = efun::read_file( file );
@@ -194,7 +194,7 @@ void cat(string file)
 
 // 	if( user && userp(user) && find_object(SECURITY_D) && !SECURITY_D->valid_read(file, user, "read_file") && wizardp(user) )
 //   {
-// 		write("Permission denied。\n");
+// 		write("Permission denied銆俓n");
 // 		return;
 //   }
 

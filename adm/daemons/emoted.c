@@ -86,7 +86,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote)
 	if ( !mapp(emote) || undefinedp(emote[verb]) ) return 0;
 
 	if(channel_emote == 2 || (!channel_emote && wizardp(me) && me->query("env/invisibility")) )
-		myname = "某人";
+		myname = "鏌愪汉";
 	else if(channel_emote == 3) 
 		myname = sprintf("%s(%s@%s)", me->name(), capitalize(me->query("id")), INTERMUD_MUD_NAME);
         else
@@ -104,7 +104,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote)
 		}
 		
 		if( !target->is_character() || !me->visible(target) )
-			return notify_fail("你要对谁做这个动作？\n"); 
+			return notify_fail("浣犺瀵硅皝鍋氳繖涓姩浣滐紵\n"); 
 
 		target_gender = target->query("gender");
 		if( target==me ) {

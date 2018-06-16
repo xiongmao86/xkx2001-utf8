@@ -241,7 +241,7 @@ void send_shutdown()
                 SHUTDOWN->send_shutdown(muds[mud_names[i]]["HOSTADDRESS"],
                         muds[mud_names[i]]["PORTUDP"]);
         socket_close(socket_id);
-        CHANNEL_D->do_channel(this_object(), "sys", "送出 shutdown 讯息。\n");
+        CHANNEL_D->do_channel(this_object(), "sys", "閫佸嚭 shutdown 璁伅銆俓n");
 }
 
 string start_message()
@@ -816,7 +816,7 @@ void create()
 
         restore_euid();
 
-        set("channel_id", "网路精灵(Internet)");
+        set("channel_id", "缃戣矾绮剧伒(Internet)");
 
         // find out which port we are on
         my_port = SRVC_PORT_UDP(mud_port());

@@ -52,7 +52,7 @@ void update_ads_phase()
 
 	current_ads_phase = (++current_ads_phase) % sizeof(ads_phase);
 	
-	message("channel:ads", "¡¾¹ã¸æ¡¿" + ads_phase[current_ads_phase]["time_msg"] + "\n", users());
+	message("channel:ads", "ã€å¹¿å‘Šã€‘" + ads_phase[current_ads_phase]["time_msg"] + "\n", users());
 	
 	all = users();
 	for(i=0;i<sizeof(all);i++) {
@@ -61,8 +61,8 @@ void update_ads_phase()
 	}
 	
 	if(ads_count >=1) {
-	//	message( "channel:wiz", sprintf("¡¾Î×Ê¦¡¿%d ¸öÍæ¼Ò½ÓÊÕ´Ë¹ã¸æ¡£\n", ads_count), users());
-		log_file("ADS", sprintf("[%s] \"" + ads_phase[current_ads_phase]["time_msg"] + "\" ±» [%d] ¸öÍæ¼Ò½ÓÊÕ\n", 
+	//	message( "channel:wiz", sprintf("ã€å·«å¸ˆã€‘%d ä¸ªç©å®¶æ¥æ”¶æ­¤å¹¿å‘Šã€‚\n", ads_count), users());
+		log_file("ADS", sprintf("[%s] \"" + ads_phase[current_ads_phase]["time_msg"] + "\" è¢« [%d] ä¸ªç©å®¶æ¥æ”¶\n", 
 		ctime(time()),	ads_count));
 	}
 

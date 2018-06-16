@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// moneyd.c  Ç®µÄ¹¦ÄÜ
+// moneyd.c  é’±çš„åŠŸèƒ½
 
 // by Xiang@XKX (95/12/22)
 // updated by snowbird (March 2000)
@@ -33,17 +33,17 @@ string money_str(int amount)
         string output;
 
         if (amount / 10000) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ğ";
+                output = chinese_number(amount / 10000) + "ä¸¤é»„é‡‘";
                 amount %= 10000;
         }
         else
                 output = "";
         if (amount / 100) {
-                output = output + chinese_number(amount / 100) + "Á½°×Òø";
+                output = output + chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
                 amount %= 100;
         }
         if (amount)
-                return output + chinese_number(amount) + "ÎÄÍ­°å";
+                return output + chinese_number(amount) + "æ–‡é“œæ¿";
         return output;
 }
 
@@ -56,23 +56,23 @@ string price_str(int amount)
                 amount = 1;
 
         if (amount / 10000) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ğ";
+                output = chinese_number(amount / 10000) + "ä¸¤é»„é‡‘";
                 amount %= 10000;
         }
         else
                 output = "";
         if (amount / 100) {
 		if (output != "")
-                	output += "ÓÖ" + chinese_number(amount / 100) + "Á½°×Òø";
+                	output += "åˆ" + chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
 		else
-			output = chinese_number(amount / 100) + "Á½°×Òø";
+			output = chinese_number(amount / 100) + "ä¸¤ç™½é“¶";
                 amount %= 100;
         }
         if (amount)
 		if (output != "")
-                	return output + "ÓÖ" + chinese_number(amount) + "ÎÄÍ­°å";
+                	return output + "åˆ" + chinese_number(amount) + "æ–‡é“œæ¿";
 		else
-			return chinese_number(amount) + "ÎÄÍ­°å";
+			return chinese_number(amount) + "æ–‡é“œæ¿";
         return output;
 }
 
@@ -166,7 +166,7 @@ int player_pay(object who, int amount)
 int player_dealer_pay(object who, object from, int amount)
 {
 	string str;
-	str = from->name(1) + "¸æËßÄã£º¶Ô²»Æğ£¬Ğ¡µÄÏÖÔÚÂò²»ÆğÕâ¶«Î÷¡£\n";
+	str = from->name(1) + "å‘Šè¯‰ä½ ï¼šå¯¹ä¸èµ·ï¼Œå°çš„ç°åœ¨ä¹°ä¸èµ·è¿™ä¸œè¥¿ã€‚\n";
 	if (amount <= query_avalible_xkx_cashflow())
 	{
 		pay_player(who, amount);
@@ -183,7 +183,7 @@ int player_dealer_pay(object who, object from, int amount)
 int player_bank_pay(object who, object from, int amount)
 {
 	string str;
-	str = from->name(1) + "¸æËßÄã£º¶Ô²»ÆğThere is no money to withdraw\n";
+	str = from->name(1) + "å‘Šè¯‰ä½ ï¼šå¯¹ä¸èµ·There is no money to withdraw\n";
 	if (amount <= query_avalible_xkx_cashflow())
 	{
 		pay_player(who, amount);
@@ -200,7 +200,7 @@ int player_bank_pay(object who, object from, int amount)
 int player_job_pay(object who, object from, int amount)
 {
 	string str;
-	str = from->name(1) + "¸æËßÄã£ºThere is no money to pay you\n";
+	str = from->name(1) + "å‘Šè¯‰ä½ ï¼šThere is no money to pay you\n";
 	if (amount <= query_avalible_xkx_cashflow())
 	{
 		pay_player(who, amount);

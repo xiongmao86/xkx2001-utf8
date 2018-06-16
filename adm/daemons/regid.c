@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// regi.c	ÏèÉÙÒ¯ (registrator)
+// regi.c	ç¿”å°‘çˆ· (registrator)
 //change email register to online register for Mudos under win32 by lbc
 #ifndef QUEUEDIR
 #define QUEUEDIR "/queue/"
@@ -47,7 +47,7 @@ int change_password(string who, string what);
 void create()
 {
 	seteuid(getuid());
-	set("channel_id", "×¢²á¾«Áé");
+	set("channel_id", "æ³¨å†Œç²¾çµ");
 }
 
 void save_data(string who, string where, string what)
@@ -69,22 +69,22 @@ int register_char(string who, string where)
 	ob = new(LOGIN_OB);
 	ob->set("id", who);
 	if (!ob->restore())
-		return notify_fail("ÄãÒª¸øË­µÇ¼Ç£¿\n");
+		return notify_fail("ä½ è¦ç»™è°ç™»è®°ï¼Ÿ\n");
 	if (SECURITY_D->get_status(who) != "(player)")
-		return notify_fail("µÇ¼ÇÊ§°Ü¡£\n");
+		return notify_fail("ç™»è®°å¤±è´¥ã€‚\n");
 //	if (!wizardp(this_player()) && ob->query("registered") == "yes")
-//		return notify_fail(who + "ÒÑ¾­µÇ¼Ç¹ıÁË¡£\n");
+//		return notify_fail(who + "å·²ç»ç™»è®°è¿‡äº†ã€‚\n");
         if (file_size(LOCKDATA) != -1)
-                return notify_fail("ÇëµÈÒ»»á¶ùÔÙÀ´µÇ¼Ç£¡\n");
+                return notify_fail("è¯·ç­‰ä¸€ä¼šå„¿å†æ¥ç™»è®°ï¼\n");
 	ob->set("email", where);
 	ob->set("password", crypt(pass = random_password(), 0));
 	ob->set("registered", "yes");
 	save_data(ob->query("id"), where, pass);
-	CHANNEL_D->do_channel(this_object(), "sys", sprintf("%s(%s)Íê³É×¢²á£¬µç×ÓÓÊ¼şµØÖ·£º%s", ob->query("name"), who, where));
+	CHANNEL_D->do_channel(this_object(), "sys", sprintf("%s(%s)å®Œæˆæ³¨å†Œï¼Œç”µå­é‚®ä»¶åœ°å€ï¼š%s", ob->query("name"), who, where));
 	if (objectp(body = find_player(who)) && geteuid(body) == who) {
 		log_file("REGISTER", sprintf("[%s] %s registered as %s from %s.\n", 
 			ctime(time()), body->query("id"), where, query_ip_name(body)));
-		tell_object(body, "ÄúµÄĞÂÃÜÂëÊÇ"+pass+"\nÇëÓÃĞÂµÄÃÜÂëÁ¬Ïß£º£©\n");
+		tell_object(body, "æ‚¨çš„æ–°å¯†ç æ˜¯"+pass+"\nè¯·ç”¨æ–°çš„å¯†ç è¿çº¿ï¼šï¼‰\n");
 		body->set("registered", "yes");
 		body->save();
 		destruct(body);
@@ -103,10 +103,10 @@ int change_password(string who, string what)
 	if (!ob) ob = new(LOGIN_OB);
         ob->set("id", who);
         if (!ob->restore())
-               	return notify_fail("ÄãÒª¸ÄË­µÄÃÜÂë£¿\n");
+               	return notify_fail("ä½ è¦æ”¹è°çš„å¯†ç ï¼Ÿ\n");
         ob->set("password", crypt(what, 0));
     	ob->save();
-        write("ÃÜÂë¸Ä»»³É¹¦£¡\n");
+        write("å¯†ç æ”¹æ¢æˆåŠŸï¼\n");
 	return 1;
 }
 
@@ -119,10 +119,10 @@ int change_name(string who, string what)
 	if (!ob) ob = new(LOGIN_OB);
         ob->set("id", who);
         if (!ob->restore())
-               	return notify_fail("ÄãÒª¸ÄË­µÄÔ­À´ĞÕÃû£¿\n");
+               	return notify_fail("ä½ è¦æ”¹è°çš„åŸæ¥å§“åï¼Ÿ\n");
         ob->set("name", what);
     	ob->save();
-        write("ĞÕÃû¸Ä»»³É¹¦£¡\n");
+        write("å§“åæ”¹æ¢æˆåŠŸï¼\n");
 	return 1;
 }
 
@@ -136,7 +136,7 @@ int change_id(string who, string what)
         if (!ob1->restore() || !ob2->restore()) {
 		destruct(ob1);
 		destruct(ob2);
-               	return notify_fail("ÄãÒª¸ÄË­µÄÓ¢ÎÄÃû×Ö£¿\n");
+               	return notify_fail("ä½ è¦æ”¹è°çš„è‹±æ–‡åå­—ï¼Ÿ\n");
 	}
 	ob3 = new(LOGIN_OB);
 	ob3->set("id", what);
@@ -144,14 +144,14 @@ int change_id(string who, string what)
 		destruct(ob1);
 		destruct(ob2);
 		destruct(ob3);
-		return notify_fail("ÒÑÓĞÈËÊ¹ÓÃ´ËÓ¢ÎÄÃû×Ö");
+		return notify_fail("å·²æœ‰äººä½¿ç”¨æ­¤è‹±æ–‡åå­—");
 	}
 	if (SECURITY_D->get_status(who) != "(player)"
 	 || SECURITY_D->get_status(what) != "(player)" ) {
 		destruct(ob1);
 		destruct(ob2);
 		destruct(ob3);
-		return notify_fail("Ö¸ÁîÊ§°Ü¡£\n");
+		return notify_fail("æŒ‡ä»¤å¤±è´¥ã€‚\n");
 	}
 	ob1->set("id", what);
 	ob2->set("id", what);
@@ -163,6 +163,6 @@ int change_id(string who, string what)
 	destruct(ob2);
 	destruct(ob3);
 
-        write("¸Ä»»³É¹¦£¡\n");
+        write("æ”¹æ¢æˆåŠŸï¼\n");
 	return 1;
 }

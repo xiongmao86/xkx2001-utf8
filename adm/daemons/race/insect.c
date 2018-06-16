@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// insect.c À¥³æ
+// insect.c æ˜†è™«
 
 #ifndef __INSECT__
 #define __INSECT__
@@ -12,37 +12,37 @@ inherit F_DBASE;
 
 mapping *combat_action_crawl = ({
 ([
-	"action":		"$NÅÀÉÏÀ´ÕÅ×ìÍù$nµÄ$lºÝºÝµØÒ»Ò§",
+	"action":		"$Nçˆ¬ä¸Šæ¥å¼ å˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
 	"damage":		30,
-	"damage_type":	"Ò§ÉË",
+	"damage_type":	"å’¬ä¼¤",
 ]),
 ([
-	"action":		"$NÔ¾ÉÏÀ´ÃÍµØÍù$nµÄ$l¶£ÁËÒ»ÏÂ",
+	"action":		"$Nè·ƒä¸Šæ¥çŒ›åœ°å¾€$nçš„$lå®äº†ä¸€ä¸‹",
 	"damage":		10,
-	"damage_type":	"´ÌÉË",
+	"damage_type":	"åˆºä¼¤",
 ]),
 ([
-	"action":		"$N·´×ªÉíÓÃÎ²°Í¼â¶Ô×¼$nµÄ$lÒ»´Ì",
+	"action":		"$Nåè½¬èº«ç”¨å°¾å·´å°–å¯¹å‡†$nçš„$lä¸€åˆº",
 	"damage":		20,
-	"damage_type":	"´ÌÉË",
+	"damage_type":	"åˆºä¼¤",
 ]),  
 });
 
 mapping *combat_action_fly = ({
 ([
-	"action":		"$N·É¹ýÀ´ÕÅ×ìÍù$nµÄ$lºÝºÝµØÒ»Ò§",
+	"action":		"$Né£žè¿‡æ¥å¼ å˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
 	"damage":		30,
-	"damage_type":	"Ò§ÉË",
+	"damage_type":	"å’¬ä¼¤",
 ]),
 ([
-	"action":		"$N·ÉÉÏÀ´ÃÍµØÍù$nµÄ$l¶£ÁËÒ»ÏÂ",
+	"action":		"$Né£žä¸Šæ¥çŒ›åœ°å¾€$nçš„$lå®äº†ä¸€ä¸‹",
 	"damage":		10,
-	"damage_type":	"´ÌÉË",
+	"damage_type":	"åˆºä¼¤",
 ]),
 ([
-	"action":		"$N·´×ªÉíÓÃÎ²°Í¼â¶Ô×¼$nµÄ$lÒ»´Ì",
+	"action":		"$Nåè½¬èº«ç”¨å°¾å·´å°–å¯¹å‡†$nçš„$lä¸€åˆº",
 	"damage":		20,
-	"damage_type":	"´ÌÉË",
+	"damage_type":	"åˆºä¼¤",
 ]),  
 });
 
@@ -60,9 +60,9 @@ void setup_insect(object ob)
 
 	ob->set("default_actions", (: call_other, __FILE__, "query_action" :));
 	
-	my["unit"] = "Ö»";
+	my["unit"] = "åª";
 	
-	if( undefinedp(my["gender"]) ) my["gender"] = "ÎÞÐÔ";
+	if( undefinedp(my["gender"]) ) my["gender"] = "æ— æ€§";
 	if( undefinedp(my["age"]) ) my["age"] = random( 5) + 5;
 
 	if( undefinedp(my["str"]) ) my["str"] = random( 5) + 5;
@@ -87,33 +87,33 @@ void setup_insect(object ob)
 	ob->set_default_object(__FILE__);
 	if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 5)* 100);
 
-	if( ob->query("subrace") == "ÅÀ³æ" ) {
-		set("dead_message",       "\n$NËÄ½Å³¯ÌìµØ·­ÁË¹ýÀ´£¬ËÀÁË¡£\n\n"        );
-		set("unconcious_message", "\n$NËÄ½Å³¯ÌìµØ·­ÁË¹ýÀ´£¬²»¶¯ÁË¡£\n\n"      );
-		set("revive_message",     "\n$NÒ»ÏÂ·­¹ýÉí£¬ÓÖÃô½ÝµØËÄ´¦ÅÀ¶¯ÆðÀ´¡£\n\n");
-		set("comeout_message",    "à§µØÔ¾Èë²Ý´Ô£¬Íù$d×êÁË³öÈ¥¡£\n"            );
-		set("comein_message",     "ÅÀÁË¹ýÀ´¡£\n"                              );
-		set("fleeout_message",    "à§µØÔ¾Èë²Ý´Ô£¬Íù$d×êÁË³öÈ¥¡£\n"            );
-		set("fleein_message",     "»º»ºÅÀÁË¹ýÀ´£¬¶¯×÷ÓÐÐ©³ÙÖÍ¡£\n"            );
+	if( ob->query("subrace") == "çˆ¬è™«" ) {
+		set("dead_message",       "\n$Nå››è„šæœå¤©åœ°ç¿»äº†è¿‡æ¥ï¼Œæ­»äº†ã€‚\n\n"        );
+		set("unconcious_message", "\n$Nå››è„šæœå¤©åœ°ç¿»äº†è¿‡æ¥ï¼Œä¸åŠ¨äº†ã€‚\n\n"      );
+		set("revive_message",     "\n$Nä¸€ä¸‹ç¿»è¿‡èº«ï¼Œåˆæ•æ·åœ°å››å¤„çˆ¬åŠ¨èµ·æ¥ã€‚\n\n");
+		set("comeout_message",    "å”°åœ°è·ƒå…¥è‰ä¸›ï¼Œå¾€$dé’»äº†å‡ºåŽ»ã€‚\n"            );
+		set("comein_message",     "çˆ¬äº†è¿‡æ¥ã€‚\n"                              );
+		set("fleeout_message",    "å”°åœ°è·ƒå…¥è‰ä¸›ï¼Œå¾€$dé’»äº†å‡ºåŽ»ã€‚\n"            );
+		set("fleein_message",     "ç¼“ç¼“çˆ¬äº†è¿‡æ¥ï¼ŒåŠ¨ä½œæœ‰äº›è¿Ÿæ»žã€‚\n"            );
 
-		set("limbs", ({"Í·²¿",	"±³²¿",	"¸¹²¿", "´¥½Ç", "Ç°ÍÈ",	"ºóÍÈ", "Î²°Í"}) );
+		set("limbs", ({"å¤´éƒ¨",	"èƒŒéƒ¨",	"è…¹éƒ¨", "è§¦è§’", "å‰è…¿",	"åŽè…¿", "å°¾å·´"}) );
 	}
 
-	if( ob->query("subrace") == "·É³æ" ) {
-		set("dead_message",       "\n$NµôÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n\n"      );
-		set("unconcious_message", "\n$NÆËµÄµøÔÚµØÉÏ£¬»èÁË¹ýÈ¥¡£\n\n"          );
-		set("revive_message",     "\n$NÕÅ¿ª³á°òÆËÌÚÁËÒ»ÏÂ£¬ÓÖ·ÉÁËÆðÀ´¡£\n\n"  );
-		set("comeout_message",    "ÎËÎËÎËµØ½Ð×ÅÍù$d·ÉÁË³öÈ¥¡£\n"              );
-		set("comein_message",     "ÎËÎËµØ½Ð×Å·ÉÁË¹ýÀ´¡£\n"                    );
-		set("fleeout_message",    "ÎËÎËµØ½Ð×ÅÍù$d·ÉÁË³öÈ¥¡£\n"                );
-		set("fleein_message",     "»º»º·ÉÁË¹ýÀ´£¬¶¯×÷ÓÐÐ©³ÙÖÍ¡£\n"            );
+	if( ob->query("subrace") == "é£žè™«" ) {
+		set("dead_message",       "\n$NæŽ‰åœ¨åœ°ä¸Šï¼ŒæŒ£æ‰Žäº†å‡ ä¸‹å°±æ­»äº†ã€‚\n\n"      );
+		set("unconcious_message", "\n$Næ‰‘çš„è·Œåœ¨åœ°ä¸Šï¼Œæ˜äº†è¿‡åŽ»ã€‚\n\n"          );
+		set("revive_message",     "\n$Nå¼ å¼€ç¿…è†€æ‰‘è…¾äº†ä¸€ä¸‹ï¼Œåˆé£žäº†èµ·æ¥ã€‚\n\n"  );
+		set("comeout_message",    "å—¡å—¡å—¡åœ°å«ç€å¾€$dé£žäº†å‡ºåŽ»ã€‚\n"              );
+		set("comein_message",     "å—¡å—¡åœ°å«ç€é£žäº†è¿‡æ¥ã€‚\n"                    );
+		set("fleeout_message",    "å—¡å—¡åœ°å«ç€å¾€$dé£žäº†å‡ºåŽ»ã€‚\n"                );
+		set("fleein_message",     "ç¼“ç¼“é£žäº†è¿‡æ¥ï¼ŒåŠ¨ä½œæœ‰äº›è¿Ÿæ»žã€‚\n"            );
 
-		set("limbs", ({"Í·²¿",	"±³²¿",	"¸¹²¿",	"³á°ò", "Ç°ÍÈ",	"ºóÍÈ", "Î²°Í"}) );
+		set("limbs", ({"å¤´éƒ¨",	"èƒŒéƒ¨",	"è…¹éƒ¨",	"ç¿…è†€", "å‰è…¿",	"åŽè…¿", "å°¾å·´"}) );
 	}
 }
 
 mapping query_action(object me)
 {
-	if( me->query("subrace") == "ÅÀ³æ" ) return combat_action_crawl[random(sizeof(combat_action_crawl))];
-	if( me->query("subrace") == "·É³æ" ) return combat_action_fly[random(sizeof(combat_action_fly))];
+	if( me->query("subrace") == "çˆ¬è™«" ) return combat_action_crawl[random(sizeof(combat_action_crawl))];
+	if( me->query("subrace") == "é£žè™«" ) return combat_action_fly[random(sizeof(combat_action_fly))];
 }

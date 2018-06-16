@@ -84,12 +84,12 @@ void incoming_request(mapping info)
 
 		if( TELL_CMD->remote_tell( info["CNAME"], info["WIZFROM"], info["NAME"],
 			info["WIZTO"], info["MSG"]) )
-			reply = "Äã¸æËß" + find_player(info["WIZTO"])->name(1) +"(" + capitalize(info["WIZTO"]) + ")£º" + info["MSG"];
+			reply = "ä½ å‘Šè¯‰" + find_player(info["WIZTO"])->name(1) +"(" + capitalize(info["WIZTO"]) + ")ï¼š" + info["MSG"];
 		else
-			reply = "Ã»ÓĞÕâ¸öÈË¡­¡­¡£\n";
+			reply = "æ²¡æœ‰è¿™ä¸ªäººâ€¦â€¦ã€‚\n";
 	
 		(AUX_PATH+"affirmation_a")->send_affirmation_a(info["HOSTADDRESS"],
-			info["PORTUDP"], "Ç§Àï´«Òô@"+Mud_name(),
+			info["PORTUDP"], "åƒé‡Œä¼ éŸ³@"+Mud_name(),
 			info["WIZFROM"], reply, "gtell");
 	} //if (info["NAME"] && info["PORTUDP"])
 }
