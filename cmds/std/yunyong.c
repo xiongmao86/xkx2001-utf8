@@ -12,44 +12,44 @@ int main(object me, string arg)
     
     seteuid(getuid());
     
-    if( !me->query_temp("war/war")) return notify_fail("Äã²¢²»ÊÇÔÚ´òÕÌ£¡\n");
+    if( !me->query_temp("war/war")) return notify_fail("ä½ å¹¶ä¸æ˜¯åœ¨æ‰“ä»—ï¼\n");
     
     if( me->query_temp("in_war/is_hunluan") ) 
-        return notify_fail("ÄãµÄ¾üÖĞÌ«»ìÂÒÁË£¬ÄãÃ»ÓĞ°ì·¨Ê¹ÓÃ¼ÆÄ±£¡\n");
+        return notify_fail("ä½ çš„å†›ä¸­å¤ªæ··ä¹±äº†ï¼Œä½ æ²¡æœ‰åŠæ³•ä½¿ç”¨è®¡è°‹ï¼\n");
 
     if( me->is_busy() )
-	return notify_fail("ÄãÕıÃ¦ÓÚ±ğµÄÊÂÇéÄØ¡£\n");
+	return notify_fail("ä½ æ­£å¿™äºåˆ«çš„äº‹æƒ…å‘¢ã€‚\n");
 
     if( me->query_temp("in_war/trick_amount") == 0)
-        return notify_fail("ÄãÒÑ¾­½­ÀÉ²Å¾¡£¬Ç­Â¿¼¼ÇîÁË¡£¡£¡£\n");
+        return notify_fail("ä½ å·²ç»æ±Ÿéƒæ‰å°½ï¼Œé»”é©´æŠ€ç©·äº†ã€‚ã€‚ã€‚\n");
 
     if( me->query_temp("in_war/is_tricking") )
-    	return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ¼ÆÄ±ÁË¡£\n");
+    	return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨è®¡è°‹äº†ã€‚\n");
 
     if(sizeof(all_inventory(environment(me))) > 1 ) 
-        return notify_fail("ÄãµÄ¾ü¶ÓÕıÔÚ´òÕÌÄØ¡£\n");
+        return notify_fail("ä½ çš„å†›é˜Ÿæ­£åœ¨æ‰“ä»—å‘¢ã€‚\n");
         	
-    if( !arg ) return notify_fail("ÄãÒªÓÃÊ²Ã´¼ÆÄ±£¿£¿\n");
+    if( !arg ) return notify_fail("ä½ è¦ç”¨ä»€ä¹ˆè®¡è°‹ï¼Ÿï¼Ÿ\n");
     
     if( sscanf(arg, "%s %s", jimou, target)==2 ) {}
     else jimou = arg;         
     	
     if( !stringp(file = TRICK_D(jimou) ) 
 	|| file_size(file + ".c") <= 0 )
-	    return notify_fail("Ã»ÓĞÕâÖÖ¼ÆÄ±¡£\n");
+	    return notify_fail("æ²¡æœ‰è¿™ç§è®¡è°‹ã€‚\n");
     return (int)call_other( TRICK_D(jimou), "trick", me, target);
 }
 
 int help (object me)
 {
-// later maybe add ¶ÔÏó - Ö¸Áî¸ñÊ½£ºtrick <¼ÆÄ±Ãû³Æ> [<Ê©ÓÃ¶ÔÏó>]
+// later maybe add å¯¹è±¡ - æŒ‡ä»¤æ ¼å¼ï¼štrick <è®¡è°‹åç§°> [<æ–½ç”¨å¯¹è±¡>]
     write(@HELP
-ÕâÊÇÔÚÕ½³¡ÉÏÓÃ¼ÆÄ±µÄÖ¸Áî¡£
-Ö¸Áî¸ñÊ½£º  tricky <¼ÆÄ±Ãû³Æ>
-	or  tricky <¼ÆÄ±Ãû³Æ> <Ê©ÓÃ¶ÔÏó>
-	or  tricky <¼ÆÄ±Ãû³Æ> <²ÎÊı>
+è¿™æ˜¯åœ¨æˆ˜åœºä¸Šç”¨è®¡è°‹çš„æŒ‡ä»¤ã€‚
+æŒ‡ä»¤æ ¼å¼ï¼š  tricky <è®¡è°‹åç§°>
+	or  tricky <è®¡è°‹åç§°> <æ–½ç”¨å¯¹è±¡>
+	or  tricky <è®¡è°‹åç§°> <å‚æ•°>
 
-    Èç£ºtricky fire	Ê¹ÓÃ»ğ¼Æ¡£
+    å¦‚ï¼štricky fire	ä½¿ç”¨ç«è®¡ã€‚
         tricky recover or tricky recover <id>	
 HELP);
     return 1;

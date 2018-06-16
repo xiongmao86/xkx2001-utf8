@@ -1,30 +1,30 @@
 //Cracked by Roath
-// drive.c Çı¸Ï
+// drive.c é©±èµ¶
 #include <ansi.h>
 inherit F_CLEAN_UP;
 //inherit F_TEAM;
 
 mapping default_dirs = ([
-        "north":        "±±",
-        "south":        "ÄÏ",
-        "east":         "¶«",
-        "west":         "Î÷",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "enter":        "Àï",
+        "north":        "åŒ—",
+        "south":        "å—",
+        "east":         "ä¸œ",
+        "west":         "è¥¿",
+        "northup":      "åŒ—è¾¹",
+        "southup":      "å—è¾¹",
+        "eastup":       "ä¸œè¾¹",
+        "westup":       "è¥¿è¾¹",
+        "northdown":    "åŒ—è¾¹",
+        "southdown":    "å—è¾¹",
+        "eastdown":     "ä¸œè¾¹",
+        "westdown":     "è¥¿è¾¹",
+        "northeast":    "ä¸œåŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "ä¸œå—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "enter":        "é‡Œ",
 ]);
 
 int main(object me, string arg)
@@ -33,43 +33,43 @@ int main(object me, string arg)
 	string target_dir, dir, dest, victim;
 	mapping exit;
 
-	if (!arg) return notify_fail("ÄãÒªÇı¸ÏË­£¿\n");
+	if (!arg) return notify_fail("ä½ è¦é©±èµ¶è°ï¼Ÿ\n");
 
-	if( sscanf(arg, "%s %s", victim, dir) != 2 ) return notify_fail("Ö¸Áî´íÎó£¡\n");
+	if( sscanf(arg, "%s %s", victim, dir) != 2 ) return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼\n");
 
-	if ( victim == me->query("id") ) return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+	if ( victim == me->query("id") ) return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
 
 	ob = present(victim, environment(me));
-	if (!ob) return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
-	if (!living(ob)) return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
+	if (!ob) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
+	if (!living(ob)) return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
 	
 //	if (!me->query_temp("curser", 1))
-//		return notify_fail("Äã²»ÄÜÕâÃ´¸É£¡\n");
+//		return notify_fail("ä½ ä¸èƒ½è¿™ä¹ˆå¹²ï¼\n");
 
     if( ob->query_condition("xs_necromancy") < 0 || !ob->query_temp("block_msg/all", 1) 
 		|| (me->query("id") != ob->query("xueshan/necromancy_singer")) )
 //	if (!ob->query_temp("cursed", 1) || !ob->query_temp("block_msg/all", 1))
-		return notify_fail("Äã²»ÄÜÇı¸Ï´ËÈË£¡\n");
+		return notify_fail("ä½ ä¸èƒ½é©±èµ¶æ­¤äººï¼\n");
 
 	if (ob->query("no_get", 1))
-		return notify_fail("Õâ¸öÈË¸Ï²»×ß£¡\n");
-	if (!wizardp(me) && wizardp(ob)) return notify_fail("´óµ¨£¡¾¹ÏëÄ±º¦Î×Ê¦£¡\n");			
+		return notify_fail("è¿™ä¸ªäººèµ¶ä¸èµ°ï¼\n");
+	if (!wizardp(me) && wizardp(ob)) return notify_fail("å¤§èƒ†ï¼ç«Ÿæƒ³è°‹å®³å·«å¸ˆï¼\n");			
 
 	if (me->query_skill("necromancy", 1) < 30)
-		return notify_fail("ÄãµÄ½µ·ü·¨»ğºò²»¹»£¡\n");
+		return notify_fail("ä½ çš„é™ä¼æ³•ç«å€™ä¸å¤Ÿï¼\n");
 
 	env = environment(me);
 	if( !mapp(exit = env->query("exits")) || undefinedp(exit[dir]) ) 
-		return notify_fail("ÎŞ´Ë·½Ïò¿ÉÈ¥£¡\n");
+		return notify_fail("æ— æ­¤æ–¹å‘å¯å»ï¼\n");
 
 	dest = exit[dir];
 
 //	if( !(obj = find_object(dest)) )
  //               call_other(dest, "???");
         if( !(obj = find_object(dest)) )
-                return notify_fail("ÎŞ·¨×ß£¡\n");
-	if( !wizardp(ob) && obj->query("short") == "Î×Ê¦ĞİÏ¢ÊÒ" )
-		return notify_fail("ÎŞ·¨×ß£¡\n");
+                return notify_fail("æ— æ³•èµ°ï¼\n");
+	if( !wizardp(ob) && obj->query("short") == "å·«å¸ˆä¼‘æ¯å®¤" )
+		return notify_fail("æ— æ³•èµ°ï¼\n");
 
 	if( !undefinedp(default_dirs[dir]) )
                 target_dir = default_dirs[dir];
@@ -77,12 +77,12 @@ int main(object me, string arg)
                 target_dir = dir;
 
 	if ( !me->query("env/invisibility") ) 
-		message_vision(HIR "$N¹îĞ¦ÖĞÏò$n³¯"+target_dir+"Ò»Ö¸¡£\n" NOR, me, ob);
-	message("vision", HIR "Ö»¼û"+ob->name()+"Ê§»êÂäÆÇËÆµÄÏò"+target_dir+"Àë¿ª¡£\n" NOR, environment(ob), ({ob}));
-	tell_object(ob,"ÄãÔÚÃÔÃÔºıºıÖĞÉí²»ÓÉÖ÷µØÏò"+target_dir+"Àë¿ª¡£\n");
+		message_vision(HIR "$Nè¯¡ç¬‘ä¸­å‘$næœ"+target_dir+"ä¸€æŒ‡ã€‚\n" NOR, me, ob);
+	message("vision", HIR "åªè§"+ob->name()+"å¤±é­‚è½é­„ä¼¼çš„å‘"+target_dir+"ç¦»å¼€ã€‚\n" NOR, environment(ob), ({ob}));
+	tell_object(ob,"ä½ åœ¨è¿·è¿·ç³Šç³Šä¸­èº«ä¸ç”±ä¸»åœ°å‘"+target_dir+"ç¦»å¼€ã€‚\n");
 
 	if( ob->move(obj) ) {
-		message( "vision", HIR "Ö»¼û"+ob->name()+"Ê§»êÂäÆÇËÆµÄ×ßÁË¹ıÀ´¡£\n" NOR, environment(ob), ({ob}));
+		message( "vision", HIR "åªè§"+ob->name()+"å¤±é­‚è½é­„ä¼¼çš„èµ°äº†è¿‡æ¥ã€‚\n" NOR, environment(ob), ({ob}));
 		return 1;
         }
 
@@ -91,9 +91,9 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : drive <ÉúÎï><·½Ïò>]
+æŒ‡ä»¤æ ¼å¼ : drive <ç”Ÿç‰©><æ–¹å‘>]
 
-Õâ¸öÖ¸ÁîÈÃÄã°ÑÄ³ÈËÏòÄ³¸ö·½ÏòÇı¸Ï¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŠŠæŸäººå‘æŸä¸ªæ–¹å‘é©±èµ¶ã€‚
 
 HELP
 );

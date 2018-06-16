@@ -18,17 +18,17 @@ int vote(object me, object victim)
   if (me == victim)
   {
 	if (random(2)) me->add("vote/abuse", 10);
-  	return notify_fail("Äã²»ÊÇ¿ªÍæĞ¦°É£¿µ±ĞÄ±»°ş¶á±í¾öÈ¨£¡\n");
+  	return notify_fail("ä½ ä¸æ˜¯å¼€ç©ç¬‘å§ï¼Ÿå½“å¿ƒè¢«å‰¥å¤ºè¡¨å†³æƒï¼\n");
   }
 
   if ((reason = (int)victim->query("vote/reason"))>0 && (reason!=V_CHBLK))
   {
-  	return notify_fail("Òª°Ñµ±Ç°µÄ±í¾öÍê³ÉÒÔºó²Å¿ÉÒÔÌáĞÂµÄ¶¯Òé¡£\n");
+  	return notify_fail("è¦æŠŠå½“å‰çš„è¡¨å†³å®Œæˆä»¥åæ‰å¯ä»¥ææ–°çš„åŠ¨è®®ã€‚\n");
   }
 
   if( victim->query("chblk_on") ) 
   {
-  	return notify_fail(victim->name()+"µÄÆµµÀÒÑ¾­ÊÇ¹Ø±ÕµÄÁË¡£\n");
+  	return notify_fail(victim->name()+"çš„é¢‘é“å·²ç»æ˜¯å…³é—­çš„äº†ã€‚\n");
   }
 
   if (reason <= 0)
@@ -50,7 +50,7 @@ int vote(object me, object victim)
   } else
   {
 	me->add("vote/abuse", 10);
-  	return notify_fail("Ò»ÈËÒ»Æ±£¡ÀÄÓÃ±í¾öÈ¨ÊÇÒªÊÜ³Í·£µÄ£¡\n");
+  	return notify_fail("ä¸€äººä¸€ç¥¨ï¼æ»¥ç”¨è¡¨å†³æƒæ˜¯è¦å—æƒ©ç½šçš„ï¼\n");
   }
 
   vv = (int) ("/cmds/std/vote")->valid_voters(me)/4;  
@@ -61,17 +61,17 @@ int vote(object me, object victim)
 
   if (df>=1)
   {
-	shout( HIG "¡¾±í¾ö¡¿"+me->name()+"Í¶Æ±¹Ø±Õ" +victim->name()
-			+"µÄ½»Ì¸ÆµµÀ£¬»¹²î"+chinese_number(df)+"Æ±¡£\n" NOR);
-	write( HIG "¡¾±í¾ö¡¿"+me->name()+"Í¶Æ±¹Ø±Õ" +victim->name()
-			+"µÄ½»Ì¸ÆµµÀ£¬»¹²î"+chinese_number(df)+"Æ±¡£\n" NOR);
+	shout( HIG "ã€è¡¨å†³ã€‘"+me->name()+"æŠ•ç¥¨å…³é—­" +victim->name()
+			+"çš„äº¤è°ˆé¢‘é“ï¼Œè¿˜å·®"+chinese_number(df)+"ç¥¨ã€‚\n" NOR);
+	write( HIG "ã€è¡¨å†³ã€‘"+me->name()+"æŠ•ç¥¨å…³é—­" +victim->name()
+			+"çš„äº¤è°ˆé¢‘é“ï¼Œè¿˜å·®"+chinese_number(df)+"ç¥¨ã€‚\n" NOR);
 	victim->apply_condition("vote_clear", 10);
   } else 
   {
-	shout( HIG "¡¾±í¾ö¡¿"+me->name()+"Í¶Æ±¹Ø±Õ" +victim->name()
-			+"µÄ½»Ì¸ÆµµÀ¡£"+victim->name()+"µÄ½»Ì¸ÆµµÀ±»¹Ø±ÕÁË£¡\n" NOR);
-	write( HIG "¡¾±í¾ö¡¿"+me->name()+"Í¶Æ±¹Ø±Õ" +victim->name()
-			+"µÄ½»Ì¸ÆµµÀ¡£"+victim->name()+"µÄ½»Ì¸ÆµµÀ±»¹Ø±ÕÁË£¡\n" NOR);
+	shout( HIG "ã€è¡¨å†³ã€‘"+me->name()+"æŠ•ç¥¨å…³é—­" +victim->name()
+			+"çš„äº¤è°ˆé¢‘é“ã€‚"+victim->name()+"çš„äº¤è°ˆé¢‘é“è¢«å…³é—­äº†ï¼\n" NOR);
+	write( HIG "ã€è¡¨å†³ã€‘"+me->name()+"æŠ•ç¥¨å…³é—­" +victim->name()
+			+"çš„äº¤è°ˆé¢‘é“ã€‚"+victim->name()+"çš„äº¤è°ˆé¢‘é“è¢«å…³é—­äº†ï¼\n" NOR);
 			
 	victim->apply_condition("vote_clear", -10);
 	victim->set("chblk_on", 1);

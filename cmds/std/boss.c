@@ -76,7 +76,7 @@ int main(object me, string arg)
 	{
         me->delete_temp("block_msg/all");
 	write(CLR);
-	write("»¶Ó­ÄúÖØ»ØxkxÊÀ½ç£¡\n");
+	write("æ¬¢è¿æ‚¨é‡å›xkxä¸–ç•Œï¼\n");
 	
       return 1;
         }
@@ -85,10 +85,10 @@ int main(object me, string arg)
 int help(object me)
 {
      write(@HELP
-Ö¸Áî¸ñÊ½: boss | boss leave
+æŒ‡ä»¤æ ¼å¼: boss | boss leave
 
-Õâ¸öÖ¸ÁîÈÃÄãÔÚÁìµ¼³öÏÖÇ°Ë²¼ä½«ÆÁÄ»ÉÏËùÓĞµÄÖĞÎÄÏû³ı£¬
-²¢²»ÔÙÊÕµ½xkxµÄÑ¶Ï¢¡£Ö±µ½ÄãÊäÈëboss leave»Ö¸´¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ åœ¨é¢†å¯¼å‡ºç°å‰ç¬é—´å°†å±å¹•ä¸Šæ‰€æœ‰çš„ä¸­æ–‡æ¶ˆé™¤ï¼Œ
+å¹¶ä¸å†æ”¶åˆ°xkxçš„è®¯æ¯ã€‚ç›´åˆ°ä½ è¾“å…¥boss leaveæ¢å¤ã€‚
 
 
 HELP

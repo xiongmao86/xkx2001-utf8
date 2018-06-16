@@ -6,25 +6,25 @@ int main(object me, string arg)
 {
         if (me->is_fighting()) {
                 me->remove_all_enemy();
-                message_vision("$NÉíÐÐÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£\n", me); 
+                message_vision("$Nèº«è¡Œå‘åŽä¸€è·ƒï¼Œè·³å‡ºæˆ˜åœˆä¸æ‰“äº†ã€‚\n", me); 
         }
         else if (!me->is_busy()) 
-                return notify_fail("ÄãÏÖÔÚ²»Ã¦¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ä¸å¿™ã€‚\n");
         else if ((int)me->query_temp("pending/exercise") != 0) {
-                message_vision("$N°ÑÕýÔÚÔËÐÐµÄÕæÆøÇ¿ÐÐÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆðÀ´¡£\n", me);
+                message_vision("$NæŠŠæ­£åœ¨è¿è¡Œçš„çœŸæ°”å¼ºè¡ŒåŽ‹å›žä¸¹ç”°ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
                 me->interrupt_me();
         }
         else if ((int)me->query_temp("pending/respirate") != 0) {
-                message_vision("$NÃÍÎü¼¸¿Ú´óÆø£¬Õ¾ÁËÆðÀ´¡£\n", me);
+                message_vision("$NçŒ›å¸å‡ å£å¤§æ°”ï¼Œç«™äº†èµ·æ¥ã€‚\n", me);
                 me->interrupt_me();
         } 
         else if ((int)me->query_temp("pending/jingzuo") != 0) {
-                message_vision("$NÐÄ·³ÒâÂÒ£¬Õö¿ªÑÛ¾¦Õ¾ÁËÆðÀ´¡£\n", me);
+                message_vision("$Nå¿ƒçƒ¦æ„ä¹±ï¼Œçå¼€çœ¼ç›ç«™äº†èµ·æ¥ã€‚\n", me);
                 me->interrupt_me();
         }
 
         me->interrupt_me();
-	// if (me->is_busy()) write("ÄãÏÖÔÚºÜÃ¦£¬Í£²»ÏÂÀ´¡£\n");
+	// if (me->is_busy()) write("ä½ çŽ°åœ¨å¾ˆå¿™ï¼Œåœä¸ä¸‹æ¥ã€‚\n");
 	
         return 1;
 }

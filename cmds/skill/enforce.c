@@ -8,33 +8,33 @@ int main(object me, string arg)
 	int pts;
 
 	if( !arg || (arg!="none" && !sscanf(arg, "%d", pts)) ) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºenforce|jiali <Ê¹³ö¼¸µãÄÚÁ¦ÉËµĞ>|none");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenforce|jiali <ä½¿å‡ºå‡ ç‚¹å†…åŠ›ä¼¤æ•Œ>|none");
 
 	if( !me->query_skill_mapped("force") )
-		return notify_fail("Äã±ØĞëÏÈ enable Ò»ÖÖÄÚ¹¦¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆ enable ä¸€ç§å†…åŠŸã€‚\n");
 
 	if( arg=="none" )
 		me->delete("jiali");
 	else {
 		if( pts < 0 )
-			return notify_fail("ÄãÖ»ÄÜÓÃ none ±íÊ¾²»ÔËÄÚÁ¦£¬»òÊı×Ö±íÊ¾Ã¿Ò»»÷ÓÃ¼¸µãÄÚÁ¦¡£\n");
+			return notify_fail("ä½ åªèƒ½ç”¨ none è¡¨ç¤ºä¸è¿å†…åŠ›ï¼Œæˆ–æ•°å­—è¡¨ç¤ºæ¯ä¸€å‡»ç”¨å‡ ç‚¹å†…åŠ›ã€‚\n");
 		if( pts > (int)me->query_skill("force") / 2 )
-			return notify_fail("ÄãµÄÄÚ¹¦»ğºî»¹¼Ó²»ÁËÄÇÃ´´óÁ¦¡£\n");
+			return notify_fail("ä½ çš„å†…åŠŸç«ä¾¯è¿˜åŠ ä¸äº†é‚£ä¹ˆå¤§åŠ›ã€‚\n");
 		me->set("jiali", pts);
 	}
 
-	write("´ÓÏÖÔÚÆğÄãÓÃ" + chinese_number(pts)+"µãÄÚÁ¦ÉËµĞ¡£\n");
+	write("ä»ç°åœ¨èµ·ä½ ç”¨" + chinese_number(pts)+"ç‚¹å†…åŠ›ä¼¤æ•Œã€‚\n");
 	return 1;
 }
 
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: enforce|jiali <Ê¹³ö¼¸µãÄÚÁ¦ÉËµĞ>|none
+æŒ‡ä»¤æ ¼å¼: enforce|jiali <ä½¿å‡ºå‡ ç‚¹å†…åŠ›ä¼¤æ•Œ>|none
  
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨Ã¿´Î»÷ÖĞµĞÈËÊ±£¬Òª·¢³ö¼¸µãÄÚÁ¦ÉËµĞ¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŒ‡å®šæ¯æ¬¡å‡»ä¸­æ•Œäººæ—¶ï¼Œè¦å‘å‡ºå‡ ç‚¹å†…åŠ›ä¼¤æ•Œã€‚
 
-enforce none Ôò±íÊ¾Äã²»Ê¹ÓÃÄÚÁ¦¡£ 
+enforce none åˆ™è¡¨ç¤ºä½ ä¸ä½¿ç”¨å†…åŠ›ã€‚ 
 
 See Also: enable
 HELP

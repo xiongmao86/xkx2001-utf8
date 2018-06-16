@@ -24,10 +24,10 @@ void do_to(object me, string arg, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : to <Ö¸Áî>
+æŒ‡ä»¤æ ¼å¼ : to <æŒ‡ä»¤>
 
-¿ÉÒÔÒ»´ÎÊä³ö¶àĞĞÒÔÉÏµÄÎÄ×Ö, <Ö¸Áî>Í¨³£ÊÇÊä³öÑ¶Ï¢µÄÖ¸ÁîÈç
-say , tell , describe , chat , reple ........µÈ¡£
+å¯ä»¥ä¸€æ¬¡è¾“å‡ºå¤šè¡Œä»¥ä¸Šçš„æ–‡å­—, <æŒ‡ä»¤>é€šå¸¸æ˜¯è¾“å‡ºè®¯æ¯çš„æŒ‡ä»¤å¦‚
+say , tell , describe , chat , reple ........ç­‰ã€‚
 HELP
     );
     return 1;

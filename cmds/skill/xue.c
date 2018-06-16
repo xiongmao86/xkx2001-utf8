@@ -6,9 +6,9 @@
 inherit F_CLEAN_UP;
 
 string *reject_msg = ({
-	"ËµµÀ£ºÄúÌ«¿ÍÆøÁË£¬ÕâÔõÃ´¸Òµ±£¿\n",
-	"ÏñÊÇÊÜ³èÈô¾ªÒ»Ñù£¬ËµµÀ£ºÇë½Ì£¿ÕâÔõÃ´¸Òµ±£¿\n",
-	"Ğ¦×ÅËµµÀ£ºÄú¼ûĞ¦ÁË£¬ÎÒÕâµãµñ³æĞ¡¼¼Ôõ¹»×Ê¸ñ¡¸Ö¸µã¡¹ÄúÊ²Ã´£¿\n",
+	"è¯´é“ï¼šæ‚¨å¤ªå®¢æ°”äº†ï¼Œè¿™æ€ä¹ˆæ•¢å½“ï¼Ÿ\n",
+	"åƒæ˜¯å—å® è‹¥æƒŠä¸€æ ·ï¼Œè¯´é“ï¼šè¯·æ•™ï¼Ÿè¿™æ€ä¹ˆæ•¢å½“ï¼Ÿ\n",
+	"ç¬‘ç€è¯´é“ï¼šæ‚¨è§ç¬‘äº†ï¼Œæˆ‘è¿™ç‚¹é›•è™«å°æŠ€æ€å¤Ÿèµ„æ ¼ã€ŒæŒ‡ç‚¹ã€æ‚¨ä»€ä¹ˆï¼Ÿ\n",
 });
 
 void create() { seteuid(getuid()); }
@@ -22,30 +22,30 @@ int main(object me, string arg)
 
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if(!arg)
-	    return notify_fail("Ö¸Áî¸ñÊ½£ºlearn|xue <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]\n");
+	    return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn|xue <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]\n");
 
   	if (sscanf(arg, "%s %s %d", teacher, skill, learn_times)!=3 ) {
 	    learn_times = 1;
 	    if (sscanf(arg, "%s %s", teacher, skill)!=2 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºlearn|xue <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn|xue <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]\n");
 	}
 	if (learn_times < 1) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºlearn|xue <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn|xue <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]\n");
 
 	if( me->is_fighting() )
-		return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
+		return notify_fail("ä¸´é˜µç£¨æªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
 
 	if( !(ob = present(teacher, environment(me))) || !ob->is_character())
-		return notify_fail("ÄãÒªÏòË­Çó½Ì£¿\n");
+		return notify_fail("ä½ è¦å‘è°æ±‚æ•™ï¼Ÿ\n");
 
 	if( !living(ob) )
-		return notify_fail("àÅ....ÄãµÃÏÈ°Ñ" + ob->name() + "ÅªĞÑÔÙËµ¡£\n");
+		return notify_fail("å—¯....ä½ å¾—å…ˆæŠŠ" + ob->name() + "å¼„é†’å†è¯´ã€‚\n");
 
 	if( (int)me->query("potential") < learn_times )
-		return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬Ã»ÓĞ°ì·¨ÔÙ³É³¤ÁË¡£\n");
+		return notify_fail("ä½ çš„æ½œèƒ½ä¸å¤Ÿï¼Œæ²¡æœ‰åŠæ³•å†æˆé•¿äº†ã€‚\n");
 
 	// HACK: recognize_apprentice takes care of the payment 
 	// for literate.  We have to do this learn_times.
@@ -55,12 +55,12 @@ int main(object me, string arg)
 	    }
 	}
 
-	if ( (string)me->query("family/family_name") == "¶ëáÒÅÉ" 
-	  && (string)ob->query("family/family_name") == "¶ëáÒÅÉ"
-	  && (string)me->query("gender") != "Å®ĞÔ" 
+	if ( (string)me->query("family/family_name") == "å³¨åµ‹æ´¾" 
+	  && (string)ob->query("family/family_name") == "å³¨åµ‹æ´¾"
+	  && (string)me->query("gender") != "å¥³æ€§" 
 	  && (int)me->query_int() < 20 + random(25) ) {
 		slow_factor = 2; 
-		slow_msg = "ÏëÁËÁ¼¾Ã£¬";
+		slow_msg = "æƒ³äº†è‰¯ä¹…ï¼Œ";
 	}
 	else {
 		slow_factor = 1;
@@ -68,29 +68,29 @@ int main(object me, string arg)
 	}
 
 	if( !master_skill = ob->query_skill(skill, 1) )
-	    return notify_fail("ÕâÏî¼¼ÄÜÄã¿ÖÅÂ±ØĞëÕÒ±ğÈËÑ§ÁË¡£\n");
+	    return notify_fail("è¿™é¡¹æŠ€èƒ½ä½ ææ€•å¿…é¡»æ‰¾åˆ«äººå­¦äº†ã€‚\n");
 
-	notify_fail(ob->name() + "²»Ô¸Òâ½ÌÄãÕâÏî¼¼ÄÜ¡£\n");
+	notify_fail(ob->name() + "ä¸æ„¿æ„æ•™ä½ è¿™é¡¹æŠ€èƒ½ã€‚\n");
 	if( ob->prevent_learn(me, skill) ) return 0;
 
 	my_skill = me->query_skill(skill, 1);
 	if( my_skill >= master_skill )
-		return notify_fail("ÕâÏî¼¼ÄÜÄãµÄ³Ì¶ÈÒÑ¾­²»ÊäÄãÊ¦¸¸ÁË¡£\n");
+		return notify_fail("è¿™é¡¹æŠ€èƒ½ä½ çš„ç¨‹åº¦å·²ç»ä¸è¾“ä½ å¸ˆçˆ¶äº†ã€‚\n");
 
 	if (me->is_spouse_of(ob) )
 	    if (my_skill >= master_skill - 20*(me->query("married_times")-1))
-		return notify_fail(ob->name() + "Ïëµ½ÄãºÍÒÔÇ°" 
+		return notify_fail(ob->name() + "æƒ³åˆ°ä½ å’Œä»¥å‰" 
 			+ me->query("spouse/title") 
-			+ "ÔÚÒ»ÆğµÄÇéĞÎ£¬ÓĞµã²»´óÔ¸Òâ½ÌÄãÕâÏî¼¼ÄÜ¡£\n");
+			+ "åœ¨ä¸€èµ·çš„æƒ…å½¢ï¼Œæœ‰ç‚¹ä¸å¤§æ„¿æ„æ•™ä½ è¿™é¡¹æŠ€èƒ½ã€‚\n");
 	    else if ( (ob->query("combat_exp") < 10000 
 	    	       || me->query("combat_exp") < 10000 )
 			&& (string)SKILL_D(skill)->type() == "martial" ) 
-		return notify_fail("ÄãÃÇ·ò¸¾ÊµÕ½¾­Ñé»¹²»×ã£¬²»ÄÜ»¥Ïà´«ÊÚÎäÒÕ£¡\n");
+		return notify_fail("ä½ ä»¬å¤«å¦‡å®æˆ˜ç»éªŒè¿˜ä¸è¶³ï¼Œä¸èƒ½äº’ç›¸ä¼ æˆæ­¦è‰ºï¼\n");
 		
-	notify_fail("ÒÀÄãÄ¿Ç°µÄÄÜÁ¦£¬Ã»ÓĞ°ì·¨Ñ§Ï°ÕâÖÖ¼¼ÄÜ¡£\n");
-	if (me->is_spouse_of(ob)) me->add_temp("mark/Öì", learn_times);
+	notify_fail("ä¾ä½ ç›®å‰çš„èƒ½åŠ›ï¼Œæ²¡æœ‰åŠæ³•å­¦ä¹ è¿™ç§æŠ€èƒ½ã€‚\n");
+	if (me->is_spouse_of(ob)) me->add_temp("mark/æœ±", learn_times);
 	if( !SKILL_D(skill)->valid_learn(me) ) return 0;
-	if (me->is_spouse_of(ob)) me->add_temp("mark/Öì", -learn_times);
+	if (me->is_spouse_of(ob)) me->add_temp("mark/æœ±", -learn_times);
 
 	gin_cost = 150 / (int)me->query("int");
 
@@ -99,18 +99,18 @@ int main(object me, string arg)
 	    me->set_skill(skill,0);
 	}
 
-	printf("ÄãÏò%sÇë½ÌÓĞ¹Ø¡¸%s¡¹µÄÒÉÎÊ¡£\n", ob->name(), to_chinese(skill));
+	printf("ä½ å‘%sè¯·æ•™æœ‰å…³ã€Œ%sã€çš„ç–‘é—®ã€‚\n", ob->name(), to_chinese(skill));
 
 	if( ob->query("env/no_teach") )
-		return notify_fail("µ«ÊÇ" + ob->name() + "ÏÖÔÚ²¢²»×¼±¸»Ø´ğÄãµÄÎÊÌâ¡£\n");
+		return notify_fail("ä½†æ˜¯" + ob->name() + "ç°åœ¨å¹¶ä¸å‡†å¤‡å›ç­”ä½ çš„é—®é¢˜ã€‚\n");
 
-	tell_object(ob, sprintf("%sÏòÄãÇë½ÌÓĞ¹Ø¡¸%s¡¹µÄÎÊÌâ¡£\n", me->name(), to_chinese(skill)));
+	tell_object(ob, sprintf("%så‘ä½ è¯·æ•™æœ‰å…³ã€Œ%sã€çš„é—®é¢˜ã€‚\n", me->name(), to_chinese(skill)));
 
 	if( (int)ob->query("jing") > learn_times*gin_cost/5 + 1 ) {
 		if( userp(ob) ) ob->receive_damage("jing", learn_times*gin_cost/5 + 1);
 	} else {
-		write("µ«ÊÇ" + ob->name() + "ÏÔÈ»Ì«ÀÛÁË£¬Ã»ÓĞ°ì·¨½ÌÄãÊ²Ã´¡£\n");
-		tell_object(ob, "µ«ÊÇÄãÌ«ÀÛÁË£¬Ã»ÓĞ°ì·¨½Ì" + me->name() + "¡£\n");
+		write("ä½†æ˜¯" + ob->name() + "æ˜¾ç„¶å¤ªç´¯äº†ï¼Œæ²¡æœ‰åŠæ³•æ•™ä½ ä»€ä¹ˆã€‚\n");
+		tell_object(ob, "ä½†æ˜¯ä½ å¤ªç´¯äº†ï¼Œæ²¡æœ‰åŠæ³•æ•™" + me->name() + "ã€‚\n");
 		return 1;
 	}
 		
@@ -119,18 +119,18 @@ int main(object me, string arg)
 	if( (int)me->query("jing") > gin_cost ) {
 		if( (string)SKILL_D(skill)->type()=="martial"
 		&&	my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) {
-			printf("Ò²ĞíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬Äã¶Ô%sµÄ»Ø´ğ×ÜÊÇÎŞ·¨Áì»á¡£\n", ob->name() );
+			printf("ä¹Ÿè®¸æ˜¯ç¼ºä¹å®æˆ˜ç»éªŒï¼Œä½ å¯¹%sçš„å›ç­”æ€»æ˜¯æ— æ³•é¢†ä¼šã€‚\n", ob->name() );
 		} else {
 		    if(skill_name = SKILL_D(skill)->query_skill_name(my_skill)) {
 			if ( skill=="linji-zhuang" )
-			    printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬%s¶Ô¡¸%s¡¹µÄĞŞÑøËÆºõÓĞËùÌá¸ß¡£\n", 
+			    printf("ä½ å¬äº†%sçš„æŒ‡å¯¼ï¼Œ%så¯¹ã€Œ%sã€çš„ä¿®å…»ä¼¼ä¹æœ‰æ‰€æé«˜ã€‚\n", 
 				    ob->name(), slow_msg, skill_name);
 			else
-			    printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬%s¶Ô¡¸%s¡¹ÕâÒ»ÕĞËÆºõÓĞĞ©ĞÄµÃ¡£\n", 
+			    printf("ä½ å¬äº†%sçš„æŒ‡å¯¼ï¼Œ%så¯¹ã€Œ%sã€è¿™ä¸€æ‹›ä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n", 
 				    ob->name(), slow_msg, skill_name);
 		    }
 		    else
-			printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬%sËÆºõÓĞĞ©ĞÄµÃ¡£\n", ob->name(), slow_msg);
+			printf("ä½ å¬äº†%sçš„æŒ‡å¯¼ï¼Œ%sä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n", ob->name(), slow_msg);
 //	    	    me->add("learned_points", learn_times);
 		    me->add("potential", -learn_times);
 
@@ -142,7 +142,7 @@ int main(object me, string arg)
 		}
 	} else {
 		gin_cost = me->query("jing") > 0 ? (int)me->query("jing") : 0;
-		write("Äã½ñÌìÌ«ÀÛÁË£¬½á¹ûÊ²Ã´Ò²Ã»ÓĞÑ§µ½¡£\n");
+		write("ä½ ä»Šå¤©å¤ªç´¯äº†ï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡æœ‰å­¦åˆ°ã€‚\n");
 	}
 
 	me->receive_damage("jing", gin_cost);
@@ -153,17 +153,17 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºlearn|xue <Ä³ÈË> <¼¼ÄÜ> [´ÎÊı]
+æŒ‡ä»¤æ ¼å¼ï¼šlearn|xue <æŸäºº> <æŠ€èƒ½> [æ¬¡æ•°]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÏò±ğÈËÇë½ÌÓĞ¹ØÄ³Ò»ÖÖ¼¼ÄÜµÄÒÉÄÑÎÊÌâ£¬µ±È»£¬ÄãÇë½ÌµÄ
-¶ÔÏóÔÚÕâÏî¼¼ÄÜÉÏµÄÔìÒè±ØĞë±ÈÄã¸ß£¬¶øÄã¾­ÓÉÕâÖÖ·½Ê½Ñ§Ï°µÃÀ´µÄ¼¼ÄÜÒ²
-²»¿ÉÄÜ¸ßÓÚÄãËùÇë½ÌµÄÈË£¬È»¶øÒòÎªÕâÖÖÑ§Ï°·½Ê½Ïàµ±ÓÚÒ»ÖÖ¡¸¾­ÑéµÄ´«³Ğ¡¹£¬
-Òò´ËÑ§Ï°¿ÉÒÔËµÊÇÊìÏ¤Ò»ÖÖĞÂ¼¼ÄÜ×î¿ìµÄ·½·¨¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å‘åˆ«äººè¯·æ•™æœ‰å…³æŸä¸€ç§æŠ€èƒ½çš„ç–‘éš¾é—®é¢˜ï¼Œå½“ç„¶ï¼Œä½ è¯·æ•™çš„
+å¯¹è±¡åœ¨è¿™é¡¹æŠ€èƒ½ä¸Šçš„é€ è¯£å¿…é¡»æ¯”ä½ é«˜ï¼Œè€Œä½ ç»ç”±è¿™ç§æ–¹å¼å­¦ä¹ å¾—æ¥çš„æŠ€èƒ½ä¹Ÿ
+ä¸å¯èƒ½é«˜äºä½ æ‰€è¯·æ•™çš„äººï¼Œç„¶è€Œå› ä¸ºè¿™ç§å­¦ä¹ æ–¹å¼ç›¸å½“äºä¸€ç§ã€Œç»éªŒçš„ä¼ æ‰¿ã€ï¼Œ
+å› æ­¤å­¦ä¹ å¯ä»¥è¯´æ˜¯ç†Ÿæ‚‰ä¸€ç§æ–°æŠ€èƒ½æœ€å¿«çš„æ–¹æ³•ã€‚
 
-´ËÍâÑ§Ï°Ò²ĞèÒªÏûºÄÒ»Ğ©¾«Á¦£¬¶øÏûºÄµÄ¾«Á¦¸úÄã×Ô¼º¡¢ÓëÄãÑ§Ï°¶ÔÏóµÄÎò
-ĞÔÓĞ¹Ø¡£
+æ­¤å¤–å­¦ä¹ ä¹Ÿéœ€è¦æ¶ˆè€—ä¸€äº›ç²¾åŠ›ï¼Œè€Œæ¶ˆè€—çš„ç²¾åŠ›è·Ÿä½ è‡ªå·±ã€ä¸ä½ å­¦ä¹ å¯¹è±¡çš„æ‚Ÿ
+æ€§æœ‰å…³ã€‚
 
-ÆäËûÏà¹ØÖ¸Áî : apprentice, practice, skills, study, marry
+å…¶ä»–ç›¸å…³æŒ‡ä»¤ : apprentice, practice, skills, study, marry
 HELP
         );
         return 1;

@@ -22,9 +22,9 @@ int main(object me, string arg)
 	env = me->query("env");
  
 	if( !arg || arg=="" ) {
-		write("ÄãÄ¿Ç°Éè¶¨µÄ»·¾³±äÁ¿ÓĞ£º\n");
+		write("ä½ ç›®å‰è®¾å®šçš„ç¯å¢ƒå˜é‡æœ‰ï¼š\n");
 		if( !mapp(env) || !sizeof(env) )
-			write("\tÃ»ÓĞÉè¶¨ÈÎºÎ»·¾³±äÁ¿¡£\n");
+			write("\tæ²¡æœ‰è®¾å®šä»»ä½•ç¯å¢ƒå˜é‡ã€‚\n");
 		else {
 			terms = keys(env);
 			for(i=0; i<sizeof(terms); i++)
@@ -58,12 +58,12 @@ int main(object me, string arg)
 
 	if( term && term!="" ) {
 		if( mapp(env) && undefinedp(env[term]) && sizeof(env) >= MAX_ENV_VARS )
-			return notify_fail("ÄãÉèµÄ»·¾³±äÁ¿Ì«¶àÁË£¬ÇëÏÈÓÃ unset É¾µô¼¸¸ö°É¡£\n");
+			return notify_fail("ä½ è®¾çš„ç¯å¢ƒå˜é‡å¤ªå¤šäº†ï¼Œè¯·å…ˆç”¨ unset åˆ æ‰å‡ ä¸ªå§ã€‚\n");
 		sscanf(data, "%d", data);
         if((wiz_level(me) == 0) && (member_array(term, wiz_only) != -1))
-            return notify_fail("Ö»ÓĞÉñÏÉÄÜÓÃÕâ¸öÉè¶¨¡£\n");
+            return notify_fail("åªæœ‰ç¥ä»™èƒ½ç”¨è¿™ä¸ªè®¾å®šã€‚\n");
         me->set("env/" + term, data);
-		printf("Éè¶¨»·¾³±äÁ¿£º%s = %O\n", term, data);
+		printf("è®¾å®šç¯å¢ƒå˜é‡ï¼š%s = %O\n", term, data);
 		return 1;
 	}
 	return help();
@@ -72,14 +72,14 @@ int main(object me, string arg)
 int help()
 {
 	write(@TEXT
-Ö¸Áî¸ñÊ½£ºset <±äÁ¿Ãû> [<±äÁ¿Öµ>]
+æŒ‡ä»¤æ ¼å¼ï¼šset <å˜é‡å> [<å˜é‡å€¼>]
  
-Õâ¸öÖ¸ÁîÈÃÄãÉè¶¨Ò»Ğ©»·¾³±äÁ¿£¬²»¼Ó²ÎÊıÊ±»áÏÔÊ¾ÄãÄ¿Ç°Éè¶¨µÄ»·¾³±äÁ¿£¬²»Ö¸¶¨
-±äÁ¿Öµ£¬ÔòÄÚ¶¨ÖµÎª "YES"¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ è®¾å®šä¸€äº›ç¯å¢ƒå˜é‡ï¼Œä¸åŠ å‚æ•°æ—¶ä¼šæ˜¾ç¤ºä½ ç›®å‰è®¾å®šçš„ç¯å¢ƒå˜é‡ï¼Œä¸æŒ‡å®š
+å˜é‡å€¼ï¼Œåˆ™å†…å®šå€¼ä¸º "YES"ã€‚
  
-È¡Ïû±äÁ¿Éè¶¨ÇëÓÃ unset Ö¸Áî¡£
+å–æ¶ˆå˜é‡è®¾å®šè¯·ç”¨ unset æŒ‡ä»¤ã€‚
  
-ÖÁì¶ÓĞÄÄĞ©»·¾³±äÁ¿¿ÉÒÔÉè¶¨£¬Çë¼û help settings¡£
+è‡³æ–¼æœ‰å“ªäº›ç¯å¢ƒå˜é‡å¯ä»¥è®¾å®šï¼Œè¯·è§ help settingsã€‚
 TEXT
 	);
 	return 1;

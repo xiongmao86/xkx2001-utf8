@@ -22,40 +22,40 @@ int main(object me, string arg)
 
 	if( !arg
 	||      sscanf(arg, "%s at %s", what, who)!=2)
-		return notify_fail("ÃüÁî¸ñÊ½: throw <ÎïÆ·> at <Ä³ÈË>¡£\n");
+		return notify_fail("å‘½ä»¤æ ¼å¼: throw <ç‰©å“> at <æŸäºº>ã€‚\n");
 
 	ob = present(what, me);
-	if( !ob ) return notify_fail("ÄãÒªÈÓÊ²Ã´£¿\n");
+	if( !ob ) return notify_fail("ä½ è¦æ‰”ä»€ä¹ˆï¼Ÿ\n");
 
 	if (ob->query("no_drop"))
-		return notify_fail("Õâ¸ö¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+		return notify_fail("è¿™ä¸ªä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 
 	if (!(victim = present(who, environment(me))))
-		return notify_fail("ÕâÀïÃ»ÓĞÄãµÄÄ¿±ê¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰ä½ çš„ç›®æ ‡ã€‚\n");
 
 	if (!victim)
-		return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
+		return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
 	if (!living(victim))
-		return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
+		return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
 
 	if (victim->query("winner"))
-		return notify_fail("²»¿É¶Ô"+victim->short()+"·ÅËÁ£¡\n");
+		return notify_fail("ä¸å¯å¯¹"+victim->short()+"æ”¾è‚†ï¼\n");
 
 	if (me->is_busy() )
-		return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓĞ×öÍê¡£\n");
+		return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰åšå®Œã€‚\n");
 
 	if (victim == me) 
-		return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+		return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+		return notify_fail("åœ¨è¿™é‡Œä¸èƒ½æ”»å‡»ä»–äººã€‚\n");
 		
         if( (time < 3600) && userp(victim))
-                return notify_fail("Äã×Ô¾õÉ±ĞÄÌ«ÖØ£¬ÊÖÈíÁËÏÂÀ´£¡\n");
+                return notify_fail("ä½ è‡ªè§‰æ€å¿ƒå¤ªé‡ï¼Œæ‰‹è½¯äº†ä¸‹æ¥ï¼\n");
                 
 	if( strsrch(file_name(environment(me)), "/d/xiakedao/") >= 0 && userp(victim))
-                return notify_fail("ÁúµºÖ÷ÓĞÁî£º²»µÃÔÚµºÉÏÊ¹°µÆ÷ÉËÈË£¡\n");
+                return notify_fail("é¾™å²›ä¸»æœ‰ä»¤ï¼šä¸å¾—åœ¨å²›ä¸Šä½¿æš—å™¨ä¼¤äººï¼\n");
 
 	if( ob->query("id") == "corpse" && me->query_skill("chousui-zhang", 1) >= 120 
 	&& me->query_skill("poison", 1) >= 120 ) 
@@ -73,14 +73,14 @@ int do_throw(object me, object ob, object victim)
 	string *limbs, str, dodge_skill, limb, result;
 	int ap, dp, damage;
 
-	message_vision("\n$NÊÖÒ»Ñï£¬½«"+ob->name()+"¶Ô×¼$nÖÀÈ¥¡£\n", me, victim);
+	message_vision("\n$Næ‰‹ä¸€æ‰¬ï¼Œå°†"+ob->name()+"å¯¹å‡†$næ·å»ã€‚\n", me, victim);
 
 	me->start_busy(1);
 
 	if ( victim->query_skill_mapped("sword")=="dugu-jiujian" 
 	&& victim->query_temp("weapon")->query("skill_type")=="sword" 
 	&& victim->query("combat_exp") > me->query("combat_exp")/2 ) {
-		message_vision(CYN"$N»Ó½£µãÏò"+ob->name()+"£¬Ê¹³ö¶À¹Â¾Å½£µÄ¡¸ÆÆ¼ıÊ½¡¹£¬½«"+ob->name()+"ÌôÉä»ØÈ¥¡£\n"NOR, victim);			
+		message_vision(CYN"$NæŒ¥å‰‘ç‚¹å‘"+ob->name()+"ï¼Œä½¿å‡ºç‹¬å­¤ä¹å‰‘çš„ã€Œç ´ç®­å¼ã€ï¼Œå°†"+ob->name()+"æŒ‘å°„å›å»ã€‚\n"NOR, victim);			
 		throw_result(victim, me, ob);
 	}
 	else {
@@ -119,8 +119,8 @@ private int throw_result(object me, object victim, object ob)
 	    victim->receive_damage("qi", ob->query_weight()/100, me);
 		
 		if(ob->query("armor_type") == "embed" && !victim->query_temp("armor/embed")){
-		message_vision(CYN"½á¹û$NÒ»Éù²Ò½Ğ£¬$n"+CYN+"ÒÑÈ»²åÔÚ$NµÄ"+limbs[random(sizeof(limbs))]
-			  +"ÉÏ¡£\n"NOR, victim, ob);
+		message_vision(CYN"ç»“æœ$Nä¸€å£°æƒ¨å«ï¼Œ$n"+CYN+"å·²ç„¶æ’åœ¨$Nçš„"+limbs[random(sizeof(limbs))]
+			  +"ä¸Šã€‚\n"NOR, victim, ob);
 				 ob2=new(base_name(ob));
 				 ob2->set_amount(1);
 				 ob2->set("embedded", 1);
@@ -130,8 +130,8 @@ private int throw_result(object me, object victim, object ob)
 				 victim->kill_ob(me);
 		}
 		else {  
-		message_vision(CYN"$Nâ§²»¼°·À£¬$n"+CYN+"ÔÒÔÚÁË$NµÄ"+limbs[random(sizeof(limbs))]
-			  +"ÉÏ¡£\n"NOR, victim, ob);
+		message_vision(CYN"$NçŒä¸åŠé˜²ï¼Œ$n"+CYN+"ç ¸åœ¨äº†$Nçš„"+limbs[random(sizeof(limbs))]
+			  +"ä¸Šã€‚\n"NOR, victim, ob);
 		if (!userp(victim) && victim->query_temp("offenders/"+me->query("id")) > 1)
                         victim->kill_ob(me);
 		else{
@@ -148,8 +148,8 @@ private int throw_result(object me, object victim, object ob)
 	}
 
 	else if ( ap < dp/7 && ob->query_weight() < 7000 
-		&& victim->query("race") == "ÈËÀà"){
-		message_vision(CYN"²»ÁÏ$NÑÛÃ÷ÊÖ¿ì£¬Éí×ÓÒ»²à£¬°Ñ$n"+CYN+"ÇáÇáµØ½ÓÔÚÊÖÀï¡£\n\n"NOR, victim, ob);
+		&& victim->query("race") == "äººç±»"){
+		message_vision(CYN"ä¸æ–™$Nçœ¼æ˜æ‰‹å¿«ï¼Œèº«å­ä¸€ä¾§ï¼ŒæŠŠ$n"+CYN+"è½»è½»åœ°æ¥åœ¨æ‰‹é‡Œã€‚\n\n"NOR, victim, ob);
 		me->start_busy(random(3));
 		if (ob->query_amount() > 0){
 				 ob->add_amount(-1);
@@ -191,13 +191,13 @@ private int throw_result(object me, object victim, object ob)
 int fushi_du(object me, object victim, object ob)
 {
 	int ap, dp, damage;
-	string dodge_skill, str, *limbs, limb, result, type = "ğöÉË";
+	string dodge_skill, str, *limbs, limb, result, type = "ç˜€ä¼¤";
 	
 	if(userp(victim) && userp(me) && (me->query_condition("pker") > 240
            || victim->query("mud_age") < 18000) )
-                return notify_fail("Äã¸Ğµ½Ò»Ë¿ÄÚ¾Î£¬ÊÖÍ»È»ÈíÁËÏÂÀ´£¡\n");
+                return notify_fail("ä½ æ„Ÿåˆ°ä¸€ä¸å†…ç–šï¼Œæ‰‹çªç„¶è½¯äº†ä¸‹æ¥ï¼\n");
 
-	message_vision(HIB"$NÉì³öÃ°×ÅºÚÆøµÄÊÖÕÆ×¥Æğ"+ob->name()+"³¯$nÖÀÈ¥¡£\n"NOR, me, victim);
+	message_vision(HIB"$Nä¼¸å‡ºå†’ç€é»‘æ°”çš„æ‰‹æŒæŠ“èµ·"+ob->name()+"æœ$næ·å»ã€‚\n"NOR, me, victim);
 	
 	ap = me->query_skill("strike"); 
 	dp = victim->query_skill("dodge");
@@ -263,7 +263,7 @@ void do_respond(object victim, object me)
 	if (victim->query("shen") < 0)
 		return victim->kill_ob(me);
 
-	if (att == "friendly" && victim->query("race") == "ÈËÀà")
+	if (att == "friendly" && victim->query("race") == "äººç±»")
 		return e_mote(victim, me);
 	
 	if (att == "heroism" || att == "aggressive")
@@ -272,7 +272,7 @@ void do_respond(object victim, object me)
 	if (att == "peaceful" && random(5)== 1) 
 		return victim->kill_ob(me);
 
-	else if(victim->query("race") == "ÈËÀà")
+	else if(victim->query("race") == "äººç±»")
 	EMOTE_D->do_emote(victim, "brag", me->query("id"));
 
 	return victim->fight_ob(me);    

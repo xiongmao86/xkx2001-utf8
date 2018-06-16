@@ -6,16 +6,16 @@
 inherit F_CLEAN_UP;
 
 string* words = ({
-	"ÍòÄê²»ÀÏ",
-	"ÏÉ¸£ÓÀÏí",
-	"ÊÙÓëÌìÆë",
-	"ÉñÍ¨¹ã´ó",
-	"Õ½ÎŞ²»Ê¤",
-	"¹¦ÎŞ²»¿Ë",
-	"ÎŞ¼á²»´İ",
-	"ÎŞµĞ²»ÆÆ",
-	"½ÌÖ÷±¦Ñµ£¬Ê±¿ÌÔÚĞÄ",
-	"ÉñÄ¿Èçµç£¬ÖòÕÕËÄ·½",
+	"ä¸‡å¹´ä¸è€",
+	"ä»™ç¦æ°¸äº«",
+	"å¯¿ä¸å¤©é½",
+	"ç¥é€šå¹¿å¤§",
+	"æˆ˜æ— ä¸èƒœ",
+	"åŠŸæ— ä¸å…‹",
+	"æ— åšä¸æ‘§",
+	"æ— æ•Œä¸ç ´",
+	"æ•™ä¸»å®è®­ï¼Œæ—¶åˆ»åœ¨å¿ƒ",
+	"ç¥ç›®å¦‚ç”µï¼Œçƒ›ç…§å››æ–¹",
 });
 
 int main(object me, string arg)
@@ -25,8 +25,8 @@ int main(object me, string arg)
 	object *inv;	
 
 	if (!arg) {
-		write("Äã×ÔÑÔ×ÔÓï²»ÖªµÀÔÚËµĞ©Ê²Ã´¡£\n");
-		message("sound", me->name() + "×ÔÑÔ×ÔÓï²»ÖªµÀÔÚËµĞ©Ê²Ã´¡£\n",
+		write("ä½ è‡ªè¨€è‡ªè¯­ä¸çŸ¥é“åœ¨è¯´äº›ä»€ä¹ˆã€‚\n");
+		message("sound", me->name() + "è‡ªè¨€è‡ªè¯­ä¸çŸ¥é“åœ¨è¯´äº›ä»€ä¹ˆã€‚\n",
 			environment(me), me);
 		return 1;
 	}
@@ -34,7 +34,7 @@ int main(object me, string arg)
 		arg = replace_string(arg, " ", " ... ") + " ...";
 	}
 
-	if( me->query("family/family_name") == "ÉñÁú½Ì" 
+	if( me->query("family/family_name") == "ç¥é¾™æ•™" 
 	&&  me->query("jing") >= 30
 	&&  me->query("jingli") >= 30 ) {
 
@@ -47,20 +47,20 @@ int main(object me, string arg)
 
 		point = me->query_skill("dulong-dafa", 1);
 		for(i=0; i<sizeof(words); i++) {
-			if( (strsrch(arg, "ºé½ÌÖ÷") >= 0 || strsrch(arg, "ºé·òÈË") >= 0) 
+			if( (strsrch(arg, "æ´ªæ•™ä¸»") >= 0 || strsrch(arg, "æ´ªå¤«äºº") >= 0) 
 			&& strsrch(arg, words[i]) >= 0 
 			&& point <= 100 && point >= 30 
 			&& count > 0 ) {
 				me->improve_skill("dulong-dafa", random(point*2 + count*10));
-				me->receive_damage("jing", random(point*2), "´óÉùÄÅº°£¬¾«ÉñË¥½ß¶øËÀ");
-				me->receive_damage("jingli", random(point*2), "´óÉùÄÅº°£¬¾«Á¦Ë¥½ß¶øËÀ");
+				me->receive_damage("jing", random(point*2), "å¤§å£°å‘å–Šï¼Œç²¾ç¥è¡°ç«­è€Œæ­»");
+				me->receive_damage("jingli", random(point*2), "å¤§å£°å‘å–Šï¼Œç²¾åŠ›è¡°ç«­è€Œæ­»");
 				break;
 			}
 		}
 	}
 
-	write( CYN "ÄãËµµÀ£º" + arg + "\n" NOR);
-	message("sound", CYN + me->name() + "ËµµÀ£º" +  arg + "\n" NOR,
+	write( CYN "ä½ è¯´é“ï¼š" + arg + "\n" NOR);
+	message("sound", CYN + me->name() + "è¯´é“ï¼š" +  arg + "\n" NOR,
 		environment(me), me);
 
 	// The mudlib interface of say
@@ -72,11 +72,11 @@ int main(object me, string arg)
 int help (object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: say <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼: say <è®¯æ¯>
  
-Ëµ»°£¬ËùÓĞ¸úÄãÔÚÍ¬Ò»¸ö·¿¼äµÄÈË¶¼»áÌıµ½ÄãËµµÄ»°¡£
+è¯´è¯ï¼Œæ‰€æœ‰è·Ÿä½ åœ¨åŒä¸€ä¸ªæˆ¿é—´çš„äººéƒ½ä¼šå¬åˆ°ä½ è¯´çš„è¯ã€‚
  
-×¢: ±¾Ö¸Áî¿ÉÓÃ ' È¡´ú.
+æ³¨: æœ¬æŒ‡ä»¤å¯ç”¨ ' å–ä»£.
  
 HELP
 	);

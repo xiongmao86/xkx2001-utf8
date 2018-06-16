@@ -2,7 +2,7 @@
 // purge.c
 
 #include <ansi.h>
-#define SYNTAX	"Ö¸Áî¸ñÊ½£ºpurge [<Î´ÉÏÏßÌìÊı>] | <Ê¹ÓÃÕßĞÕÃû> because <Ô­Òò>\n"
+#define SYNTAX	"æŒ‡ä»¤æ ¼å¼ï¼špurge [<æœªä¸Šçº¿å¤©æ•°>] | <ä½¿ç”¨è€…å§“å> because <åŸå› >\n"
 
 inherit F_CLEAN_UP;
 
@@ -17,7 +17,7 @@ int main(object me, string arg)
 	status = wizhood(me);
 	if( me!=this_player(1)
 	|| wiz_level(me) < wiz_level(status) )
-		return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 	
 
 	if( !arg ) return notify_fail(SYNTAX);
@@ -29,11 +29,11 @@ int main(object me, string arg)
 
 	seteuid(getuid());
 	if( file_size(DATA_DIR + "login/" + name[0..0] + "/" + name + SAVE_EXTENSION)<0 )
-		return notify_fail("Ã»ÓĞÕâÎ»Ê¹ÓÃÕß¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä½ä½¿ç”¨è€…ã€‚\n");
 
 	rm(DATA_DIR + "login/" + name[0..0] + "/" + name + SAVE_EXTENSION);
 	rm(DATA_DIR + "user/" + name[0..0] + "/" + name + SAVE_EXTENSION);
-	write( "Ê¹ÓÃÕß " + capitalize(name) + " É¾³ıµôÁË¡£\n");
+	write( "ä½¿ç”¨è€… " + capitalize(name) + " åˆ é™¤æ‰äº†ã€‚\n");
 	log_file("static/PURGE", sprintf("[%s] %s purged %s because %s.\n",
 		ctime(time())[0..15], geteuid(this_player(1)), name, reason));
 
@@ -46,11 +46,11 @@ private int do_purge_players(int day)
 	string *dir, *ppls, name;
 	mixed info;
 	if(day<30)
-		return notify_fail("Ö»ÄÜÇå³şÖÁÉÙÒ»¸öÔÂÎ´ÉÏÏßµÄÍæ¼Òµµ°¸¡£\n");
+		return notify_fail("åªèƒ½æ¸…æ¥šè‡³å°‘ä¸€ä¸ªæœˆæœªä¸Šçº¿çš„ç©å®¶æ¡£æ¡ˆã€‚\n");
 
 	seteuid(getuid());
-	message("system", "\n*** ÕûÀíÍæ¼Ò´¢´æµµÖĞ£¬ÇëÉÔºò.... ***\n", users());
-	write("´¦ÀíÖĞ£º");
+	message("system", "\n*** æ•´ç†ç©å®¶å‚¨å­˜æ¡£ä¸­ï¼Œè¯·ç¨å€™.... ***\n", users());
+	write("å¤„ç†ä¸­ï¼š");
 	count = 0;
 	ppl_cnt = 0;
 	dir = get_dir(DATA_DIR + "login/");
@@ -71,9 +71,9 @@ private int do_purge_players(int day)
 			}
 		}
 	}
-	write("\n\nÔ­À´×Ü¹²ÓĞ " + ppl_cnt + " Î»Ê¹ÓÃÕß¡£\n");
-	write( count + " ¸ö³¬¹ı " + day + " ÌìÎ´ÉÏÏßµÄÊ¹ÓÃÕß±»Çå³ıµôÁË¡£\n");
-	write("ÏÖÔÚ×Ü¹²ÓĞ " + (ppl_cnt - count) + " Î»Ê¹ÓÃÕß¡£\n");
+	write("\n\nåŸæ¥æ€»å…±æœ‰ " + ppl_cnt + " ä½ä½¿ç”¨è€…ã€‚\n");
+	write( count + " ä¸ªè¶…è¿‡ " + day + " å¤©æœªä¸Šçº¿çš„ä½¿ç”¨è€…è¢«æ¸…é™¤æ‰äº†ã€‚\n");
+	write("ç°åœ¨æ€»å…±æœ‰ " + (ppl_cnt - count) + " ä½ä½¿ç”¨è€…ã€‚\n");
 	log_file("static/PURGE", sprintf("[%s] %s cleaned up %d characters who didn't login for more than %d days\n"
 		"\t\tResulting statistics: %d characters remaining.\n",
 		ctime(time())[0..15], geteuid(this_player(1)), count, day, ppl_cnt - count));
@@ -89,8 +89,8 @@ private int do_purge_unregistered(int day)
 	mixed info;
 
 	seteuid(getuid());
-	message("system", "\n*** ÕûÀíÍæ¼Ò´¢´æµµÖĞ£¬ÇëÉÔºò.... ***\n", users());
-	write("´¦ÀíÖĞ£º");
+	message("system", "\n*** æ•´ç†ç©å®¶å‚¨å­˜æ¡£ä¸­ï¼Œè¯·ç¨å€™.... ***\n", users());
+	write("å¤„ç†ä¸­ï¼š");
 	count = 0;
 	ppl_cnt = 0;
 	dir = get_dir(DATA_DIR + "login/");
@@ -111,9 +111,9 @@ private int do_purge_unregistered(int day)
 			}
 		}
 	}
-	write("\n\nÔ­À´×Ü¹²ÓĞ " + ppl_cnt + " Î»Ê¹ÓÃÕß¡£\n");
-	write( count + " ¸ö³¬¹ı " + day + " ÌìÎ´ÉÏÏßµÄÊ¹ÓÃÕß±»Çå³ıµôÁË¡£\n");
-	write("ÏÖÔÚ×Ü¹²ÓĞ " + (ppl_cnt - count) + " Î»Ê¹ÓÃÕß¡£\n");
+	write("\n\nåŸæ¥æ€»å…±æœ‰ " + ppl_cnt + " ä½ä½¿ç”¨è€…ã€‚\n");
+	write( count + " ä¸ªè¶…è¿‡ " + day + " å¤©æœªä¸Šçº¿çš„ä½¿ç”¨è€…è¢«æ¸…é™¤æ‰äº†ã€‚\n");
+	write("ç°åœ¨æ€»å…±æœ‰ " + (ppl_cnt - count) + " ä½ä½¿ç”¨è€…ã€‚\n");
 	log_file("static/PURGE", sprintf("[%s] %s cleaned up %d characters who didn't login for more than %d days\n"
 		"\t\tResulting statistics: %d characters remaining.\n",
 		ctime(time())[0..15], geteuid(this_player(1)), count, day, ppl_cnt - count));
@@ -125,9 +125,9 @@ private int do_purge_unregistered(int day)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºpurge [<Î´ÉÏÏßÌìÊı>] | <Ê¹ÓÃÕßĞÕÃû> because <Ô­Òò>
+æŒ‡ä»¤æ ¼å¼ï¼špurge [<æœªä¸Šçº¿å¤©æ•°>] | <ä½¿ç”¨è€…å§“å> because <åŸå› >
 
-Çå³ıÒ»¸öÊ¹ÓÃÕß»òÇå³ı³¬¹ıÒ»¶¨ÌìÊı²»ÔøÉÏÏßµØÊ¹ÓÃÕß¡£
+æ¸…é™¤ä¸€ä¸ªä½¿ç”¨è€…æˆ–æ¸…é™¤è¶…è¿‡ä¸€å®šå¤©æ•°ä¸æ›¾ä¸Šçº¿åœ°ä½¿ç”¨è€…ã€‚
 HELP
 	);
     return 1;

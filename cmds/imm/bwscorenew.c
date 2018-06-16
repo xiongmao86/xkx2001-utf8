@@ -24,11 +24,11 @@ int main(object me, string arg)
 		 square = new("/d/bwdh/sjsz/square.c");
 
 	  return notify_fail(square->long_desc() +
-			"\n\nÖ¸Áî¸ñÊ½£ºbwscore or bwscore player\n" );
+			"\n\næŒ‡ä»¤æ ¼å¼ï¼šbwscore or bwscore player\n" );
 	}
   
   usr = present(arg, environment(me));
-  if (!wizardp(me)) return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+  if (!wizardp(me)) return notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");
   
   if (!usr) usr = present(arg, me);
   if (!usr) usr = find_player(arg);
@@ -36,7 +36,7 @@ int main(object me, string arg)
 	 return print_info(usr);
   }
   else 
-  return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+  return notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");
 
   print_info(usr);
   destruct(usr);
@@ -51,33 +51,33 @@ int print_info(object target)
 	string *players;
 
 
-	if ( !objectp(target) ) return notify_fail("²¢ÎŞ´ËÈË£¡\n");
+	if ( !objectp(target) ) return notify_fail("å¹¶æ— æ­¤äººï¼\n");
 
 	msg =  sprintf( BOLD " %s" NOR "%s\n\n", RANK_D->query_rank(target), target->short(1) );
 
 	if( (record = target->query("bwdh")) )
 	{
-		msg += "¸öÈËÈüÊ¤Àû´ÎÊı£º" + target->query("bwdh/win") + "\n";
-		msg += "¸öÈËÈüÊ§°Ü´ÎÊı£º" + target->query("bwdh/defeated") + "\n";
+		msg += "ä¸ªäººèµ›èƒœåˆ©æ¬¡æ•°ï¼š" + target->query("bwdh/win") + "\n";
+		msg += "ä¸ªäººèµ›å¤±è´¥æ¬¡æ•°ï¼š" + target->query("bwdh/defeated") + "\n";
 		players = keys(record);
 		for(i=0;i<sizeof(players);i++)
 		{
 			if( players[i] != "win" && players[i] != "defeated"  && players[i] != "fighting" &&
 				players[i] != "once" )
-	msg += "½»Õ½¹ı£º           " + players[i] + " Ê¤ " + target->query("bwdh/"+players[i]+"/win") + " ¸º  " + target->query("bwdh/"+players[i]+"/lose") + "\n";
+	msg += "äº¤æˆ˜è¿‡ï¼š           " + players[i] + " èƒœ " + target->query("bwdh/"+players[i]+"/win") + " è´Ÿ  " + target->query("bwdh/"+players[i]+"/lose") + "\n";
 		}
 
 	}
 
-	msg += "\n¶ÓÃû£º             " + target->query("sjsz/team_name")+"\n";
-	msg += "×Ü³É¼¨£º           " + target->query("sjsz/bw_score")+"\n";
-	msg += "×Ü±ÈÎä¾­Ñé£º       " + target->query("sjsz/exp")+"\n";
-	msg += "×ÜÇÀÆì´ÎÊı£º       " + target->query("sjsz/flag")+"\n\n";
-	msg += "±¾´Î³É¼¨£º         " + target->query("sjsz/this_score")+"\n";
-	msg += "±¾´Î±ÈÎä¾­Ñé£º     " + target->query("sjsz/this_exp")+"\n";
-	msg += "±¾´ÎÇÀÆì´ÎÊı£º     " + target->query("sjsz/this_flag")+"\n\n";
+	msg += "\né˜Ÿåï¼š             " + target->query("sjsz/team_name")+"\n";
+	msg += "æ€»æˆç»©ï¼š           " + target->query("sjsz/bw_score")+"\n";
+	msg += "æ€»æ¯”æ­¦ç»éªŒï¼š       " + target->query("sjsz/exp")+"\n";
+	msg += "æ€»æŠ¢æ——æ¬¡æ•°ï¼š       " + target->query("sjsz/flag")+"\n\n";
+	msg += "æœ¬æ¬¡æˆç»©ï¼š         " + target->query("sjsz/this_score")+"\n";
+	msg += "æœ¬æ¬¡æ¯”æ­¦ç»éªŒï¼š     " + target->query("sjsz/this_exp")+"\n";
+	msg += "æœ¬æ¬¡æŠ¢æ——æ¬¡æ•°ï¼š     " + target->query("sjsz/this_flag")+"\n\n";
 	if( target->query("sjsz/red") || target->query("sjsz/white") )
-		msg += "ÕıÔÚ±ÈÎäÖĞ¡£\n";
+		msg += "æ­£åœ¨æ¯”æ­¦ä¸­ã€‚\n";
 
 	return notify_fail(msg);
 }
@@ -89,9 +89,9 @@ int print_info(object target)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºbwscore or bwscore player.
+æŒ‡ä»¤æ ¼å¼ï¼šbwscore or bwscore player.
 
-ÓÃÀ´¼ì²éÍæ¼Ò±ÈÎäÊı¾İ
+ç”¨æ¥æ£€æŸ¥ç©å®¶æ¯”æ­¦æ•°æ®
 HELP
 	 );
 	 return 1;

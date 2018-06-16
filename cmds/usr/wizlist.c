@@ -10,7 +10,7 @@ int main(object me, string arg)
 	mapping wizstatus;
 	int j = 0;
 	int i; 
-	write(MUD_NAME + "Ä¿Ç°µÄÎ×Ê¦ÓĞ£º");
+	write(MUD_NAME + "ç›®å‰çš„å·«å¸ˆæœ‰ï¼š");
 
 //
 //	for(int i=0; i<sizeof(list); i++)
@@ -19,7 +19,7 @@ int main(object me, string arg)
 	wizstatus = SECURITY_D->query_wizstatus();
 	list = keys(wizstatus);
 
-/*	write(HIW"\n\n¡ºÌìµÛ¡»  "NOR);
+/*	write(HIW"\n\nã€å¤©å¸ã€  "NOR);
 	for(int i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(admin)" )
@@ -30,7 +30,7 @@ int main(object me, string arg)
 	}
 */
 	j=0;
-	write(HIY"\n\n¡º´óÉñ¡»  "NOR);
+	write(HIY"\n\nã€å¤§ç¥ã€  "NOR);
 	for( i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(arch)" )
@@ -41,7 +41,7 @@ int main(object me, string arg)
 	}
 
 	j=0;
-	write(HIG"\n¡ºÉñÏÉ¡»  "NOR);
+	write(HIG"\nã€ç¥ä»™ã€  "NOR);
 	for( i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(wizard)" )
@@ -52,7 +52,7 @@ int main(object me, string arg)
 	}
 
 	j=0;
-        write(HIM"\n¡ºÉ¢ÏÉ¡»  "NOR);
+        write(HIM"\nã€æ•£ä»™ã€  "NOR);
         for( i=0; i<sizeof(list); i++)
         {
                 if( wizstatus[list[i]] == "(virtuoso)" )
@@ -63,7 +63,7 @@ int main(object me, string arg)
         }
 
 	j=0;
-	write(YEL"\n¡ºÌì¹Ù¡»  "NOR);
+	write(YEL"\nã€å¤©å®˜ã€  "NOR);
 	for( i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(caretaker)" )
@@ -74,7 +74,7 @@ int main(object me, string arg)
 	}
 
 	j=0;
-	write(GRN"\n¡ºÌìÊ¦¡»  "NOR);
+	write(GRN"\nã€å¤©å¸ˆã€  "NOR);
 	for( i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(designer)" )
@@ -85,7 +85,7 @@ int main(object me, string arg)
 	}
 
 	j=0;
-	write(HIC"\n¡ºÌìÏÉ¡»  "NOR);
+	write(HIC"\nã€å¤©ä»™ã€  "NOR);
 	for( i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(creator)" )
@@ -96,7 +96,7 @@ int main(object me, string arg)
 	}
 
 	j=0;
-	write(MAG"\n¡ºÏÉÈË¡»  "NOR);
+	write(MAG"\nã€ä»™äººã€  "NOR);
 	for( i=0; i<sizeof(list); i++)
 	{
 		if( wizstatus[list[i]] == "(apprentice)" )
@@ -108,7 +108,7 @@ int main(object me, string arg)
 
 
 	j=0;
-	write(CYN"\n¡º°ëÏÉ¡»  "NOR); 	for(i=0; i<sizeof(list); i++) 	{ 		if( wizstatus[list[i]] == "(immortal)" ) 		{ 			j++; 			printf("%-12s%c", list[i],  (j%7==0) ? '\n' : ' '); 			if(j==7)break; 		} 	}  	write(CYN"¡º°ëÏÉ¡»  "NOR); 	for(; i<sizeof(list); i++) 	{ 		if( wizstatus[list[i]] == "(immortal)" ) 		{ 			j++; 			printf("%-12s%c", list[i],  (j%7==0) ? '\n' : ' '); 			if(j==7)break; 		} 	} 
+	write(CYN"\nã€åŠä»™ã€  "NOR); 	for(i=0; i<sizeof(list); i++) 	{ 		if( wizstatus[list[i]] == "(immortal)" ) 		{ 			j++; 			printf("%-12s%c", list[i],  (j%7==0) ? '\n' : ' '); 			if(j==7)break; 		} 	}  	write(CYN"ã€åŠä»™ã€  "NOR); 	for(; i<sizeof(list); i++) 	{ 		if( wizstatus[list[i]] == "(immortal)" ) 		{ 			j++; 			printf("%-12s%c", list[i],  (j%7==0) ? '\n' : ' '); 			if(j==7)break; 		} 	} 
 
 
 	write("\n\n");
@@ -118,9 +118,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : wizlist
+æŒ‡ä»¤æ ¼å¼ : wizlist
 
-ÓÃÍ¾ : ÁĞ³öÄ¿Ç°ËùÓĞµÄÎ×Ê¦Ãûµ¥¡£
+ç”¨é€” : åˆ—å‡ºç›®å‰æ‰€æœ‰çš„å·«å¸ˆåå•ã€‚
 HELP
      );
      return 1;

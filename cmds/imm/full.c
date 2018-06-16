@@ -45,6 +45,6 @@ int main(object me, string str)
         max = me->max_water_capacity();  
         me->set("water",max);
         me->clear_condition();
-        message_vision(HIY+"$N打了一个哈欠，立即变精神了。\n"+NOR, me);
+        message_vision(HIY+"$N鎵撲簡涓�涓搱娆狅紝绔嬪嵆鍙樼簿绁炰簡銆俓n"+NOR, me);
         return 1;
 }

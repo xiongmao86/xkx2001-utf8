@@ -7,17 +7,17 @@
 inherit F_CLEAN_UP;
 
 string *persuade_msg = ({
-        "µÃÈÄÈË´¦ÇÒÈÄÈË£¬Ê©Ö÷»¹ÊÇ°ÕÊÖ²»¶·ÁË°É£¡\n", 
-        "±ğ´òÁË£¬ÓĞ»°ºÃËµ£¬²»ÒªÕâ°ãÂùºá£¡\n",
-        "Á½Î»ĞİµÃÉËÁËºÍÆø£¬²»ÒªÔÙ¶·ÏÂÈ¥ÁË°É£¡\n",
-        "°¢ÃÖÍÓ·ğ£¬´ó¼Ò½­ºşÈËÊ¿£¬ÔõµØ¾Í¶¯Æğ´ÖÀ´£¿Á½Î»»¹ÊÇ×¡ÊÖ°É£¡\n",
-        "×¡ÊÖ°Õ£¬´ó¼ÒÎŞÔ©ÎŞ³ğ£¬ºÎ±ØÊ§ÁËÎäÁÖÖĞµÄºÍÆø£¿\n",
-        "¶à¸öÅóÓÑ¶àÌõÂ·, Á½Î»ºÎ²»»¯¸É¸êÎªÓñ²¯, Í£ÊÖ°Õ¶·»¯µĞÎªÓÑÄØ£¿\n",
-        "±ÈÎä½ÏÁ¿Òªµãµ½ÎªÖ¹£¬ºÎ±Ø¿à¿àÏà¶·£¬Í÷×ÔÉËÁË×Ô¼ÒĞÔÃü£¿\n",
+        "å¾—é¥¶äººå¤„ä¸”é¥¶äººï¼Œæ–½ä¸»è¿˜æ˜¯ç½¢æ‰‹ä¸æ–—äº†å§ï¼\n", 
+        "åˆ«æ‰“äº†ï¼Œæœ‰è¯å¥½è¯´ï¼Œä¸è¦è¿™èˆ¬è›®æ¨ªï¼\n",
+        "ä¸¤ä½ä¼‘å¾—ä¼¤äº†å’Œæ°”ï¼Œä¸è¦å†æ–—ä¸‹å»äº†å§ï¼\n",
+        "é˜¿å¼¥é™€ä½›ï¼Œå¤§å®¶æ±Ÿæ¹–äººå£«ï¼Œæ€åœ°å°±åŠ¨èµ·ç²—æ¥ï¼Ÿä¸¤ä½è¿˜æ˜¯ä½æ‰‹å§ï¼\n",
+        "ä½æ‰‹ç½¢ï¼Œå¤§å®¶æ— å†¤æ— ä»‡ï¼Œä½•å¿…å¤±äº†æ­¦æ—ä¸­çš„å’Œæ°”ï¼Ÿ\n",
+        "å¤šä¸ªæœ‹å‹å¤šæ¡è·¯, ä¸¤ä½ä½•ä¸åŒ–å¹²æˆˆä¸ºç‰å¸›, åœæ‰‹ç½¢æ–—åŒ–æ•Œä¸ºå‹å‘¢ï¼Ÿ\n",
+        "æ¯”æ­¦è¾ƒé‡è¦ç‚¹åˆ°ä¸ºæ­¢ï¼Œä½•å¿…è‹¦è‹¦ç›¸æ–—ï¼Œæ‰è‡ªä¼¤äº†è‡ªå®¶æ€§å‘½ï¼Ÿ\n",
 });
 string *succeed_msg = ({
-        "Á¼ÑÔÏàÈ°£¬ÔİÇÒ°ÕÊÖ¡£\n",
-        "ÔÚ´ËÏàÈ°£¬¿´ÔÚÈË¼ÒµÄÃæ×ÓÉÏ£¬Õâ´Î¾ÍËãÁË¡£\n",
+        "è‰¯è¨€ç›¸åŠï¼Œæš‚ä¸”ç½¢æ‰‹ã€‚\n",
+        "åœ¨æ­¤ç›¸åŠï¼Œçœ‹åœ¨äººå®¶çš„é¢å­ä¸Šï¼Œè¿™æ¬¡å°±ç®—äº†ã€‚\n",
 });
 
 int main(object me, string who)
@@ -31,49 +31,49 @@ int main(object me, string who)
 
 	seteuid(getuid());
 
-	if ( !(myfam = me->query("family")) || myfam["family_name"] != "¶ëáÒÅÉ")
-		return notify_fail("ÄãÏëÈ°ÈË°Õ¶·£¬¿ÉÊÇÈË¼Ò²»Àí²ÇÄã¡£\n");
-//		return notify_fail("Äã·Ç´ó³Ë·ğ½ÌÖĞÈË£¬²»ÉÆÈ°ÈË°Õ¶·¡£\n");
+	if ( !(myfam = me->query("family")) || myfam["family_name"] != "å³¨åµ‹æ´¾")
+		return notify_fail("ä½ æƒ³åŠäººç½¢æ–—ï¼Œå¯æ˜¯äººå®¶ä¸ç†ç¬ä½ ã€‚\n");
+//		return notify_fail("ä½ éå¤§ä¹˜ä½›æ•™ä¸­äººï¼Œä¸å–„åŠäººç½¢æ–—ã€‚\n");
 
-	if ( !who ) return notify_fail("Ö¸Áî¸ñÊ½£ºpersuade <ÈËÎï>\n");
+	if ( !who ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špersuade <äººç‰©>\n");
 
 	target = present(who, environment(me));
 	if ( !target || target == me || !living(target) || !objectp(target) ) 
-		return notify_fail("ÄãÏëÈ°·şË­£¿\n");
+		return notify_fail("ä½ æƒ³åŠæœè°ï¼Ÿ\n");
 
 	if ( busy = me->query_busy() ) {
 		if (intp(busy)) me->start_busy(busy+1);
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å£¡\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€ï¼\n");
 	}
 
-	if ( target->query("race") != "ÈËÀà" )
-		return notify_fail(target->name() + "Ìı²»¶®ÈË»°£¡\n");
+	if ( target->query("race") != "äººç±»" )
+		return notify_fail(target->name() + "å¬ä¸æ‡‚äººè¯ï¼\n");
 
 	if ( target->query("winner"))
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
 	if ( me->query_temp("persuading") )
-		return notify_fail("ÄãÕıÔÚÈ°·ş±ğÈË£¡\n");
+		return notify_fail("ä½ æ­£åœ¨åŠæœåˆ«äººï¼\n");
 
 	if ( !target->is_fighting() ) 
-		return notify_fail(target->name() + "Ã»ÔÚ´ò¼Ü£¬²»ÓÃÄã²ÙĞÄ£¡\n");
+		return notify_fail(target->name() + "æ²¡åœ¨æ‰“æ¶ï¼Œä¸ç”¨ä½ æ“å¿ƒï¼\n");
 
         if ( target->query_temp("yield") )
-		return notify_fail(target->name() + "´ò²»»¹ÊÖ£¬»¹ÊÇÈ¥È°È°" + 
-			gender_pronoun(target->query("gender")) + "µÄ¶ÔÊÖ°É¡£\n");
+		return notify_fail(target->name() + "æ‰“ä¸è¿˜æ‰‹ï¼Œè¿˜æ˜¯å»åŠåŠ" + 
+			gender_pronoun(target->query("gender")) + "çš„å¯¹æ‰‹å§ã€‚\n");
 
 	if ( target->query_temp("persuading") == me->query("id")) 
-		return notify_fail(target->name() + "ÕıÔÚ¿ªµ¼Äã£¬ÏëÍ¨ÁË¾Í×Ô¼ºÏÈ°Õ¶·¡£\n" + NOR);
+		return notify_fail(target->name() + "æ­£åœ¨å¼€å¯¼ä½ ï¼Œæƒ³é€šäº†å°±è‡ªå·±å…ˆç½¢æ–—ã€‚\n" + NOR);
 
 	if ( target->query_temp("last_persuader") == me->query("id") ) {
 		me->start_busy(1);
-		return notify_fail("Äã¸ÕÈ°·ş¹ı" + gender_pronoun(target->query("gender"))
-				+ "£¬Ïë±ØÕâ´Î²»»áÔÙÌıÄãÈ°ÁË¡£\n");
+		return notify_fail("ä½ åˆšåŠæœè¿‡" + gender_pronoun(target->query("gender"))
+				+ "ï¼Œæƒ³å¿…è¿™æ¬¡ä¸ä¼šå†å¬ä½ åŠäº†ã€‚\n");
 	}
 
 	if( (int)me->query("jing") * 100 / (int)me->query("max_jing") < 40 
 	 || (int)me->query("jingli") * 100 / (int)me->query("max_jingli") < 40)
-		return notify_fail("ÄãÌ«ÀÛÁË£¬ĞİÏ¢Ò»»á¶ùÔÙÈ°°É¡£\n");
+		return notify_fail("ä½ å¤ªç´¯äº†ï¼Œä¼‘æ¯ä¸€ä¼šå„¿å†åŠå§ã€‚\n");
 
 	me->receive_damage("jing", 15);
 	me->receive_damage("jingli", 15);
@@ -93,14 +93,14 @@ int main(object me, string who)
 	yourexp = target->query("combat_exp");
 	dp *= (yourexp/2 + random(yourexp))/1500+1;
 
-        tell_object(me, HIY + "Äã¶Ô" + EMOTE_D->normal_color(target->name())
-              + "ËµµÀ£º" + persuade_msg[random(sizeof(persuade_msg))] + "\n" + NOR); 
+        tell_object(me, HIY + "ä½ å¯¹" + EMOTE_D->normal_color(target->name())
+              + "è¯´é“ï¼š" + persuade_msg[random(sizeof(persuade_msg))] + "\n" + NOR); 
 
-        tell_object(target, HIY + me->name() + "¶ÔÄãËµµÀ£º" +
+        tell_object(target, HIY + me->name() + "å¯¹ä½ è¯´é“ï¼š" +
                 persuade_msg[random(sizeof(persuade_msg))] + "\n" + NOR);
 
-        message("vision", HIY + me->name() + "¶Ô" + EMOTE_D->normal_color(target->name()) 
-                + "ËµµÀ£º" + persuade_msg[random(sizeof(persuade_msg))] + "\n" + NOR,
+        message("vision", HIY + me->name() + "å¯¹" + EMOTE_D->normal_color(target->name()) 
+                + "è¯´é“ï¼š" + persuade_msg[random(sizeof(persuade_msg))] + "\n" + NOR,
                 where, ({ me, target }) );
 
 	me->set_temp("persuading", target->query("id"));
@@ -118,18 +118,18 @@ private void complete_persuade(object me, object target, int pp, int dp)
 	if (!objectp(target)) return;
 
 	if (environment(target) != environment(me)) {
-		tell_object(me, "ÉÆÔÕ£¬" + target->name() + "ÒÑ¾­×ßÁË¡£\n"); 
+		tell_object(me, "å–„å“‰ï¼Œ" + target->name() + "å·²ç»èµ°äº†ã€‚\n"); 
 		return;
 	}
 
 	if ( !living(target) ) {
-		tell_object(me, target->name() + "ÒÑ²»ÄÜÌıÈ¡ÄãµÄÈ°µ¼ÁË£¡\n");
+		tell_object(me, target->name() + "å·²ä¸èƒ½å¬å–ä½ çš„åŠå¯¼äº†ï¼\n");
 		me->delete_temp("defensing");
 		return;
 	}
 
 	if (!target->is_fighting()) {
-		tell_object(me, "ÉÆÔÕ£¬" + target->name() + "ÒÑ¾­ÏÈĞĞ°ÕÊÖÁË¡£\n");
+		tell_object(me, "å–„å“‰ï¼Œ" + target->name() + "å·²ç»å…ˆè¡Œç½¢æ‰‹äº†ã€‚\n");
 		me->delete_temp("defensing");
 		return;
 	}
@@ -160,12 +160,12 @@ else
 
 	if ( random(pp+dp) > dp ) {
 
-		tell_object(target, HIG + "ÄãÊÜµ½" + me->name()
-		  		  + "µÄ¸ĞÕĞ£¬¾ö¶¨°ÕÊÖ²»¶·¡£\n" + NOR);
+		tell_object(target, HIG + "ä½ å—åˆ°" + me->name()
+		  		  + "çš„æ„Ÿæ‹›ï¼Œå†³å®šç½¢æ‰‹ä¸æ–—ã€‚\n" + NOR);
 		tell_object(me, HIG + EMOTE_D->normal_color(target->name()) 
-			      + "ÊÜµ½Äã·ğ·¨¸ĞÕĞ£¬¾ö¶¨°ÕÊÖ²»¶·¡£\n" + NOR);
-                message("vision", CYN"Ö»¼û" + EMOTE_D->normal_color(target->name()) 
-                        + "ÍùºóÒ»×İ£¬ËµµÀ£ººÃ£¡" + me->name() 
+			      + "å—åˆ°ä½ ä½›æ³•æ„Ÿæ‹›ï¼Œå†³å®šç½¢æ‰‹ä¸æ–—ã€‚\n" + NOR);
+                message("vision", CYN"åªè§" + EMOTE_D->normal_color(target->name()) 
+                        + "å¾€åä¸€çºµï¼Œè¯´é“ï¼šå¥½ï¼" + me->name() 
 			+ succeed_msg[random(sizeof(succeed_msg))] + NOR, 
                         environment(target), ( {me, target} ) );
 
@@ -203,16 +203,16 @@ else
 	}
 	else if ( !target->is_fighting(me) || me->query_temp("defensing") ) {
 		if ( random(pp) < dp/3 ) {
-			tell_object(me, RED + EMOTE_D->normal_color(target->name()) + "³åÄã´óºÈÒ»Éù£º¡°"
+			tell_object(me, RED + EMOTE_D->normal_color(target->name()) + "å†²ä½ å¤§å–ä¸€å£°ï¼šâ€œ"
 				       + RANK_D->query_rude(me) 
-				       + "¶à¹ÜÏĞÊÂ£¬¿´ÕĞ£¡¡±\n" + NOR);
-			tell_object(target, CYN + "Äã³å" + me->name() + "´óºÈÒ»Éù£º¡°"
+				       + "å¤šç®¡é—²äº‹ï¼Œçœ‹æ‹›ï¼â€\n" + NOR);
+			tell_object(target, CYN + "ä½ å†²" + me->name() + "å¤§å–ä¸€å£°ï¼šâ€œ"
 				          + RANK_D->query_rude(me)
-				          + "¶à¹ÜÏĞÊÂ£¬¿´ÕĞ£¡¡±\n" + NOR);
-			message("vision", CYN + "Ö»¼û" + EMOTE_D->normal_color(target->name()) + "³å×Å"
-					+ me->name() + "´óºÈÒ»Éù£º¡°"
+				          + "å¤šç®¡é—²äº‹ï¼Œçœ‹æ‹›ï¼â€\n" + NOR);
+			message("vision", CYN + "åªè§" + EMOTE_D->normal_color(target->name()) + "å†²ç€"
+					+ me->name() + "å¤§å–ä¸€å£°ï¼šâ€œ"
 					+ RANK_D->query_rude(me)
-                                        + "¶à¹ÜÏĞÊÂ£¬¿´ÕĞ£¡¡±\n" + NOR, environment(target),
+                                        + "å¤šç®¡é—²äº‹ï¼Œçœ‹æ‹›ï¼â€\n" + NOR, environment(target),
 					( {me, target} ) );
 			if ( (int)target->query("shen") < 0 )
 				target->kill_ob(me);
@@ -225,12 +225,12 @@ else
 		}
 		else {
 			tell_object(me, HIR + EMOTE_D->normal_color(target->name())
-			 + "ÂúÁ³²»ÄÍ·³µØ³åÄãÈÂµÀ£ºÄÄÁ¹¿ìÄÄ´ı×ÅÈ¥£¬ÉÙ¹ÜÏĞÊÂ£¡\n"+ NOR);
-			tell_object(target, HIR "Äã¶Ô×Å" + EMOTE_D->normal_color(me->name())
-			 + "²»Ğ¼µØÆ²Æ²×ì£ºÄÄÁ¹¿ìÄÄ´ı×ÅÈ¥£¬ÉÙ¹ÜÏĞÊÂ£¡\n" + NOR);
-			message("vision", HIR + "Ö»¼û" + EMOTE_D->normal_color(target->name()) + "¶Ô×Å" 
+			 + "æ»¡è„¸ä¸è€çƒ¦åœ°å†²ä½ åš·é“ï¼šå“ªå‡‰å¿«å“ªå¾…ç€å»ï¼Œå°‘ç®¡é—²äº‹ï¼\n"+ NOR);
+			tell_object(target, HIR "ä½ å¯¹ç€" + EMOTE_D->normal_color(me->name())
+			 + "ä¸å±‘åœ°æ’‡æ’‡å˜´ï¼šå“ªå‡‰å¿«å“ªå¾…ç€å»ï¼Œå°‘ç®¡é—²äº‹ï¼\n" + NOR);
+			message("vision", HIR + "åªè§" + EMOTE_D->normal_color(target->name()) + "å¯¹ç€" 
 					+ EMOTE_D->normal_color(me->name())
-				+ "²»Ğ¼µØÆ²Æ²×ì£ºÄÄÁ¹¿ìÄÄ´ı×ÅÈ¥£¬ÉÙ¹ÜÏĞÊÂ£¡\n" + NOR,
+				+ "ä¸å±‘åœ°æ’‡æ’‡å˜´ï¼šå“ªå‡‰å¿«å“ªå¾…ç€å»ï¼Œå°‘ç®¡é—²äº‹ï¼\n" + NOR,
 				environment(target), ( {me, target} ) );
 			if (!target->is_fighting(me) ) me->delete_temp("defensing");
 			me->start_busy(1+random(3));
@@ -238,17 +238,17 @@ else
 	}
 	else if ( target->is_killing(me->query("id")) 
 		|| me->is_killing(target->query("id")) ) {
-		message_vision(CYN"$N¶Ô$nÀíÒ²²»Àí£¡\n"NOR, target, me);
+		message_vision(CYN"$Nå¯¹$nç†ä¹Ÿä¸ç†ï¼\n"NOR, target, me);
 		target->kill_ob(me);
 		me->start_busy(2);
 	} else if ( target->is_fighting(me) ) {
-		tell_object(target, RED"Äã¶ñºİºİµØ¶Ô" + me->name() + "ºÈµÀ£º"
-			+ RANK_D->query_rude(me) + "£¬ÄãÎÒÇĞ´êÎäÒÕÄã»¹¼ÙĞÊĞÊÏ¹È°£¬ÄÃÃüÀ´°É£¡\n"NOR);
-		tell_object(me, RED + target->name() + "¶ñºİºİµØ¶ÔÄãºÈµÀ£º"
-			+ RANK_D->query_rude(me) + "£¬ÄãÎÒÇĞ´êÎäÒÕÄã»¹¼ÙĞÊĞÊÏ¹È°£¬ÄÃÃüÀ´°É£¡\n"NOR);
-		message("vision", RED + target->name() + "¶ñºİºİµØ¶Ô"
-			+ me->name() + "ºÈµÀ£º" + RANK_D->query_rude(me)
-			+ "£¬ÄãÎÒÇĞ´êÎäÒÕÄã»¹¼ÙĞÊĞÊÏ¹È°£¬ÄÃÃüÀ´°É£¡\n"NOR,
+		tell_object(target, RED"ä½ æ¶ç‹ ç‹ åœ°å¯¹" + me->name() + "å–é“ï¼š"
+			+ RANK_D->query_rude(me) + "ï¼Œä½ æˆ‘åˆ‡æ“æ­¦è‰ºä½ è¿˜å‡æƒºæƒºçåŠï¼Œæ‹¿å‘½æ¥å§ï¼\n"NOR);
+		tell_object(me, RED + target->name() + "æ¶ç‹ ç‹ åœ°å¯¹ä½ å–é“ï¼š"
+			+ RANK_D->query_rude(me) + "ï¼Œä½ æˆ‘åˆ‡æ“æ­¦è‰ºä½ è¿˜å‡æƒºæƒºçåŠï¼Œæ‹¿å‘½æ¥å§ï¼\n"NOR);
+		message("vision", RED + target->name() + "æ¶ç‹ ç‹ åœ°å¯¹"
+			+ me->name() + "å–é“ï¼š" + RANK_D->query_rude(me)
+			+ "ï¼Œä½ æˆ‘åˆ‡æ“æ­¦è‰ºä½ è¿˜å‡æƒºæƒºçåŠï¼Œæ‹¿å‘½æ¥å§ï¼\n"NOR,
 			environment(target), ( {me, target} ) );
 		target->kill_ob(me);
                 me->add("combat_exp", 1);
@@ -266,9 +266,9 @@ private void delete_last_persuader(object me, object target)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : persuade <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : persuade <æŸäºº>
 
-¶ëáÒµÜ×Ó¿ÉÒÔ¸ßÉî·ğ·¨È°ÈËÏòÉÆ£¬ÆÕ¶ÉÖÚÉú¡£²»¹ı¹¦Á¦²»¹»ÓĞÊ±Ò²»áÈÇ»öÉÏÉí¡£
+å³¨åµ‹å¼Ÿå­å¯ä»¥é«˜æ·±ä½›æ³•åŠäººå‘å–„ï¼Œæ™®æ¸¡ä¼—ç”Ÿã€‚ä¸è¿‡åŠŸåŠ›ä¸å¤Ÿæœ‰æ—¶ä¹Ÿä¼šæƒ¹ç¥¸ä¸Šèº«ã€‚
 HELP
     );
     return 1;

@@ -8,14 +8,14 @@ int main(object me, string arg)
 	object ob;
 
 	if (me->query_busy())
-		return notify_fail("ÂýÂý³Ô£¬¼±Ê²Ã´£¿\n");
+		return notify_fail("æ…¢æ…¢åƒï¼Œæ€¥ä»€ä¹ˆï¼Ÿ\n");
 
-	if( !arg || arg=="" ) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if( !arg || arg=="" ) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
 	ob = present(arg, me);
 	if( !ob ) ob = present(arg, environment(me));
-	if( !ob ) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	if( !ob ) return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	notify_fail("ÕâÑù¶«Î÷²»ÄÜ³Ô¡£\n");
+	notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½åƒã€‚\n");
 	return ob->feed_ob(me);
 }

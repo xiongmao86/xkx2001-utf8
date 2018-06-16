@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 
 int main(object me, string file)
 {
-	if( !file ) return notify_fail("Ö¸Áî¸ñÊ½£ºedit <µµÃû>\n");
+	if( !file ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šedit <æ¡£å>\n");
 /*
 	if( me->query("id") != "server" 
 		&& me->query("id") != "xuanyuan"
@@ -15,9 +15,9 @@ int main(object me, string file)
 		&& me->query("id") != "liu"
 		&& me->query("id") != "linglong"
 		&& me->query("id") != "lax") 
-	return notify_fail("ÄãÃ»ÓĞĞŞ¸ÄÕâ¸öµµ°¸µÄÈ¨Àû\n");
+	return notify_fail("ä½ æ²¡æœ‰ä¿®æ”¹è¿™ä¸ªæ¡£æ¡ˆçš„æƒåˆ©\n");
 */
-	if( in_edit(me) ) return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ±à¼­Æ÷ÁË¡£\n");
+	if( in_edit(me) ) return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨ç¼–è¾‘å™¨äº†ã€‚\n");
 
 	seteuid(geteuid(me));
 	ed(resolve_path(me->query("cwd"), file));
@@ -33,9 +33,9 @@ int main(object me, string file)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : edit <µµÃû>, edit here
+æŒ‡ä»¤æ ¼å¼ : edit <æ¡£å>, edit here
 
-ÀûÓÃ´ËÒ»Ö¸Áî¿ÉÖ±½ÓÔÚÏßÉÏ±à¼­µµ°¸¡£
+åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤å¯ç›´æ¥åœ¨çº¿ä¸Šç¼–è¾‘æ¡£æ¡ˆã€‚
 HELP
     );
     return 1;

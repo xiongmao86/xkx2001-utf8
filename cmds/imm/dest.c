@@ -11,7 +11,7 @@ int main(object me, string arg)
 
 	object obj;
 
-	if (!arg) return notify_fail("Ö¸Áî¸ñÊ½ : dest <Îï¼şÖ®Ãû³Æ»òµµÃû>\n" );
+	if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : dest <ç‰©ä»¶ä¹‹åç§°æˆ–æ¡£å>\n" );
 
 	if( sscanf(arg, "%s %s", option, target)!=2 ) target = arg;
 
@@ -25,16 +25,16 @@ int main(object me, string arg)
 	if (!obj) obj = present(target, me);
 	if (!obj) obj = present(target, environment(me));
 	if (!obj) obj = find_object( resolve_path(me->query("cwd"), target) );
-	if (!obj) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş....¡£\n");
+	if (!obj) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶....ã€‚\n");
 
 	if( environment(me)==environment(obj) )
 	if( !stringp(msg = me->query("env/msg_dest")) )
-		msg = "$NÕÙ»½³öÒ»¸öºÚ¶´£¬½«$nÍÌÃ»ÁË¡£\n";
+		msg = "$Nå¬å”¤å‡ºä¸€ä¸ªé»‘æ´ï¼Œå°†$nåæ²¡äº†ã€‚\n";
 	else
 		message_vision(msg + "\n", me, obj);
 
 	destruct(obj);
-	if(obj) write("ÄãÎŞ·¨½«Õâ¸öÎï¼ş´İ»Ù¡£\n");
+	if(obj) write("ä½ æ— æ³•å°†è¿™ä¸ªç‰©ä»¶æ‘§æ¯ã€‚\n");
 	else write("Ok.\n");
 
 	return 1;
@@ -43,15 +43,15 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : dest [-r] <Îï¼şÖ®Ãû³Æ»òµµÃû>
+æŒ‡ä»¤æ ¼å¼ : dest [-r] <ç‰©ä»¶ä¹‹åç§°æˆ–æ¡£å>
 
-ÀûÓÃ´ËÒ»Ö¸Áî¿É½«Ò»¸öÎï¼ş(object)»òÎï¼ş¶¨Òå(class)´Ó¼ÇÒäÌåÖĞÇå³ı£¬ÈôÇå³ıÎï
-¼ş¶¨Òå(¼´£ºÖ¸¶¨µµÃûµÄÇé¿öÏÂ)ÔòÏÂÒ»´Î²Î¿¼µ½Õâ¸öÎï¼şµÄÊ±ºò»áÖØĞÂ½«Ëü±àÒë¡£
+åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤å¯å°†ä¸€ä¸ªç‰©ä»¶(object)æˆ–ç‰©ä»¶å®šä¹‰(class)ä»è®°å¿†ä½“ä¸­æ¸…é™¤ï¼Œè‹¥æ¸…é™¤ç‰©
+ä»¶å®šä¹‰(å³ï¼šæŒ‡å®šæ¡£åçš„æƒ…å†µä¸‹)åˆ™ä¸‹ä¸€æ¬¡å‚è€ƒåˆ°è¿™ä¸ªç‰©ä»¶çš„æ—¶å€™ä¼šé‡æ–°å°†å®ƒç¼–è¯‘ã€‚
 
-¾ßÓĞ (admin) Éí·ÖµÄÎ×Ê¦¿ÉÒÔÓÃ -r Ñ¡ÏîÒÔ ROOT_UID Éí·ÖÀ´Çå³ı±»±£»¤µÄÎï¼şÈç
-Ê¹ÓÃÕß¡£
+å…·æœ‰ (admin) èº«åˆ†çš„å·«å¸ˆå¯ä»¥ç”¨ -r é€‰é¡¹ä»¥ ROOT_UID èº«åˆ†æ¥æ¸…é™¤è¢«ä¿æŠ¤çš„ç‰©ä»¶å¦‚
+ä½¿ç”¨è€…ã€‚
 
-²Î¿¼×ÊÁÏ£º destruct()
+å‚è€ƒèµ„æ–™ï¼š destruct()
 HELP
     );
     return 1;

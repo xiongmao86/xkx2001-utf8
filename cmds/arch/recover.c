@@ -20,23 +20,23 @@ int main(object me, string arg)
 	if( me != this_player(1) ) return 0;
 
 	if( wizhood(me) != "(arch)" && wizhood(me) != "(admin)" )
-		return notify_fail("ÄãÃ»ÓĞ×ã¹»È¨ÏŞ»Ö¸´Íæ¼ÒµÄÊı¾İ¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰è¶³å¤Ÿæƒé™æ¢å¤ç©å®¶çš„æ•°æ®ã€‚\n");
 
 	if (!arg)
-		return notify_fail("ÄãÏë»Ö¸´ÄÇ¸öÍæ¼ÒµÄÊı¾İ£¿\n");
+		return notify_fail("ä½ æƒ³æ¢å¤é‚£ä¸ªç©å®¶çš„æ•°æ®ï¼Ÿ\n");
 
 /*
 	ob = new(LOGIN_OB);
         ob->set("id", arg);
 	if( ob->restore() ) {
 		destruct(ob);
-		return notify_fail("²»ÄÜ»Ö¸´Ã»ÓĞ×ÔÉ±µÄÍæ¼ÒÊı¾İ¡£\n");
+		return notify_fail("ä¸èƒ½æ¢å¤æ²¡æœ‰è‡ªæ€çš„ç©å®¶æ•°æ®ã€‚\n");
 	}
 */
 
 	file = read_file(SUICIDE_LIST);
 	if (!file) 
-		return notify_fail("ÏµÍ³ÉÏÃ»ÓĞ×ÔÉ±Íæ¼ÒµÄ¼ÇÂ¼¡£\n");
+		return notify_fail("ç³»ç»Ÿä¸Šæ²¡æœ‰è‡ªæ€ç©å®¶çš„è®°å½•ã€‚\n");
 
 	tmp = explode(file, "\n");
 
@@ -54,7 +54,7 @@ int main(object me, string arg)
 //	Suicided = filter_array(Suicided, (:strsrch:), arg+" commits");
 
 	if ( !found )
-		return notify_fail("Õâ¸öÍæ¼Ò²¢²»´æÔÚ¡£\n");
+		return notify_fail("è¿™ä¸ªç©å®¶å¹¶ä¸å­˜åœ¨ã€‚\n");
 
 	rm(SUICIDE_LIST);
 
@@ -63,7 +63,7 @@ int main(object me, string arg)
 	}
 
 	log_file("static/RESTORE", sprintf("%s recovered %s after suicide on %s\n", geteuid(me), arg, ctime(time())));
-	write(arg + "ÔÙ´ÎÄÜÖØÍæµÄÈ¨Á¦»Ö¸´ÁË¡£\n");
+	write(arg + "å†æ¬¡èƒ½é‡ç©çš„æƒåŠ›æ¢å¤äº†ã€‚\n");
 
 	return 1;
 	
@@ -72,9 +72,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºrecover [player id]
+æŒ‡ä»¤æ ¼å¼ï¼šrecover [player id]
 
-ÕâÌõÃüÁîÊÇÓÃÀ´»Ö¸´ÒÑ¾­×ÔÉ±µÄÍæ¼ÒÔÙ´ÎÄÜÖØÍæµÄÈ¨Á¦¡£
+è¿™æ¡å‘½ä»¤æ˜¯ç”¨æ¥æ¢å¤å·²ç»è‡ªæ€çš„ç©å®¶å†æ¬¡èƒ½é‡ç©çš„æƒåŠ›ã€‚
 HELP
 	);
 	return 1;

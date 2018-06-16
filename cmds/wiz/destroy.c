@@ -14,19 +14,19 @@ int main(object me, string arg)
 
 		 if( wizhood(me) != "(caretaker)" && wizhood(me) != "(wizard)" &&
 			  wizhood(me) != "(arch)" && wizhood(me) != "(admin)"
-		  ) return notify_fail("Ê²Ã´£¿\n");
+		  ) return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-		 if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºdestroy object.\n");
+		 if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdestroy object.\n");
 
 		 if(!objectp(obj = present(arg, environment(this_player()))))
-					 return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");  		  if (!obj) obj = present(arg, me); 		  if (!obj) obj = find_object( resolve_path(me->query("cwd"), arg) ); 		  if (!obj) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş....¡£\n");  		  message_vision(CYN"$NÌÍ³öÒ»°Ñ¼¤¹âÇ¹£¬¶Ô×¼$nàØµÄ¿ªÁËÒ»Ç¹£¬°Ñ$p´ò³ÉÒ»Æ¬ÏõÑÌÏûÊ§ÁË£¡¡±\n"NOR, 							  me,obj);  		  seteuid(ROOT_UID); 		  destruct(obj); 		  if(obj){ write("ÄãÎŞ·¨½«Õâ¸öÎï¼ş´İ»Ù¡£\n"); return;}  		 return 1; } 
+					 return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");  		  if (!obj) obj = present(arg, me); 		  if (!obj) obj = find_object( resolve_path(me->query("cwd"), arg) ); 		  if (!obj) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶....ã€‚\n");  		  message_vision(CYN"$Næå‡ºä¸€æŠŠæ¿€å…‰æªï¼Œå¯¹å‡†$nå˜­çš„å¼€äº†ä¸€æªï¼ŒæŠŠ$pæ‰“æˆä¸€ç‰‡ç¡çƒŸæ¶ˆå¤±äº†ï¼â€\n"NOR, 							  me,obj);  		  seteuid(ROOT_UID); 		  destruct(obj); 		  if(obj){ write("ä½ æ— æ³•å°†è¿™ä¸ªç‰©ä»¶æ‘§æ¯ã€‚\n"); return;}  		 return 1; } 
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºdestroy object.
+æŒ‡ä»¤æ ¼å¼ï¼šdestroy object.
 
-ÓÃÀ´Çå³ıÀ¬»ø
+ç”¨æ¥æ¸…é™¤åƒåœ¾
 HELP
 	 );
 	 return 1;

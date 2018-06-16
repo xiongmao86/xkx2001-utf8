@@ -15,26 +15,26 @@ int main(object me, string arg)
 	int i;
 
 	if( !arg || !ob = present(arg, environment(me)) )
-		return notify_fail("��Ҫ��˭���ʦ�ţ�\n");
+		return notify_fail("你要将谁逐出师门？\n");
 
 	if( !ob->is_character() )
-		return notify_fail("���𲻶�����\n");
+		return notify_fail("你逐不动他。\n");
 
 	if( !userp(ob) )
-		return notify_fail("��ֻ�ܿ�����������ݵ����\n");
+		return notify_fail("你只能开除玩家所扮演的人物。\n");
 
 	if( me->query("family/privs")==-1
 	&&	(string)me->query("family/family_name")==(string)ob->query("family/family_name") ) {
-		message_vision("\n$N����$n˵�����ӽ���������Ҳ������"
-			+ me->query("family/family_name") + "�ĵ����ˣ����߰ɣ�\n\n",
+		message_vision("\n$N对着$n说道：从今天起，你再也不是我"
+			+ me->query("family/family_name") + "的弟子了，你走吧！\n\n",
 			me, ob);
-		tell_object(ob, "\n�㱻" + me->query("family/title") + "�����ʦ���ˣ�\n\n");
+		tell_object(ob, "\n你被" + me->query("family/title") + "开革出师门了！\n\n");
 	} else if( ob->is_apprentice_of(me) ) {
-		message_vision("\n$N����$n˵�����ӽ���������ʦͽ������������߰ɣ�\n\n",
+		message_vision("\n$N对着$n说道：从今天起，你我师徒恩断情绝，你走吧！\n\n",
 			me, ob);
-		tell_object(ob, "\n�㱻ʦ�������ʦ���ˣ�\n\n");
+		tell_object(ob, "\n你被师父开革出师门了！\n\n");
 	} else
-		return notify_fail("����˲�����ĵ��ӡ�\n");
+		return notify_fail("这个人不是你的弟子。\n");
 
 	ob->delete("family");
 	ob->delete("title");
@@ -53,11 +53,11 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-ָ���ʽ : expell|kaichu <ĳ��>
+指令格式 : expell|kaichu <某人>
  
-���ָ��������㿪�����ɲŵĵ��ӣ��������ĵ������м��ܶ��ή��ԭ��
-��һ�룬�����ۺ�����һ������㣬�����һ�����������һ����������
-���ء��Ĵ���������ڿ���һ������֮ǰ����������ǡ�
+这个指令可以让你开除不成才的弟子，被开除的弟子所有技能都会降到原来
+的一半，而且综合评价一项会变成零，这对于一个人物而言是一个「比死还
+严重」的打击，请你在开除一名弟子之前务必审慎考虑。
  
 HELP
 	);

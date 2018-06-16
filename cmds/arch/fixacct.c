@@ -2,7 +2,7 @@
 // fixacct.c
 
 #include <ansi.h>
-#define SYNTAX	"Ö¸Áî¸ñÊ½£ºfixacct [<Î´ÉÏÏßÌìÊı>]\n"
+#define SYNTAX	"æŒ‡ä»¤æ ¼å¼ï¼šfixacct [<æœªä¸Šçº¿å¤©æ•°>]\n"
 
 inherit F_CLEAN_UP;
 
@@ -17,14 +17,14 @@ int main(object me, string arg)
 	status = wizhood(me);
 	if( me!=this_player(1)
 	|| wiz_level(me) < wiz_level(status) )
-		return notify_fail("ÄãÃ»ÓĞÈ¨Á¦Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰æƒåŠ›ä½¿ç”¨è¿™ä¸ªæŒ‡ä»¤ã€‚\n");
 
 	if( !arg ) return notify_fail(SYNTAX);
 
 	if( sscanf(arg, "%d", day) && day >= 1)
 		return do_fixacct(day);
 	else
-		return notify_fail("Ö»ÄÜÕûÀíÒ»ÌìÇ°µÇ¼ÇµÄÕÊºÅ¡£\n");
+		return notify_fail("åªèƒ½æ•´ç†ä¸€å¤©å‰ç™»è®°çš„å¸å·ã€‚\n");
 }
 
 private int do_fixacct(int day)
@@ -35,8 +35,8 @@ private int do_fixacct(int day)
 	object ob;
 
 	seteuid(getuid());
-	message("system", "\n*** ÕûÀíÍæ¼Ò´¢´æµµÖĞ£¬ÇëÉÔºò.... ***\n", users());
-	write("´¦ÀíÖĞ£º");
+	message("system", "\n*** æ•´ç†ç©å®¶å‚¨å­˜æ¡£ä¸­ï¼Œè¯·ç¨å€™.... ***\n", users());
+	write("å¤„ç†ä¸­ï¼š");
 	count = 0;
 	ppl_cnt = 0;
 	dir = get_dir(DATA_DIR + "login/");
@@ -66,9 +66,9 @@ private int do_fixacct(int day)
 			}
 		}
 	}
-	write("\n\nÔ­À´×Ü¹²ÓĞ " + ppl_cnt + " Î»Ê¹ÓÃÕß¡£\n");
-	write( count + " ¸ö³¬¹ı " + day + " ÌìÎ´µÇ¼ÇµÄÊ¹ÓÃÕß±»Çå³ıµôÁË¡£\n");
-	write("ÏÖÔÚ×Ü¹²ÓĞ " + (ppl_cnt - count) + " Î»Ê¹ÓÃÕß¡£\n");
+	write("\n\nåŸæ¥æ€»å…±æœ‰ " + ppl_cnt + " ä½ä½¿ç”¨è€…ã€‚\n");
+	write( count + " ä¸ªè¶…è¿‡ " + day + " å¤©æœªç™»è®°çš„ä½¿ç”¨è€…è¢«æ¸…é™¤æ‰äº†ã€‚\n");
+	write("ç°åœ¨æ€»å…±æœ‰ " + (ppl_cnt - count) + " ä½ä½¿ç”¨è€…ã€‚\n");
 	log_file("static/PURGE", sprintf("[%s] %s cleaned up %d characters who registered incorrectly\n"
 		"\t\tResulting statistics: %d characters remaining.\n",
 		ctime(time())[0..15], geteuid(this_player(1)), count, ppl_cnt - count));
@@ -80,9 +80,9 @@ private int do_fixacct(int day)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºfixacct [<Î´ÉÏÏßÌìÊı>]
+æŒ‡ä»¤æ ¼å¼ï¼šfixacct [<æœªä¸Šçº¿å¤©æ•°>]
 
-Çå³ıµÇ¼ÇÊ§°ÜµÄÓÃ»§¡£
+æ¸…é™¤ç™»è®°å¤±è´¥çš„ç”¨æˆ·ã€‚
 HELP
 	);
     return 1;

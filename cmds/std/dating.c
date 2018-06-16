@@ -17,74 +17,74 @@ int main(object me, string arg)
 
 	all = all_inventory(environment(me));
 	for(i=0; i<sizeof(all); i++) {
-		if( living(all[i]) && !userp(all[i]) && all[i]->query("race") == "ÈËÀà") {
+		if( living(all[i]) && !userp(all[i]) && all[i]->query("race") == "äººç±»") {
 			man = all[i];
 			break;
 		}
 	}
 
-	if ( (!(fam = me->query("family")) || fam["family_name"] != "Ø¤°ï") )
-		return notify_fail("Ö»ÓĞÆòØ¤²ÅÄÜ´òÌ½±ğÈËµÄ¼¼ÄÜ£¡\n");
+	if ( (!(fam = me->query("family")) || fam["family_name"] != "ä¸å¸®") )
+		return notify_fail("åªæœ‰ä¹ä¸æ‰èƒ½æ‰“æ¢åˆ«äººçš„æŠ€èƒ½ï¼\n");
 
 	if ( !objectp(man) )
-		return notify_fail("ÖÜÎ§Ã»ÈËÄÜ°ïÄãÈ¥ÁË½â±ğÈËµÄÏûÏ¢£¡\n");
+		return notify_fail("å‘¨å›´æ²¡äººèƒ½å¸®ä½ å»äº†è§£åˆ«äººçš„æ¶ˆæ¯ï¼\n");
 
 	if ( me->query("rank") <= 1 )
-		return notify_fail("ÄãÖ»ÊÇ¸ö²»ÈëÁ÷µÄĞ¡ÆòØ¤£¬¶Ô·½¿Ï¶¨Ê²Ã´¶¼²»»á¸æËßÄã£¡\n");
+		return notify_fail("ä½ åªæ˜¯ä¸ªä¸å…¥æµçš„å°ä¹ä¸ï¼Œå¯¹æ–¹è‚¯å®šä»€ä¹ˆéƒ½ä¸ä¼šå‘Šè¯‰ä½ ï¼\n");
 
 	if ( me->query_skill("checking",1) < 10 )
-		return notify_fail("ÄãµÄ´òÌ½±¾ÁìÉĞÎ´´¿Êì£¬ÎŞ·¨ÁË½â±ğÈËµÄÏûÏ¢£¡\n");
+		return notify_fail("ä½ çš„æ‰“æ¢æœ¬é¢†å°šæœªçº¯ç†Ÿï¼Œæ— æ³•äº†è§£åˆ«äººçš„æ¶ˆæ¯ï¼\n");
 
 	if ( !arg )
-		return notify_fail("ÄãÒª´òÌıË­µÄÏûÏ¢£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬è°çš„æ¶ˆæ¯ï¼Ÿ\n");
 
 	if ( present(arg, environment(me)) )
-		return notify_fail("ÄãÒª´òÌıµÄÈË¾ÍÔÚ±ßÉÏ£¬ÔÚÕâÀïÎÊ²»´óÍ×µ±°É£¿\n");
+		return notify_fail("ä½ è¦æ‰“å¬çš„äººå°±åœ¨è¾¹ä¸Šï¼Œåœ¨è¿™é‡Œé—®ä¸å¤§å¦¥å½“å§ï¼Ÿ\n");
 
 	ob = find_player(arg);
 	if (!ob) ob = find_living(arg);
-	if (!ob) return notify_fail("ÄãÒª´òÌıË­µÄÏûÏ¢£¿\n");
+	if (!ob) return notify_fail("ä½ è¦æ‰“å¬è°çš„æ¶ˆæ¯ï¼Ÿ\n");
 
 	if ( ob == me )
-		return notify_fail("ÄãÃ»Õâ÷á±¿°É£¬Òª±ğÈË¸æËßÄã×Ô¼ºµÄÇé¿ö£¿\n");
+		return notify_fail("ä½ æ²¡è¿™éº½ç¬¨å§ï¼Œè¦åˆ«äººå‘Šè¯‰ä½ è‡ªå·±çš„æƒ…å†µï¼Ÿ\n");
 
 	cost = me->query("max_jing")/(me->query_skill("checking",1)/10) - 10;
 
 	if ( me->query("jing") <= cost )
-		return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨È¥´òÌı±ğÈËµÄÏûÏ¢¡£\n");
+		return notify_fail("ç°åœ¨ä½ å¤ªç´¯äº†ï¼Œæ— æ³•å»æ‰“å¬åˆ«äººçš„æ¶ˆæ¯ã€‚\n");
 
-	tell_object(me, "\nÄã×ßÉÏÇ°È¥£¬Ğ¡ĞÄÒíÒíµØÏò" + man->name() + "´òÌı¹ØÓÚ" + ob->name() + "µÄÇé¿ö ...\n\n");
-	message("vision", "Ö»¼û" + me->name() + "Åã×ÅĞ¦Á³¸ú" + man->name() + "Ëµ×Å»°£¬ºÃÏóÔÚ´òÌıĞ©Ê²Ã´¡£\n\n", 
+	tell_object(me, "\nä½ èµ°ä¸Šå‰å»ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘" + man->name() + "æ‰“å¬å…³äº" + ob->name() + "çš„æƒ…å†µ ...\n\n");
+	message("vision", "åªè§" + me->name() + "é™ªç€ç¬‘è„¸è·Ÿ" + man->name() + "è¯´ç€è¯ï¼Œå¥½è±¡åœ¨æ‰“å¬äº›ä»€ä¹ˆã€‚\n\n", 
 		environment(me), ({ me, man }) );
 
 	sp = me->query_skill("checking")*10 + me->query("kar")*5 + me->query("jing") + man->query("jing");
 	dp = ob->query("kar")*5 + ob->query("jing")*2;
 	
 	if ( random(sp) < random(dp) )
-		return notify_fail( man->name() + "Ò¡ÁËÒ¡Í·£¬ËµµÀ£ºÕâÊÂÎÒ¿É²»Çå³ş£¬"
-		 	+ RANK_D->query_respect(me) + "»¹ÊÇÈ¥Ïò±ğÈË´òÌıÒ»ÏÂ°É£¡\n");
+		return notify_fail( man->name() + "æ‘‡äº†æ‘‡å¤´ï¼Œè¯´é“ï¼šè¿™äº‹æˆ‘å¯ä¸æ¸…æ¥šï¼Œ"
+		 	+ RANK_D->query_respect(me) + "è¿˜æ˜¯å»å‘åˆ«äººæ‰“å¬ä¸€ä¸‹å§ï¼\n");
 
 	me->receive_damage("jing", cost );
 
-	write( GRN + man->name() + "ÍµÍµÃşÃşµØ¸æËßÄã£º \n" NOR);
+	write( GRN + man->name() + "å·å·æ‘¸æ‘¸åœ°å‘Šè¯‰ä½ ï¼š \n" NOR);
 
 	skl = ob->query_skills();
 	if(!sizeof(skl)) {
-		write( ob->name() + "Ä¿Ç°²¢Ã»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ¡£\n");
+		write( ob->name() + "ç›®å‰å¹¶æ²¡æœ‰å­¦ä¼šä»»ä½•æŠ€èƒ½ã€‚\n");
 		return 1;
 	} else {
 		sname  = keys(skl);
 		i = random(sizeof(skl));
-		write( ob->name() + "Ñ§¹ı" + chinese_number(skl[sname[i]]) + "¼¶µÄ" + to_chinese(sname[i])+ "¡£\n");
+		write( ob->name() + "å­¦è¿‡" + chinese_number(skl[sname[i]]) + "çº§çš„" + to_chinese(sname[i])+ "ã€‚\n");
 	}	
 
 	inv = all_inventory(ob);
 	if( !sizeof(inv) ) {
-		write(ob->name() + "ÉíÉÏÃ»ÓĞĞ¯´øÈÎºÎ¶«Î÷¡£\n");
+		write(ob->name() + "èº«ä¸Šæ²¡æœ‰æºå¸¦ä»»ä½•ä¸œè¥¿ã€‚\n");
 		return 1;
 	} else {
 		j = random(sizeof(inv));
-		write( ob->name() + "ÉíÉÏ´øÖø" + inv[j]->short() + "¡£\n");
+		write( ob->name() + "èº«ä¸Šå¸¦è‘—" + inv[j]->short() + "ã€‚\n");
 	}	
 
 	return 1;
@@ -93,13 +93,13 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : check|dating [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : check|dating [<æŸäºº>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´òÌı±ğÈËËùÑ§¹ıµÄÏûÏ¢¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æ‰“å¬åˆ«äººæ‰€å­¦è¿‡çš„æ¶ˆæ¯ã€‚
 
-ÄãÒ²¿ÉÒÔÖ¸¶¨Ò»¸öºÍÄãÓĞÊ¦Í½¹ØÏµµÄ¶ÔÏó£¬ÓÃ skills|cha ¿ÉÒÔ²éÖª¶Ô·½µÄ¼¼ÄÜ×´¿ö¡£
+ä½ ä¹Ÿå¯ä»¥æŒ‡å®šä¸€ä¸ªå’Œä½ æœ‰å¸ˆå¾’å…³ç³»çš„å¯¹è±¡ï¼Œç”¨ skills|cha å¯ä»¥æŸ¥çŸ¥å¯¹æ–¹çš„æŠ€èƒ½çŠ¶å†µã€‚
 
-´ËÃüÁîÎªØ¤°ïµÜ×Ó×¨ÓÃ£¬²¢ĞèÑ§Ï°ÏàÓ¦µÄ¼¼ÄÜ¡£
+æ­¤å‘½ä»¤ä¸ºä¸å¸®å¼Ÿå­ä¸“ç”¨ï¼Œå¹¶éœ€å­¦ä¹ ç›¸åº”çš„æŠ€èƒ½ã€‚
 
 HELP
     );

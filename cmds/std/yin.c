@@ -9,32 +9,32 @@ int main(object me, string arg)
 {
 	object dest;
 
-	if(!arg) return notify_fail("ÄãÒªÈÃË­ºÈË®£¿\n");
+	if(!arg) return notify_fail("ä½ è¦è®©è°å–æ°´ï¼Ÿ\n");
 
 	if( !objectp(dest = present(arg, environment(me))) )
-		return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( !dest->is_character() )
-		return notify_fail("Ê²Ã´£¿\n");
+		return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-	if( dest->query("race") == "ÈËÀà" )
-		return notify_fail("Äã²»ÄÜÎ¹ÈËºÈË®£¡\n");
+	if( dest->query("race") == "äººç±»" )
+		return notify_fail("ä½ ä¸èƒ½å–‚äººå–æ°´ï¼\n");
 
 	if( dest->query_lord() != me )
-		return notify_fail("Äã²»ÊÇËüµÄÖ÷ÈË£¡\n");
+		return notify_fail("ä½ ä¸æ˜¯å®ƒçš„ä¸»äººï¼\n");
 
 	if( !environment(me)->query("resource/water") )
-		return notify_fail("ÕâÀïÃ»ÓĞË®Ô´£¡\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰æ°´æºï¼\n");
 
 	if( dest->query("water") >= dest->max_water_capacity() )
-		return notify_fail("ËüÒÑ¾­ºÈµÃÌ«×ãÁË£¬ÔÙÒ²ºÈ²»ÏÂÁË¡£\n");
+		return notify_fail("å®ƒå·²ç»å–å¾—å¤ªè¶³äº†ï¼Œå†ä¹Ÿå–ä¸ä¸‹äº†ã€‚\n");
 
 	dest->add("water", 20);
 	dest->add("jingli", 20);
 	if( dest->query("jingli") > dest->query("max_jingli")) 
 	dest->set("jingli", dest->query("max_jingli"));
 
-	message_vision("$NÇ£¹ı" + dest->name() + "À´Î¹ÖøËüºÈÁË¼¸¿ÚË®¡£\n", me);
+	message_vision("$Nç‰µè¿‡" + dest->name() + "æ¥å–‚è‘—å®ƒå–äº†å‡ å£æ°´ã€‚\n", me);
 
 	if( dest->is_fighting() ) dest->start_busy(2);
 
@@ -44,9 +44,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : drink|yin <Ä³¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : drink|yin <æŸåŠ¨ç‰©>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÎ¹Ä³¶¯ÎïºÈË®¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å–‚æŸåŠ¨ç‰©å–æ°´ã€‚
  
 HELP
     );

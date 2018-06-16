@@ -7,37 +7,37 @@ int main(object me, string arg)
 	object target, victim, dummy;
 	string name1, name2;
 
-	if (!arg) return notify_fail("ÄãÒªÃüÁîË­É±Ë­£¿\n");
+	if (!arg) return notify_fail("ä½ è¦å‘½ä»¤è°æ€è°ï¼Ÿ\n");
 
-        if( sscanf(arg, "%s with %s", name2, name1) != 2 ) return notify_fail("Ö¸Áî´íÎó£¡\n");
+        if( sscanf(arg, "%s with %s", name2, name1) != 2 ) return notify_fail("æŒ‡ä»¤é”™è¯¯ï¼\n");
 
-	if ( name1 == name2 ) return notify_fail("ÏëÒª±ðÈË×Ô¼ºÉ±×Ô¼º£¿Äã·¢Ê²Ã´Éñ¾­°¡£¿\n");
-	if ( name1 == me->query("id") ) return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
-	if ( name2 == me->query("id") ) return notify_fail("Äã·èÀ²£¿ÒªÑ°ËÀÒ²²»±ØÈç´ËÂé·³£¡\n");
+	if ( name1 == name2 ) return notify_fail("æƒ³è¦åˆ«äººè‡ªå·±æ€è‡ªå·±ï¼Ÿä½ å‘ä»€ä¹ˆç¥žç»å•Šï¼Ÿ\n");
+	if ( name1 == me->query("id") ) return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
+	if ( name2 == me->query("id") ) return notify_fail("ä½ ç–¯å•¦ï¼Ÿè¦å¯»æ­»ä¹Ÿä¸å¿…å¦‚æ­¤éº»çƒ¦ï¼\n");
 
 	target = present(name1, environment(me));
-        if (!target) return notify_fail("ÕâÀï²¢ÎÞ´ËÄ¿±ê£¡\n");
-	if (!living(target)) return notify_fail("´ËÄ¿±ê²»ÊÇ»îÎï£¡\n");
-	if ( userp(target)) return notify_fail("ºÜÏÔÈ»£¬´ËÈË²»Ìý´ÓÄãµÄÕâÏîÃüÁî£¡\n");
+        if (!target) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤ç›®æ ‡ï¼\n");
+	if (!living(target)) return notify_fail("æ­¤ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
+	if ( userp(target)) return notify_fail("å¾ˆæ˜¾ç„¶ï¼Œæ­¤äººä¸å¬ä»Žä½ çš„è¿™é¡¹å‘½ä»¤ï¼\n");
 
 	victim = present(name2, environment(me));
-        if (!victim) return notify_fail("ÕâÀï²¢ÎÞÄãÏëÉ±µÄÄ¿±ê£¡\n");
-	if (!living(victim)) return notify_fail("ÄãÏëÉ±µÄÄ¿±ê²»ÊÇ»îÎï£¡\n");
+        if (!victim) return notify_fail("è¿™é‡Œå¹¶æ— ä½ æƒ³æ€çš„ç›®æ ‡ï¼\n");
+	if (!living(victim)) return notify_fail("ä½ æƒ³æ€çš„ç›®æ ‡ä¸æ˜¯æ´»ç‰©ï¼\n");
 
-	if (!wizardp(me) && (wizardp(target) || wizardp(victim))) return notify_fail("´óµ¨£¡¾¹ÏëÄ±º¦Î×Ê¦£¡\n");
+	if (!wizardp(me) && (wizardp(target) || wizardp(victim))) return notify_fail("å¤§èƒ†ï¼ç«Ÿæƒ³è°‹å®³å·«å¸ˆï¼\n");
 
     if( target->query_condition("xs_necromancy") < 0 || !target->query_temp("block_msg/all", 1) 
                 || (me->query("id") != target->query("xueshan/necromancy_singer")) )
 //	if (!target->query_temp("cursed", 1) || !target->query_temp("block_msg/all", 1))
-		return notify_fail("Äã²»ÄÜÕâÃ´¸É£¡\n");
+		return notify_fail("ä½ ä¸èƒ½è¿™ä¹ˆå¹²ï¼\n");
 
 	if (me->query_skill("necromancy", 1) < 90)
-		return notify_fail("ÄãµÄ½µ·ü·¨»ðºò²»¹»£¡\n");
+		return notify_fail("ä½ çš„é™ä¼æ³•ç«å€™ä¸å¤Ÿï¼\n");
 
 	if ( !me->query("env/invisibility") )   
-		message_vision(HIR "$N¹îÐ¦ÖÐ¶Ô×Å$nÄîÁË¼¸¾äÃÜÖä£¬ÓÖÉìÊÖÖ¸ÁËÖ¸"+victim->name()+"¡£\n", me, target);
-	message("vision", HIR "Ö»¼û"+target->name()+"Ê§»êÂäÆÇËÆµÄÏò"+victim->name()+"·¢¶¯ÃÍÁÒµÄ¹¥»÷£¬ÓûÖÆÆäÓÚËÀµØ£¡\n" NOR, environment(target), ({target}));
-	tell_object(target,"ÄãÔÚÃÔÃÔºýºýÖÐÉí²»ÓÉÖ÷µØÏò"+victim->name()+"·¢¶¯ÃÍÁÒµÄ¹¥»÷£¬ÓûÖÆÆäÓÚËÀµØ£¡\n");
+		message_vision(HIR "$Nè¯¡ç¬‘ä¸­å¯¹ç€$nå¿µäº†å‡ å¥å¯†å’’ï¼Œåˆä¼¸æ‰‹æŒ‡äº†æŒ‡"+victim->name()+"ã€‚\n", me, target);
+	message("vision", HIR "åªè§"+target->name()+"å¤±é­‚è½é­„ä¼¼çš„å‘"+victim->name()+"å‘åŠ¨çŒ›çƒˆçš„æ”»å‡»ï¼Œæ¬²åˆ¶å…¶äºŽæ­»åœ°ï¼\n" NOR, environment(target), ({target}));
+	tell_object(target,"ä½ åœ¨è¿·è¿·ç³Šç³Šä¸­èº«ä¸ç”±ä¸»åœ°å‘"+victim->name()+"å‘åŠ¨çŒ›çƒˆçš„æ”»å‡»ï¼Œæ¬²åˆ¶å…¶äºŽæ­»åœ°ï¼\n");
 
 	target->kill_ob(victim);
 

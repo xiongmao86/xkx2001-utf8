@@ -12,16 +12,16 @@ int main(object me, string arg)
 	object ob;
 
 	seteuid(geteuid(me));
-	if (!arg) return notify_fail("Ö¸Áî¸ñÊ½ : more <µµÃû>|<Îï¼şÃû> \n");
+	if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : more <æ¡£å>|<ç‰©ä»¶å> \n");
 	file = resolve_path(me->query("cwd"), arg);
 	if( file_size(file) < 0 ) {
 		ob = present(arg, me);
 		if( !ob ) ob = present(arg, environment(me));
-		if( !ob ) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+		if( !ob ) return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 		file = base_name(ob) + ".c";
 	}
 
-	if(!SECURITY_D-> valid_read(file, this_object(), "read_file") && me->query("id") != "sdong" )return notify_fail("¶Ô²»Æğ£¬ÄãÃ»ÓĞ¶ÁÕâ¸öµµ°¸µÄÈ¨Á¦¡£\n");
+	if(!SECURITY_D-> valid_read(file, this_object(), "read_file") && me->query("id") != "sdong" )return notify_fail("å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰è¯»è¿™ä¸ªæ¡£æ¡ˆçš„æƒåŠ›ã€‚\n");
 
 	me->start_more( read_file(file));
 	return 1;
@@ -30,14 +30,14 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : more <µµ°¸>|<Îï¼şÃû>
+æŒ‡ä»¤æ ¼å¼ : more <æ¡£æ¡ˆ>|<ç‰©ä»¶å>
  
-·ÖÒ³ÏÔÊ¾µµ°¸ÄÚÈİ¡£
+åˆ†é¡µæ˜¾ç¤ºæ¡£æ¡ˆå†…å®¹ã€‚
  
-more Ä£Ê½ÏÂµÄÖ¸Áî:
-q      : Àë¿ª more.
-b      : ÏÔÊ¾Ç°Ò»Ò³µÄÄÚÈİ.
-[ENTER]: ÏÔÊ¾ÏÂÒ»Ò³µÄÄÚÈİ.
+more æ¨¡å¼ä¸‹çš„æŒ‡ä»¤:
+q      : ç¦»å¼€ more.
+b      : æ˜¾ç¤ºå‰ä¸€é¡µçš„å†…å®¹.
+[ENTER]: æ˜¾ç¤ºä¸‹ä¸€é¡µçš„å†…å®¹.
 
 HELP
     );

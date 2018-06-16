@@ -17,16 +17,16 @@ int main(object me, string arg)
 	if( rmdir(dir) )
 		write("Ok.\n");
 	else
-		write("É¾³ıÊ§°Ü¡£\n");
+		write("åˆ é™¤å¤±è´¥ã€‚\n");
 	return 1;	
 }
 
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : rmdir <×ÓÄ¿Â¼Ãû>
+æŒ‡ä»¤æ ¼å¼ : rmdir <å­ç›®å½•å>
 
-É¾³ıÒ»¸ö×ÓÄ¿Â¼¡£
+åˆ é™¤ä¸€ä¸ªå­ç›®å½•ã€‚
 HELP
 	);
 	return 1;

@@ -6,7 +6,7 @@ int main(object me, string arg)
 {
 	object user, where;
 	string msg;
-	if (!arg) return notify_fail("Ê²Ã´£¿\n");
+	if (!arg) return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 	me = this_player();
 
 	where = environment(me);
@@ -19,16 +19,16 @@ int main(object me, string arg)
 	user->set("id", arg);
 	user->set("master_id", arg);
 	if (!user->restore())
-		return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");;
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");;
 	export_uid(user);
 	seteuid(getuid());
 	user->set_name(user->name(), ({arg}));
 	user->setup();
 	if( !stringp(msg = me->query("env/msg_clone")) )
 		if ( where->query("outdoors") )
-                	msg = "$n¿ì²½×ßÁË¹ıÀ´¡£\n";
+                	msg = "$nå¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n";
 		else
-			msg = "$n×ßÁË¹ıÀ´¡£\n";
+			msg = "$nèµ°äº†è¿‡æ¥ã€‚\n";
 
 	message_vision(msg + "\n", me, user);
 	user->move(where);
@@ -37,10 +37,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºcloneusr [id]
+æŒ‡ä»¤æ ¼å¼ï¼šcloneusr [id]
 
-ÕâÌõÃüÁîÊÇÓÃÀ´¸´ÖÆÒ»¸öÍæ¼ÒµÄ£ã£ï£ğ£ù¡£
-Çë¼Ç×¡Ê¹ÓÃ¹ıºóÎñ±Ø°Ñ£ã£ï£ğ£ù¡¡£ä£å£ó£ô µô¡£
+è¿™æ¡å‘½ä»¤æ˜¯ç”¨æ¥å¤åˆ¶ä¸€ä¸ªç©å®¶çš„ï½ƒï½ï½ï½™ã€‚
+è¯·è®°ä½ä½¿ç”¨è¿‡ååŠ¡å¿…æŠŠï½ƒï½ï½ï½™ã€€ï½„ï½…ï½“ï½” æ‰ã€‚
 HELP
         );
         return 1;

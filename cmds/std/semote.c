@@ -21,7 +21,7 @@ int main(object me, string arg)
 	e = sort_array(EMOTE_D->query_all_emote(), 1);
 	if (arg)
 		e = filter_array(e, (: lead_match :), arg);
-	msg = "¡ò ÏÀ¿ÍÐÐ ¡ò ÓÐÏÂÁÐÏµÍ³Ô¤ÉèµÄ¶¯×÷£º\n";
+	msg = "â—Ž ä¾ å®¢è¡Œ â—Ž æœ‰ä¸‹åˆ—ç³»ç»Ÿé¢„è®¾çš„åŠ¨ä½œï¼š\n";
 	for(i=0; i<sizeof(e); i++)
 		msg = sprintf("%s%-15s%s", msg, e[i], (i%5==4)?"\n": "");
 	msg += "\n";
@@ -32,10 +32,10 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : semote 
+æŒ‡ä»¤æ ¼å¼ : semote 
 	   semote [a-z]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁÐ³öÄ¿Ç°ËùÄÜÊ¹ÓÃµÄemote.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åˆ—å‡ºç›®å‰æ‰€èƒ½ä½¿ç”¨çš„emote.
 HELP
     );
     return 1;

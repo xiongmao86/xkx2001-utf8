@@ -11,9 +11,9 @@ int main(object me, string arg)
 	object news_ob;
 	seteuid(geteuid(me));
 	if(!wizardp(me))
-		return notify_fail ("Äã²»ÊÇÎ×Ê¦£¬²»ÄÜÊ¹ÓÃÕâ¸öÃüÁî¡£\n");
+		return notify_fail ("ä½ ä¸æ˜¯å·«å¸ˆï¼Œä¸èƒ½ä½¿ç”¨è¿™ä¸ªå‘½ä»¤ã€‚\n");
 	if( !arg ) 
-		return notify_fail("Ö¸Áî¸ñÊ½newspub title(ÇëÊäÈëÄúÒª·¢²¼µÄĞÂÎÅÃû³Æ:)\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼newspub title(è¯·è¾“å…¥æ‚¨è¦å‘å¸ƒçš„æ–°é—»åç§°:)\n");
 	if(!news_ob=find_object("/clone/obj/news_b"))
 		news_ob=new("/clone/obj/news_b");
 	if(!objectp(news_ob)) return 0;
@@ -26,9 +26,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : newspub <ĞÂÎÅÌâÄ¿>
+æŒ‡ä»¤æ ¼å¼ : newspub <æ–°é—»é¢˜ç›®>
  
-·¢²¼ĞÂÎÅ¡£
+å‘å¸ƒæ–°é—»ã€‚
  
 HELP
     );

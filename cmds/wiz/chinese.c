@@ -6,7 +6,7 @@ int main(object me, string arg)
 	string key, chinz;
 
 	if( !arg || arg=="" )
-		return notify_fail("指令格式：chinese <英文>==<中文>\n");
+		return notify_fail("鎸囦护鏍煎紡锛歝hinese <鑻辨枃>==<涓枃>\n");
 
 	if( sscanf(arg, "%s==%s", key, chinz)==2 ) {
 		CHINESE_D->add_translate(key, chinz);
@@ -20,7 +20,7 @@ int main(object me, string arg)
 int help()
 {
 	write ( @HELP
-指令格式：chinese <英文>==<中文>
+鎸囦护鏍煎紡锛歝hinese <鑻辨枃>==<涓枃>
 HELP
 	);
 	return 1 ;

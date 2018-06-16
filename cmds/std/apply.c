@@ -8,13 +8,13 @@ int main(object me, string arg)
 	object ob;
 
 	if (me->query_busy())
-		return notify_fail("ʲô��\n");
-	if( !arg || arg=="" ) return notify_fail("��Ҫ����ʲô��\n");
+		return notify_fail("什么？\n");
+	if( !arg || arg=="" ) return notify_fail("你要服用什么？\n");
 
 	ob = present(arg, me);
 	if( !ob ) ob = present(arg, environment(me));
-	if( !ob ) return notify_fail("��Ҫ����ʲô��\n");
+	if( !ob ) return notify_fail("你要服用什么？\n");
 
-	notify_fail("�����������ܵ�ҩ���á�\n");
+	notify_fail("这样东西不能当药服用。\n");
 	return ob->cure_ob(me);
 }

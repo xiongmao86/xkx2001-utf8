@@ -1,5 +1,5 @@
 //Cracked by Roath
-//lead.c ´øÁì
+//lead.c å¸¦é¢†
 #include <ansi.h>
 inherit F_CLEAN_UP;
 
@@ -8,22 +8,22 @@ int main(object me, string arg)
 	object victim;
 	string comm;
 
-		  if (!arg) return notify_fail("ÄãÒªÈÃË­¸ú×ÅÄã×ß£¿\n");
+		  if (!arg) return notify_fail("ä½ è¦è®©è°è·Ÿç€ä½ èµ°ï¼Ÿ\n");
 
-		  if ( arg == me->query("id") ) return notify_fail("ÄãÒª×Ô¼º¸ú×Å×Ô¼º£¬·èÀ²£¿\n");
+		  if ( arg == me->query("id") ) return notify_fail("ä½ è¦è‡ªå·±è·Ÿç€è‡ªå·±ï¼Œç–¯å•¦ï¼Ÿ\n");
 
 	victim = present(arg, environment(me));
-		  if (!victim) return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
-		  if (!living(victim)) return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
+		  if (!victim) return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
+		  if (!living(victim)) return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
 
 	 if (victim->query("no_get", 1))
-					 return notify_fail("Õâ¸öÈËÁì²»×ß£¡\n");
+					 return notify_fail("è¿™ä¸ªäººé¢†ä¸èµ°ï¼\n");
 
 	if ( !me->query("env/invisibility") ){
 
 	if ( !userp(victim) && victim->query("sjsz/team_name") && victim->query("sjsz/team_name") == me->query("sjsz/team_name") ){
-		message_vision("\n$N¶ÔÖø$nËµµÀ£º¸ú×ÅÎÒ×ß°É£¬ÎÒ´øÄãÈ¥¸öµØ·½¡£\n",me, victim);
-		message_vision("$N¿´ÁË¿´$n£¬Í´¿ìµØËµµÀ£ººÃ°É£¡\n\n",victim, me, );
+		message_vision("\n$Nå¯¹è‘—$nè¯´é“ï¼šè·Ÿç€æˆ‘èµ°å§ï¼Œæˆ‘å¸¦ä½ å»ä¸ªåœ°æ–¹ã€‚\n",me, victim);
+		message_vision("$Nçœ‹äº†çœ‹$nï¼Œç—›å¿«åœ°è¯´é“ï¼šå¥½å§ï¼\n\n",victim, me, );
 		victim->set_leader(me);
 		return 1;
 	}
@@ -31,16 +31,16 @@ int main(object me, string arg)
     if( victim->query_condition("xs_necromancy") < 0 || !victim->query_temp("block_msg/all", 1) 
                 || (me->query("id") != victim->query("xueshan/necromancy_singer")) ) {
 //	if ( !victim->query_temp("cursed", 1) || !victim->query_temp("block_msg/all", 1)){
-	message_vision("\n$N¶ÔÖø$nËµµÀ£º¸ú×ÅÎÒ×ß°É£¬ÎÒ´øÄãÈ¥¸öµØ·½¡£\n\n",me, victim);
-	tell_object(victim, YEL "Èç¹ûÄãÔ¸Òâ¸ú×Å" + me->query("name") +"×ß£¬ÇëÄã¼üÈë follow " + me->query("id") +"µÄÖ¸Áî¡£\n" NOR);
-					 write(YEL "Äã±ØĞëµÈ¶Ô·½Í¬Òâ²ÅÄÜÁì×Å¶Ô·½×ß¡£\n" NOR);
+	message_vision("\n$Nå¯¹è‘—$nè¯´é“ï¼šè·Ÿç€æˆ‘èµ°å§ï¼Œæˆ‘å¸¦ä½ å»ä¸ªåœ°æ–¹ã€‚\n\n",me, victim);
+	tell_object(victim, YEL "å¦‚æœä½ æ„¿æ„è·Ÿç€" + me->query("name") +"èµ°ï¼Œè¯·ä½ é”®å…¥ follow " + me->query("id") +"çš„æŒ‡ä»¤ã€‚\n" NOR);
+					 write(YEL "ä½ å¿…é¡»ç­‰å¯¹æ–¹åŒæ„æ‰èƒ½é¢†ç€å¯¹æ–¹èµ°ã€‚\n" NOR);
 					 return 1;
 	}
 	if (me->query_skill("necromancy", 1) < 45)
-		return notify_fail("ÄãµÄ½µ·ü·¨»ğºò²»¹»£¡\n");
+		return notify_fail("ä½ çš„é™ä¼æ³•ç«å€™ä¸å¤Ÿï¼\n");
 
-	message_vision(HIR "$N¹îĞ¦ÖĞÉìÊÖÏò$nÒ»ÕĞ¡£\n" NOR, me, victim);
-	tell_object(victim,"ÄãÃÔÃÔºıºıÖĞ¾õµÃ"+me->name()+"ÊÇÄãµÄÖ÷ÈË£¬ĞëµÃ¸úËæËû£¡\n");
+	message_vision(HIR "$Nè¯¡ç¬‘ä¸­ä¼¸æ‰‹å‘$nä¸€æ‹›ã€‚\n" NOR, me, victim);
+	tell_object(victim,"ä½ è¿·è¿·ç³Šç³Šä¸­è§‰å¾—"+me->name()+"æ˜¯ä½ çš„ä¸»äººï¼Œé¡»å¾—è·Ÿéšä»–ï¼\n");
 
 	victim->set_leader(me);
 	return 1;

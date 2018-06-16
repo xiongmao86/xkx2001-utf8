@@ -13,11 +13,11 @@ int main(object me, string arg)
 	|| !objectp(ob = present(arg, environment(me)))
 	|| ob != me->query("rided")
 	|| ob->query("rider") != me)
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹²ä»€ä¹ˆï¼Ÿ\n");
 
 	me->delete("rided");
 	ob->delete("rider" );
-	message_vision("\n$NÒ»×İÉí£¬´Ó" + ob->name() +"ÉíÉÏÔ¾ÁËÏÂÀ´¡£\n", me);
+	message_vision("\n$Nä¸€çºµèº«ï¼Œä»" + ob->name() +"èº«ä¸Šè·ƒäº†ä¸‹æ¥ã€‚\n", me);
 
 	return 1;
 }
@@ -25,9 +25,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : unride|buqi <Ä³¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : unride|buqi <æŸåŠ¨ç‰©>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´ÓËùÆïÄ³Ò»¶¯ÎïÉíÉÏÌøÏÂÀ´£¬ÈçÅ££¬Âí£¬»¢µÈ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ ä»æ‰€éª‘æŸä¸€åŠ¨ç‰©èº«ä¸Šè·³ä¸‹æ¥ï¼Œå¦‚ç‰›ï¼Œé©¬ï¼Œè™ç­‰ã€‚
  
 HELP
 	);

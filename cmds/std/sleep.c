@@ -16,46 +16,46 @@ int main(object me, string arg)
 
         seteuid(getuid());
 
-	if ( (!(fam = me->query("family")) || fam["family_name"] != "Ø¤°ï")
+	if ( (!(fam = me->query("family")) || fam["family_name"] != "ä¸å¸®")
              && !(where->query("sleep_room"))
              || (where->query("no_sleep_room")) )
-             return notify_fail("ÕâÀï²»ÊÇÄãÄÜË¯µÄµØ·½£¡\n");
+             return notify_fail("è¿™é‡Œä¸æ˜¯ä½ èƒ½ç¡çš„åœ°æ–¹ï¼\n");
    
 	if (me->is_busy())
-		return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐ²»ÄÜË¯¾õ£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç¡è§‰ï¼\n");
         
 	if (where->query("hotel") && !(me->query_temp("rent_paid")))
 	{
-		message_vision("µêÐ¡¶þ´ÓÃÅÍâ¶Ô$N´ó½Ð: °ÑÕâÀïµ±±ÜÄÑËù°¡! ÏÈµ½Ò»Â¥¸¶Ç®ºóÔÙÀ´Ë¯!\n",me);
+		message_vision("åº—å°äºŒä»Žé—¨å¤–å¯¹$Nå¤§å«: æŠŠè¿™é‡Œå½“é¿éš¾æ‰€å•Š! å…ˆåˆ°ä¸€æ¥¼ä»˜é’±åŽå†æ¥ç¡!\n",me);
 		return 1;
 	}
  
 /*
 	if (me->query_temp("sleeped"))
-		return notify_fail("Äã¸ÕÔÚÈý·ÖÖÓÄÚË¯¹ýÒ»¾õ, ¶àË¯¶ÔÉíÌåÓÐº¦ÎÞÒæ! \n");
+		return notify_fail("ä½ åˆšåœ¨ä¸‰åˆ†é’Ÿå†…ç¡è¿‡ä¸€è§‰, å¤šç¡å¯¹èº«ä½“æœ‰å®³æ— ç›Š! \n");
 */
 
 	if (where->query("night_room")){
 	event = NATURE_D->outdoor_room_event();
 	if (event != "event_night" && event != "event_midnight" && event != "event_dawn")
-                return notify_fail("ÌìÃ»ºÚ£¬Ë¯Ê²Ã´¾õ£¿\n");
+                return notify_fail("å¤©æ²¡é»‘ï¼Œç¡ä»€ä¹ˆè§‰ï¼Ÿ\n");
 	}
 
 	if (where->query("sleep_room"))
 	{
-		write("ÄãÍù´²ÉÏÒ»ÌÉ£¬¿ªÊ¼Ë¯¾õ¡£\n");
-		write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+		write("ä½ å¾€åºŠä¸Šä¸€èººï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+		write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
 		me->set_temp("block_msg/all",1);
-		message_vision("$NÒ»ÍáÉí£¬µ¹ÔÚ´²ÉÏ£¬²»Ò»»á±ã÷ýÉù´ó×÷£¬½øÈëÁËÃÎÏç¡£\n",me);
+		message_vision("$Nä¸€æ­ªèº«ï¼Œå€’åœ¨åºŠä¸Šï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œè¿›å…¥äº†æ¢¦ä¹¡ã€‚\n",me);
 	}
 	else { 
-		write("ÄãÍùµØÏÂ½ÇÂäÒ»ÌÉ£¬¿ªÊ¼Ë¯¾õ¡£\n");
-		write("²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n");
+		write("ä½ å¾€åœ°ä¸‹è§’è½ä¸€èººï¼Œå¼€å§‹ç¡è§‰ã€‚\n");
+		write("ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n");
 		me->set_temp("block_msg/all",1);
-		message_vision("$NÍùµØÏÂ½ÇÂäÇüÉíÒ»ÌÉ£¬²»Ò»»á±ã÷ýÉù´ó×÷£¬×öÆðÃÎÀ´¡£\n",me);
+		message_vision("$Nå¾€åœ°ä¸‹è§’è½å±ˆèº«ä¸€èººï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œåšèµ·æ¢¦æ¥ã€‚\n",me);
 	}
 
 	/*where->set("no_fight", 1);*/
@@ -69,7 +69,7 @@ int main(object me, string arg)
 	else
 		me->delete_temp("rent_paid");
 
-	me->disable_player("<Ë¯ÃÎÖÐ>");
+	me->disable_player("<ç¡æ¢¦ä¸­>");
 
 	call_out("wakeup",random(60 - me->query("con")), me, where);
         
@@ -120,9 +120,9 @@ void wakeup(object me,object where)
   
 	/*call_out("del_sleeped", 179, me);*/
 
-	message_vision("$NÒ»¾õÐÑÀ´£¬¾«Á¦³äÅæµØ»î¶¯ÁËÒ»ÏÂ½î¹Ç¡£\n",me);
+	message_vision("$Nä¸€è§‰é†’æ¥ï¼Œç²¾åŠ›å……æ²›åœ°æ´»åŠ¨äº†ä¸€ä¸‹ç­‹éª¨ã€‚\n",me);
 	me->set_temp("block_msg/all", 0);
-	write("ÄãÒ»¾õÐÑÀ´£¬Ö»¾õ¾«Á¦³äÅæ¡£¸Ã»î¶¯Ò»ÏÂÁË¡£\n");
+	write("ä½ ä¸€è§‰é†’æ¥ï¼Œåªè§‰ç²¾åŠ›å……æ²›ã€‚è¯¥æ´»åŠ¨ä¸€ä¸‹äº†ã€‚\n");
 
 	//if (!where->query("sleep_room") && !where->query("hotel"))
 		//where->delete("no_fight");

@@ -50,9 +50,9 @@ int main(string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : npclist
+æŒ‡ä»¤æ ¼å¼ : npclist
 
-½«ÏßÉÏËùÓĞnpc and playersµÄ/obj/user number ÏÔÊ¾³öÀ´¡£
+å°†çº¿ä¸Šæ‰€æœ‰npc and playersçš„/obj/user number æ˜¾ç¤ºå‡ºæ¥ã€‚
 HELP
     );
     return 1;

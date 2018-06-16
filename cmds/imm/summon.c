@@ -11,18 +11,18 @@ int main(object me, string str)
 	ob = LOGIN_D->find_body(str);
 	if (!ob) ob=find_object(str);
 
-	if(!ob) return notify_fail("ß×... ÓĞÕâ¸öÈËÂğ?\n");
+	if(!ob) return notify_fail("å’¦... æœ‰è¿™ä¸ªäººå—?\n");
 
 	// moving
-	tell_room(environment(ob),"Ìì¿ÕÖĞÉì³öÒ»Ö»´óÊÖ°Ñ"+
-	(string)ob->query("name")+"×¥ÁËÆğÀ´, È»áá²»¼ûÁË.\n", ob);
-	tell_object(ob,"Ò»Ö»ÊÖ°ÑÄã×¥ÁËÆğÀ´, ÄãÑÛÇ°Ò»ÕóºÚ....\n");
+	tell_room(environment(ob),"å¤©ç©ºä¸­ä¼¸å‡ºä¸€åªå¤§æ‰‹æŠŠ"+
+	(string)ob->query("name")+"æŠ“äº†èµ·æ¥, ç„¶å¾Œä¸è§äº†.\n", ob);
+	tell_object(ob,"ä¸€åªæ‰‹æŠŠä½ æŠ“äº†èµ·æ¥, ä½ çœ¼å‰ä¸€é˜µé»‘....\n");
 	ob->move(environment(me));
-        tell_object(me, "Äã°Ñ"+(string)ob->query("name")+"×¥µ½ÄãµÄÃæÇ°.\n");
-	tell_object(ob,".... ĞÑÀ´Ê±·¢ÏÖÊÇ"+(string)me->query("name")+
-	"°ÑÄãÅª¹ıÀ´µÄ.\n");
-	tell_room(environment(ob),(string)ob->query("name")+"Í»È»³öÏÖ"+
-	"ÔÚÄãÑÛÇ°\n",({me,ob}));
+        tell_object(me, "ä½ æŠŠ"+(string)ob->query("name")+"æŠ“åˆ°ä½ çš„é¢å‰.\n");
+	tell_object(ob,".... é†’æ¥æ—¶å‘ç°æ˜¯"+(string)me->query("name")+
+	"æŠŠä½ å¼„è¿‡æ¥çš„.\n");
+	tell_room(environment(ob),(string)ob->query("name")+"çªç„¶å‡ºç°"+
+	"åœ¨ä½ çœ¼å‰\n",({me,ob}));
 	// ok ..
 	return 1;
 }
@@ -30,9 +30,9 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : summon <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : summon <æŸäºº>
 
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)½«Ä³ÈË×¥µ½ÄãÃæÇ°¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )å°†æŸäººæŠ“åˆ°ä½ é¢å‰ã€‚
 HELP
     );
     return 1;

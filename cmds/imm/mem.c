@@ -10,7 +10,7 @@ int main(object me, string arg)
 	object obj;
 
 	if (!arg) {
-		printf( "%sÄ¿Ç°¹²Ê¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n",
+		printf( "%sç›®å‰å…±ä½¿ç”¨ %s bytes è®°å¿†ä½“ã€‚\n",
 			MUD_NAME, memory_expression(memory_info()) );
 		return 1;
 	}
@@ -25,9 +25,9 @@ int main(object me, string arg)
 	if (!obj) obj = present(arg, me);
 	if (!obj) obj = present(arg, environment(me));
 	if (!obj) obj = find_object( resolve_path(me->query("cwd"), arg) );
-	if (!obj) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş....¡£\n");
+	if (!obj) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶....ã€‚\n");
 
-	printf( "%O ¹²Ê¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n", obj, memory_expression(memory_info(obj)));
+	printf( "%O å…±ä½¿ç”¨ %s bytes è®°å¿†ä½“ã€‚\n", obj, memory_expression(memory_info(obj)));
 	return 1;
 }
 
@@ -45,10 +45,10 @@ string memory_expression(int m)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : mem <Îï¼şÖ®Ãû³Æ»òµµÃû>
+æŒ‡ä»¤æ ¼å¼ : mem <ç‰©ä»¶ä¹‹åç§°æˆ–æ¡£å>
 
-Õâ¸öÖ¸Áî¸æËßÄãÄ³¸öÎï¼şÕ¼ÓÃµÄ¼ÇÒäÌåÊıÁ¿¡£
-ÈôÃ»ÓĞÖ¸Ã÷Îï¼ş, Ôò»áÏÔÊ¾Ä¿Ç°ÓÎÏ·ËùÕ¼ÓÃµÄ¼ÇÒäÌå.
+è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰ä½ æŸä¸ªç‰©ä»¶å ç”¨çš„è®°å¿†ä½“æ•°é‡ã€‚
+è‹¥æ²¡æœ‰æŒ‡æ˜ç‰©ä»¶, åˆ™ä¼šæ˜¾ç¤ºç›®å‰æ¸¸æˆæ‰€å ç”¨çš„è®°å¿†ä½“.
 HELP
     );
     return 1;

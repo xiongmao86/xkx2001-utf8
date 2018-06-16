@@ -20,29 +20,29 @@ int main(object me, string arg)
 		ob = present(arg, environment(me));
 		if (!ob) ob = find_player(arg);
 		if (!ob) ob = find_living(arg);
-        if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+        if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹è°çš„çŠ¶æ€ï¼Ÿ\n");
 	} else
-		return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
+		return notify_fail("åªæœ‰å·«å¸ˆèƒ½å¯Ÿçœ‹åˆ«äººçš„çŠ¶æ€ã€‚\n");
  
 	my = ob->query_entire_dbase();
  
-    printf(" ¾«£º %s%4d/ %4d %s(%3d%%)" NOR "    ¾«Á¦£º %s%4d / %4d (+%d)\n" NOR,
+    printf(" ç²¾ï¼š %s%4d/ %4d %s(%3d%%)" NOR "    ç²¾åŠ›ï¼š %s%4d / %4d (+%d)\n" NOR,
 		status_color(my["jing"], my["eff_jing"]), my["jing"], my["eff_jing"],
 		status_color(my["eff_jing"], my["max_jing"]),	my["eff_jing"] * 100 / my["max_jing"],
 		status_color(my["jingli"], my["max_jingli"]),	my["jingli"], my["max_jingli"],
 		my["jiajin"] );
-    printf(" Æø£º %s%4d/ %4d %s(%3d%%)" NOR "    ÄÚÁ¦£º %s%4d / %4d (+%d)\n" NOR,
+    printf(" æ°”ï¼š %s%4d/ %4d %s(%3d%%)" NOR "    å†…åŠ›ï¼š %s%4d / %4d (+%d)\n" NOR,
 		status_color(my["qi"], my["eff_qi"]), my["qi"], my["eff_qi"],
 		status_color(my["eff_qi"], my["max_qi"]), my["eff_qi"] * 100 / my["max_qi"],
 		status_color(my["neili"], my["max_neili"]), my["neili"], my["max_neili"],
 		my["jiali"] );
-    printf(" Ê³Îï£º %s%4d/ %4d      " NOR "   Ç±ÄÜ£º %s%4d / %4d\n" NOR,
+    printf(" é£Ÿç‰©ï¼š %s%4d/ %4d      " NOR "   æ½œèƒ½ï¼š %s%4d / %4d\n" NOR,
         status_color(my["food"], ob->max_food_capacity()),
         my["food"], ob->max_food_capacity(),
         HIY,
         (int)ob->query("potential"),
         (int)ob->query("max_potential"));
-    printf(" ÒûË®£º %s%4d/ %4d      " NOR "   ¾­Ñé£º %s%d\n" NOR,
+    printf(" é¥®æ°´ï¼š %s%4d/ %4d      " NOR "   ç»éªŒï¼š %s%d\n" NOR,
         status_color(my["water"], ob->max_water_capacity()),
         my["water"], ob->max_water_capacity(),
         HIM,
@@ -67,10 +67,10 @@ string status_color(int current, int max)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : hp
-           hp <¶ÔÏóÃû³Æ>                   (Î×Ê¦×¨ÓÃ)
+æŒ‡ä»¤æ ¼å¼ : hp
+           hp <å¯¹è±¡åç§°>                   (å·«å¸ˆä¸“ç”¨)
  
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã(Äã)»òÖ¸¶¨¶ÔÏó(º¬¹ÖÎï)µÄ¾«, Æø, ÉñÊıÖµ¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ˜¾ç¤ºä½ (ä½ )æˆ–æŒ‡å®šå¯¹è±¡(å«æ€ªç‰©)çš„ç²¾, æ°”, ç¥æ•°å€¼ã€‚
  
 see also : score
 HELP

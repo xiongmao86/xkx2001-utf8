@@ -12,7 +12,7 @@ int main(object me, string arg)
 
 	seteuid(geteuid(me));
 	if (!arg || sscanf(arg, "%s %s", src, dst)!=2 ) return
-		notify_fail("Ö¸Áî¸ñÊ½: cp <Ô­µµÃû> <Ä¿±êµµÃû> \n");
+		notify_fail("æŒ‡ä»¤æ ¼å¼: cp <åŸæ¡£å> <ç›®æ ‡æ¡£å> \n");
 
 	src = resolve_path(me->query("cwd"), src);
 	dst = resolve_path(me->query("cwd"), dst);
@@ -20,11 +20,11 @@ int main(object me, string arg)
 	if( file_size(src) < 0 ) {
 		ob = present(src, me);
 		if( !ob ) ob = present(src, environment(me));
-		if( !ob ) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+		if( !ob ) return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 		file = base_name(ob) + ".c";
 	}
 
-	if(!SECURITY_D-> valid_read(src, this_object(), "read_file") && me->query("id") != "sdong" )return notify_fail("¶Ô²»Æğ£¬ÄãÃ»ÓĞCOPYÕâ¸öµµ°¸µÄÈ¨Á¦¡£\n");
+	if(!SECURITY_D-> valid_read(src, this_object(), "read_file") && me->query("id") != "sdong" )return notify_fail("å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰COPYè¿™ä¸ªæ¡£æ¡ˆçš„æƒåŠ›ã€‚\n");
 
 	if( file_size(dst)==-2 ) {
 		dirs = explode(src, "/");
@@ -34,16 +34,16 @@ int main(object me, string arg)
 	if( cp(src, dst) )
 		write("Ok.\n");
 	else
-		write("ÄãÃ»ÓĞ×ã¹»µÄ¶ÁĞ´È¨Àû¡£\n");
+		write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„è¯»å†™æƒåˆ©ã€‚\n");
 	return 1;
 }
 
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : cp <Ô­µµÃû> <Ä¿±êµµÃû>
+æŒ‡ä»¤æ ¼å¼ : cp <åŸæ¡£å> <ç›®æ ‡æ¡£å>
 
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)¿½±´µµ°¸¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )æ‹·è´æ¡£æ¡ˆã€‚
 HELP
 	 );
 	 return 1;

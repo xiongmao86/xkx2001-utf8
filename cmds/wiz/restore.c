@@ -11,14 +11,14 @@ int main(object me, string arg)
 {
 		 object obj;
 
-		 if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºrestore player.\n"); 		 if(!objectp(obj = present(arg, environment(this_player())))) 					 return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");  		  if (!obj) obj = present(arg, me); 		  if (!obj) obj = find_object( resolve_path(me->query("cwd"), arg) ); 		  if (!obj) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş....¡£\n");  		  obj->restore(); 		  message_vision(CYN"$N¶Ô×Å$n¿ÚÄîÕæ¾÷£¬$pµÄÉíÓ°Ô½À´Ô½ÇåÎú£¬×î®Û¸´Ô­ÁË£¡¡±\n"NOR, 							  me,obj); 		 return 1; } 
+		 if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šrestore player.\n"); 		 if(!objectp(obj = present(arg, environment(this_player())))) 					 return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");  		  if (!obj) obj = present(arg, me); 		  if (!obj) obj = find_object( resolve_path(me->query("cwd"), arg) ); 		  if (!obj) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶....ã€‚\n");  		  obj->restore(); 		  message_vision(CYN"$Nå¯¹ç€$nå£å¿µçœŸè¯€ï¼Œ$pçš„èº«å½±è¶Šæ¥è¶Šæ¸…æ™°ï¼Œæœ€î†²å¤åŸäº†ï¼â€\n"NOR, 							  me,obj); 		 return 1; } 
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºexam player.
+æŒ‡ä»¤æ ¼å¼ï¼šexam player.
 
-ÓÃÀ´»Ö¸´Íæ¼ÒÊı¾İ
+ç”¨æ¥æ¢å¤ç©å®¶æ•°æ®
 HELP
 	 );
 	 return 1;

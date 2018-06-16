@@ -21,7 +21,7 @@ int main(object me, string arg)
 	// Else, try if a command name is specified.
 	seteuid(getuid());
 	if( stringp(file = me->find_command(arg)) ) {
-		notify_fail("ÓĞÕâ¸öÖ¸Áî´æÔÚ£¬µ«ÊÇ²¢Ã»ÓĞÏêÏ¸µÄËµÃ÷ÎÄ¼ş¡£\n");
+		notify_fail("æœ‰è¿™ä¸ªæŒ‡ä»¤å­˜åœ¨ï¼Œä½†æ˜¯å¹¶æ²¡æœ‰è¯¦ç»†çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
 		return file->help(me);
 	}
 
@@ -47,17 +47,17 @@ int main(object me, string arg)
 		}
 	}
 
-	return notify_fail("Ã»ÓĞÕë¶ÔÕâÏîÖ÷ÌâµÄËµÃ÷ÎÄ¼ş¡£\n");
+	return notify_fail("æ²¡æœ‰é’ˆå¯¹è¿™é¡¹ä¸»é¢˜çš„è¯´æ˜æ–‡ä»¶ã€‚\n");
 }
 
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºhelp <Ö÷Ìâ>              ÀıÈç£º> help cmds
-          help <º¯ÊıÃû³Æ>()        ÀıÈç£º> help call_out()
+æŒ‡ä»¤æ ¼å¼ï¼šhelp <ä¸»é¢˜>              ä¾‹å¦‚ï¼š> help cmds
+          help <å‡½æ•°åç§°>()        ä¾‹å¦‚ï¼š> help call_out()
 
-Õâ¸öÖ¸ÁîÌá¹©ÄãÕë¶ÔÄ³Ò»Ö÷ÌâµÄÏêÏ¸ËµÃ÷ÎÄ¼ş£¬ÈôÊÇ²»Ö¸¶¨Ö÷Ìâ£¬ÔòÌá¹©ÄãÓĞ¹Ø
-Ö÷ÌâµÄÎÄ¼ş¡£
+è¿™ä¸ªæŒ‡ä»¤æä¾›ä½ é’ˆå¯¹æŸä¸€ä¸»é¢˜çš„è¯¦ç»†è¯´æ˜æ–‡ä»¶ï¼Œè‹¥æ˜¯ä¸æŒ‡å®šä¸»é¢˜ï¼Œåˆ™æä¾›ä½ æœ‰å…³
+ä¸»é¢˜çš„æ–‡ä»¶ã€‚
 HELP
 	);
 	return 1;

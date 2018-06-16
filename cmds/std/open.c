@@ -11,7 +11,7 @@ int main(object me, string arg)
 	string *dirs, dir;
 	int i;
 
-	if( !arg ) return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 
 	doors = environment(me)->query_doors();
 	if( mapp(doors) ) {
@@ -22,10 +22,10 @@ int main(object me, string arg)
 				dir = dirs[i];
 				break;
 			}
-		if( !dir ) return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+		if( !dir ) return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 	
 		if( environment(me)->open_door(dir) ) {
-			message_vision("$N½«" + doors[dir]["name"] + "´ò¿ª¡£\n", me);
+			message_vision("$Nå°†" + doors[dir]["name"] + "æ‰“å¼€ã€‚\n", me);
 			return 1;
 		}
 	}
@@ -36,9 +36,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : open <door> »ò <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : open <door> æˆ– <æ–¹å‘>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´ò¿ªÃÅ.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æ‰“å¼€é—¨.
  
 HELP
     );

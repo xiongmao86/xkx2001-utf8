@@ -8,29 +8,29 @@
 inherit F_CLEAN_UP;
 
 mapping default_dirs = ([
-        "north":        "±±",
-        "south":        "ÄÏ",
-        "east":         "¶«",
-        "west":         "Î÷",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "enter":        "Àï",
-        "in":           "Àï",
-        "left":         "×ó",
-        "right":        "ÓÒ",
+        "north":        "åŒ—",
+        "south":        "å—",
+        "east":         "ä¸œ",
+        "west":         "è¥¿",
+        "northup":      "åŒ—è¾¹",
+        "southup":      "å—è¾¹",
+        "eastup":       "ä¸œè¾¹",
+        "westup":       "è¥¿è¾¹",
+        "northdown":    "åŒ—è¾¹",
+        "southdown":    "å—è¾¹",
+        "eastdown":     "ä¸œè¾¹",
+        "westdown":     "è¥¿è¾¹",
+        "northeast":    "ä¸œåŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "ä¸œå—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "enter":        "é‡Œ",
+        "in":           "é‡Œ",
+        "left":         "å·¦",
+        "right":        "å³",
 ]);
 
 string day_event(){return NATURE_D->outdoor_room_event();}
@@ -44,20 +44,20 @@ int main(object me, string arg)
         mapping exit;
         object *f_obs;
 
-        if( !arg ) return notify_fail("ÄãÒªÍùÄÄ¸ö·½Ïò×ß£¿\n");
+        if( !arg ) return notify_fail("ä½ è¦å¾€å“ªä¸ªæ–¹å‘èµ°ï¼Ÿ\n");
 
         if( me->over_encumbranced() )
-                return notify_fail("ÄãµÄ¸ººÉ¹ıÖØ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è´Ÿè·è¿‡é‡ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+                return notify_fail("ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ç§»åŠ¨ã€‚\n");
 		////////////////////////////////////////////////////////////////////////
 		//add by wzfeng
 		if(me->query_temp("cannot_move"))
 			if(me->query_temp("cannot_move_msg"))
 				return notify_fail(me->query_temp("cannot_move_msg")+"\n");
 			else
-				return notify_fail("ÄãÏÖÔÚ²»ÄÜÒÆ¶¯¡£\n");
+				return notify_fail("ä½ ç°åœ¨ä¸èƒ½ç§»åŠ¨ã€‚\n");
 ///////////////////////////////////////////////////////////////////////////
         if (me->is_fighting()) {
                 f_obs = me->query_enemy();
@@ -65,19 +65,19 @@ int main(object me, string arg)
                 if (5 + random((int)me->query("dex")) <=
                         random((int)f_obs[0]->query("dex"))) {
                         me->start_busy(1);
-                        return notify_fail("ÄãÌÓÅÜÊ§°Ü¡£\n");
+                        return notify_fail("ä½ é€ƒè·‘å¤±è´¥ã€‚\n");
                 }
         }
 
         if( me->query("jingli") < me->query("max_jingli")/10 )
-                return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦¾¡£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ å·²ç»ç²¾ç–²åŠ›å°½ï¼ŒåŠ¨å¼¹ä¸å¾—ã€‚\n");
 
         env = environment(me);
-        if(!env) return notify_fail("ÄãÄÄÀïÒ²È¥²»ÁË¡£\n");
+        if(!env) return notify_fail("ä½ å“ªé‡Œä¹Ÿå»ä¸äº†ã€‚\n");
 
         if( !mapp(exit = env->query("exits")) || undefinedp(exit[arg]) ) {
                 if( query_verb()=="go")
-                        return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞ³öÂ·¡£\n");
+                        return notify_fail("è¿™ä¸ªæ–¹å‘æ²¡æœ‰å‡ºè·¯ã€‚\n");
                 else
                         return 0;
         }
@@ -88,36 +88,36 @@ int main(object me, string arg)
                 dest = exit[arg];
 
         if( !(obj = load_object(dest)) )
-                return notify_fail("ÎŞ·¨ÒÆ¶¯¡£\n");
+                return notify_fail("æ— æ³•ç§»åŠ¨ã€‚\n");
 
         me->delete_temp("new_valid_dest");
 
         if( objectp(rided = me->query("rided")) 
         && environment(rided) == env
-        && me->query("race") == "ÈËÀà" )
+        && me->query("race") == "äººç±»" )
                 rided_name = rided->name();
         else me->delete("rided");
              
         if( obj->query("day_shop")
         && ( day_event() == "event_night" || day_event() == "event_midnight"))
-        return notify_fail(obj->query("short")+"ÍíÉÏ²»¿ª£¬ÇëÌìÁÁÁËÔÙÀ´£¡\n");
+        return notify_fail(obj->query("short")+"æ™šä¸Šä¸å¼€ï¼Œè¯·å¤©äº®äº†å†æ¥ï¼\n");
 
         if( objectp(rided) && !env->valid_leave(rided, arg) )
-                return notify_fail("Äã²»ÄÜÆïÖø" + rided_name + "Í¨¹ı¡£\n");
+                return notify_fail("ä½ ä¸èƒ½éª‘è‘—" + rided_name + "é€šè¿‡ã€‚\n");
 
-        if( me->query("race") == "ÈËÀà" && me->query_temp("riding") ) {
+        if( me->query("race") == "äººç±»" && me->query_temp("riding") ) {
                 if( present( "biao che", environment(me) ) )
-                        return notify_fail("ÄãÕı×øÔÚïÚ³µÉÏÄØ£¡\n");
+                        return notify_fail("ä½ æ­£ååœ¨é•–è½¦ä¸Šå‘¢ï¼\n");
       else me->delete_temp("riding");
         }
 
 
-        if( me->query("race") == "ÈËÀà" && objectp(rided) ) {
+        if( me->query("race") == "äººç±»" && objectp(rided) ) {
                 if( !obj->query("outdoors") )
-                        return notify_fail("Äã²»ÄÜÆïÖø" + rided_name + "½øÈ¥¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½éª‘è‘—" + rided_name + "è¿›å»ã€‚\n");
                 if( obj->query("cost") > rided->query("ability") )
-                        return notify_fail(rided_name + "µ½ÁËÕâµØ·½ºÃÏñ×ß²»¶¯ÁË£¡\n");
-        } else  if( me->query("race") == "¼ÒĞó" 
+                        return notify_fail(rided_name + "åˆ°äº†è¿™åœ°æ–¹å¥½åƒèµ°ä¸åŠ¨äº†ï¼\n");
+        } else  if( me->query("race") == "å®¶ç•œ" 
         && ( !obj->query("outdoors") 
         || obj->query("cost") > me->query("ability") ) ) return 0;
 
@@ -127,14 +127,14 @@ int main(object me, string arg)
                 dir = arg;
 
         if( me->is_fighting() ) {
-                if( me->query("race") == "ÈËÀà" ) {
+                if( me->query("race") == "äººç±»" ) {
                         if( objectp(rided)  ) {
-                                mout = "·üÔÚ" + rided_name + "ÉíÉÏÍù" + dir + "Âä»Ä¶øÌÓÁË¡£\n";               
-                                min = "ÆïÖø" + rided_name + "µøµø×²×²µØÅÜÁË¹ıÀ´£¬Ä£ÑùÓĞĞ©ÀÇ±·¡£\n";
+                                mout = "ä¼åœ¨" + rided_name + "èº«ä¸Šå¾€" + dir + "è½è’è€Œé€ƒäº†ã€‚\n";               
+                                min = "éª‘è‘—" + rided_name + "è·Œè·Œæ’æ’åœ°è·‘äº†è¿‡æ¥ï¼Œæ¨¡æ ·æœ‰äº›ç‹¼ç‹ˆã€‚\n";
                         }
                         else {    
-                                mout = "Íù" + dir + "Âä»Ä¶øÌÓÁË¡£\n";
-                                min = "µøµø×²×²µØÅÜÁË¹ıÀ´£¬Ä£ÑùÓĞĞ©ÀÇ±·¡£\n";
+                                mout = "å¾€" + dir + "è½è’è€Œé€ƒäº†ã€‚\n";
+                                min = "è·Œè·Œæ’æ’åœ°è·‘äº†è¿‡æ¥ï¼Œæ¨¡æ ·æœ‰äº›ç‹¼ç‹ˆã€‚\n";
                         }
                 }
                 else {    
@@ -143,20 +143,20 @@ int main(object me, string arg)
                 }
         } 
         else {
-                if( me->query("race") == "ÈËÀà" ) {
+                if( me->query("race") == "äººç±»" ) {
                         if( env->query("outdoors") ) {
                                 if( objectp(me->query("rided")) ) {
-                                        mout = "Æï×Å" + rided_name + "Íù" + dir + "·É³Û¶øÈ¥¡£\n";
-                                        min  = "Æï×Å" + rided_name + "±¼³Û¹ıÀ´¡£\n";
+                                        mout = "éª‘ç€" + rided_name + "å¾€" + dir + "é£é©°è€Œå»ã€‚\n";
+                                        min  = "éª‘ç€" + rided_name + "å¥”é©°è¿‡æ¥ã€‚\n";
                                 }
                                 else {
-                                        mout = "¼±²½Íù" + dir + "Àë¿ª¡£\n";
-                                        min = "¿ì²½×ßÁË¹ıÀ´¡£\n";
+                                        mout = "æ€¥æ­¥å¾€" + dir + "ç¦»å¼€ã€‚\n";
+                                        min = "å¿«æ­¥èµ°äº†è¿‡æ¥ã€‚\n";
                                 }
                         }
                         else {
-                                mout = "Íù" + dir + "×ßÁË³öÈ¥¡£\n";
-                                min = "×ßÁË¹ıÀ´¡£\n";
+                                mout = "å¾€" + dir + "èµ°äº†å‡ºå»ã€‚\n";
+                                min = "èµ°äº†è¿‡æ¥ã€‚\n";
                         }
                 }
                 else {
@@ -166,11 +166,11 @@ int main(object me, string arg)
         }
         
         // Added for play. by maco
-	if( objectp(play_ob = env->query("playing")) && me->query("race") == "ÈËÀà" && play_ob != me){
+	if( objectp(play_ob = env->query("playing")) && me->query("race") == "äººç±»" && play_ob != me){
 		if( !present(play_ob, env))
 			env->delete("playing");
 		if(play_ob->query_temp("exercise/playing") && me->query_temp("be_played/"+play_ob->query("id")) > 1 ) {
-			message_vision("$NÏë³¯"+dir+"×ßÈ¥£¬µ«ÊÇ$nµÄóïÉùÊµÔÚÃÀÃîÖ®¼«£¬$NÌıÔÚ¶úÀï£¬¾¹È»Éá²»µÃ¾Í´ËÀë¿ª¡£\n", me, play_ob);
+			message_vision("$Næƒ³æœ"+dir+"èµ°å»ï¼Œä½†æ˜¯$nçš„ç®«å£°å®åœ¨ç¾å¦™ä¹‹æï¼Œ$Nå¬åœ¨è€³é‡Œï¼Œç«Ÿç„¶èˆä¸å¾—å°±æ­¤ç¦»å¼€ã€‚\n", me, play_ob);
 			me->start_busy(2);
 			me->delete_temp("be_played/"+play_ob->query("id"));
 			return 1;
@@ -179,26 +179,26 @@ int main(object me, string arg)
 
 	
         //If the exit is blocked.
-        if( objectp(ob = env->query("exit_blockers/"+dir)) && me->query("race") == "ÈËÀà" && ob != me){
+        if( objectp(ob = env->query("exit_blockers/"+dir)) && me->query("race") == "äººç±»" && ob != me){
                 if( !present(ob, env))
                         env->delete("exit_blockers/"+ob->query_temp("exit_blocked"));
                 if( present(ob, env) && interactive(ob) && living(ob)){
                         if( !me->query("rided")){
                                 if( me->query_dex() < ob->query_dex()+5+random(5)){
-                                message_vision("$NÊÔÍ¼³¯"+dir+"×ßÈ¥£¬µ«ÊÇ±»$nµ²×¡ÁË³öÂ·¡£\n", me, ob);
+                                message_vision("$Nè¯•å›¾æœ"+dir+"èµ°å»ï¼Œä½†æ˜¯è¢«$næŒ¡ä½äº†å‡ºè·¯ã€‚\n", me, ob);
                                 return 1;
                                 }
-                                mout = "Ê©Õ¹Çá¹¦£¬´Ó" + ob->name() +"ÉíÅÔÒ»»Î¶ø¹ı£¬Á¬ÒÂ½ÇÒ²Ã»°¤×Å¡£\n";    
+                                mout = "æ–½å±•è½»åŠŸï¼Œä»" + ob->name() +"èº«æ—ä¸€æ™ƒè€Œè¿‡ï¼Œè¿è¡£è§’ä¹Ÿæ²¡æŒ¨ç€ã€‚\n";    
                         }
                         else {
                                 if( me->query("combat_exp") >= ob->query("combat_exp")){
                                         if( ob->query("rided")){
-                                                message_vision(HIR"$NÆï×Å"+rided_name+"³å¹ıÀ´£¬Ò»Í·°Ñ$n´Ó×øÆïÉÏ×²ÏÂÀ´£¬Ë¤¸öËÄ½Å³¯Ìì¡£\n"NOR, me, ob);
+                                                message_vision(HIR"$Néª‘ç€"+rided_name+"å†²è¿‡æ¥ï¼Œä¸€å¤´æŠŠ$nä»åéª‘ä¸Šæ’ä¸‹æ¥ï¼Œæ‘”ä¸ªå››è„šæœå¤©ã€‚\n"NOR, me, ob);
                                                 ob->query("rided")->delete("rider");
                                                 ob->delete("rided");
                                                 }
                                 else
-                                message_vision(HIR"$NÆï×Å"+rided_name+"³å¹ıÀ´£¬°Ñ$n×²¸öËÄ½Å³¯Ìì¡£\n"NOR, me, ob);
+                                message_vision(HIR"$Néª‘ç€"+rided_name+"å†²è¿‡æ¥ï¼ŒæŠŠ$næ’ä¸ªå››è„šæœå¤©ã€‚\n"NOR, me, ob);
 
                                 ob->receive_wound("qi", random(1000), rided);
                                 result = COMBAT_D->eff_status_msg((int)ob->query("qi") * 100 /(int)ob->query("max_qi"));
@@ -208,19 +208,19 @@ int main(object me, string arg)
                                 env->delete("exit_blockers/"+dir);
                                 } 
                                 if( me->query("combat_exp") < ob->query("combat_exp")/2){
-                                message_vision(HIG"$NÒ»°Ñ×¥×¡"+rided_name+"µÄçÖÉş£¬°Ñ$nÁ¬ÈË´ø×øÆïÒ»ÆëÍ£ÁËÏÂÀ´¡£\n"NOR, ob, me);
+                                message_vision(HIG"$Nä¸€æŠŠæŠ“ä½"+rided_name+"çš„ç¼°ç»³ï¼ŒæŠŠ$nè¿äººå¸¦åéª‘ä¸€é½åœäº†ä¸‹æ¥ã€‚\n"NOR, ob, me);
                                 me->start_busy(2);
                                 ob->start_busy(1);
                                 return 1;
                                 }
                                 else if( me->query("combat_exp") < ob->query("combat_exp"))
-                                message_vision(RED"$N¼û$nÆï×Å"+rided_name+"³å¹ıÀ´£¬¸Ï½ôÉÁµ½Ò»ÅÔÈÃ$nÍ¨¹ı¡£\n"NOR, ob, me);
+                                message_vision(RED"$Nè§$néª‘ç€"+rided_name+"å†²è¿‡æ¥ï¼Œèµ¶ç´§é—ªåˆ°ä¸€æ—è®©$né€šè¿‡ã€‚\n"NOR, ob, me);
                         }
                 }
                 if( !living(ob)) 
-                        mout = "²È×Å" +ob->name()+ "Ïò" +dir+ "×ßÁË³öÈ¥¡£\n";
+                        mout = "è¸©ç€" +ob->name()+ "å‘" +dir+ "èµ°äº†å‡ºå»ã€‚\n";
         } 
-        if( me->query("race") == "ÈËÀà" && !me->query("env/invisibility") ) {
+        if( me->query("race") == "äººç±»" && !me->query("env/invisibility") ) {
                 if( objectp(rided) ) {
                         if( random(5) == 0 ) me->add("jingli", -2);
                         rided->add("jingli", - env->query("cost")*2);
@@ -230,7 +230,7 @@ int main(object me, string arg)
                         if( me->query("jingli") <= 0 ) me->unconcious();
                 }
                 message( "vision", me->name() + mout, env, ({me}) );
-        } else if( !objectp(me->query("rider")) && me->query("race") != "ÈËÀà" ){
+        } else if( !objectp(me->query("rider")) && me->query("race") != "äººç±»" ){
                 me->add("jingli", - env->query("cost")*2);
                 if( me->query("jingli") <= 0 ) me->unconcious();
         }
@@ -244,12 +244,12 @@ int main(object me, string arg)
 
                 if(( !objectp(rided = me->query("rided")) 
                 || environment(rided) != environment(me))
-                && me->query("race") == "ÈËÀà")
+                && me->query("race") == "äººç±»")
                         me->delete("rided");
 
                 if(( !objectp(rider = me->query("rider")) 
                 || environment(rider) != environment(me))
-                && me->query("race") != "ÈËÀà")
+                && me->query("race") != "äººç±»")
                         me->delete("rider");
 
                 if( me->query_temp("exit_blocked")){
@@ -272,16 +272,16 @@ void do_flee(object me)
         exits = environment(me)->query("exits");
         if( !mapp(exits) || !sizeof(exits) ) return;
         directions = keys(exits);
-        tell_object(me, "¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË...\n");
+        tell_object(me, "çœ‹æ¥è¯¥æ‰¾æœºä¼šé€ƒè·‘äº†...\n");
         main(me, directions[random(sizeof(directions))]);
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : go <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : go <æ–¹å‘>
  
-ÈÃÄãÍùÖ¸¶¨µÄ·½ÏòÒÆ¶¯¡£
+è®©ä½ å¾€æŒ‡å®šçš„æ–¹å‘ç§»åŠ¨ã€‚
  
 HELP
     );

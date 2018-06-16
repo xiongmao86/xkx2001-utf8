@@ -9,12 +9,12 @@ inherit F_CLEAN_UP;
 void print_info(object usr);
 mapping valid_types =
 ([
-        "finger":   "Ö¸·¨",
-        "hand":     "ÊÖ·¨",
-		  "cuff":     "È­·¨",
-		  "claw":     "×¦·¨",
-		  "strike":   "ÕÆ·¨",
-		  "kick":     "ÍÈ·¨",
+        "finger":   "æŒ‡æ³•",
+        "hand":     "æ‰‹æ³•",
+		  "cuff":     "æ‹³æ³•",
+		  "claw":     "çˆªæ³•",
+		  "strike":   "æŒæ³•",
+		  "kick":     "è…¿æ³•",
 ]);
 
 
@@ -22,7 +22,7 @@ int main(object me, string arg)
 {
   object usr;
 
-  if (! arg) return notify_fail("Ö¸Áî¸ñÊ½£ºexam player.\n");
+  if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šexam player.\n");
 
   usr = present(arg, environment(me));
   if (!usr) usr = present(arg, me);
@@ -36,7 +36,7 @@ int main(object me, string arg)
   usr = new("/clone/test/dummy");
   usr->set("id", arg);
   if ( !usr->restore() )
-	 return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+	 return notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");
   print_info(usr);
   destruct(usr);
   return 1;
@@ -76,29 +76,29 @@ void print_info(object usr)
 		age_decimal = age_decimal / 8640;
 	 }
 
-	 printf("%s %s [%s] %s Ê¦¸¸£º%s ÄêÁä£º%d.%d ´æ¿î£º%s ½øÈëµØµã£º%s\n",
+	 printf("%s %s [%s] %s å¸ˆçˆ¶ï¼š%s å¹´é¾„ï¼š%d.%d å­˜æ¬¾ï¼š%s è¿›å…¥åœ°ç‚¹ï¼š%s\n",
 		usr->query("family/family_name"), usr->query("title"),
 		usr->query("nickname"), usr->query("name"),usr->query("family/master_name"),
 		age_years, age_decimal ,MONEY_D->money_str(usr->query("balance")), usr->query("startroom") );
 
-	 printf("±ÛÁ¦: %d/%d ÎòĞÔ: %d/%d ¸ù¹Ç: %d/%d Éí·¨: %d/%d ÈİÃ²: %d/%d ¸£Ôµ: %d/%d\n",
+	 printf("è‡‚åŠ›: %d/%d æ‚Ÿæ€§: %d/%d æ ¹éª¨: %d/%d èº«æ³•: %d/%d å®¹è²Œ: %d/%d ç¦ç¼˜: %d/%d\n",
 		usr->query_str(), usr->query("str"),
 		usr->query_int(), usr->query("int"),
 		usr->query_con(), usr->query("con"),
 		usr->query_dex(), usr->query("dex"),
 		usr->query_per(), usr->query("per"),
 		usr->query_kar(), usr->query("kar"));
-	 printf("ËÀÍö´ÎÊı: %d (ÓĞĞ§ËÀÍö %d ´Î) É±ËÀÈËÊı: %d (É±ËÀÍæ¼Ò %d ÈË)\n",
+	 printf("æ­»äº¡æ¬¡æ•°: %d (æœ‰æ•ˆæ­»äº¡ %d æ¬¡) æ€æ­»äººæ•°: %d (æ€æ­»ç©å®¶ %d äºº)\n",
 		usr->query("death_count"), usr->query("death_times"),
 		usr->query("MKS"), usr->query("PKS"));
 	 printf("\n");
-	 printf("¾«: %4d/%4d/%4d ¾«Á¦: %5d/%5d ",
+	 printf("ç²¾: %4d/%4d/%4d ç²¾åŠ›: %5d/%5d ",
 	usr->query("jing"),
 	usr->query("eff_jing"),
 	usr->query("max_jing"),
 	usr->query("jingli"),
 	usr->query("eff_jingli"));
-	 printf("Æø: %4d/%4d/%4d ÄÚÁ¦: %5d/%5d\n", usr->query("qi"),
+	 printf("æ°”: %4d/%4d/%4d å†…åŠ›: %5d/%5d\n", usr->query("qi"),
 	usr->query("eff_qi"),
 	usr->query("max_qi"),
 	usr->query("neili"),
@@ -142,16 +142,16 @@ void print_info(object usr)
 	pmap = usr->query_skill_prepare();
 	if (!pmap) pmap = ([]);
 	skill = keys(valid_types);
-	write("×éºÏÖĞµÄÌØÊâÈ­Êõ¼¼ÄÜ:");
+	write("ç»„åˆä¸­çš„ç‰¹æ®Šæ‹³æœ¯æŠ€èƒ½:");
 	for (i=0; i<sizeof(skill); i++) {
 		if( !usr->query_skill(skill[i]) || !pmap[skill[i]] ) continue;
 			write(  valid_types[skill[i]] + " (" + skill[i] + ")" + "   " + to_chinese(pmap[skill[i]]) + " ");
 	}
 
-	 printf("\n\n¾­Ñé: %9d Ç±ÄÜ: %4d/%4d   Éñ: %9d\n", usr->query("combat_exp"),
+	 printf("\n\nç»éªŒ: %9d æ½œèƒ½: %4d/%4d   ç¥: %9d\n", usr->query("combat_exp"),
 		usr->query("potential"), usr->query("max_potential"),
 		usr->query("shen"));
-	 printf("¹¥»÷: %9d ÕĞ¼Ü: %9d ¶ãÉÁ: %9d \n",
+	 printf("æ”»å‡»: %9d æ‹›æ¶: %9d èº²é—ª: %9d \n",
 		attack_points, parry_points, dodge_points);
 	 printf("apply: att=%d, dam=%d def=%d, dodge=%d, parry=%d, arm=%d, speed=%d\n",
 		usr->query_temp("apply/attack"),
@@ -167,9 +167,9 @@ void print_info(object usr)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºexam player.
+æŒ‡ä»¤æ ¼å¼ï¼šexam player.
 
-ÓÃÀ´¼ì²éÍæ¼ÒÊı¾İ
+ç”¨æ¥æ£€æŸ¥ç©å®¶æ•°æ®
 HELP
 	 );
 	 return 1;

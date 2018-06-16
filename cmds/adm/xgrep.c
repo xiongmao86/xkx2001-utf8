@@ -1,6 +1,6 @@
 // xgrep.c 
 // write by JackyBoy@CuteRabbit Studio for SDXL & CCTX 1999/6/1
-// ÎªÁË±ÜÃâµİ¹éÌ«Éî£¬Çë²»ÒªÉèÖÃ½øÈë¼¶±ğ³¬¹ı16¼¶. JackyBoy
+// ä¸ºäº†é¿å…é€’å½’å¤ªæ·±ï¼Œè¯·ä¸è¦è®¾ç½®è¿›å…¥çº§åˆ«è¶…è¿‡16çº§. JackyBoy
 inherit F_CLEAN_UP;
 int help();
 int do_grep(string,string,int);
@@ -14,35 +14,35 @@ int main(object me, string arg)
 	string  path,wild;
 	int level;
 	level=1;
-	result="Æ¥ÅäÎÄ¼şÓĞ£º\n";
+	result="åŒ¹é…æ–‡ä»¶æœ‰ï¼š\n";
 	seteuid(geteuid(me));
-	write("X grep ÃüÁî v0.1  \nWrite By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1\n"+
-		"Ö÷Ò³£ºhttp://mud.yn.cninfo.net/jackyboy\nÓÊ¼ş£ºjackyboy@126.com\n");
+	write("X grep å‘½ä»¤ v0.1  \nWrite By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1\n"+
+		"ä¸»é¡µï¼šhttp://mud.yn.cninfo.net/jackyboy\né‚®ä»¶ï¼šjackyboy@126.com\n");
     if (!arg) return help();
     if (sscanf(arg,"-d %s %s",path,pattern)!=2)
     {
     	if(sscanf(arg,"-d%d %s %s",level,path,pattern)!=3)
     		if(sscanf(arg,"%s %s",path,pattern)!=2)
     		{
-    			write ("\n²ÎÊı½âÎö´íÎó¡£\n\n");
+    			write ("\nå‚æ•°è§£æé”™è¯¯ã€‚\n\n");
     			return help();
     		}
     }
     else
-    	level=15;//´ø-d²ÎÊıÄ¬ÈÏ¼¶±ğÎªËùÓĞ¼¶
+    	level=15;//å¸¦-då‚æ•°é»˜è®¤çº§åˆ«ä¸ºæ‰€æœ‰çº§
     if(level<0) level=1;
     if(level>15) level=15;
-    //´¦Àípath·Ö½â³öwild
+    //å¤„ç†pathåˆ†è§£å‡ºwild
     path=resolve_path(me->query("cwd"),path);
-    write("Î´½âÎöÂ·¾¶£º\t"+path+"\n");
-    //write("ÓûËÑË÷×Ö·û´®£º\t"+pattern+"\n");
-    write("ËÑË÷Ä¿Â¼¼¶±ğ£º\t"+level+"\n");
+    write("æœªè§£æè·¯å¾„ï¼š\t"+path+"\n");
+    //write("æ¬²æœç´¢å­—ç¬¦ä¸²ï¼š\t"+pattern+"\n");
+    write("æœç´¢ç›®å½•çº§åˆ«ï¼š\t"+level+"\n");
     wild=resolvePath(path,0);
     path=resolvePath(path,1);
-    write("½âÎöºóÂ·¾¶£º\t"+path+"\n");
-    write("½âÎöºóÍ¨Åä·û£º\t"+wild+"\n\n");
+    write("è§£æåè·¯å¾„ï¼š\t"+path+"\n");
+    write("è§£æåé€šé…ç¬¦ï¼š\t"+wild+"\n\n");
     do_grep(path,wild,level);
-    write("\nËÑË÷½áÊø¡£\n");
+    write("\næœç´¢ç»“æŸã€‚\n");
     write(result+"\n");
 	return 1;
 }
@@ -51,18 +51,18 @@ string resolvePath(string path,int op)
 {
 	string *dn,tmp;
 	int i;
-	if(path=="/")//¶ÔÕâ¸öÇé¿öÌØÊâ´¦Àí
+	if(path=="/")//å¯¹è¿™ä¸ªæƒ…å†µç‰¹æ®Šå¤„ç†
 		return (op)?"/":"*";
 	dn=explode(path,"/");
-	if(op)//opÎª·Ç0±íÊ¾ĞèÒª·µ»ØÂ·¾¶
+	if(op)//opä¸ºé0è¡¨ç¤ºéœ€è¦è¿”å›è·¯å¾„
 	{
 		//dn=dn-({dn[sizeof(dn)-1]});
 		//tmp=implode(dn,"/")+"/";
-		//ÉÏÃæµÄ³ÌĞò²»ºÃ£¬²»ÄÜ¶ÔÍ¬ÃûÂ·¾¶ÕıÈ·´¦Àí£¬±ÈÈç²»ÄÜÔÚ/log/logÎÄ¼şÀïËÑË÷
+		//ä¸Šé¢çš„ç¨‹åºä¸å¥½ï¼Œä¸èƒ½å¯¹åŒåè·¯å¾„æ­£ç¡®å¤„ç†ï¼Œæ¯”å¦‚ä¸èƒ½åœ¨/log/logæ–‡ä»¶é‡Œæœç´¢
 		tmp="/";
 		for(i=0;i<sizeof(dn)-1;i++)
 		{
-			//write("ºÏ²¢"+dn[i]+"\n");
+			//write("åˆå¹¶"+dn[i]+"\n");
 			tmp+=dn[i]+"/";
 		}
 		return tmp;
@@ -74,12 +74,12 @@ int do_grep(string path,string wild,int level)
 {
 	//int i;string *fs;
 	string sbuffer,file;
-	reset_eval_cost();//ÖØĞÂÉèÖÃÊ£ÓàÖ´ĞĞÊ±¼ä£¬±ØĞëÉèÖÃ£¡
+	reset_eval_cost();//é‡æ–°è®¾ç½®å‰©ä½™æ‰§è¡Œæ—¶é—´ï¼Œå¿…é¡»è®¾ç½®ï¼
 	if(this_player()->query("env/debug"))
-		write("¿ªÊ¼ËÑË÷"+path+wild+"\n");
+		write("å¼€å§‹æœç´¢"+path+wild+"\n");
 	if(level<0)
 	{
-		//write("¼¶±ğÏŞÖÆ£¬²»ÄÜÔÙ½øÈëËÑË÷¡£\n");
+		//write("çº§åˆ«é™åˆ¶ï¼Œä¸èƒ½å†è¿›å…¥æœç´¢ã€‚\n");
 		return 0;
 	}
 	//for(i=0;i<(sizeof(fs=get_dir(path+wild))-1);i++)
@@ -87,30 +87,30 @@ int do_grep(string path,string wild,int level)
 	
 	foreach(file in get_dir(path+wild))
 	{
-		//write("¼ì²é£º"+path+file+"\n");
-		//write("file_size·µ»Ø£º"+file_size(path+file)+"\n");
+		//write("æ£€æŸ¥ï¼š"+path+file+"\n");
+		//write("file_sizeè¿”å›ï¼š"+file_size(path+file)+"\n");
 		if(file=="."||file=="..")
 			continue;
 		
 		switch(file_size(path+file))
 		{
 			case -1:
-				//ÎŞ·¨¶ÁÈ¡¸ÃÄ¿Â¼£¬Ìø¹ı
+				//æ— æ³•è¯»å–è¯¥ç›®å½•ï¼Œè·³è¿‡
 				break;
 			case -2:
 				if(file!="."&&file!="..")
 					do_grep(path+file+"/","*",level-1);
 				break;
 			default:
-				//write("¼ì²éÎÄ¼ş£º"+path+file+"\n");
+				//write("æ£€æŸ¥æ–‡ä»¶ï¼š"+path+file+"\n");
 				if(!sbuffer=read_file(path+file))
-				//¶ÔÌ«´óµÄÎÄ¼ş¶ÁÈ¡¿ÉÄÜÒªÊ§°Ü£¡¶øÇÒ²»ÄÜÊÔÍ¼¶ÁÈ¡¶ş½øÖÆÎÄ¼ş£¬ÒòÎªº¬ÓĞ\0!
+				//å¯¹å¤ªå¤§çš„æ–‡ä»¶è¯»å–å¯èƒ½è¦å¤±è´¥ï¼è€Œä¸”ä¸èƒ½è¯•å›¾è¯»å–äºŒè¿›åˆ¶æ–‡ä»¶ï¼Œå› ä¸ºå«æœ‰\0!
 				{
-					write("¶ÁÎÄ¼ş"+path+file+"³ö´í£¡\n");
+					write("è¯»æ–‡ä»¶"+path+file+"å‡ºé”™ï¼\n");
 					return 0;
 				}
 				if(strsrch(sbuffer,pattern)!=-1)
-					result=result+"ÔÚ"+path+file+"ÀïÕÒµ½"+pattern+"\n";//Ó¦¸ÃÊÇ¼ÇÂ¼ÏÂÀ´£¬×îºóÔÙÊä³ö
+					result=result+"åœ¨"+path+file+"é‡Œæ‰¾åˆ°"+pattern+"\n";//åº”è¯¥æ˜¯è®°å½•ä¸‹æ¥ï¼Œæœ€åå†è¾“å‡º
 			/*
 				if(strsrch(read_file(path+file),pattern)!=-1)
 					write(path+file+"\n");
@@ -126,17 +126,17 @@ int help()
 {
   write(@HELP
 
-X grep ÃüÁî v0.1  Write By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1
-Ö÷Ò³£ºhttp://mud.yn.cninfo.net/jackyboy
-ÓÊ¼ş£ºjackyboy@126.com
+X grep å‘½ä»¤ v0.1  Write By JackyBoy@CuteRabbit for CCTX & SDXL 1999/6/1
+ä¸»é¡µï¼šhttp://mud.yn.cninfo.net/jackyboy
+é‚®ä»¶ï¼šjackyboy@126.com
 
 
-Ö¸Áî¸ñÊ½ : xgrep [-d[0-15]] Â·¾¶ ÏëÒªËÑË÷µÄ×Ö·û´®
-´ËÖ¸Áî¿ÉÈÃÄãÔÚÖ¸¶¨(³ıÁËÄ¿Â¼£¬¿ÉÒÔÓÃÍ¨Åä·ûÀ´Ö¸¶¨)µµ°¸»òÄ¿Â¼ÀïÑ°ÕÒº¬ÓĞÒª
-ËÑË÷µÄ×Ö·û´®µÄÎÄ¼ş£¬²¢½«ÆäÎ»ÖÃÏÔÊ¾³öÀ´¡£
-×¢Òâ£¬Ä¬ÈÏ½öËÑË÷µ±Ç°Ä¿Â¼£¡
-ÒÑÖªBUG£º
-¶Ô¶ş½øÖÆÎÄ¼ş½øĞĞËÑË÷½«»á³ö´í£¬ÒòÎª½ûÖ¹½«'\0'ÉèÖÃµ½Ò»¸östringÀï£¡
+æŒ‡ä»¤æ ¼å¼ : xgrep [-d[0-15]] è·¯å¾„ æƒ³è¦æœç´¢çš„å­—ç¬¦ä¸²
+æ­¤æŒ‡ä»¤å¯è®©ä½ åœ¨æŒ‡å®š(é™¤äº†ç›®å½•ï¼Œå¯ä»¥ç”¨é€šé…ç¬¦æ¥æŒ‡å®š)æ¡£æ¡ˆæˆ–ç›®å½•é‡Œå¯»æ‰¾å«æœ‰è¦
+æœç´¢çš„å­—ç¬¦ä¸²çš„æ–‡ä»¶ï¼Œå¹¶å°†å…¶ä½ç½®æ˜¾ç¤ºå‡ºæ¥ã€‚
+æ³¨æ„ï¼Œé»˜è®¤ä»…æœç´¢å½“å‰ç›®å½•ï¼
+å·²çŸ¥BUGï¼š
+å¯¹äºŒè¿›åˆ¶æ–‡ä»¶è¿›è¡Œæœç´¢å°†ä¼šå‡ºé”™ï¼Œå› ä¸ºç¦æ­¢å°†'\0'è®¾ç½®åˆ°ä¸€ä¸ªstringé‡Œï¼
 HELP
     );
     return 1;

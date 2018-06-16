@@ -20,20 +20,20 @@ int vote(object me, object victim)
 
   if ((reason = (int)victim->query("vote/reason"))>0 && (reason!=V_UNCHBLK))
   {
-  	return notify_fail("Òª°Ñµ±Ç°µÄ±í¾öÍê³ÉÒÔºó²Å¿ÉÒÔÌáĞÂµÄ¶¯Òé¡£\n");
+  	return notify_fail("è¦æŠŠå½“å‰çš„è¡¨å†³å®Œæˆä»¥åæ‰å¯ä»¥ææ–°çš„åŠ¨è®®ã€‚\n");
   }
 
   if(victim->query("chblk_on") || victim->query("chblk_chat"))
   {
-  	channel = "½»Ì¸";
+  	channel = "äº¤è°ˆ";
   } else if (victim->query("chblk_rumor")) 
   {
-  	channel = "Ò¥ÑÔ";
+  	channel = "è°£è¨€";
   } else if (victim->query("chblk_menpai")) 
   {
-  	channel = "ÃÅÅÉ";
+  	channel = "é—¨æ´¾";
   }else 
-  	return notify_fail(victim->name()+"µÄÆµµÀÒÑ¾­ÊÇ´ò¿ªµÄÁË¡£\n");
+  	return notify_fail(victim->name()+"çš„é¢‘é“å·²ç»æ˜¯æ‰“å¼€çš„äº†ã€‚\n");
   
 
   if (reason <= 0)
@@ -55,7 +55,7 @@ int vote(object me, object victim)
   } else
   {
 	me->add("vote/abuse", 10);
-  	return notify_fail("Ò»ÈËÒ»Æ±£¡ÀÄÓÃ±í¾öÈ¨ÊÇÒªÊÜ³Í·£µÄ£¡\n");
+  	return notify_fail("ä¸€äººä¸€ç¥¨ï¼æ»¥ç”¨è¡¨å†³æƒæ˜¯è¦å—æƒ©ç½šçš„ï¼\n");
   }
 
   vv = (int) ("/cmds/std/vote")->valid_voters(me)/6;  
@@ -65,15 +65,15 @@ int vote(object me, object victim)
   if (vv < 4) df = 4 - vc;
   
   my_name = me->name();
-  if (me == victim) v_name = "×Ô¼º";
+  if (me == victim) v_name = "è‡ªå·±";
   	else  v_name = victim->name();
 
   if (df>=1)
   {
-	shout( HIG "¡¾±í¾ö¡¿"+my_name+"Í¶Æ±´ò¿ª" +v_name +"µÄ"+channel+"ÆµµÀ£¬»¹²î"
-			+chinese_number(df)+"Æ±¡£\n" NOR);
-	write( HIG "¡¾±í¾ö¡¿"+my_name+"Í¶Æ±´ò¿ª" +v_name +"µÄ"+channel+"ÆµµÀ£¬»¹²î"
-			+chinese_number(df)+"Æ±¡£\n" NOR);
+	shout( HIG "ã€è¡¨å†³ã€‘"+my_name+"æŠ•ç¥¨æ‰“å¼€" +v_name +"çš„"+channel+"é¢‘é“ï¼Œè¿˜å·®"
+			+chinese_number(df)+"ç¥¨ã€‚\n" NOR);
+	write( HIG "ã€è¡¨å†³ã€‘"+my_name+"æŠ•ç¥¨æ‰“å¼€" +v_name +"çš„"+channel+"é¢‘é“ï¼Œè¿˜å·®"
+			+chinese_number(df)+"ç¥¨ã€‚\n" NOR);
     
 	victim->apply_condition("vote_clear", 10);
 			        
@@ -81,16 +81,16 @@ int vote(object me, object victim)
   {
   	if (me != victim)
   	{
-	shout( HIG "¡¾±í¾ö¡¿"+my_name+"Í¶Æ±´ò¿ª" +v_name+"µÄ"+channel+"ÆµµÀ¡£"
-		+v_name+"µÄ"+channel+"ÆµµÀ±»´ò¿ªÁË£¡\n" NOR);
-	write( HIG "¡¾±í¾ö¡¿"+my_name+"Í¶Æ±´ò¿ª" +v_name+"µÄ"+channel+"ÆµµÀ¡£"
-		+v_name+"µÄ"+channel+"ÆµµÀ±»´ò¿ªÁË£¡\n" NOR);
+	shout( HIG "ã€è¡¨å†³ã€‘"+my_name+"æŠ•ç¥¨æ‰“å¼€" +v_name+"çš„"+channel+"é¢‘é“ã€‚"
+		+v_name+"çš„"+channel+"é¢‘é“è¢«æ‰“å¼€äº†ï¼\n" NOR);
+	write( HIG "ã€è¡¨å†³ã€‘"+my_name+"æŠ•ç¥¨æ‰“å¼€" +v_name+"çš„"+channel+"é¢‘é“ã€‚"
+		+v_name+"çš„"+channel+"é¢‘é“è¢«æ‰“å¼€äº†ï¼\n" NOR);
 	} else 
 	{
-	shout( HIG "¡¾±í¾ö¡¿"+my_name+"Í¶Æ±´ò¿ª×Ô¼ºµÄ"+channel+"ÆµµÀ¡£"
-		+my_name+"µÄ"+channel+"ÆµµÀ±»´ò¿ªÁË£¡\n" NOR);
-	write( HIG "¡¾±í¾ö¡¿"+my_name+"Í¶Æ±´ò¿ª×Ô¼ºµÄ"+channel+"ÆµµÀ¡£"
-		+my_name+"µÄ"+channel+"ÆµµÀ±»´ò¿ªÁË£¡\n" NOR);
+	shout( HIG "ã€è¡¨å†³ã€‘"+my_name+"æŠ•ç¥¨æ‰“å¼€è‡ªå·±çš„"+channel+"é¢‘é“ã€‚"
+		+my_name+"çš„"+channel+"é¢‘é“è¢«æ‰“å¼€äº†ï¼\n" NOR);
+	write( HIG "ã€è¡¨å†³ã€‘"+my_name+"æŠ•ç¥¨æ‰“å¼€è‡ªå·±çš„"+channel+"é¢‘é“ã€‚"
+		+my_name+"çš„"+channel+"é¢‘é“è¢«æ‰“å¼€äº†ï¼\n" NOR);
 	}		
 	
 	victim->apply_condition("vote_clear", -10);

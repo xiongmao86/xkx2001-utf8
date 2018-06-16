@@ -11,12 +11,12 @@ int main(object me, string arg)
 	string id, name;
 
 	if (!arg || sscanf(arg, "%s %s", id, name) != 2) 
-		return notify_fail("Ö¸Áî¸ñÊ½: rename <id> <new chinese name>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼: rename <id> <new chinese name>\n");
 	
 	ob = present(id, environment(me));
-	if (!ob) return notify_fail("ÕÒ²»µ½Õâ¸öÉúÎï.\n");
+	if (!ob) return notify_fail("æ‰¾ä¸åˆ°è¿™ä¸ªç”Ÿç‰©.\n");
 	
-	message_vision("$N°Ñ$nµÄÃû×Ö¸ÄÎª"+name+"¡£\n",me,ob);
+	message_vision("$NæŠŠ$nçš„åå­—æ”¹ä¸º"+name+"ã€‚\n",me,ob);
 	ob -> set("name",name);
 	return 1;
 }
@@ -24,9 +24,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-Ö¸Áî¸ñÊ½: rename <id> <ÖĞÎÄÃû×Ö>
+æŒ‡ä»¤æ ¼å¼: rename <id> <ä¸­æ–‡åå­—>
  
-¸ü¸ÄÍæ¼ÒÖĞÎÄĞÕÃû¡£
+æ›´æ”¹ç©å®¶ä¸­æ–‡å§“åã€‚
 
 HELP
    );

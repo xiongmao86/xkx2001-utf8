@@ -25,26 +25,26 @@ int main(object me, string arg)
     if (who == "rumor")
     {
 		CHANNEL_D->set_block(who, 0);
-		CHANNEL_D->do_channel(me, "sys", "Ò¥ÑÔÆµµÀ£ï£ë£á£ù£¡\n");
+		CHANNEL_D->do_channel(me, "sys", "è°£è¨€é¢‘é“ï½ï½‹ï½ï½™ï¼\n");
         return 1;
     }
 
 	 if (who == "chat")
 	 {
 		CHANNEL_D->set_block(who, 0);
-		CHANNEL_D->do_channel(me, "sys", "ÁÄÌìÆµµÀ£ï£ë£á£ù£¡\n");
+		CHANNEL_D->do_channel(me, "sys", "èŠå¤©é¢‘é“ï½ï½‹ï½ï½™ï¼\n");
 		  return 1;
 	 }
 
 	 if (who == "xkx")
 	 {
 		CHANNEL_D->set_block(who, 0);
-		CHANNEL_D->do_channel(me, "sys", "ÏÀ¿ÍÐÐÆµµÀ£ï£ë£á£ù£¡\n");
+		CHANNEL_D->do_channel(me, "sys", "ä¾ å®¢è¡Œé¢‘é“ï½ï½‹ï½ï½™ï¼\n");
 		  return 1;
 	 }
 
 	ob = LOGIN_D->find_body(who);
-	if (!ob) return notify_fail("Õâ¸öÈË²»ÔÚ£¡\n");
+	if (!ob) return notify_fail("è¿™ä¸ªäººä¸åœ¨ï¼\n");
 
 	if (ch_name == ""||ch_name == " "||ch_name == "all")
 	{
@@ -56,7 +56,7 @@ int main(object me, string arg)
 			ob->delete("chblk_chat");
 		if ((int)ob->query("chblk_xkx"))
 			ob->delete("chblk_xkx");
-		tell_object(me, (string)ob->query("name")+"µÄÆµµÀ±»´ò¿ªÁË¡£\n");
+		tell_object(me, (string)ob->query("name")+"çš„é¢‘é“è¢«æ‰“å¼€äº†ã€‚\n");
 	} else if (ch_name == "rumor")
 	{
 		if ((int)ob->query("chblk_on"))
@@ -68,7 +68,7 @@ int main(object me, string arg)
 		if ((int)ob->query("chblk_rumor"))
 			ob->delete("chblk_rumor");
 
-		tell_object(me, (string)ob->query("name")+"µÄÒ¥ÑÔÆµµÀ±»´ò¿ªÁË¡£\n");
+		tell_object(me, (string)ob->query("name")+"çš„è°£è¨€é¢‘é“è¢«æ‰“å¼€äº†ã€‚\n");
 	} else if (ch_name == "chat")
 	{
 		if ((int)ob->query("chblk_on"))
@@ -80,7 +80,7 @@ int main(object me, string arg)
 		if ((int)ob->query("chblk_chat"))
 			ob->delete("chblk_chat");
 
-		tell_object(me, (string)ob->query("name")+"µÄÁÄÌìÆµµÀ±»´ò¿ªÁË¡£\n");
+		tell_object(me, (string)ob->query("name")+"çš„èŠå¤©é¢‘é“è¢«æ‰“å¼€äº†ã€‚\n");
 	} else if (ch_name == "xkx")
 	{
 		if ((int)ob->query("chblk_on"))
@@ -92,7 +92,7 @@ int main(object me, string arg)
 		if ((int)ob->query("chblk_xkx"))
 			ob->delete("chblk_xkx");
 
-		tell_object(me, (string)ob->query("name")+"µÄÁÄÌìÆµµÀ±»´ò¿ªÁË¡£\n");
+		tell_object(me, (string)ob->query("name")+"çš„èŠå¤©é¢‘é“è¢«æ‰“å¼€äº†ã€‚\n");
 	} else
 	{
 		return notify_fail("<Syntax>: unchblk <player id> <channel name>\n");
@@ -104,11 +104,11 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : unchblk <Ä³ÈË> <ÆµµÀÃû>
+æŒ‡ä»¤æ ¼å¼ : unchblk <æŸäºº> <é¢‘é“å>
 
-´ËÃüÁî½«´ò¿ªÄ³ÈËµÄÆµµÀ¡£Èç¹ûÃ»ÓÐÆµµÀÃû¾Í´ò¿ªËùÓÐºÏ·¨ÆµµÀ¡£
-<Ä³ÈË>¡¡Ò²¿ÉÒÔÊÇÆµµÀÃû¡£
-<ÆµµÀÃû> ¿ÉÒÔÊÇrumor »ò chat 
+æ­¤å‘½ä»¤å°†æ‰“å¼€æŸäººçš„é¢‘é“ã€‚å¦‚æžœæ²¡æœ‰é¢‘é“åå°±æ‰“å¼€æ‰€æœ‰åˆæ³•é¢‘é“ã€‚
+<æŸäºº>ã€€ä¹Ÿå¯ä»¥æ˜¯é¢‘é“åã€‚
+<é¢‘é“å> å¯ä»¥æ˜¯rumor æˆ– chat 
 
 HELP
     );

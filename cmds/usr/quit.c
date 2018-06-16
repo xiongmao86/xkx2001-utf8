@@ -12,7 +12,7 @@ private int slow_quit(object);
 void create() 
 {
 	seteuid(getuid());
-	set("channel_id", "ÀëÏßÖ¸Áî");
+	set("channel_id", "ç¦»çº¿æŒ‡ä»¤");
 	set("id", "quit");
 }
 
@@ -20,12 +20,12 @@ int main(object me, string arg)
 {
 	if( (me->is_busy() || me->is_fighting() || me->query_temp("cursed", 1)) 
 	&&  !me->query_temp("quit/forced") )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å×öÆäËûÊÂ£¬²»ÄÜÍË³öÓÎÏ·£¡\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€åšå…¶ä»–äº‹ï¼Œä¸èƒ½é€€å‡ºæ¸¸æˆï¼\n");
 
 	if ( me->query_temp("quit/forced") ) call_out("slow_quit", 0, me);
 	
 	if( me->query_temp("quitting") )
-		return notify_fail("ÓÎÏ·ÍË³ö½ø³ÌÒÑ¾­Æô¶¯£¬ÕıÔÚ½øĞĞÖĞ£¡\n");
+		return notify_fail("æ¸¸æˆé€€å‡ºè¿›ç¨‹å·²ç»å¯åŠ¨ï¼Œæ­£åœ¨è¿›è¡Œä¸­ï¼\n");
 
 	if( environment(me)->query("invalid_startroom") ) 
 	{
@@ -33,16 +33,16 @@ int main(object me, string arg)
 	// from hell, etc.
 //		me->delete("startroom");
 		me->set("startroom", "/d/city/kedian");
-		tell_object( me, "\nÄãÔÚÒ»¸ö²»ÄÜ½øÈëÓÎÏ·µÄµØ·½ÍË³ö£¬ÏÂ´Î½øÈëÓÎÏ·½«´Ó±ğµÄµØ·½¿ªÊ¼¡£\n");
+		tell_object( me, "\nä½ åœ¨ä¸€ä¸ªä¸èƒ½è¿›å…¥æ¸¸æˆçš„åœ°æ–¹é€€å‡ºï¼Œä¸‹æ¬¡è¿›å…¥æ¸¸æˆå°†ä»åˆ«çš„åœ°æ–¹å¼€å§‹ã€‚\n");
 		me->set_temp("quitting", 1);
-		tell_object( me, "\n¿ªÊ¼ÍË³öÓÎÏ·£¬½øĞĞÖĞ ...\n\n" );
+		tell_object( me, "\nå¼€å§‹é€€å‡ºæ¸¸æˆï¼Œè¿›è¡Œä¸­ ...\n\n" );
 		call_out("slow_quit", 10 + random(10), me);
 	} else if( environment(me)->query("valid_startroom") ) {
 		me->set("startroom", base_name(environment(me)));
 		me->set_temp("quitting", 1);
 		slow_quit(me);
 	} else {
-		tell_object( me, "\n¿ªÊ¼ÍË³öÓÎÏ·£¬½øĞĞÖĞ ...\n\n" );
+		tell_object( me, "\nå¼€å§‹é€€å‡ºæ¸¸æˆï¼Œè¿›è¡Œä¸­ ...\n\n" );
 		me->set("startroom", base_name(environment(me)));
 		me->set_temp("quitting", 1);
 		call_out("slow_quit", 10 + random(10), me);
@@ -65,7 +65,7 @@ private int slow_quit(object me)
 
 			if( me->query_encumbrance() > me->query_max_encumbrance() ) {
 			    if( base_name(inv[i]) == GOLD_OB || base_name(inv[i]) == SILVER_OB ) {
-				tell_object(me, "Äã´øÁËÌ«¶à½ğÇ®³¬ÖØÁË£¡Ö»ºÃ½«"+inv[i]->name()+"¶ªÆúÁË£¡\n");
+				tell_object(me, "ä½ å¸¦äº†å¤ªå¤šé‡‘é’±è¶…é‡äº†ï¼åªå¥½å°†"+inv[i]->name()+"ä¸¢å¼ƒäº†ï¼\n");
 				destruct(inv[i]);
 			    }
 			}
@@ -81,7 +81,7 @@ private int slow_quit(object me)
 
 		// Are we possessing in others body ?
 		if( link_ob->is_character() ) {
-			write("ÄãµÄ»êÆÇ»Øµ½" + link_ob->name(1) + "µÄÉíÉÏ¡£\n");
+			write("ä½ çš„é­‚é­„å›åˆ°" + link_ob->name(1) + "çš„èº«ä¸Šã€‚\n");
 			exec(link_ob, me);
 			me->delete_temp("quitting");
 			link_ob->setup();
@@ -95,13 +95,13 @@ private int slow_quit(object me)
 		destruct(link_ob);
 	}
 
-	write("»¶Ó­ÏÂ´ÎÔÙÀ´£¡\n");
-	message("system", me->name() + "Àë¿ªÓÎÏ·¡£\n", environment(me), me);
+	write("æ¬¢è¿ä¸‹æ¬¡å†æ¥ï¼\n");
+	message("system", me->name() + "ç¦»å¼€æ¸¸æˆã€‚\n", environment(me), me);
 
 	if (stringp(msg = me->query_temp("quit/report_msg")))
 		CHANNEL_D->do_channel(this_object(), "sys", me->name() + msg);
 	else	
-		CHANNEL_D->do_channel(this_object(), "sys", me->name() + "Àë¿ªÓÎÏ·ÁË¡£");
+		CHANNEL_D->do_channel(this_object(), "sys", me->name() + "ç¦»å¼€æ¸¸æˆäº†ã€‚");
 
 	me->save();
 	destruct(me);
@@ -112,9 +112,9 @@ private int slow_quit(object me)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : quit
+æŒ‡ä»¤æ ¼å¼ : quit
 
-µ±Äã(Äã)ÏëÔİÊ±Àë¿ªÊ±, ¿ÉÀûÓÃ´ËÒ»Ö¸Áî¡£
+å½“ä½ (ä½ )æƒ³æš‚æ—¶ç¦»å¼€æ—¶, å¯åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤ã€‚
 HELP
     );
     return 1;

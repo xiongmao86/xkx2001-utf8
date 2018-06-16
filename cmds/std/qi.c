@@ -10,19 +10,19 @@ int main(object me, string arg)
 	object ob;
 
 	if( !arg || !ob = present(arg, environment(me)) )
-		return notify_fail("ÄãÒªÆïÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦éª‘ä»€ä¹ˆï¼Ÿ\n");
 
 	if (me->query_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
-	if( !ob->is_character() || ob->query("race") == "ÈËÀà")
-		return notify_fail("Äã²»ÄÜÕâÃ´¸É£¡\n");
+	if( !ob->is_character() || ob->query("race") == "äººç±»")
+		return notify_fail("ä½ ä¸èƒ½è¿™ä¹ˆå¹²ï¼\n");
 
 	if( !ob->query("ridable") )
-		return notify_fail("Õâ¶«Î÷²»ÄÜÆï£¡\n");
+		return notify_fail("è¿™ä¸œè¥¿ä¸èƒ½éª‘ï¼\n");
 
 	if (!living(ob))
-		return notify_fail("ÏÈµÈËüĞÑ¹ıÀ´ÔÚËµ°É¡£\n");
+		return notify_fail("å…ˆç­‰å®ƒé†’è¿‡æ¥åœ¨è¯´å§ã€‚\n");
 
 	if( ob->query_lord() == me ) 
 	{
@@ -34,14 +34,14 @@ int main(object me, string arg)
 				ob->set("rider", me);
 				ob->set_leader(me);
 
-				message_vision("\n$NÒ»×İÉí£¬Íş·çÁİÁİµØÆïÔÚÁË" + ob->name() +"ÉíÉÏ¡£\n", me);
+				message_vision("\n$Nä¸€çºµèº«ï¼Œå¨é£å‡›å‡›åœ°éª‘åœ¨äº†" + ob->name() +"èº«ä¸Šã€‚\n", me);
 				return 1;
 			}
-			else    return notify_fail( (ob->query("rider"))->name() + "ÒÑ¾­ÆïÔÚËüÉíÉÏÁË£¡\n");
+			else    return notify_fail( (ob->query("rider"))->name() + "å·²ç»éª‘åœ¨å®ƒèº«ä¸Šäº†ï¼\n");
 		}
-		else	return notify_fail("ÄãÒÑ¾­ÆïÔÚ" + (me->query("rided"))->name() + "ÉÏÁË£¡\n");
+		else	return notify_fail("ä½ å·²ç»éª‘åœ¨" + (me->query("rided"))->name() + "ä¸Šäº†ï¼\n");
 	}
-	else return notify_fail("Äã²»ÊÇËüµÄÖ÷ÈË£¡\n");
+	else return notify_fail("ä½ ä¸æ˜¯å®ƒçš„ä¸»äººï¼\n");
 
 	return 0;
 }
@@ -49,9 +49,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : ride|qi <Ä³¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : ride|qi <æŸåŠ¨ç‰©>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÆïÉÏÄ³Ò»¶¯Îï£¬ÈçÅ££¬Âí£¬»¢µÈ£¬¼Ó¿ìĞĞ×ßËÙ¶È¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ éª‘ä¸ŠæŸä¸€åŠ¨ç‰©ï¼Œå¦‚ç‰›ï¼Œé©¬ï¼Œè™ç­‰ï¼ŒåŠ å¿«è¡Œèµ°é€Ÿåº¦ã€‚
  
 HELP
 	);

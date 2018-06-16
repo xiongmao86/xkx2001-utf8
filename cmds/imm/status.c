@@ -16,9 +16,9 @@ int main(object me,string arg)
 int help(object me)
 {
   write(@HELP
-指令格式 : status [detail]
+鎸囦护鏍煎紡 : status [detail]
  
-这个指令可以显示出目前游戏的一些相关资料及状况.
+杩欎釜鎸囦护鍙互鏄剧ず鍑虹洰鍓嶆父鎴忕殑涓�浜涚浉鍏宠祫鏂欏強鐘跺喌.
  
 HELP
     );

@@ -17,28 +17,28 @@ int main(object me, string arg)
                         op = load_object("/d/city/npc/aqingsao");
 
         if(!arg || !objectp(obj = present(arg, environment(me))))
-                return notify_fail("ÄãÏòË­Í¶½µ£¿\n");
+                return notify_fail("ä½ å‘è°æŠ•é™ï¼Ÿ\n");
 
         if( !obj->is_character() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇÉúÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯ç”Ÿç‰©ã€‚\n");
 
         if( !userp(obj) )
-                return notify_fail("ÄãÖ»ÄÜÏòÍæ¼ÒÍ¶½µ¡£\n");
+                return notify_fail("ä½ åªèƒ½å‘ç©å®¶æŠ•é™ã€‚\n");
 
 	if( me->is_busy())
-		return notify_fail("Äã»¹ÔÚÃ¦£¡£¡\n");
+		return notify_fail("ä½ è¿˜åœ¨å¿™ï¼ï¼\n");
 		
 	if( me->query_temp("surrender_not")==1)
-		return notify_fail("ËûÏÖÔÚ²»½ÓÊÜÄãÍ¶½µ£¬µÈÒ»»ØÔÙÊÔÊÔ£¡£¡\n");	
+		return notify_fail("ä»–ç°åœ¨ä¸æ¥å—ä½ æŠ•é™ï¼Œç­‰ä¸€å›å†è¯•è¯•ï¼ï¼\n");	
 	
 	if( !me->is_fighting() )
-		return notify_fail("Í¶½µ£¿ÏÖÔÚÃ»ÓĞÈËÔÚ´òÄã°¡....£¿\n");
+		return notify_fail("æŠ•é™ï¼Ÿç°åœ¨æ²¡æœ‰äººåœ¨æ‰“ä½ å•Š....ï¼Ÿ\n");
 	
 	ob = me->query_temp("last_opponent");
 	if( random(3)==0)
 	     {
-		message_vision( HIC "\n $NÏò$nÇóÈÄ£¬µ«ÊÇ$n´óÉùËµµÀ£º"
-			+ RANK_D->query_rude(me) + "·Ï»°ÉÙËµ£¬ÄÉÃüÀ´£¡\n" NOR, me, ob);
+		message_vision( HIC "\n $Nå‘$næ±‚é¥¶ï¼Œä½†æ˜¯$nå¤§å£°è¯´é“ï¼š"
+			+ RANK_D->query_rude(me) + "åºŸè¯å°‘è¯´ï¼Œçº³å‘½æ¥ï¼\n" NOR, me, ob);
 		me->set_temp("surrender_not",1);
 		 call_out("waittime1", 60 , me );	
 			
@@ -58,9 +58,9 @@ int main(object me, string arg)
 	        me->remove_all_enemy();
 	        ob->remove_killer(me);
 	        me->remove_killer(ob);
-	        message_vision( HIW "\n$NÏò$nÁ¬ÉùÇóÈÄµÀ£º¡¸²»´òÁË£¬²»´òÁË£¬ÎÒÍ¶½µ....¡¹\n" NOR, me,ob );
-	        message_vision( HIC "$n²»Ğ¼µØÆ²ÁËÆ²×ì£¬Ïò$NËµµÀ£º¡¸¿´ÄãÕâĞÜÑù£¬ÎÒ½ñÌì¾Í·ÅÄãÒ»Âí£¬ÒÔºó¿ÉµÃĞ¡ĞÄ£¡£¡¡¹\n\n" NOR, me,ob );
-	        CHANNEL_D->do_channel(op,"rumor",""+me->query("name") +"Ì°ÉúÅÂËÀ£¬Ïò"+ob->query("name") +"Í¶½µÁË£¡\n");
+	        message_vision( HIW "\n$Nå‘$nè¿å£°æ±‚é¥¶é“ï¼šã€Œä¸æ‰“äº†ï¼Œä¸æ‰“äº†ï¼Œæˆ‘æŠ•é™....ã€\n" NOR, me,ob );
+	        message_vision( HIC "$nä¸å±‘åœ°æ’‡äº†æ’‡å˜´ï¼Œå‘$Nè¯´é“ï¼šã€Œçœ‹ä½ è¿™ç†Šæ ·ï¼Œæˆ‘ä»Šå¤©å°±æ”¾ä½ ä¸€é©¬ï¼Œä»¥åå¯å¾—å°å¿ƒï¼ï¼ã€\n\n" NOR, me,ob );
+	        CHANNEL_D->do_channel(op,"rumor",""+me->query("name") +"è´ªç”Ÿæ€•æ­»ï¼Œå‘"+ob->query("name") +"æŠ•é™äº†ï¼\n");
 	        call_out("waittime2", 1000 , me );	
 	  
 	        
@@ -78,7 +78,7 @@ void waittime1( object me )
 void waittime2( object me)
 { 
   me->delete_temp("surrender/ownder");
-  message_vision("Äã»Ö¸´ÁËÒ»Ğ©ÒòÍ¶½µ¶ø½µµÍµÄĞÅĞÄ¡£\n", me);
+  message_vision("ä½ æ¢å¤äº†ä¸€äº›å› æŠ•é™è€Œé™ä½çš„ä¿¡å¿ƒã€‚\n", me);
   
 }
 
@@ -86,9 +86,9 @@ void waittime2( object me)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : surrender <id>
+æŒ‡ä»¤æ ¼å¼ : surrender <id>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÓĞ»ú»áÏòµĞÈËÍ¶½µ¶øÖÕÖ¹Õ½¶·£¬µ«Í¶½µºóÄã½«ÓĞÒ»¶¨µÄËğÊ§¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ æœ‰æœºä¼šå‘æ•ŒäººæŠ•é™è€Œç»ˆæ­¢æˆ˜æ–—ï¼Œä½†æŠ•é™åä½ å°†æœ‰ä¸€å®šçš„æŸå¤±ã€‚
  
 HELP
     );

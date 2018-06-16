@@ -11,7 +11,7 @@ int main(object me, string arg)
 	if( me != this_player(1) ) me = this_player(1);
 
 	seteuid(getuid());
-   	if(!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºcost <Ö¸Áî> [<²ÎÊı> ....]\n");
+   	if(!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcost <æŒ‡ä»¤> [<å‚æ•°> ....]\n");
 
 	before = rusage();
 	eval_cost = eval_cost();
@@ -20,7 +20,7 @@ int main(object me, string arg)
 	after = rusage();
 	usertime = after["utime"] - before["utime"];
 	stime = after["stime"] - before["stime"];
-	printf("\nÏµÍ³Ê±¼ä£º%d Î¢Ãë\nÊ¹ÓÃÕßÊ±¼ä£º%d Î¢Ãë\nEval cost£º%d µ¥Î»\n",
+	printf("\nç³»ç»Ÿæ—¶é—´ï¼š%d å¾®ç§’\nä½¿ç”¨è€…æ—¶é—´ï¼š%d å¾®ç§’\nEval costï¼š%d å•ä½\n",
 		stime, usertime, eval_cost );
 		
 	return 1;
@@ -29,9 +29,9 @@ int main(object me, string arg)
 int help()
 {
 	write( @TEXT
-Ö¸Áî¸ñÊ½£ºcost <Ö¸Áî> [<²ÎÊı> .... ]
+æŒ‡ä»¤æ ¼å¼ï¼šcost <æŒ‡ä»¤> [<å‚æ•°> .... ]
 
-Õâ¸öÖ¸ÁîÈÃÄã²âÁ¿ÁíÒ»¸öÖ¸ÁîÖ´ĞĞËùĞèµÄÊ±¼ä¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æµ‹é‡å¦ä¸€ä¸ªæŒ‡ä»¤æ‰§è¡Œæ‰€éœ€çš„æ—¶é—´ã€‚
 TEXT
 	);
 	return 1 ;

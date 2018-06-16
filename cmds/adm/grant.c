@@ -14,13 +14,13 @@ int main(object me, string arg)
 
 	if( wizhood(me) != "(arch)" && wizhood(me) != "(admin)" && geteuid(me) != "sdong" ) return 0;
 
-	if( !arg )	return notify_fail("Ö¸Áî¸ñÊ½£ºgrant <AccessType> <Ä¿Â¼>: <Î×Ê¦>, or grant <AccessType> list.\n");
+	if( !arg )	return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šgrant <AccessType> <ç›®å½•>: <å·«å¸ˆ>, or grant <AccessType> list.\n");
 
 
 	if( sscanf(arg, "%s %s:%s", type, dir,wizlist) != 3 )
 		if( sscanf(arg, "%s %s", type, dir)!=2 )
 		{
-			 notify_fail("Ö¸Áî¸ñÊ½£ºgrant <AccessType> <Ä¿Â¼>:<Î×Ê¦>, or grant <AccessType> list.\n");
+			 notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šgrant <AccessType> <ç›®å½•>:<å·«å¸ˆ>, or grant <AccessType> list.\n");
 		}
 
 	if( dir == "list" )
@@ -41,20 +41,20 @@ int main(object me, string arg)
 	else if(type == "excluderead") result = SECURITY_D->set_exclude_readaccess(dir,wizlist);
 	else if(type == "excludewrite") result = SECURITY_D->set_exclude_writeaccess(dir,wizlist);
 	else if(type == "excludecmd") result = SECURITY_D->set_exclude_cmdlist(dir,wizlist);
-	else return notify_fail("Ö¸Áî¸ñÊ½£ºgrant <AccessType> <Ä¿Â¼>:<Î×Ê¦>, or grant <AccessType> list.\n");
+	else return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šgrant <AccessType> <ç›®å½•>:<å·«å¸ˆ>, or grant <AccessType> list.\n");
 
 	if( !result ) return result;
 
-	message_vision("$N½«"+dir+"µÄ"+type+"È¨ÏŞ¸ÄÎª"+wizlist+"ÓµÓĞ¡£\n", me);
+	message_vision("$Nå°†"+dir+"çš„"+type+"æƒé™æ”¹ä¸º"+wizlist+"æ‹¥æœ‰ã€‚\n", me);
 	return 1;
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºgrant <AccessType> <Ä¿Â¼>: <Î×Ê¦>, or grant <AccessType> list.
+æŒ‡ä»¤æ ¼å¼ï¼šgrant <AccessType> <ç›®å½•>: <å·«å¸ˆ>, or grant <AccessType> list.
 
-ÓÃÀ´ÌáÉıÄ¿Â¼¶ÁĞ´È¨ÏŞ,
+ç”¨æ¥æå‡ç›®å½•è¯»å†™æƒé™,
 (arch) (admin)
 Example:
 grant read list

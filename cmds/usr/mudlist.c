@@ -9,7 +9,7 @@
 
 inherit F_CLEAN_UP;
 
-#define	SYNTAX	"Ö¸Áî¸ñÊ½£ºmudlist [<Mud Ãû³Æ>]\n"
+#define	SYNTAX	"æŒ‡ä»¤æ ¼å¼ï¼šmudlist [<Mud åç§°>]\n"
 
 void create() { seteuid(getuid()); }
 
@@ -18,17 +18,17 @@ string cuptime(int t)
 	int d, h, m;
         string time;
 
-	if (t<100) return "<Ê§È¥Á¬ÂçÖĞ>     ";
+	if (t<100) return "<å¤±å»è¿ç»œä¸­>     ";
 
 	t /= 60;
 	m = t % 60; t /= 60;
 	h = t % 24; t /= 24;
 	d = t;
 
-	if(d) time = chinese_number(d) + "Ìì";
+	if(d) time = chinese_number(d) + "å¤©";
 	else time = "";
-	if(h) time += chinese_number(h) + "Ğ¡Ê±";
-        if(m) time += chinese_number(m) + "·Ö";
+	if(h) time += chinese_number(h) + "å°æ—¶";
+        if(m) time += chinese_number(m) + "åˆ†";
 
 	return time;
 }
@@ -42,7 +42,7 @@ int main(object me, string arg)
 	int loop, size, usernum, total=0, uptime;
 
 	if( !find_object(DNS_MASTER) )
-		return notify_fail("ÍøÂ·¾«Áé²¢Ã»ÓĞ±»ÔØÈë£¬ÇëÏÈ½«ÍøÂ·¾«ÁéÔØÈë¡£\n");
+		return notify_fail("ç½‘è·¯ç²¾çµå¹¶æ²¡æœ‰è¢«è½½å…¥ï¼Œè¯·å…ˆå°†ç½‘è·¯ç²¾çµè½½å…¥ã€‚\n");
 
 	//	Obtain mapping containing mud data
 	mud_list = (mapping)DNS_MASTER->query_muds();
@@ -51,7 +51,7 @@ int main(object me, string arg)
 	mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
 
 	if(!mud_list)
-		return notify_fail( MUD_NAME + "Ä¿Ç°²¢Ã»ÓĞ¸úÍøÂ·ÉÏÆäËû Mud È¡µÃÁªÏµ¡£\n");
+		return notify_fail( MUD_NAME + "ç›®å‰å¹¶æ²¡æœ‰è·Ÿç½‘è·¯ä¸Šå…¶ä»– Mud å–å¾—è”ç³»ã€‚\n");
 
 	//	Get list of all mud names within name server
 	muds = keys( mud_list ) - ({ "DEFAULT" });
@@ -67,14 +67,14 @@ int main(object me, string arg)
 		arg = htonn(arg);
 
 		if(!mapp( mud_list[arg] )) {
-			write(MUD_NAME + "²¢Ã»ÓĞºÍÕâ¸ö Mud È¡µÃÁªÏµ¡£\n");
+			write(MUD_NAME + "å¹¶æ²¡æœ‰å’Œè¿™ä¸ª Mud å–å¾—è”ç³»ã€‚\n");
 			return 1;
 		}
-		printf("ÓĞ¹Ø %s µÄ×ÊÑ¶£º\n%O\n", arg, mud_list[arg]);
+		printf("æœ‰å…³ %s çš„èµ„è®¯ï¼š\n%O\n", arg, mud_list[arg]);
 		return 1;
 	}
 
-	output = "ÏÀ¿ÍĞĞÕ¾µãÃû³Æ\t¹ú¼ÊÍøÂ·Î»Ö·\t ²ººÅ\t       ÔËĞĞÊ±¼ä\t\t  Íæ¼ÒÈËÊı\n==============\t============\t ====\t======================\t============\n";
+	output = "ä¾ å®¢è¡Œç«™ç‚¹åç§°\tå›½é™…ç½‘è·¯ä½å€\t åŸ å·\t       è¿è¡Œæ—¶é—´\t\t  ç©å®¶äººæ•°\n==============\t============\t ====\t======================\t============\n";
 
 	//	Loop through mud list and store one by one
 	for(loop = 0, size = sizeof(muds); loop<size; loop++) {
@@ -87,13 +87,13 @@ int main(object me, string arg)
 			total += usernum;
 			uptime = (int)(AUX_PATH+DNS_RWHO_A)->query(mud_list[muds[loop]]["NAME"]+"/UPTIME");
 		}
-		output += sprintf("%-16s%-16s%5s\t%22s \t%10sÎ»\n", mud_list[muds[loop]]["CNAME"]+"("+mud_list[muds[loop]]["NAME"]+")", 
+		output += sprintf("%-16s%-16s%5s\t%22s \t%10sä½\n", mud_list[muds[loop]]["CNAME"]+"("+mud_list[muds[loop]]["NAME"]+")", 
 			mud_list[muds[loop]]["HOSTADDRESS"],
 			mud_list[muds[loop]]["PORT"],
 			cuptime(uptime),
 			chinese_number(usernum) );
 	}
-        output += "==============\t============\t ====\t======================\t============\nÏÀ¿ÍĞĞ¹²ÓĞ"+chinese_number(total)+"Î»Íæ¼ÒÁ¬ÏßÖĞ¡£\n\n";
+        output += "==============\t============\t ====\t======================\t============\nä¾ å®¢è¡Œå…±æœ‰"+chinese_number(total)+"ä½ç©å®¶è¿çº¿ä¸­ã€‚\n\n";
 
 	//	Display dumped mudlist output through user's more pager
 	if (userp(me) ) this_player()->start_more( output );
@@ -112,7 +112,7 @@ string do_mudlist(string arg)
 	object me=this_object();
 
 	if( !find_object(DNS_MASTER) )
-		return "ÍøÂ·¾«Áé²¢Ã»ÓĞ±»ÔØÈë£¬ÇëÏÈ½«ÍøÂ·¾«ÁéÔØÈë¡£\n";
+		return "ç½‘è·¯ç²¾çµå¹¶æ²¡æœ‰è¢«è½½å…¥ï¼Œè¯·å…ˆå°†ç½‘è·¯ç²¾çµè½½å…¥ã€‚\n";
 
 	//	Obtain mapping containing mud data
 	mud_list = (mapping)DNS_MASTER->query_muds();
@@ -121,7 +121,7 @@ string do_mudlist(string arg)
 	mud_svc = DNS_MASTER->query_svc() + ([ Mud_name() : 0 ]);
 
 	if(!mud_list)
-		return MUD_NAME + "Ä¿Ç°²¢Ã»ÓĞ¸úÍøÂ·ÉÏÆäËû Mud È¡µÃÁªÏµ¡£\n";
+		return MUD_NAME + "ç›®å‰å¹¶æ²¡æœ‰è·Ÿç½‘è·¯ä¸Šå…¶ä»– Mud å–å¾—è”ç³»ã€‚\n";
 
 	//	Get list of all mud names within name server
 	muds = keys( mud_list ) - ({ "DEFAULT" });
@@ -137,13 +137,13 @@ string do_mudlist(string arg)
 		arg = htonn(arg);
 
 		if(!mapp( mud_list[arg] )) {
-			return MUD_NAME + "²¢Ã»ÓĞºÍÕâ¸ö Mud È¡µÃÁªÏµ¡£\n";
+			return MUD_NAME + "å¹¶æ²¡æœ‰å’Œè¿™ä¸ª Mud å–å¾—è”ç³»ã€‚\n";
 		}
 		
-		return sprintf("ÓĞ¹Ø %s µÄ×ÊÑ¶£º\n%O\n", arg, mud_list[arg]);
+		return sprintf("æœ‰å…³ %s çš„èµ„è®¯ï¼š\n%O\n", arg, mud_list[arg]);
 	}
 
-	output = "ÏÀ¿ÍĞĞÕ¾µãÃû³Æ\t¹ú¼ÊÍøÂ·Î»Ö·\t ²ººÅ\t       ÔËĞĞÊ±¼ä\t\t  Íæ¼ÒÈËÊı\n==============\t============\t ====\t======================\t============\n";
+	output = "ä¾ å®¢è¡Œç«™ç‚¹åç§°\tå›½é™…ç½‘è·¯ä½å€\t åŸ å·\t       è¿è¡Œæ—¶é—´\t\t  ç©å®¶äººæ•°\n==============\t============\t ====\t======================\t============\n";
 
 	//	Loop through mud list and store one by one
 	for(loop = 0, size = sizeof(muds); loop<size; loop++) {
@@ -156,13 +156,13 @@ string do_mudlist(string arg)
 			total += usernum;
 			uptime = (int)(AUX_PATH+DNS_RWHO_A)->query(mud_list[muds[loop]]["NAME"]+"/UPTIME");
 		}
-		output += sprintf("%-16s%-16s%5s\t%22s \t%10sÎ»\n", mud_list[muds[loop]]["CNAME"]+"("+mud_list[muds[loop]]["NAME"]+")", 
+		output += sprintf("%-16s%-16s%5s\t%22s \t%10sä½\n", mud_list[muds[loop]]["CNAME"]+"("+mud_list[muds[loop]]["NAME"]+")", 
 			mud_list[muds[loop]]["HOSTADDRESS"],
 			mud_list[muds[loop]]["PORT"],
 			cuptime(uptime),
 			chinese_number(usernum) );
 	}
-        output += "==============\t============\t ====\t======================\t============\nÏÀ¿ÍĞĞ¹²ÓĞ"+chinese_number(total)+"Î»Íæ¼ÒÁ¬ÏßÖĞ¡£\n\n";
+        output += "==============\t============\t ====\t======================\t============\nä¾ å®¢è¡Œå…±æœ‰"+chinese_number(total)+"ä½ç©å®¶è¿çº¿ä¸­ã€‚\n\n";
 
 	return output;
 }
@@ -170,7 +170,7 @@ string do_mudlist(string arg)
 int help()
 {
 	write( SYNTAX + "\n"
-		"Õâ¸öÖ¸ÁîÈÃÄãÁĞ³öÄ¿Ç°¸ú"+Mud_cname()+"È¡µÃÁªÏµÖĞµÄÆäËûÕ¾µã¡£\n"
+		"è¿™ä¸ªæŒ‡ä»¤è®©ä½ åˆ—å‡ºç›®å‰è·Ÿ"+Mud_cname()+"å–å¾—è”ç³»ä¸­çš„å…¶ä»–ç«™ç‚¹ã€‚\n"
 	);
 	return 1;
 }

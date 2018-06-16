@@ -14,44 +14,44 @@ int main(object me, string file)
 
 	if (!file) file = me->query("cwf");
 	if (!file)
-		return notify_fail("ÄãÒª¸´ÖÆÊ²Ã´Îï¼ş£¿\n");
+		return notify_fail("ä½ è¦å¤åˆ¶ä»€ä¹ˆç‰©ä»¶ï¼Ÿ\n");
 
 	file = resolve_path(me->query("cwd"), file);
 	if( sscanf(file, "%*s.c") != 1 ) file += ".c";
 	me->set("cwf", file);
 
 	if( file_size(file) < 0 )
-		return notify_fail("Ã»ÓĞÕâ¸öµµ°¸(" + file + ")¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆ(" + file + ")ã€‚\n");
 
 	if( !find_object(file) ) {
 		err = catch(call_other(file, "???"));
 		if (err) {
-			write("ÔØÈëÊ§°Ü£º" + err + "\n");
+			write("è½½å…¥å¤±è´¥ï¼š" + err + "\n");
 			return 1;
 		}
 	}
 
 	err = catch(obj = new(file));
 	if (err) {
-		write("¸´ÖÆÊ§°Ü£º" + err + "\n");
+		write("å¤åˆ¶å¤±è´¥ï¼š" + err + "\n");
 		return 1;
 	}
 
 	if( !stringp(msg = me->query("env/msg_clone")) )
-		msg = "Ö»¼û$NÉìÊÖÁè¿ÕÒ»Ö¸£¬±ä³öÁË$n¡£\n";
+		msg = "åªè§$Nä¼¸æ‰‹å‡Œç©ºä¸€æŒ‡ï¼Œå˜å‡ºäº†$nã€‚\n";
 
 	if (!objectp(obj))
-		return notify_fail("ÕâÑù¶«Î÷²»ÄÜ±»¸´ÖÆ¡£\n");
+		return notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½è¢«å¤åˆ¶ã€‚\n");
 
 	if( !obj->is_character() && obj->move(me) ) {
-		write(obj->query("name") + "¸´ÖÆ³É¹¦\£¬·ÅÔÚÄãµÄÎïÆ·À¸¡£\n");
+		write(obj->query("name") + "å¤åˆ¶æˆåŠŸ\ï¼Œæ”¾åœ¨ä½ çš„ç‰©å“æ ã€‚\n");
 		obj->set("cloner", geteuid(me));
 		if( me->query("env/msg_on") && !me->query("env/invisibility") )
         		message_vision(msg + "\n", me, obj);
 		return 1;
 	}
 	if( obj->move(environment(me)) ) {
-		write(obj->query("name") + "¸´ÖÆ³É¹¦\£¬·ÅÔÚÕâ¸ö·¿¼ä¡£\n");
+		write(obj->query("name") + "å¤åˆ¶æˆåŠŸ\ï¼Œæ”¾åœ¨è¿™ä¸ªæˆ¿é—´ã€‚\n");
 		obj->set("cloner", geteuid(me));
 		if( me->query("env/msg_on") && !me->query("env/invisibility") )
         		message_vision(msg + "\n", me, obj);
@@ -59,15 +59,15 @@ int main(object me, string file)
 	}
 
 	destruct(obj);
-	return notify_fail("ÎŞ·¨¸´ÖÆ²»ÄÜÒÆ¶¯µÄÎï¼ş(" + file + ")¡£\n");
+	return notify_fail("æ— æ³•å¤åˆ¶ä¸èƒ½ç§»åŠ¨çš„ç‰©ä»¶(" + file + ")ã€‚\n");
 }
 
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : clone <µµÃû>
+æŒ‡ä»¤æ ¼å¼ : clone <æ¡£å>
 
-ÀûÓÃ´ËÖ¸Áî¿É¸´ÖÆÈÎºÎÄÜÒÆ¶¯Ö®Îï¼ş(º¬¹ÖÎï)¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯å¤åˆ¶ä»»ä½•èƒ½ç§»åŠ¨ä¹‹ç‰©ä»¶(å«æ€ªç‰©)ã€‚
 HELP
     );
     return 1;

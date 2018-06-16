@@ -19,26 +19,26 @@ int main(object me, string arg)
 	seteuid(getuid());
 	where = environment(me);
 
-	if( !(fam = me->query("family")) || fam["family_name"] != "¶ëáÒÅÉ" )
-		return notify_fail("¾²×øĞŞÁ·ĞëÓĞ¶ëáÒÍ¬ÃÅÊØ»¤£¬Äã·Ç¶ëáÒµÜ×Ó£¬²»ÄÜĞĞ¹¦¡£\n");
+	if( !(fam = me->query("family")) || fam["family_name"] != "å³¨åµ‹æ´¾" )
+		return notify_fail("é™åä¿®ç»ƒé¡»æœ‰å³¨åµ‹åŒé—¨å®ˆæŠ¤ï¼Œä½ éå³¨åµ‹å¼Ÿå­ï¼Œä¸èƒ½è¡ŒåŠŸã€‚\n");
 	
 	if( !where->query("jingzuo_room") )
-		return notify_fail("´Ë´¦²»ÒË¾²×øĞŞÁ·¡£\n");
+		return notify_fail("æ­¤å¤„ä¸å®œé™åä¿®ç»ƒã€‚\n");
 
 	if( (yuga_lvl = me->query_skill("mahayana", 1)) < 20 ) 
-		return notify_fail("Äã´ó³ËÄùÅÍ·¨ĞŞÎªÌ«µÍ£¬²»ÄÜĞĞ¹¦ĞŞÁ·¡£\n");
+		return notify_fail("ä½ å¤§ä¹˜æ¶…ç£æ³•ä¿®ä¸ºå¤ªä½ï¼Œä¸èƒ½è¡ŒåŠŸä¿®ç»ƒã€‚\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞ¾²ĞŞ£¬ÕÒËÀ°¡£¿£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­é™ä¿®ï¼Œæ‰¾æ­»å•Šï¼Ÿï¼\n");
 
 	if( (int)me->query("jing") * 100 / (int)me->query("max_jing") < 70 )
-		return notify_fail("ÄãÏÖÔÚ¾«²»¹»£¬ÎŞ·¨¿ØÖÆĞÄÄ§¾²ĞŞ¡£\n");
+		return notify_fail("ä½ ç°åœ¨ç²¾ä¸å¤Ÿï¼Œæ— æ³•æ§åˆ¶å¿ƒé­”é™ä¿®ã€‚\n");
 
 	if( (int)me->query("qi") * 100 / (int)me->query("max_qi") < 70 )
-		return notify_fail("ÄãÏÖÔÚÌåÁ¦²»¹»£¬ÄÑÒÔÄı¾ÛÌåÄÜ¾²ĞŞ¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä½“åŠ›ä¸å¤Ÿï¼Œéš¾ä»¥å‡èšä½“èƒ½é™ä¿®ã€‚\n");
 
 	pot_gain = yuga_lvl/20 + random(5);
 	pot_gain += random(yuga_lvl < 100 ? 6 : 8);
@@ -47,7 +47,7 @@ int main(object me, string arg)
 	busy_time *= pot_gain;
 	if (me->query("food") + me->query("water") < 20) busy_time *= 2;
 // printf("yual_lvl=%d, busy_time=%d, pot_gain=%d\n", yuga_lvl, busy_time, pot_gain);
-	message_vision("$NÅÌÏ¥×øÏÂ£¬±ÕÉÏÑÛ¾¦¿ªÊ¼ĞŞÁ·¡£\n", me);
+	message_vision("$Nç›˜è†åä¸‹ï¼Œé—­ä¸Šçœ¼ç›å¼€å§‹ä¿®ç»ƒã€‚\n", me);
 	me->set_temp("pending/jingzuo", 1);
 	me->set_temp("jingzuo/time", busy_time);
 	me->set_temp("jingzuo/pot", pot_gain);
@@ -74,9 +74,9 @@ int jingzuoing(object me)
 	
 	me->set_temp("pending/jingzuo", 0);
 
-	message_vision("$N»º»ºÕö¿ªÑÛ¾¦£¬³¤ÊæÒ»¿ÚÆøÕ¾ÁËÆğÀ´¡£\n", me);
+	message_vision("$Nç¼“ç¼“çå¼€çœ¼ç›ï¼Œé•¿èˆ’ä¸€å£æ°”ç«™äº†èµ·æ¥ã€‚\n", me);
 
-	tell_object(me, HIC "ÄãµÄÇ±ÄÜÔö¼ÓÁË" + chinese_number(pot_gain) + "µã£¡\n" NOR);
+	tell_object(me, HIC "ä½ çš„æ½œèƒ½å¢åŠ äº†" + chinese_number(pot_gain) + "ç‚¹ï¼\n" NOR);
 		me->add("potential", pot_gain);
 	if( me->query("potential") > me->query("max_potential") )
 		me->set("potential", me->query("max_potential"));
@@ -100,9 +100,9 @@ int halt_jingzuo(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : jingzuo
+æŒ‡ä»¤æ ¼å¼ : jingzuo
 
-¾²×øĞŞÁ·ÒÔÌá¸ßÈËÌåµÄÇ±ÄÜ¡£ÄË¶ëáÒÅÉÌØÓĞÁ·¹¦·½Ê½¡£
+é™åä¿®ç»ƒä»¥æé«˜äººä½“çš„æ½œèƒ½ã€‚ä¹ƒå³¨åµ‹æ´¾ç‰¹æœ‰ç»ƒåŠŸæ–¹å¼ã€‚
 HELP
         );
         return 1;

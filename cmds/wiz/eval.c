@@ -23,7 +23,7 @@ main(object me, string arg)
 int help()
 {
 	write(@TEXT
-指令格式：eval <expression>
+鎸囦护鏍煎紡锛歟val <expression>
 
 TEXT
 	);

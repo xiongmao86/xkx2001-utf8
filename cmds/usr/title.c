@@ -13,9 +13,9 @@ int main(object me, string str)
 int help(object me)
 {
     write(@HELP
-Ö¸Áî¸ñÊ½: title
+æŒ‡ä»¤æ ¼å¼: title
  
-ÏÔÊ¾ÄãÄ¿Ç°µÄ½×¼¶ºÍÍ·ÏÎ¡£
+æ˜¾ç¤ºä½ ç›®å‰çš„é˜¶çº§å’Œå¤´è¡”ã€‚
  
 HELP
     );

@@ -20,12 +20,12 @@ int main(object me, string arg)
 
 	inv = all_inventory(ob);
 	if( !sizeof(inv) ) {
-		write((ob==me)? "д©г╟дЦиМиоц╩спхн╨н╤╚нВ║ё\n"
-			: ob->name() + "иМиоц╩спп╞╢Ьхн╨н╤╚нВ║ё\n");
+		write((ob==me)? "Г⌡╝Е┴█Д╫═Х╨╚Д╦┼Ф╡║Ф°┴Д╩╩Д╫∙Д╦°Х╔©Ц─┌\n"
+			: ob->name() + "Х╨╚Д╦┼Ф╡║Ф°┴Ф░╨Е╦╕Д╩╩Д╫∙Д╦°Х╔©Ц─┌\n");
 		return 1;
 	}
-	printf("%sиМио╢ЬжЬобапуБп╘╤╚нВ(╦╨жь %d%%)ё╨\n%s\n",
-		(ob==me)? "дЦ": ob->name(),
+	printf("%sХ╨╚Д╦┼Е╦╕Х▒≈Д╦▀Е┬≈Х©≥Д╨⌡Д╦°Х╔©(Х╢÷И┤█ %d%%)О╪ \n%s\n",
+		(ob==me)? "Д╫═": ob->name(),
 		(int)ob->query_encumbrance() * 100 / (int)ob->query_max_encumbrance(),
 		implode(map_array(inv, "inventory_desc", this_object()), "\n") );
 
@@ -35,8 +35,8 @@ int main(object me, string arg)
 string inventory_desc(object ob)
 {
 	return sprintf("%s%s",
-		ob->query("embedded")? HIR "║л" NOR:
-		ob->query("equipped")? HIC "║У" NOR:"  ",
+		ob->query("embedded")? HIR "Б┬ " NOR:
+		ob->query("equipped")? HIC "Б√║" NOR:"  ",
 		ob->short()
 	);
 }
@@ -44,11 +44,11 @@ string inventory_desc(object ob)
 int help (object me)
 {
         write(@HELP
-ж╦аН╦Яй╫: inventory
+Ф▄┤Д╩╓Ф═╪Е╪▐: inventory
  
-©иапЁЖдЦ(дЦ)д©г╟иМиокЫп╞╢Ь╣дкЫспнОф╥║ё
+Е▐╞Е┬≈Е┤╨Д╫═(Д╫═)Г⌡╝Е┴█Х╨╚Д╦┼Ф┴─Ф░╨Е╦╕Г └Ф┴─Ф°┴Г┴╘Е⌠│Ц─┌
  
-в╒ : ╢кж╦аН©ирт " i " ╢ЗлФ║ё
+ФЁ╗ : Ф╜╓Ф▄┤Д╩╓Е▐╞Д╩╔ " i " Д╩ёФ⌡©Ц─┌
  
 HELP
 );

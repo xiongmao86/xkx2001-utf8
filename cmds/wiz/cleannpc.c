@@ -21,9 +21,9 @@ int main(string str)
 int help(object me)
 {
 write(@HELP
-指令格式 : cleannpc
+鎸囦护鏍煎紡 : cleannpc
 
-将线上所有npc and players cleaned.
+灏嗙嚎涓婃墍鏈塶pc and players cleaned.
 HELP
     );
     return 1;

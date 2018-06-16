@@ -9,27 +9,27 @@ int main(object me, string arg)
  
         seteuid(geteuid(me));
         if (!arg || sscanf(arg, "%s %s", src, dst)!=2 ) return
-        notify_fail("Ö¸Áî¸ñÊ½: mv <Ô­µµÃû> <Ä¿±êµµÃû> \n");
+        notify_fail("æŒ‡ä»¤æ ¼å¼: mv <åŸæ¡£å> <ç›®æ ‡æ¡£å> \n");
  
         src = resolve_path(me->query("cwd"), src);
         dst = resolve_path(me->query("cwd"), dst);
-        if(!SECURITY_D->valid_read(src, this_object(), "read_file") )return notify_fail("¶Ô²»Æğ£¬ÄãÃ»ÓĞ¶ÁÕâ¸öµµ°¸µÄÈ¨?
-¦¡£\n");
+        if(!SECURITY_D->valid_read(src, this_object(), "read_file") )return notify_fail("å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰è¯»è¿™ä¸ªæ¡£æ¡ˆçš„æƒ?
+Î‘î–¢n");
 
  
         if( !rename(src, dst) )
                 write("Ok.\n");
         else
-                write("ÄãÃ»ÓĞ×ã¹»µÄ¶ÁĞ´È¨Àû¡£\n");
+                write("ä½ æ²¡æœ‰è¶³å¤Ÿçš„è¯»å†™æƒåˆ©ã€‚\n");
         return 1;
 }
  
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : mv <Ô­µµÃû> <Ä¿±êµµÃû>
+æŒ‡ä»¤æ ¼å¼ : mv <åŸæ¡£å> <ç›®æ ‡æ¡£å>
  
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)ĞŞ¸ÄÄ³¸öµµ°¸»òÄ¿Â¼Ãû³Æ¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )ä¿®æ”¹æŸä¸ªæ¡£æ¡ˆæˆ–ç›®å½•åç§°ã€‚
 HELP
     );
     return 1;

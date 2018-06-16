@@ -19,14 +19,14 @@ int main(object me, string arg)
         if( file_size(dir)==-2 && dir[strlen(dir)-1] != '/' ) dir += "/";
         file = get_dir(dir, -1);
         if( !sizeof(file) )
-        {if (file_size(dir) == -2) return notify_fail("Ä¿Â¼ÊÇ¿ÕµÄ¡£\n");
+        {if (file_size(dir) == -2) return notify_fail("ç›®å½•æ˜¯ç©ºçš„ã€‚\n");
                 else
-                return notify_fail("Ã»ÓĞÕâ¸öÄ¿Â¼¡£\n");
+                return notify_fail("æ²¡æœ‰è¿™ä¸ªç›®å½•ã€‚\n");
         }
 
         wiz_status = SECURITY_D->get_status(me);
         if( wiz_status != "(admin)" && wiz_status != "(arch)" && BAN_D->is_banned(dir) == 1 )
-                return notify_fail("¶Ô²»ÆğÕâ¸öÄ¿Â¼Äã²»ÄÜ¶Á³öÀ´¡£\n");
+                return notify_fail("å¯¹ä¸èµ·è¿™ä¸ªç›®å½•ä½ ä¸èƒ½è¯»å‡ºæ¥ã€‚\n");
 
         i = sizeof(file);
         w = 0;
@@ -34,7 +34,7 @@ int main(object me, string arg)
                 if (file[i][1]==-2) file[i][0] += "/";
                 if (strlen(file[i][0])>w) w = strlen(file[i][0]) + 1;
         }
-        write("Ä¿Â¼£º" + dir + "\n");
+        write("ç›®å½•ï¼š" + dir + "\n");
         col = 70 / (w+6);
 
         if (sizeof(file))
@@ -51,7 +51,7 @@ int main(object me, string arg)
                                 ((i+1)%col)?"  ":"\n");
                 }
 
-        else write("    Ã»ÓĞÈÎºÎµµ°¸¡£\n");
+        else write("    æ²¡æœ‰ä»»ä½•æ¡£æ¡ˆã€‚\n");
         write("\n");
         
         return 1;       
@@ -71,13 +71,13 @@ int do_match(string str, string substr)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: ls [<Â·¾¶Ãû>]
+æŒ‡ä»¤æ ¼å¼: ls [<è·¯å¾„å>]
  
-ÁĞ³öÄ¿Â¼ÏÂËùÓĞµÄ×ÓÄ¿Â¼¼°µµ°¸, Èç¹ûÃ»ÓĞÖ¸¶¨Ä¿Â¼, ÔòÁĞ³öËùÔÚÄ¿Â¼
-µÄÄÚÈİ£¬ËùÁĞ³öµÄµµ°¸ÖĞÇ°Ãæ±êÊ¾ * ºÅµÄÊÇÒÑ¾­ÔØÈëµÄÎï¼ş¡£
+åˆ—å‡ºç›®å½•ä¸‹æ‰€æœ‰çš„å­ç›®å½•åŠæ¡£æ¡ˆ, å¦‚æœæ²¡æœ‰æŒ‡å®šç›®å½•, åˆ™åˆ—å‡ºæ‰€åœ¨ç›®å½•
+çš„å†…å®¹ï¼Œæ‰€åˆ—å‡ºçš„æ¡£æ¡ˆä¸­å‰é¢æ ‡ç¤º * å·çš„æ˜¯å·²ç»è½½å…¥çš„ç‰©ä»¶ã€‚
  
-·¶Àı:
-'ls /' »áÁĞ³öËùÓĞÎ»ì¶¸ùÄ¿Â¼ÏÂµÄµµ°¸¼°×ÓÄ¿Â¼.
+èŒƒä¾‹:
+'ls /' ä¼šåˆ—å‡ºæ‰€æœ‰ä½æ–¼æ ¹ç›®å½•ä¸‹çš„æ¡£æ¡ˆåŠå­ç›®å½•.
  
 HELP
         );

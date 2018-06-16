@@ -10,7 +10,7 @@ int main(object me, string arg)
 	object news_ob;
 	seteuid(geteuid(me));
 	if(!wizardp(me))
-		return notify_fail ("Äã²»ÊÇÎ×Ê¦£¬²»ÄÜÊ¹ÓÃÕâ¸öÃüÁî¡£\n");
+		return notify_fail ("ä½ ä¸æ˜¯å·«å¸ˆï¼Œä¸èƒ½ä½¿ç”¨è¿™ä¸ªå‘½ä»¤ã€‚\n");
 	if(!news_ob=find_object("/clone/obj/news_b"))
 		news_ob=new("/clone/obj/news_b");
 	if(!objectp(news_ob)) return 0;
@@ -28,9 +28,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : newsdel <ĞÂÎÅ±àºÅ>
+æŒ‡ä»¤æ ¼å¼ : newsdel <æ–°é—»ç¼–å·>
  
-É¾³ıĞÂÎÅ¡£
+åˆ é™¤æ–°é—»ã€‚
  
 HELP
     );

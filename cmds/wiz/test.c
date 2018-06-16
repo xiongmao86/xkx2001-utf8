@@ -17,9 +17,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : test <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : test <æŸäºº>
 
-ÓÃÀ´²âÊÔÎä¹¦¼¼ÄÜµÄÇ¿Èõ¡£
+ç”¨æ¥æµ‹è¯•æ­¦åŠŸæŠ€èƒ½çš„å¼ºå¼±ã€‚
 HELP
     );
     return 1;

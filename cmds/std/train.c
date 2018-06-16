@@ -6,10 +6,10 @@
 inherit F_CLEAN_UP;
 
 string *training_msg = ({
-	"È«Éñ¹á×¢µØÄıÊÓ×Å",
-	"Éì³öÓÒÊÖµÄÊ³Ö¸ºÍĞ¡Ö¸Ö¸×Å",
-	"Ò»±ß×ìÀïß´ß´¹¾¹¾·¢³öĞ©Ææ¹ÖµÄÒô½Ú£¬Ò»±ßÂıÂı×ß½ü",
-	"×ö³öÒ»¸¶ÈôÎŞÆäÊÂµÄÑù×Ó£¬²»¶¯ÉùÉ«µØ¿¿½ü"
+	"å…¨ç¥è´¯æ³¨åœ°å‡è§†ç€",
+	"ä¼¸å‡ºå³æ‰‹çš„é£ŸæŒ‡å’Œå°æŒ‡æŒ‡ç€",
+	"ä¸€è¾¹å˜´é‡Œå½å½å’•å’•å‘å‡ºäº›å¥‡æ€ªçš„éŸ³èŠ‚ï¼Œä¸€è¾¹æ…¢æ…¢èµ°è¿‘",
+	"åšå‡ºä¸€ä»˜è‹¥æ— å…¶äº‹çš„æ ·å­ï¼Œä¸åŠ¨å£°è‰²åœ°é è¿‘"
 });
 
 int main(object me, string arg)
@@ -20,29 +20,29 @@ int main(object me, string arg)
 
 
 	if( me->query_temp("training") )
-		return notify_fail("ÏÖÔÚÄãÕıÔÚÊÔÍ¼Ñ±·şËü£¡\n");
+		return notify_fail("ç°åœ¨ä½ æ­£åœ¨è¯•å›¾é©¯æœå®ƒï¼\n");
 
-	if( !arg) return notify_fail("Ö¸Áî¸ñÊ½£ºtrain <¶¯Îï>\n");
+	if( !arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼štrain <åŠ¨ç‰©>\n");
 
 	victim = present(arg, environment(me));
-	if( !victim || victim==me) return notify_fail("ÄãÏëÑ±·şµÄ¶ÔÏó²»ÔÚÕâÀï¡£\n");
+	if( !victim || victim==me) return notify_fail("ä½ æƒ³é©¯æœçš„å¯¹è±¡ä¸åœ¨è¿™é‡Œã€‚\n");
 
-	if(!living(victim)) return notify_fail("µÈËüĞÑÁËÔÙËµ°É¡£\n");
+	if(!living(victim)) return notify_fail("ç­‰å®ƒé†’äº†å†è¯´å§ã€‚\n");
 
 	if( !(victim->is_trainee()))
-		return notify_fail("ÏëÑ±·şËü£¿±ğ×öÃÎÁË£¡\n");
+		return notify_fail("æƒ³é©¯æœå®ƒï¼Ÿåˆ«åšæ¢¦äº†ï¼\n");
 
 	if( objectp(lord = victim->query_lord()) 
 	&& environment(lord) == environment(me) && lord != me)
-		return notify_fail("µ±ÖøÖ÷ÈËÃæÕâÃ´¸É£¿£¡²»Ì«ºÃ°É£¡\n");
+		return notify_fail("å½“è‘—ä¸»äººé¢è¿™ä¹ˆå¹²ï¼Ÿï¼ä¸å¤ªå¥½å§ï¼\n");
 	if (me == lord)
-		return notify_fail("ÄãÒÑ¾­ÊÇËüµÄÖ÷ÈËÁË¡£\n");
+		return notify_fail("ä½ å·²ç»æ˜¯å®ƒçš„ä¸»äººäº†ã€‚\n");
 
-	if( environment(me)->query("short") == YEL"Âí¾Ç"NOR)
-                return notify_fail("ÔÚ±ğÈË¼ÒÀïÑ±ÊŞ£¬Õâ²»Ì«ºÃ°É¡£\n");
+	if( environment(me)->query("short") == YEL"é©¬å©"NOR)
+                return notify_fail("åœ¨åˆ«äººå®¶é‡Œé©¯å…½ï¼Œè¿™ä¸å¤ªå¥½å§ã€‚\n");
 
 	if (victim->query_temp("prelord") == me->query("id")) {
-		write("ËüºÃÏóÈÏÊ¶ÄãÒ»Ñù£¬´ÕÁË¹ıÀ´¡£\n");
+		write("å®ƒå¥½è±¡è®¤è¯†ä½ ä¸€æ ·ï¼Œå‡‘äº†è¿‡æ¥ã€‚\n");
 		victim->train_it(me, victim,101);
 		return 1;
 	}	
@@ -51,7 +51,7 @@ int main(object me, string arg)
 	cost = 200/((int)me->query_skill("training",1)/5 + 1);
 
 	if ( me->query("jingli") <= cost )
-                return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬Ğ¡ĞÄ·´ÊÜÆäº¦£¡\n");
+                return notify_fail("ç°åœ¨ä½ å¤ªç´¯äº†ï¼Œå°å¿ƒåå—å…¶å®³ï¼\n");
 
 	me->add("jingli", - cost );
 	if( me->query("jingli") <= 0 ) me->unconcious();
@@ -67,7 +67,7 @@ int main(object me, string arg)
 	dp = (int)victim->query("wildness");
 
 	message_vision("$N" + training_msg[random(sizeof(training_msg))] +
-		"$n¡£\n", me, victim);
+		"$nã€‚\n", me, victim);
 
 	me->set_temp("training", 1);
 	call_out( "compelete_train", 1, me, victim, sp, dp);
@@ -84,25 +84,25 @@ private void compelete_train(object me, object victim, int sp, int dp)
 
 	me->delete_temp("training");
 	if(!(msg_fail = victim->query("msg_fail")))
-		msg_fail = "$n¿´ÁË$NÒ»ÑÛ£¬×ªÉí±³¶Ô×Å$N";
+		msg_fail = "$nçœ‹äº†$Nä¸€çœ¼ï¼Œè½¬èº«èƒŒå¯¹ç€$N";
 	if(!(msg_succ = victim->query("msg_succ")))
-		msg_succ = "$nÏòºóÍËÁË°ë²½£¬ËÆºõÓĞĞ©ÅÂ$N";
+		msg_succ = "$nå‘åé€€äº†åŠæ­¥ï¼Œä¼¼ä¹æœ‰äº›æ€•$N";
 
 	if( environment(victim) != environment(me) ) {
-		tell_object(me, "Ì«¿ÉÏ§ÁË£¬ÄãÏëÑ±·şµÄÄ¿±êÒÑ¾­×ßÁË¡£\n");
+		tell_object(me, "å¤ªå¯æƒœäº†ï¼Œä½ æƒ³é©¯æœçš„ç›®æ ‡å·²ç»èµ°äº†ã€‚\n");
 		return;
 	}
 
 	pts = random(sp+dp);
-	//tell_object(me, chinese_number(sp) + "£¡" + chinese_number(dp) +
-		//"£½" + chinese_number(pts) + "\n");
+	//tell_object(me, chinese_number(sp) + "ï¼" + chinese_number(dp) +
+		//"ï¼" + chinese_number(pts) + "\n");
 	if( living(victim) && (pts > 2*dp) ) {
 		//victim->train_it(me, victim);
 		if( living(victim) ) {
-			message_vision(msg_succ + "¡£\n", me, victim);
+			message_vision(msg_succ + "ã€‚\n", me, victim);
 			me->improve_skill("training", random(me->query("int")));
-			if (me->query("family/family_name")=="°×ÍÕÉ½" ||
-			    me->query("family/family_name")=="Ø¤°ï")
+			if (me->query("family/family_name")=="ç™½é©¼å±±" ||
+			    me->query("family/family_name")=="ä¸å¸®")
 			if (me->query("combat_exp") < 100000 ){
 			me->add("combat_exp",random((int)victim->query("wildness"))/2);
                         me->add("potential",random(2));
@@ -114,10 +114,10 @@ private void compelete_train(object me, object victim, int sp, int dp)
 
 	} else {
 		if( pts > dp/2 ) {
-			message_vision(msg_fail + "¡£\n", me, victim);
+			message_vision(msg_fail + "ã€‚\n", me, victim);
 			return;
 		}
-		//message_vision("$nÏëÉ±ËÀ$N¡£\n", me, victim);
+		//message_vision("$næƒ³æ€æ­»$Nã€‚\n", me, victim);
 		me->improve_skill("training", 1, 1);
 		victim->kill_ob(me);
 		me->fight_ob(victim);
@@ -128,22 +128,22 @@ private void compelete_train(object me, object victim, int sp, int dp)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : train <¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : train <åŠ¨ç‰©>
 
-´ËÖ¸Áî¿ÉÓÃÓÚÑ±»¯Ä³¶¯Îï¡£¶ÔÓÚÒÑ¾­Ñ±·şµÄ¶¯Îï£¬¿ÉÒÔ½øĞĞÏÂÊöÖ¸Áî£º
+æ­¤æŒ‡ä»¤å¯ç”¨äºé©¯åŒ–æŸåŠ¨ç‰©ã€‚å¯¹äºå·²ç»é©¯æœçš„åŠ¨ç‰©ï¼Œå¯ä»¥è¿›è¡Œä¸‹è¿°æŒ‡ä»¤ï¼š
 
-»ù±¾Ö¸Áî£º
-	gen(come) <¶¯ÎïÃû>: 		ÈÃ¶¯Îï¸úËæÖ÷ÈËĞĞ¶¯;
-	ting(stay): 			Í£Ö¹¶¯ÎïµÄ¸úËæ×´Ì¬;
-	yao(attack <Ä³ÈË>): 		ÈÃ¶¯Îï¹¥»÷µĞÈË;
-	zhi(stop) <¶¯ÎïÃû>:		ÈÃ¶¯ÎïÍ£Ö¹¶ÔÈËµÄ¹¥»÷;
-	fang(release): 			½áÊøÖ÷Å«×´Ì¬£¬½«¶¯Îï·ÅÀë¡£
+åŸºæœ¬æŒ‡ä»¤ï¼š
+	gen(come) <åŠ¨ç‰©å>: 		è®©åŠ¨ç‰©è·Ÿéšä¸»äººè¡ŒåŠ¨;
+	ting(stay): 			åœæ­¢åŠ¨ç‰©çš„è·ŸéšçŠ¶æ€;
+	yao(attack <æŸäºº>): 		è®©åŠ¨ç‰©æ”»å‡»æ•Œäºº;
+	zhi(stop) <åŠ¨ç‰©å>:		è®©åŠ¨ç‰©åœæ­¢å¯¹äººçš„æ”»å‡»;
+	fang(release): 			ç»“æŸä¸»å¥´çŠ¶æ€ï¼Œå°†åŠ¨ç‰©æ”¾ç¦»ã€‚
 
-ÌØÊâÖ¸Áî£º£¨Ö»¶ÔÄ³Ğ©¶¯ÎïÊÊÓÃ£©
-	qi(ride) <¶¯ÎïÃû>:		Æï£¬ÈçÆïÂí£¬»¢£¬µñ£¬öèµÈ¡£
-	xia(unride) <¶¯ÎïÃû>:		ÏÂ£¬Àë¿ª×øÆï¡£
-	wei(feed) <¶¯ÎïÃû>:		Ìæ¶¯ÎïÎ¹Ê³¡£
-	yin <¶¯ÎïÃû>:			¸ø¶¯ÎïÒûË®¡£
+ç‰¹æ®ŠæŒ‡ä»¤ï¼šï¼ˆåªå¯¹æŸäº›åŠ¨ç‰©é€‚ç”¨ï¼‰
+	qi(ride) <åŠ¨ç‰©å>:		éª‘ï¼Œå¦‚éª‘é©¬ï¼Œè™ï¼Œé›•ï¼Œé²¨ç­‰ã€‚
+	xia(unride) <åŠ¨ç‰©å>:		ä¸‹ï¼Œç¦»å¼€åéª‘ã€‚
+	wei(feed) <åŠ¨ç‰©å>:		æ›¿åŠ¨ç‰©å–‚é£Ÿã€‚
+	yin <åŠ¨ç‰©å>:			ç»™åŠ¨ç‰©é¥®æ°´ã€‚
 
 HELP
     );

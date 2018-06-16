@@ -15,28 +15,28 @@ int main(object me, string arg)
 	int sp, dp;
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÕâÀï½ûÖ¹ĞĞÇÔ¡£\n");
+		return notify_fail("è¿™é‡Œç¦æ­¢è¡Œçªƒã€‚\n");
 
 	if( me->query_temp("stealing") )
-		return notify_fail("ÄãÒÑ¾­ÔÚÕÒ»ú»áÏÂÊÖÁË£¡\n");
+		return notify_fail("ä½ å·²ç»åœ¨æ‰¾æœºä¼šä¸‹æ‰‹äº†ï¼\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
 	if( !arg || sscanf(arg, "%s from %s", what, who)!=2 ) return
-		notify_fail("Ö¸Áî¸ñÊ½£ºsteal <ÎïÆ·> from <ÈËÎï>\n");
+		notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šsteal <ç‰©å“> from <äººç‰©>\n");
 
-	if( what == "all" ) return notify_fail("±ğ×Å¼±£¬»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+	if( what == "all" ) return notify_fail("åˆ«ç€æ€¥ï¼Œè¿˜æ˜¯ä¸€æ ·ä¸€æ ·æ¥å§ã€‚\n");
 	victim = present(who, environment(me));
-	if( !victim || victim==me) return notify_fail("ÄãÏëĞĞÇÔµÄ¶ÔÏó²»ÔÚÕâÀï¡£\n");
-	if( !victim->is_character() ) return notify_fail("Íµ"+victim->name()+"£¿£¡ÄãÓĞÃ«²¡°¡£¿\n");
+	if( !victim || victim==me) return notify_fail("ä½ æƒ³è¡Œçªƒçš„å¯¹è±¡ä¸åœ¨è¿™é‡Œã€‚\n");
+	if( !victim->is_character() ) return notify_fail("å·"+victim->name()+"ï¼Ÿï¼ä½ æœ‰æ¯›ç—…å•Šï¼Ÿ\n");
 	if( !wizardp(me) && wizardp(victim) )
-		return notify_fail("Íæ¼Ò²»ÄÜÍµÎ×Ê¦ÉíÉÏµÄ¶«Î÷¡£\n");
+		return notify_fail("ç©å®¶ä¸èƒ½å·å·«å¸ˆèº«ä¸Šçš„ä¸œè¥¿ã€‚\n");
 		//////////////////////////////////////////////add by wzfeng
 	if(victim->query("id")=="tang nan" 
 	|| victim->query("id")=="lao chaofeng"
 	|| victim->query("dealer"))
-		return notify_fail("ÏëÍµËûµÄ¶«Î÷£¿ÏÂ±²×Ó°É¡£\n");
+		return notify_fail("æƒ³å·ä»–çš„ä¸œè¥¿ï¼Ÿä¸‹è¾ˆå­å§ã€‚\n");
 /////////////////////////////////////////////////////////////
 
 
@@ -46,17 +46,17 @@ int main(object me, string arg)
 		object *inv;
 		inv = all_inventory(victim);
 		if( !sizeof(inv) || (sizeof(inv)==1 && inv[0]->query("no_steal")) )
-			return notify_fail( victim->name() + "ÉíÉÏ¿´ÆğÀ´Ã»ÓĞÊ²÷áÖµÇ®µÄ¶«Î÷ºÃÍµ¡£\n");
+			return notify_fail( victim->name() + "èº«ä¸Šçœ‹èµ·æ¥æ²¡æœ‰ä»€éº½å€¼é’±çš„ä¸œè¥¿å¥½å·ã€‚\n");
 		ob = inv[random(sizeof(inv))];
 	}
 
 	if( ob->query("no_steal") || ob->query("no_get")) 
-	return notify_fail("Õâ¶«Î÷²»ÄÜÍµ¡£\n");
+	return notify_fail("è¿™ä¸œè¥¿ä¸èƒ½å·ã€‚\n");
 
 	sp = (int)me->query("jing")/10 + (int)me->query("kar") + (int)me->query_dex();
 	sp *= (int)me->query_skill("stealing", 1)/10;
 
-	if ( (myfam = me->query("family")) && myfam["family_name"] == "Ø¤°ï" )
+	if ( (myfam = me->query("family")) && myfam["family_name"] == "ä¸å¸®" )
 	sp *= 2;
 
 	if( sp < 1 ) sp = 1;
@@ -69,7 +69,7 @@ int main(object me, string arg)
 	if( victim->is_fighting() ) dp *= 10;
 	if( ob->query("equipped") ) dp *= 10;
 
-	write("Äã²»¶¯ÉùÉ«µØÂıÂı¿¿½ü" + victim->name() + "£¬µÈ´ı»ú»áÏÂÊÖ ...\n\n");
+	write("ä½ ä¸åŠ¨å£°è‰²åœ°æ…¢æ…¢é è¿‘" + victim->name() + "ï¼Œç­‰å¾…æœºä¼šä¸‹æ‰‹ ...\n\n");
 
 	me->set_temp("stealing", 1);
 	me->start_busy(3);
@@ -87,19 +87,19 @@ private void compelete_steal(object me, object victim, object ob, int sp, int dp
 	if( !me || !victim || !ob) return;
 
 	if( environment(victim) != environment(me) ) {
-		tell_object(me, "Ì«¿ÉÏ§ÁË£¬ÄãÏÂÊÖµÄÄ¿±êÒÑ¾­×ßÁË¡£\n");
+		tell_object(me, "å¤ªå¯æƒœäº†ï¼Œä½ ä¸‹æ‰‹çš„ç›®æ ‡å·²ç»èµ°äº†ã€‚\n");
 		return;
 	}
 
 	if( !living(victim) || (random(sp+dp) > dp) ) {
 		if( !ob->move(me) ) {
-			tell_object(me, "ÄãÃşµ½Ò»" + ob->query("unit") + ob->name() 
-				+ "£¬¿ÉÊÇ¶ÔÄã¶øÑÔÌ«ÖØÁË£¬²»µÃ²»·ÅÆú¡£\n");
+			tell_object(me, "ä½ æ‘¸åˆ°ä¸€" + ob->query("unit") + ob->name() 
+				+ "ï¼Œå¯æ˜¯å¯¹ä½ è€Œè¨€å¤ªé‡äº†ï¼Œä¸å¾—ä¸æ”¾å¼ƒã€‚\n");
 			return;
 		}
 		if ( ob->query("money_id") ) victim->save();
-		tell_object(me, HIW "µÃÊÖÁË£¡\n\n" NOR);
-		tell_object(me, "Äã³É¹¦µØÍµµ½Ò»" + ob->query("unit") + ob->name() + "£¡\n");
+		tell_object(me, HIW "å¾—æ‰‹äº†ï¼\n\n" NOR);
+		tell_object(me, "ä½ æˆåŠŸåœ°å·åˆ°ä¸€" + ob->query("unit") + ob->name() + "ï¼\n");
 
 		if( living(victim) ) {
 			if (me->query("combat_exp") <= (int)victim->query("combat_exp")*3/2) {
@@ -112,23 +112,23 @@ private void compelete_steal(object me, object victim, object ob, int sp, int dp
 		}
 
 		if( random(sp) > dp/2 )
-			message("vision", "Äã¿´µ½" + me->name() + "¹í¹íËîËîµØ´Ó"
-				+ victim->name() + "ÉíÉÏÍµ×ßÁËÒ»" + ob->query("unit")
-				+ ob->name() + "£¡\n", environment(me), ({ me, victim }) );
+			message("vision", "ä½ çœ‹åˆ°" + me->name() + "é¬¼é¬¼ç¥Ÿç¥Ÿåœ°ä»"
+				+ victim->name() + "èº«ä¸Šå·èµ°äº†ä¸€" + ob->query("unit")
+				+ ob->name() + "ï¼\n", environment(me), ({ me, victim }) );
 	} else {
 		if( random(sp) > dp/3 ) {
-			tell_object(me, victim->name() + "²»¾­ÒâµØÒ»×ªÍ·£¬Äã¼±Ã¦½«ÊÖËõÁË»ØÈ¥£¡\n"
-				"»¹ºÃ£¬Ã»ÓĞ±»·¢ÏÖ¡£\n");
+			tell_object(me, victim->name() + "ä¸ç»æ„åœ°ä¸€è½¬å¤´ï¼Œä½ æ€¥å¿™å°†æ‰‹ç¼©äº†å›å»ï¼\n"
+				"è¿˜å¥½ï¼Œæ²¡æœ‰è¢«å‘ç°ã€‚\n");
 			return;
 		}
-		tell_object(me, HIR "Ôã¸â£¡ÄãÊ§ÊÖÁË£¡\n\n" NOR);
-//	      message_vision("$NÒ»»ØÍ·£¬ÕıºÃ·¢ÏÖ$nµÄÊÖÕı×¥×Å$PÉíÉÏµÄ" + ob->name() + "£¡\n\n"
-//		      + "$NºÈµÀ£º¡¸¸ÉÊ²Ã´£¡¡¹\n\n", victim, me);
+		tell_object(me, HIR "ç³Ÿç³•ï¼ä½ å¤±æ‰‹äº†ï¼\n\n" NOR);
+//	      message_vision("$Nä¸€å›å¤´ï¼Œæ­£å¥½å‘ç°$nçš„æ‰‹æ­£æŠ“ç€$Pèº«ä¸Šçš„" + ob->name() + "ï¼\n\n"
+//		      + "$Nå–é“ï¼šã€Œå¹²ä»€ä¹ˆï¼ã€\n\n", victim, me);
 
-		if ( victim->query("race") == "ÈËÀà" ) 
-			message_vision("$NÒ»»ØÍ·£¬ÕıºÃ·¢ÏÖ$nµÄÊÖÕı×¥×Å$PÉíÉÏ£¬ºÈµÀ£º¡¸¸ÉÊ²Ã´£¡¡¹\n\n", victim, me);
+		if ( victim->query("race") == "äººç±»" ) 
+			message_vision("$Nä¸€å›å¤´ï¼Œæ­£å¥½å‘ç°$nçš„æ‰‹æ­£æŠ“ç€$Pèº«ä¸Šï¼Œå–é“ï¼šã€Œå¹²ä»€ä¹ˆï¼ã€\n\n", victim, me);
 		else
-			message_vision("$NÒ»»ØÍ·£¬ÕıºÃ·¢ÏÖ$nµÄÊÖÕı×¥×Å$PÉíÉÏ£¬ÏÔµÃÊ®·Ö·ßÅ­£¡\n\n", victim, me);
+			message_vision("$Nä¸€å›å¤´ï¼Œæ­£å¥½å‘ç°$nçš„æ‰‹æ­£æŠ“ç€$Pèº«ä¸Šï¼Œæ˜¾å¾—ååˆ†æ„¤æ€’ï¼\n\n", victim, me);
 
 		me->improve_skill("stealing", 1, 1);
 		if( userp(victim) ) victim->fight_ob(me);
@@ -142,11 +142,11 @@ private void compelete_steal(object me, object victim, object ob, int sp, int dp
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : steal <Ä³Îï> from <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : steal <æŸç‰©> from <æŸäºº>
 
-Õâ¸öÖ¸ÁîÈÃÄãÓĞ»ú»áÍµµ½ËûÈËÉíÉÏµÄ¶«Î÷¡£³É¹¦ÁË, µ±È»Äã¾ÍÄÜ»ñµÃ
-¸ÃÑùÎïÆ·¡£¿ÉÊÇ, ÂíÓĞÊ§Ìã, ÈË×ÜÓĞÊ§·çµÄÊ±ºò, µ±ÄãÊ§°ÜÊ±µ±È»¾Í
-µÃ¸¶³ö´ú¼Û, ÖÁì¶ÊÇÊ²Ã´´ú¼Û......¿¿Äã×Ô¼ºÈ¥·¢¾òÂŞ¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æœ‰æœºä¼šå·åˆ°ä»–äººèº«ä¸Šçš„ä¸œè¥¿ã€‚æˆåŠŸäº†, å½“ç„¶ä½ å°±èƒ½è·å¾—
+è¯¥æ ·ç‰©å“ã€‚å¯æ˜¯, é©¬æœ‰å¤±è¹„, äººæ€»æœ‰å¤±é£çš„æ—¶å€™, å½“ä½ å¤±è´¥æ—¶å½“ç„¶å°±
+å¾—ä»˜å‡ºä»£ä»·, è‡³æ–¼æ˜¯ä»€ä¹ˆä»£ä»·......é ä½ è‡ªå·±å»å‘æ˜ç½—ã€‚
 HELP
     );
     return 1;

@@ -10,18 +10,18 @@ int main(object me, string arg)
 	object ob;
 	string name1, name2;
 
-	if (!arg) return notify_fail("÷∏¡Ó∏Ò Ω: smash <living>\n");
+	if (!arg) return notify_fail("Êåá‰ª§Ê†ºÂºè: smash <living>\n");
 	ob = present(arg, environment(me));
-	if (!ob) return notify_fail("’“≤ªµΩ’‚∏ˆ…˙ŒÔ.\n");
+	if (!ob) return notify_fail("Êâæ‰∏çÂà∞Ëøô‰∏™ÁîüÁâ©.\n");
 	name1 = (string)me->query("name");
 	name2 = (string)ob->query("name");
 	tell_room(environment(me),
-	name1+"∏ﬂæŸÀ´ ÷¥Û∫» »•À¿∞—!, ÷ªº˚ÃÏ…œ“ªµ¿…¡µÁ≤ª∆´≤ª“–µÿª˜÷–"+name2+", Ω´÷ÆªØŒ™“ª∂—ª“Ω˝.\n", 
+	name1+"È´ò‰∏æÂèåÊâãÂ§ßÂñù ÂéªÊ≠ªÊää!, Âè™ËßÅÂ§©‰∏ä‰∏ÄÈÅìÈó™Áîµ‰∏çÂÅè‰∏çÂÄöÂú∞Âáª‰∏≠"+name2+", Â∞Ü‰πãÂåñ‰∏∫‰∏ÄÂ†ÜÁÅ∞ÁÉ¨.\n", 
 	({me, ob}));
-	tell_object(ob, name1+"∏ﬂæŸÀ´ ÷¥Û∫» »•À¿∞—!, ÷ªº˚ÃÏ…œ“ªµ¿…¡µÁ≤ª∆´≤ª“–µÿª˜÷–ƒ„.\n");
+	tell_object(ob, name1+"È´ò‰∏æÂèåÊâãÂ§ßÂñù ÂéªÊ≠ªÊää!, Âè™ËßÅÂ§©‰∏ä‰∏ÄÈÅìÈó™Áîµ‰∏çÂÅè‰∏çÂÄöÂú∞Âáª‰∏≠‰Ω†.\n");
 	
-	write("ƒ„∏ﬂæŸÀ´ ÷¥Û∫» »•À¿∞…! ¥”ÃÏ…œΩµœ¬“ªµ¿…¡µÁΩ´"+name2+"ªØ◊˜“ª∂—ª“Ω˝.\n");
-	write("π˛π˛π˛π˛π˛π˛... ∫√À¨!\n");
+	write("‰Ω†È´ò‰∏æÂèåÊâãÂ§ßÂñù ÂéªÊ≠ªÂêß! ‰ªéÂ§©‰∏äÈôç‰∏ã‰∏ÄÈÅìÈó™ÁîµÂ∞Ü"+name2+"Âåñ‰Ωú‰∏ÄÂ†ÜÁÅ∞ÁÉ¨.\n");
+	write("ÂìàÂìàÂìàÂìàÂìàÂìà... Â•ΩÁàΩ!\n");
 	ob -> die();
 	return 1;
 }
@@ -29,7 +29,7 @@ int main(object me, string arg)
 int help(object me)
 {
    write(@HELP
-÷∏¡Ó∏Ò Ω: smash <…˙ŒÔ>
+Êåá‰ª§Ê†ºÂºè: smash <ÁîüÁâ©>
  
 hehehehehe...........
 

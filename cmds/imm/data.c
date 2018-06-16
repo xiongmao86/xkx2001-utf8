@@ -30,9 +30,9 @@ int main(object me, string arg)
      ob1=present(id, environment(me));
      if (!ob1) ob1 = present(id, me);
      if (!ob1) return
-       notify_fail ("±¾µØÎŞ´ËÉúÎï: "+id+"\n");
+       notify_fail ("æœ¬åœ°æ— æ­¤ç”Ÿç‰©: "+id+"\n");
      if (!ob=present(arg, ob1)) return
-       notify_fail ("¸ÃÉúÎïÉíÉÏÎŞ´ËÎï¼ş: "+arg+"\n");
+       notify_fail ("è¯¥ç”Ÿç‰©èº«ä¸Šæ— æ­¤ç‰©ä»¶: "+arg+"\n");
    }
    else if (arg == "here") {
      ob = environment(me);
@@ -44,13 +44,13 @@ int main(object me, string arg)
      if (!ob) ob = find_player(arg);
      if (!ob) ob = find_living(arg);
      if (!ob) ob = present(arg, me);
-     if(!ob) return notify_fail("Data: ÎŞ·¨ÕÒµ½´ËÎï¼ş: "+arg+"¡£\n");
+     if(!ob) return notify_fail("Data: æ— æ³•æ‰¾åˆ°æ­¤ç‰©ä»¶: "+arg+"ã€‚\n");
    }
  
    list = (mapping)ob->query_entire_dbase();
    tlist = (mapping)ob->query_entire_temp_dbase();
    if( (!list || !mapp(list)) && (!tlist || !mapp(tlist)))
-          return notify_fail("Data: ´ËÎï¼ş²¢Ã»ÓĞÈÎºÎµÄ×ÊÁÏ¡£\n");
+          return notify_fail("Data: æ­¤ç‰©ä»¶å¹¶æ²¡æœ‰ä»»ä½•çš„èµ„æ–™ã€‚\n");
  
    if (sizeof(list))
    {
@@ -65,7 +65,7 @@ int main(object me, string arg)
    }
  
    if(!klist || !sizeof(klist))
-     return notify_fail("Data: ´ËÎï¼ş²¢Ã»ÓĞ´¢´æÈÎºÎ×ÊÁÏ¡£\n");
+     return notify_fail("Data: æ­¤ç‰©ä»¶å¹¶æ²¡æœ‰å‚¨å­˜ä»»ä½•èµ„æ–™ã€‚\n");
  
    if (!spec || spec == "-d") {
      text = "Object : " + base_name(ob) + ".c\n";
@@ -77,7 +77,7 @@ int main(object me, string arg)
  
         text +=sprintf("%O \n",list[ klist[loop] ]);
      }
-     text += "\n×Ü¹²ÓĞ " + sizeof(klist) + " ¸ö´¢´æµÄ×ÊÁÏ¡£\n\n";
+     text += "\næ€»å…±æœ‰ " + sizeof(klist) + " ä¸ªå‚¨å­˜çš„èµ„æ–™ã€‚\n\n";
    }
    else text = "";
  
@@ -91,7 +91,7 @@ int main(object me, string arg)
          text +=sprintf("%O \n",tlist[ tlist2[loop] ]); 
      }
  
-     text += "\n×Ü¹²ÓĞ " + sizeof(tlist2) + " ¸öÔİ´æµÄ×ÊÁÏ¡£\n\n";
+     text += "\næ€»å…±æœ‰ " + sizeof(tlist2) + " ä¸ªæš‚å­˜çš„èµ„æ–™ã€‚\n\n";
    }
  
    me->start_more( text );
@@ -110,19 +110,19 @@ return 1; }
 int help(object me)
 {
   write( @LONG
-Ö¸Áî¸ñÊ½: data [-t|-d] [Íæ¼Ò|Îï¼ş|here] [in Íæ¼Ò»òÉúÎï]
-Ö¸Áî·¶Àı: data        <-- ¿´×Ô¼ºµÄËùÓĞ data base
-     data -t     <-- ¿´×Ô¼ºµÄÔİ´æ×ÊÁÏ
-     data -d     <-- ¿´×Ô¼ºµÄÓÀ¾Ã×ÊÁÏ
-     data -t here     <-- ¿´ËùÔÚ·¿¼äµÄÔİÊ±×ÊÁÏ
-     data wade     <-- ¿´ wade Õâ¸öÍæ¼Ò(»òÎï¼ş)µÄËùÓĞ×ÊÁÏ
-     data board     <-- ¿´°æ×ÓµÄ×ÊÁÏ
-     data cloth in wade   <-- ¿´ wade ÉíÉÏµÄ cloth µÄ×ÊÁÏ
-Ö¸ÁîËµÃ÷:
-   ´ËÃüÁîÈÃÄã¿ÉÒÔ¹Û¿´ËùÖ¸¶¨Îï¼şµÄ×ÊÁÏ£¬ÇÒ½«»áÒÔ more µÄ·½Ê½
-Êä³ö£¬Èç¹ûÃ»ÓĞÖ¸¶¨Êı£¬Ôò×Ô¶¯ÒÔÊ¹ÓÃÕßÎª²ÎÊı¡£ÆäÖĞµÄ -t Ñ¡Ïî¿ÉÒÔÏÔ
-Ê¾ÔİÊ±±äÊı, -d Ñ¡Ïî¿ÉÒÔÖ»ÏÔÊ¾ÓÀ¾Ã±äÊı, ËùÒª¿´µÄ¶ÔÏó¿ÉÒÔÊÇÍæ¼Ò»ò
-ÈÎºÎÎï¼ş.
+æŒ‡ä»¤æ ¼å¼: data [-t|-d] [ç©å®¶|ç‰©ä»¶|here] [in ç©å®¶æˆ–ç”Ÿç‰©]
+æŒ‡ä»¤èŒƒä¾‹: data        <-- çœ‹è‡ªå·±çš„æ‰€æœ‰ data base
+     data -t     <-- çœ‹è‡ªå·±çš„æš‚å­˜èµ„æ–™
+     data -d     <-- çœ‹è‡ªå·±çš„æ°¸ä¹…èµ„æ–™
+     data -t here     <-- çœ‹æ‰€åœ¨æˆ¿é—´çš„æš‚æ—¶èµ„æ–™
+     data wade     <-- çœ‹ wade è¿™ä¸ªç©å®¶(æˆ–ç‰©ä»¶)çš„æ‰€æœ‰èµ„æ–™
+     data board     <-- çœ‹ç‰ˆå­çš„èµ„æ–™
+     data cloth in wade   <-- çœ‹ wade èº«ä¸Šçš„ cloth çš„èµ„æ–™
+æŒ‡ä»¤è¯´æ˜:
+   æ­¤å‘½ä»¤è®©ä½ å¯ä»¥è§‚çœ‹æ‰€æŒ‡å®šç‰©ä»¶çš„èµ„æ–™ï¼Œä¸”å°†ä¼šä»¥ more çš„æ–¹å¼
+è¾“å‡ºï¼Œå¦‚æœæ²¡æœ‰æŒ‡å®šæ•°ï¼Œåˆ™è‡ªåŠ¨ä»¥ä½¿ç”¨è€…ä¸ºå‚æ•°ã€‚å…¶ä¸­çš„ -t é€‰é¡¹å¯ä»¥æ˜¾
+ç¤ºæš‚æ—¶å˜æ•°, -d é€‰é¡¹å¯ä»¥åªæ˜¾ç¤ºæ°¸ä¹…å˜æ•°, æ‰€è¦çœ‹çš„å¯¹è±¡å¯ä»¥æ˜¯ç©å®¶æˆ–
+ä»»ä½•ç‰©ä»¶.
 LONG);
  
   return 1;

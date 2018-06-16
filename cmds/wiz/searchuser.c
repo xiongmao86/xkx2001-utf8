@@ -5,7 +5,7 @@
 #define DATA_DIR "/data/user/"
 #define debug printf
 
-#define SYNTAX  "÷∏¡Ó∏Ò Ω£∫searchuser [-sln] <property> <value>\n"+\
+#define SYNTAX  "Êåá‰ª§Ê†ºÂºèÔºösearchuser [-sln] <property> <value>\n"+\
 		"          -s: stop current search\n"+\
 		"          -i: initial character to start from\n"+\
 		"          -l: use login database (for email, last_from)\n"+\
@@ -29,7 +29,7 @@ int main(object me, string arg)
 
     if ( me!=this_player(1)
 	 || wiz_level(me) < wiz_level(wizhood(me)) )
-	    return notify_fail("ƒ„√ª”–»®¡¶ π”√’‚∏ˆ÷∏¡Ó°£\n");
+	    return notify_fail("‰Ω†Ê≤°ÊúâÊùÉÂäõ‰ΩøÁî®Ëøô‰∏™Êåá‰ª§„ÄÇ\n");
 
     if (!arg ) return notify_fail(SYNTAX);
 
@@ -147,7 +147,7 @@ General:
 This command can be used to search the whole user database for
 equality (==) or non-equality (!=) conditions.
 
-÷∏¡Ó∏Ò Ω£∫
+Êåá‰ª§Ê†ºÂºèÔºö
 
 searchuser [-slrn] [-i letter] <property> <value>
 

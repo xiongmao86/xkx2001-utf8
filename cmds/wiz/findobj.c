@@ -14,23 +14,23 @@ int main(object me, string file)
 
 	if (!file) file = me->query("cwf");
 	if (!file)
-		return notify_fail("ÄãÒªÑ°ÕÒÊ²Ã´Îï¼ş£¿\n");
+		return notify_fail("ä½ è¦å¯»æ‰¾ä»€ä¹ˆç‰©ä»¶ï¼Ÿ\n");
 
 	file = resolve_path(me->query("cwd"), file);
 
 	if( file_size(file+".c") < 0 )
-		return notify_fail("Ã»ÓĞÕâ¸öµµ°¸(" + file + ")¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆ(" + file + ")ã€‚\n");
 
 	obs = filter_array(children(file), (: clonep :));
 
 	if (sizeof(obs) == 0)
-		return notify_fail("ÕÒ²»µ½ÕâÑùÎï¼şµÄ¸´ÖÆ¼ş¡£\n");
+		return notify_fail("æ‰¾ä¸åˆ°è¿™æ ·ç‰©ä»¶çš„å¤åˆ¶ä»¶ã€‚\n");
 
-	msg = sprintf("×Ü¹²ÕÒµ½ÁË%s¸ö¸´ÖÆ¼ş\n", chinese_number(sizeof(obs)));
+	msg = sprintf("æ€»å…±æ‰¾åˆ°äº†%sä¸ªå¤åˆ¶ä»¶\n", chinese_number(sizeof(obs)));
 	foreach(ob in obs) {
 		where = environment(ob);
 		msg += sprintf("%-40s\t%s(%s)\n", sprintf("%s(%O)", ob->name(),ob),
-			where ? (living(where) ? where->name() : where->query("short")) : "²»Ïê",
+			where ? (living(where) ? where->name() : where->query("short")) : "ä¸è¯¦",
 			where ? (living(where) ? where->query("id") : base_name(where)) : "none");
 	}
 	me->start_more(msg);
@@ -40,9 +40,9 @@ int main(object me, string file)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : findobj <Îï¼şÖ®ÎÄ¼şÃû>
+æŒ‡ä»¤æ ¼å¼ : findobj <ç‰©ä»¶ä¹‹æ–‡ä»¶å>
 
-´ËÖ¸ÁîÁĞ³öËùÓĞÎï¼şµÄ¸´ÖÆ¼ş¡£
+æ­¤æŒ‡ä»¤åˆ—å‡ºæ‰€æœ‰ç‰©ä»¶çš„å¤åˆ¶ä»¶ã€‚
 HELP
     );
     return 1;

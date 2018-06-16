@@ -11,12 +11,12 @@ int main(object me, string arg)
 	string cn;
 
 	if( me->query("combat_exp") < 500000)
-		return notify_fail("�������������������û���ʸ���ɫ��\n");
+		return notify_fail("你的名声还不够响亮，没有资格上色。\n");
 	cn = me->query("colorname");
 	if( cn &&  cn[7..strlen(cn)-8] == me->query("name"))
-		return notify_fail("��������Ѿ�����ɫ�ˡ�\n");
+		return notify_fail("你的名字已经有颜色了。\n");
 
-	if( !arg ) return notify_fail("��Ҫ���Լ���������ʲôɫ��\n");
+	if( !arg ) return notify_fail("你要给自己的名字上什么色？\n");
 
 	if( arg == "RED") me->set_color("$RED$");
 	if( arg == "GRN") me->set_color("$GRN$");
@@ -34,27 +34,27 @@ int main(object me, string arg)
 	if( arg == "HIW") me->set_color("$HIW$");
 
 	else if(!me->query("colorname"))
-	return notify_fail("��Ҫ���Լ���������ʲôɫ��\n");
+	return notify_fail("你要给自己的名字上什么色？\n");
 
-	write("�����������Ư�����ˡ�\n");
+	write("现在你的名字漂亮多了。\n");
 	return 1;
 }
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : color <��ɫ>
+指令格式 : color <颜色>
  
-���������ʮ���飬��ô����Ը����Լ����������ּ���һ����ɫ��
-��ѡ��������ɫ��
-��ע�⣡������ɫһ�����ϾͲ��ܸ��ģ���������������֣�������
+如果你有五十万经验，那么你可以给你自己响亮的名字加上一个颜色。
+请选择以下颜色：
+（注意！！！颜色一旦加上就不能更改，除非你更换了名字！！！）
 
-RED - ��ɫ		HIR - ����ɫ
-GRN - ��ɫ		HIG - ����ɫ
-YEL - ����ɫ		HIY - ��ɫ
-BLU - ����ɫ		HIB - ��ɫ
-MAG - ǳ��ɫ		HIM - �ۺ�ɫ
-CYN - ����ɫ		HIC - ����ɫ
-WHT - ǳ��ɫ		HIW - ��ɫ
+RED - 红色		HIR - 亮红色
+GRN - 绿色		HIG - 亮绿色
+YEL - 土黄色		HIY - 黄色
+BLU - 深蓝色		HIB - 蓝色
+MAG - 浅紫色		HIM - 粉红色
+CYN - 蓝绿色		HIC - 天青色
+WHT - 浅灰色		HIW - 白色
 
 HELP
         );

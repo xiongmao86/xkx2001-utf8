@@ -7,14 +7,14 @@ int main(object me, string arg)
 {
 	object ob;
 
-	if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºilist <Îï¼ş»òµµÃû>\n");
+	if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šilist <ç‰©ä»¶æˆ–æ¡£å>\n");
 
 	ob = present(arg, me);
 	if( !ob ) ob = present(arg, environment(me));
 	if( !ob ) ob = find_object(resolve_path(me->query("cwd"), arg));
-	if( !ob ) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş»òÕâÑùÎï¼şÃ»ÓĞ±»ÔØÈë¡£\n");
+	if( !ob ) return notify_fail("æ²¡æœ‰è¿™æ ·ç‰©ä»¶æˆ–è¿™æ ·ç‰©ä»¶æ²¡æœ‰è¢«è½½å…¥ã€‚\n");
 
-	printf("%OÖ±½Ó»ò¼ä½Ó¼Ì³ĞÒÔÏÂµµ°¸£º\n    %s\n", ob,
+	printf("%Oç›´æ¥æˆ–é—´æ¥ç»§æ‰¿ä»¥ä¸‹æ¡£æ¡ˆï¼š\n    %s\n", ob,
 		implode(deep_inherit_list(ob), "\n    "));
 	return 1;
 }
@@ -22,9 +22,9 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: ilist <Îï¼ş»òµµÃû>
+æŒ‡ä»¤æ ¼å¼: ilist <ç‰©ä»¶æˆ–æ¡£å>
  
-ÁĞ³öÒ»¸öÎï¼şËù¼Ì³ĞµÄËùÓĞÎï¼ş¡£
+åˆ—å‡ºä¸€ä¸ªç‰©ä»¶æ‰€ç»§æ‰¿çš„æ‰€æœ‰ç‰©ä»¶ã€‚
  
 HELP
 );

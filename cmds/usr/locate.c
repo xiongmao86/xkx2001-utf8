@@ -14,15 +14,15 @@ mixed main(object me, string arg)
     string str;
     object *target;
 
-    if( !stringp(arg) || arg == "" ) return notify_fail("ÄãÒªÕÒË­£¿\n");
+    if( !stringp(arg) || arg == "" ) return notify_fail("ä½ è¦æ‰¾è°ï¼Ÿ\n");
     LOCATE_Q->send_locate_q(arg);
-    write("ÕıÔÚÕÒÑ°£¬ÇëÉÔºò¡£\n");
+    write("æ­£åœ¨æ‰¾å¯»ï¼Œè¯·ç¨å€™ã€‚\n");
     target = LOCATE_Q->find_users(arg);
     if(pointerp(target) && sizeof(target)) 
 	for(i=0; i<sizeof(target); i++) 
-	    write(target[i]->short(1)+"ÕıÔÚÁ¬ÏßÖĞ¡£\n");
+	    write(target[i]->short(1)+"æ­£åœ¨è¿çº¿ä¸­ã€‚\n");
     else
-	write("Ã»ÓĞ·¢ÏÖ"+arg+"ÔÚ±¾Õ¾Á¬Ïß£¬¼ÌĞøËÑÑ°ÆäËûÕ¾µãÖĞ¡£\n");
+	write("æ²¡æœ‰å‘ç°"+arg+"åœ¨æœ¬ç«™è¿çº¿ï¼Œç»§ç»­æœå¯»å…¶ä»–ç«™ç‚¹ä¸­ã€‚\n");
     return 1;
 }
 
@@ -30,11 +30,11 @@ mixed main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : locate Ê¹ÓÃÕßĞÕÃû
+æŒ‡ä»¤æ ¼å¼ : locate ä½¿ç”¨è€…å§“å
 
-Õâ¸öÖ¸Áî¿ÉÒÔÔÚÓÎÏ·ÍøÂçÖĞËÑÑ°Ä³Ò»Íæ¼Ò¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥åœ¨æ¸¸æˆç½‘ç»œä¸­æœå¯»æŸä¸€ç©å®¶ã€‚
 
-Ïà¹ØÖ¸Áî£º finger, who
+ç›¸å…³æŒ‡ä»¤ï¼š finger, who
 HELP
     );
     return 1;

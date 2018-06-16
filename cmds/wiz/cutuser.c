@@ -5,7 +5,7 @@
 #define DATA_DIR "/data/user/"
 #define debug printf
 
-#define SYNTAX  "÷∏¡Ó∏Ò Ω£∫cutuser [-es] <user id> [cut percentage]\n"+\
+#define SYNTAX  "Êåá‰ª§Ê†ºÂºèÔºöcutuser [-es] <user id> [cut percentage]\n"+\
 		"          -s: cut skill, e.g. -s taiji-shengong\n"+\
 		"          -e: cut combat_exp (default)\n"
 
@@ -19,7 +19,7 @@ int main(object me, string arg)
 
     if ( me!=this_player(1)
 	 || wiz_level(me) < wiz_level(wizhood(me)) )
-	    return notify_fail("ƒ„√ª”–»®¡¶ π”√’‚∏ˆ÷∏¡Ó°£\n");
+	    return notify_fail("‰Ω†Ê≤°ÊúâÊùÉÂäõ‰ΩøÁî®Ëøô‰∏™Êåá‰ª§„ÄÇ\n");
 
     if (!arg ) return notify_fail(SYNTAX);
 
@@ -101,7 +101,7 @@ int main(object me, string arg)
 int help(object me) {
     write (@HELP
 
-÷∏¡Ó∏Ò Ω£∫
+Êåá‰ª§Ê†ºÂºèÔºö
 
 cutuser [-es] <user id> [cut percentage]
           -s: cut skill, e.g. -s taiji-shengong

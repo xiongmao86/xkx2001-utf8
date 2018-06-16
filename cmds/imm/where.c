@@ -25,7 +25,7 @@ int main(object me, string str)
 			where = environment(ob);
 			msg += sprintf("%-20s%-20s%-20s\n", ob->name()+
 				"("+ob->query("id")+")",
-				where ? where->query("short") : "²»Ïê",
+				where ? where->query("short") : "ä¸è¯¦",
 				where ? base_name(where) : "none");
 		}
 		me->start_more(msg);	
@@ -41,12 +41,12 @@ int main(object me, string str)
 			if( !ob = environment(ob_list[i]) ) continue;
 			printf("%O\n", ob );
 		}
-		return notify_fail("ÏÖÔÚÃ»Õâ¸öÈË¡£\n");
+		return notify_fail("ç°åœ¨æ²¡è¿™ä¸ªäººã€‚\n");
 	}
-	if (!ob) return notify_fail("ÏÖÔÚÃ»Õâ¸öÈË.\n");
+	if (!ob) return notify_fail("ç°åœ¨æ²¡è¿™ä¸ªäºº.\n");
 	where = environment(ob);
-	if (!where) return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÇÀïÒ®...\n");
-	printf("%s(%s)ÏÖÔÚÔÚ%s(%s).\n",
+	if (!where) return notify_fail("è¿™ä¸ªäººä¸çŸ¥é“åœ¨é‚£é‡Œè€¶...\n");
+	printf("%s(%s)ç°åœ¨åœ¨%s(%s).\n",
 		(string)ob->name(),
 		(string)ob->query("id"),
 		(string)where->query("short"),
@@ -57,10 +57,10 @@ int main(object me, string str)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½: where <Íæ¼ÒµÄ ID>
+æŒ‡ä»¤æ ¼å¼: where <ç©å®¶çš„ ID>
 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÍæ¼ÒÄ¿Ç°ËùÔÚµÄÎ»ÖÃ, Èô²»¼Ó id Ôò»áÁĞ³öËùÓĞ
-Íæ¼ÒµÄËùÔÚÎ»ÖÃ¡£
+è¿™ä¸ªæŒ‡ä»¤æ˜¯ç”¨æ¥å¾—çŸ¥ç©å®¶ç›®å‰æ‰€åœ¨çš„ä½ç½®, è‹¥ä¸åŠ  id åˆ™ä¼šåˆ—å‡ºæ‰€æœ‰
+ç©å®¶çš„æ‰€åœ¨ä½ç½®ã€‚
 
 HELP
 	);

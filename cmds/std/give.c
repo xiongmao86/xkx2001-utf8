@@ -13,36 +13,36 @@ int main(object me, string arg)
 	object obj, who, *inv, obj2;
 	int i, amount;
 
-	if(!arg) return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+	if(!arg) return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( sscanf(arg, "%s to %s", item, target)==2
 	|| sscanf(arg, "%s %s", target, item)==2 );
-	else return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+	else return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if (me->is_fighting())
-		return notify_fail("ÄãÕýÃ¦×Å´ò¼ÜÄØ¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€æ‰“æž¶å‘¢ã€‚\n");
 
 	if(!objectp(who = present(target, environment(me))) || !living(who))
-		return notify_fail("ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
-	if( who == me) return notify_fail("×Ô¼º¸ø×Ô¼º£¿£¡\n");
+	if( who == me) return notify_fail("è‡ªå·±ç»™è‡ªå·±ï¼Ÿï¼\n");
 
-	if( who->query("env/no_accept") ) return notify_fail(who->name() + "²»Ïë½ÓÊÜÈÎºÎÎïÆ·¡£\n");
+	if( who->query("env/no_accept") ) return notify_fail(who->name() + "ä¸æƒ³æŽ¥å—ä»»ä½•ç‰©å“ã€‚\n");
 
 	if(sscanf(item, "%d %s", amount, item)==2) {
 		if( !objectp(obj = present(item, me)) )	
-			return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+			return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 		if( obj->query("no_drop") )
-			return notify_fail("ÕâÑù¶«Î÷²»ÄÜËæ±ã¸øÈË¡£\n");
+			return notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½éšä¾¿ç»™äººã€‚\n");
 		if( !obj->query_amount() )	
-			return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ª¸øÈË¡£\n");
+			return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†å¼€ç»™äººã€‚\n");
 		if( amount < 1 )
-			return notify_fail("¶«Î÷µÄÊýÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+			return notify_fail("ä¸œè¥¿çš„æ•°é‡è‡³å°‘æ˜¯ä¸€ä¸ªã€‚\n");
 		if( amount > obj->query_amount() ) 
-			return notify_fail("ÄãÃ»ÓÐÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+			return notify_fail("ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„" + obj->name() + "ã€‚\n");
 		else if( amount == (int)obj->query_amount() )
 			return do_give(me, obj, who);
 		else {
@@ -69,7 +69,7 @@ int main(object me, string arg)
 	}
 
 	if(!objectp(obj = present(item, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 	return do_give(me, obj, who);
 }
 
@@ -78,28 +78,28 @@ int do_give(object me, object obj, object who)
 	string amt;
 
 	if( obj->query("no_drop") )
-		return notify_fail("ÕâÑù¶«Î÷²»ÄÜËæ±ã¸øÈË¡£\n");
+		return notify_fail("è¿™æ ·ä¸œè¥¿ä¸èƒ½éšä¾¿ç»™äººã€‚\n");
 
 	if( obj->query_amount())
 		amt = chinese_number(obj->query_amount());
 
-	notify_fail("¶Ô·½²»½ÓÊÜÕâÑù¶«Î÷¡£\n");
+	notify_fail("å¯¹æ–¹ä¸æŽ¥å—è¿™æ ·ä¸œè¥¿ã€‚\n");
 	if( !interactive(who) && !who->accept_object(me, obj) )
 		return 0;
 
 	if( !userp(who) && obj->value() ) {
-		message_vision("$NÄÃ³ö" + obj->short() + "¸ø$n¡£\n", me, who);
+		message_vision("$Næ‹¿å‡º" + obj->short() + "ç»™$nã€‚\n", me, who);
 		destruct(obj);
 		return 1;
 	} else if( obj->move(who) ) {
-		printf("Äã¸ø%s%s%s%s¡£\n", 
+		printf("ä½ ç»™%s%s%s%sã€‚\n", 
 			who->name(),
-			obj->query_amount()? amt : "Ò»",
+			obj->query_amount()? amt : "ä¸€",
                         obj->query_amount()? obj->query("base_unit") : obj->query("unit"), 
 			obj->name());
-		message("vision", sprintf("%s¸øÄãÒ»%s%s¡£\n", me->name(),
+		message("vision", sprintf("%sç»™ä½ ä¸€%s%sã€‚\n", me->name(),
 			obj->query("unit"), obj->name()), who );
-		message("vision", sprintf("%s¸ø%sÒ»%s%s¡£\n", me->name(), who->name(),
+		message("vision", sprintf("%sç»™%sä¸€%s%sã€‚\n", me->name(), who->name(),
 			obj->query("unit"), obj->name()), environment(me), ({me, who}) );
 		me->save();
 		who->save();
@@ -110,10 +110,10 @@ int do_give(object me, object obj, object who)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : give <ÎïÆ·Ãû³Æ> to <Ä³ÈË>
-      »ò : give <Ä³ÈË> <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : give <ç‰©å“åç§°> to <æŸäºº>
+      æˆ– : give <æŸäºº> <ç‰©å“åç§°>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³ÑùÎïÆ·¸ø±ðÈË, µ±È», Ê×ÏÈÄãÒªÓµÓÐÕâÑùÎïÆ·.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å°†æŸæ ·ç‰©å“ç»™åˆ«äºº, å½“ç„¶, é¦–å…ˆä½ è¦æ‹¥æœ‰è¿™æ ·ç‰©å“.
  
 HELP
     );

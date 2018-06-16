@@ -10,19 +10,19 @@ int main(object me, string str)
 	int i;
 	if (!str) return notify_fail("<Syntax>: Summon <player id>\n");
 	ob = LOGIN_D->find_body(str);
-	if (!ob) return notify_fail("ß×... ÓĞÕâ¸öÈËÂğ?\n");
+	if (!ob) return notify_fail("å’¦... æœ‰è¿™ä¸ªäººå—?\n");
 	// moving
-	tell_room(environment(ob),"Ìì¿ÕÖĞÉì³öÒ»Ö»´óÊÖ°Ñ"+
-	(string)ob->query("name")+"×¥ÁËÆğÀ´, È»áá²»¼ûÁË.\n", ob);
-	tell_object(ob,"Ò»Ö»ÊÖ°ÑÄã×¥ÁËÆğÀ´, ÄãÑÛÇ°Ò»ÕóºÚ....\n");
+	tell_room(environment(ob),"å¤©ç©ºä¸­ä¼¸å‡ºä¸€åªå¤§æ‰‹æŠŠ"+
+	(string)ob->query("name")+"æŠ“äº†èµ·æ¥, ç„¶å¾Œä¸è§äº†.\n", ob);
+	tell_object(ob,"ä¸€åªæ‰‹æŠŠä½ æŠ“äº†èµ·æ¥, ä½ çœ¼å‰ä¸€é˜µé»‘....\n");
 	ob->move("/d/death/blkbot");
-        tell_object(me, "Äã°Ñ"+(string)ob->query("name")+"ËÍÈë¿Õ·¿¼ä¡£\n");
-	tell_object(ob,".... ĞÑÀ´Ê±·¢ÏÖÊÇ"+(string)me->query("name")+
-	"°ÑÄãÅª¹ıÀ´µÄ.\n");
-	tell_room(environment(ob),(string)ob->query("name")+"Í»È»³öÏÖ"+
-	"ÔÚÄãÑÛÇ°\n",({me,ob}));
+        tell_object(me, "ä½ æŠŠ"+(string)ob->query("name")+"é€å…¥ç©ºæˆ¿é—´ã€‚\n");
+	tell_object(ob,".... é†’æ¥æ—¶å‘ç°æ˜¯"+(string)me->query("name")+
+	"æŠŠä½ å¼„è¿‡æ¥çš„.\n");
+	tell_room(environment(ob),(string)ob->query("name")+"çªç„¶å‡ºç°"+
+	"åœ¨ä½ çœ¼å‰\n",({me,ob}));
 	// ok ..
-	log_file("static/BLK", sprintf("[%s]%s(%s)±»%s(%s)ËÍ½ø¿Õ·¿¼ä¡£\n",
+	log_file("static/BLK", sprintf("[%s]%s(%s)è¢«%s(%s)é€è¿›ç©ºæˆ¿é—´ã€‚\n",
                 ctime(time())[0..15], ob->name(), geteuid(ob), me->name(), geteuid(me)));
 	return 1;
 }
@@ -30,9 +30,9 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : blk <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : blk <æŸäºº>
 
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)½«Ä³ÈË¹Øµ½¿Õ·¿¼äÀïÈ¥¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )å°†æŸäººå…³åˆ°ç©ºæˆ¿é—´é‡Œå»ã€‚
 HELP
     );
 

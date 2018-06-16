@@ -3,7 +3,7 @@
 * [x] convert u/
 * [x] convert clone/
 * [x] convert adm/
-* [ ] convert cmds/
+* [x] convert cmds/
 * [ ] convert d/
 * [ ] convert data/
 * [ ] convert doc/

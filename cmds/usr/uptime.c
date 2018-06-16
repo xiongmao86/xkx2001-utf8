@@ -19,23 +19,23 @@ int main()
 	h = t % 24;		t /= 24;
 	d = t;
 
-	if(d) time = chinese_number(d) + "Ìì";
+	if(d) time = chinese_number(d) + "å¤©";
 	else time = "";
 
-	if(h) time += chinese_number(h) + "Ğ¡Ê±";
-	if(m) time += chinese_number(m) + "·Ö";
-	time += chinese_number(s) + "Ãë\n";
+	if(h) time += chinese_number(h) + "å°æ—¶";
+	if(m) time += chinese_number(m) + "åˆ†";
+	time += chinese_number(s) + "ç§’\n";
 
-	write(INTERMUD_MUD_CNAME + "ÒÑ¾­Ö´ĞĞÁË" + time + "\n");
+	write(INTERMUD_MUD_CNAME + "å·²ç»æ‰§è¡Œäº†" + time + "\n");
 	return 1;
 }
 
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : uptime
+æŒ‡ä»¤æ ¼å¼ : uptime
  
-Õâ¸öÖ¸Áî¸æËßÄúÓÎÏ·ÒÑ¾­Á¬ĞøÖ´ĞĞÁË¶à¾Ã.
+è¿™ä¸ªæŒ‡ä»¤å‘Šè¯‰æ‚¨æ¸¸æˆå·²ç»è¿ç»­æ‰§è¡Œäº†å¤šä¹….
  
 HELP
     );

@@ -18,7 +18,7 @@ int main(object me, string arg)
 		if (site[sizeof(site)-1] == '*' ||
 		    site[sizeof(site)-1] == '?' ||
 		    site[sizeof(site)-1] == '+')
-			write("²»ÄÜ½ûÒÔ *, +, ? ½áÎ²µÄµØÖ·¡£\n");
+			write("ä¸èƒ½ç¦ä»¥ *, +, ? ç»“å°¾çš„åœ°å€ã€‚\n");
 		else
 			REGBAN_D->add(site);
 		}
@@ -26,7 +26,7 @@ int main(object me, string arg)
 		REGBAN_D->remove(site);
 	else if (sscanf(arg, "? %s", site) == 1)
 		REGBAN_D->check(site);
-	else write("Ö¸Áî¸ñÊ½£ºregban [+|-|? hostname|user@hostname]\n");
+	else write("æŒ‡ä»¤æ ¼å¼ï¼šregban [+|-|? hostname|user@hostname]\n");
 
 	return 1;
 	
@@ -35,13 +35,13 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£ºregban [+|-|? hostname_pettern|user@hostname_pattern]
+æŒ‡ä»¤æ ¼å¼ï¼šregban [+|-|? hostname_pettern|user@hostname_pattern]
 
-½ûÖ¹±ğÈË×¢²áĞÂµÄÈËÎï£¬ÒÔ·ÀÓĞÈËĞîÒâµ·ÂÒ¡£
-Àı£º regban + smart@.*hacker.com
+ç¦æ­¢åˆ«äººæ³¨å†Œæ–°çš„äººç‰©ï¼Œä»¥é˜²æœ‰äººè“„æ„æ£ä¹±ã€‚
+ä¾‹ï¼š regban + smart@.*hacker.com
      regban - smart@.*hacker.com
      regban ? smart@attack.hacker.com
-Àı£º regban + hacker.com
+ä¾‹ï¼š regban + hacker.com
      regban - hacker.com
      regban ? attack.hacker.com
 HELP

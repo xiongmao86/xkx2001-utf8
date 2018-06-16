@@ -17,7 +17,7 @@ int main(object me, string file)
 
 	if (!file) file = me->query("cwf");
 	if (!file)
-		return notify_fail("ÄãÒªÖØÐÂ±àÒëÊ²÷áµµ°¸£¿\n");
+		return notify_fail("ä½ è¦é‡æ–°ç¼–è¯‘ä»€éº½æ¡£æ¡ˆï¼Ÿ\n");
 
 	if( (obj = present(file, environment(me))) && interactive(obj) )
 		return update_player(obj);
@@ -30,14 +30,14 @@ int main(object me, string file)
 	}
 
 	if( file_size(file)==-1 )
-		return notify_fail("Ã»ÓÐÕâ¸öµµ°¸¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 
 	me->set("cwf", file);
 
 	if (obj = find_object(file)) {
 		if( obj==environment(me) ) {
 			if( file_name(obj)==VOID_OB )
-				return notify_fail("Äã²»ÄÜÔÚ VOID_OB ÀïÖØÐÂ±àÒë VOID_OB¡£\n");
+				return notify_fail("ä½ ä¸èƒ½åœ¨ VOID_OB é‡Œé‡æ–°ç¼–è¯‘ VOID_OBã€‚\n");
 			inv = all_inventory(obj);
 			i = sizeof(inv);
 			while(i--)
@@ -47,14 +47,14 @@ int main(object me, string file)
 		destruct(obj);
 	}
 
-	if (obj) return notify_fail("ÎÞ·¨Çå³ý¾É³ÌÊ½Âë¡£\n");
+	if (obj) return notify_fail("æ— æ³•æ¸…é™¤æ—§ç¨‹å¼ç ã€‚\n");
 
-    write("ÖØÐÂ±àÒë " + file + "£º");
+    write("é‡æ–°ç¼–è¯‘ " + file + "ï¼š");
 	err = catch( call_other(file, "???") );
 	if (err)
-		printf( "·¢Éú´íÎó£º\n%s\n", err );
+		printf( "å‘ç”Ÿé”™è¯¯ï¼š\n%s\n", err );
 	else {
-		write("³É¹¦\£¡\n");
+		write("æˆåŠŸ\ï¼\n");
 		if( (i=sizeof(inv)) && (obj = find_object(file))) {
 			while(i--)
 				if( inv[i] && userp(inv[i]) ) inv[i]->move(obj, 1);
@@ -84,7 +84,7 @@ int update_player(object me)
 	obj->restore();
 	LOGIN_D->enter_world(link_ob, obj, 1);
 
-	write("ÉíÌå¸üÐÂÍê±Ï¡£\n\n");
+	write("èº«ä½“æ›´æ–°å®Œæ¯•ã€‚\n\n");
 	obj->move(env);
 	obj->write_prompt();
 
@@ -94,11 +94,11 @@ int update_player(object me)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : update <µµÃû|here|me|Íæ¼ÒÃû>
+æŒ‡ä»¤æ ¼å¼ : update <æ¡£å|here|me|çŽ©å®¶å>
  
-Õâ¸öÖ¸Áî¿ÉÒÔ¸üÐÂµµ°¸, ²¢½«ÐÂµµµÄÄÚÈÝÔØÈë¼ÇÒäÌåÄÚ. ÈôÄ¿±êÎª
-'here' Ôò¸üÐÂËùÔÚ»·¾³. ÈôÄ¿±êÎª 'me' Ôò¸üÐÂ×Ô¼ºµÄÈËÎï. ÈôÄ¿
-±êÎªÍæ¼ÒÔò¿É¸üÐÂÍæ¼ÒÎï¼þ.
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥æ›´æ–°æ¡£æ¡ˆ, å¹¶å°†æ–°æ¡£çš„å†…å®¹è½½å…¥è®°å¿†ä½“å†…. è‹¥ç›®æ ‡ä¸º
+'here' åˆ™æ›´æ–°æ‰€åœ¨çŽ¯å¢ƒ. è‹¥ç›®æ ‡ä¸º 'me' åˆ™æ›´æ–°è‡ªå·±çš„äººç‰©. è‹¥ç›®
+æ ‡ä¸ºçŽ©å®¶åˆ™å¯æ›´æ–°çŽ©å®¶ç‰©ä»¶.
  
 HELP
     );

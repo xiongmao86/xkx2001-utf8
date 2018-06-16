@@ -12,11 +12,11 @@ int main(object me, string arg)
 	string file;
 	
 	seteuid(geteuid(me));
-    if (!arg) return notify_fail("ÄãÏëÒªÏÔÊ¾ÄÇ¸öµµ°¸?\n");
+    if (!arg) return notify_fail("ä½ æƒ³è¦æ˜¾ç¤ºé‚£ä¸ªæ¡£æ¡ˆ?\n");
 	file = resolve_path(me->query("cwd"), arg);
-	if( file_size(file)<0 ) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+	if( file_size(file)<0 ) return notify_fail("æ²¡æœ‰è¿™ä¸ªæ¡£æ¡ˆã€‚\n");
 
-	if(!SECURITY_D-> valid_read(file, this_object(), "read_file") )return notify_fail("¶Ô²»Æğ£¬ÄãÃ»ÓĞ¶ÁÕâ¸öµµ°¸µÄÈ¨Á¦¡£\n");
+	if(!SECURITY_D-> valid_read(file, this_object(), "read_file") )return notify_fail("å¯¹ä¸èµ·ï¼Œä½ æ²¡æœ‰è¯»è¿™ä¸ªæ¡£æ¡ˆçš„æƒåŠ›ã€‚\n");
 	cat(file);
 	return 1;
 }
@@ -24,9 +24,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : cat <µµ°¸>
+æŒ‡ä»¤æ ¼å¼ : cat <æ¡£æ¡ˆ>
 
-´ËÖ¸Áî¿ÉÈÃÄã(Äã)Ö±½Ó¶ÁÈ¡Ä³µµ°¸Ö®³ÌÊ½¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ (ä½ )ç›´æ¥è¯»å–æŸæ¡£æ¡ˆä¹‹ç¨‹å¼ã€‚
 HELP
     );
     return 1;

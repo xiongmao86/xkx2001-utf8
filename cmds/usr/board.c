@@ -7,22 +7,22 @@ inherit F_CLEAN_UP;
 
 int main(object me)
 {
-	return notify_fail("����help board�鿴���԰�ʹ�÷�����\n");
+	return notify_fail("请用help board查看留言版使用方法。\n");
 }
 
 int help()
 {
 	write(@HELP
 
-�͵꼰�������ɵ����԰�����ҽ������顢�ĵõ���Ҫ�ط���
-��ʦҲͨ�����԰淢���ͣգĵĸ��ָĶ������һ��Ҫ��ʱ
-�鿴�����԰�ָ���������԰棨�£���䣬�ң�����
-�ȣ��ĵط�����Ч��
+客店及各个门派的留言版是玩家交留经验、心得的重要地方，
+巫师也通过留言版发布ＭＵＤ的各种改动，因此一定要及时
+查看。留言版指令在有留言版（Ｂｏａｒｄ，Ｒｅｐｏｒｔ
+等）的地方才有效。
 
-	list 			: �鿴�����԰�Ŀ¼
-	read <��>		: �Ķ��ڣ�������
-	post <title>		: �����Ҳ����д���䡭
-	discard <��>		: ɾ���ڣ������ԡ�������ֻ��ɾ���Լ�����
+	list 			: 查看该留言版目录
+	read <＃>		: 阅读第＃号留言
+	post <title>		: 如果你也想来写几句…
+	discard <＃>		: 删除第＃号留言。可是你只能删你自己留的
 
 
 HELP

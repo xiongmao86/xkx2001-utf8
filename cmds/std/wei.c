@@ -10,73 +10,73 @@ int main(object me, string arg)
 	string target, item;
 	object obj, dest;
 
-	if(!arg) return notify_fail("ÄãÒªÎ¹Ê²Ã´¶«Î÷¸øË­£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å–‚ä»€ä¹ˆä¸œè¥¿ç»™è°ï¼Ÿ\n");
 
 	if( sscanf(arg, "%s to %s", item, target)!=2 )
-		return notify_fail("ÄãÒªÎ¹Ë­Ê²Ã´¶«Î÷£¿\n");
+		return notify_fail("ä½ è¦å–‚è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if( !objectp(dest = present(target, environment(me))) )
-		return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( !dest->is_character() )
-		return notify_fail("ÕâÑù¶«Î÷²»ÊÇ»îÎï¡£\n");
+		return notify_fail("è¿™æ ·ä¸œè¥¿ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
-	if( dest->query("race") == "ÈËÀà" )
-		return notify_fail("Äã²»ÄÜÓÃÕâ¶«Î÷Î¹ÈË£¡\n");
+	if( dest->query("race") == "äººç±»" )
+		return notify_fail("ä½ ä¸èƒ½ç”¨è¿™ä¸œè¥¿å–‚äººï¼\n");
      if( environment(me)->query("no_fight") )
-                return notify_fail("Äã²»ÄÜÔÚÕâÀïÎ¹¶«Î÷¡£\n");
+                return notify_fail("ä½ ä¸èƒ½åœ¨è¿™é‡Œå–‚ä¸œè¥¿ã€‚\n");
 
 
 	if( !(obj = present(item, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	if( userp(me) && userp(obj) && me->query_condition("pker") > 240)
-		return notify_fail("Äã¸Ğµ½Ò»Ë¿ÄÚ¾Î£¬ÊÖÍ»È»ÈíÁËÏÂÀ´¡£\n");
+		return notify_fail("ä½ æ„Ÿåˆ°ä¸€ä¸å†…ç–šï¼Œæ‰‹çªç„¶è½¯äº†ä¸‹æ¥ã€‚\n");
 	
 	if (!living(obj) && obj->is_character() &&
-	!obj->query("food_supply") && dest->query("race")=="Ò°ÊŞ" ) 
+	!obj->query("food_supply") && dest->query("race")=="é‡å…½" ) 
 	{
-                if (obj->query("disable_type") == "<Ë¯ÃÎÖĞ>"
+                if (obj->query("disable_type") == "<ç¡æ¢¦ä¸­>"
                 && random(obj->query_con()) > 3 
-		&& dest->query("name") != "ÀÏ»¢" 
+		&& dest->query("name") != "è€è™" 
 		&& obj->query("combat_exp") > random(dest->query("combat_exp")))
  {
                      obj->revive();
                      obj->move(environment(me));
 		     obj->receive_wound("qi", (int)(obj->query("eff_qi")/2));	
 
-message_vision("$nµÄÍ·±»"+dest->name()+"Ò§ÁËÒ»¿Ú£¬$n¶ÙÊ±ÌÛµÄĞÑÁË¹ıÀ´£¡\n", me, obj);
+message_vision("$nçš„å¤´è¢«"+dest->name()+"å’¬äº†ä¸€å£ï¼Œ$né¡¿æ—¶ç–¼çš„é†’äº†è¿‡æ¥ï¼\n", me, obj);
                      obj->kill_ob(me);
 		     obj->kill_ob(dest);	
                      return 1;
                 } 
 }
-	if (!living(obj) && obj->is_character() && !obj->query("food_supply") && dest->query("race")=="Ò°ÊŞ" ) {
-		if (obj->query("disable_type") == "<Ë¯ÃÎÖĞ>"
+	if (!living(obj) && obj->is_character() && !obj->query("food_supply") && dest->query("race")=="é‡å…½" ) {
+		if (obj->query("disable_type") == "<ç¡æ¢¦ä¸­>"
 		    && random(obj->query_con()) > 10) {
 		     obj->enable_player();
 		     obj->move(environment(me));
-		     message_vision("$NÏë°Ñ$nµÄÍ·Î¹¸ø" + dest->name()+"³Ô£¬$nÍ»È»¾ªĞÑ£¡\n", me, obj);
+		     message_vision("$Næƒ³æŠŠ$nçš„å¤´å–‚ç»™" + dest->name()+"åƒï¼Œ$nçªç„¶æƒŠé†’ï¼\n", me, obj);
 		     obj->kill_ob(me);
 		     return 1;
 	        } else {
-		     message_vision("$N°Ñ$nµÄÍ·Î¹¸ø" + dest->name()+"³ÔÁË¡£\n",  me, obj);
+		     message_vision("$NæŠŠ$nçš„å¤´å–‚ç»™" + dest->name()+"åƒäº†ã€‚\n",  me, obj);
 		     if (userp(obj) && userp(me) )
 			me->apply_condition("pker", me->query_condition("pker")+120);
-		     obj->set_temp("last_damage_from", "±»" +me->name()+"Î¹ÁË" + dest->name()+"ÁË");
+		     obj->set_temp("last_damage_from", "è¢«" +me->name()+"å–‚äº†" + dest->name()+"äº†");
 		     obj->die();
 		     return 1;
 		}
 	}
 
 	if( obj->query("food_supply") <= 0 || obj->query("food_race") != dest->query("race") )
-		return notify_fail("Äã²»ÄÜÓÃÕâ¶«Î÷Î¹Ëü£¡\n");
+		return notify_fail("ä½ ä¸èƒ½ç”¨è¿™ä¸œè¥¿å–‚å®ƒï¼\n");
 
 	if (!obj->query("food_remaining"))
-		return notify_fail(obj->name() + "ÒÑ¾­Ã»Ê²Ã´ºÃÎ¹µÄÁË¡£\n");
+		return notify_fail(obj->name() + "å·²ç»æ²¡ä»€ä¹ˆå¥½å–‚çš„äº†ã€‚\n");
 
 	if( dest->query("food") >= dest->max_food_capacity() )
-		return notify_fail("ËüÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²Èû²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+		return notify_fail("å®ƒå·²ç»åƒå¤ªé¥±äº†ï¼Œå†ä¹Ÿå¡ä¸ä¸‹ä»»ä½•ä¸œè¥¿äº†ã€‚\n");
 
 	dest->add("food", obj->query("food_supply"));
 	dest->add("jingli", obj->query("food_supply"));
@@ -86,11 +86,11 @@ message_vision("$nµÄÍ·±»"+dest->name()+"Ò§ÁËÒ»¿Ú£¬$n¶ÙÊ±ÌÛµÄĞÑÁË¹ıÀ´£¡\n", me, o
 //	if (obj->query("food_remaining")>4) obj->set("food_remaining",4);
 	obj->add("food_remaining", -1);
 	if (!obj->query("food_remaining") ) {
-		message_vision("$NÎ¹Öø" + dest->name() + "³ÔÍêÁË" + obj->name() +"¡£\n",  me);
+		message_vision("$Nå–‚è‘—" + dest->name() + "åƒå®Œäº†" + obj->name() +"ã€‚\n",  me);
 		destruct(obj);
 	}
 	else 
-	message_vision("$NÄÃÆğ" + obj->name() + "Î¹Öø" + dest->name() + "³ÔÁË¼¸¿Ú¡£\n", me);
+	message_vision("$Næ‹¿èµ·" + obj->name() + "å–‚è‘—" + dest->name() + "åƒäº†å‡ å£ã€‚\n", me);
 
 	if( dest->is_fighting() ) dest->start_busy(2);
 
@@ -100,9 +100,9 @@ message_vision("$nµÄÍ·±»"+dest->name()+"Ò§ÁËÒ»¿Ú£¬$n¶ÙÊ±ÌÛµÄĞÑÁË¹ıÀ´£¡\n", me, o
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : feed|wei <Ê³ÎïÃû³Æ> to <Ä³¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : feed|wei <é£Ÿç‰©åç§°> to <æŸåŠ¨ç‰©>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³ÑùÊ³ÎïÎ¹¸øÄ³¶¯ÎïÊ³ÓÃ£¬µ±È»£¬Ê×ÏÈÄãÒªÓµÓĞÕâÑùÎïÆ·¡£
+è¿™ä¸ªæŒ‡ä»¤å¯ä»¥è®©ä½ å°†æŸæ ·é£Ÿç‰©å–‚ç»™æŸåŠ¨ç‰©é£Ÿç”¨ï¼Œå½“ç„¶ï¼Œé¦–å…ˆä½ è¦æ‹¥æœ‰è¿™æ ·ç‰©å“ã€‚
  
 HELP
     );

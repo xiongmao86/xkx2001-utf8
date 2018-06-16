@@ -1,4 +1,4 @@
-// wizlian.c Î×Ê¦×¨ÓÃ
+// wizlian.c å·«å¸ˆä¸“ç”¨
 // Written by Doing Lu 1998/11/1
 
 #include <globals.h>
@@ -11,77 +11,77 @@ void	restore_origin(object me);
 
 mapping attrib =([
 	"qi"	 	: "",
-	"Æø"		: "qi",
+	"æ°”"		: "qi",
 	"eff_qi"	: "",
-	"ÓĞĞ§Æø"	: "eff_qi",
+	"æœ‰æ•ˆæ°”"	: "eff_qi",
 	"max_qi"	: "",
-	"×î´óÆø"	: "max_qi",
+	"æœ€å¤§æ°”"	: "max_qi",
 	"jing"		: "",
-	"¾«"		: "jing",
+	"ç²¾"		: "jing",
 	"eff_jing"	: "",
-	"ÓĞĞ§¾«"	: "eff_jing",
+	"æœ‰æ•ˆç²¾"	: "eff_jing",
 	"max_jing"	: "",
-	"×î´ó¾«"	: "max_jing",
+	"æœ€å¤§ç²¾"	: "max_jing",
 	"food"		: "",
-	"Ê³Îï"		: "food",
+	"é£Ÿç‰©"		: "food",
 	"water"		: "",
-	"ÒûË®"		: "water",
+	"é¥®æ°´"		: "water",
 	"neili"		: "",
-	"ÄÚÁ¦"		: "neili",
+	"å†…åŠ›"		: "neili",
 	"max_neili"	: "",
-	"×î´óÄÚÁ¦"	: "max_neili",
+	"æœ€å¤§å†…åŠ›"	: "max_neili",
 	"jingli"	: "",
-	"¾«Á¦"		: "jingli",
+	"ç²¾åŠ›"		: "jingli",
 	"max_jingli"	: "",
-	"×î´ó¾«Á¦"	: "max_jingli",
+	"æœ€å¤§ç²¾åŠ›"	: "max_jingli",
 	"shen"		: "",
-	"Éñ"		: "shen",
+	"ç¥"		: "shen",
 	"mud_age"	: "",
-	"ÄêÁä"		: "mud_age",
+	"å¹´é¾„"		: "mud_age",
 	"str"		: "",
-	"ëöÁ¦"		: "str",
-	"±ÛÁ¦"		: "str",
+	"è†‚åŠ›"		: "str",
+	"è‡‚åŠ›"		: "str",
 	"int"		: "",
-	"ÎòĞÔ"		: "int",
-	"ÖÇÁ¦"		: "int",
+	"æ‚Ÿæ€§"		: "int",
+	"æ™ºåŠ›"		: "int",
 	"con"		: "",
-	"¸ù¹Ç"		: "con",
+	"æ ¹éª¨"		: "con",
 	"dex"		: "",
-	"Éí·¨"		: "dex",
+	"èº«æ³•"		: "dex",
 	"MKS"		: "",	
 	"PKS"		: "",
 	"potential"	: "",
-	"Ç±Á¦"		: "potential",
-	"Ç±ÄÜ"		: "potential",
+	"æ½œåŠ›"		: "potential",
+	"æ½œèƒ½"		: "potential",
 	"combat_exp"	: "",
 	"exp"		: "combat_exp",
-	"¾­Ñé"		: "combat_exp",
+	"ç»éªŒ"		: "combat_exp",
 	"learned_points": "",
-	"Ñ§Ï°µãÊı"	: "learnd_points",
+	"å­¦ä¹ ç‚¹æ•°"	: "learnd_points",
 ]);
 
 int main(object me, string arg)
 {
 	object ob;
 	mapping learned;
-	string pack, argn, argm;	// ÊôĞÔ/Îä¹¦  ²ÎÊı1  ²ÎÊı2:ÔİÊ±²»ÓÃ
-	int argnum;			// ²ÎÊıµÄ¸öÊı (°üÀ¨ÊôĞÔ)
+	string pack, argn, argm;	// å±æ€§/æ­¦åŠŸ  å‚æ•°1  å‚æ•°2:æš‚æ—¶ä¸ç”¨
+	int argnum;			// å‚æ•°çš„ä¸ªæ•° (åŒ…æ‹¬å±æ€§)
 
 	int i;
 	string attrs;
 
-	// »Ö¸´×´Ì¬£¬¾«¡¢Æø¡¢ÄÚÁ¦
+	// æ¢å¤çŠ¶æ€ï¼Œç²¾ã€æ°”ã€å†…åŠ›
 	if( !arg)
 	{
-		message_vision(HIW "$Nà«à«µÄÄîÁËÒ»»áÖäÓï£¬Ò»¹ÉÑÌÎíÁıÕÖÁË$N¡£\n\n" NOR, me);
+		message_vision(HIW "$Nå–ƒå–ƒçš„å¿µäº†ä¸€ä¼šå’’è¯­ï¼Œä¸€è‚¡çƒŸé›¾ç¬¼ç½©äº†$Nã€‚\n\n" NOR, me);
 		restore_condition(me);
 		return 1;
 	}
 
-	// »Ö¸´³ÉÔ­Ê¼Êı¾İ£¬·ÅÆúÎä¹¦
+	// æ¢å¤æˆåŸå§‹æ•°æ®ï¼Œæ”¾å¼ƒæ­¦åŠŸ
 	if (arg == "org")
 	{
-		message_vision(HIW "$Nà«à«µÄÄîÁËÒ»»áÖäÓï£¬Ò»¹ÉÑÌÎíÁıÕÖÁË$N¡£\n\n" NOR, me);
+		message_vision(HIW "$Nå–ƒå–ƒçš„å¿µäº†ä¸€ä¼šå’’è¯­ï¼Œä¸€è‚¡çƒŸé›¾ç¬¼ç½©äº†$Nã€‚\n\n" NOR, me);
 		restore_origin(me);
 		return 1;
 	}
@@ -90,38 +90,38 @@ int main(object me, string arg)
 
 	if (argnum < 2)
 	{
-		// Ã»ÓĞÖ¸¶¨ÊôĞÔ
-		message_vision(HIW "$Nà«à«µÄÄîÁËÒ»»áÖäÓï£¬Ê²Ã´Ò²Ã»·¢Éú¡£\n\n" NOR, me);
+		// æ²¡æœ‰æŒ‡å®šå±æ€§
+		message_vision(HIW "$Nå–ƒå–ƒçš„å¿µäº†ä¸€ä¼šå’’è¯­ï¼Œä»€ä¹ˆä¹Ÿæ²¡å‘ç”Ÿã€‚\n\n" NOR, me);
 		return 1;
 	}
 
 	if (! undefinedp(attrs = attrib[pack]))
 	{
-		// ĞŞ¸ÄÊôĞÔ
+		// ä¿®æ”¹å±æ€§
 		if (attrs == "") attrs = pack;
-		message_vision(HIW "$Nà«à«µÄÄîß¶£ºÌìÁéÁé£¬µØÁéÁé£¬¸÷Â·ÉñÏÉ¿ìÏÔÁé£¡\n\n" NOR, me);
+		message_vision(HIW "$Nå–ƒå–ƒçš„å¿µå¨ï¼šå¤©çµçµï¼Œåœ°çµçµï¼Œå„è·¯ç¥ä»™å¿«æ˜¾çµï¼\n\n" NOR, me);
 		me->set(attrs, argn);
-		message_vision(HIY "ÌìÉÏºäÂ¡Â¡µÄÏìÁËÒ»»á£¬$NºÇºÇµÄĞ¦ÁËÁ½ÉùËµµÀ£ºÕæÊÇÁéÑé¡£\n\n" NOR, me);
+		message_vision(HIY "å¤©ä¸Šè½°éš†éš†çš„å“äº†ä¸€ä¼šï¼Œ$Nå‘µå‘µçš„ç¬‘äº†ä¸¤å£°è¯´é“ï¼šçœŸæ˜¯çµéªŒã€‚\n\n" NOR, me);
 		return 1;
 	} else
 	{
-		// ĞŞ¸ÄÎä¹¦
-		message_vision(HIW "$NµãÈ¼Ò»ÕÅ·ûÖä£¬ºÈµÀ£ºÌ«ÉÏÀÏ¾ı¼±¼±ÈçÂÉë·Áî£¡\n\n" NOR, me);
+		// ä¿®æ”¹æ­¦åŠŸ
+		message_vision(HIW "$Nç‚¹ç‡ƒä¸€å¼ ç¬¦å’’ï¼Œå–é“ï¼šå¤ªä¸Šè€å›æ€¥æ€¥å¦‚å¾‹æ••ä»¤ï¼\n\n" NOR, me);
 		
 		if( !find_object(SKILL_D(pack))
 			&& file_size(SKILL_D(pack)+".c") < 0 )
 		{
-			message_vision(HIR "ÌìÉÏºäÂ¡Â¡µÄÏìÁËÒ»»á£¬Ì«ÉÏÀÏ¾ıÅ­ºÈµÀ£ºÄã¸ãÊ²Ã´¹í£¡\n\n" NOR, me);
+			message_vision(HIR "å¤©ä¸Šè½°éš†éš†çš„å“äº†ä¸€ä¼šï¼Œå¤ªä¸Šè€å›æ€’å–é“ï¼šä½ æä»€ä¹ˆé¬¼ï¼\n\n" NOR, me);
 			return 1;
 		}
 
 		if (argn >= 0)
 		{
 			me->set_skill(pack, argn);
-			message_vision(HIY "Ò»µÀ½ğ¹â´ÓÌìÉÏÉäÏÂÀ´£¬ÒşÈë$NµÄÌåÄÚ¡£\n\n" NOR, me);
+			message_vision(HIY "ä¸€é“é‡‘å…‰ä»å¤©ä¸Šå°„ä¸‹æ¥ï¼Œéšå…¥$Nçš„ä½“å†…ã€‚\n\n" NOR, me);
 		} else
 		{
-			message_vision(HIR "ÌìÉÏºäÂ¡Â¡µÄÏìÁËÒ»»á£¬Ì«ÉÏÀÏ¾ıÅ­ºÈµÀ£º²»ÒªÂÒÀ´£¡\n\n" NOR, me);
+			message_vision(HIR "å¤©ä¸Šè½°éš†éš†çš„å“äº†ä¸€ä¼šï¼Œå¤ªä¸Šè€å›æ€’å–é“ï¼šä¸è¦ä¹±æ¥ï¼\n\n" NOR, me);
 		}
 		return 1;
 	}
@@ -129,28 +129,28 @@ int main(object me, string arg)
 
 void restore_condition(object me)
 {
-	message_vision(HIY "$N±äµÃÉñ²ÉŞÈŞÈ£¡\n\n" NOR, me);
-	// »Ö¸´Æø
+	message_vision(HIY "$Nå˜å¾—ç¥é‡‡å¥•å¥•ï¼\n\n" NOR, me);
+	// æ¢å¤æ°”
 	me->set("qi", me->query("max_qi"));
 	me->set("eff_qi", me->query("max_qi"));
 
-	// »Ö¸´¾«
+	// æ¢å¤ç²¾
 	me->set("jing", me->query("max_jing"));
 	me->set("eff_jing", me->query("max_jing"));
 
-	// »Ö¸´ÄÚÁ¦
+	// æ¢å¤å†…åŠ›
 	me->set("neili", me->query("max_neili"));
 
-	// »Ö¸´¾«Á¦
+	// æ¢å¤ç²¾åŠ›
 	me->set("jingli", me->query("max_jingli"));
 
-	// »Ö¸´Ê³Îï
+	// æ¢å¤é£Ÿç‰©
 	me->set("food", me->max_food_capacity());
 
-	// »Ö¸´ÒûË®
+	// æ¢å¤é¥®æ°´
 	me->set("water",me->max_water_capacity());
 
-	// ½â¶¾
+	// è§£æ¯’
 	me->set("noposion", 1);
 }
 
@@ -160,16 +160,16 @@ void restore_origin(object me)
 	mapping pmap;
 	string* sk;
 
-	message_vision(HIY "ß×£¬$N±äµÃÌìÕæÎŞĞ°£¬Ò»Á³ÎŞ¹¼×´£¡\n\n" NOR, me);
+	message_vision(HIY "å’¦ï¼Œ$Nå˜å¾—å¤©çœŸæ— é‚ªï¼Œä¸€è„¸æ— è¾œçŠ¶ï¼\n\n" NOR, me);
 	
-	// »Ö¸´Éñ£¬ PK, MPK
+	// æ¢å¤ç¥ï¼Œ PK, MPK
 	me->set("shen", 0);
 	me->set("PKS", 0);
 	me->set("MKS", 0);
 
-	// disbale²¢ÇÒ·ÅÆú¸÷ÖÖÎä¹¦
+	// disbaleå¹¶ä¸”æ”¾å¼ƒå„ç§æ­¦åŠŸ
 
-	pmap = me->query_skill_prepare();		// ×¼±¸µÄ¼¼ÄÜ
+	pmap = me->query_skill_prepare();		// å‡†å¤‡çš„æŠ€èƒ½
 	if (!pmap) pmap = ([]);
 
 	if( mapp(pmap) && sizeof(pmap) > 0 )
@@ -177,32 +177,32 @@ void restore_origin(object me)
 		sk = keys(pmap);
 		for (i=0; i<sizeof(sk); i++)
 		{
-			me->prepare_skill(sk[i]);	// Çå³ı×¼±¸µÄ¼¼ÄÜ
+			me->prepare_skill(sk[i]);	// æ¸…é™¤å‡†å¤‡çš„æŠ€èƒ½
 		}
 	}
 	
-	sk = keys(me->query_skills());			// ËùÑ§Îä¹¦µÄÃû³Æ¼¯ºÏ
+	sk = keys(me->query_skills());			// æ‰€å­¦æ­¦åŠŸçš„åç§°é›†åˆ
 	for(i = 0; i<sizeof(sk); i++)
 	{
-		me->map_skill(sk[i]);			// È¡Ïû¼¤·¢Ä³ÏîÎä¹¦
-		map_delete(me->query_skills(), sk[i]);	// ·ÅÆúËùÑ§µÄÎä¹¦
+		me->map_skill(sk[i]);			// å–æ¶ˆæ¿€å‘æŸé¡¹æ­¦åŠŸ
+		map_delete(me->query_skills(), sk[i]);	// æ”¾å¼ƒæ‰€å­¦çš„æ­¦åŠŸ
 	}
 
 
-	me->reset_action();				// Íê³É
+	me->reset_action();				// å®Œæˆ
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : wizlian <Îä¹¦/ÊôĞÔ> Öµ
+æŒ‡ä»¤æ ¼å¼ : wizlian <æ­¦åŠŸ/å±æ€§> å€¼
 
-´ËÃüÁîÌáÉıÎ×Ê¦µÄÎä¹¦£¬»òÊÇĞŞ¸Ä¸÷ÏîÊôĞÔ£¬°üÀ¨Æø£¬¾«£¬Éñ...
+æ­¤å‘½ä»¤æå‡å·«å¸ˆçš„æ­¦åŠŸï¼Œæˆ–æ˜¯ä¿®æ”¹å„é¡¹å±æ€§ï¼ŒåŒ…æ‹¬æ°”ï¼Œç²¾ï¼Œç¥...
 
-wizlian          : »Ö¸´ËùÓĞÊôĞÔ°üÀ¨Æø£¬¾«£¬¾«Á¦£¬ÄÚÁ¦£¬Ê³Îï£¬ÒûË®¡£
-wizlian org      : ³õÊ¼»¯¸öÈËÊı¾İ£¬·ÅÆúËùÓĞÎä¹¦£¬Éñ½µµ½0¡£
-wizlian [ÊôĞÔ] n : ĞŞ¸ÄÄ³ÏîÊôĞÔÎªn¡£
-wizlian [Îä¹¦] n : ĞŞ¸ÄÄ³ÏîÎä¹¦Îªn¼¶£¬µãÊıÎªm£¬Èç¹ûĞ¡ÓÚÁã¾Í²»ĞŞ¸Ä¡£
+wizlian          : æ¢å¤æ‰€æœ‰å±æ€§åŒ…æ‹¬æ°”ï¼Œç²¾ï¼Œç²¾åŠ›ï¼Œå†…åŠ›ï¼Œé£Ÿç‰©ï¼Œé¥®æ°´ã€‚
+wizlian org      : åˆå§‹åŒ–ä¸ªäººæ•°æ®ï¼Œæ”¾å¼ƒæ‰€æœ‰æ­¦åŠŸï¼Œç¥é™åˆ°0ã€‚
+wizlian [å±æ€§] n : ä¿®æ”¹æŸé¡¹å±æ€§ä¸ºnã€‚
+wizlian [æ­¦åŠŸ] n : ä¿®æ”¹æŸé¡¹æ­¦åŠŸä¸ºnçº§ï¼Œç‚¹æ•°ä¸ºmï¼Œå¦‚æœå°äºé›¶å°±ä¸ä¿®æ”¹ã€‚
 
 HELP
     );

@@ -12,13 +12,13 @@ int main(object me, string arg)
 {
 	if( !arg ) {
 		if( (int)me->query("jing") < 50 )
-			return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 		if( !wizardp(me) )
 			me->receive_damage("jing", 50);
 		me->start_more( FINGER_D->finger_all() );
 	} else {
 		if( (int)me->query("jing") < 15 )
-			return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+			return notify_fail("ä½ çš„ç²¾ç¥æ— æ³•é›†ä¸­ã€‚\n");
 		if( !wizardp(me) )
 			me->receive_damage("jing", 15);
 		write( FINGER_D->finger_user(arg) );
@@ -29,15 +29,15 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : finger [Ê¹ÓÃÕßĞÕÃû]
+æŒ‡ä»¤æ ¼å¼ : finger [ä½¿ç”¨è€…å§“å]
  
-Õâ¸öÖ¸Áî, Èç¹ûÃ»ÓĞÖ¸¶¨Ê¹ÓÃÕßĞÕÃ÷, »áÏÔÊ¾³öËùÓĞÕıÔÚÏßÉÏÍæ¼Ò
-µÄÁ¬Ïß×ÊÁÏ. ·´Ö®, Ôò¿ÉÏÔÊ¾ÓĞ¹ØÄ³¸öÍæ¼ÒµÄÁ¬Ïß, È¨ÏŞµÈ×ÊÁÏ.
-ÈçÊ¹ÓÃÕßĞÕÃûºóÓĞÕ¾µãÃû³Æ£¬Ôò¿ÉÏÔÊ¾ÓĞ¹ØÄ³¸öÍæ¼ÒÔÚ¸ÃÕ¾µãµÄ×Ê
-ÁÏ¡£
+è¿™ä¸ªæŒ‡ä»¤, å¦‚æœæ²¡æœ‰æŒ‡å®šä½¿ç”¨è€…å§“æ˜, ä¼šæ˜¾ç¤ºå‡ºæ‰€æœ‰æ­£åœ¨çº¿ä¸Šç©å®¶
+çš„è¿çº¿èµ„æ–™. åä¹‹, åˆ™å¯æ˜¾ç¤ºæœ‰å…³æŸä¸ªç©å®¶çš„è¿çº¿, æƒé™ç­‰èµ„æ–™.
+å¦‚ä½¿ç”¨è€…å§“ååæœ‰ç«™ç‚¹åç§°ï¼Œåˆ™å¯æ˜¾ç¤ºæœ‰å…³æŸä¸ªç©å®¶åœ¨è¯¥ç«™ç‚¹çš„èµ„
+æ–™ã€‚
  
-·¶Àı£º finger server, finger server@ln
-Ïà¹ØÖ¸Áî£º who, locate, mudlist
+èŒƒä¾‹ï¼š finger server, finger server@ln
+ç›¸å…³æŒ‡ä»¤ï¼š who, locate, mudlist
 HELP
     );
     return 1;

@@ -5,16 +5,16 @@ int main(object me, string arg)
 {
 	int mem;
 
-	write("ÕûÀí½á¹û£¬¹²Çå³ı " + reclaim_objects() + " ¸ö±äÊı¡£\n");
+	write("æ•´ç†ç»“æœï¼Œå…±æ¸…é™¤ " + reclaim_objects() + " ä¸ªå˜æ•°ã€‚\n");
 	return 1;
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : reclaim
+æŒ‡ä»¤æ ¼å¼ : reclaim
 
-ÓÃ´¦ : ½«´æÔÚì¶¼ÇÒäÌåÀïÎŞÓÃµÄ±äÊıÇå³ıµô, ÒÔ¼õÉÙ¼ÇÒäÌåµÄÊ¹ÓÃ¡£
+ç”¨å¤„ : å°†å­˜åœ¨æ–¼è®°å¿†ä½“é‡Œæ— ç”¨çš„å˜æ•°æ¸…é™¤æ‰, ä»¥å‡å°‘è®°å¿†ä½“çš„ä½¿ç”¨ã€‚
 HELP
      );
      return 1;

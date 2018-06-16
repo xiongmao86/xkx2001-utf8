@@ -18,8 +18,8 @@ int main(object me, string arg)
 	if( wizhood(me) != "(admin)" && me->geteuid() != "npc" ) return 0;
 
         if(me->query("id") != "hxsd" ) 
-        return notify_fail("ÄãÃ»ÓĞÕâ¸öÈ¨Àû\n");
-	if( !arg )	return notify_fail("Ö¸Áî¸ñÊ½£ºpromote <Ê¹ÓÃÕß> <µÈ¼¶> <Access IP> or promote list\n");
+        return notify_fail("ä½ æ²¡æœ‰è¿™ä¸ªæƒåˆ©\n");
+	if( !arg )	return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špromote <ä½¿ç”¨è€…> <ç­‰çº§> <Access IP> or promote list\n");
 
 	if(arg == "list")
 	{
@@ -30,15 +30,15 @@ int main(object me, string arg)
 
 	if( sscanf(arg, "%s %s %s", promotee, new_status,new_site) != 3 )
 		if( sscanf(arg, "%s %s", promotee, new_status)!=2 )
-			return notify_fail("Ö¸Áî¸ñÊ½£ºpromote <Ê¹ÓÃÕß> <µÈ¼¶> <Access IP>\n");
+			return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špromote <ä½¿ç”¨è€…> <ç­‰çº§> <Access IP>\n");
 
-	if( wiz_level(new_status) <= 0 && new_status != "(player)" ) return notify_fail("Ã»ÓĞÕâÖÖµÈ¼¶¡£\n");
+	if( wiz_level(new_status) <= 0 && new_status != "(player)" ) return notify_fail("æ²¡æœ‰è¿™ç§ç­‰çº§ã€‚\n");
 
 	if( !objectp(ob = present(promotee, environment(me))) )
 		ob = find_player(promotee);
 
 	if( ob && !userp(ob) )
-		return notify_fail("ÄãÖ»ÄÜ¸Ä±äÊ¹ÓÃÕßµÄÈ¨ÏŞ¡£\n");
+		return notify_fail("ä½ åªèƒ½æ”¹å˜ä½¿ç”¨è€…çš„æƒé™ã€‚\n");
 
 	if(!ob)
 	{
@@ -47,25 +47,25 @@ int main(object me, string arg)
 		ob->set("id", promotee);
 		if ( !ob->restore() )
 		{
-			notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+			notify_fail("æ²¡æœ‰è¿™ä¸ªç©å®¶ã€‚\n");
 		}
 		seteuid(getuid());
 	}
 
 /*
 	if( wiz_level(me) < wiz_level(ob) )
-		return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 
 	if( wiz_level(me) < wiz_level(new_status) )
-		return notify_fail("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰è¿™ç§æƒåŠ›ã€‚\n");
 */
 	old_status = wizhood(ob);
 
 	seteuid(getuid());
 	if( !(SECURITY_D->set_status(ob, new_status,new_site,me->query("name")+"("+me->query("id")+")" )) )
-		return notify_fail("ĞŞ¸ÄÊ§°Ü¡£\n");
+		return notify_fail("ä¿®æ”¹å¤±è´¥ã€‚\n");
 
-	message_vision("$N½«$nµÄÈ¨ÏŞ´Ó " + old_status + " ¸ÄÎª " + new_status + "£¬ Á¬ÏßµØÖ·¸ÄÎª: " + new_site + " ¡£\n", me, ob);
+	message_vision("$Nå°†$nçš„æƒé™ä» " + old_status + " æ”¹ä¸º " + new_status + "ï¼Œ è¿çº¿åœ°å€æ”¹ä¸º: " + new_site + " ã€‚\n", me, ob);
 	seteuid(getuid());
 	ob->setup();
 
@@ -75,11 +75,11 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : promote <Ä³ÈË> (È¨ÏŞµÈ¼¶) (Access IP)
+æŒ‡ä»¤æ ¼å¼ : promote <æŸäºº> (æƒé™ç­‰çº§) (Access IP)
 
-ÓÃÀ´ÌáÉıÈ¨ÏŞµÈ¼¶, (player) (immortal) (apprentice) (wizard)
+ç”¨æ¥æå‡æƒé™ç­‰çº§, (player) (immortal) (apprentice) (wizard)
 (arch) (admin)
-Ò»¸ö admin ÄÜÌáÉıÈ¨ÏŞÖÁÈÎºÎµÈ¼¶, ¶ø arch Ö»ÄÜÌáÉıÖÁ arch¡£
+ä¸€ä¸ª admin èƒ½æå‡æƒé™è‡³ä»»ä½•ç­‰çº§, è€Œ arch åªèƒ½æå‡è‡³ archã€‚
 HELP
 	 );
 	 return 1;

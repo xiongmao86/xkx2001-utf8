@@ -12,27 +12,27 @@ int main(object me, string arg)
         object ob;
         string skill,obj;
         string *skills;
-        if( !arg )      return notify_fail("setskill <Ä³ÈË> <¼¼ÄÜ>/all <¼¶±ğÊı>¡£\n");
+        if( !arg )      return notify_fail("setskill <æŸäºº> <æŠ€èƒ½>/all <çº§åˆ«æ•°>ã€‚\n");
         if( !arg || sscanf(arg, "%s %s %d", obj, skill, level)!=3 )
-                return notify_fail("setskill <Ä³ÈË> <¼¼ÄÜ>/all <¼¶±ğÊı>¡£\n");
+                return notify_fail("setskill <æŸäºº> <æŠ€èƒ½>/all <çº§åˆ«æ•°>ã€‚\n");
         
 
         ob = find_player(obj);
         if( !ob )       ob = find_living(obj);
         if( !ob )       ob = present(obj, environment(me));
-        if( !ob ) return notify_fail("ÕÒ²»µ½Õâ¸öÉúÎï.\n");
+        if( !ob ) return notify_fail("æ‰¾ä¸åˆ°è¿™ä¸ªç”Ÿç‰©.\n");
         if( (wiz_level(me) < wiz_level(ob)) && userp(ob) )
-                return notify_fail("ÄãÃ»ÓĞÉèÖÃ" + ob->name() + "¼¼ÄÜµÄÈ¨Àû¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è®¾ç½®" + ob->name() + "æŠ€èƒ½çš„æƒåˆ©ã€‚\n");
 //        if( level == 0 && wizardp(ob) )
-//                return notify_fail("²»ÄÜÓÃ´ËÃüÁî½«Î×Ê¦µÄ¹¦·òÉ¾³ı¡£\n");
+//                return notify_fail("ä¸èƒ½ç”¨æ­¤å‘½ä»¤å°†å·«å¸ˆçš„åŠŸå¤«åˆ é™¤ã€‚\n");
         if( (wiz_level(me) < wiz_level("(wizard)")) && me!=ob )
-                return notify_fail("ÄãÃ»ÓĞÉèÖÃ" + ob->name() + "¼¼ÄÜµÄÈ¨Àû¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰è®¾ç½®" + ob->name() + "æŠ€èƒ½çš„æƒåˆ©ã€‚\n");
 
 
-        write(WHT"begin setting skills for "NOR + ob->short(1) + WHT"£º\n"NOR);
+        write(WHT"begin setting skills for "NOR + ob->short(1) + WHT"ï¼š\n"NOR);
         if( skill == "all" ) {
                 if ( !(skill_status = ob->query_skills()) || !sizeof(skill_status) )
-                        return notify_fail("Õâ¸öÈËÃ»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ£¬²»ÄÜÓÃ all Õâ¸ö²ÎÊı¡£\n");
+                        return notify_fail("è¿™ä¸ªäººæ²¡æœ‰å­¦ä¼šä»»ä½•æŠ€èƒ½ï¼Œä¸èƒ½ç”¨ all è¿™ä¸ªå‚æ•°ã€‚\n");
                 skills  = keys(skill_status);
                 j = sizeof(skill_status);
                 for(i=0; i<j; i++) {
@@ -70,12 +70,12 @@ int main(object me, string arg)
 int help()
 {
         write(@LONG
-Ö¸Áî¸ñÊ½£ºsetskill  <Ä³ÈË> <¼¼ÄÜ>/all <¼¶±ğÊı>¡£
+æŒ‡ä»¤æ ¼å¼ï¼šsetskill  <æŸäºº> <æŠ€èƒ½>/all <çº§åˆ«æ•°>ã€‚
 
-ÓÃÀ´Éè¶¨Ä³ÈËµÄÄ³ÖÖ¼¼ÄÜµÄ¼¶±ğÊı, Èç¹ûµÚ¶şÏîÊÇ all Ôò½«ÆäËùÓĞµÄ
-¼¼ÄÜ¸ÄÎªÉè¶¨µÄ¼¶±ğÊı¡£Èç¹ûÑ¡ÔñÁË¼¶±ğÊıÎª 0 ÔòÉ¾³ı¸ÃÈË´ËÏî¼¼ÄÜ¡£
+ç”¨æ¥è®¾å®šæŸäººçš„æŸç§æŠ€èƒ½çš„çº§åˆ«æ•°, å¦‚æœç¬¬äºŒé¡¹æ˜¯ all åˆ™å°†å…¶æ‰€æœ‰çš„
+æŠ€èƒ½æ”¹ä¸ºè®¾å®šçš„çº§åˆ«æ•°ã€‚å¦‚æœé€‰æ‹©äº†çº§åˆ«æ•°ä¸º 0 åˆ™åˆ é™¤è¯¥äººæ­¤é¡¹æŠ€èƒ½ã€‚
 
-¾¯¸æ£ºÇëÉ÷ÓÃ´ËÃüÁî¡£
+è­¦å‘Šï¼šè¯·æ…ç”¨æ­¤å‘½ä»¤ã€‚
 LONG    );
         return 1;
 }

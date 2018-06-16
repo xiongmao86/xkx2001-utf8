@@ -6,29 +6,29 @@
 inherit F_CLEAN_UP;
 
 mapping default_dirs = ([
-	"north":	"±±",
-	"south":	"ÄÏ",
-	"east":		"¶«",
-	"west":		"Î÷",
-	"northup":	"±±±ß",
-	"southup":	"ÄÏ±ß",
-	"eastup":	"¶«±ß",
-	"westup":	"Î÷±ß",
-	"northdown":	"±±±ß",
-	"southdown":	"ÄÏ±ß",
-	"eastdown":	"¶«±ß",
-	"westdown":	"Î÷±ß",
-	"northeast":	"¶«±±",
-	"northwest":	"Î÷±±",
-	"southeast":	"¶«ÄÏ",
-	"southwest":	"Î÷ÄÏ",
-	"up":		"ÉÏ",
-	"down":		"ÏÂ",
-	"out":		"Íâ",
-	"enter":	"Àï",
-	"in":		"Àï",
-	"left":		"×ó",
-	"right":	"ÓÒ",
+	"north":	"åŒ—",
+	"south":	"å—",
+	"east":		"ä¸œ",
+	"west":		"è¥¿",
+	"northup":	"åŒ—è¾¹",
+	"southup":	"å—è¾¹",
+	"eastup":	"ä¸œè¾¹",
+	"westup":	"è¥¿è¾¹",
+	"northdown":	"åŒ—è¾¹",
+	"southdown":	"å—è¾¹",
+	"eastdown":	"ä¸œè¾¹",
+	"westdown":	"è¥¿è¾¹",
+	"northeast":	"ä¸œåŒ—",
+	"northwest":	"è¥¿åŒ—",
+	"southeast":	"ä¸œå—",
+	"southwest":	"è¥¿å—",
+	"up":		"ä¸Š",
+	"down":		"ä¸‹",
+	"out":		"å¤–",
+	"enter":	"é‡Œ",
+	"in":		"é‡Œ",
+	"left":		"å·¦",
+	"right":	"å³",
 ]);
 
 void create() { seteuid(getuid()); }
@@ -39,21 +39,21 @@ int main(object me, string arg)
 	object env, obj, ob;
 	mapping exit;
 
-	if( !arg ) return notify_fail("ÄãÒªÊØ×¡ÄÄ¸ö·½Ïò£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦å®ˆä½å“ªä¸ªæ–¹å‘ï¼Ÿ\n");
 
 	if( me->is_busy() )
-		return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓÐÍê³É¡£\n");
+		return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆã€‚\n");
 
 	env = environment(me);
-	if(!env) return notify_fail("ÄãÄÄÀïÒ²ÓÃ²»×ÅÊØ¡£\n");
+	if(!env) return notify_fail("ä½ å“ªé‡Œä¹Ÿç”¨ä¸ç€å®ˆã€‚\n");
 
 	if( env->query("no_fight") || env->query("day_shop"))
-		return notify_fail("Äã²»ÄÜÔÚÕâÀïµ²ËûÈË³öÂ·¡£\n");
+		return notify_fail("ä½ ä¸èƒ½åœ¨è¿™é‡ŒæŒ¡ä»–äººå‡ºè·¯ã€‚\n");
 
 	if( strsrch(file_name(env), "/d/xiakedao/") >= 0 )
-		return notify_fail("ÁúµºÖ÷ÓÐÁî£º²»µÃÔÚµºÉÏ×èËûÈËÂ·£¡\n");
+		return notify_fail("é¾™å²›ä¸»æœ‰ä»¤ï¼šä¸å¾—åœ¨å²›ä¸Šé˜»ä»–äººè·¯ï¼\n");
 	if( !mapp(exit = env->query("exits")) || undefinedp(exit[arg]) ) 
-			return notify_fail("ÄãÏëÊØ×¡ÄÄ¸ö·½Ïò£¿\n");
+			return notify_fail("ä½ æƒ³å®ˆä½å“ªä¸ªæ–¹å‘ï¼Ÿ\n");
 
 //	if( !env->valid_leave(me, arg) ) return 0;
 
@@ -61,7 +61,7 @@ int main(object me, string arg)
 		dest = exit[arg];
 
 	if( !(obj = load_object(dest)) )
-		return notify_fail("ERROR¡£\n");
+		return notify_fail("ERRORã€‚\n");
 
 
 	if( !undefinedp(default_dirs[arg]) )
@@ -70,10 +70,10 @@ int main(object me, string arg)
 		dir = arg;
 
 	if (objectp(ob=env->query("exit_blockers/"+dir)))
-		return notify_fail(ob->query("name")+"ÒÑ¾­µ²×¡ÁËÍù"+dir+"È¥µÄ³öÂ·£¡\n");
+		return notify_fail(ob->query("name")+"å·²ç»æŒ¡ä½äº†å¾€"+dir+"åŽ»çš„å‡ºè·¯ï¼\n");
 
 	if (me->query_temp("exit_blocked")){
-		message_vision("$NÈÃ¿ªÁËÍù"+me->query_temp("exit_blocked")+"È¥µÄÍ¨Â·¡£\n", me);
+		message_vision("$Nè®©å¼€äº†å¾€"+me->query_temp("exit_blocked")+"åŽ»çš„é€šè·¯ã€‚\n", me);
 		env->delete("exit_blockers/"+me->query_temp("exit_blocked"));
 		me->delete_temp("exit_blocked");
 	}
@@ -82,7 +82,7 @@ int main(object me, string arg)
 	me->set_temp("exit_blocked", dir);
     env->set("exit_blockers/"+dir, me);
 
-	message_vision(CYN"$NÍùÂ·ÖÐ¼äÒ»Õ¾£¬µ²×¡ÁËÏò" + dir + "È¥µÄ³öÂ·¡£\n"NOR, me);
+	message_vision(CYN"$Nå¾€è·¯ä¸­é—´ä¸€ç«™ï¼ŒæŒ¡ä½äº†å‘" + dir + "åŽ»çš„å‡ºè·¯ã€‚\n"NOR, me);
 	call_out("cost",3);
 	return 1;
 }
@@ -97,7 +97,7 @@ void cost()
 
 	if(me->query("jingli",1)<200 || me->query("jing",1)<200)
 	{
-		message_vision("$N°ÑÊØÕâÃ´¾Ã£¬ÊµÔÚÊÇÌ«ÀÛÁË£¬Ö»ºÃÈÃ¿ªÁËÍù"+me->query_temp("exit_blocked")+"È¥µÄÍ¨Â·¡£\n", me);
+		message_vision("$NæŠŠå®ˆè¿™ä¹ˆä¹…ï¼Œå®žåœ¨æ˜¯å¤ªç´¯äº†ï¼Œåªå¥½è®©å¼€äº†å¾€"+me->query_temp("exit_blocked")+"åŽ»çš„é€šè·¯ã€‚\n", me);
 		env->delete("exit_blockers/"+me->query_temp("exit_blocked"));
 		me->delete_temp("exit_blocked");
 		return;
@@ -111,10 +111,10 @@ void cost()
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ : block <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : block <æ–¹å‘>
  
-ÈÃÄãµ²×¡ÈÎÒ»·½ÏòµÄ³öÂ·£¬Ë­Ò²²»ÈÃ¹ý¡£
-Èç¹ûÄã²»Ïë¼ÌÐøµ²×ÅÕâ¸ö³öÂ·£¬Àë¿ªÕâ¸ö·¿¼ä¼´¿É¡£
+è®©ä½ æŒ¡ä½ä»»ä¸€æ–¹å‘çš„å‡ºè·¯ï¼Œè°ä¹Ÿä¸è®©è¿‡ã€‚
+å¦‚æžœä½ ä¸æƒ³ç»§ç»­æŒ¡ç€è¿™ä¸ªå‡ºè·¯ï¼Œç¦»å¼€è¿™ä¸ªæˆ¿é—´å³å¯ã€‚
 
 HELP
     );

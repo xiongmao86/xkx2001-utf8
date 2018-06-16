@@ -8,28 +8,28 @@ int main(object me, string arg)
 	int pts;
 
 	if( !arg || (arg!="basic" && !sscanf(arg, "%d", pts)) ) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºenpower|jiajin <Ê¹³ö¼¸·ÖÌåÁ¦ÉËµĞ>|basic\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenpower|jiajin <ä½¿å‡ºå‡ åˆ†ä½“åŠ›ä¼¤æ•Œ>|basic\n");
 
 	if( arg=="basic" )
 		me->set("jiajin", 1);
 	else {
 		if( pts < 1 || pts > (int)me->query("max_jingli")/20 )
-			return notify_fail("ÄãÖ»ÄÜÓÃ basic ±íÊ¾Ö»ÓÃÒ»·ÖÌåÁ¦£¬»òÊı×Ö±íÊ¾Ã¿Ò»»÷ÓÃ¼¸·ÖÌåÁ¦£¬ÇÒ²»ÄÜ³¬¹ı×î´óÌåÁ¦Öµ¡£\n");
+			return notify_fail("ä½ åªèƒ½ç”¨ basic è¡¨ç¤ºåªç”¨ä¸€åˆ†ä½“åŠ›ï¼Œæˆ–æ•°å­—è¡¨ç¤ºæ¯ä¸€å‡»ç”¨å‡ åˆ†ä½“åŠ›ï¼Œä¸”ä¸èƒ½è¶…è¿‡æœ€å¤§ä½“åŠ›å€¼ã€‚\n");
 		me->set("jiajin", pts);
 	}
 
-	write("Éè¶¨Íê±Ï¡£\n");
+	write("è®¾å®šå®Œæ¯•ã€‚\n");
 	return 1;
 }
 
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: enpower|jiajin <Ê¹³ö¼¸·ÖÌåÁ¦ÉËµĞ>|basic
+æŒ‡ä»¤æ ¼å¼: enpower|jiajin <ä½¿å‡ºå‡ åˆ†ä½“åŠ›ä¼¤æ•Œ>|basic
  
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨Ã¿´Î»÷ÖĞµĞÈËÊ±£¬Òª·¢³ö¼¸·ÖÌåÁ¦ÉËµĞ¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŒ‡å®šæ¯æ¬¡å‡»ä¸­æ•Œäººæ—¶ï¼Œè¦å‘å‡ºå‡ åˆ†ä½“åŠ›ä¼¤æ•Œã€‚
 
-enpower baisc Ôò±íÊ¾ÄãÖ»ÓÃÒ»·ÖÌåÁ¦¡£ 
+enpower baisc åˆ™è¡¨ç¤ºä½ åªç”¨ä¸€åˆ†ä½“åŠ›ã€‚ 
 
 HELP
         );
