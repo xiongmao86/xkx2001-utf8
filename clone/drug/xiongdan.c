@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiongdan.c ĞÜµ¨
+// xiongdan.c ç†Šèƒ†
 // Modified by xQin 9/00 to fix the unlimited consumption bug
 
 #include <ansi.h>
@@ -12,13 +12,13 @@ void init();
 
 void create()
 {
-	set_name("ĞÜµ¨", ({ "xiong dan", "dan" }) );
+	set_name("ç†Šèƒ†", ({ "xiong dan", "dan" }) );
         set_weight(1000);
         if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-        	set("long", "ÕâÊÇÒ»¿Å±ÈÈ­Í·»¹´óµÄĞÜµ¨£¬±éÌå·¢³öÎÚºÚµÄÁÁ¹â¡£\n");
+		set("unit", "é¢—");
+        	set("long", "è¿™æ˜¯ä¸€é¢—æ¯”æ‹³å¤´è¿˜å¤§çš„ç†Šèƒ†ï¼Œéä½“å‘å‡ºä¹Œé»‘çš„äº®å…‰ã€‚\n");
 		set("value", 10000);
 		set("medicine", 1);
 	}
@@ -34,7 +34,7 @@ int cure_ob(object me)
                 me->add("eff_jingli", -1);
                 me->set("jingli", 0);
                 me->apply_condition("bonze_drug", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»¿ÅĞÜµ¨£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€é¢—ç†Šèƒ†ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
 		destruct(this_object());
                 return 1;
         }
@@ -48,7 +48,7 @@ int cure_ob(object me)
         me->add("neili", 200);
         me->apply_condition("bonze_drug", 
         me->query_condition("bonze_drug")+30);
-        message_vision(HIY "$N³ÔÏÂÒ»¿ÅĞÜµ¨£¬Ö»¾õµÃµ¤Ìï³äÂúÕæÆø»ìÉíÓĞ¾¢¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€é¢—ç†Šèƒ†ï¼Œåªè§‰å¾—ä¸¹ç”°å……æ»¡çœŸæ°”æ··èº«æœ‰åŠ²ã€‚\n" NOR, me);
 
         destruct(this_object());
         return 1;
@@ -59,7 +59,7 @@ void remove_effect(object me)
         me->add_temp("apply/damage", -30);
         me->delete_temp("cbs/xiongdan");
         if( wizardp(me) )
-                tell_object(me, "¹ıÁËÒ»»á¶ù£¬ĞÜµ¨´øÀ´µÄÓàÈÈ¶¼Ã»ÁË¡£\n");
+                tell_object(me, "è¿‡äº†ä¸€ä¼šå„¿ï¼Œç†Šèƒ†å¸¦æ¥çš„ä½™çƒ­éƒ½æ²¡äº†ã€‚\n");
 }
 
 

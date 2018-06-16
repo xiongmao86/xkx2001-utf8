@@ -6,10 +6,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-    set_name("ÁôÑÔ°å", ({ "board" }) );
+    set_name("ç•™è¨€æ¿", ({ "board" }) );
     set("location", "/d/beijing/kedian");
     set("board_id", "beijing_b");
-    set("long", "ÓĞÓĞÓÃµÄ»°¾ÍÍùÕâÀïËµ£¬ÂÒ¹àË®É±ÎŞÉâ¡£\n" );
+    set("long", "æœ‰æœ‰ç”¨çš„è¯å°±å¾€è¿™é‡Œè¯´ï¼Œä¹±çŒæ°´æ€æ— èµ¦ã€‚\n" );
     setup();
     set("capacity", 80);
     replace_program(BULLETIN_BOARD);

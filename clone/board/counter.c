@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /object/region/counter.c     ¼ÆËãÆ÷
+// /object/region/counter.c     è®¡ç®—å™¨
 // by Jun@SIA
 // Copyright (C) 1998 SIA
 

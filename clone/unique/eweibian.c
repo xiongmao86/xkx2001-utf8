@@ -5,19 +5,19 @@ inherit WHIP;
 inherit F_UNIQUE;
 void create()
 {
-	set_name(GRN"öùÎ²±Ş"NOR, ({ "ewei bian", "bian" }));
+	set_name(GRN"é³„å°¾é­"NOR, ({ "ewei bian", "bian" }));
 //	set_color("$GRN$");
 	set_weight(8000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»±úÓÉöùÓãµÄÎ²°Í×ö³ÉµÄ±Ş×Ó£¬±Ş×ÓÉÏµ¹²å×ÅÒ»¸ù¸ù¸ÖÕë¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€æŸ„ç”±é³„é±¼çš„å°¾å·´åšæˆçš„é­å­ï¼Œé­å­ä¸Šå€’æ’ç€ä¸€æ ¹æ ¹é’¢é’ˆã€‚\n");
 		set("value", 7000000);
 		set("rigidity", 100000);
 		set("material", "leather");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù¶¶³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¾í»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ–å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nå·å›è…°é—´ã€‚\n");
 		set("clone_ob", "/clone/weapon/eweibian");
 	}
 	::create();

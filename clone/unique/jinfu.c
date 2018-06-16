@@ -8,17 +8,17 @@ inherit AXE;
 
 void create()
 {
-        set_name(HIY"»Æ½ğ¸«"NOR, ({ "huangjin fu", "fu", "axe" }));
+        set_name(HIY"é»„é‡‘æ–§"NOR, ({ "huangjin fu", "fu", "axe" }));
         set_weight(20000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ³ÁÖØµÄ³¤±ú½ğ¸«£¬ÊÇ¹ÅÎ÷Óò±©¾ıÉ£À­°ÍÊ¹ÓÃµÄ±øÆ÷£¬ÍêÈ«ÊÇ»Æ½ğ´òÔìµÄ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠæ²‰é‡çš„é•¿æŸ„é‡‘æ–§ï¼Œæ˜¯å¤è¥¿åŸŸæš´å›æ¡‘æ‹‰å·´ä½¿ç”¨çš„å…µå™¨ï¼Œå®Œå…¨æ˜¯é»„é‡‘æ‰“é€ çš„ã€‚\n");
                 set("value", 50000);
                 set("material", "gold");
-                set("wield_msg", "$N¾¢¹áË«±Û£¬¾ÙÆğÁËÒ»°Ñ$n¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÁËÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$NåŠ²è´¯åŒè‡‚ï¼Œä¸¾èµ·äº†ä¸€æŠŠ$nã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹äº†æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_axe(140);
 	setup();

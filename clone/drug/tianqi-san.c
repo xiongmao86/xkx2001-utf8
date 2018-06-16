@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÌïÆßöèµ¨É¢" NOR, ({"tianqi san", "san"}));
+        set_name(HIY "ç”°ä¸ƒé²¨èƒ†æ•£" NOR, ({"tianqi san", "san"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "£ºÕâÊÇÒ»°üÌïÆßöèµ¨É¢£¬¿É½â¾ç¶¾¡£\n");
+                set("unit", "åŒ…");
+                set("long", "ï¼šè¿™æ˜¯ä¸€åŒ…ç”°ä¸ƒé²¨èƒ†æ•£ï¼Œå¯è§£å‰§æ¯’ã€‚\n");
                 set("value", 10000);
 		set("medicine", 1);
         }
@@ -28,12 +28,12 @@ int cure_ob(object me)
 // Because it clears all conditions on a player!!!!!!!!!!!!!!!
    if (me->query_condition("cool_drug") > 0){        
 
-	message_vision(HIR "$N³ÔÏÂÒ»°ü"+name()+"£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·þÊ³Ì«¼±Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+	message_vision(HIR "$Nåƒä¸‹ä¸€åŒ…"+name()+"ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŽŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
         destruct(this_object());
         return 1;
    }
 
-   message_vision("$N³ÔÏÂÒ»°ü" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€åŒ…" + name() + "ã€‚\n", me);
 
 
    if ((int)me->query_condition("xx_poison") < 30) {

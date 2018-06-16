@@ -10,14 +10,14 @@ void setup()
 int cure_ob(string);
 void create()
 {
-	set_name(BLU"Óñ¶´ºÚÊ¯µ¤"NOR, ({"yudong dan", "heishi dan", "dan"}));
+	set_name(BLU"çŽ‰æ´žé»‘çŸ³ä¸¹"NOR, ({"yudong dan", "heishi dan", "dan"}));
 	set_weight(50);
 	if (clonep())
     	set_default_object(__FILE__);
     else 
     {
-		set("unit", "¿Å");
-        set("long", "ºÚºÚµÄÒ»¿ÅÒ©Íè£¬ºÁ²»ÆðÑÛ£¬È´ÊÇáÇá¼ÅÉµÄÁÆÉËÊ¥Ò©¡£\n");
+		set("unit", "é¢—");
+        set("long", "é»‘é»‘çš„ä¸€é¢—è¯ä¸¸ï¼Œæ¯«ä¸èµ·çœ¼ï¼Œå´æ˜¯å´†å³’æ´¾çš„ç–—ä¼¤åœ£è¯ã€‚\n");
 		set("value", 20000);
 		set("medicine", 1);
     }
@@ -36,11 +36,11 @@ int cure_ob(object me)
 			{
 				me->add("neili",-(me->query("neili")));
 			}	
-        	message_vision(BLU"$N·þÏÂÒ»¿ÅºÚÊ¯Óñ¶´µ¤£¬¾õµÃÌåÄÚÕæÆø·­Ó¿£¬ÄÚÁ¦´óËð¡£Ô­À´·þÊ³Ì«¼±Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+        	message_vision(BLU"$Næœä¸‹ä¸€é¢—é»‘çŸ³çŽ‰æ´žä¸¹ï¼Œè§‰å¾—ä½“å†…çœŸæ°”ç¿»æ¶Œï¼Œå†…åŠ›å¤§æŸã€‚åŽŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
         	destruct(this_object());
         	return 1;
 	}
-	message_vision(BLU"$N·þÏÂÒ»¿ÅºÚÊ¯Óñ¶´µ¤£¬Ö»¾õÈý½¹Í¨³©£¬ÎåÆøµ÷ºÍ£¬ÄÚÍâÉË¶¼´óÓÐºÃ×ª¡£\n"NOR, me);
+	message_vision(BLU"$Næœä¸‹ä¸€é¢—é»‘çŸ³çŽ‰æ´žä¸¹ï¼Œåªè§‰ä¸‰ç„¦é€šç•…ï¼Œäº”æ°”è°ƒå’Œï¼Œå†…å¤–ä¼¤éƒ½å¤§æœ‰å¥½è½¬ã€‚\n"NOR, me);
         me->set("eff_qi", (int)me->query("max_qi"));
         me->set("qi", (int)me->query("max_qi"));
 		me->apply_condition("hot_drug", 20);

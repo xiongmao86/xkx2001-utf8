@@ -1,5 +1,5 @@
 //Cracked by Roath
-// weapon: banfu.c °å¸«
+// weapon: banfu.c æ¿æ–§
 // qfy August 19, 1996.
 
 #include <ansi.h>
@@ -8,17 +8,17 @@ inherit AXE;
 
 void create()
 {
-        set_name(HIW"°å¸«"NOR, ({ "banfu", "fu", "axe" }));
+        set_name(HIW"æ¿æ–§"NOR, ({ "banfu", "fu", "axe" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ¼«¾ßÉ±ÉËÁ¦µÄ°å¸«£¬Ã÷»Î»ÎµÄ·æÀûÖ®¼«¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæå…·æ€ä¼¤åŠ›çš„æ¿æ–§ï¼Œæ˜æ™ƒæ™ƒçš„é”‹åˆ©ä¹‹æã€‚\n");
                 set("value", 300);
                 set("material", "steel");
-                set("wield_msg", "$NË«ÊÖÌáÆğ$n¡£\n");
-                set("unwield_msg", "$N·ÅÏÂ$n¡£\n");
+                set("wield_msg", "$NåŒæ‰‹æèµ·$nã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹$nã€‚\n");
         }
         init_axe(30);
         setup();

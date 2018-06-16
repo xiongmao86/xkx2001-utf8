@@ -9,12 +9,12 @@ int auto_perform();
 
 void create()
 {
-        set_name("Ïô·å", ({ "xiao feng", "xiao", "feng", "gb_npc", "gaibang", "gb", "bangzhu", "npc"}));
+        set_name("è§å³°", ({ "xiao feng", "xiao", "feng", "gb_npc", "gaibang", "gb", "bangzhu", "npc"}));
         set_color("$HIG$");
         set("long", 
-"ÕâÈËÉí²ÄÉõÊÇ¿ıÎ°£¬ÈıÊ®À´ËêÄê¼Í£¬Éí´©»ÒÉ«¾É²¼ÅÛ£¬ÒÑÎ¢ÓĞÆÆÀÃ£¬Å¨Ã¼´óÑÛ£¬\n"
-"¸ß±ÇÀ«¿Ú£¬Ò»ÕÅËÄ·½µÄ¹ú×ÖÁ³£¬ÆÄÓĞ·çËªÖ®É«£¬¹ËÅÎÖ®¼Ê£¬¼«ÓĞÍşÊÆ¡£\n");
-        set("gender", "ÄĞĞÔ");
+"è¿™äººèº«æç”šæ˜¯é­ä¼Ÿï¼Œä¸‰åæ¥å²å¹´çºªï¼Œèº«ç©¿ç°è‰²æ—§å¸ƒè¢ï¼Œå·²å¾®æœ‰ç ´çƒ‚ï¼Œæµ“çœ‰å¤§çœ¼ï¼Œ\n"
+"é«˜é¼»é˜”å£ï¼Œä¸€å¼ å››æ–¹çš„å›½å­—è„¸ï¼Œé¢‡æœ‰é£éœœä¹‹è‰²ï¼Œé¡¾ç›¼ä¹‹é™…ï¼Œææœ‰å¨åŠ¿ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 60);
         set("attitude", "heroism");
         set("shen_type", 1);
@@ -66,7 +66,7 @@ void create()
         
         prepare_skill("strike", "xianglong-zhang");
 
-        create_family("Ø¤°ï", 13, "°ïÖ÷");
+        create_family("ä¸å¸®", 13, "å¸®ä¸»");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),

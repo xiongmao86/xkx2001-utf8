@@ -10,19 +10,19 @@ inherit STICK;
 
 void create()
 {
-	set_name(HIG"´ò¹·°ô"NOR, ({"dagou bang", "bang", "stick"}));
+	set_name(HIG"æ‰“ç‹—æ£’"NOR, ({"dagou bang", "bang", "stick"}));
 	set_weight(5000);
 
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", HIG"Ò»¸ù±ÌÂÌÓÌÈçôä´ä°ãµÄÖñ°ô¡£\n"NOR);
+		set("unit", "æ ¹");
+		set("long", HIG"ä¸€æ ¹ç¢§ç»¿çŠ¹å¦‚ç¿¡ç¿ èˆ¬çš„ç«¹æ£’ã€‚\n"NOR);
 		set("value", 8000000);
 		set("material", "bamboo");
 		set("rigidity", 3000);
-		set("wield_msg", "$N³é³öÒ»¸ùÇà¹âÉÁÉÁµÄÂÌÖñÕÈ×¥ÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N°ÑÊÖÖĞµÄ´ò¹·°ô²å»ØÑüÖĞ¡£\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹é’å…‰é—ªé—ªçš„ç»¿ç«¹æ–æŠ“åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$NæŠŠæ‰‹ä¸­çš„æ‰“ç‹—æ£’æ’å›è…°ä¸­ã€‚\n");
 	}
 	init_stick(130);
 	setup();

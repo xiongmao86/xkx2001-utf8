@@ -32,12 +32,12 @@ string query_save_file()
 
 void create()
 {
-	set_name("ÍõÀÏ°å", ({ "wang laobang", "publisher", "wang"}));
+	set_name("ç‹è€æ¿", ({ "wang laobang", "publisher", "wang"}));
 	set_color(YEL);
-	set("long", "ÕâÊÇÒ»Î»°×°×ÅÖÅÖµÄÖĞÄêÈË£¬Éí×ÓÎ¢Î¢·¢¸££¬ÊÇ¸ö¸»ÉÌºÀÉğÄ£Ñù¡£\n"
-	"ËûÊÖÖĞÌá×ÅÒ»¸öĞ¡Ïä×Ó£¬ÕıĞ¦ÃĞÃĞµØÉÏÏÂ´òÁ¿×ÅÄã¡£\n"
-        "¾İËµËûÔø¾­ÊÔ¹ı¿Æ¾Ù£¬µ«¼¸´Î²»ÖĞºó±ã¸ÄĞĞÒÔ··ÊéÎªÒµÁË¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set("long", "è¿™æ˜¯ä¸€ä½ç™½ç™½èƒ–èƒ–çš„ä¸­å¹´äººï¼Œèº«å­å¾®å¾®å‘ç¦ï¼Œæ˜¯ä¸ªå¯Œå•†è±ªç»…æ¨¡æ ·ã€‚\n"
+	"ä»–æ‰‹ä¸­æç€ä¸€ä¸ªå°ç®±å­ï¼Œæ­£ç¬‘çœ¯çœ¯åœ°ä¸Šä¸‹æ‰“é‡ç€ä½ ã€‚\n"
+        "æ®è¯´ä»–æ›¾ç»è¯•è¿‡ç§‘ä¸¾ï¼Œä½†å‡ æ¬¡ä¸ä¸­åä¾¿æ”¹è¡Œä»¥è´©ä¹¦ä¸ºä¸šäº†ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
     set("weight", 50000);
     set("str", 25);
@@ -107,15 +107,15 @@ int init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        message_vision(	"$N³¯$nÎ¢Î¢Ğ¦ÁËĞ¦¡£\n",this_object(),ob );
+        message_vision(	"$Næœ$nå¾®å¾®ç¬‘äº†ç¬‘ã€‚\n",this_object(),ob );
         switch( random(2) ) {
                 case 0:
-                        command( "say ÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÏëÒª¿¯ĞĞÄúµÄÖø×÷Âğ£¿Õâ¿ÉÕÒ¶ÔÈËÁË¡£\n");
+                        command( "say è¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæƒ³è¦åˆŠè¡Œæ‚¨çš„è‘—ä½œå—ï¼Ÿè¿™å¯æ‰¾å¯¹äººäº†ã€‚\n");
                         break;
                 case 1:
-                        command( "say ÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÎÒÕâÓĞ¸÷ÖÖ½­ºşÎÄÊ¿Ğ´µÄ±ÊÂ¼£¬¿´¿´ÄúÏëÒªÂòÄÄÒ»±¾¡£\n");
+                        command( "say è¿™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæˆ‘è¿™æœ‰å„ç§æ±Ÿæ¹–æ–‡å£«å†™çš„ç¬”å½•ï¼Œçœ‹çœ‹æ‚¨æƒ³è¦ä¹°å“ªä¸€æœ¬ã€‚\n");
                         break;
         }
 }
@@ -126,17 +126,17 @@ int do_publish(string arg)
 	object me, this_book, save_book;
     mapping book_content;
 
-    if(!arg) return notify_fail("ÄúÒª¿¯ĞĞÊ²Ã´£¿\n");
+    if(!arg) return notify_fail("æ‚¨è¦åˆŠè¡Œä»€ä¹ˆï¼Ÿ\n");
 
 	me = this_player();
     this_book = present(arg, me);
 
     if(!this_book)
-            return notify_fail("ÄãÉíÉÏºÃÏñ²¢Ã»ÓĞÕâÑù¶«Î÷£¿\n");
+            return notify_fail("ä½ èº«ä¸Šå¥½åƒå¹¶æ²¡æœ‰è¿™æ ·ä¸œè¥¿ï¼Ÿ\n");
     if(!this_book->query("publishable"))
-            return notify_fail("¶Ô²»Æğ£¡ÕâÑù¶«Î÷ÎÒÎŞ·¨¿¯Ó¡¡£\n");
+            return notify_fail("å¯¹ä¸èµ·ï¼è¿™æ ·ä¸œè¥¿æˆ‘æ— æ³•åˆŠå°ã€‚\n");
     if(me->is_busy())
-            return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+            return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 
 
@@ -152,7 +152,7 @@ int do_publish(string arg)
     save_book=new("/clone/misc/save_book");
     save_book->set_owner(book_content["arthur_id"]);
     save_book->save_this_book(book_content);
-    message_vision(	"$N¸ß¸ßĞËĞËµØ°Ñ$nĞ´µÄ¸åÖ½ÄÃÈ¥¿¯Ó¡ÁË¡£\n\n",this_object(),me );
+    message_vision(	"$Né«˜é«˜å…´å…´åœ°æŠŠ$nå†™çš„ç¨¿çº¸æ‹¿å»åˆŠå°äº†ã€‚\n\n",this_object(),me );
 
     destruct(save_book);
 	destruct(this_book);
@@ -170,12 +170,12 @@ int do_discard(string arg)
     string ob_file, file;
     object ob, obj, *inv;
 
-    if(!arg) return notify_fail("ÄúÒªÊÕ»ØÊ²Ã´£¿\n");
+    if(!arg) return notify_fail("æ‚¨è¦æ”¶å›ä»€ä¹ˆï¼Ÿ\n");
 
 	me = this_player();
 
     if(me->is_busy())
-            return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+            return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
         k = 0;
 		book_found = 0;
@@ -184,7 +184,7 @@ int do_discard(string arg)
 		{
             inv = all_inventory(this_object());
 			if(!sizeof(inv))
-			    return notify_fail("ÄãÏëÊÕ»ØµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+			    return notify_fail("ä½ æƒ³æ”¶å›çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
             for (i = 0; i < sizeof(inv); i++) 
 	     	{
                 if ( inv[i]->query("can_sell_book") )
@@ -198,21 +198,21 @@ int do_discard(string arg)
 		 		}
 		    }
 			if (!book_found)
-				return notify_fail("ÄãÏëÊÕ»ØµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+				return notify_fail("ä½ æƒ³æ”¶å›çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
 		}
 		else 
 		{
-			return notify_fail("ÄãÏëÊÕ»ØµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+			return notify_fail("ä½ æƒ³æ”¶å›çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
         }
 
 		
         if (query_temp("busy"))
-                return notify_fail("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+                return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 
 		if( (ob->query("new_book"))["arthur_id"] != me->query("id") && !wizardp(me) )
-			return notify_fail("ÄãÓÖ²»ÊÇÖ÷ÈË¡£\n");
+			return notify_fail("ä½ åˆä¸æ˜¯ä¸»äººã€‚\n");
 
-	    message_vision(	"$NÌı´Ó$nÃüÁî°Ñ" +(ob->query("new_book"))["arthur"] + "Ğ´µÄ"+(ob->query("new_book"))["title"]+"´ÓÊé¼ÜÉÏÈ¡µôÁË¡£\n\n",
+	    message_vision(	"$Nå¬ä»$nå‘½ä»¤æŠŠ" +(ob->query("new_book"))["arthur"] + "å†™çš„"+(ob->query("new_book"))["title"]+"ä»ä¹¦æ¶ä¸Šå–æ‰äº†ã€‚\n\n",
 		this_object(),me );
 
         obj=new("/clone/misc/save_book");
@@ -237,11 +237,11 @@ int do_list()
         inv = all_inventory(this_object());
 		k = 0;
         if (!sizeof(inv) && !arrayp(goods = query("vendor_goods")))
-                return notify_fail("Ä¿Ç°Ã»ÓĞ¿ÉÒÔÂòµÄ¶«Î÷¡£\n");
+                return notify_fail("ç›®å‰æ²¡æœ‰å¯ä»¥ä¹°çš„ä¸œè¥¿ã€‚\n");
         // list the cloneable goods
         if (arrayp(goods = query("vendor_goods"))){
                 for (i = 0; i < sizeof(goods); i++)
-                        printf("%65-s£º%s\n", goods[i]->short(),
+                        printf("%65-sï¼š%s\n", goods[i]->short(),
                         MONEY_D->price_str(goods[i]->query("value")));
         }
 		// list the inventory for sell
@@ -251,7 +251,7 @@ int do_list()
 				{
 					k++;
 					long_name = sprintf("%s(%s%d)",(inv[i]->query("new_book"))["title"],inv[i]->query("id"),k);
-                    printf("%35-s ¡¾×÷Õß¡¿%20-s £º%s\n", long_name, 
+                    printf("%35-s ã€ä½œè€…ã€‘%20-s ï¼š%s\n", long_name, 
                     (inv[i]->query("new_book"))["arthur"],MONEY_D->price_str(inv[i]->query("value")));
 				}
 		}
@@ -268,9 +268,9 @@ int do_buy(string arg)
         k = 0;
 		book_found = 0;
         if (!arg)
-                return notify_fail("ÄãÏëÂòÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³ä¹°ä»€ä¹ˆï¼Ÿ\n");
         if (ob && ob->query("money_id"))
-                return notify_fail("ÄãÏëÂò¡¸Ç®¡¹£¿£¿\n");
+                return notify_fail("ä½ æƒ³ä¹°ã€Œé’±ã€ï¼Ÿï¼Ÿ\n");
 
 		if (arg == "book")
 		{
@@ -282,7 +282,7 @@ int do_buy(string arg)
 		{
             inv = all_inventory(this_object());
 			if(!sizeof(inv))
-			    return notify_fail("ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+			    return notify_fail("ä½ æƒ³ä¹°çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
             for (i = 0; i < sizeof(inv); i++) 
 	     	{
                 if (inv[i]->query("can_sell_book"))
@@ -295,28 +295,28 @@ int do_buy(string arg)
 		 		}
 		    }
 			if (!book_found)
-				return notify_fail("ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+				return notify_fail("ä½ æƒ³ä¹°çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
 		}
 		else 
 		{
-			return notify_fail("ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£\n");
+			return notify_fail("ä½ æƒ³ä¹°çš„ä¸œè¥¿æˆ‘è¿™é‡Œæ²¡æœ‰ã€‚\n");
         }
 
 		
         if (query_temp("busy"))
-                return notify_fail("Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\n");
+                return notify_fail("å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚\n");
 				
 
         
   switch (MONEY_D->player_pay(this_player(), ob->query("value") )) {
         case 0:
-                return notify_fail("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+                return notify_fail("ç©·å…‰è›‹ï¼Œä¸€è¾¹å‘†ç€å»ï¼\n");
         case 2:
-                return notify_fail("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+                return notify_fail("æ‚¨çš„é›¶é’±ä¸å¤Ÿäº†ï¼Œé“¶ç¥¨åˆæ²¡äººæ‰¾å¾—å¼€ã€‚\n");
         default:
                 set_temp("busy", 1);
-                message_vision("$N´Ó$nÄÇÀïÂòÏÂÁËÒ»" + ob->query("unit") + 
-                ob->query("name") + "¡£\n", this_player(), this_object());
+                message_vision("$Nä»$né‚£é‡Œä¹°ä¸‹äº†ä¸€" + ob->query("unit") + 
+                ob->query("name") + "ã€‚\n", this_player(), this_object());
 				// save the number of book sold and money made to file
 				if(book_found) {
                    obj=new("/clone/misc/save_book");
@@ -491,7 +491,7 @@ int ask_book()
 		  new_book->pay_player_profit();
    }
    else {
-        return notify_fail("Äã»¹Î´¿¯ĞĞ³öÒ»±¾Êé£¬¾ÍÏëÒªÇ®£¿\n");
+        return notify_fail("ä½ è¿˜æœªåˆŠè¡Œå‡ºä¸€æœ¬ä¹¦ï¼Œå°±æƒ³è¦é’±ï¼Ÿ\n");
    }
 
    destruct(new_book);

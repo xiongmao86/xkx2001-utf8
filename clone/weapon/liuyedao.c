@@ -7,17 +7,17 @@
 inherit BLADE;
 void create()
 {
-	set_name(GRN"ÁøÒ¶µ¶"NOR, ({ "liuyedao", "dao", "blade" }) );
+	set_name(GRN"æŸ³å¶åˆ€"NOR, ({ "liuyedao", "dao", "blade" }) );
 	set_weight(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 250);
 		set("material", "iron");
-		set("long", "ÕâÊÇÒ»°Ñ³ß°ë³¤µÄ¸Öµ¶£¬ĞÎËÆÁøÒ¶£¬ÈëÊÖÇáÆ®£¬ÄËÊÇÅ®×Ó³£ÓÃ±øÆ÷¡£\n");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n¾íÈëÑü¼ä¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠå°ºåŠé•¿çš„é’¢åˆ€ï¼Œå½¢ä¼¼æŸ³å¶ï¼Œå…¥æ‰‹è½»é£˜ï¼Œä¹ƒæ˜¯å¥³å­å¸¸ç”¨å…µå™¨ã€‚\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$nå·å…¥è…°é—´ã€‚\n");
 	}
 	init_blade(25);
 	setup();

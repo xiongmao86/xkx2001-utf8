@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tianxiang.c ÌìÏã¶ÏĞø¸à
+// tianxiang.c å¤©é¦™æ–­ç»­è†
 
 #include <ansi.h>
 
@@ -12,16 +12,16 @@ int cure_ob(string);
 void create()
 {
 
-	set_name(MAG"ÌìÏã¶ÏĞø¸à"NOR, ({"tian xiang", "gao"}));
+	set_name(MAG"å¤©é¦™æ–­ç»­è†"NOR, ({"tian xiang", "gao"}));
 	set_weight(10);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "ºĞ");
-		set("long", "ÕâÊÇÒ»ºĞ¼«ÎªÓĞĞ§µÄ¶ëáÒ¶ÀÃÅÉËÒ©£¬×¨ÖÎÄÚÍâÉËµÈ¡£\n");
+		set("unit", "ç›’");
+		set("long", "è¿™æ˜¯ä¸€ç›’æä¸ºæœ‰æ•ˆçš„å³¨åµ‹ç‹¬é—¨ä¼¤è¯ï¼Œä¸“æ²»å†…å¤–ä¼¤ç­‰ã€‚\n");
 		set("value", 5000);
 		set("medicine", 1);
-		set("no_drop", "Èç´Ë±¦¹óµÄÁéÒ©¶ªÆúÁË²»ÅÂ»ØÈ¥±»Ê¦¸¸Ôğ·£Âğ£¿");
+		set("no_drop", "å¦‚æ­¤å®è´µçš„çµè¯ä¸¢å¼ƒäº†ä¸æ€•å›å»è¢«å¸ˆçˆ¶è´£ç½šå—ï¼Ÿ");
 	}
 
 	set("used", 3);
@@ -32,25 +32,25 @@ void create()
 int cure_ob(object me)
 {
 	if (me->query("eff_qi") == me->query("max_qi"))
-		return notify_fail("ÄãÏÖÔÚ²»ÓÃ·óÌìÏã¶ÏĞø¸à¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸ç”¨æ•·å¤©é¦™æ–­ç»­è†ã€‚\n");
 	
 	if ( (int)me->query_condition("bonze_drug" ) > 0 )
 	{
-		this_player()->receive_wound("qi", 50, "ÓÃÒ©²»µ±ÉËÊÆ¶ñ»¯ËÀÁË");
-		message_vision(HIR "$N·óÉÏÒ»Ğ©ÌìÏã¶ÏĞø¸à£¬Ö»¾õÉË¿Ú·´¶ø¶ñ»¯£¬Ô­À´·óÒ©¹ı¼±¹ı¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		this_player()->receive_wound("qi", 50, "ç”¨è¯ä¸å½“ä¼¤åŠ¿æ¶åŒ–æ­»äº†");
+		message_vision(HIR "$Næ•·ä¸Šä¸€äº›å¤©é¦™æ–­ç»­è†ï¼Œåªè§‰ä¼¤å£åè€Œæ¶åŒ–ï¼ŒåŸæ¥æ•·è¯è¿‡æ€¥è¿‡å¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 	}
 	else if ( me->query_skill_mapped("force") != "linji-zhuang" ) 
-		message_vision(HIC "$N·óÉÏÒ»Ğ©ÌìÏã¶ÏĞø¸à£¬Ö»¾õ×÷ÓÃ²»´ó£¬Ô­À´ÄÚ¹¦²»·û£¬Ò©Á¦ĞĞ²»¿ª¡£\n" NOR, me);
+		message_vision(HIC "$Næ•·ä¸Šä¸€äº›å¤©é¦™æ–­ç»­è†ï¼Œåªè§‰ä½œç”¨ä¸å¤§ï¼ŒåŸæ¥å†…åŠŸä¸ç¬¦ï¼Œè¯åŠ›è¡Œä¸å¼€ã€‚\n" NOR, me);
 	else
 	{
 		this_player()->receive_curing("qi", 500);
-		message_vision(HIC "$N·óÉÏÒ»Ğ©ÌìÏã¶ÏĞø¸à£¬Ö»¾õÉËÊÆ´óÎªºÃ×ª£¬ÆøÉ«ºÃ¶àÁË¡£\n" NOR, me);
+		message_vision(HIC "$Næ•·ä¸Šä¸€äº›å¤©é¦™æ–­ç»­è†ï¼Œåªè§‰ä¼¤åŠ¿å¤§ä¸ºå¥½è½¬ï¼Œæ°”è‰²å¥½å¤šäº†ã€‚\n" NOR, me);
 	}
 
 	me->apply_condition("bonze_drug", 15);
 
 	if ( add("used", -1) < 1 ) {
-		tell_object(me, "ÕâºĞÌìÏã¶ÏĞø¸àÓÃÍêÁË¡£\n");
+		tell_object(me, "è¿™ç›’å¤©é¦™æ–­ç»­è†ç”¨å®Œäº†ã€‚\n");
 		destruct(this_object());
 	}
 	return 1;

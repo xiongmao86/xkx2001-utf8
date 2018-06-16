@@ -1,5 +1,5 @@
 //Cracked by Roath
-// hugu.c »¢¹Ç
+// hugu.c è™Žéª¨
 
 #include <ansi.h>
 
@@ -11,13 +11,13 @@ void init();
 
 void create()
 {
-	set_name("»¢¹Ç", ({ "hu gu", "gu" }) );
+	set_name("è™Žéª¨", ({ "hu gu", "gu" }) );
         set_weight(1000);
         if( clonep() )
 		set_default_object(__FILE__);
 	else {
-	        set("unit", "Ö§");
-                set("long", "ÕâÊÇÒ»Ö§ÀÏ»¢µÄëÖ¹Ç£¬ÄËÊÇ¼«ÎªÕä¹óµÄÒ©²Ä¡£\n");
+	        set("unit", "æ”¯");
+                set("long", "è¿™æ˜¯ä¸€æ”¯è€è™Žçš„èƒ«éª¨ï¼Œä¹ƒæ˜¯æžä¸ºçè´µçš„è¯æã€‚\n");
 	        set("value", 10000);
 	        set("medicine", 1);
 	}
@@ -33,7 +33,7 @@ int cure_ob(object me)
                 me->add("eff_jingli", -1);
                 me->set("jingli", 0);
                 me->apply_condition("bonze_drug", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»Ö§»¢¹Ç£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·þÊ³Ì«¶àÒ©Îï£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€æ”¯è™Žéª¨ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŽŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
                 this_object()->move("/u/aln/workroom");
                 call_out("destroy", 31);
                 return 1;
@@ -50,7 +50,7 @@ int cure_ob(object me)
 
         me->apply_condition("bonze_drug", 
         me->query_condition("bonze_drug")+30);
-        message_vision(HIY "$N³ÔÏÂÒ»Ö§»¢¹Ç£¬Ö»¾õµÃÈ«ÉíÃ°º¹£¬Ë¬¿ìÁÜÀì¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€æ”¯è™Žéª¨ï¼Œåªè§‰å¾—å…¨èº«å†’æ±—ï¼Œçˆ½å¿«æ·‹æ¼“ã€‚\n" NOR, me);
         this_object()->move("/u/aln/workroom");
         call_out("destroy", 31);
         return 1;

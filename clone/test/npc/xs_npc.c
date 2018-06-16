@@ -4,12 +4,12 @@ int auto_perform();
 inherit NPC;
 void create()
 {
-        set_name("¸ğÂ×²¼", ({ "ge lunbu", "ge", "lunbu" }));
+        set_name("è‘›ä¼¦å¸ƒ", ({ "ge lunbu", "ge", "lunbu" }));
         set_weight(3000000);
         set("long", 
-"ËûÊÇÃÜ×ÚµÄ½äÂÉÉ®£¬³¤µÃ°ò´óÑü£¬ÊÖÖĞÌá×Å·¨Æ÷£¬Éí×Å»ÆÅÛ£¬Í·´÷»ÆÃ±£¬\n"
-"ÂúÃæËàÉ±Ö®Æø¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–æ˜¯å¯†å®—çš„æˆ’å¾‹åƒ§ï¼Œé•¿å¾—è†€å¤§è…°ï¼Œæ‰‹ä¸­æç€æ³•å™¨ï¼Œèº«ç€é»„è¢ï¼Œå¤´æˆ´é»„å¸½ï¼Œ\n"
+"æ»¡é¢è‚ƒæ€ä¹‹æ°”ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 70);
         set("attitude", "heroism");
         set("class","lama");
@@ -63,7 +63,7 @@ void create()
         map_skill("blade", "xue-dao");
         prepare_skill("strike", "huoyan-dao");
 
-   create_family("Ñ©É½ÅÉ", 12, "µÜ×Ó");
+   create_family("é›ªå±±æ´¾", 12, "å¼Ÿå­");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({

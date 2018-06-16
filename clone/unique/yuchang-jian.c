@@ -7,19 +7,19 @@ inherit SWORD;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-        set_name(HIW"Óã³¦½£"NOR,({ "yuchang jian", "yuchang", "sword", "jian" }) );
+        set_name(HIW"é±¼è‚ å‰‘"NOR,({ "yuchang jian", "yuchang", "sword", "jian" }) );
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 7000000);
                 set("material", "steel");
 		set("rigidity", 50);
                 set("long", 
-		"Ò»±ú³ß°ë³¤¶Ì½££¬½£Éí¼«±¡£¬ÈĞÉÏ±¦¹âÁ÷¶¯£¬±ä»Ã²»¶¨¡£\n");
+		"ä¸€æŸ„å°ºåŠé•¿çŸ­å‰‘ï¼Œå‰‘èº«æè–„ï¼Œåˆƒä¸Šå®å…‰æµåŠ¨ï¼Œå˜å¹»ä¸å®šã€‚\n");
                 set("wield_msg", 
-		HIW"$NÎÕ×¡Óã³¦½££¬ÌáÁËÆğÀ´£¬Ö»¼û½£ÈĞ²»×¡²ü¶¯£¬ËÆºõÖ»ĞëÇáÇáÒ»¶¶£¬±ãÄÜÕÛ¶Ï¡£\n"NOR);
+		HIW"$Næ¡ä½é±¼è‚ å‰‘ï¼Œæäº†èµ·æ¥ï¼Œåªè§å‰‘åˆƒä¸ä½é¢¤åŠ¨ï¼Œä¼¼ä¹åªé¡»è½»è½»ä¸€æŠ–ï¼Œä¾¿èƒ½æŠ˜æ–­ã€‚\n"NOR);
         }
 	init_sword(80);
         setup();

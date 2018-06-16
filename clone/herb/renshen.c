@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIW"ÈË²Î"NOR, ({"renshen","shen"}));
+        set_name(HIW"äººå‚"NOR, ({"renshen","shen"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ö§");
-                set("long","ÈË²Î£º´ó²¹Æ·£¬µõÃüÎï¡£\n");
+                set("unit", "æ”¯");
+                set("long","äººå‚ï¼šå¤§è¡¥å“ï¼ŒåŠå‘½ç‰©ã€‚\n");
                 set("value", 10000);
 		set("yaocai", 1);
         	set("cure_s",100);

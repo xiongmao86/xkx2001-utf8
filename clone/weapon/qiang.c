@@ -8,17 +8,17 @@ inherit PIKE;
 
 void create()
 {
-        set_name("³¤Ç¹", ({ "chang qiang", "qiang" }) );
+        set_name("é•¿æª", ({ "chang qiang", "qiang" }) );
         set_weight(1800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±ú³¤Ç¹£¬Ç¹Í·ÉÏÓĞÒ»ÊøºìÓ§¡£\n");
+                set("unit", "æŸ„");
+                set("long", "è¿™æ˜¯ä¸€æŸ„é•¿æªï¼Œæªå¤´ä¸Šæœ‰ä¸€æŸçº¢ç¼¨ã€‚\n");
                 set("value", 200);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»±ú$n£¬¶¶ÁË¸öÇ¹»¨£¬ºìÓ§ÉÁ¶¯¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŸ„$nï¼ŒæŠ–äº†ä¸ªæªèŠ±ï¼Œçº¢ç¼¨é—ªåŠ¨ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_pike(20);
         setup();

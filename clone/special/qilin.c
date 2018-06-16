@@ -6,21 +6,21 @@ inherit F_EQUIP;
 
 void create()
 {
-        set_name( "÷è÷ë±Û", ({ "qilin bi", "qilin", "bi", "arm" }) );
+        set_name( "éº’éºŸè‡‚", ({ "qilin bi", "qilin", "bi", "arm" }) );
 	set_color(RED);
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else
 	{
-                set("long", "ÕâÊÇÒ»¸ùÊÖ±Û£¬Ïà´«ÊÇÓÚÔÀÉÙÄêÊ±³à²²²«¶·»ğ÷è÷ë£¬×ó±Û±»÷è÷ëÑªËù½¦¶ø³É¡£\n");
-                set("unit", "¸ù");
+                set("long", "è¿™æ˜¯ä¸€æ ¹æ‰‹è‡‚ï¼Œç›¸ä¼ æ˜¯äºå²³å°‘å¹´æ—¶èµ¤è†Šææ–—ç«éº’éºŸï¼Œå·¦è‡‚è¢«éº’éºŸè¡€æ‰€æº…è€Œæˆã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 150);
                 set("armor_type", "arm");
                 set("armor_prop/armor", 1);
                 set("armor_prop/strength", 20);
-		set("wear_msg", "$N¡¸ßÇàê¡¹Ò»Éù£¬½«$n½ÓÔÚÁË¶Ï±ÛÖ®´¦¡£\n");
-		set("remove_msg", "$N°ÑĞÄÒ»ºá£¬¡¸¿©¡¹µÄÒ»Éù£¬½«$nĞ¶ÁËÏÂÀ´¡£\n");
+		set("wear_msg", "$Nã€Œå’”åš“ã€ä¸€å£°ï¼Œå°†$næ¥åœ¨äº†æ–­è‡‚ä¹‹å¤„ã€‚\n");
+		set("remove_msg", "$NæŠŠå¿ƒä¸€æ¨ªï¼Œã€Œå’¯ã€çš„ä¸€å£°ï¼Œå°†$nå¸äº†ä¸‹æ¥ã€‚\n");
                 set("no_sell", 1);
         }
         setup();
@@ -70,23 +70,23 @@ int do_enfor(string arg)
 	if( !query("embedded") ) return 0;
 
         if( !arg || (arg!="none" && !sscanf(arg, "%d", pts)) ) 
-                return notify_fail("Ö¸Áî¸ñÊ½£ºenforce|jiali <Ê¹³ö¼¸µãÄÚÁ¦ÉËµĞ>|none");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenforce|jiali <ä½¿å‡ºå‡ ç‚¹å†…åŠ›ä¼¤æ•Œ>|none");
 
         if( !me->query_skill_mapped("force") )
-                return notify_fail("Äã±ØĞëÏÈ enable Ò»ÖÖÄÚ¹¦¡£\n");
+                return notify_fail("ä½ å¿…é¡»å…ˆ enable ä¸€ç§å†…åŠŸã€‚\n");
 
         if( arg=="none" )
                 me->delete("jiali");
         else {
                 if( pts < 0 )
-                        return notify_fail("ÄãÖ»ÄÜÓÃ none ±íÊ¾²»ÔËÄÚÁ¦£¬»òÊı×Ö±íÊ¾Ã¿Ò»»÷ÓÃ¼¸µãÄÚÁ¦¡£\n");
+                        return notify_fail("ä½ åªèƒ½ç”¨ none è¡¨ç¤ºä¸è¿å†…åŠ›ï¼Œæˆ–æ•°å­—è¡¨ç¤ºæ¯ä¸€å‡»ç”¨å‡ ç‚¹å†…åŠ›ã€‚\n");
                 if( pts > (int)me->query_skill("force") / 3 * 2 )
-                        return notify_fail("ÄãµÄÄÚ¹¦»ğºî»¹¼Ó²»ÁËÄÇÃ´´óÁ¦¡£\n");
+                        return notify_fail("ä½ çš„å†…åŠŸç«ä¾¯è¿˜åŠ ä¸äº†é‚£ä¹ˆå¤§åŠ›ã€‚\n");
                 me->set("jiali", pts);
         }
 
 	if( pts > 150 )
-		message_vision(RED"$N°µ°µ½«ÄÚÁ¦ÔËµ½×ó±ÛÖ®ÉÏ£¬Ö»¼û÷è÷ë±ÛÒşÒşÏÖ³ö÷öºìµÄÉ«Ôó¡£\n"NOR, me);
-        write("´ÓÏÖÔÚÆğÄãÓÃ" + chinese_number(pts)+"µãÄÚÁ¦ÉËµĞ¡£\n");
+		message_vision(RED"$Næš—æš—å°†å†…åŠ›è¿åˆ°å·¦è‡‚ä¹‹ä¸Šï¼Œåªè§éº’éºŸè‡‚éšéšç°å‡ºé»¯çº¢çš„è‰²æ³½ã€‚\n"NOR, me);
+        write("ä»ç°åœ¨èµ·ä½ ç”¨" + chinese_number(pts)+"ç‚¹å†…åŠ›ä¼¤æ•Œã€‚\n");
         return 1;
 }

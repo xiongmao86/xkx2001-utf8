@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shuanggou.c Ë«¹³
+// shuanggou.c åŒé’©
 
 #include <ansi.h>
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit HOOK;
 
 void create()
 {
-	set_name(HIW"Ë«¹³"NOR, ({ "shuang gou", "gou","hook" }));
+	set_name(HIW"åŒé’©"NOR, ({ "shuang gou", "gou","hook" }));
 	set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»¶ÔÆÕÍ¨µÄ¸Ö¹³£¬ÓĞÒ»»¤ÊÖÔÂÑÀ¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€å¯¹æ™®é€šçš„é’¢é’©ï¼Œæœ‰ä¸€æŠ¤æ‰‹æœˆç‰™ã€‚\n");
 		set("value", 250);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»¶Ô$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø±³ºó¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€å¯¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›èƒŒåã€‚\n");
 	}
 	init_hook(35);
 	setup();

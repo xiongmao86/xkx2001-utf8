@@ -5,10 +5,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("Î×Ê¦ÁôÑÔ°å", ({ "board"}) );
+	set_name("å·«å¸ˆç•™è¨€æ¿", ({ "board"}) );
 	set("location", "/d/death/noteroom");
 	set("board_id", "note_b");
-	set("long", "ÕâÊÇÒ»¿é¸øÎ×Ê¦¼ÇÂ¼Íæ¼Ò·¸¹æÔ­ÒòµÄÁôÑÔ°å¡£\n" );
+	set("long", "è¿™æ˜¯ä¸€å—ç»™å·«å¸ˆè®°å½•ç©å®¶çŠ¯è§„åŸå› çš„ç•™è¨€æ¿ã€‚\n" );
 	setup();
 	set("capacity", 500);
 	replace_program(BULLETIN_BOARD);

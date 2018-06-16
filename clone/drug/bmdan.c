@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /d/shenlong/obj/bmdan.c ÌìÍõ±£Ãüµ¤
+// /d/shenlong/obj/bmdan.c å¤©ç‹ä¿å‘½ä¸¹
 // by Aln  1/98
 
 #include <ansi.h>
@@ -8,16 +8,16 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-        set_name("ÌìÍõ±£Ãüµ¤", ({"baoming dan", "dan"}));
+        set_name("å¤©ç‹ä¿å‘½ä¸¹", ({"baoming dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¢—");
                 set("value", 4000);
                 set("long", 
-"ÕâÌìÍõ±£Ãüµ¤ÊÇÓÉÈı°ÙÄêÀÏÉ½ÈË²Î¡¢°×ĞÜµ¨¡¢Ñ©Á«µÈÎïÁ¶³ÉµÄÁéµ¤\n");
+"è¿™å¤©ç‹ä¿å‘½ä¸¹æ˜¯ç”±ä¸‰ç™¾å¹´è€å±±äººå‚ã€ç™½ç†Šèƒ†ã€é›ªè²ç­‰ç‰©ç‚¼æˆçš„çµä¸¹\n");
                 set("medicine", 1);
-                set("no_drop", "ÌìÍõ±£Ãüµ¤Á¶ÖÆ£¬ÄÄÄÜÂÒÈÓ£¡ \n");
+                set("no_drop", "å¤©ç‹ä¿å‘½ä¸¹ç‚¼åˆ¶ï¼Œå“ªèƒ½ä¹±æ‰”ï¼ \n");
         }
 
         setup();
@@ -27,21 +27,21 @@ int cure_ob(object me)
 {
         if( (int)me->query("eff_qi")*10 > (int)me->query("max_qi")*3 
         &&  (int)me->query("eff_jing")*10 > (int)me->query("max_jing")*3 ) {
-                write("ÄãÏÖÔÚÓÃ²»×Å·şÌìÍõ±£Ãüµ¤¡£\n");
+                write("ä½ ç°åœ¨ç”¨ä¸ç€æœå¤©ç‹ä¿å‘½ä¸¹ã€‚\n");
                 return 1;
         }
 
         if( !me->is_fighting() ) {
-                write("ÏÖÔÚÓÖ²»ÊÇÎ£¼±¹ØÍ·£¬±ğÀË·ÑÁË£¡\n");
+                write("ç°åœ¨åˆä¸æ˜¯å±æ€¥å…³å¤´ï¼Œåˆ«æµªè´¹äº†ï¼\n");
                 return 1;
         }
 
-        message_vision("$N³ÔÏÂÒ»¿Å" + name() + "¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€é¢—" + name() + "ã€‚\n", me);
 
         me->set("eff_qi", (int)me->query("max_qi"));
         me->set("eff_jing", (int)me->query("max_jing"));
 
-        message_vision(YEL "$NÖ»¾õÉËÊÆÈ«ÓúÁË¡£\n\n" NOR, me);
+        message_vision(YEL "$Nåªè§‰ä¼¤åŠ¿å…¨æ„ˆäº†ã€‚\n\n" NOR, me);
         destruct(this_object());
         return 1;
 }

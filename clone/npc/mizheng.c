@@ -1,6 +1,6 @@
 //Cracked by Roath
-// mizheng.c ±ø²¿ÉĞÊé
-// ¸ºÔğ¾©çÜÎä¹Ù£¬»Ê¹¬ÊÌÎÀµÄÉÍ·££¬¼ÇÂ¼£¬ÉıÇ¨£¬½µ¼¶µÈ	-chu
+// mizheng.c å…µéƒ¨å°šä¹¦
+// è´Ÿè´£äº¬ç•¿æ­¦å®˜ï¼Œçš‡å®«ä¾å«çš„èµç½šï¼Œè®°å½•ï¼Œå‡è¿ï¼Œé™çº§ç­‰	-chu
 
 #include <ansi.h>
 #ifndef NPCDATA
@@ -23,12 +23,12 @@ void create()
     int i, *speed_cur;
 
     seteuid(getuid());
-    set_name("Ã×Õı", ({"mi zheng", "mi"}));
-    set("title", "±ø²¿ÉĞÊé");
-    set("gender", "ÄĞĞÔ");
+    set_name("ç±³æ­£", ({"mi zheng", "mi"}));
+    set("title", "å…µéƒ¨å°šä¹¦");
+    set("gender", "ç”·æ€§");
     set("age", 30);
-    set("long", "Ëû¾ÍÊÇµ±½ñ³¯Í¢µÄ±ø²¿ÉĞÊé£¬\n"
-    "¾©çÜÊÌÎÀ£¬Îä¹ÙµÄÉıÇ¨¾ÍÈ«¿´ËûÁË¡£\n");
+    set("long", "ä»–å°±æ˜¯å½“ä»Šæœå»·çš„å…µéƒ¨å°šä¹¦ï¼Œ\n"
+    "äº¬ç•¿ä¾å«ï¼Œæ­¦å®˜çš„å‡è¿å°±å…¨çœ‹ä»–äº†ã€‚\n");
     set("attitude","heroism");
     set("generation",0);
 
@@ -59,25 +59,25 @@ void create()
 int init()
 {
 	set("inquiry", ([
-	"Ëæ´Ó" : "Õâ¸öÄãÈ¥ÎÊ¾üÓªµÄ¶à×Ü¹Ü°É¡£",
-	"suicong" : "Õâ¸öÄãÈ¥ÎÊ¾üÓªµÄ¶à×Ü¹Ü°É¡£",
-	"ÈÎÎñ" : "Õâ¸öÄãÈ¥ÎÊ¾üÓªµÄ¶à×Ü¹Ü°É¡£",
-	"job" : "Õâ¸öÄãÈ¥ÎÊ¾üÓªµÄ¶à×Ü¹Ü°É¡£",
-	"here" : "ÕâÀï¾ÍÊÇÌÃÌÃ±ø²¿ÑÃÃÅ¡£",
-	"±ø²¿" : "±ø²¿Í³ÁìæçÆïÓª£¬½üÈÕ»ÊÉÏ¿ª¶÷£¬ÈÃÏÂ¹Ù´úÁìÊÌÎÀÓª¡£",
-	"Í¶¾ü" : (: do_toujun :),
+	"éšä»" : "è¿™ä¸ªä½ å»é—®å†›è¥çš„å¤šæ€»ç®¡å§ã€‚",
+	"suicong" : "è¿™ä¸ªä½ å»é—®å†›è¥çš„å¤šæ€»ç®¡å§ã€‚",
+	"ä»»åŠ¡" : "è¿™ä¸ªä½ å»é—®å†›è¥çš„å¤šæ€»ç®¡å§ã€‚",
+	"job" : "è¿™ä¸ªä½ å»é—®å†›è¥çš„å¤šæ€»ç®¡å§ã€‚",
+	"here" : "è¿™é‡Œå°±æ˜¯å ‚å ‚å…µéƒ¨è¡™é—¨ã€‚",
+	"å…µéƒ¨" : "å…µéƒ¨ç»Ÿé¢†éªéª‘è¥ï¼Œè¿‘æ—¥çš‡ä¸Šå¼€æ©ï¼Œè®©ä¸‹å®˜ä»£é¢†ä¾å«è¥ã€‚",
+	"æŠ•å†›" : (: do_toujun :),
 	"join" : (: do_toujun :),
-	"ÉıÇ¨" : (: do_shengqian :),
-	"½úÉı" : (: do_shengqian :),
+	"å‡è¿" : (: do_shengqian :),
+	"æ™‹å‡" : (: do_shengqian :),
 	"promote" : (: do_shengqian :),
-	"ÍËÒÛ" : (: do_tuiyi :),
-	"¸æÀÏ" : (: do_tuiyi :),
+	"é€€å½¹" : (: do_tuiyi :),
+	"å‘Šè€" : (: do_tuiyi :),
 	"retire"  : (: do_tuiyi :),
-	"ĞÂÎÅ"      : (: do_news :),
-	"Í¨ÎÄ"      : (: do_news :),
+	"æ–°é—»"      : (: do_news :),
+	"é€šæ–‡"      : (: do_news :),
 	"news"      : (: do_news :),
-	"Ãû²á"   : (: do_members :),
-	"Ãûµ¥"   : (: do_members :),
+	"åå†Œ"   : (: do_members :),
+	"åå•"   : (: do_members :),
 	"members"   : (: do_members :),
 	]));
 }
@@ -223,13 +223,13 @@ void normalize(object player)
 	    if (environment(ob) == player) {
 		destruct(ob);
 		if (environment(player) == environment(this_object()))
-		    message_vision("$N´Ó$nµÄÉíÉÏ½âÏÂÒ»¸öÊÌÎÀÑüÅÆ¡£\n", 
+		    message_vision("$Nä»$nçš„èº«ä¸Šè§£ä¸‹ä¸€ä¸ªä¾å«è…°ç‰Œã€‚\n", 
 			this_object(), player);
 	    }
 	}
     }
     player->delete("family");
-    player->set("title","ÆÕÍ¨°ÙĞÕ");
+    player->set("title","æ™®é€šç™¾å§“");
     player->save();
 }
 
@@ -244,14 +244,14 @@ string do_news()
     int     i;
 
     if (! IS_SHIWEI(player)) {
-	return "Äã²»ÊÇÓùÁÖ¾üÊÌÎÀ£¬ÈçºÎ¸ÒÀ´´ËÂŞßğ!";
+	return "ä½ ä¸æ˜¯å¾¡æ—å†›ä¾å«ï¼Œå¦‚ä½•æ•¢æ¥æ­¤ç½—å”£!";
     }
-    message_vision("$N¸ø$n¿´ÁËÒ»ÑÛ±ø²¿µÄÍ¨ÎÄ¡£\n", me, player);
-    tell_object(player, "----------------±ø²¿Í¨ÎÄ-------------\n");
+    message_vision("$Nç»™$nçœ‹äº†ä¸€çœ¼å…µéƒ¨çš„é€šæ–‡ã€‚\n", me, player);
+    tell_object(player, "----------------å…µéƒ¨é€šæ–‡-------------\n");
     for (i=0; i<news_num; i++){
 	tell_object(player, news[i]);
     }
-    return "¿´Íê¾Í¸Ï½ô×ß°É¡£";
+    return "çœ‹å®Œå°±èµ¶ç´§èµ°å§ã€‚";
 }
 
 string do_members()
@@ -263,18 +263,18 @@ string do_members()
     string *members, *ret, *name;
     
     if (! IS_SHIWEI(player)) {
-	return "Äã²»ÊÇÓùÁÖ¾üÊÌÎÀ£¬ÈçºÎ¸ÒÀ´´ËÂŞßğ!";
+	return "ä½ ä¸æ˜¯å¾¡æ—å†›ä¾å«ï¼Œå¦‚ä½•æ•¢æ¥æ­¤ç½—å”£!";
     }
 
     if (time() - player->query("bingbu/ask_member") < 3600) {
-	return "²»ÊÇ¸Õ¸øÄã¿´¹ıÂğ£¿";
+	return "ä¸æ˜¯åˆšç»™ä½ çœ‹è¿‡å—ï¼Ÿ";
     }
 
     player->set("bingbu/ask_member", time());
 
-    message_vision("$N¸ø$n¿´ÁËÒ»ÑÛÊÌÎÀÃû²á¡£\n", me, player);
+    message_vision("$Nç»™$nçœ‹äº†ä¸€çœ¼ä¾å«åå†Œã€‚\n", me, player);
 
-    tell_object(player, "ÓùÁÖ¾üÃû²á\n");
+    tell_object(player, "å¾¡æ—å†›åå†Œ\n");
     for (rank = 0; rank < 7; rank ++) {
 	tell_object(player, "--------------- " + HELPER->rank_name(rank)+" --------------\n");
  	members = me->query("members/rank"+rank);
@@ -304,7 +304,7 @@ string do_members()
 	    tell_object(player, "\n");
 	}
     }
-    return "¿´Íê¾Í¸Ï½ô×ß°É¡£";
+    return "çœ‹å®Œå°±èµ¶ç´§èµ°å§ã€‚";
 }
 
 string do_shengqian()
@@ -314,20 +314,20 @@ string do_shengqian()
     int    rank, i;
     string *members;
 
-    if (player->query("possessed")) return "Äã±»¸½ÉíÁË¡£";
+    if (player->query("possessed")) return "ä½ è¢«é™„èº«äº†ã€‚";
     if (! IS_SHIWEI(player)) {
-	return "Äã¿ªÊ²Ã´ÍæĞ¦£¿µ±ĞÄÎÒ°ÑÄã×¥ÆğÀ´¡£";
+	return "ä½ å¼€ä»€ä¹ˆç©ç¬‘ï¼Ÿå½“å¿ƒæˆ‘æŠŠä½ æŠ“èµ·æ¥ã€‚";
     }
     rank = SHIWEI_LEVEL(player);
     if ( player->query("bingbu/job_cur") < HELPER->job_upgrade_num(rank)) {
-	return "ÄãµÄ¾ü¹¦²»¹»£¬ÔõÃ´Éı°¡£¿";
+	return "ä½ çš„å†›åŠŸä¸å¤Ÿï¼Œæ€ä¹ˆå‡å•Šï¼Ÿ";
     }
     if (rank >= 6) 
-	return "´óÈËÄúÒÑ¾­ÊÇ"+HELPER->player_title(player)+
-	       "ÁË£¬ÔÙÉı¾Í¡£¡£¡£";
+	return "å¤§äººæ‚¨å·²ç»æ˜¯"+HELPER->player_title(player)+
+	       "äº†ï¼Œå†å‡å°±ã€‚ã€‚ã€‚";
 
     if (! add_user_succ(me, player, rank+1)) {
-	return "´óÈË¾ü¹¦×¿Öø£¬¿ÉÏÖÏÂ±ø²¿ÈËÂúÎª»¼£¬Ã»ÓĞÊµÈ±°¡.";
+	return "å¤§äººå†›åŠŸå“è‘—ï¼Œå¯ç°ä¸‹å…µéƒ¨äººæ»¡ä¸ºæ‚£ï¼Œæ²¡æœ‰å®ç¼ºå•Š.";
     }
 
     // remove user from his current rank
@@ -338,10 +338,10 @@ string do_shengqian()
 	}
     }
     me->set("members/rank"+rank, members);
-    post_message(player->name()+"ÈÙÉı"+HELPER->player_title(player)+"\n");
+    post_message(player->name()+"è£å‡"+HELPER->player_title(player)+"\n");
     me->save();
 
-    return "ºÃ£¬´óÈË¾ü¹¦×¿Öø£¬ÎÒ¾ÍÉıÄúÎª"+HELPER->player_title(player)+"°É¡£";
+    return "å¥½ï¼Œå¤§äººå†›åŠŸå“è‘—ï¼Œæˆ‘å°±å‡æ‚¨ä¸º"+HELPER->player_title(player)+"å§ã€‚";
 }
 
 
@@ -353,9 +353,9 @@ string do_tuiyi()
     string *members, name=player->name(), id = player->query("id");
     int    i, slot, rank;
 
-    if (player->query("possessed")) return "Äã±»¸½ÉíÁË¡£";
+    if (player->query("possessed")) return "ä½ è¢«é™„èº«äº†ã€‚";
     if (! IS_SHIWEI(player)) {
-	return "Äã¿ªÊ²Ã´ÍæĞ¦£¿µ±ĞÄÎÒ°ÑÄã×¥ÆğÀ´¡£";
+	return "ä½ å¼€ä»€ä¹ˆç©ç¬‘ï¼Ÿå½“å¿ƒæˆ‘æŠŠä½ æŠ“èµ·æ¥ã€‚";
     }
 
     for (rank=0; rank<7; rank++){
@@ -381,10 +381,10 @@ string do_tuiyi()
 	}
     }
 
-    post_message(HELPER->player_title(player)+player->name()+"ÍËÒÛÁË¡£\n");
+    post_message(HELPER->player_title(player)+player->name()+"é€€å½¹äº†ã€‚\n");
     if (slot == -1) {
  	normalize(player);
-	return "ÎÒµÄÃû²áÉÏÃ»ÓĞÄã°¡£¿²»¹ıÎÒ»¹ÊÇ°ÑÄã¸ø×¢ÏúÁË°É¡£";
+	return "æˆ‘çš„åå†Œä¸Šæ²¡æœ‰ä½ å•Šï¼Ÿä¸è¿‡æˆ‘è¿˜æ˜¯æŠŠä½ ç»™æ³¨é”€äº†å§ã€‚";
     }else {
 	player->set("bingbu/leave_time", time());
 	player->set("bingbu/leave_age", player->query("mud_age"));
@@ -392,7 +392,7 @@ string do_tuiyi()
  	members[slot] = 0;
 	me->set("members/rank"+rank, members);
 	me->save();
-	return "ºÃ°É£¬¾Í×¼Äã¸æÀÏ»¹Ïç°É¡£";
+	return "å¥½å§ï¼Œå°±å‡†ä½ å‘Šè€è¿˜ä¹¡å§ã€‚";
     }
 }
 
@@ -404,39 +404,39 @@ string do_toujun()
     object yaopai;
     int    leave_age;
 
-    if (player->query("possessed")) return "Äã±»¸½ÉíÁË£¬ÎÒ¿É²»ÄÜÊÕÄã¡£";
+    if (player->query("possessed")) return "ä½ è¢«é™„èº«äº†ï¼Œæˆ‘å¯ä¸èƒ½æ”¶ä½ ã€‚";
     if (IS_SHIWEI(player)) {
-	return "Äã¿ªÊ²Ã´ÍæĞ¦£¿µ±ĞÄÎÒ°ÑÄã¸ïÖ°²é°ì¡£";
+	return "ä½ å¼€ä»€ä¹ˆç©ç¬‘ï¼Ÿå½“å¿ƒæˆ‘æŠŠä½ é©èŒæŸ¥åŠã€‚";
     }
 
-    if ((player->query("family/family_name") == "Ø¤°ï") &&
+    if ((player->query("family/family_name") == "ä¸å¸®") &&
 	(player->query("rank") > 1)) {
-	return "ÄãÄËØ¤°ï¸ßÊÖ£¬ÈçºÎÒªÀ´¹«ÃÅ£¿";
+	return "ä½ ä¹ƒä¸å¸®é«˜æ‰‹ï¼Œå¦‚ä½•è¦æ¥å…¬é—¨ï¼Ÿ";
     }
 
-    if (player->query("gender") == "ÎŞĞÔ") 
-	return "¹«¹«»¹ÊÇ»Ø¹¬È¥°É¡£";
+    if (player->query("gender") == "æ— æ€§") 
+	return "å…¬å…¬è¿˜æ˜¯å›å®«å»å§ã€‚";
 
-    if (player->query("gender") == "Å®ĞÔ") 
-	return "ÏóÄãÕâ°ã²»ÊØ¸¾µÀµÄÅ®×Ó£¬Ò²ÓĞÁ³ÃæÀ´¼û±¾¹Ù£¿";
+    if (player->query("gender") == "å¥³æ€§") 
+	return "è±¡ä½ è¿™èˆ¬ä¸å®ˆå¦‡é“çš„å¥³å­ï¼Œä¹Ÿæœ‰è„¸é¢æ¥è§æœ¬å®˜ï¼Ÿ";
     
     if (player->query("combat_exp") < 20000) 
-	return "¸óÏÂÎä¹¦µÍÎ¢£¬ÈçºÎÄÜÎª»ÊÉÏ³öÁ¦£¿";
+	return "é˜ä¸‹æ­¦åŠŸä½å¾®ï¼Œå¦‚ä½•èƒ½ä¸ºçš‡ä¸Šå‡ºåŠ›ï¼Ÿ";
     
     if (leave_age = player->query("bingbu/leave_age")) {
  	if (player->query("mud_age")-leave_age < HELPER->pending_time()) {
-	    return "Äã¸Õ¸æÀÏ»¹Ïç¾ÍÏëÖØĞÂÍ¶¾ü£¿";
+	    return "ä½ åˆšå‘Šè€è¿˜ä¹¡å°±æƒ³é‡æ–°æŠ•å†›ï¼Ÿ";
 	}
     }
 
     // we allow this player to join, check positions available
     if (! add_user_succ(me, player, 0)) {
-	return "ÏÖÔÚÓùÁÖ¾üÃ»ÓĞ¿ÕÈ±£¬Äã¹ıÒ»Õó×ÓÔÙÀ´°É¡£";
+	return "ç°åœ¨å¾¡æ—å†›æ²¡æœ‰ç©ºç¼ºï¼Œä½ è¿‡ä¸€é˜µå­å†æ¥å§ã€‚";
     }
 
-    post_message(player->name()+"Í¶¾ü£¬ÊµÊÚ"+HELPER->player_title(player)+"¡£\n");
+    post_message(player->name()+"æŠ•å†›ï¼Œå®æˆ"+HELPER->player_title(player)+"ã€‚\n");
     player->set("family", ([
-	"family_name"    : "ÓùÁÖ¾ü",
+	"family_name"    : "å¾¡æ—å†›",
 	"enter_time"     : time(),
     ]));
     player->set("bingbu/job_total", 0);
@@ -453,11 +453,11 @@ string do_toujun()
     player->set("suicong_num", 0);
     player->save();
 
-    message_vision("$N¾ö¶¨±³ÅÑÊ¦ÃÅ£¬¼ÓÈëÓùÁÖ¾ü£¡£¡\n", player);
-    message_vision("$N¸ø$nÒ»¸öÊÌÎÀÑüÅÆ¡£ÅÄ×Å$nµÄ¼ç°òËµµÀ£º¹§Ï²Äã³ÉÎª"
-	+HELPER->rank_name(0)+"¡£\n", me, player);
+    message_vision("$Nå†³å®šèƒŒå›å¸ˆé—¨ï¼ŒåŠ å…¥å¾¡æ—å†›ï¼ï¼\n", player);
+    message_vision("$Nç»™$nä¸€ä¸ªä¾å«è…°ç‰Œã€‚æ‹ç€$nçš„è‚©è†€è¯´é“ï¼šæ­å–œä½ æˆä¸º"
+	+HELPER->rank_name(0)+"ã€‚\n", me, player);
 
-    return "È¥¶à×Ü¹ÜÄÇ¶ùÁìÈÎÎñÈ¥°É¡£";
+    return "å»å¤šæ€»ç®¡é‚£å„¿é¢†ä»»åŠ¡å»å§ã€‚";
 }
 
 /*
@@ -487,7 +487,7 @@ string should_demote(object usr)
 
     ret = 0;
     if (death - usr->query("bingbu/death_count") > death_allowed[rank]) {
-	msg="ÔÚÖ°ÆÚ¼äËÀÍö´ÎÊı¹ı¶à";
+	msg="åœ¨èŒæœŸé—´æ­»äº¡æ¬¡æ•°è¿‡å¤š";
 	ret = 1;
     }
 
@@ -503,7 +503,7 @@ string should_demote(object usr)
     // check if he is doing jobs
     if (time() - usr->query("bingbu/job_lazy_time") >= 604800) {
 	if (usr->query("bingbu/job_lazy") < 4) {
-	    msg="³¤ÆÚ²»µ½±ø²¿µãÃû";
+	    msg="é•¿æœŸä¸åˆ°å…µéƒ¨ç‚¹å";
 	    ret = 1;
  	}
 	usr->set("bingbu/job_lazy", 0);
@@ -512,7 +512,7 @@ string should_demote(object usr)
     if (usr->query("mud_age") - usr->query("bingbu/job_lazy_mudtime") >= 
 	    43200) {
 	if (usr->query("bingbu/job_lazy_mud") < 4) {
-	    msg="³¤ÆÚ²»µ½±ø²¿Öµ°à";
+	    msg="é•¿æœŸä¸åˆ°å…µéƒ¨å€¼ç­";
 	    ret = 1;
  	}
 	usr->set("bingbu/job_lazy_mud", 0);
@@ -529,8 +529,8 @@ void demote(object me, object usr, int old_rank)
 
     for (i=old_rank-1; i>=0; i--){
 	if (add_user_succ(me, usr, i)) {
-	    tell_object(usr, "Äã±»½µ³É"+HELPER->rank_name(i)+"\n");
-	    post_message(usr->query("name")+"±»½µ³É"+
+	    tell_object(usr, "ä½ è¢«é™æˆ"+HELPER->rank_name(i)+"\n");
+	    post_message(usr->query("name")+"è¢«é™æˆ"+
 			HELPER->rank_name(i)+"\n");
  	    // remove suicong
 	    if (usr->query("suicong_num") > HELPER->suicong_max(i)) {
@@ -540,8 +540,8 @@ void demote(object me, object usr, int old_rank)
 	}
     }
     normalize(usr);
-    tell_object(usr, "Äã±»ÀÕÁîÍËÒÛ¡£\n");
-    post_message(usr->query("name")+"Äã±»ÀÕÁîÍËÒÛ¡£\n");
+    tell_object(usr, "ä½ è¢«å‹’ä»¤é€€å½¹ã€‚\n");
+    post_message(usr->query("name")+"ä½ è¢«å‹’ä»¤é€€å½¹ã€‚\n");
 }
 
 void refresh_members()
@@ -564,8 +564,8 @@ void refresh_members()
 		    members[j] = 0;	// maybe he went to xx
 		}else if ( msg=should_demote(usr)) {
 		    members[j] = 0;
-		    tell_object(usr, "ÓÉÓÚÄã"+msg+"£¬Äã±»±ø²¿½µÖ°ÁË¡£\n");
-		    post_message(usr->name()+"ÓÉÓÚ"+msg+"±»±ø²¿½µÖ°ÁË¡£\n");
+		    tell_object(usr, "ç”±äºä½ "+msg+"ï¼Œä½ è¢«å…µéƒ¨é™èŒäº†ã€‚\n");
+		    post_message(usr->name()+"ç”±äº"+msg+"è¢«å…µéƒ¨é™èŒäº†ã€‚\n");
 		    demote(me, usr, i);
 		    usr->save();
 		}

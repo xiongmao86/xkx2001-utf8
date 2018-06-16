@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ningbi-jian Äı±Ì½£
+// ningbi-jian å‡ç¢§å‰‘
 // qfy September 29, 1996
 
 #include <weapon.h>
@@ -9,21 +9,21 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Äı±Ì½£",({ "ningbi jian", "ningbi", "sword", "jian" }) );
+        set_name("å‡ç¢§å‰‘",({ "ningbi jian", "ningbi", "sword", "jian" }) );
         set_weight(4000);
 	set_color(HIG);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 7000);
                 set("material", "steel");
                 set("long", 
-		"´Ë½£Îª»ÊµÛÓù´Í£¬¶Ï½ğÏ÷Ìú£¬·æÀûÒì³£¡£\n");
+		"æ­¤å‰‘ä¸ºçš‡å¸å¾¡èµï¼Œæ–­é‡‘å‰Šé“ï¼Œé”‹åˆ©å¼‚å¸¸ã€‚\n");
                 set("wield_msg", 
-		    HIG "$N³é³ö$n£¬Ö»¼û´Ë½£ÓĞÈçÒ»ãüÇåË®£¬º®Æø±ÆÈË£¬´óÒìÑ°³£±¦½£¡£\n" NOR );
-                set("unwield_msg", HIG "$NäìÈ÷µØ½«$nÒ»»ÓÒ»Ğı£¬²å»ØÇÊÖĞ¡£\n" NOR);
-                set("unequip_msg", HIG "$NäìÈ÷µØ½«$nÒ»»ÓÒ»Ğı£¬²å»ØÇÊÖĞ¡£\n" NOR);
+		    HIG "$NæŠ½å‡º$nï¼Œåªè§æ­¤å‰‘æœ‰å¦‚ä¸€æ³“æ¸…æ°´ï¼Œå¯’æ°”é€¼äººï¼Œå¤§å¼‚å¯»å¸¸å®å‰‘ã€‚\n" NOR );
+                set("unwield_msg", HIG "$Næ½‡æ´’åœ°å°†$nä¸€æŒ¥ä¸€æ—‹ï¼Œæ’å›é˜ä¸­ã€‚\n" NOR);
+                set("unequip_msg", HIG "$Næ½‡æ´’åœ°å°†$nä¸€æŒ¥ä¸€æ—‹ï¼Œæ’å›é˜ä¸­ã€‚\n" NOR);
         }
 	init_sword(200);
         setup();

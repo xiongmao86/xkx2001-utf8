@@ -12,13 +12,13 @@ string query_save_file()
 }
 
 void create() {
-    set_name("ÍÅÌåÈü³É¼¨°æ", ({ "board"}) );
+    set_name("å›¢ä½“èµ›æˆç»©ç‰ˆ", ({ "board"}) );
 	 if( !restore() )
 	 {
 		 set_weight(10000);
 		 set_max_encumbrance(500000);
-		 set("unit", "¸ö");
-		 set("long", "ÍÅÌåÈü³É¼¨°æ´æ×Å±ÈÎäµÄÍæ¼ÒÃÇµÄÈ«²¿³É¼¨¡£");
+		 set("unit", "ä¸ª");
+		 set("long", "å›¢ä½“èµ›æˆç»©ç‰ˆå­˜ç€æ¯”æ­¦çš„ç©å®¶ä»¬çš„å…¨éƒ¨æˆç»©ã€‚");
 		 set("value", 10000);
 		 set("material", "steel");
 		 set("no_get",1);

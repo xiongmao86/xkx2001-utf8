@@ -14,13 +14,13 @@ static int last_age_set;
 void create()
 {
 	::create();
-	set_name("Ê¹ÓÃÕßÎï¼ş", ({ "user object", "user", "object" }) );
+	set_name("ä½¿ç”¨è€…ç‰©ä»¶", ({ "user object", "user", "object" }) );
 }
 
 void terminal_type(string term_type)
 {
 	set_temp("terminal_type", term_type);
-	message("system", "ÖÕ¶Ë»úĞÍÌ¬Éè¶¨Îª " + term_type + "¡£\n", this_object());
+	message("system", "ç»ˆç«¯æœºå‹æ€è®¾å®šä¸º " + term_type + "ã€‚\n", this_object());
 }
 
 void reset()
@@ -90,8 +90,8 @@ private void user_dump(int type)
 	wiz_type = wizhood(this_object());
 	switch(type) {
 		case DUMP_NET_DEAD:
-			tell_room( environment(), query("name") + "¶ÏÏß³¬¹ı "
-				+ NET_DEAD_TIMEOUT/60 + " ·ÖÖÓ£¬×Ô¶¯ÍË³öÕâ¸öÊÀ½ç¡£\n");
+			tell_room( environment(), query("name") + "æ–­çº¿è¶…è¿‡ "
+				+ NET_DEAD_TIMEOUT/60 + " åˆ†é’Ÿï¼Œè‡ªåŠ¨é€€å‡ºè¿™ä¸ªä¸–ç•Œã€‚\n");
 			set_temp("quit/forced", 1);
 			command("quit");
 			break;
@@ -104,10 +104,10 @@ private void user_dump(int type)
 //			}
 //			else	
 			{
-			tell_object( this_object(), "¶Ô²»Æğ£¬ÄúÒÑ¾­·¢´ô³¬¹ı " 
-				+ IDLE_TIMEOUT/60 + " ·ÖÖÓÁË£¬ÇëÏÂ´ÎÔÙÀ´¡£\n");
-			tell_room( environment(), "Ò»Õó·ç´µÀ´£¬½«·¢´ôÖĞµÄ" + query("name")
-				+ "»¯ÎªÒ»¶Ñ·É»Ò£¬ÏûÊ§ÁË¡£\n", ({this_object()}));
+			tell_object( this_object(), "å¯¹ä¸èµ·ï¼Œæ‚¨å·²ç»å‘å‘†è¶…è¿‡ " 
+				+ IDLE_TIMEOUT/60 + " åˆ†é’Ÿäº†ï¼Œè¯·ä¸‹æ¬¡å†æ¥ã€‚\n");
+			tell_room( environment(), "ä¸€é˜µé£å¹æ¥ï¼Œå°†å‘å‘†ä¸­çš„" + query("name")
+				+ "åŒ–ä¸ºä¸€å †é£ç°ï¼Œæ¶ˆå¤±äº†ã€‚\n", ({this_object()}));
 			set_temp("quit/forced", 1);
 			command("quit");
                         }
@@ -132,8 +132,8 @@ private void net_dead()
 	set_temp("netdead", 1);
 	if( userp(this_object()) ) {
 		call_out("user_dump", NET_DEAD_TIMEOUT, DUMP_NET_DEAD);
-	    tell_room(environment(), query("name") + "¶ÏÏßÁË¡£\n", this_object());
-	    CHANNEL_D->do_channel(this_object(), "sys", "¶ÏÏßÁË¡£");
+	    tell_room(environment(), query("name") + "æ–­çº¿äº†ã€‚\n", this_object());
+	    CHANNEL_D->do_channel(this_object(), "sys", "æ–­çº¿äº†ã€‚");
 	} else {
 		set_temp("quit/forced", 1);
 		command("quit");
@@ -146,6 +146,6 @@ void reconnect()
 	set_heart_beat(1);
 	set_temp("netdead",0);
 	remove_call_out("user_dump");
-	tell_object(this_object(), "ÖØĞÂÁ¬ÏßÍê±Ï¡£\n");
+	tell_object(this_object(), "é‡æ–°è¿çº¿å®Œæ¯•ã€‚\n");
 }
 

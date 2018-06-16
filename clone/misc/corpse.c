@@ -8,9 +8,9 @@ int decayed;
 
 void create()
 {
-	set_name("ÎŞÃûÊ¬Ìå", ({ "corpse" }) );
-	set("long", "ÕâÊÇÒ»¾ßÎŞÃûÊ¬Ìå¡£\n");
-	set("unit", "¾ß" );
+	set_name("æ— åå°¸ä½“", ({ "corpse" }) );
+	set("long", "è¿™æ˜¯ä¸€å…·æ— åå°¸ä½“ã€‚\n");
+	set("unit", "å…·" );
 	decayed = 0;
 	if( clonep(this_object()) ) call_out("decay", 1, 0);
 }
@@ -28,32 +28,32 @@ void decay(int phase)
 		case 0:
 		        set("food_remaining", 4);
         		set("food_supply", query_weight()/1000);
-        		set("food_race","Ò°ÊŞ");
+        		set("food_race","é‡å…½");
 			call_out("decay", 120, 1);
 			break;
 		case 1:
-			message("vision", query("name") + "¿ªÊ¼¸¯ÀÃÁË£¬·¢³öÒ»¹ÉÄÑÎÅµÄ¶ñ³ô¡£\n", environment() );
+			message("vision", query("name") + "å¼€å§‹è…çƒ‚äº†ï¼Œå‘å‡ºä¸€è‚¡éš¾é—»çš„æ¶è‡­ã€‚\n", environment() );
 			delete("food_supply");
 			switch(query("gender")) {
-				case "ÄĞĞÔ":
-					set_name("¸¯ÀÃµÄÄĞÊ¬", ({ "corpse", "Ê¬Ìå" }) );
-				case "Å®ĞÔ":
-					set_name("¸¯ÀÃµÄÅ®Ê¬", ({ "corpse", "Ê¬Ìå" }) );
+				case "ç”·æ€§":
+					set_name("è…çƒ‚çš„ç”·å°¸", ({ "corpse", "å°¸ä½“" }) );
+				case "å¥³æ€§":
+					set_name("è…çƒ‚çš„å¥³å°¸", ({ "corpse", "å°¸ä½“" }) );
 				default:
-					set_name("¸¯ÀÃµÄÊ¬Ìå", ({ "corpse", "Ê¬Ìå" }) );
+					set_name("è…çƒ‚çš„å°¸ä½“", ({ "corpse", "å°¸ä½“" }) );
 			}
-			set("long",	"Õâ¾ßÊ¬ÌåÏÔÈ»ÒÑ¾­ÌÉÔÚÕâÀïÓĞÒ»¶ÎÊ±¼äÁË£¬ÕıÉ¢·¢ÖøÒ»¹É¸¯Ê¬µÄÎ¶µÀ¡£\n");
+			set("long",	"è¿™å…·å°¸ä½“æ˜¾ç„¶å·²ç»èººåœ¨è¿™é‡Œæœ‰ä¸€æ®µæ—¶é—´äº†ï¼Œæ­£æ•£å‘è‘—ä¸€è‚¡è…å°¸çš„å‘³é“ã€‚\n");
 			call_out("decay", 60, phase + 1);
 			break;
 		case 2:
-			message("vision", query("name") + "±»·ç´µÇ¬ÁË£¬±ä³ÉÒ»¾ßº¡¹Ç¡£\n", environment() );
-			set_name("º¡¹Ç", ({ "skeleton", "º¡¹Ç" }) );
+			message("vision", query("name") + "è¢«é£å¹ä¹¾äº†ï¼Œå˜æˆä¸€å…·éª¸éª¨ã€‚\n", environment() );
+			set_name("éª¸éª¨", ({ "skeleton", "éª¸éª¨" }) );
 			set_weight(query_weight()/5);
-			set("long", "Õâ¸±º¡¹ÇÒÑ¾­ÌÉÔÚÕâÀïºÜ¾ÃÁË¡£\n");
+			set("long", "è¿™å‰¯éª¸éª¨å·²ç»èººåœ¨è¿™é‡Œå¾ˆä¹…äº†ã€‚\n");
 			call_out("decay", 60, phase + 1);
 			break;
 		case 3:
-			message("vision", "Ò»Õó·ç´µ¹ı£¬°Ñ" + query("name") + "»¯³É¹Ç»Ò´µÉ¢ÁË¡£\n", environment() );
+			message("vision", "ä¸€é˜µé£å¹è¿‡ï¼ŒæŠŠ" + query("name") + "åŒ–æˆéª¨ç°å¹æ•£äº†ã€‚\n", environment() );
 			if( environment() ) {
 				object *inv;
 				int i;

@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIG"ÜòÜß"NOR, ({"fuling"}));
+        set_name(HIG"èŒ¯è‹“"NOR, ({"fuling"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","ÜòÜß£º²İ±¾Ö²Îï£¬²¹ÆøÑª£¬ÈóÎåÔà£¬ÊÇ²»¿É¶àµÃµÄÉÏ¼ÑÒ©²Ä¡£\n");
+                set("unit", "é’±");
+                set("long","èŒ¯è‹“ï¼šè‰æœ¬æ¤ç‰©ï¼Œè¡¥æ°”è¡€ï¼Œæ¶¦äº”è„ï¼Œæ˜¯ä¸å¯å¤šå¾—çš„ä¸Šä½³è¯æã€‚\n");
                 set("value", 10000);
 				set("yaocai", 1);
         		set("cure_s",40);

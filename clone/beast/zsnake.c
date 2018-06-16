@@ -6,15 +6,15 @@ inherit NPC_TRAINEE;
 
 void create()
 {
-        set_name("ÖñÒ¶Çà", ({ "zhuye qing", "snake" }) );
-        set("race", "ÉßÀà");
+        set_name("ç«¹å¶é’", ({ "zhuye qing", "snake" }) );
+        set("race", "è›‡ç±»");
         set("age", 4);
-        set("long", "Ò»Ö»ÉíÌå±ÌÂÌµÄÉß£¬ÏÔµÃÌØ±ğÏ¸Ğ¡¡£\n");
+        set("long", "ä¸€åªèº«ä½“ç¢§ç»¿çš„è›‡ï¼Œæ˜¾å¾—ç‰¹åˆ«ç»†å°ã€‚\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆğÀ´");
-        set("msg_trained","$nÇÄÎŞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$nå†²$Nå˜¶åœ°ä¸€åèˆŒå¤´");
+        set("msg_succ", "$nå˜¶å˜¶åšå“ï¼Œè›‡å¤´éšç€$Nçš„æ‰‹åŠ¨äº†èµ·æ¥");
+        set("msg_trained","$næ‚„æ— å£°æ¯åœ°æ¸¸åˆ°$Nçš„è„šä¸‹ä¸åŠ¨äº†");
         set("auto_follow",0);
         set("wildness", 11);
 
@@ -36,7 +36,7 @@ void init()
         ::init();
 	add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-	    ob->query("family/family_name") != "°×ÍÕÉ½" &&
+	    ob->query("family/family_name") != "ç™½é©¼å±±" &&
                 random(ob->query_kar() + ob->query_per()) < 30) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -63,8 +63,8 @@ int convert(string arg)
 	object ob;
 
 	if (arg!="snake" && arg!="zhuye qing") return 0;
-	if (me->query("family/family_name") != "°×ÍÕÉ½") 
-		return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
-	return notify_fail("ÖñÒ¶Çà¹ıÓÚÏ¸Ğ¡£¬²»ÄÜ»¯ÎªÕÈ¡£\n");
+	if (me->query("family/family_name") != "ç™½é©¼å±±") 
+		return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ä¸ºæ–ã€‚\n");
+	return notify_fail("ç«¹å¶é’è¿‡äºç»†å°ï¼Œä¸èƒ½åŒ–ä¸ºæ–ã€‚\n");
 }
 

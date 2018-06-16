@@ -7,17 +7,17 @@ inherit CLUB;
 
 void create()
 {
-	set_name(HIY "»Æ½ğ¹÷" NOR, ({ "huangjin gun", "gun" }));
+	set_name(HIY "é»„é‡‘æ£" NOR, ({ "huangjin gun", "gun" }));
         set_weight(30000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ù»Æ½ğËùÖıµÄ´ó¹÷£¬³¤´ïÆß³ß£¬Ê®·Ö³ÁÖØ£¬Ê¹¿ªÀ´Á½ÕÉÖ®ÄÚÒ»ÍÅ»Æ¹â£¬¶ËÊÇÀ÷º¦Ö®¼«¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹é»„é‡‘æ‰€é“¸çš„å¤§æ£ï¼Œé•¿è¾¾ä¸ƒå°ºï¼Œååˆ†æ²‰é‡ï¼Œä½¿å¼€æ¥ä¸¤ä¸ˆä¹‹å†…ä¸€å›¢é»„å…‰ï¼Œç«¯æ˜¯å‰å®³ä¹‹æã€‚\n");
                 set("value", 15000000);
                 set("material", "gold");
-		set("wield_msg", "$N³é³öÒ»¸ù$n£¬ÔÚÊÖÖĞÒ»¶¶¡£\n");
-		set("unequip_msg", "$N½«ÊÖÖĞµÄ$n±³»ØÉíºó¡£\n");
+		set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$nï¼Œåœ¨æ‰‹ä¸­ä¸€æŠ–ã€‚\n");
+		set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$nèƒŒå›èº«åã€‚\n");
         }
         init_club(35);
         setup();

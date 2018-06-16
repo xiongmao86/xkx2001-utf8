@@ -1,5 +1,5 @@
 //Cracked by Roath
-// danggui.c µ±¹é
+// danggui.c å½“å½’
 
 #include <ansi.h>
 
@@ -11,13 +11,13 @@ void init();
 
 void create()
 {
-	set_name( GRN "µ±¹é" NOR , ({"dang gui", "danggui"}));
+	set_name( GRN "å½“å½’" NOR , ({"dang gui", "danggui"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ã");
-		set("long", "ÕâÊÇÒ»¿Ã°ÙÄêµÄÀÏµ±¹é£¬ËäÈ»ÒÑ¾­¸É±ñ£¬µ«ÆäÑø¾«ÕòÉñµÄÒ©Ğ§Éõ¼Ñ¡£\n");
+		set("unit", "æ£µ");
+		set("long", "è¿™æ˜¯ä¸€æ£µç™¾å¹´çš„è€å½“å½’ï¼Œè™½ç„¶å·²ç»å¹²ç˜ªï¼Œä½†å…¶å…»ç²¾é•‡ç¥çš„è¯æ•ˆç”šä½³ã€‚\n");
 		set("value", 10000);
 		set("medicine", 1);
 	}
@@ -31,14 +31,14 @@ int cure_ob(object me)
                 me->add("eff_jingli", -1);
 		me->set("jingli", 0);
 		me->apply_condition("bonze_drug", 30);
-        message_vision(HIR "$N³ÔÏÂÒ»¿Åµ±¹é£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+        message_vision(HIR "$Nåƒä¸‹ä¸€é¢—å½“å½’ï¼Œåªè§‰å¾—è‚è‚ å¯¸æ–­ï¼Œäº”è„æ¬²è£‚ï¼ŒåŸæ¥æœé£Ÿå¤ªå¤šè¯ç‰©ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
 		destruct(this_object());
         }
 	me->add("max_jingli", 1);
 	me->add("eff_jingli", 1);
 	me->set("jingli", (int)me->query("max_jingli"));
 	me->apply_condition("bonze_drug", me->query_condition("bonze_drug")+25);
-	message_vision(HIY "$N³ÔÏÂÒ»¿ÃÀÏµ±¹é£¬Ò»µÀÈÈÏßÖ±ÉÏÖØÂ¥£¬È«ÉíµÄ¾«Á¦¶¼»Ö¸´ÁË¡£\n" NOR, me);
+	message_vision(HIY "$Nåƒä¸‹ä¸€æ£µè€å½“å½’ï¼Œä¸€é“çƒ­çº¿ç›´ä¸Šé‡æ¥¼ï¼Œå…¨èº«çš„ç²¾åŠ›éƒ½æ¢å¤äº†ã€‚\n" NOR, me);
 
 	destruct(this_object());
 	return 1;

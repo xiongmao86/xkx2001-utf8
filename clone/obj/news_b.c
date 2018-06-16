@@ -37,8 +37,8 @@ void query_list_full(object player)
 	restore();
 	if(!pointerp(news_xkx))
 		return 0;
-	msg+=sprintf("%s",HIY"ÏÀ¿ÍĞĞ×îĞÂĞÂÎÅÁĞ±í£º\n"NOR
-		"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n");
+	msg+=sprintf("%s",HIY"ä¾ å®¢è¡Œæœ€æ–°æ–°é—»åˆ—è¡¨ï¼š\n"NOR
+		"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
 	j=sizeof(news_xkx);
 	for(k=0;k<sizeof(news_xkx);k++)
 	{
@@ -57,7 +57,7 @@ string query_list()
 	msg="";
 	restore();
 	if( !pointerp(news_xkx) || !sizeof(news_xkx) )
-		return ("Ä¿Ç°Ã»ÓĞÈÎºÎĞÂÎÅ¡£\n");
+		return ("ç›®å‰æ²¡æœ‰ä»»ä½•æ–°é—»ã€‚\n");
 
 	last_read_time = this_player()->query("news_last_read");	
 
@@ -68,10 +68,10 @@ string query_list()
 				if(news_xkx[num-1]["time"] > last_read_time) break;
 
 
-	msg+=sprintf("%s",HIW"ÏÀ¿ÍĞĞ×îĞÂĞÂÎÅÁĞ±í£º(¹²ÓĞ"+chinese_number(sizeof(news_xkx)-num+1)+"ÌõÎ´¶Á)\n"NOR
-		"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n");
+	msg+=sprintf("%s",HIW"ä¾ å®¢è¡Œæœ€æ–°æ–°é—»åˆ—è¡¨ï¼š(å…±æœ‰"+chinese_number(sizeof(news_xkx)-num+1)+"æ¡æœªè¯»)\n"NOR
+		"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
 
-	//msg+="\t\t\t\tÄú¹²ÓĞ"+chinese_number(sizeof(news_xkx)-num+1)+"ÌõĞÂÎÅÎ´¶Á\n";
+	//msg+="\t\t\t\tæ‚¨å…±æœ‰"+chinese_number(sizeof(news_xkx)-num+1)+"æ¡æ–°é—»æœªè¯»\n";
 	for(i=num-1; i<sizeof(news_xkx); i++) {
 		//k=sizeof(news_xkx)-1-i;
 		k=i;
@@ -94,7 +94,7 @@ void input_news_name(string news_name,object me)
 	news["title"]=news_name;
 	news["who_post"]=me->query("name")+"("+me->query("id")+")";
 	news["time"]=time();
-	tell_object(me,"Çë±à¼­ÄúÒª·¢²¼ĞÂÎÅµÄÄÚÈİ:\n");
+	tell_object(me,"è¯·ç¼–è¾‘æ‚¨è¦å‘å¸ƒæ–°é—»çš„å†…å®¹:\n");
 	me->edit( (: start_edit:) );
 }
 void start_edit(string content)
@@ -125,7 +125,7 @@ string do_read(string arg)
 	last_read_time = this_player()->query("news_last_read");
 	
 	if( !pointerp(news_xkx) || !sizeof(news_xkx) )
-		return ("Ä¿Ç°Ã»ÓĞÈÎºÎĞÂÎÅ¡£\n");
+		return ("ç›®å‰æ²¡æœ‰ä»»ä½•æ–°é—»ã€‚\n");
 	
 		if( arg=="new" || arg=="next" ) 
 		{
@@ -136,10 +136,10 @@ string do_read(string arg)
 				if(news_xkx[num-1]["time"] > last_read_time) break;
 		}
 		else if( !sscanf(arg, "%d", num) )
-		return ("ÄãÒª¶ÁµÚ¼¸ÌõĞÂÎÅ£¿\n");
+		return ("ä½ è¦è¯»ç¬¬å‡ æ¡æ–°é—»ï¼Ÿ\n");
 
 	if( num < 1 || num > sizeof(news_xkx) )
-		return ("Ã»ÓĞÕâÌõĞÂÎÅ¡£\n");
+		return ("æ²¡æœ‰è¿™æ¡æ–°é—»ã€‚\n");
 	num--;
 
 		msg= ( sprintf("[%d] %-=36s %18s (%s)\n"
@@ -161,17 +161,17 @@ string do_discard(string arg)
 	int num;
 	restore();
 	if( !arg || sscanf(arg, "%d", num)!=1 )
-		return ("Ö¸Áî¸ñÊ½£ºnewsdel <ĞÂÎÅ±àºÅ>\n");
+		return ("æŒ‡ä»¤æ ¼å¼ï¼šnewsdel <æ–°é—»ç¼–å·>\n");
 	if( !arrayp(news_xkx) || num < 1 || num > sizeof(news_xkx) )
-		return ("Ã»ÓĞÕâÌõĞÂÎÅ¡£\n");
+		return ("æ²¡æœ‰è¿™æ¡æ–°é—»ã€‚\n");
 	num--;
 	if( news_xkx[num]["who_post"] != (string) this_player()->query("name") + "("+this_player()->query("id")+")"
 	&& (string)SECURITY_D->get_status(this_player(1)) != "(admin)" 
 	&& (string)SECURITY_D->get_status(this_player(1)) != "(arch)")
 
-		return ("ÕâÌõĞÂÎÅ²»ÊÇÄãĞ´µÄ¡£\n");
+		return ("è¿™æ¡æ–°é—»ä¸æ˜¯ä½ å†™çš„ã€‚\n");
 	news_xkx = news_xkx[0..num-1] + news_xkx[num+1..<1];
 	save();
-	return ("É¾³ıµÚ " + (num+1) + "ÌõĞÂÎÅ....Ok¡£\n");
+	return ("åˆ é™¤ç¬¬ " + (num+1) + "æ¡æ–°é—»....Okã€‚\n");
 
 }

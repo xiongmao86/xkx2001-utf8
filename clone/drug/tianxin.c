@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tianxin.c ÌìĞÄ½â¶¾µ¤
+// tianxin.c å¤©å¿ƒè§£æ¯’ä¸¹
 // xQin 04/01
 
 #include <ansi.h>
@@ -8,16 +8,16 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-   set_name(WHT"ÌìĞÄ½â¶¾µ¤"NOR, ({"tianxin dan", "jiedu dan", "dan"}));
+   set_name(WHT"å¤©å¿ƒè§£æ¯’ä¸¹"NOR, ({"tianxin dan", "jiedu dan", "dan"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
       set("no_sell",1);
       set("no_get",1);
       set("no_drop",1);
-      set("unit", "¿Å");
+      set("unit", "é¢—");
               set("long",
-"ÕâÊÇÒ»¿Å»Ò°×É«µ¤Ò©£¬ÓÉ¶àÖØÒ©ÎïÅäÖÃ¶ø³É£¬ÊÇÎäµ±ÅÉµÄ½â¶¾Á¼Ò©£¬\n¶Ô½â¸÷ÖÖÇ³¶¾ÓĞÏÔÖøµÄÁÆĞ§¡£\n");
+"è¿™æ˜¯ä¸€é¢—ç°ç™½è‰²ä¸¹è¯ï¼Œç”±å¤šé‡è¯ç‰©é…ç½®è€Œæˆï¼Œæ˜¯æ­¦å½“æ´¾çš„è§£æ¯’è‰¯è¯ï¼Œ\nå¯¹è§£å„ç§æµ…æ¯’æœ‰æ˜¾è‘—çš„ç–—æ•ˆã€‚\n");
 
       set("value", 20000);
    }
@@ -27,7 +27,7 @@ void create()
 
 int cure_ob(object me)
 {
-	message_vision("$N³ÔÏÂÒ»¿Å" + name() + "¡£\n", me);
+	message_vision("$Nåƒä¸‹ä¸€é¢—" + name() + "ã€‚\n", me);
    
 	if ((int)me->query_condition("snake_poison") > 10) {
         me->apply_condition("snake_poison", (int)me->query_condition("snake_poison") - 10);
@@ -64,7 +64,7 @@ int cure_ob(object me)
       	me->apply_condition("qianzhu-poison", (int)me->query_condition("qianzhu-poison") - 5);
    	}
    
-   	tell_object(me, "Äã¸Ğµ½ÓĞÒ»¹ÉÁ¹Òâ×Ôµ¤ÌïÓ¿ÉÏĞÄÍ·£¬ºôÎüÒÑ²»¼°ÏÈÇ°µÄ²Ö´Ù¡£\n");
+   	tell_object(me, "ä½ æ„Ÿåˆ°æœ‰ä¸€è‚¡å‡‰æ„è‡ªä¸¹ç”°æ¶Œä¸Šå¿ƒå¤´ï¼Œå‘¼å¸å·²ä¸åŠå…ˆå‰çš„ä»“ä¿ƒã€‚\n");
    	destruct(this_object());
    	return 1;
 	}

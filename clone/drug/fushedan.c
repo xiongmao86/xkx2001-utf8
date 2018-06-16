@@ -9,9 +9,9 @@ int cure_ob(string);
 
 void create()
 {
-	set_name("¸¹Éßµ¨", ({"shedan", "dan"}));
-        set("unit", "Á£");
-	set("long", "ÕâÊÇÒ»Ö»ÂÌÓ¨Ó¨µÄ¸¹Éßµ¨£¬ÊÇÖÆ±¸¶¾Ò©µÄ×î¼ÑÔ­ÁÏ¡£\n");
+	set_name("è…¹è›‡èƒ†", ({"shedan", "dan"}));
+        set("unit", "ç²’");
+	set("long", "è¿™æ˜¯ä¸€åªç»¿è¹è¹çš„è…¹è›‡èƒ†ï¼Œæ˜¯åˆ¶å¤‡æ¯’è¯çš„æœ€ä½³åŸæ–™ã€‚\n");
 	set("value", 500);
 	set("medicine", 1);
         setup();
@@ -21,8 +21,8 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        return notify_fail("ÄãÕÒËÀ°¡¡£\n");
+                return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
+        return notify_fail("ä½ æ‰¾æ­»å•Šã€‚\n");
 }
 */
 
@@ -30,10 +30,10 @@ int do_eat(string arg)
 int cure_ob(object me)
 {
 
-   message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
    if ((int)me->query_condition("snake_poison") > 0) {
       me->apply_condition("snake_poison", 0);
-   write("Í»È»£¬Äã¾õµÃ¸¹ÄÚÓÌÈç·­½­µ¹º£....");
+   write("çªç„¶ï¼Œä½ è§‰å¾—è…¹å†…çŠ¹å¦‚ç¿»æ±Ÿå€’æµ·....");
       me->add("qi",-500);
    }
 

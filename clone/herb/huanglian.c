@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"»ÆÁ¬"NOR, ({"huanglian"}));
+        set_name(HIY"é»„è¿"NOR, ({"huanglian"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","»ÆÁ¬£º²İ±¾Ö²Îï£¬Î¶¿à£¬ÇåÈÈ¶¾¡£\n");
+                set("unit", "é’±");
+                set("long","é»„è¿ï¼šè‰æœ¬æ¤ç‰©ï¼Œå‘³è‹¦ï¼Œæ¸…çƒ­æ¯’ã€‚\n");
                 set("value", 4000);
 				set("yaocai", 1);
         		set("cure_s",0);

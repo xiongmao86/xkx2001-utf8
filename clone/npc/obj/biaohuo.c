@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-		  set_name("ïÚ»õ", ({ "biao huo", "huo" }));
+		  set_name("é•–è´§", ({ "biao huo", "huo" }));
 		  set_weight(10000);
-		  set("no_steal", "Õâ¶«Î÷²»ÄÜÍµ¡£\n");
-		  set("long", "ÕâÊÇÒ»´ó°üÓÃÓÍ²¼ºñºñ°ü×°µÄ¶«Î÷£¬²»ÖªÀïÃæ×°ÁËĞ©Ê²Ã´¡£\n");
+		  set("no_steal", "è¿™ä¸œè¥¿ä¸èƒ½å·ã€‚\n");
+		  set("long", "è¿™æ˜¯ä¸€å¤§åŒ…ç”¨æ²¹å¸ƒåšåšåŒ…è£…çš„ä¸œè¥¿ï¼Œä¸çŸ¥é‡Œé¢è£…äº†äº›ä»€ä¹ˆã€‚\n");
 		  set("material", "steel");
 		  set("regidity", 100000000);
-		  set("unit", "°ü");
+		  set("unit", "åŒ…");
 		  set("value", 10000000);
 		  setup();
 }

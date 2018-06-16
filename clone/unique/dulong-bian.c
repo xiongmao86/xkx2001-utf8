@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dulong-bian.c ¶¾Áú±Ş 
+// dulong-bian.c æ¯’é¾™é­ 
 // Ryu
 
 #include <weapon.h>
@@ -9,21 +9,21 @@ inherit WHIP;
 
 void create()
 {
-        set_name("¶¾Áú±Ş",({ "dulong bian", "bian", "whip", "dulong" }) );
+        set_name("æ¯’é¾™é­",({ "dulong bian", "bian", "whip", "dulong" }) );
         set_weight(700);
 	set_color(YEL);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 7000000);
 		set("rigidity", 100000);
 		set("poison_applied", 300);
                 set("material", "leather");
                 set("long", 
-		"ÕâÊÇÒ»ÌõÀÃÒøÒ²ËÆµÄÒøÉ«Èí±Ş£¬³¤´ïËÄÕÉÓĞÓà£¬±ŞÍ·×°×ÅÊ®¶àÖ»Ã÷»Î»ÎµÄ¼âÀûµ¹³¹³¡£\n");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù´ÓÑüºó³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğ»ØÑüºó¡£\n");
+		"è¿™æ˜¯ä¸€æ¡çƒ‚é“¶ä¹Ÿä¼¼çš„é“¶è‰²è½¯é­ï¼Œé•¿è¾¾å››ä¸ˆæœ‰ä½™ï¼Œé­å¤´è£…ç€åå¤šåªæ˜æ™ƒæ™ƒçš„å°–åˆ©å€’é’©ã€‚\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°ä»è…°åæŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$nåˆ«å›è…°åã€‚\n");
         }
 	init_whip(50);
         setup();

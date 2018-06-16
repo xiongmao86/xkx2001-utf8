@@ -1,5 +1,5 @@
 //Cracked by Kafei
-//xiongdan-wan.c °×ÔÆÐÜµ¨Íè
+//xiongdan-wan.c ç™½äº‘ç†Šèƒ†ä¸¸
 //kane 1998.6
 #include <ansi.h>
 inherit PILL;
@@ -10,15 +10,15 @@ void setup()
 int cure_ob(string);
 void create()
 {
-	set_name(HIW"°×ÔÆÐÜµ¨Íè"NOR, ({"xiongdan wan","wan"}));
+	set_name(HIW"ç™½äº‘ç†Šèƒ†ä¸¸"NOR, ({"xiongdan wan","wan"}));
 	set_weight(50);
 	if (clonep())
     	set_default_object(__FILE__);
     else
     {
-		set("unit", "¿Å");
+		set("unit", "é¢—");
         set("long",
-"Ò»¿Å½à°×¹âÈóµÄÒ©Íè£¬ÒÔÐÜµ¨µÈ´ó²¹Ò©ÎïÁ¶ÖÆ¶ø³É£¬¹¦ÄÜÀíÆø»¯Ðé£¬\nµ÷Ôª¹Ì±¾£¬ÓÚÖØÉËÖ®ÈË¸üÓÐµõÃüÖ®Ð§¡£\n");
+"ä¸€é¢—æ´ç™½å…‰æ¶¦çš„è¯ä¸¸ï¼Œä»¥ç†Šèƒ†ç­‰å¤§è¡¥è¯ç‰©ç‚¼åˆ¶è€Œæˆï¼ŒåŠŸèƒ½ç†æ°”åŒ–è™šï¼Œ\nè°ƒå…ƒå›ºæœ¬ï¼ŒäºŽé‡ä¼¤ä¹‹äººæ›´æœ‰åŠå‘½ä¹‹æ•ˆã€‚\n");
 		set("value", 10000);
 		set("medicine", 1);
     }
@@ -34,12 +34,12 @@ int cure_ob(object me)
 		else
 			me->add("jingli",-(me->query("jingli")));
 
-		message_vision(BLU"$N·þÏÂÒ»¿Å"+query("name")+BLU"£¬¾õµÃÐØ¿ÚÓôÃÆ£¬ËÄÖ«·¦Á¦¡£Ô­À´·þÊ³Ì«¼±\nÌ«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(BLU"$Næœä¸‹ä¸€é¢—"+query("name")+BLU"ï¼Œè§‰å¾—èƒ¸å£éƒé—·ï¼Œå››è‚¢ä¹åŠ›ã€‚åŽŸæ¥æœé£Ÿå¤ªæ€¥\nå¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
         	destruct(this_object());
         	return 1;
 	}
    	
-	message_vision(HIW"$N·þÏÂÒ»¿Å"+query("name")+HIW"£¬Ö»¾õÈ«ÉíÅ¯ÈÚÈÚµÄ£¬Ëµ²»³öµÄÊÜÓÃ£¬ÉËÊÆ\n»ôÈ»¶øÓú¡£\n"NOR, me);
+	message_vision(HIW"$Næœä¸‹ä¸€é¢—"+query("name")+HIW"ï¼Œåªè§‰å…¨èº«æš–èžèžçš„ï¼Œè¯´ä¸å‡ºçš„å—ç”¨ï¼Œä¼¤åŠ¿\néœç„¶è€Œæ„ˆã€‚\n"NOR, me);
 	me->set("eff_jing", (int)me->query("max_jing"));
 	me->set("jing", (int)me->query("max_jing"));
     	me->set("jingli", (int)me->query("max_jingli"));

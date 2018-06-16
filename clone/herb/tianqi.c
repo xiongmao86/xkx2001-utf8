@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIY"ÌïÆß"NOR, ({"tianqi"}));
+        set_name(HIY"ç”°ä¸ƒ"NOR, ({"tianqi"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","ÌïÆß£º²İ±¾Ö²Îï£¬¿É½â¶¾¡£\n");
+                set("unit", "é’±");
+                set("long","ç”°ä¸ƒï¼šè‰æœ¬æ¤ç‰©ï¼Œå¯è§£æ¯’ã€‚\n");
                 set("value", 4500);
 				set("yaocai", 1);
         		set("cure_s",5);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiangpai_b.c °ÂÔË½±ÅÆ°ñ
+// jiangpai_b.c å¥¥è¿å¥–ç‰Œæ¦œ
 
 #include <ansi.h>
 
@@ -15,20 +15,20 @@ int do_delete(string);
 int do_change(string);
 
 mapping medal_name = ([
-        "gold"		: HIY "½ğÅÆ" NOR,
-        "silver"	: HIW "ÒøÅÆ" NOR,
-        "bronze"	: HIC "Í­ÅÆ" NOR,
+        "gold"		: HIY "é‡‘ç‰Œ" NOR,
+        "silver"	: HIW "é“¶ç‰Œ" NOR,
+        "bronze"	: HIC "é“œç‰Œ" NOR,
 ]);
         
 void create()
 {
-	set_name("°ÂÔË½±ÅÆ°ñ", ({ "jiangpai bang", "bang" }) );
+	set_name("å¥¥è¿å¥–ç‰Œæ¦œ", ({ "jiangpai bang", "bang" }) );
         set("location", "/d/city/kedian");
 	set("board_id", "jiangpai_b");
 	set("long", @LONG
-	ÖĞ»ª½¡¶ù£±£¹£¹£¶ÑÇÌØÀ¼´ó°ÂÔË»á½±ÅÆ°ñ
+	ä¸­åå¥å„¿ï¼‘ï¼™ï¼™ï¼–äºšç‰¹å…°å¤§å¥¥è¿ä¼šå¥–ç‰Œæ¦œ
 	
-	ĞÕÃû		½±ÅÆ		ÏîÄ¿
+	å§“å		å¥–ç‰Œ		é¡¹ç›®
 ------------------------------------------------------------
 LONG
 	);
@@ -47,7 +47,7 @@ string short()
 {
 	mapping *medals = query("medals");
 	
-	return sprintf("%s [ ¹²ÓĞ %d Ã¶½±ÅÆ£¬%d ½ğ %d Òø %d Í­ ]",
+	return sprintf("%s [ å…±æœ‰ %d æšå¥–ç‰Œï¼Œ%d é‡‘ %d é“¶ %d é“œ ]",
 		query("name") + "(" + capitalize(query("id")) + ")",
 		sizeof(medals), (int)query("gold"),
 		(int)query("silver"), (int)query("bronze"));
@@ -78,10 +78,10 @@ int do_add(string arg)
 	string name, medal, event;
 	
 	if( !wizardp(me) )
-               return notify_fail("Äã²»ÊÇÎ×Ê¦£¬ÎŞÈ¨ĞŞ¸Ä½±ÅÆ°ñ! \n");
+               return notify_fail("ä½ ä¸æ˜¯å·«å¸ˆï¼Œæ— æƒä¿®æ”¹å¥–ç‰Œæ¦œ! \n");
 	                
 	if( !arg || sscanf(arg, "%s %s %s", name, medal, event) != 3 ) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºpost <ĞÕÃû> <gold|silver|bronze> <ÏîÄ¿>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špost <å§“å> <gold|silver|bronze> <é¡¹ç›®>\n");
 	
 	row = allocate_mapping(3);
 	row["name"] = name;
@@ -102,7 +102,7 @@ int do_add(string arg)
 		medals = medals[BOARD_CAPACITY / 2 .. BOARD_CAPACITY];
 
 	set("medals", medals);
-	write("ĞŞ¸ÄÍê±Ï¡£\n");
+	write("ä¿®æ”¹å®Œæ¯•ã€‚\n");
 
 	save();
 	return 1;
@@ -116,14 +116,14 @@ int do_delete(string arg)
 	string medal;
 
         if( !wizardp(me) )
-		return notify_fail("Äã²»ÊÇÎ×Ê¦£¬ÎŞÈ¨ĞŞ¸Ä½±ÅÆ°ñ! \n");
+		return notify_fail("ä½ ä¸æ˜¯å·«å¸ˆï¼Œæ— æƒä¿®æ”¹å¥–ç‰Œæ¦œ! \n");
                        
 	if( !arg || sscanf(arg, "%d", num)!=1 )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºdiscard <½±ÅÆ±àºÅ>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdiscard <å¥–ç‰Œç¼–å·>\n");
 		
 	medals = query("medals");
 	if( !arrayp(medals) || num < 1 || num > sizeof(medals) )
-		return notify_fail("Ã»ÓĞÕâÃ¶½±ÅÆ¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™æšå¥–ç‰Œã€‚\n");
 	num--;
 
 	medal = medals[num]["medal"];
@@ -132,7 +132,7 @@ int do_delete(string arg)
 	set("medals", medals);
 	
 	save();
-	write("É¾³ıµÚ " + (num+1) + " Ã¶½±ÅÆ....Ok¡£\n");
+	write("åˆ é™¤ç¬¬ " + (num+1) + " æšå¥–ç‰Œ....Okã€‚\n");
 	return 1;
 }
 
@@ -144,14 +144,14 @@ int do_change(string arg)
 	int num;
 	
 	if( !wizardp(me) )
-               return notify_fail("Äã²»ÊÇÎ×Ê¦£¬ÎŞÈ¨ĞŞ¸Ä½±ÅÆ°ñ! \n");
+               return notify_fail("ä½ ä¸æ˜¯å·«å¸ˆï¼Œæ— æƒä¿®æ”¹å¥–ç‰Œæ¦œ! \n");
 	                
 	if( !arg || sscanf(arg, "%d %s %s %s", num, name, medal, event) != 4 ) 
-		return notify_fail("Ö¸Áî¸ñÊ½£ºchange <½±ÅÆ±àºÅ> <ĞÕÃû> <gold|silver|bronze> <ÏîÄ¿>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šchange <å¥–ç‰Œç¼–å·> <å§“å> <gold|silver|bronze> <é¡¹ç›®>\n");
 	
 	medals = query("medals");
 	if( !arrayp(medals) || num < 1 || num > sizeof(medals) )
-		return notify_fail("Ã»ÓĞÕâÃ¶½±ÅÆ¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™æšå¥–ç‰Œã€‚\n");
 	num--;
 	
 	oldmedal = medals[num]["medal"];
@@ -163,7 +163,7 @@ int do_change(string arg)
 	else add(medal, 1);
 	
 	set("medals", medals);
-	write("ĞŞ¸ÄÍê±Ï¡£\n");
+	write("ä¿®æ”¹å®Œæ¯•ã€‚\n");
 
 	save();
 	return 1;

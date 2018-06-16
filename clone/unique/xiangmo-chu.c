@@ -9,18 +9,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name(HIY"½µÄ§èÆ"NOR, ({ "xiangmo chu", "xiangmo","chu" }));
+        set_name(HIY"é™é­”æµ"NOR, ({ "xiangmo chu", "xiangmo","chu" }));
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", HIY"´ËèÆ¶¥³ÊÁ«»¨×´£¬èÆÉí³¤Ô¼Á½³ß£¬Ñ¼µ°´ÖÏ¸£¬èÆ¶Î¼âÈñ·æÀ÷¡£ÊÇÃÜ×ÚÀ®Âï½µÑı·üÄ§µÄ·¨Æ÷¡£\n"NOR);
+                set("unit", "æ ¹");
+                set("long", HIY"æ­¤æµé¡¶å‘ˆè²èŠ±çŠ¶ï¼Œæµèº«é•¿çº¦ä¸¤å°ºï¼Œé¸­è›‹ç²—ç»†ï¼Œæµæ®µå°–é”é”‹å‰ã€‚æ˜¯å¯†å®—å–‡å˜›é™å¦–ä¼é­”çš„æ³•å™¨ã€‚\n"NOR);
                 set("value", 7000000);
                 set("material", "steel");
 		set("rigidity", 4000);
-                set("wield_msg", HIY"Ò»µÀ½ğ¹âÔÚÄãÑÛÇ°Ò»ÉÁ£¬$N²Ù³öÒ»¸ù½µÄ§èÆ£¬¾Ù¹ıÍ·¶¥£¬¹âÃ£ÍòÕÕ¡£\n"NOR);
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", HIY"ä¸€é“é‡‘å…‰åœ¨ä½ çœ¼å‰ä¸€é—ªï¼Œ$Næ“å‡ºä¸€æ ¹é™é­”æµï¼Œä¸¾è¿‡å¤´é¡¶ï¼Œå…‰èŒ«ä¸‡ç…§ã€‚\n"NOR);
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_staff(120);

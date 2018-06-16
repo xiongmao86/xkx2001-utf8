@@ -248,12 +248,12 @@ mixed get_job_hist(string job_name) {
  ************************************************************************/
 void create()
 {
-    set_name("ÈÎÎñÏµÍ³²Ù×İÆ÷", ({"job server", "js"}));
+    set_name("ä»»åŠ¡ç³»ç»Ÿæ“çºµå™¨", ({"job server", "js"}));
     set_weight(0);
     if (clonep()) set_default_object(__FILE__);
     else {
-	set("long", "ÈÎÎñÏµÍ³²Ù×İÆ÷. \n");
-	set("unit", "Ì¨");
+	set("long", "ä»»åŠ¡ç³»ç»Ÿæ“çºµå™¨. \n");
+	set("unit", "å°");
 	set("material", "iron");
 	set("value", 0);
     }
@@ -275,9 +275,9 @@ int init()
     add_action("do_set_exp_limit", "set_exp_limit");
     add_action("do_set_pot_limit", "set_pot_limit");
 
-    set("no_get", "¸ÉÊ²Ã´!");
-    set("no_drop", "¸ÉÊ²Ã´!");
-    set("no_steal", "¸ÉÊ²Ã´!");
+    set("no_get", "å¹²ä»€ä¹ˆ!");
+    set("no_drop", "å¹²ä»€ä¹ˆ!");
+    set("no_steal", "å¹²ä»€ä¹ˆ!");
     return 1;
 }
 

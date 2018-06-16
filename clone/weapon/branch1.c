@@ -8,14 +8,14 @@ inherit SWORD;
 
 void create()
 {
-    set_name("Ğ¡Ê÷Ö¦", ({"shuzhi", "zhi", "branch"}));
+    set_name("å°æ ‘æ", ({"shuzhi", "zhi", "branch"}));
     set_weight(100+random(100)); 
     if( clonep() )
       set_default_object(__FILE__);
     else {
-      set("long", "ÕâÊÇÒ»¸ùĞ¡Ê÷Ö¦¡£\n");
-	set("unit","¸ù");
-	set("wield_msg","$N³é³öÒ»¸ùĞ¡Ê÷Ö¦ÎÕÔÚÊÖÖĞ¡£\n");
+      set("long", "è¿™æ˜¯ä¸€æ ¹å°æ ‘æã€‚\n");
+	set("unit","æ ¹");
+	set("wield_msg","$NæŠ½å‡ºä¸€æ ¹å°æ ‘ææ¡åœ¨æ‰‹ä¸­ã€‚\n");
 	set("material", "wood");
     }
     init_sword(random(2));

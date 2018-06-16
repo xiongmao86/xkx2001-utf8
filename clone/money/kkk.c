@@ -8,18 +8,18 @@ inherit THROWING;
 
 void create()
 {
-	set_name("Í­Ç®", ({"coin", "coins", "coin_money" }));
+	set_name("é“œé’±", ({"coin", "coins", "coin_money" }));
         set_color("$YEL$");
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
 		set("money_id", "coin");
-		set("long", "ÕâÊÇÁ÷Í¨ÖĞµ¥Î»×îĞ¡µÄ»õ±Ò£¬Ô¼ÒªÒ»°ÙÎÄÍ­Ç®²ÅÖµµÃÒ»Á½°×Òø¡£\n");
-		set("unit", "Ğ©");
+		set("long", "è¿™æ˜¯æµé€šä¸­å•ä½æœ€å°çš„è´§å¸ï¼Œçº¦è¦ä¸€ç™¾æ–‡é“œé’±æ‰å€¼å¾—ä¸€ä¸¤ç™½é“¶ã€‚\n");
+		set("unit", "äº›");
 		set("base_value", 1);
-		set("base_unit", "ÎÄ");
-		set("wield_msg","$NÌÍ³öÒ»Ã¶Í­Ç®¿ÛÔÚÊÖĞÄ¡£\n");
-       	set("unwield_msg","$N°ÑÍ­Ç®·Å»ØÑü°ü¡£\n");
+		set("base_unit", "æ–‡");
+		set("wield_msg","$Næå‡ºä¸€æšé“œé’±æ‰£åœ¨æ‰‹å¿ƒã€‚\n");
+       	set("unwield_msg","$NæŠŠé“œé’±æ”¾å›è…°åŒ…ã€‚\n");
 
 		set("base_weight", 1);
 //		set("armor_prop/armor", 1);

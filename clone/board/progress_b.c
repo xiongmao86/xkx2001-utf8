@@ -5,10 +5,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("�����н��ȱ�", ({ "board" }) );
+	set_name("侠客行进度表", ({ "board" }) );
 	set("location", "/d/wizard/meeting_room");
 	set("board_id", "progress_b");
-	set("long", "����һ������������ʦ�ǻ㱨�����ƻ��Լ����ȵ����԰塣\n" );
+	set("long", "这是一个供侠客行巫师们汇报工作计划以及进度的留言板。\n" );
 	set("wizard_only", 1);
 	setup();
 	set("capacity", 200);

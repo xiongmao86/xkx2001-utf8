@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(GRN"ĞÜµ¨"NOR, ({"xiong dan", "dan"}));
+        set_name(GRN"ç†Šèƒ†"NOR, ({"xiong dan", "dan"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "¿Å");
-                set("long","ĞÜµ¨£¬Í¨ğöË³Æø£¬ÅàÔª¹Ì±¾£¬ÁÆÄÚÍâÉËÖ®¼ÑÆ·¡£\n");
+                set("unit", "é¢—");
+                set("long","ç†Šèƒ†ï¼Œé€šç˜€é¡ºæ°”ï¼ŒåŸ¹å…ƒå›ºæœ¬ï¼Œç–—å†…å¤–ä¼¤ä¹‹ä½³å“ã€‚\n");
                 set("value", 8000);
 				set("yaocai", 1);
         		set("cure_s",30);

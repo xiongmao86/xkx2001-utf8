@@ -8,20 +8,20 @@ inherit SWORD;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-	set_name("ÒĞÌì½£", ({ "yitian jian", "yitian", "sword" }) );
+	set_name("å€šå¤©å‰‘", ({ "yitian jian", "yitian", "sword" }) );
 	set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("unit", "±ú");
-                set("long", "Ò»±úËÄ³ßÀ´³¤µÄ¹Å½££¬½£ÇÊÉÏÓÃ½ğË¿Ïâ×ÅÁ½¸ö×Ö£º¡¸ÒĞÌì¡¹¡£\n");
+		set("unit", "æŸ„");
+                set("long", "ä¸€æŸ„å››å°ºæ¥é•¿çš„å¤å‰‘ï¼Œå‰‘é˜ä¸Šç”¨é‡‘ä¸é•¶ç€ä¸¤ä¸ªå­—ï¼šã€Œå€šå¤©ã€ã€‚\n");
 		set("value", 10000);
 		set("material", "steel");
 		set("rigidity", 2000);
                 set("wield_msg",
-			HIG"Ö»¼ûÇà¹âÒ»ÉÁ£¬$NµÄÊÖÖĞÒÑ¾­¶àÁËÒ»±ú$n£¬ÒĞÌì¼È³ö£¬Ë­ÓëÕù·æ !\n"NOR);
-                set("unwield_msg", HIG"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n"NOR);
-                set("unequip_msg", HIG"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n"NOR);
+			HIG"åªè§é’å…‰ä¸€é—ªï¼Œ$Nçš„æ‰‹ä¸­å·²ç»å¤šäº†ä¸€æŸ„$nï¼Œå€šå¤©æ—¢å‡ºï¼Œè°ä¸äº‰é”‹ !\n"NOR);
+                set("unwield_msg", HIG"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n"NOR);
+                set("unequip_msg", HIG"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n"NOR);
         }
 
 	init_sword(150);

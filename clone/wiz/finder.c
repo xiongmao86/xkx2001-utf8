@@ -15,16 +15,16 @@ void init()
 
 void create()
 {
-       set_name(HIG "IPÌ½²âÆ÷" NOR, ({"tance qi", "finder"}));
+       set_name(HIG "IPæ¢æµ‹å™¨" NOR, ({"tance qi", "finder"}));
        if (clonep())
                set_default_object(__FILE__);
        else {
                set("long",
-               "ÕâÊÇÒ»¸öÊ®·ÖĞ¡ÇÉ±ğÖÂµÄÌ½²âÆ÷£¬×¨ÃÅÓÃÀ´¼ì²éÔÚÏßÍæ¼ÒµÄ¡£ \n"+
-                        HIW"ËüÕıÔÚ¡°à½¡±¡¢¡°à½¡±µØÏì×Å¡£\n"NOR);
+               "è¿™æ˜¯ä¸€ä¸ªååˆ†å°å·§åˆ«è‡´çš„æ¢æµ‹å™¨ï¼Œä¸“é—¨ç”¨æ¥æ£€æŸ¥åœ¨çº¿ç©å®¶çš„ã€‚ \n"+
+                        HIW"å®ƒæ­£åœ¨â€œå˜Ÿâ€ã€â€œå˜Ÿâ€åœ°å“ç€ã€‚\n"NOR);
 
                set("value", 5000);
-               set("unit", "¸ö");
+               set("unit", "ä¸ª");
                 set("material", "steel");
                set("no_get", 1);
        }
@@ -42,20 +42,20 @@ int do_checkip(string arg)
         for(i = 0;i < sizeof(user);i++)
                 user[i]->set_temp("pending/ipcheck", 0);
 
-        msg = "\n¼ì²éÔÚÏßÍæ¼ÒIP£º\n\n";
+        msg = "\næ£€æŸ¥åœ¨çº¿ç©å®¶IPï¼š\n\n";
         num = 0;
         for(i = 0;i < sizeof(user);i++) {
                 if(user[i]->query_temp("pending/ipcheck") )     continue;
 
 
                 if( result = check_ip(user[i], user) ) {
-msg += HIW + result + NOR"Ä¿Ç°Õı´Ó"HIY + query_ip_name(user[i]) + NOR"Á¬ÏßÖĞ¡£\n";
+msg += HIW + result + NOR"ç›®å‰æ­£ä»"HIY + query_ip_name(user[i]) + NOR"è¿çº¿ä¸­ã€‚\n";
                         num++;
                 }
         }
-        if(num == 0)    msg += "\n¼ì²é½á¹û£ºÄ¿Ç°ÏßÉÏÍæ¼ÒµÄ IP ¸÷²»ÏàÍ¬¡£\n";
+        if(num == 0)    msg += "\næ£€æŸ¥ç»“æœï¼šç›®å‰çº¿ä¸Šç©å®¶çš„ IP å„ä¸ç›¸åŒã€‚\n";
 
-        if(num > 0)     msg += sprintf("\n ¼ì²é½á¹û£ºÓĞ 2 Íæ¼Ò»òÒÔÉÏÏàÍ¬ IP ÊıÁ¿%d ¡£\n",num);
+        if(num > 0)     msg += sprintf("\n æ£€æŸ¥ç»“æœï¼šæœ‰ 2 ç©å®¶æˆ–ä»¥ä¸Šç›¸åŒ IP æ•°é‡%d ã€‚\n",num);
         write(msg);
         return 1;
 }

@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(YEL"¿û»¨·Û"NOR, ({"kuihua fen","fen"}));
+        set_name(YEL"è‘µèŠ±ç²‰"NOR, ({"kuihua fen","fen"}));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","ÕâÊÇÒ»Ç®¿û»¨·Û¡£\n");
+                set("unit", "é’±");
+                set("long","è¿™æ˜¯ä¸€é’±è‘µèŠ±ç²‰ã€‚\n");
                 set("value", 100);
                         set("yaocai", 1);
                         set("cure_s",0);

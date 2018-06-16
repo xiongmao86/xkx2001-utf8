@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jinchuang.c ½ð´´Ò©
+// jinchuang.c é‡‘åˆ›è¯
 
 //inherit ITEM;
 inherit COMBINED_ITEM;
@@ -9,13 +9,13 @@ void setup()
 int cure_ob(string);
 void create()
 {
-	set_name("½ð´´Ò©", ({"jinchuang yao", "jin", "jinchuang"}));
+	set_name("é‡‘åˆ›è¯", ({"jinchuang yao", "jin", "jinchuang"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ð©");
-		set("base_unit", "°ü");
-		set("long", "ÕâÊÇÒ»°üÎäÁÖÈËÊ¿±Ø±¸µÄ½ð´´Ò©¡£\n");
+		set("unit", "äº›");
+		set("base_unit", "åŒ…");
+		set("long", "è¿™æ˜¯ä¸€åŒ…æ­¦æž—äººå£«å¿…å¤‡çš„é‡‘åˆ›è¯ã€‚\n");
 		set("value", 5000);
 		set("medicine", 1);
 	}
@@ -26,22 +26,22 @@ int cure_ob(object me)
 {
 	if ((int)this_player()->query("eff_qi") == 
 	    (int)this_player()->query("max_qi"))
-		return notify_fail("ÄãÏÖÔÚ²»ÐèÒªÓÃ½ð´´Ò©¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨ä¸éœ€è¦ç”¨é‡‘åˆ›è¯ã€‚\n");
 	else if (this_player()->query_condition("jin_used") > 0) {
 		add_amount(-1);
-		message_vision("$NÐ¡ÐÄÒíÒíµØ°ÑÒ»°ü½ð´´Ò©·óÔÚÉË¿ÚÉÏ¡£\n", this_player());
+		message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€åŒ…é‡‘åˆ›è¯æ•·åœ¨ä¼¤å£ä¸Šã€‚\n", this_player());
 		return 1;
 	}
 	else if ((int)this_player()->query("eff_qi") < 10
 	      || (int)this_player()->query("qi") < 10) {
 		add_amount(-1);
-		message_vision("$NÐ¡ÐÄÒíÒíµØ°ÑÒ»°ü½ð´´Ò©·óÔÚÉË¿ÚÉÏ£¬¿ÉÊÇÏÊÑªÓ¿³ö£¬½«Ò©·Û¶¼³å¿ªÁË¡£\n", this_player());
+		message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€åŒ…é‡‘åˆ›è¯æ•·åœ¨ä¼¤å£ä¸Šï¼Œå¯æ˜¯é²œè¡€æ¶Œå‡ºï¼Œå°†è¯ç²‰éƒ½å†²å¼€äº†ã€‚\n", this_player());
 		return 1;
 	}
 	else {
 		this_player()->receive_curing("qi", 50+random(100));
 		add_amount(-1);
-		message_vision("$NÐ¡ÐÄÒíÒíµØ°ÑÒ»°ü½ð´´Ò©·óÔÚÉË¿ÚÉÏ£¬Ö»¾õÉËÊÆ´óÎªºÃ×ª£¬ÆøÉ«¿´ÆðÀ´ºÃ¶àÁË¡£\n", this_player());
+		message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€åŒ…é‡‘åˆ›è¯æ•·åœ¨ä¼¤å£ä¸Šï¼Œåªè§‰ä¼¤åŠ¿å¤§ä¸ºå¥½è½¬ï¼Œæ°”è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n", this_player());
 		this_player()->apply_condition("jin_used", 1+random(3));
 		return 1;
 	}

@@ -1,7 +1,7 @@
 //Cracked by Roath
 // wzfeng, 12/28/98
-//×¢Òâ£¬ÒõÀúµÄÄê·İËã·¨ÎÒÃ»ÓĞ×ö£¬Éú¼ÓÉÏÈ¥µÄ£¬ÇëÔÚÃ¿Ò»ÄêµÄÍ·Ò»Ìì
-//ĞŞ¸Ästring chinese_time(int date)º¯Êı
+//æ³¨æ„ï¼Œé˜´å†çš„å¹´ä»½ç®—æ³•æˆ‘æ²¡æœ‰åšï¼Œç”ŸåŠ ä¸Šå»çš„ï¼Œè¯·åœ¨æ¯ä¸€å¹´çš„å¤´ä¸€å¤©
+//ä¿®æ”¹string chinese_time(int date)å‡½æ•°
 
 
 
@@ -11,7 +11,7 @@ inherit ITEM;
 inherit F_SAVE;
 mapping *letters;
 mapping letter;
-static string *sym_di = ({ "×Ó","³ó","Òú","Ã®","³½","ËÈ","Îç","Î´","Éê","ÓÏ","Ğç","º¥" });
+static string *sym_di = ({ "å­","ä¸‘","å¯…","å¯","è¾°","å·³","åˆ","æœª","ç”³","é…‰","æˆŒ","äº¥" });
 int set_owner(string id)
 {
         set("owner_id", id);
@@ -25,12 +25,12 @@ string chinese_time(int date)
 
 	local = localtime(date);
 	i = (local[LT_HOUR]+1) % 2 * 2 + local[LT_MIN] / 30;
-	return sprintf("ÎìÒúÄê%sÔÂ%sÈÕ%sÊ±%s",
+	return sprintf("æˆŠå¯…å¹´%sæœˆ%sæ—¥%sæ—¶%s",
                 chinese_number(local[LT_MON] + 1),
                 chinese_number(local[LT_MDAY]),
                 sym_di[((local[LT_HOUR] + 1) % 24) / 2],
 		i?chinese_number((local[LT_HOUR]+1) % 2 * 2 + 
-		local[LT_MIN] / 30 ) + "¿Ì":"Õı");
+		local[LT_MIN] / 30 ) + "åˆ»":"æ­£");
 }
 
 
@@ -110,12 +110,12 @@ void check(object me,object obj)
                                 {
                                         
 										ob->set("long", 
-"ÕâÊÇÒ»·âÒÑ¾­·âºÃµÄĞÅº¯¡£ÉÏÃæĞ´×Å£º\n"
-+me->query("name")+"      Ç×Æô¡£\n"+
-ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
-"ÑïÖİæäÕ¾Ç©·¢ÓÚ"+str_time+"¡£\n"
-"Äã¿É²ğ(chai or open)¿ªÉÏÃæµÄ·âÆá£¬È¡³öÊéº¯¡£\n");
-										ob->set_name("ĞÅº¯", ({"xin han","letter"}));
+"è¿™æ˜¯ä¸€å°å·²ç»å°å¥½çš„ä¿¡å‡½ã€‚ä¸Šé¢å†™ç€ï¼š\n"
++me->query("name")+"      äº²å¯ã€‚\n"+
+ob->query("letter/from")+"æ‰˜æ‰¬å·é©¿ç«™è½¬ã€‚\n"
+"æ‰¬å·é©¿ç«™ç­¾å‘äº"+str_time+"ã€‚\n"
+"ä½ å¯æ‹†(chai or open)å¼€ä¸Šé¢çš„å°æ¼†ï¼Œå–å‡ºä¹¦å‡½ã€‚\n");
+										ob->set_name("ä¿¡å‡½", ({"xin han","letter"}));
                                         ob->set("send_level_time",600);
                                 }
 
@@ -123,13 +123,13 @@ ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
                                 case 2:
                                         {
                                         
-                                        ob->set_name(YEL"ĞÅº¯"NOR, ({"xin han","letter"}));
+                                        ob->set_name(YEL"ä¿¡å‡½"NOR, ({"xin han","letter"}));
 										ob->set("long",
-"ÕâÊÇÒ»·âÒÑ¾­·âºÃµÄĞÅº¯¡£Æä±³ÃæÕ´×ÅÈı¸ùÓğÃ«¡£ÉÏÃæĞ´×Å\n"
-+me->query("name")+"      Ç×Æô¡£\n"+
-ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
-"ÑïÖİæäÕ¾Ç©·¢ÓÚ"+str_time+"¡£\n"
-"Äã¿É²ğ(chai or open)¿ªÉÏÃæµÄ·âÆá£¬È¡³öÊéº¯¡£\n");
+"è¿™æ˜¯ä¸€å°å·²ç»å°å¥½çš„ä¿¡å‡½ã€‚å…¶èƒŒé¢æ²¾ç€ä¸‰æ ¹ç¾½æ¯›ã€‚ä¸Šé¢å†™ç€\n"
++me->query("name")+"      äº²å¯ã€‚\n"+
+ob->query("letter/from")+"æ‰˜æ‰¬å·é©¿ç«™è½¬ã€‚\n"
+"æ‰¬å·é©¿ç«™ç­¾å‘äº"+str_time+"ã€‚\n"
+"ä½ å¯æ‹†(chai or open)å¼€ä¸Šé¢çš„å°æ¼†ï¼Œå–å‡ºä¹¦å‡½ã€‚\n");
 										ob->set("send_level_time",300);
 
                                 }
@@ -137,14 +137,14 @@ ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
                                                   break;
                                 case 3:
 									{
-                                        ob->set_name(HIR"ĞÅº¯"NOR, ({"xin han","letter"}));
+                                        ob->set_name(HIR"ä¿¡å‡½"NOR, ({"xin han","letter"}));
                                        	ob->set("long", 
-"ÕâÊÇÒ»¸öÒÑ¾­·âºÃµÄ²¯ÄÒ£¬ÀïÃæ×°ÓĞÊéº¯¡£Æä±³ÃæÕ´×ÅÎå¸ùÓğ\n"
-"Ã«¡£ÉÏÃæĞ´×Å£º\n"
-+me->query("name")+"      Ç×Æô¡£\n"+
-ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
-"ÑïÖİæäÕ¾Ç©·¢ÓÚ"+str_time+"¡£\n"
-"Äã¿É²ğ(chai or open)¿ªÉÏÃæµÄ·âÆá£¬È¡³öÊéº¯¡£\n");
+"è¿™æ˜¯ä¸€ä¸ªå·²ç»å°å¥½çš„å¸›å›Šï¼Œé‡Œé¢è£…æœ‰ä¹¦å‡½ã€‚å…¶èƒŒé¢æ²¾ç€äº”æ ¹ç¾½\n"
+"æ¯›ã€‚ä¸Šé¢å†™ç€ï¼š\n"
++me->query("name")+"      äº²å¯ã€‚\n"+
+ob->query("letter/from")+"æ‰˜æ‰¬å·é©¿ç«™è½¬ã€‚\n"
+"æ‰¬å·é©¿ç«™ç­¾å‘äº"+str_time+"ã€‚\n"
+"ä½ å¯æ‹†(chai or open)å¼€ä¸Šé¢çš„å°æ¼†ï¼Œå–å‡ºä¹¦å‡½ã€‚\n");
 										ob->set("send_level_time",0);
 									}
                                                   break;
@@ -152,7 +152,7 @@ ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
                 }
                 if(ob->query("letter/send_time")+ob->query("send_level_time")<time())
                  {
-                 //¿ÉÒÔ·¢ĞÅ
+                 //å¯ä»¥å‘ä¿¡
                  ob->move(me);
                  modify_letter(letters[i]);
                  save();
@@ -160,7 +160,7 @@ ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
                  }
                  else
                  {
-                         //Ê±¼äÎ´µ½.
+                         //æ—¶é—´æœªåˆ°.
                          destruct(ob);
                  }
         }
@@ -169,24 +169,24 @@ ob->query("letter/from")+"ÍĞÑïÖİæäÕ¾×ª¡£\n"
         {
 
                 obj->do_emote(ob->query("letter/to"));
-                tell_object(me,CYN"Ò»¸öæäÊ¹×ßÁË¹ıÀ´¡£\n"NOR);
-                tell_object(me,CYN"æäÊ¹ÏòÄã±¨È­ËµµÀ£º¡°ÕâÀïÓĞÄúµÄĞÅ¼ş£¬ÄúĞ¡ĞÄÊÕºÃ¡±¡£\n"NOR);
-                tell_object(me,CYN"æäÊ¹´ÓÉíÉÏÄÃ³öÒ»¸ö°ü¹ü½»µ½ÄãÊÖÀï¡£\n"NOR);
-                tell_object(me,CYN"æäÊ¹¶ÔÄãËµµ½£º¡°æäÊ¹ËÍµ½£¬ÔÚÏÂ»¹ÓĞ¹«ÎñÔÚÉí£¬ÏÈĞĞ¸æÍË¡£\n"NOR);
-                tell_object(me,CYN"æäÊ¹×ßÁË³öÈ¥¡£\n"NOR);
+                tell_object(me,CYN"ä¸€ä¸ªé©¿ä½¿èµ°äº†è¿‡æ¥ã€‚\n"NOR);
+                tell_object(me,CYN"é©¿ä½¿å‘ä½ æŠ¥æ‹³è¯´é“ï¼šâ€œè¿™é‡Œæœ‰æ‚¨çš„ä¿¡ä»¶ï¼Œæ‚¨å°å¿ƒæ”¶å¥½â€ã€‚\n"NOR);
+                tell_object(me,CYN"é©¿ä½¿ä»èº«ä¸Šæ‹¿å‡ºä¸€ä¸ªåŒ…è£¹äº¤åˆ°ä½ æ‰‹é‡Œã€‚\n"NOR);
+                tell_object(me,CYN"é©¿ä½¿å¯¹ä½ è¯´åˆ°ï¼šâ€œé©¿ä½¿é€åˆ°ï¼Œåœ¨ä¸‹è¿˜æœ‰å…¬åŠ¡åœ¨èº«ï¼Œå…ˆè¡Œå‘Šé€€ã€‚\n"NOR);
+                tell_object(me,CYN"é©¿ä½¿èµ°äº†å‡ºå»ã€‚\n"NOR);
         }
 
 }
 
 void create()
 {
-        set_name("ĞÅ", ({"xin", "letter"}));
+        set_name("ä¿¡", ({"xin", "letter"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»·âÒÑ¾­Ğ´ºÃµÄĞÅ£¬Äã¿ÉÓÃ¶Á(read letter)À´¿´ËüµÄÄÚÈİ¡£\n");
-                set("unit", "·â");
+                set("long", "ä¸€å°å·²ç»å†™å¥½çš„ä¿¡ï¼Œä½ å¯ç”¨è¯»(read letter)æ¥çœ‹å®ƒçš„å†…å®¹ã€‚\n");
+                set("unit", "å°");
                 
 		        set("can_read_letter",1);
 
@@ -196,7 +196,7 @@ void create()
 void init ()
 {
         add_action("do_read", "read");
-        add_action("do_read", "¶Á");
+        add_action("do_read", "è¯»");
 }
 
 int do_read(string arg)
@@ -205,21 +205,21 @@ int do_read(string arg)
       int i;
      ob=this_object();
      
-	 if(!arg) return notify_fail("ÄãÒª¶ÁÊ²Ã´ĞÅ¼ş£¿\n");
+	 if(!arg) return notify_fail("ä½ è¦è¯»ä»€ä¹ˆä¿¡ä»¶ï¼Ÿ\n");
 	 
 	 ob_letter = present(arg, this_player());
 	 
 	 if(!ob_letter)
-            return notify_fail("ÄãÉíÉÏºÃÏñ²¢Ã»ÓĞÕâ·âĞÅ¼ş£¿\n");
+            return notify_fail("ä½ èº«ä¸Šå¥½åƒå¹¶æ²¡æœ‰è¿™å°ä¿¡ä»¶ï¼Ÿ\n");
         if(!ob_letter->query("can_read_letter"))
-                return notify_fail("¶Ô²»Æğ£¡ÄãÎŞ·¨´ÓÕâÀïÃæ¶Áµ½ÈÎºÎ¶«Î÷¡£\n");
+                return notify_fail("å¯¹ä¸èµ·ï¼ä½ æ— æ³•ä»è¿™é‡Œé¢è¯»åˆ°ä»»ä½•ä¸œè¥¿ã€‚\n");
 		
 
 
         if(!i=sizeof(letters))
-                return notify_fail("¶ÁÈ¡Ê§°Ü¡£\n");
+                return notify_fail("è¯»å–å¤±è´¥ã€‚\n");
 		
-        printf("¡¾ÊéĞÅ±êÌâ¡¿£º%s\n¡¾ÊÕĞÅÈË¡¿£º%s\n¡¾ĞÅ¼şÄÚÈİ¡¿£º\n%s\n\t\t%sĞ´ÓÚ%s\n\n\n",
+        printf("ã€ä¹¦ä¿¡æ ‡é¢˜ã€‘ï¼š%s\nã€æ”¶ä¿¡äººã€‘ï¼š%s\nã€ä¿¡ä»¶å†…å®¹ã€‘ï¼š\n%s\n\t\t%så†™äº%s\n\n\n",
         letters[i-1]["title"],
 		letters[i-1]["to"],
         letters[i-1]["text"],

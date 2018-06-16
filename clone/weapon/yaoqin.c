@@ -5,17 +5,17 @@ inherit STAFF;
 
 void create()
 {
-        set_name("ÑşÇÙ", ({ "yao qin", "qin" }));
+        set_name("ç‘¶ç´", ({ "yao qin", "qin" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÕÅÇÙÑÕÉ«°µ¾É£¬ÊÇÊı°ÙÄêÄËÖÁÉÏÇ§ÄêµÄ¹ÅÎï¡£\n");
+                set("unit", "å¼ ");
+                set("long", "è¿™å¼ ç´é¢œè‰²æš—æ—§ï¼Œæ˜¯æ•°ç™¾å¹´ä¹ƒè‡³ä¸Šåƒå¹´çš„å¤ç‰©ã€‚\n");
                 set("value", 5000);
                 set("material", "wood");
-                set("wield_msg", "$NÅõÆğÒ»ÕÅ$nÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÁËÏÂÀ´¡£\n");
+                set("wield_msg", "$Næ§èµ·ä¸€å¼ $nåœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾äº†ä¸‹æ¥ã€‚\n");
                 set("shape", "zither");
         }
         init_staff(45);

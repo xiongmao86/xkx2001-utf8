@@ -8,20 +8,20 @@ int query_autoload() { return 1; }
 
 void create()
 {
-	set_name(HIW+BLK"ĞşÌúÁéÉßÕÈ"NOR, ({ "lingshe zhang", "staff", "shezhang" }));
+	set_name(HIW+BLK"ç„é“çµè›‡æ–"NOR, ({ "lingshe zhang", "staff", "shezhang" }));
 		set_weight(5000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-	   set("unit", "¸ù");
-	   set("long", HIW BLK"Ò»¸ùÍäÍäÇúÇúµÄºÚÉ«´ÖÕÈ£¬ËÆÊÇ¸ÖÌúËùÖÆ£¬ÕÈÍ·Öı×Å¸öÁÑ¿Ú¶øĞ¦µÄÈËÍ·£¬ÈËÍ·¿ÚÖĞÂ¶³ö¼âÀûÑ©°×µÄÑÀ³İ¡£\n"+
-		HIW"Á½ÌõÒøÁÛÉÁÉÁµÄĞ¡Éß£¬²»×¡µÄòêÑÑÉÏÏÂ£¬ÊÇÎ÷ÓòĞ¡Óã¶ùÓÃ×î¶¾µÄÁéÉßÓë¹ÖÉßÔÓ½»ÅàÓı³öÀ´µÄ¡£\n"NOR);
+	   set("unit", "æ ¹");
+	   set("long", HIW BLK"ä¸€æ ¹å¼¯å¼¯æ›²æ›²çš„é»‘è‰²ç²—æ–ï¼Œä¼¼æ˜¯é’¢é“æ‰€åˆ¶ï¼Œæ–å¤´é“¸ç€ä¸ªè£‚å£è€Œç¬‘çš„äººå¤´ï¼Œäººå¤´å£ä¸­éœ²å‡ºå°–åˆ©é›ªç™½çš„ç‰™é½¿ã€‚\n"+
+		HIW"ä¸¤æ¡é“¶é³é—ªé—ªçš„å°è›‡ï¼Œä¸ä½çš„èœ¿èœ’ä¸Šä¸‹ï¼Œæ˜¯è¥¿åŸŸå°é±¼å„¿ç”¨æœ€æ¯’çš„çµè›‡ä¸æ€ªè›‡æ‚äº¤åŸ¹è‚²å‡ºæ¥çš„ã€‚\n"NOR);
 		set("value", 5000000);
 		set("material", "steel");
-		set("wield_msg", HIW"ÕÈ¶ËµÄÒøÉßòêÑÑÉÏÏÂ£¬ßÚßÚ×öÏì¡£\n"NOR);
-		set("unwield_msg", HIR"$N½«ÊÖÖĞµÄ$n"HIR"·ÅÁËÏÂÀ´¡£\n"NOR);
+		set("wield_msg", HIW"æ–ç«¯çš„é“¶è›‡èœ¿èœ’ä¸Šä¸‹ï¼Œå‘²å‘²åšå“ã€‚\n"NOR);
+		set("unwield_msg", HIR"$Nå°†æ‰‹ä¸­çš„$n"HIR"æ”¾äº†ä¸‹æ¥ã€‚\n"NOR);
 		set("poison_applied", 100);
-		set("snake_type","ÁéÉß");
+		set("snake_type","çµè›‡");
 		set("snake", 2);
 	}
 	init_staff(130);
@@ -40,7 +40,7 @@ int wield()
 
 	if( !wizardp(me) && me->query("id") != "litfish" )
 	{
-		message_vision(HIR"$NÊÖÖĞµÄ$n"HIR"Í»È»Ïñ»îÁËÒ»Ñù£¬Ïò$NÃÍÒ§Ò»¿Ú£¡\n"NOR, me, ob);
+		message_vision(HIR"$Næ‰‹ä¸­çš„$n"HIR"çªç„¶åƒæ´»äº†ä¸€æ ·ï¼Œå‘$NçŒ›å’¬ä¸€å£ï¼\n"NOR, me, ob);
 		me->apply_condition("bt_poison", random(100) +
 				    me->query_condition("bt_poison"));
 		ob->move(environment(me));
@@ -48,7 +48,7 @@ int wield()
 	}
 	else if (::wield())
 	{
-		message_vision(HIR"$N³é³öÒ»¸ù$n"HIR"ÎÕÔÚÊÖÖĞ£¬ÓëÉßÕÈÁ¬³ÉÒ»Ìå£¬ÈÃÈË²»º®¶øÀõ£¡\n"NOR, me, ob);
+		message_vision(HIR"$NæŠ½å‡ºä¸€æ ¹$n"HIR"æ¡åœ¨æ‰‹ä¸­ï¼Œä¸è›‡æ–è¿æˆä¸€ä½“ï¼Œè®©äººä¸å¯’è€Œæ —ï¼\n"NOR, me, ob);
 		me->add("neili", -100);
 		return 1;
 	}
@@ -74,6 +74,6 @@ int convert(string arg)
 	object ob;
 
 	if (arg!="shezhang" && arg!="staff" && arg!="zhang") return 0;
-		return notify_fail("Äã²»ÄÜ»¯ĞşÌúÁéÉßÕÈÎªÉß¡£\n");
+		return notify_fail("ä½ ä¸èƒ½åŒ–ç„é“çµè›‡æ–ä¸ºè›‡ã€‚\n");
 }
 

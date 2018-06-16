@@ -8,14 +8,14 @@ inherit WAIST;
 
 void create()
 {
-	set_name( "Æ¤Ñü´ø", ({ "yao dai", "yaodai" }) );
+	set_name( "çš®è…°å¸¦", ({ "yao dai", "yaodai" }) );
 	set_weight(300);
 	set_max_encumbrance(1000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»ÌõÆ¤ÖÊµÄ¿íÑü´ø£¬¼Ğ²ãÍ¸¿Õ£¬¿ÉÒÔ·Å¸÷ÖÖÈí±øÈĞ¡£\n");
+		set("unit", "æ¡");
+                set("long", "è¿™æ˜¯ä¸€æ¡çš®è´¨çš„å®½è…°å¸¦ï¼Œå¤¹å±‚é€ç©ºï¼Œå¯ä»¥æ”¾å„ç§è½¯å…µåˆƒã€‚\n");
 		set("value", 250);
 		set("material", "leather");
 		set("armor_prop/armor", 5);

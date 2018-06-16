@@ -1,17 +1,17 @@
 //Cracked by Roath
-// banjiu.c °ßð¯
+// banjiu.c æ–‘é¸ 
 
 inherit NPC;
 
 void create()
 {
-	set_name("°ßð¯", ({ "ban jiu", "bird"}) );
-	set("race", "Ò°ÊÞ");
+	set_name("æ–‘é¸ ", ({ "ban jiu", "bird"}) );
+	set("race", "é‡Žå…½");
 	set("age", 2);
-	set("long", "Ò»Ö»µÄÐ¡°ßð¯¡£\n");
+	set("long", "ä¸€åªçš„å°æ–‘é¸ ã€‚\n");
 	set("attitude", "peaceful");
 	
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò", "×¦×Ó", "Î²°Í" }) );
+        set("limbs", ({ "å¤´éƒ¨", "èº«ä½“", "ç¿…è†€", "çˆªå­", "å°¾å·´" }) );
 	set("verbs", ({ "bite", "claw" }) );
 
 	set("combat_exp", 100);
@@ -28,7 +28,7 @@ void die()
 {
 	object ob = new(__DIR__"obj/banjiu-rou");
 
-	message_vision("$N´ÓÊ÷ÉÏµôÏÂÀ´£¬ËÀÁË¡£\n", this_object());
+	message_vision("$Nä»Žæ ‘ä¸ŠæŽ‰ä¸‹æ¥ï¼Œæ­»äº†ã€‚\n", this_object());
 	ob->move(environment(this_object()));
 	destruct(this_object());
 }

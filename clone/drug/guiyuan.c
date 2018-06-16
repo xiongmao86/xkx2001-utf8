@@ -1,5 +1,5 @@
 //Cracked by Roath
-// guiyuan.c ¹éÔªµ¤
+// guiyuan.c å½’å…ƒä¸¹
 // Ryu
 // Modified by xQin to forbid the abuse of gyd
 
@@ -15,12 +15,12 @@ int worn;
 int cure_ob(string);
 void create()
 {
-        set_name("¹éÔªµ¤", ({"guiyuan dan", "dan"}));
+        set_name("å½’å…ƒä¸¹", ({"guiyuan dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÓ¨°×ÁïÔ²µÄ¹éÔªµ¤¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯ä¸€é¢—èŽ¹ç™½æºœåœ†çš„å½’å…ƒä¸¹ã€‚\n");
                 set("value", 5000);
                 set("medicine", 1);
         }
@@ -30,7 +30,7 @@ void create()
 int cure_ob(object me)
 {
         this_player()->add("neili", -200);
-        message_vision(HIR "$N³ÔÏÂÒ»¿Ã¹éÔªµ¤£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ðÆø·­ÌÚ£¬Ô­À´·þÊ³¹ýÃÍ£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+        message_vision(HIR "$Nåƒä¸‹ä¸€æ£µå½’å…ƒä¸¹ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œç«æ°”ç¿»è…¾ï¼ŒåŽŸæ¥æœé£Ÿè¿‡çŒ›ï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
         this_player()->apply_condition("bonze_drug",
                 this_player()->query_condition("bonze_drug")+10);
         destruct(this_object());
@@ -52,11 +52,11 @@ void wear(int phase)
         worn = phase;
         switch(phase) {
         case 1:
-                set("long", "ÕâÊÇÒ»Á£¸éÁËºÜ³¤Ê±¼äµÄ¹éÔªµ¤¡£\n");
+                set("long", "è¿™æ˜¯ä¸€ç²’æäº†å¾ˆé•¿æ—¶é—´çš„å½’å…ƒä¸¹ã€‚\n");
                 call_out("wear", 300, phase+1);
                 break;
         case 2:
-                set("long", "ÕâÊÇÒ»Á£ÒÑ¾­²»Ì«³ÉÐÎµÄ¹éÔªµ¤£¬¿ì±»·ç»¯ÁË¡£\n");
+                set("long", "è¿™æ˜¯ä¸€ç²’å·²ç»ä¸å¤ªæˆå½¢çš„å½’å…ƒä¸¹ï¼Œå¿«è¢«é£ŽåŒ–äº†ã€‚\n");
                 call_out("wear", 100, phase+1);
                 break;
         case 3:
@@ -70,7 +70,7 @@ int effect_in_liquid(object ob)
 	if (this_player()->query_condition("bonze_drug" ) > 0 )
 	{	
 	me->add("neili", -50);
-	message_vision(HIR "$NºÈÏÂÒ»¿ÚÒ©¾Æ£¬·¢ÏÖÔ­À´ÌåÄÚÒ©ÐÔ¹ýÃÍ£¬ÊÊµÃÆä·´¡£\n" NOR, this_player());
+	message_vision(HIR "$Nå–ä¸‹ä¸€å£è¯é…’ï¼Œå‘çŽ°åŽŸæ¥ä½“å†…è¯æ€§è¿‡çŒ›ï¼Œé€‚å¾—å…¶åã€‚\n" NOR, this_player());
         this_player()->apply_condition("bonze_drug",
         this_player()->query_condition("bonze_drug")+10);
         return 1;
@@ -79,7 +79,7 @@ int effect_in_liquid(object ob)
         if (this_player()->query("neili") > this_player()->query("max_neili")*2)
         this_player()->set("neili", this_player()->query("max_neili") *2-1);
         if (ob->query("liquid/type") == "alcohol" && !ob->query("zuixian")){
-        tell_object(this_player(), HIG"ÄãÖ»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬²»¾øÈçÂÆ¡£\n"NOR);
+        tell_object(this_player(), HIG"ä½ åªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä¸ç»å¦‚ç¼•ã€‚\n"NOR);
         this_player()->add("neili", random(10)+10*ob->query("liquid/drunk_apply"));
         me->apply_condition("bonze_drug", 30);
         return 1;

@@ -97,7 +97,7 @@ mapping update_usage(string skill_name, object me, object target, int weight)
   info = query(skill_name);
 
   if( wizardp(me) && (string)me->query("env/combat")=="verbose" ) {
-    tell_object(me, sprintf("got from skill_db: info£º%O\n", 
+    tell_object(me, sprintf("got from skill_db: infoï¼š%O\n", 
 			    info));
   }
   if (!mapp(info)) { // first time usage, set default values

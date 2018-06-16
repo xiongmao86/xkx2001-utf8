@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Ò©³ú
+// è¯é”„
 
 #include <weapon.h>
 
@@ -7,17 +7,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Ò©³ú", ({ "yaochu", "chu" }) );
+        set_name("è¯é”„", ({ "yaochu", "chu" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÌØÖÆµÄ²ÉÒ©ÓÃµÄÒ©³ú¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠç‰¹åˆ¶çš„é‡‡è¯ç”¨çš„è¯é”„ã€‚\n");
                 set("value", 30);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(30);

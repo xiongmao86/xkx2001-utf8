@@ -5,10 +5,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("¿ÍµêÁôÑÔ°å", ({ "board" }) );
+	set_name("å®¢åº—ç•™è¨€æ¿", ({ "board" }) );
 	set("location", "/d/shaolin/kedian1");
 	set("board_id", "nanyang_b");
-	set("long", "ÓĞÓĞÓÃµÄ»°¾ÍÍùÕâÀïËµ£¬ÂÒ¹àË®É±ÎŞÉâ¡£\n" );
+	set("long", "æœ‰æœ‰ç”¨çš„è¯å°±å¾€è¿™é‡Œè¯´ï¼Œä¹±çŒæ°´æ€æ— èµ¦ã€‚\n" );
 	setup();
 	set("capacity", 80);
 	replace_program(BULLETIN_BOARD);

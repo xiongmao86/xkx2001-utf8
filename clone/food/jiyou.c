@@ -1,18 +1,18 @@
 //Cracked by Roath
-// jiyou.c ¼¦ÓÍ 
+// jiyou.c é¸¡æ²¹ 
 // By xbc 
 
 inherit ITEM;
 
 void create()
 {
-	set_name("¼¦ÓÍ", ({"ji you", "chicken butter", "butter"}));
+	set_name("é¸¡æ²¹", ({"ji you", "chicken butter", "butter"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»¹ŞÄåÄåµÄ¼¦ÓÍ¡£\n");
-		set("unit", "¹Ş");
+		set("long", "ä¸€ç½è…»è…»çš„é¸¡æ²¹ã€‚\n");
+		set("unit", "ç½");
 		set("value", 0);
 	}
 }

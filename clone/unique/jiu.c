@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xuanbing_bihuo_jiu.c  Ğş±ù±Ì»ğ¾Æ
+// xuanbing_bihuo_jiu.c  ç„å†°ç¢§ç«é…’
 // xQin 8/00
 
 inherit F_UNIQUE;
@@ -13,13 +13,13 @@ void init()
 }
 void create()
 {
-        set_name(HIC"Ğş"HIW"±ù"HIG"±Ì"HIR"»ğ"YEL"¾Æ" NOR, ({"xuanbing_bihuo jiu", "jiu"}));
-        set("unit", "Æ¿");
+        set_name(HIC"ç„"HIW"å†°"HIG"ç¢§"HIR"ç«"YEL"é…’" NOR, ({"xuanbing_bihuo jiu", "jiu"}));
+        set("unit", "ç“¶");
         set("long", 
-        	"ÕâÆ¿±ãÊÇ½­ºş´«ËµÖĞµÄĞş±ù±Ì»ğ¾Æ£¬ ¼¯ÊıÊ®ÖÖÕä¹óÒ©²Ä¶øÄğ³É¡£\n"
-        	"´Ë¾Æ¾İËµ¼æÓĞÒõÑôµ÷ºÍÖ®¹¦£¬ºÈºó¸ü¿É¹¦Á¦´ó½ø¡£\n");
-        set("no_drop","ÕâÃ´±¦¹óµÄ¶«Î÷ÔõÃ´¿ÉÒÔÀë¿ªÄã£¿£¡\n");
-        set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+        	"è¿™ç“¶ä¾¿æ˜¯æ±Ÿæ¹–ä¼ è¯´ä¸­çš„ç„å†°ç¢§ç«é…’ï¼Œ é›†æ•°åç§çè´µè¯æè€Œé…¿æˆã€‚\n"
+        	"æ­¤é…’æ®è¯´å…¼æœ‰é˜´é˜³è°ƒå’Œä¹‹åŠŸï¼Œå–åæ›´å¯åŠŸåŠ›å¤§è¿›ã€‚\n");
+        set("no_drop","è¿™ä¹ˆå®è´µçš„ä¸œè¥¿æ€ä¹ˆå¯ä»¥ç¦»å¼€ä½ ï¼Ÿï¼\n");
+        set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
         set("value", 10000000);
         setup();
 }
@@ -29,12 +29,12 @@ int do_drink(string arg)
 	me=this_player();
 
 	
-        if (!id(arg))  return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+        if (!id(arg))  return notify_fail("ä½ è¦å–ä»€ä¹ˆï¼Ÿ\n");
         
         if(arg=="jiu") {
         if (me->query("wine/drank"))
         {
-        write(HIW"´Ë¾ÆÄË´ó²¹Ö®Ò©£¬Ò»ÉúÖĞºÈµ½Ò»´ÎÒÑÊÇÆæÔµ£¬²»ÄÜ¶àºÈ·ñÔòÕæÔª´óËğ£¡"NOR);
+        write(HIW"æ­¤é…’ä¹ƒå¤§è¡¥ä¹‹è¯ï¼Œä¸€ç”Ÿä¸­å–åˆ°ä¸€æ¬¡å·²æ˜¯å¥‡ç¼˜ï¼Œä¸èƒ½å¤šå–å¦åˆ™çœŸå…ƒå¤§æŸï¼"NOR);
         return 1;
         }
         if (me->query_condition("bonze_drug") > 0)
@@ -47,8 +47,8 @@ int do_drink(string arg)
         me->add("eff_jingli",-10-random(20));
         me->add("max_neili",-10-random(20));
         me->add("eff_neili",-10-random(20));
-        message_vision(HIR"$N½«Ê£ÏÂµÄĞş±ù±Ì»ğ¾ÆÒ»Òû¶ø¾¡£¬Ö»¾õµÃÌåÄÚÕæÆøËÄ´¦À£É¢£¬ºöÀäºöÈÈ¡£\n"
-        	 	  "Ïë±ØÊÇÏÈÇ°Ëù·şÒ©ÎïÎ´É¢£¬ÒÔÖÁºÍĞş±ù±Ì»ğ¾ÆµÄÒ©Á¦Ïà¿Ë£¬¹¦Á¦´óËğ£¡\n" NOR, me );
+        message_vision(HIR"$Nå°†å‰©ä¸‹çš„ç„å†°ç¢§ç«é…’ä¸€é¥®è€Œå°½ï¼Œåªè§‰å¾—ä½“å†…çœŸæ°”å››å¤„æºƒæ•£ï¼Œå¿½å†·å¿½çƒ­ã€‚\n"
+        	 	  "æƒ³å¿…æ˜¯å…ˆå‰æ‰€æœè¯ç‰©æœªæ•£ï¼Œä»¥è‡³å’Œç„å†°ç¢§ç«é…’çš„è¯åŠ›ç›¸å…‹ï¼ŒåŠŸåŠ›å¤§æŸï¼\n" NOR, me );
         me->apply_condition("bonze_drug", me->query_condition("bonze_drug")+70);
         me->set("drunk_apply", 20);
         me->unconcious();
@@ -64,7 +64,7 @@ int do_drink(string arg)
              me->add("eff_jingli",10+random(20));
              me->add("max_neili",10+random(20));
              me->add("eff_neili",10+random(20));
-             message_vision(HIG"$N½«Ê£ÏÂµÄĞş±ù±Ì»ğ¾ÆÒ»Òû¶ø¾¡£¬Ö»¾õÒ»¹ÉÇåÏãÇßÈëĞÄ·Î£¬¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷£¬ÉñÒâÇåË¬£¡\n" NOR, me );
+             message_vision(HIG"$Nå°†å‰©ä¸‹çš„ç„å†°ç¢§ç«é…’ä¸€é¥®è€Œå°½ï¼Œåªè§‰ä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚ºï¼Œé¡¿æ—¶çµå°ä¸€ç‰‡ç©ºæ˜ï¼Œç¥æ„æ¸…çˆ½ï¼\n" NOR, me );
              me->apply_condition("bonze_drug", 100);
              me->set("drunk_apply", 20);
              me->set("wine/drank", 1);

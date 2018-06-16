@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shang-shan.c ÉÍÉÆÊ¹Õß
+// shang-shan.c èµå–„ä½¿è€…
 
 #ifndef NPCDATA
 #define NPCDATA "/data/npc/"
@@ -23,11 +23,11 @@ void create()
 	seteuid(getuid());
 
 	if (!restore()) {
-	set_name("¶«·½ÈÕ", ({ "shangshan shizhe", "shangshan", "shizhe" }) );
-	set("title", "ÉÍÉÆÊ¹Õß" );
-	set("gender", "ÄĞĞÔ" );
+	set_name("ä¸œæ–¹æ—¥", ({ "shangshan shizhe", "shangshan", "shizhe" }) );
+	set("title", "èµå–„ä½¿è€…" );
+	set("gender", "ç”·æ€§" );
 	set("age", 35);
-      set("long","Ò»Î»Ğ¦Èİ¿ÉŞäµÄÖĞÄêÈË£¬Ëû¾ÍÊÇÀÖÉÆºÃÊ©£¬°®Æ¶Èç×ÓµÄÎäÁÖÉÍÉÆÊ¹Õß¡£\n");
+      set("long","ä¸€ä½ç¬‘å®¹å¯æ¬çš„ä¸­å¹´äººï¼Œä»–å°±æ˜¯ä¹å–„å¥½æ–½ï¼Œçˆ±è´«å¦‚å­çš„æ­¦æ—èµå–„ä½¿è€…ã€‚\n");
 	set("attitude", "heroism");
 	set("generation",0);
 	set("winner","none");
@@ -92,10 +92,10 @@ int do_kill(string arg)
 	int i;
 
 	if (!arg || arg != "shangshan") return 0;
-	write("\n²»¿É¶ÔÊ¹Õß·ÅËÁ£¡\n");
+	write("\nä¸å¯å¯¹ä½¿è€…æ”¾è‚†ï¼\n");
 /*
-	command("say ÄãÏëÄ±º¦±¾Ê¹Õß£¬µ±ÕæÊÇ×ÔÕÒËÀÂ·£¡ ×ùÏÂºìÒÂÎäÊ¿ºÎÔÚ£¡");
-	message_vision("ËÄÖÜµÄºìÒÂÎäÊ¿ÈºÆğ¶Ô$N·¢¶¯¹¥»÷£¡\n", this_player());
+	command("say ä½ æƒ³è°‹å®³æœ¬ä½¿è€…ï¼Œå½“çœŸæ˜¯è‡ªæ‰¾æ­»è·¯ï¼ åº§ä¸‹çº¢è¡£æ­¦å£«ä½•åœ¨ï¼");
+	message_vision("å››å‘¨çš„çº¢è¡£æ­¦å£«ç¾¤èµ·å¯¹$Nå‘åŠ¨æ”»å‡»ï¼\n", this_player());
 
 	for(i=0; i<3; i++) {
 		if( objectp( ob = present("wei shi " + (i+1), environment(this_object())) ) )
@@ -118,26 +118,26 @@ int accept_fight(object ob)
 	name1 = mengzhu->query("winner");
 
         if( stringp(me->query_temp("shan/bangzhu")) )
-                return notify_fail( RANK_D->query_respect(me) + "Ö»ÊÇÒ»Ğ¡°ï°ïÖ÷£¬ÔõÒ²Ì°Í¼ÉÍÉÆÊ¹Õß£¿£¡\n" );
+                return notify_fail( RANK_D->query_respect(me) + "åªæ˜¯ä¸€å°å¸®å¸®ä¸»ï¼Œæ€ä¹Ÿè´ªå›¾èµå–„ä½¿è€…ï¼Ÿï¼\n" );
 
 	if( this_player()->query("id") == name1 )
-		return notify_fail("ÄãÒÑ¾­ÊÇÎäÁÖÃËÖ÷£¬»¹ÒªÇÀµ±ÉÍÉÆÊ¹Õß£¿£¡\n");
+		return notify_fail("ä½ å·²ç»æ˜¯æ­¦æ—ç›Ÿä¸»ï¼Œè¿˜è¦æŠ¢å½“èµå–„ä½¿è€…ï¼Ÿï¼\n");
 
 	if(!( fae = find_living("fae")) )
 	fae = load_object("/clone/npc/fa-e");
 	name2 = fae->query("winner");
 
 	if( this_player()->query("id") == name2 )
-		return notify_fail("ÄãÒÑ¾­ÊÇ·£¶ñÊ¹Õß£¬»¹ÒªÇÀµ±ÉÍÉÆÊ¹Õß£¿£¡\n");
+		return notify_fail("ä½ å·²ç»æ˜¯ç½šæ¶ä½¿è€…ï¼Œè¿˜è¦æŠ¢å½“èµå–„ä½¿è€…ï¼Ÿï¼\n");
 
 	if ( me->query("winner") == ob->query("id") ) 
-		return notify_fail("Äã¸úÄã×Ô¼º´òÊ²Ã´¼Ü£¿£¡\n");
+		return notify_fail("ä½ è·Ÿä½ è‡ªå·±æ‰“ä»€ä¹ˆæ¶ï¼Ÿï¼\n");
 
 	if (wiz_level(this_player()))
-		return notify_fail("Î×Ê¦²»ÄÜÇÀÊ¹ÕßÖ®Î»£¡\n");
+		return notify_fail("å·«å¸ˆä¸èƒ½æŠ¢ä½¿è€…ä¹‹ä½ï¼\n");
 
 	if ( me->is_fighting() ) 
-		return notify_fail("ÒÑ¾­ÓĞÈËÕıÔÚÌôÕ½ÉÍÉÆÊ¹Õß£¡\n");
+		return notify_fail("å·²ç»æœ‰äººæ­£åœ¨æŒ‘æˆ˜èµå–„ä½¿è€…ï¼\n");
 
 	me->set("eff_qi", me->query("max_qi"));
 	me->set("qi",     me->query("max_qi"));
@@ -167,16 +167,16 @@ int chat()
 	my_max_qi  = me->query("max_qi");
 	his_max_qi = ob->query("max_qi");
 	if (( (int)me->query("qi")*100 / my_max_qi) <= 50 ) {
-		command("say Åå·şÅå·ş£¬¿´À´ÎÒµÄµ£×Ó¿ÉÒÔ½»Ğ¶ÁË£¬¹§Ï²Äã³ÉÎªÎäÁÖÉÍÉÆÊ¹Õß£¡\n");
-		command("chat ¹§Ï²" + ob->query("name") + "±»ÍÆ¾ÙÎªÏÖÈÎÎäÁÖÉÍÉÆÊ¹Õß£¡\n");
+		command("say ä½©æœä½©æœï¼Œçœ‹æ¥æˆ‘çš„æ‹…å­å¯ä»¥äº¤å¸äº†ï¼Œæ­å–œä½ æˆä¸ºæ­¦æ—èµå–„ä½¿è€…ï¼\n");
+		command("chat æ­å–œ" + ob->query("name") + "è¢«æ¨ä¸¾ä¸ºç°ä»»æ­¦æ—èµå–„ä½¿è€…ï¼\n");
 		remove_call_out("do_copy");
 		call_out("do_copy", 1, me, ob);
 		return 1;
 	}
 
 	if (( (int)ob->query("qi")*100 / his_max_qi) < 50 ) {
-		command("say ¿´À´" + RANK_D->query_respect(ob) + 
-			"»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚµ±½ñÎäÁÖÖĞÓĞËù×÷Îª !\n");
+		command("say çœ‹æ¥" + RANK_D->query_respect(ob) + 
+			"è¿˜å¾—å¤šåŠ ç»ƒä¹ ï¼Œæ–¹èƒ½åœ¨å½“ä»Šæ­¦æ—ä¸­æœ‰æ‰€ä½œä¸º !\n");
 		return 1;
 	}
 
@@ -188,14 +188,14 @@ int do_copy(object me, object ob)
 	me->add("generation", 1);	
 
 	me->set("name",  ob->query("name") );
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÉÍÉÆÊ¹Õß");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£èµå–„ä½¿è€…");
 	me->set("short", me->query("title") + " " + me->query("name") + "(" + capitalize(ob->query("id")) + ")");
 	me->delete("title");
 
 	ob->delete_temp("apply/short");
 	ob->set_temp("apply/short", ({me->short(1)}));
 	
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÉÍÉÆÊ¹Õß");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£èµå–„ä½¿è€…");
 	me->set("short", me->query("title") + " " + me->query("name") + "(shangshan shizhe)");
 	me->delete("title");
 
@@ -211,26 +211,26 @@ int do_recopy(object me, object ob)
 	ob = this_player();
 
 	if ( me->query("winner") != ob->query("id") ) 
-		return notify_fail("Äã²»ÊÇÏÖÈÎÉÍÉÆÊ¹Õß£¡\n");
+		return notify_fail("ä½ ä¸æ˜¯ç°ä»»èµå–„ä½¿è€…ï¼\n");
         if ( me->is_killing(ob->query("id")) || me->is_fighting() )
-                return notify_fail("Ê¹ÕßÏÖÔÚÕıÃ¦×Å£¬Ã»¹¤·òÀíÄã¡£\n");
+                return notify_fail("ä½¿è€…ç°åœ¨æ­£å¿™ç€ï¼Œæ²¡å·¥å¤«ç†ä½ ã€‚\n");
 
 	me->set("name",  ob->query("name") );
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÉÍÉÆÊ¹Õß");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£èµå–„ä½¿è€…");
 	me->set("short", me->query("title") + " " + me->query("name") + "(" + capitalize(ob->query("id")) + ")");
 	me->delete("title");
 
 	ob->delete_temp("apply/short");
 	ob->set_temp("apply/short", ({me->short(1)}));
 
-	me->set("title", "µÚ" + chinese_number(me->query("generation")) + "´úÉÍÉÆÊ¹Õß");
+	me->set("title", "ç¬¬" + chinese_number(me->query("generation")) + "ä»£èµå–„ä½¿è€…");
 	me->set("short", me->query("title") + " " + me->query("name") + "(shangshan shizhe)");
 	me->delete("title");
 
 	remove_call_out("do_clone");
 	call_out("do_clone", 0, me, ob);
 
-	write("×´Ì¬¸üĞÂÍê±Ï¡£\n");
+	write("çŠ¶æ€æ›´æ–°å®Œæ¯•ã€‚\n");
 	return 1;
 }
 
@@ -365,7 +365,7 @@ int do_clone(object me, object ob)
 	environment()->set("winner", ob->query("id"));
 	me->save();
 
-	tell_object(ob, "×´Ì¬´¢´æÍê±Ï¡£\n");
+	tell_object(ob, "çŠ¶æ€å‚¨å­˜å®Œæ¯•ã€‚\n");
 
 /*
 	new1 = new("/clone/npc/shang-shan");
@@ -384,21 +384,21 @@ int do_recover()
 	ob = this_player();
 
 	if ( me->query("winner") != ob->query("id") ) 
-		return notify_fail("Äã²»ÊÇÏÖÈÎÉÍÉÆÊ¹Õß£¡\n");;
+		return notify_fail("ä½ ä¸æ˜¯ç°ä»»èµå–„ä½¿è€…ï¼\n");;
 
 	if( (string)me->query("family/family_name") 
 	 != (string)ob->query("family/family_name") )
-		return notify_fail("ÄãÒÑ±³ÅÑÊ¦ÃÅ£¬²»ÄÜ¸´Ô­ÁË£¡\n");
+		return notify_fail("ä½ å·²èƒŒå›å¸ˆé—¨ï¼Œä¸èƒ½å¤åŸäº†ï¼\n");
 
 	if( (int)me->query("family/enter_time") 
 	 != (int)ob->query("family/enter_time") )
-		return notify_fail("ÄãÔø¸Ä»»Ê¦ÃÅ£¬²»ÄÜ¸´Ô­ÁË£¡\n");
+		return notify_fail("ä½ æ›¾æ”¹æ¢å¸ˆé—¨ï¼Œä¸èƒ½å¤åŸäº†ï¼\n");
 
 	ob->set("combat_exp", me->query("combat_exp"));
         ob->set("death_times", me->query("death_times"));
         ob->set("death_count", me->query("death_count"));
 
-	write("×´Ì¬¸´ÔªÍê±Ï¡£\n");
+	write("çŠ¶æ€å¤å…ƒå®Œæ¯•ã€‚\n");
 
 	return 1;
 }

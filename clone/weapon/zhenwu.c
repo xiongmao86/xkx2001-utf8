@@ -8,20 +8,20 @@ inherit SWORD;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-        set_name("ÕæÎä½£", ({ "zhenwu sword", "zhenwu", "sword" }) );
+        set_name("çœŸæ­¦å‰‘", ({ "zhenwu sword", "zhenwu", "sword" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("long",
-			"Ö»¼û³¤½£½£ÇÊÍ­ÂÌ°ßìµ£¬ÒÔÍ­Ë¿Ç¶×ÅÁ½¸ö×­ÎÄ£º¡°ÕæÎä¡±¡£\n");
+			"åªè§é•¿å‰‘å‰‘éž˜é“œç»¿æ–‘æ–“ï¼Œä»¥é“œä¸åµŒç€ä¸¤ä¸ªç¯†æ–‡ï¼šâ€œçœŸæ­¦â€ã€‚\n");
                 set("value", 7000);
                 set("material", "steel");
 		set("rigidity", 1500);
                 set("wield_msg", 
-			"Ö»Ìý¼û¡¸ì¬¡¹µØÒ»Éù£¬¶Ù¾õº®ÆøÆËÃæ£¬$NµÄÊÖÖÐÒÑ¾­¶àÁËÒ»°Ñ±¦½£¡ª¡ª$n¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖÐµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+			"åªå¬è§ã€Œé£•ã€åœ°ä¸€å£°ï¼Œé¡¿è§‰å¯’æ°”æ‰‘é¢ï¼Œ$Nçš„æ‰‹ä¸­å·²ç»å¤šäº†ä¸€æŠŠå®å‰‘â€”â€”$nã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘éž˜ã€‚\n");
         }
 
         init_sword(120);
@@ -39,7 +39,7 @@ int do_study(string arg)
 	object me = this_player();
 
 	if ( arg != "youlong sword" && arg != "youlong" && arg != "sword")
-	return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+	return notify_fail("ä½ è¦å­¦ä»€ä¹ˆï¼Ÿ\n");
 
 	if ( me->is_fighting() 
 	&& (int)me->query_skill("sword", 1) >= 30 
@@ -48,7 +48,7 @@ int do_study(string arg)
 	{
 		me->receive_damage("jing", 30);
 		me->improve_skill("sword", me->query("int"));
-		tell_object(me, "Ö»¼û½£Éí»¯×÷Ò»Ìõ°×Áú£¬¹âÑæÉÁ¶¯¼ä£¬Äã¶Ô½£µÀµÄÁìÎòÓÖÉîÁËÒ»²ã£¡\n", me);
+		tell_object(me, "åªè§å‰‘èº«åŒ–ä½œä¸€æ¡ç™½é¾™ï¼Œå…‰ç„°é—ªåŠ¨é—´ï¼Œä½ å¯¹å‰‘é“çš„é¢†æ‚Ÿåˆæ·±äº†ä¸€å±‚ï¼\n", me);
 		return 1;
 	}
 

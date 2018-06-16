@@ -13,19 +13,19 @@ void init()
 
 void create()
 {
-        set_name(GRN"öù×ì¼ô"NOR, ({"ezui jian", "jian"}));
+        set_name(GRN"é³„å˜´å‰ª"NOR, ({"ezui jian", "jian"}));
 //	set_color("$GRN$");
         set_weight(7000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ³ßÐí³¤µÄ´ó¼ôµ¶£¬µ¶±ú³ÊÆæ¹ÖµÄÍäÇú×´£¬µ¶¿ÚÊÇÒ»ÅÅÌú³Ý£¬ÏóöùÓãµÄÑÀ³ÝÒ»Ñù¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠå°ºè®¸é•¿çš„å¤§å‰ªåˆ€ï¼Œåˆ€æŸ„å‘ˆå¥‡æ€ªçš„å¼¯æ›²çŠ¶ï¼Œåˆ€å£æ˜¯ä¸€æŽ’é“é½¿ï¼Œè±¡é³„é±¼çš„ç‰™é½¿ä¸€æ ·ã€‚\n");
                 set("value", 300);
 		set("rigidity", 100000);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖÐ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖÐµÄ$n·ÅÏÂ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¾ä¸‹ã€‚\n");
 		set("clone_ob", "/clone/weapon/eyujian");
         }
 	::create();
@@ -41,49 +41,49 @@ int do_cut(string arg)
 //        if( !target ) target = offensive_target(me);
 
 	if (!arg)
-        return notify_fail("ÄãÒª¼ôÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦å‰ªä»€ä¹ˆï¼Ÿ\n");
 
 	target = present(arg,environment(me));
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Ê²÷á£¿\n");
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
 
 	if( !objectp(weapon = me->query_temp("weapon"))
 	 || (string)weapon->query("id") != "ezui jian" ) 
-		return notify_fail("Ê²÷á£¿\n");
+		return notify_fail("ä»€éº½ï¼Ÿ\n");
 
 	if( me->is_busy() )
-                return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓÐ×öÍê¡£\n");
+                return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰åšå®Œã€‚\n");
 
         if( !objectp(weapon = target->query_temp("weapon")))
 //        || (string)weapon->query("skill_type") == 0 )
-                return notify_fail("Ê²÷á£¿\n");
-	message_vision(HIW "$N¾ÙÆðÊÖÖÐöùÓã¼ôÍù$nµÄ" + weapon->name()
-			+ "¼ôÈ¥¡£\n" NOR, me, target);
+                return notify_fail("ä»€éº½ï¼Ÿ\n");
+	message_vision(HIW "$Nä¸¾èµ·æ‰‹ä¸­é³„é±¼å‰ªå¾€$nçš„" + weapon->name()
+			+ "å‰ªåŽ»ã€‚\n" NOR, me, target);
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2){ 
-/*	if( weapon->name() != "ÒÐÌì½£" && weapon->name() != "ÐþÌúÖØ½£"
+/*	if( weapon->name() != "å€šå¤©å‰‘" && weapon->name() != "çŽ„é“é‡å‰‘"
 	&& weapon->query("id") != "fumo dao" && weapon->query("id") != "xiangmo chu"
-	&& weapon->query("id") != "xue dao" && weapon->name() != "ÓÎÁú½£"
-	&& weapon->name() != "Ñìµ¶" && weapon->name() != "Ô§µ¶"
+	&& weapon->query("id") != "xue dao" && weapon->name() != "æ¸¸é¾™å‰‘"
+	&& weapon->name() != "é¸¯åˆ€" && weapon->name() != "é¸³åˆ€"
 	&& weapon->query("id") != "ezui jian" && weapon->query("id") != "ewei bian") {
 */
 	if( weapon->query("weapon_prop/damage") < 80){
-	message_vision(HIW "Ö»Ìý¼û¡¸¿¦àê¡¹µØÒ»Éù£¬$nÊÖÖÐµÄ" + weapon->name()
-                                + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me, target);
+	message_vision(HIW "åªå¬è§ã€Œå–€åš“ã€åœ°ä¸€å£°ï¼Œ$næ‰‹ä¸­çš„" + weapon->name()
+                                + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me, target);
                         weapon->unequip();
                         weapon->move(environment(target));
-                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                        weapon->set("name", "æ–­æŽ‰çš„" + weapon->query("name"));
                         weapon->set("value", 0);
                         weapon->set("weapon_prop", 0);
                         target->reset_action();
 	}else {
-	message_vision(HIW"Ö»¼û»ð»¨ÂÒ½¦£¬$nÊÖÖÐ" +weapon->name() +"¹ýì¶½áÊµ£¬öù×ì¼ô¼ôËü²»¶Ï¡£\n"NOR, me, target);
+	message_vision(HIW"åªè§ç«èŠ±ä¹±æº…ï¼Œ$næ‰‹ä¸­" +weapon->name() +"è¿‡æ–¼ç»“å®žï¼Œé³„å˜´å‰ªå‰ªå®ƒä¸æ–­ã€‚\n"NOR, me, target);
 	me->start_busy(1+ random(3));
 		
 	}
         } else {
-        message_vision(HIW"¿ÉÊÇ$n¿´ÆÆÁË$NµÄÒâÍ¼£¬»¹ÕÐµ²¿ª¡£\n" NOR, me, target);
+        message_vision(HIW"å¯æ˜¯$nçœ‹ç ´äº†$Nçš„æ„å›¾ï¼Œè¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR, me, target);
 	me->start_busy(1+ random(3));
         }
 

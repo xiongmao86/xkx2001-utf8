@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiuzhuan-huanhundan.c ¾Å×ª»¹»êµ¤
+// jiuzhuan-huanhundan.c ä¹è½¬è¿˜é­‚ä¸¹
 
 #include <ansi.h>
 
@@ -11,21 +11,21 @@ void setup()
 void init()
 {
 	add_action("do_eat", "eat");
-//	log_file("OBJECTS", sprintf("%s(%s)µÃµ½Ò»¿Å¾Å×ª»¹»êµ¤(%O)\n", 
+//	log_file("OBJECTS", sprintf("%s(%s)å¾—åˆ°ä¸€é¢—ä¹è½¬è¿˜é­‚ä¸¹(%O)\n", 
 //			this_player()->query("name"), getuid(this_player()), this_object()));
 }
 
 void create()
 {
-	set_name("¾Å×ª»¹»êµ¤", ({"jiuzhuan dan", "jiuzhuan", "dan"}));
+	set_name("ä¹è½¬è¿˜é­‚ä¸¹", ({"jiuzhuan dan", "jiuzhuan", "dan"}));
 	set_weight(10);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Å");
-		set("long", "ÕâÊÇÒ»¿Å½ğ¹âÉÁÉÁµÄ¾Å×ª»¹»êµ¤£¬¹¦ÄÜÆğËÀ»ØÉú£¬ÃîÓÃÎŞÇî¡£\n");
+		set("unit", "é¢—");
+		set("long", "è¿™æ˜¯ä¸€é¢—é‡‘å…‰é—ªé—ªçš„ä¹è½¬è¿˜é­‚ä¸¹ï¼ŒåŠŸèƒ½èµ·æ­»å›ç”Ÿï¼Œå¦™ç”¨æ— ç©·ã€‚\n");
 		set("value", 1000000000);
-	//	set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+	//	set("no_drop", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
 	}
 	set_color(HIY);
 	set("qfy",1);
@@ -42,14 +42,14 @@ int do_eat(string arg)
 	object ob = this_object();
 
 	if (!id(arg))
-	return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+	return notify_fail("ä½ è¦åƒä»€ä¹ˆï¼Ÿ\n");
 
-	message_vision(HIG "$N³ÔÏÂÒ»¿Å¾Å×ª»¹»êµ¤£¬·¢ÏÖ»êÆÇÒ»Ë¿Ë¿µÄ»Ö¸´¹ıÀ´£¬Îä¹¦¾¡¸´£¡\n" NOR, me);
+	message_vision(HIG "$Nåƒä¸‹ä¸€é¢—ä¹è½¬è¿˜é­‚ä¸¹ï¼Œå‘ç°é­‚é­„ä¸€ä¸ä¸çš„æ¢å¤è¿‡æ¥ï¼Œæ­¦åŠŸå°½å¤ï¼\n" NOR, me);
 
-//	log_file("OBJECTS", sprintf("%s(%s)³ÔÏÂÒ»¿Å¾Å×ª»¹»êµ¤(%O) %s\n",
+//	log_file("OBJECTS", sprintf("%s(%s)åƒä¸‹ä¸€é¢—ä¹è½¬è¿˜é­‚ä¸¹(%O) %s\n",
 //			me->query("name"), getuid(me), this_object(), 
 //			ctime(time())));
-	log_file("OBJECTS", sprintf("%s(%s)ÓÚ%s³ÔÏÂ(%s)¸´ÖÆµÄÒ»¿Å¾Å×ª»¹»êµ¤(%O)¡£\n",
+	log_file("OBJECTS", sprintf("%s(%s)äº%såƒä¸‹(%s)å¤åˆ¶çš„ä¸€é¢—ä¹è½¬è¿˜é­‚ä¸¹(%O)ã€‚\n",
 			me->query("name"), getuid(me), ctime(time()),
 			this_object()->query("cloner"), this_object()));
 			

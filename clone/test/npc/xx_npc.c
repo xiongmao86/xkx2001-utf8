@@ -12,11 +12,11 @@ int weapon();
 
 void create()
 {
-	set_name("ĞÇËŞµÜ×Ó", ({"xx_npc", "dizi", "xx"}));
-	set("gender", "ÄĞĞÔ");
+	set_name("æ˜Ÿå®¿å¼Ÿå­", ({"xx_npc", "dizi", "xx"}));
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 	set("long", 
-		"¾İËµÊÇĞÇËŞÎä¹¦×î¸ßµÄ´óÊ¦ĞÖ¡£\n");
+		"æ®è¯´æ˜¯æ˜Ÿå®¿æ­¦åŠŸæœ€é«˜çš„å¤§å¸ˆå…„ã€‚\n");
  	
 	set("attitude", "peaceful");
 	
@@ -29,7 +29,7 @@ void create()
 
 	set("chat_chance", 1);
 	set("chat_msg", ({
-		(: command("say ÀÏ×ÓÎÒ×îÀûº¦£¬²»·şÆø¾ÍºÍÎÒ±È»®Ò»ÏÂ£¡") :),
+		(: command("say è€å­æˆ‘æœ€åˆ©å®³ï¼Œä¸æœæ°”å°±å’Œæˆ‘æ¯”åˆ’ä¸€ä¸‹ï¼") :),
 		(: command("grin") :),
 	}));
 
@@ -49,7 +49,7 @@ void create()
               (: auto_perform :),
         }) );
 
-	create_family("ĞÇËŞÅÉ", 2, "µÜ×Ó");
+	create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
 	set_skill("force", 400);		
 	set_skill("huagong-dafa", 400);		
@@ -130,13 +130,13 @@ int unarmed(){
 	command("unwield gangzhang");
 	map_skill("parry", "chousui-zhang");
 	command("blow di");
-	command("say OK ÁË£¡\n");
+	command("say OK äº†ï¼\n");
 	return 1;
 }
 
 int weapon(){
 	command("wield gangzhang");
 	map_skill("parry", "tianshan-zhang");
-	command("say OK ÁË£¡\n");
+	command("say OK äº†ï¼\n");
 	return 1;
 }

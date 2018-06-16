@@ -1,5 +1,5 @@
 //Cracked by Roath
-// seaboat1.c  º£´¬
+// seaboat1.c  æµ·èˆ¹
 // by ALN@XKX
 
 inherit SHIP;
@@ -9,7 +9,7 @@ void create()
         string argg;
         int num;
   
-        set("short", "º£´¬");
+        set("short", "æµ·èˆ¹");
         set("long", (: long_desc :));
         set("invalid_startroom", 1);
 

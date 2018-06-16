@@ -1,5 +1,5 @@
 //Cracked by Roath
-// sangucha Èı¹É²æ
+// sangucha ä¸‰è‚¡å‰
 
 #include <weapon.h>
 
@@ -7,17 +7,17 @@ inherit PIKE;
 
 void create()
 {
-        set_name("Èı¹É²æ", ({ "san gu cha", "cha" }) );
+        set_name("ä¸‰è‚¡å‰", ({ "san gu cha", "cha" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÈı¹É²æ£¬Èı¸ù¼âÈñµÄ²æ×ÓÁîÈËĞÄº®¡£\n");
+                set("unit", "æŸ„");
+                set("long", "è¿™æ˜¯ä¸€æŸ„ä¸‰è‚¡å‰ï¼Œä¸‰æ ¹å°–é”çš„å‰å­ä»¤äººå¿ƒå¯’ã€‚\n");
                 set("value", 300);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»±ú$n£¬¶¶ÁËÒ»¶¶£¬·¢³öÒ»ÕóÂÒÃù¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŸ„$nï¼ŒæŠ–äº†ä¸€æŠ–ï¼Œå‘å‡ºä¸€é˜µä¹±é¸£ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_pike(30);
         setup();

@@ -1,17 +1,17 @@
 //Cracked by Roath
-// laohu.c Ê¨×Ó
+// laohu.c ç‹®å­
 
 inherit NPC_TRAINEE;
 
 void create()
 {
-	set_name("Ê¨×Ó", ({ "lion", "shi zi", "shi" }) );
-        set("race", "Ò°ÊŞ");
+	set_name("ç‹®å­", ({ "lion", "shi zi", "shi" }) );
+        set("race", "é‡å…½");
         set("age", 25);
-	set("long", "Ò»ù¢»ÆÃ«³¤××µÄĞÛÊ¨£¬×¦ÑÀÈñÀû£¬ÉñÇéÍşÎä¡£\n");
-        set("msg_fail", "$n³å$NßÚÑÀºğÁËÒ»Éù");
-        set("msg_succ", "$nÒ»Ãæ¿ÚÖĞÏò$NºÉºÉ·¢Íş£¬Ò»ÃæÏòºóÍËÁË°ë²½£¬ËÆºõÓĞĞ©ÇÓÁË");
-        set("msg_trained","$nµÍºğ×ÅÔÚ$NµÄÃæÇ°·üÁËÏÂÀ´");
+	set("long", "ä¸€îŠ“é»„æ¯›é•¿é¬ƒçš„é›„ç‹®ï¼Œçˆªç‰™é”åˆ©ï¼Œç¥æƒ…å¨æ­¦ã€‚\n");
+        set("msg_fail", "$nå†²$Nå‘²ç‰™å¼äº†ä¸€å£°");
+        set("msg_succ", "$nä¸€é¢å£ä¸­å‘$Nè·è·å‘å¨ï¼Œä¸€é¢å‘åé€€äº†åŠæ­¥ï¼Œä¼¼ä¹æœ‰äº›æ€¯äº†");
+        set("msg_trained","$nä½å¼ç€åœ¨$Nçš„é¢å‰ä¼äº†ä¸‹æ¥");
         set("auto_follow",1);
         set("attitude", "aggressive");
 
@@ -35,9 +35,9 @@ void create()
         set("chat_chance", 10);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "Ê¨×ÓÀ´»Ø×ß¶¯£¬³¯×ÅÄã¶ËÏàÁË°ëÉÎ£¬¿ÚÖĞºÉºÉµÄ·¢Íş¡£\n",
-                "Ê¨×Ó³¤³¤ºğÁËÒ»Éù¡£\n",
-                "Ê¨×ÓÅ¿ÔÚµØÉÏ£¬°ÚÍ·¶¶ÁË¶¶××Ã«£¬Ò»Ë«ÑÛ¾¦½ô½ô¶¢×ÅÄã¡£\n",
+                "ç‹®å­æ¥å›èµ°åŠ¨ï¼Œæœç€ä½ ç«¯ç›¸äº†åŠæ™Œï¼Œå£ä¸­è·è·çš„å‘å¨ã€‚\n",
+                "ç‹®å­é•¿é•¿å¼äº†ä¸€å£°ã€‚\n",
+                "ç‹®å­è¶´åœ¨åœ°ä¸Šï¼Œæ‘†å¤´æŠ–äº†æŠ–é¬ƒæ¯›ï¼Œä¸€åŒçœ¼ç›ç´§ç´§ç›¯ç€ä½ ã€‚\n",
         }) );
 
         setup();
@@ -45,7 +45,7 @@ void create()
 
 void die()
 {
-        message_vision("\n$NÑöÌì²Òº¿ÁËÒ»Éù£¬Å¿ÔÚµØÉÏ²»¶¯ÁË¡£\n", this_object());
+        message_vision("\n$Nä»°å¤©æƒ¨åšäº†ä¸€å£°ï¼Œè¶´åœ¨åœ°ä¸Šä¸åŠ¨äº†ã€‚\n", this_object());
         ::die();
 }
 
@@ -79,7 +79,7 @@ int do_look(string arg)
 
         printf(this_object()->query("long") + 
         COMBAT_D->eff_status_msg((int)this_object()->query("eff_qi")* 100 / (int)this_object()->query("max_qi")) + "\n" 
-        + "ËüÉíÉÏÍÔ×Å£º\n");
+        + "å®ƒèº«ä¸Šé©®ç€ï¼š\n");
         for (i = 0; i < sizeof(inv); i++)
                 printf("%s \n", inv[i]->short());
         return 1;

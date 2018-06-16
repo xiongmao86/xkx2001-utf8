@@ -15,13 +15,13 @@ string WIZ_DIR = "/wiz/clone/";
 
 void create()
 {
-    set_name(HIY"Íæ¼ÒÐÍ¶ìÃ«ÉÈ"NOR, ({ "fan", "yushan", "shan" }));
+    set_name(HIY"çŽ©å®¶åž‹é¹…æ¯›æ‰‡"NOR, ({ "fan", "yushan", "shan" }));
     set_weight(5);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "°Ñ");
-        set("long", "ÕâÊÇÒ»°Ñ¶ìÃ«ÉÈ£¬Ïà´«ÊÇÈý¹úÊ±ÆÚÖî¸ðÁÁµÄÒÅÎï¡£\n");
+        set("unit", "æŠŠ");
+        set("long", "è¿™æ˜¯ä¸€æŠŠé¹…æ¯›æ‰‡ï¼Œç›¸ä¼ æ˜¯ä¸‰å›½æ—¶æœŸè¯¸è‘›äº®çš„é—ç‰©ã€‚\n");
 //		set("value", 2000000000);
     }
     setup();
@@ -39,11 +39,11 @@ int do_makelist(string arg)
 	object ob;
 	object me = this_player();
 	object ob1 = this_object();
-	if( !ob1->query("data") ) return notify_fail("Äã»¹Ã»ÓÐ sort ÄØ£¿\n");
+	if( !ob1->query("data") ) return notify_fail("ä½ è¿˜æ²¡æœ‰ sort å‘¢ï¼Ÿ\n");
 	ob = new( WIZ_DIR + "xkx_list.c" );
 	ob->set("data", this_object()->query("data") );
 	ob->move(me);
-	message_vision(HIY"$N°ÑÉÈ×ÓÒ¡ÁËÒ¡£¬Ò¡³öÁËÒ»ÕÅÏÀ¿ÍÐÐ·çÔÆ°ñ¡£\n"NOR, me);
+	message_vision(HIY"$NæŠŠæ‰‡å­æ‘‡äº†æ‘‡ï¼Œæ‘‡å‡ºäº†ä¸€å¼ ä¾ å®¢è¡Œé£Žäº‘æ¦œã€‚\n"NOR, me);
 	return 1;
 }
 
@@ -54,17 +54,17 @@ int do_readlist(string arg)
 		
 	lists = this_object()->query("data");
 	
-	if( !lists ) return notify_fail("Äã»¹Ã»ÓÐ sort ÄØ£¿\n");
+	if( !lists ) return notify_fail("ä½ è¿˜æ²¡æœ‰ sort å‘¢ï¼Ÿ\n");
 	
 	num = sizeof(lists);
 	if ( num > 101 ) num = 101;
 	
-	write("ÏÀ¿ÍÐÐ·çÔÆ°ñ£º\n");
+	write("ä¾ å®¢è¡Œé£Žäº‘æ¦œï¼š\n");
 	
 	for(int i = 0; i < num; i++)
 	{
 		k = i+1;
-		write("µÚ"+ chinese_number(k) + "Ãû£º" + lists[i]["name"] + "(" + lists[i]["id"] + "): ¾­Ñé " + lists[i]["exp"] + "¡£ÄêÁä£º" + chinese_number(lists[i]["age"]) + "Ëê\n");
+		write("ç¬¬"+ chinese_number(k) + "åï¼š" + lists[i]["name"] + "(" + lists[i]["id"] + "): ç»éªŒ " + lists[i]["exp"] + "ã€‚å¹´é¾„ï¼š" + chinese_number(lists[i]["age"]) + "å²\n");
 	}
 	return 1;
 }
@@ -123,7 +123,7 @@ int do_sortallexp(int day)
 			      continue;
 			    }
 			    if(!rc) {
-                    printf("Ã»ÓÐÕâ¸öÈË¡£(%s)\n",name);
+                    printf("æ²¡æœ‰è¿™ä¸ªäººã€‚(%s)\n",name);
 			      destruct(ob);
 			      continue;
 			    }
@@ -220,7 +220,7 @@ int do_sort(string arg)
 	object this_ob = this_object();
 	
 	sorttime = this_ob->query("sorttime");
-	if(sorttime > 2) return notify_fail("»¹ sort, ÔÙ sort ÏÀ¿ÍÐÐÒª±ä lag ÁË¡£\n");
+	if(sorttime > 2) return notify_fail("è¿˜ sort, å† sort ä¾ å®¢è¡Œè¦å˜ lag äº†ã€‚\n");
 	else {
 		sorttime += 1;
 		this_ob->set("sorttime", sorttime);

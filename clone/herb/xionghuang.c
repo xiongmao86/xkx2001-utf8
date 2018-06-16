@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIY"�ۻ�"NOR, ({"xionghuang"}));
+        set_name(HIY"雄黄"NOR, ({"xionghuang"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ǯ");
-                set("long","�ۻơ�\n");
+                set("unit", "钱");
+                set("long","雄黄。\n");
                 set("value", 100);
 				set("yaocai", 1);
         		set("cure_s",0);

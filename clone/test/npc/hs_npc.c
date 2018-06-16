@@ -10,12 +10,12 @@ int use_hsjf();
 int use_lyd();
 void create()
 {
-        set_name("ÄÂÈËÇå", ({ "hs_npc", "mu","mu renqing"}));
+        set_name("ç©†äººæ¸…", ({ "hs_npc", "mu","mu renqing"}));
 	set_color("$HIC$");
         set("long", 
-"´ËÀÏÉíÇû¸ß´ó£¬¶øÇÒÆø¶È·Ç·²£¬ÁîÈË²»¸ÒĞ¡¿ú¡£¾İ´«ÎÅËû\n"
-"±Õ¹ØÒÑ¾Ã£¬½­ºşÉÏÏÊÎÅÆäÃû¡£Îä¹¦Ö®¸ß£¬È´ÁîÈËÕğ¾ª¡£\n");
-        set("gender", "ÄĞĞÔ");
+"æ­¤è€èº«èº¯é«˜å¤§ï¼Œè€Œä¸”æ°”åº¦éå‡¡ï¼Œä»¤äººä¸æ•¢å°çª¥ã€‚æ®ä¼ é—»ä»–\n"
+"é—­å…³å·²ä¹…ï¼Œæ±Ÿæ¹–ä¸Šé²œé—»å…¶åã€‚æ­¦åŠŸä¹‹é«˜ï¼Œå´ä»¤äººéœ‡æƒŠã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 70);
         set("attitude", "heroism");
         set("shen_type", 1);
@@ -65,7 +65,7 @@ void create()
         prepare_skill("strike", "hunyuan-zhang");
         prepare_skill("cuff", "pishi-poyu");
 
-        create_family("»ªÉ½ÅÉ", 1, "ÕÆÃÅÈË");
+        create_family("åå±±æ´¾", 1, "æŒé—¨äºº");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),

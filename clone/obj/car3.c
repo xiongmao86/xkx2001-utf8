@@ -11,7 +11,7 @@ void reset()
 
 void create()
 {
-        set("short", "³µ¿â");
+        set("short", "è½¦åº“");
         set("no_clean_up", 1);
 
         setup();

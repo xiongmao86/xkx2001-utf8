@@ -1,5 +1,5 @@
 //Cracked by Roath
-// feibiao.c ·ÉïÚ
+// feibiao.c é£é•–
 // Ryu
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit COMBINED_ITEM;
 inherit F_EQUIP;
 void create()
 {
-        set_name("½ğÇ®ïÚ", ({ "jinqian biao", "biao" }) );
+        set_name("é‡‘é’±é•–", ({ "jinqian biao", "biao" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        	set("long", "Ò»Ã¶ÓÉÍ­Ç®´òÖÆ³ÉµÄĞ¡·ÉïÚ¡£\n");
-        	set("unit", "´ü");
-		set("base_unit", "Ö§");
+        	set("long", "ä¸€æšç”±é“œé’±æ‰“åˆ¶æˆçš„å°é£é•–ã€‚\n");
+        	set("unit", "è¢‹");
+		set("base_unit", "æ”¯");
         	set("value", 150);
 		set("damage", 6);
 		set("armor_type", "embed");
@@ -24,7 +24,7 @@ void create()
                 set("armor_prop/defense", -50);
                 set("armor_prop/unarmed", -50);
 		set("no_sell", 1);
-		set("unequip_msg", HIR"$NÒ»Ò§ÑÀ½«$n´ÓÉË¿ÚÉÏ°ÎÁËÏÂÀ´£¬Ò»¹ÉÏÊÑªÃÍµØÓ¿ÁË³öÀ´¡£\n"NOR);
+		set("unequip_msg", HIR"$Nä¸€å’¬ç‰™å°†$nä»ä¼¤å£ä¸Šæ‹”äº†ä¸‹æ¥ï¼Œä¸€è‚¡é²œè¡€çŒ›åœ°æ¶Œäº†å‡ºæ¥ã€‚\n"NOR);
         }
 	set_amount(15);
         setup();

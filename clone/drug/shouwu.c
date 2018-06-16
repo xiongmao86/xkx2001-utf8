@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shouwu.c ºÎÊ×ÎÚ
+// shouwu.c ä½•é¦–ä¹Œ
 
 inherit ITEM;
 #include <ansi.h>
@@ -9,12 +9,12 @@ void setup()
 int cure_ob(string);
 void create()
 {
-	set_name("ºÎÊ×ÎÚ", ({"heshou wu", "wu"}));
+	set_name("ä½•é¦–ä¹Œ", ({"heshou wu", "wu"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¿Ã");
-		set("long", "ÕâÊÇÒ»¿Ã³õ¾ßÈËÐÎµÄºÎÊ×ÎÚ¡£\n");
+		set("unit", "æ£µ");
+		set("long", "è¿™æ˜¯ä¸€æ£µåˆå…·äººå½¢çš„ä½•é¦–ä¹Œã€‚\n");
 		set("value", 10000);
 		set("medicine", 1);
 	}
@@ -27,19 +27,19 @@ int cure_ob(object me)
         {
                 me->add("max_neili", -1);
 		me->apply_condition("bonze_drug", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»Ö§ºÎÊ×ÎÚ£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ðÆø·­ÌÚ£¬Ô­À´·þÊ³Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$Nåƒä¸‹ä¸€æ”¯ä½•é¦–ä¹Œï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œç«æ°”ç¿»è…¾ï¼ŒåŽŸæ¥æœé£Ÿå¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
 		destruct(this_object());
         }
 	if( random(2) == 1)
 	{
-        message_vision("$N³ÔÏÂÒ»¿ÃºÎÊ×ÎÚ£¬×ìÀï¾õµÃÌðÌðµÄ¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€æ£µä½•é¦–ä¹Œï¼Œå˜´é‡Œè§‰å¾—ç”œç”œçš„ã€‚\n", me);
         destruct(this_object());
         return 1;
         }
 	else
 	{
 	me->add("max_neili", 1);
-	message_vision(HIG"$N³ÔÏÂÒ»¿ÃºÎÊ×ÎÚ£¬¶ÙÊ±¼ä¾õµÃÈ«Éí³äÂúÁË»îÁ¦ !\n"NOR, me);
+	message_vision(HIG"$Nåƒä¸‹ä¸€æ£µä½•é¦–ä¹Œï¼Œé¡¿æ—¶é—´è§‰å¾—å…¨èº«å……æ»¡äº†æ´»åŠ› !\n"NOR, me);
 	}
 	me->apply_condition("bonze_drug", 
 	this_player()->query_condition("bonze_drug")+30);

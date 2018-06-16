@@ -9,12 +9,12 @@ void init();
 
 void create()
 {
-	set_name(RED "ĞøÃü°Ëµ¤" NOR, ({"xuming badan", "badan", "dan"}));
+	set_name(RED "ç»­å‘½å…«ä¸¹" NOR, ({"xuming badan", "badan", "dan"}));
 	set_weight(20);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Á£");
+		set("unit", "ç²’");
 		set("value", 50000);
 		set("medicine", 1);
 	}
@@ -40,7 +40,7 @@ int cure_ob(object me)
         me->apply_condition("xx_poison", me->query_condition("xx_poison") - 50);
 	if (me->query_condition("hanbing_damage") > 30)
 	me->apply_condition("hanbing_damage", 10);
-	message_vision(HIG "$N³ÔÏÂÒ»Á£ĞøÃü°Ëµ¤£¬°ÑÃüµõÁË»ØÀ´! \n" NOR, me);
+	message_vision(HIG "$Nåƒä¸‹ä¸€ç²’ç»­å‘½å…«ä¸¹ï¼ŒæŠŠå‘½åŠäº†å›æ¥! \n" NOR, me);
 
 	destruct(this_object());
 	return 1;

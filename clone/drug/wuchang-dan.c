@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wuchang-dan.c ÎÞ³£µ¤
+// wuchang-dan.c æ— å¸¸ä¸¹
 
 #include <ansi.h>
 
@@ -9,12 +9,12 @@ int cure_ob(string);
 
 void create()
 {
-        set_name(HIR "ÎÞ³£µ¤" NOR, ({"wuchang dan", "dan"}));
+        set_name(HIR "æ— å¸¸ä¸¹" NOR, ({"wuchang dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÌÒ»¨µºÁÆÉËÊ¥Ò©ÎÞ³£µ¤¡£\n");
+                set("unit", "é¢—");
+                set("long", "è¿™æ˜¯æ¡ƒèŠ±å²›ç–—ä¼¤åœ£è¯æ— å¸¸ä¸¹ã€‚\n");
                 set("value", 5000);
 		set("medicine", 1);
         }
@@ -26,8 +26,8 @@ int cure_ob(object me)
 	if ( (int)this_player()->query_condition("bonze_drug" ) > 0 )
         {
                 this_player()->add("neili", -100);
-                message_vision(HIR "$N³ÔÏÂÒ»¿ÃÎÞ³£µ¤£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ðÆø·­ÌÚ£¬
-Ô­À´·þÊ³Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€æ£µæ— å¸¸ä¸¹ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œç«æ°”ç¿»è…¾ï¼Œ
+åŽŸæ¥æœé£Ÿå¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, this_player());
                 this_player()->apply_condition("bonze_drug",
                 this_player()->query_condition("bonze_drug")+10);
 		destruct(this_object());
@@ -35,7 +35,7 @@ int cure_ob(object me)
 	me->set("eff_qi", (int)me->query("max_qi"));
 
 	message_vision(HIG 
-"$N³ÔÏÂÒ»Á£ÎÞ³£µ¤£¬¶ÙÊ±ÉñÍêÆø×ã£¬¾«Éñ»À·¢\n" NOR, me);
+"$Nåƒä¸‹ä¸€ç²’æ— å¸¸ä¸¹ï¼Œé¡¿æ—¶ç¥žå®Œæ°”è¶³ï¼Œç²¾ç¥žç„•å‘\n" NOR, me);
 	this_player()->apply_condition("bonze_drug",
                 this_player()->query_condition("bonze_drug")+10);
 

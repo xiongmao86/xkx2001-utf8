@@ -6,10 +6,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name(HIR"¿Ö²À»­°å"NOR, ({ "board" }) );
+	set_name(HIR"ææ€–ç”»æ¿"NOR, ({ "board" }) );
 	set("location", "/u/fear/workroom");
 	set("board_id", "fear_b");
-	set("long", "ÕâÊÇÒ»¸ö¹©´ó¼ÒÌ¸ÂÛ¸÷ÖÖ»°ÌâµÄÁôÑÔ°å¡£\n" );
+	set("long", "è¿™æ˜¯ä¸€ä¸ªä¾›å¤§å®¶è°ˆè®ºå„ç§è¯é¢˜çš„ç•™è¨€æ¿ã€‚\n" );
 	setup();
 	set("capacity", 200);
 	replace_program(BULLETIN_BOARD);

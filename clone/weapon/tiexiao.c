@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tiexiao.c Ìúóï
+// tiexiao.c é“ç®«
 // kane
 
 #include <weapon.h>
@@ -8,17 +8,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(YEL "Ìúóï" NOR,({ "tie xiao", "xiao" }) );
+        set_name(YEL "é“ç®«" NOR,({ "tie xiao", "xiao" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("value", 300);
                 set("material", "steel");
-                set("long", "Ò»±úÆÕÍ¨ÌúÖÆ¶´óï£¬³ÁµéµéµÄÓĞĞ©×¹ÊÖ¡£\n");
-                set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»Ö§Ìúóï¡£\n");
-                set("unwield_msg", "$N½«$n²åµ½Áìáá¡£\n" );
+                set("long", "ä¸€æŸ„æ™®é€šé“åˆ¶æ´ç®«ï¼Œæ²‰ç”¸ç”¸çš„æœ‰äº›å æ‰‹ã€‚\n");
+                set("wield_msg", "$Nä»è…°é—´æŠ½å‡ºä¸€æ”¯é“ç®«ã€‚\n");
+                set("unwield_msg", "$Nå°†$næ’åˆ°é¢†å¾Œã€‚\n" );
         }
 	init_sword(20);
         setup();

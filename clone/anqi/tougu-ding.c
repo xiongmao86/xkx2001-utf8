@@ -7,14 +7,14 @@ inherit COMBINED_ITEM;
 inherit F_EQUIP;
 void create()
 {
-        set_name("×ÓÎçÍ¸¹Ç¶¤", ({ "tougu ding", "ding" }) );
+        set_name("å­åˆé€éª¨é’‰", ({ "tougu ding", "ding" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        	set("long", "Ò»Ã¶³¤Ô¼´çĞíµÄÎÚÌú¶¤¡£\n");
-        	set("unit", "´ü");
-		set("base_unit", "Ã¶");
+        	set("long", "ä¸€æšé•¿çº¦å¯¸è®¸çš„ä¹Œé“é’‰ã€‚\n");
+        	set("unit", "è¢‹");
+		set("base_unit", "æš");
         	set("value", 150);
 		set("damage", 8);
 		set("armor_type", "embed");
@@ -23,7 +23,7 @@ void create()
                 set("armor_prop/defense", -60);
                 set("armor_prop/unarmed", -60);
 		set("no_sell", 1);
-		set("unequip_msg", HIR"$NÒ»Ò§ÑÀ½«$n´ÓÉË¿ÚÉÏ°ÎÁËÏÂÀ´£¬Ò»¹ÉÏÊÑªÃÍµØÓ¿ÁË³öÀ´¡£\n"NOR);
+		set("unequip_msg", HIR"$Nä¸€å’¬ç‰™å°†$nä»ä¼¤å£ä¸Šæ‹”äº†ä¸‹æ¥ï¼Œä¸€è‚¡é²œè¡€çŒ›åœ°æ¶Œäº†å‡ºæ¥ã€‚\n"NOR);
         }
 	set_amount(15);
         setup();

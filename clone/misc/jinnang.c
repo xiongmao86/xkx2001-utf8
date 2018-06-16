@@ -1,7 +1,7 @@
 //Cracked by Roath
 // /clone/misc/jinnang.c
 // Wzfeng 4/1/1998
-//³ÌĞò¹¦ÄÜËµÃ÷:½õÄÒ,¿É´æ·ÅÍæ¼ÒµÄĞÅº¯¡£¾ßÓĞ¶Á£¬Ìí¼Ó£¬¶ªÆúĞÅ¼şµÄ¹¦ÄÜ¡£
+//ç¨‹åºåŠŸèƒ½è¯´æ˜:é”¦å›Š,å¯å­˜æ”¾ç©å®¶çš„ä¿¡å‡½ã€‚å…·æœ‰è¯»ï¼Œæ·»åŠ ï¼Œä¸¢å¼ƒä¿¡ä»¶çš„åŠŸèƒ½ã€‚
 
 #include <ansi.h>
 
@@ -18,7 +18,7 @@ int set_owner(string id)
         set("owner_id", id);
         return restore();
 }
-//ÉèÖÃ´æÅÌµÄÎÄ¼şÂ·¾¶ºÍÃû³Æ¡£
+//è®¾ç½®å­˜ç›˜çš„æ–‡ä»¶è·¯å¾„å’Œåç§°ã€‚
 string query_save_file()
 {
         string id;
@@ -28,7 +28,7 @@ string query_save_file()
         return DATA_DIR + "letter/" + id[0..0] + "/" + id+"_jin";
 }
 
-//Ìí¼ÓĞÅ¼şµÄº¯Êı
+//æ·»åŠ ä¿¡ä»¶çš„å‡½æ•°
 void add_letter(mapping letter)
 {
         if( !pointerp(letters) )
@@ -39,7 +39,7 @@ void add_letter(mapping letter)
 
 }
 
-//É¾³ıĞÅ¼şµÄº¯Êı¡£
+//åˆ é™¤ä¿¡ä»¶çš„å‡½æ•°ã€‚
 void cut_letter(mapping letter)
 {
         if( !pointerp(letters) )
@@ -54,15 +54,15 @@ void cut_letter(mapping letter)
 
 void create()
 {
-	set_name(CYN "½õÄÒ" NOR, ({ "jin nang", "nang" }) );
+	set_name(CYN "é”¦å›Š" NOR, ({ "jin nang", "nang" }) );
 	set_weight(100);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("material", "silk");
 		set("no_get",1);
-		set("no_drop","½õÄÒÊÇËæÉíÎïÆ·£¬Äã²»ÄÜËæ±ã¶ªÏÂËü");
+		set("no_drop","é”¦å›Šæ˜¯éšèº«ç‰©å“ï¼Œä½ ä¸èƒ½éšä¾¿ä¸¢ä¸‹å®ƒ");
 		set("no_insert", 1);
 	}
 	setup();
@@ -73,7 +73,7 @@ int query_autoload()
 {
 	return 1;
 }
-//³õÊ¼»¯ÎïÆ·£¬Éè¶¨½õÄÒµÄÃèÊöµÈ
+//åˆå§‹åŒ–ç‰©å“ï¼Œè®¾å®šé”¦å›Šçš„æè¿°ç­‰
 void init()
 {
 	int letter_num,i;
@@ -87,24 +87,24 @@ void init()
 
 	for(i=0;i<letter_num;i++)
 	{
-		letter_msg+="µÚ"+chinese_number(i+1)+"·âĞÅº¯\t";
-		letter_msg+="¡¾ÊéĞÅ±êÌâ¡¿£º"+letters[i]["title"]+"\t";
-		letter_msg+=letters[i]["from"]+"Ğ´ÓÚ"+letters[i]["time"]+"\n";
+		letter_msg+="ç¬¬"+chinese_number(i+1)+"å°ä¿¡å‡½\t";
+		letter_msg+="ã€ä¹¦ä¿¡æ ‡é¢˜ã€‘ï¼š"+letters[i]["title"]+"\t";
+		letter_msg+=letters[i]["from"]+"å†™äº"+letters[i]["time"]+"\n";
 	}
 if(letter_num)
 {	
 	set("long", "
-ÕâÊÇÒ»¸ö¿ÉÒÔÓÃÀ´×°ĞÅµÄ½õÄÒ¡£\n"
-"Äã¿ÉÓÃ(read)À´¶ÁĞÅ£¬ÓÃ(add)ÍùÀïÃæ·ÅĞÅ,ÓÃ(discard)À´¶ªÆúÄ³Ò»·âĞÅ¡£\n"
-"Ä¿Ç°ÀïÃæ×°×Å"+chinese_number(letter_num)+"·âĞÅº¯¡£\n"
+è¿™æ˜¯ä¸€ä¸ªå¯ä»¥ç”¨æ¥è£…ä¿¡çš„é”¦å›Šã€‚\n"
+"ä½ å¯ç”¨(read)æ¥è¯»ä¿¡ï¼Œç”¨(add)å¾€é‡Œé¢æ”¾ä¿¡,ç”¨(discard)æ¥ä¸¢å¼ƒæŸä¸€å°ä¿¡ã€‚\n"
+"ç›®å‰é‡Œé¢è£…ç€"+chinese_number(letter_num)+"å°ä¿¡å‡½ã€‚\n"
 ""+letter_msg+"\n"
 );
 }else
 {
 		set("long", "
-ÕâÊÇÒ»¸ö¿ÉÒÔÓÃÀ´×°ĞÅµÄ½õÄÒ¡£\n"
-"Äã¿ÉÓÃ(read)À´¶ÁĞÅ£¬ÓÃ(add)ÍùÀïÃæ·ÅĞÅ,ÓÃ(discard)À´¶ªÆúÄ³Ò»·âĞÅ¡£\n"
-"Ä¿Ç°ÀïÃæÃ»ÓĞ×°ÈÎºÎĞÅº¯¡£\n");
+è¿™æ˜¯ä¸€ä¸ªå¯ä»¥ç”¨æ¥è£…ä¿¡çš„é”¦å›Šã€‚\n"
+"ä½ å¯ç”¨(read)æ¥è¯»ä¿¡ï¼Œç”¨(add)å¾€é‡Œé¢æ”¾ä¿¡,ç”¨(discard)æ¥ä¸¢å¼ƒæŸä¸€å°ä¿¡ã€‚\n"
+"ç›®å‰é‡Œé¢æ²¡æœ‰è£…ä»»ä½•ä¿¡å‡½ã€‚\n");
 }
 
     add_action("do_add", "add");
@@ -113,7 +113,7 @@ if(letter_num)
 
 }
 
-//¶ªÆúĞÅ¼şµÄº¯Êı
+//ä¸¢å¼ƒä¿¡ä»¶çš„å‡½æ•°
 int do_cut(string arg)
 {
         object ob;
@@ -122,12 +122,12 @@ int do_cut(string arg)
         ob=this_object();
 		
     	if( !arg || !sscanf(arg, "%d", num) )
-		return notify_fail("ÄãÒª¶ªÆúÄÄÒ»·âĞÅ£¿\n");
+		return notify_fail("ä½ è¦ä¸¢å¼ƒå“ªä¸€å°ä¿¡ï¼Ÿ\n");
 
         if( !pointerp(letters) || num < 1 || num > sizeof(letters) )
-		return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªç¼–å·çš„ä¿¡ä»¶ã€‚\n");
 		num --;
-		write("Äã´Ó½õÄÒÖĞÄÃ³öÒ»·âĞÅº¯,¶ªÔÚÒ»±ß¡£\n");
+		write("ä½ ä»é”¦å›Šä¸­æ‹¿å‡ºä¸€å°ä¿¡å‡½,ä¸¢åœ¨ä¸€è¾¹ã€‚\n");
         cut_letter(letters[num]);
 		save();
 		init();
@@ -136,25 +136,25 @@ int do_cut(string arg)
 }
 
 
-//Ìí¼ÓĞÅ¼şµÄº¯Êı
+//æ·»åŠ ä¿¡ä»¶çš„å‡½æ•°
 int do_add(string arg)
 {
     object ob,ob_letter;
     int i;
     mapping letter;
     
-	if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´·Å½ø½õÄÒÀï£¿\n");
+	if(!arg) return notify_fail("ä½ è¦å°†ä»€ä¹ˆæ”¾è¿›é”¦å›Šé‡Œï¼Ÿ\n");
 	ob_letter = present(arg, this_player());
 	if(!ob_letter)
-        return notify_fail("ÄãÉíÉÏºÃÏñ²¢Ã»ÓĞÑùÎïÆ·£¿\n");
+        return notify_fail("ä½ èº«ä¸Šå¥½åƒå¹¶æ²¡æœ‰æ ·ç‰©å“ï¼Ÿ\n");
 	if(!ob_letter->query("can_add_jinnang"))
-        return notify_fail("¶Ô²»Æğ£¡ÄãÎŞ·¨½«Õâ¼şÎïÆ··Å½ø½õÄÒÀï¡£\n");
+        return notify_fail("å¯¹ä¸èµ·ï¼ä½ æ— æ³•å°†è¿™ä»¶ç‰©å“æ”¾è¿›é”¦å›Šé‡Œã€‚\n");
     if(!ob_letter->query("be_read"))
-		return notify_fail("Äã»¹Ã»ÓĞ¶Á¹ıÕâ·âĞÅÄØ£¿ÇëÏÈ¶ÁÒ»±éÔÙ·Å½ø½õÄÒ²»³Ù¡£\n");
+		return notify_fail("ä½ è¿˜æ²¡æœ‰è¯»è¿‡è¿™å°ä¿¡å‘¢ï¼Ÿè¯·å…ˆè¯»ä¸€éå†æ”¾è¿›é”¦å›Šä¸è¿Ÿã€‚\n");
 
 	if(sizeof(letters)>9)
 	{
-		return notify_fail("½õÄÒÒÑ±»×°Âú£¬Ã»ÓĞµØ·½·ÅÕâ·âĞÅÁË¡£\n");
+		return notify_fail("é”¦å›Šå·²è¢«è£…æ»¡ï¼Œæ²¡æœ‰åœ°æ–¹æ”¾è¿™å°ä¿¡äº†ã€‚\n");
 	}
 
 	letter=ob_letter->query("letter");
@@ -162,11 +162,11 @@ int do_add(string arg)
 	save();
 	init();
 	destruct(ob_letter);
-	write("Äã½«Ò»·âĞÅº¯·Å½ø½õÄÒÖĞ¡£\n");
+	write("ä½ å°†ä¸€å°ä¿¡å‡½æ”¾è¿›é”¦å›Šä¸­ã€‚\n");
 	return 1;
 }
 
-//¶ÁĞÅ¼şµÄº¯Êı¡£
+//è¯»ä¿¡ä»¶çš„å‡½æ•°ã€‚
 int do_read(string arg)
 {
         object ob;
@@ -175,13 +175,13 @@ int do_read(string arg)
         ob=this_object();
 		
     	if( !arg || !sscanf(arg, "%d", num) )
-		return notify_fail("ÄãÒª¶ÁÄÄÒ»·âĞÅ£¿\n");
+		return notify_fail("ä½ è¦è¯»å“ªä¸€å°ä¿¡ï¼Ÿ\n");
 
         if( !pointerp(letters) || num < 1 || num > sizeof(letters) )
-		return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+		return notify_fail("æ²¡æœ‰è¿™ä¸ªç¼–å·çš„ä¿¡ä»¶ã€‚\n");
 		num --;
 
-        printf("¡¾ÊéĞÅ±êÌâ¡¿£º%s\n¡¾ÊÕĞÅÈË¡¿£º%s\n¡¾ĞÅ¼şÄÚÈİ¡¿£º\n%s\n\t\t%sĞ´ÓÚ%s\n\n\n",
+        printf("ã€ä¹¦ä¿¡æ ‡é¢˜ã€‘ï¼š%s\nã€æ”¶ä¿¡äººã€‘ï¼š%s\nã€ä¿¡ä»¶å†…å®¹ã€‘ï¼š\n%s\n\t\t%så†™äº%s\n\n\n",
         letters[num]["title"],
 		letters[num]["to"],
         letters[num]["text"],

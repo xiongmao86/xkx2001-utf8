@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIR"ºì°ü"NOR, ({ "red pocket", "hong bao", "bao", "li shi"}) );
+	set_name(HIR"çº¢åŒ…"NOR, ({ "red pocket", "hong bao", "bao", "li shi"}) );
 	set_weight(30);
 	set_max_encumbrance(5000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»Ö»ºìÉ«µÄÀûÊÇ·â£¬ÉÏÃæÏ²ÆøÑóÑóµØĞ´×Å¡¸¹§Ï²·¢²Æ¡¹¼¸¸ö½ğ×Ö¡£\n");
+		set("unit", "åª");
+                set("long", "è¿™æ˜¯ä¸€åªçº¢è‰²çš„åˆ©æ˜¯å°ï¼Œä¸Šé¢å–œæ°”æ´‹æ´‹åœ°å†™ç€ã€Œæ­å–œå‘è´¢ã€å‡ ä¸ªé‡‘å­—ã€‚\n");
 		set("value", 88);
 		set("material", "paper");
 	}
@@ -25,7 +25,7 @@ int reject(object ob)
         if (ob && (ob->query("money_id")=="ten-cash" ||
 		ob->query("money_id")=="hundred-cash" )) return 0;
 
-        notify_fail("ÀûÊÇ·âÀïÖ»ÄÜ×°ÒøÆ±¡£\n");
+        notify_fail("åˆ©æ˜¯å°é‡Œåªèƒ½è£…é“¶ç¥¨ã€‚\n");
         return 1;
 }
 

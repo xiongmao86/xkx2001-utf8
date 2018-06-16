@@ -7,17 +7,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name("ÖØ½£", ({ "zhongjian", "jian", "sword" }));
+	set_name("é‡å‰‘", ({ "zhongjian", "jian", "sword" }));
 	set_weight(30000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long", "ÕâÊÇÒ»±ú³ÁÖØµÄ½££¬¹¤ÒÕ´Ö²Ú¡£\n");
+		set("unit", "æŸ„");
+		set("long", "è¿™æ˜¯ä¸€æŸ„æ²‰é‡çš„å‰‘ï¼Œå·¥è‰ºç²—ç³™ã€‚\n");
 		set("value", 30);
 		set("material", "steel");
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›å‰‘é˜ã€‚\n");
 	}
 	init_sword(3);
 	setup();

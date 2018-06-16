@@ -9,20 +9,20 @@ inherit STICK;
 
 void create()
 {
-        set_name(HIW"¿ŞÉ¥°ô"NOR, ({"kusang bang", "bang", "stick"}));
+        set_name(HIW"å“­ä¸§æ£’"NOR, ({"kusang bang", "bang", "stick"}));
         set_weight(10000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", HIW"Ò»¸ù¾«¸Ö´ò¾ÍµÄ¿ŞÉ¥°ô£¬°ôÉÏ°×Ë÷²øÈÆ£¬°ôÍ·ÍÏ×ÅÒ»ÌõÂéÉş£¬ÇÆ²»³öË¿ºÁÒì´¦¡£\n"NOR);
+                set("unit", "æ ¹");
+                set("long", HIW"ä¸€æ ¹ç²¾é’¢æ‰“å°±çš„å“­ä¸§æ£’ï¼Œæ£’ä¸Šç™½ç´¢ç¼ ç»•ï¼Œæ£’å¤´æ‹–ç€ä¸€æ¡éº»ç»³ï¼Œç§ä¸å‡ºä¸æ¯«å¼‚å¤„ã€‚\n"NOR);
                 set("value", 4000000);
                 set("material", "blacksteal");
                 set("rigidity", 2000);
 	        set("poison", 5);
-                set("wield_msg", "$NÒõâüâüµØÒ»Ğ¦£¬³é³öÒ»¸ù¿ŞÉ¥°ô×¥ÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N°ÑÊÖÖĞµÄ¿ŞÉ¥°ô²å»ØÑüÖĞ¡£\n");
+                set("wield_msg", "$Né˜´æ»æ»åœ°ä¸€ç¬‘ï¼ŒæŠ½å‡ºä¸€æ ¹å“­ä¸§æ£’æŠ“åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$NæŠŠæ‰‹ä¸­çš„å“­ä¸§æ£’æ’å›è…°ä¸­ã€‚\n");
         }
 
         init_stick(100);

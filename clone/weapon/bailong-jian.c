@@ -1,5 +1,5 @@
 //Cracked by Roath
-//°×Áú½£
+//ç™½é¾™å‰‘
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
@@ -7,17 +7,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-	set_name(HIW"°×Áú½£"NOR, ({ "bailong jian","sword","jian" }));
+	set_name(HIW"ç™½é¾™å‰‘"NOR, ({ "bailong jian","sword","jian" }));
 	set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-		set("unit", "°Ñ");
-		set("long", "ÕâÊÇÒ»°Ñº®Æø±ÆÈËµÄ±¦½££¬½£ÈĞ½ÏÖ®Ò»°ã³¤½£ËÆºõÒªÂÔ³¤Ò»Ğ©¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "è¿™æ˜¯ä¸€æŠŠå¯’æ°”é€¼äººçš„å®å‰‘ï¼Œå‰‘åˆƒè¾ƒä¹‹ä¸€èˆ¬é•¿å‰‘ä¼¼ä¹è¦ç•¥é•¿ä¸€äº›ã€‚\n");
 		set("value", 1000);
                 set("material", "steel");
-		set("wield_msg","$N¡¸ï£¡¹µÄÒ»ÉùÇåÏì£¬ÒÑ°Î³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-		set("unwield_msg","$N½«ÊÖÖĞµÄ$n¡¸à§¡¹µÄÒ»Éù²å»Ø½£ÇÊ¡£\n");
+		set("wield_msg","$Nã€Œé“®ã€çš„ä¸€å£°æ¸…å“ï¼Œå·²æ‹”å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg","$Nå°†æ‰‹ä¸­çš„$nã€Œå”°ã€çš„ä¸€å£°æ’å›å‰‘é˜ã€‚\n");
         }
 	init_sword(45+random(11));
         setup();

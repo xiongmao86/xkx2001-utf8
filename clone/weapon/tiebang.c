@@ -1,22 +1,22 @@
 //Cracked by Roath
-// tiebang.c Ìú°ô
+// tiebang.c é“æ£’
 #include <ansi.h>
 #include <weapon.h>
 inherit STICK;
 
 void create()
 {
-        set_name("Ìú°ô", ({ "tie bang", "bang" }));
+        set_name("é“æ£’", ({ "tie bang", "bang" }));
         set_weight(9000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù³ÁµéµéµÄ³¤°ô¡£\n");
+                set("unit", "æ ¹");
+                set("long", "è¿™æ˜¯ä¸€æ ¹æ²‰ç”¸ç”¸çš„é•¿æ£’ã€‚\n");
                 set("value", 350);
                 set("material", "iron");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
         }
         init_stick(25);
         setup();

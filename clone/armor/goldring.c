@@ -1,5 +1,5 @@
 //Cracked by Roath
-// goldring.c ½ð½äÖ¸
+// goldring.c é‡‘æˆ’æŒ‡
 
 #include <ansi.h>
 #include <armor.h>
@@ -8,12 +8,12 @@ inherit FINGER;
 
 void create()
 {
-	set_name(HIY"½ð½äÖ¸"NOR, ({ "golden ring", "ring" }));
+	set_name(HIY"é‡‘æˆ’æŒ‡"NOR, ({ "golden ring", "ring" }));
 	set("weight", 400);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
+		set("unit", "ä¸ª");
 		set("value", 1000);
 		set("material", "gold");
 		set("armor_prop/armor", 1);

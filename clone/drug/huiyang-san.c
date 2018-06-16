@@ -1,5 +1,5 @@
 //Cracked by Roath
-//huiyang-san.c »ØÑôÎåÁúÉ¢
+//huiyang-san.c å›é˜³äº”é¾™æ•£
 //kane 1998.6
 #include <ansi.h>
 inherit PILL;
@@ -10,16 +10,16 @@ void setup()
 int cure_ob(string);
 void create()
 {
-	set_name(HIY"»ØÑôÎåÁúÉ¢"NOR, ({"huiyang san","san"}));
+	set_name(HIY"å›é˜³äº”é¾™æ•£"NOR, ({"huiyang san","san"}));
 	set_weight(50);
 	if (clonep())
     	set_default_object(__FILE__);
     else
     {
-		set("unit", "°ü");
+		set("unit", "åŒ…");
         set("long", 
-"áÇá¼ÅÉ³£ÓÃµÄÁÆÉËÁéÒ©¡£·ÛÄ©Î¢Ï¸£¬É«Ôóµ­»Æ£¬Î¢ÓĞĞÁÀ±´Ì±ÇµÄÎ¶µÀ\n
-£¬¶ÔË®³å·şĞ§¹ûÓÈ¼Ñ¡£\n");
+"å´†å³’æ´¾å¸¸ç”¨çš„ç–—ä¼¤çµè¯ã€‚ç²‰æœ«å¾®ç»†ï¼Œè‰²æ³½æ·¡é»„ï¼Œå¾®æœ‰è¾›è¾£åˆºé¼»çš„å‘³é“\n
+ï¼Œå¯¹æ°´å†²æœæ•ˆæœå°¤ä½³ã€‚\n");
 		set("value", 10000);
 		set("medicine", 1);
     }
@@ -35,12 +35,12 @@ int cure_ob(object me)
 		else
 			me->add("jingli",-(me->query("jingli")));
 
-		message_vision(BLU"$N·şÏÂÒ»°ü"+query("name")+BLU"£¬¾õµÃĞØ¿ÚÓôÃÆ£¬ËÄÖ«·¦Á¦¡£Ô­À´·şÊ³Ì«¼±\nÌ«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+		message_vision(BLU"$Næœä¸‹ä¸€åŒ…"+query("name")+BLU"ï¼Œè§‰å¾—èƒ¸å£éƒé—·ï¼Œå››è‚¢ä¹åŠ›ã€‚åŸæ¥æœé£Ÿå¤ªæ€¥\nå¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
         	destruct(this_object());
         	return 1;
 	}
    	
-	message_vision(HIY"$N·şÏÂÒ»°ü"+query("name")+HIY"£¬Ö»¾õÍ¨ÌåÊæÌ©£¬¾«Éñ»À·¢£¬ÉËÊÆ´óÓĞºÃ×ª¡£\n"NOR, me);
+	message_vision(HIY"$Næœä¸‹ä¸€åŒ…"+query("name")+HIY"ï¼Œåªè§‰é€šä½“èˆ’æ³°ï¼Œç²¾ç¥ç„•å‘ï¼Œä¼¤åŠ¿å¤§æœ‰å¥½è½¬ã€‚\n"NOR, me);
 	me->receive_heal("qi", 100+random(200));
 	me->add("jingli",100+random(200));
 	me->apply_condition("hot_drug", 30);
@@ -59,7 +59,7 @@ void init()
 int effect_in_liquid(object ob)
 {
 
-	tell_object(this_player(),HIG"ÄãÖ»¾õµÃÌåÄÚÒ»¹ÉÅ¯ÆøÁ÷¶¯£¬´óÎªÊÜÓÃ¡£\n"NOR);
+	tell_object(this_player(),HIG"ä½ åªè§‰å¾—ä½“å†…ä¸€è‚¡æš–æ°”æµåŠ¨ï¼Œå¤§ä¸ºå—ç”¨ã€‚\n"NOR);
 	this_player()->receive_heal("qi",10+random(20));
        return 0;
 }

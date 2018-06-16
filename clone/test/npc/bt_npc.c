@@ -12,12 +12,12 @@ int auto_perform();
 
 void create()
 {
-	set_name("Å·Ñô·æ", ({ "ouyang feng", "ouyang", "feng" }));
-	set("long", "ËûÉíĞÎ¸ß´ó£¬¸ß±ÇÉîÄ¿£¬ÂúÁ³Ñ©°×¶ÌĞë£¬¸ù¸ùËÆÌú¡£\n"
-		"Ëû¼«ÉÆÊ¹¶¾£¬ºÅ³Æ¡°Î÷¶¾¡±¡£\n");
-	set("nickname","Î÷¶¾");
-	set("title", "°×ÍÕÉ½×¯Ö÷");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¬§é˜³é”‹", ({ "ouyang feng", "ouyang", "feng" }));
+	set("long", "ä»–èº«å½¢é«˜å¤§ï¼Œé«˜é¼»æ·±ç›®ï¼Œæ»¡è„¸é›ªç™½çŸ­é¡»ï¼Œæ ¹æ ¹ä¼¼é“ã€‚\n"
+		"ä»–æå–„ä½¿æ¯’ï¼Œå·ç§°â€œè¥¿æ¯’â€ã€‚\n");
+	set("nickname","è¥¿æ¯’");
+	set("title", "ç™½é©¼å±±åº„ä¸»");
+	set("gender", "ç”·æ€§");
 	set("age", 65);
 
 	set("lingshe_count",3);
@@ -60,14 +60,14 @@ void create()
 		  set("attitude", "peaceful");
 		  set("shen_type", -1);
 
-		  create_family("°×ÍÕÉ½", 1 , "×¯Ö÷");
+		  create_family("ç™½é©¼å±±", 1 , "åº„ä¸»");
 		  set("chat_chance_combat", 50);
 		  set("chat_msg_combat", ({
 			 (: auto_perform :),
 		  }) );
 
 	set("inquiry", ([
-		"Å·Ñô¿Ë" : "±ãÊÇÉáÖ¶¡£",
+		"æ¬§é˜³å…‹" : "ä¾¿æ˜¯èˆä¾„ã€‚",
         "unarmed"   : (: unarmed :),
         "staff"    : (: staff :),
 	]));

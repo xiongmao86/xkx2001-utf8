@@ -6,18 +6,18 @@ inherit BLADE;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-	set_name(MAG"×Ï½ğµ¶"NOR, ({ "zijin dao", "dao" }));
+	set_name(MAG"ç´«é‡‘åˆ€"NOR, ({ "zijin dao", "dao" }));
 	set_weight(6000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-		set("long", "Ò»±úºñ±³±¡ÈĞ×Ï½ğµ¶£¬ÈĞÉÏ×Ï¹âÉÁÉÁ£¬ÀäÆøÉ­É­¡£\n");
+		set("unit", "æŠŠ");
+		set("long", "ä¸€æŸ„åšèƒŒè–„åˆƒç´«é‡‘åˆ€ï¼Œåˆƒä¸Šç´«å…‰é—ªé—ªï¼Œå†·æ°”æ£®æ£®ã€‚\n");
 		set("value", 30000);
 		set("material", "steel");
 		set("rigidity", 500);
-		set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+		set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å›è…°é—´ã€‚\n");
 	}
 	init_blade(50);
 	setup();

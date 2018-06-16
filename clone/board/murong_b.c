@@ -2,10 +2,10 @@
 inherit BULLETIN_BOARD;
 
 void create()
- {        set_name("Ñà×ÓÎëÁôÑÔÅÆ", ({ "board" }) );
+ {        set_name("ç‡•å­åç•™è¨€ç‰Œ", ({ "board" }) );
         set("location", "/d/murong/qing4");
         set("board_id", "murong_b");
-        set("long", "Ò»¿éÁôÑÔÓÃµÄ°å×Ó¡£\n" );
+        set("long", "ä¸€å—ç•™è¨€ç”¨çš„æ¿å­ã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

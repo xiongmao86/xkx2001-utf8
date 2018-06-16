@@ -1,19 +1,19 @@
 //Cracked by Roath
-// feibiao.c ·ÉïÚ
+// feibiao.c é£é•–
 #include <ansi.h>
 #include <weapon.h>
 inherit COMBINED_ITEM;
 inherit F_EQUIP;
 void create()
 {
-        set_name("·ÉïÚ", ({ "fei biao", "biao" }) );
+        set_name("é£é•–", ({ "fei biao", "biao" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        	set("long", "Ã÷»Î»ÎµÄ·ÉïÚ£¬ïÚÎ²°ó×ÅÒ»¿éĞ¡Ğ¡µÄºì²¼Ìõ¡£\n");
-        	set("unit", "´ü");
-		set("base_unit", "Ö§");
+        	set("long", "æ˜æ™ƒæ™ƒçš„é£é•–ï¼Œé•–å°¾ç»‘ç€ä¸€å—å°å°çš„çº¢å¸ƒæ¡ã€‚\n");
+        	set("unit", "è¢‹");
+		set("base_unit", "æ”¯");
         	set("value", 150);
 		set("damage", 5);
 		set("armor_type", "embed");
@@ -21,7 +21,7 @@ void create()
 		set("armor_prop/attack", -50);
                 set("armor_prop/defense", -50);
                 set("armor_prop/unarmed", -50);
-		set("unequip_msg", HIR"$NÒ»Ò§ÑÀ½«$n´ÓÉË¿ÚÉÏ°ÎÁËÏÂÀ´£¬Ò»¹ÉÏÊÑªÃÍµØÓ¿ÁË³öÀ´¡£\n"NOR);
+		set("unequip_msg", HIR"$Nä¸€å’¬ç‰™å°†$nä»ä¼¤å£ä¸Šæ‹”äº†ä¸‹æ¥ï¼Œä¸€è‚¡é²œè¡€çŒ›åœ°æ¶Œäº†å‡ºæ¥ã€‚\n"NOR);
         }
 	set_amount(15);
         setup();

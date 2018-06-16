@@ -1,5 +1,5 @@
 //Cracked by Roath
-//ß¡ÉÈ
+//æ‘ºæ‰‡
 //Ryu
 
 #include <weapon.h>
@@ -9,60 +9,60 @@ inherit SKILL;
 
 mapping *action = ({
 ([      "action" : 
-"Å¾µÄÒ»Éù£¬$NÊÖÖĞß¡ÉÈß¡³ÉÒ»¸ù¶Ì°ô£¬Ïò$n¼ç¾®Ñ¨Î¢µã£¬ÓÒÕÆºôµØÅü³ö£¬ÊÆĞ®¾¢·ç£¬ÁèÀ÷ºİÀ±",
+"å•ªçš„ä¸€å£°ï¼Œ$Næ‰‹ä¸­æ‘ºæ‰‡æ‘ºæˆä¸€æ ¹çŸ­æ£’ï¼Œå‘$nè‚©äº•ç©´å¾®ç‚¹ï¼Œå³æŒå‘¼åœ°åŠˆå‡ºï¼ŒåŠ¿æŒŸåŠ²é£ï¼Œå‡Œå‰ç‹ è¾£",
         "force" : 160,
         "dodge" : 10,
-        "damage_type" : "ğöÉË",
+        "damage_type" : "ç˜€ä¼¤",
 ]),
 ([      "action" : 
-"$NÊÖÖĞÉÈ×Ó»Ó¶¯£¬Ò»Õó¾¢·çÏò$nÓ­ÃæÆËÈ¥£¬·çÖĞ¾¹´øÓÄÏã",
+"$Næ‰‹ä¸­æ‰‡å­æŒ¥åŠ¨ï¼Œä¸€é˜µåŠ²é£å‘$nè¿é¢æ‰‘å»ï¼Œé£ä¸­ç«Ÿå¸¦å¹½é¦™",
         "force" : 220,
         "dodge" : 5,
-        "damage_type" : "±ŞÉË",
+        "damage_type" : "é­ä¼¤",
 ]),
 ([      "action" : 
-"$NÒ»ÉÈ»Ó³ö£¬¸ú×Å²ÁµÄÒ»Éù£¬ÉÈ×ÓÒÑß¡³ÉÒ»Ìõ°Ë´ç³¤µÄµãÑ¨±Ê£¬åÉÏò$n$lµãÈ¥",
+"$Nä¸€æ‰‡æŒ¥å‡ºï¼Œè·Ÿç€æ“¦çš„ä¸€å£°ï¼Œæ‰‡å­å·²æ‘ºæˆä¸€æ¡å…«å¯¸é•¿çš„ç‚¹ç©´ç¬”ï¼Œè¿³å‘$n$lç‚¹å»",
         "force" : 300,
         "dodge" : 5,
-        "damage_type" : "´ÌÉË",
+        "damage_type" : "åˆºä¼¤",
 ]),
 ([      "action" : 
-"$NÒ»²àÉí£¬ß¡ÉÈĞ±µã£¬×óÕÆÈç·ç£¬ÉÈµãÊÇĞé£¬ÕÆ»÷ÊÇÊµ£¬Ö±»÷$nÄÔÃÅ",
+"$Nä¸€ä¾§èº«ï¼Œæ‘ºæ‰‡æ–œç‚¹ï¼Œå·¦æŒå¦‚é£ï¼Œæ‰‡ç‚¹æ˜¯è™šï¼ŒæŒå‡»æ˜¯å®ï¼Œç›´å‡»$nè„‘é—¨",
         "force" : 360,
         "dodge" : -5,
-        "damage_type" : "ÄÚÉË",
+        "damage_type" : "å†…ä¼¤",
 ]),
 ([      "action" : 
-"$N·¢Éù³¤Ğ¥£¬ÓÒÉÈ×óĞä¹ÄÆğÒ»Õó¼²·ç£¬³¯$nÆËÈ¥£¬¾¢µÀÁèÀ÷",
+"$Nå‘å£°é•¿å•¸ï¼Œå³æ‰‡å·¦è¢–é¼“èµ·ä¸€é˜µç–¾é£ï¼Œæœ$næ‰‘å»ï¼ŒåŠ²é“å‡Œå‰",
         "force" : 420,
         "dodge" : 10,
-        "damage_type" : "±ŞÉË",
+        "damage_type" : "é­ä¼¤",
 ]),
 ([      "action" : 
-"$NÊÖÖĞß¡ÉÈ»Ø×ª£¬Á½ÏÂÒ»´ÕºÏ£¬ÊÖÖ¸×ªÁËÁ½×ª£¬ÕıºÃ´îÉÏ$nµÄ$l",
+"$Næ‰‹ä¸­æ‘ºæ‰‡å›è½¬ï¼Œä¸¤ä¸‹ä¸€å‡‘åˆï¼Œæ‰‹æŒ‡è½¬äº†ä¸¤è½¬ï¼Œæ­£å¥½æ­ä¸Š$nçš„$l",
         "force" : 480,
         "dodge" : 10,
-        "damage_type" : "ÅüÉË",
+        "damage_type" : "åŠˆä¼¤",
 ])
 });
 void create()
 {
-    set_name(HIC"ß¡ÉÈ"NOR, ({"fan","zheshan", "shan"}) );
+    set_name(HIC"æ‘ºæ‰‡"NOR, ({"fan","zheshan", "shan"}) );
 
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "±ú");
-        set("long","Ò»±úß¡ÉÈ£¬ÉÈ¹ÇÊÇ¸ÖÖıµÄ¡£\n");
+        set("unit", "æŸ„");
+        set("long","ä¸€æŸ„æ‘ºæ‰‡ï¼Œæ‰‡éª¨æ˜¯é’¢é“¸çš„ã€‚\n");
 	set("rigidity", 1000000);
 	set_weight(1000);
         set("value", 2000000000);
 	set("ding", 10);
 	set("material", "blacksteel");
 
-        set("wield_msg",HIM"$N´ÓĞäÖĞÌÍ³öÒ»±úß¡ÉÈ£¬Ò»»Ó£¬ÕÅÁË¿ªÀ´£¬Â¶³öÉÈÉÏÒ»¶ä½¿ÑŞÓûµÎµÄÄµµ¤¡£\n"NOR);
-        set("unwield_msg", "Å¾µÄÒ»Éù£¬$N°Ñß¡ÉÈºÏÁËÆğÀ´£¬ÊÕ½øĞäÖĞ¡£\n");
+        set("wield_msg",HIM"$Nä»è¢–ä¸­æå‡ºä¸€æŸ„æ‘ºæ‰‡ï¼Œä¸€æŒ¥ï¼Œå¼ äº†å¼€æ¥ï¼Œéœ²å‡ºæ‰‡ä¸Šä¸€æœµå¨‡è‰³æ¬²æ»´çš„ç‰¡ä¸¹ã€‚\n"NOR);
+        set("unwield_msg", "å•ªçš„ä¸€å£°ï¼Œ$NæŠŠæ‘ºæ‰‡åˆäº†èµ·æ¥ï¼Œæ”¶è¿›è¢–ä¸­ã€‚\n");
 
 	init_stick(30);
 	set("actions", (: call_other, __FILE__, "query_action" :) );
@@ -86,40 +86,40 @@ int do_duan(string arg)
         object weapon;
 
         if (!arg)
-        return notify_fail("Ê²Ã´£¿\n");
+        return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
         target = present(arg,environment(me));
         if( !target
         ||      !target->is_character()
 	||      !me->is_fighting(target) )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
         if( !objectp(weapon = me->query_temp("weapon"))
          || (string)weapon->query("id") != "fan" )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓĞ×öÍê¡£\n");
+                return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰åšå®Œã€‚\n");
 
         if( !objectp(weapon = target->query_temp("weapon")))
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
-        message_vision("\n$NÑÛ¼û$nµÄ" + weapon->name()
-                        + "¹¥µ½£¬×óÊÖÊ³Ö¸ÍùÉÏÒ»ÍĞ£¬´î×¡ÁË"
-			+ weapon->name() + "£¬ÉÈ×ÓĞ±×Å»ÓÈ¥£¬À¹Ñü³¯"
-			+ weapon->name() + "Ò»»÷¡£\n", me, target);
+        message_vision("\n$Nçœ¼è§$nçš„" + weapon->name()
+                        + "æ”»åˆ°ï¼Œå·¦æ‰‹é£ŸæŒ‡å¾€ä¸Šä¸€æ‰˜ï¼Œæ­ä½äº†"
+			+ weapon->name() + "ï¼Œæ‰‡å­æ–œç€æŒ¥å»ï¼Œæ‹¦è…°æœ"
+			+ weapon->name() + "ä¸€å‡»ã€‚\n", me, target);
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2){
-	message_vision(HIW "Ö»Ìı¼û¡¸ï£¡¹µØÒ»Éù£¬$nÊÖÖĞµÄ" + weapon->name()
-                                + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, me, target);
+	message_vision(HIW "åªå¬è§ã€Œé“®ã€åœ°ä¸€å£°ï¼Œ$næ‰‹ä¸­çš„" + weapon->name()
+                                + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, me, target);
 	weapon->unequip();
                         weapon->move(environment(target));
-                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                        weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
                         weapon->set("value", 0);
                         weapon->set("weapon_prop", 0);
                         target->reset_action();
 	}else{
-	message_vision("$NµÄß¡ÉÈºÍ$nµÄ" + weapon->name()
-                                + "Ïà»÷£¬Ã°³öµãµãµÄ»ğĞÇ¡£\n", me, target);
+	message_vision("$Nçš„æ‘ºæ‰‡å’Œ$nçš„" + weapon->name()
+                                + "ç›¸å‡»ï¼Œå†’å‡ºç‚¹ç‚¹çš„ç«æ˜Ÿã€‚\n", me, target);
 	me->start_busy(1+ random(3));
 	}
 	return 1;
@@ -130,42 +130,42 @@ int do_shoot(string arg)
    object victim, weapon;
 
    if (!arg)
-        return notify_fail("ÄãÒªÉäË­£¿\n");
+        return notify_fail("ä½ è¦å°„è°ï¼Ÿ\n");
 
    victim = present(arg,environment(me));
 
 	if( !objectp(weapon = me->query_temp("weapon"))
          || (string)weapon->query("id") != "fan" )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
    if (!victim)
-        return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
+        return notify_fail("è¿™é‡Œå¹¶æ— æ­¤äººï¼\n");
 
    if (query("ding") < 1)
-	return notify_fail("ß¡ÉÈÀïµÄ¶¾¶¤ÒÑ¾­ÉäÍêÁË¡£\n");
+	return notify_fail("æ‘ºæ‰‡é‡Œçš„æ¯’é’‰å·²ç»å°„å®Œäº†ã€‚\n");
 
    if (!living(victim))
-        return notify_fail("Õâ²»ÊÇ»îÎï£¡\n");
+        return notify_fail("è¿™ä¸æ˜¯æ´»ç‰©ï¼\n");
 
    if (me->is_busy())
-        return notify_fail("ÄãÇ°Ò»¸ö¶¯×÷»¹Ã»ÓĞ×öÍê¡£\n");
+        return notify_fail("ä½ å‰ä¸€ä¸ªåŠ¨ä½œè¿˜æ²¡æœ‰åšå®Œã€‚\n");
 
-   if (victim == me) return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+   if (victim == me) return notify_fail("ä½•å¿…å¤šæ­¤ä¸€ä¸¾ï¼Ÿ\n");
 
    if( environment(me)->query("no_fight") )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨è¿™é‡Œä¸èƒ½æ”»å‡»ä»–äººã€‚\n");
 
-   message_vision(HIG"$NÓÒÊÖÄ·Ö¸Ò»°´ÉÈ±úÉÏµÄ»úÀ¨£¬Ò»Ã¶¶¾¶¤´ÓÉÈ¹ÇÖĞ·É³ö£¬³¯$nÉäÈ¥¡£\n" NOR, me, victim);
+   message_vision(HIG"$Nå³æ‰‹å§†æŒ‡ä¸€æŒ‰æ‰‡æŸ„ä¸Šçš„æœºæ‹¬ï¼Œä¸€æšæ¯’é’‰ä»æ‰‡éª¨ä¸­é£å‡ºï¼Œæœ$nå°„å»ã€‚\n" NOR, me, victim);
    add("ding", -1);
    if( random(me->query("combat_exp")) > (int)victim->query("combat_exp")/2){ 
-   message_vision(CYN"Ö»ÌıÒ»Éù²Ò½Ğ£¬¶¾¶¤ÒÑ¶¤ÔÚÁË$NµÄÉíÉÏ¡£\n"NOR, victim);
+   message_vision(CYN"åªå¬ä¸€å£°æƒ¨å«ï¼Œæ¯’é’‰å·²é’‰åœ¨äº†$Nçš„èº«ä¸Šã€‚\n"NOR, victim);
    victim->apply_condition("insect_poison", 100);
-   victim->receive_wound("qi", 500, "±»" + me->query("name") +"É±ËÀÁË");
-   victim->receive_wound("jing", 100, "±»" + me->query("name") +"É±ËÀÁË");
+   victim->receive_wound("qi", 500, "è¢«" + me->query("name") +"æ€æ­»äº†");
+   victim->receive_wound("jing", 100, "è¢«" + me->query("name") +"æ€æ­»äº†");
    if (!victim->is_killing(me))
    victim->kill_ob(me);
    } else {
-   message_vision(CYN"µ«ÊÇ$N»úÁéµØ¶ãÁË¿ªÈ¥£¡\n"NOR, victim);
+   message_vision(CYN"ä½†æ˜¯$Næœºçµåœ°èº²äº†å¼€å»ï¼\n"NOR, victim);
    if (!victim->is_killing(me))
    victim->kill_ob(me);
    }

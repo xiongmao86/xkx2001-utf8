@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xuantie-jian ĞşÌú½£
+// xuantie-jian ç„é“å‰‘
 // qfy July 5, 1996
 
 #include <weapon.h>
@@ -9,20 +9,20 @@ inherit SWORD;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-        set_name("ĞşÌúÖØ½£",({ "xuantie jian", "xuantie", "sword", "jian" }) );
+        set_name("ç„é“é‡å‰‘",({ "xuantie jian", "xuantie", "sword", "jian" }) );
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 8000);
                 set("material", "steel");
 		set("rigidity", 200);
                 set("long", 
-		"´Ë½£ºÚ÷î÷îµÄºÁÎŞÒì×´£¬È´ÊÇ³ÁÖØÖ®¼«¡£Á½±ß½£·æ¶¼ÊÇ¶Û¿Ú£¬½£¼â¸üÔ²Ô²µÄËÆÊÇ¸ö°ëÇò¡£\n");
-                set("wield_msg", HIY "$N¾ÙÆğ$n£¬µ«¼ûÈÕÔÂÎŞ¹â£¬³ÁÀ×ÓôÓô£¬ËÆºõÒª½«Ò»ÇĞÉú»úÑ¹»Ù¡£\n" NOR);
-                set("unwield_msg", HIY "ĞşÌúÕ§ÊÕ£¬Éú»úÍ½ÏÖ¡£\n" NOR);
-                set("unequip_msg", HIY "ĞşÌúÕ§ÊÕ£¬Éú»úÍ½ÏÖ¡£\n" NOR);
+		"æ­¤å‰‘é»‘é»é»çš„æ¯«æ— å¼‚çŠ¶ï¼Œå´æ˜¯æ²‰é‡ä¹‹æã€‚ä¸¤è¾¹å‰‘é”‹éƒ½æ˜¯é’å£ï¼Œå‰‘å°–æ›´åœ†åœ†çš„ä¼¼æ˜¯ä¸ªåŠçƒã€‚\n");
+                set("wield_msg", HIY "$Nä¸¾èµ·$nï¼Œä½†è§æ—¥æœˆæ— å…‰ï¼Œæ²‰é›·éƒéƒï¼Œä¼¼ä¹è¦å°†ä¸€åˆ‡ç”Ÿæœºå‹æ¯ã€‚\n" NOR);
+                set("unwield_msg", HIY "ç„é“ä¹æ”¶ï¼Œç”Ÿæœºå¾’ç°ã€‚\n" NOR);
+                set("unequip_msg", HIY "ç„é“ä¹æ”¶ï¼Œç”Ÿæœºå¾’ç°ã€‚\n" NOR);
         }
 	init_sword(280);
         setup();
@@ -46,7 +46,7 @@ int do_lian(string arg)
 
 	if ( !objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword" )
-	   return notify_fail( "ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+	   return notify_fail( "ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	
 	if ( arg == "sword" && !me->is_fighting() 
 	&& (int)me->query_skill("sword", 1) >= 50
@@ -54,13 +54,13 @@ int do_lian(string arg)
 	&& (int)me->query("combat_exp") >= 50000 ) {
 	   me->receive_damage("qi",50);
 	   me->improve_skill("sword", me->query("int")+20);
-	   tell_object(me,"ÄãµÄ»ù±¾½£·¨½ø²½ÁË£¡\n", me);
+	   tell_object(me,"ä½ çš„åŸºæœ¬å‰‘æ³•è¿›æ­¥äº†ï¼\n", me);
 	
 	   if ( (int)me->query_skill("dugu-jiujian",1) >= 30 
 	   && (int)me->query_skill("dugu-jiujian",1) <= 120 
 	   && me->query("family/master_id") == "feng qingyang" ) {
 		me->improve_skill("dugu-jiujian", me->query("int")+20);
-		tell_object(me,"ÄãµÄ¶À¹Â¾Å½£½ø²½ÁË£¡\n", me);
+		tell_object(me,"ä½ çš„ç‹¬å­¤ä¹å‰‘è¿›æ­¥äº†ï¼\n", me);
    	   }
 	}
 

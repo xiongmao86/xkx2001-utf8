@@ -5,13 +5,13 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-   set_name("ÐÛ»ÆÍè", ({"xionghuang wan", "xionghuang", "wan"}));
+   set_name("é›„é»„ä¸¸", ({"xionghuang wan", "xionghuang", "wan"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "¿Å");
+      set("unit", "é¢—");
       set("value", 4000);
-      set("long", "ÕâÊÇÒ»¿ÅØ¤°ïÌØÖÆÄÜ½â°Ù¶¾µÄÐÛ»ÆÍè£¬ÓÈÆä¶ÔÉßàÍ³æÒ§Ö®ÉË¸ü¼ûÉñÐ§¡£\n");
+      set("long", "è¿™æ˜¯ä¸€é¢—ä¸å¸®ç‰¹åˆ¶èƒ½è§£ç™¾æ¯’çš„é›„é»„ä¸¸ï¼Œå°¤å…¶å¯¹è›‡å—¤è™«å’¬ä¹‹ä¼¤æ›´è§ç¥žæ•ˆã€‚\n");
       set("medicine", 1);
    }
    setup();
@@ -19,14 +19,14 @@ void create()
 
 int cure_ob(object me)
 {
-   message_vision("$N³ÔÏÂÒ»¿Å" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€é¢—" + name() + "ã€‚\n", me);
 
    if ( !me->query_condition("xx_poison") && !me->query_condition("snake_poison")
    && !me->query_condition("insect_poison") ) {
 	me->apply_condition("snake_poison", 10);
 	me->apply_condition("insect_poison", 10);
 	me->query_condition("xx_poison", 5);
-	tell_object(me, HIR "ÄãÃ»ÉËºúÂÒ·þÊ³µ¤Ò©£¬·´ÓÐ´óº¦£¡\n\n" NOR);
+	tell_object(me, HIR "ä½ æ²¡ä¼¤èƒ¡ä¹±æœé£Ÿä¸¹è¯ï¼Œåæœ‰å¤§å®³ï¼\n\n" NOR);
 	destruct(this_object());
   	return 1;
    }	
@@ -44,7 +44,7 @@ int cure_ob(object me)
    }
 
    if ( (int)me->query_condition("xx_poison") > 100 && !me->query_temp("xhwan") ) {
-        return notify_fail("ÄãÖÐµÄ³éËèÕÆ¶¾Ì«Éî£¬ÏÖÔÚ·þ´ËÒ©Ã»Ê²Ã´Ð§ÓÃ¡£\n");
+        return notify_fail("ä½ ä¸­çš„æŠ½é«“æŽŒæ¯’å¤ªæ·±ï¼ŒçŽ°åœ¨æœæ­¤è¯æ²¡ä»€ä¹ˆæ•ˆç”¨ã€‚\n");
    }
    else {
       me->apply_condition("xx_poison", (int)me->query_condition("xx_poison") - 5);
@@ -53,14 +53,14 @@ int cure_ob(object me)
    }
 
    if ( (int)me->query_condition("sl_poison") > 100 && !me->query_temp("xhwan") ) {
-        return notify_fail("ÄãÖÐµÄ»¯¹ÇÃàÕÆ¶¾Ì«Éî£¬ÏÖÔÚ·þ´ËÒ©Ã»Ê²Ã´Ð§ÓÃ¡£\n");
+        return notify_fail("ä½ ä¸­çš„åŒ–éª¨ç»µæŽŒæ¯’å¤ªæ·±ï¼ŒçŽ°åœ¨æœæ­¤è¯æ²¡ä»€ä¹ˆæ•ˆç”¨ã€‚\n");
    }
    else {
       me->apply_condition("sl_poison", (int)me->query_condition("sl_poison") - 5);
       if ( (int)me->query_condition("sl_poison") < 0 ) me->apply_condition("sl_poison", 0);
    }
 
-   message_vision(YEL "$NÖ»¾õ¶¾ÉË´óÎªºÃ×ª£¬¿É¼û´Ëµ¤ÁéÐ§¡£\n\n" NOR, me);
+   message_vision(YEL "$Nåªè§‰æ¯’ä¼¤å¤§ä¸ºå¥½è½¬ï¼Œå¯è§æ­¤ä¸¹çµæ•ˆã€‚\n\n" NOR, me);
    
    me->delete_temp("xhwan", 1);
    destruct(this_object());

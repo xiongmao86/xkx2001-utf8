@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huxindan.c ÌìÍõ»¤ĞÄµ¤
+// huxindan.c å¤©ç‹æŠ¤å¿ƒä¸¹
 // xQin 04/01
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-   set_name(RED"ÌìÍõ»¤ĞÄµ¤"NOR, ({"huxin dan", "tianwang dan", "dan"}));
+   set_name(RED"å¤©ç‹æŠ¤å¿ƒä¸¹"NOR, ({"huxin dan", "tianwang dan", "dan"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
       set("no_sell",1);
       set("no_get",1);
       set("no_drop",1);
-      set("unit", "¿Å");
+      set("unit", "é¢—");
       set("value", 20000);
    }
    setup();
@@ -28,7 +28,7 @@ int cure_ob(object me)
    if (me->query_condition("hot_drug") > 0)
    {
    me->add("max_neili", -1);
-   message_vision(HIR"$N³ÔÏÂÒ»¿Å" + name() + HIR"£¬Ö»¾õÎåÔàÁù¸­¶¼ÔÚ½ÊÍ´£¬Ô­À´·şÊ³Ò©Îï¹ı¶à£¬ÊÊµÃÆä·´¡£\n"NOR, me);
+   message_vision(HIR"$Nåƒä¸‹ä¸€é¢—" + name() + HIR"ï¼Œåªè§‰äº”è„å…­è…‘éƒ½åœ¨ç»ç—›ï¼ŒåŸæ¥æœé£Ÿè¯ç‰©è¿‡å¤šï¼Œé€‚å¾—å…¶åã€‚\n"NOR, me);
    destruct(this_object());
    return 1;
    }
@@ -38,7 +38,7 @@ int cure_ob(object me)
    me->set("qi", (int)me->query("max_qi"));
 
    
-   message_vision(HIG"$N³ÔÏÂÒ»¿Å" + name() + HIG"£¬Ö»¾õÈ«ÉíÊæÌ©£¬ÉËÊÆÒÑ´óÓĞºÃ×ª¡£\n"NOR, me);
+   message_vision(HIG"$Nåƒä¸‹ä¸€é¢—" + name() + HIG"ï¼Œåªè§‰å…¨èº«èˆ’æ³°ï¼Œä¼¤åŠ¿å·²å¤§æœ‰å¥½è½¬ã€‚\n"NOR, me);
    me->apply_condition("hot_drug", 20);
    destruct(this_object());
    return 1;

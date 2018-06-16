@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cloth.c ½ğÉß±³ĞÄ
+// cloth.c é‡‘è›‡èƒŒå¿ƒ
 // qfy July 6, 1996.
 
 #include <armor.h>
@@ -9,19 +9,19 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("½ğÉß±³ĞÄ", ({ "jinshe beixin", "jinshe", "beixin" }) );
+        set_name("é‡‘è›‡èƒŒå¿ƒ", ({ "jinshe beixin", "jinshe", "beixin" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
 		set("value", 100000);
                 set("material", "cloth");
 		set("long",
-		"Ò»¼şÇáÈáµÄÉßÆ¤±³ĞÄ¡£Æ¤±³ĞÄÉÏ½ğÁÛÆ¬Æ¬£¬ÉÁÉÁÉú¹â¡£ÊÇ½ğÉßÀÉ\n"
-		"¾ıµ±ÄêÁôÏÂµÄÒìÊÀÖ®±¦£¬Ë®»ğ²»ÇÖ£¬µ¶Ç¹²»Èë¡£\n");
-		set("wear_msg", HIY "$NÅûÉÏ$n£¬¹âÃ¢´Ü¶¯£¬»¯×÷ÍòÌõ½ğÉß£¬ÁîÖÜÎ§µÄÈËÄÑÒÔÖ±ÊÓ¡£\n" NOR);
-		set("unequip_msg", HIY "$NÍÑÏÂ$n£¬½ğ¹âÓĞÈçÍòÉßËÄ´Ü£¬ÏûÉ¢ÎŞ×Ù¡£\n" NOR);
+		"ä¸€ä»¶è½»æŸ”çš„è›‡çš®èƒŒå¿ƒã€‚çš®èƒŒå¿ƒä¸Šé‡‘é³ç‰‡ç‰‡ï¼Œé—ªé—ªç”Ÿå…‰ã€‚æ˜¯é‡‘è›‡éƒ\n"
+		"å›å½“å¹´ç•™ä¸‹çš„å¼‚ä¸–ä¹‹å®ï¼Œæ°´ç«ä¸ä¾µï¼Œåˆ€æªä¸å…¥ã€‚\n");
+		set("wear_msg", HIY "$NæŠ«ä¸Š$nï¼Œå…‰èŠ’çªœåŠ¨ï¼ŒåŒ–ä½œä¸‡æ¡é‡‘è›‡ï¼Œä»¤å‘¨å›´çš„äººéš¾ä»¥ç›´è§†ã€‚\n" NOR);
+		set("unequip_msg", HIY "$Nè„±ä¸‹$nï¼Œé‡‘å…‰æœ‰å¦‚ä¸‡è›‡å››çªœï¼Œæ¶ˆæ•£æ— è¸ªã€‚\n" NOR);
                 set("armor_prop/armor", 270);
         }
         setup();

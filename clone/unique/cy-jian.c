@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /clone/unique/cy-jian.c
-// ÖØÑô½£
+// é‡é˜³å‰‘
 // by sdong 08/01/98
 
 #include <ansi.h>
@@ -10,20 +10,20 @@ inherit SWORD;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-	set_name(HIG"ÖØÑô½£"NOR, ({ "chongyang jian", "chongyang", "jian" }) );
+	set_name(HIG"é‡é˜³å‰‘"NOR, ({ "chongyang jian", "chongyang", "jian" }) );
 	set_weight(4000);
 		if( clonep() )
 			 set_default_object(__FILE__);
 		else {
-		set("unit", "±ú");
-		set("long", "Ò»±úÇà¹âÉÁÉÁ¡¢º®ÆøÉ­É­±¦½£¡£½£ÈĞÓÌÈçÒ»ãüÇïË®£¬½£ÇÊÉÏÏâ×ÅÁ½¸ö×Ö£º¡¸ÖØÑô¡¹¡£\n");
+		set("unit", "æŸ„");
+		set("long", "ä¸€æŸ„é’å…‰é—ªé—ªã€å¯’æ°”æ£®æ£®å®å‰‘ã€‚å‰‘åˆƒçŠ¹å¦‚ä¸€æ³“ç§‹æ°´ï¼Œå‰‘é˜ä¸Šé•¶ç€ä¸¤ä¸ªå­—ï¼šã€Œé‡é˜³ã€ã€‚\n");
 		set("value", 10000);
 		set("material", "steel");
 		set("rigidity", 2000);
 		set("wield_msg",
-			HIG"Ö»¼ûÇà¹âÒ»ÉÁ£¬$NµÄÊÖÖĞÒÑ¾­¶àÁËÒ»±ú"+"$n"+HIG"£¬½£ÈĞÓÌÈçÒ»ãüÇïË®£¬Ò»Íû¶øÖªÊÇ¶Ï½ğÇĞÓñµÄÀûÈĞ !\n"NOR);
-					 set("unwield_msg", HIG"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n"NOR);
-					 set("unequip_msg", HIG"$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n"NOR);
+			HIG"åªè§é’å…‰ä¸€é—ªï¼Œ$Nçš„æ‰‹ä¸­å·²ç»å¤šäº†ä¸€æŸ„"+"$n"+HIG"ï¼Œå‰‘åˆƒçŠ¹å¦‚ä¸€æ³“ç§‹æ°´ï¼Œä¸€æœ›è€ŒçŸ¥æ˜¯æ–­é‡‘åˆ‡ç‰çš„åˆ©åˆƒ !\n"NOR);
+					 set("unwield_msg", HIG"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n"NOR);
+					 set("unequip_msg", HIG"$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n"NOR);
 		  }
 
 	init_sword(100);

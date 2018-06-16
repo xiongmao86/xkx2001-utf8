@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"¾Õ¹£"NOR, ({"jugeng"}));
+        set_name(HIY"èŠæ¢—"NOR, ({"jugeng"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","¾Õ¹££º¾Õ»¨¸ù¾¥£¬ÇåÈÈ°Ü»ğ¡£\n");
+                set("unit", "é’±");
+                set("long","èŠæ¢—ï¼šèŠèŠ±æ ¹èŒï¼Œæ¸…çƒ­è´¥ç«ã€‚\n");
                 set("value", 50);
 		set("yaocai", 1);
         	set("cure_s",0);

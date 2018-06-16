@@ -5,11 +5,11 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("ÎäÃí¸æÊ¾°å", ({ "board" }) );
+        set_name("æ­¦åº™å‘Šç¤ºæ¿", ({ "board" }) );
         set("location", "/d/city/wumiao");
         set("board_id", "wumiao_b");
         set("poster_level", "(apprentice)");
-        set("long", "ÕâÊÇ¹©Î×Ê¦Ìù¸æÊ¾ÓÃµÄ£¬Íæ¼Ò²»ÄÜÕÅÌù¡£\n");
+        set("long", "è¿™æ˜¯ä¾›å·«å¸ˆè´´å‘Šç¤ºç”¨çš„ï¼Œç©å®¶ä¸èƒ½å¼ è´´ã€‚\n");
         set("intermud", 1);
         setup();
         set("capacity", 200);

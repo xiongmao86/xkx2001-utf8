@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(YEL"·À·ç"NOR, ({"fangfeng"}));
+        set_name(YEL"é˜²é£"NOR, ({"fangfeng"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ç®");
-                set("long","·À·ç£º³£¼ûÖĞÒ©£¬ÓÃÒÔµ÷Àí¸ÎÔà¡£\n");
+                set("unit", "é’±");
+                set("long","é˜²é£ï¼šå¸¸è§ä¸­è¯ï¼Œç”¨ä»¥è°ƒç†è‚è„ã€‚\n");
                 set("value", 200);
 				set("yaocai", 1);
         		set("cure_s",0);

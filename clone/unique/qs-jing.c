@@ -4,17 +4,17 @@ inherit ITEM;
 inherit F_UNIQUE;
 void create()
 {
-	set_name("ÆßÉËÈ­¾­", ({"qishang jing", "jing"}));
+	set_name("ä¸ƒä¼¤æ‹³ç»", ({"qishang jing", "jing"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±¾");
+		set("unit", "æœ¬");
 		set("long", "
-	ÎåĞĞÖ®Æøµ÷ÒõÑô£¬
-	ËğĞÄÉË·Î´İ¸Î³¦£¬
-	²ØÀë¾«Ê§Òâ»Ğã±£¬
-	Èı½¹ÆëÄæÙâ»êÆÇ·ÉÑï\n");
+	äº”è¡Œä¹‹æ°”è°ƒé˜´é˜³ï¼Œ
+	æŸå¿ƒä¼¤è‚ºæ‘§è‚è‚ ï¼Œ
+	è—ç¦»ç²¾å¤±æ„ææƒšï¼Œ
+	ä¸‰ç„¦é½é€†å…®é­‚é­„é£æ‰¬\n");
 		set("material", "paper");
 		set("value", 500);
 	}
@@ -33,50 +33,50 @@ int do_study(string arg)
 	if (!id(arg)) return 0;
 
 	if( !me->query_skill("literate", 1) ){
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                write("ä½ æ˜¯ä¸ªæ–‡ç›²ï¼Œå…ˆå­¦ç‚¹æ–‡åŒ–(literate)å§ã€‚\n");
 		return 1;
 	}
 
 	if (!present("qishang jing", me)) return 0;
 
 	if ( me->query_skill("cuff", 1) < me->query_skill("qishang-quan",1)*2/3){
-		write("ÄãµÄ»ù±¾È­·¨»ğºò²»¹»¡£\n");
+		write("ä½ çš„åŸºæœ¬æ‹³æ³•ç«å€™ä¸å¤Ÿã€‚\n");
 	return 1;
 	}
 	if ( me->query_skill("qishang-quan",1) > 100 ) {
-		write("Äã¾õµÃ¾­ÖĞËùËß¹ıÓÚ´ÖÇ³£¬ÎŞ·¨ÔÙÑ§µ½ĞÂ¶«Î÷ÁË¡£\n");
+		write("ä½ è§‰å¾—ç»ä¸­æ‰€è¯‰è¿‡äºç²—æµ…ï¼Œæ— æ³•å†å­¦åˆ°æ–°ä¸œè¥¿äº†ã€‚\n");
 		return 1;
 	}
 	if ( me->query("jing") < 60){
-		write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+		write("ä½ ç°åœ¨è¿‡äºç–²å€¦ï¼Œæ— æ³•ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ã€‚\n");
 		return 1;
 	}
 	if (me->is_busy()) {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 		return 1;
 	}
 	if (environment(me)->query("pigging")){
-                write("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                write("ä½ è¿˜æ˜¯ä¸“å¿ƒæ‹±çŒªå§ï¼\n");
 		return 1;
 	}
 
 	if ( me->is_fighting() ){ 
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­ä¸“å¿ƒä¸‹æ¥ç ”è¯»æ–°çŸ¥ï¼\n");
 		return 1;
 	}
 
 	if ( me->query("potential") < 1){
-		write("ÄãµÄÇ±ÄÜ²»¹»£¡\n");
+		write("ä½ çš„æ½œèƒ½ä¸å¤Ÿï¼\n");
 		return 1;
 	}
 
-	message("vision", me->name() + "×ĞÏ¸µØÑĞ¶Á¡¶ÆßÉËÈ­¾­¡·¡£\n",environment(me), me);
+	message("vision", me->name() + "ä»”ç»†åœ°ç ”è¯»ã€Šä¸ƒä¼¤æ‹³ç»ã€‹ã€‚\n",environment(me), me);
 
 	me->improve_skill("qishang-quan", random(me->query_int()*3/2));
 	me->receive_damage("jing", 1500 / (int)me->query("int"));
 	me->add("potential", -1);
 	me->apply_condition("qs_self_damage", 5+random(5));
 
-	write("ÄãÑĞ¶Á¡¶ÆßÉËÈ­¾­¡·£¬ÆÄÓĞĞÄµÃ¡£\n");
+	write("ä½ ç ”è¯»ã€Šä¸ƒä¼¤æ‹³ç»ã€‹ï¼Œé¢‡æœ‰å¿ƒå¾—ã€‚\n");
 	return 1;
 }

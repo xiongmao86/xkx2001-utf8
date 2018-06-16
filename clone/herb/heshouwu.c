@@ -7,14 +7,14 @@ void setup()
 
 void create()
 {
-        set_name(HIY"ºÎÊ×ÎÚ"NOR, ({"heshouwu","shouwu"}));
+        set_name(HIY"ä½•é¦–ä¹Œ"NOR, ({"heshouwu","shouwu"}));
 	set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Ö§");
-                set("long","ºÎÊ×ÎÚ£º²İ±¾Ö²Îï£¬¿é¸ù¿ÉÈëÒ©£¬°ÙÄêÒÔÉÏÖ®Îï½¥¾ßÈËĞÎ£¬ÄË×Ì²¹¼ÑÆ·¡£\n");
+                set("unit", "æ”¯");
+                set("long","ä½•é¦–ä¹Œï¼šè‰æœ¬æ¤ç‰©ï¼Œå—æ ¹å¯å…¥è¯ï¼Œç™¾å¹´ä»¥ä¸Šä¹‹ç‰©æ¸å…·äººå½¢ï¼Œä¹ƒæ»‹è¡¥ä½³å“ã€‚\n");
                 set("value", 6000);
 				set("yaocai", 1);
         		set("cure_s",80);

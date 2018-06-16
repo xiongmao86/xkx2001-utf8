@@ -9,20 +9,20 @@ inherit SWORD;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-        set_name("ÕæÎä½£", ({ "zhenwu sword", "zhenwu", "sword" }) );
+        set_name("çœŸæ­¦å‰‘", ({ "zhenwu sword", "zhenwu", "sword" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("long",
-			"Ö»¼û³¤½£½£ÇÊÍ­ÂÌ°ßìµ£¬ÒÔÍ­Ë¿Ç¶×ÅÁ½¸ö×­ÎÄ£º¡°ÕæÎä¡±¡£\n");
+			"åªè§é•¿å‰‘å‰‘é˜é“œç»¿æ–‘æ–“ï¼Œä»¥é“œä¸åµŒç€ä¸¤ä¸ªç¯†æ–‡ï¼šâ€œçœŸæ­¦â€ã€‚\n");
                 set("value", 7000);
                 set("material", "steel");
 		set("rigidity", 1500);
                 set("wield_msg", 
-			"Ö»Ìı¼û¡¸ì¬¡¹µØÒ»Éù£¬¶Ù¾õº®ÆøÆËÃæ£¬$NµÄÊÖÖĞÒÑ¾­¶àÁËÒ»°Ñ±¦½£¡ª¡ª$n¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+			"åªå¬è§ã€Œé£•ã€åœ°ä¸€å£°ï¼Œé¡¿è§‰å¯’æ°”æ‰‘é¢ï¼Œ$Nçš„æ‰‹ä¸­å·²ç»å¤šäº†ä¸€æŠŠå®å‰‘â€”â€”$nã€‚\n");
+                set("unequip_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥è…°é—´çš„å‰‘é˜ã€‚\n");
         }
 
         init_sword(120);

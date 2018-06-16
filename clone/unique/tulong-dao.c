@@ -1,5 +1,5 @@
 //Cracked by Roath
-//tulong-dao ÍÀÁúµ¶
+//tulong-dao å± é¾™åˆ€
 
 #include <weapon.h>
 #include <ansi.h>
@@ -8,19 +8,19 @@ inherit BLADE;
 #include "/clone/unique/special_weapon.h"
 void create()
 {
-	set_name("ÍÀÁúµ¶", ({ "tulong dao", "dao", "blade" }));
+	set_name("å± é¾™åˆ€", ({ "tulong dao", "dao", "blade" }));
 	set_weight(20000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "±ú");
-		set("long","ÕâÊÇÒ»±úËÄ³ßÀ´³¤¡¢ÎÚ³Á³ÁµÄµ¥µ¶£¬¿´ÉÏÈ¥ºÚ÷î÷îµÄºÁ²»ÆğÑÛ¡£\n");
+		set("unit", "æŸ„");
+		set("long","è¿™æ˜¯ä¸€æŸ„å››å°ºæ¥é•¿ã€ä¹Œæ²‰æ²‰çš„å•åˆ€ï¼Œçœ‹ä¸Šå»é»‘é»é»çš„æ¯«ä¸èµ·çœ¼ã€‚\n");
 		set("value", 10000);
 		set("material", "steel");
 		set("rigidity", 3000);
-		set("wield_msg", HIY "Ö»¼ûºÚ¹âÒ»ÉÁ£¬$NÊÖÖĞÒÑ¶àÁËÒ»±úºÚ³Á³ÁµÄ´óµ¶£º
-ÎäÁÖÖÁ×ğ£¬±¦µ¶ÍÀÁú£¬ºÅÁîÌìÏÂ£¬Äª¸Ò²»´Ó£¡\n" NOR);
-		set("unwield_msg",HIY"$NÑöÌìÒ»ÉùÇåĞ¥£¬ÉìÊÖÔÚÍÀÁúµ¶ÉÏÒ»µ¯£¬·ÅÈë³¤ÅÛÖ®ÄÚ¡£\n" NOR);
+		set("wield_msg", HIY "åªè§é»‘å…‰ä¸€é—ªï¼Œ$Næ‰‹ä¸­å·²å¤šäº†ä¸€æŸ„é»‘æ²‰æ²‰çš„å¤§åˆ€ï¼š
+æ­¦æ—è‡³å°Šï¼Œå®åˆ€å± é¾™ï¼Œå·ä»¤å¤©ä¸‹ï¼Œè«æ•¢ä¸ä»ï¼\n" NOR);
+		set("unwield_msg",HIY"$Nä»°å¤©ä¸€å£°æ¸…å•¸ï¼Œä¼¸æ‰‹åœ¨å± é¾™åˆ€ä¸Šä¸€å¼¹ï¼Œæ”¾å…¥é•¿è¢ä¹‹å†…ã€‚\n" NOR);
 	}
 	init_blade(180);
 	setup();

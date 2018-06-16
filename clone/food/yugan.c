@@ -1,18 +1,18 @@
 //Cracked by Roath
-//ÏÌÓã¸É
+//å’¸é±¼å¹²
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ÏÌÓã¸É", ({"yu gan", "yu", "fish"}));
+        set_name("å’¸é±¼å¹²", ({"yu gan", "yu", "fish"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´ó¿éëçÖÆºÃµÄÏÌÓã¸É\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å¤§å—è…Œåˆ¶å¥½çš„å’¸é±¼å¹²\n");
+                set("unit", "å—");
                 set("value", 100);
                 set("food_remaining", 6);
                 set("food_supply", 50);

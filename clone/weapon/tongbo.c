@@ -1,22 +1,22 @@
 //Cracked by Roath
-// tongbo.c Í­îà
+// tongbo.c é“œé’¹
 
 #include <weapon.h>
 inherit BLADE;
 
 void create()
 {
-	set_name("Í­îà", ({ "tongbo", "bo" }));
+	set_name("é“œé’¹", ({ "tongbo", "bo" }));
 	set_weight(2000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶Ô");
-		set("long", "ÕâÊÇÒ»¶ÔÍ­îà£¬îà±ßÉÁÉÁÉú¹â£¬·æÀûÒì³£¡£\n");
+		set("unit", "å¯¹");
+		set("long", "è¿™æ˜¯ä¸€å¯¹é“œé’¹ï¼Œé’¹è¾¹é—ªé—ªç”Ÿå…‰ï¼Œé”‹åˆ©å¼‚å¸¸ã€‚\n");
 		set("value", 300);
 		set("material", "steel");
-		set("wield_msg", "$NÈ¡³öÒ»¶Ô$n£¬Ë«ÊÖºÏ´¦£¬µ±µØÒ»Éù£¬Õğ¶úÓûÁû¡£\n");
-		set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕºÃ¡£\n");
+		set("wield_msg", "$Nå–å‡ºä¸€å¯¹$nï¼ŒåŒæ‰‹åˆå¤„ï¼Œå½“åœ°ä¸€å£°ï¼Œéœ‡è€³æ¬²è‹ã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ”¶å¥½ã€‚\n");
 	}
 	init_blade(30);
 	setup();

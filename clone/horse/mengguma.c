@@ -1,18 +1,18 @@
 //Cracked by Roath
-// menggu-ma.c ÃÉ¹ÅÂí
+// menggu-ma.c è’™å¤é©¬
 inherit NPC_TRAINEE;
 #include "/clone/horse/horse.h"
 int return_home(object home);
 int condition_check();
 void create()
 {
-	set_name("ÃÉ¹ÅÂí", ({ "menggu ma", "ma", "horse" }) );
-        set("race", "¼ÒĞó");
+	set_name("è’™å¤é©¬", ({ "menggu ma", "ma", "horse" }) );
+        set("race", "å®¶ç•œ");
         set("age", 12);
-	set("long", "ÕâÊÇÒ»Æ¥ÌåĞÍ¸ß´ó£¬ Ìã´óÎ²³¤µÄ´óÂí£¬ ÉÆÓÚÆ½Ô­±¼³Û£¬ ¶àÓÃÎª¾üÂí¡£\n");
-	set("msg_fail", "$n³å×Å$NÅ­Ë»Ò»Éù£¬×ìÀïºôºôµØÅçÖø°×Æø¡£");
-        set("msg_succ", "$nÒ¡×ÅÍ·´ò×ª£¬Ìã×Ó»÷´ò×ÅµØÃæ£¬ËÆºõ´ò²»¶¨Ö÷Òâ");
-        set("msg_trained","$nµÍË»Ò»Éù£¬×ßµ½$NÉí±ß°¤°¤²Á²Á£¬ÏÔµÃÊ®·Ö¸ßĞË£¡");
+	set("long", "è¿™æ˜¯ä¸€åŒ¹ä½“å‹é«˜å¤§ï¼Œ è¹„å¤§å°¾é•¿çš„å¤§é©¬ï¼Œ å–„äºå¹³åŸå¥”é©°ï¼Œ å¤šç”¨ä¸ºå†›é©¬ã€‚\n");
+	set("msg_fail", "$nå†²ç€$Næ€’å˜¶ä¸€å£°ï¼Œå˜´é‡Œå‘¼å‘¼åœ°å–·è‘—ç™½æ°”ã€‚");
+        set("msg_succ", "$næ‘‡ç€å¤´æ‰“è½¬ï¼Œè¹„å­å‡»æ‰“ç€åœ°é¢ï¼Œä¼¼ä¹æ‰“ä¸å®šä¸»æ„");
+        set("msg_trained","$nä½å˜¶ä¸€å£°ï¼Œèµ°åˆ°$Nèº«è¾¹æŒ¨æŒ¨æ“¦æ“¦ï¼Œæ˜¾å¾—ååˆ†é«˜å…´ï¼");
         set("attitude", "peaceful");
 
 	set("wildness", 6);

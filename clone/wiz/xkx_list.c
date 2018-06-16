@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"ÏÀ¿ÍÐÐ·çÔÆ°ñ"NOR, ({"xkx list"}));
+        set_name(HIY"ä¾ å®¢è¡Œé£Žäº‘æ¦œ"NOR, ({"xkx list"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÕÅÏÀ¿ÍÐÐÍæ¼ÒµÄ·çÔÆ°ñ£¬¿ÉÒÔÓÃ(readlist)À´²é¿´¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "è¿™æ˜¯ä¸€å¼ ä¾ å®¢è¡ŒçŽ©å®¶çš„é£Žäº‘æ¦œï¼Œå¯ä»¥ç”¨(readlist)æ¥æŸ¥çœ‹ã€‚\n");
+                set("unit", "å¼ ");
                 set("value", 1000000);
         }
 }
@@ -29,16 +29,16 @@ int do_readlist(string arg)
 		
 	lists = this_object()->query("data");
 	
-	if( !lists ) return notify_fail("ÄãÕâÕÅÏÀ¿ÍÐÐ·çÔÆ°ñÊÇÍµÀ´µÄ°É£¿\n");
+	if( !lists ) return notify_fail("ä½ è¿™å¼ ä¾ å®¢è¡Œé£Žäº‘æ¦œæ˜¯å·æ¥çš„å§ï¼Ÿ\n");
 	
 	num = sizeof(lists);
 	if ( num > 100 ) num = 100;
 	
-	write("ÏÀ¿ÍÐÐ·çÔÆ°ñ£º\n");
+	write("ä¾ å®¢è¡Œé£Žäº‘æ¦œï¼š\n");
 	for(int i = 0; i < num; i++)
 	{
 		k = i+1;
-		write("µÚ"+ chinese_number(k) + "Ãû£º" + lists[i]["name"] + "(" + lists[i]["id"] + "): ¾­Ñé " + lists[i]["exp"] + "¡£ÄêÁä£º" + chinese_number(lists[i]["age"]) + "Ëê¡£\n");
+		write("ç¬¬"+ chinese_number(k) + "åï¼š" + lists[i]["name"] + "(" + lists[i]["id"] + "): ç»éªŒ " + lists[i]["exp"] + "ã€‚å¹´é¾„ï¼š" + chinese_number(lists[i]["age"]) + "å²ã€‚\n");
 	}
 	return 1;
 }
@@ -58,7 +58,7 @@ int do_sell(string arg)
 void change_value(object me, object ob)
 {
 	if(me && !present(ob, me)) {
-		tell_object(me, "¿ÉÏ§¶þÊÖµÄÏÀ¿ÍÐÐ·çÔÆ°ñÖ»Öµ¼¸Ê®¸öÍ­Ç®¡£\n");
+		tell_object(me, "å¯æƒœäºŒæ‰‹çš„ä¾ å®¢è¡Œé£Žäº‘æ¦œåªå€¼å‡ åä¸ªé“œé’±ã€‚\n");
 		ob->set("value", 1000000);
 	}
 }

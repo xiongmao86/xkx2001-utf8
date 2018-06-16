@@ -6,16 +6,16 @@ inherit MONEY;
 
 void create()
 {
-	set_name("Ò»Ç§Á½ÒøÆ±", ({"thousand-cash", "thousand-cash_money", "cash"}));
+	set_name("ä¸€åƒä¸¤é“¶ç¥¨", ({"thousand-cash", "thousand-cash_money", "cash"}));
         set_color("$HIG$");
 if(clonep())
 		set_default_object(__FILE__);
 	else {
 		set("money_id", "thousand-cash");
-		set("long", "Ò»ÕÅÃæ¶îÖµÒ»Ç§Á½Òø×ÓµÄÒøÆ±¡£\n");
-		set("unit", "µş");
+		set("long", "ä¸€å¼ é¢é¢å€¼ä¸€åƒä¸¤é“¶å­çš„é“¶ç¥¨ã€‚\n");
+		set("unit", "å ");
 		set("base_value", 100000);
-		set("base_unit", "ÕÅ");
+		set("base_unit", "å¼ ");
 		set("base_weight", 3);
 	}
 	set_amount(1);

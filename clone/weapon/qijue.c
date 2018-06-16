@@ -1,5 +1,5 @@
 //Cracked by Roath
-// weapon: xiuhua.c Ğå»¨Õë
+// weapon: xiuhua.c ç»£èŠ±é’ˆ
 // Jay 4/7/96 unique weapon
 
 #include <ansi.h>
@@ -9,17 +9,17 @@ inherit SWORD;
 
 void create()
 {
-	set_name(HIY "Æß¾øÕë" NOR, ({ "qijue zhen", "zhen", "needle" }));
+	set_name(HIY "ä¸ƒç»é’ˆ" NOR, ({ "qijue zhen", "zhen", "needle" }));
 	set_weight(10);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ù");
-		set("long", "ÕâÊÇÒ»¸ù»Æ½ğÖÆ³ÉµÄÕë£¬ÏâÔÚÒ»¸öÖ¸»·ÉÏ¡£\n");
+		set("unit", "æ ¹");
+		set("long", "è¿™æ˜¯ä¸€æ ¹é»„é‡‘åˆ¶æˆçš„é’ˆï¼Œé•¶åœ¨ä¸€ä¸ªæŒ‡ç¯ä¸Šã€‚\n");
 		set("value", 1000);
 		set("material", "steel");
-		set("wield_msg", "$N´Ó¿Ú´üÖĞÄé³öÒ»¸ù$nÌ×ÔÚĞ¡ÊÖÖ¸ÉÏ¡£\n");
-		set("unwield_msg", "$N½«ÊÖÉÏµÄ$nÕªÏÂÀ´¡£\n");
+		set("wield_msg", "$Nä»å£è¢‹ä¸­æ‹ˆå‡ºä¸€æ ¹$nå¥—åœ¨å°æ‰‹æŒ‡ä¸Šã€‚\n");
+		set("unwield_msg", "$Nå°†æ‰‹ä¸Šçš„$næ‘˜ä¸‹æ¥ã€‚\n");
 	}
 	init_sword(40);
 	setup();
@@ -33,6 +33,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 	if (victim->query_condition("snake_poison",1)< 50)
 	{
 		victim->apply_condition("snake_poison", 290);   
-		return HIR "$nÖ»¾õµÃÉË¿ÚÉÏÒ»Âé£¡\n" NOR;
+		return HIR "$nåªè§‰å¾—ä¼¤å£ä¸Šä¸€éº»ï¼\n" NOR;
 	}
 }

@@ -7,13 +7,13 @@ inherit NECK;
 
 void create()
 {
-	set_name( YEL "Î§²±" NOR, ({ "wei bo", "bo" }) );
+	set_name( YEL "å›´è„–" NOR, ({ "wei bo", "bo" }) );
 	set_weight(500);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»Æ¤Î§²±£¬ÓÃÒÔ±£»¤¾±²¿¡£\n");
+		set("unit", "æ¡");
+                set("long", "è¿™æ˜¯ä¸€çš®å›´è„–ï¼Œç”¨ä»¥ä¿æŠ¤é¢ˆéƒ¨ã€‚\n");
 		set("value", 150);
 		set("material", "leather");
 		set("armor_prop/armor", 3);

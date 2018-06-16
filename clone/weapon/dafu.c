@@ -1,5 +1,5 @@
 //Cracked by Roath
-// weapon: dafu.c ´ó¸«Í·
+// weapon: dafu.c å¤§æ–§å¤´
 // qfy August 19, 1996.
 
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit AXE;
 
 void create()
 {
-        set_name("´ó¸«Í·", ({ "da futou", "futou", "axe" }));
+        set_name("å¤§æ–§å¤´", ({ "da futou", "futou", "axe" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ¼«¾ßÉ±ÉËÁ¦µÄ´ó¸«Í·£¬Ã÷»Î»ÎµÄ·æÀûÖ®¼«¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "è¿™æ˜¯ä¸€æŠŠæå…·æ€ä¼¤åŠ›çš„å¤§æ–§å¤´ï¼Œæ˜æ™ƒæ™ƒçš„é”‹åˆ©ä¹‹æã€‚\n");
                 set("value", 250);
                 set("material", "steel");
-                set("wield_msg", "$NË«ÊÖÌáÆğ$n¡£\n");
-                set("unwield_msg", "$N·ÅÏÂ$n¡£\n");
+                set("wield_msg", "$NåŒæ‰‹æèµ·$nã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹$nã€‚\n");
         }
         init_axe(25);
         setup();

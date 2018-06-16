@@ -1,5 +1,5 @@
 //Cracked by Roath
-// kaoya.c ¿¾Ñ¼
+// kaoya.c çƒ¤é¸­
 
 #include <ansi.h>
 inherit ITEM;
@@ -10,13 +10,13 @@ int do_cut(string);
 
 void create()
 {
-	set_name(MAG"¿¾Ñ¼"NOR, ({"kaoya", "ya"}));
+	set_name(MAG"çƒ¤é¸­"NOR, ({"kaoya", "ya"}));
 	set_weight(200);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("long", "Ò»Ö»·ÊµÃÁ÷ÓÍµÄ±±¾©¿¾Ñ¼¡£\n");
-		set("unit", "Ö»");
+		set("long", "ä¸€åªè‚¥å¾—æµæ²¹çš„åŒ—äº¬çƒ¤é¸­ã€‚\n");
+		set("unit", "åª");
 		set("value", 120);
 		set("food_remaining", 3);
 		set("food_supply", 80);
@@ -36,9 +36,9 @@ int do_cut(string arg)
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "¿¾Ñ¼" || arg == "kaoya" ) {
+	if ( arg == "çƒ¤é¸­" || arg == "kaoya" ) {
         	object ob2 = new("/clone/food/yazhang");
-		message_vision("$N°Ñ¿¾Ñ¼µÄÑ¼ÕÆÇÐÁËÏÂÀ´¡£\n", me);
+		message_vision("$NæŠŠçƒ¤é¸­çš„é¸­æŽŒåˆ‡äº†ä¸‹æ¥ã€‚\n", me);
 		ob2->move(me);
 		destruct(ob1);
 		return 1;

@@ -53,22 +53,22 @@ total += (int)inv[i]->query_amount();
 }
 void create()
 {
-        set_name("½ðÂÖ", ({ "jin lun", "falun", "lun" }) );
+        set_name("é‡‘è½®", ({ "jin lun", "falun", "lun" }) );
 	set_color("$HIY$");
 	set_weight(10000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸±");
-		set("base_unit", "Ö»");
+		set("unit", "å‰¯");
+		set("base_unit", "åª");
                 set("base_weight", 10000);
-		set("long", "ÕâÊÇÒ»Ö»´¿½ðÖýÔìÖ±¾¶³ß°ëµÄÒ»¸öÔ²»·£¬ÉÏÃæ¿ÌÂúÁËÃÜ×Ú·üÄ§ÕæÑÔ£¬»·ÄÚÖÐ¿Õ£¬²ØÓÐ¾Å¸öÌúÇò¡£\n");
+		set("long", "è¿™æ˜¯ä¸€åªçº¯é‡‘é“¸é€ ç›´å¾„å°ºåŠçš„ä¸€ä¸ªåœ†çŽ¯ï¼Œä¸Šé¢åˆ»æ»¡äº†å¯†å®—ä¼é­”çœŸè¨€ï¼ŒçŽ¯å†…ä¸­ç©ºï¼Œè—æœ‰ä¹ä¸ªé“çƒã€‚\n");
 		set("value", 7000000);
 		set("material", "iron");
 		set("base_weapon", 50);
 		set("rigidity", 100000);
-		set("wield_msg", "$NÄÃ³öÒ»¸±$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖÐ¡£\n");
-		set("unwield_msg", "$N·ÅÏÂÊÖÖÐµÄ$n¡£\n");
+		set("wield_msg", "$Næ‹¿å‡ºä¸€å‰¯$nï¼Œè¯•äº†è¯•é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+		set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
 	}
 
         init_hammer(50);
@@ -84,7 +84,7 @@ int wield()
 	|| (me->query_str() - 10 )/5 < query_amount()
 	|| query_amount() > 5
 	|| me->query_skill("longxiang-banruo", 1) < 101)
-					 return notify_fail("ÄãÊ¹²»ÁËÄÇÃ´¶à·¨ÂÖ¡£\n");
+					 return notify_fail("ä½ ä½¿ä¸äº†é‚£ä¹ˆå¤šæ³•è½®ã€‚\n");
 	}
 
 	return ::wield();

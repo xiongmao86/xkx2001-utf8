@@ -4,15 +4,15 @@ inherit MONEY;
 
 void create()
 {
-        set_name(HIY"½ðÉ³"NOR, ({"jin sha", "jinsha", "gold nugget"}));
+        set_name(HIY"é‡‘æ²™"NOR, ({"jin sha", "jinsha", "gold nugget"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("money_id", "jinsha");
-                set("long", "ÕâÊÇÒ»Á£ÁÁÉÁÉÁµÄ½ðÉ³¡£\n");
-                set("unit", "Á£");
+                set("long", "è¿™æ˜¯ä¸€ç²’äº®é—ªé—ªçš„é‡‘æ²™ã€‚\n");
+                set("unit", "ç²’");
                 set("base_value", 1500+random(10));
-                set("base_unit", "Á£");
+                set("base_unit", "ç²’");
                 set("base_weight", 20);
         }
         set_amount(1);

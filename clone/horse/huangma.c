@@ -1,5 +1,5 @@
 //Cracked by Roath
-//huangbiao-ma.c »Æ±ìÂí
+//huangbiao-ma.c é»„è†˜é©¬
 inherit NPC_TRAINEE;
 #include "/clone/horse/horse.h"
 int condition_check();
@@ -7,13 +7,13 @@ int return_home(object home);
 
 void create()
 {
-	set_name("»Æ±ìÂí", ({ "huangbiao ma", "ma", "horse" }) );
-        set("race", "¼ÒĞó");
+	set_name("é»„è†˜é©¬", ({ "huangbiao ma", "ma", "horse" }) );
+        set("race", "å®¶ç•œ");
         set("age", 10);
-	set("long", "ÕâÊÇÒ»Æ¥»ÆÉ«µÄ¸ßÍ·´óÂí£¬ÉúµÃÈ«Éí»ÆÉ«£¬ÎŞÒ»¸ùÔÓÃ«¡£\n");
-	set("msg_fail", "$n³å×Å$NÅ­Ë»Ò»Éù£¬Éì³öÇ°Ìã£¬×÷ÊÆÓûÌß");
-        set("msg_succ", "$nÒ¡×ÅÍ·´ò×ª£¬Ìã×Ó»÷´ò×ÅµØÃæ£¬ËÆºõ´ò²»¶¨Ö÷Òâ");
-        set("msg_trained","$n¾ÍµØ´òÁËÒ»¸ö¹ö£¬×ßµ½$NÉí±ß£¬ÎÂË³µØµÍÏÂÁËÍ·");
+	set("long", "è¿™æ˜¯ä¸€åŒ¹é»„è‰²çš„é«˜å¤´å¤§é©¬ï¼Œç”Ÿå¾—å…¨èº«é»„è‰²ï¼Œæ— ä¸€æ ¹æ‚æ¯›ã€‚\n");
+	set("msg_fail", "$nå†²ç€$Næ€’å˜¶ä¸€å£°ï¼Œä¼¸å‡ºå‰è¹„ï¼Œä½œåŠ¿æ¬²è¸¢");
+        set("msg_succ", "$næ‘‡ç€å¤´æ‰“è½¬ï¼Œè¹„å­å‡»æ‰“ç€åœ°é¢ï¼Œä¼¼ä¹æ‰“ä¸å®šä¸»æ„");
+        set("msg_trained","$nå°±åœ°æ‰“äº†ä¸€ä¸ªæ»šï¼Œèµ°åˆ°$Nèº«è¾¹ï¼Œæ¸©é¡ºåœ°ä½ä¸‹äº†å¤´");
         set("attitude", "peaceful");
 
         set("wildness", 5);

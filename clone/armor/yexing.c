@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("Ò¹ĞĞË®¿¿", ({ "shui kao", "night suit", "suit" }) );
+        set_name("å¤œè¡Œæ°´é ", ({ "shui kao", "night suit", "suit" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-		set("long", "ÕâÊÇÒ»¼şºÚ¹âÓÍÁÁµÄÒ¹ĞĞË®¿¿£¬´©ÉÏºóÄÜÓĞĞ§µÄ¶ã±Ü¹¥»÷¡£\n");
-                set("unit", "¼ş");
+		set("long", "è¿™æ˜¯ä¸€ä»¶é»‘å…‰æ²¹äº®çš„å¤œè¡Œæ°´é ï¼Œç©¿ä¸Šåèƒ½æœ‰æ•ˆçš„èº²é¿æ”»å‡»ã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
 		set("value", 200);
                 set("armor_prop/armor", 5);

@@ -49,11 +49,11 @@ int pay_player_profit()
 
 	 money_payed =0;
      if( !pointerp(books) )
-         return notify_fail("Äã»¹Î´³ö°æ¹ıÒ»±¾Êé£¬¾ÍÏëÒªÇ®£¿\n");
+         return notify_fail("ä½ è¿˜æœªå‡ºç‰ˆè¿‡ä¸€æœ¬ä¹¦ï¼Œå°±æƒ³è¦é’±ï¼Ÿ\n");
 
 	 for (i=0; i< sizeof(books); i++) {
 
-         printf("¡¾%s¡¿ÖÁ½ñÒ»¹²Âô³ö%d±¾£¬ÏÖ»¹Ç·Äã%s\n", books[i]["title"],
+         printf("ã€%sã€‘è‡³ä»Šä¸€å…±å–å‡º%dæœ¬ï¼Œç°è¿˜æ¬ ä½ %s\n", books[i]["title"],
 		 books[i]["book_sold"],MONEY_D->price_str(books[i]["money_made"]));
 		 money_payed += books[i]["money_made"];
 		 // reset the money_made value
@@ -63,7 +63,7 @@ int pay_player_profit()
 
 	 // pay the player if he made any profit
 	 if (money_payed > 0){
-           printf("Êé¼ÖÈ¡³ö%s£¬·ÅÔÚÄãµÄÊÖÀï¡£\n", MONEY_D->price_str(money_payed));
+           printf("ä¹¦è´¾å–å‡º%sï¼Œæ”¾åœ¨ä½ çš„æ‰‹é‡Œã€‚\n", MONEY_D->price_str(money_payed));
            MONEY_D->pay_player(this_player(), money_payed);
 	 }
 	 // save the record

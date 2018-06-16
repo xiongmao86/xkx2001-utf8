@@ -8,16 +8,16 @@ inherit HAMMER;
  
 void create()
 {
-        set_name("Á÷ĞÇ´¸", ({ "liuxing chui","hammer","chui" }) );           
+        set_name("æµæ˜Ÿé”¤", ({ "liuxing chui","hammer","chui" }) );           
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");                                
+                set("unit", "å‰¯");                                
                 set("material", "wood");                             
-                set("long", "ÕâÊÇÒ»¸±ÓÃ¿İÎ®µÄºùÂ«Ìî³äÒÔÏ¸É³ÖÆ³ÉµÄÁ÷ĞÇ´¸¡£\n");
-		set("wield_msg", "$N´ÓµØÉÏÅõÆğÒ»Ğ©É³×Ó£¬°ÑÉ³×Ó¹àÈë$nÖĞ£¬ÎÕÔÚÊÖÀï¡£\n");
-		set("unequip_msg", "$N½«$nÖĞµÄÉ³×Óµ¹ÔÚµØÉÏ£¬°ÑºùÂ«ÊÕÆğÀ´¡£\n");
+                set("long", "è¿™æ˜¯ä¸€å‰¯ç”¨æ¯èçš„è‘«èŠ¦å¡«å……ä»¥ç»†æ²™åˆ¶æˆçš„æµæ˜Ÿé”¤ã€‚\n");
+		set("wield_msg", "$Nä»åœ°ä¸Šæ§èµ·ä¸€äº›æ²™å­ï¼ŒæŠŠæ²™å­çŒå…¥$nä¸­ï¼Œæ¡åœ¨æ‰‹é‡Œã€‚\n");
+		set("unequip_msg", "$Nå°†$nä¸­çš„æ²™å­å€’åœ¨åœ°ä¸Šï¼ŒæŠŠè‘«èŠ¦æ”¶èµ·æ¥ã€‚\n");
         }
         init_hammer(15);
 }

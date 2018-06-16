@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yulu-wan.c ¾Å»¨ÓñÂ¶Íè
+// yulu-wan.c ä¹èŠ±ç‰éœ²ä¸¸
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit PILL;
 
 void create()
 {
-	set_name(GRN "¾Å»¨ÓñÂ¶Íè" NOR, ({"yulu wan", "wan"}));
+	set_name(GRN "ä¹èŠ±ç‰éœ²ä¸¸" NOR, ({"yulu wan", "wan"}));
 	set_weight(90);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Á£");
-		set("long", "ÕâÊÇÒ»Á£¾Å»¨ÓñÂ¶Íè£¬·¢³öÒ»ÕóÕóÇßÈËĞÄÆ¢µÄÏãÆø¡£\n");
-		set("no_drop","¾Å»¨ÓñÂ¶Íè²ÉÁ¶²»Ò×£¬ÄÄÄÜÂÒÈÓ£¡ \n");
+		set("unit", "ç²’");
+		set("long", "è¿™æ˜¯ä¸€ç²’ä¹èŠ±ç‰éœ²ä¸¸ï¼Œå‘å‡ºä¸€é˜µé˜µæ²äººå¿ƒè„¾çš„é¦™æ°”ã€‚\n");
+		set("no_drop","ä¹èŠ±ç‰éœ²ä¸¸é‡‡ç‚¼ä¸æ˜“ï¼Œå“ªèƒ½ä¹±æ‰”ï¼ \n");
 		set("value", 10000);
 		set("medicine", 1);
 	}
@@ -26,7 +26,7 @@ int cure_ob(object me)
 {
 	if (me->query_condition("cool_drug") > 0){
         me->add("max_neili", -1);
-        message_vision(HIR "$N³ÔÏÂÒ»Á£¾Å»¨ÓñÂ¶Íè£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+        message_vision(HIR "$Nåƒä¸‹ä¸€ç²’ä¹èŠ±ç‰éœ²ä¸¸ï¼Œåªè§‰å¾—å¤´é‡è„šè½»ï¼Œæ‘‡æ‘‡æ¬²å€’ï¼ŒåŸæ¥æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè¯æ•ˆé€‚å¾—å…¶åï¼\n" NOR, me);
         destruct(this_object());
         return 1;
         }
@@ -39,7 +39,7 @@ int cure_ob(object me)
 //	me->set("neili", (int)me->query("max_neili"));
         
 	message_vision(HIG 
-"$N³ÔÏÂÒ»Á£¾Å»¨ÓñÂ¶Íè£¬Ò»¹ÉÇåÏãÖ®ÆøÖ±Í¸µ¤Ìï£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÆøÑª³äÓ¯£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬½«Æ£·¦Ò»É¨¶ø¿Õ! \n" NOR, me);
+"$Nåƒä¸‹ä¸€ç²’ä¹èŠ±ç‰éœ²ä¸¸ï¼Œä¸€è‚¡æ¸…é¦™ä¹‹æ°”ç›´é€ä¸¹ç”°ï¼Œåªè§‰å¾—ç²¾ç¥å¥æ—ºï¼Œæ°”è¡€å……ç›ˆï¼Œä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œå°†ç–²ä¹ä¸€æ‰«è€Œç©º! \n" NOR, me);
 
 	me->apply_condition("cool_drug", 30);
 	destruct(this_object());
@@ -54,7 +54,7 @@ void init()
 int effect_in_liquid(object ob)
 {
 	tell_object(this_player(),
-		GRN"ÄãÖ»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬²»¾øÈçÂÆ¡£\n"NOR);
+		GRN"ä½ åªè§‰å¾—ä½“å†…çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä¸ç»å¦‚ç¼•ã€‚\n"NOR);
         
 	this_player()->add("neili", (random(1000)+1000)/ob->query("max_liquid") );
         

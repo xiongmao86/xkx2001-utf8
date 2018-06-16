@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiuyin_force_book.c ¾ÅÒõÕæ¾­ÄÚ¹¦Æª
+// jiuyin_force_book.c ä¹é˜´çœŸç»å†…åŠŸç¯‡
 // by sdong 08/98
 
 inherit ITEM;
@@ -10,13 +10,13 @@ int do_read(string arg);
 
 void create()
 {
-		  set_name(HIB"¾ÅÒõÕæ¾­"NOR, ({ "jiuying zhenjing", "zhenjing" }));
+		  set_name(HIB"ä¹é˜´çœŸç»"NOR, ({ "jiuying zhenjing", "zhenjing" }));
 		  set_weight(600);
 		  if( clonep() )
 					 set_default_object(__FILE__);
 		  else {
-					 set("unit", "±¾");
-					 set("long", "ÕâÊÇÒ»±¾²ÐÆÆµÄÏß×°Êé£¬ÉÏÊé¡¶¾ÅÒõÕæ¾­ÉÏÆªÖ®ÄÚ¹¦ÐÄ·¨¡·£¬ÀïÃæ¼ÇÔØÁËÉÏ³ËµÄÄÚ¹¦ÐÄ·¨£¬¿ÉÏ§È±ÁËºÃ¶àÒ³¡£\n");
+					 set("unit", "æœ¬");
+					 set("long", "è¿™æ˜¯ä¸€æœ¬æ®‹ç ´çš„çº¿è£…ä¹¦ï¼Œä¸Šä¹¦ã€Šä¹é˜´çœŸç»ä¸Šç¯‡ä¹‹å†…åŠŸå¿ƒæ³•ã€‹ï¼Œé‡Œé¢è®°è½½äº†ä¸Šä¹˜çš„å†…åŠŸå¿ƒæ³•ï¼Œå¯æƒœç¼ºäº†å¥½å¤šé¡µã€‚\n");
 					 set("value", 1000000);
 					 set("material", "paper");
 					 set("skill", ([
@@ -42,7 +42,7 @@ int do_read(string arg)
 
 		if( me->query("9yin") != "granted" )
 		{
-			message_vision("$N½Á¾¡ÄÔÖ­Ò²¿´²»Ã÷°×Õâ±¾$n¡£\n",me,this_object());
+			message_vision("$Næ…å°½è„‘æ±ä¹Ÿçœ‹ä¸æ˜Žç™½è¿™æœ¬$nã€‚\n",me,this_object());
 			return 1;
 		}
 		else return "/cmds/skill/du.c"->main(me, arg);

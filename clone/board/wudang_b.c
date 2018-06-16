@@ -5,11 +5,11 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-	set_name("Éñ¹êÍÔÓñ±®", ({ "board" }) );
+	set_name("ç¥é¾Ÿé©®ç‰ç¢‘", ({ "board" }) );
 	set("location", "/d/wudang/sanqingdian");
 	set("board_id", "wudang_b");
-	set("long", "ÕâÊÇÒ»¿éÔìĞÍ¼«´óµÄÊ¯±®£¬Ë×³Æ¡°¹êÍÔ±®¡±¡£\n"
-	            "±®ÎÄÖĞ¼ÇÂ¼ÁËĞí¶àÎäµ±¹ıÍùµÄ´óĞ¡ÊÂ¼ş¡£\n" );
+	set("long", "è¿™æ˜¯ä¸€å—é€ å‹æå¤§çš„çŸ³ç¢‘ï¼Œä¿—ç§°â€œé¾Ÿé©®ç¢‘â€ã€‚\n"
+	            "ç¢‘æ–‡ä¸­è®°å½•äº†è®¸å¤šæ­¦å½“è¿‡å¾€çš„å¤§å°äº‹ä»¶ã€‚\n" );
 	setup();
 	set("capacity", 80);
 	replace_program(BULLETIN_BOARD);

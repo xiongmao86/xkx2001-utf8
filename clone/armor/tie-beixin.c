@@ -8,12 +8,12 @@ inherit CLOTH;
 
 void create()
 {
-	set_name( WHT"Ìú±³ĞÄ"NOR, ({ "tie beixin", "beixin" }) );
+	set_name( WHT"é“èƒŒå¿ƒ"NOR, ({ "tie beixin", "beixin" }) );
 	set_weight(3000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¼ş");
+		set("unit", "ä»¶");
 		set("value", 0);
 		set("material", "iron");
 		set("armor_prop/armor", 15);

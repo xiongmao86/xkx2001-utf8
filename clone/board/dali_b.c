@@ -3,10 +3,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("Íõ¸®¸æÊ¾ÅÆ", ({ "board" }) );
+        set_name("ç‹åºœå‘Šç¤ºç‰Œ", ({ "board" }) );
         set("location", "/d/dali/wangfu1");
         set("board_id", "dali_b");
-        set("long", "Ò»¿é°×ÑîÄ¾µÄÅÆ×Ó¡£\n" );
+        set("long", "ä¸€å—ç™½æ¨æœ¨çš„ç‰Œå­ã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

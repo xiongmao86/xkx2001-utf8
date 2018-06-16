@@ -14,11 +14,11 @@ int auto_perform();
 
 void create()
 {
-        set_name("Ëæ´Ó", ({ "sui cong", "sui" }));
+        set_name("éšä»", ({ "sui cong", "sui" }));
 
         set("long", 
-        "ÕâÊÇÒ»¸öÖÒĞÄ¹¢¹¢µÄËæ´Ó¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "è¿™æ˜¯ä¸€ä¸ªå¿ å¿ƒè€¿è€¿çš„éšä»ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 34);
         set("attitude", "heroism");
         set("shen_type", 0);

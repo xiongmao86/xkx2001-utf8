@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wushifu.c ÎäÊ¿·ş
+// wushifu.c æ­¦å£«æœ
 
 #include <armor.h>
 
@@ -7,12 +7,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÎäÊ¿·ş", ({ "wushi fu", "fu", "cloth" }) );
+        set_name("æ­¦å£«æœ", ({ "wushi fu", "fu", "cloth" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("armor_prop/armor", 5);
         }

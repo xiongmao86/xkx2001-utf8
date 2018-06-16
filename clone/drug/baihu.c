@@ -1,5 +1,5 @@
 //Cracked by Roath
-// baihu.c °×»¢¶áÃüÍè
+// baihu.c ç™½è™å¤ºå‘½ä¸¸
 // xQin 04/01
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit ITEM;
 int cure_ob(string);
 void create()
 {
-   set_name(HIW"°×»¢¶áÃüÍè"NOR, ({"baihu wan", "duoming wan", "wan"}));
+   set_name(HIW"ç™½è™å¤ºå‘½ä¸¸"NOR, ({"baihu wan", "duoming wan", "wan"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
       set("no_sell",1);
       set("no_get",1);
       set("no_drop",1);
-      set("unit", "¿Å");
+      set("unit", "é¢—");
       set("value", 100000);
    }
    setup();
@@ -28,7 +28,7 @@ int cure_ob(object me)
 	if (me->query_condition("bonze_drug") > 0)
         {
 	me->add("max_neili", -1);
-	message_vision(HIR"$N³ÔÏÂÒ»¿Å" + name() + HIR"£¬Ö»¾õÎåÔàÁù¸­¶¼ÔÚ·­ÌÚ£¬Ô­À´·şÊ³Ò©Îï¹ı¶à£¬ÊÊµÃÆä·´¡£\n"NOR, me);
+	message_vision(HIR"$Nåƒä¸‹ä¸€é¢—" + name() + HIR"ï¼Œåªè§‰äº”è„å…­è…‘éƒ½åœ¨ç¿»è…¾ï¼ŒåŸæ¥æœé£Ÿè¯ç‰©è¿‡å¤šï¼Œé€‚å¾—å…¶åã€‚\n"NOR, me);
 	destruct(this_object());
         return 1;
         }
@@ -40,7 +40,7 @@ int cure_ob(object me)
         me->set("neili", (int)me->query("max_neili"));
 
    
-       message_vision(HIW"$N³ÔÏÂÒ»¿Å" + name() + HIW"£¬Ö»¾õÒ»¹ÉÕæÆø´Óµ¤ÌïÉÏÉı£¬Ë²¼ä±ãÒÑÖÜĞĞÈ«Éí¾­Âö»Ø¹éµ¤Ìï¡£\n"NOR, me);
+       message_vision(HIW"$Nåƒä¸‹ä¸€é¢—" + name() + HIW"ï¼Œåªè§‰ä¸€è‚¡çœŸæ°”ä»ä¸¹ç”°ä¸Šå‡ï¼Œç¬é—´ä¾¿å·²å‘¨è¡Œå…¨èº«ç»è„‰å›å½’ä¸¹ç”°ã€‚\n"NOR, me);
        me->apply_condition("bonze_drug", 60);
        destruct(this_object());
        return 1;

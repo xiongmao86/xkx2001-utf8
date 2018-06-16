@@ -1,18 +1,18 @@
 //Cracked by Roath
-// mabudai.c Âé²¼´ü
+// mabudai.c éº»å¸ƒè¢‹
 
 inherit ITEM;
 
 void create()
 {
-	set_name("Âé²¼´ü", ({ "budai", "dai", "bag" }));
+	set_name("éº»å¸ƒè¢‹", ({ "budai", "dai", "bag" }));
 	set_weight(500);
 	set_max_encumbrance(10000);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ö»");
-		set("long", "Ò»Ö»ÓÃÂé²¼Ö¯³ÉµÄ´ü×Ó£¬ºÃÏñ¿ÉÒÔ×°¶«Î÷¡£\n");
+		set("unit", "åª");
+		set("long", "ä¸€åªç”¨éº»å¸ƒç»‡æˆçš„è¢‹å­ï¼Œå¥½åƒå¯ä»¥è£…ä¸œè¥¿ã€‚\n");
 		set("value", 50);
 		set("material", "cloth");
 	}
