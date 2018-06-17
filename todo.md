@@ -5,7 +5,7 @@
 * [x] convert adm/
 * [x] convert cmds/
 * [x] convert d/
-* [ ] convert data/
+* [x] convert data/
 * [ ] convert doc/
 * [ ] convert feature/
 * [ ] convert help/
@@ -14,21 +14,24 @@
 * [ ] convert kungfu/
 
 # waiting list
-* [ ] complete the transformation of adm/etc/welcome_newyear, the origin file
-is keeped as welcome_newyear.todo
+* [ ] figure out the right edit, and finish adm/etc/welcome_newyear, the origin file is keeped as welcome_newyear.todo
+* [ ] data/letter/x/xfaery.o saved as xfaery.todo
 
-# process **Draft Only**
+# Procedure **Draft Only**
 ## none c or h files
 ### 1. Make sure no file name end with bak under the working folder
 ```shell
 find . -name "*.bak"
 ```
 ### 2. Convert file other than *.c *.h
+
 ```shell
-find . -type f -not -name "*.c" -and -not -name "*.h" | sed /\.DS_Store/d | sed /^\.\\/log$/d |xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
+find . -type f -not -name "*.c" -and -not -name "*.h" | sed /\.DS_Store/d | sed /^\.\\/log$/d | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
 ```
 
 *Filter* .DS_Store ./log is filtered out with sed which is not needed with *.h and *.c version. If there are other file you don't want to process, add something like `sed /^\.\\/todo$/d` or `sed /^\.\\/log$/d` add it to the command.
+
+Add `sed 's#\ #\\\\\ #g'` to escape space in file name.
 
 **If log is empty, goto ?+1 Remove log file.**
 
@@ -37,27 +40,84 @@ find . -type f -not -name "*.c" -and -not -name "*.h" | sed /\.DS_Store/d | sed 
 cat log| sed /^$/d | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g > lognext
 mv lognext log
 ```
-Remove empty line and cut path and trim line and > lognext.
+Remove empty line and cut path and trim line and > lognext. 
 
-### 4. Find binary files in log
+### 4. Find Binary files and remove their correspond .bak files from log
+Sub algorithm:
+1. detect binary file
 ```shell
-file -f log
+file -f log > lognext
+```
+2. This should probable only done by hand? Replace sed pattern (`\ data$` for example) to delete binary file. Add sed to escape 
+Remember to update lognext each turn.
+```shell
+cat lognext | sed -n /\ data$/p | cut -d ":" -f 1 | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "rm {}.bak"
+cat lognext | sed /\ data$/d > lognextnext
+mv lognextnext lognext
+```
+Handy pickups.
+```shell
+cat lognext | sed -n /DOS\ executable/p | cut -d ":" -f 1 | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "rm {}.bak"
+cat lognext | sed /DOS\ executable/d > lognextnext
+mv lognextnext lognext
 ```
 
-### ?. And remove those binary files' .bak file.
-**If all files in log are binary files.**
+3. After filter out every binary file, transform the filtered longnext back to log
 ```shell
-find . -type f -name "*.bak" | xargs rm
+cat lognext | cut -d ":" -f 1 > log
+rm lognext
 ```
 
-### ?+1. Move converted files back to their origin name
-
-### ?+2. Remove log file
+### 5. Process each file that are left in log 
 ```shell
-rm log
+function openup() {
+    code $1.bak;
+    open -a "Hex Fiend" $1
+}
+function convert() {
+    iconv -f 18030 -t utf8 $1 > $1.bak
+}
+function cleanup() {
+    mv $1-gai.bak $1;
+    rm $1-gai $1.bak
+}
+```
+Algorithms process each file:
+1. Open current converted file with vscode, and current working file with `Hex Fiend`(`openup xxx.h` or `openup xxx.h-gai` depending on whether this is your first time to process the file.) 
+2. Find last two or there intelligible characters in vscode. 
+3. Identify its hex code and bookmark them in Hex Fiend. This is the [recommended site.](http://mytju.com/classcode/tools/encode_gb2312.asp)
+4. Find the nearest intelligilble character after the bookmark and bookmark them either.
+5. Figure out what is added or what is lost between the bookmarks.
+6. Edit and save to `xxx.h-gai`
+7. `convert xxx.h-gai`
+8. check result by `code xxx.h-gai.bak` to see how is it going.
+9. If convert is not successful, goto 3.
+10. If file is handling fine. `cleanup xxx.h`.
+11. Process next file.
+
+### 6. Move all `xxx.bak` files back to `xxx`
+```shell
+find . -type f -not -name "*.c" -and -not -name "*.h" -and -not -name "*.bak" | sed /\.DS_Store/d | sed /^\.\\/log$/d | sed /^\.\\/processed/d | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "mv {}.bak {}" 2>processed
 ```
 
-### ?+3. Git commit
+### 7. Process processed file
+```shell
+cat processed | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g | sed s/\.bak$//g > processednext
+mv processednext processed
+```
+
+### 8. If every file in log are processed, we known nothing is neglected.
+```shell
+diff log processed
+```
+diff to see if log and processed is match. processed file make contain binary file that are excluded in log. Generate a list to `file -f list`, to see whether all of them are binary file.
+
+After checking remove log and processed.
+```shell
+rm log processed
+```
+
+### ?+8 Git commit
 
 ## h files
 ### ?+1. Convert *.h files
@@ -89,7 +149,7 @@ cat lognext | cut -d ":" -f 1 > log
 rm lognext
 ```
 
-### ?+5. Process each file that are left in log **remember to paste back to #h file**
+### ?+5. Process each file that are left in log 
 ```shell
 function openup() {
     code $1.bak;
@@ -170,7 +230,7 @@ cat lognext | cut -d ":" -f 1 > log
 rm lognext
 ```
 
-### ?+5. Process each file that are left in log **remember to paste back to #h file**
+### ?+5. Process each file that are left in log
 ```shell
 function openup() {
     code $1.bak;
