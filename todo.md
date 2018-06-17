@@ -6,7 +6,7 @@
 * [x] convert cmds/
 * [x] convert d/
 * [x] convert data/
-* [ ] convert doc/
+* [x] convert doc/
 * [ ] convert feature/
 * [ ] convert help/
 * [ ] convert include/
@@ -42,31 +42,27 @@ mv lognext log
 ```
 Remove empty line and cut path and trim line and > lognext. 
 
-### 4. Find Binary files and remove their correspond .bak files from log
+### 4. Find Binary files and remove their correspond .bak files from log **Check the algorithm again**
 Sub algorithm:
-1. detect binary file
+1. Check there are any binary file in log. If there are none, goto next section.
 ```shell
-file -f log > lognext
+file -f log
 ```
-2. This should probable only done by hand? Replace sed pattern (`\ data$` for example) to delete binary file. Add sed to escape 
-Remember to update lognext each turn.
+2. This should probable only done by hand? Replace sed pattern (`\ data$` for example) to delete binary file. And Go back to 1.
 ```shell
-cat lognext | sed -n /\ data$/p | cut -d ":" -f 1 | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "rm {}.bak"
-cat lognext | sed /\ data$/d > lognextnext
-mv lognextnext lognext
+function filterout() {
+    file -f log > lognext
+    cat lognext | sed -n /$1/p | cut -d ":" -f 1 | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "rm {}.bak";
+    cat lognext | sed /$1/d | cut -d ":" -f 1 > log
+    rm lognext
+}
 ```
-Handy pickups.
+Handy pick up.
 ```shell
-cat lognext | sed -n /DOS\ executable/p | cut -d ":" -f 1 | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "rm {}.bak"
-cat lognext | sed /DOS\ executable/d > lognextnext
-mv lognextnext lognext
+filterout '[[:space:]]text$' # is \ text$
 ```
 
-3. After filter out every binary file, transform the filtered longnext back to log
-```shell
-cat lognext | cut -d ":" -f 1 > log
-rm lognext
-```
+ps. The files in doc/help is really nasty so I use the quick way, open up with Sublime text 3 and use the plugin to filter out strange characters. After save and `convert xxx-subl`, usually it's good, and then handle the cleanup manually. quanzhen file is the really nasty one, toke me a long time to fix byte by byte, painful experience, so I just fail out using editors.
 
 ### 5. Process each file that are left in log 
 ```shell
@@ -75,7 +71,8 @@ function openup() {
     open -a "Hex Fiend" $1
 }
 function convert() {
-    iconv -f 18030 -t utf8 $1 > $1.bak
+    iconv -f gb18030 -t utf8 $1 > $1.bak
+    code $1.bak
 }
 function cleanup() {
     mv $1-gai.bak $1;
@@ -83,16 +80,15 @@ function cleanup() {
 }
 ```
 Algorithms process each file:
-1. Open current converted file with vscode, and current working file with `Hex Fiend`(`openup xxx.h` or `openup xxx.h-gai` depending on whether this is your first time to process the file.) 
+1. Open current converted file with vscode, and current working file with `Hex Fiend`(`openup xxx` or `openup xxx-gai` depending on whether this is your first time to process the file.) 
 2. Find last two or there intelligible characters in vscode. 
 3. Identify its hex code and bookmark them in Hex Fiend. This is the [recommended site.](http://mytju.com/classcode/tools/encode_gb2312.asp)
 4. Find the nearest intelligilble character after the bookmark and bookmark them either.
 5. Figure out what is added or what is lost between the bookmarks.
-6. Edit and save to `xxx.h-gai`
-7. `convert xxx.h-gai`
-8. check result by `code xxx.h-gai.bak` to see how is it going.
+6. Edit and save to `xxx-gai`
+7. Convert and show result with vscode `convert xxx-gai`.
 9. If convert is not successful, goto 3.
-10. If file is handling fine. `cleanup xxx.h`.
+10. If file is handling fine. `cleanup xxx`.
 11. Process next file.
 
 ### 6. Move all `xxx.bak` files back to `xxx`
