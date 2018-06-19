@@ -2,18 +2,18 @@
 int accept_object(object ob, object obj)
 {
         if (obj->query("id")!="gong wen") {
-                command("say ¶Ô²»Æğ£¬Õâ¶«Î÷ÎÒ²»Òª¡£");
+                command("say å¯¹ä¸èµ·ï¼Œè¿™ä¸œè¥¿æˆ‘ä¸è¦ã€‚");
                 return 0;
         }
         if (obj->query("applicant")!=ob->query("id")) {
-                command("say Õâ¹«ÎÄÉÏµÄÈË²»ÊÇÄã°¡¡£");
+                command("say è¿™å…¬æ–‡ä¸Šçš„äººä¸æ˜¯ä½ å•Šã€‚");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
         }
 
-        if (ob->query("family/family_name") != "´óÀí¶Î¼Ò" && !ob->query("dali/employee")) {
-                command("say "+RANK_D->query_respect(ob)+"ºÍ±¾ÅÉ²¢ÎŞ¹ØÏµ£¬¸øÎÒ´ËÎïºÎÒâ£¿");
+        if (ob->query("family/family_name") != "å¤§ç†æ®µå®¶" && !ob->query("dali/employee")) {
+                command("say "+RANK_D->query_respect(ob)+"å’Œæœ¬æ´¾å¹¶æ— å…³ç³»ï¼Œç»™æˆ‘æ­¤ç‰©ä½•æ„ï¼Ÿ");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
@@ -21,21 +21,21 @@ int accept_object(object ob, object obj)
 
         if (ob->query("dali/rank")!=1) {
                 command("hmm "+getuid(ob));
-                command("say "+RANK_D->query_respect(ob)+"ËÆºõÉí·Ö²»·û£¬²»¸ÃÔÚÎÒÕâÀïÉêÇëÉı¼¶°É¡£\n");
+                command("say "+RANK_D->query_respect(ob)+"ä¼¼ä¹èº«åˆ†ä¸ç¬¦ï¼Œä¸è¯¥åœ¨æˆ‘è¿™é‡Œç”³è¯·å‡çº§å§ã€‚\n");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
         }
 
-        if (ob->query("family/family_name")=="´óÀí¶Î¼Ò" && ob->query("dali/jobdone")<300) {
-                command("say "+RANK_D->query_respect(ob)+"ÎÒ¿´Äã»¹ÊÇÏÈÎªÍõ¸®³öµãÁ¦°É£¬µ½Ê±ºòÎÒÒ»¶¨ºÍÄã±È»®¡£");
+        if (ob->query("family/family_name")=="å¤§ç†æ®µå®¶" && ob->query("dali/jobdone")<300) {
+                command("say "+RANK_D->query_respect(ob)+"æˆ‘çœ‹ä½ è¿˜æ˜¯å…ˆä¸ºç‹åºœå‡ºç‚¹åŠ›å§ï¼Œåˆ°æ—¶å€™æˆ‘ä¸€å®šå’Œä½ æ¯”åˆ’ã€‚");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
         }
 
         ob->set_temp("fight_ok2",1);
-        command("say ºÃ£¬¼ÈÈ»ÒÑµÃµ½¸ß´óÈËĞí¿É£¬ÎÒÃÇ¾ÍÀ´ÑéÖ¤Ò»ÏÂÎä¹¦¡£");
+        command("say å¥½ï¼Œæ—¢ç„¶å·²å¾—åˆ°é«˜å¤§äººè®¸å¯ï¼Œæˆ‘ä»¬å°±æ¥éªŒè¯ä¸€ä¸‹æ­¦åŠŸã€‚");
         remove_call_out("destroying");
         call_out("destroying", 1, obj);
         return 1;
@@ -56,7 +56,7 @@ int accept_fight(object ob)
         if (!ob->query_temp("fight_ok2")) return 0;
 
         if (me->is_fighting())
-        return notify_fail(me->name()+"Ò¡Í·µÀ£º"+ RANK_D->query_respect(ob)+"£¬ÇëÎğÒĞ¶àÎªÊ¤£¡");
+        return notify_fail(me->name()+"æ‘‡å¤´é“ï¼š"+ RANK_D->query_respect(ob)+"ï¼Œè¯·å‹¿å€šå¤šä¸ºèƒœï¼");
 
         me->set("qi", me->query("max_qi"));     
         me->set("eff_qi", me->query("max_qi")); 
@@ -86,15 +86,15 @@ int chat()
     if (me->is_fighting()) return ::chat();
     if (!present(ob, environment())) return ::chat();
     if (( (int)me->query("qi")*100 / my_max_qi) <= 50 ) {
-                command("say ºÃ£¬¹ûÈ»ÉíÊÖ²»·²£¬²»Í÷´óÈËÃÇµÄÔÔÅã¡£\n");
-                command("say ºÃ£¬ÎÒ¾Í´úÍõÒ¯ÊÕÄã×÷¸öÎäÊ¿À²£¡¹§Ï²ÄãÁË£¡\n");
-                ob->set("title","´óÀí¹úÎäÊ¿");
+                command("say å¥½ï¼Œæœç„¶èº«æ‰‹ä¸å‡¡ï¼Œä¸æ‰å¤§äººä»¬çš„æ ½é™ªã€‚\n");
+                command("say å¥½ï¼Œæˆ‘å°±ä»£ç‹çˆ·æ”¶ä½ ä½œä¸ªæ­¦å£«å•¦ï¼æ­å–œä½ äº†ï¼\n");
+                ob->set("title","å¤§ç†å›½æ­¦å£«");
                 ob->set("dali/rank",2);
         return ::chat();
         }
 
     if (((int)ob->query("qi")*100 / his_max_qi) < 50) {
-                command("say ¿´À´"+RANK_D->query_respect(ob)+"¹¦·ò»ğºòÉĞÇ³£¬»¹²»ÄÜÊ¤ÈÎ¸ßÖ°Ñ½¡£\n");
+                command("say çœ‹æ¥"+RANK_D->query_respect(ob)+"åŠŸå¤«ç«å€™å°šæµ…ï¼Œè¿˜ä¸èƒ½èƒœä»»é«˜èŒå‘€ã€‚\n");
         return ::chat();
         }
     return ::chat();  
@@ -103,6 +103,6 @@ int chat()
 int do_kill()
 {
     object me= this_object();
-    say(me->name()+"¸ß¸ß¾ÙÆğ¹«ÎÄ£¬ºÈµÀ£º´óÀíÃÅÏÂ±ÈÎä£¬²»¿ÉÉ±ÈË!\n");
+    say(me->name()+"é«˜é«˜ä¸¾èµ·å…¬æ–‡ï¼Œå–é“ï¼šå¤§ç†é—¨ä¸‹æ¯”æ­¦ï¼Œä¸å¯æ€äºº!\n");
         return 1;
 }

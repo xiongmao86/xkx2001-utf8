@@ -3,7 +3,7 @@
 
 mapping *force_list = ({
 	([
-		"family": "ÉÙÁÖÅÉ",
+		"family": "å°‘æ—æ´¾",
 		"force": "hunyuan-yiqi",
 		"zheng_xie": 1,
 		"gang_rou": 1,
@@ -12,7 +12,7 @@ mapping *force_list = ({
 		"dodge": 0,	
 	]),
 	([
-		"family": "¶ëáÒÅÉ",
+		"family": "å³¨åµ‹æ´¾",
 		"force": "linji-zhuang",
                 "zheng_xie": 1,
                 "gang_rou": -1,
@@ -21,7 +21,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "Îäµ±ÅÉ",
+		"family": "æ­¦å½“æ´¾",
 		"force": "taiji-shengong",
                 "zheng_xie": 1,
                 "gang_rou": -1,
@@ -30,7 +30,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "Ø¤°ï",
+		"family": "ä¸å¸®",
 		"force": "huntian-qigong",
                 "zheng_xie": 1,
                 "gang_rou": 1,
@@ -39,7 +39,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "ĞÇËŞÅÉ",
+		"family": "æ˜Ÿå®¿æ´¾",
 		"force": "huagong-dafa",
                 "zheng_xie": -1,
                 "gang_rou": -1,
@@ -48,7 +48,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "ÌÒ»¨µº",
+		"family": "æ¡ƒèŠ±å²›",
 		"force": "bitao-xuangong",
                 "zheng_xie": 0,
                 "gang_rou": 0,
@@ -57,7 +57,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "°×ÍÕÉ½",
+		"family": "ç™½é©¼å±±",
 		"force": "hamagong",
                 "zheng_xie": -1,
                 "gang_rou": 1,
@@ -66,7 +66,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "Ñ©É½ÅÉ",
+		"family": "é›ªå±±æ´¾",
 		"force": "longxiang-banruo",
                 "zheng_xie": -1,
                 "gang_rou": 1,
@@ -75,7 +75,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "Ñªµ¶ÃÅ",
+		"family": "è¡€åˆ€é—¨",
 		"force": "longxiang-banruo",
                 "zheng_xie": -1,
                 "gang_rou": 1,
@@ -84,7 +84,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "»ªÉ½ÅÉ",
+		"family": "åå±±æ´¾",
 		"force": "zixia-gong",
                 "zheng_xie": 1,
                 "gang_rou": 0,
@@ -93,7 +93,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "ÉñÁú½Ì",
+		"family": "ç¥é¾™æ•™",
 		"force": "dulong-dafa",
                 "zheng_xie": -1,
                 "gang_rou": -1,
@@ -102,7 +102,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "´óÀí¶Î¼Ò",
+		"family": "å¤§ç†æ®µå®¶",
 		"force": "kurong-changong",
                 "zheng_xie": 1,
                 "gang_rou": 1,
@@ -111,7 +111,7 @@ mapping *force_list = ({
         	"dodge": 0,
 	]),
 	([
-		"family": "Ã÷½Ì",
+		"family": "æ˜æ•™",
 		"force": "shenghuo-xuangong",
                 "zheng_xie": 1,
                 "gang_rou": 1,

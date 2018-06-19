@@ -16,15 +16,15 @@ string* place = ({
 });
 
 string* area = ({
-        "ÑïÖİ",
-        "´óÀí",
-        "º¼Öİ",
-        "ÓÀµÇ",
-        "ÈªÖİ",
-        "ÄÏÑô",
-        "Î÷ÏÄ",
-//        "ÏåÑô",
-//        "±±¾©",
+        "æ‰¬å·",
+        "å¤§ç†",
+        "æ­å·",
+        "æ°¸ç™»",
+        "æ³‰å·",
+        "å—é˜³",
+        "è¥¿å¤",
+//        "è¥„é˜³",
+//        "åŒ—äº¬",
 });
 
 string ask_for_job()
@@ -32,17 +32,17 @@ string ask_for_job()
         object ob,obj,me=this_player();
         int i;
         string meet_room,room;
-        if (me->query("family/family_name")!="¶ëáÒÅÉ") {
+        if (me->query("family/family_name")!="å³¨åµ‹æ´¾") {
                 command ("smile ");
-                return RANK_D->query_respect(this_player())+"Ò²»áÈ°¼İÂğ£¿";
+                return RANK_D->query_respect(this_player())+"ä¹Ÿä¼šåŠé©¾å—ï¼Ÿ";
         }
         if (me->query_condition("get_pers_job") &&!me->query("last_finished")) {
                 command ("hmm ");
-                return "ÉÏ»Ø½»¸øÄãµÄÈÎÎñ»¹Ã»°ìÍê°É......";
+                return "ä¸Šå›äº¤ç»™ä½ çš„ä»»åŠ¡è¿˜æ²¡åŠå®Œå§......";
         }
         if (me->query_condition("get_pers_job") &&me->query("last_finished")) {
                 command ("hehehe ");
-                return "ÍĞ¹ù×æÊ¦µÄ¸££¬×î½üºÃÏóÍ¦Ì«Æ½µÄ¡£";
+                return "æ‰˜éƒ­ç¥–å¸ˆçš„ç¦ï¼Œæœ€è¿‘å¥½è±¡æŒºå¤ªå¹³çš„ã€‚";
         }
         command ("nod ");
         i=random(sizeof(place));
@@ -52,5 +52,5 @@ string ask_for_job()
         room=->obj->query("short");
         ob=new("/d/emei/npc/guide");
         ob->move(obj);
-        return "ºÃ°É£¬ÄÇ¾ÍÏà·³"+RANK_D->query_respect(this_player())+"ËÙÈ¥"+area[i]+"µÄ"+room+"£¬ÄÇ¶ùÓĞÍ¬ÃÅµÈ×ÅÄã½ÓÓ¦ÄØ¡£";
+        return "å¥½å§ï¼Œé‚£å°±ç›¸çƒ¦"+RANK_D->query_respect(this_player())+"é€Ÿå»"+area[i]+"çš„"+room+"ï¼Œé‚£å„¿æœ‰åŒé—¨ç­‰ç€ä½ æ¥åº”å‘¢ã€‚";
 }

@@ -13,7 +13,7 @@ void init()
 		if (interactive(ob = this_player()) && ob->query("dali/rank")>=5 && me->query("dali/rank")<5)
 			call_out("bow1", 1, me, ob);
 		else 
-			if (ob->query("dali/rank")==4 && me->query("family/family_name")=="�����μ�" && me->query("dali/rank")<5)
+			if (ob->query("dali/rank")==4 && me->query("family/family_name")=="大理段家" && me->query("dali/rank")<5)
 				call_out("bow2", 1, me, ob);
 	}
 }
@@ -21,7 +21,7 @@ void init()
 int bow1(object me, object ob)
 {
 	if (present(ob, environment(me)))
-		message_vision("$N�Ϲ��Ͼ�����$n�������񣺡���ү�á���\n",me,ob);
+		message_vision("$N毕恭毕敬地向$n躬身行礼：“王爷好。”\n",me,ob);
 	return 1;
 }
 
@@ -35,15 +35,15 @@ int bow2(object me, object ob)
 int accept_fight(object me)
 {
 
-	if (me->query("family/family_name") != "�����μ�"
+	if (me->query("family/family_name") != "大理段家"
 		&& !me->query("dali/employee")) {
-		command("say ��ү����������ɱ�ţ��������㵹ù��\n");
+		command("say 大爷我正想找人杀呐，今天算你倒霉。\n");
         me->apply_condition("dlkiller", 100);
         kill_ob(me);
         return 1;
 	}
 	else {
-		command("say ���ұ���ͬ�ţ��д�һ����Ҳ�޷¡�\n");
+		command("say 你我本是同门，切搓一二到也无仿。\n");
         return 1;
 	}
 }
@@ -51,10 +51,10 @@ int accept_fight(object me)
 int accept_kill(object me)
 {
 	if (me->query("dali/employee")) {
-		command("say ����ͬ�����£��ιʼӺ����ң����Ҹ���ƴ�ˣ�\n");
+		command("say 你我同府共事，何故加害与我？！我跟你拼了！\n");
 		me->add("dali/trust",-1);
 	}
-	else command("say ��ү����������ɱ�ţ��������㵹ù��\n");
+	else command("say 大爷我正想找人杀呐，今天算你倒霉。\n");
 	me->apply_condition("dlkiller", 100);
 	return 1;
 }

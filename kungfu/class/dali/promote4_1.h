@@ -2,18 +2,18 @@
 int accept_object(object ob, object obj)
 {
 		if (obj->query("id")!="xin yin") {
-                command("say ¶Ô²»Æğ£¬Õâ¶«Î÷ÎÒ²»Òª¡£");
+                command("say å¯¹ä¸èµ·ï¼Œè¿™ä¸œè¥¿æˆ‘ä¸è¦ã€‚");
                 return 0;
         }
 //        if (obj->query("applicant")!=me->query("id")) {
-//                command("say ´óµ¨£¡£¡Á¬»ÊÉÏµÄĞÅÓ¡¶¼ÏëÃ°Ãû¶¥Ìæ£¡");
+//                command("say å¤§èƒ†ï¼ï¼è¿çš‡ä¸Šçš„ä¿¡å°éƒ½æƒ³å†’åé¡¶æ›¿ï¼");
 //                remove_call_out("destroying");
 //                call_out("destroying", 1, obj);
 //                return 1;
 //        }
 
-        if (ob->query("family/family_name") != "´óÀí¶Î¼Ò" && !ob->query("dali/employee")) {
-                command("say "+RANK_D->query_respect(ob)+"ºÍ±¾ÅÉ²¢ÎŞ¹ØÏµ£¬¸øÎÒ´ËÎïºÎÒâ£¿");
+        if (ob->query("family/family_name") != "å¤§ç†æ®µå®¶" && !ob->query("dali/employee")) {
+                command("say "+RANK_D->query_respect(ob)+"å’Œæœ¬æ´¾å¹¶æ— å…³ç³»ï¼Œç»™æˆ‘æ­¤ç‰©ä½•æ„ï¼Ÿ");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
@@ -21,21 +21,21 @@ int accept_object(object ob, object obj)
 
         if (ob->query("dali/rank")!=3) {
                 command("hmm "+getuid(ob));
-                command("say "+RANK_D->query_respect(ob)+"ËÆºõÉí·Ö²»·û£¬²»¸ÃÔÚÎÒÕâÀïÉêÇëÉı¼¶°É¡£\n");
+                command("say "+RANK_D->query_respect(ob)+"ä¼¼ä¹èº«åˆ†ä¸ç¬¦ï¼Œä¸è¯¥åœ¨æˆ‘è¿™é‡Œç”³è¯·å‡çº§å§ã€‚\n");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
         }
 
-        if (ob->query("family/family_name")=="´óÀí¶Î¼Ò" && ob->query("dali/jobdone")<1000) {
-                command("say "+RANK_D->query_respect(ob)+"ÎÒ¿´Äã»¹ÊÇÏÈÎªÍõ¸®³öµãÁ¦°É£¬µ½Ê±ºòÎÒÒ»¶¨ºÍÄã±È»®¡£");
+        if (ob->query("family/family_name")=="å¤§ç†æ®µå®¶" && ob->query("dali/jobdone")<1000) {
+                command("say "+RANK_D->query_respect(ob)+"æˆ‘çœ‹ä½ è¿˜æ˜¯å…ˆä¸ºç‹åºœå‡ºç‚¹åŠ›å§ï¼Œåˆ°æ—¶å€™æˆ‘ä¸€å®šå’Œä½ æ¯”åˆ’ã€‚");
                 remove_call_out("destroying");
                 call_out("destroying", 1, obj);
                 return 1;
         }
 
 		ob->set_temp("fight_ok5",1);
-		command("say ºÃ£¬¼ÈÈ»ÒÑµÃµ½Ê¥ÉÏµÄĞí¿É£¬ÎÒÃÇ¾ÍÀ´ÑéÖ¤Ò»ÏÂÎä¹¦¡£");
+		command("say å¥½ï¼Œæ—¢ç„¶å·²å¾—åˆ°åœ£ä¸Šçš„è®¸å¯ï¼Œæˆ‘ä»¬å°±æ¥éªŒè¯ä¸€ä¸‹æ­¦åŠŸã€‚");
 		remove_call_out("destroying");
 		call_out("destroying", 1, obj);
 		return 1;
@@ -59,22 +59,22 @@ int accept_fight()
 	exp = me->query("combat_exp");
 
 	if (!me->query_temp("fight_ok5")) {
-		if (me->query("family/family_name") != "´óÀí¶Î¼Ò"
+		if (me->query("family/family_name") != "å¤§ç†æ®µå®¶"
 			&& !me->query("dali/employee")) {
-			command("say ´óÒ¯ÎÒÕıÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+			command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 			me->apply_condition("dlkiller", 100);
 			kill_ob(me);
 			return 1;
 			}
 		else {
-			command("say ÄãÎÒ±¾ÊÇÍ¬ÃÅ£¬ÇĞ´êÒ»¶şµ½Ò²ÎŞ·Â¡£\n");
+			command("say ä½ æˆ‘æœ¬æ˜¯åŒé—¨ï¼Œåˆ‡æ“ä¸€äºŒåˆ°ä¹Ÿæ— ä»¿ã€‚\n");
 			return 1;
 			}
 		}
 
 
 	if (obj->is_fighting())
-		return notify_fail(obj->name()+"Ò¡Í·µÀ£º"+RANK_D->query_respect(me)+"£¬ÇëÎğÒĞ¶àÎªÊ¤£¡");
+		return notify_fail(obj->name()+"æ‘‡å¤´é“ï¼š"+RANK_D->query_respect(me)+"ï¼Œè¯·å‹¿å€šå¤šä¸ºèƒœï¼");
 
 	if ( mapp(skill_status = me->query_skills()) ) {
 		skill_status = me->query_skills();
@@ -154,7 +154,7 @@ int chat()
 		letter->move(me);
 		letter->set("applicant",ob->query("id"));
 		command("give zou zhe to "+ob->query("id"));
-		command("say Çë"+RANK_D->query_respect(ob)+"°ÑÕâ·İ×àÕÛ´úÎÒ³Ê½»Ê¥ÉÏ¡£\n");
+		command("say è¯·"+RANK_D->query_respect(ob)+"æŠŠè¿™ä»½å¥æŠ˜ä»£æˆ‘å‘ˆäº¤åœ£ä¸Šã€‚\n");
 		remove_call_out("reset");
 		call_out("reset", 2, me);
 //		destruct(me);
@@ -162,7 +162,7 @@ int chat()
 		}
 
     if (((int)ob->query("qi")*100/his_max_qi)<50) {
-                command("say ¿´À´"+RANK_D->query_respect(ob)+"¹¦·ò»ğºòÉĞÇ³£¬»¹²»ÄÜÊ¤ÈÎ¸ßÖ°Ñ½¡£\n");
+                command("say çœ‹æ¥"+RANK_D->query_respect(ob)+"åŠŸå¤«ç«å€™å°šæµ…ï¼Œè¿˜ä¸èƒ½èƒœä»»é«˜èŒå‘€ã€‚\n");
 				remove_call_out("reset");
 				call_out("reset", 2, me);
                 return ::chat();
@@ -173,7 +173,7 @@ int chat()
 int do_kill()
 {
     object me= this_object();
-    say(me->name()+"¸ß¸ß¾ÙÆğÊéĞÅ£¬ºÈµÀ£º´óÀíÃÅÏÂ±ÈÎä£¬²»¿ÉÉ±ÈË!\n");
+    say(me->name()+"é«˜é«˜ä¸¾èµ·ä¹¦ä¿¡ï¼Œå–é“ï¼šå¤§ç†é—¨ä¸‹æ¯”æ­¦ï¼Œä¸å¯æ€äºº!\n");
         return 1;
 }
 void reset(object me)

@@ -7,62 +7,62 @@ void attempt_apprentice(object ob)
 {
         mapping fam;
 
-        if (!mapp(fam = ob->query("family")) || (string)ob->query("family/family_name") != "ÁéðÕ¹¬") {
+        if (!mapp(fam = ob->query("family")) || (string)ob->query("family/family_name") != "çµé¹«å®«") {
 
-		if(ob->query("gender") != "Å®ÐÔ") {
-                	command("say ÁéðÕ¹¬Ö»ÊÕÅ®µÜ×Ó£¬"+RANK_D->query_respect(ob)+"»¹ÊÇÇë»Ø°É¡£");
+		if(ob->query("gender") != "å¥³æ€§") {
+                	command("say çµé¹«å®«åªæ”¶å¥³å¼Ÿå­ï¼Œ"+RANK_D->query_respect(ob)+"è¿˜æ˜¯è¯·å›žå§ã€‚");
                 return;
                 }
 
-        	if ((string)ob->query("family/family_name") == "Ø¤°ï" && ob->query("rank") > 1 )  {
-               		command("say " + RANK_D->query_respect(ob) + "ÊÇØ¤°ï¸ßÊÖ£¬Ë¡ÎÒ²»ÄÜÊÕÄã¡£");
+        	if ((string)ob->query("family/family_name") == "ä¸å¸®" && ob->query("rank") > 1 )  {
+               		command("say " + RANK_D->query_respect(ob) + "æ˜¯ä¸å¸®é«˜æ‰‹ï¼Œæ•æˆ‘ä¸èƒ½æ”¶ä½ ã€‚");
                 	return;
         	}
 			
-                if (ob->query("family/family_name") != "ÁéðÕ¹¬" && ob->query("combat_exp") >= 10000 ) {
+                if (ob->query("family/family_name") != "çµé¹«å®«" && ob->query("combat_exp") >= 10000 ) {
                         command ("say " + RANK_D->query_respect(this_player())
-                                + "ÊÇ" + fam["family_name"]  + "µÄÎä¹¦¸ßÊÖ£¬±¾ÅÉ¿É²»¸ÒÊÕÁô¡£");
+                                + "æ˜¯" + fam["family_name"]  + "çš„æ­¦åŠŸé«˜æ‰‹ï¼Œæœ¬æ´¾å¯ä¸æ•¢æ”¶ç•™ã€‚");
                         return;
                 }
 
                 if ((string)ob->query("class") =="bonze") {
-			if ((string)ob->query("gender") == "Å®ÐÔ")  {
+			if ((string)ob->query("gender") == "å¥³æ€§")  {
 				command("hmm " + ob->query("id"));
-				command("say " +RANK_D->query_respect(ob) +"¼ÈÊÇ³ö¼ÒÈË£¬»¹ÊÇÈ¥¶ëáÒÉ½ÕÒÄÇµÄÊ¦Ì«ÃÇ°É¡£");
+				command("say " +RANK_D->query_respect(ob) +"æ—¢æ˜¯å‡ºå®¶äººï¼Œè¿˜æ˜¯åŽ»å³¨åµ‹å±±æ‰¾é‚£çš„å¸ˆå¤ªä»¬å§ã€‚");
                 		return;
 			}
 			else {
-                                command("say " +RANK_D->query_respect(ob) +"¼ÈÊÇ³ö¼ÒÈË£¬ÇëÈ¥ÉÙÁÖÑ°Ê¦°É¡£");
+                                command("say " +RANK_D->query_respect(ob) +"æ—¢æ˜¯å‡ºå®¶äººï¼Œè¯·åŽ»å°‘æž—å¯»å¸ˆå§ã€‚");
                         	return;
                 	}
 		}
 
 		if ((int)ob->query("shen") < -100)  {
                         command("hmm " + ob->query("id"));
-                        command("say ÎÒÁéðÕ¹¬Ëä²»ÊÇÃûÃÅÕýÅÉ£¬µ«Ò²¾ø²»ÓÚ¼éÐ°Ö®ÈËÎªÎé¡£");
-                	command("say "+RANK_D->query_respect(ob)+"·ÇÎÒ±²ÖÐÈË£¬Ë¡ÎÒ²»ÄÜÊÕÄã¡£");
+                        command("say æˆ‘çµé¹«å®«è™½ä¸æ˜¯åé—¨æ­£æ´¾ï¼Œä½†ä¹Ÿç»ä¸äºŽå¥¸é‚ªä¹‹äººä¸ºä¼ã€‚");
+                	command("say "+RANK_D->query_respect(ob)+"éžæˆ‘è¾ˆä¸­äººï¼Œæ•æˆ‘ä¸èƒ½æ”¶ä½ ã€‚");
         		return;
 		}
 
-		command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£Ï£ÍûÄãÄÜÐÐÌìµØÕýµÀ£¬½«ÁéðÕ¹¬·¢Ñï¹â´ó¡£"); 
+		command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚å¸Œæœ›ä½ èƒ½è¡Œå¤©åœ°æ­£é“ï¼Œå°†çµé¹«å®«å‘æ‰¬å…‰å¤§ã€‚"); 
         	command("recruit " + ob->query("id"));
 	}
 
 	else {
         	if ((string)ob->query("class") == "bonze")  {
-			if ((string)ob->query("gender") != "Å®ÐÔ" ) {
-				message_vision( "$n¿´×Å$NËµµÀ£ºÄã¼ÈÈ»³öÁË¼Ò£¬ÔÚÎÒÕâÀïÔõÑùÐÞÐÐ£¿\n", ob, this_object() );
-                		command("say ÎÒ¿´Äã²»ÈçÈ¥ÉÙÁÖËÂÑ°Ê¦°É¡£\n");
+			if ((string)ob->query("gender") != "å¥³æ€§" ) {
+				message_vision( "$nçœ‹ç€$Nè¯´é“ï¼šä½ æ—¢ç„¶å‡ºäº†å®¶ï¼Œåœ¨æˆ‘è¿™é‡Œæ€Žæ ·ä¿®è¡Œï¼Ÿ\n", ob, this_object() );
+                		command("say æˆ‘çœ‹ä½ ä¸å¦‚åŽ»å°‘æž—å¯ºå¯»å¸ˆå§ã€‚\n");
                 		return;
         		}
 			else {
-                                message_vision( "$n¿´×Å$NËµµÀ£ºÄã³öÁË¼Ò£¬ÔÚÎÒÕâÀïÔõÑùÐÞÐÐ£¿\n", ob, this_object() );
-                		command("say ÎÒ¿´Äã»¹ÊÇÈ¥¶ëáÒÉ½°É¡£");
+                                message_vision( "$nçœ‹ç€$Nè¯´é“ï¼šä½ å‡ºäº†å®¶ï¼Œåœ¨æˆ‘è¿™é‡Œæ€Žæ ·ä¿®è¡Œï¼Ÿ\n", ob, this_object() );
+                		command("say æˆ‘çœ‹ä½ è¿˜æ˜¯åŽ»å³¨åµ‹å±±å§ã€‚");
                 		return;
 			}
 		}
 
-		command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£Ï£ÍûÄãÄÜÐÐÌìµØÕýµÀ£¬½«ÁéðÕ¹¬·¢Ñï¹â´ó¡£"); 
+		command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚å¸Œæœ›ä½ èƒ½è¡Œå¤©åœ°æ­£é“ï¼Œå°†çµé¹«å®«å‘æ‰¬å…‰å¤§ã€‚"); 
 		command("recruit " + ob->query("id"));
 	}
 	return;

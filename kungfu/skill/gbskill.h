@@ -10,9 +10,9 @@ int valid_learn(object me)
 	qg = me->query_skill("huntian-qigong", 1);
 	ld = me->query_skill("liuhe-dao", 1);
 	
-	if (me->query("family/family_name") == "丐帮"){
+	if (me->query("family/family_name") == "涓愬府"){
 	if (dg+xl+ds+qg+ld > level*3)	
-                return notify_fail("你是叫化子，做的可不够，不能向师父学习本门武功。\n");
+                return notify_fail("浣犳槸鍙寲瀛愶紝鍋氱殑鍙笉澶燂紝涓嶈兘鍚戝笀鐖跺涔犳湰闂ㄦ鍔熴�俓n");
         return 1;
 	}
 }

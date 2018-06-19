@@ -4,21 +4,21 @@ void attempt_apprentice(object ob)
 	mapping fam;
     string dldj;
 
-	if (ob->query("family/family_name")!="´óÀí¶Î¼Ò") {
+	if (ob->query("family/family_name")!="å¤§ç†æ®µå®¶") {
 		command("shake "+ob->query("id"));
-		command("say ÎÒÔçÒÑÍ¶Éí´óÀíÎª³¼£¬²»ÔÙÉæ×ã½­ºþË×Îñ£¬²»ÄÜÊÕÍ½ÁË¡£");
+		command("say æˆ‘æ—©å·²æŠ•èº«å¤§ç†ä¸ºè‡£ï¼Œä¸å†æ¶‰è¶³æ±Ÿæ¹–ä¿—åŠ¡ï¼Œä¸èƒ½æ”¶å¾’äº†ã€‚");
         return;
 	}
 
     command ("look "+ob->query("id"));
 
 	if (ob->query("shen")<0) {
-		command("say ´óÀí¾³ÄÚÈÝ²»µÃÄãÕâµÈÒõÏÕÐ¡ÈË£¡");
+		command("say å¤§ç†å¢ƒå†…å®¹ä¸å¾—ä½ è¿™ç­‰é˜´é™©å°äººï¼");
 		return;
 	}
 
 	command("hehehe "+getuid(ob));
-	command("say ÄãÎÒ±¾ÊÇÍ¬¸®¹²ÊÂ£¬ÏëÕÒÎÒÑ§Ð©¹¦·òµ±È»Ã»ÎÊÌâ¡£");
+	command("say ä½ æˆ‘æœ¬æ˜¯åŒåºœå…±äº‹ï¼Œæƒ³æ‰¾æˆ‘å­¦äº›åŠŸå¤«å½“ç„¶æ²¡é—®é¢˜ã€‚");
 	ob->set_temp("title", ob->query("title"));
 	command("recruit " + ob->query("id"));
 	ob->set("title", ob->query_temp("title"));

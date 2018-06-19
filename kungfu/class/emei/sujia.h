@@ -7,42 +7,42 @@ void attempt_apprentice(object ob)
 {
         mapping fam;
 
-        if (!mapp(fam = ob->query("family")) || (string)ob->query("family/family_name") != "¶ëáÒÅÉ") {
+        if (!mapp(fam = ob->query("family")) || (string)ob->query("family/family_name") != "å³¨åµ‹æ´¾") {
 
-        	if ((string)ob->query("family/family_name") == "Ø¤°ï" && ob->query("rank") > 1 )  {
-               		command("say " + RANK_D->query_respect(ob) + "ÊÇØ¤°ï¸ßÊÖ£¬Ë¡ÎÒ²»ÄÜÊÕÄã¡£");
+        	if ((string)ob->query("family/family_name") == "ä¸å¸®" && ob->query("rank") > 1 )  {
+               		command("say " + RANK_D->query_respect(ob) + "æ˜¯ä¸å¸®é«˜æ‰‹ï¼Œæ•æˆ‘ä¸èƒ½æ”¶ä½ ã€‚");
                 	return;
         	}
 			
                 if (ob->query("combat_exp") >= 10000 && ob->query("family") ) {
                         command ("say " + RANK_D->query_respect(this_player())
-                                + "ÊÇ" + fam["family_name"]  + "µÄÎä¹¦¸ßÊÖ£¬±¾ÅÉ¿É²»¸ÒÊÕÁô¡£");
+                                + "æ˜¯" + fam["family_name"]  + "çš„æ­¦åŠŸé«˜æ‰‹ï¼Œæœ¬æ´¾å¯ä¸æ•¢æ”¶ç•™ã€‚");
                         return;
                 }
 
                 if ((string)ob->query("class") =="bonze") {
-			if ((string)ob->query("gender") == "Å®ÐÔ")  {
+			if ((string)ob->query("gender") == "å¥³æ€§")  {
 				command("hmm " + ob->query("id"));
-				command("say " +RANK_D->query_respect(ob) +"¼ÈÊÇ³ö¼ÒÈË£¬»¹ÊÇÈ¥±¾É½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦½ã°É¡£");
+				command("say " +RANK_D->query_respect(ob) +"æ—¢æ˜¯å‡ºå®¶äººï¼Œè¿˜æ˜¯åŽ»æœ¬å±±çš„åºµå ‚é‡Œæ‰¾æˆ‘é™å­—è¾ˆå¸ˆå§å§ã€‚");
                 		return;
 			}
 			else {
-                                command("say " +RANK_D->query_respect(ob) +"¼ÈÊÇ³ö¼ÒÈË£¬ÇëÈ¥ÉÙÁÖÑ°Ê¦°É¡£");
+                                command("say " +RANK_D->query_respect(ob) +"æ—¢æ˜¯å‡ºå®¶äººï¼Œè¯·åŽ»å°‘æž—å¯»å¸ˆå§ã€‚");
                         	return;
                 	}
 		}
 
 		if ((int)ob->query("shen") < -10)  {
                         command("hmm " + ob->query("id"));
-                        command("say ÎÒ¶ëáÒÅÉÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                	command("say "+RANK_D->query_respect(ob)+"·ÇÎÒ±²ÖÐÈË£¬Ë¡ÎÒ²»ÄÜÊÕÄã¡£");
+                        command("say æˆ‘å³¨åµ‹æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+                	command("say "+RANK_D->query_respect(ob)+"éžæˆ‘è¾ˆä¸­äººï¼Œæ•æˆ‘ä¸èƒ½æ”¶ä½ ã€‚");
         		return;
 		}
 
-		if ((string)ob->query("gender") != "Å®ÐÔ")  { 
+		if ((string)ob->query("gender") != "å¥³æ€§")  { 
                         command("hmm " + ob->query("id"));
-                        command("say ÎÒÃÇ¶ëáÒÅÉµÄ¹¦·ò±È½ÏÊÊºÏÅ®µÜ×ÓÐÞÏ°¡£"); 
-                        command("say ¼ÈÈ»" +RANK_D->query_respect(this_player()) +  "ÒªÑ§Ð©Ç¿Éí½¡ÌåµÄ±¾Áì£¬¾ÍÁôÔÚÎÒÕâÀï°É¡£");
+                        command("say æˆ‘ä»¬å³¨åµ‹æ´¾çš„åŠŸå¤«æ¯”è¾ƒé€‚åˆå¥³å¼Ÿå­ä¿®ä¹ ã€‚"); 
+                        command("say æ—¢ç„¶" +RANK_D->query_respect(this_player()) +  "è¦å­¦äº›å¼ºèº«å¥ä½“çš„æœ¬é¢†ï¼Œå°±ç•™åœ¨æˆ‘è¿™é‡Œå§ã€‚");
                 	command("recruit " + ob->query("id"));
         		ob->set("emei", 1);
 			if (!ob->query("MKS_emei")) 
@@ -51,7 +51,7 @@ void attempt_apprentice(object ob)
                 	return;
         	}
 
-		command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£Ï£ÍûÄãÄÜÐÐÌìµØÕýµÀ£¬½«¶ëáÒ¾«Éñ·¢Ñï¹â´ó¡£"); 
+		command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚å¸Œæœ›ä½ èƒ½è¡Œå¤©åœ°æ­£é“ï¼Œå°†å³¨åµ‹ç²¾ç¥žå‘æ‰¬å…‰å¤§ã€‚"); 
         	command("recruit " + ob->query("id"));
 		if (!ob->query("MKS_emei")) 
 		    ob->set("MKS_emei", ob->query("MKS"));
@@ -61,14 +61,14 @@ void attempt_apprentice(object ob)
 
 	else {
         	if ((string)ob->query("class") == "bonze")  {
-			if ((string)ob->query("gender") != "Å®ÐÔ" ) {
-				message_vision( "$n¿´×Å$NËµµÀ£ºÄã¼ÈÈ»³öÁË¼Ò£¬ÔÚÎÒÕâÀïÔõÑùÐÞÐÐ£¿\n", ob, this_object() );
-                		command("say ÎÒ¿´Äã²»ÈçÈ¥ÉÙÁÖËÂÑ°Ê¦°É¡£\n");
+			if ((string)ob->query("gender") != "å¥³æ€§" ) {
+				message_vision( "$nçœ‹ç€$Nè¯´é“ï¼šä½ æ—¢ç„¶å‡ºäº†å®¶ï¼Œåœ¨æˆ‘è¿™é‡Œæ€Žæ ·ä¿®è¡Œï¼Ÿ\n", ob, this_object() );
+                		command("say æˆ‘çœ‹ä½ ä¸å¦‚åŽ»å°‘æž—å¯ºå¯»å¸ˆå§ã€‚\n");
                 		return;
         		}
 			else {
-                                message_vision( "$n¿´×Å$NËµµÀ£ºÄã³öÁË¼Ò£¬ÔÚÎÒÕâÀïÔõÑùÐÞÐÐ£¿\n", ob, this_object() );
-                		command("say ÎÒ¿´Äã»¹ÊÇ»ØâÖÈ¥°É¡£");
+                                message_vision( "$nçœ‹ç€$Nè¯´é“ï¼šä½ å‡ºäº†å®¶ï¼Œåœ¨æˆ‘è¿™é‡Œæ€Žæ ·ä¿®è¡Œï¼Ÿ\n", ob, this_object() );
+                		command("say æˆ‘çœ‹ä½ è¿˜æ˜¯å›žåºµåŽ»å§ã€‚");
                 		return;
 			}
 		}
@@ -76,22 +76,22 @@ void attempt_apprentice(object ob)
 /*
 		if ((int)ob->query("shen") < (int)ob->query("emei_shen"))  {
         		command("hmm " + ob->query("id"));
-        		command("say ÎÒ¶ëáÒÅÉÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-        		message_vision( "$n¿´×Å$NËµµÀ£ºÄãÔÚÍâ±ß×öµÄÊÂÄãÊ¦¸¸ÖªµÀÂð£¿ÎÒ²»ÄÜÊÕÄã£¬ÄãÈ¥°É¡£\n", ob, this_object() );
+        		command("say æˆ‘å³¨åµ‹æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+        		message_vision( "$nçœ‹ç€$Nè¯´é“ï¼šä½ åœ¨å¤–è¾¹åšçš„äº‹ä½ å¸ˆçˆ¶çŸ¥é“å—ï¼Ÿæˆ‘ä¸èƒ½æ”¶ä½ ï¼Œä½ åŽ»å§ã€‚\n", ob, this_object() );
         		return;
 		}
 */
-		if ((string)ob->query("gender") != "Å®ÐÔ" ) { 
+		if ((string)ob->query("gender") != "å¥³æ€§" ) { 
                 	command("hmm " + ob->query("id"));
-                	command("say ÎÒÃÇ¶ëáÒÅÉµÄ¹¦·ò±È½ÏÊÊºÏÅ®µÜ×ÓÐÞÏ°¡£"); 
-                	command("say ¼ÈÈ»" +RANK_D->query_respect(this_player()) +  "ÒªÑ§Ð©Ç¿Éí½¡ÌåµÄ±¾Áì£¬¾ÍÁôÔÚÎÒÕâÀï°É¡£");
+                	command("say æˆ‘ä»¬å³¨åµ‹æ´¾çš„åŠŸå¤«æ¯”è¾ƒé€‚åˆå¥³å¼Ÿå­ä¿®ä¹ ã€‚"); 
+                	command("say æ—¢ç„¶" +RANK_D->query_respect(this_player()) +  "è¦å­¦äº›å¼ºèº«å¥ä½“çš„æœ¬é¢†ï¼Œå°±ç•™åœ¨æˆ‘è¿™é‡Œå§ã€‚");
                 	command("recruit " + ob->query("id"));
 			ob->set("emei", 1);
 //			ob->set("emei_shen", ob->query("shen"));
                 	return;
         	}
 
-		command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£Ï£ÍûÄãÄÜÐÐÌìµØÕýµÀ£¬½«¶ëáÒ¾«Éñ·¢Ñï¹â´ó¡£"); 
+		command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚å¸Œæœ›ä½ èƒ½è¡Œå¤©åœ°æ­£é“ï¼Œå°†å³¨åµ‹ç²¾ç¥žå‘æ‰¬å…‰å¤§ã€‚"); 
 		command("recruit " + ob->query("id"));
 		ob->set("emei", 1);
 //		ob->set("emei_shen", ob->query("shen"));

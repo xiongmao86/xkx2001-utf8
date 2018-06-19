@@ -9,11 +9,11 @@ int inter_killing()
 
 	if( interactive(ob = this_player()) 
 	&& environment(ob) == environment()){
-	if ( ob1->query("family/family_name") == "ÐÇËÞÅÉ" 
-	&& ob->query("family/family_name") != "ÐÇËÞÅÉ"  
+	if ( ob1->query("family/family_name") == "æ˜Ÿå®¿æ´¾" 
+	&& ob->query("family/family_name") != "æ˜Ÿå®¿æ´¾"  
 	&& ob->is_killing(ob1)){
 	
-	message_vision("$NÒ»ÉùÀäÐ¦£º´óµ¨¿ñÍ½£¡¾¹¸Òµ±×ÅÎÒµÄÃæÐÐÐ×É±ÈË£¬µ±ÎÒÐÇËÞÅÉºÃÆÛ¸ºÃ´£¿\n", me);
+	message_vision("$Nä¸€å£°å†·ç¬‘ï¼šå¤§èƒ†ç‹‚å¾’ï¼ç«Ÿæ•¢å½“ç€æˆ‘çš„é¢è¡Œå‡¶æ€äººï¼Œå½“æˆ‘æ˜Ÿå®¿æ´¾å¥½æ¬ºè´Ÿä¹ˆï¼Ÿ\n", me);
 	command("follow " + ob->query("id"));
 	me->kill_ob(ob);
 	return;

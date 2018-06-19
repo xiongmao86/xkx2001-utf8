@@ -9,7 +9,7 @@ private int qi_damage_300(object me, object target)
 	target->map_skill("force");
 	target->set_temp("dugu/force", 1);
 	time = (int)me->query_skill("sword") / 30;
-	msg1 = RED "$pÖ»¾õ»ìÉíÈçÔâµç»÷£¬ÕæÆø¾¢Á¦ÎÉÂÒÄÑ¿Ø£¬ÒÑÈ»²»ÄÜÊ©Õ¹"+to_chinese(skill)+"£¡\n" NOR;
+	msg1 = RED "$påªè§‰æ··èº«å¦‚é­ç”µå‡»ï¼ŒçœŸæ°”åŠ²åŠ›ç´Šä¹±éš¾æ§ï¼Œå·²ç„¶ä¸èƒ½æ–½å±•"+to_chinese(skill)+"ï¼\n" NOR;
 	target->apply_condition("jiujian_qi_damage", time);
 	message_vision(msg1, me, target);
 
@@ -25,19 +25,19 @@ private int qi_damage_220(object me, object target)
 	   case "hunyuan-yiqi":
 		if ( target->query_temp("jinzhongzhao") ) {
 		   target->delete_temp("jinzhongzhao");
-        	   msg1 = RED "$pµ¤Ìï±»´Ì£¬Á³É«Í»×ª²Ô°×£¬½ğ¸Õ²»»µÌåÉñÍ¨ÒÑÈ»Íß½â£¡\n" NOR;
+        	   msg1 = RED "$pä¸¹ç”°è¢«åˆºï¼Œè„¸è‰²çªè½¬è‹ç™½ï¼Œé‡‘åˆšä¸åä½“ç¥é€šå·²ç„¶ç“¦è§£ï¼\n" NOR;
 		}
 		
 		break;
 
 	   case "hamagong":
 		level = target->query_skill("force");
-		msg1 = RED "$p±»´ÌÖĞÌìÍ¥£¬";
+		msg1 = RED "$pè¢«åˆºä¸­å¤©åº­ï¼Œ";
 
 		if ( target->query_temp("reverse") ) {
 		   target->add_temp("apply/dodge", -level/2);
 		   target->set_temp("dugu/reverse", 1);
-		   msg1 += "$pÄÚÁ¦É¢ÂÒ£¬ÒÑ²»ÄÜÔÙÊ©Õ¹¾­Âöµ¹×ª£¬Ö»ºÃ·­ÉíÖ±Á¢ÆğÀ´£¡\n";
+		   msg1 += "$på†…åŠ›æ•£ä¹±ï¼Œå·²ä¸èƒ½å†æ–½å±•ç»è„‰å€’è½¬ï¼Œåªå¥½ç¿»èº«ç›´ç«‹èµ·æ¥ï¼\n";
 		}
 
 		if ( target->query_temp("powerup") ) {
@@ -45,9 +45,9 @@ private int qi_damage_220(object me, object target)
 		   target->add("eff_qi", -level*5/2);
 		   target->add("qi", -level);
 		   target->set_temp("dugu/hamapowerup", 1);
-		   if ( target->query_temp("reverse") ) msg1 += "Í¬Ê±";
+		   if ( target->query_temp("reverse") ) msg1 += "åŒæ—¶";
 
-		   msg1 += "$pÕæÆøÎŞ·¨Äı¾Û£¬Ë«±Û·¢Âé£¬ÔÙÒ²Ê¹²»³ö¸òó¡¹¦À´£¡\n" ;
+		   msg1 += "$pçœŸæ°”æ— æ³•å‡èšï¼ŒåŒè‡‚å‘éº»ï¼Œå†ä¹Ÿä½¿ä¸å‡ºè›¤èŸ†åŠŸæ¥ï¼\n" ;
 		}
 
 		msg1 += NOR;
@@ -56,20 +56,20 @@ private int qi_damage_220(object me, object target)
 
 	   case "huntian-qigong":
 		level = target->query_skill("force");
-                msg1 = RED "$p±»´ÌÖĞÆøº££¬";
+                msg1 = RED "$pè¢«åˆºä¸­æ°”æµ·ï¼Œ";
 
 		if ( target->query_temp("powerup") ) {
 		   target->add_temp("apply/dodge", -level/3);
 		   target->add_temp("apply/attack", -level/3);
                    target->set_temp("dugu/powerup", 1);
-                   msg1 += "$pĞØ¿ÚÕæÁ¦ËÄ´Ü£¬ÄÑÒÔ¿ØÖÆ£¬ÎŞ·¨ÔÙÔËÊ¹»ìÌìÆø¹¦¼ÓÁ¦£¡\n"; 
+                   msg1 += "$pèƒ¸å£çœŸåŠ›å››çªœï¼Œéš¾ä»¥æ§åˆ¶ï¼Œæ— æ³•å†è¿ä½¿æ··å¤©æ°”åŠŸåŠ åŠ›ï¼\n"; 
                 }
 
 		if ( target->query_temp("shengang") ) {
 		   target->set_temp("shengang", level/8);
 
-		   if ( target->query_temp("powerup") ) msg1 += "Í¬Ê±";
-		   msg1 += "$pÄÚÁ¦Í»¸ĞÖÍĞ¹£¬Á¦²»´ÓĞÄ£¬Î¨ÓĞ¿ªÊ¼ÊÕÊøÆğ»ìÌìÉñî¸£¡\n";
+		   if ( target->query_temp("powerup") ) msg1 += "åŒæ—¶";
+		   msg1 += "$på†…åŠ›çªæ„Ÿæ»æ³„ï¼ŒåŠ›ä¸ä»å¿ƒï¼Œå”¯æœ‰å¼€å§‹æ”¶æŸèµ·æ··å¤©ç¥ç½¡ï¼\n";
 		}
 
 		msg1 += NOR;
@@ -83,7 +83,7 @@ private int qi_damage_220(object me, object target)
                    target->add_temp("apply/armor", -level/2);
                    target->add_temp("apply/defense", -level/2);
                    target->set_temp("dugu/shield", 1);
-		   msg1 = RED "$p°Ù»ã±»´Ì£¬È«ÉíÕæÆøÍ»Ğ¹£¬»¤ÌåÉñ¹¦Ò»É¢£¬¹ÄÕÇµÄÒÂÉÀÒ²Æ½¸²ÏÂÀ´£¡\n" NOR;
+		   msg1 = RED "$pç™¾æ±‡è¢«åˆºï¼Œå…¨èº«çœŸæ°”çªæ³„ï¼ŒæŠ¤ä½“ç¥åŠŸä¸€æ•£ï¼Œé¼“æ¶¨çš„è¡£è¡«ä¹Ÿå¹³è¦†ä¸‹æ¥ï¼\n" NOR;
                 }
 
 		break;
@@ -96,43 +96,43 @@ private int qi_damage_220(object me, object target)
 		   target->add_temp("apply/dexerity", -level/10);
 		   target->add_temp("apply/speed", -level/30);
 		   target->set_temp("dugu/wuzhuan", 1);
-		   msg1 = RED "$pëşÖĞ±»´Ì£¬ÕæÆøÔË×ª´ôÖÍ£¬½Å²½ò©º©£¬ÆæÃÅÎå×ª¶ÙÈ»ÆÆÈ¥£¡\n" NOR;
+		   msg1 = RED "$pè†»ä¸­è¢«åˆºï¼ŒçœŸæ°”è¿è½¬å‘†æ»ï¼Œè„šæ­¥é¢Ÿæ†¨ï¼Œå¥‡é—¨äº”è½¬é¡¿ç„¶ç ´å»ï¼\n" NOR;
 		}
 
 		break;
 
 	   case "linji-zhuang":
 		level = target->query_skill("linji-zhuang", 1);
-		msg1 = RED "$p±»´ÌÖĞÃüÃÅ£¬" ;
+		msg1 = RED "$pè¢«åˆºä¸­å‘½é—¨ï¼Œ" ;
 
 		if ( target->query_temp("linji/tiandi") ) {
 		   target->add("max_qi", -level);
 		   target->add("max_jing", -level);
 		   target->add("max_jingli", -level);
-		   target->receive_damage("qi", level, "Ç¿ÔËÌìµØ×¯Äæ¿¹ÆÆÆøÊ½£¬ÌåÁ¦Í¸Ö§¹ı¶ÈËÀÁË");
-		   target->receive_damage("jing", level, "Ç¿ÔËÌìµØ×¯Äæ¿¹ÆÆÆøÊ½£¬¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
-		   target->receive_damage("jingli", level, "Ç¿ÔËÌìµØ×¯Äæ¿¹ÆÆÆøÊ½£¬¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
+		   target->receive_damage("qi", level, "å¼ºè¿å¤©åœ°åº„é€†æŠ—ç ´æ°”å¼ï¼Œä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+		   target->receive_damage("jing", level, "å¼ºè¿å¤©åœ°åº„é€†æŠ—ç ´æ°”å¼ï¼Œç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+		   target->receive_damage("jingli", level, "å¼ºè¿å¤©åœ°åº„é€†æŠ—ç ´æ°”å¼ï¼Œç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 		   if ((int)target->query("eff_qi") > (int)target->query("max_qi") )
 			target->set("eff_qi", (int)target->query("max_qi") );
 		   if ((int)target->query("eff_jing") > (int)target->query("max_jing") )
 			target->set("eff_jing", (int)target->query("max_jing") );
 		   target->set_temp("dugu/tiandi", 1);
 
-		   msg1 += "$pÖ»¾õ»ìÉíÑªÆøÕôÌÚ£¬ÄÑÒÔ¼İÔ¦£¬ÎŞ·¨ÔÙÔËÓÃÌìµØ×¯£¡\n" ;
+		   msg1 += "$påªè§‰æ··èº«è¡€æ°”è’¸è…¾ï¼Œéš¾ä»¥é©¾é©­ï¼Œæ— æ³•å†è¿ç”¨å¤©åœ°åº„ï¼\n" ;
 		}
 
 		if ( target->query_temp("linji/zhixin") ) {
 		   level1 = target->query_int() - target->query("int") - target->query_skill("literate", 1);
 		   target->add_temp("apply/intelligence", -level1);
 		   target->set_temp("dugu/zhixin", level1);
-		   msg1 += "$pĞÄÉñÄÑ¶¨£¬Ë¼Î¬ÔÓÂÒÎŞÕÂ£¬Ö®ĞÄ×¯ÒàÎŞ·¨ÔË×÷£¡\n" ;
+		   msg1 += "$på¿ƒç¥éš¾å®šï¼Œæ€ç»´æ‚ä¹±æ— ç« ï¼Œä¹‹å¿ƒåº„äº¦æ— æ³•è¿ä½œï¼\n" ;
 		}
 	
 		if ( target->query_temp("linji/fengyun") ) {
 		   target->add_temp("apply/dexerity", -level);
 		   target->add_temp("apply/attack", level);
 		   target->set_temp("dugu/fengyun", 1);
-		   msg1 += "Í¬Ê±$pÉí·¨Öğ½¥»ºÂıÏÂÀ´£¬¿É¼û·çÔÆ×¯ÒÑ±»ÆÆ½â£¡\n" ;
+		   msg1 += "åŒæ—¶$pèº«æ³•é€æ¸ç¼“æ…¢ä¸‹æ¥ï¼Œå¯è§é£äº‘åº„å·²è¢«ç ´è§£ï¼\n" ;
 
 		}
 
@@ -146,7 +146,7 @@ private int qi_damage_220(object me, object target)
 		   if ( (int)target->query("eff_qi") > (int)target->query("max_qi") ) 
                 	target->set("eff_qi", (int)target->query("max_qi") );
 		   target->set_temp("dugu/daxiao", level1);
-		   msg1 += "×îºó$pÌåÏÖÆ£Ì¬£¬ËÆºõÁ¦Æø²»¼Ì£¬´óĞ¡×¯Ò²²»ÄÜÊ©Õ¹ÁË£¡\n" ;
+		   msg1 += "æœ€å$pä½“ç°ç–²æ€ï¼Œä¼¼ä¹åŠ›æ°”ä¸ç»§ï¼Œå¤§å°åº„ä¹Ÿä¸èƒ½æ–½å±•äº†ï¼\n" ;
 		}
 
 		msg1 += NOR;
@@ -171,7 +171,7 @@ private int qi_damage_150(object me, object target)
 {
 	string msg1;
 
-	msg1 = RED "½á¹û$pÍË±Ü²»¼°£¬ÖĞ½£Òò¶øµ¼ÖÁÄÚÁ¦ÊÜËğ¡£\n" NOR;
+	msg1 = RED "ç»“æœ$pé€€é¿ä¸åŠï¼Œä¸­å‰‘å› è€Œå¯¼è‡³å†…åŠ›å—æŸã€‚\n" NOR;
 
 	if ( random(2) == 1 ) {
 	   target->add("max_neili", -(random(4)+2));

@@ -1,8 +1,8 @@
 //Cracked by Roath
-// promote.h for fight and get promotion of Ø¤°ï
+// promote.h for fight and get promotion of ä¸å¸®
 // created by ???
 
-// Modified by xxx@xkx 01.01 for allowing some npc accept special objects other than ÇàÖñÁî
+// Modified by xxx@xkx 01.01 for allowing some npc accept special objects other than é’ç«¹ä»¤
 
 /**************************************************************
  All NPCs who need to accept special objects need:
@@ -14,7 +14,7 @@ int accept_special_object(object ob, object obj);
 3. the npc set:
 set("accept_special_object", 1);
 
-If you need an example for this, please read peng.c  Åí³¤ÀÏµÄÎÄ¼þ
+If you need an example for this, please read peng.c  å½­é•¿è€çš„æ–‡ä»¶
 ***************************************************************/
 
 // Use a macro guard to avoid duplicate accept_special_object() function definition 
@@ -38,39 +38,39 @@ int accept_object(object ob, object obj)
         if( obj->query("id") != "qingzhu ling" && query("accept_special_object") )
           return accept_special_object(ob, obj);
         
-        // For ÇàÖñÁî
+        // For é’ç«¹ä»¤
         
         if( ob->query("family/family_name") != me->query("family/family_name") ) {
-                command("say ÄãÎÒ²»ÊôÍ¬Ò»ÃÅÅÉ£¬Äã¸øÎÒÇàÖñÁîÓÖÓÐºÎÓÃ£¿£¡");
+                command("say ä½ æˆ‘ä¸å±žåŒä¸€é—¨æ´¾ï¼Œä½ ç»™æˆ‘é’ç«¹ä»¤åˆæœ‰ä½•ç”¨ï¼Ÿï¼");
                 return 0;
         }
 
         if( ob->query("rank") != me->query("rank") ) {
-                command("say ÄãÎÒ°ïÖÐ±²·Ý²»Í¬£¬ÎÒÃ»ÓÐ×Ê¸ñ¿¼ÑéÄãµÄÎä¹¦£¬Äã»¹ÊÇÕÒÍ¬±²µÄ´óÊ¦ÐÖÈ¥°É£¡");
+                command("say ä½ æˆ‘å¸®ä¸­è¾ˆä»½ä¸åŒï¼Œæˆ‘æ²¡æœ‰èµ„æ ¼è€ƒéªŒä½ çš„æ­¦åŠŸï¼Œä½ è¿˜æ˜¯æ‰¾åŒè¾ˆçš„å¤§å¸ˆå…„åŽ»å§ï¼");
                 return 0;
         }
 
         if( obj->query("id") == "qingzhu ling" ) 
         {
                 if( obj->query_temp("owner") != ob->query("name") ) {
-                        command("say Äã²»ÊÇÕâ¿ìÇàÖñÁîµÄÖ÷ÈË£¡");
+                        command("say ä½ ä¸æ˜¯è¿™å¿«é’ç«¹ä»¤çš„ä¸»äººï¼");
                         return 0;
                 } else if( obj->query_temp("win_times") < 1 ) {
-                        command("say ÄãÉÐÎ´Õ½Ê¤Ò»¸öÍ¬ÃÅÊ¦ÐÖµÜ£¬²»·ûºÏÌôÕ½ÎÒµÄÌõ¼þ¡£");
+                        command("say ä½ å°šæœªæˆ˜èƒœä¸€ä¸ªåŒé—¨å¸ˆå…„å¼Ÿï¼Œä¸ç¬¦åˆæŒ‘æˆ˜æˆ‘çš„æ¡ä»¶ã€‚");
                         return 0;
                 } else if( obj->query_temp("win_last") ) {
-                        command("say ÄãÒÑ¾­Õ½Ê¤Ò»Î»Ê¦ÐÖµÜºÍÍ¬±²´óÊ¦ÐÖ£¬¿ÉÒÔÖ±½ÓÕÒ¼ò³¤ÀÏÒªÇó½úÉýÁË£¡");
+                        command("say ä½ å·²ç»æˆ˜èƒœä¸€ä½å¸ˆå…„å¼Ÿå’ŒåŒè¾ˆå¤§å¸ˆå…„ï¼Œå¯ä»¥ç›´æŽ¥æ‰¾ç®€é•¿è€è¦æ±‚æ™‹å‡äº†ï¼");
                         return 0;
                 } else {
                         ob->set_temp("fight_ok",1);
-                        command("say ºÃ£¬ÎÒÃÇÕâ¾ÍÀ´ÑéÖ¤Ò»ÏÂÎä¹¦£¬¿´ÄãÊÇ·ñÄÜ¹»³ÉÎªÒ»ÃûºÏ¸ñµÄØ¤°ï" +
-                        chinese_number(ob->query("rank")) + "´üµÜ×Ó¡£");
+                        command("say å¥½ï¼Œæˆ‘ä»¬è¿™å°±æ¥éªŒè¯ä¸€ä¸‹æ­¦åŠŸï¼Œçœ‹ä½ æ˜¯å¦èƒ½å¤Ÿæˆä¸ºä¸€ååˆæ ¼çš„ä¸å¸®" +
+                        chinese_number(ob->query("rank")) + "è¢‹å¼Ÿå­ã€‚");
                         return 1;
                 }
         }
 
         command("shake");
-        command("say Õâ¶«Î÷¸øÎÒ¿ÉÃ»ÓÐÊ²÷áÓÃ¡£");
+        command("say è¿™ä¸œè¥¿ç»™æˆ‘å¯æ²¡æœ‰ä»€éº½ç”¨ã€‚");
         command("give " + obj->query("id") + " to " + me->query("id"));
         return 0;
 
@@ -109,20 +109,20 @@ int chat()
 
         if (( (int)me->query("qi")*100 / my_max_qi) <= 50 ) 
         {
-                command("say Ê¦µÜÎä¹¦×¿¾ø£¬ÁîÎªÐÖº¹ÑÕÖ®ÖÁ£¬²ÑÀ¢£¬²ÑÀ¢£¡\n");
-                message_vision("\n$NÈ¡¹ýÇàÖñÁî£¬ÔÚ±³ÃæÇ©ÉÏ×Ô¼ºµÄÃû×ÖºóµÝ¸ø$n¡£\n\n", 
+                command("say å¸ˆå¼Ÿæ­¦åŠŸå“ç»ï¼Œä»¤ä¸ºå…„æ±—é¢œä¹‹è‡³ï¼Œæƒ­æ„§ï¼Œæƒ­æ„§ï¼\n");
+                message_vision("\n$Nå–è¿‡é’ç«¹ä»¤ï¼Œåœ¨èƒŒé¢ç­¾ä¸Šè‡ªå·±çš„åå­—åŽé€’ç»™$nã€‚\n\n", 
                                 me, ob);
 
                 obj = present("qingzhu ling", me);
                 obj->set_temp("win_last", 1);
                 obj->move(ob);
 
-                command("say ÄãÒÑ¾­Õ½Ê¤ÎÒºÍÁíÒ»Î»Ê¦ÐÖµÜ£¬¿ÉÒÔÖ±½ÓÕÒ¼ò³¤ÀÏÒªÇó½úÉýÁË£¡");
+                command("say ä½ å·²ç»æˆ˜èƒœæˆ‘å’Œå¦ä¸€ä½å¸ˆå…„å¼Ÿï¼Œå¯ä»¥ç›´æŽ¥æ‰¾ç®€é•¿è€è¦æ±‚æ™‹å‡äº†ï¼");
                 return ::chat();
         } 
         else if (( (int)ob->query("qi")*100 / his_max_qi) < 50 ) 
         {
-                command("say ¿´À´Ê¦µÜ»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚØ¤°ïÖÚµÜ×ÓÖÐ³öÈËÍ·µØ£¡\n");
+                command("say çœ‹æ¥å¸ˆå¼Ÿè¿˜å¾—å¤šåŠ ç»ƒä¹ ï¼Œæ–¹èƒ½åœ¨ä¸å¸®ä¼—å¼Ÿå­ä¸­å‡ºäººå¤´åœ°ï¼\n");
                 return ::chat();
         }
 

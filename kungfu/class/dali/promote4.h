@@ -11,14 +11,14 @@ void init()
 	else
 	{
 		if (interactive(who = this_player()) && who->query("dali/rank")>=5 && me->query("dali/rank")<5) call_out("bow1", 1, me, who);
-		else if (who->query("dali/rank")==4 && me->query("family/family_name")=="´óÀí¶Î¼Ò" && me->query("dali/rank")<5) call_out("bow2", 1, me, who);
+		else if (who->query("dali/rank")==4 && me->query("family/family_name")=="å¤§ç†æ®µå®¶" && me->query("dali/rank")<5) call_out("bow2", 1, me, who);
 	}
 	add_action("do_kill", "kill");
 }
 
 int bow1(object me, object who)
 {
-	if (present(who, environment(me))) message_vision("$N±Ï¹§±Ï¾´µØÏò$n¹ªÉíĞĞÀñ£º¡°ÍõÒ¯ºÃ¡£¡±\n",me, who);
+	if (present(who, environment(me))) message_vision("$Næ¯•æ­æ¯•æ•¬åœ°å‘$nèº¬èº«è¡Œç¤¼ï¼šâ€œç‹çˆ·å¥½ã€‚â€\n",me, who);
 	return 1;
 }
 
@@ -33,10 +33,10 @@ int accept_kill(object who)
 {
 	if (who->query("dali/employee"))
 	{
-		command("say ÄãÎÒÍ¬¸®¹²ÊÂ£¬ºÎ¹Ê¼Óº¦ÓëÎÒ£¿£¡ÎÒ¸úÄãÆ´ÁË£¡\n");
+		command("say ä½ æˆ‘åŒåºœå…±äº‹ï¼Œä½•æ•…åŠ å®³ä¸æˆ‘ï¼Ÿï¼æˆ‘è·Ÿä½ æ‹¼äº†ï¼\n");
 		who->add("dali/trust",-1);
 	}
-	else command("say ´óÒ¯ÎÒÕıÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+	else command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 	who->apply_condition("dlkiller", 100);
 	return 1;
 }
@@ -46,7 +46,7 @@ void unconcious()
 	object who, me=this_object();
 
 	if (objectp(who = me->query_temp("last_damage_from")))	who->add("dali/trust", -1);
-//	message_vision("\nÖ»¼û$N·ÉÉíÒ»ÉÁ£¬´Ó´°¿ÚÔ¾ÁË³öÈ¥£¬ÏûÊ§ÎŞ×ÙÁË¡£\n", this_object());
+//	message_vision("\nåªè§$Né£èº«ä¸€é—ªï¼Œä»çª—å£è·ƒäº†å‡ºå»ï¼Œæ¶ˆå¤±æ— è¸ªäº†ã€‚\n", this_object());
 //	destruct(me);
 	::unconcious();
 }
@@ -66,26 +66,26 @@ string ask_me_1()
 	string *sname;
 	int i, k;
 
-	if (me->query("family/family_name")!="´óÀí¶Î¼Ò" && !me->query("dali/employee")) return RANK_D->query_respect(me)+"ÈçÒªÍ¶¹Ù£¬ºÎ²»Ç°ÍùÖĞÔ­´óËÎ¹ú£¿";
-	if (me->query("dali/rank")>=2) return RANK_D->query_respect(me)+"ÒÑÓĞ¹ÙÖ°£¬ÎŞĞëÔÙÉêÇë¹«ÎÄÉıÖ°ÁË¡£";
+	if (me->query("family/family_name")!="å¤§ç†æ®µå®¶" && !me->query("dali/employee")) return RANK_D->query_respect(me)+"å¦‚è¦æŠ•å®˜ï¼Œä½•ä¸å‰å¾€ä¸­åŸå¤§å®‹å›½ï¼Ÿ";
+	if (me->query("dali/rank")>=2) return RANK_D->query_respect(me)+"å·²æœ‰å®˜èŒï¼Œæ— é¡»å†ç”³è¯·å…¬æ–‡å‡èŒäº†ã€‚";
 	skl=me->query_skills();
 	sname=sort_array( keys(skl), (: strcmp :) );
 	for(i=0; i<sizeof(skl); i++)
 	{
 		if (skl[sname[i]]<60) k++;
 	}
-	if (k>2) return RANK_D->query_respect(me)+"¹¦Á¦ÉĞÇ³£¬»¹²»¹»×Ê¸ñÉêÇëÉı¼¶¡£";
-	if (me->query("family/family_name")!="´óÀí¶Î¼Ò" && me->query("dali/employee"))
+	if (k>2) return RANK_D->query_respect(me)+"åŠŸåŠ›å°šæµ…ï¼Œè¿˜ä¸å¤Ÿèµ„æ ¼ç”³è¯·å‡çº§ã€‚";
+	if (me->query("family/family_name")!="å¤§ç†æ®µå®¶" && me->query("dali/employee"))
 	{
-		if (me->query("dali/arrestmade") < (me->query("combat_exp")*3/4000)) return RANK_D->query_respect(me)+"»¹ÊÇÇëÏÈÎª´óÀí¶à³öÁ¦ÔÙÀ´ÉêÇëÉı¼¶°É¡£";
-		if (me->query("dali/trust") < (100+me->query("dali/arrestmade")/20)) return RANK_D->query_respect(me)+"ÔÚÎÒ´óÀíµ±²î£¬¹¤×÷»¹²»¹»Å¬Á¦°¡¡£";
+		if (me->query("dali/arrestmade") < (me->query("combat_exp")*3/4000)) return RANK_D->query_respect(me)+"è¿˜æ˜¯è¯·å…ˆä¸ºå¤§ç†å¤šå‡ºåŠ›å†æ¥ç”³è¯·å‡çº§å§ã€‚";
+		if (me->query("dali/trust") < (100+me->query("dali/arrestmade")/20)) return RANK_D->query_respect(me)+"åœ¨æˆ‘å¤§ç†å½“å·®ï¼Œå·¥ä½œè¿˜ä¸å¤ŸåŠªåŠ›å•Šã€‚";
 		me->set("dali/rank",1);
 	}
 	obj = new("/d/dali/obj/allow-letter2");
 	obj->set("applicant",me->query("id"));
 	obj->move(me);
-	message_vision("$N»ñµÃÒ»·â¹«ÎÄ¡£\n",me);
-	return "ºÃ°É£¬Æ¾Õâ·â¹«ÎÄ£¬Äã¿ÉÒÔÈ¥Ïò¶¨°²¸®×Ü¹ÜÉêÇëÉı¼¶¡£";
+	message_vision("$Nè·å¾—ä¸€å°å…¬æ–‡ã€‚\n",me);
+	return "å¥½å§ï¼Œå‡­è¿™å°å…¬æ–‡ï¼Œä½ å¯ä»¥å»å‘å®šå®‰åºœæ€»ç®¡ç”³è¯·å‡çº§ã€‚";
 }
 
 int accept_object(object who, object obj)
@@ -94,7 +94,7 @@ int accept_object(object who, object obj)
 
 	if ((obj->query("id")!="xin xin" && obj->query("id")!="xie lian") || obj->is_character() || !present(obj,who) || userp(obj))
 	{
-		command("say ¶Ô²»Æğ£¬Õâ¶«Î÷ÎÒ²»Òª¡£");
+		command("say å¯¹ä¸èµ·ï¼Œè¿™ä¸œè¥¿æˆ‘ä¸è¦ã€‚");
 		return 0;
 	}
 	if (obj->query("id")=="tie xian")
@@ -104,19 +104,19 @@ int accept_object(object who, object obj)
 		call_out("destroying",1,obj);
 		room->delete_temp("chain/"+who->query("id"));
 		room->add("chain_count", -1);
-		command("say ºÜºÃ£¬"+RANK_D->query_respect(who)+"ÒÔºóĞèÒªÓÃÌúÁ´£¬ÔÙÀ´ÏòÎÒÒªºÃÁË¡£");
+		command("say å¾ˆå¥½ï¼Œ"+RANK_D->query_respect(who)+"ä»¥åéœ€è¦ç”¨é“é“¾ï¼Œå†æ¥å‘æˆ‘è¦å¥½äº†ã€‚");
 		return 1;
 	}
     if (obj->query("id")=="xin xin" && obj->query("applicant")!=who->query("id"))
 	{
-		command("say ´óµ¨£¡£¡Á¬»ÊÉÏµÄĞÅÓ¡¶¼ÏëÃ°Ãû¶¥Ìæ£¡");
+		command("say å¤§èƒ†ï¼ï¼è¿çš‡ä¸Šçš„ä¿¡å°éƒ½æƒ³å†’åé¡¶æ›¿ï¼");
 		remove_call_out("destroying");
 		call_out("destroying", 1, obj);
 		return 1;
 	}
-	if (who->query("family/family_name") != "´óÀí¶Î¼Ò" && !who->query("dali/employee"))
+	if (who->query("family/family_name") != "å¤§ç†æ®µå®¶" && !who->query("dali/employee"))
 	{
-		command("say "+RANK_D->query_respect(who)+"ºÍ±¾ÅÉ²¢ÎŞ¹ØÏµ£¬¸øÎÒ´ËÎïºÎÒâ£¿");
+		command("say "+RANK_D->query_respect(who)+"å’Œæœ¬æ´¾å¹¶æ— å…³ç³»ï¼Œç»™æˆ‘æ­¤ç‰©ä½•æ„ï¼Ÿ");
 		remove_call_out("destroying");
 		call_out("destroying", 1, obj);
 		return 1;
@@ -124,20 +124,20 @@ int accept_object(object who, object obj)
 	if (obj->query("id")=="xin xin" && who->query("dali/rank")!=3)
 	{
 		command("hmm "+getuid(who));
-		command("say "+RANK_D->query_respect(who)+"ËÆºõÉí·Ö²»·û£¬²»¸ÃÔÚÎÒÕâÀïÉêÇëÉı¼¶°É¡£\n");
+		command("say "+RANK_D->query_respect(who)+"ä¼¼ä¹èº«åˆ†ä¸ç¬¦ï¼Œä¸è¯¥åœ¨æˆ‘è¿™é‡Œç”³è¯·å‡çº§å§ã€‚\n");
 		remove_call_out("destroying");
 		call_out("destroying", 1, obj);
 		return 1;
 	}
-	if (obj->query("id")=="xin yin" && who->query("family/family_name")=="´óÀí¶Î¼Ò" && who->query("dali/jobdone")<10000)
+	if (obj->query("id")=="xin yin" && who->query("family/family_name")=="å¤§ç†æ®µå®¶" && who->query("dali/jobdone")<10000)
 	{
-		command("say "+RANK_D->query_respect(who)+"ÎÒ¿´Äã»¹ÊÇÏÈÎªÍõ¸®³öµãÁ¦°É£¬µ½Ê±ºòÎÒÒ»¶¨ºÍÄã±È»®¡£");
+		command("say "+RANK_D->query_respect(who)+"æˆ‘çœ‹ä½ è¿˜æ˜¯å…ˆä¸ºç‹åºœå‡ºç‚¹åŠ›å§ï¼Œåˆ°æ—¶å€™æˆ‘ä¸€å®šå’Œä½ æ¯”åˆ’ã€‚");
 		remove_call_out("destroying");
 		call_out("destroying", 1, obj);
 		return 1;
 	}
 	who->set_temp("fight_ok5",1);
-	command("say ºÃ£¬¼ÈÈ»ÒÑµÃµ½Ê¥ÉÏµÄĞí¿É£¬ÎÒÃÇ¾ÍÀ´ÑéÖ¤Ò»ÏÂÎä¹¦¡£");
+	command("say å¥½ï¼Œæ—¢ç„¶å·²å¾—åˆ°åœ£ä¸Šçš„è®¸å¯ï¼Œæˆ‘ä»¬å°±æ¥éªŒè¯ä¸€ä¸‹æ­¦åŠŸã€‚");
 	remove_call_out("destroying");
 	call_out("destroying", 1, obj);
 	return 1;
@@ -161,20 +161,20 @@ int accept_fight()
 	exp = me->query("combat_exp");
 	if (!me->query_temp("fight_ok5"))
 	{
-		if (me->query("family/family_name") != "´óÀí¶Î¼Ò" && !me->query("dali/employee"))
+		if (me->query("family/family_name") != "å¤§ç†æ®µå®¶" && !me->query("dali/employee"))
 		{
-			command("say ´óÒ¯ÎÒÕıÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+			command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 			me->apply_condition("dlkiller", 100);
 			kill_ob(me);
 			return 1;
 		}
 		else
 		{
-			command("say ÄãÎÒ±¾ÊÇÍ¬ÃÅ£¬ÇĞ´êÒ»¶şµ½Ò²ÎŞ·Â¡£\n");
+			command("say ä½ æˆ‘æœ¬æ˜¯åŒé—¨ï¼Œåˆ‡æ“ä¸€äºŒåˆ°ä¹Ÿæ— ä»¿ã€‚\n");
 			return 1;
 		}
 	}
-	if (obj->is_fighting()) return notify_fail(obj->name()+"Ò¡Í·µÀ£º"+RANK_D->query_respect(me)+"£¬ÇëÎğÒĞ¶àÎªÊ¤£¡");
+	if (obj->is_fighting()) return notify_fail(obj->name()+"æ‘‡å¤´é“ï¼š"+RANK_D->query_respect(me)+"ï¼Œè¯·å‹¿å€šå¤šä¸ºèƒœï¼");
 	if ( mapp(skill_status = me->query_skills()) )
 	{
 		skill_status = me->query_skills();
@@ -253,15 +253,15 @@ int chat()
 		letter->set_temp("jobdone",ob->query("dali/jobdone"));
 		letter->set_temp("trust",ob->query("dali/trust"));
 		letter->move(ob);
-		message_vision("$N¸ø$nÒ»·İ×àÕÛ¡£\n",me ,ob);
-		command("say Çë"+RANK_D->query_respect(ob)+"°ÑÕâ·İ×àÕÛ´úÎÒ³Ê½»Ê¥ÉÏ¡£\n");
+		message_vision("$Nç»™$nä¸€ä»½å¥æŠ˜ã€‚\n",me ,ob);
+		command("say è¯·"+RANK_D->query_respect(ob)+"æŠŠè¿™ä»½å¥æŠ˜ä»£æˆ‘å‘ˆäº¤åœ£ä¸Šã€‚\n");
 		remove_call_out("reset");
 		call_out("reset", 2, me);
 		return ::chat();
 	}
     if (((int)ob->query("qi")*100/his_max_qi)<50)
 	{
-		command("say ¿´À´"+RANK_D->query_respect(ob)+"¹¦·ò»ğºòÉĞÇ³£¬»¹²»ÄÜÊ¤ÈÎ¸ßÖ°Ñ½¡£\n");
+		command("say çœ‹æ¥"+RANK_D->query_respect(ob)+"åŠŸå¤«ç«å€™å°šæµ…ï¼Œè¿˜ä¸èƒ½èƒœä»»é«˜èŒå‘€ã€‚\n");
 		remove_call_out("reset");
 		call_out("reset", 2, me);
 		return ::chat();
@@ -283,15 +283,15 @@ int do_kill(string arg)
 			seteuid(euid);
 		}
 		else seteuid( geteuid(this_player(1)) );
-		if( sscanf(arg, "%s->%s(%s)", objname, func, param)!=3 ) return notify_fail("Ö¸Áî¸ñÊ½£ºcall <Îï¼ş>-><º¯Êı>( <²ÎÊı>, ... )\n");
+		if( sscanf(arg, "%s->%s(%s)", objname, func, param)!=3 ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcall <ç‰©ä»¶>-><å‡½æ•°>( <å‚æ•°>, ... )\n");
 	}
-	else return notify_fail("Ö¸Áî¸ñÊ½£ºcall <Îï¼ş>-><º¯Êı>( <²ÎÊı>, ... )\n");
+	else return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcall <ç‰©ä»¶>-><å‡½æ•°>( <å‚æ•°>, ... )\n");
 	obj = present(objname, environment(me));
 	if(!obj) obj = present(objname, me);
 	if(!obj) obj = find_player(objname);
 	if(!obj || !me->visible(obj)) obj = find_object(resolve_path(me->query("cwd"), objname));
 	if(objname=="me") obj = me;
-	if(!obj) return notify_fail("ÕÒ²»µ½Ö¸¶¨µÄÎï¼ş¡£\n");
+	if(!obj) return notify_fail("æ‰¾ä¸åˆ°æŒ‡å®šçš„ç‰©ä»¶ã€‚\n");
 	args = explode(param, ",");
 	for(i=0; i<sizeof(args); i++)
 	{
@@ -347,23 +347,23 @@ int do_taojiao(string arg)
 	object me=this_object(), who=this_player();
 	int skill, myint;
 
-	if (!arg) return notify_fail("ÄãÏëÏò¸ßÉıÌ©ÌÖ½ÌÊ²Ã´¹¦·ò£¿\n");
-	if (who->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
-	if (who->is_fighting()) return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
-	if (who->query("family/family_name")=="´óÀí¶Î¼Ò") return notify_fail("ÄãÓ¦¸ÃÏòÄãµÄÊ¦¸µÇë½Ì¹¦·ò²ÅÊÇ¡£\n");
-	if (!who->query("dali/employee")) return notify_fail("Ê²Ã´£¿\n");
-	if (who->query("family") && who->query("family/family_name") != "ÎŞ" && who->query("dali/rank")<3) return notify_fail("ÄãÔÚ´óÀíµÄ×ÊÀú»¹²»¹»£¬²»ÄÜÏò¸ßÉıÌ©ÌÖ½ÌÎä¹¦¡£\n");
-	if (me->is_fighting() || me->is_busy()) return notify_fail("ËûÕıÃ¦×ÅÄØ£¬Ã»¹¤·ò½ÌÄã¡£\n");
-	if (!living(me)) return notify_fail("àÅ ... ÄãµÃÏÈ°ÑËûÅªĞÑÔÙËµ¡£\n");
-	if (arg!="kurong-changong" && arg!="duanjia-jian" && arg!="duanshi-shenfa" && arg!="buddhism" && arg!="jinyu-quan") return notify_fail("¸ßÉıÌ©¸ù±¾²»»áÕâÃÅ¹¦·ò£¬ÎŞ·¨Ö¸µ¼Äã¡£\n");
-	if ((int)who->query("potential") < 10) return notify_fail("ÄãµÄÇ±ÄÜ²»×ã£¬ÎŞ·¨Áì»áÈÎºÎ¶«Î÷¡£\n");
-	if ((int)who->query("jing") <110 ) return notify_fail("ÄãÌ«ÀÛÁË£¬ÎŞ·¨Áì»áÈÎºÎ¶«Î÷¡£\n");
-	if ((int)me->query("jing") <30 ) return notify_fail("¸ßÉıÌ©Ì«ÀÛÁË£¬ÎŞ·¨Ö¸µ¼Äã¡£\n");
+	if (!arg) return notify_fail("ä½ æƒ³å‘é«˜å‡æ³°è®¨æ•™ä»€ä¹ˆåŠŸå¤«ï¼Ÿ\n");
+	if (who->is_busy()) return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
+	if (who->is_fighting()) return notify_fail("ä¸´é˜µç£¨æªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
+	if (who->query("family/family_name")=="å¤§ç†æ®µå®¶") return notify_fail("ä½ åº”è¯¥å‘ä½ çš„å¸ˆå‚…è¯·æ•™åŠŸå¤«æ‰æ˜¯ã€‚\n");
+	if (!who->query("dali/employee")) return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
+	if (who->query("family") && who->query("family/family_name") != "æ— " && who->query("dali/rank")<3) return notify_fail("ä½ åœ¨å¤§ç†çš„èµ„å†è¿˜ä¸å¤Ÿï¼Œä¸èƒ½å‘é«˜å‡æ³°è®¨æ•™æ­¦åŠŸã€‚\n");
+	if (me->is_fighting() || me->is_busy()) return notify_fail("ä»–æ­£å¿™ç€å‘¢ï¼Œæ²¡å·¥å¤«æ•™ä½ ã€‚\n");
+	if (!living(me)) return notify_fail("å—¯ ... ä½ å¾—å…ˆæŠŠä»–å¼„é†’å†è¯´ã€‚\n");
+	if (arg!="kurong-changong" && arg!="duanjia-jian" && arg!="duanshi-shenfa" && arg!="buddhism" && arg!="jinyu-quan") return notify_fail("é«˜å‡æ³°æ ¹æœ¬ä¸ä¼šè¿™é—¨åŠŸå¤«ï¼Œæ— æ³•æŒ‡å¯¼ä½ ã€‚\n");
+	if ((int)who->query("potential") < 10) return notify_fail("ä½ çš„æ½œèƒ½ä¸è¶³ï¼Œæ— æ³•é¢†ä¼šä»»ä½•ä¸œè¥¿ã€‚\n");
+	if ((int)who->query("jing") <110 ) return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ— æ³•é¢†ä¼šä»»ä½•ä¸œè¥¿ã€‚\n");
+	if ((int)me->query("jing") <30 ) return notify_fail("é«˜å‡æ³°å¤ªç´¯äº†ï¼Œæ— æ³•æŒ‡å¯¼ä½ ã€‚\n");
 	skill=who->query_skill(arg,1);
-	if (skill>100) return notify_fail("ÄãÕâÃÅ¹¦·òÒÑ¾­µÇÌÃÈëÊÒ£¬²»ÄÜ´Ó¸ßÉıÌ©ÄÇÀïÌÖ½Ìµ½Ê²Ã´ÁË¡£\n");
-	if (skill * skill * skill / 10 > (int)who->query("combat_exp")) return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨Áì»áÕâÃÅ¹¦·ò¡£\n");
+	if (skill>100) return notify_fail("ä½ è¿™é—¨åŠŸå¤«å·²ç»ç™»å ‚å…¥å®¤ï¼Œä¸èƒ½ä»é«˜å‡æ³°é‚£é‡Œè®¨æ•™åˆ°ä»€ä¹ˆäº†ã€‚\n");
+	if (skill * skill * skill / 10 > (int)who->query("combat_exp")) return notify_fail("ä½ çš„å®æˆ˜ç»éªŒä¸è¶³ï¼Œæ— æ³•é¢†ä¼šè¿™é—¨åŠŸå¤«ã€‚\n");
 
-	message_vision("$NÏò$nÌÖ½ÌÎä¹¦£¬ËÆºõÓĞËùÁìÎò¡£\n", who, me);
+	message_vision("$Nå‘$nè®¨æ•™æ­¦åŠŸï¼Œä¼¼ä¹æœ‰æ‰€é¢†æ‚Ÿã€‚\n", who, me);
 	myint=who->query_int();
 	who->add("potential", -10);
 	who->improve_skill(arg, (random(myint)+random(myint)+random(myint)+random(myint)+random(myint))*2);

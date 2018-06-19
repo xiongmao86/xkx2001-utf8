@@ -8,7 +8,7 @@
 * [x] convert data/
 * [x] convert doc/
 * [x] convert include/
-* [ ] convert kungfu/
+* [x] convert kungfu/
 * [ ] convert feature/
 * [ ] convert help/
 * [ ] convert inherit/
@@ -117,7 +117,7 @@ rm log processed
 ### 9. Git commit
 
 ## h files **although test is needed, this should consider to be good**
-### 10. Convert *.h files, if log is empty go to step 13.
+### 10. Convert *.h files, if log is empty go to step 14.
 ```shell
 find . -type f -name "*.h" | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
 ```
@@ -173,7 +173,7 @@ Algorithms process each file:
 10. If file is handling fine. `cleanup xxx.h`.
 11. Process next file.
 
-### 14. Move all `xxx.h.bak` files back to `xxx.h`, if processed file is empty goto step 15
+### 14. Move all `xxx.h.bak` files back to `xxx.h`, if processed file is empty goto step 16
 ```shell
 find . -type f -name "*.h" | xargs -I {} sh -c "mv {}.bak {}" 2>processed
 ```
@@ -198,7 +198,7 @@ rm log processed
 ## c files
 The procedure is just like *.h files. Make a copy of section 'h files' and just replace ".h" with ".c".
 
-### 17. Convert *.c files, if log is empty go to step ???.
+### 17. Convert *.c files, if log is empty go to step 21.
 ```shell
 find . -type f -name "*.c" | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
 ```
@@ -254,17 +254,17 @@ Algorithms process each file:
 10. If file is handling fine. `cleanup xxx.c`.
 11. Process next file.
 
-### 14. Move all `xxx.h.bak` files back to `xxx.h`, if processed file is empty goto step 15
+### 21. Move all `xxx.c.bak` files back to `xxx.c`, if processed file is empty goto step 15
 ```shell
-find . -type f -name "*.h" | xargs -I {} sh -c "mv {}.bak {}" 2>processed
+find . -type f -name "*.c" | xargs -I {} sh -c "mv {}.bak {}" 2>processed
 ```
-### 15. Process processed file
+### 22. Process processed file
 ```shell
 cat processed | cut -d ":" -f 2 | sed s/^\ *//g | sed s/\ *$//g | sed s/\.bak$//g > processednext
 mv processednext processed
 ```
 
-### 16. If that every file in log are processed, we known nothing is neglected.
+### 23. If that every file in log are processed, we known nothing is neglected.
 ```shell
 diff log processed
 ```
@@ -274,4 +274,4 @@ After checking remove log and processed.
 ```shell
 rm log processed
 ```
-### 17. Git commit
+### 24. Git commit

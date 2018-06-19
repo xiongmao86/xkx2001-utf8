@@ -2,7 +2,7 @@
 int accept_object(object ob, object obj)
 {
         command("shake");
-        command("say ËÂÖĞÒÔ¿İÈÙ´óÊ¦Îª×ğ£¬ÎÒÑ§ÒÕÎ´¾«£¬²»ÄÜÊÕÍ½¡£");
+        command("say å¯ºä¸­ä»¥æ¯è£å¤§å¸ˆä¸ºå°Šï¼Œæˆ‘å­¦è‰ºæœªç²¾ï¼Œä¸èƒ½æ”¶å¾’ã€‚");
         return 1 ;
 }
 
