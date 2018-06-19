@@ -8,23 +8,24 @@
 * [x] convert data/
 * [x] convert doc/
 * [x] convert include/
+* [ ] convert kungfu/
 * [ ] convert feature/
 * [ ] convert help/
 * [ ] convert inherit/
-* [ ] convert kungfu/
+
 
 # waiting list
 * [ ] figure out the right edit, and finish adm/etc/welcome_newyear, the origin file is keeped as welcome_newyear.todo
 * [ ] data/letter/x/xfaery.o saved as xfaery.todo
 
-# Procedure
+# Procedure **Not through thorough test.**
 ## none c or h files **Final**
 ### 1. Make sure no file name end with bak under the working folder
 ```shell
 find . -name "*.bak"
 ```
 
-### 2. Convert file other than *.c *.h
+### 2. Convert file other than *.c *.h goto step 6
 ```shell
 find . -type f -not -name "*.c" -and -not -name "*.h" | sed /\.DS_Store/d | sed /^\.\\/log$/d | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
 ```
@@ -33,7 +34,7 @@ find . -type f -not -name "*.c" -and -not -name "*.h" | sed /\.DS_Store/d | sed 
 
 Add `sed 's#\ #\\\\\ #g'` to escape space in file name.
 
-If log is empty, `rm log` and goto next section to handle *.h files.
+
 
 ### 3. Process log file
 ```shell
@@ -42,7 +43,7 @@ mv lognext log
 ```
 Remove empty line and cut path and trim line and > lognext. 
 
-### 4. Find Binary files and remove their correspond .bak files from log **Check the algorithm again**
+### 4. Find Binary files and remove their correspond .bak files from log
 Sub algorithm:
 1. Check there are any binary file in log. If there are none, goto next section.
 ```shell
@@ -59,7 +60,7 @@ function filterout() {
 ```
 Handy pick up.
 ```shell
-filterout '[[:space:]]text$' # is \ text$
+filterout '[[:space:]]data$' # is \ text$
 ```
 
 ps. The files in doc/help is really nasty so I use the quick way, open up with Sublime text 3 and use the plugin to filter out strange characters. After save and `convert xxx-subl`, usually it's good, and then handle the cleanup manually. quanzhen file is the really nasty one, toke me a long time to fix byte by byte, painful experience, so I just fail out using editors.
@@ -91,7 +92,7 @@ Algorithms process each file:
 10. If file is handling fine. `cleanup xxx`.
 11. Process next file.
 
-### 6. Move all `xxx.bak` files back to `xxx`
+### 6. Move all `xxx.bak` files back to `xxx`, if processed is empty, goto 8.
 ```shell
 find . -type f -not -name "*.c" -and -not -name "*.h" -and -not -name "*.bak" | sed /\.DS_Store/d | sed /^\.\\/log$/d | sed /^\.\\/processed/d | sed 's#\ #\\\\\ #g' | xargs -I {} sh -c "mv {}.bak {}" 2>processed
 ```
@@ -194,7 +195,6 @@ rm log processed
 ```
 ### 16. Git commit
 
-## c files **although test is need, this should consider as good.**
-The procedure is just like *.h files. Make a copy of section 'h files' and 
-just replace ".h" with ".c".
+## c files **Final**
+The procedure is just like *.h files. Make a copy of section 'h files' and just replace ".h" with ".c".
 
