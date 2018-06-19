@@ -11,7 +11,7 @@
 * [x] convert kungfu/
 * [x] convert feature/
 * [x] convert inherit/
-* [ ] convert help/
+* [x] convert help/
 
 # waiting list
 * [ ] figure out the right edit, and finish adm/etc/welcome_newyear, the origin file is keeped as welcome_newyear.todo
