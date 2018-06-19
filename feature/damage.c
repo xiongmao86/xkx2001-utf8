@@ -14,9 +14,9 @@ varargs int receive_damage(string type, int damage, mixed who)
 {
 	int val;
 
-	if( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+	if( damage < 0 ) error("F_DAMAGE: ä¼¤å®³å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 	if( type!="jing" && type!="qi" && type!="jingli")
-		error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi, jingli ÆäÖÐÖ®Ò» )¡£\n");
+		error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi, jingli å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	set_temp("last_damage_from", who);
 	
@@ -40,9 +40,9 @@ varargs int receive_wound(string type, int damage, mixed who)
 {
 	int val;
 
-	if( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+	if( damage < 0 ) error("F_DAMAGE: ä¼¤å®³å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 	if( type!="jing" && type!="qi" )
-		error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+		error("F_DAMAGE: ä¼¤å®³ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	set_temp("last_damage_from", who);
 	
@@ -69,9 +69,9 @@ int receive_heal(string type, int heal)
 {
 	int val;
 
-	if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+	if( heal < 0 ) error("F_DAMAGE: æ¢å¤å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 	if( type!="jing" && type!="qi" && type!="jingli")
-		error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+		error("F_DAMAGE: æ¢å¤ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	val = (int)query(type) + heal;
 
@@ -86,9 +86,9 @@ int receive_curing(string type, int heal)
 {
 	int max, val;
 
-	if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+	if( heal < 0 ) error("F_DAMAGE: æ¢å¤å€¼ä¸ºè´Ÿå€¼ã€‚\n");
 	if( type!="jing" && type!="qi" )
-		error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖÐÖ®Ò» )¡£\n");
+		error("F_DAMAGE: æ¢å¤ç§ç±»é”™è¯¯( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
 	val = (int)query("eff_" + type);
 	max = (int)query("max_" + type);
@@ -122,9 +122,9 @@ void unconcious()
 	this_object()->interrupt_me();
 
 	this_object()->dismiss_team();
-	message("system", HIR "\nÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\n\n" NOR,
+	message("system", HIR "\nä½ çš„çœ¼å‰ä¸€é»‘ï¼ŒæŽ¥è‘—ä»€ä¹ˆä¹Ÿä¸çŸ¥é“äº†....\n\n" NOR,
 		this_object());
-	this_object()->disable_player(" <»èÃÔ²»ÐÑ>");
+	this_object()->disable_player(" <æ˜è¿·ä¸é†’>");
 	set("jing", 0);
 	set("qi", 0);
 	set("jingli", 0);
@@ -143,7 +143,7 @@ varargs void revive(int quiet)
 	if( !quiet ) {
 		COMBAT_D->announce(this_object(), "revive");
 		set_temp("block_msg/all", 0);
-		message("system", HIY "\nÂýÂýµØÄãÖÕÓÚÓÖÓÐÁËÖª¾õ....\n\n" NOR,
+		message("system", HIY "\næ…¢æ…¢åœ°ä½ ç»ˆäºŽåˆæœ‰äº†çŸ¥è§‰....\n\n" NOR,
 			this_object());
 	} else
 		set_temp("block_msg/all", 0);
@@ -166,10 +166,10 @@ void die()
 
 //			if ( stringp(killer) )
 //				CHANNEL_D->do_channel(rum_ob, "chat",
-//					sprintf("%s±»" + killer + "¸ÉµôÁË¡£", this_object()->name(1)));
+//					sprintf("%sè¢«" + killer + "å¹²æŽ‰äº†ã€‚", this_object()->name(1)));
 //			else
 //				CHANNEL_D->do_channel(rum_ob, "rumor",
-//					sprintf("%s±»¸ÉµôÁË¡£", this_object()->name(1)));
+//					sprintf("%sè¢«å¹²æŽ‰äº†ã€‚", this_object()->name(1)));
 			unconcious();
 			remove_call_out("revive");
 
@@ -199,26 +199,26 @@ void die()
 
 	if ( stringp(killer) )
 		CHANNEL_D->do_channel(rum_ob, "rumor",
-			sprintf("%s" + killer + "¡£", this_object()->name(1)));
+			sprintf("%s" + killer + "ã€‚", this_object()->name(1)));
 	else
 		CHANNEL_D->do_channel(rum_ob, "rumor",
-			sprintf("%sÄªÃûÆäÃîµØËÀÁË¡£", this_object()->name(1)));
+			sprintf("%sèŽ«åå…¶å¦™åœ°æ­»äº†ã€‚", this_object()->name(1)));
 	}
 
     // log for death reason
     if ( userp(this_object()) ) {
        if (stringp(query_temp("last_eff_damage_from")) ) {
-           log_file("PKILL_DATA", sprintf("%s(%s) ±» %s É±ËÀÁË(PlayerKill) on %s¡£\n", me->query("name"), 
+           log_file("PKILL_DATA", sprintf("%s(%s) è¢« %s æ€æ­»äº†(PlayerKill) on %sã€‚\n", me->query("name"), 
              getuid(me), query_temp("last_eff_damage_from"), ctime(time()) ));
-           log_file("PLAYER_DEATH", sprintf("%s(%s) ±» %s É±ËÀÁË(PlayerKill) on %s¡£\n", me->query("name"), 
+           log_file("PLAYER_DEATH", sprintf("%s(%s) è¢« %s æ€æ­»äº†(PlayerKill) on %sã€‚\n", me->query("name"), 
              getuid(me), query_temp("last_eff_damage_from"), ctime(time()) ));
        }
        else if (objectp(killer)){
-           log_file("PLAYER_DEATH", sprintf("%s(%s) ±» %s É±ËÀÁË on %s¡£\n", me->query("name"), 
+           log_file("PLAYER_DEATH", sprintf("%s(%s) è¢« %s æ€æ­»äº† on %sã€‚\n", me->query("name"), 
              getuid(me), killer->name(), ctime(time()) ));
        }
        else if (stringp(killer)){
-           log_file("PLAYER_DEATH", sprintf("%s(%s) died from %s on %s¡£\n", me->query("name"), 
+           log_file("PLAYER_DEATH", sprintf("%s(%s) died from %s on %sã€‚\n", me->query("name"), 
              getuid(me), query_temp("last_damage_from"), ctime(time()) ));
        }
     }

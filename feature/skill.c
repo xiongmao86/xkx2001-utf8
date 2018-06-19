@@ -176,7 +176,7 @@ varargs void improve_skill(string skill, int amount, int weak_mode)
 	&&	learned[skill] > (skills[skill] + 1) * (skills[skill] + 1) ) {
 		skills[skill]++;
 		learned[skill] = 0;
-		tell_object(this_object(), HIC "ÄãµÄ¡¸" + to_chinese(skill) + "¡¹½ø²½ÁË£¡\n" NOR);
+		tell_object(this_object(), HIC "ä½ çš„ã€Œ" + to_chinese(skill) + "ã€è¿›æ­¥äº†ï¼\n" NOR);
 		SKILL_D(skill)->skill_improved(this_object());
 	}
 }

@@ -23,7 +23,7 @@ void more(string cmd, string *text, int line)
 		case "q":
 			return;
 	}
-	printf("== Î´Íê¼ÌĞø " HIY "%d%%" NOR " == (n »ò <ENTER> ¼ÌĞøÏÂÒ»Ò³£¬q Àë¿ª£¬b Ç°Ò»Ò³)",
+	printf("== æœªå®Œç»§ç»­ " HIY "%d%%" NOR " == (n æˆ– <ENTER> ç»§ç»­ä¸‹ä¸€é¡µï¼Œq ç¦»å¼€ï¼Œb å‰ä¸€é¡µ)",
 		(line*100/sizeof(text)) );
 	input_to("more", text, line);
 }

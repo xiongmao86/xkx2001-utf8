@@ -9,7 +9,7 @@
 * [x] convert doc/
 * [x] convert include/
 * [x] convert kungfu/
-* [ ] convert feature/
+* [x] convert feature/
 * [ ] convert help/
 * [ ] convert inherit/
 
@@ -252,7 +252,7 @@ Algorithms process each file:
 10. If file is handling fine. `cleanup xxx.c`.
 11. Process next file.
 
-### 21. Move all `xxx.c.bak` files back to `xxx.c`, if processed file is empty goto step 15
+### 21. Move all `xxx.c.bak` files back to `xxx.c`, if processed file is empty goto step 23
 ```shell
 find . -type f -name "*.c" | xargs -I {} sh -c "mv {}.bak {}" 2>processed
 ```

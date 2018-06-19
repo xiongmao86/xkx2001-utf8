@@ -54,7 +54,7 @@ void kill_ob(object ob)
 	if( member_array(ob->query("id"), killer)==-1 )
 		killer += ({ ob->query("id") });
 
-	tell_object(ob, HIR "¿´ÆðÀ´" + this_object()->name() + "ÏëÉ±ËÀÄã£¡\n" NOR);
+	tell_object(ob, HIR "çœ‹èµ·æ¥" + this_object()->name() + "æƒ³æ€æ­»ä½ ï¼\n" NOR);
 
 	fight_ob(ob);
 }

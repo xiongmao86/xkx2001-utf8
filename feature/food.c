@@ -10,16 +10,16 @@ int feed_ob(object me)
 {
 	string str;
 	if( me->is_busy() )
-		return notify_fail("����һ��������û����ɡ�\n");
+		return notify_fail("你上一个动作还没有完成。\n");
 	if( !living(me) ) return 0;
 
 	if( stringp(query("food_race")) )
-		return notify_fail( "��ɲ��Ǹ��˳ԵĶ�����\n");
+		return notify_fail( "这可不是给人吃的东西！\n");
 
 	if( !query("food_remaining") )
-		return notify_fail( name() + "�Ѿ�ûʲô�óԵ��ˡ�\n");
+		return notify_fail( name() + "已经没什么好吃的了。\n");
 	if( (int)me->query("food") >= (int)me->max_food_capacity() )
-		return notify_fail("���Ѿ���̫���ˣ���Ҳ�������κζ����ˡ�\n");
+		return notify_fail("你已经吃太饱了，再也塞不下任何东西了。\n");
 
 	me->add("food", query("food_supply"));
 
@@ -36,13 +36,13 @@ int feed_ob(object me)
 	add("food_remaining", -1);
 	if( !query("food_remaining") ) {
 		if( !stringp(str = this_object()->query("eat_all")) )
-		str = "$N��ʣ�µ�$n�Ե�ǬǬ������\n";
+		str = "$N将剩下的$n吃得乾乾净净。\n";
 		message_vision(str, this_player(),this_object());
 		if( !this_object()->finish_eat() )
 			destruct(this_object());
 	} else  {
 		if( !stringp(str = this_object()->query("eat_msg")) )
-		str = "$N����$nҧ�˼��ڡ�\n";
+		str = "$N拿起$n咬了几口。\n";
 		message_vision(str, this_player(),this_object());
 	}
 	me->start_busy(1);

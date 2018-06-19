@@ -110,11 +110,11 @@ varargs string short(int raw)
 
 	if (!raw) {
 		if ((int)query_temp("pending/exercise") != 0)
-			return name() + "Õý×øÔÚµØÏÂÐÞÁ¶ÄÚÁ¦¡£";
+			return name() + "æ­£ååœ¨åœ°ä¸‹ä¿®ç‚¼å†…åŠ›ã€‚";
 		else if ((int)query_temp("pending/respirate") != 0)
-			return name() + "Õý×øÔÚµØÏÂÍÂÄÉÁ¶¾«¡£";
+			return name() + "æ­£ååœ¨åœ°ä¸‹åçº³ç‚¼ç²¾ã€‚";
 		else if ((int)query_temp("pending/jingzuo") != 0)
-			return name() + "ÕýÔÚÆÑÍÅÉÏÅÌÏ¥¾²×ø¡£";
+			return name() + "æ­£åœ¨è’²å›¢ä¸Šç›˜è†é™åã€‚";
 	}
 	
         if( !raw && sizeof(mask = query_temp("apply/short")) )
@@ -127,19 +127,19 @@ varargs string short(int raw)
 //	}
 	else {
 		if( stringp(nick = query("nickname")) )
-			str = sprintf("¡¸%s¡¹%s", nick, str);
+			str = sprintf("ã€Œ%sã€%s", nick, str);
 
 		if( stringp(title = query("title")) )
 			str = sprintf("%s%s%s", title,(nick?"":" "), str);
 	}
 
 	if( !raw ) {
-		if( this_object()->is_ghost() ) str = HIB "(¹íÆø) " NOR + str;
-		if( query_temp("netdead") ) str += HIG " <¶ÏÏßÖÐ>" NOR;
-		if( in_input() ) str += HIC " <ÊäÈëÎÄ×ÖÖÐ>" NOR;
-		if( in_edit() ) str += HIY " <±à¼­µµ°¸ÖÐ>" NOR;
+		if( this_object()->is_ghost() ) str = HIB "(é¬¼æ°”) " NOR + str;
+		if( query_temp("netdead") ) str += HIG " <æ–­çº¿ä¸­>" NOR;
+		if( in_input() ) str += HIC " <è¾“å…¥æ–‡å­—ä¸­>" NOR;
+		if( in_edit() ) str += HIY " <ç¼–è¾‘æ¡£æ¡ˆä¸­>" NOR;
 		if( interactive(this_object())
-		&&	query_idle( this_object() ) > 120 ) str += HIM " <·¢´ôÖÐ>" NOR;
+		&&	query_idle( this_object() ) > 120 ) str += HIM " <å‘å‘†ä¸­>" NOR;
 		if( !living(this_object()) ) str += HIR + query("disable_type") + NOR;
 	}
 
@@ -153,7 +153,7 @@ varargs string long(int raw)
 	if( !raw && sizeof(mask = query_temp("apply/long")) )
 		str = mask[sizeof(mask)-1];
 	else if( !stringp(str = query("long")) )
-		str = short(raw) + "¡£\n";
+		str = short(raw) + "ã€‚\n";
 
 	if( stringp(extra = this_object()->extra_long()) )
 		str += extra;

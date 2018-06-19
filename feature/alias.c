@@ -40,26 +40,26 @@ string process_input(string str)
 	me = this_object();
 	if ( cnt >  3*CMDS_PER_TICK ) 
 	{
-		tell_object(me, "\n\n±¾ÓÎÏ··¢ÏÖÄãÀÄÓÃÖ¸Áî£¡\n\n");
+		tell_object(me, "\n\næœ¬æ¸¸æˆå‘ç°ä½ æ»¥ç”¨æŒ‡ä»¤ï¼\n\n");
 		
 		if ( random(2) )
 		{
-		message_vision(HIR"ºöÈ»Ò»Éù¾ªÀ×ÔÚÄãÍ·¶¥Õ¨¿ª£¬ÕğµÃÄãÁ½¶úÓûÁû£¡\n"
-		   "Ò»µÀÉÁµç´ÓÌì½µÏÂ£¬ÕıÅüÔÚ$NÉíÉÏ¡­\n"NOR, me);
+		message_vision(HIR"å¿½ç„¶ä¸€å£°æƒŠé›·åœ¨ä½ å¤´é¡¶ç‚¸å¼€ï¼Œéœ‡å¾—ä½ ä¸¤è€³æ¬²è‹ï¼\n"
+		   "ä¸€é“é—ªç”µä»å¤©é™ä¸‹ï¼Œæ­£åŠˆåœ¨$Nèº«ä¸Šâ€¦\n"NOR, me);
 		   
-		me->set_temp("last_damage_from", "±»ÌìÀ×ÅüËÀÁË");
+		me->set_temp("last_damage_from", "è¢«å¤©é›·åŠˆæ­»äº†");
 		me->unconcious();
 		} else 
 		{
-		message_vision(HIR"ºöÈ»Ò»Éù¾ªÀ×ÔÚÄãÍ·¶¥Õ¨¿ª£¬ÕğµÃÄãÁ½¶úÓûÁû£¡\n"
-		   "Ò»µÀÉÁµç´ÓÌì½µÏÂ£¬Ö±³¯$NÅüÈ¥¡­¡­½á¹ûÃ»´òÖĞ£¡\n"NOR, me);
+		message_vision(HIR"å¿½ç„¶ä¸€å£°æƒŠé›·åœ¨ä½ å¤´é¡¶ç‚¸å¼€ï¼Œéœ‡å¾—ä½ ä¸¤è€³æ¬²è‹ï¼\n"
+		   "ä¸€é“é—ªç”µä»å¤©é™ä¸‹ï¼Œç›´æœ$NåŠˆå»â€¦â€¦ç»“æœæ²¡æ‰“ä¸­ï¼\n"NOR, me);
 		}
 		
 		log_file("FLOODER", sprintf("%s(%s) was caught flooding on %s.\n",
 			 me->query("name"), geteuid(me), ctime(time())));
 
 		me->set_temp("quit/forced", 1);
-		me->set_temp("quit/report_msg", "ÓÉÓÚÀÄÓÃÖ¸Áî±»Ìß³öÓÎÏ·£¨Command Flooding£©¡£");
+		me->set_temp("quit/report_msg", "ç”±äºæ»¥ç”¨æŒ‡ä»¤è¢«è¸¢å‡ºæ¸¸æˆï¼ˆCommand Floodingï¼‰ã€‚");
 		if ( !command("quit") ) me->delete_temp("quit");
 		return "";
 	} else if (cnt > CMDS_PER_TICK) 
@@ -67,8 +67,8 @@ string process_input(string str)
 		i = (int)me->query("qi"); 
 		j = 1+(cnt-CMDS_PER_TICK)/4;
 		
-		if (i > j) me->receive_damage("qi", j, "±»ÌìÀ×ÅüËÀÁË");
-		else me->receive_damage("jing", j/2, "±»ÌìÀ×ÅüËÀÁË");
+		if (i > j) me->receive_damage("qi", j, "è¢«å¤©é›·åŠˆæ­»äº†");
+		else me->receive_damage("jing", j/2, "è¢«å¤©é›·åŠˆæ­»äº†");
 	}
 
 	if( this_object()->query("language") == "BIG5" )
@@ -125,7 +125,7 @@ int set_alias(string verb, string replace)
 	} else {
 		if( !mapp(alias) ) alias = ([ verb:replace ]);
 		else if( sizeof(alias) > MAX_ALIASES )
-			return notify_fail("ÄúÉè¶¨µÄ alias Ì«¶àÁË£¬ÇëÏÈÉ¾µôÒ»Ğ©²»³£ÓÃµÄ¡£\n");
+			return notify_fail("æ‚¨è®¾å®šçš„ alias å¤ªå¤šäº†ï¼Œè¯·å…ˆåˆ æ‰ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");
 		else alias[verb] = replace;
 		return 1;
 	}

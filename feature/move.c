@@ -25,7 +25,7 @@ nomask void add_encumbrance(int w)
 void over_encumbrance()
 {
 	if( !interactive(this_object()) ) return;
-	tell_object(this_object(), "ÄãµÄ¸ººÉ¹ıÖØÁË£¡\n");
+	tell_object(this_object(), "ä½ çš„è´Ÿè·è¿‡é‡äº†ï¼\n");
 }
 
 nomask int query_weight() { return weight; }
@@ -53,7 +53,7 @@ varargs int move(mixed dest, int silently)
 
 	// If we are equipped, unequip first.
 	if( query("equipped") && !this_object()->unequip() )
-		return notify_fail("ÄãÃ»ÓĞ°ì·¨È¡ÏÂÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰åŠæ³•å–ä¸‹è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 	// Find the destination ob for moving.
 	if( objectp(dest) )
@@ -76,9 +76,9 @@ varargs int move(mixed dest, int silently)
 	if( !env && (int)ob->query_encumbrance() + weight()
 		> (int)ob->query_max_encumbrance() ) {
 		if( ob==this_player() )
-			return notify_fail( this_object()->name() + "¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+			return notify_fail( this_object()->name() + "å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
 		else
-			return notify_fail( this_object()->name() + "¶Ô" + ob->name() + "¶øÑÔÌ«ÖØÁË¡£\n");
+			return notify_fail( this_object()->name() + "å¯¹" + ob->name() + "è€Œè¨€å¤ªé‡äº†ã€‚\n");
 	}
 
 	// Move the object and update encumbrance
@@ -131,7 +131,7 @@ void remove(string euid)
 	if( userp(this_object()) && euid!=ROOT_UID ) {
 		log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
 			euid, this_object()->query("id"), ctime(time())));
-		error("Äã(" + euid + ")²»ÄÜ´İ»ÙÆäËûµÄÊ¹ÓÃÕß¡£\n");
+		error("ä½ (" + euid + ")ä¸èƒ½æ‘§æ¯å…¶ä»–çš„ä½¿ç”¨è€…ã€‚\n");
 	} else if( this_object()->query("equipped")) {
 		if(	!this_object()->unequip() )
 			log_file("destruct", sprintf("Failed to unequip %s when destructed.\n",file_name(this_object())));
@@ -148,7 +148,7 @@ void remove(string euid)
 int move_or_destruct( object dest )
 {
 	if( userp(this_object()) ) {
-		tell_object(this_object(), "Ò»ÕóÊ±¿ÕµÄÅ¤Çú½«Äã´«ËÍµ½ÁíÒ»¸öµØ·½....\n");
+		tell_object(this_object(), "ä¸€é˜µæ—¶ç©ºçš„æ‰­æ›²å°†ä½ ä¼ é€åˆ°å¦ä¸€ä¸ªåœ°æ–¹....\n");
 		move(VOID_OB);
 	}
 }

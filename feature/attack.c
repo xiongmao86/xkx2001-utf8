@@ -56,7 +56,7 @@ void kill_ob(object ob)
 	if( member_array(ob->query("id"), killer)==-1 )
 		killer += ({ ob->query("id") });
 
-	tell_object(ob, HIR "¿´ÆğÀ´" + this_object()->name() + "ÏëÉ±ËÀÄã£¡\n" NOR);
+	tell_object(ob, HIR "çœ‹èµ·æ¥" + this_object()->name() + "æƒ³æ€æ­»ä½ ï¼\n" NOR);
 
 	fight_ob(ob);
 }
@@ -184,10 +184,10 @@ files.
 * following files can be found in /u/oyxb/stand/
 if not found, be patient(very very patient)
 
-1, Ë«ÊÖ»¥²© -- Anubis(also has extra functions as toy)
-2. ×Ô´´Á¬Ğø¼¼ -- Golden E.
-3. ËÙ¶ÈÌåÏÖ -- White Album/Silver Chariot(and atb)
-4. Õó·¨ºÏ»÷(A all attack/B all defense) -- Silver Chariot && Fool
+1, åŒæ‰‹äº’åš -- Anubis(also has extra functions as toy)
+2. è‡ªåˆ›è¿ç»­æŠ€ -- Golden E.
+3. é€Ÿåº¦ä½“ç° -- White Album/Silver Chariot(and atb)
+4. é˜µæ³•åˆå‡»(A all attack/B all defense) -- Silver Chariot && Fool
 *by default*
 each of the 4 unique local functions are activated by temp settings
 stand/dualattack, stand/combo, stand/speed and stand/teamwork

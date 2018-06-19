@@ -435,8 +435,8 @@ varargs int m_remove(string id, int amount)
 			obj->move(environment(me));
 		obj[i]->delete("parent");
 		if (!(msg = obj[i]->query("msg_remove")))
-			message_vision("$N°Ñ" + obj[i]->query("name") +
-				"´Ó" + owner->query("name") + "ÉÏÐ¶ÁËÏÂÀ´¡£\n", me);
+			message_vision("$NæŠŠ" + obj[i]->query("name") +
+				"ä»Ž" + owner->query("name") + "ä¸Šå¸äº†ä¸‹æ¥ã€‚\n", me);
 		else
 		{
 			str1 = replace_string(msg,  "$m", query("name"));
@@ -458,7 +458,7 @@ varargs int m_load(string owner, string id, int order)
 		
 	if (!owner_ob)
 	{
-		write("ÄãÒª°Ñ" + query("name") + "×°µ½" + "Ê²Ã´µØ·½£¿\n");
+		write("ä½ è¦æŠŠ" + query("name") + "è£…åˆ°" + "ä»€ä¹ˆåœ°æ–¹ï¼Ÿ\n");
 		return 0;
 	}
 	
@@ -466,15 +466,15 @@ varargs int m_load(string owner, string id, int order)
 	
 	if (owner_ob->m_find(id) < (order + 1))	
 	{
-		write("ÄãÒª°Ñ" + query("name") + "×°µ½" + 
-			owner_ob->query("name") + "µÄÊ²Ã´µØ·½È¥£¿\n");
+		write("ä½ è¦æŠŠ" + query("name") + "è£…åˆ°" + 
+			owner_ob->query("name") + "çš„ä»€ä¹ˆåœ°æ–¹åŽ»ï¼Ÿ\n");
 		return 0;
 	}
 	
 	if (query("unique") && m_exists(owner_ob))
 	{
-		write(owner_ob->query("name") + "ÉÏÒÑ¾­ÓÐÒ»¸ö" +
-			query("name") + "£¬²»ÄÜÔÙ×°ÁË¡£\n");
+		write(owner_ob->query("name") + "ä¸Šå·²ç»æœ‰ä¸€ä¸ª" +
+			query("name") + "ï¼Œä¸èƒ½å†è£…äº†ã€‚\n");
 		return 0;
 	}
 	
@@ -482,7 +482,7 @@ varargs int m_load(string owner, string id, int order)
 	if ((carr = ob->query("carribility")) && (carr <= sizeof(ob->all_children())))
 	{
 		write(owner_ob->query("name") + 
-			"µÄ" + ob->query("name") + "ÒÑ¾­ÂúÁË£¬²»ÄÜÔÙ×°ÁË¡£\n");
+			"çš„" + ob->query("name") + "å·²ç»æ»¡äº†ï¼Œä¸èƒ½å†è£…äº†ã€‚\n");
 		return 0;
 	}
 	
@@ -491,12 +491,12 @@ varargs int m_load(string owner, string id, int order)
 		if (!(msg = query("msg_load")))
 		{
 			if (owner_ob == ob)
-				message_vision("$N°Ñ" + query("name") +
-				"×°µ½ÁË" + owner_ob->query("name") +"ÉÏÈ¥¡£\n", me);
+				message_vision("$NæŠŠ" + query("name") +
+				"è£…åˆ°äº†" + owner_ob->query("name") +"ä¸ŠåŽ»ã€‚\n", me);
 			else
-				message_vision("$N°Ñ" + query("name") +
-					"×°µ½ÁË" + owner_ob->query("name") + "µÄ" + 
-					ob->query("name") + "ÉÏÈ¥¡£\n", me);
+				message_vision("$NæŠŠ" + query("name") +
+					"è£…åˆ°äº†" + owner_ob->query("name") + "çš„" + 
+					ob->query("name") + "ä¸ŠåŽ»ã€‚\n", me);
 		}
 		else
 		//wildcard for "msg_load": $N---this_player, $m---name of this object, 
