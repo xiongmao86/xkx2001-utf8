@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yiwei-dujiang.c Ò»Î­¶É½­
+// yiwei-dujiang.c ä¸€è‹‡æ¸¡æ±Ÿ
 
 inherit SKILL;
 
@@ -9,11 +9,11 @@ int valid_learn(object me)
 	object weapon;
 
 	fam = me->query("family"); 
-	if( !mapp(fam) || fam["family_name"] != "ÉÙÁÖÅÉ" )
-		return notify_fail("Äã²»ÊôÓÚÉÙÁÖÅÉ£¬²»ÄÜÑ§Ï°Ò»Î­¶É½­¹¦£¡\n");
+	if( !mapp(fam) || fam["family_name"] != "å°‘æ—æ´¾" )
+		return notify_fail("ä½ ä¸å±äºå°‘æ—æ´¾ï¼Œä¸èƒ½å­¦ä¹ ä¸€è‹‡æ¸¡æ±ŸåŠŸï¼\n");
 
-	if ( fam["family_name"] == "ÉÙÁÖÅÉ" && fam["generation"] != 35 )
-		return notify_fail("Äã×Ê¸ñ²»¹»£¬²»ÄÜÑ§Ï°Ò»Î­¶É½­£¬µÈµ½ÉıÁË¶É×Ö±²ÔÙËµ°É¡£\n");
+	if ( fam["family_name"] == "å°‘æ—æ´¾" && fam["generation"] != 35 )
+		return notify_fail("ä½ èµ„æ ¼ä¸å¤Ÿï¼Œä¸èƒ½å­¦ä¹ ä¸€è‹‡æ¸¡æ±Ÿï¼Œç­‰åˆ°å‡äº†æ¸¡å­—è¾ˆå†è¯´å§ã€‚\n");
 
 	return 1;
 }

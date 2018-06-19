@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("»¤ÔºÎäÊ¿Áì¶Ó", ({ "weishi lingdui", "shi", "guard", "lingdui" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name("æŠ¤é™¢æ­¦å£«é¢†é˜Ÿ", ({ "weishi lingdui", "shi", "guard", "lingdui" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 35);
-	set("long","ÕâÊÇÎ»Éí»³¾ø¼¼µÄÎäÊ¿¡£\n");
+	set("long","è¿™æ˜¯ä½èº«æ€€ç»æŠ€çš„æ­¦å£«ã€‚\n");
 	set("combat_exp", 300000);
 	set("shen_type", 1);
 	set("attitude", "heroism");
@@ -39,7 +39,7 @@ void create()
 	map_skill("sword", "duanjia-jian");
 	map_skill("parry", "duanjia-jian");
 	map_skill("dodge", "duanshi-shenfa");
-	set("no_get", "Äã¿¸²»¶¯");
+	set("no_get", "ä½ æ‰›ä¸åŠ¨");
 
 
 	setup();

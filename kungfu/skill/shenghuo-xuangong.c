@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shenghuo-xuangong.c	Ã÷½Ì  Ê¥»ğĞş¹¦
+// shenghuo-xuangong.c	æ˜æ•™  åœ£ç«ç„åŠŸ
 // Zhangchi 2/2000
 
 inherit FORCE;
@@ -27,7 +27,7 @@ int valid_learn(object me)
 	skname = sort_array(keys(skill), (: strcmp :) );
 
 	if ((int)me->query_skill("force", 1) < 10 )
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò²»×ã£¬²»ÄÜÑ§Ê¥»ğĞş¹¦¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™ä¸è¶³ï¼Œä¸èƒ½å­¦åœ£ç«ç„åŠŸã€‚\n");
 
 	if(me->query_skill("shenghuo-xuangong", 1) > 99)
 	{
@@ -38,7 +38,7 @@ int valid_learn(object me)
 		}
 		if ( n >=2 && !me->query_skill("qiankun-danuoyi", 1) ) 	// if learned qkny,
 									// can have 2+ forces.
-			return notify_fail("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÎŞ·¨¼ÌĞøÑ§Ï°Ê¥»ğĞş¹¦¡£\n");
+			return notify_fail("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œæ— æ³•ç»§ç»­å­¦ä¹ åœ£ç«ç„åŠŸã€‚\n");
 	}
 
 	return 1;
@@ -50,26 +50,26 @@ int practice_skill(object me)
 
 
         if ( me->query_skill("shenghuo-xuangong", 1) < 180 )
-                return notify_fail("ÄãµÄÊ¥»ğĞş¹¦ĞŞÎª²»¹»£¬Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+                return notify_fail("ä½ çš„åœ£ç«ç„åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 
         if ( me->query_temp("weapon") )
-                return notify_fail("Á·Ï°Ê¥»ğĞş¹¦±ØĞë¿ÕÊÖ»ÓÕÆÔËÆø·½¿É¡£\n");
+                return notify_fail("ç»ƒä¹ åœ£ç«ç„åŠŸå¿…é¡»ç©ºæ‰‹æŒ¥æŒè¿æ°”æ–¹å¯ã€‚\n");
 
         if ( (int)me->query("qi") < 100 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ï°Ê¥»ğĞş¹¦¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒä¹ åœ£ç«ç„åŠŸã€‚\n");
 
         if ( (int)me->query("jingli") < 100 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·Ï°Ê¥»ğĞş¹¦¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒä¹ åœ£ç«ç„åŠŸã€‚\n");
 
         if ( (int)me->query("neili") < 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ï°Ê¥»ğĞş¹¦¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹ åœ£ç«ç„åŠŸã€‚\n");
 
 	cost = (int)me->query_skill("shenghuo-xuangong", 1)/3;	// cost 60 when qkyq 180, 
 								// 100 when 300 and so on.
 
 	me->add("neili", -cost);
-	me->receive_damage("jingli", cost, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
-	me->receive_damage("qi", cost, "ÌåÁ¦Í¸Ö§¹ı¶ÈËÀÁË");
+	me->receive_damage("jingli", cost, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+	me->receive_damage("qi", cost, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 
         return 1;
 }
@@ -93,7 +93,7 @@ string exert_function_file(string func)
 
 	if ( n >=2 && !me->query_skill("qiankun-danuoyi", 1) )	// if learned qkny, can exert
 	{							// even when have 2+ forces
-		tell_object(me, "ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÊ¹ÓÃÇ¬À¤Ò»Æø¹¦¡£\n");
+		tell_object(me, "ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥ä½¿ç”¨ä¹¾å¤ä¸€æ°”åŠŸã€‚\n");
 		return 0;
 	}
 

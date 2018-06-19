@@ -1,5 +1,5 @@
 //Cracked by Roath
-// buqun.c ‘¿≤ª»∫
+// buqun.c Â≤≥‰∏çÁæ§
 // qfy July 4, 1996.
 
 #include <ansi.h>
@@ -10,13 +10,13 @@ int auto_perform();
 
 void create() 
 {
-	set_name("‘¿≤ª»∫", ({ "yue buqun", "yue", "buqun" }));
-	set("nickname", "æ˝◊”Ω£");
+	set_name("Â≤≥‰∏çÁæ§", ({ "yue buqun", "yue", "buqun" }));
+	set("nickname", "ÂêõÂ≠êÂâë");
 	set("long",
-"’‚±„ «ª™…Ωµ±¥˙’∆√≈°∏æ˝◊”Ω£°π‘¿≤ª»∫°£À˚‘⁄Ω≠∫˛÷–œ¿√˚‘∂≤•£¨\n"
-"º≤∂Ò»Á≥£¨…ıµ√»À–ƒ°£À˚ø¥∆¿¥ŒƒÁßÁßµÿÀ∆∏ˆ È…˙£¨Œ‰π¶»¥ «…Ó\n"
-"≤ªø…≤‚°£\n");
-	set("gender", "Œﬁ–‘");
+"Ëøô‰æøÊòØÂçéÂ±±ÂΩì‰ª£ÊéåÈó®„ÄåÂêõÂ≠êÂâë„ÄçÂ≤≥‰∏çÁæ§„ÄÇ‰ªñÂú®Ê±üÊπñ‰∏≠‰æ†ÂêçËøúÊí≠Ôºå\n"
+"ÁñæÊÅ∂Â¶Ç‰ªáÔºåÁîöÂæó‰∫∫ÂøÉ„ÄÇ‰ªñÁúãËµ∑Êù•ÊñáÁªâÁªâÂú∞‰ºº‰∏™‰π¶ÁîüÔºåÊ≠¶ÂäüÂç¥ÊòØÊ∑±\n"
+"‰∏çÂèØÊµã„ÄÇ\n");
+	set("gender", "Êó†ÊÄß");
 	set("age", 46);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -64,7 +64,7 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu");
 
-	create_family("ª™…Ω≈…", 13, "’∆√≈");
+	create_family("ÂçéÂ±±Ê¥æ", 13, "ÊéåÈó®");
 
 	set("chat_chance_combat", 50);
 	set("chat_msg_combat", ({
@@ -85,7 +85,7 @@ void init()
 	set_heart_beat(1);
 
 	if ( interactive(ob = this_player()) ) {
-	  if ( ob->query("family/family_name") != "ª™…Ω≈…" )
+	  if ( ob->query("family/family_name") != "ÂçéÂ±±Ê¥æ" )
 		me->kill_ob(ob);
 
 		remove_call_out("checking");

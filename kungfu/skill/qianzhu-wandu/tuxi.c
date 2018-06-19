@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Ç§ÖëÍò¶¾Í»Ï®
+// åƒè››ä¸‡æ¯’çªè¢­
 // chu@xkx   3/6/99
 
 // Apache: modified so that player can't perform it continuously.
@@ -19,27 +19,27 @@ int perform(object me, object target)
   int finger, ap, dp, dodge, parry, damage, poison;
 
   if (me->query_temp("perform_tuxi")) {
-  	return notify_fail("ÄãµÄÍ»Ï®ÒÑ±»¶Ô·½²ì¾õ£¡µÈÒ»ÏÂ°É¡£\n");
+  	return notify_fail("ä½ çš„çªè¢­å·²è¢«å¯¹æ–¹å¯Ÿè§‰ï¼ç­‰ä¸€ä¸‹å§ã€‚\n");
   }
 
   if ( !target ) target = offensive_target(me);
 
   if( !target || !target->is_character())
-    return notify_fail("ÄãÏëÍ»Ï®Ë­?\n");
+    return notify_fail("ä½ æƒ³çªè¢­è°?\n");
 
   if( environment(target)->query("no_fight"))
-    return notify_fail("ÕâÀï²»ÄÜÍµÏ®¡£\n");
+    return notify_fail("è¿™é‡Œä¸èƒ½å·è¢­ã€‚\n");
     
   if(target->query_temp("surrender/ownder")!=0)
-    return notify_fail("ÄãÏÖÔÚ²»ÄÜÍµÏ®Ëû!");
+    return notify_fail("ä½ çŽ°åœ¨ä¸èƒ½å·è¢­ä»–!");
 
   if( (finger = (int)me->query_skill("qianzhu-wandu", 1)) < 120 )
-    return notify_fail("ÄãµÄÇ§ÖëÍò¶¾ÊÖ²»¹»´¿Êì.\n");
+    return notify_fail("ä½ çš„åƒè››ä¸‡æ¯’æ‰‹ä¸å¤Ÿçº¯ç†Ÿ.\n");
 
   if (me->query("neili") < 1000)
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÓÃ.\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç”¨.\n");
 
-  msg = "$N³Ã$n²»±¸, ÇÄÈ»´í²½×ªÉí, ´Ó±³ºó³öÖ¸Í»Ï®¡£\n\n";
+  msg = "$Nè¶$nä¸å¤‡, æ‚„ç„¶é”™æ­¥è½¬èº«, ä»ŽèƒŒåŽå‡ºæŒ‡çªè¢­ã€‚\n\n";
   dodge = target->query_skill("dodge", 1);
   parry = target->query_skill("parry", 1);
   poison = target->query_skill("qianzhu-wandu", 1);
@@ -50,7 +50,7 @@ int perform(object me, object target)
   damage += random(damage/2);
 
   if (random(ap) > dp/2) {
-        msg += "Ö»Ìý$nÃÆºßÁËÒ»Éù, ºóÐÄÒÑ±»$NÖ¸Á¦´ÁÖÐ.\n";
+        msg += "åªå¬$né—·å“¼äº†ä¸€å£°, åŽå¿ƒå·²è¢«$NæŒ‡åŠ›æˆ³ä¸­.\n";
         target->start_busy(1+random(2));
         target->receive_wound("qi", damage, me);
         target->apply_condition("qianzhu-poison", 
@@ -58,7 +58,7 @@ int perform(object me, object target)
         if(target->query("poisoner") != me) target->set("poisoner", me);
         target->set_temp("last_damage_from", me);
   }else {
-        msg += "²»ÁÏ$nÔçÓÐ·À±¸, ²àÉí¶ã¹ý.\n";
+        msg += "ä¸æ–™$næ—©æœ‰é˜²å¤‡, ä¾§èº«èº²è¿‡.\n";
         me->start_busy(1+random(3));
   }
   if (! target->killing_ob(me))  target->kill_ob(me);

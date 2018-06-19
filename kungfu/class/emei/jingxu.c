@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /kungfu/class/emei/jingxu.c ����ʦ̫
+// Npc: /kungfu/class/emei/jingxu.c 静虚师太
 // Date: xbc 99/09/24
 // Modified by xQin 8/00
 #include <ansi.h>
@@ -13,22 +13,22 @@ int auto_perform();
 
 void create()
 {
-        set_name("����ʦ̫", ({
+        set_name("静虚师太", ({
                 "jingxu shitai",
                 "jingxu",
                 "shitai",
 	}));
 	set("long",
-		"����һλ���������ʦ̫���ڻ��������С�\n"
-		"�������ʦ̫�İ˴��ֱ�����֮��������ָ�����Ʒ���\n"
+		"她是一位慈祥的中年师太，在华藏庵修行。\n"
+		"她是灭绝师太的八大静字辈弟子之二，最擅指法和掌法。\n"
 	);
 
-	set("gender", "Ů��");
+	set("gender", "女性");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
         set("inquiry",([
-                "����"  : (: ask_for_join :),
+                "出家"  : (: ask_for_join :),
         ]));
 
 	set("age", 38);
@@ -74,7 +74,7 @@ void create()
 	prepare_skill("strike", "jinding-zhang");
 	prepare_skill("finger", "tiangang-zhi");
 
-	create_family("������", 4, "����");
+	create_family("峨嵋派", 4, "弟子");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -82,9 +82,9 @@ void create()
         }) );
 
 	set("inquiry",([
-		"����"  : (: ask_for_update :),
+		"更新"  : (: ask_for_update :),
 		"update"  : (: ask_for_update :),
-		"����" : (:ask_for_huansu:),
+		"还俗" : (:ask_for_huansu:),
 	]));
 	setup();
 
@@ -100,54 +100,54 @@ int do_nod(string arg)
                 return 0;
 
 	command("smile");
-	command("say �ҽ�������������\n");
+	command("say 我讲个故事你听：\n");
 
-	message("vision", "����ʦ̫����"+me->name()+"���˼��仰��\n",
+	message("vision", "静虚师太对着"+me->name()+"讲了几句话。\n",
                         environment(me), ({me}) );
 
         switch(random(2)) {
 		case 0:
-                write("����ʦ̫˵����к�����ס�ڶ���ɽ��
-            �и�ɮ��������ʲô��ʤ�壿�����˵��ֱ����ᰡ�
-            ɮ�����ʣ������£�������֮�£���Σ����������������塣
-            ɮ�����ʣ�ʲô�Ƿ𷨣�������˵��������ǰ���˹ġ�
-            ��ɮ˵�����Ҳ���������к����������ش������أ�\n\n");
+                write("静虚师太说：大承和尚曾住在峨嵋山。
+            有个僧人问他：什么是胜峰？　大承说；直耸烟岚。
+            僧人又问：向上事（即脱俗之事）如何？　他答：立地三尺五。
+            僧人又问：什么是佛法？　他就说：兴义门前咚咚鼓。
+            那僧说：这我不懂。　大承和尚是怎样回答他的呢？\n\n");
 
 		if ((int)me->query_skill("mahayana", 1) > 60 + random(8)) {
-			write("��������һ�������������������¡�\n");
-			write("��˵��������ǧ��ĺ��˰١�\n\n");
-			message("vision", me->name()+"����һ�£�������ʦ̫˵�˼��仰��\n",
+			write("你想起在一部经书里读到过这个故事。\n");
+			write("你说：朝打三千，暮打八百。\n\n");
+			message("vision", me->name()+"想了一下，跟静虚师太说了几句话。\n",
 				environment(me), ({me}) );
 
-                	command("say �����ӷ����գ����գ��ðɣ��Ҿ��������ˡ�");
-                	command("say ϣ�������Դȱ�֮�ģ����ǻ�֮����Ŭ�����ƣ��ö�������\n");
+                	command("say 阿弥陀佛，善哉！善哉！好吧，我就收下你了。");
+                	command("say 希望你能以慈悲之心，以智慧之力，努力行善，济度众生。\n");
                 	command("recruit " + me->query("id"));
 		}
 		else {
-			write("���������ã�Ҳ�ⲻ�������е�������\n");
-			command("say �����ӷ����ѧЩ�𷨺��������Ұɡ�\n");
+			write("你想了许久，也解不明白其中的禅理。\n");
+			command("say 阿弥陀佛，你多学些佛法后再来找我吧。\n");
 		}
 		break;
 
 		case 1:
-                write("����ʦ̫˵������������ڶ���ɽ���ҡ�
-            ������������죬�и�ɮ�˳����ʣ�ʲô�Ƿ𷨴��⣿
-            �������˵���ճ���֪�����ʣ������ĵ��ǰ�ƣ�
-            ɮ�����ʣ�ʲô��˫�徳������������������ش������أ�\n\n");
+                write("静虚师太说：慧真广悟曾在峨嵋山出家。
+            慧真广悟开堂那天，有个僧人出来问：什么是佛法大意？
+            慧真广悟说：日出方知天下朗，无油哪点佛前灯？
+            僧人又问：什么是双峰境？　慧真广悟是怎样回答他的呢？\n\n");
 
                 if ((int)me->query_skill("mahayana", 1) > 60 + random(8)) {
-                        write("��������һ������������������ʡ�\n");
-                        write("������ҹ��ˮ���ֺ�����������ǰɽ��\n\n");
-                        message("vision", me->name()+"����һ�£�������ʦ̫˵�˼��仰��\n",
+                        write("你想起在一部经书里读到过这个典故。\n");
+                        write("你答道：夜听水流庵后竹，昼起看云面前山。\n\n");
+                        message("vision", me->name()+"想了一下，跟静虚师太说了几句话。\n",
                                 environment(me), ({me}) );
 
-                        command("say �����ӷ����գ����գ��ðɣ��Ҿ��������ˡ�");
-                        command("say ϣ�������Դȱ�֮�ģ����ǻ�֮����Ŭ�����ƣ��ö�������\n");
+                        command("say 阿弥陀佛，善哉！善哉！好吧，我就收下你了。");
+                        command("say 希望你能以慈悲之心，以智慧之力，努力行善，济度众生。\n");
                         command("recruit " + me->query("id"));
                 }
 		else {
-                        write("���������ã�Ҳ�ⲻ�������е�������\n");
-                	command("say �����ӷ����ѧЩ�𷨺��������Ұɡ�\n");
+                        write("你想了许久，也解不明白其中的禅理。\n");
+                	command("say 阿弥陀佛，你多学些佛法后在来找我吧。\n");
 		}
                	break;
 	}
@@ -175,10 +175,10 @@ void init()
 	&& ob->query("shen") < -100) 
 	{
        	 	message_vision(
-                "$n����$N˵��������ô����������£�\n",
+                "$n看着$N说道：你怎么在外边做坏事？\n",
                 ob, this_object() );
-		command("say �Ҷ��������������������ɣ�" +
-                        "�Ե���Ҫ���ϡ��Ҳ����������㣬��ȥ�ɡ�\n");
+		command("say 我峨嵋派乃是堂堂名门正派，" +
+                        "对弟子要求极严。我不能再收留你，你去吧。\n");
                 command("expell " + ob->query("id"));
                 return;
         }
@@ -188,7 +188,7 @@ void init()
         && ob->query("class") !=  "bonze" )                 
 	{
 		message_vision(
-                        "$n����$N˵�������Ȼ�����ף�����ȥ�����׼�ʦ��ѧ�հɡ�\n");
+                        "$n看着$N说道：你既然还了俗，还是去找你俗家师叔学艺吧。\n");
                 ob->delete("family/master_name");
                 ob->delete("family/master_id");
                 return;
@@ -202,18 +202,18 @@ string ask_for_update()
 
 	if( environment(me) != environment(this_object()) ) return "";
 
-	if( me->query("emj_converted") ) return "�����Ѿ�������¹��ˣ�";
-	if( (int)me->query_skill("huifeng-jian") < 1 ) return "�㲢�����ö��ҵĽ�������";
+	if( me->query("emj_converted") ) return "不是已经给你更新过了？";
+	if( (int)me->query_skill("huifeng-jian") < 1 ) return "你并不懂得峨嵋的剑法啊？";
 
 	me->set_skill("emei-jian", me->query_skill("huifeng-jian", 1));
 	me->improve_skill("emei-jian", subpoint["huifeng-jian"]);
 	me->delete_skill("huifeng-jian");
 	me->set("emei/emj_converted", 1);
-	return HIY"��ϲ�����Ľ����Ѿ�����Ϊ���µĶ��ҽ���2000�棬�ɵİ汾Ҳ��\n"
-		"ͬʱɾ�����뼴ʱװ�������µĶ��ҽ���"NOR+CYN"(ָ�enable sword emei-jian)��\n"NOR
-		HIY"��������κ����ʣ�����°汾�����κε����л�����ϵ�������\n"
-		"�������������ڴ˴�����ѯ�ʣ�ȡ����ͻ����񲿼�����Ա����ϵ��\n"
-		"�ٴθ�л���Զ����ɵĻݹˡ�\n"NOR;
+	return HIY"恭喜！您的剑法已经更新为最新的峨嵋剑法2000版，旧的版本也将\n"
+		"同时删除，请即时装备上最新的峨嵋剑法"NOR+CYN"(指令：enable sword emei-jian)。\n"NOR
+		HIY"如果您有任何疑问，亦或新版本出现任何的运行或操作上的问题与\n"
+		"错误，您都可以在此处张贴询问，取得与客户服务部技术人员的联系。\n"
+		"再次感谢您对峨嵋派的惠顾。\n"NOR;
 }
 
 #include "/kungfu/class/emei/jing3.h"

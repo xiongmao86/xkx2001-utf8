@@ -16,23 +16,23 @@ int exert(object me, object target)
 		  int i, j, tao_level, tjsg_level, new_exp, neili_drop, sneili_drop, skill_amount;
 
 		  if( !target )
-					 return notify_fail("ÄãÏëÒª¾ÈË­µÄÃü£¿\n");
+					 return notify_fail("ä½ æƒ³è¦æ•‘è°çš„å‘½ï¼Ÿ\n");
 
 		  if( me->is_fighting() || me->is_busy() )
-					 return notify_fail("ÄãÕýÃ¦×ÅÄØ£¡\n");
+					 return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼\n");
 
 		  if ( (tao_level = me->query_skill("taoism", 1)) < 120)
-					 return notify_fail("ÄãµÄµÀÑ§ÐÄ·¨»¹Ã»ÐÞµ½ÆðËÀ»ØÉúµÄ³Ì¶È£¡\n");
+					 return notify_fail("ä½ çš„é“å­¦å¿ƒæ³•è¿˜æ²¡ä¿®åˆ°èµ·æ­»å›žç”Ÿçš„ç¨‹åº¦ï¼\n");
 
 		  if ( (tjsg_level = me->query_skill("taiji-shengong", 1)) < 120)
-					 return notify_fail("ÄãµÄÌ«¼«Éñ¹¦»¹²»¹»¸ß£¡\n");
+					 return notify_fail("ä½ çš„å¤ªæžç¥žåŠŸè¿˜ä¸å¤Ÿé«˜ï¼\n");
 
 		  if ( me == target && !me->is_ghost() )
-					 return notify_fail("Äã»¹Ã»ËÀ£¬ÓÃ²»×Å×Ô¾È£¡\n");
+					 return notify_fail("ä½ è¿˜æ²¡æ­»ï¼Œç”¨ä¸ç€è‡ªæ•‘ï¼\n");
 		  else if ( me != target && !target->id("corpse") )
-					 return notify_fail("ÒªÏÈÕÒ×ÅÒ»¾ßÊ¬Ìå²ÅÄÜÔË¹¦¾ÈÃü£¡\n");
+					 return notify_fail("è¦å…ˆæ‰¾ç€ä¸€å…·å°¸ä½“æ‰èƒ½è¿åŠŸæ•‘å‘½ï¼\n");
 		  else if ( target->id("corpse") && !target->is_character() )
-					 return notify_fail("Õâ¾ßÊ¬ÌåÒÑ¾­¸¯ÀÃ£¬ÎÞ·¨¾È×ªÁË£¡\n");
+					 return notify_fail("è¿™å…·å°¸ä½“å·²ç»è…çƒ‚ï¼Œæ— æ³•æ•‘è½¬äº†ï¼\n");
 
 		  neili_drop = 150 - tjsg_level/2;
 		  sneili_drop = 300 - tjsg_level; // this is where the bug from. if tjsg>300, can gain max_neil from lifesave self.
@@ -43,28 +43,28 @@ int exert(object me, object target)
 		  if (target == me)
 		  {
 					 if (tao_level < 140)
-								return notify_fail("ÄãµÄµÀÑ§ÐÄ·¨»¹Ã»ÐÞµ½ÄÜ×ß³ö¹íÃÅ¹ØµÄ³Ì¶È£¡\n");
+								return notify_fail("ä½ çš„é“å­¦å¿ƒæ³•è¿˜æ²¡ä¿®åˆ°èƒ½èµ°å‡ºé¬¼é—¨å…³çš„ç¨‹åº¦ï¼\n");
 
 					 if (tjsg_level < 140)
-								return notify_fail("ÄãµÄÌ«¼«Éñ¹¦»¹²»¹»¸ß£¡\n");
+								return notify_fail("ä½ çš„å¤ªæžç¥žåŠŸè¿˜ä¸å¤Ÿé«˜ï¼\n");
 
-					 message_vision( HIW"$NÅÌÏ¥×øÏÂ£¬Ä¬ÔËÌ«¼«Éñ¹¦£¬¿ªÊ¼¾ÛÒõ»¯Ñô....\n"NOR, me);
-					 tell_object(me, HIW"¹¦ÐÐÁ½È¦£¬µ¤ÌïÒ»¹ÉÑôÆøÈôÒþÈôÏÖ....\n\n"NOR);
+					 message_vision( HIW"$Nç›˜è†åä¸‹ï¼Œé»˜è¿å¤ªæžç¥žåŠŸï¼Œå¼€å§‹èšé˜´åŒ–é˜³....\n"NOR, me);
+					 tell_object(me, HIW"åŠŸè¡Œä¸¤åœˆï¼Œä¸¹ç”°ä¸€è‚¡é˜³æ°”è‹¥éšè‹¥çŽ°....\n\n"NOR);
 
 					 if ( me->query("neili") < 1000 || random(tao_level+tjsg_level) < 24 )
 					 {
 								me->set("neili", 0);
 								me->add("max_neili", -10);
 
-								message_vision( HIY"$NÍ»È»Í£¶ÙÏÂÀ´£¬ÏÔÈ»ÄÚÁ¦ÊÜµ½¼«´óËðÉË£¡\n"NOR, me);
+								message_vision( HIY"$Nçªç„¶åœé¡¿ä¸‹æ¥ï¼Œæ˜¾ç„¶å†…åŠ›å—åˆ°æžå¤§æŸä¼¤ï¼\n"NOR, me);
 
-								return notify_fail( HIY"¿ÉÏ§ÄãÄÚÁ¦²»¼Ã£¬ÎÞ·¨¼á³ÖÏÂÈ¥ÁË£¡\n"NOR );
+								return notify_fail( HIY"å¯æƒœä½ å†…åŠ›ä¸æµŽï¼Œæ— æ³•åšæŒä¸‹åŽ»äº†ï¼\n"NOR );
 					 }
 
-					 tell_object(me, HIY"ÐÐÂú¾Å¸öÖÜÌì£¬Äã¾õµÃµ¤ÌïÖÐµÄÌìî¸ÑôÆøÔ½À´Ô½Ê¢....\n"NOR);
-					 tell_object(me, HIY"Ò»¹Éî¸Æø×Ôµ¤ÌïÓ¿³ö£¬Ö±³åÌìÁé£¬ÄãÍ´µÃ¼¸ºõÔÎËÀ¹ýÈ¥£¡\n"NOR);
+					 tell_object(me, HIY"è¡Œæ»¡ä¹ä¸ªå‘¨å¤©ï¼Œä½ è§‰å¾—ä¸¹ç”°ä¸­çš„å¤©ç½¡é˜³æ°”è¶Šæ¥è¶Šç››....\n"NOR);
+					 tell_object(me, HIY"ä¸€è‚¡ç½¡æ°”è‡ªä¸¹ç”°æ¶Œå‡ºï¼Œç›´å†²å¤©çµï¼Œä½ ç—›å¾—å‡ ä¹Žæ™•æ­»è¿‡åŽ»ï¼\n"NOR);
 					 message("vision",
-								HIY ""+me->name(1)+"»¯×÷Ò»µÀÌìî¸ÑôÆøÏûÊ§ÁË£¡\n"NOR,
+								HIY ""+me->name(1)+"åŒ–ä½œä¸€é“å¤©ç½¡é˜³æ°”æ¶ˆå¤±äº†ï¼\n"NOR,
 								environment(me), me);
 
 					 me->reincarnate();
@@ -104,7 +104,7 @@ int exert(object me, object target)
                         
                 me->move(REVIVE_ROOM);
                 message("vision",
-                        "ÄãºöÈ»Ç°Ãæ¶àÁËÒ»¸öÈË£¬ÃæÉ«²Ò°×£¬¾ÍÏóÊÇ¸Õ´Ó¹×²ÄÀïÅÀ³öÀ´ËÆµÄ¡£\n",
+                        "ä½ å¿½ç„¶å‰é¢å¤šäº†ä¸€ä¸ªäººï¼Œé¢è‰²æƒ¨ç™½ï¼Œå°±è±¡æ˜¯åˆšä»Žæ£ºæé‡Œçˆ¬å‡ºæ¥ä¼¼çš„ã€‚\n",
                          environment(me), me);
 
                 me->unconcious();
@@ -120,38 +120,38 @@ int exert(object me, object target)
                 if ( name == list[i]->name(1) ) break;
         
                 if (i == sizeof(list)) 
-                        return notify_fail(name+"µÄ¹í»ê²»ÔÚ¡£\n");
+                        return notify_fail(name+"çš„é¬¼é­‚ä¸åœ¨ã€‚\n");
                         
                 deadman = list[i];      
                 if ( !deadman->is_ghost() )
-                        return notify_fail(name+"ÒÑ¾­»î¹ýÀ´ÁË,ÓÃ²»×ÅÄã¾È¡£\n");
+                        return notify_fail(name+"å·²ç»æ´»è¿‡æ¥äº†,ç”¨ä¸ç€ä½ æ•‘ã€‚\n");
                         
                 message_vision(
-                        HIW "$NÔËÆðÌ«¼«Éñ¹¦£¬ÊÖÕÆÅÄ°´"+target->name(1)+"µÄÃüÃÅ´óÑ¨¡£\n"
-								"$NÒ»±ßÐìÐìµØ½«ÕæÆøÊäÈëÊ¬ÌåÄÚ£¬¿ÚÖÐÒ»±ßÆà²ÒµØ»½×Å"+name+"µÄÃû×Ö¡£\n\n"
-								"²»Ò»»á£¬$N¶îÍ·ÉÏÃ°³ö¶¹´óº¹Öé£¬"+target->name(1)+"Ò²ËÆºõ¶¯ÁËÒ»ÏÂ¡­\n\n"NOR, me);
+                        HIW "$Nè¿èµ·å¤ªæžç¥žåŠŸï¼Œæ‰‹æŽŒæ‹æŒ‰"+target->name(1)+"çš„å‘½é—¨å¤§ç©´ã€‚\n"
+								"$Nä¸€è¾¹å¾å¾åœ°å°†çœŸæ°”è¾“å…¥å°¸ä½“å†…ï¼Œå£ä¸­ä¸€è¾¹å‡„æƒ¨åœ°å”¤ç€"+name+"çš„åå­—ã€‚\n\n"
+								"ä¸ä¸€ä¼šï¼Œ$Né¢å¤´ä¸Šå†’å‡ºè±†å¤§æ±—ç ï¼Œ"+target->name(1)+"ä¹Ÿä¼¼ä¹ŽåŠ¨äº†ä¸€ä¸‹â€¦\n\n"NOR, me);
 
 					 if ( me->query("neili") < 1000 || random(tao_level+tjsg_level) < 24 )
 					 {
 								me->set("neili", 0);
 								me->add("max_neili", -10);
                         
-                        message_vision( HIY"$NÍ»È»Í£¶ÙÏÂÀ´£¬ÏÔÈ»ÄÚÁ¦ÊÜµ½¼«´óËðÉË£¡\n"NOR, me);
-                        return notify_fail( HIY"¿ÉÏ§ÄãÄÚÁ¦²»¼Ã£¬ÎÞ·¨¼á³ÖÏÂÈ¥ÁË£¡\n"NOR );
+                        message_vision( HIY"$Nçªç„¶åœé¡¿ä¸‹æ¥ï¼Œæ˜¾ç„¶å†…åŠ›å—åˆ°æžå¤§æŸä¼¤ï¼\n"NOR, me);
+                        return notify_fail( HIY"å¯æƒœä½ å†…åŠ›ä¸æµŽï¼Œæ— æ³•åšæŒä¸‹åŽ»äº†ï¼\n"NOR );
                 } 
                 
                 me->add("neili", -1000); 
                 me->add("max_neili", - neili_drop ); 
-                me->receive_damage("qi", 3*neili_drop, "ÄÚÁ¦Êä³ö¹ý¶È¶øËÀÁË¡£"); 
-                me->receive_wound("qi", 2*neili_drop, "ÄÚÁ¦Êä³ö¹ý¶È¶øËÀÁË¡£"); 
+                me->receive_damage("qi", 3*neili_drop, "å†…åŠ›è¾“å‡ºè¿‡åº¦è€Œæ­»äº†ã€‚"); 
+                me->receive_wound("qi", 2*neili_drop, "å†…åŠ›è¾“å‡ºè¿‡åº¦è€Œæ­»äº†ã€‚"); 
 
-                message_vision( HIY"$NÍ»È»Í»È»´óºðÒ»Éù£¬½«ÓàÏÂÕæÁ¦È«Á¦ËÍ³ö£¡\n"
-                        + "Ò»ÂÆ»êÆÇ¹éµ½Ê¬ÌåÉÏ£¬" + name +"µÄÊ¬Ìå¾¹È»»Î»ÎÓÆÓÆµØÕ¾ÆðÀ´£¡"NOR, me);
+                message_vision( HIY"$Nçªç„¶çªç„¶å¤§å¼ä¸€å£°ï¼Œå°†ä½™ä¸‹çœŸåŠ›å…¨åŠ›é€å‡ºï¼\n"
+                        + "ä¸€ç¼•é­‚é­„å½’åˆ°å°¸ä½“ä¸Šï¼Œ" + name +"çš„å°¸ä½“ç«Ÿç„¶æ™ƒæ™ƒæ‚ æ‚ åœ°ç«™èµ·æ¥ï¼"NOR, me);
 
-                tell_object(deadman, HIY "Ò»µÀÌìî¸ÑôÆø»÷ÖÐÄã£¬Í´µÃÄã¼¸ºõÔÎËÀ¹ýÈ¥£¡\n" NOR);
+                tell_object(deadman, HIY "ä¸€é“å¤©ç½¡é˜³æ°”å‡»ä¸­ä½ ï¼Œç—›å¾—ä½ å‡ ä¹Žæ™•æ­»è¿‡åŽ»ï¼\n" NOR);
 
                 message("vision",  
-                        HIY"Ò»µÀÌìî¸ÑôÆø»®¹ý£¬"+name+"ÏûÊ§ÁË£¡\n"NOR, 
+                        HIY"ä¸€é“å¤©ç½¡é˜³æ°”åˆ’è¿‡ï¼Œ"+name+"æ¶ˆå¤±äº†ï¼\n"NOR, 
                         environment(deadman), deadman );
 
                 deadman->reincarnate();

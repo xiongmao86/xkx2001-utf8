@@ -6,12 +6,12 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÓàºéĞË", ({"yu hongxing", "yu", "hongxing"}));
-	set("title", "Ø¤°ï°Ë´üµÜ×Ó");
-	set("gender", "ÄĞĞÔ");
+	set_name("ä½™æ´ªå…´", ({"yu hongxing", "yu", "hongxing"}));
+	set("title", "ä¸å¸®å…«è¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("long", 
-		"ÕâÊÇÎ»Ğ¦ÃĞÃĞµÄØ¤°ï°Ë´üµÜ×Ó£¬ÉúĞÔ¶àÖÇ£¬ÍâºÅĞ¡ÎâÓÃ¡£\n");
+		"è¿™æ˜¯ä½ç¬‘çœ¯çœ¯çš„ä¸å¸®å…«è¢‹å¼Ÿå­ï¼Œç”Ÿæ€§å¤šæ™ºï¼Œå¤–å·å°å´ç”¨ã€‚\n");
 	set("attitude", "peaceful");
 	set("str", 20);
 	set("int", 30);
@@ -50,7 +50,7 @@ void create()
 	
 	prepare_skill("hand", "shexing-diaoshou");
 
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/gaibang/obj/budai")->set_amount(7);
@@ -61,25 +61,25 @@ void create()
 void attempt_apprentice(object ob)
 {
         if (ob->query("class")=="bonze") {
-                if (ob->query("gender")=="Å®ĞÔ")
-                        command ("say Ê¦Ì«ÊÇÊÇ³ö¼ÒÈË£¬ÔõÃ´ÄÜÔÚ±¾°ï×ö½Ğ»¯×ÓÄØ£¿");
+                if (ob->query("gender")=="å¥³æ€§")
+                        command ("say å¸ˆå¤ªæ˜¯æ˜¯å‡ºå®¶äººï¼Œæ€ä¹ˆèƒ½åœ¨æœ¬å¸®åšå«åŒ–å­å‘¢ï¼Ÿ");
                 return;
         }
 
 	if( ob->query("int") < 25 ) return;
 
-	if( ob->query("family/family_name") != "Ø¤°ï" )
+	if( ob->query("family/family_name") != "ä¸å¸®" )
 	{
 	        if( ob->query("rank") > 1 ) {
-                	command("say ±¾°ïÒÔÖÒÒåÎªÏÈ£¬¿ÉÈİ²»ÏÂÄãÕâÖÖÎŞĞÅÎŞÒåµÄ¼Ò»ï£¡\n");
+                	command("say æœ¬å¸®ä»¥å¿ ä¹‰ä¸ºå…ˆï¼Œå¯å®¹ä¸ä¸‹ä½ è¿™ç§æ— ä¿¡æ— ä¹‰çš„å®¶ä¼™ï¼\n");
                	 	return;
         	}
 
-		command("say °¦£¬±¾°ï³ÏĞÅÎª±¾£¬Ö»ÓĞÆß¹«ËûÀÏÈË¼ÒºÍÎÒ²ÅÌØ±ğÊÕĞ©´ÏÃ÷Í½¶ù£¬");
-		command("say ´ó¼Ò¶¼ÒªÎª³¤Ô¶×ÅÏë°¡£¡");
+		command("say å”‰ï¼Œæœ¬å¸®è¯šä¿¡ä¸ºæœ¬ï¼Œåªæœ‰ä¸ƒå…¬ä»–è€äººå®¶å’Œæˆ‘æ‰ç‰¹åˆ«æ”¶äº›èªæ˜å¾’å„¿ï¼Œ");
+		command("say å¤§å®¶éƒ½è¦ä¸ºé•¿è¿œç€æƒ³å•Šï¼");
 		ob->set("rank", 1); 
 		command("recruit " + ob->query("id"));
-                ob->set("title", "Ø¤°ïÒ»´üµÜ×Ó");
+                ob->set("title", "ä¸å¸®ä¸€è¢‹å¼Ÿå­");
 	} 
 	else
 	{

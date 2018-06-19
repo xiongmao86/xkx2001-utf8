@@ -1,5 +1,5 @@
 //Cracked by Roath
-// douzhuan.c ¶·×ªÐÇÒÆ
+// douzhuan.c æ–—è½¬æ˜Ÿç§»
 
 #include <ansi.h>
 
@@ -32,13 +32,13 @@ int perform(object me, object target)
   int ski_num;
   mapping tar_skills;
   
-  if(me->query_temp(DOU_ZHUAN)) return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ¶·×ªÐÇÒÆÁË¡£\n");
+  if(me->query_temp(DOU_ZHUAN)) return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨æ–—è½¬æ˜Ÿç§»äº†ã€‚\n");
   
   if( !target ) target = offensive_target(me);
 
   if( !target || !target->is_character()
       || !me->is_fighting(target) )
-    return notify_fail("¶·×ªÐÇÒÆÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+    return notify_fail("æ–—è½¬æ˜Ÿç§»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
   weapon = me->query_temp("weapon");
   weapon1 = target->query_temp("weapon");
@@ -47,7 +47,7 @@ int perform(object me, object target)
     if(weapon) {
       weapon->unequip();
       if( !stringp(str = weapon->query("unwield_msg")) )
-        str = "$N·ÅÏÂÊÖÖÐµÄ$n¡£\n";
+        str = "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n";
       message_vision(str, me, weapon);
     }
     
@@ -67,9 +67,9 @@ int perform(object me, object target)
     fake_type = weapon1->query("skill_type");
     skill = target->query_skill_mapped(fake_type);
     
-    if(!me->query("env/wiz_test")) return notify_fail("Äã²»ÊÇÊÔÓÃ´ËÕÐÊ½Ö®ÈË¡£\n");
+    if(!me->query("env/wiz_test")) return notify_fail("ä½ ä¸æ˜¯è¯•ç”¨æ­¤æ‹›å¼ä¹‹äººã€‚\n");
     if(!weapon || weapon->query("skill_type") != fake_type)
-      return notify_fail("ÄãÃ»ÓÐÄÇÑùµÄÎäÆ÷¡£\n");
+      return notify_fail("ä½ æ²¡æœ‰é‚£æ ·çš„æ­¦å™¨ã€‚\n");
 
     me->set_temp(DOU_FAKE_NAME, skill);
     me->set_temp(DOU_FAKE_TYPE, fake_type); 
@@ -80,11 +80,11 @@ int perform(object me, object target)
       me->set_temp(DOU_FAKE_TYPE, fake_type);
     }
     
-    else return notify_fail("ÔÝÊ±²»ÄÜÕâÃ´ÓÃ¡£\n");*/
+    else return notify_fail("æš‚æ—¶ä¸èƒ½è¿™ä¹ˆç”¨ã€‚\n");*/
   }
   
     
-  message_vision(HIY"$NÔËÓÃ¶·×ªÐÇÒÆ£¬¶Ô$nÒÔÆäÈËÖ®µÀ£¬»¹×ÔÆäÈËÖ®Éí¡£Ê¹³ö"+
+  message_vision(HIY"$Nè¿ç”¨æ–—è½¬æ˜Ÿç§»ï¼Œå¯¹$nä»¥å…¶äººä¹‹é“ï¼Œè¿˜è‡ªå…¶äººä¹‹èº«ã€‚ä½¿å‡º"+
     to_chinese(skill)+"\n"NOR, me, target);
 
   me->add("neili", -80);
@@ -100,7 +100,7 @@ private void remove_effect(object me, object target)
   if( !me->is_fighting() || !target || !target->is_character() 
      || !me->is_fighting(target) || !me->query_temp(DOU_ZHUAN) ) 
   {
-    message_vision( HIY"¶·×ªÐÇÒÆÊ¹Íê£¬$NÒÑ·ÉÉíÂäµØ£¬blah blah blah¡£\n" NOR, me);
+    message_vision( HIY"æ–—è½¬æ˜Ÿç§»ä½¿å®Œï¼Œ$Nå·²é£žèº«è½åœ°ï¼Œblah blah blahã€‚\n" NOR, me);
     me->delete_temp(DOU_ZHUAN);
     return;
   }

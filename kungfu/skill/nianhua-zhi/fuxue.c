@@ -1,5 +1,5 @@
 //Cracked by Roath
-// fuxue.c Äé»¨·÷Ñ¨
+// fuxue.c æ‹ˆèŠ±æ‹‚ç©´
 
 #include <ansi.h>
 
@@ -7,44 +7,44 @@ inherit F_DBASE;
 inherit F_SSERVER;
 
 string* xuedao1 = ({
-	"ËÄ°×Ñ¨",
-	"µØ²ÖÑ¨",
-	"´óÓ­Ñ¨",
-	"Ï¿³µÑ¨",
-	"Í·Î¬Ñ¨",
-	"ÏÂ¹ØÑ¨"
+	"å››ç™½ç©´",
+	"åœ°ä»“ç©´",
+	"å¤§è¿Žç©´",
+	"å³¡è½¦ç©´",
+	"å¤´ç»´ç©´",
+	"ä¸‹å…³ç©´"
 });
 
 string* xuedao2 = ({
-	"Òþ°×Ñ¨",
-	"Ì«°×Ñ¨",
-	"ÉÌÇðÑ¨",
-	"µØ»úÑ¨"
+	"éšç™½ç©´",
+	"å¤ªç™½ç©´",
+	"å•†ä¸˜ç©´",
+	"åœ°æœºç©´"
 });
 
 string* xuedao3 = ({
-	"ÉÙ³åÑ¨",
-	"ÉÙº£Ñ¨",
-	"Í¨ÀíÑ¨",
-	"ÉñÃÅÑ¨"
+	"å°‘å†²ç©´",
+	"å°‘æµ·ç©´",
+	"é€šç†ç©´",
+	"ç¥žé—¨ç©´"
 });
 
 string* xuedao4 = ({
-	"Ó¡ÌÃÑ¨",
-	"½ðÂÉÑ¨",
-	"ÓñÒºÑ¨",
-	"ÓãÑüÑ¨",
-	"°ÙÀÍÑ¨"
+	"å°å ‚ç©´",
+	"é‡‘å¾‹ç©´",
+	"çŽ‰æ¶²ç©´",
+	"é±¼è…°ç©´",
+	"ç™¾åŠ³ç©´"
 });
 
 string* xuedao5 = ({
-	"°Ù»áÑ¨",
-	"ÁéÌ¨Ñ¨",
-	"Ì«ÑôÑ¨",
-	"ëþÖÐÑ¨",
-	"ÃüÃÅÑ¨",
-	"ð¯Î²Ñ¨",
-	"Æøº£Ñ¨"
+	"ç™¾ä¼šç©´",
+	"çµå°ç©´",
+	"å¤ªé˜³ç©´",
+	"è†»ä¸­ç©´",
+	"å‘½é—¨ç©´",
+	"é¸ å°¾ç©´",
+	"æ°”æµ·ç©´"
 });
 
 int perform(object me, object target)
@@ -54,25 +54,25 @@ int perform(object me, object target)
 	if( !target && me->is_fighting() ) target = offensive_target(me);
 
 	if ( me->query_temp("weapon") ) 
-		return notify_fail("ÄÃ×ÅÎäÆ÷ÔõÃ´µãÑ¨£¿\n");
+		return notify_fail("æ‹¿ç€æ­¦å™¨æ€Žä¹ˆç‚¹ç©´ï¼Ÿ\n");
 
-	if( !target || !target->is_character() || target->query("race") != "ÈËÀà" )
-		return notify_fail("ÄãÒªµãË­µÄÑ¨£¿\n");
+	if( !target || !target->is_character() || target->query("race") != "äººç±»" )
+		return notify_fail("ä½ è¦ç‚¹è°çš„ç©´ï¼Ÿ\n");
 
 	if( environment(target)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀïÄã²»ÄÜÍµÏ®µãÑ¨£¡\n");
+		return notify_fail("åœ¨è¿™é‡Œä½ ä¸èƒ½å·è¢­ç‚¹ç©´ï¼\n");
 
 	if( me->query_str() < 25 )
-		return notify_fail("ÄãÔÚ±ÛÁ¦ÉÏÏÈÌìÙ÷¸³²»×ã£¬µãÑ¨·´ÊÜÆäº¦£¡\n");
+		return notify_fail("ä½ åœ¨è‡‚åŠ›ä¸Šå…ˆå¤©ç¦€èµ‹ä¸è¶³ï¼Œç‚¹ç©´åå—å…¶å®³ï¼\n");
 	
 	if( me->query_skill("finger") < 90 )
-		return notify_fail("ÄãÔÚÖ¸·¨ÉÏÏÂµÄ¹¦·ò»¹²»¹»£¬²»»áÄé»¨·÷Ñ¨£¡\n");
+		return notify_fail("ä½ åœ¨æŒ‡æ³•ä¸Šä¸‹çš„åŠŸå¤«è¿˜ä¸å¤Ÿï¼Œä¸ä¼šæ‹ˆèŠ±æ‹‚ç©´ï¼\n");
 
 	if( me->query_skill("hunyuan-yiqi", 1) < 90 )
-		return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª»ðºòÎ´µ½£¬ÎÞ·¨Ê¹ÓÃÄé»¨·÷Ñ¨£¡\n");
+		return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºç«å€™æœªåˆ°ï¼Œæ— æ³•ä½¿ç”¨æ‹ˆèŠ±æ‹‚ç©´ï¼\n");
 
 	if( me->query("max_neili") <= 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»×ã£¬¾¢Á¦²»ÄÜ¹áÍ¸£¬ÎÞ·¨µãÑ¨£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼ŒåŠ²åŠ›ä¸èƒ½è´¯é€ï¼Œæ— æ³•ç‚¹ç©´ï¼\n");
 
 	sp = me->query_skill("dodge") + me->query_skill("parry") + me->query("kar");
 	dp = target->query_skill("dodge") + target->query_skill("parry") + target->query("kar");
@@ -80,24 +80,24 @@ int perform(object me, object target)
 	time = (me->query_skill("force") - target->query_skill("force") + me->query_skill("nianhua-zhi",1))/15;
 
 	if( me->query("neili") <= 2*time )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬¾¢Á¦²»ÄÜ¹á´©Ñ¨µÀ£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼ŒåŠ²åŠ›ä¸èƒ½è´¯ç©¿ç©´é“ï¼\n");
 
 	if( random(sp) > dp && time > 0 )
 	{
 		if( me->query_skill("finger") >=  90 && me->query_skill("finger") < 115)
-		message_vision(HIR "\n$NÎåÖ¸²¢Â££¬ÉíÐÎÉÁ¶¯¼ä£¬ÒÑµãÖÐÁË$nµÄ" + xuedao1[random(6)] + "£¡\n\n" NOR, me, target);
+		message_vision(HIR "\n$Näº”æŒ‡å¹¶æ‹¢ï¼Œèº«å½¢é—ªåŠ¨é—´ï¼Œå·²ç‚¹ä¸­äº†$nçš„" + xuedao1[random(6)] + "ï¼\n\n" NOR, me, target);
 
 		if( me->query_skill("finger") >= 115 && me->query_skill("finger") < 140)
-		message_vision(HIR "\n$NÉì³öÈý¸ùÊÖÖ¸£¬Ò»»ÓÊÖµãÖÐÁË$nµÄ" + xuedao2[random(4)] + "£¡\n\n" NOR, me, target);
+		message_vision(HIR "\n$Nä¼¸å‡ºä¸‰æ ¹æ‰‹æŒ‡ï¼Œä¸€æŒ¥æ‰‹ç‚¹ä¸­äº†$nçš„" + xuedao2[random(4)] + "ï¼\n\n" NOR, me, target);
 
 		if( me->query_skill("finger") >= 140 && me->query_skill("finger") < 165)
-		message_vision(HIR "\n$NË«Ö¸Èçµ¶Èçêª£¬×Å×Å½ø±Æ£¬à§µØÒ»Éù£¬ÒÑ´ÁÔÚÁË$nµÄ" + xuedao3[random(4)] + "ÉÏ£¡\n\n" NOR, me, target);
+		message_vision(HIR "\n$NåŒæŒ‡å¦‚åˆ€å¦‚æˆŸï¼Œç€ç€è¿›é€¼ï¼Œå”°åœ°ä¸€å£°ï¼Œå·²æˆ³åœ¨äº†$nçš„" + xuedao3[random(4)] + "ä¸Šï¼\n\n" NOR, me, target);
 
 		if( me->query_skill("finger") >= 165 && me->query_skill("finger") < 190)
-		message_vision(HIR "\n$N½»²æÁ½¸ùÊ³Ö¸£¬Ò»ÂÆî¸ÆøÆÆ¿Õ±Å³ö£¬±ÊÖ±ÉäÈë$nµÄ" + xuedao4[random(5)] + "£¡\n\n" NOR, me, target);
+		message_vision(HIR "\n$Näº¤å‰ä¸¤æ ¹é£ŸæŒ‡ï¼Œä¸€ç¼•ç½¡æ°”ç ´ç©ºè¿¸å‡ºï¼Œç¬”ç›´å°„å…¥$nçš„" + xuedao4[random(5)] + "ï¼\n\n" NOR, me, target);
 
 		if( me->query_skill("finger") >= 190 )
-		message_vision(HIR "\n$NÊ³Ö¸Çáµ¯£¬Ò»Æ¬ÅÅÉ½µ¹º£µÄ°µ¾¢¶ÙÊ±Ó¿³ö£¬»÷ÔÚ$nµÄ" + xuedao5[random(7)] + "ÉÏ£¡\n\n" NOR, me, target);
+		message_vision(HIR "\n$Né£ŸæŒ‡è½»å¼¹ï¼Œä¸€ç‰‡æŽ’å±±å€’æµ·çš„æš—åŠ²é¡¿æ—¶æ¶Œå‡ºï¼Œå‡»åœ¨$nçš„" + xuedao5[random(7)] + "ä¸Šï¼\n\n" NOR, me, target);
 
 		me->add("neili", (-10)*time);
 		if( me->query_temp("jingang") )me->add("neili", (-20)*time); // jingang can make own bili 4 times, too rascal,
@@ -107,7 +107,7 @@ int perform(object me, object target)
 		}
 	else
 	{	
-		message_vision(HIW "\n$NÒ»Ö¸µãÈ¥£¬¿ÉÊÇ$nÔçÒÑÁÏµÐ»úÏÈ£¬Ò»ÉÁÉí±ÜÁË¿ªÈ¥£¡ \n\n$NÉíÇ°¶ÙÊ±¿ÕÃÅ´óÂ¶£¬ÀÇ±·µØÕÐ¼Ü×Å .... \n" NOR, me, target);
+		message_vision(HIW "\n$Nä¸€æŒ‡ç‚¹åŽ»ï¼Œå¯æ˜¯$næ—©å·²æ–™æ•Œæœºå…ˆï¼Œä¸€é—ªèº«é¿äº†å¼€åŽ»ï¼ \n\n$Nèº«å‰é¡¿æ—¶ç©ºé—¨å¤§éœ²ï¼Œç‹¼ç‹ˆåœ°æ‹›æž¶ç€ .... \n" NOR, me, target);
 		if( !target->is_fighting(me) ) target->fight_ob(me);
 		me->start_busy(5);
 	}

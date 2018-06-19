@@ -10,14 +10,14 @@ void skill_improved(object me)
 
 int valid_learn(object me)
 {
-	if (!me->query_temp("mark/Öì")
+	if (!me->query_temp("mark/æœ±")
 		&& (me->query("class") != "bonze"
-			 || (me->query("family/family_name") != "¶ëáÒÅÉ" &&
-			me->query("family/family_name") != "ÉÙÁÖÅÉ"
-			 && !me->query_temp("mark/¹ÈĞé"  ))
+			 || (me->query("family/family_name") != "å³¨åµ‹æ´¾" &&
+			me->query("family/family_name") != "å°‘æ—æ´¾"
+			 && !me->query_temp("mark/è°·è™š"  ))
 			 || me->query_skill("literate", 1) > 100) &&
-			 (me->query("class") != "taoist" || me->query("family/family_name") != "È«Õæ½Ì"
+			 (me->query("class") != "taoist" || me->query("family/family_name") != "å…¨çœŸæ•™"
 			 || me->query_skill("literate", 1) > 100) )
-		return notify_fail("ÄãÏÖÔÚ²»ÄÜÑ§Ï°¶ÁÊéĞ´×Ö¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸èƒ½å­¦ä¹ è¯»ä¹¦å†™å­—ã€‚\n");
 	return 1;
 }

@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
 	if (duration < 1) {
-		tell_object(me, "大理官府不再通缉你了！\n");
+		tell_object(me, "澶х悊瀹樺簻涓嶅啀閫氱級浣犱簡锛乗n");
 		return 0;
 	}
 	me->apply_condition("dlkiller", duration - 1);

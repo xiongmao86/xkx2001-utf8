@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /kungfu/class/emei/zhou.c ÖÜÜÆÈô
+// /kungfu/class/emei/zhou.c å‘¨èŠ·è‹¥
 // xbc: 97/02/01
 // 18th-Aug-2000: modified by yasuko
 #include <ansi.h>
@@ -9,11 +9,11 @@ string ask_jiuyin();
 
 void create()
 {
-	set_name("ÖÜÜÆÈô", ({ "zhou zhiruo", "zhou"}));
+	set_name("å‘¨èŠ·è‹¥", ({ "zhou zhiruo", "zhou"}));
 	set("long", 
-		"ÕâÊÇÒ»ÃûÉí´©´ĞÂÌÒÂÉÀµÄÅ®×Ó£¬Ñü¼äĞü×ÅÒ»±ú¶Ì½£¡£\n"
-		"Ö»¼ûËıÇåÀöĞãÑÅ£¬ÈİÉ«¼«ÃÀ¡£\n");
-	set("gender", "Å®ĞÔ");
+		"è¿™æ˜¯ä¸€åèº«ç©¿è‘±ç»¿è¡£è¡«çš„å¥³å­ï¼Œè…°é—´æ‚¬ç€ä¸€æŸ„çŸ­å‰‘ã€‚\n"
+		"åªè§å¥¹æ¸…ä¸½ç§€é›…ï¼Œå®¹è‰²æç¾ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 26);
 	set("attitude", "peaceful");
 
@@ -67,7 +67,7 @@ void create()
 	prepare_skill("claw", "jiuyin-zhao");
 	prepare_skill("strike", "cuixin-zhang");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
 	set("chat_chance_combat", 80);
 	set("chat_msg_combat", ({
@@ -82,8 +82,8 @@ void create()
 
 	set("special_master", 1);
 	set("inquiry", ([
-	    "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
-	    "¾ÅÒõÕæ¾­" : (: ask_jiuyin :),
+	    "ç­ç»å¸ˆå¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé—¨äººï¼Œåœ¨åè—åºµä¿®è¡Œã€‚\n",
+	    "ä¹é˜´çœŸç»" : (: ask_jiuyin :),
 	]));
 	setup();
 	carry_object("/d/emei/npc/obj/hui-cloth")->wear();

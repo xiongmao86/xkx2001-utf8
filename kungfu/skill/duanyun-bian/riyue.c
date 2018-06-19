@@ -1,5 +1,5 @@
 //Cracked by Roath
-///kungfu/skill/duanyun-bian/riyue.c ÈÕÔÂÎŞ¹â
+///kungfu/skill/duanyun-bian/riyue.c æ—¥æœˆæ— å…‰
 // sdong 09/98
 
 #include <ansi.h>
@@ -17,17 +17,17 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÈÕÔÂÎŞ¹âÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æ—¥æœˆæ— å…‰åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
 	if( me->query_skill_mapped("force") != "xiantian-gong" )
-					 return notify_fail("ÄãËùÓÃµÄ²¢·ÇĞşÃÅÏÈÌì¹¦£¬Ê©Õ¹²»³öÈÕÔÂÎŞ¹â£¡\n");
+					 return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç„é—¨å…ˆå¤©åŠŸï¼Œæ–½å±•ä¸å‡ºæ—¥æœˆæ— å…‰ï¼\n");
 
 	if( me->query_skill("force") < 140 )
-		return notify_fail("ÄãµÄĞşÃÅÏÈÌì¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹ÈÕÔÂÎŞ¹â£¡\n");
+		return notify_fail("ä½ çš„ç„é—¨å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•æ—¥æœˆæ— å…‰ï¼\n");
 
 	if( me->query_skill("whip") < 135 )
-		return notify_fail("ÈÕÔÂÎŞ¹âĞèÒª¾«Õ¿µÄ¶ÏÔÆ±Ş·¨·½ÄÜÓĞĞ§Ê©Õ¹£¡\n");
+		return notify_fail("æ—¥æœˆæ— å…‰éœ€è¦ç²¾æ¹›çš„æ–­äº‘é­æ³•æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	// for a 800K player, frce/2 = 150, shen/3K = 300, power = 300
 	// for players > 1.2M, power will hit max
@@ -37,12 +37,12 @@ int perform(object me, object target)
 	if(power>480)power=480;
 
 	if( me->query("neili") <= 200+power*2 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÈÕÔÂÎŞ¹â£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨æ—¥æœˆæ— å…‰ï¼\n");
 	if( me->query("jingli") <= power )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÈÕÔÂÎŞ¹â£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨æ—¥æœˆæ— å…‰ï¼\n");
 
 
-	message_vision(HIW "$NÔË×ãÄÚÁ¦£¬ÃÍµØÒ»Ñï"NOR+"$n"+HIW"¾íÆğÎŞ±ß·çÔÆÕÚÔÂÑÚÈÕ£¬Ò»¹É"NOR+HIM"î¸·ç"NOR+HIW"ËæÖøÂşÌì±ŞÓ°ÆËÌì¸ÇµØµÄÏòµĞÈËÏ®À´¡£\n\n" NOR, me, me->query_temp("weapon"));
+	message_vision(HIW "$Nè¿è¶³å†…åŠ›ï¼ŒçŒ›åœ°ä¸€æ‰¬"NOR+"$n"+HIW"å·èµ·æ— è¾¹é£äº‘é®æœˆæ©æ—¥ï¼Œä¸€è‚¡"NOR+HIM"ç½¡é£"NOR+HIW"éšè‘—æ¼«å¤©é­å½±æ‰‘å¤©ç›–åœ°çš„å‘æ•Œäººè¢­æ¥ã€‚\n\n" NOR, me, me->query_temp("weapon"));
 
 	me->add_temp("apply/attack",power/2);
 	me->add_temp("apply/damage",power/5);

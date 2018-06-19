@@ -10,31 +10,31 @@ int valid_enable(string usage)
 
 int valid_learn(object me)
 {
-	if( me->query("family/family_name") != "åÐÒ£ÅÉ")
-                return notify_fail("Äã²»ÄÜÑ§Ð¡ÎÞÏà¹¦¡£\n");
+	if( me->query("family/family_name") != "é€é¥æ´¾")
+                return notify_fail("ä½ ä¸èƒ½å­¦å°æ— ç›¸åŠŸã€‚\n");
 
 	if ( (int)me->query_skill("force", 1)  <  10 )
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬ÎÞ·¨Áì»áÁúÏó°ãÈô¹¦¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šé¾™è±¡èˆ¬è‹¥åŠŸã€‚\n");
 
-	if ( me->query("gender") == "ÎÞÐÔ" && (int)me->query_skill("xiaowuxiang",1) > 49)
-		return notify_fail("¹«¹«ÎÞ¸ùÎÞÐÔ£¬Ð¡ÎÞÏà¹¦ÔÙÄÑ¸üÉÏÒ»²ãÂ¥¡£\n");
+	if ( me->query("gender") == "æ— æ€§" && (int)me->query_skill("xiaowuxiang",1) > 49)
+		return notify_fail("å…¬å…¬æ— æ ¹æ— æ€§ï¼Œå°æ— ç›¸åŠŸå†éš¾æ›´ä¸Šä¸€å±‚æ¥¼ã€‚\n");
 
 	if ( (int)me->query_skill("xiaowuxiang", 1) >= 45 
 	&& (int)me->query_skill("huagong-dafa", 1) >= 100
 	&& (int)me->query_int() < 40 )
-		return notify_fail("ÄãÊÜ¸ßÉîµÄÐ°ÅÉÄÚ¹¦Ç£°í£¬Ð¡ÎÞÏà¹¦ÔÙÄÑ¸üÉÏÒ»²ãÂ¥¡£\n");
+		return notify_fail("ä½ å—é«˜æ·±çš„é‚ªæ´¾å†…åŠŸç‰µç»Šï¼Œå°æ— ç›¸åŠŸå†éš¾æ›´ä¸Šä¸€å±‚æ¥¼ã€‚\n");
 
 	if ( (int)me->query_skill("xiaowuxiang", 1) >= 110 
 	&& (int)me->query_skill("huagong-dafa", 1) >= 1 
 	&& (int)me->query_int() < 40 )
-		return notify_fail("ÄãÉí¸ºÐ°ÅÉÄÚ¹¦£¬Ð¡ÎÞÏà¹¦ÔÙÄÑ¸üÉÏÒ»²ãÂ¥¡£\n");
+		return notify_fail("ä½ èº«è´Ÿé‚ªæ´¾å†…åŠŸï¼Œå°æ— ç›¸åŠŸå†éš¾æ›´ä¸Šä¸€å±‚æ¥¼ã€‚\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("Ð¡ÎÞÏà¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("å°æ— ç›¸åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

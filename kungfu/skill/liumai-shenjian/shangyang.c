@@ -14,16 +14,16 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖÐ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ã€‚\n");
 
         if( target->is_busy() )
                 return notify_fail(target->name() + 
-"Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+"ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
                 
         if( (int)me->query_skill("liumai-shenjian", 1) < 120 )
-                return notify_fail("ÄãµÄÁùÂöÉñ½£ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…­è„‰ç¥žå‰‘ä¿®ä¸ºä¸å¤Ÿã€‚\n");
         if( me->query("neili") <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 		mmn =  me->query("max_neili");
 		tmn =  target->query("max_neili");
 		mexp = (int)me->query("combat_exp")/1000;
@@ -32,7 +32,7 @@ int perform(object me, object target)
 		m2 = me->query("max_qi");
 		a = (int)(m1*5+m2)/2;
          message_vision(HIR
-"$NË«ÊÖÄ·Ö¸ÏòÇ°ÃÍµØÒ»Þô£¬Á½µÀÎÞÐÎ½£ÆøÖ±Ï®$nµÄÉíÓ°¡£\n\n" NOR, me,target);
+"$NåŒæ‰‹å§†æŒ‡å‘å‰çŒ›åœ°ä¸€æ‘ï¼Œä¸¤é“æ— å½¢å‰‘æ°”ç›´è¢­$nçš„èº«å½±ã€‚\n\n" NOR, me,target);
 
 if(random(mmn+mexp)  > random(tmn+texp) ) {
 if (mexp > texp) 
@@ -42,8 +42,8 @@ target->add("qi",(-a));
 
 target->receive_wound("qi", (m1*2));
 me->add("max_neili", (-3));
-tell_object(target, BLU "ÄãÖ»¾õÁ½µÀ¾¢ÆøÆËÃæ£¬»ôµÄÐØ¿ÚÒ»Õó¾çÍ´¡£\n"NOR);
-tell_object(me, BLU "ÄãÊ¹³öÈ«Éí¹¦Á¦Ïò$nµã³öÁ½Ö¸£¬¶ÙÊ±¸Ðµ½Ò»ÕóÐéÍÑ¡£\n"NOR);
+tell_object(target, BLU "ä½ åªè§‰ä¸¤é“åŠ²æ°”æ‰‘é¢ï¼Œéœçš„èƒ¸å£ä¸€é˜µå‰§ç—›ã€‚\n"NOR);
+tell_object(me, BLU "ä½ ä½¿å‡ºå…¨èº«åŠŸåŠ›å‘$nç‚¹å‡ºä¸¤æŒ‡ï¼Œé¡¿æ—¶æ„Ÿåˆ°ä¸€é˜µè™šè„±ã€‚\n"NOR);
         me ->start_busy(1+random(3));
   }
 else
@@ -52,8 +52,8 @@ target->add
 ("qi",-(a*2/3));      
 target->receive_wound("qi", (m1*2));
 me->add("max_neili", (-3));
-tell_object(target, BLU "ÄãÖ»¾õÁ½µÀ¾¢ÆøÆËÃæ£¬»ôµÄÐØ¿ÚÒ»Õó¾çÍ´¡£\n"NOR);
-tell_object(me, BLU "ÄãÊ¹³öÈ«Éí¹¦Á¦µã³öÁ½Ö¸£¬¶ÙÊ±¸Ðµ½Ò»ÕóÐéÍÑ¡£\n"NOR);
+tell_object(target, BLU "ä½ åªè§‰ä¸¤é“åŠ²æ°”æ‰‘é¢ï¼Œéœçš„èƒ¸å£ä¸€é˜µå‰§ç—›ã€‚\n"NOR);
+tell_object(me, BLU "ä½ ä½¿å‡ºå…¨èº«åŠŸåŠ›ç‚¹å‡ºä¸¤æŒ‡ï¼Œé¡¿æ—¶æ„Ÿåˆ°ä¸€é˜µè™šè„±ã€‚\n"NOR);
                  
         me ->start_busy(1+random(3));
   }      
@@ -61,7 +61,7 @@ tell_object(me, BLU "ÄãÊ¹³öÈ«Éí¹¦Á¦µã³öÁ½Ö¸£¬¶ÙÊ±¸Ðµ½Ò»ÕóÐéÍÑ¡£\n"NOR);
        else 
         {
 message_vision(HIR
-"$n¸Ï½ôÏòááÔ¾¿ªÊýÕÉ£¬¶ã¿ª$NµÄ¹¥»÷¡£\n\n" NOR, me, target);
+"$nèµ¶ç´§å‘å¾Œè·ƒå¼€æ•°ä¸ˆï¼Œèº²å¼€$Nçš„æ”»å‡»ã€‚\n\n" NOR, me, target);
 
         }
 

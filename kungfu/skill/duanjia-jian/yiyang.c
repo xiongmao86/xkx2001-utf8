@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yiyang.c Ò»ÑôÖ¸Á¦×¢ÈëÎäÆ÷
+// yiyang.c ä¸€é˜³æŒ‡åŠ›æ³¨å…¥æ­¦å™¨
 
 #include <ansi.h>
 
@@ -13,30 +13,30 @@ int perform(object me, object target)
         int skill, skill1;
 
         if (me->query_skill_mapped("force") != "kurong-changong")
-                return notify_fail("ÄãËùÓÃµÃÄÚ¹¦ĞÄ·¨²»¶Ô£¬ÎŞ·¨ÔËÓÃÒ»ÑôÖ¸¡£\n");
+                return notify_fail("ä½ æ‰€ç”¨å¾—å†…åŠŸå¿ƒæ³•ä¸å¯¹ï¼Œæ— æ³•è¿ç”¨ä¸€é˜³æŒ‡ã€‚\n");
 
         if (me->query_temp("yiyang"))
-                return notify_fail("ÄãÒÑÔËÒ»ÑôÖ¸Ö¸Á¦ÓÚÎäÆ÷ÉÏÁË£¡\n");
+                return notify_fail("ä½ å·²è¿ä¸€é˜³æŒ‡æŒ‡åŠ›äºæ­¦å™¨ä¸Šäº†ï¼\n");
 
         if (me->query_skill("force",1)<100
                 || me->query_skill("kurong-changong",1)<100
                 || me->query_skill("duanjia-jian",1)<100
                 || me->query_skill("yiyang-zhi",1)<120)
-                return notify_fail("ÄãµÄ¹¦Á¦²»¹»£¬ÎŞ·¨ÔËÓÃÒ»ÑôÖ¸Ö¸Á¦ÓÚÎäÆ÷ÉÏ£¡\n");
+                return notify_fail("ä½ çš„åŠŸåŠ›ä¸å¤Ÿï¼Œæ— æ³•è¿ç”¨ä¸€é˜³æŒ‡æŒ‡åŠ›äºæ­¦å™¨ä¸Šï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon")) || weapon->query("skill_type")!="staff")
-                return notify_fail("ÄãÃ»ÓĞÊ¹ÓÃÕıÈ·µÄÎäÆ÷£¬ÎŞ·¨ÔËÒ»ÑôÖ¸Á¦ÓÚÆäÉÏ¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰ä½¿ç”¨æ­£ç¡®çš„æ­¦å™¨ï¼Œæ— æ³•è¿ä¸€é˜³æŒ‡åŠ›äºå…¶ä¸Šã€‚\n");
 
         if (me->query("neili") <= 300)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÔËÒ»ÑôÖ¸Á¦£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿè¿ä¸€é˜³æŒ‡åŠ›ï¼\n");
         if (me->query("jingli") <= 100)
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»ÔËÒ»ÑôÖ¸Á¦£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿè¿ä¸€é˜³æŒ‡åŠ›ï¼\n");
 
         if (weapon->query("rigidity")>=1000)
-                return notify_fail("Äã·¢ÏÖÕâ¼şÎäÆ÷ÖÊµØÌØ±ğ¼áÓ²£¬ÎŞ·¨¹à×¢ÄÚÁ¦ÓÚÆäÉÏ£¡\n");
+                return notify_fail("ä½ å‘ç°è¿™ä»¶æ­¦å™¨è´¨åœ°ç‰¹åˆ«åšç¡¬ï¼Œæ— æ³•çŒæ³¨å†…åŠ›äºå…¶ä¸Šï¼\n");
 
-        message("vision", HIY "\n"+me->query("name")+"½ôÎÕ"+weapon->query("name")+"ÄıÉñÔËÆøÆ¬¿Ì¡£\n\n" NOR, environment(me), me);
-        tell_object(me, HIY "\nÄãÄıÉñÔËÆø£¬°ÑÒ»ÑôÖ¸Ö¸Á¦¹à×¢µ½"+weapon->query("name")+"ÉÏ¡£\n\n" NOR);
+        message("vision", HIY "\n"+me->query("name")+"ç´§æ¡"+weapon->query("name")+"å‡ç¥è¿æ°”ç‰‡åˆ»ã€‚\n\n" NOR, environment(me), me);
+        tell_object(me, HIY "\nä½ å‡ç¥è¿æ°”ï¼ŒæŠŠä¸€é˜³æŒ‡æŒ‡åŠ›çŒæ³¨åˆ°"+weapon->query("name")+"ä¸Šã€‚\n\n" NOR);
 
         skill = me->query_skill("kurong-changong",1);
 
@@ -72,17 +72,17 @@ void checking(object me, object weapon)
         if (me->query_temp("yiyang")) {
            if (environment(weapon)!= me || weapon!=me->query_temp("weapon")) {
                 remove_effect(me, weapon);
-                tell_object(me, HIY "\nÄã°ÑÒ»ÑôÖ¸Ö¸Á¦´Ó"+weapon->name()+"ÉÏÊÕÁË»ØÀ´¡£\n\n" NOR);
+                tell_object(me, HIY "\nä½ æŠŠä¸€é˜³æŒ‡æŒ‡åŠ›ä»"+weapon->name()+"ä¸Šæ”¶äº†å›æ¥ã€‚\n\n" NOR);
                 return;
            }
            else if (weapon->query("weapon_prop") == 0) {
                 remove_effect(me, weapon);
-                tell_object(me, HIY "\nÄãµÄ"+weapon->name()+"ÒÑ»Ù£¬²»µÃ²»ÊÕ»Ø¹à×¢ÓÚÆäÉÏµÄÒ»ÑôÖ¸Ö¸Á¦¡£\n\n" NOR);
+                tell_object(me, HIY "\nä½ çš„"+weapon->name()+"å·²æ¯ï¼Œä¸å¾—ä¸æ”¶å›çŒæ³¨äºå…¶ä¸Šçš„ä¸€é˜³æŒ‡æŒ‡åŠ›ã€‚\n\n" NOR);
                 return;
            }
            else if (me->query_skill_mapped("force") != "kurong-changong") {
                 remove_effect(me, weapon);
-                tell_object(me, HIY "\nÄã¸Ğµ½ÄÚÏ¢²»³©£¬ÎŞ·¨±£³Ö¹à×¢ÔÚ"+weapon->name()+"ÉÏµÄÒ»ÑôÖ¸Ö¸Á¦¡£\n\n" NOR);
+                tell_object(me, HIY "\nä½ æ„Ÿåˆ°å†…æ¯ä¸ç•…ï¼Œæ— æ³•ä¿æŒçŒæ³¨åœ¨"+weapon->name()+"ä¸Šçš„ä¸€é˜³æŒ‡æŒ‡åŠ›ã€‚\n\n" NOR);
                 return;
            }
 
@@ -91,7 +91,7 @@ void checking(object me, object weapon)
         }
         else {
            remove_effect(me, weapon);
-        tell_object(me, HIY "\nÄã¸Ğµ½ÄÚÏ¢»ì×Ç£¬²»µÃ²»»»ÆøÔË¹¦£¬´Ó"+weapon->name()+"ÉÏÊÕ»Ø¹à×¢µÄÒ»ÑôÖ¸Ö¸Á¦¡£\n\n" NOR);
+        tell_object(me, HIY "\nä½ æ„Ÿåˆ°å†…æ¯æ··æµŠï¼Œä¸å¾—ä¸æ¢æ°”è¿åŠŸï¼Œä»"+weapon->name()+"ä¸Šæ”¶å›çŒæ³¨çš„ä¸€é˜³æŒ‡æŒ‡åŠ›ã€‚\n\n" NOR);
         }
 }       
 

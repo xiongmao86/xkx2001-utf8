@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
 	if (duration < 1) {
-		tell_object(me, "Î÷ÏÄ¹Ù¸®²»ÔÙÍ¨¼©ÄãÁË£¡\n");
+		tell_object(me, "è¥¿å¤å®˜åºœä¸å†é€šç¼‰ä½ äº†ï¼\n");
 		return 0;
 	}
 	me->apply_condition("xakiller", duration - 1);

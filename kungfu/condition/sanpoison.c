@@ -5,12 +5,12 @@
 inherit F_CLEAN_UP;
 
 string* xuedao = ({
-        "ĞØ¿ÚëşÖĞ",
-        "Í·¶¥°Ù»á",
-        "ÃæÅÓÓ­Ïã",
-        "×ãµ×Ó¿Èª",
-        "ÊÖĞÄÀÍ¹¬",
-        "Á½÷ŞÌ«Ñô",
+        "èƒ¸å£è†»ä¸­",
+        "å¤´é¡¶ç™¾ä¼š",
+        "é¢åºè¿é¦™",
+        "è¶³åº•æ¶Œæ³‰",
+        "æ‰‹å¿ƒåŠ³å®«",
+        "ä¸¤é¬“å¤ªé˜³",
 });
 
 
@@ -19,21 +19,21 @@ int update_condition(object me, int duration)
 	int neili, poison;
 
 	if( !living(me) ) {
-     		message_vision(me->name() + "ÉíÌåÒ»Õó²ü¶¶£¬Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+     		message_vision(me->name() + "èº«ä½“ä¸€é˜µé¢¤æŠ–ï¼Œç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
    	}
    	else {
-   		if (me->query("family/family_name")=="ĞÇËŞÅÉ"
+   		if (me->query("family/family_name")=="æ˜Ÿå®¿æ´¾"
                     && me->query_skill("huagong-dafa")) {
-                    tell_object(me, HIW"ÄãÍ»È»¾õµÃÒ»Õóº®ÆøÏ®À´£¬Ã¦ÔËÓÃ»¯¹¦´ó·¨µÖÓù¡£\n"NOR);
-		    message("vision", me->name() + "µÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬Á³ÉÏ·ºÆğÒ»Õó²Ò°×Ö®É«¡£\n",environment(me), me);	                    		   	
+                    tell_object(me, HIW"ä½ çªç„¶è§‰å¾—ä¸€é˜µå¯’æ°”è¢­æ¥ï¼Œå¿™è¿ç”¨åŒ–åŠŸå¤§æ³•æŠµå¾¡ã€‚\n"NOR);
+		    message("vision", me->name() + "çš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œè„¸ä¸Šæ³›èµ·ä¸€é˜µæƒ¨ç™½ä¹‹è‰²ã€‚\n",environment(me), me);	                    		   	
    		    
    		    poison=me->query_skill("poison",1)/2;		
    
    	
    		} else {	 		
       		    poison=10;
-      		    tell_object(me, HIW"ÄãÍ»È»¼ä¾õµÃ"+xuedao[random(sizeof(xuedao))]+"Ò»Õó´ÌÍ´£¬ÑÛÇ°Ò»ÕóºÚ£¬Ò»ÕóÃ÷£¬ĞØÖĞÒ»ÕóÓôÃÆ¡£\n" NOR );
-      		    message("vision", me->name() + "µÄÉí×ÓÍ»È»»ÎÁËÁ½»Î£¬Á³ÉÏ·ºÆğÒ»Õó²Ò°×Ö®É«¡£\n",environment(me), me);	                    		   	
+      		    tell_object(me, HIW"ä½ çªç„¶é—´è§‰å¾—"+xuedao[random(sizeof(xuedao))]+"ä¸€é˜µåˆºç—›ï¼Œçœ¼å‰ä¸€é˜µé»‘ï¼Œä¸€é˜µæ˜ï¼Œèƒ¸ä¸­ä¸€é˜µéƒé—·ã€‚\n" NOR );
+      		    message("vision", me->name() + "çš„èº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒï¼Œè„¸ä¸Šæ³›èµ·ä¸€é˜µæƒ¨ç™½ä¹‹è‰²ã€‚\n",environment(me), me);	                    		   	
    	        }
    	}
    	
@@ -42,18 +42,18 @@ int update_condition(object me, int duration)
    	
    	if(neili<me->query_skill("force",1)*4) {
    	     
-   	     tell_object(me, HIR"ÄãµÄÄÚÁ¦ÒÑ¾­½¥½¥¿ØÖÆ²»×¡ÌåÄÚµÄ¶¾ËØ£¬Ò»Õó´ÌÍ´Ï®»÷À´£¬×ÅÊµÄÑµ±¡£\n" NOR );
+   	     tell_object(me, HIR"ä½ çš„å†…åŠ›å·²ç»æ¸æ¸æ§åˆ¶ä¸ä½ä½“å†…çš„æ¯’ç´ ï¼Œä¸€é˜µåˆºç—›è¢­å‡»æ¥ï¼Œç€å®éš¾å½“ã€‚\n" NOR );
    	     
    	     me->set("neili",0);		
-   	     me->receive_damage("jing", duration*2, "ÎŞĞÎÉ¢¶¾¹¥ĞÄËÀÁË");
-      	     me->receive_wound("qi", duration*3/2, "ÎŞĞÎÉ¢¶¾¹¥ĞÄËÀÁË");
+   	     me->receive_damage("jing", duration*2, "æ— å½¢æ•£æ¯’æ”»å¿ƒæ­»äº†");
+      	     me->receive_wound("qi", duration*3/2, "æ— å½¢æ•£æ¯’æ”»å¿ƒæ­»äº†");
    		
    	} else me->set("neili",neili);  	
    	
       	me->apply_condition("sanpoison", duration - random(5));
 	
 	if(me->query("qi")<=0){
-		me->set_temp("last_damage_from", "ÎŞĞÎÉ¢¶¾¹¥ĞÄËÀÁË");
+		me->set_temp("last_damage_from", "æ— å½¢æ•£æ¯’æ”»å¿ƒæ­»äº†");
 	        me->delete("env/immortal");
 		me->die();
 	}
@@ -63,7 +63,7 @@ int update_condition(object me, int duration)
    	if( duration == 1) me->delete("poisoner");
 
    	if( duration < 1 ) {
-   		message_vision(HIG"$NÔËÁËÔËÆø£¬·¢ÏÖÌåÄÚµÄº®¶¾ÒÑ¾­µ´È»ÎŞ´æ¡£"NOR,me);	
+   		message_vision(HIG"$Nè¿äº†è¿æ°”ï¼Œå‘ç°ä½“å†…çš„å¯’æ¯’å·²ç»è¡ç„¶æ— å­˜ã€‚"NOR,me);	
    		return 0;
    	}
    	

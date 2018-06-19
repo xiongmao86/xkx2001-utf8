@@ -15,7 +15,7 @@ void create()
 {
 	object me = this_object();
 	::create();
-	set_name("ª√”∞", ({ "user huanying" }) );
+	set_name("ÂπªÂΩ±", ({ "user huanying" }) );
 	set("env/invisibility", 10);
 	set("env/wimpy", 0);
 	call_out("destruct_me",90+random(60),me);

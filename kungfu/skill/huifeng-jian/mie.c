@@ -1,5 +1,5 @@
 //Cracked by Roath
-// mie.c Ãğ½£
+// mie.c ç­å‰‘
 
 #include <ansi.h>
 
@@ -20,31 +20,31 @@ int perform(object me, object target)
         if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("Ãğ½£Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç­å‰‘åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon) || weapon->query("skill_type") != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÔõÄÜÔËÓÃ¡¸Ãğ½£¡¹ĞÄ·¨£¿£¡\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œæ€èƒ½è¿ç”¨ã€Œç­å‰‘ã€å¿ƒæ³•ï¼Ÿï¼\n");
 
         if( me->query_temp("huifeng/mie") )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸Ãğ½£¡¹ĞÄ·¨£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œç­å‰‘ã€å¿ƒæ³•ï¼\n");
 
         if( me->query_skill("huifeng-jian",1) < 60 )
-                return notify_fail("Äã»Ø·ç·÷Áø½£ĞŞÎª»¹²»¹»£¬»¹Î´ÁìÎò¡¸Ãğ½£¡¹£¡\n");
+                return notify_fail("ä½ å›é£æ‹‚æŸ³å‰‘ä¿®ä¸ºè¿˜ä¸å¤Ÿï¼Œè¿˜æœªé¢†æ‚Ÿã€Œç­å‰‘ã€ï¼\n");
 
         if( me->query_skill("linji-zhuang", 1) < 60 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª»ğºòÎ´µ½£¬Ê©Õ¹¡¸Ãğ½£¡¹Ö»»áÉË¼°×ÔÉí£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºç«å€™æœªåˆ°ï¼Œæ–½å±•ã€Œç­å‰‘ã€åªä¼šä¼¤åŠè‡ªèº«ï¼\n");
 
         if( me->query_skill_mapped("force") != "linji-zhuang")
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸Ãğ½£¡¹ĞÄ·¨Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸ã€Œç­å‰‘ã€å¿ƒæ³•ç›¸æ‚–ï¼\n");
 
         if( me->query("max_neili") <= 600 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸Ãğ½£¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼ŒåŠ²åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œç­å‰‘ã€ï¼\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸Ãğ½£¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼ŒåŠ²åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œç­å‰‘ã€ï¼\n");
 
         if( me->query("jingli") <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦ÓĞÏŞ£¬²»×ãÒÔÊ©Õ¹¡¸Ãğ½£¡¹£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›æœ‰é™ï¼Œä¸è¶³ä»¥æ–½å±•ã€Œç­å‰‘ã€ï¼\n");
 
         if ( userp(me) ) {
           me->add("neili", -100);
@@ -59,10 +59,10 @@ int perform(object me, object target)
         if (target->query_temp("pfm-target/huifeng-mie")) { 
           // the target is already being performed by mie
 
-          message_vision(HIY "\n\n$NÇåĞ¥Ò»Éù£¬ÉíĞÎÌÚ¿ÕÕÉĞí£¬½«¶ëáÒ¾ø¼¼¡¸Ãğ½£¡¹ĞÄ·¨"+
-                        "ÈÚÈë»Ø·ç·÷Áø½£ÕĞÖ®ÖĞ£¬\nÊÖÖĞ"+weapon->name()+
-                         "ÍìÆğÎŞÊı½£»¨£¬¹¦ÊÆ¸ü¼ÓÁÜÀì£¡\n" +
-                        "$n±¾¾ÍÒÑ¾­ÑÛ»¨çÔÂÒ£¬¾ª»ÅÖ®ÏÂ¸üÊÇ²»ÖªËù´ë£¡\n" NOR, 
+          message_vision(HIY "\n\n$Næ¸…å•¸ä¸€å£°ï¼Œèº«å½¢è…¾ç©ºä¸ˆè®¸ï¼Œå°†å³¨åµ‹ç»æŠ€ã€Œç­å‰‘ã€å¿ƒæ³•"+
+                        "èå…¥å›é£æ‹‚æŸ³å‰‘æ‹›ä¹‹ä¸­ï¼Œ\næ‰‹ä¸­"+weapon->name()+
+                         "æŒ½èµ·æ— æ•°å‰‘èŠ±ï¼ŒåŠŸåŠ¿æ›´åŠ æ·‹æ¼“ï¼\n" +
+                        "$næœ¬å°±å·²ç»çœ¼èŠ±ç¼­ä¹±ï¼ŒæƒŠæ…Œä¹‹ä¸‹æ›´æ˜¯ä¸çŸ¥æ‰€æªï¼\n" NOR, 
                          me, target);
 
           // 2/3 the length of tjj's chan, need two person to perform
@@ -83,9 +83,9 @@ int perform(object me, object target)
         }else {
 
           if (me->query_temp("huifeng/"+target->name()) ) {
-            message_vision(HIY "\n\n$NÇåĞ¥Ò»Éù£¬ÉíĞÎÌÚ¿ÕÕÉĞí£¬½«¶ëáÒ¾ø¼¼¡¸Ãğ½£¡¹ĞÄ·¨ÈÚÈë»Ø·ç·÷Áø½£ÕĞÖ®ÖĞ£¬\nÊÖÖĞ"
+            message_vision(HIY "\n\n$Næ¸…å•¸ä¸€å£°ï¼Œèº«å½¢è…¾ç©ºä¸ˆè®¸ï¼Œå°†å³¨åµ‹ç»æŠ€ã€Œç­å‰‘ã€å¿ƒæ³•èå…¥å›é£æ‹‚æŸ³å‰‘æ‹›ä¹‹ä¸­ï¼Œ\næ‰‹ä¸­"
                            +weapon->name()+
-                           "ÍìÆğÎŞÊı½£»¨£¬¹¦ÊÆ¸ü¼ÓÁÜÀì£¡$nËäÒÑÁì½Ì¹ı£¬ÈÔĞëÈ«Éñ¹á×¢£¬Ğ¡ĞÄÌá·À¡£\n" NOR, 
+                           "æŒ½èµ·æ— æ•°å‰‘èŠ±ï¼ŒåŠŸåŠ¿æ›´åŠ æ·‹æ¼“ï¼$nè™½å·²é¢†æ•™è¿‡ï¼Œä»é¡»å…¨ç¥è´¯æ³¨ï¼Œå°å¿ƒæé˜²ã€‚\n" NOR, 
                            me, target);
             target->add_temp("apply/dodge", -dodge/3);
             target->add_temp("apply/parry", -parry/3);
@@ -94,8 +94,8 @@ int perform(object me, object target)
             call_out("remove_effect", sword/3, me, target, dodge/3, parry/3, 
                      attack/3, sword);
           } else {
-            message_vision(HIY "\n\n$NÇåĞ¥Ò»Éù£¬ÉíĞÎÌÚ¿ÕÕÉĞí£¬½«¶ëáÒ¾ø¼¼¡¸Ãğ½£¡¹ĞÄ·¨ÈÚÈë»Ø·ç·÷Áø½£ÕĞÖ®ÖĞ£¬\nÊÖÖĞ"
-                           +weapon->name()+"ÍìÆğÎŞÊı½£»¨£¬$nÑÛ»¨çÔÂÒ£¬±»¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR, 
+            message_vision(HIY "\n\n$Næ¸…å•¸ä¸€å£°ï¼Œèº«å½¢è…¾ç©ºä¸ˆè®¸ï¼Œå°†å³¨åµ‹ç»æŠ€ã€Œç­å‰‘ã€å¿ƒæ³•èå…¥å›é£æ‹‚æŸ³å‰‘æ‹›ä¹‹ä¸­ï¼Œ\næ‰‹ä¸­"
+                           +weapon->name()+"æŒ½èµ·æ— æ•°å‰‘èŠ±ï¼Œ$nçœ¼èŠ±ç¼­ä¹±ï¼Œè¢«æ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼\n" NOR, 
                            me, target);
             target->add_temp("apply/dodge", -dodge);
             target->add_temp("apply/parry", -parry);
@@ -131,7 +131,7 @@ void remove_effect(object me, object victim, int dodge, int parry, int attack, i
   }
 
   if (objectp(me) && objectp(victim) && victim->is_fighting(me)) {
-    message_vision(HIY "\n\n$N½¥½¥ÊÊÓ¦ÁË$nµÄ½£Â·£¬¹¥ÊØ×ÔÈç¶àÁË¡£\n" NOR, victim, me);
+    message_vision(HIY "\n\n$Næ¸æ¸é€‚åº”äº†$nçš„å‰‘è·¯ï¼Œæ”»å®ˆè‡ªå¦‚å¤šäº†ã€‚\n" NOR, victim, me);
   }
 }
 
@@ -147,6 +147,6 @@ void finish_mie2(object me, object victim, int sword)
   }
 
   if (objectp(me) && objectp(victim) && victim->is_fighting(me)) {
-    message_vision(HIY "\n\n$N½¥½¥ÊÊÓ¦ÁË$nµÄ½£Â·£¬¹¥ÊØ×ÔÈç¶àÁË¡£\n" NOR, victim, me);
+    message_vision(HIY "\n\n$Næ¸æ¸é€‚åº”äº†$nçš„å‰‘è·¯ï¼Œæ”»å®ˆè‡ªå¦‚å¤šäº†ã€‚\n" NOR, victim, me);
   }
 }

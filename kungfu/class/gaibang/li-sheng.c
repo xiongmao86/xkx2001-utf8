@@ -6,12 +6,12 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÀèÉú", ({"li sheng", "li", "sheng"}));
-	set("title", "Ø¤°ï°Ë´üµÜ×Ó");
-	set("gender", "ÄĞĞÔ");
+	set_name("é»ç”Ÿ", ({"li sheng", "li", "sheng"}));
+	set("title", "ä¸å¸®å…«è¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 38);
 	set("long", 
-		"ÕâÊÇÎ»ÉúĞÔ¸ÕÖ±£¬¼µ¶ñÈç³ğµÄØ¤°ï°Ë´üµÜ×Ó¡£\n");
+		"è¿™æ˜¯ä½ç”Ÿæ€§åˆšç›´ï¼Œå«‰æ¶å¦‚ä»‡çš„ä¸å¸®å…«è¢‹å¼Ÿå­ã€‚\n");
 	set("attitude", "peaceful");
 	set("str", 25);
 	set("int", 18);
@@ -51,7 +51,7 @@ void create()
 	
 	prepare_skill("hand", "shexing-diaoshou");
 
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/gaibang/obj/budai")->set_amount(7);
@@ -62,29 +62,29 @@ void create()
 void attempt_apprentice(object ob)
 {
 	if( ob->query("shen") < 0 ) {
-		command ("say Äã¿´ÆğÀ´ÓĞĞ©ĞĞÎª²»Õı£¬ÎÒ²»ÄÜÊÕÄã¡£");
+		command ("say ä½ çœ‹èµ·æ¥æœ‰äº›è¡Œä¸ºä¸æ­£ï¼Œæˆ‘ä¸èƒ½æ”¶ä½ ã€‚");
 		return;
 	}
 
 /*
         if (ob->query("class")=="bonze") {
-                if (ob->query("gender")=="Å®ĞÔ")
-                        command ("say Ê¦Ì«ÊÇÊÇ³ö¼ÒÈË£¬ÔõÃ´ÄÜÔÚ±¾°ï×ö½Ğ»¯×ÓÄØ£¿");
+                if (ob->query("gender")=="å¥³æ€§")
+                        command ("say å¸ˆå¤ªæ˜¯æ˜¯å‡ºå®¶äººï¼Œæ€ä¹ˆèƒ½åœ¨æœ¬å¸®åšå«åŒ–å­å‘¢ï¼Ÿ");
                 return;
         }
 */
 
-	if( ob->query("family/family_name") != "Ø¤°ï" )
+	if( ob->query("family/family_name") != "ä¸å¸®" )
 	{
 	        if( ob->query("rank") > 1 ) {
-                	command("say ±¾°ïÒÔÖÒÒåÎªÏÈ£¬¿ÉÈİ²»ÏÂÄãÕâÖÖÎŞĞÅÎŞÒåµÄ¼Ò»ï£¡\n");
+                	command("say æœ¬å¸®ä»¥å¿ ä¹‰ä¸ºå…ˆï¼Œå¯å®¹ä¸ä¸‹ä½ è¿™ç§æ— ä¿¡æ— ä¹‰çš„å®¶ä¼™ï¼\n");
                 	return;
         	}
 
-		command("say ºÃ£¬ÓĞÄãÕâÑùÒ»µÈÒ»µÄÈË²Å×öÎÒÍ½µÜ£¬ÎÒ»¶Ï²»¹À´²»¼°ÄØ£¡");
+		command("say å¥½ï¼Œæœ‰ä½ è¿™æ ·ä¸€ç­‰ä¸€çš„äººæ‰åšæˆ‘å¾’å¼Ÿï¼Œæˆ‘æ¬¢å–œè¿˜æ¥ä¸åŠå‘¢ï¼");
 		ob->set("rank", 1); 
 		command("recruit " + ob->query("id"));
-                ob->set("title", "Ø¤°ïÒ»´üµÜ×Ó");
+                ob->set("title", "ä¸å¸®ä¸€è¢‹å¼Ÿå­");
 	} 
 	else
 	{

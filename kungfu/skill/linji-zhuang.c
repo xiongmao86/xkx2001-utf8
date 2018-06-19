@@ -1,5 +1,5 @@
 //Cracked by Roath
-// linji-zhuang.c ÁÙ¼ÃÊ®¶ş×¯ (emei force)
+// linji-zhuang.c ä¸´æµåäºŒåº„ (emei force)
 // xuy@xkx
 
 #include <ansi.h>
@@ -10,28 +10,28 @@ string check() { return "force"; }
 #include "/kungfu/skill/force_list.h"
 
 string *skill_name = ({
-  "Ìì×Ö×¯",
-  "µØ×Ö×¯",
-  "Ö®×Ö×¯",
-  "ĞÄ×Ö×¯",
-  "ÓÎÁú×¯",
-  "º×Ïè×¯",
-  "Ğı·ç×¯",
-  "Æ®ÔÆ×¯",
-  "´ó×Ö×¯",
-  "Ğ¡×Ö×¯",
-  "ÓÄ×Ö×¯",
-  "Ú¤×Ö×¯",
-  "ÁÙ¼ÃÊ®¶ş×¯",
+  "å¤©å­—åº„",
+  "åœ°å­—åº„",
+  "ä¹‹å­—åº„",
+  "å¿ƒå­—åº„",
+  "æ¸¸é¾™åº„",
+  "é¹¤ç¿”åº„",
+  "æ—‹é£åº„",
+  "é£˜äº‘åº„",
+  "å¤§å­—åº„",
+  "å°å­—åº„",
+  "å¹½å­—åº„",
+  "å†¥å­—åº„",
+  "ä¸´æµåäºŒåº„",
 });
 
 string *combo_name = ({
-  "ÌìµØ",
-  "Ö®ĞÄ",
-  "Áúº×",
-  "·çÔÆ",
-  "´óĞ¡",
-  "ÓÄÚ¤",
+  "å¤©åœ°",
+  "ä¹‹å¿ƒ",
+  "é¾™é¹¤",
+  "é£äº‘",
+  "å¤§å°",
+  "å¹½å†¥",
 });
 
 int valid_enable(string usage)
@@ -62,17 +62,17 @@ int valid_learn(object me)
     }
 
     if ( k >=2 )
-      return notify_fail("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÄÚ¹¦¡£\n");
+      return notify_fail("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥é¢†ä¼šæ›´é«˜æ·±çš„å†…åŠŸã€‚\n");
   }
 
 
   if ( nl >= 20 && nb < 150 && nb <= nl )
-    return notify_fail("ÄãµÄ´ó³ËÄùÅÍ·¨ĞŞÎª²»¹»£¬ÎŞ·¨ĞŞÁ·¸ü¸ßÉîµÄÁÙ¼ÃÊ®¶ş×¯¡£\n");
+    return notify_fail("ä½ çš„å¤§ä¹˜æ¶…ç£æ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä¿®ç»ƒæ›´é«˜æ·±çš„ä¸´æµåäºŒåº„ã€‚\n");
   if ( (nl >= 60 && np < 150 && np <= nl ) || np <= nl/2 )
-    return notify_fail("ÄãµÄ¶ÉÊÀ¼ÃÈËÉÆÒµ×öµÃ²»¹»£¬ÎŞ·¨ĞŞÁ·¸ü¸ßÉîµÄÁÙ¼ÃÊ®¶ş×¯¡£\n");
+    return notify_fail("ä½ çš„æ¸¡ä¸–æµäººå–„ä¸šåšå¾—ä¸å¤Ÿï¼Œæ— æ³•ä¿®ç»ƒæ›´é«˜æ·±çš„ä¸´æµåäºŒåº„ã€‚\n");
 
   if ( nf < 10 || nf/2 < nl/3 )
-    return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬ÎŞ·¨ĞŞÁ·ÁÙ¼ÃÊ®¶ş×¯¡£\n");
+    return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•ä¿®ç»ƒä¸´æµåäºŒåº„ã€‚\n");
 
   return 1;
 }
@@ -80,7 +80,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-  return notify_fail("ÁÙ¼ÃÊ®¶ş×¯Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+  return notify_fail("ä¸´æµåäºŒåº„åªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string query_skill_name(int level)
@@ -102,9 +102,9 @@ void skill_improved(object me)
   if ( level > 180 ) return;
 
   if ( level/15*15 == level ) {
-    tell_object(me, HIG "Äã¶Ô¡¸" + skill_name[level/15-1] + "¡¹ÒÑ»íÈ»¹áÍ¨¡£\n"NOR);
+    tell_object(me, HIG "ä½ å¯¹ã€Œ" + skill_name[level/15-1] + "ã€å·²è±ç„¶è´¯é€šã€‚\n"NOR);
     if (o_lvl < level) {
-      tell_object(me, HIG"¶ÙÊ±Äã¶Ô»ù±¾ÄÚ¹¦µÄÁìÎòÒ²´ó´óÌá¸ß¡£\n"NOR);
+      tell_object(me, HIG"é¡¿æ—¶ä½ å¯¹åŸºæœ¬å†…åŠŸçš„é¢†æ‚Ÿä¹Ÿå¤§å¤§æé«˜ã€‚\n"NOR);
       for (i=0; i< level; i++)		
 	me->improve_skill("force", level);
     }
@@ -112,8 +112,8 @@ void skill_improved(object me)
 
   if ( level/30*30 == level ) 
     if (o_lvl < level) {
-      tell_object(me, HIY"´ËÊ±Äã" + combo_name[level/30-1] +
-		  "¶ş×¯ÈÚ»á¹áÍ¨£¬Ò»¹ÉÈáºÍµÄÕæÆøÖÜÓÎÈ«Éí£¬ÄÚÁ¦ĞŞÎª¸ü¾«ÉîÁËÒ»²ã¡£\n"NOR);
+      tell_object(me, HIY"æ­¤æ—¶ä½ " + combo_name[level/30-1] +
+		  "äºŒåº„èä¼šè´¯é€šï¼Œä¸€è‚¡æŸ”å’Œçš„çœŸæ°”å‘¨æ¸¸å…¨èº«ï¼Œå†…åŠ›ä¿®ä¸ºæ›´ç²¾æ·±äº†ä¸€å±‚ã€‚\n"NOR);
       me->add("max_neili", level);
     }
 	
@@ -151,6 +151,6 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
 mapping curing_msg(object me)
 {
 	return ([
-		"start_self"	: HIY"ÄãÒ»ÔËÆø£¬Á¢Ê±±ã¾õµ¤ÌïÖĞÒ»¹ÉÅ¯ÒâÉı½«ÉÏÀ´¡£\n"NOR,
+		"start_self"	: HIY"ä½ ä¸€è¿æ°”ï¼Œç«‹æ—¶ä¾¿è§‰ä¸¹ç”°ä¸­ä¸€è‚¡æš–æ„å‡å°†ä¸Šæ¥ã€‚\n"NOR,
 	]);
 }

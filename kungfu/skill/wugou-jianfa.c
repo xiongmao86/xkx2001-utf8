@@ -1,22 +1,22 @@
 //Cracked by Roath
-// wugou-jianfa.c Îâ¹³½£·¨
+// wugou-jianfa.c å´é’©å‰‘æ³•
 
 inherit SKILL;
 
 mapping *action = ({
-([     "action" : "$NÍ»È»¿ä²½ÏòÇ°£¬Ò»ÕÐ¡¸Ê®²½É±Ò»ÈË¡¹£¬ÊÖÖÐ$wÏò$nµÄ$lÅü³ö",
+([     "action" : "$Nçªç„¶å¤¸æ­¥å‘å‰ï¼Œä¸€æ‹›ã€Œåæ­¥æ€ä¸€äººã€ï¼Œæ‰‹ä¸­$wå‘$nçš„$låŠˆå‡º",
        "force" : 120,
        "dodge" : 20,
        "damage" : 5,
         "lvl" : 0,
-        "damage_type":  "¸îÉË"
+        "damage_type":  "å‰²ä¼¤"
 ]),
-([     "action" : "$NÉí×ÓÍùÏÂÒ»°«Éí£¬Í¬Ê±Ò»»ÓÊÖÖÐ$w£¬Ò»ÕÐ¡¸ÍÑ½£Ï¥Ç°ºá¡¹£¬Ïò$nµÄ$lºáÅü¶ø³ö",
+([     "action" : "$Nèº«å­å¾€ä¸‹ä¸€çŸ®èº«ï¼ŒåŒæ—¶ä¸€æŒ¥æ‰‹ä¸­$wï¼Œä¸€æ‹›ã€Œè„±å‰‘è†å‰æ¨ªã€ï¼Œå‘$nçš„$læ¨ªåŠˆè€Œå‡º",
        "force" : 120,
        "dodge" : 20,
        "damage" : 5,
         "lvl" : 9,
-        "damage_type":  "¸îÉË"
+        "damage_type":  "å‰²ä¼¤"
 ]),
 });
 
@@ -40,11 +40,11 @@ int practice_skill(object me)
 
        if (!objectp(weapon = me->query_temp("weapon"))
        || (string)weapon->query("skill_type") != "sword")
-               return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+               return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	 if ((int)me->query_skill("wugou-jianfa", 1) >= 30)
-		return notify_fail("ÄãµÄÎâ¹³½£·¨ÒÑ¾­ÎÞ·¨ÔÙÓÃÁ·À´Ìá¸ßÁË¡£\n");
+		return notify_fail("ä½ çš„å´é’©å‰‘æ³•å·²ç»æ— æ³•å†ç”¨ç»ƒæ¥æé«˜äº†ã€‚\n");
        if ((int)me->query("jingli") < 50)
-               return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·Îâ¹³½£·¨¡£\n");
+               return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒå´é’©å‰‘æ³•ã€‚\n");
        me->receive_damage("jingli", 30);
        return 1;
 }

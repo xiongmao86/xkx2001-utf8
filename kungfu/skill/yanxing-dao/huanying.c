@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huaying.c ÑãĞĞµ¶Ö®ÎŞĞÎ»ÃÓ°
+// huaying.c é›è¡Œåˆ€ä¹‹æ— å½¢å¹»å½±
 
 #include <ansi.h>
 
@@ -18,36 +18,36 @@ int perform(object me, object target)
 	if( !target && me->is_fighting() ) target = offensive_target(me);
 
 	if( !objectp(weapon) || weapon->query("skill_type") != "blade") 
-		return notify_fail("ÄãÊÖÖĞÎŞµ¶£¬ÆñÄÜÔËÓÃ¡¸ÎŞĞÎ»ÃÓ°¡¹£¿£¡\n");
+		return notify_fail("ä½ æ‰‹ä¸­æ— åˆ€ï¼Œå²‚èƒ½è¿ç”¨ã€Œæ— å½¢å¹»å½±ã€ï¼Ÿï¼\n");
 
 	if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("¡¸ÎŞĞÎ»ÃÓ°¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œæ— å½¢å¹»å½±ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("yanxing/huanying") )
-		return notify_fail("µĞÊÖÕı±»ÄãµÄ¡¸ÎŞĞÎ»ÃÓ°¡¹ÃÔ»ó£¡\n");
+		return notify_fail("æ•Œæ‰‹æ­£è¢«ä½ çš„ã€Œæ— å½¢å¹»å½±ã€è¿·æƒ‘ï¼\n");
 
 	if( me->query_skill("yanxing-dao",1) < 60 )
-		return notify_fail("ÄãÑãĞĞµ¶·¨ĞŞÎª»¹²»¹»£¬»¹Î´ÁìÎò¡¸ÎŞĞÎ»ÃÓ°¡¹£¡\n");
+		return notify_fail("ä½ é›è¡Œåˆ€æ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿï¼Œè¿˜æœªé¢†æ‚Ÿã€Œæ— å½¢å¹»å½±ã€ï¼\n");
 
 	if( me->query_skill("linji-zhuang", 1) < 60 )
-		return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª»ğºòÎ´µ½£¬²»×ãÒÔÊ©Õ¹¡¸ÎŞĞÎ»ÃÓ°¡¹£¡\n");
+		return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºç«å€™æœªåˆ°ï¼Œä¸è¶³ä»¥æ–½å±•ã€Œæ— å½¢å¹»å½±ã€ï¼\n");
 
 	if( me->query_skill_mapped("force") != "linji-zhuang")
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸ÑãĞĞµ¶¡¹ÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸ã€Œé›è¡Œåˆ€ã€æ°”è·¯ç›¸æ‚–ï¼\n");
 
 	if( me->query_skill("dodge") < 60 )
-		return notify_fail("ÄãµÄÇá¹¦»ğºò²»¹»£¬²»×ãÒÔÊ©Õ¹¡¸ÎŞĞÎ»ÃÓ°¡¹£¡\n");
+		return notify_fail("ä½ çš„è½»åŠŸç«å€™ä¸å¤Ÿï¼Œä¸è¶³ä»¥æ–½å±•ã€Œæ— å½¢å¹»å½±ã€ï¼\n");
 
 	if( me->query("max_neili") <= 400 )
-		return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸ÎŞĞÎ»ÃÓ°¡¹£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼ŒåŠ²åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œæ— å½¢å¹»å½±ã€ï¼\n");
 
 	if( me->query("neili") <= 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸ÎŞĞÎ»ÃÓ°¡¹£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼ŒåŠ²åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œæ— å½¢å¹»å½±ã€ï¼\n");
 
 	if( me->query("jingli") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦ÓĞÏŞ£¬²»×ãÒÔÊ©Õ¹¡¸ÎŞĞÎ»ÃÓ°¡¹£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›æœ‰é™ï¼Œä¸è¶³ä»¥æ–½å±•ã€Œæ— å½¢å¹»å½±ã€ï¼\n");
 
 	if ( userp(me) ) {
 		me->add("neili", -100);
@@ -61,7 +61,7 @@ int perform(object me, object target)
 	    fakeme->set("master_id", me->query("id"));
 	    me->save();
 	    if (!fakeme->restore())
-		return notify_fail("Èç¹ûÄã¿´µ½Õâ¸öĞÅÏ¢£¬ËµÃ÷ÏµÍ³ÓĞÎÊÌâ£¬ÇëÏòÎ×Ê¦±¨¸æ¡£\n");
+		return notify_fail("å¦‚æœä½ çœ‹åˆ°è¿™ä¸ªä¿¡æ¯ï¼Œè¯´æ˜ç³»ç»Ÿæœ‰é—®é¢˜ï¼Œè¯·å‘å·«å¸ˆæŠ¥å‘Šã€‚\n");
 
 	    fakeme->setup();
 	    fakeweapon = weapon->clone();
@@ -69,22 +69,22 @@ int perform(object me, object target)
 	    fakeweapon->wield();
 	} else {	// npc
 	    fakeme = new(base_name(me));
-	    if ((me->query("family/family_name") == "ÓùÁÖ¾ü") &&
+	    if ((me->query("family/family_name") == "å¾¡æ—å†›") &&
 		(master=me->query("master")) &&
-		(serial=me->query("serial"))) {	// this is a Ëæ´Ó npc
+		(serial=me->query("serial"))) {	// this is a éšä» npc
 		
 		me->save();
 		fakeme->set("master", master);
 		fakeme->set("serial", serial);
 		if (!fakeme->restore())
-		    return notify_fail("Çë±¨¸æÎ×Ê¦£ºËæ´ÓÏµÍ³ÓĞÎÊÌâ¡£\n");
+		    return notify_fail("è¯·æŠ¥å‘Šå·«å¸ˆï¼šéšä»ç³»ç»Ÿæœ‰é—®é¢˜ã€‚\n");
 		fakeme->drop_all_weapon();
 		fakeweapon = weapon->clone();
 		fakeweapon->move(fakeme);
 		fakeweapon->wield();
 	    }
 	}
-	fakeme->set_name(me->name()+"»ÃÓ°", ({fakeme->query("id"), me->query("id")}));
+	fakeme->set_name(me->name()+"å¹»å½±", ({fakeme->query("id"), me->query("id")}));
 	fakeme->move(environment(me));
 	fakeme->add_temp("apply/dexerity", me->query_temp("apply/dexerity"));
 	fakeme->add_temp("apply/strength", me->query_temp("apply/strength"));
@@ -92,8 +92,8 @@ int perform(object me, object target)
 	fakeme->set("env/wimpy", 0);
 	fakeme->set("env/invisibility", 10);
 
-	message_vision(HIY "\n\n$NÇ°ºóÓÎ×ß£¬ÉíĞÎÉÁ¶¯£¬ÊÖÖĞ"+weapon->name()+"Ô½Ê¹Ô½¿ì£¬»ÃÆğÎŞÊıµ¶¹â»¯³öÊı¸öÉíĞÎ¡£\n"
-			+"$n±»´ËÑãĞĞµ¶·¨Ö®¡¸ÎŞĞÎ»ÃÓ°¡¹ËùÃÔ»ó£¬ÊÖ×ãÎŞ´ë£¬²»ÖªÄÄ¸ö$NÊÇÕæ£¬ÄÄ¸öÊÇ¼Ù¡£\n" NOR, me, target);
+	message_vision(HIY "\n\n$Nå‰åæ¸¸èµ°ï¼Œèº«å½¢é—ªåŠ¨ï¼Œæ‰‹ä¸­"+weapon->name()+"è¶Šä½¿è¶Šå¿«ï¼Œå¹»èµ·æ— æ•°åˆ€å…‰åŒ–å‡ºæ•°ä¸ªèº«å½¢ã€‚\n"
+			+"$nè¢«æ­¤é›è¡Œåˆ€æ³•ä¹‹ã€Œæ— å½¢å¹»å½±ã€æ‰€è¿·æƒ‘ï¼Œæ‰‹è¶³æ— æªï¼Œä¸çŸ¥å“ªä¸ª$Næ˜¯çœŸï¼Œå“ªä¸ªæ˜¯å‡ã€‚\n" NOR, me, target);
 
 	enemy = me->query_enemy();
 	for (i=0; i<sizeof(enemy); i++)
@@ -122,7 +122,7 @@ private void stop_huanying(object me, object victim, object fakeme)
 	me->delete_temp("yanxing/huanying");
 	destruct(fakeme);
 	if (victim && victim->is_fighting(me)) {
-	    message_vision(HIY "\n\n$NÖÕÓÚÊ¶ÆÆÁË$nµÄ¡¸ÎŞĞÎ»ÃÓ°¡¹£¬²»Îª$nËùÃÔ»ó¡£\n" NOR, 
+	    message_vision(HIY "\n\n$Nç»ˆäºè¯†ç ´äº†$nçš„ã€Œæ— å½¢å¹»å½±ã€ï¼Œä¸ä¸º$næ‰€è¿·æƒ‘ã€‚\n" NOR, 
 		victim, me);
 	}
 }

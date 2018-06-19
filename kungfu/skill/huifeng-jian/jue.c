@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jue.c ¡¸¾ø½£¡¹
+// jue.c ã€Œç»å‰‘ã€
 // xQin 10/99
 
 #include <ansi.h>
@@ -17,31 +17,31 @@ int perform(object me, object target)
         if( !target && me->is_fighting() ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸¾ø½£¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç»å‰‘ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon) || weapon->query("skill_type") != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÔõÄÜÔËÓÃ¡¸¾ø½£¡¹£¿£¡\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œæ€èƒ½è¿ç”¨ã€Œç»å‰‘ã€ï¼Ÿï¼\n");
 
         if( me->query_temp("huifeng/mie") )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ¡¸Ãğ½£¡¹ĞÄ·¨£¡\n");
+                return notify_fail("ä½ æ­£åœ¨è¿ç”¨ã€Œç­å‰‘ã€å¿ƒæ³•ï¼\n");
 
         if( me->query_skill("emei-jianfa", 1) < 100 )
-                return notify_fail("Äã¶ëáÒ½£·¨ĞŞÎª»¹²»¹»£¬»¹Î´ÁìÎò¡¸¾ø½£¡¹£¡\n");
+                return notify_fail("ä½ å³¨åµ‹å‰‘æ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿï¼Œè¿˜æœªé¢†æ‚Ÿã€Œç»å‰‘ã€ï¼\n");
 
         if( me->query_skill("linji-zhuang", 1) < 60 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª»ğºòÎ´µ½£¬Ê©Õ¹¡¸¾ø½£¡¹Ö»»áÉË¼°×ÔÉí£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºç«å€™æœªåˆ°ï¼Œæ–½å±•ã€Œç»å‰‘ã€åªä¼šä¼¤åŠè‡ªèº«ï¼\n");
 
         if( me->query_skill_mapped("force") != "linji-zhuang" )
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸¾ø½£¡¹ĞÄ·¨Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸ã€Œç»å‰‘ã€å¿ƒæ³•ç›¸æ‚–ï¼\n");
 
         if( me->query("max_neili") <= 600 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸¾ø½£¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼ŒåŠ²åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œç»å‰‘ã€ï¼\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸¾ø½£¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼ŒåŠ²åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œç»å‰‘ã€ï¼\n");
 
         if( me->query("jingli") <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦ÓĞÏŞ£¬²»×ãÒÔÊ©Õ¹¡¸¾ø½£¡¹£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›æœ‰é™ï¼Œä¸è¶³ä»¥æ–½å±•ã€Œç»å‰‘ã€ï¼\n");
 
 	level = me->query_skill("sword") / 75;
 
@@ -59,8 +59,8 @@ int perform(object me, object target)
 		me->add_temp("emei_perform/juejian", 1);
 		COMBAT_D->do_attack(me, target, weapon);
 	}
-	message_vision(HIY"\nÕâ¼¸ÏÂ½»ÊÖ£¬µ±ÕæÊÇÍÃÆğğÖÂä£¬Ñ¸½İÎŞÂ×£¬Ò»É²ÄÇ¼ä$NÁ¬¹¥ÁË"+
-		chinese_number(level) +"ÏÂ¿ìÕĞ£¬ÕĞÕĞÊÇÖÂÃüµÄÁèÀ÷¶¾Öø£¡£¡\n"NOR, me);
+	message_vision(HIY"\nè¿™å‡ ä¸‹äº¤æ‰‹ï¼Œå½“çœŸæ˜¯å…”èµ·é¹¬è½ï¼Œè¿…æ·æ— ä¼¦ï¼Œä¸€åˆ¹é‚£é—´$Nè¿æ”»äº†"+
+		chinese_number(level) +"ä¸‹å¿«æ‹›ï¼Œæ‹›æ‹›æ˜¯è‡´å‘½çš„å‡Œå‰æ¯’è‘—ï¼ï¼\n"NOR, me);
 
 	me->add_temp("apply/damage", -level*10);
 	me->add_temp("apply/attack", -level*10);

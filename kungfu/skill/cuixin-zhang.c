@@ -1,5 +1,5 @@
 //Cracked by Roath
-//´İĞÄÕÆ
+//æ‘§å¿ƒæŒ
 //Ryu 
 // 16th-Aug-2000 modified by yasuko
 
@@ -7,35 +7,35 @@
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$NØüµØ±ä×¦ÎªÕÆ£¬ÉíĞÎ²»¶¯£¬ÓÒ±Û¶¸³¤£¬¡¸ºö¡¹µÄÒ»ÕÆ³¯$n$lÅüÈ¥",
+([	"action" : "$Næ”¸åœ°å˜çˆªä¸ºæŒï¼Œèº«å½¢ä¸åŠ¨ï¼Œå³è‡‚é™¡é•¿ï¼Œã€Œå¿½ã€çš„ä¸€æŒæœ$n$låŠˆå»",
         "force" : 220,
         "dodge" : 420,
         "lvl" : 0,
-	"damage_type" : "¸îÉË"
+	"damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$N³ËÊÆ¼²ÉÏ£¬Ë«±ÛÖ±ÉÏÖ±ÏÂ£¬Æ®ºö²»¶¨¡£¸ú×Å´óºÈÒ»Éù£¬Ë«ÕÆÍ¬Ê±ÍÆ³ö",
+([      "action" : "$Nä¹˜åŠ¿ç–¾ä¸Šï¼ŒåŒè‡‚ç›´ä¸Šç›´ä¸‹ï¼Œé£˜å¿½ä¸å®šã€‚è·Ÿç€å¤§å–ä¸€å£°ï¼ŒåŒæŒåŒæ—¶æ¨å‡º",
         "force" : 330,
         "dodge" : 450,
 	"lvl" : 40,
-	"damage_type" : "ÄÚÉË"
+	"damage_type" : "å†…ä¼¤"
 ]),
-([	"action" : "$NË«ÕÆ²»×¡µØÎè¶¯£¬Ö»Ìı¡¸¿¦À®¡¹Ò»ÉùÇáÏì£¬ÓÒÕÆÒ»Á¢£¬×óÕÆÒÑÏò$n$l»÷È¥",
+([	"action" : "$NåŒæŒä¸ä½åœ°èˆåŠ¨ï¼Œåªå¬ã€Œå–€å–‡ã€ä¸€å£°è½»å“ï¼Œå³æŒä¸€ç«‹ï¼Œå·¦æŒå·²å‘$n$lå‡»å»",
 	"force" : 400,
         "dodge" : 420,
 	"lvl" : 80,
-        "damage_type" : "ÓÙÉË"
+        "damage_type" : "æ·¤ä¼¤"
 ]),
-([	"action" : "$NÉíĞÎ´ì¶¯£¬·çÉù»¢»¢£¬½Ó×Å³¯$nÁ¬·¢ÊıÕÆ£¬Ò»ÕÆ¿ìËÆÒ»ÕÆ£¬Ò»ÕÆÃÍËÆÒ»ÕÆ",
+([	"action" : "$Nèº«å½¢æŒ«åŠ¨ï¼Œé£å£°è™è™ï¼Œæ¥ç€æœ$nè¿å‘æ•°æŒï¼Œä¸€æŒå¿«ä¼¼ä¸€æŒï¼Œä¸€æŒçŒ›ä¼¼ä¸€æŒ",
 	"force" : 450,
         "dodge" : 480,
 	"lvl" : 120,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å†…ä¼¤"
 ]),
-([	"action" : "$NÒ»Éù³¤Ğ¥£¬ĞÎÈçÆ®·ç£¬×óÕÆÒÑÈç·çĞĞµçÖ¿°ãÅÄ³ö£¬ÕÆÎ´µ½£¬·çÏÈÖÁ£¬Ñ¸ÃÍÒÑ¼«",
+([	"action" : "$Nä¸€å£°é•¿å•¸ï¼Œå½¢å¦‚é£˜é£ï¼Œå·¦æŒå·²å¦‚é£è¡Œç”µæŒšèˆ¬æ‹å‡ºï¼ŒæŒæœªåˆ°ï¼Œé£å…ˆè‡³ï¼Œè¿…çŒ›å·²æ",
 	"force" : 550,
         "dodge" : 430,
 	"lvl" : 160,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å†…ä¼¤"
 ]),
 });
 
@@ -46,20 +46,20 @@ int valid_combine(string combo) { return combo=="jiuyin-zhao"; }
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Á·´İĞÄÕÆ±ØĞë¿ÕÊÖ¡£\n");
+		return notify_fail("ç»ƒæ‘§å¿ƒæŒå¿…é¡»ç©ºæ‰‹ã€‚\n");
 	if ((int)me->query("max_neili") < 500)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·´İĞÄÕÆ¡£\n");
-	if (me->query("family/master_name") !="ÖÜÜÆÈô")
-		return notify_fail("´İĞÄÕÆÖ»ÄÜÏòÖÜÜÆÈôÑ§Ï°»òÕß×ÔĞĞÁìÎòĞŞÁ¶¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒæ‘§å¿ƒæŒã€‚\n");
+	if (me->query("family/master_name") !="å‘¨èŠ·è‹¥")
+		return notify_fail("æ‘§å¿ƒæŒåªèƒ½å‘å‘¨èŠ·è‹¥å­¦ä¹ æˆ–è€…è‡ªè¡Œé¢†æ‚Ÿä¿®ç‚¼ã€‚\n");
         if (me->query("jiuyin/corpse_poison")>151740) {
-                if (me->query("jing")<=50) return notify_fail("ÄãµÄ¾«Éñ×´¿öÌ«²îÁË¡£\n");
+                if (me->query("jing")<=50) return notify_fail("ä½ çš„ç²¾ç¥çŠ¶å†µå¤ªå·®äº†ã€‚\n");
                 me->set("jing", 1);
-		return notify_fail("Äã·¢ÏÖÖÜÜÆÈôµÄ½²½âÓë×Ô¼ºĞŞÁ¶µÄ·½·¨¸ñ¸ñ²»Èë£¬ËäÈ»½Á¾¡ÁËÄÔÖ­£¬ÈÔÊÇË¿ºÁÎŞ·¨Àí½â¡£\n");
+		return notify_fail("ä½ å‘ç°å‘¨èŠ·è‹¥çš„è®²è§£ä¸è‡ªå·±ä¿®ç‚¼çš„æ–¹æ³•æ ¼æ ¼ä¸å…¥ï¼Œè™½ç„¶æ…å°½äº†è„‘æ±ï¼Œä»æ˜¯ä¸æ¯«æ— æ³•ç†è§£ã€‚\n");
         }
         if (random(me->query("jiuyin/corpse_poison"))>1681) {
-                if (me->query("jing")<=300/(int)me->query("int")) return notify_fail("ÄãµÄ¾«Éñ×´¿öÌ«²îÁË¡£\n");
+                if (me->query("jing")<=300/(int)me->query("int")) return notify_fail("ä½ çš„ç²¾ç¥çŠ¶å†µå¤ªå·®äº†ã€‚\n");
                 me->receive_damage("jing", 300/(int)me->query("int"));
-		return notify_fail("ÄãÌı×ÅÖÜÜÆÈôµÄ½²½â£¬×Ü¾õµÃÓĞĞ©²»¶Ô¾¢¡£\n");
+		return notify_fail("ä½ å¬ç€å‘¨èŠ·è‹¥çš„è®²è§£ï¼Œæ€»è§‰å¾—æœ‰äº›ä¸å¯¹åŠ²ã€‚\n");
         }
 	return 1;
 }
@@ -71,5 +71,5 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-	return notify_fail("Ã»ÓĞ¾ÅÒõÕæ¾­£¬²»ÄÜ×ÔĞĞÁìÎò»òĞŞÁ¶´İĞÄÕÆ¡£\n");
+	return notify_fail("æ²¡æœ‰ä¹é˜´çœŸç»ï¼Œä¸èƒ½è‡ªè¡Œé¢†æ‚Ÿæˆ–ä¿®ç‚¼æ‘§å¿ƒæŒã€‚\n");
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// longxiang ÁúÏóÖ®Á¦
+// longxiang é¾™è±¡ä¹‹åŠ›
 // kane 25/01/99
 
 #include <ansi.h>
@@ -14,22 +14,22 @@ int exert(object me, object target)
         string num;
 
         if( target != me ) 
-                return notify_fail("ÄãÖ»ÄÜÓÃÁúÏó°ãÈô¹¦À´ÔËÁúÏóÖ®Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨é¾™è±¡èˆ¬è‹¥åŠŸæ¥è¿é¾™è±¡ä¹‹åŠ›ã€‚\n");
 
         if( (int)me->query("neili") < 1000  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("max_neili") < 2000  )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query_temp("shielded") ) 
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË»¤ÌåÉñ¹¦ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿æŠ¤ä½“ç¥åŠŸäº†ã€‚\n");
 
         if( (int)me->query_temp("longxiang") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÁúÏóÖ®Á¦ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿é¾™è±¡ä¹‹åŠ›äº†ã€‚\n");
 
         if( (int)me->query_skill("longxiang-banruo", 1) < 120)
-                return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦»ğºî²»¹»£¡\n");
+                return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸç«ä¾¯ä¸å¤Ÿï¼\n");
 
         skill = me->query_skill("longxiang-banruo", 1);
         org = me->query_str();
@@ -38,8 +38,8 @@ int exert(object me, object target)
         me->add("neili", -300);
 
         message_vision(
-        HIR"$N¿ÚÖĞÄ¬Äî´óÃ÷Áù×ÖÕæÑÔ£¬ÊÖ½áÄ¦ÀûÖ§Ìì·ßÅ­Ó¡£¬ÔËÆğ"+num+"Áú"+num+"ÏóÖ®Á¦£¡\n" +
-        HIW"$N½ÅÏÂÉ°Ê¯ÏÂÏİ£¬åáÈ»³öÏÖÁËÒ»¸ö´ó¿Ó£¡\n"
+        HIR"$Nå£ä¸­é»˜å¿µå¤§æ˜å…­å­—çœŸè¨€ï¼Œæ‰‹ç»“æ‘©åˆ©æ”¯å¤©æ„¤æ€’å°ï¼Œè¿èµ·"+num+"é¾™"+num+"è±¡ä¹‹åŠ›ï¼\n" +
+        HIW"$Nè„šä¸‹ç ‚çŸ³ä¸‹é™·ï¼Œé½ç„¶å‡ºç°äº†ä¸€ä¸ªå¤§å‘ï¼\n"
         NOR, me);
 
         me->add_temp("apply/armor_vs_force", extra*8);
@@ -67,5 +67,5 @@ void remove_effect(object me, int amount)
         me->add_temp("apply/defense",  amount*2);
         me->add_temp("apply/armor", amount*2);
         me->delete_temp("longxiang");
-        tell_object(me, MAG"ÄãµÄÁúÏóÖ®Á¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n"NOR);
+        tell_object(me, MAG"ä½ çš„é¾™è±¡ä¹‹åŠ›è¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n"NOR);
 }

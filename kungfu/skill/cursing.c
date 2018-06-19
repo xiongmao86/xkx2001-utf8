@@ -10,7 +10,7 @@ int valid_enable(string usage) { return usage=="spell"; }
 int valid_learn(object me)
 {
 if( (int)me->query_skill("medicine") < (int)me->query_skill("cursing")*2/3 )
-return notify_fail("ÄãµÄ»ù±¾Ò½ÀíÐÞÎª²»¹»£¬ÎÞ·¨ÁìÎò¸ü¸ßÉîµÄ½µÍ·Êõ¡£\n");
+return notify_fail("ä½ çš„åŸºæœ¬åŒ»ç†ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•é¢†æ‚Ÿæ›´é«˜æ·±çš„é™å¤´æœ¯ã€‚\n");
 	return 1;
 }
 
@@ -22,11 +22,11 @@ string cast_spell_file(string spell)
 
 int practice_skill(object me)
 {	
-return notify_fail("½µÍ·ÊõÖ»ÄÜÍ¨¹ý¶ÁÊéÀ´Ìá¸ß¡£\n");
+return notify_fail("é™å¤´æœ¯åªèƒ½é€šè¿‡è¯»ä¹¦æ¥æé«˜ã€‚\n");
 }
 
 int learn_skill(object me)
 {
-return notify_fail("½µÍ·ÊõÖ»ÄÜÍ¨¹ý¶ÁÊéÀ´Ìá¸ß¡£\n");
+return notify_fail("é™å¤´æœ¯åªèƒ½é€šè¿‡è¯»ä¹¦æ¥æé«˜ã€‚\n");
 }
 

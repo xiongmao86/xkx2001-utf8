@@ -1,14 +1,14 @@
 //Cracked by Roath
-// wujiang1.c ×Ü¹Ü
+// wujiang1.c æ€»ç®¡
 
 inherit NPC;
 
 void create()
 {
-	set_name("×Ü¹Ü", ({ "zong guan", "zong", "guan"}));
-    set("long","¡¡¡¡ËûÊÇ¶¨°²¸®µÄÎä¹Ù×Ü¹Ü£¬¸ºÔğ¹ÜÀí¹ÙÔ±Éı¼¶ºÍ·ÖÅÉ¹¤×÷µÈÊÂÎñ¡£\n");
-	set("title","´óÀí¹úÎä½«");
-    set("gender", "ÄĞĞÔ");
+	set_name("æ€»ç®¡", ({ "zong guan", "zong", "guan"}));
+    set("long","ã€€ã€€ä»–æ˜¯å®šå®‰åºœçš„æ­¦å®˜æ€»ç®¡ï¼Œè´Ÿè´£ç®¡ç†å®˜å‘˜å‡çº§å’Œåˆ†æ´¾å·¥ä½œç­‰äº‹åŠ¡ã€‚\n");
+	set("title","å¤§ç†å›½æ­¦å°†");
+    set("gender", "ç”·æ€§");
     set("age", 35);
 	set_skill("cuff", 65);
     set_skill("jinyu-quan", 65);

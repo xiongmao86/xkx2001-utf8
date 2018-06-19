@@ -5,11 +5,11 @@ int ask_me();
 
 void create()
 {
-	set_name("ÄÏº£öùÉñ", ({ "nanhai eshen", "eshen"}));
-	set("nickname", "Ğ×Éñ¶ñÉ·");
+	set_name("å—æµ·é³„ç¥", ({ "nanhai eshen", "eshen"}));
+	set("nickname", "å‡¶ç¥æ¶ç…");
 	set("long", 
-"´ËÈËµÄÒ»¸öÄÔ´ü´óµÃÒìºõÑ°³££¬Ò»ÕÅÀ«×ìÖĞÂ¶³ö°×É­É­µÄÀû³İ£¬Ò»¶ÔÑÛ¾¦È´ÊÇÓÖÔ²ÓÖĞ¡¡£\n");
-	set("gender", "ÄĞĞÔ");
+"æ­¤äººçš„ä¸€ä¸ªè„‘è¢‹å¤§å¾—å¼‚ä¹å¯»å¸¸ï¼Œä¸€å¼ é˜”å˜´ä¸­éœ²å‡ºç™½æ£®æ£®çš„åˆ©é½¿ï¼Œä¸€å¯¹çœ¼ç›å´æ˜¯åˆåœ†åˆå°ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "heroism");
 	set("shen_type", -1);
@@ -28,14 +28,14 @@ void create()
 	set("chat_chance_combat", 50);
 	set("chat_msg_combat", ({
 		(: auto_perform :),
-                "ÄÏº£öùÉñËµµÀ£ºËûÂèµÄ£¬ÄÄ¸ö¸Ò²»ÌıÀÏ×ÓµÄ»°£¬±»ÀÏ×Ó¾¾×¡£¬¿¦àêÒ»ÏÂÅ¤¶ÏÁËËûµÄ²±×Ó¡£\n",
-                "ÄÏº£öùÉñÍ»È»·¢Å­´óÉùµÀ£º¡±ÀÏ×ÓÊÇÔÀÀÏ¶ş£¬²»ÊÇÔÀÀÏÈı£¡\n",
-		"ÄÏº£öùÉñÍ»È»Ğ¡ÑÛÖĞ¹âÃ¢ËÄÉä£¬ÏòÄãÁ³ÉÏ¹ÇÂµÂµÒ»×ª£¬Äã²»ÓÉµÃ´òÁË¸öº®Õ½¡£\n", 
+                "å—æµ·é³„ç¥è¯´é“ï¼šä»–å¦ˆçš„ï¼Œå“ªä¸ªæ•¢ä¸å¬è€å­çš„è¯ï¼Œè¢«è€å­æªä½ï¼Œå–€åš“ä¸€ä¸‹æ‰­æ–­äº†ä»–çš„è„–å­ã€‚\n",
+                "å—æµ·é³„ç¥çªç„¶å‘æ€’å¤§å£°é“ï¼šâ€è€å­æ˜¯å²³è€äºŒï¼Œä¸æ˜¯å²³è€ä¸‰ï¼\n",
+		"å—æµ·é³„ç¥çªç„¶å°çœ¼ä¸­å…‰èŠ’å››å°„ï¼Œå‘ä½ è„¸ä¸Šéª¨ç¢Œç¢Œä¸€è½¬ï¼Œä½ ä¸ç”±å¾—æ‰“äº†ä¸ªå¯’æˆ˜ã€‚\n", 
         }) );
 
  set("inquiry", ([
-	"²âÊÔ" : (: ask_me :),
-	"²âÊÔÎä¹¦" : (: ask_me :),
+	"æµ‹è¯•" : (: ask_me :),
+	"æµ‹è¯•æ­¦åŠŸ" : (: ask_me :),
         ]));
 
 	set_skill("force", 150);
@@ -99,15 +99,15 @@ int auto_perform()
 int ask_me()
 {
 object me=this_player();
-if ((int)me->query_temp("marks/Î÷ÏÄnan")) 
+if ((int)me->query_temp("marks/è¥¿å¤nan")) 
 	{	
-say("ÄÏº£öùÉñ¿ñĞ¦ÁËÒ»Õó£ºÄãÒªÊÇ²»ÅÂËÀ£¬¾ÍÊÔÊÔ(accept test)£¬¿´ÀÏ×Ó²»Å¡¶ÏÁËÄãµÄ²±×Ó£¿\n");
+say("å—æµ·é³„ç¥ç‹‚ç¬‘äº†ä¸€é˜µï¼šä½ è¦æ˜¯ä¸æ€•æ­»ï¼Œå°±è¯•è¯•(accept test)ï¼Œçœ‹è€å­ä¸æ‹§æ–­äº†ä½ çš„è„–å­ï¼Ÿ\n");
 	return 1;
 	}
 /* else	{
-	say("ÄÏº£öùÉñÅ­ºÈµÀ£º¹ö£¬ÀÏ×ÓĞÄ·³£¬²»¹ö¿´ÀÏ×ÓÒ»ÏÂÅ¡¶ÏÄãµÄ²±×Ó£¡\n");
+	say("å—æµ·é³„ç¥æ€’å–é“ï¼šæ»šï¼Œè€å­å¿ƒçƒ¦ï¼Œä¸æ»šçœ‹è€å­ä¸€ä¸‹æ‹§æ–­ä½ çš„è„–å­ï¼\n");
 	return 1;
-	}ı
+	}
 */
 }
 
@@ -115,12 +115,12 @@ int do_accept(string arg)
 {
         mapping guild;
 	object me=this_player();
-if (!(int)me->query_temp("marks/Î÷ÏÄnan")) 
-return notify_fail ("ÄãÏ¹ÊÔÊ²Ã´£¿\n");
+if (!(int)me->query_temp("marks/è¥¿å¤nan")) 
+return notify_fail ("ä½ çè¯•ä»€ä¹ˆï¼Ÿ\n");
         
 
         if( arg== "test" ) {
-                say("\nÄÏº£öùÉñµãÁËµãÍ·£¬ËµµÀ£ººÜºÃ£¬ÕâÊÇµÚÒ»ÕĞ....\n\n");
+                say("\nå—æµ·é³„ç¥ç‚¹äº†ç‚¹å¤´ï¼Œè¯´é“ï¼šå¾ˆå¥½ï¼Œè¿™æ˜¯ç¬¬ä¸€æ‹›....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
 query_temp("weapon"));
 COMBAT_D->do_attack(this_object(), this_player(),
@@ -129,10 +129,10 @@ query_temp("weapon"));
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-say("ÄÏº£öùÉñÌ¾ÁË¿ÚÆø£¬ËµµÀ£ºÁ¬µÚÒ»ÕĞ¶¼³Å²»¹ı£¬ÕæÊÇ×Ô²»Á¿Á¦....\n");
+say("å—æµ·é³„ç¥å¹äº†å£æ°”ï¼Œè¯´é“ï¼šè¿ç¬¬ä¸€æ‹›éƒ½æ’‘ä¸è¿‡ï¼ŒçœŸæ˜¯è‡ªä¸é‡åŠ›....\n");
                         return 1;
                 }
-                say("\nÄÏº£öùÉñËµµÀ£ºÕâÊÇµÚ¶şÕĞ....\n\n");
+                say("\nå—æµ·é³„ç¥è¯´é“ï¼šè¿™æ˜¯ç¬¬äºŒæ‹›....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
 query_temp("weapon"));
 COMBAT_D->do_attack(this_object(), this_player(),
@@ -141,10 +141,10 @@ query_temp("weapon"));
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-say("ÄÏº£öùÉñ¡¸ºß¡¹µØÒ»Éù£¬ËµµÀ£º±ãÊÇÓĞÕâĞí¶à²»ÅÂËÀµÄ¼Ò»ï....\n");
+say("å—æµ·é³„ç¥ã€Œå“¼ã€åœ°ä¸€å£°ï¼Œè¯´é“ï¼šä¾¿æ˜¯æœ‰è¿™è®¸å¤šä¸æ€•æ­»çš„å®¶ä¼™....\n");
 return 1;
                 }
-                say("\nÄÏº£öùÉñËµµÀ£ºµÚÈıÕĞÀ´ÁË....\n\n");
+                say("\nå—æµ·é³„ç¥è¯´é“ï¼šç¬¬ä¸‰æ‹›æ¥äº†....\n\n");
                 COMBAT_D->do_attack(this_object(), this_player(),
 query_temp("weapon"));
 		COMBAT_D->do_attack(this_object(), this_player(),
@@ -153,13 +153,13 @@ query_temp("weapon"));
                 if( (int)this_player()->query("qi") < 0 
                 || !present(this_player(), environment())) {
 
-say("ÄÏº£öùÉñÌ¾µÀ£º¿ÉÏ§£¬Ã»Å¡¶ÏÕâ¸ö¹ê¶ù×ÓµÄ²±×Ó....\n");
+say("å—æµ·é³„ç¥å¹é“ï¼šå¯æƒœï¼Œæ²¡æ‹§æ–­è¿™ä¸ªé¾Ÿå„¿å­çš„è„–å­....\n");
                         return 1;
                 }
 
-say("\nÄÏº£öùÉñÕö´óÁËÒ»Ë«¹ÖÑÛËµµÀ£ºËûÂèÂèµÄ£®£®£®£¡\n\n");
+say("\nå—æµ·é³„ç¥çå¤§äº†ä¸€åŒæ€ªçœ¼è¯´é“ï¼šä»–å¦ˆå¦ˆçš„ï¼ï¼ï¼ï¼\n\n");
                 this_player()->set_temp("xixia/testpass", 2);
-                this_player()->delete_temp("marks/Î÷ÏÄnan");
+                this_player()->delete_temp("marks/è¥¿å¤nan");
 		return 1;
         }
         return 0;

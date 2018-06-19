@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶ÎÑÓÇì", ({ "duan yanqing", "duan", "yanqing" }));
-        set("nickname", "¶ñ¹áÂúÓ¯");
+        set_name("æ®µå»¶åº†", ({ "duan yanqing", "duan", "yanqing" }));
+        set("nickname", "æ¶è´¯æ»¡ç›ˆ");
         set("long", 
-"´ËÈËÉíÐÎÐÞ³¤£¬ÆäÐØÍ¹³ö£¬ÓÉÈçÒ»¹Ä£¬µ«ÊÇÈ³ÁËË«ÍÈ£¬Öô×Å¸ù¸ÖÖÆ¹ÕÕÈ¡£\n");
-        set("gender", "ÄÐÐÔ");
+"æ­¤äººèº«å½¢ä¿®é•¿ï¼Œå…¶èƒ¸å‡¸å‡ºï¼Œç”±å¦‚ä¸€é¼“ï¼Œä½†æ˜¯ç˜¸äº†åŒè…¿ï¼Œæ‹„ç€æ ¹é’¢åˆ¶æ‹æ–ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "heroism");
         set("shen_type", -1);
@@ -40,7 +40,7 @@ void create()
 
         prepare_skill("finger", "yiyang-zhi");
 
-        create_family("´óÀí¶Î¼Ò", 13, "µÜ×Ó");
+        create_family("å¤§ç†æ®µå®¶", 13, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/gangzhang")->wield();
@@ -61,26 +61,26 @@ void attempt_apprentice(object me)
 {
 
         if ((int)me->query("shen") > -100000){
-                command("say ËÆÄãÕâÀà°×µÀÉÏµÄÎÔµ×Ò²¸Ò¶·µ¨À´ÕÒÎÒ?¡£");
+                command("say ä¼¼ä½ è¿™ç±»ç™½é“ä¸Šçš„å§åº•ä¹Ÿæ•¢æ–—èƒ†æ¥æ‰¾æˆ‘?ã€‚");
                 return;
         }
        if( me->query("combat_exp") < 100000 ) {
                 command ("say " + RANK_D->query_respect(this_player()) + "
-		Îä¹¦ÉÐÎ´µÇÌÃÈëÊÒ£¬»¹ÊÇÔÙÐÞÁ·ÐÞÁ·È¥°É¡£");
+		æ­¦åŠŸå°šæœªç™»å ‚å…¥å®¤ï¼Œè¿˜æ˜¯å†ä¿®ç»ƒä¿®ç»ƒåŽ»å§ã€‚");
                 return;
         }
 
-	if ((string)me->query("gender") !== "ÄÐÐÔ") {
-                command("say ÎÒÖ»ÊÕÄÐÍ½£¬" + RANK_D->query_respect(ob) + 
-"»¹ÊÇÁíÍ¶¸ßÃ÷°É¡£");
+	if ((string)me->query("gender") !== "ç”·æ€§") {
+                command("say æˆ‘åªæ”¶ç”·å¾’ï¼Œ" + RANK_D->query_respect(ob) + 
+"è¿˜æ˜¯å¦æŠ•é«˜æ˜Žå§ã€‚");
                 return;
         } 
 if( me->query("PKS) < 50) {
 command ("say " + RANK_D->query_respect(this_player()) + "
-ÄãÏÈÈ¥¸Éµô¼¸¸ö°×µÀÈËÎïÔÙÀ´°ÝÎÒ£¬¾ÖÊ±ÎÒÒ»¶¨ÊÕÄã¡£");
+ä½ å…ˆåŽ»å¹²æŽ‰å‡ ä¸ªç™½é“äººç‰©å†æ¥æ‹œæˆ‘ï¼Œå±€æ—¶æˆ‘ä¸€å®šæ”¶ä½ ã€‚");
                 return;
         }
-    command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£Ï£ÍûÄãÄÜ¶àÉ±¼¸¸ö¿õÊÀ¸ßÊÖ£¬Í¿º¦ÎäÁÖ¡£");
+    command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚å¸Œæœ›ä½ èƒ½å¤šæ€å‡ ä¸ªæ—·ä¸–é«˜æ‰‹ï¼Œæ¶‚å®³æ­¦æž—ã€‚");
         command("recruit " + me->query("id"));
        
  void init()
@@ -92,7 +92,7 @@ command ("say " + RANK_D->query_respect(this_player()) + "
 me->query("family/master_id") == "duan yanqing"
         && me->query("shen") > -100000 ) {
                 command("say " + RANK_D->query_rude(me) + 
-"µ¨¸Ò²»×ðÊ¦Ñµ£¬²»È¥Îª·Ç×÷´õ£¬ÄãºÃ´óµÄµ¨×Ó£¡" );
+"èƒ†æ•¢ä¸å°Šå¸ˆè®­ï¼Œä¸åŽ»ä¸ºéžä½œæ­¹ï¼Œä½ å¥½å¤§çš„èƒ†å­ï¼" );
                 command( "expell " + me->query("id"));
         }
 }

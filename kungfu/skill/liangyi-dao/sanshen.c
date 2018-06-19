@@ -1,5 +1,5 @@
 //Cracked by Roath
-//jianzhang.c »ªÔÀÈıÉñ·å 
+//jianzhang.c åå²³ä¸‰ç¥å³° 
 
 #include <ansi.h>
 
@@ -16,25 +16,25 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("»ªÔÀÈıÉñ·åÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("åå²³ä¸‰ç¥å³°åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_skill_mapped("cuff") != "pishi-poyu" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·ÇÅüÊ¯ÆÆÓñÈ­£¬²»ÄÜÓë»ªÉ½·´Á½ÒÇµ¶·¨ÅäºÏÊ©Õ¹»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éåŠˆçŸ³ç ´ç‰æ‹³ï¼Œä¸èƒ½ä¸åå±±åä¸¤ä»ªåˆ€æ³•é…åˆæ–½å±•åå²³ä¸‰ç¥å³°ï¼\n");
 
 	if( me->query_skill_prepared("cuff") != "pishi-poyu" )
-		return notify_fail("ÄãËù±¸µÄ²¢·ÇÅüÊ¯ÆÆÓñÈ­£¬²»ÄÜÓë»ªÉ½·´Á½ÒÇµ¶·¨ÅäºÏÊ©Õ¹»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ æ‰€å¤‡çš„å¹¶éåŠˆçŸ³ç ´ç‰æ‹³ï¼Œä¸èƒ½ä¸åå±±åä¸¤ä»ªåˆ€æ³•é…åˆæ–½å±•åå²³ä¸‰ç¥å³°ï¼\n");
 
 	if( me->query_skill_mapped("force") != "zixia-gong" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç×ÏÏ¼¹¦£¬ÎŞ·¨Ê©Õ¹»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç´«éœåŠŸï¼Œæ— æ³•æ–½å±•åå²³ä¸‰ç¥å³°ï¼\n");
 
 	if( me->query_skill("zixia-gong", 1) < 60 )
-		return notify_fail("ÄãµÄ×ÏÏ¼¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ çš„ç´«éœåŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•åå²³ä¸‰ç¥å³°ï¼\n");
 
 	if( (lvl1=me->query_skill("cuff")) < 100 )
-		return notify_fail("»ªÔÀÈıÉñ·åĞèÒª¾«Õ¿µÄÅüÊ¯ÆÆÓñÈ­ÅäºÏ£¬·½ÄÜÓĞĞ§Ê©Õ¹£¡\n");
+		return notify_fail("åå²³ä¸‰ç¥å³°éœ€è¦ç²¾æ¹›çš„åŠˆçŸ³ç ´ç‰æ‹³é…åˆï¼Œæ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	if( (lvl2=me->query_skill("blade")) < 100 )
-		return notify_fail("Äã·´Á½ÒÇµ¶·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃ»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ åä¸¤ä»ªåˆ€æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨åå²³ä¸‰ç¥å³°ï¼\n");
 	
 	amount = (lvl1+lvl2) / 15;
 
@@ -42,9 +42,9 @@ int perform(object me, object target)
         if ( amount > 80 ) amount = 80;
 
 	if( me->query("neili") <= amount*4 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨åå²³ä¸‰ç¥å³°ï¼\n");
 	if( me->query("jingli") <= amount*2 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃ»ªÔÀÈıÉñ·å£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨åå²³ä¸‰ç¥å³°ï¼\n");
 
 	if( me->query_skill_prepared("strike") == "hunyuan-zhang" ) {
 		me->set_temp("restore", 1);
@@ -55,7 +55,7 @@ int perform(object me, object target)
 
 	me->add_temp("apply/dodge", amount*2);
 
-	message_vision(HIR "\n$NÑöÌìÒ»ÉùÇåĞ¥£¬ÔË×ãÄÚÁ¦Ê¹³ö¡¸»ªÔÀÈıÉñ·å¡¹£¬Ïò$nÀ×öª°ãµØ»÷³öÁ½È­Ò»µ¶£¡\n\n" NOR, me, target);
+	message_vision(HIR "\n$Nä»°å¤©ä¸€å£°æ¸…å•¸ï¼Œè¿è¶³å†…åŠ›ä½¿å‡ºã€Œåå²³ä¸‰ç¥å³°ã€ï¼Œå‘$né›·éœ†èˆ¬åœ°å‡»å‡ºä¸¤æ‹³ä¸€åˆ€ï¼\n\n" NOR, me, target);
 
 	// make the 1st attack without weapon add more hit chances and damage.
 	me->add_temp("apply/attack", amount*2);

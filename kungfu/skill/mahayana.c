@@ -1,5 +1,5 @@
 //Cracked by Roath
-// mahayana.c ´ó³ËÄùÅÍ·¨
+// mahayana.c å¤§ä¹˜æ¶…ç£æ³•
 
 inherit SKILL;
 
@@ -15,12 +15,12 @@ int valid_learn(object me)
 	lvl2= (int)me->query_skill("persuading", 1);
 
 	if( (lvl >= 60 && lvl2 <= lvl && lvl2 < 150) || lvl2 <= lvl/2 )
-		return notify_fail("´ó³Ë·ð½Ì³çÉÐÆÕ¶ÉÖÚÉú£¬ÄãÐë¶à¶à¶ÉÊÀ¼ÃÈË²ÅÄÜ¼ÌÐøÌá¸ß´ó³ËÄùÅÍ·¨ÐÞÎª¡£\n");
+		return notify_fail("å¤§ä¹˜ä½›æ•™å´‡å°šæ™®æ¸¡ä¼—ç”Ÿï¼Œä½ é¡»å¤šå¤šæ¸¡ä¸–æµŽäººæ‰èƒ½ç»§ç»­æé«˜å¤§ä¹˜æ¶…ç£æ³•ä¿®ä¸ºã€‚\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("´ó³ËÄùÅÍ·¨Ö»ÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+	return notify_fail("å¤§ä¹˜æ¶…ç£æ³•åªèƒ½é å­¦(learn)æ¥æé«˜ã€‚\n");
 }

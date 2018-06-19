@@ -5,25 +5,25 @@
 int exert(object me, object target)
 {
         if( me->is_fighting() ||target->is_fighting()  )
-                return notify_fail("Õ½¶·ÖÐÔË¹¦Îü¶¾£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸå¸æ¯’ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
    if (me->query_condition("snake_poison") > 0 ||
        me->query_condition("xx_poison") > 0 ||
        me->query_condition("chilian_poison") > 0 ||
         me->query_condition("bt_poison") > 0)
-        return notify_fail("Äã×Ô¼ºÒÑÉíÖÐ¾ç¶¾£¬ÎÞ·¨ÎªËûÈËÎü¶¾¡£\n");
+        return notify_fail("ä½ è‡ªå·±å·²èº«ä¸­å‰§æ¯’ï¼Œæ— æ³•ä¸ºä»–äººå¸æ¯’ã€‚\n");
 
 	if ((int)target->query_condition("chilian_poison") > 0) {
         if ((int)me->query_skill("wudu-xinfa", 1) < 70)
-                return notify_fail("ÄãµÄÎå¶¾ÐÄ·¨ÐÞÎª»¹²»¹»ÎüËûÈË³àÁ·ÉñÕÆ¶¾ËùÐè¡£\n");
+                return notify_fail("ä½ çš„äº”æ¯’å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿå¸ä»–äººèµ¤ç»ƒç¥žæŽŒæ¯’æ‰€éœ€ã€‚\n");
 
         if( (int)me->query("neili") < 150 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»ÎüËûÈË³àÁ·ÉñÕÆ¶¾ËùÐè¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿå¸ä»–äººèµ¤ç»ƒç¥žæŽŒæ¯’æ‰€éœ€ã€‚\n");
 
         message_vision(
-                HIY "$N×øÁËÏÂÀ´£¬½«ÊÖÕÆÌùÔÚ$n±³ÐÄ....\n\n"
-                "Í»È»¼ä£¬$N´ó½ÐÁ½Éù£¬$nÍÂ³öÒ»¿ÚºÚ×ÏÉ«µÄðöÑª¡£\n"
-                "µ«$NµÄÇ°±ÛÒÑÊÇºÚ×ÏÒ»Æ¬¡£\n" NOR,
+                HIY "$Nåäº†ä¸‹æ¥ï¼Œå°†æ‰‹æŽŒè´´åœ¨$nèƒŒå¿ƒ....\n\n"
+                "çªç„¶é—´ï¼Œ$Nå¤§å«ä¸¤å£°ï¼Œ$nåå‡ºä¸€å£é»‘ç´«è‰²çš„ç˜€è¡€ã€‚\n"
+                "ä½†$Nçš„å‰è‡‚å·²æ˜¯é»‘ç´«ä¸€ç‰‡ã€‚\n" NOR,
                 me, target );
 
         me->apply_condition("chilian_poison", target->query_condition("chilian_poison"));
@@ -31,7 +31,7 @@ int exert(object me, object target)
 
         me->add("neili", -150);
    }
-   else write(target->name()+"²¢Î´ÖÐ¶¾¡£\n");
+   else write(target->name()+"å¹¶æœªä¸­æ¯’ã€‚\n");
 
         return 1;
 }

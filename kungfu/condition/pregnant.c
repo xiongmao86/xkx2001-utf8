@@ -13,22 +13,22 @@ int update_condition(object me, int duration)
 	int dura;
 	dura = me->query_condition("pregnant");
 	if(dura > 1000 && random(6) == 1){
-		tell_object(me,HIY"Äã¾õµÃÉíÌå²»ÊÊ£¬Ö»ÏëÕÒĞ©Ã·×ÓÖ®ÀàµÄËá¶«Î÷³Ô¡£\n"NOR);
+		tell_object(me,HIY"ä½ è§‰å¾—èº«ä½“ä¸é€‚ï¼Œåªæƒ³æ‰¾äº›æ¢…å­ä¹‹ç±»çš„é…¸ä¸œè¥¿åƒã€‚\n"NOR);
 	}
 	if(dura > 700 && dura < 1000 && random(6) == 1){
-		tell_object(me,HIY"ÄãÅ»³öÒ»¿ÚËáË®£¬Ö»¾õĞÄÖĞÒ»Õó·³¶ñ¡£\n"NOR);
+		tell_object(me,HIY"ä½ å‘•å‡ºä¸€å£é…¸æ°´ï¼Œåªè§‰å¿ƒä¸­ä¸€é˜µçƒ¦æ¶ã€‚\n"NOR);
 	}
 	if(dura > 400 && dura < 700 && random(6) == 1){
-		tell_object(me,HIY"Äã¾õµÃÑüÉí½¥½¥´Ö´ó£¬ĞĞ¶¯Éõ²»·½±ã¡£\n"NOR);
+		tell_object(me,HIY"ä½ è§‰å¾—è…°èº«æ¸æ¸ç²—å¤§ï¼Œè¡ŒåŠ¨ç”šä¸æ–¹ä¾¿ã€‚\n"NOR);
 	}
 	if(dura > 300 && dura < 400 && random(6) == 1){
-		tell_object(me,HIY"Äã¾õµÃ¸¹ÖĞÓĞÎïÈäÈä¶ø¶¯£¬ĞÄÖĞÓÖÊÇĞßÉ¬ÓÖÊÇÌğÃÛ¡£\n"NOR);
+		tell_object(me,HIY"ä½ è§‰å¾—è…¹ä¸­æœ‰ç‰©è •è •è€ŒåŠ¨ï¼Œå¿ƒä¸­åˆæ˜¯ç¾æ¶©åˆæ˜¯ç”œèœœã€‚\n"NOR);
 	}
 	if(dura > 100 && dura < 300 && random(6) == 1){
-		tell_object(me,HIY"Äã¾õµÃ¸¹ÖĞµÄĞ¡ÉúÃüÓÃÁ¦µÄÌß×ÅÄãµÄ¶Ç×Ó£¬°µÂî£ºĞ¡Ô©¼Ò£¬¼±ËÀÄãÁË£¿\n"NOR);
+		tell_object(me,HIY"ä½ è§‰å¾—è…¹ä¸­çš„å°ç”Ÿå‘½ç”¨åŠ›çš„è¸¢ç€ä½ çš„è‚šå­ï¼Œæš—éª‚ï¼šå°å†¤å®¶ï¼Œæ€¥æ­»ä½ äº†ï¼Ÿ\n"NOR);
 	}
 	if(dura > 50 && dura < 100 && random(6) == 1){
-		tell_object(me,HIY"Äã¸¹ÖĞÒ»Õó¾çÍ´£¬°¡£¡¿ìÒªÉúÁË£¡\n"NOR);
+		tell_object(me,HIY"ä½ è…¹ä¸­ä¸€é˜µå‰§ç—›ï¼Œå•Šï¼å¿«è¦ç”Ÿäº†ï¼\n"NOR);
 	}
 	if(dura > 10 && dura < 50){
 		switch(3)
@@ -37,7 +37,7 @@ int update_condition(object me, int duration)
 			case 2:
 			case 3:
 				
-message_vision(HIR"$NÖ»¾õ¸¹ÖĞÕóÕóÌÛÍ´£¬ÔÙÒ²Ö§³Ö²»×¡£¬·üµ¹ÔÚµØ£¬¾Í´ËÔÎÁË¹ıÈ¥¡£\n"NOR,me);
+message_vision(HIR"$Nåªè§‰è…¹ä¸­é˜µé˜µç–¼ç—›ï¼Œå†ä¹Ÿæ”¯æŒä¸ä½ï¼Œä¼å€’åœ¨åœ°ï¼Œå°±æ­¤æ™•äº†è¿‡å»ã€‚\n"NOR,me);
 				ob = new("/u/kane/baby");
 				break;
 		}

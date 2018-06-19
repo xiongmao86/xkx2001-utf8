@@ -25,7 +25,7 @@ int update_condition(object me, int duration)
 
 void let_know(object me)
 {
-		tell_object(me, HIR "你抬头看了看天空，估算着日子，突然发觉时限已到！真倒霉！\n" NOR);
+		tell_object(me, HIR "浣犳姮澶寸湅浜嗙湅澶╃┖锛屼及绠楃潃鏃ュ瓙锛岀獊鐒跺彂瑙夋椂闄愬凡鍒帮紒鐪熷�掗湁锛乗n" NOR);
 
 		if( me->query("biao") )
 		{

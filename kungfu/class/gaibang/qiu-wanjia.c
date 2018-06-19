@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ôÃÍò¼Ò", ({"qiu wanjia", "qiu", "wanjia"}));
-	set("title", "Ø¤°ï¶ş´üµÜ×Ó");
-	set("gender", "ÄĞĞÔ");
+	set_name("è£˜ä¸‡å®¶", ({"qiu wanjia", "qiu", "wanjia"}));
+	set("title", "ä¸å¸®äºŒè¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 18);
 	set("long", 
-		"ÕâÊÇÉÙÄêÆòØ¤£¬³¤µÃÃ¼ÇàÄ¿Ğã£¬ËÆºõÊÇ¼ÒÊÀÂÙÂä£¬±»ÆÈÀËµ´½ÖÍ·¡£\n");
+		"è¿™æ˜¯å°‘å¹´ä¹ä¸ï¼Œé•¿å¾—çœ‰é’ç›®ç§€ï¼Œä¼¼ä¹æ˜¯å®¶ä¸–æ²¦è½ï¼Œè¢«è¿«æµªè¡è¡—å¤´ã€‚\n");
 
 	set("attitude", "heroism");
 	set("str", 17);
@@ -44,7 +44,7 @@ void create()
 	
 	prepare_skill("strike", "xianglong-zhang");
 
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/gaibang/obj/budai")->set_amount(1);

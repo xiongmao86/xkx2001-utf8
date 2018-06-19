@@ -32,7 +32,7 @@ int update_condition(object me, int duration)
                 me->delete("fglearned");
                 //me->add("int", -amount);
 
-                write("\n你从佛我两忘的幻境中又回到了尘世。\n");
+                write("\n浣犱粠浣涙垜涓ゅ繕鐨勫够澧冧腑鍙堝洖鍒颁簡灏樹笘銆俓n");
                 return 0;
         }
 

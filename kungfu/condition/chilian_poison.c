@@ -10,11 +10,11 @@ int update_condition(object me, int duration)
 //	int ml;
 //	ml = me->query("max_neili")/1000;
    if( !living(me) ) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+      message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
    }
    else {
-      tell_object(me, HIR "ºöÈ»Ò»ÕóÔÎÐýÊ¹Äã¼±Óû×÷Å»£¬ÄãÖÐµÄ³àÁ¶ÕÆ¶¾·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "Í·ÖØ½ÅÇá£¬Éí×ÓÍ»È»»ÎÁËÁ½»Î¡£\n",
+      tell_object(me, HIR "å¿½ç„¶ä¸€é˜µæ™•æ—‹ä½¿ä½ æ€¥æ¬²ä½œå‘•ï¼Œä½ ä¸­çš„èµ¤ç‚¼æŽŒæ¯’å‘ä½œäº†ï¼\n" NOR );
+      message("vision", me->name() + "å¤´é‡è„šè½»ï¼Œèº«å­çªç„¶æ™ƒäº†ä¸¤æ™ƒã€‚\n",
             environment(me), me);
    }
    if(me->query("poisoner")){
@@ -22,8 +22,8 @@ int update_condition(object me, int duration)
       me->receive_wound("jing",random(duration)/2+10,me->query("poisoner"));
 	}
 	else{
-      me->receive_damage("qi", random(duration)/2+10, "³àÁ¶ÕÆ¶¾¹¥ÐÄËÀÁË");
-      me->receive_wound("jing", random(duration)/2+10,"³àÁ¶ÕÆ¶¾¹¥ÐÄËÀÁË");
+      me->receive_damage("qi", random(duration)/2+10, "èµ¤ç‚¼æŽŒæ¯’æ”»å¿ƒæ­»äº†");
+      me->receive_wound("jing", random(duration)/2+10,"èµ¤ç‚¼æŽŒæ¯’æ”»å¿ƒæ­»äº†");
 	}
 //   if(!userp(me)) me->receive_curing("jing", 12);
 

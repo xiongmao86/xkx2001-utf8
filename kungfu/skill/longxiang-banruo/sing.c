@@ -1,5 +1,5 @@
 //Cracked by Roath
-// fanchang.c èó³ª
+// fanchang.c æ¢µå”±
 // Summer 9/29/96.
 // snowbird 9 1999
 // 1.1.1.2
@@ -17,57 +17,57 @@ int exert(object me, object target)
 	if( !target ) target = offensive_target(me);
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("id") != "lubo")
-                return notify_fail("ÄãÎ´Ö´·¨Æ÷£¬²»ÄÜÄýÉñèó³ª¡£\n");
+                return notify_fail("ä½ æœªæ‰§æ³•å™¨ï¼Œä¸èƒ½å‡ç¥žæ¢µå”±ã€‚\n");
 	if ((!objectp(obj = present("kulou guan", me)) ) ||
                (!obj->query("equipped") )) 
-		return notify_fail("ÄãÎ´¶¥÷¼÷Ã¹Ú£¬²»ÄÜÄýÉñèó³ª¡£\n");
+		return notify_fail("ä½ æœªé¡¶éª·é«…å† ï¼Œä¸èƒ½å‡ç¥žæ¢µå”±ã€‚\n");
 	if ((!objectp(obj = present("rentou lian", me)) ) ||
                (!obj->query("equipped") ))
-                return notify_fail("ÄãÎ´´÷ÈËÍ·Á´£¬²»ÄÜÄýÉñèó³ª¡£\n");
+                return notify_fail("ä½ æœªæˆ´äººå¤´é“¾ï¼Œä¸èƒ½å‡ç¥žæ¢µå”±ã€‚\n");
 
 	if( !objectp(target) || target == me)
-		return notify_fail("ÄãÏëÒª³ª¸øË­Ìý£¿\n");
+		return notify_fail("ä½ æƒ³è¦å”±ç»™è°å¬ï¼Ÿ\n");
 
 	if( !target->is_character() || target->is_corpse() )
-                return notify_fail("¿´Çå³þÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€ç‚¹ï¼Œé‚£å¹¶ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
-	if( target->query("race") != "ÈËÀà")
-		return notify_fail(target->query("name") + "Ìý²»¶®ÄãµÄÖäÓï£¡\n");
+	if( target->query("race") != "äººç±»")
+		return notify_fail(target->query("name") + "å¬ä¸æ‡‚ä½ çš„å’’è¯­ï¼\n");
 
     if ((int)me->query("jingli") < 300)
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 600 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_skill("necromancy",1) < 30 )
-                return notify_fail("ÄãµÄ½µ·ü·¨¹¦Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„é™ä¼æ³•åŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("lamaism", 1) < 30 )
-                return notify_fail("ÄãµÄÃÜ×ÚÐÄ·¨¹¦Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å¯†å®—å¿ƒæ³•åŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( (int)me->query_skill("longxiang-banruo", 1) < 30 )
-		return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦¹¦Á¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸåŠŸåŠ›ä¸å¤Ÿï¼\n");
 
 	if( environment(me)->query("no_fight") )
-		return notify_fail("ÔÚÕâÀï²»ÄÜ³ª¡£\n");
+		return notify_fail("åœ¨è¿™é‡Œä¸èƒ½å”±ã€‚\n");
 	
 	// use condition instead to avoid temp variables
     if( target->query_condition("xs_necromancy") > 0 || target->query_temp("block_msg/all", 1) )
 /*	if( target->query_temp("cursed", 1) || target->query_temp("block_msg/all", 1)) */
-		return notify_fail("´ËÈËÒÑ±»½µ·ü£¡\n");
+		return notify_fail("æ­¤äººå·²è¢«é™ä¼ï¼\n");
 
 	// allow more than one target
 /*	if( (int)me->query_temp("curser") )
-                return notify_fail("Äã½µ·ü×ÅÁíÒ»¸÷ÈË£¡\n"); */
+                return notify_fail("ä½ é™ä¼ç€å¦ä¸€å„äººï¼\n"); */
 
 	me->add("neili", -400 + me->query_skill("necromancy"));
 	me->receive_damage("jingli",  50);
 
 	message_vision(
-		BLU "$NÒ¡Í·»ÎÄÔ£¬¿ÚÖÐ±³ËÐ´ó³Ë·ð¾­£¬¼ÐÔÓÒÔÃÜ×ÚÁù×ÖÖä¡£ÉùÒôÒõÑô¶Ù´ì£¬ÓÐÆðÓÐ·ü£¬°µº¬ÒôÂÉ¡£\n" NOR, me);
+		BLU "$Næ‘‡å¤´æ™ƒè„‘ï¼Œå£ä¸­èƒŒè¯µå¤§ä¹˜ä½›ç»ï¼Œå¤¹æ‚ä»¥å¯†å®—å…­å­—å’’ã€‚å£°éŸ³é˜´é˜³é¡¿æŒ«ï¼Œæœ‰èµ·æœ‰ä¼ï¼Œæš—å«éŸ³å¾‹ã€‚\n" NOR, me);
 
-			tell_object(target,  "Äã¾õµÃÄÇÃÜÖä±È¹í¿Þ»¹ÄÑÌý£¬ÄÔ´üÀïÒ»ÍÅÐõÂÒ£¬ÑÛÇ°Ò»¶Ñ¹íÓ°ÔÚÂÒÌø£¬ÐØÆø×èÈû£¬ËÄÖ«ÎÞÁ¦£¬»ìÈ»ÓûË¯¡£\n");
+			tell_object(target,  "ä½ è§‰å¾—é‚£å¯†å’’æ¯”é¬¼å“­è¿˜éš¾å¬ï¼Œè„‘è¢‹é‡Œä¸€å›¢çµ®ä¹±ï¼Œçœ¼å‰ä¸€å †é¬¼å½±åœ¨ä¹±è·³ï¼Œèƒ¸æ°”é˜»å¡žï¼Œå››è‚¢æ— åŠ›ï¼Œæ··ç„¶æ¬²ç¡ã€‚\n");
 
 	// also take my jing level into effect	
 	xf = (me->query_skill("necromancy", 1) + me->query_skill("lamaism", 1));
@@ -93,8 +93,8 @@ int exert(object me, object target)
 	target->set("jing",j);
 
 	if( sucess && !target->query("no_sing")){
-	  tell_object(target, HIR "ÄãÖ»¾õµÃÑÛÇ°µÄÒ»ÇÐÀëÄãÂýÂýÔ¶È¥£¬ÄãµÄ»êÆÇËÆÒª³öÇÏ£¬²»ÔÙÓÉÄãÖ÷Ô×¡£\n" NOR);
-	  message_vision("Äã¿´¼û" +target->query("name") +"Í»È»¿ªÊ¼Á½ÑÛ·¢Ö±£¬´ô´ôµØÍû×ÅÇ°·½¡£\n", me);
+	  tell_object(target, HIR "ä½ åªè§‰å¾—çœ¼å‰çš„ä¸€åˆ‡ç¦»ä½ æ…¢æ…¢è¿œåŽ»ï¼Œä½ çš„é­‚é­„ä¼¼è¦å‡ºçªï¼Œä¸å†ç”±ä½ ä¸»å®°ã€‚\n" NOR);
+	  message_vision("ä½ çœ‹è§" +target->query("name") +"çªç„¶å¼€å§‹ä¸¤çœ¼å‘ç›´ï¼Œå‘†å‘†åœ°æœ›ç€å‰æ–¹ã€‚\n", me);
 	  target->remove_all_killer();
       target->apply_condition("xs_necromancy", (int)(me->query_skill("necromancy", 1)/20));
 

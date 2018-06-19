@@ -1,17 +1,17 @@
 //Cracked by Roath
-// ÎäÃß·ç
+// æ­¦çœ é£
 
 inherit NPC;
 string ask_me_1(string name);
 string ask_me_2(string name);
 void create()
 {
-	set_name("ÎäÃß·ç", ({ "wu mianfeng", "wu" }));
+	set_name("æ­¦çœ é£", ({ "wu mianfeng", "wu" }));
 	set("long","
-ËûÊÇ»ÆÒ©Ê¦µÄÎåµÜ×ÓÎäÃß·ç£¬ËûÉí²ÄÊİĞ¡£¬³ÁÄ¬¹ÑÑÔ£¬ÔÚ½­ºş
-ÉÏÃûÉù²»Ïì£¬µ«È´¼«µÃ»ÆÒ©Ê¦ĞÅÈÎ£¬¹Ë¶øÃüËûÕÆ¹ÜÌÒ»¨µºÒ©·¿
-ÖØµØ¡£ËûÔÚÌÒ»¨µÜ×ÓÖĞÓÈ¾«½£·¨¡£\n");
-	set("gender", "ÄĞĞÔ");
+ä»–æ˜¯é»„è¯å¸ˆçš„äº”å¼Ÿå­æ­¦çœ é£ï¼Œä»–èº«æç˜¦å°ï¼Œæ²‰é»˜å¯¡è¨€ï¼Œåœ¨æ±Ÿæ¹–
+ä¸Šåå£°ä¸å“ï¼Œä½†å´æå¾—é»„è¯å¸ˆä¿¡ä»»ï¼Œé¡¾è€Œå‘½ä»–æŒç®¡æ¡ƒèŠ±å²›è¯æˆ¿
+é‡åœ°ã€‚ä»–åœ¨æ¡ƒèŠ±å¼Ÿå­ä¸­å°¤ç²¾å‰‘æ³•ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 40);
 	set("attitude", "friendly");
 	set("shen_type", -1);
@@ -53,12 +53,12 @@ void create()
 
 	prepare_skill("strike", "luoying-shenjian");
 
-	create_family("ÌÒ»¨µº", 2, "µÜ×Ó");
+	create_family("æ¡ƒèŠ±å²›", 2, "å¼Ÿå­");
 	setup();
         set("inquiry", ([
-		"ÌïÆßöèµ¨É¢" : (: ask_me_1, "tianqi-san" :),
-		"ÎŞ³£µ¤" : (: ask_me_1, "wuchang-dan" :),
-            	"¾Å»¨ÓñÂ¶Íè" : (: ask_me_2, "yulu-wan" :)
+		"ç”°ä¸ƒé²¨èƒ†æ•£" : (: ask_me_1, "tianqi-san" :),
+		"æ— å¸¸ä¸¹" : (: ask_me_1, "wuchang-dan" :),
+            	"ä¹èŠ±ç‰éœ²ä¸¸" : (: ask_me_2, "yulu-wan" :)
         ]));
 
 	set("drug_count", 3);
@@ -74,15 +74,15 @@ string ask_me_1(string name)
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÌÒ»¨µº")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ¡ƒèŠ±å²›")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (query("drug_count") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÒÑ¾­·¢ÍêÁË¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ï¼Œå·²ç»å‘å®Œäº†ã€‚";
 
 	if (this_player()->query_condition("work") > 0)
-		return "ÎÒ²»ÊÇ²Å¸ø¹ıÄãÒ©Âğ£¿Ôõ÷áÓÖÀ´ÒªÁË£¬ÕæÊÇÌ°µÃÎŞÑá£¡";
+		return "æˆ‘ä¸æ˜¯æ‰ç»™è¿‡ä½ è¯å—ï¼Ÿæ€éº½åˆæ¥è¦äº†ï¼ŒçœŸæ˜¯è´ªå¾—æ— åŒï¼";
 
 	ob = new(DRUG_D(name));
 	ob->move(this_player());
@@ -90,9 +90,9 @@ string ask_me_1(string name)
 
 	add("drug_count", -1);
 
-	message_vision("ÎäÃß·ç¸ø$NÒ»Á£" + ob->query("name") + "¡£\n", this_player());
+	message_vision("æ­¦çœ é£ç»™$Nä¸€ç²’" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£Ğ¡ĞÄ±ğÅª¶ªÁË¡£";
+	return "æ‹¿å»å§ã€‚å°å¿ƒåˆ«å¼„ä¸¢äº†ã€‚";
 }
 
 string ask_me_2(string name)
@@ -100,18 +100,18 @@ string ask_me_2(string name)
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÌÒ»¨µº")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ¡ƒèŠ±å²›")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
-	if ( this_player()->query("family/master_name") != "»ÆÒ©Ê¦" )
-		return "Äã¹¦·ò²»¹»£¬»¹ÊÇ²»ÒªÎªÃî¡£";		
+	if ( this_player()->query("family/master_name") != "é»„è¯å¸ˆ" )
+		return "ä½ åŠŸå¤«ä¸å¤Ÿï¼Œè¿˜æ˜¯ä¸è¦ä¸ºå¦™ã€‚";		
 
 	if (query("yulu_count") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÒÑ¾­·¢ÍêÁË¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ï¼Œå·²ç»å‘å®Œäº†ã€‚";
 
 	if (this_player()->query_condition("work") > 0)
-                return "ÎÒ²»ÊÇ²Å¸ø¹ıÄãÒ©Âğ£¿Ôõ÷áÓÖÀ´ÒªÁË£¬ÕæÊÇÌ°µÃÎŞÑá£¡";
+                return "æˆ‘ä¸æ˜¯æ‰ç»™è¿‡ä½ è¯å—ï¼Ÿæ€éº½åˆæ¥è¦äº†ï¼ŒçœŸæ˜¯è´ªå¾—æ— åŒï¼";
 
 	ob = new(DRUG_D(name));
 	ob->move(this_player());
@@ -119,15 +119,15 @@ string ask_me_2(string name)
 
 	add("yulu_count", -1);
 
-	message_vision("ÎäÃß·ç¸ø$NÒ»Á£" + ob->query("name") + "¡£\n", this_player());
+	message_vision("æ­¦çœ é£ç»™$Nä¸€ç²’" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£Ğ¡ĞÄ±ğÅª¶ªÁË¡£";
+	return "æ‹¿å»å§ã€‚å°å¿ƒåˆ«å¼„ä¸¢äº†ã€‚";
 }
 
 int accept_kill(object me)
 {
-	if (me->query("family/family_name") == "ÌÒ»¨µº"){
-        command("say ÄãÎÒ±¾ÊÇÍ¬ÃÅ£¬ÈçºÎÒª¼Óº¦ÓÚÎÒ£¡\n");
+	if (me->query("family/family_name") == "æ¡ƒèŠ±å²›"){
+        command("say ä½ æˆ‘æœ¬æ˜¯åŒé—¨ï¼Œå¦‚ä½•è¦åŠ å®³äºæˆ‘ï¼\n");
 	me->set("th_killer", 1);
         kill_ob(me);
         return 1;
@@ -139,7 +139,7 @@ void unconcious()
 	object ob, me=this_object();
 
 	if ( objectp(ob = me->query_temp("last_damage_from"))
-	&& ob->query("family/family_name") == "ÌÒ»¨µº")	
+	&& ob->query("family/family_name") == "æ¡ƒèŠ±å²›")	
 	ob->set("th_killer", 1);
 
 	::unconcious();

@@ -1,5 +1,5 @@
 //Cracked by Roath
-//liuyang-rongxue.c ÁùÑôÈÚÑ©¹¦
+//liuyang-rongxue.c å…­é˜³èžé›ªåŠŸ
 
 inherit FORCE;
 
@@ -9,24 +9,24 @@ int valid_learn(object me)
 {
         int lvl = (int)me->query_skill("liuyang-rongxue", 1);
 
-	if ( me->query("gender") == "ÎÞÐÔ" )
-		return notify_fail("ÁùÑôÈÚÑ©¹¦ÊÇµ÷Á·ÄÇÌìÉúµÄÒ»¹É´¿Ñôî¸Æø£¬ÄãÎÞ¸ùÎÞÐÔÔõ»á¶®µÃÆäÖÐÖ®°ÂÃî¡£\n");
+	if ( me->query("gender") == "æ— æ€§" )
+		return notify_fail("å…­é˜³èžé›ªåŠŸæ˜¯è°ƒç»ƒé‚£å¤©ç”Ÿçš„ä¸€è‚¡çº¯é˜³ç½¡æ°”ï¼Œä½ æ— æ ¹æ— æ€§æ€Žä¼šæ‡‚å¾—å…¶ä¸­ä¹‹å¥¥å¦™ã€‚\n");
 
-	if ( me->query("gender") == "ÎÞÐÔ" && lvl > 49)
-		return notify_fail("ÄãÎÞ¸ùÎÞÐÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÁùÑôÈÚÑ©¹¦¡£\n");
+	if ( me->query("gender") == "æ— æ€§" && lvl > 49)
+		return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„å…­é˜³èžé›ªåŠŸã€‚\n");
 
-        if ( me->query("gender") == "Å®ÐÔ" && lvl > 99)
-                return notify_fail("Äã»ùÓëÏÈÌìÌåÖÊËùÏÞ£¬ÄÑÒÔÁì»á¸ßÉîµÄÁùÑôÈÚÑ©¹¦¡£\n");
+        if ( me->query("gender") == "å¥³æ€§" && lvl > 99)
+                return notify_fail("ä½ åŸºä¸Žå…ˆå¤©ä½“è´¨æ‰€é™ï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„å…­é˜³èžé›ªåŠŸã€‚\n");
 
 	if ((int)me->query_skill("force", 1) < 20)
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {
-	return notify_fail("ÁùÑôÈÚÑ©¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("å…­é˜³èžé›ªåŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

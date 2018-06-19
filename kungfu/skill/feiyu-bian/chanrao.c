@@ -1,9 +1,9 @@
 //Cracked by Roath
-// chanrao.c ¡¶¾ÅÒõÕæ¾­¡·±Ş·¨£­¡¸²øÈÆ¡¹
+// chanrao.c ã€Šä¹é˜´çœŸç»ã€‹é­æ³•ï¼ã€Œç¼ ç»•ã€
 // xQin 8/99
 /*
-ÖÜÜÆÈô±Ş·¨Ææ»Ã£¬ÈıÕĞ¼ä±ãÒÑ½«ËûÈ¦×¡£¬
-ÓáÁ«ÖÛÊÊ²Å½ß¾¡È«Á¦£¬¾¹È»ÎŞ·¨´ÓËıµÄ±ŞÈ¦ÖĞÍÑ³ö£¬ĞÄÏÂºÃÉúº§Òì¡£
+å‘¨èŠ·è‹¥é­æ³•å¥‡å¹»ï¼Œä¸‰æ‹›é—´ä¾¿å·²å°†ä»–åœˆä½ï¼Œ
+ä¿è²èˆŸé€‚æ‰ç«­å°½å…¨åŠ›ï¼Œç«Ÿç„¶æ— æ³•ä»å¥¹çš„é­åœˆä¸­è„±å‡ºï¼Œå¿ƒä¸‹å¥½ç”Ÿéª‡å¼‚ã€‚
 */
 
 #include <ansi.h>
@@ -22,33 +22,33 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("Ö»ÄÜÔÚÕ½¶·ÖĞÊ©Õ¹¡¸²øÈÆ¡¹¡£\n");
+		return notify_fail("åªèƒ½åœ¨æˆ˜æ–—ä¸­æ–½å±•ã€Œç¼ ç»•ã€ã€‚\n");
 
 	if( !living(target) )
-		return notify_fail("ÄãÏÖÔÚ²»±ØÊ¹ÓÃ¡¸²øÈÆ¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨ä¸å¿…ä½¿ç”¨ã€Œç¼ ç»•ã€ã€‚\n");
 
 	if( (weapon = me->query_temp("weapon"))->query("skill_type") != "whip" )
-		return notify_fail("ÄãÊÖÖĞ²¢ÎŞ³ÃÊÖµÄ±øÆ÷£¬ÈçºÎÊ©Õ¹¡¸²øÈÆ¡¹£¿\n");
+		return notify_fail("ä½ æ‰‹ä¸­å¹¶æ— è¶æ‰‹çš„å…µå™¨ï¼Œå¦‚ä½•æ–½å±•ã€Œç¼ ç»•ã€ï¼Ÿ\n");
 
 	if( me->query_temp("yield") )
-		return notify_fail("Äã²»³öÕĞ£¬ºÎÒÔ¡¸²øÈÆ¡¹£¿\n");
+		return notify_fail("ä½ ä¸å‡ºæ‹›ï¼Œä½•ä»¥ã€Œç¼ ç»•ã€ï¼Ÿ\n");
 
 	if( me->query_temp("jiuyin_chanrao/"+target->name()) )
-		return notify_fail(target->name() +"ÒÑ¾­±»²øÈÆÔÚ±ŞÈ¦ÖĞÁË¡£\n");
+		return notify_fail(target->name() +"å·²ç»è¢«ç¼ ç»•åœ¨é­åœˆä¸­äº†ã€‚\n");
 
 	if( (whip = (int)me->query_skill("whip")) < 300 )
-		return notify_fail("ÄãµÄ±Ş·¨²»¹»æµÊì£¬Ê©Õ¹²»³ö¡¸²øÈÆ¡¹¡£\n");
+		return notify_fail("ä½ çš„é­æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ–½å±•ä¸å‡ºã€Œç¼ ç»•ã€ã€‚\n");
 
 	if( me->query("neili") <= 500 )
-		return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»×ãÒÔ¶¶±Ş³ÉÈ¦£¡\n");
+		return notify_fail("ä½ ç°åœ¨çš„å†…åŠ›ä¸è¶³ä»¥æŠ–é­æˆåœˆï¼\n");
 
 	if( me->query("jingli") <= 300 )
-		return notify_fail("ÄãÏÖÔÚµÄÌåÁ¦²»×ãÒÔ¶¶±Ş³ÉÈ¦£¡\n");
+		return notify_fail("ä½ ç°åœ¨çš„ä½“åŠ›ä¸è¶³ä»¥æŠ–é­æˆåœˆï¼\n");
 
 	me->add("neili", -150);
 	me->add("jingli", -80);
 
-	msg = HIG"\n$NÍ»È»¼ä$W"HIG"¶¶¶¯£¬ÈÆ³ÉÒ»¸ö¸ö´ó´óĞ¡Ğ¡µÄÈ¦×Ó£¬ÑÛ¿´Òª½«$n¹üÔÚÆä¼ä¡£\n"NOR;
+	msg = HIG"\n$Nçªç„¶é—´$W"HIG"æŠ–åŠ¨ï¼Œç»•æˆä¸€ä¸ªä¸ªå¤§å¤§å°å°çš„åœˆå­ï¼Œçœ¼çœ‹è¦å°†$nè£¹åœ¨å…¶é—´ã€‚\n"NOR;
 
 	ap = COMBAT_D->skill_power(me, "whip", SKILL_USAGE_ATTACK);
 	if( ap < 1 ) ap = 1;
@@ -59,20 +59,20 @@ int perform(object me, object target)
         if( random(ap + dp) < dp )
         {
 		dodge_skill = target->query_skill_mapped("dodge");
-		if( !dodge_skill ) dodge_skill = "Çá¹¦";
+		if( !dodge_skill ) dodge_skill = "è½»åŠŸ";
 		else dodge_skill = to_chinese(dodge_skill);
 
 		if( dp > ap*2 )
-			msg += CYN"$pÇÆ³öÀ÷º¦£¬µ±ÏÂÊ©Õ¹"+ dodge_skill +"Ïòáá»¬³öÕÉĞí£¬ÍÑ³ö$W"CYN"ËùÈÆµÄ±ŞÈ¦·¶Î§¡£\n"NOR;
+			msg += CYN"$pç§å‡ºå‰å®³ï¼Œå½“ä¸‹æ–½å±•"+ dodge_skill +"å‘å¾Œæ»‘å‡ºä¸ˆè®¸ï¼Œè„±å‡º$W"CYN"æ‰€ç»•çš„é­åœˆèŒƒå›´ã€‚\n"NOR;
 		else if( dp < ap*2/3 )
-			msg += CYN"$pĞÄÏÂ´óº§£¬¼±Ã¦½ß¾¡È«Á¦Ê©Õ¹"+ dodge_skill +"£¬ºÃ²»ÈİÒ×´Ó$W"CYN"ËùÈÆµÄ±ŞÈ¦ÖĞÍÑ³ö¡£\n"NOR;
-		else	msg += CYN"$pĞÄÏÂÒ»¾ª£¬Á¢Ê±ÌáÆø×İÔ¾£¬Ê©Õ¹"+ dodge_skill +"×Ô$W"CYN"ËùÈÆµÄ±ŞÈ¦Ö®ÖĞÍÑÀ§¶ø³ö¡£\n"NOR;
+			msg += CYN"$på¿ƒä¸‹å¤§éª‡ï¼Œæ€¥å¿™ç«­å°½å…¨åŠ›æ–½å±•"+ dodge_skill +"ï¼Œå¥½ä¸å®¹æ˜“ä»$W"CYN"æ‰€ç»•çš„é­åœˆä¸­è„±å‡ºã€‚\n"NOR;
+		else	msg += CYN"$på¿ƒä¸‹ä¸€æƒŠï¼Œç«‹æ—¶ææ°”çºµè·ƒï¼Œæ–½å±•"+ dodge_skill +"è‡ª$W"CYN"æ‰€ç»•çš„é­åœˆä¹‹ä¸­è„±å›°è€Œå‡ºã€‚\n"NOR;
 
 		me->start_busy(1+random(3));
 	}
 	else
 	{
-		msg += WHT"$p$w"WHT"ÉÏ¾¢Á¦±»$PÕâÃ´Ò»´ø£¬µÇÊ±Éí²»ÓÉÖ÷£¬Á¬×ªÁË¼¸¸öÉí";
+		msg += WHT"$p$w"WHT"ä¸ŠåŠ²åŠ›è¢«$Pè¿™ä¹ˆä¸€å¸¦ï¼Œç™»æ—¶èº«ä¸ç”±ä¸»ï¼Œè¿è½¬äº†å‡ ä¸ªèº«";
 
 		if( objectp(weapon2 = target->query_temp("weapon")) )
 		{
@@ -100,14 +100,14 @@ int perform(object me, object target)
 			rate = 11/8;
 			if( (ap>=dp) && ((random(ap-dp)+wp)*rate > wp) ) 
 			{
-				msg += "£¬$w"WHT"ÍÑÊÖÉÏÑï¡£\n"NOR;
+				msg += "ï¼Œ$w"WHT"è„±æ‰‹ä¸Šæ‰¬ã€‚\n"NOR;
 				weapon2->unequip();
 				weapon2->move(environment(target));
 				target->reset_action();
 			}
-			else msg += "¡£\n"NOR;
+			else msg += "ã€‚\n"NOR;
 		}
-		else msg += "¡£\n"NOR;
+		else msg += "ã€‚\n"NOR;
 
 		target->start_busy(2);
 		target->set_temp("guarding", 0);
@@ -154,13 +154,13 @@ int perform(object me, object target)
 		}
 		switch( attack_skill )
 		{
-			case "strike" :	msg = replace_string( msg, "$w", "ÕÆ" ); break;
-			case "cuff" :	msg = replace_string( msg, "$w", "È­" ); break;
-			case "claw" :	msg = replace_string( msg, "$w", "×¦" ); break;
-			case "finger" :	msg = replace_string( msg, "$w", "Ö¸" ); break;
-			case "hand" :	msg = replace_string( msg, "$w", "ÊÖ" ); break;
-			case "kick" :	msg = replace_string( msg, "$w", "½Å" ); break;
-			default :	msg = replace_string( msg, "$w", "È­½Å" ); break;
+			case "strike" :	msg = replace_string( msg, "$w", "æŒ" ); break;
+			case "cuff" :	msg = replace_string( msg, "$w", "æ‹³" ); break;
+			case "claw" :	msg = replace_string( msg, "$w", "çˆª" ); break;
+			case "finger" :	msg = replace_string( msg, "$w", "æŒ‡" ); break;
+			case "hand" :	msg = replace_string( msg, "$w", "æ‰‹" ); break;
+			case "kick" :	msg = replace_string( msg, "$w", "è„š" ); break;
+			default :	msg = replace_string( msg, "$w", "æ‹³è„š" ); break;
 		}
 	}
 	message_vision(msg, me, target);
@@ -179,24 +179,24 @@ void jiuyin_chanrao(object me, object target, object weapon)
 	if( weapon != me->query_temp("weapon") && living(target) )
 	{
 		me->delete_temp("jiuyin_chanrao");
-		message_vision("\n$NÊÖÖĞ"+ weapon->name() +"Ò»Ê§£¬$n¶Ù¸ĞÑ¹Á¦Öè¼õ£¬ÖÕì¶ÄÜ×ÔÈ¦ÖĞÍÑ³ö¡£\n", me, target);
+		message_vision("\n$Næ‰‹ä¸­"+ weapon->name() +"ä¸€å¤±ï¼Œ$né¡¿æ„Ÿå‹åŠ›éª¤å‡ï¼Œç»ˆæ–¼èƒ½è‡ªåœˆä¸­è„±å‡ºã€‚\n", me, target);
 		return;
 	}
 	if( !me->is_fighting(target) ) 
 	{
 		me->delete_temp("jiuyin_chanrao");
-		message_vision("$NºöµØ"+ weapon->name() +"Ò»¶¶£¬ÊÕÁË»ØÀ´¡£\n", me);
+		message_vision("$Nå¿½åœ°"+ weapon->name() +"ä¸€æŠ–ï¼Œæ”¶äº†å›æ¥ã€‚\n", me);
 		return;
 	}
 	if( me->query_skill_mapped("whip") != "feiyu-bian" )
 	{
 		me->delete_temp("jiuyin_chanrao");
-		message_vision(HIG"\n$NÒ»¶¶"+ weapon->name() +HIG"£¬±Ş·¨ºö±ä£¡\n"NOR, me);
+		message_vision(HIG"\n$Nä¸€æŠ–"+ weapon->name() +HIG"ï¼Œé­æ³•å¿½å˜ï¼\n"NOR, me);
 		return;
 	}
 	if( !me->query_temp("jiuyin_chanrao") && living(target) )
 	{
-		message_vision("\n$n½ß¾¡È«Á¦£¬ÖÕì¶´Ó$NµÄ±ŞÈ¦ÖĞÍÑ³ö¡£\n", me, target);
+		message_vision("\n$nç«­å°½å…¨åŠ›ï¼Œç»ˆæ–¼ä»$Nçš„é­åœˆä¸­è„±å‡ºã€‚\n", me, target);
 		return;
 	}
 

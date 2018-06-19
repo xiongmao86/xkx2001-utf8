@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("Â½´óÓÐ", ({ "lu dayou", "lu", "dayou" }));
-	set("nickname", "Áùºï¶ù");
+	set_name("é™†å¤§æœ‰", ({ "lu dayou", "lu", "dayou" }));
+	set("nickname", "å…­çŒ´å„¿");
 	set("long", 
-"Â½´óÓÐÉí²ÄºÜÊÝ£¬ÓÖ³¤µÄ¼â×ìºïÈùµÄ£¬µ«±ð¿´ËûÆäÃ²²»Ñï£¬ËûÔÚ\n"
-"Í¬ÃÅÖÐÅÅÐÐµÚÁù£¬ÊÇ»ªÉ½ÅÉÄêÇáÒ»´úÖÐµÄºÃÊÖ¡£\n");
-	set("gender", "ÄÐÐÔ");
+"é™†å¤§æœ‰èº«æå¾ˆç˜¦ï¼Œåˆé•¿çš„å°–å˜´çŒ´è…®çš„ï¼Œä½†åˆ«çœ‹ä»–å…¶è²Œä¸æ‰¬ï¼Œä»–åœ¨\n"
+"åŒé—¨ä¸­æŽ’è¡Œç¬¬å…­ï¼Œæ˜¯åŽå±±æ´¾å¹´è½»ä¸€ä»£ä¸­çš„å¥½æ‰‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 26);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -51,7 +51,7 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu");
 
-	create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("åŽå±±æ´¾", 14, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
@@ -73,8 +73,8 @@ int location(object me)
 	object ob;
 
 	if ( interactive(ob=this_player()) && living(me)
-	&& environment(me)->query("short")!="ºóÔº" ) {
-		message_vision("$N´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n", me);
+	&& environment(me)->query("short")!="åŽé™¢" ) {
+		message_vision("$NåŒ†åŒ†å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n", me);
 		me->move("/d/huashan/houyuan");
 	}
 

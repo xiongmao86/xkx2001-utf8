@@ -1,14 +1,14 @@
 //Cracked by Roath
-// liangfa.c Áº·¢
+// liangfa.c æ¢å‘
 
 inherit NPC;
 
 void create()
 {
-	set_name("Áº·¢", ({ "liang fa", "liang", "fa" }));
+	set_name("æ¢å‘", ({ "liang fa", "liang", "fa" }));
 	set("long", 
-"Áº·¢ÔÚ»ªÉ½µÜ×ÓÖĞÅÅĞĞµÚÈı£¬ÎªÈË¹¢Ö±¡£\n");
-	set("gender", "ÄĞĞÔ");
+"æ¢å‘åœ¨åå±±å¼Ÿå­ä¸­æ’è¡Œç¬¬ä¸‰ï¼Œä¸ºäººè€¿ç›´ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 28);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -49,7 +49,7 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu");
 
-	create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("åå±±æ´¾", 14, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();
@@ -63,15 +63,15 @@ int accept_object(object me, object obj)
 
 	if ( obj->query("id") == "zhengqi book" || obj->query("id") == "sword book" 
 	|| obj->query("id") == "ziyin book" ) {
-		if ( !ob->query_temp("huashan/Êé") ) {
+		if ( !ob->query_temp("huashan/ä¹¦") ) {
                 	command( "shake" );
-			command( "say ÄãÓÖÃ»ÓĞ´ÓÊéÔºÀïÄÃÊé³öÀ´£¬»¹ÎÒÕâÊé¸ÉÂğ£¿");
+			command( "say ä½ åˆæ²¡æœ‰ä»ä¹¦é™¢é‡Œæ‹¿ä¹¦å‡ºæ¥ï¼Œè¿˜æˆ‘è¿™ä¹¦å¹²å—ï¼Ÿ");
            		return 0;
 		}
 		else {
 			command( "nod" );
-			command( "say ºÃ°É£¬Äã¿ÉÒÔ½øÈ¥ÁË¡£" );
-			ob->delete_temp("huashan/Êé");
+			command( "say å¥½å§ï¼Œä½ å¯ä»¥è¿›å»äº†ã€‚" );
+			ob->delete_temp("huashan/ä¹¦");
 			remove_call_out("destroy_it");
            		call_out("destroy_it", 1, obj);
 			return 1;
@@ -79,12 +79,12 @@ int accept_object(object me, object obj)
 	}
 	else if ( obj->query("money_id") ) {
 		command( "haha" );
-		command( "say ÄÑµÃÕâÎ»"+RANK_D->query_respect(ob)+"Èç´Ë¿¶¿®£¬ÎÒ±ãÊÕÏÂ×öÎªÊéÔºµÄ¾­·ÑÀ²¡£" );
+		command( "say éš¾å¾—è¿™ä½"+RANK_D->query_respect(ob)+"å¦‚æ­¤æ…·æ…¨ï¼Œæˆ‘ä¾¿æ”¶ä¸‹åšä¸ºä¹¦é™¢çš„ç»è´¹å•¦ã€‚" );
 		return 1;
 	}
 	else {
 		command( "hmm" );
-		command( "say Õâ¶«Î÷Âğ»¹ÊÇÄã×Ô¸ö¶ùÁôÏÂÀ´ÓÃ°É¡£" );
+		command( "say è¿™ä¸œè¥¿å—è¿˜æ˜¯ä½ è‡ªä¸ªå„¿ç•™ä¸‹æ¥ç”¨å§ã€‚" );
                 return 0;
 	}
 

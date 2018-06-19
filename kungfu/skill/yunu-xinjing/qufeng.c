@@ -16,28 +16,28 @@ int exert(object me, object target)
 	|| target->query("id") == "shangshan" 
 	|| target->query("id") == "mengzhu" 
 	|| target->query("id") == "fae" )
-		return notify_fail("ÄãÒªÇý¸ÏÓñ·ä¹¥»÷Ë­£¿\n");
+		return notify_fail("ä½ è¦é©±èµ¶çŽ‰èœ‚æ”»å‡»è°ï¼Ÿ\n");
 
 	if (!objectp(obj=present("fengjiang ping", me)))
-            return notify_fail("ÄãÉíÉÏÃ»ÓÐ·ä½¬Æ¿£¬²»ÄÜÇý¸ÏÓñ·ä¹¥µÐ¡£\n");
+            return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰èœ‚æµ†ç“¶ï¼Œä¸èƒ½é©±èµ¶çŽ‰èœ‚æ”»æ•Œã€‚\n");
 
 	if ((int)me->query_skill("yunu-xinjing", 1) < 100 )
-		return notify_fail("ÄãµÄÓñÅ®ÐÄ¾­»ðºòÌ«µÍ£¬²»ÄÜÇý¸ÏÓñ·ä¹¥µÐ¡£\n");
+		return notify_fail("ä½ çš„çŽ‰å¥³å¿ƒç»ç«å€™å¤ªä½Žï¼Œä¸èƒ½é©±èµ¶çŽ‰èœ‚æ”»æ•Œã€‚\n");
 
         if ( me->query_skill_mapped("force") != "yunu-xinjing")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÓñÅ®ÐÄ¾­µ½ÄÚ¹¦ÉÏ£¡²»ÄÜÇý¸ÏÓñ·ä¹¥µÐ¡£\n"); 
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘çŽ‰å¥³å¿ƒç»åˆ°å†…åŠŸä¸Šï¼ä¸èƒ½é©±èµ¶çŽ‰èœ‚æ”»æ•Œã€‚\n"); 
 
 	if( (int)me->query("max_neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 200 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
         if(target == me)
-                return notify_fail("Óñ·ä²»ÄÜ¹¥»÷Äã¡£\n");
+                return notify_fail("çŽ‰èœ‚ä¸èƒ½æ”»å‡»ä½ ã€‚\n");
 
-        message_vision(HIY "\n$N°Î¿ªÓñÆ¿Èû£¬ÊÖÎæÓñÆ¿Ç±ÔËÄÚÁ¦£¬Ê¹µÃÆ¿ÖÐµÄÏãÆøÔ¶Ô¶Æ®ÁË¿ªÈ¥£¬\n"
-                   "Í»È»ÎËÎËÖ®Éù´ó×÷£¬²»ÖªµÀ´ÓÄÄÀï·ÉÀ´Ò»´óÈºÓñ·ä£¬Ïò$nÎ§ÁË¹ýÈ¥¡£\n" NOR,
+        message_vision(HIY "\n$Næ‹”å¼€çŽ‰ç“¶å¡žï¼Œæ‰‹æ‚çŽ‰ç“¶æ½œè¿å†…åŠ›ï¼Œä½¿å¾—ç“¶ä¸­çš„é¦™æ°”è¿œè¿œé£˜äº†å¼€åŽ»ï¼Œ\n"
+                   "çªç„¶å—¡å—¡ä¹‹å£°å¤§ä½œï¼Œä¸çŸ¥é“ä»Žå“ªé‡Œé£žæ¥ä¸€å¤§ç¾¤çŽ‰èœ‚ï¼Œå‘$nå›´äº†è¿‡åŽ»ã€‚\n" NOR,
                    me, target);
 
 	obj=new("/clone/beast/yufeng");
@@ -56,11 +56,11 @@ int exert(object me, object target)
                 me->fight_ob(target);
         }
 	if (  random ( (int)me->query_skill("yunu-xinjing", 1) ) < (int)target->query_skill("yunu-xinjing", 1) *2 / 3 )
-                message_vision(YEL "\nµ«$n´é´½Ò»Ð¥£¬Óñ·äËÆºõÌý¶®ÁËºÅÁî£¬Ô¶Ô¶±ÜÁË¿ªÈ¥¡£\n" NOR, me, target);
+                message_vision(YEL "\nä½†$næ’®å”‡ä¸€å•¸ï¼ŒçŽ‰èœ‚ä¼¼ä¹Žå¬æ‡‚äº†å·ä»¤ï¼Œè¿œè¿œé¿äº†å¼€åŽ»ã€‚\n" NOR, me, target);
         else
         {
-	tell_object (target , HIR "\nÄãÖÜÎ§É²ÄÇ¼ä¾¡ÊÇÓñ·äÎ§ÈÆ£¬Ò»Ö»Ö»Óñ·äº·²»Î·ËÀµØÏòÄã\n"
-               "òØÁË¹ýÀ´£¬ÄãÖ»¾õµÃ±³ÐÄÎ¢Î¢Ò»Í´£¬ÒÑ±»Óñ·äòØÖÐ£¡\n" NOR  ) ;
+	tell_object (target , HIR "\nä½ å‘¨å›´åˆ¹é‚£é—´å°½æ˜¯çŽ‰èœ‚å›´ç»•ï¼Œä¸€åªåªçŽ‰èœ‚æ‚ä¸ç•æ­»åœ°å‘ä½ \n"
+               "èœ‡äº†è¿‡æ¥ï¼Œä½ åªè§‰å¾—èƒŒå¿ƒå¾®å¾®ä¸€ç—›ï¼Œå·²è¢«çŽ‰èœ‚èœ‡ä¸­ï¼\n" NOR  ) ;
 	obj->kill_ob(target);
 	target -> start_busy (3) ;
 	}

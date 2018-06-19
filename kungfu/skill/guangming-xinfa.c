@@ -1,5 +1,5 @@
 //Cracked by Roath
-// guangming-xinfa.c 光明心法
+// guangming-xinfa.c 鍏夋槑蹇冩硶
 
 inherit SKILL;
 
@@ -9,5 +9,5 @@ string type() { return "knowledge"; }
 
 int practice_skill(object me)
 {       
-        return notify_fail("光明心法只能靠学(learn)来提高。\n");
+        return notify_fail("鍏夋槑蹇冩硶鍙兘闈犲(learn)鏉ユ彁楂樸�俓n");
 }

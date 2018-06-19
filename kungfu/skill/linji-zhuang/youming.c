@@ -17,20 +17,20 @@ int exert(object me, object target)
 	int level = me->query_skill("linji-zhuang", 1);
         int range ;
 
-	if (level < 180) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶ş×¯ĞŞÎª»¹²»¹»¡£\n");
+	if (level < 180) return notify_fail("ä½ çš„ä¸´æµåäºŒåº„ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("max_neili") < 15*level ) 
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿå¼ºã€‚\n");
 
 	if( (int)me->query("neili") < 15*level ) 
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 //	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-//		return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡\n");
+//		return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 	
-	write(HIY "ÄãÄı¾ÛÓÄÚ¤¶şÆø£¬¿ÚĞû·ğºÅ: °¢ÃÖÍÓ·ğ£¡Ò»¹É¼«Ï¸ÃÜ¼«ÓÆ³¤µÄÄÚÁ¦´ÓĞÄ¶ø·¢, Ö±ÉÏÔÆÏö£¡\n" NOR); 
+	write(HIY "ä½ å‡èšå¹½å†¥äºŒæ°”ï¼Œå£å®£ä½›å·: é˜¿å¼¥é™€ä½›ï¼ä¸€è‚¡æç»†å¯†ææ‚ é•¿çš„å†…åŠ›ä»å¿ƒè€Œå‘, ç›´ä¸Šäº‘éœ„ï¼\n" NOR); 
 	message("vision",
-		HIY + "Ö»¼û" + me->name() + "Äı¾ÛÓÄÚ¤¶şÆø£¬µÍÃ¼´¹Ê×, ¿ÚĞû·ğºÅ: °¢ÃÖÍÓ·ğ! ÓïÒôËäµÍÈ´º¶ÈËĞÄ·Î!\n", 
+		HIY + "åªè§" + me->name() + "å‡èšå¹½å†¥äºŒæ°”ï¼Œä½çœ‰å‚é¦–, å£å®£ä½›å·: é˜¿å¼¥é™€ä½›! è¯­éŸ³è™½ä½å´æ†¾äººå¿ƒè‚º!\n", 
 		environment(me), me);
 
 	me->add("neili", -15*level);
@@ -69,14 +69,14 @@ void hitself(object me, object *bad_guys, int degree)
 	{/*success to let this player hit-self*/
 	switch (degree) {
 	case 1:   // lightest
-	    message_vision("$nÏëÆğ×Ô¼ºËù×öµÄÖÖÖÖ¶ñĞĞ, Ğß²ÑµÃÁ½Èù·¢ºì, ÌáÊÖ±ãÕÕ×Ô¼º´òÈ¥¡£\n", 
+	    message_vision("$næƒ³èµ·è‡ªå·±æ‰€åšçš„ç§ç§æ¶è¡Œ, ç¾æƒ­å¾—ä¸¤è…®å‘çº¢, ææ‰‹ä¾¿ç…§è‡ªå·±æ‰“å»ã€‚\n", 
 		killer, killer);
   	    killer->add_temp("apply/defense", -200);
   	    killer->add_temp("apply/dodge", -200);
   	    killer->add_temp("apply/parry", -200);
 	    break;
 	case 2:   // medium
-	    message_vision("$nÏëÆğ×Ô¼º¹ıÈ¥É±ÈËÈçÂé, ĞÄÖĞÒ»Áİ, ²»½ûË«ÊÖ´ò²ü, »º»ºÏò×Ô¼ºÁéÌ¨´òÏÂ¡£\n", 
+	    message_vision("$næƒ³èµ·è‡ªå·±è¿‡å»æ€äººå¦‚éº», å¿ƒä¸­ä¸€å‡›, ä¸ç¦åŒæ‰‹æ‰“é¢¤, ç¼“ç¼“å‘è‡ªå·±çµå°æ‰“ä¸‹ã€‚\n", 
 		killer, killer);
   	    killer->add_temp("apply/defense", -200);
   	    killer->add_temp("apply/dodge", -200);
@@ -86,7 +86,7 @@ void hitself(object me, object *bad_guys, int degree)
 	    COMBAT_D->do_attack(killer, killer, killer->query_temp("weapon"));
 	    break;
 	case 3:   // hardest
-	    message_vision("$nÑöÌìÌ¾µÀ: ±ãËÆÎÒÕâµÈÄõÕÏ, »îÔÚÈË¼ä×÷Éõ£¡µ±ÏÂ»ØÊÖÍù×Ô¼ºËÀÑ¨ÃÍ»÷£¡\n", 
+	    message_vision("$nä»°å¤©å¹é“: ä¾¿ä¼¼æˆ‘è¿™ç­‰å­½éšœ, æ´»åœ¨äººé—´ä½œç”šï¼å½“ä¸‹å›æ‰‹å¾€è‡ªå·±æ­»ç©´çŒ›å‡»ï¼\n", 
 		killer, killer);
   	    killer->add_temp("apply/defense", -200);
   	    killer->add_temp("apply/dodge", -200);
@@ -130,8 +130,8 @@ void hitself(object me, object *bad_guys, int degree)
 //		/*not in same room*/
 //		killer->move(room);
         if (present(me,environment(killer))) {
-message_vision(HIR"$N³å×Å$nÆÆ¿Ú´óÂî£º¾ÍÆ¾ÄãÕâÑùµÄ»õÉ«Ò²¸ÒÔÚÎÒÃæÇ°Ö¸ÊÖ»®½Å£¬»¹²»¸øÎÒ¹öµÃÔ¶Ô¶µÄ£¡\n"NOR,killer,me);
-//	tell_object(me,HIR"ÄãµÄÕıÆø²»¹»Ñ¹ÖÆ¶Ô·½,·´¶ø¼¤Å­¶ÔÊÖ!"NOR);
+message_vision(HIR"$Nå†²ç€$nç ´å£å¤§éª‚ï¼šå°±å‡­ä½ è¿™æ ·çš„è´§è‰²ä¹Ÿæ•¢åœ¨æˆ‘é¢å‰æŒ‡æ‰‹åˆ’è„šï¼Œè¿˜ä¸ç»™æˆ‘æ»šå¾—è¿œè¿œçš„ï¼\n"NOR,killer,me);
+//	tell_object(me,HIR"ä½ çš„æ­£æ°”ä¸å¤Ÿå‹åˆ¶å¯¹æ–¹,åè€Œæ¿€æ€’å¯¹æ‰‹!"NOR);
 	me->start_busy(1+random(1));
 //	if( !killer->is_killing(me) ) killer->kill_ob(me);
 	COMBAT_D->do_attack(killer, me, killer->query_temp("weapon"));
@@ -224,15 +224,15 @@ int visit_room(string room_path, mapping t_info, mapping r_info, mapping data)
 	    dist_msg = "";
 	    dist_msg2 = "";
 	    if (dist > 10) {
-		dist_msg="¼«Ò£Ô¶´¦";
-		dist_msg2="ËäÈ»ÉùÒô¼«Ô¶¼«Çá, È´Áî";
+		dist_msg="æé¥è¿œå¤„";
+		dist_msg2="è™½ç„¶å£°éŸ³æè¿œæè½», å´ä»¤";
 	    }else if (dist > 5) {
-		dist_msg="Ô¶´¦";
-		dist_msg2="ËäÈ»ÉùÒô²»´ó, È´Áî";
+		dist_msg="è¿œå¤„";
+		dist_msg2="è™½ç„¶å£°éŸ³ä¸å¤§, å´ä»¤";
 	    }
 	    message("vision",
-		HIY+"Ö»Ìı"+dist_msg+me->name()+"¿ÚÖĞ·ğºÅ²»¾ø´«À´, ÆäÒâ´ó´È´ó±¯, Í¨ÓÄÚ¤, Ô½ÉúËÀ, »ë²»ËÆÈË¼äËùÓĞ¡£\n"+
-		dist_msg2+"ÖÚÈËÌıµÄ¶¼´ô×¡ÁË, ²»×Ô¾õµØÍ£ÊÖ°Õ¶·¡£\n"+NOR,
+		HIY+"åªå¬"+dist_msg+me->name()+"å£ä¸­ä½›å·ä¸ç»ä¼ æ¥, å…¶æ„å¤§æ…ˆå¤§æ‚², é€šå¹½å†¥, è¶Šç”Ÿæ­», æµ‘ä¸ä¼¼äººé—´æ‰€æœ‰ã€‚\n"+
+		dist_msg2+"ä¼—äººå¬çš„éƒ½å‘†ä½äº†, ä¸è‡ªè§‰åœ°åœæ‰‹ç½¢æ–—ã€‚\n"+NOR,
 		room, me);
 	    if (bad_guys) {
 		if (dist < range/7) {

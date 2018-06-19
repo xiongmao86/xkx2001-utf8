@@ -1,15 +1,15 @@
 //Cracked by Roath
-// chilong shi ³àÁúÊ¹
+// chilong shi èµ¤é¾™ä½¿
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÎŞ¸ùµÀÈË", ({ "wugen daoren","wugen", "chilong shi","shi" }));
-	set("nickname", "³àÁúÊ¹");
+	set_name("æ— æ ¹é“äºº", ({ "wugen daoren","wugen", "chilong shi","shi" }));
+	set("nickname", "èµ¤é¾™ä½¿");
 	set("long",
-		"ºÚĞëµÀÈË£¬¿ÉÊÇÁ³ÉÏ³äÂúÁË¼¤·ßÖ®Çé¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"é»‘é¡»é“äººï¼Œå¯æ˜¯è„¸ä¸Šå……æ»¡äº†æ¿€æ„¤ä¹‹æƒ…ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 46);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -51,7 +51,7 @@ void create()
 	prepare_skill("kick", "jueming-tui");
 	prepare_skill("strike", "huagu-mianzhang");
 
-	create_family("ÉñÁú½Ì", 2, "Ê¹Õß");
+	create_family("ç¥é¾™æ•™", 2, "ä½¿è€…");
 
 	setup();
 
@@ -77,6 +77,6 @@ void do_killing(object ob)
         || environment() != environment(ob) )
                 return;
 
-        message_vision("$N¶Ô$nºÈµÀ£ºÎŞ³ÜµÄÅÑÍ½£¬ÎÒÔ×ÁËÄã£¡£¡£¡\n", this_object(), ob);
+        message_vision("$Nå¯¹$nå–é“ï¼šæ— è€»çš„å›å¾’ï¼Œæˆ‘å®°äº†ä½ ï¼ï¼ï¼\n", this_object(), ob);
         kill_ob(ob);
 }

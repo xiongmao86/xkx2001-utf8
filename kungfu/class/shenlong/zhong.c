@@ -1,5 +1,5 @@
 //Cracked by Roath
-// bailong shi °×ÁúÊ¹
+// bailong shi ç™½é¾™ä½¿
 // ALN Sep / 97
 
 inherit NPC;
@@ -10,11 +10,11 @@ void apply_gift(object, int);
 
 void create()
 {
-	set_name("ÖÓÖ¾Áé", ({ "zhong zhiling","bailong shi", "shi","zhong" }));
-	set("nickname", "°×ÁúÊ¹");
+	set_name("é’Ÿå¿—çµ", ({ "zhong zhiling","bailong shi", "shi","zhong" }));
+	set("nickname", "ç™½é¾™ä½¿");
 	set("long",
-		"¿ıÎà´óºº£¬Ò»¿´¾ÍÖªÊÇ¹Ø¶«ÈË¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"é­æ¢§å¤§æ±‰ï¼Œä¸€çœ‹å°±çŸ¥æ˜¯å…³ä¸œäººã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -52,7 +52,7 @@ void create()
 
 	prepare_skill("strike", "huagu-mianzhang");
 
-	create_family("ÉñÁú½Ì", 2, "Ê¹Õß");
+	create_family("ç¥é¾™æ•™", 2, "ä½¿è€…");
 /*
         set("chat_chance", 20);
         set("chat_msg_combat",({
@@ -60,19 +60,19 @@ void create()
         }));
 */
         set("inquiry", ([
-                "ÉñÁú½Ì" : (:ask_ob, "jiao":),
-                "ºé°²Í¨" : "ÕâÈı¸ö×ÖÊÇÄãËµµÄÂğ£¿",
-                "ºé½ÌÖ÷" : "ºé½ÌÖ÷ÏÉ¸£ÓÀÏí£¬ÊÙÓëÌìÆë£¬ºé½ÌÖ÷ÉñÄ¿Èçµç£¬ÖòÕÕËÄ·½¡£",
-                "±ªÌ¥Ò×½îÍè" : (:ask_ob, "wan":),
-                "Ğ§Ãü"   : (:ask_ob, "task":),
-                "ÈÎÎñ"   : (:ask_ob, "task":),
-                "¹¦ÀÍ"  : (:ask_ob, "exp":),
-                "ËÕÜõ"   : "Ã»¹æÃ»¾ØµÄ¡£",
-                "ÅÖÍ·ÍÓ" : (:ask_ob, "pang":),
-                "·òÈË" : (:ask_ob, "su":),
-                "Â½¸ßĞù" : (:ask_ob, "lu":),
-                "Â½´ó·ò" : (:ask_ob, "lu":),
-                "ÉñÁúµº" : "ÉñÁúµºÔÚÈêÖİµÄ¶«±±·½Ïò£¬´ÓÌÁ¹Á¿Ú³öº£±ãµ½¡£",
+                "ç¥é¾™æ•™" : (:ask_ob, "jiao":),
+                "æ´ªå®‰é€š" : "è¿™ä¸‰ä¸ªå­—æ˜¯ä½ è¯´çš„å—ï¼Ÿ",
+                "æ´ªæ•™ä¸»" : "æ´ªæ•™ä¸»ä»™ç¦æ°¸äº«ï¼Œå¯¿ä¸å¤©é½ï¼Œæ´ªæ•™ä¸»ç¥ç›®å¦‚ç”µï¼Œçƒ›ç…§å››æ–¹ã€‚",
+                "è±¹èƒæ˜“ç­‹ä¸¸" : (:ask_ob, "wan":),
+                "æ•ˆå‘½"   : (:ask_ob, "task":),
+                "ä»»åŠ¡"   : (:ask_ob, "task":),
+                "åŠŸåŠ³"  : (:ask_ob, "exp":),
+                "è‹èƒ"   : "æ²¡è§„æ²¡çŸ©çš„ã€‚",
+                "èƒ–å¤´é™€" : (:ask_ob, "pang":),
+                "å¤«äºº" : (:ask_ob, "su":),
+                "é™†é«˜è½©" : (:ask_ob, "lu":),
+                "é™†å¤§å¤«" : (:ask_ob, "lu":),
+                "ç¥é¾™å²›" : "ç¥é¾™å²›åœ¨æ±å·çš„ä¸œåŒ—æ–¹å‘ï¼Œä»å¡˜æ²½å£å‡ºæµ·ä¾¿åˆ°ã€‚",
         ]));
 
 	setup();
@@ -95,7 +95,7 @@ int do_leave(string arg)
                 return 0;
 
         if( this_object()->is_fighting() || this_object()->is_busy() )
-                return notify_fail("ÄãÃ»¼ûÎÒÕıÃ¦×Å£¿\n");
+                return notify_fail("ä½ æ²¡è§æˆ‘æ­£å¿™ç€ï¼Ÿ\n");
 
         this_player()->delete("sg");
         this_player()->delete("sgjob");
@@ -104,8 +104,8 @@ int do_leave(string arg)
         apply_gift(this_player(), 0);
 
         command("congra " + this_player()->query("id"));
-        message_vision("$N´ÓÒÂ´üÀïÌÍ³öÒ»Á£Ò©ÍèÈû½øÁË$nµÄ×ìÀï¡£\n", this_object(), this_player());
-        command("say " + "ÍûÄãÈÕºóÔÚ½­ºşÉÏºÃ×ÔÎªÖ®°É¡£");
+        message_vision("$Nä»è¡£è¢‹é‡Œæå‡ºä¸€ç²’è¯ä¸¸å¡è¿›äº†$nçš„å˜´é‡Œã€‚\n", this_object(), this_player());
+        command("say " + "æœ›ä½ æ—¥ååœ¨æ±Ÿæ¹–ä¸Šå¥½è‡ªä¸ºä¹‹å§ã€‚");
         command("bye " + this_player()->query("id"));
         call_out("destroy_zhong", 1, this_object());
         return 1;
@@ -116,7 +116,7 @@ void destroy_zhong(object zhong)
         if( !zhong ) return;
 
         message("vision",
-                zhong->name() + "Ò»×ªÑÛ±ãÏûÊ§ÁË¡£\n",
+                zhong->name() + "ä¸€è½¬çœ¼ä¾¿æ¶ˆå¤±äº†ã€‚\n",
                 environment(zhong), ({zhong}));
 
         destruct(zhong);
@@ -125,12 +125,12 @@ void destroy_zhong(object zhong)
 string ask_ob(string arg)
 {
         if( this_player()->query("sg/cured") ) 
-                return "ÎŞ³ÜµÄÅÑÍ½£¬»¹²»¸øÎÒ¹ö£¡£¡£¡";
+                return "æ— è€»çš„å›å¾’ï¼Œè¿˜ä¸ç»™æˆ‘æ»šï¼ï¼ï¼";
 
         if( !this_player()->query("sg/spy") )
-                return "ÕâÊÇ±Ö½ÌµÄÃØÃÜ£¬ÓĞÊ²Ã´ºÃÎÊµÄ£¿£¡";
+                return "è¿™æ˜¯æ•æ•™çš„ç§˜å¯†ï¼Œæœ‰ä»€ä¹ˆå¥½é—®çš„ï¼Ÿï¼";
 
-        return "¹ØÓÚ½ÌÖĞµÄÏêÇé£¬ÄãÈ¥ÎÊÅÖÍ·ÍÓ»òÊİÍ·ÍÓ¡£";
+        return "å…³äºæ•™ä¸­çš„è¯¦æƒ…ï¼Œä½ å»é—®èƒ–å¤´é™€æˆ–ç˜¦å¤´é™€ã€‚";
 }
 
 void apply_gift(object me, int flag)

@@ -1,6 +1,6 @@
 //Cracked by Roath
-///kungfu/skill/yunu-jing ÓñÅ®ĞÄ¾­
-//maco°æ±¾
+///kungfu/skill/yunu-jing ç‰å¥³å¿ƒç»
+//macoç‰ˆæœ¬
 #include <ansi.h>
 #include <combat.h>
 
@@ -31,26 +31,26 @@ int valid_learn(object me)
 
         if ( k >=2 )
         return notify_fail
-("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÎä¹¦¡£\n");
+("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥é¢†ä¼šæ›´é«˜æ·±çš„æ­¦åŠŸã€‚\n");
         }
 
-        if ( me->query("gender") == "ÎŞĞÔ" && lvl > 49)
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÓñÅ®ĞÄ¾­¡£\n");
+        if ( me->query("gender") == "æ— æ€§" && lvl > 49)
+                return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„ç‰å¥³å¿ƒç»ã€‚\n");
 
-        if ( me->query("gender") == "ÄĞĞÔ" && lvl > 80)
-                return notify_fail("ÄãÉíÎªÄĞ×Ó£¬ÄÑÒÔÁì»á¸ßÉîµÄÓñÅ®ĞÄ¾­¡£\n");
+        if ( me->query("gender") == "ç”·æ€§" && lvl > 80)
+                return notify_fail("ä½ èº«ä¸ºç”·å­ï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„ç‰å¥³å¿ƒç»ã€‚\n");
 
         if ( me->query("class") == "bonze" )
-                return notify_fail("ÓñÅ®ĞÄ¾­½²¾¿ÒõÑôµ÷ºÏ£¬ÓĞÎ¥·ğ¼ÒÁù¸ùÇå¾»Ö®Òâ£¬"
-                        +RANK_D->query_respect(me)+"ÓûĞŞ´Ë¹¦£¬ÒÑÊÇ×ï¹ı¡£\n");
+                return notify_fail("ç‰å¥³å¿ƒç»è®²ç©¶é˜´é˜³è°ƒåˆï¼Œæœ‰è¿ä½›å®¶å…­æ ¹æ¸…å‡€ä¹‹æ„ï¼Œ"
+                        +RANK_D->query_respect(me)+"æ¬²ä¿®æ­¤åŠŸï¼Œå·²æ˜¯ç½ªè¿‡ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 10 
           || (int)me->query_skill("force", 1)/2 < lvl/3 )
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
         if (lvl > 10 && (int)me->query("shen") < t * 100
              && me->query_skill("taoism", 1) < 100) 
-                return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
 
         return 1;
 }
@@ -58,19 +58,19 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if ( me->query_skill("yunu-jing", 1) < 150 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ¾­ĞŞÎª²»¹»£¬Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒç»ä¿®ä¸ºä¸å¤Ÿï¼Œåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
         if ( me->query_temp("weapon") )
-                return notify_fail("Á·Ï°ÓñÅ®ĞÄ¾­±ØĞë¿ÕÊÖ£¬¾²×ø³ÏĞÄ·½¿É¡£\n");
+                return notify_fail("ç»ƒä¹ ç‰å¥³å¿ƒç»å¿…é¡»ç©ºæ‰‹ï¼Œé™åè¯šå¿ƒæ–¹å¯ã€‚\n");
         if ( (int)me->query("qi") < 70 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ï°ÓñÅ®ĞÄ¾­¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒä¹ ç‰å¥³å¿ƒç»ã€‚\n");
         if ( (int)me->query("jingli") < 70 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·Ï°ÓñÅ®ĞÄ¾­¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒä¹ ç‰å¥³å¿ƒç»ã€‚\n");
         if ( (int)me->query("neili") < 70 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ï°ÓñÅ®ĞÄ¾­¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹ ç‰å¥³å¿ƒç»ã€‚\n");
 
         me->add("neili", -60);
-        me->receive_damage("jingli", 60, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
-        me->receive_damage("qi", 60, "ÌåÁ¦Í¸Ö§¹ı¶ÈËÀÁË");
+        me->receive_damage("jingli", 60, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+        me->receive_damage("qi", 60, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
         return 1;
 }
 
@@ -113,7 +113,7 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
 
 if (wizardp(victim)) tell_object(victim, sprintf("ap: %d, dp: %d\n", ap, dp));
 	if(me->query_temp("shentong")) {
-                        result = "$n¼û$NÕĞÊıÁèÀ÷£¬Ò²²»¾åÅÂ£¬Ğı¼´ÒÔÓñÅ®ĞÄ¾­ÉÏµÄÎä¹¦Ò»Ò»ÆÆ½â£¡\n";
+                        result = "$nè§$Næ‹›æ•°å‡Œå‰ï¼Œä¹Ÿä¸æƒ§æ€•ï¼Œæ—‹å³ä»¥ç‰å¥³å¿ƒç»ä¸Šçš„æ­¦åŠŸä¸€ä¸€ç ´è§£ï¼\n";
                         damage_bonus = 0;
                                 me->start_busy(1+random(1));
                         result += "( $N"+ COMBAT_D->status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
@@ -122,13 +122,13 @@ if (wizardp(victim)) tell_object(victim, sprintf("ap: %d, dp: %d\n", ap, dp));
 	
         if ( random(ap+dp+dp) > ap ) {
                 if (objectp(weapon2) && objectp(weapon1) && (string)weapon1->query("skill_type") == "sword" && me->query_skill_mapped("sword") == "quanzhen-jian") {
-                        result = "ÄÇÖª$nËùÊ¹ÓñÅ®½£·¨ÕıÊÇÈ«Õæ½£·¨µÄ¶ÔÍ·£¬½£¼âÒ»²ü£¬¶¸µØÍä¹ı£¬·´¶øÏÈĞĞ´ÌÖĞ$NÒ»½££¡\n";
+                        result = "é‚£çŸ¥$næ‰€ä½¿ç‰å¥³å‰‘æ³•æ­£æ˜¯å…¨çœŸå‰‘æ³•çš„å¯¹å¤´ï¼Œå‰‘å°–ä¸€é¢¤ï¼Œé™¡åœ°å¼¯è¿‡ï¼Œåè€Œå…ˆè¡Œåˆºä¸­$Nä¸€å‰‘ï¼\n";
                                 me->start_busy(1+random(1));
                         if (damage + damage_bonus > 0)
                                 me->receive_damage("qi", (damage + damage_bonus)/2, victim);
                         result += "( $N"+ COMBAT_D->status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
                 } else if (objectp(weapon2) && objectp(weapon1) && (string)weapon1->query("skill_type") == "whip" && me->query_skill_mapped("sword") == "duanyun-bian"){
-                        result = "ÄÇÖª$n¶Ô¶ÏÔÆ±Ş·¨ÔçÒÑ¾«ÑĞÍ¸³¹£¬½£¼â»Ø×ª£¬$NÎ´ÄÜÉËµĞ£¬ÏÈÖĞÒ»½££¡\n";
+                        result = "é‚£çŸ¥$nå¯¹æ–­äº‘é­æ³•æ—©å·²ç²¾ç ”é€å½»ï¼Œå‰‘å°–å›è½¬ï¼Œ$Næœªèƒ½ä¼¤æ•Œï¼Œå…ˆä¸­ä¸€å‰‘ï¼\n";
                                 me->start_busy(1+random(1));
                         if (damage + damage_bonus > 0)
                                 me->receive_damage("qi", (damage + damage_bonus)/2, victim);
@@ -136,7 +136,7 @@ if (wizardp(victim)) tell_object(victim, sprintf("ap: %d, dp: %d\n", ap, dp));
                 }  else if (!objectp(weapon2) && !objectp(weapon1) &&  (me->query_skill_prepared("strike") == "sanhua-juding" || me->query_skill_prepared("cuff") == "chunyang-quan" ||((string)weapon1->query("skill_type") == "sword" && me->query_skill_mapped("sword") == "quanzhen-jian") 
 ||((string)weapon1->query("skill_type") == "whip" && me->query_skill_mapped("whip") == "duanyun-bian") ) ){
 
-                        result = "²»ÁÏ$nºöÈ»Ò»ÕÆ°´³ö£¬ÎŞÓ°ÎŞ×Ù£¬ÊÖÕÆ¾¹ÈÆ¹ı$NÊÖ±Û£¬°´µ½ÁË$NĞØ¿Ú£¬ÕıÊÇÓñÅ®ĞÄ¾­ÉÏøÈÖÆÈ«ÕæÎä¹¦µÄ¾øÕĞ£¡\n";
+                        result = "ä¸æ–™$nå¿½ç„¶ä¸€æŒæŒ‰å‡ºï¼Œæ— å½±æ— è¸ªï¼Œæ‰‹æŒç«Ÿç»•è¿‡$Næ‰‹è‡‚ï¼ŒæŒ‰åˆ°äº†$Nèƒ¸å£ï¼Œæ­£æ˜¯ç‰å¥³å¿ƒç»ä¸Šî‰›åˆ¶å…¨çœŸæ­¦åŠŸçš„ç»æ‹›ï¼\n";
                         if (damage + damage_bonus > 0)
                                 me->receive_damage("qi", (damage + damage_bonus)/2, victim);
 
@@ -149,10 +149,10 @@ if (wizardp(victim)) tell_object(victim, sprintf("ap: %d, dp: %d\n", ap, dp));
         } else if( random(ap+dp+dp+dp) > ap ) {
                 if (objectp(weapon2)&& objectp(weapon1) &&  (me->query_skill_prepared("strike") == "sanhua-juding" || me->query_skill_prepared("cuff") == "chunyang-quan" ||((string)weapon1->query("skill_type") == "sword" && me->query_skill_mapped("sword") == "quanzhen-jian") 
 ||((string)weapon1->query("skill_type") == "whip" && me->query_skill_mapped("whip") == "duanyun-bian") ) ) {
-                        result = "$n½£×ßÇáÁé£¬ÆÆ¿ªÁËÕâÒ»ÕĞÈ«ÕæÎä¹¦¡£\n";
+                        result = "$nå‰‘èµ°è½»çµï¼Œç ´å¼€äº†è¿™ä¸€æ‹›å…¨çœŸæ­¦åŠŸã€‚\n";
                         damage_bonus = 0;
                 } else if (!objectp(weapon2)&& !objectp(weapon1) &&  (me->query_skill_prepared("strike") == "sanhua-juding" || me->query_skill_prepared("cuff") == "chunyang-quan" ) ) {
-                        result = "µ«ÊÇ$n¶ÔÈ«ÕæÅÉÈ­ÕÆÕĞÕĞ¾«Êì£¬ËæÊÖ»¯½â£¬½«$NµÄÄÚ¾¢È«ÊıĞ¶ÔÚÒ»ÅÔ¡£\n";
+                        result = "ä½†æ˜¯$nå¯¹å…¨çœŸæ´¾æ‹³æŒæ‹›æ‹›ç²¾ç†Ÿï¼Œéšæ‰‹åŒ–è§£ï¼Œå°†$Nçš„å†…åŠ²å…¨æ•°å¸åœ¨ä¸€æ—ã€‚\n";
                         damage_bonus = -5000; 
                 }
                 return ([ "result" : result, "damage" : damage_bonus ]);

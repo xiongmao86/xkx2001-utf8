@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pojian.c ¶À¹Â¾Å½£¡¸ÆÆÇ¹Ê½¡¹
+// pojian.c ç‹¬å­¤ä¹å‰‘ã€Œç ´æªå¼ã€
 // qfy July 5, 1996.
 
 #include <ansi.h>
@@ -15,7 +15,7 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÆÆÇ¹Ê½Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç ´æªå¼åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( !objectp(weapon = target->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "staff" ) {
@@ -27,29 +27,29 @@ int perform(object me, object target)
 		|| (string)weapon->query("skill_type") != "halberd" ) {
 		   if( !objectp(weapon = target->query_temp("weapon"))
 		   || (string)weapon->query("skill_type") != "pike" )
-		      return notify_fail("ÆÆÇ¹Ê½Ö»ÄÜ¶ÔÓÃÇ¹¡¢¹÷¡¢°ô¡¢ÕÈµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		      return notify_fail("ç ´æªå¼åªèƒ½å¯¹ç”¨æªã€æ£ã€æ£’ã€æ–çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 		}
 	      }
 	   } 
 	}
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 		
 	if( (int)me->query_skill("dugu-jiujian", 1) < 50 )
-		return notify_fail("ÄãµÄ¶À¹Â¾Å½£ĞŞÎª²»¹»£¬»¹Î´Ñ§³É¡¸ÆÆÇ¹Ê½¡¹¡£\n");
+		return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘ä¿®ä¸ºä¸å¤Ÿï¼Œè¿˜æœªå­¦æˆã€Œç ´æªå¼ã€ã€‚\n");
 
         if( me->query("neili") <= 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-	msg = CYN "$NÒ»Ê½¶À¹Â¾Å½£¡¸ÆÆÇ¹Ê½¡¹£¬½£ÊÆÁéÇÉµØË³×Å"+weapon->query("name")+"Ï÷Âä£¬»®Ïò$nµÄÎåÖ¸¡£\n";
+	msg = CYN "$Nä¸€å¼ç‹¬å­¤ä¹å‰‘ã€Œç ´æªå¼ã€ï¼Œå‰‘åŠ¿çµå·§åœ°é¡ºç€"+weapon->query("name")+"å‰Šè½ï¼Œåˆ’å‘$nçš„äº”æŒ‡ã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-		msg += "½á¹û$pÎ¨ÓĞÉáÆú"+weapon->query("name")+"£¬ÏòºóÔ¾¿ªÕÉĞí£¬ÏÈÇó×Ô±£¡£\n" NOR;
+		msg += "ç»“æœ$på”¯æœ‰èˆå¼ƒ"+weapon->query("name")+"ï¼Œå‘åè·ƒå¼€ä¸ˆè®¸ï¼Œå…ˆæ±‚è‡ªä¿ã€‚\n" NOR;
 		weapon->move(environment(me));
 		target->start_busy( (int)me->query_skill("sword") / 28 );
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ½£Â·£¬»¹ÕĞµ²¿ª¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„å‰‘è·¯ï¼Œè¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR;
 		me->start_busy(1 + random(3));
 	}
 	message_vision(msg, me, target);

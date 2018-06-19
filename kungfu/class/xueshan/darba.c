@@ -7,17 +7,17 @@ int do_qiecuo();
 
 void create()
 {
-set_name("´ï¶û°Í", ({ "darba", "dar", "ba" }));
+set_name("è¾¾å°”å·´", ({ "darba", "dar", "ba" }));
         set("long",
-"ËûÊÇ½ğÂÖ·¨ÍõµÄ¶şµÜ×Ó£¬ÒÑµÃ·¨ÍõÎå¡¢Áù·ÖÕæ´«£¬¼æÌìÉúÉñÁ¦£¬Ò»ÉíÍâÃÅ¹¦·ò \n"
-"ÉõÊÇÁËµÃ£¬ËäÉíĞÎ¸ßÊİ£¬È´Ê¹Ò»¸ù³¤´ïËÄ³ßµÄ´¿½ğ½µÄ§èÆ¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–æ˜¯é‡‘è½®æ³•ç‹çš„äºŒå¼Ÿå­ï¼Œå·²å¾—æ³•ç‹äº”ã€å…­åˆ†çœŸä¼ ï¼Œå…¼å¤©ç”Ÿç¥åŠ›ï¼Œä¸€èº«å¤–é—¨åŠŸå¤« \n"
+"ç”šæ˜¯äº†å¾—ï¼Œè™½èº«å½¢é«˜ç˜¦ï¼Œå´ä½¿ä¸€æ ¹é•¿è¾¾å››å°ºçš„çº¯é‡‘é™é­”æµã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "heroism");
         set("class","lama");
         set("inquiry",([
-               "Òı¼û"  : (: ask_me :),
-                "½ğÂÖ·¨Íõ" : (: ask_me :),
+               "å¼•è§"  : (: ask_me :),
+                "é‡‘è½®æ³•ç‹" : (: ask_me :),
         ]));
 
         set("shen_type", -1);
@@ -71,24 +71,24 @@ set_name("´ï¶û°Í", ({ "darba", "dar", "ba" }));
 */
 int ask_me()
 {
-	if( this_player()->query("family/family_name") != "Ñ©É½ÅÉ"
-        && this_player()->query("family/family_name") != "Ñªµ¶ÃÅ")
+	if( this_player()->query("family/family_name") != "é›ªå±±æ´¾"
+        && this_player()->query("family/family_name") != "è¡€åˆ€é—¨")
 	return 0;
 
 	if( !present("xiangmo chu", this_object())){
-	say("´ï¶û°ÍÒ¡ÁËÒ¡Í·£º½ñÌìÃ»Á¦Æø¸úÄãËµÁË£¬ÄãÃ÷ÌìÔÙÀ´ÎÊÎÒ°É¡£\n");
+	say("è¾¾å°”å·´æ‘‡äº†æ‘‡å¤´ï¼šä»Šå¤©æ²¡åŠ›æ°”è·Ÿä½ è¯´äº†ï¼Œä½ æ˜å¤©å†æ¥é—®æˆ‘å§ã€‚\n");
 	return 1;
 	}
 
 	if( this_player()->query("jlfw")){
-	say("´ï¶û°ÍËµµÀ£ºÊ¦ĞÖÒªÕÒÊ¦¸¸ÔÙÎÊÎÒ¿ÉÃ»ÓÃ¡£\n");
+	say("è¾¾å°”å·´è¯´é“ï¼šå¸ˆå…„è¦æ‰¾å¸ˆçˆ¶å†é—®æˆ‘å¯æ²¡ç”¨ã€‚\n");
 	return 1;
 	}
 
         say(
-"´ï¶û°Í¿´ÁË" + this_player()->name() + "Ò»ÑÛ²»Ğ¼µØËµ£ºÏëÕÒÎÒÊ¦¸¸£¬µÃÏÈ¹ıÎÒ\n"
-"ÕâÒ»¹Ø£¬ÕâÎ»" + RANK_D->query_respect(this_player()) + "ÊÇ²»ÊÇÏÈºÍÎÒÇĞ´êÒ»ÏÂ£¿\n");
-        this_player()->set_temp("marks/Òı1", 1);
+"è¾¾å°”å·´çœ‹äº†" + this_player()->name() + "ä¸€çœ¼ä¸å±‘åœ°è¯´ï¼šæƒ³æ‰¾æˆ‘å¸ˆçˆ¶ï¼Œå¾—å…ˆè¿‡æˆ‘\n"
+"è¿™ä¸€å…³ï¼Œè¿™ä½" + RANK_D->query_respect(this_player()) + "æ˜¯ä¸æ˜¯å…ˆå’Œæˆ‘åˆ‡æ“ä¸€ä¸‹ï¼Ÿ\n");
+        this_player()->set_temp("marks/å¼•1", 1);
         return 1;
 }
 
@@ -99,13 +99,13 @@ int accept_fight()
         me = this_object();
         ob = this_player();
 
-        if( ob->query_temp("marks/Òı1") 
+        if( ob->query_temp("marks/å¼•1") 
 	&& present("xiangmo chu", me)) {
-        say(ob->name() + "¶Ô´ï¶ø°ÍËµ£ººÃ°É£¬ÄÇ" 
-             "ÎÒ¾ÍÍ¬ÄãÇĞ´ê¼¸ÕĞ°É£¬µãµ½ÎªÖ¹¡£\n");
+        say(ob->name() + "å¯¹è¾¾è€Œå·´è¯´ï¼šå¥½å§ï¼Œé‚£" 
+             "æˆ‘å°±åŒä½ åˆ‡æ“å‡ æ‹›å§ï¼Œç‚¹åˆ°ä¸ºæ­¢ã€‚\n");
 	  command("wield chu");
 	  me->set_temp("challenger", ob);
-          ob->set_temp("marks/Òı1", 0);
+          ob->set_temp("marks/å¼•1", 0);
 	  me->set("qi", (int)me->query("max_qi"));
 	  me->set("eff_qi", (int)me->query("max_qi"));
 	  me->set("neili", (int)me->query("max_neili"));
@@ -134,18 +134,18 @@ int chat()
         if (( (int)me->query("qi")*100 / my_max_qi) <= 50 ) 
         {
 	say(
-                  "´ï¶ø°ÍËµ£º¸óÏÂÎä¹¦È·ÊÇ²»Ò»°ã£¬ÔÚÏÂÊ®·ÖÅå·ş¡£\n"
-                  "³öÁËÓÀ²ıÍù±±×ß°ËÊ®Àï£¬ÔÙÍù¶«¶şÊ®Àï£¬È»ááÍù±±×ßÈıÊ®Àï£¬ÔÙÍù¶«¡¢Íù±±\n"
-                  "¸÷Ê®Àï£¬ÎÒÊ¦¸¸¿ÉÄÜÔÚÄÇ¸½½üµÄ²İÔ­ÉÏÊÚÁÔ¡£\n"
+                  "è¾¾è€Œå·´è¯´ï¼šé˜ä¸‹æ­¦åŠŸç¡®æ˜¯ä¸ä¸€èˆ¬ï¼Œåœ¨ä¸‹ååˆ†ä½©æœã€‚\n"
+                  "å‡ºäº†æ°¸æ˜Œå¾€åŒ—èµ°å…«åé‡Œï¼Œå†å¾€ä¸œäºŒåé‡Œï¼Œç„¶å¾Œå¾€åŒ—èµ°ä¸‰åé‡Œï¼Œå†å¾€ä¸œã€å¾€åŒ—\n"
+                  "å„åé‡Œï¼Œæˆ‘å¸ˆçˆ¶å¯èƒ½åœ¨é‚£é™„è¿‘çš„è‰åŸä¸ŠæˆçŒã€‚\n"
                 );
-                ob->set_temp("marks/Òı", 1);
+                ob->set_temp("marks/å¼•", 1);
 		ob->set("jlfw", 1);
                 return ::chat();
         }
         if (( (int)ob->query("qi")*100 / his_max_qi) < 50 ) 
         {
                 say(
-	"´ï¶ø°Í³å×Å" + ob->name() + "ºÙºÙ¼éĞ¦Á½Éù£º¸óÏÂ»¹ÊÇ»ØÈ¥ÔÙÁ·¼¸Äê°É¡£\n"
+	"è¾¾è€Œå·´å†²ç€" + ob->name() + "å˜¿å˜¿å¥¸ç¬‘ä¸¤å£°ï¼šé˜ä¸‹è¿˜æ˜¯å›å»å†ç»ƒå‡ å¹´å§ã€‚\n"
                 );
                 return ::chat();
         }
@@ -172,12 +172,12 @@ void do_killing(object ob)
 */
 void attempt_apprentice(object ob)
 {
-        command("say  ·¨Íõ¿É²»ÔÊĞíÎÒÊÕÍ½¡£");
+        command("say  æ³•ç‹å¯ä¸å…è®¸æˆ‘æ”¶å¾’ã€‚");
         //command("recruit " + ob->query("id"));
 }
 int accept_kill(object me)
 {
-        command("say ´óÒ¯ÎÒÕıÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆ·æˆ‘æ­£æƒ³æ‰¾äººæ€å‘ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 	if (present("xiangmo chu", this_object())){
 	command("wield chu");
 	}

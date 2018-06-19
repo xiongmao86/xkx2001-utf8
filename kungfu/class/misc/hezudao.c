@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ¹ÜÏóÆåµÄnpc£¡ (·´ÕýÃ»ÓÐÀ¥ÂØÅÉ)  by maco
+// ç®¡è±¡æ£‹çš„npcï¼ (åæ­£æ²¡æœ‰æ˜†ä»‘æ´¾)  by maco
 
 inherit NPC;
 #include <ansi.h>
@@ -10,16 +10,16 @@ string ask_lose();
 
 void create()
 {
-        set_name("ºÎ×ãµÀ", ({ "he zudao", "he", "zudao" }));
-        set("nickname", "À¥ÂØÈýÊ¥");
-        set("long", "ÕâÊÇÒ»¸öÉíÖø°×ÒÂµÄÖÐÄêÄÐ×Ó£¬³¤Á³ÉîÄ¿£¬ÊÝ¹ÇÀâÀâ£¬\n"
-        "Éí¸ºÇÙ¡¢½£¡¢ÆåÈý¾ø£¬ÊÀ³Æ¡¸À¥ÂØÈýÊ¥¡¹¡£\n"
-        "Ä¿Ç°ÑïÖÝµÄÏóÆåÆåÔ·ÓÉËû¸ºÔð£¬Ò²¼ÇÂ¼ËùÓÐÀ´´ËÏÂÆåµÄÆåÊ¿³É¼¨¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä½•è¶³é“", ({ "he zudao", "he", "zudao" }));
+        set("nickname", "æ˜†ä»‘ä¸‰åœ£");
+        set("long", "è¿™æ˜¯ä¸€ä¸ªèº«è‘—ç™½è¡£çš„ä¸­å¹´ç”·å­ï¼Œé•¿è„¸æ·±ç›®ï¼Œç˜¦éª¨æ£±æ£±ï¼Œ\n"
+        "èº«è´Ÿç´ã€å‰‘ã€æ£‹ä¸‰ç»ï¼Œä¸–ç§°ã€Œæ˜†ä»‘ä¸‰åœ£ã€ã€‚\n"
+        "ç›®å‰æ‰¬å·žçš„è±¡æ£‹æ£‹è‹‘ç”±ä»–è´Ÿè´£ï¼Œä¹Ÿè®°å½•æ‰€æœ‰æ¥æ­¤ä¸‹æ£‹çš„æ£‹å£«æˆç»©ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 36);
         set("special_npc", 1);
         set("no_get", 1);
-	set("title", "À¥ÂØÅÉÕÆÃÅ¡¢ÆåÔ·Ö÷ÈË");
+	set("title", "æ˜†ä»‘æ´¾æŽŒé—¨ã€æ£‹è‹‘ä¸»äºº");
         set("attitude", "heroism");
         set("str", 30);
         set("int", 33);
@@ -54,24 +54,24 @@ void create()
         map_skill("parry", "liangyi-jian");
         prepare_skill("strike", "liuyang-zhang");
 
-	create_family("À¥ÂØÅÉ", 1, "ÕÆÃÅ");
+	create_family("æ˜†ä»‘æ´¾", 1, "æŽŒé—¨");
 
         set("inquiry", ([
-                "name" : "ÎÒÐÕºÎ£¬Ãû×Ö½Ð×ö¡¸×ãµÀ¡¹¡£\n",
-                "À¥ÂØÈýÊ¥" : "ÎÒÔÚÎ÷Óò´³³öÁËÒ»µãÐ¡Ð¡ÃûÍ·£¬µ±µØµÄÅóÓÑËµÎÒÇÙ½£ÆåÈý¾ø£¬¿ÉÒÔËµµÃÉÏÊÇÇÙÊ¥¡¢½£Ê¥¡¢ÆåÊ¥¡£ÒòÎÒ³£Äê×¡ÓÚÀ¥ÂØÉ½ÖÐ£¬ÊÇÒÔ¸øÁËÎÒÒ»¸öÍâºÅ£¬½Ð×÷¡¸À¥ÂØÈýÊ¥¡¹¡£\n",
-                "À¥ÂØÈýÊ¥ºÎ×ãµÀ" : "Õâ¸ö¡¸Ê¥¡¹×Ö£¬ÆñÊÇÇáÒ×³ÆµÃµÄ£¿ËäÈ»±ðÈË¸øÎÒÁ³ÉÏÌù½ð£¬Ò²²»ÄÜ×Ô¾Ó²»ÒÉ£¬Òò´ËÉÏÎÒ¸ÄÁË×Ô¼ºµÄÃû×Ö£¬½Ð×÷¡¸×ãµÀ¡¹£¬ÁªÆðÀ´Ëµ£¬±ãÊÇ¡¸À¥ÂØÈýÊ¥ºÎ×ãµÀ¡¹¡£ÈË¼ÒÌýÁË£¬±ã²»»áËµÎÒ¿ñÍý×Ô´óÁË¡£\n",
-		"ºÎ×ãµÀ" : "Õâ¸ö¡¸Ê¥¡¹×Ö£¬ÆñÊÇÇáÒ×³ÆµÃµÄ£¿ËäÈ»±ðÈË¸øÎÒÁ³ÉÏÌù½ð£¬Ò²²»ÄÜ×Ô¾Ó²»ÒÉ£¬Òò´ËÉÏÎÒ¸ÄÁË×Ô¼ºµÄÃû×Ö£¬½Ð×÷¡¸×ãµÀ¡¹£¬ÁªÆðÀ´Ëµ£¬±ãÊÇ¡¸À¥ÂØÈýÊ¥ºÎ×ãµÀ¡¹¡£ÈË¼ÒÌýÁË£¬±ã²»»áËµÎÒ¿ñÍý×Ô´óÁË¡£\n",
-               	"³É¼¨" : (: ask_score :),
+                "name" : "æˆ‘å§“ä½•ï¼Œåå­—å«åšã€Œè¶³é“ã€ã€‚\n",
+                "æ˜†ä»‘ä¸‰åœ£" : "æˆ‘åœ¨è¥¿åŸŸé—¯å‡ºäº†ä¸€ç‚¹å°å°åå¤´ï¼Œå½“åœ°çš„æœ‹å‹è¯´æˆ‘ç´å‰‘æ£‹ä¸‰ç»ï¼Œå¯ä»¥è¯´å¾—ä¸Šæ˜¯ç´åœ£ã€å‰‘åœ£ã€æ£‹åœ£ã€‚å› æˆ‘å¸¸å¹´ä½äºŽæ˜†ä»‘å±±ä¸­ï¼Œæ˜¯ä»¥ç»™äº†æˆ‘ä¸€ä¸ªå¤–å·ï¼Œå«ä½œã€Œæ˜†ä»‘ä¸‰åœ£ã€ã€‚\n",
+                "æ˜†ä»‘ä¸‰åœ£ä½•è¶³é“" : "è¿™ä¸ªã€Œåœ£ã€å­—ï¼Œå²‚æ˜¯è½»æ˜“ç§°å¾—çš„ï¼Ÿè™½ç„¶åˆ«äººç»™æˆ‘è„¸ä¸Šè´´é‡‘ï¼Œä¹Ÿä¸èƒ½è‡ªå±…ä¸ç–‘ï¼Œå› æ­¤ä¸Šæˆ‘æ”¹äº†è‡ªå·±çš„åå­—ï¼Œå«ä½œã€Œè¶³é“ã€ï¼Œè”èµ·æ¥è¯´ï¼Œä¾¿æ˜¯ã€Œæ˜†ä»‘ä¸‰åœ£ä½•è¶³é“ã€ã€‚äººå®¶å¬äº†ï¼Œä¾¿ä¸ä¼šè¯´æˆ‘ç‹‚å¦„è‡ªå¤§äº†ã€‚\n",
+		"ä½•è¶³é“" : "è¿™ä¸ªã€Œåœ£ã€å­—ï¼Œå²‚æ˜¯è½»æ˜“ç§°å¾—çš„ï¼Ÿè™½ç„¶åˆ«äººç»™æˆ‘è„¸ä¸Šè´´é‡‘ï¼Œä¹Ÿä¸èƒ½è‡ªå±…ä¸ç–‘ï¼Œå› æ­¤ä¸Šæˆ‘æ”¹äº†è‡ªå·±çš„åå­—ï¼Œå«ä½œã€Œè¶³é“ã€ï¼Œè”èµ·æ¥è¯´ï¼Œä¾¿æ˜¯ã€Œæ˜†ä»‘ä¸‰åœ£ä½•è¶³é“ã€ã€‚äººå®¶å¬äº†ï¼Œä¾¿ä¸ä¼šè¯´æˆ‘ç‹‚å¦„è‡ªå¤§äº†ã€‚\n",
+               	"æˆç»©" : (: ask_score :),
 		"score" : (: ask_score :),
-		"ÏóÆå" : "ÏóÆåÏà¹ØÖ¸Áî¶¼ÔÚhelp c_chessÖÐ¡£\n",
-		"Î§Æå" : "ÏÀ¿ÍÐÐÉÐÎ´¿ª·ÅÎ§Æå¡£\n",
-		"·ÅÆú" : "ÇåÀí×Ô¼ºµÄ³É¼¨£¬´ÓÁã¿ªÊ¼£¬ÊäÈëclean¡£",
-		"abandon" : "ÇåÀí×Ô¼ºµÄ³É¼¨£¬´ÓÁã¿ªÊ¼£¬ÊäÈëclean¡£",
-		"clean" : "ÇåÀí×Ô¼ºµÄ³É¼¨£¬´ÓÁã¿ªÊ¼£¬ÊäÈëclean¡£",
+		"è±¡æ£‹" : "è±¡æ£‹ç›¸å…³æŒ‡ä»¤éƒ½åœ¨help c_chessä¸­ã€‚\n",
+		"å›´æ£‹" : "ä¾ å®¢è¡Œå°šæœªå¼€æ”¾å›´æ£‹ã€‚\n",
+		"æ”¾å¼ƒ" : "æ¸…ç†è‡ªå·±çš„æˆç»©ï¼Œä»Žé›¶å¼€å§‹ï¼Œè¾“å…¥cleanã€‚",
+		"abandon" : "æ¸…ç†è‡ªå·±çš„æˆç»©ï¼Œä»Žé›¶å¼€å§‹ï¼Œè¾“å…¥cleanã€‚",
+		"clean" : "æ¸…ç†è‡ªå·±çš„æˆç»©ï¼Œä»Žé›¶å¼€å§‹ï¼Œè¾“å…¥cleanã€‚",
 		"win" : (: ask_win :),
-		"Ê¤" : (: ask_win :),
+		"èƒœ" : (: ask_win :),
 		"lose" : (: ask_lose :),
-		"°Ü" : (: ask_lose :),
+		"è´¥" : (: ask_lose :),
 
         ]) );
         set("chat_chance_combat", 40);
@@ -103,13 +103,13 @@ int do_clean()
 	all = win + lose + draw;
 	
 	if(all < 20) {
-	return notify_fail("±ØÐèÀÛ»ýÂú¶þÊ®¾ÖÆåÈü²ÅÄÜÖØÐÂ¼ÇÂ¼³É¼¨¡£\n");
+	return notify_fail("å¿…éœ€ç´¯ç§¯æ»¡äºŒåå±€æ£‹èµ›æ‰èƒ½é‡æ–°è®°å½•æˆç»©ã€‚\n");
 	}
 
     	me->delete("c_chess/win");
     	me->delete("c_chess/lose");
     	me->delete("c_chess/draw");
-    	command("say ºÃ£¬"+RANK_D->query_respect(me) +"µÄÏóÆåÊ¤¸º¼ÇÂ¼ÒÑ¾­È«²¿Çå³ýÁË¡£\n");
+    	command("say å¥½ï¼Œ"+RANK_D->query_respect(me) +"çš„è±¡æ£‹èƒœè´Ÿè®°å½•å·²ç»å…¨éƒ¨æ¸…é™¤äº†ã€‚\n");
     return 1;
 }
 
@@ -125,17 +125,17 @@ int ask_score()
 	all = win + lose + draw;
 
 	if (all < 1) {
-	command("say "+RANK_D->query_respect(me) + "»¹Ã»ÓÐ¸úÈË¶ÔÞÄ¹ý°É£¿");
+	command("say "+RANK_D->query_respect(me) + "è¿˜æ²¡æœ‰è·Ÿäººå¯¹å¼ˆè¿‡å§ï¼Ÿ");
 	return 1;
 	}
 
 	msg = me->name()+RANK_D->query_respect(me) + 
-	"¶ÔÞÄÏóÆå"+chinese_number(all) +"¾Ö£¬³É¼¨ÊÇ";
+	"å¯¹å¼ˆè±¡æ£‹"+chinese_number(all) +"å±€ï¼Œæˆç»©æ˜¯";
 
-	if(win > 0)	msg += chinese_number(win) +"Ê¤";
-	if(lose > 0)	msg += chinese_number(lose) +"°Ü";
-	if(draw > 0)	msg += chinese_number(draw) +"ºÍ";
-	msg += "¡£";
+	if(win > 0)	msg += chinese_number(win) +"èƒœ";
+	if(lose > 0)	msg += chinese_number(lose) +"è´¥";
+	if(draw > 0)	msg += chinese_number(draw) +"å’Œ";
+	msg += "ã€‚";
 	
 	command("say "+msg);
 	if(all > 10) {
@@ -165,7 +165,7 @@ string ask_win()
 		}
 	}
 	if ( !obj ) {
-		msg ="àÅ£¬È«ÏÀ¿ÍÐÐÀïÃæ£¬»¹Ã»ÈËÏÂÏóÆåÓÐÓ®¹ýµÄ¡£\n";
+		msg ="å—¯ï¼Œå…¨ä¾ å®¢è¡Œé‡Œé¢ï¼Œè¿˜æ²¡äººä¸‹è±¡æ£‹æœ‰èµ¢è¿‡çš„ã€‚\n";
 		return msg;
 	}
 
@@ -174,7 +174,7 @@ string ask_win()
 	all = win + lose + draw;
 
 	name = obj->query("name")+"("+obj->query("id")+")";
-	msg ="Ëµµ½µ±½ñÏÀ¿ÍÐÐµÚÒ»ÏóÆå¹úÊÖ£¬ÄÇµ±È»ÊÇ"+name+"£¡Æä³É¼¨ÊÇ"+chinese_number(all)+"Õ½"+chinese_number(win)+"Ê¤¡£\n";
+	msg ="è¯´åˆ°å½“ä»Šä¾ å®¢è¡Œç¬¬ä¸€è±¡æ£‹å›½æ‰‹ï¼Œé‚£å½“ç„¶æ˜¯"+name+"ï¼å…¶æˆç»©æ˜¯"+chinese_number(all)+"æˆ˜"+chinese_number(win)+"èƒœã€‚\n";
 
 	return msg;
 }
@@ -196,7 +196,7 @@ string ask_lose()
 		}
 	}
 	if ( !obj ) {
-		msg ="È«ÏÀ¿ÍÐÐ¾ÓÈ»Ã»ÓÐÈËÏÂÏóÆåÊä¹ý£¬µ½µ×ÊÇ¸ö¸ö¶¼ÊÇ´ó¹úÊÖ£¬»¹ÊÇÃ»ÈË»áÏÂÆå£¿\n";
+		msg ="å…¨ä¾ å®¢è¡Œå±…ç„¶æ²¡æœ‰äººä¸‹è±¡æ£‹è¾“è¿‡ï¼Œåˆ°åº•æ˜¯ä¸ªä¸ªéƒ½æ˜¯å¤§å›½æ‰‹ï¼Œè¿˜æ˜¯æ²¡äººä¼šä¸‹æ£‹ï¼Ÿ\n";
 		return msg;
 	}
 	win = obj->query("c_chess/win");
@@ -204,7 +204,7 @@ string ask_lose()
 	all = win + lose + draw;
 
 	name = obj->query("name")+"("+obj->query("id")+")";
-	msg ="·ÅÑÛÏÀ¿ÍÐÐ£¬ÏÂÏóÆåÊäµÃ×î²ÒµÄ¾ÍÊý"+name+"ÁË£¬³É¼¨ÊÇ"+chinese_number(all)+"Õ½"+chinese_number(lose)+"°Ü¡£\n";
+	msg ="æ”¾çœ¼ä¾ å®¢è¡Œï¼Œä¸‹è±¡æ£‹è¾“å¾—æœ€æƒ¨çš„å°±æ•°"+name+"äº†ï¼Œæˆç»©æ˜¯"+chinese_number(all)+"æˆ˜"+chinese_number(lose)+"è´¥ã€‚\n";
 
 	return msg;
 }

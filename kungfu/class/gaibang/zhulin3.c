@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÖñÁÖÐ¡µÀ");
+        set("short", "ç«¹æž—å°é“");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÖñÁÖÐ¡µÀ£¬Á½ÅÔ¾¡ÊÇÕÚÌì±ÎÈÕµÄÃ¯ÃÜµÄÖñÁÖ¡£ÆË±Ç¶øÀ´ÊÇÒ»Õó¹·
-ÈâÏãÎ¶¡£
+è¿™æ˜¯ä¸€æ¡ç«¹æž—å°é“ï¼Œä¸¤æ—å°½æ˜¯é®å¤©è”½æ—¥çš„èŒ‚å¯†çš„ç«¹æž—ã€‚æ‰‘é¼»è€Œæ¥æ˜¯ä¸€é˜µç‹—
+è‚‰é¦™å‘³ã€‚
 LONG
 	);
 
@@ -53,11 +53,11 @@ int do_cook(string arg)
 
 	if ( !arg || arg == "") return 0;
 
-	if ( arg == "Å£ÈâÌõ" ){
+	if ( arg == "ç‰›è‚‰æ¡" ){
 		niu = present("niu rou", me);
 
 		if ( !objectp(niu)) {
-			tell_object(me, "ÄãÓÃÊ²Ã´À´ÉÕÅ£ÈâÌõ°¡£¿\n");
+			tell_object(me, "ä½ ç”¨ä»€ä¹ˆæ¥çƒ§ç‰›è‚‰æ¡å•Šï¼Ÿ\n");
 			return 1;
 		}
 		yang = present("yang rou", me);
@@ -65,7 +65,7 @@ int do_cook(string arg)
 		zhang = present("zhang rou", me);
 		tu = present("tu rou", me);
 
-               	message_vision("$NÉÕÁËÒ»ÍëÏãÅçÅçµÄÅ£ÈâÌõÀ´¡£\n", me);
+               	message_vision("$Nçƒ§äº†ä¸€ç¢—é¦™å–·å–·çš„ç‰›è‚‰æ¡æ¥ã€‚\n", me);
 
 		if ( !objectp(yang) || !objectp(zhu) || !objectp(zhang) || 
 		!objectp(tu) ){
@@ -88,9 +88,9 @@ int do_cook(string arg)
 		return 1;
 	}
 
-	if ( arg == "ºÃåÏÌÀ" ){
+	if ( arg == "å¥½é€‘æ±¤" ){
 		flower=present("zhu sun", me);
-               	message_vision("$NÉÕÁËÒ»ÍëÏãÅçÅçµÄºÃåÏÌÀÀ´¡£\n", me);
+               	message_vision("$Nçƒ§äº†ä¸€ç¢—é¦™å–·å–·çš„å¥½é€‘æ±¤æ¥ã€‚\n", me);
 
 		if ( !objectp(flower)) {
 			ob2->move(me);

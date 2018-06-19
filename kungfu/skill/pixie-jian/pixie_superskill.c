@@ -42,8 +42,8 @@ void checking_pixieflg(object me,object enemy)
 	me->set_temp("pixie_noop",1);
 	if( wizardp(me) &&me->query("env/pixie_test"))
 	{
-		printf(HIC"ÉÏÒ»¸ö±ØÉ±¼¼Ãû³ÆÊÇ%s\t",me->query_temp("pixie_use/3"));
-		printf(HIC"µ±Ç°Ê¹ÓÃµÄ±ØÉ±¼¼ÊÇ%s\n"NOR,me->query_temp("pixie_use/4"));
+		printf(HIC"ä¸Šä¸€ä¸ªå¿…æ€æŠ€åç§°æ˜¯%s\t",me->query_temp("pixie_use/3"));
+		printf(HIC"å½“å‰ä½¿ç”¨çš„å¿…æ€æŠ€æ˜¯%s\n"NOR,me->query_temp("pixie_use/4"));
 	}
 		if(me->query_skill_mapped("sword") != "pixie-jian"
 		||me->query_skill_mapped("dodge") != "pixie-jian"
@@ -109,8 +109,8 @@ void checking_pixieflg(object me,object enemy)
 				   me->set_temp("pixie_superskill/duoming",1);
      			   if( wizardp(me) &&me->query("env/pixie_test"))
 				   {
-				   printf(HIY"Perform cimu ³É¹¦£¬Set ³É¹¦ posheshan 1\n"NOR);
-				   printf(HIY"Perform cimu ³É¹¦£¬Set ³É¹¦ duoming 1\n"NOR);
+				   printf(HIY"Perform cimu æˆåŠŸï¼ŒSet æˆåŠŸ posheshan 1\n"NOR);
+				   printf(HIY"Perform cimu æˆåŠŸï¼ŒSet æˆåŠŸ duoming 1\n"NOR);
 				   }
 		
 			   }
@@ -123,7 +123,7 @@ void checking_pixieflg(object me,object enemy)
 				   {
 				   me->set_temp("pixie_superskill/poshensha",2);
      			   if( wizardp(me) &&me->query("env/pixie_test"))
-   				   printf(HIY"ciwan Ìõ¼ş³É¹¦£¬Set posheshan 2\n"NOR);
+   				   printf(HIY"ciwan æ¡ä»¶æˆåŠŸï¼ŒSet posheshan 2\n"NOR);
 				   }
 				   else
 				   {
@@ -133,7 +133,7 @@ void checking_pixieflg(object me,object enemy)
 				   {
 				   me->set_temp("pixie_superskill/duoming",3);
      			   if( wizardp(me) &&me->query("env/pixie_test"))
-   				   printf(HIY"ciwan Ìõ¼ş³É¹¦£¬Set duoming 3\n"NOR);
+   				   printf(HIY"ciwan æ¡ä»¶æˆåŠŸï¼ŒSet duoming 3\n"NOR);
 				   }
 				   else
 				   {
@@ -143,15 +143,15 @@ void checking_pixieflg(object me,object enemy)
 					    me->delete_temp("pixie_performtime");
 			 		    if( wizardp(me) &&me->query("env/pixie_test"))
 						{
-      				   printf(HIM"ciwan Ìõ¼şÊ§°Ü£¬Set duoming 0\n"NOR);
-      				   printf(HIM"ciwan Ìõ¼şÊ§°Ü£¬Set posheshan 0\n"NOR);
+      				   printf(HIM"ciwan æ¡ä»¶å¤±è´¥ï¼ŒSet duoming 0\n"NOR);
+      				   printf(HIM"ciwan æ¡ä»¶å¤±è´¥ï¼ŒSet posheshan 0\n"NOR);
 						}
 				   //////////////////////////////////////////////////////////////
 				   }
 				   	if( wizardp(me) &&me->query("env/pixie_test"))
 					{
-					printf(HIC"¶áÃü¹î·É»ê%d\n"NOR,me->query_temp("pixie_superskill/duoming"));
-					printf(HIC"¹í÷ÈÆÆÉíÉ±Íê³É%d\n"NOR,me->query_temp("pixie_superskill/poshensha"));
+					printf(HIC"å¤ºå‘½è¯¡é£é­‚%d\n"NOR,me->query_temp("pixie_superskill/duoming"));
+					printf(HIC"é¬¼é­…ç ´èº«æ€å®Œæˆ%d\n"NOR,me->query_temp("pixie_superskill/poshensha"));
 					}
 				   }
 			   }
@@ -165,7 +165,7 @@ void checking_pixieflg(object me,object enemy)
 				   {
 				   me->set_temp("pixie_superskill/duoming",2);
      			   if( wizardp(me) &&me->query("env/pixie_test"))
-   				   printf(HIY"cizu Ìõ¼ş³É¹¦£¬Set duoming 2\n"NOR);
+   				   printf(HIY"cizu æ¡ä»¶æˆåŠŸï¼ŒSet duoming 2\n"NOR);
 				   }
 				   else
 				   {
@@ -173,7 +173,7 @@ void checking_pixieflg(object me,object enemy)
 						   me->delete_temp("pixie_superskill");
 						   me->delete_temp("pixie_performtime");
 						   if( wizardp(me) &&me->query("env/pixie_test"))
-      				       printf(HIM"cizu Ìõ¼şÊ§°Ü£¬Set duoming 0\n"NOR);
+      				       printf(HIM"cizu æ¡ä»¶å¤±è´¥ï¼ŒSet duoming 0\n"NOR);
 				   }
 
 			   }
@@ -222,27 +222,27 @@ int do_prepare_superskill(string superskill_name,object me,object target,int ap,
 			
 				{
 
-					perpare_msg += HIB "\n$NÃÍµÄ´ß¶¯¹í÷ÈĞ°Òì°ãµÄÉíÓ°£¬³Ã$nÊÓÏßÄ£ºı£¬Ë«ÊÖÊÜ´´£¬ÉÁÉí½Ó½ü$n¡£\n"NOR;
+					perpare_msg += HIB "\n$NçŒ›çš„å‚¬åŠ¨é¬¼é­…é‚ªå¼‚èˆ¬çš„èº«å½±ï¼Œè¶$nè§†çº¿æ¨¡ç³Šï¼ŒåŒæ‰‹å—åˆ›ï¼Œé—ªèº«æ¥è¿‘$nã€‚\n"NOR;
 
-					perpare_msg += HIB "$NÍ»È»Ò»¸ö°«Éí£¬ÊÖÖĞ"+weapon->query("name")+"Á¬´Ì$nË«×ãÒªÑ¨¡£\n"NOR;
+					perpare_msg += HIB "$Nçªç„¶ä¸€ä¸ªçŸ®èº«ï¼Œæ‰‹ä¸­"+weapon->query("name")+"è¿åˆº$nåŒè¶³è¦ç©´ã€‚\n"NOR;
 
 					if(me->query("qi")<me->query("max_qi")/3)
 					ap=ap*3/2;
 			        if( random(ap+dp) < dp )
 					{
-						perpare_msg += HIG "$nÖ»ÌıµÃÉíÅÔÒÂÉÀÆ®¶¯Éù£¬ÖªÊÇ$NÏ®½üÉíÀ´£¬µ±¼´Ë«×ãµãµØ£¬Ïòºó¼±ÍË£¬¶ã¹ıÕâ¹îÒì¹ÖÕĞ¡£\n"NOR;
+						perpare_msg += HIG "$nåªå¬å¾—èº«æ—è¡£è¡«é£˜åŠ¨å£°ï¼ŒçŸ¥æ˜¯$Nè¢­è¿‘èº«æ¥ï¼Œå½“å³åŒè¶³ç‚¹åœ°ï¼Œå‘åæ€¥é€€ï¼Œèº²è¿‡è¿™è¯¡å¼‚æ€ªæ‹›ã€‚\n"NOR;
 			            me->start_busy(3 + random(3));
 					}
 					else
 					{
-    					perpare_msg += HIR "$nÖª¾õÉíÇ°¾¢·çÆËÀ´£¬ÖªµÀ´óÊÂ²»Ãë£¬¾ª»ÅÖĞÖ»¾õË«×ãÒ»Âé£¬ÒÑ±»$N´ÌÖĞÒªÑ¨£¬½Ó×ÅÏÂÉíÊ§È¥Öª¾õ¡£\n"NOR;	
-						perpare_msg += HIY "$NÑÛÖĞ¾«¹â´óÊ¢£¬Õâ¡¸´ÌÄ¿¡¹¡¸´ÌÍó¡¹¡¸´Ì×ã¡¹ÈıÕĞÒ»ÆøºÇ³É¡£\n"NOR;	
-						perpare_msg += HIR "$n¶ÙÊ±È«ÉíÊ§È¥Öª¾õ£¬ÔÙÒ²¶¯µ¯²»µÃ¡£¡£\n"NOR;	
-						perpare_msg += HIB "$N¹îÒìÒ»Ğ¦£¬Õ¹¿ª¹í÷È°ãµÄÉí·¨£¬ÉÁµç°ã»Øµ½Ô­´¦£¬ËÆºõ´ÓÎ´ÒÆ¶¯¡£\n"NOR;	
+    					perpare_msg += HIR "$nçŸ¥è§‰èº«å‰åŠ²é£æ‰‘æ¥ï¼ŒçŸ¥é“å¤§äº‹ä¸ç§’ï¼ŒæƒŠæ…Œä¸­åªè§‰åŒè¶³ä¸€éº»ï¼Œå·²è¢«$Nåˆºä¸­è¦ç©´ï¼Œæ¥ç€ä¸‹èº«å¤±å»çŸ¥è§‰ã€‚\n"NOR;	
+						perpare_msg += HIY "$Nçœ¼ä¸­ç²¾å…‰å¤§ç››ï¼Œè¿™ã€Œåˆºç›®ã€ã€Œåˆºè…•ã€ã€Œåˆºè¶³ã€ä¸‰æ‹›ä¸€æ°”å‘µæˆã€‚\n"NOR;	
+						perpare_msg += HIR "$né¡¿æ—¶å…¨èº«å¤±å»çŸ¥è§‰ï¼Œå†ä¹ŸåŠ¨å¼¹ä¸å¾—ã€‚ã€‚\n"NOR;	
+						perpare_msg += HIB "$Nè¯¡å¼‚ä¸€ç¬‘ï¼Œå±•å¼€é¬¼é­…èˆ¬çš„èº«æ³•ï¼Œé—ªç”µèˆ¬å›åˆ°åŸå¤„ï¼Œä¼¼ä¹ä»æœªç§»åŠ¨ã€‚\n"NOR;	
 						target->add_temp("apply/dodge",  -dodge_skill);
 						target->set_temp("pixie/cizu",1);
 						target->set_temp("cannot_move",1);
-						target->set_temp("cannot_move_msg","ÄãË«×ãÒªÑ¨±»´ÌÖĞ£¬ÄÄÀï»¹ÄÜÒÆ¶¯°ë²½¡£");
+						target->set_temp("cannot_move_msg","ä½ åŒè¶³è¦ç©´è¢«åˆºä¸­ï¼Œå“ªé‡Œè¿˜èƒ½ç§»åŠ¨åŠæ­¥ã€‚");
 
 						target->add_temp("pixie_times/cizu",1 );
 						target->set_temp("pixie_bisha/poshensha",1);
@@ -279,22 +279,22 @@ int do_prepare_superskill(string superskill_name,object me,object target,int ap,
 					&&me->query_temp("pixie/guimei"))
 				{
 					
-					perpare_msg += HIB "\nÉ²ÄÇ¼û$NÉíÓ°±äµÃÁé»ÃÒì³££¬³Ã$nÊÓÏßÄ£ºı£¬È«ÉíÊÜÖÆÖ®¼Ê£¬Ê©Õ¹³ö±ÙĞ°½£·¨¡¸´ÌĞÄ¡¹¾ø¼¼¡£\n"NOR;
-					perpare_msg += HIB "$NÇáÒ¡ÑüÖ«£¬ÉíÓ°Æ®¶¯£¬»Ã»¯³öÎŞÊı¹îÒìÈËÓ°¡£Í»È»Ò»Ó°·É³ö£¬Ï®Ïò$n¡£\n"NOR;
+					perpare_msg += HIB "\nåˆ¹é‚£è§$Nèº«å½±å˜å¾—çµå¹»å¼‚å¸¸ï¼Œè¶$nè§†çº¿æ¨¡ç³Šï¼Œå…¨èº«å—åˆ¶ä¹‹é™…ï¼Œæ–½å±•å‡ºè¾Ÿé‚ªå‰‘æ³•ã€Œåˆºå¿ƒã€ç»æŠ€ã€‚\n"NOR;
+					perpare_msg += HIB "$Nè½»æ‘‡è…°è‚¢ï¼Œèº«å½±é£˜åŠ¨ï¼Œå¹»åŒ–å‡ºæ— æ•°è¯¡å¼‚äººå½±ã€‚çªç„¶ä¸€å½±é£å‡ºï¼Œè¢­å‘$nã€‚\n"NOR;
 			        if(random(ap+dp)<dp||(random(7)==0))
 
 					{
-						perpare_msg += HIG"$nÌıµÃ¾¢·çÆËÃæ£¬ÖªµÀÊÇ$NÊ©Õ¹ÁèÀ÷É±×Å£¬¸Ï½ôÊÕ×¡¹¥ÊÆ£¬Ò»¸öĞ±·­£¬ÏÕÏÕµÄ±Ü¿ªÕâÒ»ÕĞ¡£\n" NOR;
+						perpare_msg += HIG"$nå¬å¾—åŠ²é£æ‰‘é¢ï¼ŒçŸ¥é“æ˜¯$Næ–½å±•å‡Œå‰æ€ç€ï¼Œèµ¶ç´§æ”¶ä½æ”»åŠ¿ï¼Œä¸€ä¸ªæ–œç¿»ï¼Œé™©é™©çš„é¿å¼€è¿™ä¸€æ‹›ã€‚\n" NOR;
 						me->start_busy(3 + random(5));
 						me->delete_temp("pixie_performtime");
 					}
 					else
 					{
    						
-						perpare_msg += HIR "$nÖª¾õÉíÇ°¾¢·çÆËÀ´£¬±ãÖª´óÊÂ²»Ãî£¬½ô½Ó×ÅĞÄ¿ÚÒ»ÌÛ£¬ÒÑ±»$N´ÌÖĞ¡£\n"NOR;	
-						perpare_msg += HIY "$NÑÛÖĞ¾«¹â´óÊ¢£¬Õâ¡¸´ÌÄ¿¡¹,¡¸´ÌÍó¡¹¡¸´Ì×ã¡¹¡¸´ÌĞÄ¡¹ËÄÕĞÒ»ÆøºÇ³É¡£\n"NOR;	
-						perpare_msg += HIR "¶ÙÊ±Ò»µÀÑª½£´Ó$nĞÄ¿Ú±ê³ö£¬È÷Âúµ±³¡¡£\n"NOR;	
-						perpare_msg += HIB "$N¹îÒìÒ»Ğ¦£¬Õ¹¿ª¹í÷È°ãµÄÉí·¨£¬Ëæ×ÅÑª½£ÏòºóÍËÈ¥£¬É²ÄÇ¼ä»Øµ½Ô­´¦¡£\n"NOR;	
+						perpare_msg += HIR "$nçŸ¥è§‰èº«å‰åŠ²é£æ‰‘æ¥ï¼Œä¾¿çŸ¥å¤§äº‹ä¸å¦™ï¼Œç´§æ¥ç€å¿ƒå£ä¸€ç–¼ï¼Œå·²è¢«$Nåˆºä¸­ã€‚\n"NOR;	
+						perpare_msg += HIY "$Nçœ¼ä¸­ç²¾å…‰å¤§ç››ï¼Œè¿™ã€Œåˆºç›®ã€,ã€Œåˆºè…•ã€ã€Œåˆºè¶³ã€ã€Œåˆºå¿ƒã€å››æ‹›ä¸€æ°”å‘µæˆã€‚\n"NOR;	
+						perpare_msg += HIR "é¡¿æ—¶ä¸€é“è¡€å‰‘ä»$nå¿ƒå£æ ‡å‡ºï¼Œæ´’æ»¡å½“åœºã€‚\n"NOR;	
+						perpare_msg += HIB "$Nè¯¡å¼‚ä¸€ç¬‘ï¼Œå±•å¼€é¬¼é­…èˆ¬çš„èº«æ³•ï¼Œéšç€è¡€å‰‘å‘åé€€å»ï¼Œåˆ¹é‚£é—´å›åˆ°åŸå¤„ã€‚\n"NOR;	
 						
 						damage=me->query_skill("pixie-jian",1)*(random(5)+5);
 						if(me->query_skill("pixie-jian",1)>400)
@@ -347,7 +347,7 @@ void remove_poshensha(object target,int dodge_skill)
 			target->delete_temp("cannot_move_msg");
 
 	        if(target->is_fighting() )
-				message_vision(HIG"$NÖÕÓÚ³å¿ªÏÂÉíÑ¨µÀ£¬Ë«×ãĞĞ¶¯»Ö¸´Õı³£¡£\n"NOR, target);
+				message_vision(HIG"$Nç»ˆäºå†²å¼€ä¸‹èº«ç©´é“ï¼ŒåŒè¶³è¡ŒåŠ¨æ¢å¤æ­£å¸¸ã€‚\n"NOR, target);
 			
 			return ;
 

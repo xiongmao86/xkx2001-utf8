@@ -1,5 +1,5 @@
 //Cracked by Roath
-//bidu.c È«Õæ½Ì±Æ¶¾·¨ÃÅ 
+//bidu.c å…¨çœŸæ•™é€¼æ¯’æ³•é—¨ 
 // changed by maco
 
 #include "/kungfu/skill/poison_list.h"
@@ -12,13 +12,13 @@ int exert(object me, object target)
 	xtg = (int)me->query_skill("xiantian-gong", 1);
 
 	if ((int)me->query_skill("xiantian-gong",1) < 100)
-		return notify_fail("ÄãµÄÏÈÌì¹¦ĞŞÎª»¹²»¹»±Æ¶¾ËùĞè¡£\n");
+		return notify_fail("ä½ çš„å…ˆå¤©åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿé€¼æ¯’æ‰€éœ€ã€‚\n");
 
 	if( (int)me->query("max_neili") < 1000 )
-		return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»±Æ¶¾ËùĞè¡£\n");
+		return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿé€¼æ¯’æ‰€éœ€ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞÔË¹¦ÁÆ¶¾¡£\n");
+		return notify_fail("ä½ æ— æ³•åœ¨æˆ˜æ–—ä¸­è¿åŠŸç–—æ¯’ã€‚\n");
 
 
 		for( i=0; i < sizeof(poison_list); i++ )
@@ -33,21 +33,21 @@ int exert(object me, object target)
 			}
 
 		if( poi_lvl == 0 )
-			return notify_fail("Äã²¢Î´ÖĞ¶¾¡£\n");
+			return notify_fail("ä½ å¹¶æœªä¸­æ¯’ã€‚\n");
 
 		neili_cost = poi_lvl*100;
 		xtg_reg = 100+poi_lvl*10;
 
 		if( (int)me->query("neili") < neili_cost+200 )
-			return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»×ãÒÔÔËÊ¹ÏÈÌì¹¦±Æ³öÉíÉÏ¶¾ÖÊ¡£\n");
+			return notify_fail("ä½ ç°åœ¨çš„å†…åŠ›ä¸è¶³ä»¥è¿ä½¿å…ˆå¤©åŠŸé€¼å‡ºèº«ä¸Šæ¯’è´¨ã€‚\n");
 
 		if( xtg < xtg_reg )
-			return notify_fail("ÄãµÄÏÈÌì¹¦ĞŞÎª»¹²»ÄÜ»¯µô" + poi_name + "¡£\n");
+			return notify_fail("ä½ çš„å…ˆå¤©åŠŸä¿®ä¸ºè¿˜ä¸èƒ½åŒ–æ‰" + poi_name + "ã€‚\n");
 
 		me->set("jiali", 0);
-		//$N¿çÈëË®¸×ÄÚ£¬ÇåË®Ö±½şµ½Í·¾±¡£
-		//Ö»¼ûÍõ´¦Ò»±ÕÄ¿¶ø×ø£¬¼±ºô»ºÎü£¬¹ıÁËÒ»¶Ù·¹¹¤·ò£¬Ò»¸×ÇåË®¾¹½¥½¥±ä³ÉºÚÉ«£¬ËûÁ³É«È´Ò²ÂÔ¸´ºìÈó¡£
-		message_vision("$NÅÌÏ¥×øÏÂ£¬ÔËÆğÏÈÌì¹¦£¬ÒÔÄÚÁ¦×è×¡" + col_ansi  + poi_name + NOR"ÉÏĞĞ£¬Í·ÉÏÒ»ÂÆÂÆÈÈÆøôÁôÁ¶øÉÏ£¬ÓÌÈçÕôÁıÒ»°ã¡£\n", me);
+		//$Nè·¨å…¥æ°´ç¼¸å†…ï¼Œæ¸…æ°´ç›´æµ¸åˆ°å¤´é¢ˆã€‚
+		//åªè§ç‹å¤„ä¸€é—­ç›®è€Œåï¼Œæ€¥å‘¼ç¼“å¸ï¼Œè¿‡äº†ä¸€é¡¿é¥­å·¥å¤«ï¼Œä¸€ç¼¸æ¸…æ°´ç«Ÿæ¸æ¸å˜æˆé»‘è‰²ï¼Œä»–è„¸è‰²å´ä¹Ÿç•¥å¤çº¢æ¶¦ã€‚
+		message_vision("$Nç›˜è†åä¸‹ï¼Œè¿èµ·å…ˆå¤©åŠŸï¼Œä»¥å†…åŠ›é˜»ä½" + col_ansi  + poi_name + NOR"ä¸Šè¡Œï¼Œå¤´ä¸Šä¸€ç¼•ç¼•çƒ­æ°”è¢…è¢…è€Œä¸Šï¼ŒçŠ¹å¦‚è’¸ç¬¼ä¸€èˆ¬ã€‚\n", me);
 
 		me->start_busy(poi_lvl);
 		call_out("bidu", poi_lvl, me, poi_name, poison, xtg, poi_lvl, neili_cost);
@@ -70,11 +70,11 @@ int bidu(object me, string poi_name, string poison, int xtg, int poi_lvl, int ne
 
 	if( poi_amount > cure_amount ) // if I poisoned more than I can cure.
 	{
-		write("ÄãÔË¹¦Ò»Õó£¬ìó¸ĞÉñÀ§Á¦Æ££¬Ã»ÁÏµ½ÌåÄÚ" + poi_name + "Èç´ËÀ÷º¦£¬¾¹È»ÇıÖ®²»³ö¡£\n");
+		write("ä½ è¿åŠŸä¸€é˜µï¼Œç¥—æ„Ÿç¥å›°åŠ›ç–²ï¼Œæ²¡æ–™åˆ°ä½“å†…" + poi_name + "å¦‚æ­¤å‰å®³ï¼Œç«Ÿç„¶é©±ä¹‹ä¸å‡ºã€‚\n");
 		return 0;
 	}
-	message_vision("$N±ÕÄ¿¶ø×ø£¬¼±ºô»ºÎü£¬¹ıÁËÒ»¶Ù·¹¹¤·ò£¬Á³É«ÂÔ¸´ºìÈó¡£\n", me);
-//Íõ´¦Ò»µÀ£º¡°·öÎÒ³öÀ´£¬»»Ò»¸×ÇåË®¡£¡±¹ù¾¸ÒÀÈ»»»ÁËË®£¬ÓÖ½«Ëû·ÅÈë¸×ÄÚ¡£ÕâÊ±²ÅÖªËûÊÇÒÔÄÚ¹¦±Æ³öÉíÉÏ¶¾ÖÊ£¬»¯ÔÚË®Àï¡£Õâ°ãÁ¬»»ÁËËÄ¸×ÇåË®¡£Ë®ÖĞ²ÅÎŞºÚÉ«¡£Íõ´¦Ò»Ğ¦µÀ£º¡°Ã»ÊÂÀ²¡£¡±·ö×Å¸×ÑØ£¬¿çÁË³öÀ´
+	message_vision("$Né—­ç›®è€Œåï¼Œæ€¥å‘¼ç¼“å¸ï¼Œè¿‡äº†ä¸€é¡¿é¥­å·¥å¤«ï¼Œè„¸è‰²ç•¥å¤çº¢æ¶¦ã€‚\n", me);
+//ç‹å¤„ä¸€é“ï¼šâ€œæ‰¶æˆ‘å‡ºæ¥ï¼Œæ¢ä¸€ç¼¸æ¸…æ°´ã€‚â€éƒ­é–ä¾ç„¶æ¢äº†æ°´ï¼Œåˆå°†ä»–æ”¾å…¥ç¼¸å†…ã€‚è¿™æ—¶æ‰çŸ¥ä»–æ˜¯ä»¥å†…åŠŸé€¼å‡ºèº«ä¸Šæ¯’è´¨ï¼ŒåŒ–åœ¨æ°´é‡Œã€‚è¿™èˆ¬è¿æ¢äº†å››ç¼¸æ¸…æ°´ã€‚æ°´ä¸­æ‰æ— é»‘è‰²ã€‚ç‹å¤„ä¸€ç¬‘é“ï¼šâ€œæ²¡äº‹å•¦ã€‚â€æ‰¶ç€ç¼¸æ²¿ï¼Œè·¨äº†å‡ºæ¥
 //	me->add("max_neili", -1);
 	if( poi_amount < cure ) // if my poison less than once I can cure.
 		me->apply_condition(poison, 0);

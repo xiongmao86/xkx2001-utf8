@@ -1,18 +1,18 @@
 //Cracked by Roath
-// xi.c ÕÅËÉÏª
+// xi.c å¼ æ¾æºª
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-        set_name("ÕÅËÉÏª", ({ "zhang songxi", "zhang" }));
-        set("nickname", "Îäµ±ËÄÏÀ");
+        set_name("å¼ æ¾æºª", ({ "zhang songxi", "zhang" }));
+        set("nickname", "æ­¦å½“å››ä¾ ");
         set("long", 
-                "Ëû¾ÍÊÇÕÅÈý·áµÄËÄµÜ×ÓÕÅËÉÏª¡£\n"
-                "Ëû½ñÄêËÄÊ®Ëê£¬Éí²Ä¶ÌÐ¡¾«º·£¬ÂúÁ³Ó¢Æø£¬\n"
-                "ÎªÈË¾«Ã÷ÄÜ¸É£¬ÒÔ×ãÖÇ¶àÄ±Öø³Æ¡£\n");
-        set("gender", "ÄÐÐÔ");
+                "ä»–å°±æ˜¯å¼ ä¸‰ä¸°çš„å››å¼Ÿå­å¼ æ¾æºªã€‚\n"
+                "ä»–ä»Šå¹´å››åå²ï¼Œèº«æçŸ­å°ç²¾æ‚ï¼Œæ»¡è„¸è‹±æ°”ï¼Œ\n"
+                "ä¸ºäººç²¾æ˜Žèƒ½å¹²ï¼Œä»¥è¶³æ™ºå¤šè°‹è‘—ç§°ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -54,7 +54,7 @@ void create()
         prepare_skill("cuff", "taiji-quan");
 	prepare_skill("strike", "mian-zhang");
 	
-        create_family("Îäµ±ÅÉ", 2, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 2, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -66,28 +66,28 @@ void attempt_apprentice(object ob)
 {
         mapping fam;
 
-        if( mapp(fam = ob->query("family")) && fam["family_name"] != "Îäµ±ÅÉ" )
+        if( mapp(fam = ob->query("family")) && fam["family_name"] != "æ­¦å½“æ´¾" )
         {
                 command ("say " + RANK_D->query_respect(this_player())
-                        + "²¢·ÇÎÒÃÅÖÐÈË£¬Ï°Îä»¹ÊÇÏÈ´Ó¸÷Î»µÀ³¤Æð°É£¡");
+                        + "å¹¶éžæˆ‘é—¨ä¸­äººï¼Œä¹ æ­¦è¿˜æ˜¯å…ˆä»Žå„ä½é“é•¿èµ·å§ï¼");
                 return;
         }
 
         if ((int)ob->query_skill("wudang-jiuyang", 1) < 60) {
-                command("say ÎÒÎäµ±ÅÉÄËÄÚ¼ÒÎä¹¦£¬×îÖØÊÓÄÚ¹¦ÐÄ·¨¡£");
+                command("say æˆ‘æ­¦å½“æ´¾ä¹ƒå†…å®¶æ­¦åŠŸï¼Œæœ€é‡è§†å†…åŠŸå¿ƒæ³•ã€‚");
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸ÃÔÚÎäµ±¾ÅÑô¹¦ÉÏ¶àÏÂµã¹¦·ò£¿");
+                        "æ˜¯å¦è¿˜åº”è¯¥åœ¨æ­¦å½“ä¹é˜³åŠŸä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
                 return;
         }
 
         if ((int)ob->query("shen") < 80000) {
-                command("say ÎÒÎäµ±ÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say " + RANK_D->query_respect(ob) + "ÈôÄÜ×ö³ö" +
-                        "¼¸¼þÏÀÒåÖ®ÊÂ£¬ÎÒÒ»¶¨ÊÕÄã¡£");
+                command("say æˆ‘æ­¦å½“ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+                command("say " + RANK_D->query_respect(ob) + "è‹¥èƒ½åšå‡º" +
+                        "å‡ ä»¶ä¾ ä¹‰ä¹‹äº‹ï¼Œæˆ‘ä¸€å®šæ”¶ä½ ã€‚");
                 return;
         }
-        command("say ºÃ°É£¬¼ÈÈ»" + RANK_D->query_respect(ob) + "Ò²ÊÇ" +
-                "ÎÒ±²ÖÐÈË£¬½ñÌì¾ÍÊÕÏÂÄã°É¡£");
+        command("say å¥½å§ï¼Œæ—¢ç„¶" + RANK_D->query_respect(ob) + "ä¹Ÿæ˜¯" +
+                "æˆ‘è¾ˆä¸­äººï¼Œä»Šå¤©å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit " + ob->query("id"));
 }
 

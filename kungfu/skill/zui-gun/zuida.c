@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zuida.c ��������
+// zuida.c 八仙醉打
 // by  aln 4 / 98
 // Modified by Apache 9/98
 
@@ -46,38 +46,38 @@ int perform(object me, object target)
     degree = me->query_condition("drunk");
 
     if( !me->is_fighting() )
-        return notify_fail("ֻ����ս���в���ʹ�ð�������\n");
+        return notify_fail("只有在战斗中才能使用八仙醉打！\n");
 
     target = offensive_target(me);
-        if( !target ) return notify_fail("��������ֻ��ս���еĶ�����Ч��\n");
+        if( !target ) return notify_fail("八仙醉打只对战斗中的对手有效！\n");
 
     weapon = me->query_temp("weapon");
     if( !objectp(weapon) || weapon->query("skill_type") != "club" )
-        return notify_fail("�������޹������ʹ�ð�������\n");
+        return notify_fail("你手中无棍，如何使得八仙醉打？\n");
 
     if( degree < limit/4 )
-        return notify_fail("�㻹û�к����أ���ô��ʩչ�������򣿣�\n");
+        return notify_fail("你还没有喝醉呢，怎么能施展八仙醉打？！\n");
 
     if( environment(me)->query("no_fight") )
-        return notify_fail("�������㲻�������������ˣ�\n");
+        return notify_fail("在这里你不能乱用醉棍打人！\n");
 
     if( (lvl = me->query_skill("zui-gun", 1)) < 90 )
-        return notify_fail("���ڹ������µĹ��򻹲���������ʹ��������\n");
+        return notify_fail("你在棍法上下的功夫还不够，不会使八仙醉打！\n");
 
     if( me->query_skill("hunyuan-yiqi", 1) < 60 )
-        return notify_fail("��Ļ�Ԫһ�������δ�����޷�ʩչ��������\n");
+        return notify_fail("你的混元一气功火候未到，无法施展八仙醉打！\n");
 
     if( me->query("max_neili") <= 500 )
-        return notify_fail("���������Ϊ���㣬��������������ںͣ��޷�ʩչ��������\n");
+        return notify_fail("你的内力修为不足，劲力不能与酒意融和，无法施展八仙醉打！\n");
 
     if( me->query("jingli") < 500 )
-        return notify_fail("�����ڵľ����������޷��ﵽ�����ⲻ����״̬��\n");
+        return notify_fail("你现在的精力不够，无法达到形醉意不醉的状态！\n");
         
     if( me->query_temp("zui-da") ) 
-        return notify_fail("������ʹ�ð������򹥻����ˣ�\n");
+        return notify_fail("你正在使用八仙醉打攻击敌人！\n");
 
-    message_vision( HIY "\n$N���ش��˸����ã��Ų�ͻȻ�������������е�" + 
-        weapon->name() + "��ָ֪��η�������Ʈ��������\n\n" NOR, me);
+    message_vision( HIY "\n$N呃地打了个酒嗝，脚步突然踉跄起来，手中的" + 
+        weapon->name() + "不知指向何方，身形飘忽不定！\n\n" NOR, me);
 
     condt = 0;
     if( skill_map = target->query_skill_map() ) {
@@ -137,7 +137,7 @@ void remove_effect(object me, object target, int d0, int d1) {
             me->add_temp("apply/strength", -d0);
             me->add_temp("apply/dexerity", -d0);
             //me->add_temp("apply/damage", -d0);
-            message_vision("\n$Nһ����ʽ�������̬�лָ��˹�����\n", me);
+            message_vision("\n$N一收招式，便从醉态中恢复了过来。\n", me);
         }
     }
 

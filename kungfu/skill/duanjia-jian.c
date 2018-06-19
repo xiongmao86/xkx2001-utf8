@@ -1,118 +1,118 @@
 //Cracked by Roath
-// Duanjia-jian ¶Î¼Ò½£
+// Duanjia-jian æ®µå®¶å‰‘
 // Original, unknown; modified, by Acep
 
 inherit SKILL;
 
 mapping *action = ({
 ([      "action" :
-"$NÓÒÊÖÒ»×ª£¬Ò»Ê½¡¸ÔÆºáÇØÁë¡¹ÊÖÖÐ$wÆ½Ö¸£¬×óÓÒÁ¬Ðø°Ú¶¯£¬Ò»ÆøºÇ³ÉºáÉ¨$nµÄ$l",
+"$Nå³æ‰‹ä¸€è½¬ï¼Œä¸€å¼ã€Œäº‘æ¨ªç§¦å²­ã€æ‰‹ä¸­$wå¹³æŒ‡ï¼Œå·¦å³è¿žç»­æ‘†åŠ¨ï¼Œä¸€æ°”å‘µæˆæ¨ªæ‰«$nçš„$l",
         "force" : 125,
         "dodge" : 5,
 	"parry" : 15,
         "damage": 5,
         "lvl"   : 0,
-        "skill_name" : "ÔÆºáÇØÁë",
-        "damage_type" : "ÅüÉË"
+        "skill_name" : "äº‘æ¨ªç§¦å²­",
+        "damage_type" : "åŠˆä¼¤"
 
 ]),
 ([      "action" :
-"$NÉí×ÓÒ»²à£¬ÓÒ×ãÇ°Ì¤£¬Ê¹³öÒ»Ê½¡¸·ÉÁ÷Ö±ÏÂ¡¹ÊÖÖÐ$w¼±Åü$nµÄ$l",
+"$Nèº«å­ä¸€ä¾§ï¼Œå³è¶³å‰è¸ï¼Œä½¿å‡ºä¸€å¼ã€Œé£žæµç›´ä¸‹ã€æ‰‹ä¸­$wæ€¥åŠˆ$nçš„$l",
         "force" : 150,
         "dodge" : 0,
 		"parry" : 15,
         "damage": 10,
         "lvl"   : 10,
-        "skill_name" : "·ÉÁ÷Ö±ÏÂ",
-        "damage_type" : "ÅüÉË"
+        "skill_name" : "é£žæµç›´ä¸‹",
+        "damage_type" : "åŠˆä¼¤"
 
 ]),
 ([      "action" :
-"$NÕÌ$wÒ»ºá£¬Ò»Ê½¡¸Ñ©Ó¿À¶¹Ø¡¹£¬Ë«ÊÖÔË×ãÕæÁ¦£¬´ÓÓÒÍù×óÏò$nÀ¹ÑüÒ»Õ¶",
+"$Nä»—$wä¸€æ¨ªï¼Œä¸€å¼ã€Œé›ªæ¶Œè“å…³ã€ï¼ŒåŒæ‰‹è¿è¶³çœŸåŠ›ï¼Œä»Žå³å¾€å·¦å‘$næ‹¦è…°ä¸€æ–©",
         "force" : 180,
         "dodge" : 5,
 		"parry" : 15,
         "damage": 20,
         "lvl"   : 20,
 
-        "skill_name" : "Ñ©Ó¿À¶¹Ø",
-        "damage_type" : "ÅüÉË"
+        "skill_name" : "é›ªæ¶Œè“å…³",
+        "damage_type" : "åŠˆä¼¤"
 
 ]),
 ([      "action" :
-"¡°ºô¡±µÄÒ»Éù·çÏì£¬$N×ÝÉíÔ¾ÆðÔÚ°ë¿Õ£¬Ò»Ê½¡¸¸ßÉ½Á÷Ë®¡¹£¬$wÁè¿ÕÅüÏò$n",
+"â€œå‘¼â€çš„ä¸€å£°é£Žå“ï¼Œ$Nçºµèº«è·ƒèµ·åœ¨åŠç©ºï¼Œä¸€å¼ã€Œé«˜å±±æµæ°´ã€ï¼Œ$wå‡Œç©ºåŠˆå‘$n",
         "force" : 230,
         "dodge" : 25,
 		"parry" : 5,
         "damage": 30,
         "lvl"   : 30,
-        "skill_name" : "¸ßÉ½Á÷Ë®",
+        "skill_name" : "é«˜å±±æµæ°´",
 	"post_action":  (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :),
-        "damage_type" : "ÅüÉË"
+        "damage_type" : "åŠˆä¼¤"
 
 ]),
 ([      "action" :
-"$NÑöÌìÒ»Ð¦£¬Ò»Ê½¡¸±Ì¼¦±¨Ïþ¡¹£¬ÊÖÖÐÏÈ$wÏòÉÏÐé¿ÕÒ»Ìô£¬×ª¶øÏò$nµÄ$lµãÈ¥",
+"$Nä»°å¤©ä¸€ç¬‘ï¼Œä¸€å¼ã€Œç¢§é¸¡æŠ¥æ™“ã€ï¼Œæ‰‹ä¸­å…ˆ$wå‘ä¸Šè™šç©ºä¸€æŒ‘ï¼Œè½¬è€Œå‘$nçš„$lç‚¹åŽ»",
         "force" : 250,
         "dodge" : 15,
 		"parry" : 15,
         "damage": 40,
         "lvl"   : 40,
-        "skill_name" : "±Ì¼¦±¨Ïþ",
-        "damage_type" : "´ÌÉË"
+        "skill_name" : "ç¢§é¸¡æŠ¥æ™“",
+        "damage_type" : "åˆºä¼¤"
 ]),
 ([      "action" :
-"$NÊ¹³öÒ»Ê½¡¸Ææ±øÍ»Æð¡¹£¬²½·¨ºöÈ»Ò»»º£¬ÓÒÊÖ$w»º»ºÍÆ³ö,ºöµÄÔÚ$n³ÙÒÉÖ®¼ÊÒÔÊ®±¶ËÙ¶È´ÌÏò$nµÄ$l",
+"$Nä½¿å‡ºä¸€å¼ã€Œå¥‡å…µçªèµ·ã€ï¼Œæ­¥æ³•å¿½ç„¶ä¸€ç¼“ï¼Œå³æ‰‹$wç¼“ç¼“æŽ¨å‡º,å¿½çš„åœ¨$nè¿Ÿç–‘ä¹‹é™…ä»¥åå€é€Ÿåº¦åˆºå‘$nçš„$l",
         "force" : 280,
         "dodge" : 5,
 		"parry" : 0,
         "damage": 50,
         "lvl"   : 50,
-        "skill_name" : "Ææ±øÍ»Æð",
-        "damage_type" : "´ÌÉË"
+        "skill_name" : "å¥‡å…µçªèµ·",
+        "damage_type" : "åˆºä¼¤"
 ]),
 ([      "action" : 
-"$NÍ¦ÐØÊæ±Û£¬×óÊÖÄó¸ö½£¾÷£¬ÓÒÊÖ$wÇá»Ó£¬´ÌÏò$nµÄ$l£¬ÕýÊÇ¶Î¼Ò½£µÄÆðÊÖÊÆ¡¸ÆäÀû¶Ï½ð¡¹",
+"$NæŒºèƒ¸èˆ’è‡‚ï¼Œå·¦æ‰‹æä¸ªå‰‘è¯€ï¼Œå³æ‰‹$wè½»æŒ¥ï¼Œåˆºå‘$nçš„$lï¼Œæ­£æ˜¯æ®µå®¶å‰‘çš„èµ·æ‰‹åŠ¿ã€Œå…¶åˆ©æ–­é‡‘ã€",
         "force" : 300,
         "dodge" : 10,
 		"parry" : 0,
         "damage": 60,
         "lvl"   : 60,
 	"post_action":  (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :),
-        "skill_name" : "ÆäÀû¶Ï½ð",
-        "damage_type" : "´ÌÉË"
+        "skill_name" : "å…¶åˆ©æ–­é‡‘",
+        "damage_type" : "åˆºä¼¤"
 ]),
 ([      "action" :  
-"$N·ÉÉíÒ»Ô¾£¬Ò»Ê½¡¸½ðÂíºá¿Õ¡¹£¬ÔÚ°ë¿ÕÖÐ×ªÉí£¬·´ÊÖÒ»»Ó£¬$wºá·É¶ø³ö£¬Ö±´Ì$nµÄ$l",
+"$Né£žèº«ä¸€è·ƒï¼Œä¸€å¼ã€Œé‡‘é©¬æ¨ªç©ºã€ï¼Œåœ¨åŠç©ºä¸­è½¬èº«ï¼Œåæ‰‹ä¸€æŒ¥ï¼Œ$wæ¨ªé£žè€Œå‡ºï¼Œç›´åˆº$nçš„$l",
         "force" : 320,
         "dodge" : 25,
 		"parry" : 10,
         "damage": 65,
         "lvl"   : 70,
-        "skill_name" : "½ðÂíºá¿Õ",
-        "damage_type" : "´ÌÉË"
+        "skill_name" : "é‡‘é©¬æ¨ªç©º",
+        "damage_type" : "åˆºä¼¤"
 ]),
 ([      "action" :
-"$NºöÈ»ÍÅÉíÒ»Ëõ£¬ÊÖÖÐ$wÕ§È»Ò»ÏÖ£¬Ò»Ê½¡¸Óê´òÀæ»¨¡¹£¬ÂþÌì¾¢ÆøÈçË®ÒøÐ¹µØ°ãµãÏò$n",
+"$Nå¿½ç„¶å›¢èº«ä¸€ç¼©ï¼Œæ‰‹ä¸­$wä¹ç„¶ä¸€çŽ°ï¼Œä¸€å¼ã€Œé›¨æ‰“æ¢¨èŠ±ã€ï¼Œæ¼«å¤©åŠ²æ°”å¦‚æ°´é“¶æ³„åœ°èˆ¬ç‚¹å‘$n",
         "force" : 350,
         "dodge" : 5,
 		"parry" : 30,
         "damage": 75,
         "lvl"   : 80,
 		"post_action":  (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :),
-        "skill_name" : "Óê´òÀæ»¨",
-        "damage_type" : "´ÌÉË"
+        "skill_name" : "é›¨æ‰“æ¢¨èŠ±",
+        "damage_type" : "åˆºä¼¤"
 ]),
 ([      "action" :   
-"$NÈ«ÉíÔËÆø£¬ÊÖÖÐ$w±©ÔöÈý³ß£¬Ò»Ê½¡¸ÖðÂ¹ÖÐÔ­¡¹ÒÔÑ¸À×²»¼°ÑÚ¶úÖ®ÊÆ±©Åü$nµÄ$l",
+"$Nå…¨èº«è¿æ°”ï¼Œæ‰‹ä¸­$wæš´å¢žä¸‰å°ºï¼Œä¸€å¼ã€Œé€é¹¿ä¸­åŽŸã€ä»¥è¿…é›·ä¸åŠæŽ©è€³ä¹‹åŠ¿æš´åŠˆ$nçš„$l",
         "force" : 380,
         "dodge" : 5,
 		"parry" : 25,
         "damage": 85,
         "lvl"   : 90,
 		"post_action":  (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :),
-        "skill_name" : "ÖðÂ¹ÖÐÔ­",
-        "damage_type" : "ÅüÉË"
+        "skill_name" : "é€é¹¿ä¸­åŽŸ",
+        "damage_type" : "åŠˆä¼¤"
 
 ]),
 });
@@ -123,10 +123,10 @@ int valid_enable(string usage) { return (usage == "sword") || (usage ==
 int valid_learn(object me)
 {
 	if ((int)me->query("max_neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if ((int)me->query_skill("kurong-changong", 1) < 20
 		&& (int)me->query_skill("beiming-shengong", 1) < 20)
-		return notify_fail("ÄãµÄ¿ÝÈÙìø¹¦»ðºòÌ«Ç³¡£\n");
+		return notify_fail("ä½ çš„æž¯è£ç¦…åŠŸç«å€™å¤ªæµ…ã€‚\n");
 	return 1;
 }
 
@@ -153,9 +153,9 @@ int practice_skill(object me)
 		(string)weapon->query("skill_type") != "sword" 
 		&& (string)weapon->query("skill_type") != "staff")
 		return 
-		notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if ((int)me->query("jingli") < 50)
-		return notify_fail("ÄãµÄ¾«Á¦²»×ã¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ã€‚\n");
 	me->receive_damage("jingli", 35);
 	return 1;
 }

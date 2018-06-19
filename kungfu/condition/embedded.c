@@ -12,12 +12,12 @@ int update_condition(object me, int duration)
 	string result;
 
 	if(me->query_condition("embedded") > 0){
-	message_vision(RED"ÏÊÑªË³×Å$n´Ó$NµÄÉË¿Ú´¦Ò»µÎÒ»µÎµÎµ½µØÉÏ¡£\n\n"NOR,
+	message_vision(RED"é²œè¡€é¡ºç€$nä»Ž$Nçš„ä¼¤å£å¤„ä¸€æ»´ä¸€æ»´æ»´åˆ°åœ°ä¸Šã€‚\n\n"NOR,
 			me, me->query_temp("armor/embed"));
-	me->receive_wound("qi", 3, "³öÑª¹ý¶àËÀÁË");
+	me->receive_wound("qi", 3, "å‡ºè¡€è¿‡å¤šæ­»äº†");
 	}
 	
-	if (!userp(me) && me->query("race") == "ÈËÀà"
+	if (!userp(me) && me->query("race") == "äººç±»"
 	&& living(me) && !me->is_fighting() 
 	&& ob=me->query_temp("armor/embed")){
 		COMMAND_DIR"std/remove"->do_remove(me, ob);

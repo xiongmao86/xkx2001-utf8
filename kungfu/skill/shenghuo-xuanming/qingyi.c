@@ -1,5 +1,5 @@
 //Cracked by Roath
-// qingyi.c ÇàÒí¾ÅÌì
+// qingyi.c é’ç¿¼ä¹å¤©
 
 #include <ansi.h>
 
@@ -8,33 +8,33 @@ int exert(object me, object target)
 	int dex, dex2, amount;
 
         if( !me->is_fighting() )
-                return notify_fail("ÇàÒí¾ÅÌìÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("é’ç¿¼ä¹å¤©åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 	if (me->query_temp("qingyi"))
-		return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃÇàÒí¾ÅÌìÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨ä½¿ç”¨é’ç¿¼ä¹å¤©äº†ã€‚\n");
 
 	if (((int)me->query_encumbrance()*100/(int)me->query_max_encumbrance()) > 50)
-		return notify_fail("Äã¸ºÖØÌ«¶à£¬ÔõÃ´Ò²Ê¹²»³öÇàÒí¾ÅÌì¡£\n");
+		return notify_fail("ä½ è´Ÿé‡å¤ªå¤šï¼Œæ€ä¹ˆä¹Ÿä½¿ä¸å‡ºé’ç¿¼ä¹å¤©ã€‚\n");
 
         if( me->query_dex() < 30 )
-                return notify_fail("ÄãµÄÉí·¨²»×ãÒÔÊ©Õ¹ÇàÒí¾ÅÌì£¡\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸è¶³ä»¥æ–½å±•é’ç¿¼ä¹å¤©ï¼\n");
 
         if( me->query_skill_mapped("force") != "shenghuo-xuanming" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÊ¥»ğĞş¹¦£¬ÎŞ·¨Ê¹³öÇàÒí¾ÅÌì£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éåœ£ç«ç„åŠŸï¼Œæ— æ³•ä½¿å‡ºé’ç¿¼ä¹å¤©ï¼\n");
 
 	if (me->query_skill_mapped("dodge") != "qingfu-shenfa")
-		return notify_fail("ÄãËùÓÃµÄ²¢·ÇÇàòğÉí·¨£¬ÎŞ·¨Ê¹³öÇàÒí¾ÅÌì£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éé’è èº«æ³•ï¼Œæ— æ³•ä½¿å‡ºé’ç¿¼ä¹å¤©ï¼\n");
 
         if( me->query_skill("force") < 135 )
-                return notify_fail("ÄãµÄÊ¥»ğĞş¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹ÇàÒí¾ÅÌì£¡\n");
+                return notify_fail("ä½ çš„åœ£ç«ç„åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•é’ç¿¼ä¹å¤©ï¼\n");
 
         if( me->query_skill("dodge") < 135 )
-                return notify_fail("ÄãÇàòğÉí·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÇàÒí¾ÅÌì£¡\n");
+                return notify_fail("ä½ é’è èº«æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨é’ç¿¼ä¹å¤©ï¼\n");
 
         if( me->query("neili") < 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÇàÒí¾ÅÌì£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨é’ç¿¼ä¹å¤©ï¼\n");
 
-        message_vision(HIW"$N°µÌáÁËÒ»¿ÚÄÚÏ¢,Éí×Ó¾õµÃÇáÓ¯ÁËĞí¶à£¬½ô½Ó×Å$N×İÉù³¤Ğ¥£¬ÉíĞÎ¾ªÀ×ÉÁµçÒ»°ã£¬Âú³¡·É±¼£¬½¥½¥»¯ÎªÒ»ÍÅ°×Ó°¡£\n" NOR, me);
+        message_vision(HIW"$Næš—æäº†ä¸€å£å†…æ¯,èº«å­è§‰å¾—è½»ç›ˆäº†è®¸å¤šï¼Œç´§æ¥ç€$Nçºµå£°é•¿å•¸ï¼Œèº«å½¢æƒŠé›·é—ªç”µä¸€èˆ¬ï¼Œæ»¡åœºé£å¥”ï¼Œæ¸æ¸åŒ–ä¸ºä¸€å›¢ç™½å½±ã€‚\n" NOR, me);
 
 	dex = me->query("dex");		// original dex
 	dex2 = me->query_dex();		// temp dex
@@ -57,7 +57,7 @@ int exert(object me, object target)
 
 int remove_effect(object me, int dex2)
 {
-	message_vision(HIW"$NÎ¢Î¢ÍÂÁË¿ÚÆø£¬·ÅÂıÉí·¨£¬ÉíĞÎÓÖ¸´ÇåÎú¡£\n"NOR,me);
+	message_vision(HIW"$Nå¾®å¾®åäº†å£æ°”ï¼Œæ”¾æ…¢èº«æ³•ï¼Œèº«å½¢åˆå¤æ¸…æ™°ã€‚\n"NOR,me);
 	me->add_temp("apply/dexerity", -dex2);
 	me->add_temp("apply/strength", dex2/15);
 	me->delete_temp("qingyi");

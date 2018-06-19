@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// beiming-shengong.c ��ڤ��
+// beiming-shengong.c 北冥神功
 // Acep, modified by xuy
 // Modified by Xuanyuan 8/2001
 
@@ -10,12 +10,12 @@ int valid_enable(string usage) { return usage == "force"; }
 
 int valid_learn(object me)
 {
-  return notify_fail("��ڤ��ֻ��ͨ���ж�����ڤ�ؼ�������ߡ�\n");
+  return notify_fail("北冥神功只能通过研读《北冥秘籍》来提高。\n");
 }
 
 int practice_skill(object me)
 {
-  return notify_fail("��ڤ��ֻ��ͨ���ж�����ڤ�ؼ�������ߡ�\n");
+  return notify_fail("北冥神功只能通过研读《北冥秘籍》来提高。\n");
 }
 
 string exert_function_file(string func)
@@ -42,7 +42,7 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
                 if ((int)me->query("potential") < 97)
                         victim->add("potential",  3);
                 victim->add("combat_exp", 10);
-                return HIY "$N��������һ�����У�ȴ����ֻ��Ϣ��һ����һ��������$n���˹�ȥ��\n" NOR;
+                return HIY "$N运足内力一击命中，却不料只觉息关一开，一股内力被$n吸了过去！\n" NOR;
         }
 	
 	return damage;

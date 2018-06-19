@@ -8,12 +8,12 @@ inherit F_MASTER;
 int auto_perform();
 void create()
 {
-	set_name("Öñ½£", ({ "zhu jian", "zhu"}));
+	set_name("ç«¹å‰‘", ({ "zhu jian", "zhu"}));
 	set("long",
-	    "ÕâÊÇ¸öÈİÃ²æ¯ºÃµÄÅ®×Ó, ¹Ï×ÓÁ³µ°,\n"+
-	    "ÑÛÈçµãÆá, ÇåĞã¾øË×.\n"+
-	    "Äã×Ü¾õµÃÔÚÄÄ¼û¹ıËı.\n");
-	set("gender", "Å®ĞÔ");
+	    "è¿™æ˜¯ä¸ªå®¹è²Œå§£å¥½çš„å¥³å­, ç“œå­è„¸è›‹,\n"+
+	    "çœ¼å¦‚ç‚¹æ¼†, æ¸…ç§€ç»ä¿—.\n"+
+	    "ä½ æ€»è§‰å¾—åœ¨å“ªè§è¿‡å¥¹.\n");
+	set("gender", "å¥³æ€§");
 	set("per", 27);
 	set("age", 18);
 	set("shen_type",0);
@@ -62,7 +62,7 @@ void create()
 	prepare_skill("strike","liuyang-zhang");
 	prepare_skill("hand","zhemei-shou");
 
-	create_family("ÁéğÕ¹¬",3,"µÜ×Ó");
+	create_family("çµé¹«å®«",3,"å¼Ÿå­");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -85,16 +85,16 @@ void init()
 	
 	if (interactive(ob) 
 	&& !environment(ob)->query("no_fight")
-	&& ((fam = ob->query("family")) && fam["family_name"] != "ÁéğÕ¹¬" )
+	&& ((fam = ob->query("family")) && fam["family_name"] != "çµé¹«å®«" )
 	&& me->query("biao/owner"))
 	{
 		if( !ob->query_temp("warned") ) {
-		command("say ×ğÖ÷ÓĞÁî£ºÍâÈË²»µÃ½øÈëÁéğÕ¹¬£¬ËÙËÙÀë¿ª£¡");
+		command("say å°Šä¸»æœ‰ä»¤ï¼šå¤–äººä¸å¾—è¿›å…¥çµé¹«å®«ï¼Œé€Ÿé€Ÿç¦»å¼€ï¼");
 			ob->set_temp("warned", 1);
 	}
 		else if( ob->query_temp("stay")<5 ) ob->add_temp("stay",1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸ÒÉÃ´³ÁéğÕ¹¬£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢æ“…é—¯çµé¹«å®«ï¼ï¼ï¼\n");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// longxiang-banruo.c Ñ©É½ ÁúÏó°ãÈô¹¦
+// longxiang-banruo.c é›ªå±± é¾™è±¡èˆ¬è‹¥åŠŸ
 // Summer, 9/29/96. 
 // kane, 25/01/99
 
@@ -35,18 +35,18 @@ int valid_learn(object me)
         }
 
         if ( k >=2 )
-        return notify_fail("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÄÚ¹¦¡£\n");
+        return notify_fail("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥é¢†ä¼šæ›´é«˜æ·±çš„å†…åŠŸã€‚\n");
         }
 
 
 	if ( me->query("class") != "lama" && nh > 39)
-		return notify_fail("ÄãÎ´Èë·ğÃÅ£¬³¾ÔµÄÑ¶Ï£¬ÎŞ·¨¼ÌĞøĞŞÁ·ÓëÃÜ×ÚË¿ÂÆÏàÁ¬µÄÁúÏó°ãÈô¹¦¡£\n");
+		return notify_fail("ä½ æœªå…¥ä½›é—¨ï¼Œå°˜ç¼˜éš¾æ–­ï¼Œæ— æ³•ç»§ç»­ä¿®ç»ƒä¸å¯†å®—ä¸ç¼•ç›¸è¿çš„é¾™è±¡èˆ¬è‹¥åŠŸã€‚\n");
 
 	if ( nb < 120 && nb <= nh )
-		return notify_fail("ÄãµÄÃÜ×ÚĞÄ·¨ĞŞÎª²»¹»£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÁúÏó°ãÈô¹¦¡£\n");
+		return notify_fail("ä½ çš„å¯†å®—å¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šæ›´é«˜æ·±çš„é¾™è±¡èˆ¬è‹¥åŠŸã€‚\n");
 
 	if ( nf < 10 || nf/2 < nh/3 )
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬ÎŞ·¨Áì»áÁúÏó°ãÈô¹¦¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šé¾™è±¡èˆ¬è‹¥åŠŸã€‚\n");
 
 
 
@@ -56,7 +56,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-	return notify_fail("ÁúÏó°ãÈô¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("é¾™è±¡èˆ¬è‹¥åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -79,7 +79,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
         dp += victim->query_skill("force");
         ap = (ap + random(ap*2))/2;
 
-        msg = HIR"$N´óºôº¨Õ½£¬¿ÚÄîÃÜ×Ú²»¶¯Ã÷ÍõÕæÑÔ£¬ÔËÁúÏóÖ®Á¦³¯$n»÷È¥£¡\n"NOR;
+        msg = HIR"$Nå¤§å‘¼é…£æˆ˜ï¼Œå£å¿µå¯†å®—ä¸åŠ¨æ˜ç‹çœŸè¨€ï¼Œè¿é¾™è±¡ä¹‹åŠ›æœ$nå‡»å»ï¼\n"NOR;
 
         myneili = (int)me->query("neili");
         yourneili = (int)victim->query("neili");
@@ -112,10 +112,10 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                         damage = - damage;
                         me->receive_damage( "qi", damage * 2, victim);
                         me->receive_wound( "qi", damage, victim );
-                        if( damage < 10 ) result = "$NÊÜµ½$nµÄÄÚÁ¦·´Õğ£¬ÃÆºßÒ»Éù¡£\n";
-                        else if( damage < 20 ) result = "$N±»$nÒÔÄÚÁ¦·´Õğ£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n";
-                        else if( damage < 40 ) result = "$N±»$nÒÔÄÚÁ¦Ò»Õğ£¬ĞØ¿ÚÓĞÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n";
-                        else result = "$N±»$nµÄÄÚÁ¦Ò»Õğ£¬ÑÛÇ°Ò»ºÚ£¬Éí×ÓÏòºó·É³öÕÉĞí£¡£¡\n";
+                        if( damage < 10 ) result = "$Nå—åˆ°$nçš„å†…åŠ›åéœ‡ï¼Œé—·å“¼ä¸€å£°ã€‚\n";
+                        else if( damage < 20 ) result = "$Nè¢«$nä»¥å†…åŠ›åéœ‡ï¼Œã€Œå˜¿ã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n";
+                        else if( damage < 40 ) result = "$Nè¢«$nä»¥å†…åŠ›ä¸€éœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿é€€äº†äº”å…­æ­¥ï¼\n";
+                        else result = "$Nè¢«$nçš„å†…åŠ›ä¸€éœ‡ï¼Œçœ¼å‰ä¸€é»‘ï¼Œèº«å­å‘åé£å‡ºä¸ˆè®¸ï¼ï¼\n";
                         result += "( $N"+ COMBAT_D->status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
                         damage_bonus = -5000; // just a number negative enough
                         return ([ "result" : result, "damage" : damage_bonus ]);

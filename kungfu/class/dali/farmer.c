@@ -1,5 +1,5 @@
 //Cracked by Roath
-// farmer.c ũ��
+// farmer.c 农夫
 // A.P.
 
 inherit NPC;
@@ -8,10 +8,10 @@ int do_push(string);
 
 void create()
 {
-        set_name("����ͨ", ({ "wu santong", "nong", "farmer", "wu" }));
+        set_name("武三通", ({ "wu santong", "nong", "farmer", "wu" }));
         set("long", 
-			"һ������ũ��\n");
-        set("gender", "����");
+			"一个中年农夫。\n");
+        set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -44,7 +44,7 @@ void create()
 	prepare_skill("finger", "yiyang-zhi");
 
         set("inquiry", ([
-	"��ɽ" : "ʲô��ɽ��ɽ��û�����Ҷ���ͦ��ס���𣿣�\n",
+	"上山" : "什么上山下山，没看见我都快挺不住了吗？！\n",
         ]));
 
         setup();
@@ -65,13 +65,13 @@ int do_push(string arg)
 	if (arg!="rock") { return 0; }
 	if (environment(me)!=find_object("/d/dali/yideng5.c")) { return 0; }
 	if (me->query_str()>25 && (int)me->query("max_neili")>=1000) {
-		write("���һ�������壬��ס���������㣡����\n");
-		write("��ʹ��ȫ��������˫�����ƣ���ũ�򽫴�ʯ����������ߣ�\n");
-		write("ũ������һ�Σ����ڴ�ʯ֮�⣬ȴ��ȥǣţ����һ˫���۽������²�ͣ�ش�����\n\n");
+		write("你大喊一声：大叔，顶住，我来帮你！！！\n");
+		write("你使出全身力气，双掌上推，帮农夫将大石推起尺许来高！\n");
+		write("农夫身形一晃，闪在大石之外，却不去牵牛，把一双大眼将你上下不停地打量！\n\n");
 		me->move("/d/dali/yideng6.c");
 		return 1;
 	}
 
-	write("����ͼ������ũ���ƿ���ʯ��������Ȼ������������������ҲûЧ����\n");
+	write("你试图用力助农夫推开大石，无奈显然功力不够，怎样用力也没效果。\n");
 	return 1;
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /kungfu/skill/chousui-zhang/sandu  pfm É¢¶¾
+// /kungfu/skill/chousui-zhang/sandu  pfm æ•£æ¯’
 // Summer, 12/28/96.
 // modified by sdong 7/16/1999. Let ppl can sandu on NPC with exp 1/3 higher than self
 #include <ansi.h>
@@ -14,36 +14,36 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ¡£\n");
+		return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ã€‚\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 
 	//if( !userp(target) )
-	//	return notify_fail("ÄãÖ»ÄÜÔÚÍæ¼ÒÉíÉÏÉ¢¶¾¡£\n");
+	//	return notify_fail("ä½ åªèƒ½åœ¨ç©å®¶èº«ä¸Šæ•£æ¯’ã€‚\n");
 
 		  if(!( room = find_object("/d/taishan/fengchan")) )
 		  room = load_object("/d/taishan/fengchan");
 
 		  if( target->query("id") == room->query("winner") )
-		return notify_fail("´óµ¨£¡¾¹¸Ò¶ÔÃËÖ÷É¢¶¾£¬ÏëÓëÈ«ÎäÁÖÎªµĞÂğ£¿\n");
+		return notify_fail("å¤§èƒ†ï¼ç«Ÿæ•¢å¯¹ç›Ÿä¸»æ•£æ¯’ï¼Œæƒ³ä¸å…¨æ­¦æ—ä¸ºæ•Œå—ï¼Ÿ\n");
 
 	if( (int)me->query_skill("chousui-zhang", 1) < 30 )
-		return notify_fail("ÄãµÄ³éËèÕÆĞŞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„æŠ½é«“æŒä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_skill("poison", 1) < 50 )
-		return notify_fail("ÄãµÄ»ù±¾¶¾¼¼ĞŞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬æ¯’æŠ€ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if ( me->query_skill_mapped("force") != "huagong-dafa")
-					 return notify_fail("ÄãÃ»ÓĞÔË»¯¹¦´ó·¨£¡\n");
+					 return notify_fail("ä½ æ²¡æœ‰è¿åŒ–åŠŸå¤§æ³•ï¼\n");
 
 	if( me->query("neili") <= 100 )
-					 return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+					 return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
 	if( target->query_condition("poisoned") > 0 || ( me->query("last_sandu") == target->query("id") && userp(target) ) )
-		return notify_fail("´ËÈËÒÑÉíÖĞ¾ç¶¾»òÖĞ¹ı¶¾²»¾Ã£¬ÔÚ´ËÈËÉíÉÏÉ¢¶¾»áÊ¹Äã·´ÊÜÆäº¦¡£\n");
+		return notify_fail("æ­¤äººå·²èº«ä¸­å‰§æ¯’æˆ–ä¸­è¿‡æ¯’ä¸ä¹…ï¼Œåœ¨æ­¤äººèº«ä¸Šæ•£æ¯’ä¼šä½¿ä½ åå—å…¶å®³ã€‚\n");
 
-	message_vision(MAG "$N°Ñ×óÕÆ»º»ºÌ§Æğ£¬ÕÆĞÄÑÕÉ«ÓÉÇà±ä×Ï£¬Ã°³öÒ»ÂÆÂÆº®Æø£¬Ëæ×Å´óºğÒ»Éù£¬ÊÖÕÆÏò$nÃÍÅÄ¹ıÈ¥¡£\n\n" NOR, me,target);
+	message_vision(MAG "$NæŠŠå·¦æŒç¼“ç¼“æŠ¬èµ·ï¼ŒæŒå¿ƒé¢œè‰²ç”±é’å˜ç´«ï¼Œå†’å‡ºä¸€ç¼•ç¼•å¯’æ°”ï¼Œéšç€å¤§å¼ä¸€å£°ï¼Œæ‰‹æŒå‘$nçŒ›æ‹è¿‡å»ã€‚\n\n" NOR, me,target);
 	me->add("neili", -150);
 	if( !userp(target) ) target->kill_ob(me);
 
@@ -52,8 +52,8 @@ int perform(object me, object target)
 		 (	(int)target->query("combat_exp") > me->query("combat_exp")/3*4 && !userp(target) )
 		){
 	if( me->query_skill("poison", 1) < target->query_skill("poison", 1) * 2){
-	tell_object(me, BLU "ÄãÒ»ÕÆÅÄÔÚ" +target->query("name") +"ĞØ¿Ú£¬²»ÁÏ´ËÈËÌåÄÚ¾Û¶¾²»µÍ£¬Äã²»ÄÜ°Ñ¶¾É¢³ö£¬·´ÊÜÆäº¦¡£\n"NOR);
-	tell_object(target, BLU "ÄãÖ»¾õÒ»¹Éº®ÆøÏ®Ãæ£¬ÃÆºßÒ»Éù£¬ĞØ¿ÚÖĞÕÆ¡£\n" NOR);
+	tell_object(me, BLU "ä½ ä¸€æŒæ‹åœ¨" +target->query("name") +"èƒ¸å£ï¼Œä¸æ–™æ­¤äººä½“å†…èšæ¯’ä¸ä½ï¼Œä½ ä¸èƒ½æŠŠæ¯’æ•£å‡ºï¼Œåå—å…¶å®³ã€‚\n"NOR);
+	tell_object(target, BLU "ä½ åªè§‰ä¸€è‚¡å¯’æ°”è¢­é¢ï¼Œé—·å“¼ä¸€å£°ï¼Œèƒ¸å£ä¸­æŒã€‚\n" NOR);
 		me->add("max_neili", - 1);
 		me->apply_condition("xx_poison", 50+me->query_condition("xx_poison"));
 		target->add("qi", - me->query_skill("chousui-zhang"));
@@ -61,8 +61,8 @@ int perform(object me, object target)
 	return 1;
 	}
 	else {
-	tell_object(me, BLU "ÄãÒ»ÕÆÅÄÔÚ" +target->query("name") +"ĞØ¿Ú£¬´ıÆäÔËÄÚÁ¦µÖ¿¹£¬Ë³ÊÆ°ÑÖÜÉí¶¾Æø¾¡Êı±Æ½ø" +target->query("name") +"ÌåÄÚ¡£\n"NOR);
-	tell_object(target, BLU "ÄãÖ»¾õÒ»¹Éº®ÆøÏ®Ãæ£¬¸Ğ½ôÔËÄÚÁ¦µÖ¿¹£¬²»ÁÏ" +me->name() +"´ø¾ç¶¾µÄÒ»ÕÆÒ»ÏÂÅÄÔÚÄãĞØ¿ÚÉÏ¡£\n"NOR);
+	tell_object(me, BLU "ä½ ä¸€æŒæ‹åœ¨" +target->query("name") +"èƒ¸å£ï¼Œå¾…å…¶è¿å†…åŠ›æŠµæŠ—ï¼Œé¡ºåŠ¿æŠŠå‘¨èº«æ¯’æ°”å°½æ•°é€¼è¿›" +target->query("name") +"ä½“å†…ã€‚\n"NOR);
+	tell_object(target, BLU "ä½ åªè§‰ä¸€è‚¡å¯’æ°”è¢­é¢ï¼Œæ„Ÿç´§è¿å†…åŠ›æŠµæŠ—ï¼Œä¸æ–™" +me->name() +"å¸¦å‰§æ¯’çš„ä¸€æŒä¸€ä¸‹æ‹åœ¨ä½ èƒ¸å£ä¸Šã€‚\n"NOR);
 		me->add("max_neili", - 1 - (int)me->query_skill("huagong-dafa", 1)/15);
 		if (me->query_skill("poison", 1) < 101)
 		me->set("body_poison",me->query_skill("poison", 1)/10+1);
@@ -79,14 +79,14 @@ int perform(object me, object target)
 		else me->add("combat_exp", me->query_skill("poison", 1) );
 
 		me->set("last_sandu", target->query("id"));
-	log_file("POISON", sprintf("%s(%s) É¢¶¾ on %s.\n",
+	log_file("POISON", sprintf("%s(%s) æ•£æ¯’ on %s.\n",
 						me->query("name"), getuid(me), target->query("name")));
 
 	return 1;
 				}
 	}
-	tell_object(me, BLU "ÄãÒ»ÕÆÅÄÔÚ" +target->query("name") +"ĞØ¿Ú£¬²»ÁÏ" +target->query("name") +"ÄÚÁ¦Ì«Èõ£¬Äã·´²»ÄÜ°Ñ¶¾Æø±Æ³öÈ¥£¬¹¦Á¦ÊÜËğ¡£\n"NOR);
-	tell_object(target, BLU "ÄãÖ»¾õÒ»¹Éº®ÆøÏ®Ãæ£¬ÃÆºßÒ»Éù£¬ĞØ¿ÚÖĞÕÆ¡£\n" NOR);
+	tell_object(me, BLU "ä½ ä¸€æŒæ‹åœ¨" +target->query("name") +"èƒ¸å£ï¼Œä¸æ–™" +target->query("name") +"å†…åŠ›å¤ªå¼±ï¼Œä½ åä¸èƒ½æŠŠæ¯’æ°”é€¼å‡ºå»ï¼ŒåŠŸåŠ›å—æŸã€‚\n"NOR);
+	tell_object(target, BLU "ä½ åªè§‰ä¸€è‚¡å¯’æ°”è¢­é¢ï¼Œé—·å“¼ä¸€å£°ï¼Œèƒ¸å£ä¸­æŒã€‚\n" NOR);
 					 target->add("qi",-(random((int)me->query_skill("chousui-zhang"))));
 		target->receive_wound("jing", (int)me->query_skill("chousui-zhang"));
 		target->apply_condition("xx_poison", 5 + target->query_condition("xx_poison"));
@@ -94,7 +94,7 @@ int perform(object me, object target)
 	}
 	else
 	{
-	message_vision(HIY "$p¸Ï½ôÏòááÔ¾¿ªÊıÕÉ£¬¶ã¿ª$PµÄ¹¥»÷¡£\n" NOR, me, target);
+	message_vision(HIY "$pèµ¶ç´§å‘å¾Œè·ƒå¼€æ•°ä¸ˆï¼Œèº²å¼€$Pçš„æ”»å‡»ã€‚\n" NOR, me, target);
 	}
 
 

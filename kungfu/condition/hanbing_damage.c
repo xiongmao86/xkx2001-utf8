@@ -10,18 +10,18 @@ int update_condition(object me, int duration)
 	int ml;
 	ml = me->query("max_neili")/1000;
    if( !living(me) ) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+      message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
    }
    else {
 	if(me->query("eff_jing") > me->query("max_jing")/4)
-	tell_object(me, HIB"Äã¾õµÃÒ»¹ÉÀäÆø´ÓÖ±Í¸ÐÄ¿Ú£¬È«ÉíÁ¢Ê±º®Õ½£¬ÑÀ³Ý»¥»÷£¬¸ñ¸ñ×÷Ïì¡£\n"NOR );
-	else tell_object(me, HIB"Äã¾õµÃÐØ¿Ú·³¶ñÓûÅ»£¬Êý·¬Ç±ÔËÄÚÁ¦ÓûÍ¼ÎÈ×¡Éí×Ó£¬×ÜÊÇÌìÐýµØ×ª£¬¼¸ÓûË¤Àý¡£\n" NOR );
+	tell_object(me, HIB"ä½ è§‰å¾—ä¸€è‚¡å†·æ°”ä»Žç›´é€å¿ƒå£ï¼Œå…¨èº«ç«‹æ—¶å¯’æˆ˜ï¼Œç‰™é½¿äº’å‡»ï¼Œæ ¼æ ¼ä½œå“ã€‚\n"NOR );
+	else tell_object(me, HIB"ä½ è§‰å¾—èƒ¸å£çƒ¦æ¶æ¬²å‘•ï¼Œæ•°ç•ªæ½œè¿å†…åŠ›æ¬²å›¾ç¨³ä½èº«å­ï¼Œæ€»æ˜¯å¤©æ—‹åœ°è½¬ï¼Œå‡ æ¬²æ‘”ä¾‹ã€‚\n" NOR );
       
-      message("vision", me->name() + "Í»È»´òÁË¸öº®Õ½£¬Á³É«Çà°×£¬±ãÈç½©Ê¬¡£\n",
+      message("vision", me->name() + "çªç„¶æ‰“äº†ä¸ªå¯’æˆ˜ï¼Œè„¸è‰²é’ç™½ï¼Œä¾¿å¦‚åƒµå°¸ã€‚\n",
             environment(me), me);
    }
-      me->receive_damage("qi", (duration/2)+20, "Òòº®±ùÃàÕÆÒõ¶¾ÇÖÈëÄÚÔà¶øËÀ");
-      me->receive_wound("jing", (duration/2)+20, "Òòº®±ùÃàÕÆÒõ¶¾ÇÖÈëÄÚÔà¶øËÀ");
+      me->receive_damage("qi", (duration/2)+20, "å› å¯’å†°ç»µæŽŒé˜´æ¯’ä¾µå…¥å†…è„è€Œæ­»");
+      me->receive_wound("jing", (duration/2)+20, "å› å¯’å†°ç»µæŽŒé˜´æ¯’ä¾µå…¥å†…è„è€Œæ­»");
 
       me->apply_condition("hanbing_damage", duration - 1);
                 me->apply_condition("hanbing_damage", duration - 1); 

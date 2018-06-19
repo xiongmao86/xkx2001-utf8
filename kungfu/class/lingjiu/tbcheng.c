@@ -1,4 +1,4 @@
-// /d/lingjiu/npc/tbhao.c ³ÉÌì²¿ Â½É©
+// /d/lingjiu/npc/tbhao.c æˆå¤©éƒ¨ é™†å«‚
 // By adx @ CuteRabbit 22:21 99-3-19
 
 #include <ansi.h>
@@ -8,12 +8,12 @@ int auto_perform();
 string ask_me(string name);
 void create()
 {
-	set_name("Â½É©", ({ "lu sao", "lu", "sao" }));
+	set_name("é™†å«‚", ({ "lu sao", "lu", "sao" }));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞ³ÉÌì²¿µÄÊ×Áì.\n"+
-	    "Ëı¸úËæÍ¯ÀÑ¶àÄê, ³öÉúÈëËÀ,±¥¾­·çËª.\n");
-	set("title", "³ÉÌì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­æˆå¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹è·Ÿéšç«¥å§¥å¤šå¹´, å‡ºç”Ÿå…¥æ­»,é¥±ç»é£éœœ.\n");
+	set("title", "æˆå¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
 	set("age", 60);
 	set("shen_type",0);
 	set("attitude", "peaceful");
@@ -60,16 +60,16 @@ void create()
 	prepare_skill("hand","zhemei-shou");
 /*
         set("inquiry", ([
-		"Ê³Îï" : (: ask_me, "gao" :),
-		"³ÔµÄ" : (: ask_me, "gao" :),
-		"Ë®" : (: ask_me, "suanmei" :),
-		"¾Æ´ü" : (: ask_me, "jiudai" :),
+		"é£Ÿç‰©" : (: ask_me, "gao" :),
+		"åƒçš„" : (: ask_me, "gao" :),
+		"æ°´" : (: ask_me, "suanmei" :),
+		"é…’è¢‹" : (: ask_me, "jiudai" :),
         ]));
 	set("fool_count", 15);
 */
 	prepare_skill("strike","liuyang-zhang");
 	prepare_skill("hand","zhemei-shou");
-	create_family("ÁéğÕ¹¬",4,"µÜ×Ó");
+	create_family("çµé¹«å®«",4,"å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),
@@ -85,25 +85,25 @@ string ask_me(string name)
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÁéğÕ¹¬")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "çµé¹«å®«")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (  present(name, this_player()) )
 		return RANK_D->query_respect(this_player()) + 
-		"ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞÂğ£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+		"ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰å—ï¼Œæ€éº½åˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	if (query("fool_count") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬¿ª·¹µÄÊ±¼äÒÑ¾­¹ıÁË¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ï¼Œå¼€é¥­çš„æ—¶é—´å·²ç»è¿‡äº†ã€‚";
 
 	ob = new("/clone/food/" + name);
 	ob->move(this_player());
 
 	add("fool_count", -1);
 
-	message_vision("Â½É©¸ø$NÒ»¸ö" + ob->query("name") + "¡£\n", this_player());
+	message_vision("é™†å«‚ç»™$Nä¸€ä¸ª" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£";
+	return "æ‹¿å»å§ã€‚";
 }
 void init()
 {
@@ -116,16 +116,16 @@ void init()
 	
 	if (interactive(ob) 
 	&& !environment(ob)->query("no_fight")
-	&& ((fam = ob->query("family")) && fam["family_name"] != "ÁéğÕ¹¬" )
+	&& ((fam = ob->query("family")) && fam["family_name"] != "çµé¹«å®«" )
 	&& me->query("biao/owner"))
 	{
 		if( !ob->query_temp("warned") ) {
-		command("say ×ğÖ÷ÓĞÁî£ºÍâÈË²»µÃ½øÈëÁéğÕ¹¬£¬ËÙËÙÀë¿ª£¡");
+		command("say å°Šä¸»æœ‰ä»¤ï¼šå¤–äººä¸å¾—è¿›å…¥çµé¹«å®«ï¼Œé€Ÿé€Ÿç¦»å¼€ï¼");
 			ob->set_temp("warned", 1);
 	}
 		else if( ob->query_temp("stay")<5 ) ob->add_temp("stay",1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸ÒÉÃ´³ÁéğÕ¹¬£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢æ“…é—¯çµé¹«å®«ï¼ï¼ï¼\n");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}

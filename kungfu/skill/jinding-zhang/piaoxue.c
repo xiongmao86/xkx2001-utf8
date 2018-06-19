@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Æ®Ñ©´©ÔÆÕÆ
+// é£˜é›ªç©¿äº‘æŒ
 // chu@xkx   6/16/98
 
 #include <ansi.h>
@@ -51,8 +51,8 @@ mapping check_usage(object me, object target, int jiali)
   ret["neili_damage"] = rate * jiali / 40;    
 
   if( wizardp(me) && (string)me->query("env/combat")=="verbose" ) {
-    tell_object(me, sprintf("new px_info£º%O\n", px_info));
-    tell_object(me, sprintf("rate=%d, return value: £º%O\n", rate, ret));
+    tell_object(me, sprintf("new px_infoï¼š%O\n", px_info));
+    tell_object(me, sprintf("rate=%d, return value: ï¼š%O\n", rate, ret));
   }
 
   return ret;
@@ -110,13 +110,13 @@ int perform(object me, object target)
   if( !target ) target = offensive_target(me);
 
   if( !target || !target->is_character() ||  !me->is_fighting(target) )
-    return notify_fail("Æ®Ñ©´©ÔÆÕÆÖ»ÄÜÓÃÀ´ÃÔ»óÕ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+    return notify_fail("é£˜é›ªç©¿äº‘æŒåªèƒ½ç”¨æ¥è¿·æƒ‘æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ã€‚\n");
 
   if( me->query_temp("yield") )
-    return notify_fail("Äã²»³öÊÖ£¬ÈçºÎÊ¹µÃ³öÆ®Ñ©´©ÔÆÕÆ£¿\n");
+    return notify_fail("ä½ ä¸å‡ºæ‰‹ï¼Œå¦‚ä½•ä½¿å¾—å‡ºé£˜é›ªç©¿äº‘æŒï¼Ÿ\n");
 
   if(objectp(ob= me->query_temp("piaoxue/target")) &&  ob->is_fighting(me) ) 
-    return notify_fail("ÄãÒÑ¾­ÔÚÃÔ»ó¶ÔÊÖÁË¡£\n");
+    return notify_fail("ä½ å·²ç»åœ¨è¿·æƒ‘å¯¹æ‰‹äº†ã€‚\n");
 
 
   db = find_object("/clone/obj/skill_db");
@@ -137,26 +137,26 @@ int perform(object me, object target)
   else req = 150 + 5000 / (1 + rate);
 
   if( (finger = (int)me->query_skill("tiangang-zhi", 1)) < req )
-    return notify_fail("ÄãµÄÌìî¸Ö¸Ñ¨·¨²»¹»æµÊì£¬²»ÄÜÈÚ»ã¹áÍ¨¶ëÃ¼ÕÆ·¨¾«Òª¡£\n");
+    return notify_fail("ä½ çš„å¤©ç½¡æŒ‡ç©´æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½èæ±‡è´¯é€šå³¨çœ‰æŒæ³•ç²¾è¦ã€‚\n");
 
   if( (skill = (int)me->query_skill("jinding-zhang", 1)) < req )
-    return notify_fail("ÄãµÄ½ğ¶¥ÃàÕÆ²»¹»æµÊì£¬²»»áÊ¹Æ®Ñ©´©ÔÆÕÆ¡£\n");
+    return notify_fail("ä½ çš„é‡‘é¡¶ç»µæŒä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿é£˜é›ªç©¿äº‘æŒã€‚\n");
 
   if (skill > finger) skill = finger; // use min(tgz, jdz)
 
   if( (int)me->query_skill("linji-zhuang", 1) < req )
-    return notify_fail("ÄãµÄÁÙ¼Ã×®¹¦ĞŞÎª²»¹»£¬²»»áÊ¹ÓÃÆ®Ñ©´©ÔÆÕÆ¡£\n");
+    return notify_fail("ä½ çš„ä¸´æµæ¡©åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œä¸ä¼šä½¿ç”¨é£˜é›ªç©¿äº‘æŒã€‚\n");
 
   if( me->query_skill_mapped("force") != "linji-zhuang" )
-    return notify_fail("ÄãËùÓÃµÄ²¢·ÇÁÙ¼Ã×®£¬Ê¹²»³öÆ®Ñ©´©ÔÆÕÆ£¡\n");
+    return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éä¸´æµæ¡©ï¼Œä½¿ä¸å‡ºé£˜é›ªç©¿äº‘æŒï¼\n");
 
   jiali=(int)me->query("jiali");
   if( jiali < 50 )
-    return notify_fail("Æ®Ñ©´©ÔÆÕÆÄËÊÇÄÚ¼Ò¹¦·ò£¬ÕÆÉÏ²»´øÄÚÁ¦Ê¹²»³öÀ´¡£\n");
+    return notify_fail("é£˜é›ªç©¿äº‘æŒä¹ƒæ˜¯å†…å®¶åŠŸå¤«ï¼ŒæŒä¸Šä¸å¸¦å†…åŠ›ä½¿ä¸å‡ºæ¥ã€‚\n");
 
-  msg = HIY "\n$PÊÖÕÆºöµÍ£¬±ãÏñÒ»Î²»¬ÁïÎŞ±È£¬Ñ¸½İÎŞÂ×µÄĞ¡ÓãÒ»°ã£¬ÅÄÏò$nµÄĞØÇ°¡£\n";
-  msg += "$n×ÔÈ»¶øÈ»µÄ·¢³öÄÚÁ¦ºÍ¶Ô·½ÅÄÀ´µÄÕÆÁ¦Ò»µ²£¬¾ÍÔÚÕâÁ½¹É¾Ş´óµÄÄÚ¾¢½«´¥Î´×²¡¢\n";
-  msg += "·½ÓöÎ´½ÓÖ®¼Ê£¬$PµÄÕÆÁ¦È´ºöÈ»ÎŞÓ°ÎŞ×ÙµÄÏûÊ§ÁË¡£\n\n";
+  msg = HIY "\n$Pæ‰‹æŒå¿½ä½ï¼Œä¾¿åƒä¸€å°¾æ»‘æºœæ— æ¯”ï¼Œè¿…æ·æ— ä¼¦çš„å°é±¼ä¸€èˆ¬ï¼Œæ‹å‘$nçš„èƒ¸å‰ã€‚\n";
+  msg += "$nè‡ªç„¶è€Œç„¶çš„å‘å‡ºå†…åŠ›å’Œå¯¹æ–¹æ‹æ¥çš„æŒåŠ›ä¸€æŒ¡ï¼Œå°±åœ¨è¿™ä¸¤è‚¡å·¨å¤§çš„å†…åŠ²å°†è§¦æœªæ’ã€\n";
+  msg += "æ–¹é‡æœªæ¥ä¹‹é™…ï¼Œ$Pçš„æŒåŠ›å´å¿½ç„¶æ— å½±æ— è¸ªçš„æ¶ˆå¤±äº†ã€‚\n\n";
 
   me->add("neili", -jiali);
 
@@ -176,19 +176,19 @@ int perform(object me, object target)
       tell_object(me, sprintf("rates: my=%d, target=%d\n", my_rate, your_rate));
     }
     if (random(my_rate) >= your_rate/2) {
-      msg += "$nÒ»´ô£¬Ì§Í·¿´$PÊ±£¬ÃÍµØÀïĞØ¿ÚÓÌËÆÊÜÁËÌú´¸µÄÒ»»÷¡£\n";
+      msg += "$nä¸€å‘†ï¼ŒæŠ¬å¤´çœ‹$Pæ—¶ï¼ŒçŒ›åœ°é‡Œèƒ¸å£çŠ¹ä¼¼å—äº†é“é”¤çš„ä¸€å‡»ã€‚\n";
       if (usage_info["damage"] < 50) {
-	msg += "$nÒÉ»óµØ¿´ÁË$PÒ»ÑÛµÀ£ºÏë²»µ½¶ëÃ¼ÅÉÄÚ¹¦Èç´Ë²î¾¢£¬ÄãÔÙ´òÒ»ÕÆÊÔÊÔ¿´¡£\n";
+	msg += "$nç–‘æƒ‘åœ°çœ‹äº†$Pä¸€çœ¼é“ï¼šæƒ³ä¸åˆ°å³¨çœ‰æ´¾å†…åŠŸå¦‚æ­¤å·®åŠ²ï¼Œä½ å†æ‰“ä¸€æŒè¯•è¯•çœ‹ã€‚\n";
       }else if (usage_info["damage"] < 200) {
-	msg += "$nÉí×ÓÒ»»Î£¬Á¢×ã²»¶¨£¬²îµã¶ù¾ÍÒªË¤µ¹¡£\n";
+	msg += "$nèº«å­ä¸€æ™ƒï¼Œç«‹è¶³ä¸å®šï¼Œå·®ç‚¹å„¿å°±è¦æ‘”å€’ã€‚\n";
       }else if (usage_info["damage"] < 400) {
-	msg += "$nÁ¢×ã²»¶¨£¬Ïòºó½ÓÁ¬Ë¤ÁËÁ½¸ö½î¶·£¬ÍÛµÄÒ»Éù£¬Åç³öÒ»¿ÚÏÊÑª¡£\n";
+	msg += "$nç«‹è¶³ä¸å®šï¼Œå‘åæ¥è¿æ‘”äº†ä¸¤ä¸ªç­‹æ–—ï¼Œå“‡çš„ä¸€å£°ï¼Œå–·å‡ºä¸€å£é²œè¡€ã€‚\n";
       }else if (usage_info["damage"] < 800) {
-	msg += "$nÍÛµÄÒ»Éù£¬Åç³öÒ»¿ÚÏÊÑª£¬Î¯¶ÙÔÚµØ£¬±ãËÆÒ»¶ÑÈíÄà¡££¬\n";
+	msg += "$nå“‡çš„ä¸€å£°ï¼Œå–·å‡ºä¸€å£é²œè¡€ï¼Œå§”é¡¿åœ¨åœ°ï¼Œä¾¿ä¼¼ä¸€å †è½¯æ³¥ã€‚ï¼Œ\n";
       }else if (usage_info["damage"] < 1600) {
-	msg += "$nÉí×Ó±ãÈçÒ»À¦µ¾²İ°ã£¬ÔÚ¿ÕÖĞÆ½Æ½µÄ·ÉÁË³öÈ¥£¬ÖØÖØË¤ÔÚµØÏÂ£¬¿ÚÖĞÏÊÑª¿ñÅç£®\n";
+	msg += "$nèº«å­ä¾¿å¦‚ä¸€æ†ç¨»è‰èˆ¬ï¼Œåœ¨ç©ºä¸­å¹³å¹³çš„é£äº†å‡ºå»ï¼Œé‡é‡æ‘”åœ¨åœ°ä¸‹ï¼Œå£ä¸­é²œè¡€ç‹‚å–·ï¼\n";
       }else {
-	msg += "Ö»ÌıÒ»Éù¾ŞÏì£¬$n¿ÚÖĞÏÊÑª¿ñÅç£¬È«Éí¹Ç÷ÀËéÁÑ£¬ÑÛ¼ûÊÇ»î²»³ÉÁË£®\n";
+	msg += "åªå¬ä¸€å£°å·¨å“ï¼Œ$nå£ä¸­é²œè¡€ç‹‚å–·ï¼Œå…¨èº«éª¨éª¼ç¢è£‚ï¼Œçœ¼è§æ˜¯æ´»ä¸æˆäº†ï¼\n";
       }
 
       msg += NOR;
@@ -203,15 +203,15 @@ int perform(object me, object target)
 	ctime(time()), me->name(1), geteuid(me), target->name(1), geteuid(target), usage_info["rate"], 
 	jiali, usage_info["damage"]));
     }else{
-      msg += "$n½«ÕæÆø¾ÛÓÚĞØ¿Ú£¬ÄıÉñ½ÓÁË$PÕâÒ»ÕÆ£¬Ğ¦µÀ£ºÆ®Ñ©´©ÔÆÕÆºÃ´óµÄÃûÍ·£¬ÄãÊ¹À´Ò²²»¹ıÈç´Ë¡£\n" NOR;
+      msg += "$nå°†çœŸæ°”èšäºèƒ¸å£ï¼Œå‡ç¥æ¥äº†$Pè¿™ä¸€æŒï¼Œç¬‘é“ï¼šé£˜é›ªç©¿äº‘æŒå¥½å¤§çš„åå¤´ï¼Œä½ ä½¿æ¥ä¹Ÿä¸è¿‡å¦‚æ­¤ã€‚\n" NOR;
       me->start_busy(random(3));
       log_file("skill_usage", sprintf("%s %s(%s) performed piaoxue on %s(%s): rate=%d missed\n",
 	ctime(time()), me->name(1), geteuid(me), target->name(1), geteuid(target), usage_info["rate"]));
     }
   } else {
-    msg += "$nÀäĞ¦µÀ£ºÈç½ñÎäÁÖÖ®ÖĞË­ÈË²»ÖªÕâÆ®Ñ©´©ÔÆÕÆ£¬Ò²ºÃÒâË¼³öÀ´ÏÖ³ó£¿\n";
-    msg += "$n½ÅÏÂ²»¶¡²»°ËµÄÕ¾ÁËÒ»¸ö×®£¬×óÕÆÁ¬»Ó£¬°Ñ$PµÄ¾¢Á¦¾¡ÊıĞ¶È¥£®\n";
-    msg += "$N´ó³ÔÒ»¾ª£¬Éí²à£¬±³ĞÄµÄ¿ÕÃÅ´ó¿ª£¬ÀÇ±·µØÕĞ¼Ü×Å£®\n" NOR;
+    msg += "$nå†·ç¬‘é“ï¼šå¦‚ä»Šæ­¦æ—ä¹‹ä¸­è°äººä¸çŸ¥è¿™é£˜é›ªç©¿äº‘æŒï¼Œä¹Ÿå¥½æ„æ€å‡ºæ¥ç°ä¸‘ï¼Ÿ\n";
+    msg += "$nè„šä¸‹ä¸ä¸ä¸å…«çš„ç«™äº†ä¸€ä¸ªæ¡©ï¼Œå·¦æŒè¿æŒ¥ï¼ŒæŠŠ$Pçš„åŠ²åŠ›å°½æ•°å¸å»ï¼\n";
+    msg += "$Nå¤§åƒä¸€æƒŠï¼Œèº«ä¾§ï¼ŒèƒŒå¿ƒçš„ç©ºé—¨å¤§å¼€ï¼Œç‹¼ç‹ˆåœ°æ‹›æ¶ç€ï¼\n" NOR;
     me->start_busy(3 + random(4));
       log_file("skill_usage", sprintf("%s %s(%s) performed piaoxue on %s(%s): total failure\n",
 	ctime(time()), me->name(1), geteuid(me), target->name(1), geteuid(target)));
@@ -230,7 +230,7 @@ void remove_effect(object me)
     target = me->query_temp("piaoxue/target");
     me->delete_temp("piaoxue");
     if( me->is_fighting() )
-      message_vision(HIY "\n$nÂıÂıµÄÊÊÓ¦ÁË$PµÄÆ®Ñ©´©ÔÆÕÆ¡£\n" NOR, me, target);
+      message_vision(HIY "\n$næ…¢æ…¢çš„é€‚åº”äº†$Pçš„é£˜é›ªç©¿äº‘æŒã€‚\n" NOR, me, target);
   }
 }
 

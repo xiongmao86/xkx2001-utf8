@@ -1,4 +1,4 @@
-// chilian-shenzhang.c  ³àÁ·ÉñÕÆ
+// chilian-shenzhang.c  èµ¤ç»ƒç¥æŒ
 // 14/7/2001  Xuanyuan
 
 #include <ansi.h>
@@ -6,50 +6,50 @@
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$NË«ÊÖÒ»·­£¬Á½ÕÆ´ø×Åµ­µ­µÄÀ¶¹â£¬Ö±Ïò$nÅÄÈ¥",
+([	"action" : "$NåŒæ‰‹ä¸€ç¿»ï¼Œä¸¤æŒå¸¦ç€æ·¡æ·¡çš„è“å…‰ï¼Œç›´å‘$næ‹å»",
 	"force" : 180,
         "dodge" : 5,
         "parry" : 20,
 	"damage": 50,
 	"lvl" : 0,
-	"skill_name" : "³àÁ·ÉñÕÆ",
-        "damage_type" : "ğöÉË"
+	"skill_name" : "èµ¤ç»ƒç¥æŒ",
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$N×óÕÆĞé»Î£¬ÓÒÕÆÖ±³ö£¬ÓÌÈç¶¾ÉßÒ»°ãÖ±ÆÈ$nµÄĞØÇ°",
+([	"action" : "$Nå·¦æŒè™šæ™ƒï¼Œå³æŒç›´å‡ºï¼ŒçŠ¹å¦‚æ¯’è›‡ä¸€èˆ¬ç›´è¿«$nçš„èƒ¸å‰",
 	"force" : 220,
         "dodge" : 10,
         "parry" : 15,
 	"damage": 60,
 	"lvl" : 10,
-	"skill_name" : "³àÁ·ÉñÕÆ",
-        "damage_type" : "ğöÉË"
+	"skill_name" : "èµ¤ç»ƒç¥æŒ",
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NË«ÕÆ·­·É£¬ËÄÖÜÃÔÃ£×ÅÒ»¹É°µµ­µÄÎíÆø£¬ÅÅÏò$nµÄÈ«Éí",
+([	"action" : "$NåŒæŒç¿»é£ï¼Œå››å‘¨è¿·èŒ«ç€ä¸€è‚¡æš—æ·¡çš„é›¾æ°”ï¼Œæ’å‘$nçš„å…¨èº«",
 	"force" : 260,
         "dodge" : 15,
         "parry" : 20,
 	"damage": 70,
 	"lvl" : 20,
-	"skill_name" : "³àÁ·ÉñÕÆ",
-        "damage_type" : "ğöÉË"
+	"skill_name" : "èµ¤ç»ƒç¥æŒ",
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÁ½ÕÆÒ»·Ö£¬×óÕÆÈçĞ«£¬ÓÒÕÆËÆÉß£¬Í¬Ê±Ïò$n»÷¹ıÈ¥",
+([	"action" : "$Nä¸¤æŒä¸€åˆ†ï¼Œå·¦æŒå¦‚èï¼Œå³æŒä¼¼è›‡ï¼ŒåŒæ—¶å‘$nå‡»è¿‡å»",
 	"force" : 300,
         "dodge" : 20,
         "parry" : 30,
 	"damage": 80,
 	"lvl" : 30,
-	"skill_name" : "³àÁ·ÉñÕÆ",
-        "damage_type" : "ğöÉË"
+	"skill_name" : "èµ¤ç»ƒç¥æŒ",
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÄ¬ÔËÄÚÁ¦£¬Ë«ÕÆºöÈ»±äºÚ£¬´ø×ÅÒ»¹ÉÒõ·çÖ»ÆË$nµÄÈ«Éí",
+([	"action" : "$Né»˜è¿å†…åŠ›ï¼ŒåŒæŒå¿½ç„¶å˜é»‘ï¼Œå¸¦ç€ä¸€è‚¡é˜´é£åªæ‰‘$nçš„å…¨èº«",
 	"force" : 340,
         "dodge" : 25,
         "parry" : 20,
 	"damage":100,
 	"lvl" : 40,
-	"skill_name" : "³àÁ·ÉñÕÆ",
-        "damage_type" : "ğöÉË"
+	"skill_name" : "èµ¤ç»ƒç¥æŒ",
+        "damage_type" : "ç˜€ä¼¤"
 ])
 });
 
@@ -61,11 +61,11 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Á·³àÁ·ÉñÕÆ±ØĞë¿ÕÊÖ¡£\n");
+		return notify_fail("ç»ƒèµ¤ç»ƒç¥æŒå¿…é¡»ç©ºæ‰‹ã€‚\n");
 	if ((int)me->query_skill("wudu-xinfa", 1) < 20)
-		return notify_fail("ÄãµÄÎå¶¾ĞÄ·¨»ğºò²»¹»£¬ÎŞ·¨Ñ§³àÁ·ÉñÕÆ¡£\n");
+		return notify_fail("ä½ çš„äº”æ¯’å¿ƒæ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦èµ¤ç»ƒç¥æŒã€‚\n");
 	if ((int)me->query("max_neili") < 100)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·³àÁ·ÉñÕÆ¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒèµ¤ç»ƒç¥æŒã€‚\n");
 	return 1;
 }
 
@@ -89,10 +89,10 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query("jingli") < 50)
-		return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·³àÁ·ÉñÕÆ¡£\n");
-        me->receive_damage("jingli", 25, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË¡£");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒèµ¤ç»ƒç¥æŒã€‚\n");
+        me->receive_damage("jingli", 25, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†ã€‚");
 	me->add("neili", -10);
 	return 1;
 }
@@ -103,9 +103,9 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
         neili=me->query("neili");
         neili2=victim->query("neili");
         if(random(neili)>random(neili2)){
-//                message_vision(MAG"$nÃÍÈ»¾õµÃÒ»Õóº®ÆøÏ®À´£¬Éí×ÓÒ»»Î£¬Í·ÄÔÎ¢Î¢ÓĞĞ©·¢»è¡£\n"NOR, me, victim);
+//                message_vision(MAG"$nçŒ›ç„¶è§‰å¾—ä¸€é˜µå¯’æ°”è¢­æ¥ï¼Œèº«å­ä¸€æ™ƒï¼Œå¤´è„‘å¾®å¾®æœ‰äº›å‘æ˜ã€‚\n"NOR, me, victim);
                 victim->apply_condition("chilian_poison", random(me->query_skill("chilian-shenzhang", 1)/2) + victim->query_condition("chilian_poison"));
                 if(victim->query("poisoner") != me) victim->set("poisoner", me);
-        } else message_vision(YEL"$nÃ¦ÔËÄÚÁ¦µÖ¿¹£¬½«$NÕÆÉÏµÄ¾ç¶¾±ÆÔÚÌåÍâ¡£\n"NOR,me,victim);
+        } else message_vision(YEL"$nå¿™è¿å†…åŠ›æŠµæŠ—ï¼Œå°†$NæŒä¸Šçš„å‰§æ¯’é€¼åœ¨ä½“å¤–ã€‚\n"NOR,me,victim);
 
 }

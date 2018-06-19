@@ -1,14 +1,14 @@
 //Cracked by Roath
-// genming.c ¸ß¸ùÃ÷
+// genming.c é«˜æ ¹æ˜Ž
 
 inherit NPC;
 
 void create()
 {
-	set_name("¸ß¸ùÃ÷", ({ "gao genming", "gao", "ming" }));
+	set_name("é«˜æ ¹æ˜Ž", ({ "gao genming", "gao", "ming" }));
 	set("long", 
-"¸ß¸ùÃ÷ÔÚ»ªÉ½µÜ×ÓÖÐÅÅÐÐµÚÎå¡£\n");
-	set("gender", "ÄÐÐÔ");
+"é«˜æ ¹æ˜Žåœ¨åŽå±±å¼Ÿå­ä¸­æŽ’è¡Œç¬¬äº”ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 26);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -49,7 +49,7 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu");
 
-	create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("åŽå±±æ´¾", 14, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();

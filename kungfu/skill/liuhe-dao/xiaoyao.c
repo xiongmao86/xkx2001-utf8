@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xiaoyao.c Â–“£ª√”∞
+// xiaoyao.c ÈÄçÈÅ•ÂπªÂΩ±
 
 #include <ansi.h>
 
@@ -22,38 +22,38 @@ int perform(object me, object target)
   
   inarray = ({0, 0 , 0, 0, 0, 0, 0, 0, 0});
   
-  if(me->query_temp("AlreadyPfmXiaoyao")) return notify_fail("ƒ„“—æ≠‘⁄ π”√Â–“£ª√”∞¡À°£\n");
+  if(me->query_temp("AlreadyPfmXiaoyao")) return notify_fail("‰Ω†Â∑≤ÁªèÂú®‰ΩøÁî®ÈÄçÈÅ•ÂπªÂΩ±‰∫Ü„ÄÇ\n");
   
   if( !target )
-    return notify_fail("ƒ„“™∂‘À≠ π”√Â–“£ª√”∞£ø\n");
+    return notify_fail("‰Ω†Ë¶ÅÂØπË∞Å‰ΩøÁî®ÈÄçÈÅ•ÂπªÂΩ±Ôºü\n");
 
 //  if( !target ) target = offensive_target(me);
   if( !target->is_character()
       || !me->is_fighting(target) )
-    return notify_fail("Â–“£ª√”∞÷ªƒ‹∂‘’Ω∂∑÷–µƒ∂‘ ÷ π”√°£\n");
+    return notify_fail("ÈÄçÈÅ•ÂπªÂΩ±Âè™ËÉΩÂØπÊàòÊñó‰∏≠ÁöÑÂØπÊâã‰ΩøÁî®„ÄÇ\n");
 
   if( (int)me->query_skill("huntian-qigong", 1) < 125 )
-    return notify_fail("ƒ„µƒªÏÃÏ∆¯π¶–ﬁŒ™≤ªπª£°\n");
+    return notify_fail("‰Ω†ÁöÑÊ∑∑Â§©Ê∞îÂäü‰øÆ‰∏∫‰∏çÂ§üÔºÅ\n");
 
   if( (int)me->query_skill("xiaoyaoyou", 1) < 125 )
-    return notify_fail("ƒ„µƒÂ–“£”Œ–ﬁŒ™≤ªπª£°\n");
+    return notify_fail("‰Ω†ÁöÑÈÄçÈÅ•Ê∏∏‰øÆ‰∏∫‰∏çÂ§üÔºÅ\n");
 
   if( (int)me->query_skill("liuhe-dao", 1) < 125 )
-    return notify_fail("ƒ„µƒ¡˘∫œµ∂∑®ªπ≤ªπª¥ø Ï.\n");
+    return notify_fail("‰Ω†ÁöÑÂÖ≠ÂêàÂàÄÊ≥ïËøò‰∏çÂ§üÁ∫ØÁÜü.\n");
     
    if( (int)me->query("max_neili") < 500 )
-      return notify_fail("ƒ„µƒƒ⁄¡¶–ﬁŒ™≤ªπª°£\n");
+      return notify_fail("‰Ω†ÁöÑÂÜÖÂäõ‰øÆ‰∏∫‰∏çÂ§ü„ÄÇ\n");
 
    if( (int)me->query("neili") < 150 )
-      return notify_fail("ƒ„µƒ’Ê∆¯≤ªπª°£\n");
+      return notify_fail("‰Ω†ÁöÑÁúüÊ∞î‰∏çÂ§ü„ÄÇ\n");
 
   // Here should change description
   if(random(2))
     message_vision( HIY
-     "∫ˆ»ª$N“ª∏ˆªÿ–˝£¨’ÊÀ∆“ª÷ª”Ò—‡°¢“ª÷ª¥Û”•ÙÊÙÊ∑…ŒË“ª∞„£¨«ÍøÃº‰ªØ≥ˆŒﬁ ˝…Ì”∞£¨ø¥µ√$n—€ª®Á‘¬“°£\n"NOR, me, target);
+     "ÂøΩÁÑ∂$N‰∏Ä‰∏™ÂõûÊóãÔºåÁúü‰ºº‰∏ÄÂè™ÁéâÁáï„ÄÅ‰∏ÄÂè™Â§ßÈπ∞Áø©Áø©È£ûËàû‰∏ÄËà¨ÔºåÈ°∑ÂàªÈó¥ÂåñÂá∫Êó†Êï∞Ë∫´ÂΩ±ÔºåÁúãÂæó$nÁúºËä±Áº≠‰π±„ÄÇ\n"NOR, me, target);
   else 
     message_vision( HIY
-      "÷ªº˚$NÀ´◊„«·µ„£¨¥Û–‰∑…ŒË£¨∂´◊›Œ˜‘æ£¨…Ì∑®¡È∂Ø»Á—‡£¨’˝ «∫È∆ﬂπ´µƒ°∞Â–“£ª√”∞°±…Ì∑®°£\n"NOR, me);
+      "Âè™ËßÅ$NÂèåË∂≥ËΩªÁÇπÔºåÂ§ßË¢ñÈ£ûËàûÔºå‰∏úÁ∫µË•øË∑ÉÔºåË∫´Ê≥ïÁÅµÂä®Â¶ÇÁáïÔºåÊ≠£ÊòØÊ¥™‰∏ÉÂÖ¨ÁöÑ‚ÄúÈÄçÈÅ•ÂπªÂΩ±‚ÄùË∫´Ê≥ï„ÄÇ\n"NOR, me);
 
   me->add("neili", -40);
   me->add("jingli", -20);
@@ -107,7 +107,7 @@ void AddFight(int WorkTime, object target, object fakeobj, object attacker)
      || (string)weapon->query("skill_type") != "blade" ) 
   {
     message_vision( HIY
-    "Â–“£ª√”∞…Ì∑®’– πÕÍ±œ£¨$N“—∑……Ì¬‰µÿ£¨…Ì∑®«·¡È∆Æ“›÷Æ÷¡°£\n" NOR, attacker);
+    "ÈÄçÈÅ•ÂπªÂΩ±Ë∫´Ê≥ïÊãõ‰ΩøÂÆåÊØïÔºå$NÂ∑≤È£ûË∫´ËêΩÂú∞ÔºåË∫´Ê≥ïËΩªÁÅµÈ£òÈÄ∏‰πãËá≥„ÄÇ\n" NOR, attacker);
     attacker->delete_temp("AlreadyPfmXiaoyao");
     attacker->delete_temp("cannot_perform");
     if(fakeobj->query("attacker")[1] != 0) {

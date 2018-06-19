@@ -39,7 +39,7 @@ void del_sung(object me)
 	me->set_temp("block_msg/all", 0);
 	if (me->query_leader() ) 
         me->set_leader(0);	
-	message_vision("$N慢慢地清醒过来，魂魄又回到了自己身体上。\n", me);
+	message_vision("$N鎱㈡參鍦版竻閱掕繃鏉ワ紝榄傞瓌鍙堝洖鍒颁簡鑷繁韬綋涓娿�俓n", me);
 
 
     me->remove_all_killer();

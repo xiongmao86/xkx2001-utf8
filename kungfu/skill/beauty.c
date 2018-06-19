@@ -1,5 +1,5 @@
 //Cracked by Roath
-// beauty.c ×¤ÑÕÊõ
+// beauty.c é©»é¢œæœ¯
 
 inherit SKILL;
 
@@ -9,8 +9,8 @@ string type() { return "knowledge"; }
 
 int valid_learn(object me) 
 {
-	if (me->query("gender") == "ÄĞĞÔ") 
-		return notify_fail("Äã¸ö´óÀÏÒ¯ÃÇÒ²À´Ñ§ÕâÍæÒâ¶ù£¿£¡\n");
+	if (me->query("gender") == "ç”·æ€§") 
+		return notify_fail("ä½ ä¸ªå¤§è€çˆ·ä»¬ä¹Ÿæ¥å­¦è¿™ç©æ„å„¿ï¼Ÿï¼\n");
 
 	return 1;
 }
@@ -31,5 +31,5 @@ int reduce_age(object me)
 
 int practice_skill(object me)
 {	
-	return notify_fail("×¤ÑÕÊõµÃ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+	return notify_fail("é©»é¢œæœ¯å¾—é å­¦(learn)æ¥æé«˜ã€‚\n");
 }

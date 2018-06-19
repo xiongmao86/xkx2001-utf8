@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /kungfu/class/emei/jingfeng.c ¾²·çÊ¦Ì«
+// Npc: /kungfu/class/emei/jingfeng.c é™é£å¸ˆå¤ª
 // Date: xbc 96/09/22
 
 inherit NPC;
@@ -12,16 +12,16 @@ int auto_perform();
 
 void create()
 {
-        set_name("¾²·çÊ¦Ì«", ({
+        set_name("é™é£å¸ˆå¤ª", ({
                 "jingfeng shitai",
                 "jingfeng",
                 "shitai",
 	}));
 	set("long",
-		"ËıÊÇÔÚ»ª²ØâÖĞŞĞĞµÄÊ¦Ì«£¬Æ½Ê±ÔÚ´¢Îï¼ä·¢·Å¶ëáÒÅÉµÄÁ·¹¦ÎäÆ÷¼°Ò©Æ·¡£\n"
+		"å¥¹æ˜¯åœ¨åè—åºµä¿®è¡Œçš„å¸ˆå¤ªï¼Œå¹³æ—¶åœ¨å‚¨ç‰©é—´å‘æ”¾å³¨åµ‹æ´¾çš„ç»ƒåŠŸæ­¦å™¨åŠè¯å“ã€‚\n"
 	);
 
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -66,7 +66,7 @@ void create()
 	prepare_skill("strike", "jinding-zhang");
 	prepare_skill("finger", "tiangang-zhi");
  
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),
@@ -75,12 +75,12 @@ void create()
 	set_weight(1000000); 
 
         set("inquiry", ([
-                "ÌìÏã¶ÏĞø¸à" :    (: ask_me_1 :),
-                "ÁøÒ¶µ¶" :    (: ask_me_weapon, "liuyedao" :),
-                "Èí½£" :    (: ask_me_weapon, "ruanjian" :),
-                "Æ¤Ñü´ø" :    (: ask_me_weapon, "yaodai" :),
-                "³ö¼Ò"  : (: ask_for_join :),
-                "»¹Ë×" : (:ask_for_huansu:),
+                "å¤©é¦™æ–­ç»­è†" :    (: ask_me_1 :),
+                "æŸ³å¶åˆ€" :    (: ask_me_weapon, "liuyedao" :),
+                "è½¯å‰‘" :    (: ask_me_weapon, "ruanjian" :),
+                "çš®è…°å¸¦" :    (: ask_me_weapon, "yaodai" :),
+                "å‡ºå®¶"  : (: ask_for_join :),
+                "è¿˜ä¿—" : (:ask_for_huansu:),
         ]));
 
 	set("gao_count", 10);
@@ -101,20 +101,20 @@ string ask_me_weapon(string name)
         object ob, who = this_player();
 	object room = load_object("/d/emei/chuwu");
 
-        if (!(fam = who->query("family")) || fam["family_name"] != "¶ëáÒÅÉ")
+        if (!(fam = who->query("family")) || fam["family_name"] != "å³¨åµ‹æ´¾")
                 return RANK_D->query_respect(who) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
         if (  ob=present(name, who) )
                 return RANK_D->query_respect(who) + 
-                "ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞ" + ob->query("name") + "Âğ£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+                "ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰" + ob->query("name") + "å—ï¼Œæ€éº½åˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	log = room->query_temp(name);
 	if ( mapp(log) && log[who->query("id")] ) 
-		return "ÎÒ²»ÊÇ¸Õ¸ø¹ıÄãÂğ£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+		return "æˆ‘ä¸æ˜¯åˆšç»™è¿‡ä½ å—ï¼Œæ€éº½åˆæ¥è¦äº†ï¼ŸçœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
         if ( mapp(log) && sizeof(log) > query(name+"_count"))
-                return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÒÑ¾­·¢ÍêÁË¡£";
+                return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ï¼Œå·²ç»å‘å®Œäº†ã€‚";
 
         if (name=="yaodai")
 	ob = new("/d/emei/obj/yaodai");
@@ -123,9 +123,9 @@ string ask_me_weapon(string name)
 
 	room->set_temp(name+"/"+who->query("id"),1);
 
-        message_vision("¾²·çÊ¦Ì«¸ø$NÒ»" + ob->query("unit") + ob->query("name") + "¡£\n", who);
+        message_vision("é™é£å¸ˆå¤ªç»™$Nä¸€" + ob->query("unit") + ob->query("name") + "ã€‚\n", who);
 
-        return "ÄÃÈ¥°É¡£²»¹ıÒª¼Ç×¡£¬ÎäÆ÷·À¾ßÖ»¿É·ÀÉíÁ·Îä£¬²»¿ÉÆ¾´Ë·Áº¦ËûÈË¡£";
+        return "æ‹¿å»å§ã€‚ä¸è¿‡è¦è®°ä½ï¼Œæ­¦å™¨é˜²å…·åªå¯é˜²èº«ç»ƒæ­¦ï¼Œä¸å¯å‡­æ­¤å¦¨å®³ä»–äººã€‚";
 }
 
 
@@ -135,32 +135,32 @@ string ask_me_1()
         object ob, who = this_player();
 	object room = load_object("/d/emei/chuwu");
 
-        if (!(fam = who->query("family")) || fam["family_name"] != "¶ëáÒÅÉ")
+        if (!(fam = who->query("family")) || fam["family_name"] != "å³¨åµ‹æ´¾")
                 return RANK_D->query_respect(who) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
         if ( (int)who->query_condition("bonze_drug" ) > 0 )
                 return RANK_D->query_respect(who) + 
-                "ÄãÊÇ²»ÊÇ¸Õ·ó¹ıÒ©£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÁéÒ©¶à·óÓĞº¦ÎŞÒæ£¬¹ı¶ÎÊ±¼äÔÙÀ´°É¡£";
+                "ä½ æ˜¯ä¸æ˜¯åˆšæ•·è¿‡è¯ï¼Œæ€éº½åˆæ¥è¦äº†ï¼Ÿ çµè¯å¤šæ•·æœ‰å®³æ— ç›Šï¼Œè¿‡æ®µæ—¶é—´å†æ¥å§ã€‚";
 
         if (  present("tian xiang", who) )
                 return RANK_D->query_respect(who) + 
-                "ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞÒ»ºĞÌìÏã¶ÏĞø¸àÂğ£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+                "ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰ä¸€ç›’å¤©é¦™æ–­ç»­è†å—ï¼Œæ€éº½åˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	log = room->query_temp("tianxiang");
 
         if ( mapp(log) && log[who->query("id")])
-                return "ÎÒ²»ÊÇ¸Õ¸ø¹ıÄãÒ»ºĞÌìÏã¶ÏĞø¸àÂğ£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+                return "æˆ‘ä¸æ˜¯åˆšç»™è¿‡ä½ ä¸€ç›’å¤©é¦™æ–­ç»­è†å—ï¼Œæ€éº½åˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
-        if ( mapp(log) && sizeof(log) > query("gao_count")) return "¶Ô²»Æğ£¬ÌìÏã¶ÏĞø¸àÒÑ¾­·¢ÍêÁË";
+        if ( mapp(log) && sizeof(log) > query("gao_count")) return "å¯¹ä¸èµ·ï¼Œå¤©é¦™æ–­ç»­è†å·²ç»å‘å®Œäº†";
 
         ob = new(DRUG_D("tianxiang"));
         ob->move(who);
 
         room->set_temp("tianxiang/"+who->query("id"),1);
 
-        message_vision("$N»ñµÃÒ»ºĞÌìÏã¶ÏĞø¸à¡£\n",this_player());
-        return "ºÃ°É£¬¼Ç×¡£¬²»µ½Î£¼±¹ØÍ·²»ÒªÇáÒ×Ê¹ÓÃ´ËÒ©¡£";
+        message_vision("$Nè·å¾—ä¸€ç›’å¤©é¦™æ–­ç»­è†ã€‚\n",this_player());
+        return "å¥½å§ï¼Œè®°ä½ï¼Œä¸åˆ°å±æ€¥å…³å¤´ä¸è¦è½»æ˜“ä½¿ç”¨æ­¤è¯ã€‚";
 
 }
 

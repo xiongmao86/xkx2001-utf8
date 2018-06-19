@@ -4,33 +4,33 @@
 
 #include <ansi.h>
 string* xuedao = ({
-        "¾Þ¹ÇÑ¨",
-        "µØ²ÖÑ¨",
-        "¼ç¾®Ñ¨",
-        "¼Õ³µÑ¨",
-        "³ÐÆüÑ¨",
-        "·ç³ØÑ¨",
-        "ÕÂÃÅÑ¨",
-        "·ç¸®Ñ¨",
-        "¾«´ÙÑ¨",
-        "ÌÕµÀÑ¨",
-        "Ç¿¼äÑ¨",
-        "ÉÙº£Ñ¨",
-        "¶¿±ÇÑ¨",
-        "ÉñÃÅÑ¨",
-        "»ª¸ÇÑ¨",
-        "´ó×µÑ¨",
-        "·ïÎ²Ñ¨",
-        "ÖÁÑôÑ¨",
-        "ÀÍ¹¬Ñ¨",
-        "°Ù»áÑ¨",
-        "ÁéÌ¨Ñ¨",
-        "Ì«ÑôÑ¨",
-        "ëþÖÐÑ¨",
-        "ÃüÃÅÑ¨",
-        "ð¯Î²Ñ¨",
-        "ÈýÒõ½»",
-        "ÌìÖùÑ¨"
+        "å·¨éª¨ç©´",
+        "åœ°ä»“ç©´",
+        "è‚©äº•ç©´",
+        "é¢Šè½¦ç©´",
+        "æ‰¿æ³£ç©´",
+        "é£Žæ± ç©´",
+        "ç« é—¨ç©´",
+        "é£Žåºœç©´",
+        "ç²¾ä¿ƒç©´",
+        "é™¶é“ç©´",
+        "å¼ºé—´ç©´",
+        "å°‘æµ·ç©´",
+        "çŠŠé¼»ç©´",
+        "ç¥žé—¨ç©´",
+        "åŽç›–ç©´",
+        "å¤§æ¤Žç©´",
+        "å‡¤å°¾ç©´",
+        "è‡³é˜³ç©´",
+        "åŠ³å®«ç©´",
+        "ç™¾ä¼šç©´",
+        "çµå°ç©´",
+        "å¤ªé˜³ç©´",
+        "è†»ä¸­ç©´",
+        "å‘½é—¨ç©´",
+        "é¸ å°¾ç©´",
+        "ä¸‰é˜´äº¤",
+        "å¤©æŸ±ç©´"
 });
 
 
@@ -38,20 +38,20 @@ int update_condition(object me, int duration)
 {
 	object ob;
 	if (!living(me)) {
-		message("vision", me->name() + "ÃÆºßÁËÒ»Éù¡£\n", environment(me), me);
+		message("vision", me->name() + "é—·å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
 	}
-	if (me->query("family/family_name")=="´óÀí¶Î¼Ò"
+	if (me->query("family/family_name")=="å¤§ç†æ®µå®¶"
 		&& me->query_skill("kurong-changong")) return 1;
 	if (me->query_temp("yyzenemy")) {
-		tell_object(me,HIR"Äã¸Ðµ½"+xuedao[random(sizeof(xuedao))]+"Ò»ÕóËáÂé£¬ÑªÆø²»³©£¬¶ÙÊ±¶¯µ¯²»µÃ£¡\n"NOR);
+		tell_object(me,HIR"ä½ æ„Ÿåˆ°"+xuedao[random(sizeof(xuedao))]+"ä¸€é˜µé…¸éº»ï¼Œè¡€æ°”ä¸ç•…ï¼Œé¡¿æ—¶åŠ¨å¼¹ä¸å¾—ï¼\n"NOR);
 		me->start_busy(random(3));
 		if (duration>=200) {
 			if (ob = LOGIN_D->find_body(me->query_temp("yyzenemy")))
 				me->receive_damage("qi", duration, ob);
-			else me->receive_damage("qi", duration, "ÔâÒ»ÑôÖ¸¾¢²»ÖÎ¶øËÀ");
+			else me->receive_damage("qi", duration, "é­ä¸€é˜³æŒ‡åŠ²ä¸æ²»è€Œæ­»");
 		}
 	}
-	else me->receive_damage("qi", duration/3, "ÔâÒ»ÑôÖ¸¾¢²»ÖÎ¶øËÀ");
+	else me->receive_damage("qi", duration/3, "é­ä¸€é˜³æŒ‡åŠ²ä¸æ²»è€Œæ­»");
 	if (me->query_condition("yyz_damage")>(5+me->query_skill("force",1)/10))
 		me->apply_condition("yyz_damage", duration - 5 - me->query_skill("force",1)/10);
 	else return 0;

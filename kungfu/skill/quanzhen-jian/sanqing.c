@@ -1,5 +1,5 @@
 //Cracked by Roath
-//sanqing.c Ò»½£»¯ÈıÇå
+//sanqing.c ä¸€å‰‘åŒ–ä¸‰æ¸…
 //by sdong, 06/98
 // modified by sdong, 12/24/98
 
@@ -19,30 +19,30 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ò»½£»¯ÈıÇåÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ä¸€å‰‘åŒ–ä¸‰æ¸…åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("sanqing",1) )
-		return notify_fail("ÄãÒÑÔÚÊ¹ÓÃÒ»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ å·²åœ¨ä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	if( me->query_skill_mapped("force") != "xiantian-gong" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·ÇÏÈÌì¹¦£¬ÎŞ·¨Ê©Õ¹Ò»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éå…ˆå¤©åŠŸï¼Œæ— æ³•æ–½å±•ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	if( me->query_skill("xiantian-gong", 1) < 60 )
-		return notify_fail("ÄãµÄÏÈÌì¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹Ò»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ çš„å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 
 	if( me->query_skill("sword") < 135 )
-		return notify_fail("ÄãµÄÈ«Õæ½£·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÒ»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ çš„å…¨çœŸå‰‘æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	skill =  ( me->query_skill("quanzhen-jian")
 		+ me->query_skill("force") ) / 5;
 
 	if( me->query("neili") <= skill*3 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÒ»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 	if( me->query("jingli") <= skill )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÒ»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 	if( me->query("jing") <= skill )
-		return notify_fail("ÄãµÄ¾«²»¹»Ê¹ÓÃÒ»½£»¯ÈıÇå£¡\n");
+		return notify_fail("ä½ çš„ç²¾ä¸å¤Ÿä½¿ç”¨ä¸€å‰‘åŒ–ä¸‰æ¸…ï¼\n");
 
 	weapon = me->query_temp("weapon");
 
@@ -58,19 +58,19 @@ int perform(object me, object target)
 	me->set_temp("apply/parry", skill*3/2);
 
 	if( me->query_skill("sword") < 200 )
-		message_vision(HIY "$N´óºÈÒ»Éù£¬½£ÕĞÍ»±ä£¬"+(me->query_temp("weapon"))->query("name")+HIY"±Æ³öÑ©ÁÁ¹âÃ¢£¬Ò»½£»¯Îª¶ş½££¬½£½£¿ìËÆÉÁµç£¡\n\n" NOR, me, target);
+		message_vision(HIY "$Nå¤§å–ä¸€å£°ï¼Œå‰‘æ‹›çªå˜ï¼Œ"+(me->query_temp("weapon"))->query("name")+HIY"é€¼å‡ºé›ªäº®å…‰èŠ’ï¼Œä¸€å‰‘åŒ–ä¸ºäºŒå‰‘ï¼Œå‰‘å‰‘å¿«ä¼¼é—ªç”µï¼\n\n" NOR, me, target);
 	else if( me->query_skill("sword") < 300 )
-		message_vision(HIY "$N´óºÈÒ»Éù£¬½£ÕĞÍ»±ä£¬"+(me->query_temp("weapon"))->query("name")+HIY"±Æ³öÑ©ÁÁ¹âÃ¢£¬Ò»½£»¯ÎªÈı½££¬½£½£¿ìËÆÉÁµç£¡\n\n" NOR, me, target);
+		message_vision(HIY "$Nå¤§å–ä¸€å£°ï¼Œå‰‘æ‹›çªå˜ï¼Œ"+(me->query_temp("weapon"))->query("name")+HIY"é€¼å‡ºé›ªäº®å…‰èŠ’ï¼Œä¸€å‰‘åŒ–ä¸ºä¸‰å‰‘ï¼Œå‰‘å‰‘å¿«ä¼¼é—ªç”µï¼\n\n" NOR, me, target);
 	else if( me->query_skill("sword") < 400 )
-		message_vision(HIY "$N´óºÈÒ»Éù£¬½£ÕĞÍ»±ä£¬"+(me->query_temp("weapon"))->query("name")+HIY"±Æ³öÑ©ÁÁ¹âÃ¢£¬Ò»½£»¯ÎªËÄ¡¢Îå½££¬½£½£¿ìËÆÉÁµç£¡\n\n" NOR, me, target);
+		message_vision(HIY "$Nå¤§å–ä¸€å£°ï¼Œå‰‘æ‹›çªå˜ï¼Œ"+(me->query_temp("weapon"))->query("name")+HIY"é€¼å‡ºé›ªäº®å…‰èŠ’ï¼Œä¸€å‰‘åŒ–ä¸ºå››ã€äº”å‰‘ï¼Œå‰‘å‰‘å¿«ä¼¼é—ªç”µï¼\n\n" NOR, me, target);
 	else if( me->query_skill("sword") < 500 )
 	{
-		message_vision(HIY "$N´óºÈÒ»Éù£¬½£ÕĞÍ»±ä£¬"+(me->query_temp("weapon"))->query("name")+HIY"±Æ³öÑ©ÁÁ¹âÃ¢£¬Ò»½£»¯ÎªÆß¡¢°Ë½££¬½£½£¿ìËÆÉÁµç£¡\n\n" NOR, me, target);
+		message_vision(HIY "$Nå¤§å–ä¸€å£°ï¼Œå‰‘æ‹›çªå˜ï¼Œ"+(me->query_temp("weapon"))->query("name")+HIY"é€¼å‡ºé›ªäº®å…‰èŠ’ï¼Œä¸€å‰‘åŒ–ä¸ºä¸ƒã€å…«å‰‘ï¼Œå‰‘å‰‘å¿«ä¼¼é—ªç”µï¼\n\n" NOR, me, target);
 		COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	}
 	else
 	{
-		message_vision(HIY "$N´óºÈÒ»Éù£¬½£ÕĞÍ»±ä£¬"+(me->query_temp("weapon"))->query("name")+HIY"±Æ³öÑ©ÁÁ¹âÃ¢£¬Ò»½£»¯ÎªÎŞÊı½££¬ö®ÄÇ¼äÂşÌìµçÉÁÀ×Ãù£¡\n\n" NOR, me, target);
+		message_vision(HIY "$Nå¤§å–ä¸€å£°ï¼Œå‰‘æ‹›çªå˜ï¼Œ"+(me->query_temp("weapon"))->query("name")+HIY"é€¼å‡ºé›ªäº®å…‰èŠ’ï¼Œä¸€å‰‘åŒ–ä¸ºæ— æ•°å‰‘ï¼Œéœé‚£é—´æ¼«å¤©ç”µé—ªé›·é¸£ï¼\n\n" NOR, me, target);
 		COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 		COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	}
@@ -96,7 +96,7 @@ int remove_effect(object me)
 	me->delete_temp("sanqing");
 
 	if( me->is_fighting() )
-		message_vision(HIG "\n$NÎüÁËÒ»¿ÚÆø£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï£¬½£ÕĞÒ²»Ö¸´Õı³££¡\n\n" NOR, me);
+		message_vision(HIG "\n$Nå¸äº†ä¸€å£æ°”ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ï¼Œå‰‘æ‹›ä¹Ÿæ¢å¤æ­£å¸¸ï¼\n\n" NOR, me);
 
 	return 0;
 }

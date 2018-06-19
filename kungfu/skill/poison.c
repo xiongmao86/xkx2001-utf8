@@ -13,15 +13,15 @@ int valid_learn(object me)
 	int lv;
 	lv = (int)me->query_skill("poison", 1);
 	
-	if (me->query("family/family_name") == "°×ÍÕÉ½") {
+	if (me->query("family/family_name") == "ç™½é©¼å±±") {
 		if ( lv > 100 && me->query("baituo/breed") < lv )
-			return notify_fail("Äã¶Ô¶¾ÊõÈ±·¦Êµ¼ÊÓ¦ÓÃ£¬ÄÑÒÔ¼ÌÐøÌá¸ß¡£\n");
+			return notify_fail("ä½ å¯¹æ¯’æœ¯ç¼ºä¹å®žé™…åº”ç”¨ï¼Œéš¾ä»¥ç»§ç»­æé«˜ã€‚\n");
 	}
 	else {
 		if (lv < 101 && lv > 50 && me->query("body_poison") < lv/10)
-			return notify_fail("ÄãÌåÄÚ¾Û¶¾¹ý¶à£¬ÄÑÒÔ¼ÌÐøÌá¸ß¡£\n");
+			return notify_fail("ä½ ä½“å†…èšæ¯’è¿‡å¤šï¼Œéš¾ä»¥ç»§ç»­æé«˜ã€‚\n");
 		if (lv > 100 && me->query("body_poison") < lv)
-			return notify_fail("ÄãÌåÄÚ¾Û¶¾¹ý¶à£¬ÄÑÒÔ¼ÌÐøÌá¸ß¡£\n");
+			return notify_fail("ä½ ä½“å†…èšæ¯’è¿‡å¤šï¼Œéš¾ä»¥ç»§ç»­æé«˜ã€‚\n");
 	}
 	return 1;
 }

@@ -15,18 +15,18 @@ int valid_learn(object me)
 
 
 	if ( lvl > lvl2 && (lvl-lvl2) > 100)
-		return notify_fail("奇门遁甲对你来说太深奥了。\n");
+		return notify_fail("濂囬棬閬佺敳瀵逛綘鏉ヨ澶繁濂ヤ簡銆俓n");
 
 
 	if ( lvl > 100 && me->query_int()-15 < lvl/10 )
-		return notify_fail("奇门遁甲对你来说太深奥了。\n");
+		return notify_fail("濂囬棬閬佺敳瀵逛綘鏉ヨ澶繁濂ヤ簡銆俓n");
 
 	if ( lvl > 100 && me->query("qmdj_use")*10 < lvl-100 )
-		return notify_fail("你在奇门遁甲上的应用不足，难以继续领会。\n");
+		return notify_fail("浣犲湪濂囬棬閬佺敳涓婄殑搴旂敤涓嶈冻锛岄毦浠ョ户缁浼氥�俓n");
 	return 1;
 }
 
 int practice_skill(object me)
 {       
-	return notify_fail("奇门遁甲只能靠学(learn)来提高。\n");
+	return notify_fail("濂囬棬閬佺敳鍙兘闈犲(learn)鏉ユ彁楂樸�俓n");
 }

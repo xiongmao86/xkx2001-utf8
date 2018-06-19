@@ -1,14 +1,14 @@
 //Cracked by Roath
-// daizi.c Ê©´÷×Ó
+// daizi.c æ–½æˆ´å­
 
 inherit NPC;
 
 void create()
 {
-	set_name("Ê©´÷×Ó", ({ "shi daizi", "shi", "daizi" }));
+	set_name("æ–½æˆ´å­", ({ "shi daizi", "shi", "daizi" }));
 	set("long", 
-"Ê©´÷×ÓÔÚ»ªÉ½µÜ×ÓÖÐÅÅÐÐµÚËÄ¡£\n");
-	set("gender", "ÄÐÐÔ");
+"æ–½æˆ´å­åœ¨åŽå±±å¼Ÿå­ä¸­æŽ’è¡Œç¬¬å››ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 27);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -49,7 +49,7 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu");
 
-	create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("åŽå±±æ´¾", 14, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();

@@ -5,22 +5,22 @@
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$nֱͦͦ������һ�ݣ��ܿ���$N���������ơ�\n",
+([	"action" : "$n直挺挺的往後一纵，避开了$N的凌厉攻势。\n",
 	"dodge"  : 10
 ]),
-([	"action" : "$nֱͦͦ������һ����������$N�Ĺ��ơ�\n",
+([	"action" : "$n直挺挺的往左一跳，化解了$N的攻势。\n",
 	"dodge"  : 20
 ]),
-([	"action" : "$n����һƮ��ͻȻ����$N������\n",
+([	"action" : "$n身形一飘，突然到了$N的身后。\n",
 	"dodge"  : 30
 ]),
-([	"action" : "$nӲ������ֱԾ�𣬽�$N�Ĺ��ƻ������Ρ�\n",
+([	"action" : "$n硬生生笔直跃起，将$N的攻势化于无形。\n",
 	"dodge"  : 40
 ]),
-([	"action" : "$nͻȻ����һԾ������һ�ԡ�\n",
+([	"action" : "$n突然往右一跃，闪到一旁。\n",
 	"dodge"  : 50
 ]),
-([	"action" : "$nͻȻ����һ�����ܹ���$N�Ĺ��ƣ��ֽ�ֱ�ı���վ��\n",
+([	"action" : "$n突然向後一倒，避过了$N的攻势，又僵直的蹦了站起。\n",
 	"dodge"  : 60
 ])
 });

@@ -1,6 +1,6 @@
 //Cracked by Roath
 // bt_poison.c
-// Î÷ÓòÁéÉß¶¾£¬»¯Ê¬·ÛµÄÄ¸¶¾
+// è¥¿åŸŸçµè›‡æ¯’ï¼ŒåŒ–å°¸ç²‰çš„æ¯æ¯’
 
 #include <ansi.h>
 
@@ -8,30 +8,30 @@ int update_condition(object me, int duration)
 {
 	int damage = 1;
    if( !living(me) ) {
-      message("vision", me->name() + "»ëÉíÀ£ÀÃ£¬·¢³öÑ¬ÌìµÄ³ôÆø£¬ÒýÀ´²»ÉÙ²ÔÓ¬¡£\n", environment(me), ({me}));
+      message("vision", me->name() + "æµ‘èº«æºƒçƒ‚ï¼Œå‘å‡ºç†å¤©çš„è‡­æ°”ï¼Œå¼•æ¥ä¸å°‘è‹è‡ã€‚\n", environment(me), ({me}));
    }
    else {
       if(me->query("eff_jing") > me->query("max_jing")*2/3) {
-      tell_object(me, HIR "ÄãµÄÉË¿Ú·¢Âé£¬È«Éí½©Ö±£¬²»ÌýÊ¹»½£¬Õâ²»ÊÇÆÕÍ¨µÄÉß¶¾£¡\n" NOR );
-      message("vision", me->name() + "ËÄÖ«Å¤Çú£¬½Å²½õÔõÄ¡£\n",
+      tell_object(me, HIR "ä½ çš„ä¼¤å£å‘éº»ï¼Œå…¨èº«åƒµç›´ï¼Œä¸å¬ä½¿å”¤ï¼Œè¿™ä¸æ˜¯æ™®é€šçš„è›‡æ¯’ï¼\n" NOR );
+      message("vision", me->name() + "å››è‚¢æ‰­æ›²ï¼Œè„šæ­¥è¸‰è·„ã€‚\n",
             environment(me), ({me}));
       }
       else if(me->query("eff_jing") > me->query("max_jing")/3) {
-      tell_object(me, HIR "ÄãÈ«ÉíÂéÄ¾£¬µ«ÉñÖ¾È´Òì³£ÇåÐÑ£¬ÄãÖÐÁËÎ÷ÓòÁéÉß¶¾ÁË£¡\n" NOR );
-      message("vision", me->name() + "Ö»Ï¥ÍäÇú£¬Éí×ÓÂýÂý´¹ÏÂ£¬¿ÚÖÐ·¢³öËÆÈËËÆÊÞµÄºÉºÉÖ®Éù¡£\n",
+      tell_object(me, HIR "ä½ å…¨èº«éº»æœ¨ï¼Œä½†ç¥žå¿—å´å¼‚å¸¸æ¸…é†’ï¼Œä½ ä¸­äº†è¥¿åŸŸçµè›‡æ¯’äº†ï¼\n" NOR );
+      message("vision", me->name() + "åªè†å¼¯æ›²ï¼Œèº«å­æ…¢æ…¢åž‚ä¸‹ï¼Œå£ä¸­å‘å‡ºä¼¼äººä¼¼å…½çš„è·è·ä¹‹å£°ã€‚\n",
             environment(me), ({me}));
       }
       else {
-      tell_object(me, HIR "Äã¿ªÊ¼¸Ðµ½È«ÉíÉÏÏÂÂéÑ÷ÄÑµ±£¬Æ«Æ«ÓÖ¶¯µ¯²»µÃ£¡\n" NOR );
-      message("vision", me->name() + "ºöÈ»ÂúÃæ¶Ñ»¶ÁÑ×ìÎûÐ¦£¬ÏÔµÃ¹îÒìÎÞÂ×¡£\n",
+      tell_object(me, HIR "ä½ å¼€å§‹æ„Ÿåˆ°å…¨èº«ä¸Šä¸‹éº»ç—’éš¾å½“ï¼ŒåååˆåŠ¨å¼¹ä¸å¾—ï¼\n" NOR );
+      message("vision", me->name() + "å¿½ç„¶æ»¡é¢å †æ¬¢è£‚å˜´å˜»ç¬‘ï¼Œæ˜¾å¾—è¯¡å¼‚æ— ä¼¦ã€‚\n",
             environment(me), ({me}));
       }
    }
 	if (duration > 0) damage = duration;
 	else damage = 10;
 
-      me->receive_wound("jing", damage/2, "ÉíÖÐÎ÷ÓòÁéÉß¶¾ËÀµôÁË");
-      me->receive_damage("jingli", damage/2, "ÉíÖÐÎ÷ÓòÁéÉß¶¾ËÀµôÁË");
+      me->receive_wound("jing", damage/2, "èº«ä¸­è¥¿åŸŸçµè›‡æ¯’æ­»æŽ‰äº†");
+      me->receive_damage("jingli", damage/2, "èº«ä¸­è¥¿åŸŸçµè›‡æ¯’æ­»æŽ‰äº†");
 
 	if (me->query_condition("bt_poison")>(5+me->query_skill("poison",1)/10))
 		me->apply_condition("bt_poison", 

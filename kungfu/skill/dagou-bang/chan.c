@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chan.c ´ò¹·°ô·¨¡¸²ø¡¹×Ö¾÷
+// chan.c æ‰“ç‹—æ£’æ³•ã€Œç¼ ã€å­—è¯€
 // fear 12/99 changed success rate and added random to target busy time 
 
 #include <ansi.h>
@@ -15,48 +15,48 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Ç£ÖÆ¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç‰µåˆ¶æ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         weapon = me->query_temp("weapon");
 
         if( weapon->query("skill_type") != "stick" )
-                return notify_fail("ÄãÊÖÖĞÎŞ°ô£¬ÈçºÎÊ¹µÃ´ò¹·°ô·¨¡¸²ø¡¹×Ö¾÷£¿£¡\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— æ£’ï¼Œå¦‚ä½•ä½¿å¾—æ‰“ç‹—æ£’æ³•ã€Œç¼ ã€å­—è¯€ï¼Ÿï¼\n");
 
         if( me->query_temp("ban",1) )
-                return notify_fail("ÄãÒÑÔÚÊ¹ÓÃ°í×Ö¾÷£¡\n");
+                return notify_fail("ä½ å·²åœ¨ä½¿ç”¨ç»Šå­—è¯€ï¼\n");
 
         if( (int)me->query_skill("force") < 100 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»»ğºò£¬Ê¹ÓÃ²»ÁË¡¸²ø¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿç«å€™ï¼Œä½¿ç”¨ä¸äº†ã€Œç¼ ã€å­—è¯€ã€‚\n");
         
         if( me->query_skill_mapped("force") != "huntian-qigong")
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë´ò¹·°ôµÄÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸æ‰“ç‹—æ£’çš„æ°”è·¯ç›¸æ‚–ï¼\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( me->query("jingli") <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
                 
         if( (int)me->query_skill("stick") < 100 )
-                return notify_fail("ÄãµÄ´ò¹·°ô·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸²ø¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„æ‰“ç‹—æ£’æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œç¼ ã€å­—è¯€ã€‚\n");
 
         if( target->is_busy() ) {
                 me->add("neili", -10);
                 me->add("jingli", -5);
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§â…µ\n");
         }
 
-        msg = CYN "$NÊ¹³ö´ò¹·°ô·¨¡¸²ø¡¹×Ö¾÷£¬»Ã³öÁ¬É½°ôÓ°£¬½«$nÍÌÃ»£¡\n";
+        msg = CYN "$Nä½¿å‡ºæ‰“ç‹—æ£’æ³•ã€Œç¼ ã€å­—è¯€ï¼Œå¹»å‡ºè¿å±±æ£’å½±ï¼Œå°†$nåæ²¡ï¼\n";
         me->add("neili", -80);
         me->add("jingli", -20);
 
         if( ((random(me->query("combat_exp")/10000) * (int)me->query_skill("stick") ) > 
         (((int)target->query("combat_exp")/5000) * ((int)target->query_skill("parry")/2 + (int)target->query_skill("dodge")/2))/4) ) {
 
-                msg += "½á¹û$p±»$P²øÁË¸öÊÖÃ¦½ÅÂÒ£¬Ò»Ê±ÎŞ·¨»¹ÕĞ½ø¹¥£¡\n" NOR;
+                msg += "ç»“æœ$pè¢«$Pç¼ äº†ä¸ªæ‰‹å¿™è„šä¹±ï¼Œä¸€æ—¶æ— æ³•è¿˜æ‹›è¿›æ”»ï¼\n" NOR;
                 target->start_busy( (int)me->query_skill("stick") /(30+random(10)));
         } else {
-                msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+                msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n" NOR;
                 me->start_busy(1+random(3));
         }
         message_vision(msg, me, target);

@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("¿ì»îÈı", ({"kuaihuo san", "kuaihuo", "san"}));
-	set("title", "Ø¤°ïËÄ´üµÜ×Ó");
-	set("gender", "ÄĞĞÔ");
+	set_name("å¿«æ´»ä¸‰", ({"kuaihuo san", "kuaihuo", "san"}));
+	set("title", "ä¸å¸®å››è¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 25);
 	set("long", 
-		"ËûÊÇ¸ö³¤µÃÊ®·Ö½áÊµµÄÇàÄêÆòØ¤£¬ÕıĞ¦ßäßäµÄ¶¢×ÅÄãÇÆ£¬²»ÖªËûÎªÉ¶ÕâÃ´¸ßĞË¡£\n");
+		"ä»–æ˜¯ä¸ªé•¿å¾—ååˆ†ç»“å®çš„é’å¹´ä¹ä¸ï¼Œæ­£ç¬‘å’ªå’ªçš„ç›¯ç€ä½ ç§ï¼Œä¸çŸ¥ä»–ä¸ºå•¥è¿™ä¹ˆé«˜å…´ã€‚\n");
 
 	set("attitude", "heroism");
 	set("str", 28);
@@ -43,7 +43,7 @@ void create()
 	map_skill("parry","liuhe-dao");
 	map_skill("dodge", "xiaoyaoyou");
 	
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/gaibang/obj/budai")->set_amount(3);

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// taiji.c ¡¸Ì«¼«ĞÄ·¨¡¹
+// taiji.c ã€Œå¤ªæå¿ƒæ³•ã€
 // xQin 3/99
 
 #include <ansi.h>
@@ -25,34 +25,34 @@ int exert(object me)
 		prepare = "notj";
 
 	if( me->query_temp("taiji") )
-		return notify_fail("ÄãÒÑ¾­½«Ì«¼«ĞÄ·¨ÈÚ»áÈëÎä¹¦Ö®ÖĞ¡£\n");
+		return notify_fail("ä½ å·²ç»å°†å¤ªæå¿ƒæ³•èä¼šå…¥æ­¦åŠŸä¹‹ä¸­ã€‚\n");
 
 	if( prepare == "notj" )
-		return notify_fail("ÄãÏÖÔÚÎŞ·¨½«Ì«¼«ĞÄ·¨ÈÚ»áÔÚÎä¹¦ÄÚ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ— æ³•å°†å¤ªæå¿ƒæ³•èä¼šåœ¨æ­¦åŠŸå†…ã€‚\n");
 
 	if( prepare == "tjj" && me->query_skill("taiji-jian", 1) < 300 )
-		return notify_fail("ÄãÉĞÎ´Áì»áµ½Ì«¼«½£Òâ¡£\n");
+		return notify_fail("ä½ å°šæœªé¢†ä¼šåˆ°å¤ªæå‰‘æ„ã€‚\n");
 
 	if( prepare == "tjq" && me->query_skill("taiji-quan", 1) < 300 )
-		return notify_fail("ÄãÉĞÎ´Áì»áµ½Ì«¼«È­Ö¼¡£\n");
+		return notify_fail("ä½ å°šæœªé¢†ä¼šåˆ°å¤ªææ‹³æ—¨ã€‚\n");
 
 	if( me->query_skill("taiji-shengong", 1) < 300 )
-		return notify_fail("ÄãµÄÌ«¼«ĞŞÎªÉĞÎ´µÇ·åÔì¼«£¬ÎŞ·¨ÁìÎòµ½ÆäĞÄ·¨¡£\n");
+		return notify_fail("ä½ çš„å¤ªæä¿®ä¸ºå°šæœªç™»å³°é€ æï¼Œæ— æ³•é¢†æ‚Ÿåˆ°å…¶å¿ƒæ³•ã€‚\n");
 
 	if( me->query_skill("taoism", 1) < 280 )
-		return notify_fail("ÄãµÄµÀÑ§ĞŞÎªÉĞÎ´»íÈ»¹áÍ¨£¬ÎŞ·¨Áì»áÌ«¼«ĞÄ·¨¡£\n");
+		return notify_fail("ä½ çš„é“å­¦ä¿®ä¸ºå°šæœªè±ç„¶è´¯é€šï¼Œæ— æ³•é¢†ä¼šå¤ªæå¿ƒæ³•ã€‚\n");
 
 	if( me->query_int() < 50 )
-		return notify_fail("ÄãµÄÎòĞÔÌ«µÍ£¬ÎŞ·¨Áì»áµ½Ì«¼«ĞÄ·¨¡£\n");
+		return notify_fail("ä½ çš„æ‚Ÿæ€§å¤ªä½ï¼Œæ— æ³•é¢†ä¼šåˆ°å¤ªæå¿ƒæ³•ã€‚\n");
 
 	if( prepare == "tjj" )
-		message_vision("\n$NÎ¢Î¢Ò»Ğ¦£¬Éí×Ó»º»ºÓÒ×ª£¬×óÊÖ³Ö½£ÏòÉÏÌáÆğ£¬½£Éíºáì¶ĞØÇ°£¬"
-		"×óÓÒË«ÕÆÕÆĞÄÏà¶Ô£¬Èç±§Ô²Çò¡£" + weapon->name() + "Î´³ö£¬ÒÑÈ»ĞîÊÆÎŞÇî¡£\n", me);
+		message_vision("\n$Nå¾®å¾®ä¸€ç¬‘ï¼Œèº«å­ç¼“ç¼“å³è½¬ï¼Œå·¦æ‰‹æŒå‰‘å‘ä¸Šæèµ·ï¼Œå‰‘èº«æ¨ªæ–¼èƒ¸å‰ï¼Œ"
+		"å·¦å³åŒæŒæŒå¿ƒç›¸å¯¹ï¼Œå¦‚æŠ±åœ†çƒã€‚" + weapon->name() + "æœªå‡ºï¼Œå·²ç„¶è“„åŠ¿æ— ç©·ã€‚\n", me);
 	else
-		message_vision("\n$N»º»ºÕ¾ÆğÉíÀ´£¬Ë«ÊÖÏÂ´¹£¬ÊÖ±³ÏòÍâ£¬ÊÖÖ¸Î¢Êæ£¬Á½×ã·Ö¿ªÆ½ĞĞ£¬"
-		"½Ó×ÅÁ½±ÛÂıÂıÌáÆğÖÁĞØÇ°£¬×ó±Û°ë»·£¬ÕÆÓëÃæ¶Ô³ÉÒõÕÆ£¬ÓÒÕÆ·­¹ı³ÉÑôÕÆ¡£\n", me);
+		message_vision("\n$Nç¼“ç¼“ç«™èµ·èº«æ¥ï¼ŒåŒæ‰‹ä¸‹å‚ï¼Œæ‰‹èƒŒå‘å¤–ï¼Œæ‰‹æŒ‡å¾®èˆ’ï¼Œä¸¤è¶³åˆ†å¼€å¹³è¡Œï¼Œ"
+		"æ¥ç€ä¸¤è‡‚æ…¢æ…¢æèµ·è‡³èƒ¸å‰ï¼Œå·¦è‡‚åŠç¯ï¼ŒæŒä¸é¢å¯¹æˆé˜´æŒï¼Œå³æŒç¿»è¿‡æˆé˜³æŒã€‚\n", me);
 
-	me->receive_damage("jing", 500, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
+	me->receive_damage("jing", 500, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 	me->add_temp("taiji", (int)me->query_skill("taiji-shengong", 1)/2);
 
 	call_out("checking", 1, me, prepare);
@@ -73,7 +73,7 @@ void checking(object me, string prepare)
 	if( me->query_temp("taiji") < 1 )
 	{
 		remove_effect(me);
-		tell_object(me, "\nÄã´óÖÜÌì°áÔËÍê±Ï£¬½«ÄÚÁ¦ºÏÓÚµ¤Ìï£¬ÈëÇÏ¹éÔª¡£\n");
+		tell_object(me, "\nä½ å¤§å‘¨å¤©æ¬è¿å®Œæ¯•ï¼Œå°†å†…åŠ›åˆäºä¸¹ç”°ï¼Œå…¥çªå½’å…ƒã€‚\n");
 		return;
 	}
 	else if( !living(me) || me->is_ghost() )
@@ -89,15 +89,15 @@ void checking(object me, string prepare)
 	else if( prepare == "tjj" && (!objectp(weapon) || weapon->query("skill_type") != "sword") )
 	{
 		if( me->query_temp("taiji_fight") )
-			message_vision(CYN "\n$NÊÖÖĞÎŞ½££¬½£Òâ¶ÙÊ§£¡\n"NOR, me);
+			message_vision(CYN "\n$Næ‰‹ä¸­æ— å‰‘ï¼Œå‰‘æ„é¡¿å¤±ï¼\n"NOR, me);
 		remove_effect(me);
 		return;
 	}
 	else if( me->query_skill_mapped("force") != "taiji-shengong" )
 	{
 		remove_effect(me);
-		tell_object(me, HIR "\nÄãºö¾õĞØ¿ÚÒ»Õó·³¶ñ£¬Ô­À´ËùÓÃÄÚ¹¦ÓëÌ«¼«ĞÄ·¨ÏàÄæ£¡\n" NOR);
-		me->receive_damage("qi", 1000, "ÄÚ¹¦×ß»ğÈëÄ§ËÀÁË");
+		tell_object(me, HIR "\nä½ å¿½è§‰èƒ¸å£ä¸€é˜µçƒ¦æ¶ï¼ŒåŸæ¥æ‰€ç”¨å†…åŠŸä¸å¤ªæå¿ƒæ³•ç›¸é€†ï¼\n" NOR);
+		me->receive_damage("qi", 1000, "å†…åŠŸèµ°ç«å…¥é­”æ­»äº†");
 		return;
 	}
 	else if( !me->is_busy() )
@@ -106,19 +106,19 @@ void checking(object me, string prepare)
 		{
 			remove_effect(me);
 			if( prepare == "tjj" )
-				message_vision("\n$NÊ¹µ½" + tjjzhao + 
-				"£¬Ë«ÊÖÍ¬Ê±»­Ô²£¬¸´³ÉµÚÎåÊ®ËÄÊ½¡¸³Ö½£¹éÔ­¡¹¡£\n"NOR, me);
+				message_vision("\n$Nä½¿åˆ°" + tjjzhao + 
+				"ï¼ŒåŒæ‰‹åŒæ—¶ç”»åœ†ï¼Œå¤æˆç¬¬äº”åå››å¼ã€ŒæŒå‰‘å½’åŸã€ã€‚\n"NOR, me);
 			else
-				message_vision("\n$NÊ¹µ½ÉÏ²½" + tjqzhao1 + "£¬ÉÏ²½" + tjqzhao2 +
-				"£¬" + tjqzhao3 + "¶øºÏÌ«¼«£¬Éñ¶¨ÆøÏĞµÄÕ¾ÔÚµ±µØ¡£\n"NOR, me);
+				message_vision("\n$Nä½¿åˆ°ä¸Šæ­¥" + tjqzhao1 + "ï¼Œä¸Šæ­¥" + tjqzhao2 +
+				"ï¼Œ" + tjqzhao3 + "è€Œåˆå¤ªæï¼Œç¥å®šæ°”é—²çš„ç«™åœ¨å½“åœ°ã€‚\n"NOR, me);
 			return;
 		}
 		else if( prepare == "tjj" && (me->query_skill_mapped("sword") != "taiji-jian"
 		|| me->query_skill_mapped("parry") != "taiji-jian") )
 		{
 			if( me->query_temp("taiji_fight") )
-				message_vision(CYN "\n$NÈ¦×ª" + weapon->name()+ CYN
-				"£¬Í»È»±äÕĞ£¬Ê¹³öÓëÌ«¼«½£Òâ²»Í¬µÄ½£·¨£¡\n"NOR, me);
+				message_vision(CYN "\n$Nåœˆè½¬" + weapon->name()+ CYN
+				"ï¼Œçªç„¶å˜æ‹›ï¼Œä½¿å‡ºä¸å¤ªæå‰‘æ„ä¸åŒçš„å‰‘æ³•ï¼\n"NOR, me);
 			remove_effect(me);
 			return;
 		}
@@ -128,7 +128,7 @@ void checking(object me, string prepare)
 		{
 			if( me->query_temp("taiji_fight") )
 				message_vision(CYN 
-				"\n$NË«ÊÖÒ»´í£¬Í»È»Ê¹³öÓëÌ«¼«È­Ö¼Ïà·´µÄÕĞÊı£¡\n"NOR, me);
+				"\n$NåŒæ‰‹ä¸€é”™ï¼Œçªç„¶ä½¿å‡ºä¸å¤ªææ‹³æ—¨ç›¸åçš„æ‹›æ•°ï¼\n"NOR, me);
 			remove_effect(me);
 			return;
 		}

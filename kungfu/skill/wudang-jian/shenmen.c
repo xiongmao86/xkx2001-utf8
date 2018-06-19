@@ -1,10 +1,10 @@
 //Cracked by Roath
-// shenmen.c ¡¸ÉñÃÅÊ®Èı½£¡¹
+// shenmen.c ã€Œç¥é—¨åä¸‰å‰‘ã€
 // xQin 1/99
 
 /*
-Ô­À´Õâ¡°ÉñÃÅÊ®Èı½£¡±¹²ÓĞÒ»Ê®Èı¼ÇÕĞÊı£¬Ã¿¼ÇÕĞÊ½¸÷²»ÏàÍ¬£¬µ«Ëù´ÌÖ®´¦£¬
-È«ÊÇµĞÈËÊÖÍóµÄ¡°ÉñÃÅÑ¨¡±¡£
+åŸæ¥è¿™â€œç¥é—¨åä¸‰å‰‘â€å…±æœ‰ä¸€åä¸‰è®°æ‹›æ•°ï¼Œæ¯è®°æ‹›å¼å„ä¸ç›¸åŒï¼Œä½†æ‰€åˆºä¹‹å¤„ï¼Œ
+å…¨æ˜¯æ•Œäººæ‰‹è…•çš„â€œç¥é—¨ç©´â€ã€‚
 */
 
 #include <combat.h>
@@ -22,35 +22,35 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target ||  !target->is_character() ||  !me->is_fighting(target) )
-		return notify_fail("¡¸ÉñÃÅÊ®Èı½£¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œç¥é—¨åä¸‰å‰‘ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !living(target) )
-                return notify_fail("ÄãÏÖÔÚ²»±ØÊ¹ÓÃ¡¸ÉñÃÅÊ®Èı½£¡¹¡£\n");
+                return notify_fail("ä½ ç°åœ¨ä¸å¿…ä½¿ç”¨ã€Œç¥é—¨åä¸‰å‰‘ã€ã€‚\n");
 
 	if( !me->query("wudang/shenmen") )
-		return notify_fail("ÄãÉĞÎ´Ñ§»á¡¸ÉñÃÅÊ®Èı½£¡¹¡£\n");
+		return notify_fail("ä½ å°šæœªå­¦ä¼šã€Œç¥é—¨åä¸‰å‰‘ã€ã€‚\n");
 
 	if( !objectp(weapon = me->query_temp("weapon"))
 		|| weapon->query("skill_type") != "sword" )
-		return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÔõÄÜÊ¹³ö¡¸ÉñÃÅÊ®Èı½£¡¹£¿£¡\n");
+		return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œæ€èƒ½ä½¿å‡ºã€Œç¥é—¨åä¸‰å‰‘ã€ï¼Ÿï¼\n");
 
 	if( me->query_temp("yield") )
-		return notify_fail("Äã²»³ö½££¬ÈçºÎÊ¹³ö¡¸ÉñÃÅÊ®Èı½£¡¹£¿\n");
+		return notify_fail("ä½ ä¸å‡ºå‰‘ï¼Œå¦‚ä½•ä½¿å‡ºã€Œç¥é—¨åä¸‰å‰‘ã€ï¼Ÿ\n");
 
 	if( me->query_skill_mapped("force") != "taiji-shengong")
-		return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸ÉñÃÅÊ®Èı½£¡¹ĞÄ·¨Ïàã££¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸ã€Œç¥é—¨åä¸‰å‰‘ã€å¿ƒæ³•ç›¸æ‚–ï¼\n");
 
 	if( me->query_skill("sword") < 120 )
-		return notify_fail("ÄãµÄ½£·¨ĞŞÎª»¹²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸ÉñÃÅÊ®Èı½£¡¹£¡\n");
+		return notify_fail("ä½ çš„å‰‘æ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•ã€Œç¥é—¨åä¸‰å‰‘ã€ï¼\n");
 
 	if( me->query("neili") <= 200 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸ÉñÃÅÊ®Èı½£¡¹£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œéš¾ä»¥æ–½å±•ã€Œç¥é—¨åä¸‰å‰‘ã€ï¼\n");
 
 	if( me->query("jingli") <= 100 )
-		return notify_fail("ÄãµÄÌåÁ¦ÓĞÏŞ£¬ÄÑÒÔÊ©Õ¹¡¸ÉñÃÅÊ®Èı½£¡¹£¡\n");
+		return notify_fail("ä½ çš„ä½“åŠ›æœ‰é™ï¼Œéš¾ä»¥æ–½å±•ã€Œç¥é—¨åä¸‰å‰‘ã€ï¼\n");
 
-	msg = "\n$NÔË½£Èç·çËÆµç£¬Ö¸¼â¶¶¶¯£¬$wì¶Ë²Ï¢Ö®¼ä´ÌÁËÊ®ÈıÏÂ£¬Ê®Èıµãº®ĞÇËÆºõÍ¬Ê±ÆË³ö£¬"
-		"Âäµã²»Ê§ÀåºÁ£¬Ã¿Ò»½£¶¼´ÌÏò$nÊÖÍó¡°ÉñÃÅÑ¨¡±\n"NOR;
+	msg = "\n$Nè¿å‰‘å¦‚é£ä¼¼ç”µï¼ŒæŒ‡å°–æŠ–åŠ¨ï¼Œ$wæ–¼ç¬æ¯ä¹‹é—´åˆºäº†åä¸‰ä¸‹ï¼Œåä¸‰ç‚¹å¯’æ˜Ÿä¼¼ä¹åŒæ—¶æ‰‘å‡ºï¼Œ"
+		"è½ç‚¹ä¸å¤±å˜æ¯«ï¼Œæ¯ä¸€å‰‘éƒ½åˆºå‘$næ‰‹è…•â€œç¥é—¨ç©´â€\n"NOR;
 
 	ap = COMBAT_D->skill_power(me, "sword", SKILL_USAGE_ATTACK);
 	if( ap < 1) ap = 1;
@@ -83,13 +83,13 @@ int perform(object me, object target)
 		{
 			if( objectp(weapon2) )
 			{
-				msg += HIR"$nÖ»¾õµÃ¡°ÉñÃÅÑ¨¡±ÉÏÒ»ÕóËáÂé£¬ÊÖÖ¸ÎŞÁ¦£¬"
-				"$W"HIR"ÄÃÄó²»ÎÈ£¬Å×ÔÚµØÏÂ£¡\n"NOR;                        
+				msg += HIR"$nåªè§‰å¾—â€œç¥é—¨ç©´â€ä¸Šä¸€é˜µé…¸éº»ï¼Œæ‰‹æŒ‡æ— åŠ›ï¼Œ"
+				"$W"HIR"æ‹¿æä¸ç¨³ï¼ŒæŠ›åœ¨åœ°ä¸‹ï¼\n"NOR;                        
 				weapon2->unequip();
 				weapon2->move(environment(target));
 			}
 			else
-			msg += HIR"$nÖ»¾õµÃ¡°ÉñÃÅÑ¨¡±ÉÏÒ»ÕóËáÂé£¬$WÔÙÒ²Ê¹²»³ö°ëµãÁ¦µÀ¡£\n"NOR;
+			msg += HIR"$nåªè§‰å¾—â€œç¥é—¨ç©´â€ä¸Šä¸€é˜µé…¸éº»ï¼Œ$Wå†ä¹Ÿä½¿ä¸å‡ºåŠç‚¹åŠ›é“ã€‚\n"NOR;
 
 			level = me->query_skill("wudang-jian", 1);
 			target->reset_action();
@@ -99,7 +99,7 @@ int perform(object me, object target)
 			target->receive_damage("qi", damage, me);
 			target->receive_wound("qi", damage/3, me);
 
-			result = COMBAT_D->damage_msg(damage, "´ÌÉË");
+			result = COMBAT_D->damage_msg(damage, "åˆºä¼¤");
 			msg += result;
 
 			result = COMBAT_D->status_msg((int)target->query("qi") * 100 /
@@ -112,7 +112,7 @@ int perform(object me, object target)
 	me->add("jingli", -50);
 	me->start_busy(1);
 
-	msg = replace_string( msg, "$l", "ÉñÃÅÑ¨" );
+	msg = replace_string( msg, "$l", "ç¥é—¨ç©´" );
 	msg = replace_string( msg, "$w", weapon->name() );
 
 	prepare = target->query_skill_prepare();
@@ -129,13 +129,13 @@ int perform(object me, object target)
 		msg = replace_string( msg, "$W", weapon2->name() );
 	else switch( attack_skill )
 	{
-		case "finger" :	msg = replace_string( msg, "$W", "ÊÖÖ¸" );
+		case "finger" :	msg = replace_string( msg, "$W", "æ‰‹æŒ‡" );
 				break;
-		case "cuff" :	msg = replace_string( msg, "$W", "È­Í·" );
+		case "cuff" :	msg = replace_string( msg, "$W", "æ‹³å¤´" );
 				break;
-		case "strike" :	msg = replace_string( msg, "$W", "ÊÖÕÆ" );
+		case "strike" :	msg = replace_string( msg, "$W", "æ‰‹æŒ" );
 				break;
-		case "claw" :	msg = replace_string( msg, "$W", "ÊÖ×¦" );
+		case "claw" :	msg = replace_string( msg, "$W", "æ‰‹çˆª" );
 				break;
 		default :	msg = replace_string( msg, "$W", "" );
 				break;

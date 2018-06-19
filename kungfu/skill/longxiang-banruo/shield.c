@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shield.c »¤ÌåÉñ¹¦
+// shield.c æŠ¤ä½“ç¥žåŠŸ
 
 #include <ansi.h>
 
@@ -12,24 +12,24 @@ int exert(object me, object target)
 	int skill;
 
 	if( target != me ) 
-		return notify_fail("ÄãÖ»ÄÜÓÃÁúÏó°ãÈô¹¦À´ÔË»¤ÌåÉñ¹¦¡£\n");
+		return notify_fail("ä½ åªèƒ½ç”¨é¾™è±¡èˆ¬è‹¥åŠŸæ¥è¿æŠ¤ä½“ç¥žåŠŸã€‚\n");
 
 	if( (int)me->query("neili") < 100  ) 
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query_temp("shielded") ) 
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
         if( (int)me->query_temp("longxiang") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÁúÏóÖ®Á¦ÁË¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿é¾™è±¡ä¹‹åŠ›äº†ã€‚\n");
 
 	if( (int)me->query_skill("longxiang-banruo", 1) < 20)
-		return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦»ðºî²»¹»£¡\n");
+		return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸç«ä¾¯ä¸å¤Ÿï¼\n");
 
 	skill = me->query_skill("force");
 	me->add("neili", -100);
 
 	message_vision(
-	MAG "$N³¤ÎüÒ»¿ÚÆø£¬ÔËÆð»¤ÌåÉñ¹¦£¬ÉíÉÏÒÂÉÀ»º»ºÕÇÆð£¬Ò»¹ÉÕæÁ÷±éÁ÷È«Éí¡£\n" NOR, me);
+	MAG "$Né•¿å¸ä¸€å£æ°”ï¼Œè¿èµ·æŠ¤ä½“ç¥žåŠŸï¼Œèº«ä¸Šè¡£è¡«ç¼“ç¼“æ¶¨èµ·ï¼Œä¸€è‚¡çœŸæµéæµå…¨èº«ã€‚\n" NOR, me);
 
 	me->add_temp("apply/armor",  skill/2);
 	me->add_temp("apply/defense",  skill/2);
@@ -50,5 +50,5 @@ void remove_effect(object me, int amount)
 	me->add_temp("apply/armor", - amount);
 	me->add_temp("apply/defense", - amount);
 	me->delete_temp("shielded");
-	tell_object(me, "ÄãµÄ»¤ÌåÉñ¹¦ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+	tell_object(me, "ä½ çš„æŠ¤ä½“ç¥žåŠŸè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ã€‚\n");
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// blood.c ÊÉÑª
+// blood.c å™¬è¡€
 // zhangchi 8/00
 
 #include <ansi.h>
@@ -13,33 +13,33 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !living(target))
-                return notify_fail("ÄãÒªÎüË­µÄÑª£¿\n");
+                return notify_fail("ä½ è¦å¸è°çš„è¡€ï¼Ÿ\n");
 
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail("´Ë¼¼Ö»ÄÜ¿ÕÊÖÔËÓÃ¡£\n");
+                return notify_fail("æ­¤æŠ€åªèƒ½ç©ºæ‰‹è¿ç”¨ã€‚\n");
 
         if( environment(target)->query("no_fight") )
-                return notify_fail("ÔÚÕâÀïÄã²»ÄÜÍµÏ®£¡\n");
+                return notify_fail("åœ¨è¿™é‡Œä½ ä¸èƒ½å·è¢­ï¼\n");
 
         if( me->query_dex() < 30 )
-                return notify_fail("ÄãµÄÉí·¨²»×ãÒÔÊ©Õ¹´Ë¼¼£¡\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸è¶³ä»¥æ–½å±•æ­¤æŠ€ï¼\n");
 
         if( me->query_skill_mapped("force") != "shenghuo-xuanming" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÊ¥»ðÐþÚ¤¹¦£¬ÎÞ·¨Ê©Õ¹´Ë¼¼£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éžåœ£ç«çŽ„å†¥åŠŸï¼Œæ— æ³•æ–½å±•æ­¤æŠ€ï¼\n");
 
         if( me->query_skill_mapped("dodge") != "qingfu-shenfa" )
-                return notify_fail("Äã²¢Î´¾ß±¸ÇàòðÉí·¨£¬ÈçºÎÊ©Õ¹´Ë¼¼£¿\n");
+                return notify_fail("ä½ å¹¶æœªå…·å¤‡é’è èº«æ³•ï¼Œå¦‚ä½•æ–½å±•æ­¤æŠ€ï¼Ÿ\n");
 
         if( me->query_skill("force") < 135 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹´Ë¼¼£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•æ­¤æŠ€ï¼\n");
 
         if( me->query_skill("qingfu-shenfa") < 100 )
-                return notify_fail("ÄãÇàòðÉí·¨ÐÞÎª²»×ã£¬»¹²»»áÊ¹ÓÃ´Ë¼¼£¡\n");
+                return notify_fail("ä½ é’è èº«æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨æ­¤æŠ€ï¼\n");
 
         if( me->query("neili") < 1000)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-        message_vision(HIB "$NÁ³É«±äµÃÉ·°×£¬Í»È»ÆÛµ½$nÉí±ß£¬ÕÅ×ì¾Í³¯$n¾±²àÒ§È¥£¡£¡\n\n" NOR, me, target);
+        message_vision(HIB "$Nè„¸è‰²å˜å¾—ç…žç™½ï¼Œçªç„¶æ¬ºåˆ°$nèº«è¾¹ï¼Œå¼ å˜´å°±æœ$né¢ˆä¾§å’¬åŽ»ï¼ï¼\n\n" NOR, me, target);
 
 	target->kill_ob(me);	
 
@@ -47,23 +47,23 @@ int perform(object me, object target)
 	&&   me->query("neili") > random(target->query("neili")*2)
 	&&   me->query("jingli") > random(target->query("jingli")*2) )
 	{	// 50% * 50% * 50% = 12.5% chance between 2 identical players.
-		message_vision(HIR"½á¹ûÒ»ÏÂ×ÓÒ§ÔÚ$nµÄ¾±²à£¬ÃÍÎüÆðÀ´£¬Ò»¹ÉÏÊÑªµÇÊ±´Ó$NµÄÑÀ±ßÉø³ö£¬ÒõÉ­¿É²À¡£\n\n"NOR,me,target);
+		message_vision(HIR"ç»“æžœä¸€ä¸‹å­å’¬åœ¨$nçš„é¢ˆä¾§ï¼ŒçŒ›å¸èµ·æ¥ï¼Œä¸€è‚¡é²œè¡€ç™»æ—¶ä»Ž$Nçš„ç‰™è¾¹æ¸—å‡ºï¼Œé˜´æ£®å¯æ€–ã€‚\n\n"NOR,me,target);
 		
 		if ( me->query("combat_exp") > random(target->query("combat_exp")*10) )		// low chance
 		{
-message_vision(HIR"Ö»¼û$NµÄ¸¹²¿Î¢Î¢¹ÄÆð£¬È»ºó·Å¿ª$n¡£ÔÙ¿´Ê±£¬$nÒÑ¾­Ñª±»Îü¸É£¬ÔçÒÑÆø¾ø¡£\n"NOR,me,target);
+message_vision(HIR"åªè§$Nçš„è…¹éƒ¨å¾®å¾®é¼“èµ·ï¼Œç„¶åŽæ”¾å¼€$nã€‚å†çœ‹æ—¶ï¼Œ$nå·²ç»è¡€è¢«å¸å¹²ï¼Œæ—©å·²æ°”ç»ã€‚\n"NOR,me,target);
 			me->receive_curing("qi",target->query("max_qi")+100);
 			me->add("qi",target->query("max_qi")+100);
 			target->set("qi", -1);
-			target->receive_wound("qi", target->query("max_qi")+100, "Ñª±»Îü¸É¶øËÀ" );
+			target->receive_wound("qi", target->query("max_qi")+100, "è¡€è¢«å¸å¹²è€Œæ­»" );
 		}
 		else
 		{
-			message_vision(HIW"$nÆ´ËÀÕõÔú£¬ÖÕÓÚÕõÍÑ$NµÄ¿ØÖÆ£¬µ«ÊÜÉË¼«ÖØ£¬ÏÊÑª´Ó¾±²¿ãéãéÁ÷³ö¡£\n"NOR,me,target);
+			message_vision(HIW"$næ‹¼æ­»æŒ£æ‰Žï¼Œç»ˆäºŽæŒ£è„±$Nçš„æŽ§åˆ¶ï¼Œä½†å—ä¼¤æžé‡ï¼Œé²œè¡€ä»Žé¢ˆéƒ¨æ±©æ±©æµå‡ºã€‚\n"NOR,me,target);
 			me->receive_curing("qi",target->query("max_qi")/3);
 			me->add("qi",target->query("max_qi")/3);
 			target->set("qi", 1000);
-			target->receive_wound("qi", target->query("max_qi")/3, "Ñª±»Îü¸É¶øËÀ" );
+			target->receive_wound("qi", target->query("max_qi")/3, "è¡€è¢«å¸å¹²è€Œæ­»" );
 		}
 		me->set_temp("blood_sucked",1);
 		if (me->query("id") == "wei yixiao")
@@ -71,9 +71,9 @@ message_vision(HIR"Ö»¼û$NµÄ¸¹²¿Î¢Î¢¹ÄÆð£¬È»ºó·Å¿ª$n¡£ÔÙ¿´Ê±£¬$nÒÑ¾­Ñª±»Îü¸É£¬ÔçÒ
 	}
 	else	
 	{
-		message_vision(HIW"$n´ó¾ªÖ®ÏÂ£¬¼±Ã¦ÉÁÉí¶ã¿ª¡£$NÒ»»÷²»ÖÐ£¬ÌåÄÚº®¶¾¹¥ÐÄ£¬µÇÊ±´òÁË¼¸¸ö¶ßàÂ£¬ÄÚÊÜÖØÉË¡£\n"NOR,me,target);
+		message_vision(HIW"$nå¤§æƒŠä¹‹ä¸‹ï¼Œæ€¥å¿™é—ªèº«èº²å¼€ã€‚$Nä¸€å‡»ä¸ä¸­ï¼Œä½“å†…å¯’æ¯’æ”»å¿ƒï¼Œç™»æ—¶æ‰“äº†å‡ ä¸ªå“†å—¦ï¼Œå†…å—é‡ä¼¤ã€‚\n"NOR,me,target);
 		me->add("qi", me->query("max_qi")/10);
-		me->receive_wound("qi", me->query("max_qi")/10, "º®¶¾¹¥ÐÄËÀÁË");
+		me->receive_wound("qi", me->query("max_qi")/10, "å¯’æ¯’æ”»å¿ƒæ­»äº†");
 	}
 
 	me->add("neili", -200);

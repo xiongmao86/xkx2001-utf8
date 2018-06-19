@@ -1,6 +1,6 @@
 //Cracked by Roath
 ///kungfu/skill/riyue-lun/riyue.c 
-// ÈÕÔÂÍ¬»Ô
+// æ—¥æœˆåŒè¾‰
 // snowbird Jan 2000
 
 #include <ansi.h>
@@ -22,42 +22,42 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ã€‚\n");
 
-   if (!(obj) || (obj->query("name")!="·¨ÂÖ" && obj->query("name")!="½ğÂÖ"))
-      return notify_fail("ÄãÊÖÖĞÎŞÂÖ£¬ÈçºÎÊ©Õ¹ÈÕÔÂÍ¬»Ô£¡\n");
+   if (!(obj) || (obj->query("name")!="æ³•è½®" && obj->query("name")!="é‡‘è½®"))
+      return notify_fail("ä½ æ‰‹ä¸­æ— è½®ï¼Œå¦‚ä½•æ–½å±•æ—¥æœˆåŒè¾‰ï¼\n");
 
         if( me->query_skill_mapped("hammer") != "riyue-lun" )
-                return notify_fail("ÄãËùÓÃµÄ·ÇÈÕÔÂÂÖ·¨£¬²»ÄÜÊ©Õ¹ÈÕÔÂÍ¬»Ô£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„éæ—¥æœˆè½®æ³•ï¼Œä¸èƒ½æ–½å±•æ—¥æœˆåŒè¾‰ï¼\n");
 
    if( me->query_skill_mapped("force") != "longxiang-banruo" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÁúÏó°ãÈô¹¦£¬Ê©Õ¹²»³öÈÕÔÂÍ¬»Ô£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éé¾™è±¡èˆ¬è‹¥åŠŸï¼Œæ–½å±•ä¸å‡ºæ—¥æœˆåŒè¾‰ï¼\n");
 
         if( me->query_skill("force") < 250 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»»ğºò£¬Ê¹ÓÃ²»ÁËÈÕÔÂÍ¬»Ô£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸å¤Ÿç«å€™ï¼Œä½¿ç”¨ä¸äº†æ—¥æœˆåŒè¾‰ï¼\n");
 
         if( me->query_skill("hammer") < 300 )
-                return notify_fail("ÄãµÄÈÕÔÂÂÖ·¨»ğºî²»¹»£¡\n");
+                return notify_fail("ä½ çš„æ—¥æœˆè½®æ³•ç«ä¾¯ä¸å¤Ÿï¼\n");
 
         if( me->query("neili") <= 800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( me->query("jingli") <= 600 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
 
    busy_time = 0;
 
    weapon = obj->name();
 
    pfm_msg = ({ 
-   "$NÌ¤ÉÏÒ»²½£¬"+weapon+"ºöµØÍÑÊÖ£¬Ïò$n·ÉÁË¹ıÈ¥¡£µ«¼û"+weapon+"¼±×ª£¬Ïò$nÔÒµ½£¡",
-   "$NÇÀÉí³¤±Û£¬ÊÖÕÆÔÚÂÖÔµÒ»²¦£¬ÄÇ"+weapon+"¾ÍÈç»îÁËÒ»°ã£¬ÔÚ¿ÕÖĞºöµØ×ªÉí£¬ÓÖÏò$n×·»÷¹ıÈ¥£¡",
-   "$NÇÀÉÏÈ¥Í»Éì×óÈ­£¬µ±µÄÒ»ÉùÔÚÂÖ±ßÒ»»÷£¬"+weapon+
-   "À´ÊÆ²¢²»Ê®·ÖÑ¸ËÙ£¬µ«ÂÖ×ÓÎ´µ½£¬¼²·çÒÑÈ»ÆËÖÁ£¬ÊÆµÀÃÍ¶ñÖ®¼«£¡",
-   "$NÊ¢Å­Ö®ÏÂ£¬ÉìÊÖÍÆ³ö"+weapon+"£¬°µÓÃ×ª¾¢£¬ÓÖ½«ÂÖ×Ó·É³ö¡£ÕâÊ±¾¢Á¦¼Ó¼±£¬ÂÖ×Ó¾¹È»¼ÅÈ»ÎŞÉù£¡",
-   "$NÔËÆğÁúÏóÖ®Á¦Í¬Ê±Ë«ÕÆÆë³ö£¬ÅÄÔÚÂÖÉÏ£¬ÄÇ"+weapon+
-   "ÓÌËÆ³¤ÁËÑÛ¾¦Ò»°ã£¬ÔÚ¿ÕÖĞÈÆÁË°ë¸öÈ¦×Ó£¬Ïò$nÉíáá¼±×·£¡",
-   "$NÊÕÕÆÔ¾Æğ£¬½«¿ÕÖĞµÄ"+weapon+"ÊÕ»Ø¡£"
+   "$Nè¸ä¸Šä¸€æ­¥ï¼Œ"+weapon+"å¿½åœ°è„±æ‰‹ï¼Œå‘$né£äº†è¿‡å»ã€‚ä½†è§"+weapon+"æ€¥è½¬ï¼Œå‘$nç ¸åˆ°ï¼",
+   "$NæŠ¢èº«é•¿è‡‚ï¼Œæ‰‹æŒåœ¨è½®ç¼˜ä¸€æ‹¨ï¼Œé‚£"+weapon+"å°±å¦‚æ´»äº†ä¸€èˆ¬ï¼Œåœ¨ç©ºä¸­å¿½åœ°è½¬èº«ï¼Œåˆå‘$nè¿½å‡»è¿‡å»ï¼",
+   "$NæŠ¢ä¸Šå»çªä¼¸å·¦æ‹³ï¼Œå½“çš„ä¸€å£°åœ¨è½®è¾¹ä¸€å‡»ï¼Œ"+weapon+
+   "æ¥åŠ¿å¹¶ä¸ååˆ†è¿…é€Ÿï¼Œä½†è½®å­æœªåˆ°ï¼Œç–¾é£å·²ç„¶æ‰‘è‡³ï¼ŒåŠ¿é“çŒ›æ¶ä¹‹æï¼",
+   "$Nç››æ€’ä¹‹ä¸‹ï¼Œä¼¸æ‰‹æ¨å‡º"+weapon+"ï¼Œæš—ç”¨è½¬åŠ²ï¼Œåˆå°†è½®å­é£å‡ºã€‚è¿™æ—¶åŠ²åŠ›åŠ æ€¥ï¼Œè½®å­ç«Ÿç„¶å¯‚ç„¶æ— å£°ï¼",
+   "$Nè¿èµ·é¾™è±¡ä¹‹åŠ›åŒæ—¶åŒæŒé½å‡ºï¼Œæ‹åœ¨è½®ä¸Šï¼Œé‚£"+weapon+
+   "çŠ¹ä¼¼é•¿äº†çœ¼ç›ä¸€èˆ¬ï¼Œåœ¨ç©ºä¸­ç»•äº†åŠä¸ªåœˆå­ï¼Œå‘$nèº«å¾Œæ€¥è¿½ï¼",
+   "$Næ”¶æŒè·ƒèµ·ï¼Œå°†ç©ºä¸­çš„"+weapon+"æ”¶å›ã€‚"
    });
 
         me->set_temp("xueshan/riyue",1);
@@ -102,7 +102,7 @@ int perform(object me, object target)
 
                         msg = HIY"\n"+ pfm_msg[2] +"\n" NOR;
                         message_vision(msg, me, target);
-         msg = HIW"\n$N¿ÚÖĞºÈµÀ£ºµÚ"+chinese_number(me->query_temp("xueshan/riyue"))+"ÕĞÀ´ÁË£¡\n"NOR;
+         msg = HIW"\n$Nå£ä¸­å–é“ï¼šç¬¬"+chinese_number(me->query_temp("xueshan/riyue"))+"æ‹›æ¥äº†ï¼\n"NOR;
                         message_vision(msg, me);
 
         ap = COMBAT_D->skill_power(me,"hammer", SKILL_USAGE_ATTACK)*3;
@@ -121,7 +121,7 @@ int perform(object me, object target)
                                 me->add("neili", -(50 + me->query("jiali")/2));
                                 me->add("jingli", -me->query("jiajin")/3);
            
-           str = "$N¶ãÉÁ²»¼°£¬±»"+weapon+"ÖØÖØµÄ»÷ÖĞĞØ¿Ú£¬ÍÛµÄÅç³öÒ»¿ÚÏÊÑª¡£\n";
+           str = "$Nèº²é—ªä¸åŠï¼Œè¢«"+weapon+"é‡é‡çš„å‡»ä¸­èƒ¸å£ï¼Œå“‡çš„å–·å‡ºä¸€å£é²œè¡€ã€‚\n";
                           message_vision(str,target);
 
                           str = COMBAT_D->status_msg((int)target->query("qi") * 100 /(int)target->query("max_qi"));

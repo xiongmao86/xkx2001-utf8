@@ -13,21 +13,21 @@ int valid_learn(object me)
 	
 	lvl = (int)me->query_skill("yunu-jue", 1);
 	
-	if(me->query("gender") == "ÎŞĞÔ" && lvl > 39)
-		return notify_fail("Äã¸ÕÌıÒ»»á¶ù£¬±ã¾õĞÄÖÇÃÔºı£¬Ô­À´ÄãÃ»ÓĞÒõÈáÖ®Æø£¬ÎŞ·¨Áì»áÀïÃæµÄÒõÑô±ä»¯Ö®µÀ¡£\n");
+	if(me->query("gender") == "æ— æ€§" && lvl > 39)
+		return notify_fail("ä½ åˆšå¬ä¸€ä¼šå„¿ï¼Œä¾¿è§‰å¿ƒæ™ºè¿·ç³Šï¼ŒåŸæ¥ä½ æ²¡æœ‰é˜´æŸ”ä¹‹æ°”ï¼Œæ— æ³•é¢†ä¼šé‡Œé¢çš„é˜´é˜³å˜åŒ–ä¹‹é“ã€‚\n");
 		
 	if(me->query("class") == "bonze")
-		return notify_fail("¹ş¹ş£¡"+RANK_D->query_respect(me)
-			+"¼´Èë·ğÃÅ£¬ÔõÃ´È´À´Ñ§µÀ¼ÒĞÄ·¨£¿\n");
+		return notify_fail("å“ˆå“ˆï¼"+RANK_D->query_respect(me)
+			+"å³å…¥ä½›é—¨ï¼Œæ€ä¹ˆå´æ¥å­¦é“å®¶å¿ƒæ³•ï¼Ÿ\n");
 
         if ( me->query("class") == "bonze" )
-                return notify_fail("ÓñÅ®¶şÊ®ËÄ¾÷½²¾¿ÒõÑôµ÷ºÏ£¬ÓĞÎ¥·ğ¼ÒÁù¸ùÇå¾»Ö®Òâ£¬"
-                        +RANK_D->query_respect(me)+"ÓûĞŞ´Ë¹¦£¬ÒÑÊÇ×ï¹ı¡£\n");
+                return notify_fail("ç‰å¥³äºŒåå››è¯€è®²ç©¶é˜´é˜³è°ƒåˆï¼Œæœ‰è¿ä½›å®¶å…­æ ¹æ¸…å‡€ä¹‹æ„ï¼Œ"
+                        +RANK_D->query_respect(me)+"æ¬²ä¿®æ­¤åŠŸï¼Œå·²æ˜¯ç½ªè¿‡ã€‚\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("ÓñÅ®¶şÊ®ËÄ¾÷Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+	return notify_fail("ç‰å¥³äºŒåå››è¯€åªèƒ½é å­¦ä¹ æ¥æé«˜ã€‚\n");
 }

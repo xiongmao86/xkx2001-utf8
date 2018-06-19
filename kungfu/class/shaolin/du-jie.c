@@ -25,12 +25,12 @@ string* places = ({
 void create()
 {
 	object *obs;
-	set_name("¶É½Ù", ({ "du jie", "jie" }) );
-	set("title", "ÉÙÁÖ³¤ÀÏ");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ¸¡åŠ«", ({ "du jie", "jie" }) );
+	set("title", "å°‘æ—é•¿è€");
+	set("gender", "ç”·æ€§");
 	set("age", 90);
 	set("long",
-		"ÕâÊÇÒ»¸öÃæ¼ÕÉîÏİ£¬Êİ¹ÇÁã¶¡µÄÀÏÉ®£¬ËûÁ³É«²Ò°×£¬ÏóÒ»ÕÅÖ½Ò»Ñù¡£\n");
+		"è¿™æ˜¯ä¸€ä¸ªé¢é¢Šæ·±é™·ï¼Œç˜¦éª¨é›¶ä¸çš„è€åƒ§ï¼Œä»–è„¸è‰²æƒ¨ç™½ï¼Œè±¡ä¸€å¼ çº¸ä¸€æ ·ã€‚\n");
 
 	set("attitude", "peaceful");
 	set("combat_exp", 1500000);
@@ -48,9 +48,9 @@ void create()
 	set("max_neili", 3000);
 	set("jiali", 100);
 
-	create_family("ÉÙÁÖÅÉ", 35, "³¤ÀÏ");
+	create_family("å°‘æ—æ´¾", 35, "é•¿è€");
 	set("class", "bonze");
-	assign_apprentice("µÜ×Ó", 0);
+	assign_apprentice("å¼Ÿå­", 0);
 
 	set_skill("force", 150);
 	set_skill("cuff", 180);
@@ -83,15 +83,15 @@ void create()
 	}) );
 
 	set("inquiry", ([
-		"½ğ¸ÕÕÖ"     : (: ask_me :),
-		"É¨µØÉ®"   : (: ask_damo :),
-		"´ïÄ¦×æÊ¦"   : "ËûÊÇÖĞÔ­ìø×ÚÖ®×æ£¬Ò²ÊÇÉÙÁÖËÂµÄ´´ÅÉ×æÊ¦¡£\n",
-                "Ô²Õæ" :
-                "Ô²ÕæÊ¦Ö¶ËïÕıÔÚ±¾ËÂÎåĞĞ¶´Àï¾²ĞŞ£¬ÍâÈË²»Òª´òÈÅ¡£\n",
-                "Ô²Õæ´óÊ¦" :
-                "Ô²ÕæÊ¦Ö¶ËïÕıÔÚ±¾ËÂÎåĞĞ¶´Àï¾²ĞŞ£¬ÍâÈË²»Òª´òÈÅ¡£\n",
-                "ÎåĞĞ¶´" :
-                "ÄÇÊÇ±¾ËÂÃØÕóÖ®Ò»£¬Ö»ÒªÊìÏ¤ÎåĞĞÉú¿Ë±ä»¯¼È¿É³öÕó¡£\n",
+		"é‡‘åˆšç½©"     : (: ask_me :),
+		"æ‰«åœ°åƒ§"   : (: ask_damo :),
+		"è¾¾æ‘©ç¥–å¸ˆ"   : "ä»–æ˜¯ä¸­åŸç¦…å®—ä¹‹ç¥–ï¼Œä¹Ÿæ˜¯å°‘æ—å¯ºçš„åˆ›æ´¾ç¥–å¸ˆã€‚\n",
+                "åœ†çœŸ" :
+                "åœ†çœŸå¸ˆä¾„å­™æ­£åœ¨æœ¬å¯ºäº”è¡Œæ´é‡Œé™ä¿®ï¼Œå¤–äººä¸è¦æ‰“æ‰°ã€‚\n",
+                "åœ†çœŸå¤§å¸ˆ" :
+                "åœ†çœŸå¸ˆä¾„å­™æ­£åœ¨æœ¬å¯ºäº”è¡Œæ´é‡Œé™ä¿®ï¼Œå¤–äººä¸è¦æ‰“æ‰°ã€‚\n",
+                "äº”è¡Œæ´" :
+                "é‚£æ˜¯æœ¬å¯ºç§˜é˜µä¹‹ä¸€ï¼Œåªè¦ç†Ÿæ‚‰äº”è¡Œç”Ÿå…‹å˜åŒ–æ—¢å¯å‡ºé˜µã€‚\n",
 	]));
 
 	setup();
@@ -120,22 +120,22 @@ string ask_me()
 	if ( !this_player()->query_temp("fighter") 
 	||    this_player()->query("combat_exp") < 5000 )
 	{
-		command("say ´óµ¨Êó±²£¬Èé³ôÎ´¸É£¬¾¹¸ÒÍµÈë½ğ¸Õ·üÄ§È¦£¬ÇÒÈÃÀÏñÄÀ´³¬¶ÈÓëÄã£¡");
+		command("say å¤§èƒ†é¼ è¾ˆï¼Œä¹³è‡­æœªå¹²ï¼Œç«Ÿæ•¢å·å…¥é‡‘åˆšä¼é­”åœˆï¼Œä¸”è®©è€è¡²æ¥è¶…åº¦ä¸ä½ ï¼");
 		this_object()->kill_ob(this_player());
 		this_player()->kill_ob(this_object());
 	}
 
 	if ( present("jingang zhao", this_player()) )
 		return RANK_D->query_respect(this_player()) + 
-		"±¦ÕÖÖ»ÓĞÒ»¼ş£¬¶øÇÒ¾ÍÔÚÄãÉíÉÏ£¬ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+		"å®ç½©åªæœ‰ä¸€ä»¶ï¼Œè€Œä¸”å°±åœ¨ä½ èº«ä¸Šï¼ŒçœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	if ( present("jingang zhao", environment()) )
 		return RANK_D->query_respect(this_player()) + 
-		"±¦ÕÖÖ»ÓĞÒ»¼ş£¬¶øÇÒ¾ÍÔÚÕâÀïÈÎÄãÈ¡×ß£¬ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+		"å®ç½©åªæœ‰ä¸€ä»¶ï¼Œè€Œä¸”å°±åœ¨è¿™é‡Œä»»ä½ å–èµ°ï¼ŒçœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	if ( present("fumo dao", this_player()) || present("fumo dao", environment()) )
 		return RANK_D->query_respect(this_player()) + 
-		"È¡ÁË·üÄ§µ¶£¬¾Í²»ÄÜÔÙÄÃ½ğ¸ÕÕÖ£¬ÄªÒªÌ°µÃÎŞ÷Ğ£¡";
+		"å–äº†ä¼é­”åˆ€ï¼Œå°±ä¸èƒ½å†æ‹¿é‡‘åˆšç½©ï¼Œè«è¦è´ªå¾—æ— é¤ï¼";
 
 	r = random(6);
 	if(!( place = find_object(places[r])) )
@@ -143,15 +143,15 @@ string ask_me()
 
 	if(holder = all_inventory(place)) {
 		for(i=0; i<sizeof(holder); i++) {
-			if( living(holder[i]) && holder[i]->query("race") == "ÈËÀà" && !userp(holder[i]) ) {
+			if( living(holder[i]) && holder[i]->query("race") == "äººç±»" && !userp(holder[i]) ) {
 				if(ob = new("/d/shaolin/obj/jingang-zhao")) {
 					ob->move(holder[i]);
 					call_out("rumor", 5, place, holder[i]);
-					return "ÎÒÒÑ¾­°Ñ½ğ¸ÕÕÖ½»¸øÁË"
-						+ place->query("short") + "µÄ" 
-						+ holder[i]->query("name") + "£¬ÄãÓĞ±¾ÊÂ£¬×ÔÈ¥È¡°É£¡";
+					return "æˆ‘å·²ç»æŠŠé‡‘åˆšç½©äº¤ç»™äº†"
+						+ place->query("short") + "çš„" 
+						+ holder[i]->query("name") + "ï¼Œä½ æœ‰æœ¬äº‹ï¼Œè‡ªå»å–å§ï¼";
 				}
-				else return "½ğ¸ÕÕÖÄË·ğ¼ÒÉñÎï£¬Î¨ÓĞÔµÕßµÃÖ®¡£´ËÊ±ÔÚºÎ´¦£¬ÀÏñÄÒ²²»ÖªÏş¡£";
+				else return "é‡‘åˆšç½©ä¹ƒä½›å®¶ç¥ç‰©ï¼Œå”¯æœ‰ç¼˜è€…å¾—ä¹‹ã€‚æ­¤æ—¶åœ¨ä½•å¤„ï¼Œè€è¡²ä¹Ÿä¸çŸ¥æ™“ã€‚";
 			}
 			else continue;
 		}
@@ -160,17 +160,17 @@ string ask_me()
 	if(ob = new("/d/shaolin/obj/jingang-zhao")) {
 		ob->move(place);
 		call_out("rumor", 5, place);
-		return "ÎÒÒÑ¾­°Ñ½ğ¸ÕÕÖ·ÅÔÚÁË"	+ place->query("short") + "£¬ÄãÓĞ±¾ÊÂ£¬×ÔÈ¥È¡°É£¡";
+		return "æˆ‘å·²ç»æŠŠé‡‘åˆšç½©æ”¾åœ¨äº†"	+ place->query("short") + "ï¼Œä½ æœ‰æœ¬äº‹ï¼Œè‡ªå»å–å§ï¼";
 	}
-	else return "½ğ¸ÕÕÖÄË·ğ¼ÒÉñÎï£¬Î¨ÓĞÔµÕßµÃÖ®¡£´ËÊ±ÔÚºÎ´¦£¬ÀÏñÄÒ²²»ÖªÏş¡£";
+	else return "é‡‘åˆšç½©ä¹ƒä½›å®¶ç¥ç‰©ï¼Œå”¯æœ‰ç¼˜è€…å¾—ä¹‹ã€‚æ­¤æ—¶åœ¨ä½•å¤„ï¼Œè€è¡²ä¹Ÿä¸çŸ¥æ™“ã€‚";
 }
 
 string rumor(object place, object holder)
 {
 	if(objectp(holder))
-	command ("rumor ÌıËµ½ğ¸ÕÕÖºÃÏóÂäÔÚ"
-		+ place->query("short") + "µÄ" 
-		+ holder->query("name") + "ÊÖÀïÁË£¡");
+	command ("rumor å¬è¯´é‡‘åˆšç½©å¥½è±¡è½åœ¨"
+		+ place->query("short") + "çš„" 
+		+ holder->query("name") + "æ‰‹é‡Œäº†ï¼");
 	else
-	command ("rumor ÌıËµ½ğ¸ÕÕÖºÃÏó²ØÔÚ" + place->query("short") + "£¡");
+	command ("rumor å¬è¯´é‡‘åˆšç½©å¥½è±¡è—åœ¨" + place->query("short") + "ï¼");
 }

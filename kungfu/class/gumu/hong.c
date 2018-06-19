@@ -6,10 +6,10 @@ inherit NPC;
 int auto_perform();
 void create()
 {
-        set_name("ºéÁè²¨", ({ "hong lingbo", "hong", "lingbo" }));
-        set("long", "Ëı¾ÍÊÇÀîÄª³îµÄµÃÒâµÜ×Ó¡£\n");
-        set("gender", "Å®ĞÔ");
-        set("rank_info/respect", "µÀ¹Ã");
+        set_name("æ´ªå‡Œæ³¢", ({ "hong lingbo", "hong", "lingbo" }));
+        set("long", "å¥¹å°±æ˜¯æè«æ„çš„å¾—æ„å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
+        set("rank_info/respect", "é“å§‘");
         set("age", 20);
         set("attitude","heroism");
         set("str", 20);
@@ -46,13 +46,13 @@ void create()
         set("neili", 2000);
         set("max_neili", 2000);
 
-        create_family("¹ÅÄ¹ÅÉ",4,"µÜ×Ó");
+        create_family("å¤å¢“æ´¾",4,"å¼Ÿå­");
 
         set("inquiry", ([
-            "name" : "Õ¾Ô¶µã£¡",
-            "here" : "ÎÒ²»ÊÇ±¾µØÈË£¬²»ÖªµÀ¡£",
-            "Ğ¡ÁúÅ®" : "ÄÇÊÇÎÒÊ¦¸µµÄÊ¦ÃÃ¡£ÊÇÎÒÊ¦Êå¡£",
-            "ÁÖ³¯Ó¢" : "ÌıÊ¦¸µËµÄÇÊÇÎÒµÄÊ¦×æ£¬",
+            "name" : "ç«™è¿œç‚¹ï¼",
+            "here" : "æˆ‘ä¸æ˜¯æœ¬åœ°äººï¼Œä¸çŸ¥é“ã€‚",
+            "å°é¾™å¥³" : "é‚£æ˜¯æˆ‘å¸ˆå‚…çš„å¸ˆå¦¹ã€‚æ˜¯æˆ‘å¸ˆå”ã€‚",
+            "æ—æœè‹±" : "å¬å¸ˆå‚…è¯´é‚£æ˜¯æˆ‘çš„å¸ˆç¥–ï¼Œ",
        ]) );
 
         setup();

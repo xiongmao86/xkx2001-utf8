@@ -5,10 +5,10 @@ int do_push(string);
 
 void create()
 {
-        set_name("ÎÀÊ¿³¤", ({ "weishi zhang", "guard", "wei" }));
+        set_name("å«å£«é•¿", ({ "weishi zhang", "guard", "wei" }));
         set("long", 
-"Ò»¸öÖĞÄêÎÀÊ¿\n");
-        set("gender", "ÄĞĞÔ");
+"ä¸€ä¸ªä¸­å¹´å«å£«\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);

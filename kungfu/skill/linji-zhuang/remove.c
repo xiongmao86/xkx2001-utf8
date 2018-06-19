@@ -13,7 +13,7 @@ int exert(object me)
 		case "tiandi" :
 			if( lj_exert["eff_jing"] ) me->add("eff_jing", -lj_exert["eff_jing"]);
 			if( lj_exert["eff_qi"] ) me->add("eff_qi", -lj_exert["eff_qi"]);
-			tell_object(me, HIG"你将所聚天地之精气散回天地之间。\n"NOR);
+			tell_object(me, HIG"浣犲皢鎵�鑱氬ぉ鍦颁箣绮炬皵鏁ｅ洖澶╁湴涔嬮棿銆俓n"NOR);
 			break;
 		case "longhe" :
 			if( lj_exert["jing2jingli"] )
@@ -46,7 +46,7 @@ int exert(object me)
 				me->receive_curing("qi", lj_exert["qi2neili"]);
 				me->add("neili", -lj_exert["qi2neili"]);
 			}
-			tell_object(me, HIG"你行龙鹤二庄已久，又恢复了原有精气。\n"NOR);
+			tell_object(me, HIG"浣犺榫欓工浜屽簞宸蹭箙锛屽張鎭㈠浜嗗師鏈夌簿姘斻�俓n"NOR);
 			break;
 	}
 	me->delete_temp("lj_exert");

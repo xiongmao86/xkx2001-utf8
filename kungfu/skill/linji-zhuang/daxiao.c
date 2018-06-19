@@ -9,24 +9,24 @@ int exert(object me, object target)
 	int level = me->query_skill("linji-zhuang", 1);
 	int amount;
 
-	if (level < 150) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+	if (level < 150) return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("max_neili") < 5*level ) 
-		return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿå¼ºã€‚\n");
 
 	if( (int)me->query("neili") < 4*level ) 
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-		return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+		return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 	
 	if ( me->query_temp("linji/daxiao") )
-		return notify_fail("ÄãÒÑ¾­ÔË¹¦µ÷½Ú¾«Æø´óÐ¡ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»è¿åŠŸè°ƒèŠ‚ç²¾æ°”å¤§å°äº†ã€‚\n");
 
 	me->set_temp("linji/daxiao", 1);
-	write( HIY "ÄãÆÁÏ¢¾²Æø£¬½»´íÔËÐÐ´óÐ¡¶þ×¯£¬Ö»¾õÒ»¹ÉÅ¯Á÷³öÌìÃÅ£¬´©µØ»§£¬ÑØ×ÅÈ«Éí¾­ÂöÔËÐÐÒ»ÖÜ£¬»ãÈëµ¤ÌïÆøº£¡£\n" NOR);
+	write( HIY "ä½ å±æ¯é™æ°”ï¼Œäº¤é”™è¿è¡Œå¤§å°äºŒåº„ï¼Œåªè§‰ä¸€è‚¡æš–æµå‡ºå¤©é—¨ï¼Œç©¿åœ°æˆ·ï¼Œæ²¿ç€å…¨èº«ç»è„‰è¿è¡Œä¸€å‘¨ï¼Œæ±‡å…¥ä¸¹ç”°æ°”æµ·ã€‚\n" NOR);
 	message("vision",
-		HIY + "Ö»¼û" + me->name() + "ÆÁÏ¢¾²Æø£¬Í·¶¥Æ®ÆðÒ»ÂÆÂÆ°×Æø£¬ÉñÌ¬ÂÔÏÖÆ£·¦¡£\n" NOR,
+		HIY + "åªè§" + me->name() + "å±æ¯é™æ°”ï¼Œå¤´é¡¶é£˜èµ·ä¸€ç¼•ç¼•ç™½æ°”ï¼Œç¥žæ€ç•¥çŽ°ç–²ä¹ã€‚\n" NOR,
 		environment(me), me);
 
 	amount = me->query("max_jing") - me->query("max_qi");
@@ -56,5 +56,5 @@ void remove_effect(object me, int level)
 	me->receive_curing("jing", level);
 	me->delete_temp("linji/daxiao");
 
-	tell_object(me, HIG"ÄãÐÐ´óÐ¡¶þ×¯ÒÑ¾Ã£¬ÓÖ»Ö¸´ÁËÔ­ÓÐ¾«Æø¡£\n"NOR);
+	tell_object(me, HIG"ä½ è¡Œå¤§å°äºŒåº„å·²ä¹…ï¼Œåˆæ¢å¤äº†åŽŸæœ‰ç²¾æ°”ã€‚\n"NOR);
 }

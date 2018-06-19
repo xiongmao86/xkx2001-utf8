@@ -16,12 +16,12 @@ int checking(object me);
 
 void create()
 {
-	set_name("Ã·½£", ({ "mei jian", "mei"}));
+	set_name("æ¢…å‰‘", ({ "mei jian", "mei"}));
 	set("long",
-	    "ÕâÊÇ¸öÈÝÃ²æ¯ºÃµÄÅ®×Ó, ¹Ï×ÓÁ³µ°,\n"+
-	    "ÑÛÈçµãÆá, ÇåÐã¾øË×.\n"+
-	    "Äã×Ü¾õµÃÔÚÄÄ¼û¹ýËý.\n");
-	set("gender", "Å®ÐÔ");
+	    "è¿™æ˜¯ä¸ªå®¹è²Œå§£å¥½çš„å¥³å­, ç“œå­è„¸è›‹,\n"+
+	    "çœ¼å¦‚ç‚¹æ¼†, æ¸…ç§€ç»ä¿—.\n"+
+	    "ä½ æ€»è§‰å¾—åœ¨å“ªè§è¿‡å¥¹.\n");
+	set("gender", "å¥³æ€§");
 	set("per", 28);
 	set("age", 18);
 	set("shen_type",0);
@@ -72,14 +72,14 @@ void create()
 	set("job_count",0);
         set("inquiry", ([
 		"job" : (: ask_job :),
-		"ÊØÃÅ" : (: ask_job :),
-		"¹¤×÷" : (: ask_job :),
-		"·ÅÆú" : (: ask_escape :), 
-		"¸É²»ÁË" : (: ask_escape :), //for escape when in job;
+		"å®ˆé—¨" : (: ask_job :),
+		"å·¥ä½œ" : (: ask_job :),
+		"æ”¾å¼ƒ" : (: ask_escape :), 
+		"å¹²ä¸äº†" : (: ask_escape :), //for escape when in job;
 		"escape" : (: ask_escape :), 
         ]));
 
-	create_family("ÁéðÕ¹¬",3,"µÜ×Ó");
+	create_family("çµé¹«å®«",3,"å¼Ÿå­");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -102,16 +102,16 @@ void init()
 	
 	if (interactive(ob) 
 	&& !environment(ob)->query("no_fight")
-	&& ((fam = ob->query("family")) && fam["family_name"] != "ÁéðÕ¹¬" )
+	&& ((fam = ob->query("family")) && fam["family_name"] != "çµé¹«å®«" )
 	&& me->query("biao/owner"))
 	{
 		if( !ob->query_temp("warned") ) {
-		command("say ×ðÖ÷ÓÐÁî£ºÍâÈË²»µÃ½øÈëÁéðÕ¹¬£¬ËÙËÙÀë¿ª£¡");
+		command("say å°Šä¸»æœ‰ä»¤ï¼šå¤–äººä¸å¾—è¿›å…¥çµé¹«å®«ï¼Œé€Ÿé€Ÿç¦»å¼€ï¼");
 			ob->set_temp("warned", 1);
 	}
 		else if( ob->query_temp("stay")<5 ) ob->add_temp("stay",1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸ÒÉÃ´³ÁéðÕ¹¬£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢æ“…é—¯çµé¹«å®«ï¼ï¼ï¼\n");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}
@@ -126,19 +126,19 @@ string ask_escape()
 	object ob;
 
 	ob=this_player();
-	if (!(fam = ob->query("family")) || fam["family_name"] != "ÁéðÕ¹¬")
-		return RANK_D->query_respect(ob) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = ob->query("family")) || fam["family_name"] != "çµé¹«å®«")
+		return RANK_D->query_respect(ob) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
 
 	if((ob->query("job_status"))==1)
 	{
-		command("say ºÃ°É£¬ÄãÏÖÔÚ¿ÉÒÔ×ßÁË¡£");
+		command("say å¥½å§ï¼Œä½ çŽ°åœ¨å¯ä»¥èµ°äº†ã€‚");
 		add("job_count", -1);
 		ob->set("job_status",0);
 	}
 	else  
-		command( "say ÄãÓÖÃ»ÓÐÔÚÕâÀï¿´ÊØ´óÃÅ£¬Õâ»°´ÓºÎËµÆð£¿");
+		command( "say ä½ åˆæ²¡æœ‰åœ¨è¿™é‡Œçœ‹å®ˆå¤§é—¨ï¼Œè¿™è¯ä»Žä½•è¯´èµ·ï¼Ÿ");
 		
-	return "½ñºóÒªºÃºÃ¸É£¡\n";
+	return "ä»ŠåŽè¦å¥½å¥½å¹²ï¼\n";
 }
 
 string ask_job()
@@ -148,26 +148,26 @@ string ask_job()
 	
 	ob=this_player();
 
-	if (!(fam = ob->query("family")) || fam["family_name"] != "ÁéðÕ¹¬")
-		return RANK_D->query_respect(ob) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = ob->query("family")) || fam["family_name"] != "çµé¹«å®«")
+		return RANK_D->query_respect(ob) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
 
 	if((ob->query("job_status"))==2)
-		return "Äã»¹Ã»ÓÐÍê³ÉÍ¯ÀÑµÄ¹¤×÷£¬ÓÖÀ´ÎÊÊ²Ã´£¿\n";
+		return "ä½ è¿˜æ²¡æœ‰å®Œæˆç«¥å§¥çš„å·¥ä½œï¼Œåˆæ¥é—®ä»€ä¹ˆï¼Ÿ\n";
 
 	if((ob->query("combat_exp"))<10000)                             //      exp<10k  can not do meijian's job; 
-		return "Äã¾­Ñé²»¹»£¬ÔÚ´ËÊØÃÅÓÐÎ£ÏÕ¡£µÈ¾­Ñé¹»ÁËÔÙÀ´ÎÊÎÒ¡£\n";
+		return "ä½ ç»éªŒä¸å¤Ÿï¼Œåœ¨æ­¤å®ˆé—¨æœ‰å±é™©ã€‚ç­‰ç»éªŒå¤Ÿäº†å†æ¥é—®æˆ‘ã€‚\n";
 
 	if((ob->query("job_status"))==1)
 	{
-//		command("say ÖØÐÂ¿ªÊ¼°É¡£ºÃºÃ¸É£¡");
+//		command("say é‡æ–°å¼€å§‹å§ã€‚å¥½å¥½å¹²ï¼");
 //		remove_call_out("doing_job");
-		command("say Èç¹ûÄã¸É²»ÁËÎÒÅÉ¸øÄãµÄ»î£¬¿ÉÒÔÖ±½Ó¸úÎÒËµÄã¸É²»ÁË¡£");
+		command("say å¦‚æžœä½ å¹²ä¸äº†æˆ‘æ´¾ç»™ä½ çš„æ´»ï¼Œå¯ä»¥ç›´æŽ¥è·Ÿæˆ‘è¯´ä½ å¹²ä¸äº†ã€‚");
 
 	}
 	else  if(query("job_count")>=4)
-		  return "ÄãÀ´ÍíÁË£¬ÊØÃÅµÄÎ»ÖÃÒÑ¾­·ÖÅÉÍêÁË¡£¹ýÒ»»áÔÙÀ´¿´¿´¡£\n";
+		  return "ä½ æ¥æ™šäº†ï¼Œå®ˆé—¨çš„ä½ç½®å·²ç»åˆ†æ´¾å®Œäº†ã€‚è¿‡ä¸€ä¼šå†æ¥çœ‹çœ‹ã€‚\n";
     else{
-		command( "say Äã¾ÍÔÚÕâÀï¿´ÊØ´óÃÅ°É¡£");
+		command( "say ä½ å°±åœ¨è¿™é‡Œçœ‹å®ˆå¤§é—¨å§ã€‚");
 		ob->set("job_status", 1);
 		add("job_count",1);
 	 }
@@ -177,7 +177,7 @@ string ask_job()
 		call_out("add_bandit",0,ob); //bandit has 1/4 chance;
 
 	call_out("doing_job",500,ob); //use call out and set time 10 minitues.
-	return "´òÆð¾«Éñ£¬²»ÒªÍµÀÁ¡£\n";
+	return "æ‰“èµ·ç²¾ç¥žï¼Œä¸è¦å·æ‡’ã€‚\n";
 }
 
 int doing_job(object ob)//, int second)
@@ -192,13 +192,13 @@ int doing_job(object ob)//, int second)
 
 	ob->set("job_status",0);
 
-	command("say Ê±¼äµ½ÁË£¬"+ob->query("name")+"£¬Äã¿ÉÒÔ×ßÁË¡£½ñºó»¹Òª¶à¶àÅ¬Á¦£¡");
+	command("say æ—¶é—´åˆ°äº†ï¼Œ"+ob->query("name")+"ï¼Œä½ å¯ä»¥èµ°äº†ã€‚ä»ŠåŽè¿˜è¦å¤šå¤šåŠªåŠ›ï¼");
 	add("job_count", -1);
 	}
 	return 1;
 }
 
-int add_bandit(object ob)               //if bandit come, player can 'ask mei about ¸É²»ÁË' and then escape.
+int add_bandit(object ob)               //if bandit come, player can 'ask mei about å¹²ä¸äº†' and then escape.
 {
 	object me;
 	object *inv;
@@ -290,10 +290,10 @@ int add_bandit(object ob)               //if bandit come, player can 'ask mei ab
 	me->set("combat_exp",hp_status["combat_exp"]/7*9);
 	me->set("shen",      hp_status["shen"]*(-1));
 	
-//		write("Í»È»,´ÓºáÁºÉÏÌøÏÂÒ»¸öÃÉÃæ´óºº!\n");
-//	write( "ÃÉÃæÈË³é³öÒ»±ú³¤½£,Ö¸×ÅÄãµÀ:ÄÃÃüÀ´!\n" );
-	message_vision(HIR"Í»È»É½ÏÂ³åÉÏÒ»¸ö$N£¬¶þ»°²»ËµÏòÊØÎÀÃÇ·¢Æð¹¥»÷£¡\n"NOR, me);
-	message_vision(CYN"$N³é³öÒ»±ú³¤½£ºÈµÀ£º¸Ï¿ì½ÐÍ¯ÀÑ½»³öÉúËÀ·ûµÄ½âÒ©À´£¡\n"NOR, me);
+//		write("çªç„¶,ä»Žæ¨ªæ¢ä¸Šè·³ä¸‹ä¸€ä¸ªè’™é¢å¤§æ±‰!\n");
+//	write( "è’™é¢äººæŠ½å‡ºä¸€æŸ„é•¿å‰‘,æŒ‡ç€ä½ é“:æ‹¿å‘½æ¥!\n" );
+	message_vision(HIR"çªç„¶å±±ä¸‹å†²ä¸Šä¸€ä¸ª$Nï¼ŒäºŒè¯ä¸è¯´å‘å®ˆå«ä»¬å‘èµ·æ”»å‡»ï¼\n"NOR, me);
+	message_vision(CYN"$NæŠ½å‡ºä¸€æŸ„é•¿å‰‘å–é“ï¼šèµ¶å¿«å«ç«¥å§¥äº¤å‡ºç”Ÿæ­»ç¬¦çš„è§£è¯æ¥ï¼\n"NOR, me);
 
 	me->kill_ob(ob);
 	
@@ -310,7 +310,7 @@ int do_kill(object me, object dest)
 	if( objectp(dest) && present(dest, environment(me))
 		 && !environment(me)->query("no_fight"))
 	{
-		command( "say ´óµ¨¿ñÍ½£¬¾¹¸ÒÔÚÁéðÕ¹¬ÈöÒ°£¬»¹²»¿ì¿ì¸¿ÊÖ¾ÍÇÜ£¡");
+		command( "say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢åœ¨çµé¹«å®«æ’’é‡Žï¼Œè¿˜ä¸å¿«å¿«ç¼šæ‰‹å°±æ“’ï¼");
 		me->kill_ob(dest);
 		dest->fight_ob(me);
 	}

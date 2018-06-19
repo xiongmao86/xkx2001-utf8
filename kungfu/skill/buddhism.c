@@ -14,18 +14,18 @@ int valid_learn(object me)
 	lvl = (int)me->query_skill("buddhism", 1);
 
 	if( me->query("class") == "bonze" && (int)me->query("guilty") > 0 )
-		return notify_fail("ÄãÂÅ·¸É®¼ÒÊý½ä£¬³¾Ë×Ö®ÐÄÌ«ÖØ£¬ÎÞ·¨ÐÞÁ¶ìø×ÚÐÄ·¨¡£\n");
+		return notify_fail("ä½ å±¡çŠ¯åƒ§å®¶æ•°æˆ’ï¼Œå°˜ä¿—ä¹‹å¿ƒå¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼ç¦…å®—å¿ƒæ³•ã€‚\n");
 		
-	if( (me->query("class") != "bonze" && me->query("family/family_name") != "´óÀí¶Î¼Ò")
+	if( (me->query("class") != "bonze" && me->query("family/family_name") != "å¤§ç†æ®µå®¶")
 	 && lvl > 39 ) 
-		return notify_fail("ÄãÎ´Èë·ðÃÅ£¬³¾Ôµ²»¶Ï£¬Ã»ÓÐÇå¾»ÎÞÎªµÄÆÐÌáÐÄ£¬ÎÞ·¨¼ÌÐøÐÞ³Öìø×ÚÃî·¨¡£\n");
+		return notify_fail("ä½ æœªå…¥ä½›é—¨ï¼Œå°˜ç¼˜ä¸æ–­ï¼Œæ²¡æœ‰æ¸…å‡€æ— ä¸ºçš„è©æå¿ƒï¼Œæ— æ³•ç»§ç»­ä¿®æŒç¦…å®—å¦™æ³•ã€‚\n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("ìø×ÚÐÄ·¨Ö»ÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+	return notify_fail("ç¦…å®—å¿ƒæ³•åªèƒ½é å­¦(learn)æ¥æé«˜ã€‚\n");
 }
 
 void skill_improved(object me)
@@ -34,6 +34,6 @@ void skill_improved(object me)
         &&  !me->query("sl_gifts/bdh") ) {
                 me->set("sl_gifts/bdh", 1);
                 me->add("int", 1);
-                write("\nÄãµÄìø×ÚÐÄ·¨Ñ§ÓÐËù³É£¬Ìá¸ßÁËÄãµÄÖÇÁ¦¡£\n");
+                write("\nä½ çš„ç¦…å®—å¿ƒæ³•å­¦æœ‰æ‰€æˆï¼Œæé«˜äº†ä½ çš„æ™ºåŠ›ã€‚\n");
         }
 }

@@ -5,25 +5,25 @@
 int exert(object me, object target)
 {
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐÔË¹¦Çý¶¾£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸé©±æ¯’ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if ((int)me->query_condition("chilian_poison") > 0) {
         if ((int)me->query_skill("wudu-xinfa", 1) < 40)
-                return notify_fail("ÄãµÄÎå¶¾ÐÄ·¨ÐÞÎª»¹²»¹»Çý³àÁ·ÉñÕÆ¶¾ËùÐè¡£\n");
+                return notify_fail("ä½ çš„äº”æ¯’å¿ƒæ³•ä¿®ä¸ºè¿˜ä¸å¤Ÿé©±èµ¤ç»ƒç¥žæŽŒæ¯’æ‰€éœ€ã€‚\n");
         if( (int)me->query("neili") < 200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»Çý³àÁ·ÉñÕÆ¶¾ËùÐè¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿé©±èµ¤ç»ƒç¥žæŽŒæ¯’æ‰€éœ€ã€‚\n");
 
         if ((int)me->query_condition("chilian_poison") > me->query_skill("wudu-xinfa",1) )
-                return notify_fail("ÄãÖÐµÄ³àÁ·ÉñÕÆ¶¾¹ýÉî£¬ÏÖÔÚÇý²»µô¡£\n");
+                return notify_fail("ä½ ä¸­çš„èµ¤ç»ƒç¥žæŽŒæ¯’è¿‡æ·±ï¼ŒçŽ°åœ¨é©±ä¸æŽ‰ã€‚\n");
 
-        write( HIW "ÄãÈ«Éí±Á½ô£¬ÑöÃæÌÉÏÂÀ´¿ªÊ¼ÔË¹¦Çý¶¾¡£\n" NOR);
+        write( HIW "ä½ å…¨èº«ç»·ç´§ï¼Œä»°é¢èººä¸‹æ¥å¼€å§‹è¿åŠŸé©±æ¯’ã€‚\n" NOR);
         message_vision(
-                HIW "$N´ó½ÐÁ½Éù£¬ÍÂ³öÒ»¿ÚºÚ×ÏÉ«µÄðöÑª¡£\n" NOR,
+                HIW "$Nå¤§å«ä¸¤å£°ï¼Œåå‡ºä¸€å£é»‘ç´«è‰²çš„ç˜€è¡€ã€‚\n" NOR,
                 me);
         me->apply_condition("chilian_poison", 0);
         me->add("neili", -200);
    }
-   else write("Äã²¢Î´ÖÐ¶¾¡£\n");
+   else write("ä½ å¹¶æœªä¸­æ¯’ã€‚\n");
 
         return 1;
 }

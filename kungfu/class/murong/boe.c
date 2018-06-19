@@ -10,10 +10,10 @@ int auto_perform();
 
 void create()
 {
-        set_name("·ç²¨¶ñ", ({"feng boe", "feng", "boe"}));
-        set("long",  "´ËÈËÃæ»Æ¼¡Êİ£¬ÏÂò¢¹Ò×ÅÁ½Æ²ÊóĞë£¬Ïñ´ó²¡³õÓú¡£\n" );
-        set("title", WHT"½­ÄÏÒ»Õó·ç" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é£æ³¢æ¶", ({"feng boe", "feng", "boe"}));
+        set("long",  "æ­¤äººé¢é»„è‚Œç˜¦ï¼Œä¸‹é¢ŒæŒ‚ç€ä¸¤æ’‡é¼ é¡»ï¼Œåƒå¤§ç—…åˆæ„ˆã€‚\n" );
+        set("title", WHT"æ±Ÿå—ä¸€é˜µé£" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 32);
         set("max_qi", 4000);
         set("max_jing", 3500);
@@ -59,7 +59,7 @@ void create()
 
         prepare_skill("finger","canhe-zhi");
 	
-	create_family("¹ÃËÕÄ½Èİ", 19, "´«ÈË");
+	create_family("å§‘è‹æ…•å®¹", 19, "ä¼ äºº");
 
 	set("chat_chance", 70);
         set("chat_msg", ({
@@ -76,7 +76,7 @@ void create()
 int accept_kill(object ob)
 {
         command("haha");
-        command("say ÀÏ×ÓÕı³îÕÒ²»µ½ÈË´ò¼ÜÄØ¡£À´À´À´£¬ÎÒÓëÄã´óÕ½Èı°Ù»ØºÏ£¡");
+        command("say è€å­æ­£æ„æ‰¾ä¸åˆ°äººæ‰“æ¶å‘¢ã€‚æ¥æ¥æ¥ï¼Œæˆ‘ä¸ä½ å¤§æˆ˜ä¸‰ç™¾å›åˆï¼");
         return 1;
 }
 
@@ -156,29 +156,29 @@ int auto_perform()
 
         if( objectp(w = me->query_temp("weapon")) ) {
                 if( w == w1 && n < 5 ) {
-                        message_vision(HIR"\nÍ»È»¼ä$NºÙºÙ¸ÉĞ¦¼¸Éù¡£\nÊÖÖĞ³é³öÒ»±ú" + w->name() + "ËµµÀ£º¡°ÄãµÃÅãÎÒ´ò¼Ü£¬²»×¼ÅÜ²ÅĞĞÑ½£¡¡±\n"NOR, me);
+                        message_vision(HIR"\nçªç„¶é—´$Nå˜¿å˜¿å¹²ç¬‘å‡ å£°ã€‚\næ‰‹ä¸­æŠ½å‡ºä¸€æŸ„" + w->name() + "è¯´é“ï¼šâ€œä½ å¾—é™ªæˆ‘æ‰“æ¶ï¼Œä¸å‡†è·‘æ‰è¡Œå‘€ï¼â€\n"NOR, me);
                 } else if( w == w1 && n == 5 ) {
                         w->unequip();
                         message_vision(w->query("unwield_msg"), me, w);
                         w2->wield();
                         message_vision(w2->query("wield_msg"), me, w2);
-                        message_vision(HIR"\nÍ»È»¼ä$Nµ¶·¨Ò»±ä£¬ÊÖÖĞ" + w2->name() + "ÈçÁéÉßÒ»°ãÖ±²øÉÏÀ´¡£\n"NOR, me);
+                        message_vision(HIR"\nçªç„¶é—´$Nåˆ€æ³•ä¸€å˜ï¼Œæ‰‹ä¸­" + w2->name() + "å¦‚çµè›‡ä¸€èˆ¬ç›´ç¼ ä¸Šæ¥ã€‚\n"NOR, me);
                 } else if( w == w2 && n < 5) {
                         w->unequip();
                         message_vision(w->query("unwield_msg"), me, w);
                         w1->wield();
                         message_vision(w1->query("wield_msg"), me, w1);
-                        message_vision(HIG"\n$NËÆºõÓĞÒâ·ÅÂıÁË½ø¹¥£¬È»¶ø¡­¡­\n"NOR, me);
+                        message_vision(HIG"\n$Nä¼¼ä¹æœ‰æ„æ”¾æ…¢äº†è¿›æ”»ï¼Œç„¶è€Œâ€¦â€¦\n"NOR, me);
                 }
         } else {
                 if( n < 5 ) {
                         w1->wield();
                         message_vision(w1->query("wield_msg"), me, w1);
-                        message_vision(HIG"\n$NËÆºõÓĞÒâ·ÅÂıÁË½ø¹¥£¬È»¶ø¡­¡­\n"NOR, me);
+                        message_vision(HIG"\n$Nä¼¼ä¹æœ‰æ„æ”¾æ…¢äº†è¿›æ”»ï¼Œç„¶è€Œâ€¦â€¦\n"NOR, me);
                 } else {
                         w2->wield();
                         message_vision(w2->query("wield_msg"), me, w2);
-                        message_vision(HIR"\nÍ»È»¼ä$Nµ¶·¨Ò»±ä£¬ÊÖÖĞ" + w2->name() + "ÕĞÊ½¹îÒì£¬Ö±±¼ÄãµÄÒªº¦¹¥À´£¡\n"NOR, me);
+                        message_vision(HIR"\nçªç„¶é—´$Nåˆ€æ³•ä¸€å˜ï¼Œæ‰‹ä¸­" + w2->name() + "æ‹›å¼è¯¡å¼‚ï¼Œç›´å¥”ä½ çš„è¦å®³æ”»æ¥ï¼\n"NOR, me);
                 }
         }              
 

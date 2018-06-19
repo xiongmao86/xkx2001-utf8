@@ -1,15 +1,15 @@
 //Cracked by Roath
-// xiaosong.c ËÎÇàÊé
+// xiaosong.c å®‹é’ä¹¦
 
 inherit NPC;
 
 void create()
 {
-	set_name("ËÎÇàÊé", ({ "song qingshu", "song" }));
+	set_name("å®‹é’ä¹¦", ({ "song qingshu", "song" }));
 	set("long", 
-		"Ëû¾ÍÊÇËÎÔ¶ÇÅµÄ¶ù×ÓËÎÇàÊé¡£\n"
-		"Ëû½ñÄê¶þÊ®Ëê£¬ÄËÊÇÎäµ±µÚÈý´úÖÐ³öÀà°ÎÝÍµÄÈËÎï¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"ä»–å°±æ˜¯å®‹è¿œæ¡¥çš„å„¿å­å®‹é’ä¹¦ã€‚\n"
+		"ä»–ä»Šå¹´äºŒåå²ï¼Œä¹ƒæ˜¯æ­¦å½“ç¬¬ä¸‰ä»£ä¸­å‡ºç±»æ‹”èƒçš„äººç‰©ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("attitude", "peaceful");
 	set("shen_type", 0);
@@ -44,7 +44,7 @@ void create()
 	map_skill("parry", "taiji-jian");
 	map_skill("sword", "taiji-jian");
 
-	create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+	create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/changjian")->wield();

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shihou.c ³ö³¾×Ó
+// shihou.c å‡ºå°˜å­
 #include <ansi.h>
 inherit NPC;
 inherit F_MASTER;
@@ -8,12 +8,12 @@ string ask_me();
 
 void create()
 {
-        set_name("³ö³¾×Ó", ({ "chuchen zi", "chuchen" }));
-        set("nickname", "ĞÇËŞÅÉ°ËÊ¦ĞÖ");
+        set_name("å‡ºå°˜å­", ({ "chuchen zi", "chuchen" }));
+        set("nickname", "æ˜Ÿå®¿æ´¾å…«å¸ˆå…„");
         set("long", 
-                "Ëû¾ÍÊÇ¶¡´ºÇïµÄ°ËµÜ×Ó³ö³¾×Ó¡£\n"
-                "ËûÉí²Å°«ÅÖ£¬¿ÉÊÖÖĞÎÕµÄ¸ÖÕÈÓÖ³¤ÓÖÖØ¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯ä¸æ˜¥ç§‹çš„å…«å¼Ÿå­å‡ºå°˜å­ã€‚\n"
+                "ä»–èº«æ‰çŸ®èƒ–ï¼Œå¯æ‰‹ä¸­æ¡çš„é’¢æ–åˆé•¿åˆé‡ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -49,7 +49,7 @@ void create()
 
         prepare_skill("strike", "chousui-zhang");
 
-        create_family("ĞÇËŞÅÉ", 2, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
         setup();
         carry_object("/d/xingxiu/obj/staff1")->wield();
@@ -65,7 +65,7 @@ init()
         if (interactive(ob = this_player()) && !is_fighting()
         && file_name(environment(this_object())) == "/d/xingxiu/xxroad5" ) {
                 myfam = (mapping)ob->query("family");
-                if ((!myfam || myfam["family_name"] != "ĞÇËŞÅÉ") &&
+                if ((!myfam || myfam["family_name"] != "æ˜Ÿå®¿æ´¾") &&
                         (!wizardp(ob))) {
                         remove_call_out("do_killing");
                         call_out("do_killing",1,ob);
@@ -74,7 +74,7 @@ init()
         if (interactive(ob=this_player()) && !this_object()->is_killing(ob)
         && present("lanyu bo",ob)) {
            message_vision(
-           HIY "$NÒ»¼ûµ½$n£¬Å­µÀ£º´óµ¨Êó±²£¡¾¡¸ÒÇÔ×ßÊ¦ÃÅ±¦Îï¡£ÄÃÃüÀ´£¡\n"NOR, this_object(), ob);
+           HIY "$Nä¸€è§åˆ°$nï¼Œæ€’é“ï¼šå¤§èƒ†é¼ è¾ˆï¼å°½æ•¢çªƒèµ°å¸ˆé—¨å®ç‰©ã€‚æ‹¿å‘½æ¥ï¼\n"NOR, this_object(), ob);
         command("follow "+ob->query("id"));
         kill_ob(ob);
         ob->start_busy(1);
@@ -91,7 +91,7 @@ void do_killing(object ob)
 
 void attempt_apprentice(object ob)
 {
-        command("say ÀÏÏÉ»¹Ã»ÔÊĞíÎÒÊÕÍ½ÄØ¡£");
+        command("say è€ä»™è¿˜æ²¡å…è®¸æˆ‘æ”¶å¾’å‘¢ã€‚");
         //command("recruit " + ob->query("id"));
 }
 

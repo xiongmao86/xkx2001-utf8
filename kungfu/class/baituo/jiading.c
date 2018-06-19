@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("¼Ò¶¡", ({ "jiading" }));
-        set("long", "Ò»¸ö¶şÊ®À´ËêµÄ×³Ğ¡»ï£¬°ò´óÑüÔ²¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å®¶ä¸", ({ "jiading" }));
+        set("long", "ä¸€ä¸ªäºŒåæ¥å²çš„å£®å°ä¼™ï¼Œè†€å¤§è…°åœ†ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 28);
 
         set_skill("hand", 30);
@@ -34,14 +34,14 @@ void create()
         set("attitude", "peaceful");
         set("shen_type", -1);
 
-        create_family("°×ÍÕÉ½", 4 , "µÜ×Ó");
+        create_family("ç™½é©¼å±±", 4 , "å¼Ÿå­");
 	setup();
 	carry_object("/d/city/obj/cloth")->wear();
 }
 void attempt_apprentice(object ob)
 {
         command("shake");
-        command("say ÎÒÖ»ÊÇ¸öĞ¡¼Ò¶¡£¬²»ÄÜÊÕÍ½¡£");
+        command("say æˆ‘åªæ˜¯ä¸ªå°å®¶ä¸ï¼Œä¸èƒ½æ”¶å¾’ã€‚");
         return;
 }
 

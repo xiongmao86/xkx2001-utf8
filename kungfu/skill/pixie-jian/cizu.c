@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cimu.c ±ÙĞ°½£·¨¡¸´Ì×ã¡¹Ö®¼¼
+// cimu.c è¾Ÿé‚ªå‰‘æ³•ã€Œåˆºè¶³ã€ä¹‹æŠ€
 // wzfeng@XKX 99 9 
 
 #include <ansi.h>
@@ -17,34 +17,34 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸´Ì×ã¡¹Ö®¼¼Ö»ÄÜÔÚÕ½¶·ÖĞ¶ÔµĞÈËÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œåˆºè¶³ã€ä¹‹æŠ€åªèƒ½åœ¨æˆ˜æ–—ä¸­å¯¹æ•Œäººä½¿ç”¨ã€‚\n");
 		if(!living(target))
-			return notify_fail("¶Ô¸¶»èÃÔµÄÈË»¹Ğè¡¸´Ì×ã¡¹?\n");
+			return notify_fail("å¯¹ä»˜æ˜è¿·çš„äººè¿˜éœ€ã€Œåˆºè¶³ã€?\n");
 
 
         if( (int)target->query_temp("pixie/cizu") )
-                return notify_fail(target->name() +"ÒÑ±»Äã´ÌÖĞË«×ãÒªº¦£¡\n");
+                return notify_fail(target->name() +"å·²è¢«ä½ åˆºä¸­åŒè¶³è¦å®³ï¼\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( me->query("jingli") <= 300 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
 
 
         if( !objectp(weapon = me->query_temp("weapon")) )
-                 return notify_fail("¿ÕÊÖÈçºÎ¡¸´Ì×ã¡¹£¿£¿\n");
+                 return notify_fail("ç©ºæ‰‹å¦‚ä½•ã€Œåˆºè¶³ã€ï¼Ÿï¼Ÿ\n");
 
 /*        if( (string)weapon->query("id") != "xiuhua zhen" && 
             (string)weapon->query("id") != "qijue zhen" )
-                 return notify_fail("ÄãÃ»ÓĞ³ÃÊÖµÄ±øÆ÷£¬²»ÄÜÊ©Õ¹¡¸´Ì×ã¡¹¾ø¼¼¡£\n");
+                 return notify_fail("ä½ æ²¡æœ‰è¶æ‰‹çš„å…µå™¨ï¼Œä¸èƒ½æ–½å±•ã€Œåˆºè¶³ã€ç»æŠ€ã€‚\n");
 */
 
         if( ( (int)me->query_skill("pixie-jian", 1)) < 100 )
-                return notify_fail("ÄãµÄ±ÙĞ°½£·¨²»¹»æµÊì£¬ÎŞ·¨Ê¹³ö¡¸´Ì×ã¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿å‡ºã€Œåˆºè¶³ã€ç»æŠ€ã€‚\n");
 
 		if( (string)me->query_skill_mapped("dodge") != "pixie-jian" )
-                return notify_fail("ÄãÃ»ÓĞ½«±ÙĞ°½£·¨ÔËÔÚÉí·¨ÉÏ£¬ºÜÄÑ½Ó½ü¶ÔÊÖ¡£\n");	
+                return notify_fail("ä½ æ²¡æœ‰å°†è¾Ÿé‚ªå‰‘æ³•è¿åœ¨èº«æ³•ä¸Šï¼Œå¾ˆéš¾æ¥è¿‘å¯¹æ‰‹ã€‚\n");	
 		
         //if( !target->is_killing(me->query("id")) ) target->kill_ob(me);
 		perform_name="pixie-cizu";
@@ -63,7 +63,7 @@ int perform(object me, object target)
 		if(dodge_skill<=0)
 			dodge_skill=0;
 		
-		//¸ù¾İÉí·¨µÄ¸ßµÍÀ´¾ö¶¨´Ì×ãµÄÊ±¼ä¡£
+		//æ ¹æ®èº«æ³•çš„é«˜ä½æ¥å†³å®šåˆºè¶³çš„æ—¶é—´ã€‚
 		if(me->query("dex")>22&&me->query("dex")>target->query("dex"))
 			cizu_busy=me->query_dex();
 		else
@@ -74,16 +74,16 @@ int perform(object me, object target)
 		{
 		    if(target->query_temp("pixie/cimu"))
 		 {
-			msg = HIB "\n³Ã$nË«Ä¿Ê§Ã÷Ö®Ê±£¬$NÒ»Éù¼âĞ¦£¬Ê¹³ö±ÙĞ°½£·¨¡¸´Ì×ã¡¹Ö®¼¼¡£\n"NOR;
+			msg = HIB "\nè¶$nåŒç›®å¤±æ˜ä¹‹æ—¶ï¼Œ$Nä¸€å£°å°–ç¬‘ï¼Œä½¿å‡ºè¾Ÿé‚ªå‰‘æ³•ã€Œåˆºè¶³ã€ä¹‹æŠ€ã€‚\n"NOR;
 			ap=ap+random(ap);
 		}
 			if(me->query_temp("pixie/guimei") >0 )
                     {
-                    msg += HIB "$NµÄÉíÓ°ÓÌÈç¹í÷ÈÒ»°ã£¬É²ÄÇ¼ä±äµÃÁé»ÃÒì³£¡£\n"NOR;
+                    msg += HIB "$Nçš„èº«å½±çŠ¹å¦‚é¬¼é­…ä¸€èˆ¬ï¼Œåˆ¹é‚£é—´å˜å¾—çµå¹»å¼‚å¸¸ã€‚\n"NOR;
                     ap=ap+random(ap);
                     }
 
-		msg += HIB "$NÍ»È»Ò»¸ö°«Éí£¬Õ£ÑÛ¼äÆ®µ½$nÉíÇ°£¬ÊÖÖĞ"+weapon->query("name")+"Á¬´Ì$nË«×ãÒªÑ¨¡£\n"NOR;
+		msg += HIB "$Nçªç„¶ä¸€ä¸ªçŸ®èº«ï¼Œçœ¨çœ¼é—´é£˜åˆ°$nèº«å‰ï¼Œæ‰‹ä¸­"+weapon->query("name")+"è¿åˆº$nåŒè¶³è¦ç©´ã€‚\n"NOR;
 
 		
 		if( wizardp(me) &&me->query("env/pixie_test"))
@@ -94,7 +94,7 @@ int perform(object me, object target)
 
         if( random(ap+dp) < dp )
         {
-				msg += HIG "$nÎÅÓĞÒì¶¯£¬ÖªÊÇ$NÊ©Õ¹¹ÖÕĞ£¬Ã¦ÌáÆøÏò¿ÕÖĞÔ¾Æğ£¬½Ó×ÅÒ»¸ö·­Éí£¬ÂäÔÚÔ¶´¦¡£\n"NOR;	
+				msg += HIG "$né—»æœ‰å¼‚åŠ¨ï¼ŒçŸ¥æ˜¯$Næ–½å±•æ€ªæ‹›ï¼Œå¿™ææ°”å‘ç©ºä¸­è·ƒèµ·ï¼Œæ¥ç€ä¸€ä¸ªç¿»èº«ï¼Œè½åœ¨è¿œå¤„ã€‚\n"NOR;	
 	            me->start_busy(1 + random(1));
    					me->delete_temp("pixie_performtime");
         }
@@ -103,17 +103,17 @@ int perform(object me, object target)
 				&&random(target->query_temp("pixie_times/cizu"))>1+random(10)
 				&&random(target->query_int())>random(me->query_int()))
 				{
-				msg += HIG"$pÏÈÇ°ÒÑ¼û¹ı´ËÕĞ£¬ĞÄÖĞÂÔÓĞ·À±¸£¬µ±¼´Ïòºó¼±ÍË£¬±Ü¿ªÕâÒ»ÕĞ¡£\n" NOR;
+				msg += HIG"$på…ˆå‰å·²è§è¿‡æ­¤æ‹›ï¼Œå¿ƒä¸­ç•¥æœ‰é˜²å¤‡ï¼Œå½“å³å‘åæ€¥é€€ï¼Œé¿å¼€è¿™ä¸€æ‹›ã€‚\n" NOR;
 				me->start_busy(1 + random(1));
 				me->delete_temp("pixie_performtime");
 				}
 			else
 			{
-					msg += HIR "$nÖª¾õÉíÇ°¾¢·çÆËÀ´£¬ÖªµÀ´óÊÂ²»Ãë£¬¾ª»ÅÖĞÖ»¾õË«×ãÒ»Âé£¬½Ó×ÅÏÂÉíÊ§È¥Öª¾õ¡£\n"NOR;	
+					msg += HIR "$nçŸ¥è§‰èº«å‰åŠ²é£æ‰‘æ¥ï¼ŒçŸ¥é“å¤§äº‹ä¸ç§’ï¼ŒæƒŠæ…Œä¸­åªè§‰åŒè¶³ä¸€éº»ï¼Œæ¥ç€ä¸‹èº«å¤±å»çŸ¥è§‰ã€‚\n"NOR;	
 					target->add_temp("apply/dodge",  -dodge_skill);
 					target->set_temp("pixie/cizu",1);
 					target->set_temp("cannot_move",1);
-					target->set_temp("cannot_move_msg","ÄãË«×ãÒªÑ¨±»´ÌÖĞ£¬ÄÄÀï»¹ÄÜÒÆ¶¯°ë²½¡£");
+					target->set_temp("cannot_move_msg","ä½ åŒè¶³è¦ç©´è¢«åˆºä¸­ï¼Œå“ªé‡Œè¿˜èƒ½ç§»åŠ¨åŠæ­¥ã€‚");
 					target->add_temp("pixie_times/cizu",1 );
 					target->add("eff_qi",-(random((int)me->query_skill("pixie-jian"))*4/3));
 					       if( userp(me) )
@@ -151,6 +151,6 @@ void remove_effect(object target,int dodge_skill)
 			target->delete_temp("cannot_move_msg");
 
 	        if(target->is_fighting())
-			message_vision(HIG"$NÖÕÓÚ³å¿ªÏÂÉíÑ¨µÀ£¬Ë«×ãĞĞ¶¯»Ö¸´Õı³£¡£\n");
+			message_vision(HIG"$Nç»ˆäºå†²å¼€ä¸‹èº«ç©´é“ï¼ŒåŒè¶³è¡ŒåŠ¨æ¢å¤æ­£å¸¸ã€‚\n");
 			return;
 }

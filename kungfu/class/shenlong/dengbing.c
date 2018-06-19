@@ -1,16 +1,16 @@
 //Cracked by Roath
-// deng bingchun µË±ş´º
+// deng bingchun é‚“ç‚³æ˜¥
 
 inherit NPC;
 // inherit F_MASTER;
 
 void create()
 {
-	set_name("µË±ş´º", ({ "deng bingchun","deng" }));
+	set_name("é‚“ç‚³æ˜¥", ({ "deng bingchun","deng" }));
 //      set("nickname", "");
 	set("long",
-		"ÕÅµ­ÔÂµÄµÜ×Ó¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"å¼ æ·¡æœˆçš„å¼Ÿå­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 33);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -48,10 +48,10 @@ void create()
 
 	prepare_skill("strike", "huagu-mianzhang");
 
-	create_family("ÉñÁú½Ì", 3, "ºÚÁúÃÅµÜ×Ó");
+	create_family("ç¥é¾™æ•™", 3, "é»‘é¾™é—¨å¼Ÿå­");
 
 //      set("inquiry", ([
-//              "ÃØ¼®" : (: ask_me :),
+//              "ç§˜ç±" : (: ask_me :),
 //      ]));
 
 //      set("book_count", 1);

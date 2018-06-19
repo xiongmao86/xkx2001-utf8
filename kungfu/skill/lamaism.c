@@ -14,12 +14,12 @@ int valid_learn(object me)
 	lvl = (int)me->query_skill("lamaism", 1);
 
 	if(me->query("class") != "lama" && lvl > 39)
-		return notify_fail("你未入佛门，尘缘不断，无法继续修持密宗神法。\n");
+		return notify_fail("浣犳湭鍏ヤ經闂紝灏樼紭涓嶆柇锛屾棤娉曠户缁慨鎸佸瘑瀹楃娉曘�俓n");
 
 	return 1;
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("密宗心法只能靠学(learn)来提高。\n");
+	return notify_fail("瀵嗗畻蹇冩硶鍙兘闈犲(learn)鏉ユ彁楂樸�俓n");
 }

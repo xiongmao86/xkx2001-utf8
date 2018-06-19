@@ -31,6 +31,6 @@ void let_know(object me)
         me->add_temp("apply/defense", amount);
         me->delete_temp("cimu_power");
         me->delete_temp("pixie/cimu");
-        tell_object(me, HIC"你的视力恢复过来了。\n"NOR);
+        tell_object(me, HIC"浣犵殑瑙嗗姏鎭㈠杩囨潵浜嗐�俓n"NOR);
 }
 

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// juezhao.c ¼ÀÑªÉñµ¶ 
+// juezhao.c ç¥­è¡€ç¥žåˆ€ 
 
 #include <ansi.h>
 
@@ -16,29 +16,29 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("¼ÀÑªÉñµ¶Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç¥­è¡€ç¥žåˆ€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	weapon = me->query_temp("weapon");
 	if( weapon->query("skill_type") != "blade" )
-                return notify_fail("ÄãÊÖÖÐÎÞµ¶£¬ÈçºÎÊ¹µÃ¼ÀÑªÉñµ¶£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— åˆ€ï¼Œå¦‚ä½•ä½¿å¾—ç¥­è¡€ç¥žåˆ€ï¼Ÿ\n");
 
 	if( me->query_str() < 25 )
-		return notify_fail("ÄãµÄ±ÛÁ¦²»×ãÒÔÊ¹ÓÃÑªµ¶¾øÕÐ£¡\n");
+		return notify_fail("ä½ çš„è‡‚åŠ›ä¸è¶³ä»¥ä½¿ç”¨è¡€åˆ€ç»æ‹›ï¼\n");
 
 	if( me->query_skill("longxiang-banruo", 1) < 80
 	&& me->query_skill("xiaowuxiang", 1) < 80)
-		return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹¼ÀÑªÉñµ¶£¡\n");
+		return notify_fail("ä½ çš„é¾™è±¡èˆ¬è‹¥åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•ç¥­è¡€ç¥žåˆ€ï¼\n");
 
 	if( me->query_skill_mapped("force") != "longxiang-banruo"
 	&& me->query_skill_mapped("force") != "xiaowuxiang")
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¼ÀÑªÉñµ¶µÄÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸Žç¥­è¡€ç¥žåˆ€çš„æ°”è·¯ç›¸æ‚–ï¼\n");
 
 	if( me->query_skill("xue-dao", 1) < 120 )
-		return notify_fail("ÄãµÄÑªµ¶»ðºîÎ´µ½£¬²»»áÊ¹¾øÕÐ£¡\n");
+		return notify_fail("ä½ çš„è¡€åˆ€ç«ä¾¯æœªåˆ°ï¼Œä¸ä¼šä½¿ç»æ‹›ï¼\n");
 
 	if( me->query("neili") <= 800 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ¼ÀÑªÉñµ¶£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨ç¥­è¡€ç¥žåˆ€ï¼\n");
 
-	message_vision(HIR "$NÍ»È»µ¹×ªµ¶·æ¶Ô×Å×Ô¼º¶îÍ·ÃÍ¿³Ò»µ¶£¬±©ºÈÒ»Éù£º¿´ÕÐ£¡½¦ÂúÏÊÑª¡¢·º×ÅÑª¹âµÄµ¶ÉíÈ´ÓÖ·Â·ð»¯³ÉÒ»Æ¬Ñªº££¬ÁýÕÖ×¡$nµÄÉíÓ°¡£\n\n" NOR, me, target);
+	message_vision(HIR "$Nçªç„¶å€’è½¬åˆ€é”‹å¯¹ç€è‡ªå·±é¢å¤´çŒ›ç ä¸€åˆ€ï¼Œæš´å–ä¸€å£°ï¼šçœ‹æ‹›ï¼æº…æ»¡é²œè¡€ã€æ³›ç€è¡€å…‰çš„åˆ€èº«å´åˆä»¿ä½›åŒ–æˆä¸€ç‰‡è¡€æµ·ï¼Œç¬¼ç½©ä½$nçš„èº«å½±ã€‚\n\n" NOR, me, target);
 
    // take into account both attacker and victem's shen
 	shen1 = 0 - me->query("shen");

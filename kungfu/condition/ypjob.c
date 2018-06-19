@@ -9,7 +9,7 @@ int update_condition(object me, int duration)
 	me->apply_condition("ypjob", duration - 1);
 	if (duration == 1 ){
 	me->add("yipin/failure", 1);
-	tell_object(me, "青铁令时限已到！\n");
+	tell_object(me, "闈掗搧浠ゆ椂闄愬凡鍒帮紒\n");
 	me->apply_condition("ypjob", 0);
 	return 1; 
 	}

@@ -14,8 +14,8 @@ int update_condition(object me, int duration)
 		me->unconcious();
 		return 0;
 	} else if( duration > limit/2 ) {
-		tell_object(me, "你觉得脑中昏昏沉沉，心中空荡荡的，直想躺下来睡一觉。\n");
-		message("vision", me->name() + "摇头晃脑地站都站不稳，显然是蒙汗药的药力发作了。\n",
+		tell_object(me, "浣犺寰楄剳涓槒鏄忔矇娌夛紝蹇冧腑绌鸿崱鑽＄殑锛岀洿鎯宠汉涓嬫潵鐫′竴瑙夈�俓n");
+		message("vision", me->name() + "鎽囧ご鏅冭剳鍦扮珯閮界珯涓嶇ǔ锛屾樉鐒舵槸钂欐睏鑽殑鑽姏鍙戜綔浜嗐�俓n",
 			environment(me), me);
 	}
 

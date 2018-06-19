@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tianji-xuangong.c ÌÒ»¨ Ìì»úÐþ¹¦
+// tianji-xuangong.c æ¡ƒèŠ± å¤©æœºçŽ„åŠŸ
 // Ryu
 
 inherit FORCE;
@@ -17,10 +17,10 @@ int valid_learn(object me)
 	nh = (int)me->query_skill("tianji-xuangong", 1);
 
 	if ( nb < 120 && nb <= nh )
-		return notify_fail("ÄãµÄÆæÃÅ¶Ý¼×ÐÞÎª²»¹»£¬ÎÞ·¨Áì»á¸ü¸ßÉîµÄÌì»úÐþ¹¦¡£\n");
+		return notify_fail("ä½ çš„å¥‡é—¨éç”²ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šæ›´é«˜æ·±çš„å¤©æœºçŽ„åŠŸã€‚\n");
 
 	if ( nf < 10 || nf/2 < nh/3 )
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬ÎÞ·¨Áì»áÌì»úÐþ¹¦¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šå¤©æœºçŽ„åŠŸã€‚\n");
 
 	return 1;
 }
@@ -28,7 +28,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-	return notify_fail("Ìì»úÐþ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("å¤©æœºçŽ„åŠŸåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢žåŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

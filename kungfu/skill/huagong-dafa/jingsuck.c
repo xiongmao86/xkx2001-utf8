@@ -17,30 +17,30 @@ int exert(object me, object target)
         || target->query("id") == "shangshan" 
         || target->query("id") == "mengzhu" 
         || target->query("id") == "fae" )
-                return notify_fail("ÄãÒªÎüÈ¡Ë­µÄ¾«Éñ£¿\n");
+                return notify_fail("ä½ è¦å¸å–è°çš„ç²¾ç¥žï¼Ÿ\n");
 
         if ( me->query_temp("sucked") )
-                return notify_fail("Äã¸Õ¸ÕÎüÈ¡¹ý¾«Éñ£¡\n");
+                return notify_fail("ä½ åˆšåˆšå¸å–è¿‡ç²¾ç¥žï¼\n");
 
         if( objectp(me->query_temp("weapon")) && me->query_skill("huagong-dafa",1) < 60)
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨¹¦Á¦²»¹»£¬±ØÐë¿ÕÊÖ²ÅÄÜÊ©ÓÃ»¯¹¦´ó·¨ÎüÈË¾«Á¦£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•åŠŸåŠ›ä¸å¤Ÿï¼Œå¿…é¡»ç©ºæ‰‹æ‰èƒ½æ–½ç”¨åŒ–åŠŸå¤§æ³•å¸äººç²¾åŠ›ï¼\n");
 
         if( !me->is_fighting() || !target->is_fighting() || !living(target) )
-                return notify_fail("Äã±ØÐëÔÚÕ½¶·ÖÐ²ÅÄÜÎüÈ¡¶Ô·½µÄ¾«Éñ£¡\n");
+                return notify_fail("ä½ å¿…é¡»åœ¨æˆ˜æ–—ä¸­æ‰èƒ½å¸å–å¯¹æ–¹çš„ç²¾ç¥žï¼\n");
 
         if( (int)me->query_skill("huagong-dafa",1) < 45 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨¹¦Á¦²»¹»£¬²»ÄÜÎüÈ¡¶Ô·½µÄ¾«Éñ¡£\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•åŠŸåŠ›ä¸å¤Ÿï¼Œä¸èƒ½å¸å–å¯¹æ–¹çš„ç²¾ç¥žã€‚\n");
 
         if( (int)me->query("neili",1) < 10 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃ»¯¹¦´ó·¨¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨åŒ–åŠŸå¤§æ³•ã€‚\n");
 
         if( (int)target->query("jing") < (int)target->query("max_jing") / 5 
          || (int)target->query("jingli") < (int)target->query("max_jingli") / 10 )
                 return notify_fail( target->name() +
-                        "ÒÑ¾­¾«Éñ»ÁÉ¢£¬ÄãÒÑ¾­ÎÞ·¨´ÓËûÌåÄÚÎüÈ¡¾«Á¦ÁË£¡\n");
+                        "å·²ç»ç²¾ç¥žæ¶£æ•£ï¼Œä½ å·²ç»æ— æ³•ä»Žä»–ä½“å†…å¸å–ç²¾åŠ›äº†ï¼\n");
 
         message_vision(
-                HIR "$NÍ»È»ÉñÃØµÄÒ»Ð¦£¬Ë«ÕÆÒ»Ç°Ò»áá¶Ô×¼$nµÄÌ«ÑôÑ¨ÅÄÁË¹ýÀ´£¡\n\n" NOR,
+                HIR "$Nçªç„¶ç¥žç§˜çš„ä¸€ç¬‘ï¼ŒåŒæŽŒä¸€å‰ä¸€å¾Œå¯¹å‡†$nçš„å¤ªé˜³ç©´æ‹äº†è¿‡æ¥ï¼\n\n" NOR,
                 me, target );
 
         if( !target->is_killing(me) ) target->kill_ob(me);
@@ -54,8 +54,8 @@ int exert(object me, object target)
 
         if( random(sp+dp) > dp )
         {
-                tell_object(target, HIR "ÄãÃÍ¾õ¶î½ÇÁ½²àÈçÕë´Ì°ã¾çÍ´£¬ÉñÖ¾ÃÔÀ§£¬Í·ÄÔÖÐÒ»Æ¬¿Õ°×£¡\n" NOR);
-                tell_object(me, HIG "Äã¾õµÃ" + target->name() + "µÄ¾«Á¦×ÔÊÖÕÆÔ´Ô´²»¾øµØÁ÷ÁË½øÀ´¡£\n" NOR);
+                tell_object(target, HIR "ä½ çŒ›è§‰é¢è§’ä¸¤ä¾§å¦‚é’ˆåˆºèˆ¬å‰§ç—›ï¼Œç¥žå¿—è¿·å›°ï¼Œå¤´è„‘ä¸­ä¸€ç‰‡ç©ºç™½ï¼\n" NOR);
+                tell_object(me, HIG "ä½ è§‰å¾—" + target->name() + "çš„ç²¾åŠ›è‡ªæ‰‹æŽŒæºæºä¸ç»åœ°æµäº†è¿›æ¥ã€‚\n" NOR);
 
                 target->receive_damage("jing", (int)me->query_skill("huagong-dafa", 1)/10 );
 
@@ -78,7 +78,7 @@ int exert(object me, object target)
         }
         else
         {       
-                message_vision(HIY "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬»úÁéµØÉÁÁË¿ªÈ¥¡£\n" NOR, me, target);
+                message_vision(HIY "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼å›¾ï¼Œæœºçµåœ°é—ªäº†å¼€åŽ»ã€‚\n" NOR, me, target);
                 me->start_busy(3);
                 call_out("del_sucked", 4, me);
         }

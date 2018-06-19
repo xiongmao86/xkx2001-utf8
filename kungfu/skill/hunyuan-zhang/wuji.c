@@ -1,5 +1,5 @@
 //Cracked by Roath
-// wuji.c »ìÔªÎŞ¼«
+// wuji.c æ··å…ƒæ— æ
 
 #include <ansi.h>
 
@@ -15,40 +15,40 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("»ìÔªÎŞ¼«Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("æ··å…ƒæ— æåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("wuji") )
-		return notify_fail("ÄãÒÑÔÚÊ¹ÓÃ»ìÔªÎŞ¼«ÁË£¡\n");
+		return notify_fail("ä½ å·²åœ¨ä½¿ç”¨æ··å…ƒæ— æäº†ï¼\n");
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("¿ÕÊÖ²ÅÄÜÊ©Õ¹»ìÔªÎŞ¼«£¡\n");
+		return notify_fail("ç©ºæ‰‹æ‰èƒ½æ–½å±•æ··å…ƒæ— æï¼\n");
 
 	if( me->query_skill_mapped("strike") != "hunyuan-zhang" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç»ìÔªÕÆ£¬²»ÄÜÊ©Õ¹»ìÔªÎŞ¼«£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éæ··å…ƒæŒï¼Œä¸èƒ½æ–½å±•æ··å…ƒæ— æï¼\n");
 
 	if( me->query_skill_prepared("strike") != "hunyuan-zhang" )
-                return notify_fail("ÄãËù±¸µÄ²¢·Ç»ìÔªÕÆ£¬²»ÄÜÊ©Õ¹»ìÔªÎŞ¼«£¡\n");
+                return notify_fail("ä½ æ‰€å¤‡çš„å¹¶éæ··å…ƒæŒï¼Œä¸èƒ½æ–½å±•æ··å…ƒæ— æï¼\n");
 
 	if( me->query_skill_mapped("force") != "zixia-gong" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç×ÏÏ¼¹¦£¬Ê©Õ¹²»³ö»ìÔª¾¢£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç´«éœåŠŸï¼Œæ–½å±•ä¸å‡ºæ··å…ƒåŠ²ï¼\n");
 
 	if( me->query_skill("force") < 140 )
-		return notify_fail("ÄãµÄ×ÏÏ¼¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹»ìÔª¾¢£¡\n");
+		return notify_fail("ä½ çš„ç´«éœåŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•æ··å…ƒåŠ²ï¼\n");
 
 	if( me->query_skill("strike") < 135 )
-		return notify_fail("»ìÔªÎŞ¼«ĞèÒª¾«Õ¿µÄ»ìÔªÕÆ·½ÄÜÓĞĞ§Ê©Õ¹£¡\n");
+		return notify_fail("æ··å…ƒæ— æéœ€è¦ç²¾æ¹›çš„æ··å…ƒæŒæ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	if( me->query("neili") <= 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ»ìÔªÎŞ¼«£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨æ··å…ƒæ— æï¼\n");
 	if( me->query("jingli") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃ»ìÔªÎŞ¼«£¡\n");	
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨æ··å…ƒæ— æï¼\n");	
 
 	if( me->query_skill_prepared("cuff") == "pishi-poyu" ) {
                 me->set_temp("restore", 1);
                 me->prepare_skill("cuff");
         }
 
-	message_vision(MAG "\n$NÔËÆğ×ÏÏ¼¹¦£¬È«Éí·ºÆğË¿Ë¿×ÏÆø£¬½ô½Ó×Å·­ÕÆÅü³öÒ»¹ÉÆø¾¢£¬ÎŞÉùÎŞÏ¢µØÓ¿Ïò$n£¡\n\n" NOR, me, target);
+	message_vision(MAG "\n$Nè¿èµ·ç´«éœåŠŸï¼Œå…¨èº«æ³›èµ·ä¸ä¸ç´«æ°”ï¼Œç´§æ¥ç€ç¿»æŒåŠˆå‡ºä¸€è‚¡æ°”åŠ²ï¼Œæ— å£°æ— æ¯åœ°æ¶Œå‘$nï¼\n\n" NOR, me, target);
 	me->set_temp("wuji", 1);
 
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));

@@ -20,31 +20,31 @@ int perform(object me, object target)
         if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("áÔÉ½½£·¨´ß¶¯ÄÚ¾¢µÄ·¨ÃÅìóÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åµ©å±±å‰‘æ³•å‚¬åŠ¨å†…åŠ²çš„æ³•é—¨ç¥—èƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon) || weapon->query("skill_type") != "sword" )
-                return notify_fail("ÄãÊÖÖÐÎÞ½££¬ÈçºÎÔË¾¢ì¶½££¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œå¦‚ä½•è¿åŠ²æ–¼å‰‘ï¼Ÿ\n");
 
         if( me->query_temp("songshan_attack") )
-                return notify_fail("ÄãµÄ½£ÉÏÕýÔÚ»ýÐî¾¢Á¦£¡\n");
+                return notify_fail("ä½ çš„å‰‘ä¸Šæ­£åœ¨ç§¯è“„åŠ²åŠ›ï¼\n");
         
         if( me->query_temp("songshan_wait") )
-                return notify_fail("Äã¸Õ²Å³ö½££¬ÒÑ´óºÄÕæÔª£¬ÏÖÔÚÎÞ·¨ÔÙÐÐÐî¾¢£¡\n");
+                return notify_fail("ä½ åˆšæ‰å‡ºå‰‘ï¼Œå·²å¤§è€—çœŸå…ƒï¼ŒçŽ°åœ¨æ— æ³•å†è¡Œè“„åŠ²ï¼\n");
 
         if( me->query_skill("songshan-jian",1) < 100 )
-                return notify_fail("ÄãµÄáÔÉ½½£·¨ÐÞÎª²»×ã£¬´ß¶¯ÄÚ¾¢ÒàÎÞÓÃ´¦£¡\n");
+                return notify_fail("ä½ çš„åµ©å±±å‰‘æ³•ä¿®ä¸ºä¸è¶³ï¼Œå‚¬åŠ¨å†…åŠ²äº¦æ— ç”¨å¤„ï¼\n");
 
         if( me->query_skill("force", 1) < 100 )
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»×ã£¬´ß¶¯ÄÚ¾¢ÒàÎÞÓÃ´¦£¡\n");
+                return notify_fail("ä½ çš„å†…åŠŸä¿®ä¸ºä¸è¶³ï¼Œå‚¬åŠ¨å†…åŠ²äº¦æ— ç”¨å¤„ï¼\n");
 
         if( me->query("max_neili") <= 2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Éîºñ£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿæ·±åŽšï¼\n");
 
         if( me->query("neili") <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
 
         if( me->query("jingli") <= 1000 )
-                return notify_fail("ÄãµÄ¾«Á¦²»×ã£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ï¼\n");
 
         skill = me->query_skill("songshan-jian",1);
 
@@ -56,9 +56,9 @@ int perform(object me, object target)
 	
 	me->add_temp("apply/speed", -damage);
 
-        message_vision(YEL"$NÂýÂýÌáÆð"+weapon->name()+YEL"£¬½£¼â¶Ô×¼ÁË$nÐØ¿Ú¡£\n"NOR, me,target);
+        message_vision(YEL"$Næ…¢æ…¢æèµ·"+weapon->name()+YEL"ï¼Œå‰‘å°–å¯¹å‡†äº†$nèƒ¸å£ã€‚\n"NOR, me,target);
 	if (cloth->query("material") == "cloth")
-        message_vision(HIY"µ«¼û$NÓÒÊÖÒÂÐä¹ÄÁËÆðÀ´£¬ÓÌËÆ³Ô±¥ÁË·çµÄ·«ÅñÒ»°ã£¬×óÊÖÒÂÐäÆ½´¹£¬ÓëÑ°³£ÎÞÒì£¬×ã¼û$PÈ«Éí¾¢Á¦¶¼¼¯ÖÐµ½ÓÒ±ÛÖ®ÉÏ£¬ÄÚÁ¦¹Äµ´£¬Á¬ÒÂÐä¶¼ÓûÕÍÁÑ£¬Ö±ÊÇ·ÇÍ¬Ð¡¿É¡£\n"NOR, me,target);
+        message_vision(HIY"ä½†è§$Nå³æ‰‹è¡£è¢–é¼“äº†èµ·æ¥ï¼ŒçŠ¹ä¼¼åƒé¥±äº†é£Žçš„å¸†ç¯·ä¸€èˆ¬ï¼Œå·¦æ‰‹è¡£è¢–å¹³åž‚ï¼Œä¸Žå¯»å¸¸æ— å¼‚ï¼Œè¶³è§$På…¨èº«åŠ²åŠ›éƒ½é›†ä¸­åˆ°å³è‡‚ä¹‹ä¸Šï¼Œå†…åŠ›é¼“è¡ï¼Œè¿žè¡£è¢–éƒ½æ¬²èƒ€è£‚ï¼Œç›´æ˜¯éžåŒå°å¯ã€‚\n"NOR, me,target);
 
         me->set_temp("songshan_attack", 1); 
         me->add_temp("songshan_xuli", 1); 
@@ -86,11 +86,11 @@ void checking(object me, object target, object weapon, int skill, int damage)
 	xuli = me->query_temp("songshan_xuli");
 
                 if( wizardp(me) )
-                        tell_object(me,"áÔÉ½½£ÐîÁ¦ÒÑÓÐ"+xuli+"£¬ÐèÒª"+skill*5+"¡£\n");
+                        tell_object(me,"åµ©å±±å‰‘è“„åŠ›å·²æœ‰"+xuli+"ï¼Œéœ€è¦"+skill*5+"ã€‚\n");
 
 	if( !me->is_fighting() )
 	{
-		message_vision("\n$N»º»º´¹ÏÂÁËÊÖ±Û£¬½«¸½×Åì¶"+weapon->name()+"ÉÏµÄÄÚÁ¦É¢È¥¡£\n", me);
+		message_vision("\n$Nç¼“ç¼“åž‚ä¸‹äº†æ‰‹è‡‚ï¼Œå°†é™„ç€æ–¼"+weapon->name()+"ä¸Šçš„å†…åŠ›æ•£åŽ»ã€‚\n", me);
 		remove_effect(me, weapon, damage);
 		return ;
 	}
@@ -108,13 +108,13 @@ void checking(object me, object target, object weapon, int skill, int damage)
 	else if(  (int)me->query("neili") < skill ||(int)me->query("jingli") < skill )
 	{
 	if (cloth->query("material") == "cloth")
-        message_vision("$N½£ÉÏÄÚÁ¦Ò»ËÉ£¬ÓÒÊÖÒÂÐä´¹ÁËÏÂÀ´¡£\n", me,target);
+        message_vision("$Nå‰‘ä¸Šå†…åŠ›ä¸€æ¾ï¼Œå³æ‰‹è¡£è¢–åž‚äº†ä¸‹æ¥ã€‚\n", me,target);
 		return ;
 	}
 
 	else if(xuli > skill*5){
 		
-	//Ðî¾¢Íê³É£¬¹¥»÷
+	//è“„åŠ²å®Œæˆï¼Œæ”»å‡»
 	me->set_temp("s_hit",1);
 	me->add_temp("apply/attack", skill);
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
@@ -133,7 +133,7 @@ void checking(object me, object target, object weapon, int skill, int damage)
 }
 void checking2(object me, object weapon, int damage)
 {
-	tell_object(me,"Äã¾õµÃµ¤ÌïÖÐµÄÄÚÏ¢½¥½¥ÖØÐÐÄý¾ÛÁË¡£\n");
+	tell_object(me,"ä½ è§‰å¾—ä¸¹ç”°ä¸­çš„å†…æ¯æ¸æ¸é‡è¡Œå‡èšäº†ã€‚\n");
 	me->delete_temp("songshan_wait"); 
 }
 

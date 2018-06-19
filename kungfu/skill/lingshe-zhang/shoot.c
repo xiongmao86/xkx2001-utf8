@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shoot ·¢Éä°µÆ÷
+// shoot å‘å°„æš—å™¨
 // maco
 
 #include <ansi.h>
@@ -17,62 +17,62 @@ int perform(object me, object target)
 	int poi_amount, level, exp1, exp2;
 
 	if( environment(me)->query("no_fight"))
-		return notify_fail("ÕâÀï²»ÄÜ·¢Éä°µÆ÷¡£\n");
+		return notify_fail("è¿™é‡Œä¸èƒ½å‘å°„æš—å™¨ã€‚\n");
 
 	if( !target && me->is_fighting()) target = offensive_target(me);
 
 	if( !target )
-		return notify_fail("ÄãÒª¶ÔË­·¢Éä°µÆ÷£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°å‘å°„æš—å™¨ï¼Ÿ\n");
 		
 	if( target == me )
-		return notify_fail("¶Ô×Ô¼º·¢Éä°µÆ÷£¿\n");
+		return notify_fail("å¯¹è‡ªå·±å‘å°„æš—å™¨ï¼Ÿ\n");
 
 	if( t && (time()-t) < 10 )
-                return notify_fail("Äã¸Õ¸Õ²Å·¢ÉäÁË°µÆ÷£¬¶ÌÊ±¼äÄÚ²»ÒË¹Ê¼¼ÖØÊ©£¡\n");
+                return notify_fail("ä½ åˆšåˆšæ‰å‘å°„äº†æš—å™¨ï¼ŒçŸ­æ—¶é—´å†…ä¸å®œæ•…æŠ€é‡æ–½ï¼\n");
 
 	if (!objectp(weapon = me->query_temp("weapon")))
-		 return notify_fail("Äã±ØĞèÊÖ³ÖÄÜ·¢Éä°µÆ÷µÄÉßÕÈ¡£\n");
+		 return notify_fail("ä½ å¿…éœ€æ‰‹æŒèƒ½å‘å°„æš—å™¨çš„è›‡æ–ã€‚\n");
 
 	type = weapon->query("snake_type");
 
 	if ( !type && weapon->query("id") != "shezhang")
-		return notify_fail("ÄãµÄ"+weapon->name()+"ÉÏ²¢Ã»ÓĞ°µÆ÷»ú¹Ø¡£\n");
+		return notify_fail("ä½ çš„"+weapon->name()+"ä¸Šå¹¶æ²¡æœ‰æš—å™¨æœºå…³ã€‚\n");
 
 	level = (int)me->query_skill("lingshe-zhang", 1);
 	if (level < 40 )
-		return notify_fail("ÄãµÄÁéÉßÕÈ·¨²»¹»æµÊì£¬ÎŞ·¨²Ù×İ·¢Éä°µÆ÷µÄ»ú¹Ø¡£\n");
+		return notify_fail("ä½ çš„çµè›‡æ–æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•æ“çºµå‘å°„æš—å™¨çš„æœºå…³ã€‚\n");
 
 	if ((int)me->query_skill("poison", 1) < 40 )
-		return notify_fail("ÄãµÄ»ù±¾¶¾¼¼ÔìÒèÌ«Ç³£¬ÎŞ·¨²Ù×İ·¢Éä°µÆ÷µÄ»ú¹Ø¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬æ¯’æŠ€é€ è¯£å¤ªæµ…ï¼Œæ— æ³•æ“çºµå‘å°„æš—å™¨çš„æœºå…³ã€‚\n");
 
 	if( me->query_skill_mapped("force") != "hamagong")
-		return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸ÁéÉßÕÈ·¨¡¹ÆøÂ·Ïàã££¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸ã€Œçµè›‡æ–æ³•ã€æ°”è·¯ç›¸æ‚–ï¼\n");
 
 	limbs = target->query("limbs");
 	//level = level/2;
 	poi_amount = level + me->query_skill("poison", 1);
 
 	if( me->query("neili") < poi_amount )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
         if( me->query("jingli") < 50 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 
 	exp1 = me->query("combat_exp");
 	exp2 = target->query("combat_exp");
 
 	if(exp1*3 < exp2 && exp2 > 1000000)
-		return notify_fail("ÄãÁÏÖª"+target->name()+"ÕâµÈÉíÊÖ£¬ÕÈÍ·°µÆ÷Ò²ÄÎºÎËû²»µÃ£¬²»Èç²»·¢£¬ÃâÈÇ³ÜĞ¦¡£\n");
+		return notify_fail("ä½ æ–™çŸ¥"+target->name()+"è¿™ç­‰èº«æ‰‹ï¼Œæ–å¤´æš—å™¨ä¹Ÿå¥ˆä½•ä»–ä¸å¾—ï¼Œä¸å¦‚ä¸å‘ï¼Œå…æƒ¹è€»ç¬‘ã€‚\n");
 
-	message_vision(HIB"$N½«"+weapon->name()+HIB"ÔÚµØÏÂÒ»¶Ù£¬ÎØµÄÒ»Éù¹ÖÏì£¬ÕÈÍ·ÖĞ·É³öÒ»¼şÆæĞÎ°µÆ÷£¬±ÊÖ±Íù$nÉäÈ¥¡£\n"NOR, me, target);
+	message_vision(HIB"$Nå°†"+weapon->name()+HIB"åœ¨åœ°ä¸‹ä¸€é¡¿ï¼Œå‘œçš„ä¸€å£°æ€ªå“ï¼Œæ–å¤´ä¸­é£å‡ºä¸€ä»¶å¥‡å½¢æš—å™¨ï¼Œç¬”ç›´å¾€$nå°„å»ã€‚\n"NOR, me, target);
 
 	me->add("neili", -poi_amount/2);
 	me->add("jingli", -50);
 
 	if( me->query("neili") > random(target->query("neili")) && exp1 > random(exp2) ) {
 
-		message_vision(HIR"ÄÇ°µÆ÷È¥µÃºÃ¿ì£¬ìóÌı$nÒ»Éù²Òº¿£¬ÉĞÎ´¿´Çå°µÆ÷À´Â·£¬ÒÑ±»ÉäÖĞ"+limbs[random(sizeof(limbs))]  +"£¡\n"NOR, me, target);
+		message_vision(HIR"é‚£æš—å™¨å»å¾—å¥½å¿«ï¼Œç¥—å¬$nä¸€å£°æƒ¨åšï¼Œå°šæœªçœ‹æ¸…æš—å™¨æ¥è·¯ï¼Œå·²è¢«å°„ä¸­"+limbs[random(sizeof(limbs))]  +"ï¼\n"NOR, me, target);
 
-		if( type == "¹ÖÉß" || type == "ÁéÉß" )
+		if( type == "æ€ªè›‡" || type == "çµè›‡" )
 			target->apply_condition("bt_poison",
 			poi_amount*3 + target->query_condition("bt_poison"));
 		else
@@ -106,5 +106,5 @@ void remove_shoot(object me)
 {
 	me->delete_temp("baituo/shoot");
 
-        tell_object(me, "ÄãµÄÉßÕÈÀïµÄ°µÆ÷×¼±¸ºÃÁË¡£\n");
+        tell_object(me, "ä½ çš„è›‡æ–é‡Œçš„æš—å™¨å‡†å¤‡å¥½äº†ã€‚\n");
 }

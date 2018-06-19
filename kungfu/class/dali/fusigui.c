@@ -1,5 +1,5 @@
 //Cracked by Roath
-// fusigui.c ¸µË¼¹é
+// fusigui.c å‚…æ€å½’
 
 inherit NPC;
 inherit F_MASTER;
@@ -7,14 +7,14 @@ string ask_me_1();
 
 void create()
 {
-	set_name("¸µË¼¹é", ({ "fu sigui", "fu"}));
-    set("long", "¡¡¡¡Ëû»ÆÉÀñÒ½íÍ·£¬ÊÖ³ÖÒ»¸ùÊìÍ­ÆëÃ¼¹÷¡£¿´ÆğÀ´¿×ÎäÓĞÁ¦¡£\n");
-	set("title","´óÀí¹úÎä½«");
-    set("gender", "ÄĞĞÔ");
+	set_name("å‚…æ€å½’", ({ "fu sigui", "fu"}));
+    set("long", "ã€€ã€€ä»–é»„è¡«è¤šå·¾å¤´ï¼Œæ‰‹æŒä¸€æ ¹ç†Ÿé“œé½çœ‰æ£ã€‚çœ‹èµ·æ¥å­”æ­¦æœ‰åŠ›ã€‚\n");
+	set("title","å¤§ç†å›½æ­¦å°†");
+    set("gender", "ç”·æ€§");
     set("age", 35);
     set("inquiry", ([
-		"¶ÎÕı´¾": "ÎÒ¼ÒÍõÒ¯ÉúĞÔ·çÁ÷¡£",
-		"ÊÖÚÍ" :  (: ask_me_1 :),
+		"æ®µæ­£æ·³": "æˆ‘å®¶ç‹çˆ·ç”Ÿæ€§é£æµã€‚",
+		"æ‰‹è°•" :  (: ask_me_1 :),
 		]));
 	set_skill("cuff", 60);
     set_skill("jinyu-quan", 60);
@@ -41,7 +41,7 @@ void create()
     set("combat_exp", 150000);
     set("attitude", "peaceful");
     set("shen_type", 1);
-    create_family("´óÀí¶Î¼Ò", 15, "µÜ×Ó");
+    create_family("å¤§ç†æ®µå®¶", 15, "å¼Ÿå­");
     setup();
 	carry_object("/d/dali/obj/ycloth")->wear();	
 	carry_object("/d/dali/obj/tonggun")->wield();
@@ -54,8 +54,8 @@ string ask_me_1()
     int i, k;
 
 	if (!(fam = this_player()->query("family"))
-		|| fam["family_name"] != "´óÀí¶Î¼Ò")
-		return RANK_D->query_respect(this_player())+"ÈçÒªÍ¶¹Ù£¬ºÎ²»Ç°ÍùÄÏËÎ£¿";
+		|| fam["family_name"] != "å¤§ç†æ®µå®¶")
+		return RANK_D->query_respect(this_player())+"å¦‚è¦æŠ•å®˜ï¼Œä½•ä¸å‰å¾€å—å®‹ï¼Ÿ";
 
 	skl=this_player()->query_skills();
     sname=sort_array(keys(skl), (: strcmp :) );
@@ -63,11 +63,11 @@ string ask_me_1()
 	{
 		if (skl[sname[i]] < 30) k++;
 	}
-	if (k>2) return RANK_D->query_respect(this_player())+"¹¦Á¦²»¹»£¬²»¹»×Ê¸ñÁìÈ¡ÊÖÚÍ¡£";
+	if (k>2) return RANK_D->query_respect(this_player())+"åŠŸåŠ›ä¸å¤Ÿï¼Œä¸å¤Ÿèµ„æ ¼é¢†å–æ‰‹è°•ã€‚";
 	ob = new("/d/dali/obj/allow-letter1");
 	ob->move(this_player());
-	message_vision("$N»ñµÃÒ»·âÊÖÚÍ¡£\n",this_player());
-	return "ºÃ°É£¬Æ¾Õâ·âÊÖÚÍ£¬Äã¿ÉÒÔÈ¥ÏòÎÀÊ¿³¤ÌôÕ½¡£";
+	message_vision("$Nè·å¾—ä¸€å°æ‰‹è°•ã€‚\n",this_player());
+	return "å¥½å§ï¼Œå‡­è¿™å°æ‰‹è°•ï¼Œä½ å¯ä»¥å»å‘å«å£«é•¿æŒ‘æˆ˜ã€‚";
 }
 #include "/kungfu/class/dali/master.h"
 #include "/kungfu/class/dali/condition.h"

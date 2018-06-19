@@ -1,5 +1,5 @@
 //Cracked by Roath
-// guxu.c ¹ÈĞé
+// guxu.c è°·è™š
 // Modified by xQin 04/01
 
 #include "daozhang.h"
@@ -12,12 +12,12 @@ string ask_me();
 
 void create()
 {
-        set_name("¹ÈĞéµÀ³¤", ({ "guxu daozhang", "guxu" }));
+        set_name("è°·è™šé“é•¿", ({ "guxu daozhang", "guxu" }));
         set("long",
-                "Ëû¾ÍÊÇÓáá·ÑÒµÄµÜ×Ó¹ÈĞéµÀ³¤¡£\n"
-                "Ëû½ñÄêËÄÊ®Ëê£¬Ö÷¹ÜÎäµ±ÅÉµÄË×ÊÂ¡£\n"
-                "ËûÒ²ËãµÃÊÇµÚÈı´úµÜ×ÓÖĞµÄÙ®Ù®Õß¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯ä¿å²±å²©çš„å¼Ÿå­è°·è™šé“é•¿ã€‚\n"
+                "ä»–ä»Šå¹´å››åå²ï¼Œä¸»ç®¡æ­¦å½“æ´¾çš„ä¿—äº‹ã€‚\n"
+                "ä»–ä¹Ÿç®—å¾—æ˜¯ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„ä½¼ä½¼è€…ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -56,12 +56,12 @@ void create()
 
         prepare_skill("strike", "mian-zhang");
 
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 3, "å¼Ÿå­");
         set("class", "taoist");
 
         set("inquiry",
                 ([
-                        "µÀµÂ¾­" : (: ask_me :),
+                        "é“å¾·ç»" : (: ask_me :),
                 ]));
 
         set("book_count", 1);
@@ -78,9 +78,9 @@ void init()
 
         ::init();
 
-        if ( me->query("family/family_name") == "Îäµ±ÅÉ"
+        if ( me->query("family/family_name") == "æ­¦å½“æ´¾"
                 && me->query("wudang/offerring") > me->query("age")*2 )
-                me->set_temp("mark/¹ÈĞé", 1);
+                me->set_temp("mark/è°·è™š", 1);
 }
 
 
@@ -91,18 +91,18 @@ string ask_me()
         object ob;
 
         if (!(fam = this_player()->query("family"))
-            || fam["family_name"] != "Îäµ±ÅÉ")
+            || fam["family_name"] != "æ­¦å½“æ´¾")
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄµÀµÂÕæ¾­²»ÔÚ´Ë´¦¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œæœ¬æ´¾çš„é“å¾·çœŸç»ä¸åœ¨æ­¤å¤„ã€‚";
 
         add("book_count", -1);
         ob = new("/d/wudang/obj/daodejing-ii");
         ob->move(this_player());
 
-        return "ºÃ°É£¬Õâ±¾¡¸µÀµÂ¾­¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+        return "å¥½å§ï¼Œè¿™æœ¬ã€Œé“å¾·ç»ã€ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
 }
 
 

@@ -1,16 +1,16 @@
 //Cracked by Roath
-// mu jianping ãå½£ÆÁ
+// mu jianping æ²å‰‘å±
 
 inherit NPC;
 // inherit F_MASTER;
 
 void create()
 {
-	set_name("ãå½£ÆÁ", ({ "mu jianping","mu" }));
+	set_name("æ²å‰‘å±", ({ "mu jianping","mu" }));
 //      set("nickname", "");
 	set("long",
-		"Ò»ÕÅ¹Ï×ÓÁ³£¬ÈİÃ²ÉõÃÀ¡£\n");
-	set("gender", "Å®ĞÔ");
+		"ä¸€å¼ ç“œå­è„¸ï¼Œå®¹è²Œç”šç¾ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 14);
 	set("attitude", "peaceful");
 	set("shen_type", 0);
@@ -47,10 +47,10 @@ void create()
 
         prepare_skill("cuff", "taiji-quan");
 
-	create_family("ÉñÁú½Ì", 3, "³àÁúÃÅµÜ×Ó");
+	create_family("ç¥é¾™æ•™", 3, "èµ¤é¾™é—¨å¼Ÿå­");
 
 //      set("inquiry", ([
-//              "ÃØ¼®" : (: ask_me :),
+//              "ç§˜ç±" : (: ask_me :),
 //      ]));
 
 //      set("book_count", 1);

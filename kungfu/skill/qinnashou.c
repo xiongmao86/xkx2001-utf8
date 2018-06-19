@@ -1,5 +1,5 @@
 //Cracked by Roath
-//qinnashou.c  ÇÜÄÃÊÖ
+//qinnashou.c  æ“’æ‹¿æ‰‹
 // arthurgu 1999/10
 
 #include <ansi.h>
@@ -8,23 +8,23 @@ inherit F_DBASE;
 inherit F_SSERVER;
 
 string* buwei = ({
-        "ÓÒÊÖÖâ²¿",
-        "ÊÖÍó",
-        "×óÊÖ¹Ø½Ú",
-        "¾±²¿",
-        "¼ç²¿¹Ø½Ú",
-        "±³ĞÄÒªÑ¨",
-        "Ï¥¹Ø½Ú",
-        "ÃüÃÅ"
+        "å³æ‰‹è‚˜éƒ¨",
+        "æ‰‹è…•",
+        "å·¦æ‰‹å…³èŠ‚",
+        "é¢ˆéƒ¨",
+        "è‚©éƒ¨å…³èŠ‚",
+        "èƒŒå¿ƒè¦ç©´",
+        "è†å…³èŠ‚",
+        "å‘½é—¨"
 });
 
 mapping *action = ({
-([      "action" : "$NÊ©³öÇÜÄÃ¾ø¼¼£¬Ò»´íÉí×¥Ïò$nµÄ" + buwei[random(8)] + "",
+([      "action" : "$Næ–½å‡ºæ“’æ‹¿ç»æŠ€ï¼Œä¸€é”™èº«æŠ“å‘$nçš„" + buwei[random(8)] + "",
         "force" : 400,
         "parry" : 5,
         "damage": 80,
         "lvl" : 10,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å†…ä¼¤"
 ]),
 
 });
@@ -34,9 +34,9 @@ int valid_enable(string usage) { return  usage=="hand" || usage=="parry"; }
 int valid_learn(object me)
 {
         if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-                return notify_fail("Á·ÇÜÄÃÊÖÊÖ±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç»ƒæ“’æ‹¿æ‰‹æ‰‹å¿…é¡»ç©ºæ‰‹ã€‚\n");
         if ((int)me->query_skill("douzhuan-xingyi", 1) < 20)
-           return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÎŞ·¨Ñ§ÇÜÄÃÊÖ¡£\n");
+           return notify_fail("ä½ çš„å†…åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦æ“’æ‹¿æ‰‹ã€‚\n");
         return 1;
 }
 
@@ -61,8 +61,8 @@ mapping query_action(object me, object weapon)
         if ((int) me->query_skill("douzhuan-xingyi",1) > random(50) && level > random(240) && me->query("neili") > 300
         && me->query("combat_exp") > random(victim->query("combat_exp")*2) && random(2)==0) {
                 me->add("neili", -50);
-                message_vision(HIC"$NÓÃÇÜÄÃ¼¼¶·È»¼ä×¥×¡ÁË$nµÄ"+bw+"!\n"NOR,me,victim);
-                message_vision(GRN"$NÍË±Ü²»¼°£¬±»$nÇÜÄÃ×¡"+bw+",ĞĞ¶¯²»Ãâ³Ù»ºÏÂÀ´¡£\n"NOR,victim,me);
+                message_vision(HIC"$Nç”¨æ“’æ‹¿æŠ€æ–—ç„¶é—´æŠ“ä½äº†$nçš„"+bw+"!\n"NOR,me,victim);
+                message_vision(GRN"$Né€€é¿ä¸åŠï¼Œè¢«$næ“’æ‹¿ä½"+bw+",è¡ŒåŠ¨ä¸å…è¿Ÿç¼“ä¸‹æ¥ã€‚\n"NOR,victim,me);
                 victim->start_busy(1 + random(level/50));
         }
 
@@ -74,9 +74,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if ((int)me->query("jingli") < 50)
-                return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
         if ((int)me->query("neili") < 50)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªä½äº†ã€‚\n");
         me->receive_damage("jingli", 15);
         me->add("neili", -5);
        

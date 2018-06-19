@@ -1,6 +1,6 @@
 //Cracked by Roath
-// liuchu.c Ñ©»¨Áù³ö
-// maco :²»¿ª·ÅµÄperform£¬code¼òÂª£¬¾ø²»×ãÒÔÑ§Ï°£¡
+// liuchu.c é›ªèŠ±å…­å‡º
+// maco :ä¸å¼€æ”¾çš„performï¼Œcodeç®€é™‹ï¼Œç»ä¸è¶³ä»¥å­¦ä¹ ï¼
 
 #include <ansi.h>
 
@@ -19,22 +19,22 @@ int perform(object me, object target)
         if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("Ñ©»¨Áù³ö¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é›ªèŠ±å…­å‡ºæ”»å‡»åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon) || weapon->query("skill_type") != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÈçºÎÊ©Õ¹¡¸Ñ©»¨Áù³ö¡¹£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œå¦‚ä½•æ–½å±•ã€Œé›ªèŠ±å…­å‡ºã€ï¼Ÿ\n");
 
         if( me->query_skill("xueshan-jian",1) < 100 )
-                return notify_fail("ÄãµÄÑ©É½½£·¨ĞŞÎªÎ´µ½£¬Ê©Õ¹²»ÁË¡¸Ñ©»¨Áù³ö¡¹£¡\n");
+                return notify_fail("ä½ çš„é›ªå±±å‰‘æ³•ä¿®ä¸ºæœªåˆ°ï¼Œæ–½å±•ä¸äº†ã€Œé›ªèŠ±å…­å‡ºã€ï¼\n");
 
         if( me->query("max_neili") <= 1200 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨Ê©Õ¹¡¸Ñ©»¨Áù³ö¡¹¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼Œæ— æ³•æ–½å±•ã€Œé›ªèŠ±å…­å‡ºã€ã€‚\n");
 
         if( me->query("neili") <= 400 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡¸Ñ©»¨Áù³ö¡¹¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•æ–½å±•ã€Œé›ªèŠ±å…­å‡ºã€ã€‚\n");
 
         if( me->query("jingli") <= 400 )
-                return notify_fail("ÄãµÄ¾«Á¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡¸Ñ©»¨Áù³ö¡¹¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ï¼Œæ— æ³•æ–½å±•ã€Œé›ªèŠ±å…­å‡ºã€ã€‚\n");
 
         damage = me->query_skill("xueshan-jian")/6;
         speed = (me->query_skill("xueshan-jian")+me->query_skill("sword") )/240;

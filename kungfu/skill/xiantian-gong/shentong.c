@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shentong.c ÏÈÌì¹¦ ´¿ÑôÉñÍ¨¹¦
+// shentong.c å…ˆå¤©åŠŸ çº¯é˜³ç¥é€šåŠŸ
 #include <ansi.h>
 
 inherit F_DBASE;
@@ -20,36 +20,36 @@ int exert(object me, object target)
 	if( !target )target = me->select_opponent();
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸´¿ÑôÉñÍ¨¹¦¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œçº¯é˜³ç¥é€šåŠŸã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 
 	if( (int)me->query("neili") < 1000  )
 	{
-		 return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		 return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	}
 
 	if( (int)me->query_temp("shentong") )
-					 return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦\ÖĞÁË¡£\n");
+					 return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸ\ä¸­äº†ã€‚\n");
 /*
 	if( !target	||	!me->is_fighting() )
-		return notify_fail("´¿ÑôÉñÍ¨¹¦Ö»ÓĞÔÚÕ½¶·ÖĞ²ÅÄÜÊ¹ÓÃ¡£\n");
+		return notify_fail("çº¯é˜³ç¥é€šåŠŸåªæœ‰åœ¨æˆ˜æ–—ä¸­æ‰èƒ½ä½¿ç”¨ã€‚\n");
 */
 
 	if( me->query("shentong") < 60 )
-		return notify_fail("Äã»¹Î´ÁìÎòºÍÁ·³É´¿ÑôÉñÍ¨¹¦£¡\n");
+		return notify_fail("ä½ è¿˜æœªé¢†æ‚Ÿå’Œç»ƒæˆçº¯é˜³ç¥é€šåŠŸï¼\n");
 
 	if( me->query_skill("force") < 300 )
-		return notify_fail("ÄãµÄĞşÃÅÏÈÌì¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹´¿ÑôÉñÍ¨¹¦£¡\n");
+		return notify_fail("ä½ çš„ç„é—¨å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•çº¯é˜³ç¥é€šåŠŸï¼\n");
 
 	if( me->query_skill("taoism") < 90 )
-		return notify_fail("ÄãµÄµÀÑ§ĞÄ·¨»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹´¿ÑôÉñÍ¨¹¦£¡\n");
+		return notify_fail("ä½ çš„é“å­¦å¿ƒæ³•ç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•çº¯é˜³ç¥é€šåŠŸï¼\n");
 
 
 
 		  message_vision(
-		  HIW "$NÔËÆğ´¿ÑôÉñÍ¨¹¦£¬Æ¬¿ÌÖ®¼ä£¬°×ÆøÁıÕÖÈ«Éí£¬Ë«ÑÛ¾«¹âËÄÉä£¬ÉíÊÖ·ÖÍâ½Ã½¡£¬½øÍËÉñËÙ£¬ÓëÆ½Ê±ÅĞÈôÁ½ÈË¡£\n" NOR, me);
+		  HIW "$Nè¿èµ·çº¯é˜³ç¥é€šåŠŸï¼Œç‰‡åˆ»ä¹‹é—´ï¼Œç™½æ°”ç¬¼ç½©å…¨èº«ï¼ŒåŒçœ¼ç²¾å…‰å››å°„ï¼Œèº«æ‰‹åˆ†å¤–çŸ«å¥ï¼Œè¿›é€€ç¥é€Ÿï¼Œä¸å¹³æ—¶åˆ¤è‹¥ä¸¤äººã€‚\n" NOR, me);
 		  message_vision(
-		  HIG "\nÄã²»½û²ïÒì£¬ÄÑµÀÕâ¾ÍÊÇÍõÖØÑô¶À²½ÎäÁÖ£¬´ò±éÌìÏÂÎŞµĞÊÖµÄ²»´«¾ø¼¼£º´¿ÑôÉñÍ¨¹¦¡£¾İËµµ±ÄêÁ¬È«ÕæÆß×ÓºÍÖÜ²®Í¨Ò²Ã»Á·³É¡£\n" NOR, me);
+		  HIG "\nä½ ä¸ç¦è¯§å¼‚ï¼Œéš¾é“è¿™å°±æ˜¯ç‹é‡é˜³ç‹¬æ­¥æ­¦æ—ï¼Œæ‰“éå¤©ä¸‹æ— æ•Œæ‰‹çš„ä¸ä¼ ç»æŠ€ï¼šçº¯é˜³ç¥é€šåŠŸã€‚æ®è¯´å½“å¹´è¿å…¨çœŸä¸ƒå­å’Œå‘¨ä¼¯é€šä¹Ÿæ²¡ç»ƒæˆã€‚\n" NOR, me);
 
 		  skill = me->query_skill("force");
 		  me->add("neili", -skill*3);

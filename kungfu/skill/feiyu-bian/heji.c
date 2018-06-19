@@ -1,9 +1,9 @@
 //Cracked by Roath
-// heji.c ¡¶¾ÅÒõÕæ¾­¡·±Þ·¨£­¡¸ºÏ»÷¡¹
+// heji.c ã€Šä¹é˜´çœŸç»ã€‹éž­æ³•ï¼ã€Œåˆå‡»ã€
 // xQin 8/99
 /*
-ÈºÐÛ×òÈÕÒÑ¼ûÊ¶ÁËËýÈí±ÞµÄÍþÁ¦£¬²»ÒâËý×óÊÖÉÐÄÜÍ¬Ê±ÓÃµ¶£¬
-Ò»³¤Ò»¶Ì£¬Ò»ÈáÒ»¸Õ£¬ÄÇÊÇÁ½°ã½ØÈ»ÏàÒìµÄ±øÈÐ¡£
+ç¾¤é›„æ˜¨æ—¥å·²è§è¯†äº†å¥¹è½¯éž­çš„å¨åŠ›ï¼Œä¸æ„å¥¹å·¦æ‰‹å°šèƒ½åŒæ—¶ç”¨åˆ€ï¼Œ
+ä¸€é•¿ä¸€çŸ­ï¼Œä¸€æŸ”ä¸€åˆšï¼Œé‚£æ˜¯ä¸¤èˆ¬æˆªç„¶ç›¸å¼‚çš„å…µåˆƒã€‚
 */
 
 #include <ansi.h>
@@ -15,14 +15,14 @@ int perform(object me)
 	int i;
 
 	if( me->query_temp("secondary_weapon") )
-		return notify_fail("ÄãÒÑ¾­×°±¸Á½°ÑÎäÆ÷ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»è£…å¤‡ä¸¤æŠŠæ­¦å™¨äº†ã€‚\n");
 
 	inv = all_inventory(me);
 	for( i=0; i < sizeof(inv); i++ )
 	{
 		short = inv[i]->query("id");
 		if( (short == "bishou" || short == "duanjian" || short == "yuchang jian"
-			|| inv[i]->query("name") == "¶Ìµ¶" || short == "yang dao")
+			|| inv[i]->query("name") == "çŸ­åˆ€" || short == "yang dao")
 			&& mapp(inv[i]->query("weapon_prop")) )
 		{
 			weapon2 = inv[i];
@@ -32,14 +32,14 @@ int perform(object me)
 
 	if( (weapon1 = me->query_temp("weapon"))->query("skill_type") != "whip"
 		|| !objectp(weapon2) )
-		return notify_fail("ÄãÉíÉÏ²¢ÎÞ³ÃÊÖµÄ±øÆ÷£¬ÎÞ·¨½øÐÐ¡¸ºÏ»÷¡¹¡£\n");
+		return notify_fail("ä½ èº«ä¸Šå¹¶æ— è¶æ‰‹çš„å…µå™¨ï¼Œæ— æ³•è¿›è¡Œã€Œåˆå‡»ã€ã€‚\n");
 
 	if( (int)me->query_skill("whip") < 350 )
-		return notify_fail("ÄãµÄ±Þ·¨²»¹»æµÊì£¬ÉÐ²»ÄÜÓëÆäËûÎä¼¼½øÐÐ¡¸ºÏ»÷¡¹¡£\n");
+		return notify_fail("ä½ çš„éž­æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œå°šä¸èƒ½ä¸Žå…¶ä»–æ­¦æŠ€è¿›è¡Œã€Œåˆå‡»ã€ã€‚\n");
 
-	message_vision(HIC"$NÓÒÊÖÒ»¶¶£¬"+ weapon1->name() +
-	HIC"µÇÊ±¾í³ÉÊ®¶à¸ö´ó´óÐ¡Ð¡µÄÈ¦×Ó£¬ºÃ¿´ÒÑ¼«£¬×óÊÖ·­´¦£¬Çà¹âÉÁ¶¯£¬Â¶³öÁËÒ»"+ 
-	weapon2->query("unit") + weapon2->name() +HIC"¡£\n"NOR, me);
+	message_vision(HIC"$Nå³æ‰‹ä¸€æŠ–ï¼Œ"+ weapon1->name() +
+	HIC"ç™»æ—¶å·æˆåå¤šä¸ªå¤§å¤§å°å°çš„åœˆå­ï¼Œå¥½çœ‹å·²æžï¼Œå·¦æ‰‹ç¿»å¤„ï¼Œé’å…‰é—ªåŠ¨ï¼Œéœ²å‡ºäº†ä¸€"+ 
+	weapon2->query("unit") + weapon2->name() +HIC"ã€‚\n"NOR, me);
 
 	weapon2->set("flag", 2);
 	weapon2->wield();

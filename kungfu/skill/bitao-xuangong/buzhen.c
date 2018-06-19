@@ -17,45 +17,45 @@ int exert(object me, object target)
         if (me->is_busy()
         || me->query_temp("pending/exercising")
         || me->query_temp("exit_blocked"))
-                return notify_fail("��������æ���ء�\n");
+                return notify_fail("你现在正忙着呢。\n");
 
         env = environment(me);
         exit = env->query("exits");
 
         if( !env )
-                return notify_fail("����ʲô�ط�Ҳ���ǣ�\n");
+                return notify_fail("这里什么地方也不是！\n");
         if( !env->query("outdoors") )
-                return notify_fail("���ڿռ�̫С����ʩչ������\n");
+                return notify_fail("室内空间太小，阵法施展不开。\n");
         if (env->query("th_buzhen"))
-                return notify_fail("�����Ѳ��������󷨡�\n");
+                return notify_fail("这里已布有奇门阵法。\n");
 /*
         if( k > 1 )
-                return notify_fail("�������ڳ����ݵ������˿������ذ£�\n");
+                return notify_fail("有旁人在场，休得让他人窥了阵法秘奥！\n");
 */
 	if( !present("tie bagua", me)) 
-		return notify_fail("��û��Я�������ԡ�\n");
+		return notify_fail("你没有携带铁八卦。\n");
 
         if( me->query_skill_mapped("force") != "bitao-xuangong")
-                return notify_fail("�����õ��ڹ��롸�����󷨡��ķ���㣣�\n");
+                return notify_fail("你所用的内功与「奇门阵法」心法相悖！\n");
 
         if( me->query_skill("bitao-xuangong", 1) < 90 )
-                return notify_fail("����ڹ���Ϊ���δ������δ���������󷨡���\n");
+                return notify_fail("你的内功修为火候未到，还未领悟「奇门阵法」！\n");
 
         if( me->query("jingli") < me->query("max_jingli") )
-		return notify_fail("��ľ���������������ʩչ�������󷨡���\n");
+		return notify_fail("你的精力不够，不足以施展「奇门阵法」！\n");
 
         if( me->query("jing") < me->query("max_jing") )
-                return notify_fail("��ľ�������������ʩչ�������󷨡���\n");
+                return notify_fail("你的精不够，不足以施展「奇门阵法」！\n");
         
 	if( me->query_skill("qimen-dunjia", 1) < 90 )
-                return notify_fail("������Ŷݼ���Ϊ��������δ���������󷨡���\n");
+                return notify_fail("你的奇门遁甲修为不够，还未领悟「奇门阵法」！\n");
 
         me->set("jing", me->query("max_jing")/2);
         me->set("jingli", me->query("max_jingli")/2);
 
-        msg = HIG"$N���η������������������¶�ʱ�̳�����ɰʯ�ҷɣ�����ɷʱ���ˣ�\n";
-        msg += GRN"��һ�̣�$N�������Σ����ֶ�����������Ӽž�������͸��һ����ɱ֮����\n"NOR;
-        desc = env->query("long")+HIB"���¾����ƺ���Ѱ���������в�ͬ��͸��ɭɭ������\n"NOR;
+        msg = HIG"$N身形飞旋，掌劈脚挑，地下顿时烟尘四起，砂石乱飞，声势煞时惊人！\n";
+        msg += GRN"不一刻，$N收势凝形，负手而立，四下里从寂静中隐隐透出一股肃杀之气！\n"NOR;
+        desc = env->query("long")+HIB"四下景况似乎和寻常所见略有不同，透出森森鬼气。\n"NOR;
         env->set("org_desc", env->query("long"));
         env->set("org_exits", env->query("exits"));
         env->set("org_cost", env->query("cost"));
@@ -147,5 +147,5 @@ void remove_effect(object env)
         env->delete("th_pozhen");
 	env->delete("th_zhen_owner");
 
-        tell_object(env, CYN"һ��΢�紵�������澰���ƺ�����Щ�仯��\n"NOR);
+        tell_object(env, CYN"一阵微风吹过，四面景致似乎起了些变化。\n"NOR);
 }

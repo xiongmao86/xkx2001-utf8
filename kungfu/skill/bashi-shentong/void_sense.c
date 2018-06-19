@@ -7,24 +7,24 @@
 
 int conjure(object me, object target)
 {
-	if( target ) return notify_fail("¿ÕÊ¶ÉñÍ¨Ö»ÄÜ¶Ô×Ô¼ºÊ¹ÓÃ¡£\n");
+	if( target ) return notify_fail("ç©ºè¯†ç¥é€šåªèƒ½å¯¹è‡ªå·±ä½¿ç”¨ã€‚\n");
 	if( me->query("jingli") < 50 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
 	me->add("jingli", -50);
 	me->receive_damage("jing", 50);
-	message_vision(HIY "$NÅÌÏ¥¶ø×ù£¬¿ªÊ¼ÔËÓÃ¿ÕÊ¶ÉñÍ¨¾²Ë¼Èë¶¨ ...\n" NOR, me);
+	message_vision(HIY "$Nç›˜è†è€Œåº§ï¼Œå¼€å§‹è¿ç”¨ç©ºè¯†ç¥é€šé™æ€å…¥å®š ...\n" NOR, me);
 	if( random(me->query_skill("magic")) > (int)me->query_int() ) {
 		if( random(me->query("max_jingli")) < (int)me->query("jingli")/2 ) {
 			me->add("learned_points", 1);
-			write( HIR "Äã¾õµÃÄÔÖĞÒ»Æ¬»ìÂÒ£¬ÄãµÄÇ±ÄÜ½µµÍÁË£¡\n" NOR );
+			write( HIR "ä½ è§‰å¾—è„‘ä¸­ä¸€ç‰‡æ··ä¹±ï¼Œä½ çš„æ½œèƒ½é™ä½äº†ï¼\n" NOR );
 			return 1;
 		}
 		if( (int)me->query("potential") - (int)me->query("learned_points") < 500 ) {
 			me->add("potential", random( (int)me->query_spi() / 5 ) + 1);
-			write( HIG "ÄãµÄÇ±ÄÜÌá¸ßÁË£¡\n" NOR );
+			write( HIG "ä½ çš„æ½œèƒ½æé«˜äº†ï¼\n" NOR );
 			return 1;
 		}
 	}
-	write("¿ÉÊÇÄãÖ»¾õµÃÒ»ÎŞËù»ñ¡£\n");
+	write("å¯æ˜¯ä½ åªè§‰å¾—ä¸€æ— æ‰€è·ã€‚\n");
 	return 1;
 }

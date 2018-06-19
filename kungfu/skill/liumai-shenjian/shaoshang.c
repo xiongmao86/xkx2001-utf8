@@ -13,16 +13,16 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ã€‚\n");
 
         if( target->is_busy() )
                 return notify_fail(target->name() + 
-"Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+"ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
                 
         if( (int)me->query_skill("liumai-shenjian", 1) < 120 )
-                return notify_fail("ÄãµÄÁùÂöÉñ½£ĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…­è„‰ç¥å‰‘ä¿®ä¸ºä¸å¤Ÿã€‚\n");
         if( me->query("neili") <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
        
         me->add("neili", -300);
@@ -32,7 +32,7 @@ mexp = me->query("combat_exp")/1000;
 texp = target->query("combat_exp")/1000;
 
  message_vision(HIR
-"$NË«ÊÖµãµã´Á´Á£¬ÎŞĞÎÆø½£×İºá\n\n"NOR, me,target);
+"$NåŒæ‰‹ç‚¹ç‚¹æˆ³æˆ³ï¼Œæ— å½¢æ°”å‰‘çºµæ¨ª\n\n"NOR, me,target);
  if( (mmn+mexp)  > (tmn+texp) ) {
 
 inv = all_inventory(target);
@@ -40,19 +40,19 @@ inv = all_inventory(target);
             if( inv[i]->query("weapon_prop/damage"))
                 destruct(inv[i]);
        message_vision(HIR 
-"$NË«ÊÖµãµã´Á´Á£¬±ã±ÆµÃ$n×İ¸ß·üµÍ£¬¶«ÉÁÎ÷±Ü¡£Í»È»¼äÅÄµÄÒ»ÉùÏì£¬$nÊÖÖĞ±øÈĞ\n" 
+"$NåŒæ‰‹ç‚¹ç‚¹æˆ³æˆ³ï¼Œä¾¿é€¼å¾—$nçºµé«˜ä¼ä½ï¼Œä¸œé—ªè¥¿é¿ã€‚çªç„¶é—´æ‹çš„ä¸€å£°å“ï¼Œ$næ‰‹ä¸­å…µåˆƒ\n" 
 NOR, me,target);
- message_vision(HIR"Îª$NµÄÎŞĞÎÆø½£Ëù¶Ï£¬»¯Îª´çĞíµÄ¶şÈıÊ®½Ø£¬·ÉÉÏ°ë¿Õ£¬Ğ±ÑôÓ³ÕÕ£¬ÉÁ³öµãµã°×¹â¡£\n\n"
+ message_vision(HIR"ä¸º$Nçš„æ— å½¢æ°”å‰‘æ‰€æ–­ï¼ŒåŒ–ä¸ºå¯¸è®¸çš„äºŒä¸‰åæˆªï¼Œé£ä¸ŠåŠç©ºï¼Œæ–œé˜³æ˜ ç…§ï¼Œé—ªå‡ºç‚¹ç‚¹ç™½å…‰ã€‚\n\n"
 NOR, me,target);
 
 	 tell_object(target, BLU 
-"ÄãÖ»¾õÊÖÉÏÒ»Õğ£¬ÊÖÖĞ±øÈĞÒÑ¶Ï³ÉÁËÊıÊ®½Ø£¡\n" NOR);
+"ä½ åªè§‰æ‰‹ä¸Šä¸€éœ‡ï¼Œæ‰‹ä¸­å…µåˆƒå·²æ–­æˆäº†æ•°åæˆªï¼\n" NOR);
        
                 target->start_busy(1+random(1));
         }
         else 
         {
-        message_vision(HIY "$p¸Ï½ôÏòááÔ¾¿ªÊıÕÉ£¬¶ã¿ª$PµÄ¹¥»÷¡£\n" NOR, 
+        message_vision(HIY "$pèµ¶ç´§å‘å¾Œè·ƒå¼€æ•°ä¸ˆï¼Œèº²å¼€$Pçš„æ”»å‡»ã€‚\n" NOR, 
 me, target);
         }
         me->start_busy(1+random(3));

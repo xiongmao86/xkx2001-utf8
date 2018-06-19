@@ -5,18 +5,18 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("±¾¹Û", ({
+        set_name("æœ¬è§‚", ({
                 "benguan dashi",
                 "dashi",
                 "benguan",
                 "ben guan",
         }));
         set("long",
-"Ëû¿´ÆğÀ´ÃæÉ«¿İéÂ£¬ÉñÉ«Ä®È»¡£\n"                
+"ä»–çœ‹èµ·æ¥é¢è‰²æ¯æ§ï¼Œç¥è‰²æ¼ ç„¶ã€‚\n"                
         );
 
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -57,7 +57,7 @@ void create()
 
         prepare_skill("finger", "liumai-shenjian");
 
-        create_family("´óÀí¶Î¼Ò", 14, "µÜ×Ó");
+        create_family("å¤§ç†æ®µå®¶", 14, "å¼Ÿå­");
 
         setup();
 

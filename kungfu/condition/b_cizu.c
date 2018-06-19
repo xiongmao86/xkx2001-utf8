@@ -14,7 +14,7 @@ int update_condition(object me, int duration)
    int i, found;
 
 	me->apply_condition("b_cizu", duration - 1);
-	//printf("发做时间还有		%d\n",duration);
+	//printf("鍙戝仛鏃堕棿杩樻湁		%d\n",duration);
 	if( duration < 2 )
 	{
 		call_out("let_know",1,me);
@@ -37,9 +37,9 @@ void let_know(object me)
 		 if(me->is_fighting() )
 			{
 			me->start_busy(1 + random(1));
-			message_vision(HIG"$N终于冲开下身穴道，双足行动恢复正常。\n"NOR,me  );
+			message_vision(HIG"$N缁堜簬鍐插紑涓嬭韩绌撮亾锛屽弻瓒宠鍔ㄦ仮澶嶆甯搞�俓n"NOR,me  );
 			}
 		 else
-			 message_vision(HIG"$N终于冲开下身穴道。\n"NOR,me  );
+			 message_vision(HIG"$N缁堜簬鍐插紑涓嬭韩绌撮亾銆俓n"NOR,me  );
 }
 

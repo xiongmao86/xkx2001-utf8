@@ -9,18 +9,18 @@ int exert(object me, object target)
 	int skill;
 
 	if( target != me ) 
-		return notify_fail("你只能用八荒六合功来提升自己的战斗力。\n");
+		return notify_fail("浣犲彧鑳界敤鍏崚鍏悎鍔熸潵鎻愬崌鑷繁鐨勬垬鏂楀姏銆俓n");
 
 	if( (int)me->query("neili") < 200  ) 
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 	if( (int)me->query_temp("powerup") ) 
-		return notify_fail("你已经在运功中了。\n");
+		return notify_fail("浣犲凡缁忓湪杩愬姛涓簡銆俓n");
 
 	skill = me->query_skill("force");
 	me->add("neili", -100);
 
 	message_vision(
-	HIR "$N凝神息气，运起八荒六合唯我独尊功，只见一股轻烟缭绕周身。\n" NOR, me);
+	HIR "$N鍑濈鎭皵锛岃繍璧峰叓鑽掑叚鍚堝敮鎴戠嫭灏婂姛锛屽彧瑙佷竴鑲¤交鐑熺辑缁曞懆韬�俓n" NOR, me);
 
 	me->add_temp("apply/attack", skill/3);
 	me->add_temp("apply/dodge", skill/3);
@@ -39,5 +39,5 @@ void remove_effect(object me, int amount)
 	me->add_temp("apply/attack", - amount);
 	me->add_temp("apply/dodge", - amount);
 	me->delete_temp("powerup");
-	tell_object(me, "你的八荒六合唯我独尊功运行完毕，将内力收回丹田。\n");}
+	tell_object(me, "浣犵殑鍏崚鍏悎鍞垜鐙皧鍔熻繍琛屽畬姣曪紝灏嗗唴鍔涙敹鍥炰腹鐢般�俓n");}
 }

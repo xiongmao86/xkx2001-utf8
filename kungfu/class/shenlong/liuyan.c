@@ -1,15 +1,15 @@
 //Cracked by Roath
-// liu yan ÁøÑà
+// liu yan æŸ³ç‡•
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÁøÑà", ({ "liu yan","liu" }));
+	set_name("æŸ³ç‡•", ({ "liu yan","liu" }));
 //      set("nickname", "");
 	set("long",
-		"ÕÅµ­ÔÂµÄµÜ×Ó£¬ÌåÌ¬¼«·Ê£¬Á³ÈçÂúÔÂ£¬ÑÛĞ¡×ì´ó¡£\n");
-	set("gender", "Å®ĞÔ");
+		"å¼ æ·¡æœˆçš„å¼Ÿå­ï¼Œä½“æ€æè‚¥ï¼Œè„¸å¦‚æ»¡æœˆï¼Œçœ¼å°å˜´å¤§ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -47,7 +47,7 @@ void create()
 
 	prepare_skill("kick", "jueming-tui");
 
-	create_family("ÉñÁú½Ì", 3, "ºÚÁúÃÅµÜ×Ó");
+	create_family("ç¥é¾™æ•™", 3, "é»‘é¾™é—¨å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/armor/flower_shoe")->wear();

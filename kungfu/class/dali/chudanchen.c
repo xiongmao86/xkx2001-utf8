@@ -7,15 +7,15 @@ string ask_me();
 void create()
 
 {
-        set_name("Öìµ¤³¼", ({ "zhu danchen", "zhu"}));
-        set("long", "ËûÊÖÄÃÒ»²áÊ«Êé£¬ÕıÔÚÓÃĞÄËĞ¶Á£¬ÑüÅÏ²å×ÅÒ»¶ÔÅĞ¹Ù±Ê¡£\n");
-        set("title","´óÀí¹úÎä½«");
-        set("gender", "ÄĞĞÔ");
+        set_name("æœ±ä¸¹è‡£", ({ "zhu danchen", "zhu"}));
+        set("long", "ä»–æ‰‹æ‹¿ä¸€å†Œè¯—ä¹¦ï¼Œæ­£åœ¨ç”¨å¿ƒè¯µè¯»ï¼Œè…°ç•”æ’ç€ä¸€å¯¹åˆ¤å®˜ç¬”ã€‚\n");
+        set("title","å¤§ç†å›½æ­¦å°†");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("inquiry", ([
-		"¶ÎÕı´¾": "ÎÒ¼ÒÍõÒ¯ÉúĞÔ·çÁ÷¡£",
-		"¶ÎÓş": "ÇëÎÊ¸óÏÂÖª·ñÎÒ¼ÒĞ¡ÍõÒ¯µÄÏÂÂä¡£",
-		"·ğ¾­" : (: ask_me :),
+		"æ®µæ­£æ·³": "æˆ‘å®¶ç‹çˆ·ç”Ÿæ€§é£æµã€‚",
+		"æ®µèª‰": "è¯·é—®é˜ä¸‹çŸ¥å¦æˆ‘å®¶å°ç‹çˆ·çš„ä¸‹è½ã€‚",
+		"ä½›ç»" : (: ask_me :),
 
         ]));
         set_skill("strike", 60);
@@ -51,7 +51,7 @@ void create()
 
         set("attitude", "peaceful");
         set("shen_type", 1);
-        create_family("´óÀí¶Î¼Ò", 15, "µÜ×Ó");
+        create_family("å¤§ç†æ®µå®¶", 15, "å¼Ÿå­");
         setup();
         carry_object("/d/city/obj/cloth")->wear();
 	carry_object("/d/dali/obj/panguanbi")->wield();
@@ -64,53 +64,53 @@ void attempt_apprentice(object ob)
 
         command ("look "+ob->query("id"));
         if ( ob->query("class")=="bonze" ) {
-             if (ob->query("gender")=="Å®ĞÔ")
-                command ("say Ê¦Ì«ÊÇ¶ëáÒÅÉµÄ¸ßÊÖ£¬´óÀí»ÄÆ§Ö®Ïç²»¸Ò¶àÁô¡£");
+             if (ob->query("gender")=="å¥³æ€§")
+                command ("say å¸ˆå¤ªæ˜¯å³¨åµ‹æ´¾çš„é«˜æ‰‹ï¼Œå¤§ç†è’åƒ»ä¹‹ä¹¡ä¸æ•¢å¤šç•™ã€‚");
              else
-                command ("say ´óÊ¦ÊÇÉÙÁÖÅÉµÄ¸ßÊÖ£¬´óÀí»ÄÆ§Ö®Ïç²»¸Ò¶àÁô¡£");
+                command ("say å¤§å¸ˆæ˜¯å°‘æ—æ´¾çš„é«˜æ‰‹ï¼Œå¤§ç†è’åƒ»ä¹‹ä¹¡ä¸æ•¢å¤šç•™ã€‚");
              return;
         }
-        if( ob->query("family/family_name") == "Ø¤°ï") {
-                command ("say ´óÀíËäÊÇ»ÄÂùÖ®µØ£¬µ«»Ê¼ÒÊÕÁôÆòØ¤³ÉºÎÌâÍ³£¿");
+        if( ob->query("family/family_name") == "ä¸å¸®") {
+                command ("say å¤§ç†è™½æ˜¯è’è›®ä¹‹åœ°ï¼Œä½†çš‡å®¶æ”¶ç•™ä¹ä¸æˆä½•é¢˜ç»Ÿï¼Ÿ");
                 return;
         }
-        if ( ob->query("family/family_name") == "Îäµ±ÅÉ" && ob->query("combat_exp") >= 10000 ) {
-                command ("say ´óÀíÖ®´¦³çÉĞ·ğ½Ì£¬ÕâÎ»µÀĞÖ»¹ÊÇÁíÇë¸ßÃ÷°É¡£");
+        if ( ob->query("family/family_name") == "æ­¦å½“æ´¾" && ob->query("combat_exp") >= 10000 ) {
+                command ("say å¤§ç†ä¹‹å¤„å´‡å°šä½›æ•™ï¼Œè¿™ä½é“å…„è¿˜æ˜¯å¦è¯·é«˜æ˜å§ã€‚");
                 return;
         }
 
-       if ( ob->query("family/family_name") == "ĞÇËŞÅÉ" && ob->query("combat_exp") >= 10000 ) {
-                command ("say ÄãÕâĞÇËŞ¶ñÔôÒ²¸ÒÀ´ÎÒ´óÀí¾³ÄÚ³«¿ñ£¿ËÙËÙÀëÈ¥!");
+       if ( ob->query("family/family_name") == "æ˜Ÿå®¿æ´¾" && ob->query("combat_exp") >= 10000 ) {
+                command ("say ä½ è¿™æ˜Ÿå®¿æ¶è´¼ä¹Ÿæ•¢æ¥æˆ‘å¤§ç†å¢ƒå†…å€¡ç‹‚ï¼Ÿé€Ÿé€Ÿç¦»å»!");
                 return;
         }
-      if ( ob->query("family/family_name") == "°×ÍÕÉ½" && ob->query("combat_exp") >= 10000 ) {
-                command ("say ÄãÕâ°×ÍÕ¶ñÔôÒ²¸ÒÀ´ÎÒ´óÀí¾³ÄÚ³«¿ñ£¿ËÙËÙÀëÈ¥!");
+      if ( ob->query("family/family_name") == "ç™½é©¼å±±" && ob->query("combat_exp") >= 10000 ) {
+                command ("say ä½ è¿™ç™½é©¼æ¶è´¼ä¹Ÿæ•¢æ¥æˆ‘å¤§ç†å¢ƒå†…å€¡ç‹‚ï¼Ÿé€Ÿé€Ÿç¦»å»!");
                 return;
         }
-       if ( ob->query("family/family_name") == "»ªÉ½ÅÉ" && ob->query("combat_exp") >= 10000 ) {
-                command ("say ´óÀíÖ®´¦³çÉĞ·ğ½Ì£¬ÕâÎ»µÀĞÖ»¹ÊÇÁíÇë¸ßÃ÷°É¡£");
+       if ( ob->query("family/family_name") == "åå±±æ´¾" && ob->query("combat_exp") >= 10000 ) {
+                command ("say å¤§ç†ä¹‹å¤„å´‡å°šä½›æ•™ï¼Œè¿™ä½é“å…„è¿˜æ˜¯å¦è¯·é«˜æ˜å§ã€‚");
                 return;
         }
-		if ( ob->query("family/family_name") == "Ñªµ¶ÃÅ" && ob->query("combat_exp") >= 10000 ) {
-                command ("say ÄãÕâÑªµ¶ÃÅµÄ¶ñÔôÒ²¸ÒÀ´ÎÒ´óÀí¾³ÄÚ³«¿ñ£¿ËÙËÙÀëÈ¥!");
+		if ( ob->query("family/family_name") == "è¡€åˆ€é—¨" && ob->query("combat_exp") >= 10000 ) {
+                command ("say ä½ è¿™è¡€åˆ€é—¨çš„æ¶è´¼ä¹Ÿæ•¢æ¥æˆ‘å¤§ç†å¢ƒå†…å€¡ç‹‚ï¼Ÿé€Ÿé€Ÿç¦»å»!");
                 return;
         }
-		if ( ob->query("family/family_name") == "ÉñÁú½Ì" && ob->query("combat_exp") >= 10000 ) {
-                command ("say ÄãÕâÉñÁú½ÌµÄ¶ñÔôÒ²¸ÒÀ´ÎÒ´óÀí¾³ÄÚ³«¿ñ£¿ËÙËÙÀëÈ¥!");
+		if ( ob->query("family/family_name") == "ç¥é¾™æ•™" && ob->query("combat_exp") >= 10000 ) {
+                command ("say ä½ è¿™ç¥é¾™æ•™çš„æ¶è´¼ä¹Ÿæ•¢æ¥æˆ‘å¤§ç†å¢ƒå†…å€¡ç‹‚ï¼Ÿé€Ÿé€Ÿç¦»å»!");
                 return;
         }
 
 	if (ob->query("combat_exp") > 20000) {
                 command ("say "+ RANK_D->query_respect(ob) + 
-                           "ÊÇÎäÁÖ¸ßÊÖ£¬°İÎÒÎªÊ¦£¿±ğÈ¡Ğ¦ÓÚÔÚÏÂÁË¡£");
+                           "æ˜¯æ­¦æ—é«˜æ‰‹ï¼Œæ‹œæˆ‘ä¸ºå¸ˆï¼Ÿåˆ«å–ç¬‘äºåœ¨ä¸‹äº†ã€‚");
                 return;
         }
 
-        if (ob->query("gender")=="Å®ĞÔ") dldj="æ¾Å®";
-        else  dldj = "¼Ò¶¡";
-        command("say ºÃ°É£¬ÎÒ¾Í¶·µ¨´úÍõÒ¯ÊÕÏÂÄã×ö¸ö" + dldj + "°É¡£");
+        if (ob->query("gender")=="å¥³æ€§") dldj="å©¢å¥³";
+        else  dldj = "å®¶ä¸";
+        command("say å¥½å§ï¼Œæˆ‘å°±æ–—èƒ†ä»£ç‹çˆ·æ”¶ä¸‹ä½ åšä¸ª" + dldj + "å§ã€‚");
         command("recruit " + ob->query("id"));
-        ob->set("title","´óÀí¶ÎÊÏ"+dldj);
+        ob->set("title","å¤§ç†æ®µæ°"+dldj);
         return;
 }
 
@@ -120,17 +120,17 @@ string ask_me()
         object ob;
 
         if (!(fam = this_player()->query("family")) 
-            || fam["family_name"] != "´óÀí¶Î¼Ò")
+            || fam["family_name"] != "å¤§ç†æ®µå®¶")
                 return RANK_D->query_respect(this_player()) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
         if (query("book_count") > 10)
-                return "ÄãÀ´ÍíÁË£¬·ğ¾­²»ÔÚ´Ë´¦¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œä½›ç»ä¸åœ¨æ­¤å¤„ã€‚";
 
         add("book_count", 1);
         ob = new("/d/shaolin/obj/fojing10");
         ob->move(this_player());
 
-        return "ºÃ°É£¬Õâ±¾·ğ¾­ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+        return "å¥½å§ï¼Œè¿™æœ¬ä½›ç»ä½ æ‹¿å›å»å¥½å¥½é’»ç ”ã€‚";
 }
 #include "/kungfu/class/dali/promote4.h"

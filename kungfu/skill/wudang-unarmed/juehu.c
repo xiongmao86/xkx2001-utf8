@@ -1,5 +1,5 @@
 //Cracked by Roath
-// juehu.c ¡¸»¢×¦¾ø»§ÊÖ¡¹
+// juehu.c ã€Œè™Žçˆªç»æˆ·æ‰‹ã€
 // xQin 5/99
 // relate file: /kungfu/condition/juehu_damage.c
 
@@ -19,35 +19,35 @@ int perform(object me, object target)
 	mapping action = ([ "force" : 500, "damage": 1000 ]);
 
 	if( !me->query("wudang/juehu") )
-		return notify_fail("ÄãÉÐÎ´Ñ§»á¡¸»¢×¦¾ø»§ÊÖ¡¹¡£\n");
+		return notify_fail("ä½ å°šæœªå­¦ä¼šã€Œè™Žçˆªç»æˆ·æ‰‹ã€ã€‚\n");
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÊ©Õ¹¡¸»¢×¦¾ø»§ÊÖ¡¹£¡\n");		
+		return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹æ‰èƒ½æ–½å±•ã€Œè™Žçˆªç»æˆ·æ‰‹ã€ï¼\n");		
 
-	if( !target ) return notify_fail("ÄãÒª¶ÔË­ÓÃ´ËºÝÕÐ£¿\n");
+	if( !target ) return notify_fail("ä½ è¦å¯¹è°ç”¨æ­¤ç‹ æ‹›ï¼Ÿ\n");
 
         if( !living(target) )
-                return notify_fail("ÄãÏÖÔÚ²»±ØÊ¹ÓÃ¡¸»¢×¦¾ø»§ÊÖ¡¹¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ä¸å¿…ä½¿ç”¨ã€Œè™Žçˆªç»æˆ·æ‰‹ã€ã€‚\n");
 
 	if( target->query_condition("juehu_damage") > 0 )
-		return notify_fail("ÕâÎ»" + RANK_D->query_respect(me) +"ÐÄ³¦Ò²Ì«¹ýºÝÀ±£¬ºÎ±Ø¸Ï¾¡É±¾ø£¿\n");
+		return notify_fail("è¿™ä½" + RANK_D->query_respect(me) +"å¿ƒè‚ ä¹Ÿå¤ªè¿‡ç‹ è¾£ï¼Œä½•å¿…èµ¶å°½æ€ç»ï¼Ÿ\n");
 /*
 	if( me->query("qi") > me->query("max_qi")/4
 		&& !target->query("sell_woman/"+me->query("id")) )
-		return notify_fail("¶÷Ê¦½Ì»å£ºÈô·ÇÓöÉÏÉúËÀ¹ØÍ·£¬¾ö¼Æ²»¿ÉÇáÓÃ´ËºÝÕÐ¡£\n");
+		return notify_fail("æ©å¸ˆæ•™è¯²ï¼šè‹¥éžé‡ä¸Šç”Ÿæ­»å…³å¤´ï¼Œå†³è®¡ä¸å¯è½»ç”¨æ­¤ç‹ æ‹›ã€‚\n");
 */
 	if( !target->is_killing(me->query("id")) || !me->is_killing(target->query("id")) )
-		return notify_fail("Äã²¢·ÇÓë"+ target->name() +"ÉúËÀÏà²«£¬ºÎ¿àÓÃ´ËºÜÕÐ£¿\n");
+		return notify_fail("ä½ å¹¶éžä¸Ž"+ target->name() +"ç”Ÿæ­»ç›¸æï¼Œä½•è‹¦ç”¨æ­¤å¾ˆæ‹›ï¼Ÿ\n");
 
 	if( (int)me->query("neili") <= 200 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Ê©Õ¹¡¸»¢×¦¾ø»§ÊÖ¡¹¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•æ–½å±•ã€Œè™Žçˆªç»æˆ·æ‰‹ã€ã€‚\n");
 
 	if( (int)me->query("jingli") <= 150 )
-		return notify_fail("ÄãÏÖÔÚÌåÁ¦Ì«²î£¬ÎÞ·¨Ê©Õ¹¡¸»¢×¦¾ø»§ÊÖ¡¹¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨ä½“åŠ›å¤ªå·®ï¼Œæ— æ³•æ–½å±•ã€Œè™Žçˆªç»æˆ·æ‰‹ã€ã€‚\n");
 
 	if( me->query_skill_mapped("force") != "taiji-shengong" 
 		&& me->query_skill_mapped("force") != "wudang-jiuyang" )
-		return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸»¢×¦¾ø»§ÊÖ¡¹ÆøÂ·Ïàã££¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸Žã€Œè™Žçˆªç»æˆ·æ‰‹ã€æ°”è·¯ç›¸æ‚–ï¼\n");
 
 	hand = (int)me->query_skill("hand", 1) / 2;
 	dodge = (int)me->query_skill("dodge", 1) / 
@@ -64,7 +64,7 @@ int perform(object me, object target)
 	// success rate will be more highher.
 	me->add_temp("apply/dodge", dodge);
 
-	msg = "\n$Nµ±ÏÂ´í²½×ªÉí£¬×óÒ»»ØÓÒÒ»Ðý£¬ÈÆµ½ÁË$nÉíÅÔ¡£";
+	msg = "\n$Nå½“ä¸‹é”™æ­¥è½¬èº«ï¼Œå·¦ä¸€å›žå³ä¸€æ—‹ï¼Œç»•åˆ°äº†$nèº«æ—ã€‚";
 	me->add("jingli", -100);
 
 	ap = COMBAT_D->skill_power(me, "hand", SKILL_USAGE_ATTACK);
@@ -88,26 +88,26 @@ int perform(object me, object target)
 		if( objectp(weapon) )
 			switch( weapon->query("skill_type") )
 			{
-				case "sword" : 	msg += "ÓÒÊÖÊ³ÖÐÁ½Ö¸Ò»ÕÅ£¬ÒÑ¼Ð×¡$WµÄ½£Éí£¡\n"; 
+				case "sword" : 	msg += "å³æ‰‹é£Ÿä¸­ä¸¤æŒ‡ä¸€å¼ ï¼Œå·²å¤¹ä½$Wçš„å‰‘èº«ï¼\n"; 
 						break;
-				case "hook"  :	msg += "ÓÒÊÖÊ³ÖÐÁ½Ö¸Ò»ÕÅ£¬ÒÑ¼Ð×¡$W£¡\n"; 
+				case "hook"  :	msg += "å³æ‰‹é£Ÿä¸­ä¸¤æŒ‡ä¸€å¼ ï¼Œå·²å¤¹ä½$Wï¼\n"; 
 						break;
-				case "blade" : 	msg += "ÓÒÊÖÌ½³ö£¬ÒÑ×¥×¡ÁË$WµÄµ¶±³£¡\n"; 
+				case "blade" : 	msg += "å³æ‰‹æŽ¢å‡ºï¼Œå·²æŠ“ä½äº†$Wçš„åˆ€èƒŒï¼\n"; 
 						break;
-				case "whip"  :	msg += "ÓÒÊÖÌ½³ö£¬ÒÑ×¥×¡ÁË$WµÄ±ÞÉÒ£¡\n";
+				case "whip"  :	msg += "å³æ‰‹æŽ¢å‡ºï¼Œå·²æŠ“ä½äº†$Wçš„éž­æ¢¢ï¼\n";
 						break;
 				case "hammer":
 				case "pike"  :
 				case "staff" :
 				case "club"  :
-				case "stick" :	msg += "ÓÒÊÖÌ½³ö£¬ÒÑ×¥×¡ÁË$W£¬Ïòáá»Ø¶á£¡\n"; 
+				case "stick" :	msg += "å³æ‰‹æŽ¢å‡ºï¼Œå·²æŠ“ä½äº†$Wï¼Œå‘å¾Œå›žå¤ºï¼\n"; 
 						break;
 				default      :	msg += "\n"; 
 						break;
 			}
 		else msg += "\n";
 
-		msg += HIR"½ô¸ú×Å×óÊÖÌ½³ö£¬Ò»ÕÐ¡¸»¢×¦¾ø»§ÊÖ¡¹£¬ÃÍµØÀïÖ¸½Ú³É»¢×¦Ö®ÐÎ£¬Òâ´«ÕæÆø£¬Ö±²å$nÐ¡¸¹£¡\n"NOR;
+		msg += HIR"ç´§è·Ÿç€å·¦æ‰‹æŽ¢å‡ºï¼Œä¸€æ‹›ã€Œè™Žçˆªç»æˆ·æ‰‹ã€ï¼ŒçŒ›åœ°é‡ŒæŒ‡èŠ‚æˆè™Žçˆªä¹‹å½¢ï¼Œæ„ä¼ çœŸæ°”ï¼Œç›´æ’$nå°è…¹ï¼\n"NOR;
 		me->add("neili", -200);
 
 		ap = COMBAT_D->skill_power(me, "hand", SKILL_USAGE_ATTACK);
@@ -145,10 +145,10 @@ int perform(object me, object target)
 				&& damage*2 > target->query("qi") )
 			{
 
-				msg += "$nÎÞ¿ÉµÖµ²£¬";
+				msg += "$næ— å¯æŠµæŒ¡ï¼Œ";
 				if( objectp(weapon) )
 				{
-					msg += "ÓÒÊÖ·ÅÍÑ$W£¬";
+					msg += "å³æ‰‹æ”¾è„±$Wï¼Œ";
 					weapon->unequip();
 					weapon->move(environment(target));
 				}
@@ -166,36 +166,36 @@ int perform(object me, object target)
 
 				switch( attack_skill )
 				{
-					case "strike" :	msg += "·´ÕÆÏò$N»¹Åü£¬";
-							unarmed = "ÊÖÕÆ";
-							type = random(2)?"ÅüÉË":"ðöÉË";
+					case "strike" :	msg += "åæŽŒå‘$Nè¿˜åŠˆï¼Œ";
+							unarmed = "æ‰‹æŽŒ";
+							type = random(2)?"åŠˆä¼¤":"ç˜€ä¼¤";
 							break;
-					case "cuff"   :	msg += "»ÓÈ­Ïò$NÃÍ»÷£¬";
-							unarmed = "È­Í·";
-							type = "ðöÉË";
+					case "cuff"   :	msg += "æŒ¥æ‹³å‘$NçŒ›å‡»ï¼Œ";
+							unarmed = "æ‹³å¤´";
+							type = "ç˜€ä¼¤";
 							break;
-					case "claw"   :	msg += "ÎåÖ¸Ïò$N$l²åÂä£¬";
-							unarmed = "ÊÖ×¦";
-							type = random(2)?"´ÌÉË":"×¥ÉË";
+					case "claw"   :	msg += "äº”æŒ‡å‘$N$læ’è½ï¼Œ";
+							unarmed = "æ‰‹çˆª";
+							type = random(2)?"åˆºä¼¤":"æŠ“ä¼¤";
 							break;
-					case "finger" :	msg += "ÊÖÖ¸Ïò$N$l´ÁÈ¥£¬";
-							unarmed = "ÊÖÖ¸";
-							type = "´ÌÉË";
+					case "finger" :	msg += "æ‰‹æŒ‡å‘$N$læˆ³åŽ»ï¼Œ";
+							unarmed = "æ‰‹æŒ‡";
+							type = "åˆºä¼¤";
 							break;
-					case "hand" :	msg += "×óÊÖÏò$N°´È¥£¬";
-							unarmed = "×óÊÖ";
-							type = "ÄÚÉË";
+					case "hand" :	msg += "å·¦æ‰‹å‘$NæŒ‰åŽ»ï¼Œ";
+							unarmed = "å·¦æ‰‹";
+							type = "å†…ä¼¤";
 							break;
-					case "kick" :	msg += "·É³öÒ»ÍÈÌßÏò$N£¬";
-							unarmed = "·ÉÍÈ";
-							type = "ðöÉË";
+					case "kick" :	msg += "é£žå‡ºä¸€è…¿è¸¢å‘$Nï¼Œ";
+							unarmed = "é£žè…¿";
+							type = "ç˜€ä¼¤";
 							break;
-					default :	msg += "Ò»ÕÅ¿ÚÒ§Ïò$NµÄ$l£¬";
-							unarmed = "ÑÀ³Ý";
-							type = "Ò§ÉË";
+					default :	msg += "ä¸€å¼ å£å’¬å‘$Nçš„$lï¼Œ";
+							unarmed = "ç‰™é½¿";
+							type = "å’¬ä¼¤";
 							break;
 				}
-				msg += "Ö»ÅÎºÍ$P¶·¸öÍ¬¹éÓÚ¾¡¡£\n";
+				msg += "åªç›¼å’Œ$Pæ–—ä¸ªåŒå½’äºŽå°½ã€‚\n";
 				enfor = (int)target->query("jiali");
 				target->set("jiali", (int)target->query("force")/2);
 
@@ -203,7 +203,7 @@ int perform(object me, object target)
 				pp = COMBAT_D->skill_power(me, "parry", SKILL_USAGE_DEFENSE);
 				if( random(ap + pp) < pp )
 				{
-					msg += "$NÓÒÊÖ²¦¿ª$n"+ unarmed +"£¬×óÊÖÈ´ÈÔÊÇÔË¾¢¼²Âä¡£\n";
+					msg += "$Nå³æ‰‹æ‹¨å¼€$n"+ unarmed +"ï¼Œå·¦æ‰‹å´ä»æ˜¯è¿åŠ²ç–¾è½ã€‚\n";
 					damage /= 2;
 				}
 				else
@@ -246,7 +246,7 @@ int perform(object me, object target)
 				target->receive_wound("qi", damage - 
 				(int)target->query_temp("apply/armor"), me);
 
-			msg += COMBAT_D->damage_msg(damage, "´ÌÉË");
+			msg += COMBAT_D->damage_msg(damage, "åˆºä¼¤");
 
 			if( damage > 0 )
 			{
@@ -262,17 +262,17 @@ int perform(object me, object target)
 				target->set_temp("wudang/juehu_damage", 1);
 				target->apply_condition("juehu_damage", duration);
 				if( damage > target->query("max_qi")/3
-					&& target->query("gender") == "ÄÐÐÔ" )
+					&& target->query("gender") == "ç”·æ€§" )
 				{
-					target->set("gender", "ÎÞÐÔ");
-					target->set("ori_gender", "ÄÐÐÔ");
+					target->set("gender", "æ— æ€§");
+					target->set("ori_gender", "ç”·æ€§");
 					tell_object(target, HIB 
-					"\nÄãÐÄÖÐÍ»È»ÂÓ¹ýÒ»Ë¿²»ÏéµÄÔ¤¸Ð£®£®£®\n\n" NOR);
+					"\nä½ å¿ƒä¸­çªç„¶æŽ è¿‡ä¸€ä¸ä¸ç¥¥çš„é¢„æ„Ÿï¼Žï¼Žï¼Ž\n\n" NOR);
 				}
 			}
 			else
 			{
-				msg += "$P¼û$p¾¹ÄÜ³öÆæ²»ÒâµÄ»¯½â¿ªÕâÒ»×¥£¬²»½ûÃ£È»²»ÖªËù´ë¡£\n";
+				msg += "$Pè§$pç«Ÿèƒ½å‡ºå¥‡ä¸æ„çš„åŒ–è§£å¼€è¿™ä¸€æŠ“ï¼Œä¸ç¦èŒ«ç„¶ä¸çŸ¥æ‰€æŽªã€‚\n";
 				me->start_busy(3+random(3));
 			}
 
@@ -282,8 +282,8 @@ int perform(object me, object target)
 	me->add_temp("apply/attack", -hand);
 	me->add_temp("apply/dodge", -dodge);
 
-	msg = replace_string( msg, "$l", "Ñü²¿");
-	msg = replace_string( msg, "$w", "»¢×¦ÎåÖ¸");
+	msg = replace_string( msg, "$l", "è…°éƒ¨");
+	msg = replace_string( msg, "$w", "è™Žçˆªäº”æŒ‡");
 	if( objectp(weapon) ) msg = replace_string( msg, "$W", weapon->name() );
 	message_vision(msg, me, target);
 	if( wizardp(me) ) tell_object(me, sprintf("damage: %d\n", damage));

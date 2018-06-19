@@ -1,5 +1,5 @@
 //Cracked by Roath
-// powerup.c 混天气功加力
+// powerup.c 娣峰ぉ姘斿姛鍔犲姏
 // fear 12/99 reduced neili cost, added parry effect
 
 #include <ansi.h>
@@ -13,12 +13,12 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) 
-                return notify_fail("你只能用混天气功来提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤娣峰ぉ姘斿姛鏉ユ彁鍗囪嚜宸辩殑鎴樻枟鍔涖�俓n");
 
         if( (int)me->query("neili") < 1000  ) 
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
         if( (int)me->query_temp("powerup") ) 
-                return notify_fail("你已经在运功\中了。\n");
+                return notify_fail("浣犲凡缁忓湪杩愬姛\涓簡銆俓n");
 
         skill = me->query_skill("force");
         me->add("neili", -skill*6/5);
@@ -26,7 +26,7 @@ int exert(object me, object target)
         me->receive_damage("qi", 0);
 
         message_vision(
-        HIR "$N微一凝神，运起混天气功，全身骨节发出一阵爆豆般的声响ⅵ\n" NOR, me);
+        HIR "$N寰竴鍑濈锛岃繍璧锋贩澶╂皵鍔燂紝鍏ㄨ韩楠ㄨ妭鍙戝嚭涓�闃电垎璞嗚埇鐨勫０鍝嶁叺\n" NOR, me);
 
         me->add_temp("apply/attack", skill/3);
         me->add_temp("apply/dodge",  skill/3);
@@ -46,5 +46,5 @@ void remove_effect(object me, int amount)
         me->add_temp("apply/dodge", - amount);
         me->add_temp("apply/parry", - amount);
         me->delete_temp("powerup");
-        tell_object(me, HIY"你的混天气功运行完毕，将内力收回丹田。\n"NOR);
+        tell_object(me, HIY"浣犵殑娣峰ぉ姘斿姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n"NOR);
 }

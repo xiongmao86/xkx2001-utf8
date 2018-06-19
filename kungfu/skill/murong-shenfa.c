@@ -7,34 +7,34 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$nÉíĞÎÂÔ¶¯£¬´Ó$NµÄ¹¥»÷·¶Î§ÖĞÆ®Éí³öÈ¥£¬¶ã¿ªÁË$NµÄ¹¥»÷¡£\n",
+([      "action" : "$nèº«å½¢ç•¥åŠ¨ï¼Œä»$Nçš„æ”»å‡»èŒƒå›´ä¸­é£˜èº«å‡ºå»ï¼Œèº²å¼€äº†$Nçš„æ”»å‡»ã€‚\n",
         "dodge"  : 10
 ]),
-([      "action" : "$nÒ»¸öÒÆĞÎ»»Î»£¬$N¶ÙÊ±Ê§È¥ÁË¹¥»÷Ä¿±ê£¡\n",
+([      "action" : "$nä¸€ä¸ªç§»å½¢æ¢ä½ï¼Œ$Né¡¿æ—¶å¤±å»äº†æ”»å‡»ç›®æ ‡ï¼\n",
         "dodge"  : 20
 ]),
-([      "action" : "$nÃæ´øĞ¦Èİ£¬ÉíĞÎäìÈ÷Ö®¼«£¬¿°¿°±Ü¹ı$NµÄÕĞÊ½£¡\n",
+([      "action" : "$né¢å¸¦ç¬‘å®¹ï¼Œèº«å½¢æ½‡æ´’ä¹‹æï¼Œå ªå ªé¿è¿‡$Nçš„æ‹›å¼ï¼\n",
         "dodge"  : 30
 ]),
-([      "action" : "$n×óÊÖÒ»¸öĞéÕĞ£¬Éí×Ó¶¸È»¼äÍËºóÈı³ß£¬Ê¹$NµÄ¹¥»÷¾¡ÊıÂäÔÚ¿Õ´¦¡£\n",
+([      "action" : "$nå·¦æ‰‹ä¸€ä¸ªè™šæ‹›ï¼Œèº«å­é™¡ç„¶é—´é€€åä¸‰å°ºï¼Œä½¿$Nçš„æ”»å‡»å°½æ•°è½åœ¨ç©ºå¤„ã€‚\n",
         "dodge"  : 40
 ]),
-([      "action" : "¿ÉÊÇ$nÈı»Î¶ş»ÎÒÑ¾­Ê§È¥ÁË×Ù¼£¡£\n",
+([      "action" : "å¯æ˜¯$nä¸‰æ™ƒäºŒæ™ƒå·²ç»å¤±å»äº†è¸ªè¿¹ã€‚\n",
         "dodge"  : 50
 ]),
-([      "action" : "$nÉí×ÓÓÒ×ª£¬²àÉí±Ü¹ı$NµÄÀ×öªÒ»»÷¡£\n",
+([      "action" : "$nèº«å­å³è½¬ï¼Œä¾§èº«é¿è¿‡$Nçš„é›·éœ†ä¸€å‡»ã€‚\n",
         "dodge"  : 60
 ]),
-([      "action" : "$n½ÅÏÂÒ»¶¯£¬$NÁ¬$nµÄÒÂ½ÇÒ²Ã»ÓĞÅöµ½°ëµã£¡\n",
+([      "action" : "$nè„šä¸‹ä¸€åŠ¨ï¼Œ$Nè¿$nçš„è¡£è§’ä¹Ÿæ²¡æœ‰ç¢°åˆ°åŠç‚¹ï¼\n",
         "dodge"  : 70
 ]),
-([      "action" : "$nÕ¹¿ªÄ½ÈİÉí·¨£¬µ±ÕæÆ®È»ÈôÏÉ£¬$NÒ»Ê±¾¹ÎŞ¼Æ¿ÉÊ©¡£\n",
+([      "action" : "$nå±•å¼€æ…•å®¹èº«æ³•ï¼Œå½“çœŸé£˜ç„¶è‹¥ä»™ï¼Œ$Nä¸€æ—¶ç«Ÿæ— è®¡å¯æ–½ã€‚\n",
         "dodge"  : 80
 ]),
-([      "action" : "¿ÉÊÇ$n±ÜÁË¿ªÈ¥¡£\n",
+([      "action" : "å¯æ˜¯$né¿äº†å¼€å»ã€‚\n",
         "dodge"  : 90
 ]),
-([      "action" : "$nÉíĞÎ²»¶¯£¬ÔËÆğÄÚ¹¦£¬Ó²ÉúÉú½«¼¡ÈâÎüÈëÊı´ç£¬ÕıºÃ±Ü¿ª$NµÄ¹¥»÷£¡\n",
+([      "action" : "$nèº«å½¢ä¸åŠ¨ï¼Œè¿èµ·å†…åŠŸï¼Œç¡¬ç”Ÿç”Ÿå°†è‚Œè‚‰å¸å…¥æ•°å¯¸ï¼Œæ­£å¥½é¿å¼€$Nçš„æ”»å‡»ï¼\n",
         "dodge"  : 100
 ]),
 });
@@ -72,7 +72,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if ((int)me->query("neili") < 20)
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«µÍÁË£¬²»ÄÜÁ·Ä½ÈİÉí·¨¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›å¤ªä½äº†ï¼Œä¸èƒ½ç»ƒæ…•å®¹èº«æ³•ã€‚\n");
         me->add("neili", -15);
         me->add("jingli", 25);
         return 1;
@@ -118,8 +118,8 @@ mixed hit_by(object me, object victim, int damage)
         dp /= 100;
 
         if ( random(ap+dp) > ap ) {
-                result = HIW "$n½ÅÏÂÎ¢Î¢Ò»¶¯£¬$NÁ¬$nµÄÒÂ½ÇÒ²Î´Õ´µ½°ë·Ö£¡\n";
-                result += "$nÈçåĞÒ£ÉñÏÉ°ãºÃÕûÒÔÏ¾µØÏò$N¹¥È¥¡£\n" NOR;
+                result = HIW "$nè„šä¸‹å¾®å¾®ä¸€åŠ¨ï¼Œ$Nè¿$nçš„è¡£è§’ä¹Ÿæœªæ²¾åˆ°åŠåˆ†ï¼\n";
+                result += "$nå¦‚é€é¥ç¥ä»™èˆ¬å¥½æ•´ä»¥æš‡åœ°å‘$Næ”»å»ã€‚\n" NOR;
                 me->start_busy( (int)victim->query_skill("murong-shenfa", 1)/50 );
                 victim->add("neili", -20);
                 victim->add("jingli", -20);
@@ -128,8 +128,8 @@ mixed hit_by(object me, object victim, int damage)
                 return ([ "result" : result, "damage" : damage ]);
         }
         else if ( random(ap+dp) > ap ) {
-                result = HIG "$nÃæ´øĞ¦Èİ£¬×ËÌ¬äìÈ÷µØ±Üµ½Ò»ÅÔ£¬$NĞØÇ°´óÂ¶ÆÆÕÀ£¡\n";
-                result += "$n×¥×¡ÉÔ×İ¼´ÊÅµÄ»ú»á£¬Á¢¿Ì¶Ô$N·¢¶¯¹¥ÊÆ¡£\n" NOR;
+                result = HIG "$né¢å¸¦ç¬‘å®¹ï¼Œå§¿æ€æ½‡æ´’åœ°é¿åˆ°ä¸€æ—ï¼Œ$Nèƒ¸å‰å¤§éœ²ç ´ç»½ï¼\n";
+                result += "$næŠ“ä½ç¨çºµå³é€çš„æœºä¼šï¼Œç«‹åˆ»å¯¹$Nå‘åŠ¨æ”»åŠ¿ã€‚\n" NOR;
                 COMBAT_D->do_attack(victim, me, victim->query_temp("weapon"));
                 victim->add("neili", -10);
                 victim->add("jingli", -20);
@@ -138,14 +138,14 @@ mixed hit_by(object me, object victim, int damage)
                 return ([ "result" : result, "damage" : damage ]);
         }
         else if ( random(ap+2*dp) > ap ) {
-                result = HIY "$nÉíĞÎÆ®È»ÈôÏÉ£¬ÒÑÈ»´Ó´ÓÈİÈİµØ±Ü¿ªÁË$NµÄ¹¥»÷¡£\n" NOR;
+                result = HIY "$nèº«å½¢é£˜ç„¶è‹¥ä»™ï¼Œå·²ç„¶ä»ä»å®¹å®¹åœ°é¿å¼€äº†$Nçš„æ”»å‡»ã€‚\n" NOR;
                 victim->add("jingli", -20);
                 damage = 0;
 
                 return ([ "result" : result, "damage" : damage ]);
         }
         else if ( random(ap+3*dp) > ap ) {
-                result = HIM "$nÉíÌå¶¸È»¼äÏòºóÆ®³öÈı³ß£¬$NµÄÕĞÊ½¾¡ÊıÂä¿Õ¡£\n" NOR;
+                result = HIM "$nèº«ä½“é™¡ç„¶é—´å‘åé£˜å‡ºä¸‰å°ºï¼Œ$Nçš„æ‹›å¼å°½æ•°è½ç©ºã€‚\n" NOR;
                 victim->add("jingli", -10);
                 damage /= 5;
         

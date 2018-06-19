@@ -1,5 +1,5 @@
 //Cracked by Roath
-//shengang.c »ìÌìÉñî¸
+//shengang.c æ··å¤©ç¥žç½¡
 
 #include <ansi.h>
 
@@ -14,31 +14,31 @@ int exert(object me, object target)
         int skill, skill1;
 
         if( me->query_temp("shengang") )
-                return notify_fail("ÄãÒÑÔÚÊ¹ÓÃ»ìÌìÉñî¸ÁË£¡\n");
+                return notify_fail("ä½ å·²åœ¨ä½¿ç”¨æ··å¤©ç¥žç½¡äº†ï¼\n");
 
         if( !objectp(weapon = me->query_temp("weapon") ) )
-                return notify_fail("ÄãÎ´³ÖÎäÆ÷£¬ÈçºÎÄÜ¹»ÒÔ»ìÌìÉñî¸¸½×¢ÕæÁ¦£¿\n");
+                return notify_fail("ä½ æœªæŒæ­¦å™¨ï¼Œå¦‚ä½•èƒ½å¤Ÿä»¥æ··å¤©ç¥žç½¡é™„æ³¨çœŸåŠ›ï¼Ÿ\n");
 
         if ( weapon->query("weapon_prop/damage") > 50 )         
-                return notify_fail(weapon->query("name") +"µÄ·æÈÐÒÑµ½¼«ÏÞ£¬»ìÌìÉñî¸ÄÑÒÔÔÙÌá¸ßÆäÍþÁ¦¡£\n");
+                return notify_fail(weapon->query("name") +"çš„é”‹åˆƒå·²åˆ°æžé™ï¼Œæ··å¤©ç¥žç½¡éš¾ä»¥å†æé«˜å…¶å¨åŠ›ã€‚\n");
 
         if( me->query_skill("force") < 150 )
-                return notify_fail("ÄãµÄ»ìÌìÆø¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹»ìÌìÉñî¸£¡\n");
+                return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•æ··å¤©ç¥žç½¡ï¼\n");
 
         if( me->query("neili") <= 800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹»ìÌìÉñî¸£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿæ–½å±•æ··å¤©ç¥žç½¡ï¼\n");
         if( me->query("jingli") <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê©Õ¹»ìÌìÉñî¸£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿæ–½å±•æ··å¤©ç¥žç½¡ï¼\n");
 
         skill = me->query_skill("force");
         skill1 = skill;
 
-        message_vision(HIR "\n$NÄýÉñÄ¬È»ÔË¹¦£¬²»Ò»»áÊÖÉÏµÄ$nËÆºõ·¢³öµ­µ­¹â»Ô£¡\n" NOR, me, weapon);
+        message_vision(HIR "\n$Nå‡ç¥žé»˜ç„¶è¿åŠŸï¼Œä¸ä¸€ä¼šæ‰‹ä¸Šçš„$nä¼¼ä¹Žå‘å‡ºæ·¡æ·¡å…‰è¾‰ï¼\n" NOR, me, weapon);
 
         me->set_temp("shengang", 1);
 
-        weapon->set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-        weapon->set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+        weapon->set("no_get", "è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€é‚£å„¿ã€‚\n");
+        weapon->set("no_drop","è¿™æ ·ä¸œè¥¿ä¸èƒ½ç¦»å¼€ä½ ã€‚\n");
         weapon->unequip();
 
         if ( weapon->query("rigidity") < 100 ) {
@@ -81,17 +81,17 @@ void checking(object me, object weapon)
         if ( me->query_temp("shengang") < (int)me->query_skill("force")/8 ) {
            if ( environment(weapon) != me || weapon != me->query_temp("weapon") ) {
                 remove_effect(me, weapon);
-                tell_object(me, HIR "\nÄã·ÅÆúÊÖÖÐµÄ"+weapon->name()+"£¬»ºÈ»ÊÕÆð»ìÌìÆø¹¦½«ÄÚÁ¦ÄÉ»Øµ¤Ìï¡£\n\n" NOR);
+                tell_object(me, HIR "\nä½ æ”¾å¼ƒæ‰‹ä¸­çš„"+weapon->name()+"ï¼Œç¼“ç„¶æ”¶èµ·æ··å¤©æ°”åŠŸå°†å†…åŠ›çº³å›žä¸¹ç”°ã€‚\n\n" NOR);
                 return;
            }
            else if ( weapon->query("weapon_prop") == 0 ) {
                 remove_effect(me, weapon);
-                tell_object(me, HIR "\nÄãµÄ"+weapon->name()+"ÒÑ»Ù£¬ÎÞÄÎÊÕÆð»ìÌìÆø¹¦½«ÄÚÁ¦ÄÉ»Øµ¤Ìï¡£\n\n" NOR);
+                tell_object(me, HIR "\nä½ çš„"+weapon->name()+"å·²æ¯ï¼Œæ— å¥ˆæ”¶èµ·æ··å¤©æ°”åŠŸå°†å†…åŠ›çº³å›žä¸¹ç”°ã€‚\n\n" NOR);
                 return;
            }
            else if ( me->query_skill_mapped("force") != "huntian-qigong" ) {
                 remove_effect(me, weapon);
-                tell_object(me, HIR "\nÄãÖÐÍ¾¸ÄÓÃÆäËûÄÚ¹¦ÐÄ·¨£¬ÎÞ·¨ÔÙÊ©Õ¹»ìÌìÉñî¸£¡\n\n" NOR);
+                tell_object(me, HIR "\nä½ ä¸­é€”æ”¹ç”¨å…¶ä»–å†…åŠŸå¿ƒæ³•ï¼Œæ— æ³•å†æ–½å±•æ··å¤©ç¥žç½¡ï¼\n\n" NOR);
                 return;
            }
 
@@ -100,7 +100,7 @@ void checking(object me, object weapon)
         }
         else {
            remove_effect(me, weapon);
-           message_vision(HIR "\n$NµÄ»ìÌìÆø¹¦ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï£¬$nÉÏµÄµ­¹âÒàÏûÊ§ÎÞ×Ù¡£\n\n" NOR, me, weapon);
+           message_vision(HIR "\n$Nçš„æ··å¤©æ°”åŠŸè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›žä¸¹ç”°ï¼Œ$nä¸Šçš„æ·¡å…‰äº¦æ¶ˆå¤±æ— è¸ªã€‚\n\n" NOR, me, weapon);
         }
 }       
 

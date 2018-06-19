@@ -1,44 +1,44 @@
 //Cracked by Roath
-// jiangshi-quan.c ½©¨ÕÈ­
+// jiangshi-quan.c åƒµã„•æ‹³
 // qfy September 28, 1996.
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NË«±ÛÖ±Í¦£¬ÏòÇ°Ò»Ô¾£¬²åÏò$nµÄ$l",
+([      "action" : "$NåŒè‡‚ç›´æŒºï¼Œå‘å‰ä¸€è·ƒï¼Œæ’å‘$nçš„$l",
         "force" : 300,
         "dodge" : 5,
 	"parry" : 10,
         "lvl" : 0,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$N¾ÙÆğÆá°×µÄÊÖ×¦£¬×¥Ïò$nµÄ$l",
+([	"action" : "$Nä¸¾èµ·æ¼†ç™½çš„æ‰‹çˆªï¼ŒæŠ“å‘$nçš„$l",
 	"force" : 350,
         "dodge" : -5,
 	"parry" : 15,
 	"lvl" : 10,
-	"damage_type" : "ğöÉË"
+	"damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÒ»Éù¼â½Ğ£¬Í¦ÆğË«±Û£¬ÆşÏò$nµÄ¾±Ïî",
+([	"action" : "$Nä¸€å£°å°–å«ï¼ŒæŒºèµ·åŒè‡‚ï¼Œæå‘$nçš„é¢ˆé¡¹",
 	"force" : 400,
         "dodge" : 10,
 	"parry" : 10,
 	"lvl" : 20,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$N½©Ö±µÄÌøÆğ£¬Éì³¤ÊÖ×¦£¬´ø×ÅÁèÀ÷µÄÉùÊÆÆËÏò$n",
+([	"action" : "$Nåƒµç›´çš„è·³èµ·ï¼Œä¼¸é•¿æ‰‹çˆªï¼Œå¸¦ç€å‡Œå‰çš„å£°åŠ¿æ‰‘å‘$n",
 	"force" : 450,
         "dodge" : 15,
 	"parry" : 10,
 	"lvl" : 30,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÖ¨Ö¨µÄ¼â½ĞÆğÀ´£¬Í»È»ÆËÏò$n£¬ÊÖ×¦Ïò$lÃÍÈ»²åÏÂ",
+([	"action" : "$Nå±å±çš„å°–å«èµ·æ¥ï¼Œçªç„¶æ‰‘å‘$nï¼Œæ‰‹çˆªå‘$lçŒ›ç„¶æ’ä¸‹",
 	"force" : 500,
         "dodge" : 10,
 	"parry" : 15,
 	"lvl" : 38,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ])
 });
 
@@ -46,7 +46,7 @@ int valid_enable(string usage) { return  usage=="cuff" || usage=="parry"; }
 
 int valid_learn(object me)
 {
-	return notify_fail("ÏëÑ§½©¨ÕÈ­£¿ºÙºÙ£¬ËÀÁËÕâÌõĞÄ±ğ×÷ÃÎÀ²£¡¡£\n");
+	return notify_fail("æƒ³å­¦åƒµã„•æ‹³ï¼Ÿå˜¿å˜¿ï¼Œæ­»äº†è¿™æ¡å¿ƒåˆ«ä½œæ¢¦å•¦ï¼ã€‚\n");
 }
 
 mapping query_action(object me, object weapon)

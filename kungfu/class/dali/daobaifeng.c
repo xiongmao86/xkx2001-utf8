@@ -1,5 +1,5 @@
 //Cracked by Roath
-// daobaifeng.c µ¶°×·ï
+// daobaifeng.c åˆ€ç™½å‡¤
 // Acep, Mantian
 
 inherit NPC;
@@ -7,12 +7,12 @@ inherit F_MASTER;
 string ask_me();
 void create()
 {
-	set_name("µ¶°×·ï", ({ "dao baifeng", "dao"}));
+	set_name("åˆ€ç™½å‡¤", ({ "dao baifeng", "dao"}));
 	set("long", 
-"ÕâÊÇ¸öÈÝÃ²ÐãÀöµÄÖÐÄêµÀ¹Ã£¬ÊÇ¸ö°ÚÒÄ×åÅ®×Ó£¬ÆÄÓÐÓºÈÝÆøÖÊ¡£\nËý±¾ÊÇ´óÀí¹ú»ÊµÛ¶ÎÕý´¾µÄÕý·¿Ô­Åä·òÈË¡£\nÒòÄÕÕÉ·ò·çÁ÷²»î¿£¬Õ´»¨ÈÇ²Ý£¬Ò»Å­Ö®ÏÂÅÜµ½ÕâÀï³öÁË¼Ò¡£");
-	set("title","´óÀí¹úÍõåú");
-	set("nickname","ÓñÐéÉ¢ÈË");
-	set("gender", "Å®ÐÔ");
+"è¿™æ˜¯ä¸ªå®¹è²Œç§€ä¸½çš„ä¸­å¹´é“å§‘ï¼Œæ˜¯ä¸ªæ‘†å¤·æ—å¥³å­ï¼Œé¢‡æœ‰é›å®¹æ°”è´¨ã€‚\nå¥¹æœ¬æ˜¯å¤§ç†å›½çš‡å¸æ®µæ­£æ·³çš„æ­£æˆ¿åŽŸé…å¤«äººã€‚\nå› æ¼ä¸ˆå¤«é£Žæµä¸ç¾ï¼Œæ²¾èŠ±æƒ¹è‰ï¼Œä¸€æ€’ä¹‹ä¸‹è·‘åˆ°è¿™é‡Œå‡ºäº†å®¶ã€‚");
+	set("title","å¤§ç†å›½çŽ‹å¦ƒ");
+	set("nickname","çŽ‰è™šæ•£äºº");
+	set("gender", "å¥³æ€§");
 	set("age", 35);
 	
 	set("str", 25);
@@ -52,12 +52,12 @@ void create()
 	prepare_skill("strike","qingyan-zhang");
 	
 	set("inquiry", ([
-		"·É·ï±Þ·¨" 		:  (: ask_me :),
-		"¶ÎÕý´¾"			: "ÌáÄÇ¸ö¸ºÐÄÈË×öÊ²Ã´£¿",
-		"¶ÎÓþ"			: "°¦£¬ÎÒºÃ¾ÃÃ»¼ûµ½Óþ¶ùÀ²¡£",
+		"é£žå‡¤éž­æ³•" 		:  (: ask_me :),
+		"æ®µæ­£æ·³"			: "æé‚£ä¸ªè´Ÿå¿ƒäººåšä»€ä¹ˆï¼Ÿ",
+		"æ®µèª‰"			: "å”‰ï¼Œæˆ‘å¥½ä¹…æ²¡è§åˆ°èª‰å„¿å•¦ã€‚",
 		]));
         
-	create_family("´óÀí¶Î¼Ò", 15, "µÜ×Ó");
+	create_family("å¤§ç†æ®µå®¶", 15, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/wudang/obj/greenrobe")->wear();	
@@ -73,30 +73,30 @@ void attempt_apprentice(object ob)
 	command ("look "+ob->query("id"));
 
         if (ob->query("class")=="bonze") {
-                if (ob->query("gender")=="Å®ÐÔ")
-                        command ("say Ê¦Ì«ÊÇ¶ëáÒÅÉµÄ¸ßÊÖ£¬´óÀí»ÄÆ§Ö®Ïç²»¸Ò¶àÁô¡£");
+                if (ob->query("gender")=="å¥³æ€§")
+                        command ("say å¸ˆå¤ªæ˜¯å³¨åµ‹æ´¾çš„é«˜æ‰‹ï¼Œå¤§ç†è’åƒ»ä¹‹ä¹¡ä¸æ•¢å¤šç•™ã€‚");
                 else
-                        command ("say ´óÊ¦ÊÇÉÙÁÖÅÉµÄ¸ßÊÖ£¬´óÀí»ÄÆ§Ö®Ïç²»¸Ò¶àÁô¡£");
+                        command ("say å¤§å¸ˆæ˜¯å°‘æž—æ´¾çš„é«˜æ‰‹ï¼Œå¤§ç†è’åƒ»ä¹‹ä¹¡ä¸æ•¢å¤šç•™ã€‚");
                 return;
         }
 
-        if( ob->query("family/family_name") == "Ø¤°ï") {
-                command ("say ´óÀíËäÊÇ»ÄÂùÖ®µØ£¬µ«»Ê¼ÒÊÕÁôÆòØ¤³ÉºÎÌåÍ³£¿");
+        if( ob->query("family/family_name") == "ä¸å¸®") {
+                command ("say å¤§ç†è™½æ˜¯è’è›®ä¹‹åœ°ï¼Œä½†çš‡å®¶æ”¶ç•™ä¹žä¸æˆä½•ä½“ç»Ÿï¼Ÿ");
         	return;
         }
 	
-	if (ob->query("gender")!="Å®ÐÔ") {
+	if (ob->query("gender")!="å¥³æ€§") {
 		command("shake "+ob->query("id"));
-		command("say Äã»¹ÊÇÈ¥Íõ¸®ÕÒÄÇÐ©¼Ò³¼Ñ§ÒÕ°É¡£");
+		command("say ä½ è¿˜æ˜¯åŽ»çŽ‹åºœæ‰¾é‚£äº›å®¶è‡£å­¦è‰ºå§ã€‚");
 		return;
 	}
-	if (me->query("family/family_name")!="´óÀí¶Î¼Ò") {
+	if (me->query("family/family_name")!="å¤§ç†æ®µå®¶") {
 		command("hmm "+ob->query("id"));
-		command("say Äã²»ÊÇ´óÀíµÜ×Ó°¡£¬ÅÜµ½ÎÒÕâÀïÀ´¸ÉÊ²Ã´£¿");
+		command("say ä½ ä¸æ˜¯å¤§ç†å¼Ÿå­å•Šï¼Œè·‘åˆ°æˆ‘è¿™é‡Œæ¥å¹²ä»€ä¹ˆï¼Ÿ");
 		return;
         }
 
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË£¬Ï£ÍûÄãºÃºÃÑ§ÒÕ£¬²»Òª¸øÄÇÐ©¸ºÐÄ±¡ÐÒµÄ³ôÄÐÈËÆÛ¸º¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ï¼Œå¸Œæœ›ä½ å¥½å¥½å­¦è‰ºï¼Œä¸è¦ç»™é‚£äº›è´Ÿå¿ƒè–„å¹¸çš„è‡­ç”·äººæ¬ºè´Ÿã€‚");
 	command("recruit " + ob->query("id"));
 	ob->set("title", current_title);
 	return;
@@ -105,16 +105,16 @@ string ask_me()
 {
     object me=this_player();
 
-	if (me->query("family/family_name")!="´óÀí¶Î¼Ò")	return RANK_D->query_respect(me)+"¶Ô²»Æð£¬Äã²»ÊÇ´óÀíµÜ×Ó£¬ÅÜµ½ÎÒÕâÀïÀ´¸ÉÊ²Ã´£¿\n";
-	if (me->query("gender")!="Å®ÐÔ") return "¶Ô²»Æð£¬ÎÒÎÞ·¨»Ø´ðÄãµÄÎÊÌâ¡£\n";
-	if (me->query_skill("feifeng-bian",1)) return "Äã²»ÊÇÒÑ¾­»áÁËÂð£¬ÔõÃ´»¹À´ÎÊÎÒ£¿\n";
-	if (me->query("family/master_id") != "yideng dashi" && me->query("family/master_name") != "Ò»µÆ´óÊ¦"){
+	if (me->query("family/family_name")!="å¤§ç†æ®µå®¶")	return RANK_D->query_respect(me)+"å¯¹ä¸èµ·ï¼Œä½ ä¸æ˜¯å¤§ç†å¼Ÿå­ï¼Œè·‘åˆ°æˆ‘è¿™é‡Œæ¥å¹²ä»€ä¹ˆï¼Ÿ\n";
+	if (me->query("gender")!="å¥³æ€§") return "å¯¹ä¸èµ·ï¼Œæˆ‘æ— æ³•å›žç­”ä½ çš„é—®é¢˜ã€‚\n";
+	if (me->query_skill("feifeng-bian",1)) return "ä½ ä¸æ˜¯å·²ç»ä¼šäº†å—ï¼Œæ€Žä¹ˆè¿˜æ¥é—®æˆ‘ï¼Ÿ\n";
+	if (me->query("family/master_id") != "yideng dashi" && me->query("family/master_name") != "ä¸€ç¯å¤§å¸ˆ"){
 		command("recruit " + me->query("id"));
-		return "ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË£¬Ï£ÍûÄãºÃºÃÑ§ÒÕ£¬²»Òª¸øÄÇÐ©¸ºÐÄ±¡ÐÒµÄ³ôÄÐÈËÆÛ¸º¡£\n";
+		return "å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ï¼Œå¸Œæœ›ä½ å¥½å¥½å­¦è‰ºï¼Œä¸è¦ç»™é‚£äº›è´Ÿå¿ƒè–„å¹¸çš„è‡­ç”·äººæ¬ºè´Ÿã€‚\n";
 		}
 	add_action("do_qingjiao", "qingjiao");
 	command("consider");
-	return "·É·ï±Þ·¨ÊÇÒ»ÖÖÍâ¸ÕÄÚÈá±Þ·¨£¬¼ÈÈ»ÄãÕâÃ´ÓÐÐÄ£¬ÎÒ¾ÍÖ¸µ¼ÄãÒ»ÏÂ°É¡£\n";
+	return "é£žå‡¤éž­æ³•æ˜¯ä¸€ç§å¤–åˆšå†…æŸ”éž­æ³•ï¼Œæ—¢ç„¶ä½ è¿™ä¹ˆæœ‰å¿ƒï¼Œæˆ‘å°±æŒ‡å¯¼ä½ ä¸€ä¸‹å§ã€‚\n";
 }
 
 int do_qingjiao(string arg)
@@ -122,16 +122,16 @@ int do_qingjiao(string arg)
 	object obj=this_object(), me=this_player();
 	int skill, myint;
 
-	if (!arg) return notify_fail("ÄãÏëÏòµ¶°×·ïÇë½ÌÊ²Ã´¹¦·ò£¿\n");
-	if (me->is_busy()) return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
-	if (me->is_fighting()) return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
-	if (obj->is_fighting() || obj->is_busy()) return notify_fail("ËýÕýÃ¦×ÅÄØ£¬Ã»¹¤·ò½ÌÄã¡£\n");
-	if (!living(obj)) return notify_fail("àÅ ... ÄãµÃÏÈ°ÑËýÅªÐÑÔÙËµ¡£\n");
-	if (arg!="feifeng-bian") return notify_fail("µ¶°×·ï¸ù±¾²»»áÕâÃÅ¹¦·ò£¬ÎÞ·¨Ö¸µ¼Äã¡£\n");
-	if ((int)me->query("jing") <500 ) return notify_fail("¾«Á¦²»¹»£¬ÎÞ·¨Çë½Ìµ¶°×·ïÈÎºÎ¶«Î÷¡£\n");
-	if ((int)obj->query("jing") <100 ) return notify_fail("µ¶°×·ïÌ«ÀÛÁË£¬ÎÞ·¨Ö¸µ¼Äã¡£\n");
+	if (!arg) return notify_fail("ä½ æƒ³å‘åˆ€ç™½å‡¤è¯·æ•™ä»€ä¹ˆåŠŸå¤«ï¼Ÿ\n");
+	if (me->is_busy()) return notify_fail("ä½ çŽ°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
+	if (me->is_fighting()) return notify_fail("ä¸´é˜µç£¨æžªï¼Ÿæ¥ä¸åŠå•¦ã€‚\n");
+	if (obj->is_fighting() || obj->is_busy()) return notify_fail("å¥¹æ­£å¿™ç€å‘¢ï¼Œæ²¡å·¥å¤«æ•™ä½ ã€‚\n");
+	if (!living(obj)) return notify_fail("å—¯ ... ä½ å¾—å…ˆæŠŠå¥¹å¼„é†’å†è¯´ã€‚\n");
+	if (arg!="feifeng-bian") return notify_fail("åˆ€ç™½å‡¤æ ¹æœ¬ä¸ä¼šè¿™é—¨åŠŸå¤«ï¼Œæ— æ³•æŒ‡å¯¼ä½ ã€‚\n");
+	if ((int)me->query("jing") <500 ) return notify_fail("ç²¾åŠ›ä¸å¤Ÿï¼Œæ— æ³•è¯·æ•™åˆ€ç™½å‡¤ä»»ä½•ä¸œè¥¿ã€‚\n");
+	if ((int)obj->query("jing") <100 ) return notify_fail("åˆ€ç™½å‡¤å¤ªç´¯äº†ï¼Œæ— æ³•æŒ‡å¯¼ä½ ã€‚\n");
 
-	message_vision("$NÏò$nÇë½Ì·É·ï±Þ·¨£¬ËÆºõÓÐËùÁìÎò¡£\n", me, obj);
+	message_vision("$Nå‘$nè¯·æ•™é£žå‡¤éž­æ³•ï¼Œä¼¼ä¹Žæœ‰æ‰€é¢†æ‚Ÿã€‚\n", me, obj);
     remove_action("do_qingjiao", "qingjiao"); 
 	me->set_skill("feifeng-bian", 1);
 	me->receive_damage("jing", 400);

@@ -11,10 +11,10 @@ void greeting();
 void create()
 {
 	seteuid(getuid());
-	set_name(HIR"Ê¥µ®ÀÏÈË"NOR, ({ "shengdan laoren","santa","laoren"}) );
-	set("gender", "ÄÐÐÔ" );
+	set_name(HIR"åœ£è¯žè€äºº"NOR, ({ "shengdan laoren","santa","laoren"}) );
+	set("gender", "ç”·æ€§" );
 	set("age", 63);
-	set("long", HIR"Ò»Î»ºì¹âÂúÃæ£¬Ð¦ºÇºÇµÄ°×ºú×ÓÀÏÒ¯Ò¯¡£\n"NOR);
+	set("long", HIR"ä¸€ä½çº¢å…‰æ»¡é¢ï¼Œç¬‘å‘µå‘µçš„ç™½èƒ¡å­è€çˆ·çˆ·ã€‚\n"NOR);
 	set("attitude", "peaceful");
 
 	set("str", 25);
@@ -45,18 +45,18 @@ void create()
 
 	set("chat_chance", 20);
 	set("chat_msg", ({
-		"Ê¥µ®ÀÏÈËÐ¦ºÇºÇËµµÀ: Ê¥µ®¿ìÀÖ£¡¿ìÀÖ£¡~~\n",
-		"Ê¥µ®ÀÏÈË¿ì»îµØ³ªµÀ: ¶£¶£îõ£¬¶£¶£îõ£¬Áå¶ùÏì¶£îõ~~\n",
-		"Ê¥µ®ÀÏÈËÐ¦ºÇºÇËµµÀ: ÏëÒªÀñÎïÂð£¿ÎÒ¾ÍÊÇÉñÅÉÀ´ËÍÊ¥µ®ÀñÎïµÄ¡£ \n",
-		"Ê¥µ®ÀÏÈËÐ¦µÀ: Ö»ÒªÊÇ¹Ôº¢×Ó£¬¾ÍÓÐÊ¥µ®ÀñÎï¡£ \n",
+		"åœ£è¯žè€äººç¬‘å‘µå‘µè¯´é“: åœ£è¯žå¿«ä¹ï¼å¿«ä¹ï¼~~\n",
+		"åœ£è¯žè€äººå¿«æ´»åœ°å”±é“: å®å®é“›ï¼Œå®å®é“›ï¼Œé“ƒå„¿å“å®é“›~~\n",
+		"åœ£è¯žè€äººç¬‘å‘µå‘µè¯´é“: æƒ³è¦ç¤¼ç‰©å—ï¼Ÿæˆ‘å°±æ˜¯ç¥žæ´¾æ¥é€åœ£è¯žç¤¼ç‰©çš„ã€‚ \n",
+		"åœ£è¯žè€äººç¬‘é“: åªè¦æ˜¯ä¹–å­©å­ï¼Œå°±æœ‰åœ£è¯žç¤¼ç‰©ã€‚ \n",
 		(: random_move :),
 		(: greeting :),
 	}) );
 
 	set("inquiry", ([
 					 "gift" : (: ask_gift :),
-					 "Ê¥µ®ÀñÎï" : (: ask_gift:),
-					 "ÀñÎï" : (: ask_gift:),
+					 "åœ£è¯žç¤¼ç‰©" : (: ask_gift:),
+					 "ç¤¼ç‰©" : (: ask_gift:),
 				  ]) );
 
 
@@ -86,15 +86,15 @@ string ask_gift()
 
 	if( ppl->query_condition("santa") )
 	{
-		message_vision("$N¶Ô×Å$nÐ¦µÀ£ºÄã²ÅÄÃµ½ÀñÎï£¬¾ÍÓÖÏëÒªÀ²£¿\n",santa,ppl);
+		message_vision("$Nå¯¹ç€$nç¬‘é“ï¼šä½ æ‰æ‹¿åˆ°ç¤¼ç‰©ï¼Œå°±åˆæƒ³è¦å•¦ï¼Ÿ\n",santa,ppl);
 		random_move();
-		return "ºÇºÇºÇ\n";
+		return "å‘µå‘µå‘µ\n";
 	}
 
 	if( ppl->query("combat_exp") < 300 )
 	{
 		random_move();
-		return "DUMMYÊÇ²»ÐèÒªÀñÎïµÄ:)";
+		return "DUMMYæ˜¯ä¸éœ€è¦ç¤¼ç‰©çš„:)";
 	}
 
 	seteuid(getuid());
@@ -138,14 +138,14 @@ string ask_gift()
 	if( ppl->query("env/no_accept") )
 	{
 		command("hmm");
-		command("say "+ppl->name()+"²»Ïë½ÓÊÜÈÎºÎ¶«Î÷£¿");
+		command("say "+ppl->name()+"ä¸æƒ³æŽ¥å—ä»»ä½•ä¸œè¥¿ï¼Ÿ");
 	}
 	else
 		command( "give "+ob->query("id")+" to "+ ppl->query("id")  );
 
 	ppl->apply_condition( "santa",20+random(10) );
 
-	return "×£ÄãÊ¥µ®¿ìÀÖ£¡¿ìÀÖ£¡~~\n";
+	return "ç¥ä½ åœ£è¯žå¿«ä¹ï¼å¿«ä¹ï¼~~\n";
 }
 
 void destroy_me(object me)
@@ -157,26 +157,26 @@ void greeting()
 {
 	object me = this_object();
 
-	command("say ×£ÄãÊ¥µ®¿ìÀÖ£¡¿ìÀÖ~~\n");
+	command("say ç¥ä½ åœ£è¯žå¿«ä¹ï¼å¿«ä¹~~\n");
 
 	if( strsrch(base_name(environment()), "/d/city/") == -1 )
 	{
-		message_vision(HIY"$N"+HIY"³Ë×ø·ç³µÁè¿Õ·ÉÈ¥£¬×ªÑÛ¾Í²»¼ûÁË.\n"NOR,me);
+		message_vision(HIY"$N"+HIY"ä¹˜åé£Žè½¦å‡Œç©ºé£žåŽ»ï¼Œè½¬çœ¼å°±ä¸è§äº†.\n"NOR,me);
 		me->move("d/city/wumiao");
-		message_vision(HIG"Ö»Ìý¿ÕÖÐÒ»ÕóÁåîõÉùÏì£¬$N"+HIG"³Ë×ø·ç³µÁè¿Õ·ÉÀ´.\n"NOR,me);
+		message_vision(HIG"åªå¬ç©ºä¸­ä¸€é˜µé“ƒé“›å£°å“ï¼Œ$N"+HIG"ä¹˜åé£Žè½¦å‡Œç©ºé£žæ¥.\n"NOR,me);
 	}
 
 	if( strsrch(ctime(time()), "Dec 25") == -1 )
 	{
-		message_vision(HIY"$N"+HIY"ÆàÍñµØËµ£ºÊ¥µ®½Ú½áÊøÁË£¬ÎÒÒ²¸Ã»ØÌìÌÃÁË.\n"NOR,me);
+		message_vision(HIY"$N"+HIY"å‡„å©‰åœ°è¯´ï¼šåœ£è¯žèŠ‚ç»“æŸäº†ï¼Œæˆ‘ä¹Ÿè¯¥å›žå¤©å ‚äº†.\n"NOR,me);
 		command("goodbye");
-		message_vision(HIY"$N"+HIY"³Ë×ø·ç³µÁè¿Õ·ÉÈ¥£¬×ªÑÛ¾Í²»¼ûÁË.\n"NOR,me);
+		message_vision(HIY"$N"+HIY"ä¹˜åé£Žè½¦å‡Œç©ºé£žåŽ»ï¼Œè½¬çœ¼å°±ä¸è§äº†.\n"NOR,me);
 		call_out("destroy_me",1,me);
 	}
 
 	if( random(150) == 0 )
 	{
-		message_vision(HIY"$N"+HIY"³Ë×ø·ç³µÁè¿Õ·ÉÈ¥£¬×ªÑÛ¾Í²»¼ûÁË.\n"NOR,me);
+		message_vision(HIY"$N"+HIY"ä¹˜åé£Žè½¦å‡Œç©ºé£žåŽ»ï¼Œè½¬çœ¼å°±ä¸è§äº†.\n"NOR,me);
 		call_out("destroy_me",1,me);
 	}
 }
@@ -185,7 +185,7 @@ int accept_object(object me, object obj)
 {
 	if (obj->query("money_id") && obj->value() >= 1) {
 			 command("smile");
-			 command("say ¶àÐ»À² ! ÄãºÃÐÄ±ØÓÐºÃ±¨µÄ !");
+			 command("say å¤šè°¢å•¦ ! ä½ å¥½å¿ƒå¿…æœ‰å¥½æŠ¥çš„ !");
 	}
 
 	return 0;
@@ -193,7 +193,7 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-	command("say " + RANK_D->query_respect(me) + "£¬ÀÏÍ·×ÓÎÒÊÇ²»´ò¼ÜµÄ:)¢¦\n");
+	command("say " + RANK_D->query_respect(me) + "ï¼Œè€å¤´å­æˆ‘æ˜¯ä¸æ‰“æž¶çš„:)â…µ\n");
 	return 0;
 }
 
@@ -203,7 +203,7 @@ int accept_kill(object victim)
 		  object player = this_player();
 		  int flag;
 
-		  command("say " + RANK_D->query_respect(player) + "£¬ÔõÃ´ÕâÃ´Ð×£¿²»¸Ã²»¸ÃÑ½£¡\n");
+		  command("say " + RANK_D->query_respect(player) + "ï¼Œæ€Žä¹ˆè¿™ä¹ˆå‡¶ï¼Ÿä¸è¯¥ä¸è¯¥å‘€ï¼\n");
 		  command("benger " + player->query("id") );
 		  if (player->query("env/immortal"))
 				flag=1;

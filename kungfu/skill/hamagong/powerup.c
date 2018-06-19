@@ -15,24 +15,24 @@ int exert(object me, object target)
 	int skill,l;
 
 	if( target != me )
-		return notify_fail("ÄãÖ»ÄÜÓÃ¸òó¡¹¦¹¦À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+		return notify_fail("ä½ åªèƒ½ç”¨è›¤èŸ†åŠŸåŠŸæ¥æå‡è‡ªå·±çš„æˆ˜æ–—åŠ›ã€‚\n");
 
 	if( (int)me->query_skill("hamagong",1) < 40)
-		return notify_fail("ÄãµÄ¸òó¡¹¦ĞŞÎªÎ´µ½£¬ÎŞ·¨ÓĞĞ§ÌáÉı³öÕĞÍşÁ¦¡£\n");
+		return notify_fail("ä½ çš„è›¤èŸ†åŠŸä¿®ä¸ºæœªåˆ°ï¼Œæ— æ³•æœ‰æ•ˆæå‡å‡ºæ‹›å¨åŠ›ã€‚\n");
 	if( (int)me->query("neili") < 100  )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query_temp("powerup") )
-		return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+		return notify_fail("ä½ å·²ç»åœ¨è¿åŠŸä¸­äº†ã€‚\n");
 
 	skill = me->query_skill("force");
 	me->add("neili", -200);
 
-	message_vision(WHT"Ö»¼û$N¶×ÔÚµØÏÂ£¬Ë«ÊÖÍäÓë¼çÆë£¬ÍğËÆÒ»Ö»´óÇàÍÜ°ã×÷ÊÆÏàÆË£¬¿ÚÖĞ·¢³öÀÏÅ£Ë»Ãù°ãµÄ¹¾¹¾Ö®Éù£¬Ê±ĞªÊ±×÷¡£\n" NOR, me);
+	message_vision(WHT"åªè§$Nè¹²åœ¨åœ°ä¸‹ï¼ŒåŒæ‰‹å¼¯ä¸è‚©é½ï¼Œå®›ä¼¼ä¸€åªå¤§é’è›™èˆ¬ä½œåŠ¿ç›¸æ‰‘ï¼Œå£ä¸­å‘å‡ºè€ç‰›å˜¶é¸£èˆ¬çš„å’•å’•ä¹‹å£°ï¼Œæ—¶æ­‡æ—¶ä½œã€‚\n" NOR, me);
 
 	me->add_temp("apply/attack", skill/4);
 	me->add_temp("apply/damage", skill/4);
 
-	if(me->query("family/family_name") == "°×ÍÕÉ½" )
+	if(me->query("family/family_name") == "ç™½é©¼å±±" )
 	{
 		me->set( "eff_qi",me->query("eff_qi")+skill*4 );
 		me->add("qi",skill);
@@ -58,12 +58,12 @@ void remove_effect(object me, int amount)
 	me->add_temp("apply/damage", - amount);
 	if(me->query_temp("apply/damage") < 0 )me->set_temp("apply/damage",0);
 
-	if( me->query("family/family_name") == "°×ÍÕÉ½" && me->query("eff_qi") > me->query("max_qi") )
+	if( me->query("family/family_name") == "ç™½é©¼å±±" && me->query("eff_qi") > me->query("max_qi") )
 	{
 		me->set( "eff_qi",me->query("eff_qi")-amount*16 );
 		if(me->query("eff_qi")<=100)me->set("eff_qi",100);
 	}
 //	me->add_temp("apply/dodge", - amount);
 	me->delete_temp("powerup");
-	message_vision(HIR "Ö»¼û$NµÄ¸òó¡¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR, me);
+	message_vision(HIR "åªè§$Nçš„è›¤èŸ†åŠŸè¿è¡Œå®Œæ¯•ï¼Œå°†å†…åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR, me);
 }

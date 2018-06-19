@@ -10,86 +10,86 @@ inherit F_DBASE;
 inherit F_SSERVER;
 
 string* xuedao = ({
-	"¾Ş¹ÇÑ¨",
-	"µØ²ÖÑ¨",
-	"¼ç¾®Ñ¨",
-	"¼Õ³µÑ¨",
-	"³ĞÆüÑ¨",
-	"·ç³ØÑ¨",
-	"ÕÂÃÅÑ¨",
-	"·ç¸®Ñ¨",
-	"¾«´ÙÑ¨",
-	"ÌÕµÀÑ¨",
-	"Ç¿¼äÑ¨",
-	"ÉÙº£Ñ¨",
-	"¶¿±ÇÑ¨",
-	"ÉñÃÅÑ¨",
-	"»ª¸ÇÑ¨",
-	"´ó×µÑ¨",
-	"·ïÎ²Ñ¨",
-	"ÖÁÑôÑ¨",
-	"ÀÍ¹¬Ñ¨",
-	"°Ù»áÑ¨",
-	"ÁéÌ¨Ñ¨",
-	"Ì«ÑôÑ¨",
-	"ëşÖĞÑ¨",
-	"ÃüÃÅÑ¨",
-	"ğ¯Î²Ñ¨",
-	"ÈıÒõ½»",
-	"ÌìÖùÑ¨"
+	"å·¨éª¨ç©´",
+	"åœ°ä»“ç©´",
+	"è‚©äº•ç©´",
+	"é¢Šè½¦ç©´",
+	"æ‰¿æ³£ç©´",
+	"é£æ± ç©´",
+	"ç« é—¨ç©´",
+	"é£åºœç©´",
+	"ç²¾ä¿ƒç©´",
+	"é™¶é“ç©´",
+	"å¼ºé—´ç©´",
+	"å°‘æµ·ç©´",
+	"çŠŠé¼»ç©´",
+	"ç¥é—¨ç©´",
+	"åç›–ç©´",
+	"å¤§æ¤ç©´",
+	"å‡¤å°¾ç©´",
+	"è‡³é˜³ç©´",
+	"åŠ³å®«ç©´",
+	"ç™¾ä¼šç©´",
+	"çµå°ç©´",
+	"å¤ªé˜³ç©´",
+	"è†»ä¸­ç©´",
+	"å‘½é—¨ç©´",
+	"é¸ å°¾ç©´",
+	"ä¸‰é˜´äº¤",
+	"å¤©æŸ±ç©´"
 });
 
 mapping *action = ({
-([      "action" : "$NÇúÆğÊ³Ö¸£¬àÍµÄÒ»ÉùÇáÏì£¬Ò»¹ÉÏ¸Ï¸Æø¾¢ÉäÏò$n"+xuedao[random(sizeof(xuedao))],
+([      "action" : "$Næ›²èµ·é£ŸæŒ‡ï¼Œå—¤çš„ä¸€å£°è½»å“ï¼Œä¸€è‚¡ç»†ç»†æ°”åŠ²å°„å‘$n"+xuedao[random(sizeof(xuedao))],
 	"force" : 250,
 	"dodge" : 0,
 	"parry" : 0,
 	"damage": 25,
 	"lvl" : 0,
-	"weapon": "Ö¸Á¦", 
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡åŠ›", 
+	"damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : "$N¿Û×¡ÖĞÖ¸£¬ßêßêßêÁ¬µ¯ÈıÏÂ£¬ÈıÂÆÖ¸·ç·æÈñÈô½££¬·ç³ÛµçÖ¿°ãÉäÏò$nµÄ"+xuedao[random(sizeof(xuedao))]+"¡¢"+xuedao[random(sizeof(xuedao))]+"¡¢"+xuedao[random(sizeof(xuedao))],
+([      "action" : "$Næ‰£ä½ä¸­æŒ‡ï¼Œå“§å“§å“§è¿å¼¹ä¸‰ä¸‹ï¼Œä¸‰ç¼•æŒ‡é£é”‹é”è‹¥å‰‘ï¼Œé£é©°ç”µæŒšèˆ¬å°„å‘$nçš„"+xuedao[random(sizeof(xuedao))]+"ã€"+xuedao[random(sizeof(xuedao))]+"ã€"+xuedao[random(sizeof(xuedao))],
 	"force" : 300,
 	"dodge" : 20,
 	"parry" : 15,
 	"damage": 40,
 	"lvl" : 20,
-	"weapon": "Ö¸·ç",
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡é£",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : "$N¿ÛÆğÖĞÖ¸¡¢ÎŞÃûÖ¸£¬Ò»Æëµ¯³ö£¬ÖĞÖ¸Ö¸¾¢¼¤Éä$n"+xuedao[random(sizeof(xuedao))]+"£¬ÎŞÃûÖ¸ÉÏ°µ¾¢ÔòÒÑÇÄÎŞÉùÏ¢µÄÑÚÖÁ"+xuedao[random(sizeof(xuedao))],
+([      "action" : "$Næ‰£èµ·ä¸­æŒ‡ã€æ— åæŒ‡ï¼Œä¸€é½å¼¹å‡ºï¼Œä¸­æŒ‡æŒ‡åŠ²æ¿€å°„$n"+xuedao[random(sizeof(xuedao))]+"ï¼Œæ— åæŒ‡ä¸Šæš—åŠ²åˆ™å·²æ‚„æ— å£°æ¯çš„æ©è‡³"+xuedao[random(sizeof(xuedao))],
 	"force" : 350,
 	"dodge" : 25,
 	"parry" : 20,
 	"damage": 50,
 	"lvl" : 40,
-	"damage_type" : "ÄÚÉË"
+	"damage_type" : "å†…ä¼¤"
 ]),
-([      "action" : "$NË«×ã²»¶¡²»°Ë£¬Ì¤×Å¶«·½ÒÒÄ¾Ö®Î»£¬Ê³ÖĞ¶şÖ¸·´¿Û×¡Ä´Ö¸£¬Ò»Éù³¤Ğ¥£¬·´ÊÖµ¯³ö£¬µ«¼ûÒ»¹ÉÁèÀ÷ÎŞ¼«µÄÖ¸¾¢¼¤ÉäÏò$nµÄ"+xuedao[random(sizeof(xuedao))],
+([      "action" : "$NåŒè¶³ä¸ä¸ä¸å…«ï¼Œè¸ç€ä¸œæ–¹ä¹™æœ¨ä¹‹ä½ï¼Œé£Ÿä¸­äºŒæŒ‡åæ‰£ä½æ‹‡æŒ‡ï¼Œä¸€å£°é•¿å•¸ï¼Œåæ‰‹å¼¹å‡ºï¼Œä½†è§ä¸€è‚¡å‡Œå‰æ— æçš„æŒ‡åŠ²æ¿€å°„å‘$nçš„"+xuedao[random(sizeof(xuedao))],
 	"force" : 400,
 	"dodge" : 30,
 	"parry" : 15,
 	"damage": 60,
 	"lvl" : 60,
-	"damage_type" : "ğöÉË"
+	"damage_type" : "ç˜€ä¼¤"
 ]),
-([      "action" : "$NÀäºßÒ»Éù£¬Ë«ÊÖÁıÈëĞäÖĞ£¬Á³ÉÏÇàÆøÒ»ÉÁ¼´ÊÅ£¬¼¸ÂÆÖ¸·çÒÑÎŞÉùÎŞÏ¢µÄÏ®Ïò$nµÄ"+xuedao[random(sizeof(xuedao))]+"¡¢"+xuedao[random(sizeof(xuedao))]+"¡¢"+xuedao[random(sizeof(xuedao))]+"Êı´¦ÒªÑ¨",
+([      "action" : "$Nå†·å“¼ä¸€å£°ï¼ŒåŒæ‰‹ç¬¼å…¥è¢–ä¸­ï¼Œè„¸ä¸Šé’æ°”ä¸€é—ªå³é€ï¼Œå‡ ç¼•æŒ‡é£å·²æ— å£°æ— æ¯çš„è¢­å‘$nçš„"+xuedao[random(sizeof(xuedao))]+"ã€"+xuedao[random(sizeof(xuedao))]+"ã€"+xuedao[random(sizeof(xuedao))]+"æ•°å¤„è¦ç©´",
 	"force" : 450,
 	"dodge" : 40,
 	"parry" : 10,
 	"damage": 80,
 	"lvl" : 80,
-	"weapon": "Ö¸·ç",
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡é£",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : "$NÃæÉ«ÄıÖØ£¬ÕæÆøÁ÷×ª£¬Ö»¼û$NÓÒÊÖÖĞÖ¸½¥±äÎªµ­ÇàÉ«£¬»º»ºµ¯Ïò$n£¬$nÖ»¾õĞØ¿ÚÒ»ÖÏ£¬±»Ò»¹ÉÉ­º®Ö®¼«µÄÖ¸·çÑ¹µÃ¼¸ºõÁ¬ÆøÒ²´­²»¹ıÀ´",
+([      "action" : "$Né¢è‰²å‡é‡ï¼ŒçœŸæ°”æµè½¬ï¼Œåªè§$Nå³æ‰‹ä¸­æŒ‡æ¸å˜ä¸ºæ·¡é’è‰²ï¼Œç¼“ç¼“å¼¹å‘$nï¼Œ$nåªè§‰èƒ¸å£ä¸€çª’ï¼Œè¢«ä¸€è‚¡æ£®å¯’ä¹‹æçš„æŒ‡é£å‹å¾—å‡ ä¹è¿æ°”ä¹Ÿå–˜ä¸è¿‡æ¥",
 	"force" : 500,
 	"dodge" : 50,
 	"parry" : 10,
 	"damage": 100,
 	"lvl" : 100,
-	"damage_type" : "ÄÚÉË"
+	"damage_type" : "å†…ä¼¤"
 ]),
 });
 
@@ -99,16 +99,16 @@ int valid_enable(string usage) { return usage=="finger" || usage=="parry"; }
 
 int valid_learn(object me)
 {
-	if (me->query("family/master_name") != "»ÆÒ©Ê¦")
-		return notify_fail("µ¯Ö¸ÉñÍ¨ÄËÌÒ»¨µº¾ø¼¼£¬±ØĞèÏò»ÆÒ©Ê¦Çë½Ì¡£\n");
+	if (me->query("family/master_name") != "é»„è¯å¸ˆ")
+		return notify_fail("å¼¹æŒ‡ç¥é€šä¹ƒæ¡ƒèŠ±å²›ç»æŠ€ï¼Œå¿…éœ€å‘é»„è¯å¸ˆè¯·æ•™ã€‚\n");
 	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
-		return notify_fail("Á·µ¯Ö¸ÉñÍ¨±ØĞë¿ÕÊÖ¡£\n");
+		return notify_fail("ç»ƒå¼¹æŒ‡ç¥é€šå¿…é¡»ç©ºæ‰‹ã€‚\n");
 	if ((int)me->query_skill("bitao-xuangong", 1) <60)
-		return notify_fail("ÄãµÄ±ÌÌÎĞş¹¦»ğºò²»¹»£¬ÎŞ·¨Ñ§µ¯Ö¸ÉñÍ¨¡£\n");
+		return notify_fail("ä½ çš„ç¢§æ¶›ç„åŠŸç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦å¼¹æŒ‡ç¥é€šã€‚\n");
 	if ((int)me->query("max_neili") < 500)
-		return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·µ¯Ö¸ÉñÍ¨¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒå¼¹æŒ‡ç¥é€šã€‚\n");
 	if ((int)me->query_skill("finger", 1) <60)
-	   return notify_fail("ÄãµÄ»ù±¾Ö¸·¨»ğºò²»¹»£¬ÎŞ·¨Ñ§µ¯Ö¸ÉñÍ¨¡£\n");
+	   return notify_fail("ä½ çš„åŸºæœ¬æŒ‡æ³•ç«å€™ä¸å¤Ÿï¼Œæ— æ³•å­¦å¼¹æŒ‡ç¥é€šã€‚\n");
 	return 1;
 }
 
@@ -123,7 +123,7 @@ mapping query_action(object me, object weapon)
 /*
 	if ((w) && random(level)>random(400) && me->query("neili")>600) {
         	me->add("neili", -100);	
-        	message_vision(HIG"$NÀäĞ¦Ò»Éù£¬Éì³öÊ³ÖĞ¶şÖ¸Ïò$nÊÖÖĞµÄ"+w->name()+HIG"µ¯È¥£¡\n"NOR,me,victim);
+        	message_vision(HIG"$Nå†·ç¬‘ä¸€å£°ï¼Œä¼¸å‡ºé£Ÿä¸­äºŒæŒ‡å‘$næ‰‹ä¸­çš„"+w->name()+HIG"å¼¹å»ï¼\n"NOR,me,victim);
         	remove_call_out("bash_weapon");
 		call_out("bash_weapon",0, me, victim);
         }
@@ -136,9 +136,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query("jingli") < 80)
-		return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 40)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·µ¯Ö¸ÉñÍ¨¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒå¼¹æŒ‡ç¥é€šã€‚\n");
 	me->receive_damage("jingli", 25);
 	me->add("neili", -5);
 	return 1;
@@ -168,27 +168,27 @@ int bash_weapon(object me, object victim)
                         + (int)victim->query("neili")/15;
                 wap = random(wap);
                 if( wap > 2 * wdp ) {
-                        message_vision(HIW "$NÖ»¾õµÃÊÖÖĞ" + ob->name() + "°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n" NOR,
+                        message_vision(HIW "$Nåªè§‰å¾—æ‰‹ä¸­" + ob->name() + "æŠŠæŒä¸å®šï¼Œè„±æ‰‹é£å‡ºï¼\n" NOR,
                                 victim);
                         ob->unequip();
                         ob->move(environment(victim));
                         victim->reset_action();
                 } else if( wap > wdp ) {
-                        message_vision(HIW "Ö»Ìı¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖĞµÄ" + ob->name() + "ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n" NOR, victim );
+                        message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + ob->name() + "å·²ç»æ–­ä¸ºä¸¤æˆªï¼\n" NOR, victim );
                         ob->unequip();
                         ob->move(environment(victim));
-                        ob->set("name", "¶ÏµôµÄ" + ob->query("name"));
+                        ob->set("name", "æ–­æ‰çš„" + ob->query("name"));
 //                      ob->set("value", (int)ob->query("value") / 10);
                         ob->set("value", 0);
                         ob->set("weapon_prop", 0);
                         victim->reset_action();
                 } else if( wap > wdp / 2 ) {
-                        message_vision("$NÖ»¾õµÃÊÖÖĞ" + ob->name() + "Ò»Õğ£¬ÏÕĞ©ÍÑÊÖ£¡\n",
+                        message_vision("$Nåªè§‰å¾—æ‰‹ä¸­" + ob->name() + "ä¸€éœ‡ï¼Œé™©äº›è„±æ‰‹ï¼\n",
                                 victim);
                 } 
 /*		else {
-                        message_vision("$NÉä³öµÄĞ¡Ê¯×ÓºÍ$nµÄ" + ob->name()
-                                + "Ïà»÷£¬Ã°³öµãµãµÄ»ğĞÇ¡£\n", me, victim);
+                        message_vision("$Nå°„å‡ºçš„å°çŸ³å­å’Œ$nçš„" + ob->name()
+                                + "ç›¸å‡»ï¼Œå†’å‡ºç‚¹ç‚¹çš„ç«æ˜Ÿã€‚\n", me, victim);
                 }*/
         }
 }

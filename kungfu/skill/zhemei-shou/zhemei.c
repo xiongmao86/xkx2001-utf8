@@ -1,4 +1,4 @@
-// duo.c ¿ÕÊÖÕÛÃ·
+// duo.c ç©ºæ‰‹æŠ˜æ¢…
 
 #include <ansi.h>
 
@@ -18,31 +18,31 @@ int perform(object me, object target)
       skill = me->query_skill("zhemei-shou",1);
 
       if( !(me->is_fighting() ))
-              return notify_fail("¿ÕÊÖÕÛÃ·Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("ç©ºæ‰‹æŠ˜æ¢…åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
       if (objectp(weapon2 = me->query_temp("weapon")))
-              return notify_fail("Äã±ØĞë¿ÕÊÖ¡£\n");
+              return notify_fail("ä½ å¿…é¡»ç©ºæ‰‹ã€‚\n");
 
       if (!objectp(weapon = target->query_temp("weapon")))
-         return notify_fail("¶Ô·½Ã»ÓĞ±øÈĞ£¬Äã²»ÓÃµ£ĞÄ¡£\n");
+         return notify_fail("å¯¹æ–¹æ²¡æœ‰å…µåˆƒï¼Œä½ ä¸ç”¨æ‹…å¿ƒã€‚\n");
 
       if( skill < 100)
-              return notify_fail("ÄãµÄÌìÉ½ÕÛÃ·ÊÖµÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¿ÕÊÖÕÛÃ·£¡\n");
+              return notify_fail("ä½ çš„å¤©å±±æŠ˜æ¢…æ‰‹ç­‰çº§ä¸å¤Ÿ, ä¸èƒ½ä½¿ç”¨ç©ºæ‰‹æŠ˜æ¢…ï¼\n");
 
 	if ((int)me->query_skill("xiaowu-xiang", 1)<100
 		&& (int)me->query_skill("bahuang-gong", 1)<100
 		&& (int)me->query_skill("beiming-shengong", 1)<100)
-		return notify_fail("ÄãµÄåĞÒ£ÅÉÄÚ¹¦»ğºò²»¹»¡£\n");
+		return notify_fail("ä½ çš„é€é¥æ´¾å†…åŠŸç«å€™ä¸å¤Ÿã€‚\n");
 
 	if ( me->query_skill_mapped("force") != "xiaowu-xiang"
 		&& me->query_skill_mapped("force") != "bahuang-gong"
 		&& me->query_skill_mapped("force") != "beiming-shengong")
-                return notify_fail("ÄãÃ»ÓĞÔËÓÃåĞÒ£ÅÉÄÚ¹¦£¡\n");	
+                return notify_fail("ä½ æ²¡æœ‰è¿ç”¨é€é¥æ´¾å†…åŠŸï¼\n");	
 
 	if( me->query("neili") < 300 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃ¿ÕÊÖÕÛÃ·£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ç©ºæ‰‹æŠ˜æ¢…ï¼\n");
 
-	message_vision(CYN"\n$NÄıÉñ±ÕÏ¢Åü³öÒ»ÕÆ£¬·¢ÖÁÖĞÂ·Í»È»·´ÕÆÎª×¦£¬×¥Ïò$nÊÖÖĞµÄ"+weapon->query("name")+CYN"¡£\n\n"NOR,me,target);
+	message_vision(CYN"\n$Nå‡ç¥é—­æ¯åŠˆå‡ºä¸€æŒï¼Œå‘è‡³ä¸­è·¯çªç„¶åæŒä¸ºçˆªï¼ŒæŠ“å‘$næ‰‹ä¸­çš„"+weapon->query("name")+CYN"ã€‚\n\n"NOR,me,target);
 
 	exp1 = me->query("combat_exp");
 	exp2 = target->query("combat_exp");
@@ -55,7 +55,7 @@ int perform(object me, object target)
 
 	if (exp1 < exp2/3)
 	{
-		message_vision("Ë­Öª$n»ìÈô²»¼û£¬ºó·¢ÏÈÖÁÒ»¸ö½øÕĞµ²×¡ÁË$NµÄ¹¥ÊÆ¡£\n",me,target);
+		message_vision("è°çŸ¥$næ··è‹¥ä¸è§ï¼Œåå‘å…ˆè‡³ä¸€ä¸ªè¿›æ‹›æŒ¡ä½äº†$Nçš„æ”»åŠ¿ã€‚\n",me,target);
 		me->start_busy(1+random(3));
 		me->add("neili",-50);
 		COMBAT_D->do_attack(target,me,me->query_temp("weapon"));
@@ -64,26 +64,26 @@ int perform(object me, object target)
 
 	if (exp1 > random(exp2))
 	{
-	message_vision(HIR"$nÒ»²»ÁôÉñ£¬ÊÖÖĞ"+weapon->query("name")+HIR"ÒÑ±»$N·´ÊÖ×¥µ½¡£\n\n"NOR,me,target);
+	message_vision(HIR"$nä¸€ä¸ç•™ç¥ï¼Œæ‰‹ä¸­"+weapon->query("name")+HIR"å·²è¢«$Nåæ‰‹æŠ“åˆ°ã€‚\n\n"NOR,me,target);
 		comb1 = str1*neili1*skill1;
 		comb2 = str2*neili2*skill2;
 	
 		if (comb1 > comb2 * 3/5 )
 		{
 			
-	message_vision(HIW"$nÖ»¾õÒ»¹É¾¢Á¦×Ô"+weapon->query("name")+HIW"´«ÁË¹ıÀ´£¬ÊÖÍóÒ»Âé£¬ÊÖÖĞ"+weapon->query("name")+HIW"ÍÑÊÖ¶ø³ö£¡\n"NOR,me,target);
+	message_vision(HIW"$nåªè§‰ä¸€è‚¡åŠ²åŠ›è‡ª"+weapon->query("name")+HIW"ä¼ äº†è¿‡æ¥ï¼Œæ‰‹è…•ä¸€éº»ï¼Œæ‰‹ä¸­"+weapon->query("name")+HIW"è„±æ‰‹è€Œå‡ºï¼\n"NOR,me,target);
 			weapon->move(me);
 			me->add("neili",-50);
 			return 1;
 		}
-	message_vision(HIW"$N·­×ªÊÖ×¥´óºÈÒ»Éù¡¸³·£¡¡¹£¬ÄÚÁ¦×Ô"+weapon->query("name")+HIW"´«³ö£¬ÔË¾¢»Ø¶á£¡\n\n"NOR,me,target);
-	message_vision(HIG"$NÖ»¾õ$nÊÖÖĞµÄ"+weapon->query("name")+HIG"ÈçÍ¬ÖıÔÚÌúÖĞÒ»°ã£¬Ö»ºÃ·ÅÊÖ£¬Æ®ÉíÍË¿ª¡£\n"NOR,me,target);
+	message_vision(HIW"$Nç¿»è½¬æ‰‹æŠ“å¤§å–ä¸€å£°ã€Œæ’¤ï¼ã€ï¼Œå†…åŠ›è‡ª"+weapon->query("name")+HIW"ä¼ å‡ºï¼Œè¿åŠ²å›å¤ºï¼\n\n"NOR,me,target);
+	message_vision(HIG"$Nåªè§‰$næ‰‹ä¸­çš„"+weapon->query("name")+HIG"å¦‚åŒé“¸åœ¨é“ä¸­ä¸€èˆ¬ï¼Œåªå¥½æ”¾æ‰‹ï¼Œé£˜èº«é€€å¼€ã€‚\n"NOR,me,target);
 			me->start_busy(1+random(2));
 			me->add("neili",-150);
 			return 1;
 
 	}
-	message_vision("¿ÉÊÇ$nµÄ¿´ÆÆÁË$NµÄÆóÍ¼£¬Á¢¿Ì²ÉÈ¡ÊØÊÆ£¬Æ®Éí¶ã¿ª$NµÄ¹¥»÷¡£\n",me,target);
+	message_vision("å¯æ˜¯$nçš„çœ‹ç ´äº†$Nçš„ä¼å›¾ï¼Œç«‹åˆ»é‡‡å–å®ˆåŠ¿ï¼Œé£˜èº«èº²å¼€$Nçš„æ”»å‡»ã€‚\n",me,target);
 	me->add("neili",-50);
 	me->start_busy(1+random(2));
 	return 1;

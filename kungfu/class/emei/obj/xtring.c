@@ -1,5 +1,5 @@
 //Cracked by Roath
-// xtring.c ÌúÖ¸»·
+// xtring.c é“æŒ‡ç¯
 
 #include <armor.h>
 #include <ansi.h>
@@ -9,15 +9,15 @@ inherit FINGER;
 
 void create()
 {
-        set_name("ÌúÖ¸»·", ({ "tie zhihuan", "ring" }) );
+        set_name("é“æŒ‡ç¯", ({ "tie zhihuan", "ring" }) );
 	set_color(HIW+BLK);
         set("weight", 400);
         if( clonep() )
 		set_default_object(__FILE__);
         else
 	{
-		set("long", "ÕâÊÇ¶ëáÒÕÆÃÅµÄĞÅÎï£¬´´ÅÉ×æÊ¦¹ùÏåÅ®ÏÀËùÒÅÖ®ĞşÌúÖ¸»·£¬Ö¸»·ÄÚ¿Ì×Å¡°ÁôêİÏåÅ®¡±ËÄ¸ö×Ö¡£\n");
-		set("unit", "¸ö");
+		set("long", "è¿™æ˜¯å³¨åµ‹æŒé—¨çš„ä¿¡ç‰©ï¼Œåˆ›æ´¾ç¥–å¸ˆéƒ­è¥„å¥³ä¾ æ‰€é—ä¹‹ç„é“æŒ‡ç¯ï¼ŒæŒ‡ç¯å†…åˆ»ç€â€œç•™è´»è¥„å¥³â€å››ä¸ªå­—ã€‚\n");
+		set("unit", "ä¸ª");
 		set("value", 100000);
 		set("rigidity", 10000);
 		set("material", "alloy");

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /kungfu/class/emei/ji.c ¼ÍÏşÜ½
+// /kungfu/class/emei/ji.c çºªæ™“èŠ™
 // xuy: 96/11/22
 
 #include <ansi.h>
@@ -30,10 +30,10 @@ string* homes = ({
 
 void create()
 {
-        set_name("¼ÍÏşÜ½", ({ "ji xiaofu", "ji", "xiaofu" }));
+        set_name("çºªæ™“èŠ™", ({ "ji xiaofu", "ji", "xiaofu" }));
         set("long", 
-		"ËıÊÇ½ğ±Ş¼Í¼ÒµÄ¶ëáÒÅÉµÜ×Ó¼ÍÏşÜ½¡£Ëı·ôÉ«Ñ©°×£¬³¤ÌôÉí²Ä£¬ÊÇ¸öÃÀÃ²Å®ÀÉ¡£\n");
-	set("gender", "Å®ĞÔ");
+		"å¥¹æ˜¯é‡‘é­çºªå®¶çš„å³¨åµ‹æ´¾å¼Ÿå­çºªæ™“èŠ™ã€‚å¥¹è‚¤è‰²é›ªç™½ï¼Œé•¿æŒ‘èº«æï¼Œæ˜¯ä¸ªç¾è²Œå¥³éƒã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 28);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -82,11 +82,11 @@ void create()
 	prepare_skill("finger", "tiangang-zhi");
 	prepare_skill("strike", "jinding-zhang");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-		"³ö¼Ò" : "ÄãÈ¥¶ëáÒÉ½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦ÃÃ°É¡£ËıÃÇÔÚ¸£ÊÙâÖ¡¢Ç§·ğâÖ¡¢\nÍòÄêâÖ¡¢ÍòĞĞâÖºÍÎÔÔÆâÖĞŞĞĞ¡£\n",
-            "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
+		"å‡ºå®¶" : "ä½ å»å³¨åµ‹å±±çš„åºµå ‚é‡Œæ‰¾æˆ‘é™å­—è¾ˆå¸ˆå¦¹å§ã€‚å¥¹ä»¬åœ¨ç¦å¯¿åºµã€åƒä½›åºµã€\nä¸‡å¹´åºµã€ä¸‡è¡Œåºµå’Œå§äº‘åºµä¿®è¡Œã€‚\n",
+            "ç­ç»å¸ˆå¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé—¨äººï¼Œåœ¨åè—åºµä¿®è¡Œã€‚\n",
         ]));
 
 	set("chat_chance_combat", 50);
@@ -128,17 +128,17 @@ int chat()
 	inv = all_inventory(where);
 
 	for(i=0;i<sizeof(inv);i++)
-	    if ((string)inv[i]->query("race") == "ÈËÀà"
+	    if ((string)inv[i]->query("race") == "äººç±»"
 	      && inv[i] != me )
 		if (inv[i]->is_fighting()) {
 		    chars += ({inv[i]});
 		    if ( interactive(inv[i]) ) 
 			chars += ({inv[i], inv[i]});
 		} 
-		else if ((interactive(inv[i]) || inv[i]->query("family/family_name") == "¶ëáÒÅÉ")
+		else if ((interactive(inv[i]) || inv[i]->query("family/family_name") == "å³¨åµ‹æ´¾")
 		      && inv[i]->query("eff_qi")<inv[i]->query("max_qi")) {
 		    injured += ({inv[i]});
-		    if (inv[i]->query("family/family_name") == "¶ëáÒÅÉ" 
+		    if (inv[i]->query("family/family_name") == "å³¨åµ‹æ´¾" 
 		     || inv[i]->query_temp("last_persuader") == "ji xiaofu" )
 			injured += ({inv[i], inv[i]});
 		}
@@ -152,9 +152,9 @@ int chat()
 	} else if (sizeof(injured)>0 && !me->is_fighting() ) {
 		target = injured[random(sizeof(injured))];
 		me->set("neili", me->query("max_neili"));
-		message_vision(CYN"$N¶Ô$nËµµÀ£º¡°ÕâÎ»"
+		message_vision(CYN"$Nå¯¹$nè¯´é“ï¼šâ€œè¿™ä½"
 		        +RANK_D->query_respect(target)
-			+"ÊÜÉË²»Çá£¬ÈÃÎÒ¸øÄãÔË¹¦ÁÆÉË¡£¡±\n"NOR,
+			+"å—ä¼¤ä¸è½»ï¼Œè®©æˆ‘ç»™ä½ è¿åŠŸç–—ä¼¤ã€‚â€\n"NOR,
 			me, target);
 		command("exert lifeheal "+target->query("id"));
 		set("jiali", 90);
@@ -212,7 +212,7 @@ int return_home(object home)
         ||      is_fighting() ) return 0;
 
         // Leave for home now.
-        message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+        message("vision", this_object()->name() + "æ€¥æ€¥å¿™å¿™åœ°ç¦»å¼€äº†ã€‚\n",
                 environment(), this_object());
 	
 	home = load_object(homes[random(sizeof(homes))]);

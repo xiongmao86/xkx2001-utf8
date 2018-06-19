@@ -7,21 +7,21 @@
 int exert(object me, object target)
 {
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆ¾«£¿ÕÒËÀÂð£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­è¿åŠŸç–—ç²¾ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
 	if ((int)me->query_skill("kurong-changong", 1) < 20)
-		return notify_fail("ÄãµÄ¿ÝÈÙìø¹¦ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„æž¯è£ç¦…åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("jingli") < 50 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("jingli") < 300 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("eff_jing") >= (int)me->query("max_jing"))
-		return notify_fail("ÄãÏÖÔÚ²»ÐëÒªÁÆ¾«£¡\n");
+		return notify_fail("ä½ çŽ°åœ¨ä¸é¡»è¦ç–—ç²¾ï¼\n");
 
-	write( HIW "ÄãÔÚÉíÉÏ»®Ò»µÀÉË¿Ú£¬¼·³öÒ»Ð©ÓÙÑª£¬Æø³Áµ¤Ìï£¬¿ªÊ¼ÄýÉñÁÆ¾«¡£\n" NOR);
+	write( HIW "ä½ åœ¨èº«ä¸Šåˆ’ä¸€é“ä¼¤å£ï¼ŒæŒ¤å‡ºä¸€äº›æ·¤è¡€ï¼Œæ°”æ²‰ä¸¹ç”°ï¼Œå¼€å§‹å‡ç¥žç–—ç²¾ã€‚\n" NOR);
 	message("vision",
-		HIW + me->name() + "ÔÚÉíÉÏ»®Ò»µÀÉË¿Ú£¬¼·³öÒ»Ð©ÓÙÑª£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£\n" NOR,
+		HIW + me->name() + "åœ¨èº«ä¸Šåˆ’ä¸€é“ä¼¤å£ï¼ŒæŒ¤å‡ºä¸€äº›æ·¤è¡€ï¼Œè„¸è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚\n" NOR,
 		environment(me), me);
 
 	me->receive_curing("jing", (int)me->query_skill("force")/2 );

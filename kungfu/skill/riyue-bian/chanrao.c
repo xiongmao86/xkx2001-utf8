@@ -1,5 +1,5 @@
 //Cracked by Roath
-// chanrao.c Ìì²øµØÈÆ
+// chanrao.c å¤©ç¼ åœ°ç»•
 
 #include <ansi.h>
 
@@ -14,30 +14,30 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("Ìì²øµØÈÆÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å¤©ç¼ åœ°ç»•åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	weapon = me->query_temp("weapon");
         if( weapon->query("skill_type") != "whip" )
-                return notify_fail("ÄãÊÖÖĞÎŞ±Ş£¬ÈçºÎÊ¹µÃÌì²øµØÈÆ£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— é­ï¼Œå¦‚ä½•ä½¿å¾—å¤©ç¼ åœ°ç»•ï¼Ÿ\n");
 	if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 	
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§â…µ\n");
 
-	msg = HIY "$NÊ¹³öÈÕÔÂ±Ş·¨µÄÌì²øµØÈÆ¾÷£¬Á¬»ÓÊı±Ş£¬ÈçºÚÁú°ã×ÅµØÏò$nµÄÈ«Éí¾íÈ¥£¡\n";
+	msg = HIY "$Nä½¿å‡ºæ—¥æœˆé­æ³•çš„å¤©ç¼ åœ°ç»•è¯€ï¼Œè¿æŒ¥æ•°é­ï¼Œå¦‚é»‘é¾™èˆ¬ç€åœ°å‘$nçš„å…¨èº«å·å»ï¼\n";
 
 	me->add("neili", -100);
 	me->add("jingli", -50);
 
 	if( random(me->query("combat_exp")) > random(target->query("combat_exp")) ) 
 	{
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¬»ëÉí±»ÂşÌì±ŞÓ°¹üÔÚÆäÖĞ£¡\n" NOR;
+		msg += "ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼Œæµ‘èº«è¢«æ¼«å¤©é­å½±è£¹åœ¨å…¶ä¸­ï¼\n" NOR;
 		target->start_busy( (int)me->query_skill("whip") / 30 );
 	} 
 	else 
 	{
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ±Ş·¨È¥Â·£¬Ãô½İµØÉÁÁË¿ªÈ¥¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„é­æ³•å»è·¯ï¼Œæ•æ·åœ°é—ªäº†å¼€å»ã€‚\n" NOR;
 		me->start_busy(1 + random(3));
 	}
 

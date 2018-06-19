@@ -1,5 +1,5 @@
 //Cracked by Roath
-// liaoshang.c ÔËÆøÁÆÉË
+// liaoshang.c è¿æ°”ç–—ä¼¤
 // mantian may/11/2001
 // only can liaoshang in sleep room or hotel 
 
@@ -16,23 +16,23 @@ int exert(object me, object target)
 	object where = environment(me);
 
 	me = this_player();
-	if( !target || target==me || !target->is_character() || target->query("race") != "ÈËÀà" ) return notify_fail(HIW"ÄãÒªÎªË­ÁÆÉË£¿\n"NOR);
-	if (me->is_fighting() || target->is_fighting()) return notify_fail(HIW"Õ½¶·ÖĞÔË¹¦ÁÆÉË£¿ÕÒËÀÂğ£¿\n"NOR);
-	if (me->query__temp("liaoshang")) return notify_fail(HIW"ÄãÒÑ¾­ÔÚÎª"+me->query__temp("liao/targetname")+"("+me->query__temp("liao/target")+")ÁÆÉËÁË¡£\n"NOR);
-	if ((int)me->query_skill("kurong-changong", 1) < 120) return notify_fail(HIW"ÄãµÄ¿İÈÙìø¹¦ĞŞÎª»¹²»¹»ÎªËûÈËÔË¹¦ÁÆÉË¡£\n"NOR);
-	if ((int)me->query_skill("yiyang-zhi", 1) < 150) return notify_fail(HIW"ÄãµÄÒ»ÑôÖ¸ĞŞÎª»¹²»¹»ÎªËûÈËÁÆÉË¡£\n"NOR);
-	if (!(where->query("sleep_room")) && !(where->query("hotel"))) return notify_fail(HIW"ÕâÀïÌ«³³ÁË£¬ÄãÎŞ·¨¾²ÏÂĞÄÀ´ÌæÈËÁÆÉË£¡\n"NOR);
+	if( !target || target==me || !target->is_character() || target->query("race") != "äººç±»" ) return notify_fail(HIW"ä½ è¦ä¸ºè°ç–—ä¼¤ï¼Ÿ\n"NOR);
+	if (me->is_fighting() || target->is_fighting()) return notify_fail(HIW"æˆ˜æ–—ä¸­è¿åŠŸç–—ä¼¤ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n"NOR);
+	if (me->query__temp("liaoshang")) return notify_fail(HIW"ä½ å·²ç»åœ¨ä¸º"+me->query__temp("liao/targetname")+"("+me->query__temp("liao/target")+")ç–—ä¼¤äº†ã€‚\n"NOR);
+	if ((int)me->query_skill("kurong-changong", 1) < 120) return notify_fail(HIW"ä½ çš„æ¯è£ç¦…åŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿä¸ºä»–äººè¿åŠŸç–—ä¼¤ã€‚\n"NOR);
+	if ((int)me->query_skill("yiyang-zhi", 1) < 150) return notify_fail(HIW"ä½ çš„ä¸€é˜³æŒ‡ä¿®ä¸ºè¿˜ä¸å¤Ÿä¸ºä»–äººç–—ä¼¤ã€‚\n"NOR);
+	if (!(where->query("sleep_room")) && !(where->query("hotel"))) return notify_fail(HIW"è¿™é‡Œå¤ªåµäº†ï¼Œä½ æ— æ³•é™ä¸‹å¿ƒæ¥æ›¿äººç–—ä¼¤ï¼\n"NOR);
 
 	for( i=0; i < sizeof(poison_list); i++ )
-		if (me->query_condition(poison_list[i]["poison"]) > 0) return notify_fail(HIW"ÄãÉíÊÜ"+poison_list[i]["name"]+poison_list[i]["type"]+"£¬ÎŞ·¨ÎªËûÈËÁÆÉË¡£\n"NOR);
+		if (me->query_condition(poison_list[i]["poison"]) > 0) return notify_fail(HIW"ä½ èº«å—"+poison_list[i]["name"]+poison_list[i]["type"]+"ï¼Œæ— æ³•ä¸ºä»–äººç–—ä¼¤ã€‚\n"NOR);
 	for( i=0; i < sizeof(poison_list); i++ )
 		if( target->query_condition(poison_list[i]["poison"]) > 0 )
 		{
 			poison = poison_list[i]["poison"];
 			break;
 		}
-		if (poison == 0) return notify_fail(HIW+target->name() + "ÉíÌå²¢ÎŞÒìÑù¡£\n"NOR);
-	if( (int)me->query("neili") < 2000 ) return notify_fail(HIW"ÄãµÄÕæÆø²»¹»ÎªËûÈËÁÆÉËËùĞè¡£\n"NOR);
+		if (poison == 0) return notify_fail(HIW+target->name() + "èº«ä½“å¹¶æ— å¼‚æ ·ã€‚\n"NOR);
+	if( (int)me->query("neili") < 2000 ) return notify_fail(HIW"ä½ çš„çœŸæ°”ä¸å¤Ÿä¸ºä»–äººç–—ä¼¤æ‰€éœ€ã€‚\n"NOR);
 	target->start_busy(30);
 	target->set_temp("liao/healer", me->query("id"));
 	me->start_busy(30);
@@ -40,10 +40,10 @@ int exert(object me, object target)
 	me->set_temp("liao/target", target->query("id"));
 	me->set_temp("liao/targetname", target->query("name"));
 	tempLook = me->short();
-	tempLook += CYN" <ÕïÊÓÖĞ>"NOR;
+	tempLook += CYN" <è¯Šè§†ä¸­>"NOR;
 	if (me->query_temp("apply/short")) me->set_temp("liao/short", me->query_temp("apply/short"));
 	me->set_temp("apply/short", ({tempLook}));
-	message_vision(CYN"$NËµµÀ£ºÏÈ¿´¿´ÄãµÄÂöÏó°É¡£\n\n\n\n\n\n"NOR HIB"Ëµ×Å$N±ãÌáÆğ$nµÄÊÖ°ÑÁËÒ»»áÂö¡£\n"NOR, me,target );
+	message_vision(CYN"$Nè¯´é“ï¼šå…ˆçœ‹çœ‹ä½ çš„è„‰è±¡å§ã€‚\n\n\n\n\n\n"NOR HIB"è¯´ç€$Nä¾¿æèµ·$nçš„æ‰‹æŠŠäº†ä¸€ä¼šè„‰ã€‚\n"NOR, me,target );
 	call_out("checking_poison", 15, me, target);
 	return 1;
 }
@@ -64,35 +64,35 @@ void checking_poison(object me, object target)
 			break;
 		}
 	poi_amount = (int)target->query_condition(poison, 1);
-	if (poi_amount < 4)	msg = "²¢ÎŞÒìÑù";
-	else if (poi_amount < 50) msg = "²¢ÎŞ´ó°­";
+	if (poi_amount < 4)	msg = "å¹¶æ— å¼‚æ ·";
+	else if (poi_amount < 50) msg = "å¹¶æ— å¤§ç¢";
 	else if (poi_amount < 70)
 	{
-		msg = "ÉÔ¾ßÎ£ÏÕ";
+		msg = "ç¨å…·å±é™©";
 		finger_drop = finger_drop+random(finger_drop/2);
 		neili_drop = neili_drop+random(neili_drop/2);
 	}
 	else if (poi_amount < 100)
 	{
-		msg = "ÇÖÈë½îÂö";
+		msg = "ä¾µå…¥ç­‹è„‰";
 		finger_drop = finger_drop+random(finger_drop*2/3);
 		neili_drop = neili_drop+random(neili_drop*2/3);
 	}
 	else if (poi_amount < 130)
 	{
-		msg = "ÉîÈë½îÂö";
+		msg = "æ·±å…¥ç­‹è„‰";
 		finger_drop = finger_drop+random(finger_drop*4/5);
 		neili_drop = neili_drop+random(neili_drop*4/5);
 	}
 	else if (poi_amount < 160)
 	{
-		msg = "ÇÖÈëĞÄÂö";
+		msg = "ä¾µå…¥å¿ƒè„‰";
 		finger_drop = finger_drop+random(finger_drop);
 		neili_drop = neili_drop+random(neili_drop);
 	}
 	else
 	{
-		msg = "ÉîÈëĞÄÂö";
+		msg = "æ·±å…¥å¿ƒè„‰";
 		finger_drop = finger_drop+random(finger_drop*2);
 		neili_drop = neili_drop+random(neili_drop*2);
 	}
@@ -100,26 +100,26 @@ void checking_poison(object me, object target)
 	{
 		if (poi_amount = 3)
 		{
-			msg = "ÉîÈë½îÂö";
+			msg = "æ·±å…¥ç­‹è„‰";
 			finger_drop = finger_drop+random(finger_drop*4/5);
 			neili_drop = neili_drop+random(neili_drop*4/5);
 		}
 		else if (poi_amount = 2)
 		{
-			msg = "ÇÖÈëĞÄÂö";
+			msg = "ä¾µå…¥å¿ƒè„‰";
 			finger_drop = finger_drop+random(finger_drop);
 			neili_drop = neili_drop+random(neili_drop);
 		}
 		else if (poi_amount = 1)
 		{
-			msg = "ÉîÈëĞÄÂö";
+			msg = "æ·±å…¥å¿ƒè„‰";
 			finger_drop = finger_drop+random(finger_drop*2);
 			neili_drop = neili_drop+random(neili_drop*2);
 		}
 	}
 	if (poi_amount < 4 && poison != "sxs_poison")
 	{
-		message_vision(CYN"$N³ÁË¼ÁËÒ»»áËµµÀ£º¸óÏÂËùÖĞµÄ"+poi_name+poi_type+"ÒÑ"+msg+"£¬ÊµÔÚÎŞ´ÓÖÎÆğ¡£\n\n"NOR, me,target );
+		message_vision(CYN"$Næ²‰æ€äº†ä¸€ä¼šè¯´é“ï¼šé˜ä¸‹æ‰€ä¸­çš„"+poi_name+poi_type+"å·²"+msg+"ï¼Œå®åœ¨æ— ä»æ²»èµ·ã€‚\n\n"NOR, me,target );
 		target->delete_temp("liao/healer");
 		target->start_busy(1);
 		me->delete_temp("apply/short");
@@ -129,7 +129,7 @@ void checking_poison(object me, object target)
 		me->start_busy(1);
 		return 0;
 	}
-	message_vision(CYN"$N³ÁË¼ÁËÒ»»áËµµÀ£º¸óÏÂËùÖĞµÄ"+poi_name+poi_type+"ÒÑ"+msg+"£¬ÇëÈİÔÚÏÂÎªÄúÒ½ÖÎ¡£\n\n\n\n\n\n"NOR, me,target );
+	message_vision(CYN"$Næ²‰æ€äº†ä¸€ä¼šè¯´é“ï¼šé˜ä¸‹æ‰€ä¸­çš„"+poi_name+poi_type+"å·²"+msg+"ï¼Œè¯·å®¹åœ¨ä¸‹ä¸ºæ‚¨åŒ»æ²»ã€‚\n\n\n\n\n\n"NOR, me,target );
 	if ((int)target->query_condition("xbiao") > 0) target->set_temp("liao/xbiao", (int)target->query_condition("xbiao", 1));
 	if ((int)target->query_condition("biao") > 0) target->set_temp("liao/biao", (int)target->query_condition("biao", 1));
 	if ((int)target->query_condition("bonze_drug") > 0) target->set_temp("liao/bonze_drug", (int)target->query_condition("bonze_drug", 1));
@@ -138,9 +138,9 @@ void checking_poison(object me, object target)
 	if ((int)target->query_condition("mang_shedan") > 0) target->set_temp("liao/mang_shedan", (int)target->query_condition("mang_shedan", 1));
 	me->delete_temp("apply/short");
 	tempLook = me->short();
-	tempLook += BLU" <Èë¶¨ÖĞ>"NOR;
+	tempLook += BLU" <å…¥å®šä¸­>"NOR;
 	me->set_temp("apply/short", ({tempLook}));
-	message_vision(YEL"$Nµ±¼´±ÕÄ¿´¹Ã¼£¬Èë¶¨ÔËÆğ¿İÈÙìø¹¦¡£\n\n\n\n\n\n"NOR, me,target );
+	message_vision(YEL"$Nå½“å³é—­ç›®å‚çœ‰ï¼Œå…¥å®šè¿èµ·æ¯è£ç¦…åŠŸã€‚\n\n\n\n\n\n"NOR, me,target );
 	me->set_temp("liao/finger_drop", finger_drop);
 	me->set_temp("liao/neili_drop", neili_drop);
 	me->start_busy(30);
@@ -154,10 +154,10 @@ void start_heal(object me, object target)
 
 	me->delete_temp("apply/short");
 	tempLook = me->short();
-	tempLook += HIW" <Ò½ÖÎÖĞ>"NOR;
+	tempLook += HIW" <åŒ»æ²»ä¸­>"NOR;
 	me->set_temp("apply/short", ({tempLook}));
-	message_vision(MAG"$NºöÈ»µÄÔ¾Æğ£¬×óÕÆÎæĞØ£¬ÓÒÊÖÉì³öÊ³Ö¸£¬»º»ºµÄÏò$nÍ·¶¥°Ù»áÑ¨µãÈ¥¡£\n"
-		"$nÉí²»ÓÉ¼¸µÄÎ¢Î¢Ò»Ìø£¬Ö»¾õµÄÒ»¹ÉÈÈÆø´Ó¶¥ÃÅÖ±Í¸ÏÂÀ´¡£\n\n\n\n\n\n"NOR, me,target );
+	message_vision(MAG"$Nå¿½ç„¶çš„è·ƒèµ·ï¼Œå·¦æŒæ‚èƒ¸ï¼Œå³æ‰‹ä¼¸å‡ºé£ŸæŒ‡ï¼Œç¼“ç¼“çš„å‘$nå¤´é¡¶ç™¾ä¼šç©´ç‚¹å»ã€‚\n"
+		"$nèº«ä¸ç”±å‡ çš„å¾®å¾®ä¸€è·³ï¼Œåªè§‰çš„ä¸€è‚¡çƒ­æ°”ä»é¡¶é—¨ç›´é€ä¸‹æ¥ã€‚\n\n\n\n\n\n"NOR, me,target );
 	target->start_busy(30);
 	me->start_busy(30);
 	call_out("healing", 15, me, target);
@@ -165,9 +165,9 @@ void start_heal(object me, object target)
 
 void healing(object me, object target)
 {
-	message_vision(MAG"$NÒ»Ö¸µã¹ı£¬Á¢¼´Ëõ»Ø£¬µÚ¶şÖ¸ÒÑµãÏò$nµÄ°Ù»áÑ¨ºóÒ»´çÎå·Ö´¦µÄºó¶¥Ñ¨£¬\n"
-		               "½Ó×ÅÇ¿¼ä£¬ÄÔ»§£¬·ç¸®£¬´ó×¶£¬ÌÕµÀ£¬ÉíÖù£¬ÉñµÀ£¬ÁéÌ¨Ò»Â·µã½«ÏÂÀ´¡£\n"
-					   "Ò»Ö§ÏãÈ¼ÁËÒ»°ë£¬ÒÑ½«$n¶½ÂöµÄÈıÊ®´óÑ¨Ë³´Îµãµ½¡£\n\n\n\n\n\n"NOR, me,target );
+	message_vision(MAG"$Nä¸€æŒ‡ç‚¹è¿‡ï¼Œç«‹å³ç¼©å›ï¼Œç¬¬äºŒæŒ‡å·²ç‚¹å‘$nçš„ç™¾ä¼šç©´åä¸€å¯¸äº”åˆ†å¤„çš„åé¡¶ç©´ï¼Œ\n"
+		               "æ¥ç€å¼ºé—´ï¼Œè„‘æˆ·ï¼Œé£åºœï¼Œå¤§é”¥ï¼Œé™¶é“ï¼Œèº«æŸ±ï¼Œç¥é“ï¼Œçµå°ä¸€è·¯ç‚¹å°†ä¸‹æ¥ã€‚\n"
+					   "ä¸€æ”¯é¦™ç‡ƒäº†ä¸€åŠï¼Œå·²å°†$nç£è„‰çš„ä¸‰åå¤§ç©´é¡ºæ¬¡ç‚¹åˆ°ã€‚\n\n\n\n\n\n"NOR, me,target );
 	target->start_busy(30);
 	me->start_busy(30);
 	call_out("end_heal", 15, me, target);
@@ -177,7 +177,7 @@ void end_heal(object me, object target)
 	int a;
 
 	a = me->query_skill("yiyang-zhi",1);
-	message_vision(RED"$nÍ»È»¾õµÃÒ»¹ÉÅ¯Á÷×Ô¶¥¶øÈë£¬¿ÚÖĞÍÂ³ö¼¸¿ÚºÚÑª£¬ÑÛÇ°Ò»ºÚ¾ÍÊ²Ã´Ò²¿´²»¼ûÁË£¡\n\n\n"NOR, me,target );
+	message_vision(RED"$nçªç„¶è§‰å¾—ä¸€è‚¡æš–æµè‡ªé¡¶è€Œå…¥ï¼Œå£ä¸­åå‡ºå‡ å£é»‘è¡€ï¼Œçœ¼å‰ä¸€é»‘å°±ä»€ä¹ˆä¹Ÿçœ‹ä¸è§äº†ï¼\n\n\n"NOR, me,target );
 	target->clear_condition();
 	target->start_busy(1);
 	target->unconcious();

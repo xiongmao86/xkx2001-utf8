@@ -1,6 +1,6 @@
 //Cracked by Roath
 //Cracked by Kafei
-//huxin.  护心功法
+//huxin.  鎶ゅ績鍔熸硶
 
 #include <ansi.h>
 
@@ -12,23 +12,23 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("护心功只对自己有效！\n");
+                return notify_fail("鎶ゅ績鍔熷彧瀵硅嚜宸辨湁鏁堬紒\n");
 
         if (me->query_temp("huxin"))
-                return notify_fail("你已经护住心脉了。\n");
+                return notify_fail("浣犲凡缁忔姢浣忓績鑴変簡銆俓n");
 
         if (me->query_skill("douzhuan-xingyi",1) < 80
                 || me->query_skill("force",1) < 80
                 || me->query_skill("literate",1) < 80 )
-                return notify_fail("你的斗转星移神功未成，无法用来护心！\n");
+                return notify_fail("浣犵殑鏂楄浆鏄熺Щ绁炲姛鏈垚锛屾棤娉曠敤鏉ユ姢蹇冿紒\n");
 
         if (me->query("neili") < 300)
-                return notify_fail("你的内力太少！\n");
+                return notify_fail("浣犵殑鍐呭姏澶皯锛乗n");
 
         skill=me->query_skill("douzhuan-xingyi",1)+me->query_skill("literate",1);
 
-        message("vision", HIW "\n"+me->query("name")+"潜用斗转星移神功，护住心脉。\n\n" NOR, environment(me), me);
-        tell_object(me, HIW "\n你运转斗转星移内功，护住心脉。\n\n" NOR);
+        message("vision", HIW "\n"+me->query("name")+"娼滅敤鏂楄浆鏄熺Щ绁炲姛锛屾姢浣忓績鑴夈�俓n\n" NOR, environment(me), me);
+        tell_object(me, HIW "\n浣犺繍杞枟杞槦绉诲唴鍔燂紝鎶や綇蹇冭剦銆俓n\n" NOR);
 
         me->set_temp("huxin", skill*8);
         me->add_temp("apply/armor",  me->query_skill("douzhuan-xingyi",1)/2);
@@ -46,7 +46,7 @@ void checking(object me)
 
         if (!me->query_temp("huxin")) {
         	me->add_temp("apply/armor", -me->query_skill("douzhuan-xingyi",1)/2 );
-                tell_object(me, HIW "你散去护心功法，长吁一口气。\n" NOR);
+                tell_object(me, HIW "浣犳暎鍘绘姢蹇冨姛娉曪紝闀垮悂涓�鍙ｆ皵銆俓n" NOR);
                 return;
         }
 
@@ -67,7 +67,7 @@ void checking(object me)
                 amount=(me->query_skill("douzhuan-xingyi",1)+me->query_skill("literate",1))/3+10;
                 me->add("neili", -40);
                 me->receive_curing("qi", amount);
-        message_vision("$N转动护心功法，止住伤口的流血。\n", me);
+        message_vision("$N杞姩鎶ゅ績鍔熸硶锛屾浣忎激鍙ｇ殑娴佽銆俓n", me);
         }
 
         if (living(me) && (me->query("qi") < (maxqi*2/3))) {
@@ -75,7 +75,7 @@ void checking(object me)
                 if (amount > me->query_temp("huxin")) amount=me->query_temp("huxin");
                 me->add_temp("huxin",-amount);
         me->receive_heal("qi", amount);
-        message_vision("$N转动护心功法，气色顿时好多了。\n", me);
+        message_vision("$N杞姩鎶ゅ績鍔熸硶锛屾皵鑹查】鏃跺ソ澶氫簡銆俓n", me);
         }
 
         call_out("checking", 1, me);

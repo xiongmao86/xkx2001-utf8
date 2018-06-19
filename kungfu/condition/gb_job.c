@@ -21,10 +21,10 @@ int update_condition(object me, int duration)
    if ( objectp(obj) && random(me->query("kar")) < 3 && random(40) < 5 ) {
    	switch( random(2) ) {
    	case 0:	
-		message("vision", me->name()+"ÉíÉÏÍ»È»µôÏÂÒ»·âĞÅ¡£\n", environment(me), ({me}) );
+		message("vision", me->name()+"èº«ä¸Šçªç„¶æ‰ä¸‹ä¸€å°ä¿¡ã€‚\n", environment(me), ({me}) );
 		break;
    	case 1:
-		message("vision", "Äã¼ûµ½ÓĞÈË¹í¹íËîËîµØÓÉ"+me->name()+"ÉíÉÏ°Ç×ßÒ»·âĞÅ¡£\n", environment(me), ({me}) );
+		message("vision", "ä½ è§åˆ°æœ‰äººé¬¼é¬¼ç¥Ÿç¥Ÿåœ°ç”±"+me->name()+"èº«ä¸Šæ‰’èµ°ä¸€å°ä¿¡ã€‚\n", environment(me), ({me}) );
 		break;
 	}
 
@@ -38,5 +38,5 @@ int update_condition(object me, int duration)
 
 void let_know(object me)
 {
-	tell_object(me, HIR "ÄãÉìÊÖÍù»³ÖĞÒ»Ãş£¬¾ª¾õÃÜº¯²»¼ûÁË£¡\n" NOR);
+	tell_object(me, HIR "ä½ ä¼¸æ‰‹å¾€æ€€ä¸­ä¸€æ‘¸ï¼ŒæƒŠè§‰å¯†å‡½ä¸è§äº†ï¼\n" NOR);
 }

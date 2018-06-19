@@ -1,5 +1,5 @@
 //Cracked by Roath
-/// kungfu/skill/xiantian-gong.c ÏÈÌì¹¦
+/// kungfu/skill/xiantian-gong.c å…ˆå¤©åŠŸ
 // sdong, 7/25/98
 
 #include <combat.h>
@@ -31,24 +31,24 @@ int valid_learn(object me)
         }
 
         if ( k >=2 && me->query_skill("taiji-shengong") < 80 )
-		  return notify_fail("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÎä¹¦¡£\n");
+		  return notify_fail("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥é¢†ä¼šæ›´é«˜æ·±çš„æ­¦åŠŸã€‚\n");
 		  }
 
 
-	if ( me->query("gender") == "ÎŞĞÔ" && lvl > 49)
-		return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÏÈÌìÆø¹¦¡£\n");
+	if ( me->query("gender") == "æ— æ€§" && lvl > 49)
+		return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„å…ˆå¤©æ°”åŠŸã€‚\n");
 
 	if ( me->query("class") == "bonze" )
-		return notify_fail("ÏÈÌìÆø¹¦½²¾¿ÒõÑôµ÷ºÏ£¬ÓĞÎ¥·ğ¼ÒÁù¸ùÇå¾»Ö®Òâ£¬"
-			+RANK_D->query_respect(me)+"ÓûĞŞ´Ë¹¦£¬ÒÑÊÇ×ï¹ı¡£\n");
+		return notify_fail("å…ˆå¤©æ°”åŠŸè®²ç©¶é˜´é˜³è°ƒåˆï¼Œæœ‰è¿ä½›å®¶å…­æ ¹æ¸…å‡€ä¹‹æ„ï¼Œ"
+			+RANK_D->query_respect(me)+"æ¬²ä¿®æ­¤åŠŸï¼Œå·²æ˜¯ç½ªè¿‡ã€‚\n");
 
 	if ((int)me->query_skill("force", 1) < 10
 	  || (int)me->query_skill("force", 1)/2 < lvl/3 )
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if (lvl > 10 && (int)me->query("shen") < t * 100
 		  && me->query_skill("taoism", 1) < 100)
-		return notify_fail("ÄãµÄÏÀÒåÕıÆøÌ«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ä¾ ä¹‰æ­£æ°”å¤ªä½äº†ã€‚\n");
 
 	return 1;
 }
@@ -56,19 +56,19 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if ( me->query_skill("xiantian-gong", 1) < 150 )
-                return notify_fail("ÄãµÄÏÈÌì¹¦ĞŞÎª²»¹»£¬Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+                return notify_fail("ä½ çš„å…ˆå¤©åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
         if ( me->query_temp("weapon") )
-                return notify_fail("Á·Ï°ÏÈÌì¹¦±ØĞë¿ÕÊÖ£¬¾²×ø³ÏĞÄ·½¿É¡£\n");
+                return notify_fail("ç»ƒä¹ å…ˆå¤©åŠŸå¿…é¡»ç©ºæ‰‹ï¼Œé™åè¯šå¿ƒæ–¹å¯ã€‚\n");
         if ( (int)me->query("qi") < 70 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ï°ÏÈÌì¹¦¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒä¹ å…ˆå¤©åŠŸã€‚\n");
         if ( (int)me->query("jingli") < 70 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·Ï°ÏÈÌì¹¦¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒä¹ å…ˆå¤©åŠŸã€‚\n");
         if ( (int)me->query("neili") < 70 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ï°ÏÈÌì¹¦¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹ å…ˆå¤©åŠŸã€‚\n");
 
         me->add("neili", -60);
-        me->receive_damage("jingli", 60, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
-		  me->receive_damage("qi", 60, "ÌåÁ¦Í¸Ö§¹ı¶ÈËÀÁË");
+        me->receive_damage("jingli", 60, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+		  me->receive_damage("qi", 60, "ä½“åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 		  return 1;
 }
 
@@ -112,25 +112,25 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
 			if (damage + damage_bonus > 0)
 			{
 				me->receive_damage("qi", (damage + damage_bonus)/2, victim);
-				result = HIG"Ö»¼û$nÊÖÖĞ½£ÇÉÃîµØÒ»Õ³Ò»À­£¬$NµÄÁ¦µÀÍ¨Í¨»÷ÔÚ¿Õ´¦£¬$PÓÃÁ¦¹ıÃÍ£¬Ê§È¥Æ½ºâ£¬µøÁË¸öõÓ¡£\n"NOR;
+				result = HIG"åªè§$næ‰‹ä¸­å‰‘å·§å¦™åœ°ä¸€ç²˜ä¸€æ‹‰ï¼Œ$Nçš„åŠ›é“é€šé€šå‡»åœ¨ç©ºå¤„ï¼Œ$Pç”¨åŠ›è¿‡çŒ›ï¼Œå¤±å»å¹³è¡¡ï¼Œè·Œäº†ä¸ªè·¤ã€‚\n"NOR;
 				result += "( $N"+ COMBAT_D->status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
 				me->start_busy( 2+random(2) );
 			}
 			else
-				result = "Ö»¼û$nÊÖÖĞ½£ÇÉÃîµØÒ»Õ³Ò»Òı£¬$NµÄÁ¦µÀ±»»¯½âÎªÎŞĞÎ¡£\n";
+				result = "åªè§$næ‰‹ä¸­å‰‘å·§å¦™åœ°ä¸€ç²˜ä¸€å¼•ï¼Œ$Nçš„åŠ›é“è¢«åŒ–è§£ä¸ºæ— å½¢ã€‚\n";
 		}
 		else if( victim->query_temp("sanhua") || victim->is_busy() )
 		{
 			if( !weapon1 )
 			{
-				result = HIM"Ö»¼û$nÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶øÈ»·¢¶¯£¬½«$NµÄÁ¦µÀ¾¡Êı·´ÕğÏò$P×Ô¼º¡£\n"NOR;
+				result = HIM"åªè§$nå…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œç„¶å‘åŠ¨ï¼Œå°†$Nçš„åŠ›é“å°½æ•°åéœ‡å‘$Pè‡ªå·±ã€‚\n"NOR;
 				if (damage + damage_bonus > 0)
 					me->receive_damage("qi", (damage + damage_bonus)/2, victim);
 				result += "( $N"+ COMBAT_D->status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
 			}
 			else
 			{
-				result = HIM"Ö»¼û$nÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶øÈ»·¢¶¯£¬½«$NµÄÁ¦µÀÒıµ½Ò»±ß¡£\n"NOR;
+				result = HIM"åªè§$nå…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œç„¶å‘åŠ¨ï¼Œå°†$Nçš„åŠ›é“å¼•åˆ°ä¸€è¾¹ã€‚\n"NOR;
 			}
 		}
 		else return damage;
@@ -141,12 +141,12 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
 	} else if( random(ap+dp+dp+dp) > ap ) {
 
 		if (objectp(weapon2)) {
-			result = "$nÊÖÖĞ½£ÇáÇáĞ±Òı£¬$NµÄÁ¦µÀ±»»¯½âÁË´ó°ë¡£\n";
+			result = "$næ‰‹ä¸­å‰‘è½»è½»æ–œå¼•ï¼Œ$Nçš„åŠ›é“è¢«åŒ–è§£äº†å¤§åŠã€‚\n";
 			damage_bonus = 0;
 		}
 		else if( victim->query_temp("sanhua") || victim->is_busy())
 		{
-			result = MAG"Ö»¼û$nÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶øÈ»·¢¶¯£¬½«$NµÄ¹¥»÷»¯ÎªÎŞĞÎ¡£\n"NOR;
+			result = MAG"åªè§$nå…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œç„¶å‘åŠ¨ï¼Œå°†$Nçš„æ”»å‡»åŒ–ä¸ºæ— å½¢ã€‚\n"NOR;
 			damage_bonus = -5000;
 		}
 		else return damage;
@@ -156,7 +156,7 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
 
 		 if( victim->query_temp("sanhua") || victim->is_busy() )
 		{
-			result = MAG"Ö»¼û$nÏÈÌì»¤ÌåÉñ¹¦×ÔÈ»¶øÈ»·¢¶¯£¬µÖ¿¹$NµÄ¹¥»÷¡£\n"NOR;
+			result = MAG"åªè§$nå…ˆå¤©æŠ¤ä½“ç¥åŠŸè‡ªç„¶è€Œç„¶å‘åŠ¨ï¼ŒæŠµæŠ—$Nçš„æ”»å‡»ã€‚\n"NOR;
 			damage_bonus = 0;
 		}
 		else return damage;
@@ -169,8 +169,8 @@ mixed hit_by(object me, object victim, int damage, int damage_bonus, int factor)
 mapping curing_msg(object me)
 {
 	return ([
-		"apply_short"	: me->name() +"×øÔÚµØÏÂ£¬Í·ÉÏÒ»ÂÆÂÆÈÈÆøôÁôÁ¶øÉÏ£¬ÓÌÈçÕôÁıÒ»°ã¡£",
-		"start_self"	: YEL"ÄãÅÌÏ¥×øÏÂ£¬µ÷Æø»¤ÉË£¬ÔËÆøÔÚÖÜÉí´óÑ¨ÔË×ª¡£\n"NOR,
-		"unfinish_other": "¹ıÁËÒ»»á£¬"+ me->name() +"ÍÂ³öÒ»¿ÚğöÑª¡£\n",
+		"apply_short"	: me->name() +"ååœ¨åœ°ä¸‹ï¼Œå¤´ä¸Šä¸€ç¼•ç¼•çƒ­æ°”è¢…è¢…è€Œä¸Šï¼ŒçŠ¹å¦‚è’¸ç¬¼ä¸€èˆ¬ã€‚",
+		"start_self"	: YEL"ä½ ç›˜è†åä¸‹ï¼Œè°ƒæ°”æŠ¤ä¼¤ï¼Œè¿æ°”åœ¨å‘¨èº«å¤§ç©´è¿è½¬ã€‚\n"NOR,
+		"unfinish_other": "è¿‡äº†ä¸€ä¼šï¼Œ"+ me->name() +"åå‡ºä¸€å£ç˜€è¡€ã€‚\n",
 	]);
 }

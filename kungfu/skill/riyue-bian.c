@@ -1,34 +1,34 @@
 //Cracked by Roath
-// riyue-bian.c ÈÕÔÂ±Ş·¨
+// riyue-bian.c æ—¥æœˆé­æ³•
 
 #include <ansi.h>
 
 inherit SKILL;
 
 mapping *action = ({
-([	"action":		"$N¶Ë×ø²»¶¯£¬Ò»ÕĞ¡¸ÁÑÊ¯Ê½¡¹£¬ÊÖÖĞ$w¶¶µÃ±ÊÖ±£¬¶Ô×¼$nµÄĞØ¸¹Òªº¦Á¬´ÌÊı±Ş",
+([	"action":		"$Nç«¯åä¸åŠ¨ï¼Œä¸€æ‹›ã€Œè£‚çŸ³å¼ã€ï¼Œæ‰‹ä¸­$wæŠ–å¾—ç¬”ç›´ï¼Œå¯¹å‡†$nçš„èƒ¸è…¹è¦å®³è¿åˆºæ•°é­",
 	"dodge":		-5,
 	"damage":		60,
 	"force" : 		160,
 	"lvl" : 		0,
-	"skill_name" : "ÁÑÊ¯Ê½",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "è£‚çŸ³å¼",
+	"damage_type":	"é­ä¼¤"
 ]),
-([	"action":		"$NÉíĞÎÒ»×ª£¬Ò»ÕĞ¡¸¶Ï´¨Ê½¡¹£¬ÊÖÖĞ$wÈç½ÃÁú°ãÌÚ¿ÕÒ»¾í£¬ÃÍµØÏò$nÅüÍ·´òÏÂ",
+([	"action":		"$Nèº«å½¢ä¸€è½¬ï¼Œä¸€æ‹›ã€Œæ–­å·å¼ã€ï¼Œæ‰‹ä¸­$wå¦‚çŸ«é¾™èˆ¬è…¾ç©ºä¸€å·ï¼ŒçŒ›åœ°å‘$nåŠˆå¤´æ‰“ä¸‹",
 	"dodge":		-10,
 	"damage":		 95,
 	"force" : 		320,
 	"lvl" : 		60,
-	"skill_name" : "¶Ï´¨Ê½",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "æ–­å·å¼",
+	"damage_type":	"é­ä¼¤"
 ]),
-([	"action":		"$NÁ¦¹á±ŞÉÒ£¬Ò»ÕĞ¡¸ÆÆÔÆÊ½¡¹£¬ÊÖÖĞ$wÎè³öÂúÌì±ŞÓ°£¬ÅÅÉ½µ¹º£°ãÉ¨Ïò$nÈ«Éí",
+([	"action":		"$NåŠ›è´¯é­æ¢¢ï¼Œä¸€æ‹›ã€Œç ´äº‘å¼ã€ï¼Œæ‰‹ä¸­$wèˆå‡ºæ»¡å¤©é­å½±ï¼Œæ’å±±å€’æµ·èˆ¬æ‰«å‘$nå…¨èº«",
 	"dodge":		-15,
 	"damage":		120,
 	"force" : 		480,
 	"lvl" : 		90,
-	"skill_name" : "ÆÆÔÆÊ½",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "ç ´äº‘å¼",
+	"damage_type":	"é­ä¼¤"
 ])
 });
 
@@ -40,21 +40,21 @@ int valid_learn(object me)
 	object weapon;
 
 	fam = me->query("family"); 
-	if( !mapp(fam) || fam["family_name"] != "ÉÙÁÖÅÉ" )
-		return notify_fail("Äã²»ÊôÓÚÉÙÁÖÅÉ£¬²»ÄÜÑ§Ï°²©´ó¾«ÉîµÄÈÕÔÂ±Ş·¨£¡\n");
+	if( !mapp(fam) || fam["family_name"] != "å°‘æ—æ´¾" )
+		return notify_fail("ä½ ä¸å±äºå°‘æ—æ´¾ï¼Œä¸èƒ½å­¦ä¹ åšå¤§ç²¾æ·±çš„æ—¥æœˆé­æ³•ï¼\n");
 
-	if ( fam["family_name"] == "ÉÙÁÖÅÉ" && fam["generation"] > 36 )
-		return notify_fail("Äã×Ê¸ñ²»¹»£¬²»ÄÜÑ§Ï°ÈÕÔÂ±Ş·¨£¬µÈµ½ÉıÁË±²·İÔÙËµ°É¡£\n");
+	if ( fam["family_name"] == "å°‘æ—æ´¾" && fam["generation"] > 36 )
+		return notify_fail("ä½ èµ„æ ¼ä¸å¤Ÿï¼Œä¸èƒ½å­¦ä¹ æ—¥æœˆé­æ³•ï¼Œç­‰åˆ°å‡äº†è¾ˆä»½å†è¯´å§ã€‚\n");
 
 	if( (int)me->query("max_neili") < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬Ã»ÓĞ°ì·¨Á·ÈÕÔÂ±Ş·¨£¬¶àÁ·Ğ©ÄÚÁ¦ÔÙÀ´°É¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ²¡æœ‰åŠæ³•ç»ƒæ—¥æœˆé­æ³•ï¼Œå¤šç»ƒäº›å†…åŠ›å†æ¥å§ã€‚\n");
 
 	if ((int)me->query_skill("hunyuan-yiqi", 1) < 50)
-		return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦»ğºòÌ«Ç³¡£\n");
+		return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸç«å€™å¤ªæµ…ã€‚\n");
 
 	if ( !objectp(weapon = me->query_temp("weapon"))
 	|| ( string)weapon->query("skill_type") != "whip" )
-		return notify_fail("Äã±ØĞëÏÈÕÒÒ»Ìõ±Ş×Ó²ÅÄÜÁ·±Ş·¨¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æ¡é­å­æ‰èƒ½ç»ƒé­æ³•ã€‚\n");
 
 	return 1;
 }
@@ -82,9 +82,9 @@ int practice_skill(object me)
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "whip")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if ((int)me->query("jingli") < 50)
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·ÈÕÔÂ±Ş·¨¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒæ—¥æœˆé­æ³•ã€‚\n");
 	me->receive_damage("jingli", 10 );
 	if( me->query_skill("riyue-bian",1) > 150 ) me->receive_damage("jingli", 5 );
 	if( me->query_skill("riyue-bian",1) > 180 ) me->receive_damage("jingli", 10 );

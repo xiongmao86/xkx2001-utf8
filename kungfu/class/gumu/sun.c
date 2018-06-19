@@ -1,4 +1,4 @@
-// sun.c ËïÆÅÆÅ
+// sun.c å­™å©†å©†
 // 15/7/2001  by xuanyuan
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-        set_name("ËïÆÅÆÅ", ({"sun popo", "sun"}));
-        set("gender", "Å®ĞÔ");
+        set_name("å­™å©†å©†", ({"sun popo", "sun"}));
+        set("gender", "å¥³æ€§");
         set("age", 55);
         set("long",
-                "ÕâÊÇÒ»Î»´ÈÏéµÄÀÏÆÅÆÅ£¬Õı¿´×ÅÄãÎ¢Î¢Ò»Ğ¦¡£\n"
+                "è¿™æ˜¯ä¸€ä½æ…ˆç¥¥çš„è€å©†å©†ï¼Œæ­£çœ‹ç€ä½ å¾®å¾®ä¸€ç¬‘ã€‚\n"
         );
         set("attitude", "friendly");
 
@@ -44,14 +44,14 @@ void create()
         map_skill("cuff", "meinu-quan");
 
         set("inquiry", ([
-                "Ğ¡ÁúÅ®" :  "Áú¹ÃÄïÊÇÎÒÒ»ÊÖ´ø´óµÄ£¬Ëı´ÓĞ¡Ã»ÁË¸¸Ä¸£¬ÏÖÔÚÓÖ¶À¸ö¶ù×¡ÔÚÕâ¹ÅÄ¹Àï£¬°¦..\n",
-		"Óñ·ä½¬" : (: ask_me :),
+                "å°é¾™å¥³" :  "é¾™å§‘å¨˜æ˜¯æˆ‘ä¸€æ‰‹å¸¦å¤§çš„ï¼Œå¥¹ä»å°æ²¡äº†çˆ¶æ¯ï¼Œç°åœ¨åˆç‹¬ä¸ªå„¿ä½åœ¨è¿™å¤å¢“é‡Œï¼Œå”‰..\n",
+		"ç‰èœ‚æµ†" : (: ask_me :),
         ]) );
 
 	set("book_count", 1);
 	set("jiang_count", 4);
 
-        create_family("¹ÅÄ¹ÅÉ",2,"µÜ×Ó");
+        create_family("å¤å¢“æ´¾",2,"å¼Ÿå­");
         set("env/wimpy", 50);
         setup();
 
@@ -65,24 +65,24 @@ void attempt_apprentice(object ob)
 	mapping fam = ob->query("family");
 	object obj, *obs;
 
-	if (!fam || fam["family_name"] != "¹ÅÄ¹ÅÉ"){
-                command("say "+RANK_D->query_respect(ob)+"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿");
+	if (!fam || fam["family_name"] != "å¤å¢“æ´¾"){
+                command("say "+RANK_D->query_respect(ob)+"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ");
                 return;
                 }
-	if(fam["master_name"] == "ÀîÄª³î") {
-		command("say ÄãÊÇÄÇ¸öÅÑÍ½µÄÍ½µÜ£¬ÎÒÆñÄÜÊÕÄã£¡");
+	if(fam["master_name"] == "æè«æ„") {
+		command("say ä½ æ˜¯é‚£ä¸ªå›å¾’çš„å¾’å¼Ÿï¼Œæˆ‘å²‚èƒ½æ”¶ä½ ï¼");
 		return;
 		}       
 	if((int)ob->query_skill("yunu-jue", 1) < 60) {
-                command("say ÄãµÄÓñÅ®¶şÊ®ËÄ¾÷ĞŞÎªÉĞÇ³£¬ÁìÎò²»ÁËÎÒµÄ¹¦·ò¡£"); 
-                command("say "+RANK_D->query_respect(ob)+"ÊÇ·ñ»¹Ó¦¸ÃÔÚÓñÅ®¶şÊ®ËÄ¾÷ÉÏ¶àÏÂµã¹¦·ò£¿");
+                command("say ä½ çš„ç‰å¥³äºŒåå››è¯€ä¿®ä¸ºå°šæµ…ï¼Œé¢†æ‚Ÿä¸äº†æˆ‘çš„åŠŸå¤«ã€‚"); 
+                command("say "+RANK_D->query_respect(ob)+"æ˜¯å¦è¿˜åº”è¯¥åœ¨ç‰å¥³äºŒåå››è¯€ä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
                 return;
                 }
 /*
 	if (query("book_count") > 0){
 		command("sigh");
-		command("say ËäÈ»" + RANK_D->query_respect(ob) + "Ò²ÊÇÎÒ±²ÖĞÈË£¬µ«ÁÖ×æÊ¦È¥ºó£¬ÎÒÃ»Ê²Ã´ÄÜ½ÌÄãµÄ¡£");
-		command("say ²»¹ıÄãÎÒ½ñÈÕÏà¼ûÒ²ÊÇÓĞÔµ£¬Õâ±¾¡¸ÓñÅ®¶şÊ®ËÄ¾÷ÏÂ¾í¡¹¾ÍËÍÓÚÄã×êÑĞ£¬Ò²²»Í÷ÄãÎÒÏàÊ¶Ò»³¡¡£");
+		command("say è™½ç„¶" + RANK_D->query_respect(ob) + "ä¹Ÿæ˜¯æˆ‘è¾ˆä¸­äººï¼Œä½†æ—ç¥–å¸ˆå»åï¼Œæˆ‘æ²¡ä»€ä¹ˆèƒ½æ•™ä½ çš„ã€‚");
+		command("say ä¸è¿‡ä½ æˆ‘ä»Šæ—¥ç›¸è§ä¹Ÿæ˜¯æœ‰ç¼˜ï¼Œè¿™æœ¬ã€Œç‰å¥³äºŒåå››è¯€ä¸‹å·ã€å°±é€äºä½ é’»ç ”ï¼Œä¹Ÿä¸æ‰ä½ æˆ‘ç›¸è¯†ä¸€åœºã€‚");
 		obj=new("/d/zhongnan/obj/yunu_book2");
 		obj->move(this_object());
 		add("book_count", -1);
@@ -90,27 +90,27 @@ void attempt_apprentice(object ob)
                 return;
 	}
 		command("sigh");
-		command("say ËäÈ»" + RANK_D->query_respect(ob) + "Ò²ÊÇÎÒ±²ÖĞÈË£¬µ«ÁÖ×æÊ¦È¥ºó£¬ÎÒÃ»Ê²Ã´ÄÜ½ÌÄãµÄ¡£");
+		command("say è™½ç„¶" + RANK_D->query_respect(ob) + "ä¹Ÿæ˜¯æˆ‘è¾ˆä¸­äººï¼Œä½†æ—ç¥–å¸ˆå»åï¼Œæˆ‘æ²¡ä»€ä¹ˆèƒ½æ•™ä½ çš„ã€‚");
 */
 
 	if (query("book_count") < 1){
 		command("sigh");
-		command("say ËäÈ»" + RANK_D->query_respect(ob) + "Ò²ÊÇÎÒ±²ÖĞÈË£¬µ«ÁÖ×æÊ¦È¥ºó£¬ÎÒÃ»Ê²Ã´ÄÜ½ÌÄãµÄ¡£");
+		command("say è™½ç„¶" + RANK_D->query_respect(ob) + "ä¹Ÿæ˜¯æˆ‘è¾ˆä¸­äººï¼Œä½†æ—ç¥–å¸ˆå»åï¼Œæˆ‘æ²¡ä»€ä¹ˆèƒ½æ•™ä½ çš„ã€‚");
                 return;
 	}
 	obs = filter_array(children("/d/zhongnan/obj/yunu_book2.c"), (: clonep :));
         if (sizeof(obs) > 2){
 		command("sigh");
-		command("say ËäÈ»" + RANK_D->query_respect(ob) + "Ò²ÊÇÎÒ±²ÖĞÈË£¬µ«ÁÖ×æÊ¦È¥ºó£¬ÎÒÃ»Ê²Ã´ÄÜ½ÌÄãµÄ¡£");
+		command("say è™½ç„¶" + RANK_D->query_respect(ob) + "ä¹Ÿæ˜¯æˆ‘è¾ˆä¸­äººï¼Œä½†æ—ç¥–å¸ˆå»åï¼Œæˆ‘æ²¡ä»€ä¹ˆèƒ½æ•™ä½ çš„ã€‚");
                 return;
 	}
 		command("sigh");
-		command("say ËäÈ»" + RANK_D->query_respect(ob) + "Ò²ÊÇÎÒ±²ÖĞÈË£¬µ«ÁÖ×æÊ¦È¥ºó£¬ÎÒÃ»Ê²Ã´ÄÜ½ÌÄãµÄ¡£");
-		command("say ²»¹ıÄãÎÒ½ñÈÕÏà¼ûÒ²ÊÇÓĞÔµ£¬Õâ±¾¡¸ÓñÅ®¶şÊ®ËÄ¾÷ÏÂ¾í¡¹¾ÍËÍÓÚÄã×êÑĞ£¬Ò²²»Í÷ÄãÎÒÏàÊ¶Ò»³¡¡£");
+		command("say è™½ç„¶" + RANK_D->query_respect(ob) + "ä¹Ÿæ˜¯æˆ‘è¾ˆä¸­äººï¼Œä½†æ—ç¥–å¸ˆå»åï¼Œæˆ‘æ²¡ä»€ä¹ˆèƒ½æ•™ä½ çš„ã€‚");
+		command("say ä¸è¿‡ä½ æˆ‘ä»Šæ—¥ç›¸è§ä¹Ÿæ˜¯æœ‰ç¼˜ï¼Œè¿™æœ¬ã€Œç‰å¥³äºŒåå››è¯€ä¸‹å·ã€å°±é€äºä½ é’»ç ”ï¼Œä¹Ÿä¸æ‰ä½ æˆ‘ç›¸è¯†ä¸€åœºã€‚");
 		obj=new("/d/zhongnan/obj/yunu_book2");
 		obj->move(this_object());
 		add("book_count", -1);
-		command ("rumor "+this_player()->query("name")+"Åªµ½ÁËÒ»²áÓñÅ®¶şÊ®ËÄ¾÷ÏÂ¾í¡£");
+		command ("rumor "+this_player()->query("name")+"å¼„åˆ°äº†ä¸€å†Œç‰å¥³äºŒåå››è¯€ä¸‹å·ã€‚");
 		command ("give book to "+this_player()->query("id")+"");
 }
 
@@ -119,23 +119,23 @@ string ask_me()
 	mapping fam; 
 	object ob, *obs;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "¹ÅÄ¹ÅÉ")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "å¤å¢“æ´¾")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
-	if(fam["master_name"] == "ÀîÄª³î") 
-		return "ÄãÊÇÄÇ¸öÅÑÍ½µÄÍ½µÜ£¬ÏëÒªÀÏÌ«ÆÅÎÒ¸øÄãÓñ·ä½¬ÄÇÊÇÍòÍò²»¿ÉÄÜµÄ£¡";
+	if(fam["master_name"] == "æè«æ„") 
+		return "ä½ æ˜¯é‚£ä¸ªå›å¾’çš„å¾’å¼Ÿï¼Œæƒ³è¦è€å¤ªå©†æˆ‘ç»™ä½ ç‰èœ‚æµ†é‚£æ˜¯ä¸‡ä¸‡ä¸å¯èƒ½çš„ï¼";
 
 	if (query("jiang_count") < 1)
-		return "ÄãÀ´ÍíÁË£¬Óñ·ä½¬ÒÑ¾­¶¼¸øÁËÄãµÄÊ¦½ãÊ¦ÃÃÃÇÁË¡£";
+		return "ä½ æ¥æ™šäº†ï¼Œç‰èœ‚æµ†å·²ç»éƒ½ç»™äº†ä½ çš„å¸ˆå§å¸ˆå¦¹ä»¬äº†ã€‚";
 
 	if ( (int)this_player()->query("eff_qi")==(int)this_player()->query("max_qi") ) {
-                message_vision("$NÏò$nÁ³ÉÏ×ĞÏ¸µØ´òÁ¿ÁËÒ»Õó£¬±ãÖåÆğÃ¼Í·¡£\n", this_object(), this_player());
-                return "Äã²¢Î´ÊÜÉË£¬ÒªÓñ·ä½¬¸ÉÂğ£¿\n";
+                message_vision("$Nå‘$nè„¸ä¸Šä»”ç»†åœ°æ‰“é‡äº†ä¸€é˜µï¼Œä¾¿çš±èµ·çœ‰å¤´ã€‚\n", this_object(), this_player());
+                return "ä½ å¹¶æœªå—ä¼¤ï¼Œè¦ç‰èœ‚æµ†å¹²å—ï¼Ÿ\n";
         }
 
 	ob=new("/clone/drug/yufeng-jiang");
 	ob->move(this_player());
 	add("jiang_count", -1);
-	return "ÕâÊÇÎÒÃÇ¹ÅÄ¹ÅÉµÄÁÆÉËÁéÒ©£¬ÄãÄÃÈ¥ºÃºÃ·şÓÃ¡£";
+	return "è¿™æ˜¯æˆ‘ä»¬å¤å¢“æ´¾çš„ç–—ä¼¤çµè¯ï¼Œä½ æ‹¿å»å¥½å¥½æœç”¨ã€‚";
 }

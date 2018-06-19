@@ -7,18 +7,18 @@ int auto_perform();
 
 void create()
 {
-	set_name("ºÎÊ¦ÎÒ", ({ "he shiwo", "he", "shiwo" }));
+	set_name("ä½•å¸ˆæˆ‘", ({ "he shiwo", "he", "shiwo" }));
 	set("shen_type", -1);
-	set("title", "Ø¤°ïÎå´üµÜ×Ó");
+	set("title", "ä¸å¸®äº”è¢‹å¼Ÿå­");
 	set("attitude", "peaceful");
 
 	set("str", 30);
 	set("con", 30);
 	set("dex", 28);
-	set("gender", "ÄĞĞÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("long",
-		"´ËÈËÉíÅûÒ»¼ş¿í´óÆÆÀÃµÄºÚÒÂ£¬ÂúÍ·ÂÒ·¢£¬Ò»ÕÅÁ³½¹»ÆÓ·Ö×£¬Í¹Í¹°¼°¼ÂúÊÇ°ÌºÛ¡£\n");
+		"æ­¤äººèº«æŠ«ä¸€ä»¶å®½å¤§ç ´çƒ‚çš„é»‘è¡£ï¼Œæ»¡å¤´ä¹±å‘ï¼Œä¸€å¼ è„¸ç„¦é»„è‡ƒè‚¿ï¼Œå‡¸å‡¸å‡¹å‡¹æ»¡æ˜¯ç–¤ç—•ã€‚\n");
 	set("combat_exp", 800000);
         set("max_qi", 1600);
         set("max_jing", 800);  
@@ -46,8 +46,8 @@ void create()
 
 	set("attitude", "friendly");
 	set("inquiry", ([
-		"»ô¶¼" : (: ask_me :),
-		"ÃÉ¹ÅÍõ×Ó" : (: ask_me :),
+		"éœéƒ½" : (: ask_me :),
+		"è’™å¤ç‹å­" : (: ask_me :),
 	]));
 	set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -68,31 +68,31 @@ string ask_me(object who)
 {
         int i;
 	object cake;
-	if (query("asked")) return ("ÉÙ·Ï»°£¡\n");
+	if (query("asked")) return ("å°‘åºŸè¯ï¼\n");
 
         if( (random(10) < 5) || is_fighting() )
-                return "ÎÒ¡­²»ÖªµÀ¡£\n";
+                return "æˆ‘â€¦ä¸çŸ¥é“ã€‚\n";
 
         message("vision",
-		"ºÎÊ¦ÎÒµÀ£ºÄã¼ÈÈ»ÖªµÀÀÏ×ÓµÄÃû×Ö£¬¾Í»á»µÎÒ´óÊÂ£¡ÄÉÃüÀ´°É£¡\n"
-                "»ô¶¼´óºÈÒ»Éù£¬½ĞµÀ£º¡°¼ÈÈ»Èç´Ë£¬ÀÏ×Ó½ñÌì·´Õı»í³öÈ¥£¬¸úÄãÆ´ÁË¡£¡±\n" ,
+		"ä½•å¸ˆæˆ‘é“ï¼šä½ æ—¢ç„¶çŸ¥é“è€å­çš„åå­—ï¼Œå°±ä¼šåæˆ‘å¤§äº‹ï¼çº³å‘½æ¥å§ï¼\n"
+                "éœéƒ½å¤§å–ä¸€å£°ï¼Œå«é“ï¼šâ€œæ—¢ç„¶å¦‚æ­¤ï¼Œè€å­ä»Šå¤©åæ­£è±å‡ºå»ï¼Œè·Ÿä½ æ‹¼äº†ã€‚â€\n" ,
                 environment(), this_object() );
 
-        set_name("»ô¶¼", ({ "huodu", "huo"}));
+        set_name("éœéƒ½", ({ "huodu", "huo"}));
 	kill_ob(this_player());
 	command("follow " + this_player()->query("id"));
 	command("drop tiezhang");
-	message_vision(HIM"»ô¶¼´ÓĞäÖĞÌÍ³öÒ»±úß¡ÉÈ£¬Ò»»Ó£¬ÕÅÁË¿ªÀ´£¬Â¶³öÉÈÉÏÒ»¶ä½¿ÑŞÓûµÎµÄÄµµ¤¡£\n"NOR, this_object());
+	message_vision(HIM"éœéƒ½ä»è¢–ä¸­æå‡ºä¸€æŸ„æ‘ºæ‰‡ï¼Œä¸€æŒ¥ï¼Œå¼ äº†å¼€æ¥ï¼Œéœ²å‡ºæ‰‡ä¸Šä¸€æœµå¨‡è‰³æ¬²æ»´çš„ç‰¡ä¸¹ã€‚\n"NOR, this_object());
         carry_object("/clone/unique/fan")->wield();
 	carry_object("/d/gaibang/obj/yuzhu-zhang");
-        return "Äã¼ÈÈ»ÖªµÀÀÏ×ÓµÄÃû×Ö£¬¾Í»á»µÎÒ´óÊÂ£¡ÄÉÃüÀ´°É£¡\n";
+        return "ä½ æ—¢ç„¶çŸ¥é“è€å­çš„åå­—ï¼Œå°±ä¼šåæˆ‘å¤§äº‹ï¼çº³å‘½æ¥å§ï¼\n";
 }
 
 void unconcious()
 {
 	object ob = this_object();
 
-        message_vision("\n$NÍ»È»ÂôÒ»ÆÆÕÀ£¬Ìø³öÕ½È¦£¬ÌÓÁË£¡\n", ob);
+        message_vision("\n$Nçªç„¶å–ä¸€ç ´ç»½ï¼Œè·³å‡ºæˆ˜åœˆï¼Œé€ƒäº†ï¼\n", ob);
 	destruct(ob);
 }
 int auto_perform()

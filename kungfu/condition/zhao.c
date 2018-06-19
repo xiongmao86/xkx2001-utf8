@@ -44,7 +44,7 @@ void remove_effect(object me, int amount)
 		destruct(inv[i]);
 	}
 	me->delete_temp("huti");
-       tell_object(me, "你的金钟罩护体功运行完毕，将内力收回丹田。\n");
+       tell_object(me, "浣犵殑閲戦挓缃╂姢浣撳姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }
 
 

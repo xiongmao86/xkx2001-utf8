@@ -1,4 +1,4 @@
-// jueqing-bian.c  ¾øÇé±Ş·¨
+// jueqing-bian.c  ç»æƒ…é­æ³•
 
 #include <ansi.h>
 
@@ -9,45 +9,45 @@ int sanwu
 (object me, object victim, object weapon, int damage);
 
 mapping *action = ({
-([	"action":		"$NÇá¶¶ÊÖÍó£¬Ò»ÕĞ¡¸ÇàÉßÍÂĞ¾¡¹£¬ÊÖÖĞ$w¶¶µÃ±ÊÖ±£¬Ö±Ïò$n¾íÈ¥",
+([	"action":		"$Nè½»æŠ–æ‰‹è…•ï¼Œä¸€æ‹›ã€Œé’è›‡åèŠ¯ã€ï¼Œæ‰‹ä¸­$wæŠ–å¾—ç¬”ç›´ï¼Œç›´å‘$nå·å»",
 	"force":		60,
 	"dodge":		30,
 	"damage":		30,
 	"lvl" : 0,
-	"skill_name" : "ÇàÉßÍÂĞ¾",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "é’è›‡åèŠ¯",
+	"damage_type":	"é­ä¼¤"
 ]),
-([	"action":		"$NÉíĞÎÒ»×ª£¬Ò»ÕĞ¡¸¶¾Ğ«·´Î²¡¹£¬$wÔÚ¿ÕÖĞ×ªÁË¸öÈ¦£¬ÒÔ¹ÖÒìµÄ½Ç¶ÈÅüÏò$n",
+([	"action":		"$Nèº«å½¢ä¸€è½¬ï¼Œä¸€æ‹›ã€Œæ¯’èåå°¾ã€ï¼Œ$wåœ¨ç©ºä¸­è½¬äº†ä¸ªåœˆï¼Œä»¥æ€ªå¼‚çš„è§’åº¦åŠˆå‘$n",
 	"force":		120,
 	"dodge":		20,
 	"damage":		40,
 	"lvl" : 10,
-	"skill_name" : "¶¾Ğ«·´Î²",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "æ¯’èåå°¾",
+	"damage_type":	"é­ä¼¤"
 ]),
-([	"action":		"$NÒ»¶¶³¤±Ş£¬Ò»ÕĞ¡¸ºÚÖëÍÂË¿¡¹£¬ÊÖÖĞ$w»¯×öÎŞÊı»ÃÓ°£¬ÕÖÏò$n",
+([	"action":		"$Nä¸€æŠ–é•¿é­ï¼Œä¸€æ‹›ã€Œé»‘è››åä¸ã€ï¼Œæ‰‹ä¸­$wåŒ–åšæ— æ•°å¹»å½±ï¼Œç½©å‘$n",
 	"force":		180,
 	"dodge":		30,
 	"damage":		50,
 	"lvl" : 20,
-	"skill_name" : "ºÚÖëÍÂË¿",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "é»‘è››åä¸",
+	"damage_type":	"é­ä¼¤"
 ]),
-([	"action":		"$NÁ¦¹á±ŞÉÒ£¬Ò»ÕĞ¡¸ó¸òÜ³ö¶´¡¹£¬ÊÖÖĞ$wºö×óºöÓÒ£¬Ö±ÅüÏò$nĞØ¿Ú",
+([	"action":		"$NåŠ›è´¯é­æ¢¢ï¼Œä¸€æ‹›ã€ŒèŸ¾èœå‡ºæ´ã€ï¼Œæ‰‹ä¸­$wå¿½å·¦å¿½å³ï¼Œç›´åŠˆå‘$nèƒ¸å£",
 	"force":		240,
 	"dodge":		10,
 	"damage":		60,
 	"lvl" : 30,
-	"skill_name" : "ó¸òÜ³ö¶´",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "èŸ¾èœå‡ºæ´",
+	"damage_type":	"é­ä¼¤"
 ]),
-([	"action":		"$NÔËÆøÓÚÍó£¬Ò»ÕĞ¡¸òÚò¼·­Éí¡¹£¬ÊÖÖĞ$w×ªÆğÎŞÊı¸öÈ¦È¦£¬´ø×ÅÒ»¹ÉÒõ·ç£¬Ö±Ïò$nÆËÈ¥",
+([	"action":		"$Nè¿æ°”äºè…•ï¼Œä¸€æ‹›ã€Œèœˆèš£ç¿»èº«ã€ï¼Œæ‰‹ä¸­$wè½¬èµ·æ— æ•°ä¸ªåœˆåœˆï¼Œå¸¦ç€ä¸€è‚¡é˜´é£ï¼Œç›´å‘$næ‰‘å»",
 	"force":		300,
 	"dodge":		-20,
 	"damage":		80,
 	"lvl" : 40,
-	"skill_name" : "òÚò¼·­Éí",
-	"damage_type":	"±ŞÉË"
+	"skill_name" : "èœˆèš£ç¿»èº«",
+	"damage_type":	"é­ä¼¤"
 ])
 
 });
@@ -59,11 +59,11 @@ int valid_learn(object me)
 	object weapon;
 
 	if( (int)me->query_skill("wudu-xinfa") < 25 )
-		return notify_fail("ÄãµÄÎå¶¾ĞÄ·¨Ì«µÍ£¬²»ÄÜÁ·¾øÇé±Ş·¨¡£\n");
+		return notify_fail("ä½ çš„äº”æ¯’å¿ƒæ³•å¤ªä½ï¼Œä¸èƒ½ç»ƒç»æƒ…é­æ³•ã€‚\n");
 
 	if ( !objectp(weapon = me->query_temp("weapon"))
 	|| ( string)weapon->query("skill_type") != "whip" )
-		return notify_fail("Äã±ØĞëÏÈÕÒÒ»Ìõ±Ş×Ó²ÅÄÜÁ·¾øÇé±Ş·¨¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆæ‰¾ä¸€æ¡é­å­æ‰èƒ½ç»ƒç»æƒ…é­æ³•ã€‚\n");
 
 	return 1;
 }
@@ -78,12 +78,12 @@ string query_skill_name(int level)
 
 mapping query_action(object me, object weapon)
 {
-//	ÈıÎŞÈı²»ÊÖ
+//	ä¸‰æ— ä¸‰ä¸æ‰‹
 	string *sanwu_msg = 
 	({
-		"$NÒ»ÕĞ"+WHT"¡¸ÎŞ¿×²»Èë¡¹"+NOR"£¬$nÉíÇ°Éíáá¶¼ÊÇ$wµÄÓ°×ÓÍ¬Ê±µã$nÈ«Éí¸÷´¦´óÑ¨",
-		"$NÒ»ÕĞÎ´¾ø£¬µÚ¶şÕĞ"+WHT"¡¸ÎŞËù²»ÖÁ¡¹"+NOR"ÒÔÈ»´òµ½£¬ÊÖÖĞ$wµãÏò$nÖÜÉíÖî´¦Æ«ÃÅÑ¨µÀ",
-		WHT"Á½ÕĞÉ¨¹ı$NÓÖÊÇÒ»ÕĞ¡¸ÎŞËù²»Îª¡¹£¬$w»ØĞı·ÉÖÁ£¬×¨´ò$nÖÜÉíÈáÈõÖ®´¦"NOR,
+		"$Nä¸€æ‹›"+WHT"ã€Œæ— å­”ä¸å…¥ã€"+NOR"ï¼Œ$nèº«å‰èº«å¾Œéƒ½æ˜¯$wçš„å½±å­åŒæ—¶ç‚¹$nå…¨èº«å„å¤„å¤§ç©´",
+		"$Nä¸€æ‹›æœªç»ï¼Œç¬¬äºŒæ‹›"+WHT"ã€Œæ— æ‰€ä¸è‡³ã€"+NOR"ä»¥ç„¶æ‰“åˆ°ï¼Œæ‰‹ä¸­$wç‚¹å‘$nå‘¨èº«è¯¸å¤„åé—¨ç©´é“",
+		WHT"ä¸¤æ‹›æ‰«è¿‡$Nåˆæ˜¯ä¸€æ‹›ã€Œæ— æ‰€ä¸ä¸ºã€ï¼Œ$wå›æ—‹é£è‡³ï¼Œä¸“æ‰“$nå‘¨èº«æŸ”å¼±ä¹‹å¤„"NOR,
 	});
 
 		if ( me->query_temp("sanwu") > 0 && me->query_temp("sanwu") <= 3 )
@@ -94,7 +94,7 @@ mapping query_action(object me, object weapon)
 			"parry": 25,
 			"force": 400,
 			"damage": 100,
-			"damage_type": "±ŞÉË",
+			"damage_type": "é­ä¼¤",
 			"post_action": (: sanwu :) ]);
 		}
 
@@ -106,10 +106,10 @@ int practice_skill(object me)
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "whip")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 	if ((int)me->query("jingli") < 50)
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·¾øÇé±Ş·¨¡£\n");
-        me->receive_damage("jingli", 25, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË¡£");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒç»æƒ…é­æ³•ã€‚\n");
+        me->receive_damage("jingli", 25, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†ã€‚");
 	return 1;
 }
 

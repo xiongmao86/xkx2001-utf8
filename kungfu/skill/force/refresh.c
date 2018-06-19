@@ -8,16 +8,16 @@ int exert(object me, object target)
 {
         int n,q;
 	if (target != me) 
-		return notify_fail("ÄãÖ»ÄÜÓÃÄÚ¹¦»Ö¸´×Ô¼ºµÄ¾«Á¦¡£\n");
+		return notify_fail("ä½ åªèƒ½ç”¨å†…åŠŸæ¢å¤è‡ªå·±çš„ç²¾åŠ›ã€‚\n");
 	
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if ((int)me->query("jingli") >= (int)me->query("max_jingli") )
-		return notify_fail("ÄãÏÖÔÚ¾«Á¦³äÅæ¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨ç²¾åŠ›å……æ²›ã€‚\n");
 
         q = (int)me->query("max_jingli") - (int)me->query("jingli");
-	if ( q < 10) return notify_fail ("ÄãÏÖÔÚ¾«Á¦³äÅæ¡£\n");
+	if ( q < 10) return notify_fail ("ä½ çŽ°åœ¨ç²¾åŠ›å……æ²›ã€‚\n");
 
         n = 100 * q / me->query_skill("force");
         if (n < 20)
@@ -31,7 +31,7 @@ int exert(object me, object target)
         me->receive_heal("jingli", q);
 
 	
-        message_vision("$NÉìÁËÉìÑü£¬³¤³¤µØÎüÁË¿ÚÆø¡£\n", me);
+        message_vision("$Nä¼¸äº†ä¼¸è…°ï¼Œé•¿é•¿åœ°å¸äº†å£æ°”ã€‚\n", me);
 
         if( me->is_fighting() ) me->start_busy(1);
 	

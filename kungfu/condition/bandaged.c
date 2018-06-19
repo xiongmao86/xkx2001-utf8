@@ -22,9 +22,9 @@ int update_condition(object me, int duration)
 			case "vulnerary":
 				if( (int)me->query("eff_qi") < (int)me->query("max_qi") )
 					me->receive_curing("qi", drug_app[type[i]]);
-				if( wizardp(me) ) tell_object(me, "ÖÎÓú£º"+drug_app[type[i]]+"\n");
+				if( wizardp(me) ) tell_object(me, "æ²»æ„ˆï¼š"+drug_app[type[i]]+"\n");
 				if( drug_app[type[i]] == 10 )
-					tell_object(me, "±Á´øÉÏµÄÉËÒ©½¥½¥Ê§È¥ÁËÒ©ĞÔ£®£®\n");
+					tell_object(me, "ç»·å¸¦ä¸Šçš„ä¼¤è¯æ¸æ¸å¤±å»äº†è¯æ€§ï¼ï¼\n");
 				break;
 			}
 			drug_app[type[i]] -= 1;

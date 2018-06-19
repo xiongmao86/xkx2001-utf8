@@ -1,5 +1,5 @@
 //Cracked by Roath
-// bite (×İÉßÒ§ÈË)
+// bite (çºµè›‡å’¬äºº)
 
 #include <ansi.h>
 #define SNAKE_STAFF this_player()->query_temp("weapon")
@@ -27,50 +27,50 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÄãÖ»ÄÜ×İÉßÍµÏ®Õ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+		return notify_fail("ä½ åªèƒ½çºµè›‡å·è¢­æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ã€‚\n");
 		
 	if (lv < 200 )
-		return notify_fail("ÄãµÄÁéÉßÕÈ·¨²»¹»æµÊì£¬ÎŞ·¨ÔÚÊ¹ÕÈ¹¥µĞÖ®Óà×İÉßÉËÈË¡£\n");
+		return notify_fail("ä½ çš„çµè›‡æ–æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•åœ¨ä½¿æ–æ”»æ•Œä¹‹ä½™çºµè›‡ä¼¤äººã€‚\n");
 
 	if (poison < 200 )
-		return notify_fail("Äã¶ÔÊ¹¶¾µÄ·¨ÃÅËùÖªÓĞÏŞ¡£\n");
+		return notify_fail("ä½ å¯¹ä½¿æ¯’çš„æ³•é—¨æ‰€çŸ¥æœ‰é™ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon")))
-		 return notify_fail("ÄãÊÖÉÏÃ»ÓĞÅÌÉßµÄ±øÆ÷¡£\n");
+		 return notify_fail("ä½ æ‰‹ä¸Šæ²¡æœ‰ç›˜è›‡çš„å…µå™¨ã€‚\n");
 
 	type = weapon->query("snake_type");
 
 	if ( !type && weapon->query("id") != "shezhang")
-		return notify_fail("ÄãµÄ"+weapon->name()+"ÉÏ²¢Ã»ÓĞÉß¡£\n");
+		return notify_fail("ä½ çš„"+weapon->name()+"ä¸Šå¹¶æ²¡æœ‰è›‡ã€‚\n");
 
 	if( t && (time() - t) < 10 )
-		return notify_fail("Äã¸Õ¸ÕÒÑ¾­×İÉßÉËÈË£¬Õâ÷á¿ì¾Í¹Ê¼¼ÖØÊ©£¬ìóÅÂÄÑÒÔ×àĞ§¡£\n");
+		return notify_fail("ä½ åˆšåˆšå·²ç»çºµè›‡ä¼¤äººï¼Œè¿™éº½å¿«å°±æ•…æŠ€é‡æ–½ï¼Œç¥—æ€•éš¾ä»¥å¥æ•ˆã€‚\n");
 
 	if( me->query_skill("training",1) < 100 )
-	       return notify_fail("ÄãµÄÔ¦ÊŞÊõÎŞ·¨Ë³ÀûÇıÊ¹¶¾ÉßÉËÈË¡£\n");
+	       return notify_fail("ä½ çš„é©­å…½æœ¯æ— æ³•é¡ºåˆ©é©±ä½¿æ¯’è›‡ä¼¤äººã€‚\n");
 
 	if( me->query("neili") < poi_amount)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÄÑÒÔÔÚ×İÉßÏ®»÷Ê±ÎÈ¿Ø"+weapon->name()+"¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œéš¾ä»¥åœ¨çºµè›‡è¢­å‡»æ—¶ç¨³æ§"+weapon->name()+"ã€‚\n");
 
 	if( me->query("jingli") < 300)
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬ÄÑÒÔÔÚ×İÉßÏ®»÷Ê±ÎÈ¿Ø"+weapon->name()+"¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼Œéš¾ä»¥åœ¨çºµè›‡è¢­å‡»æ—¶ç¨³æ§"+weapon->name()+"ã€‚\n");
 
 	if( me->query_skill_mapped("force") != "hamagong")
-		return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸ÁéÉßÕÈ·¨¡¹ÆøÂ·Ïàã££¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸ã€Œçµè›‡æ–æ³•ã€æ°”è·¯ç›¸æ‚–ï¼\n");
 
 	me->add("neili", -(poi_amount/2 +50));
 	me->add("jingli", -200);
 
 	switch (type) {
-	case "¹ÖÉß" :
+	case "æ€ªè›‡" :
 	snake_path = "/d/xingxiu/npc/guaishe";
 	break;
-	case "ÁéÉß" :
+	case "çµè›‡" :
 	snake_path = "/d/xingxiu/npc/lingshe";
 	break;
 	default:
 	snake_path = "/d/xingxiu/npc/snake";
-	type = "¶¾Éß";
+	type = "æ¯’è›‡";
 	}
 	
 	seteuid(getuid());
@@ -95,7 +95,7 @@ int perform(object me, object target)
 	snake->set("snake_poison", poi_amount*3 );
 	snake->kill_ob(target);
 
-	message_vision(HIB"\n$N½«"+weapon->name()+HIB"Ò»¶¶£¬ÕÈÉÏ½ğ»·µ±à¥à¥Ò»ÕóÂÒÏì£¬Ò»Ìõ"+type+HIB"´ÓÕÈµ×Ö±ÅÌÉÏÀ´¡£\n"NOR,me);
+	message_vision(HIB"\n$Nå°†"+weapon->name()+HIB"ä¸€æŠ–ï¼Œæ–ä¸Šé‡‘ç¯å½“å•·å•·ä¸€é˜µä¹±å“ï¼Œä¸€æ¡"+type+HIB"ä»æ–åº•ç›´ç›˜ä¸Šæ¥ã€‚\n"NOR,me);
 
 	me->start_busy(1);
 
@@ -119,20 +119,20 @@ int perform(object me, object target)
 void remove_bite(object me, string type)
 {
 	me->delete_temp("baituo/bite");
-	tell_object(me, type+"°ºÆğÁËÍ·£¬Ë»µØÒ»ÍÂÉàÍ·¡£\n");
+	tell_object(me, type+"æ˜‚èµ·äº†å¤´ï¼Œå˜¶åœ°ä¸€åèˆŒå¤´ã€‚\n");
 }
 
 mapping query_action(object me)
 {
 	string msg1, msg2;
-	msg1 = HIR"ìó¼û"+SNAKE_STAFF->name()+HIR"´Ó$nÑÛÇ°ÂÓ¹ı£¬²øÕÈÅÌĞıµÄÒ»Ìõ$NÍÌÍÂÉìËõ£¬ÃÍÈ»ÕÅ¿ÚÒ§Ïò$n$l£¬ÕøÄü¹îÒìÖ®¼«£¡"NOR;
-	msg2 = HIW BLK"Ò»Ìõ$N²Å¸Õ´Ü³ö£¬Àä²»·À"+SNAKE_STAFF->name()+HIW BLK"ÉÏÁíÒ»Ìõ$NÒ²ÒÑÇÄÃ»ÉùÏ¢µØ°ºÊ×¶øÆğ£¬Ò»¿ÚÏò$n$lÒ§È¥£¡"NOR;
+	msg1 = HIR"ç¥—è§"+SNAKE_STAFF->name()+HIR"ä»$nçœ¼å‰æ è¿‡ï¼Œç¼ æ–ç›˜æ—‹çš„ä¸€æ¡$Nååä¼¸ç¼©ï¼ŒçŒ›ç„¶å¼ å£å’¬å‘$n$lï¼Œç‹°ç‹è¯¡å¼‚ä¹‹æï¼"NOR;
+	msg2 = HIW BLK"ä¸€æ¡$Næ‰åˆšçªœå‡ºï¼Œå†·ä¸é˜²"+SNAKE_STAFF->name()+HIW BLK"ä¸Šå¦ä¸€æ¡$Nä¹Ÿå·²æ‚„æ²¡å£°æ¯åœ°æ˜‚é¦–è€Œèµ·ï¼Œä¸€å£å‘$n$lå’¬å»ï¼"NOR;
 	return ([
 	"action": me->query("second_attack") ? msg2 : msg1,
 	"force" : 400,
 	"dodge" : 0,
 	"parry" : 0,
 	"damage" : 400,
-	"weapon" :"¶¾ÑÀ",
-	"damage_type":"Ò§ÉË"]);
+	"weapon" :"æ¯’ç‰™",
+	"damage_type":"å’¬ä¼¤"]);
 }

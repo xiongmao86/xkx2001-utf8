@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huakai.c ÃàÕÆÖ®¡¸»¨¿ª²¢µÙ¡¹
+// huakai.c ç»µæŒä¹‹ã€ŒèŠ±å¼€å¹¶è’‚ã€
 // xQin 11/00
 
 #include <ansi.h>
@@ -15,27 +15,27 @@ int perform(object me, object target)
 	if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("»¨¿ª²¢µÙÖ»ÄÜ´ø¶¯Õ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+                return notify_fail("èŠ±å¼€å¹¶è’‚åªèƒ½å¸¦åŠ¨æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ã€‚\n");
                 
         if( me->query_temp("yield") )
-                return notify_fail("Äã²»³öÕÆ£¬ÔõÃ´ÄÜ³ö¡¸»¨¿ª²¢µÙ¡¹£¿\n");
+                return notify_fail("ä½ ä¸å‡ºæŒï¼Œæ€ä¹ˆèƒ½å‡ºã€ŒèŠ±å¼€å¹¶è’‚ã€ï¼Ÿ\n");
         
    /*     if( objectp(ob = me->query_temp("huakai")) )
 	{
                 if( ob->is_fighting(me) )
-                	return notify_fail("ÄãÒÑ¾­ÔÚ³ö¡¸»¨¿ª²¢µÙ¡¹ÁË¡£\n");
+                	return notify_fail("ä½ å·²ç»åœ¨å‡ºã€ŒèŠ±å¼€å¹¶è’‚ã€äº†ã€‚\n");
         }
      */   
         if( (int)me->query_skill("mian-zhang", 1) < 99)
-        	return notify_fail("ÄãµÄÃàÕÆ²»¹»´¿Êì£¬ÉĞÎ´ÄÜ³ö´Ë¾øÕĞ¡£\n");
+        	return notify_fail("ä½ çš„ç»µæŒä¸å¤Ÿçº¯ç†Ÿï¼Œå°šæœªèƒ½å‡ºæ­¤ç»æ‹›ã€‚\n");
         
         if( (int)me->query_skill("taiji-shengong", 1) < 79)
-        	return notify_fail("ÄãµÄÌ«¼«Éñ¹¦ĞŞÎª²»¹»£¬²»ÄÜ³ö¡¸»¨¿ª²¢µÙ¡¹¡£\n");
+        	return notify_fail("ä½ çš„å¤ªæç¥åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œä¸èƒ½å‡ºã€ŒèŠ±å¼€å¹¶è’‚ã€ã€‚\n");
         	
         if( (int)me->query("jiali") > 2 || (int)me->query("jiajin") > 2)
-        	return notify_fail("Äã·¢ÏÖ¼ÓÁ¦ºóÎŞ·¨°ÑÃàÕÆÖĞÈôÓĞÈôÎŞ£¬½èÁ¦´òÁ¦µÄÒª¾ö·¢»Ó³öÀ´¡£\n");
+        	return notify_fail("ä½ å‘ç°åŠ åŠ›åæ— æ³•æŠŠç»µæŒä¸­è‹¥æœ‰è‹¥æ— ï¼Œå€ŸåŠ›æ‰“åŠ›çš„è¦å†³å‘æŒ¥å‡ºæ¥ã€‚\n");
                 
-        msg = WHT "\n$NÉîÉîÎüÁËÒ»¿ÚÆø£¬Ò»ÕĞ¡¸»¨¿ª²¢µÙ¡¹×óÊÖ»ÓÕÆÃÍ»÷$nµÄÓÒ¼Õ£¬ÓÒÊÖ³öÖ¸¼²µã$nµÄ¡°È±ÅèÑ¨¡±¡£\n";
+        msg = WHT "\n$Næ·±æ·±å¸äº†ä¸€å£æ°”ï¼Œä¸€æ‹›ã€ŒèŠ±å¼€å¹¶è’‚ã€å·¦æ‰‹æŒ¥æŒçŒ›å‡»$nçš„å³é¢Šï¼Œå³æ‰‹å‡ºæŒ‡ç–¾ç‚¹$nçš„â€œç¼ºç›†ç©´â€ã€‚\n";
         
         me->add("neili", -30 +random(-20));
         me->add("jingli", -15 +random(-15));
@@ -49,7 +49,7 @@ int perform(object me, object target)
 	}
 	else
 	{
-		msg += YEL"¿ÉÊÇ$pÒÑ¿´ÆÆ´ËÕĞ£¬²»»Å²»Ã¦µÄ±Ü¿ªÁË¡£\n"NOR;
+		msg += YEL"å¯æ˜¯$på·²çœ‹ç ´æ­¤æ‹›ï¼Œä¸æ…Œä¸å¿™çš„é¿å¼€äº†ã€‚\n"NOR;
 		me->start_busy(1+random(3));
 		}
 	
@@ -79,8 +79,8 @@ int huakai(object me, object target)
 		target->add("neili", -(damage/4));
 
 		me->add("neili", -damage/10);
-		message_vision(WHT"$PË«ÊÖµİÕĞÖ®ºó£¬¸ú×ÅÓÒÕÆ»÷$p×ó¼Õ£¬×óÊÖÊ³Ö¸µã$pÓÒ¼çºó¡°È±ÅèÑ¨¡±¡£\n"
-		               "ÕâÁ½ÕĞ¡¸»¨¿ª²¢µÙ¡¹²¢³ÉÒ»ÕĞ£¬Á¬ĞøËÄÊ½£¬±ãÈç±©·çÖèÓê°ãÊ¹³ö£¬ÊÆµÀÖ®ÃÍ£¬ÊÖ·¨Ö®¿ì£¬µ±Õæ·ÇÍ¬Ğ¡¿É£¡\n"NOR, me, target);
+		message_vision(WHT"$PåŒæ‰‹é€’æ‹›ä¹‹åï¼Œè·Ÿç€å³æŒå‡»$på·¦é¢Šï¼Œå·¦æ‰‹é£ŸæŒ‡ç‚¹$på³è‚©åâ€œç¼ºç›†ç©´â€ã€‚\n"
+		               "è¿™ä¸¤æ‹›ã€ŒèŠ±å¼€å¹¶è’‚ã€å¹¶æˆä¸€æ‹›ï¼Œè¿ç»­å››å¼ï¼Œä¾¿å¦‚æš´é£éª¤é›¨èˆ¬ä½¿å‡ºï¼ŒåŠ¿é“ä¹‹çŒ›ï¼Œæ‰‹æ³•ä¹‹å¿«ï¼Œå½“çœŸéåŒå°å¯ï¼\n"NOR, me, target);
 		return 1;               
 	}
 	else
@@ -93,7 +93,7 @@ int huakai(object me, object target)
 		target->add("neili", -(damage/5));
 		
 		me->add("neili", -damage/9);
-		message_vision(RED"½á¹ûÖ»¼û$pÇáºßÒ»Éù£¬ºóÍËÈı²½£¬ÍÂ³öÁËÒ»¿ÚÏÊÑª¡£\n"NOR, me, target);
+		message_vision(RED"ç»“æœåªè§$pè½»å“¼ä¸€å£°ï¼Œåé€€ä¸‰æ­¥ï¼Œåå‡ºäº†ä¸€å£é²œè¡€ã€‚\n"NOR, me, target);
 		return 1;
 	}
 	

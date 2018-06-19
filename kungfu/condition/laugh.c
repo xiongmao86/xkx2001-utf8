@@ -9,11 +9,11 @@ int update_condition(object me, int duration)
 	int neili, poison;
 
 	if( !living(me) ) {
-     		message_vision(HIY"$NÉíÌåÒ»Õó²ü¶¶£¬Ë¯ÃÎÖÐ·¢³ö³Á³ÁµØÐ¦Éú¡£\n", environment(me), me);
+     		message_vision(HIY"$Nèº«ä½“ä¸€é˜µé¢¤æŠ–ï¼Œç¡æ¢¦ä¸­å‘å‡ºæ²‰æ²‰åœ°ç¬‘ç”Ÿã€‚\n", environment(me), me);
    	}
    	else {
    		     		
-  		message_vision(HIY"$NÍ»È»¼ä¹þ¹þµÄ´óÐ¦ÆðÀ´£¬Á³ÉÏÈ´Â¶³öÍ´¿àµÄÉñÉ«¡£\n",environment(me), me);	                    		   	
+  		message_vision(HIY"$Nçªç„¶é—´å“ˆå“ˆçš„å¤§ç¬‘èµ·æ¥ï¼Œè„¸ä¸Šå´éœ²å‡ºç—›è‹¦çš„ç¥žè‰²ã€‚\n",environment(me), me);	                    		   	
    	        
    	}
    	   	
@@ -26,7 +26,7 @@ int update_condition(object me, int duration)
 		me->add("jing", -25);		
 
    	if( duration < 1 ) {
-   		message_vision(HIG"$NÔËÁËÔËÆø£¬·¢ÏÖÌåÄÚµÄº®¶¾ÒÑ¾­µ´È»ÎÞ´æ¡£"NOR,me);	
+   		message_vision(HIG"$Nè¿äº†è¿æ°”ï¼Œå‘çŽ°ä½“å†…çš„å¯’æ¯’å·²ç»è¡ç„¶æ— å­˜ã€‚"NOR,me);	
    		return 0;
    	}
    	

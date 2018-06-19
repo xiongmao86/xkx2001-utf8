@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("½­ÉÏÓÎ", ({"jiang shangyou", "jiang shangyou", "jiang"}));
-	set("title", "Ø¤°ïÎå´üµÜ×Ó");
-	set("gender", "ÄĞĞÔ");
+	set_name("æ±Ÿä¸Šæ¸¸", ({"jiang shangyou", "jiang shangyou", "jiang"}));
+	set("title", "ä¸å¸®äº”è¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 28);
 	set("long", 
-		"ËûÊÇÔ¶½üÎÅÃûµÄÇ±Ë®ºÃÊÖ£¬±»ÈËÆğÁË¸öÍâºÅ¾Í½Ğ¡¸ÀËÀïÓã¡¹½­ÉÏÓÎ¡£\n");
+		"ä»–æ˜¯è¿œè¿‘é—»åçš„æ½œæ°´å¥½æ‰‹ï¼Œè¢«äººèµ·äº†ä¸ªå¤–å·å°±å«ã€Œæµªé‡Œé±¼ã€æ±Ÿä¸Šæ¸¸ã€‚\n");
 
 	set("attitude", "peaceful");
 	set("str", 20);
@@ -43,7 +43,7 @@ void create()
 	
 	prepare_skill("hand", "shexing-diaoshou");
 
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 
 	setup();
 

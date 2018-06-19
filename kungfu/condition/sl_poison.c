@@ -9,15 +9,15 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration)
 {
    if( !living(me) ) {
-      message("vision", me->name() + "Ãæ²¿Í»È»³é´¤ÁËÒ»ÏÂ¡£\n", environment(me), me);
+      message("vision", me->name() + "é¢éƒ¨çªç„¶æŠ½æäº†ä¸€ä¸‹ã€‚\n", environment(me), me);
    }
    else {
-      tell_object(me, HIB "ºöÈ»Äã¾õµÃÈ«Éí·¦Á¦£¬ÄãÖÐµÄ»¯¹ÇÃàÕÆ¶¾·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "µÄ²½ÂÄÍ»È»³ÁÖØ£¬×ßÂ·¿ªÊ¼Ò¡Ò¡»Î»ÎÁËÆðÀ´¡£\n",
+      tell_object(me, HIB "å¿½ç„¶ä½ è§‰å¾—å…¨èº«ä¹åŠ›ï¼Œä½ ä¸­çš„åŒ–éª¨ç»µæŽŒæ¯’å‘ä½œäº†ï¼\n" NOR );
+      message("vision", me->name() + "çš„æ­¥å±¥çªç„¶æ²‰é‡ï¼Œèµ°è·¯å¼€å§‹æ‘‡æ‘‡æ™ƒæ™ƒäº†èµ·æ¥ã€‚\n",
             environment(me), me);
    }
-      me->receive_damage("qi", 25,"»¯¹ÇÃàÕÆ¶¾É¢¼°È«Éí¶øËÀÁË");
-      me->receive_wound("jing", 15,"»¯¹ÇÃàÕÆ¶¾É¢¼°È«Éí¶øËÀÁË");
+      me->receive_damage("qi", 25,"åŒ–éª¨ç»µæŽŒæ¯’æ•£åŠå…¨èº«è€Œæ­»äº†");
+      me->receive_wound("jing", 15,"åŒ–éª¨ç»µæŽŒæ¯’æ•£åŠå…¨èº«è€Œæ­»äº†");
       me->apply_condition("sl_poison", duration - 1);
    if( duration < 1 ) return 0;
    return CND_CONTINUE;

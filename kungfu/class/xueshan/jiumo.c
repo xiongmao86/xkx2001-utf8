@@ -6,12 +6,12 @@ int auto_perform();
 
 void create()
 {
-	set_name("ð¯Ä¦ÖÇ", ({ "jiumozhi", "jiu" }));
-	set("nickname", "´óÂÖÃ÷Íõ");
+	set_name("é¸ æ‘©æ™º", ({ "jiumozhi", "jiu" }));
+	set("nickname", "å¤§è½®æ˜ŽçŽ‹");
 	set("long", 
-"ÕâÊÇÒ»¸öÖÐÄêÉ®ÈË£¬¿´ÆðÀ´Ò»Á³×¯ÑÏ±¦Ïó£¬Ãæ´÷Î¢Ð¦£¬ÉíÅûÇ³»ÆôÂôÄ¡£\n"
-"Ëû¾ÍÊÇÍÂÞ¬¹ú»¤¹ú·¨Íõ¡¢´óÑ©É½´óÂÖËÂµÄÖ÷³Ö¡£ \n");
-	set("gender", "ÄÐÐÔ");
+"è¿™æ˜¯ä¸€ä¸ªä¸­å¹´åƒ§äººï¼Œçœ‹èµ·æ¥ä¸€è„¸åº„ä¸¥å®è±¡ï¼Œé¢æˆ´å¾®ç¬‘ï¼Œèº«æŠ«æµ…é»„è¢ˆè£Ÿã€‚\n"
+"ä»–å°±æ˜¯åè•ƒå›½æŠ¤å›½æ³•çŽ‹ã€å¤§é›ªå±±å¤§è½®å¯ºçš„ä¸»æŒã€‚ \n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "peaceful");
 	set("class","lama");
@@ -61,34 +61,34 @@ void create()
         set("chat_msg_combat", ({
                 (: auto_perform :),
         }) );
-	create_family("Ñ©É½ÅÉ", 6, "ÕÆÃÅÈË");
+	create_family("é›ªå±±æ´¾", 6, "æŽŒé—¨äºº");
 
 	setup();
 	carry_object("/d/qilian/obj/lamajiasha")->wear();
 }
 void attempt_apprentice(object ob)
 {
-	if( ob->query("family/family_name") != "Ñ©É½ÅÉ"
-        && ob->query("family/family_name") != "Ñªµ¶ÃÅ"
+	if( ob->query("family/family_name") != "é›ªå±±æ´¾"
+        && ob->query("family/family_name") != "è¡€åˆ€é—¨"
         && ob->query("combat_exp") >= 10000 ) {
-                command ("say " + RANK_D->query_respect(this_player()) + "ÊÇ"
-                +ob->query("family/family_name")+"¸ßÊÖ£¬±¾ÅÉ¿É²»¸ÒÊÕÁô£¡");
+                command ("say " + RANK_D->query_respect(this_player()) + "æ˜¯"
+                +ob->query("family/family_name")+"é«˜æ‰‹ï¼Œæœ¬æ´¾å¯ä¸æ•¢æ”¶ç•™ï¼");
                 return;
         }
 	if ((int)ob->query_skill("longxiang-banruo", 1) < 60
 	&& (int)ob->query_skill("xiaowuxiang", 1) < 60) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸ÃÔÚÄÚ¹¦ÐÞÎªÉÏ¶àÏÂµã¹¦·ò£¿");
+                        "æ˜¯å¦è¿˜åº”è¯¥åœ¨å†…åŠŸä¿®ä¸ºä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
 	return;
 	}
 	if (ob->query_con() < 30) {
 		command("say " + RANK_D->query_respect(ob) +
-			"ÈçÓûÁ·Ï°»ðÑ×µ¶£¬ÄÇµÃÐèÒª¼«ÉÏ³ËµÄ¸ù¹ÇÀ´¼Ý
-ÓùÌåÄÚÕæÆø¡£");
+			"å¦‚æ¬²ç»ƒä¹ ç«ç‚Žåˆ€ï¼Œé‚£å¾—éœ€è¦æžä¸Šä¹˜çš„æ ¹éª¨æ¥é©¾
+å¾¡ä½“å†…çœŸæ°”ã€‚");
 	return;
 	}
-//	command("chat ¹þ¹þ¹þ¹þ£¡£¡£¡£¡");
- //       command("chat Ïë²»µ½ÀÏ·ðÒ¯ÎÒ¾ÓÈ»ÄÜÃÙµÃÒ»¸öÑ§»ðÑæµ¶Ö®²Å£¬ÕæÊÇ¿ÉÏ²¿ÉºØ¡£");
+//	command("chat å“ˆå“ˆå“ˆå“ˆï¼ï¼ï¼ï¼");
+ //       command("chat æƒ³ä¸åˆ°è€ä½›çˆ·æˆ‘å±…ç„¶èƒ½è§…å¾—ä¸€ä¸ªå­¦ç«ç„°åˆ€ä¹‹æ‰ï¼ŒçœŸæ˜¯å¯å–œå¯è´ºã€‚");
         command("recruit " + ob->query("id"));
 }
 #include "/kungfu/class/xueshan/auto_perform.h"

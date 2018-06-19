@@ -14,43 +14,43 @@ int exert(object me, object target)
 
         env = environment(me);
         if (!env)
-                return notify_fail("����ʲô�ط�Ҳ���ǣ�\n");
+                return notify_fail("这里什么地方也不是！\n");
         if (!env->query("th_buzhen"))
-                return notify_fail("���ﲢ�޲��������󷨡�\n");
+                return notify_fail("这里并无布有奇门阵法。\n");
         
         if( me->query_skill_mapped("force") != "bitao-xuangong")
-                return notify_fail("�����õ��ڹ��롸�����󷨡��ķ���㣣�\n");
+                return notify_fail("你所用的内功与「奇门阵法」心法相悖！\n");
 
         if( me->query_skill("bitao-xuangong", 1) < 90 )
-                return notify_fail("����ڹ���Ϊ���δ������δ���������󷨡���\n");
+                return notify_fail("你的内功修为火候未到，还未领悟「奇门阵法」！\n");
 
         if( me->query("jingli") < me->query("max_jingli") )
-                return notify_fail("��ľ����������������ƽ⡸�����󷨡���\n");
+                return notify_fail("你的精力不够，不足以破解「奇门阵法」！\n");
 
         if( me->query("jing") < me->query("max_jing") )
-                return notify_fail("��ľ��������������ƽ⡸�����󷨡���\n");
+                return notify_fail("你的精不够，不足以破解「奇门阵法」！\n");
 
         if( me->query_skill("qimen-dunjia", 1) < 90 )
-                return notify_fail("������Ŷݼ���Ϊ��������δ���������󷨡���\n");
+                return notify_fail("你的奇门遁甲修为不够，还未领悟「奇门阵法」！\n");
 
         me->set("jing", me->query("max_jing")/2);
         me->set("jingli", me->query("max_jingli")/2);
 
         if( me->query("id") != env->query("th_zhen_owner") && 
         me->query_skill("qimen-dunjia",1) < env->query("th_pozhen")*3/4) {
-                message_vision(CYN"$N���ڵ���ڤ˼���룬ͻȻ��ɫ��䣬������Ѫ��\n"NOR,me);
+                message_vision(CYN"$N坐在地上冥思苦想，突然脸色大变，口吐鲜血！\n"NOR,me);
                 me->unconcious();
                 return 1;
         }
 
-        msg = HIW"$N��˼Ƭ�̣��󷨵��������˱仯��ȫ����Ȼ���أ�����һ����Ц������һ����\n";
-        msg += "�������У�������������ʱ��ɳ��ʯ����һ�̣�����������������ɢ����Ӱ���٣�\n"NOR;
+        msg = HIW"$N凝思片刻，阵法的种种生克变化已全盘了然于胸，仰天一声长笑，袍袖一拂，\n";
+        msg += "掠入阵中，掌劈脚挑，顿时飞沙走石，不一刻，阵中阴霾戾气已消散得无影无踪！\n"NOR;
         message_vision(msg, me);
         
 	if( me->query("id") == env->query("th_zhen_owner") 
 	&& me->query_skill("qimen-dunjia",1) > 100 
 	&& me->query("qmdj_use")*10 <= me->query_skill("qimen-dunjia",1)-100 ) {
-	tell_object(me,"�������Ŷݼ��ϵ��������˽�һ������ᡣ\n");
+	tell_object(me,"你在奇门遁甲上的运用有了进一步的领会。\n");
 	me->add("qmdj_use",1);
 	}
         env->set("long", env->query("org_desc"));

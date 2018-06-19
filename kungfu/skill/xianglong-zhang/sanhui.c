@@ -1,27 +1,27 @@
 //Cracked by Roath
-// sanhui ¡¸¿ºÁúÈý»Ú¡¹
+// sanhui ã€Œäº¢é¾™ä¸‰æ‚”ã€
 // kane 25/5/1998
 // Modified by xQin 1/99
 
 /*
-¡¡¡¡Ïô·åÐÄÏÂÓÖÊÇÍ´Ï§£¬ÓÖÊÇ·ßÅ­£¬µ±¼´´ó²½Âõ³ö£¬×óÊÖÒ»»®£¬ÓÒÊÖºôµÄÒ»ÕÆ£¬±ã
-Ïò¶¡´ºÇï»÷È¥£¬ÕýÊÇ½µÁúÊ®°ËÕÆµÄÒ»ÕÐ¡°¿ºÁúÓÐ»Ú¡±£¬Ëû³öÕÆÖ®Ê±£¬Óë¶¡´ºÇïÏà¾à
-ÉÐÓÐÊ®ÎåÁùÕÉ£¬µ«Ëµµ½±ãµ½£¬Á¦×ÔÕÆÉúÖ®¼Ê£¬Á½¸öÏà¾àÒÑ²»¹ýÆß°ËÕÉ¡£
+ã€€ã€€è§å³°å¿ƒä¸‹åˆæ˜¯ç—›æƒœï¼Œåˆæ˜¯æ„¤æ€’ï¼Œå½“å³å¤§æ­¥è¿ˆå‡ºï¼Œå·¦æ‰‹ä¸€åˆ’ï¼Œå³æ‰‹å‘¼çš„ä¸€æŽŒï¼Œä¾¿
+å‘ä¸æ˜¥ç§‹å‡»åŽ»ï¼Œæ­£æ˜¯é™é¾™åå…«æŽŒçš„ä¸€æ‹›â€œäº¢é¾™æœ‰æ‚”â€ï¼Œä»–å‡ºæŽŒä¹‹æ—¶ï¼Œä¸Žä¸æ˜¥ç§‹ç›¸è·
+å°šæœ‰åäº”å…­ä¸ˆï¼Œä½†è¯´åˆ°ä¾¿åˆ°ï¼ŒåŠ›è‡ªæŽŒç”Ÿä¹‹é™…ï¼Œä¸¤ä¸ªç›¸è·å·²ä¸è¿‡ä¸ƒå…«ä¸ˆã€‚
 
-¡¡¡¡ÌìÏÂÎäÊõÖ®ÖÐ£¬ÈÎÄãÕÆÁ¦ÔÙÇ¿£¬Ò²¾öÎÞÒ»ÕÆ¿É»÷µ½ÎåÕÉÒÔÍâµÄ¡£¶¡´ºÇïËØÎÅ¡°
-±±ÇÇ·å£¬ÄÏÄ½ÈÝ¡±µÄ´óÃû£¬¶ÔËû¾öÎÞ°ëµãÐ¡êïÖ®ÐÄ£¬È»¼ûËûÔÚÊ®Îå°ËÕÉÖ®Íâ³öÕÆ£¬
-ÍòÁÏ²»µ½´ËÕÆÊÇÕë¶Ô×Ô¼º¶ø·¢¡£Êâ²»ÁÏÏô·åÒ»ÕÆ¼È³ö£¬Éí×ÓÒÑÇÀµ½ÀëËûÈýËÄÕÉÍâ£¬
-ÓÖÊÇÒ»ÕÐ¡°¿ºÁúÓÐ»Ú¡±£¬ºóÕÆÍÆÇ°ÕÆ£¬Ë«ÕÆÁ¦µÀ²¢ÔÚÒ»Æð£¬ÅÅÉ½µ¹º£µÄÑ¹½«¹ýÀ´¡£
+ã€€ã€€å¤©ä¸‹æ­¦æœ¯ä¹‹ä¸­ï¼Œä»»ä½ æŽŒåŠ›å†å¼ºï¼Œä¹Ÿå†³æ— ä¸€æŽŒå¯å‡»åˆ°äº”ä¸ˆä»¥å¤–çš„ã€‚ä¸æ˜¥ç§‹ç´ é—»â€œ
+åŒ—ä¹”å³°ï¼Œå—æ…•å®¹â€çš„å¤§åï¼Œå¯¹ä»–å†³æ— åŠç‚¹å°è§‘ä¹‹å¿ƒï¼Œç„¶è§ä»–åœ¨åäº”å…«ä¸ˆä¹‹å¤–å‡ºæŽŒï¼Œ
+ä¸‡æ–™ä¸åˆ°æ­¤æŽŒæ˜¯é’ˆå¯¹è‡ªå·±è€Œå‘ã€‚æ®Šä¸æ–™è§å³°ä¸€æŽŒæ—¢å‡ºï¼Œèº«å­å·²æŠ¢åˆ°ç¦»ä»–ä¸‰å››ä¸ˆå¤–ï¼Œ
+åˆæ˜¯ä¸€æ‹›â€œäº¢é¾™æœ‰æ‚”â€ï¼ŒåŽæŽŒæŽ¨å‰æŽŒï¼ŒåŒæŽŒåŠ›é“å¹¶åœ¨ä¸€èµ·ï¼ŒæŽ’å±±å€’æµ·çš„åŽ‹å°†è¿‡æ¥ã€‚
 
-¡¡¡¡Ö»Ò»Ë²Ö®¼ä£¬¶¡´ºÇï±ã¾õÆøÏ¢ÖÏÖÍ£¬¶Ô·½ÕÆÁ¦¾¹ÈçÅ­³±¿ñÓ¿£¬ÊÆ²»¿Éµ±£¬Ë«Èç
-ÊÇÒ»¶ÂÎÞÐÎµÄ¸ßÇ½£¬Ïò×Ô¼ºÉíÇ°¼²³å¡£Ëû´ó¾ªÖ®ÏÂ£¬ÄÄÀï»¹ÓÐÓàÔ£³ïË¼¶Ô²ß£¬µ«Öª
-ÈôÊÇµ¥ÕÆ³öÓ­£¬ÊÆ±Ø±Û¶ÏÍóÕÛ£¬Ëµ²»¶¨È«Éí½î¹Ç¾¡Ëé£¬°ÙÃ¦ÖÐ½«°¢×ÏÏòÉÏ¼±Å×£¬Ë«
-ÕÆÁ¬»®Èý¸ö°ëÔ²»¤×¡ÉíÇ°£¬Í¬Ê±×ã¼â×ÅÁ¦£¬Æ®ÉíºóÍË¡£
+ã€€ã€€åªä¸€çž¬ä¹‹é—´ï¼Œä¸æ˜¥ç§‹ä¾¿è§‰æ°”æ¯çª’æ»žï¼Œå¯¹æ–¹æŽŒåŠ›ç«Ÿå¦‚æ€’æ½®ç‹‚æ¶Œï¼ŒåŠ¿ä¸å¯å½“ï¼ŒåŒå¦‚
+æ˜¯ä¸€å µæ— å½¢çš„é«˜å¢™ï¼Œå‘è‡ªå·±èº«å‰ç–¾å†²ã€‚ä»–å¤§æƒŠä¹‹ä¸‹ï¼Œå“ªé‡Œè¿˜æœ‰ä½™è£•ç­¹æ€å¯¹ç­–ï¼Œä½†çŸ¥
+è‹¥æ˜¯å•æŽŒå‡ºè¿Žï¼ŒåŠ¿å¿…è‡‚æ–­è…•æŠ˜ï¼Œè¯´ä¸å®šå…¨èº«ç­‹éª¨å°½ç¢Žï¼Œç™¾å¿™ä¸­å°†é˜¿ç´«å‘ä¸Šæ€¥æŠ›ï¼ŒåŒ
+æŽŒè¿žåˆ’ä¸‰ä¸ªåŠåœ†æŠ¤ä½èº«å‰ï¼ŒåŒæ—¶è¶³å°–ç€åŠ›ï¼Œé£˜èº«åŽé€€ã€‚
 
-¡¡¡¡Ïô·å¸ú×ÅÓÖÊÇÒ»ÕÐ¡°¿ºÁúÓÐ»Ú¡±£¬Ç°ÕÐÕÆÁ¦Î´Ïû£¬´ÎÕÐÕÆÁ¦ÓÖµ½¡£¶¡´ºÇï²»¸Ò
-ÕýÃæÖ±ÞüÆä·æ£¬ÓÒÕÆÐ±Ð±»Ó³ö£¬Ò²Ïô·åÕÆÁ¦µÄÆ«ÊÆÒ»´¥£¬µ«¾õÓÒ±ÛËáÂé£¬ÐØÖÐÆøÏ¢
-µÇÊ±³Á×Ç£¬µ±¼´³ËÊÆ×Ý³öÈýÕÉÖ®Íâ£¬Î¨¿ÖµÐÈËÓÖÔÙ×·»÷£¬ÊúÕÆµ±ÐØ£¬°µ°µ½«¶¾ÆøÄý
-µ½ÕÆÉÏ¡£Ïô·åÇáÉìÔ³±Û£¬½«´Ó°ë¿ÕÖÐ¸½ÏÂµÄ°¢×Ï½Ó×¡£¬ËæÊÖ½â¿ªÁËËýµÄÑ¨µÀ¡£
+ã€€ã€€è§å³°è·Ÿç€åˆæ˜¯ä¸€æ‹›â€œäº¢é¾™æœ‰æ‚”â€ï¼Œå‰æ‹›æŽŒåŠ›æœªæ¶ˆï¼Œæ¬¡æ‹›æŽŒåŠ›åˆåˆ°ã€‚ä¸æ˜¥ç§‹ä¸æ•¢
+æ­£é¢ç›´æ’„å…¶é”‹ï¼Œå³æŽŒæ–œæ–œæŒ¥å‡ºï¼Œä¹Ÿè§å³°æŽŒåŠ›çš„ååŠ¿ä¸€è§¦ï¼Œä½†è§‰å³è‡‚é…¸éº»ï¼Œèƒ¸ä¸­æ°”æ¯
+ç™»æ—¶æ²‰æµŠï¼Œå½“å³ä¹˜åŠ¿çºµå‡ºä¸‰ä¸ˆä¹‹å¤–ï¼Œå”¯ææ•Œäººåˆå†è¿½å‡»ï¼Œç«–æŽŒå½“èƒ¸ï¼Œæš—æš—å°†æ¯’æ°”å‡
+åˆ°æŽŒä¸Šã€‚è§å³°è½»ä¼¸çŒ¿è‡‚ï¼Œå°†ä»ŽåŠç©ºä¸­é™„ä¸‹çš„é˜¿ç´«æŽ¥ä½ï¼Œéšæ‰‹è§£å¼€äº†å¥¹çš„ç©´é“ã€‚
 */
 
 #include <ansi.h>
@@ -36,48 +36,48 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 /*
         if( !wizardp(me) )
-                return notify_fail("Äã²»ÊÇÏô·å£¬²»»áÊ¹ÓÃ¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ ä¸æ˜¯è§å³°ï¼Œä¸ä¼šä½¿ç”¨ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 */
         if( me->query_temp("sanhui_busy") )
-                return notify_fail("ÄãÎ¢Ò»ÔË¾¢£¬Ö»¾õÐØÖÐÆøÏ¢³Á×Ç£¬ÎÞÁ¦³öÕÆ£¡\n");
+                return notify_fail("ä½ å¾®ä¸€è¿åŠ²ï¼Œåªè§‰èƒ¸ä¸­æ°”æ¯æ²‰æµŠï¼Œæ— åŠ›å‡ºæŽŒï¼\n");
 
         if( me->query_temp("xianglong",1) )
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃÄÚ¹¦£¬ÎÞ·¨ÊÔÓÃ¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å†…åŠŸï¼Œæ— æ³•è¯•ç”¨ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( !target || !target->is_character() ||  !me->is_fighting(target) )
-                return notify_fail("¡¸¿ºÁúÈý»Ú¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œäº¢é¾™ä¸‰æ‚”ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(me->query_temp("weapon")) )
-                return notify_fail("¡¸¿ºÁúÈý»Ú¡¹Ö»ÄÜ¿ÕÊÖÔËÓÃ¡£\n");
+                return notify_fail("ã€Œäº¢é¾™ä¸‰æ‚”ã€åªèƒ½ç©ºæ‰‹è¿ç”¨ã€‚\n");
 
         if( me->query_temp("yield") )
-                return notify_fail("Äã²»³öÕÆ£¬ÈçºÎÊ¹³ö¡¸¿ºÁúÈý»Ú¡¹£¿\n");
+                return notify_fail("ä½ ä¸å‡ºæŽŒï¼Œå¦‚ä½•ä½¿å‡ºã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼Ÿ\n");
 
         if( me->query_str() < 50 )
-                return notify_fail("ÄãµÄ±ÛÁ¦²»×ãÒÔÊ©Õ¹¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ çš„è‡‚åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( me->query_con() < 50 )
-                return notify_fail("ÄãµÄÌåÖÊ²»×ãÒÔÊ©Õ¹¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ çš„ä½“è´¨ä¸è¶³ä»¥æ–½å±•ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( me->query_skill_mapped("force") != "huntian-qigong" )
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸¿ºÁúÈý»Ú¡¹ÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å†…åŠŸä¸Žã€Œäº¢é¾™ä¸‰æ‚”ã€æ°”è·¯ç›¸æ‚–ï¼\n");
 
         if( me->query_skill("huntian-qigong", 1) < 280 )
-                return notify_fail("ÄãµÄ»ìÌìÆø¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( me->query_skill("xianglong-zhang", 1) < 300 )
-                return notify_fail("Äã½µÁúÊ®°ËÕÆ²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ é™é¾™åå…«æŽŒä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•æ–½å±•ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( (int)me->query("max_neili", 1) < 5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»£¬ÎÞÁ¦Ê©Õ¹¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œæ— åŠ›æ–½å±•ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( me->query("neili") < 1000 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦Ì«Èõ£¬²»¹»Ê¹ÓÃ¡¸¿ºÁúÈý»Ú¡¹£¡\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„å†…åŠ›å¤ªå¼±ï¼Œä¸å¤Ÿä½¿ç”¨ã€Œäº¢é¾™ä¸‰æ‚”ã€ï¼\n");
 
         if( (int)me->query("jingli", 1) < 500 )
-                return notify_fail("ÄãÏÖÔÚµÄÌåÁ¦Ì«Èõ£¬²»¹»Ê¹ÓÃ¡¸¿ºÁúÈý»Ú¡¹\n");
+                return notify_fail("ä½ çŽ°åœ¨çš„ä½“åŠ›å¤ªå¼±ï¼Œä¸å¤Ÿä½¿ç”¨ã€Œäº¢é¾™ä¸‰æ‚”ã€\n");
 
-        message_vision( HIR"\n$NÉîÎüÒ»¿ÚÆø£¬´ì²½³Á¼ç£¬¿´À´Òª³öÃÍÕÐÁË£¡\n"NOR, me);
+        message_vision( HIR"\n$Næ·±å¸ä¸€å£æ°”ï¼ŒæŒ«æ­¥æ²‰è‚©ï¼Œçœ‹æ¥è¦å‡ºçŒ›æ‹›äº†ï¼\n"NOR, me);
 
         me->add("neili", -100);
         me->add("jingli", -100);
@@ -100,13 +100,13 @@ int sanhui(object me, object target)
         }
         else if ( !living(target) || !me->is_fighting(target) )
         {
-                message_vision(CYN"\n$Nµ±¼´ÊÕ»ØÓÒÕÆ£¬×óÕÆÔÚÉíÇ°»­ÁË¸öÔ²È¦¡£\n"NOR,me);
+                message_vision(CYN"\n$Nå½“å³æ”¶å›žå³æŽŒï¼Œå·¦æŽŒåœ¨èº«å‰ç”»äº†ä¸ªåœ†åœˆã€‚\n"NOR,me);
                 remove_effect(me);
                 return;
         }
         else if ( (int)me->query("neili", 1) < 500 )
         {
-                tell_object(me, HIR"Äã´ýÒªÔÙ·¢Ò»ÕÆ£¬È´·¢ÏÖ×Ô¼ºµÄÄÚÁ¦²»¹»ÁË£¡\n"NOR);     
+                tell_object(me, HIR"ä½ å¾…è¦å†å‘ä¸€æŽŒï¼Œå´å‘çŽ°è‡ªå·±çš„å†…åŠ›ä¸å¤Ÿäº†ï¼\n"NOR);     
                 remove_effect(me);
                 return;
         }
@@ -178,7 +178,7 @@ void remove_effect(object me)
         if ( amount < 15 ) amount = 15;
 
         if ( sanhui_busy == 3 )
-                message_vision(RED"\n$NÈýÕÆ»÷³ö£¬´óºÄÕæÆø£¬²»µÃ²»×ª¹¥ÎªÊØ£¬ÉÔÊÂµ÷Ï¢¡£\n"NOR,me);
+                message_vision(RED"\n$Nä¸‰æŽŒå‡»å‡ºï¼Œå¤§è€—çœŸæ°”ï¼Œä¸å¾—ä¸è½¬æ”»ä¸ºå®ˆï¼Œç¨äº‹è°ƒæ¯ã€‚\n"NOR,me);
 
         // if 3 hit all missed, delete sanhui temp here.
         if ( me->query_temp("sanhui") )
@@ -197,5 +197,5 @@ void receive_heal(object me)
         if ( !me ) return;
 
         me->delete_temp("sanhui_busy");
-        tell_object(me, MAG"\nÄã¾­¹ýÒ»ÕóÔË¹¦µ÷Ï¢£¬ÏûÈ¥ÁËÐØÖÐËùÄý×¡µÄÒ»¹É×ÇÆø¡£\n"NOR); 
+        tell_object(me, MAG"\nä½ ç»è¿‡ä¸€é˜µè¿åŠŸè°ƒæ¯ï¼Œæ¶ˆåŽ»äº†èƒ¸ä¸­æ‰€å‡ä½çš„ä¸€è‚¡æµŠæ°”ã€‚\n"NOR); 
 }

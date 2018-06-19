@@ -1,15 +1,15 @@
 //Cracked by Roath
-// he sheng ºÎÊ¢
+// he sheng ä½•ç››
 
 inherit NPC;
 
 void create()
 {
-	set_name("ºÎÊ¢", ({ "he sheng","he" }));
+	set_name("ä½•ç››", ({ "he sheng","he" }));
 //      set("nickname", "");
 	set("long",
-		"ÎÞ¸ùµÀÈËµÄ´óµÜ×Ó¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"æ— æ ¹é“äººçš„å¤§å¼Ÿå­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 28);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -48,7 +48,7 @@ void create()
 
 	prepare_skill("strike", "huagu-mianzhang");
 
-	create_family("ÉñÁú½Ì", 3, "³àÁúÃÅµÜ×Ó");
+	create_family("ç¥žé¾™æ•™", 3, "èµ¤é¾™é—¨å¼Ÿå­");
 
 	setup();
 	carry_object("/clone/weapon/gangdao")->wield();

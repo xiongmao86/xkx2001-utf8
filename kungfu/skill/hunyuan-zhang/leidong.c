@@ -1,5 +1,5 @@
 //Cracked by Roath
-// leidong.c À×¶¯¾ÅÌì
+// leidong.c é›·åŠ¨ä¹å¤©
 
 #include <ansi.h>
 
@@ -16,38 +16,38 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("À×¶¯¾ÅÌìÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("é›·åŠ¨ä¹å¤©åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( me->query_temp("leidong") )
-		return notify_fail("ÄãÒÑÔÚÊ¹ÓÃÀ×¶¯¾ÅÌìÁË£¡\n");
+		return notify_fail("ä½ å·²åœ¨ä½¿ç”¨é›·åŠ¨ä¹å¤©äº†ï¼\n");
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("À×¶¯¾ÅÌìĞè¿ÕÊÖ²ÅÄÜÊ©Õ¹£¡\n");
+		return notify_fail("é›·åŠ¨ä¹å¤©éœ€ç©ºæ‰‹æ‰èƒ½æ–½å±•ï¼\n");
 
 	if( me->query_skill_mapped("cuff") != "pishi-poyu" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·ÇÅüÊ¯ÆÆÓñÈ­£¬²»ÄÜÊ©Õ¹À×¶¯¾ÅÌì£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éåŠˆçŸ³ç ´ç‰æ‹³ï¼Œä¸èƒ½æ–½å±•é›·åŠ¨ä¹å¤©ï¼\n");
 
 	if( me->query_skill_prepared("cuff") != "pishi-poyu" )
-                return notify_fail("ÄãËù±¸µÄ²¢·ÇÅüÊ¯ÆÆÓñÈ­£¬²»ÄÜÊ©Õ¹À×¶¯¾ÅÌì£¡\n");
+                return notify_fail("ä½ æ‰€å¤‡çš„å¹¶éåŠˆçŸ³ç ´ç‰æ‹³ï¼Œä¸èƒ½æ–½å±•é›·åŠ¨ä¹å¤©ï¼\n");
 
 	if( me->query_skill_mapped("force") != "zixia-gong" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç×ÏÏ¼¹¦£¬Ê©Õ¹²»³öÀ×¶¯¾ÅÌì£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç´«éœåŠŸï¼Œæ–½å±•ä¸å‡ºé›·åŠ¨ä¹å¤©ï¼\n");
 
 	if( me->query_skill("force") < 140 )
-		return notify_fail("ÄãµÄ×ÏÏ¼¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹À×¶¯¾ÅÌì£¡\n");
+		return notify_fail("ä½ çš„ç´«éœåŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•é›·åŠ¨ä¹å¤©ï¼\n");
 
 	if( (lvl=me->query_skill("cuff")) < 135 )
-		return notify_fail("À×¶¯¾ÅÌìĞèÒª¾«Õ¿µÄÅüÊ¯ÆÆÓñÈ­·½ÄÜÓĞĞ§Ê©Õ¹£¡\n");
+		return notify_fail("é›·åŠ¨ä¹å¤©éœ€è¦ç²¾æ¹›çš„åŠˆçŸ³ç ´ç‰æ‹³æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	if( me->query("neili") <= lvl*2 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÀ×¶¯¾ÅÌì£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨é›·åŠ¨ä¹å¤©ï¼\n");
 /*
 	if( me->query_skill_prepared("strike") == "hunyuan-zhang" ) {
                 me->set_temp("restore", 1);
                 me->prepare_skill("strike");
         }
 */
-	message_vision(MAG "\nÖ»ÌıµÃ$NÒ»Éù´óºÈ£¬È­·çÍ»È»±äµÃÃÍ¾¢Ö®¼«£¬Éí·¨È´¸ü¼ÓÆ®ºöÄÑ²â£¡\n\n" NOR, me, target);
+	message_vision(MAG "\nåªå¬å¾—$Nä¸€å£°å¤§å–ï¼Œæ‹³é£çªç„¶å˜å¾—çŒ›åŠ²ä¹‹æï¼Œèº«æ³•å´æ›´åŠ é£˜å¿½éš¾æµ‹ï¼\n\n" NOR, me, target);
 
 //	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	str = me->query_str();
@@ -73,5 +73,5 @@ void end_perform( object me, int str, int dex)
 	me->add_temp("apply/dexerity", -dex*2);
 	me->delete_temp("leidong");
 
-	tell_object(me, "Äã»º»ºÎüÁËÒ»¿ÚÆø£¬½«ÄÚ¾¢ÊÕ»Øµ¤Ìï¡£\n");
+	tell_object(me, "ä½ ç¼“ç¼“å¸äº†ä¸€å£æ°”ï¼Œå°†å†…åŠ²æ”¶å›ä¸¹ç”°ã€‚\n");
 }	

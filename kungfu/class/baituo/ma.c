@@ -7,10 +7,10 @@ string ask_camel();
 
 void create()
 {
-        set_name("Âí¹â×ô", ({ "ma guangzuo","ma","guangzuo" }));
-        set("long", "Âí¹â×ôÊÇ¸öÎ÷ÓòµÄ»ØÈË£¬ĞÂ½üÍ¶¿¿µ½°×ÍÕÉ½×¯¡£Ëû´ÖÃ¼´ÖÑÛ£¬ÉíÉÏµÄ¼¡ÈâºÃÏñÊ¯Í·Ò»Ñù£¬ÓĞÒ»ÉíµÄºÃÎäÒÕ¡£\n");
-	set("title","°×ÍÕÉ½×¯ÎäÊ¦");
-        set("gender", "ÄĞĞÔ");
+        set_name("é©¬å…‰ä½", ({ "ma guangzuo","ma","guangzuo" }));
+        set("long", "é©¬å…‰ä½æ˜¯ä¸ªè¥¿åŸŸçš„å›äººï¼Œæ–°è¿‘æŠ•é åˆ°ç™½é©¼å±±åº„ã€‚ä»–ç²—çœ‰ç²—çœ¼ï¼Œèº«ä¸Šçš„è‚Œè‚‰å¥½åƒçŸ³å¤´ä¸€æ ·ï¼Œæœ‰ä¸€èº«çš„å¥½æ­¦è‰ºã€‚\n");
+	set("title","ç™½é©¼å±±åº„æ­¦å¸ˆ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set_skill("cuff", 60);
 	set_skill("lingshe-quan", 60);
@@ -43,18 +43,18 @@ void create()
         set("shen_type", 0);
 
 	set("inquiry", ([
-                "ÂæÍÕ" : (: ask_camel :),
-                "×øÆï" : (: ask_camel :),
-		"°×ÍÕÉ½×¯" : "´ÓÕâÀïÏòÎ÷±±·½×ß£¬¿ìµ½ÌìÉ½Ê±Â·±ßÓĞÒ»¿éÊ¯±®£¬´ÓÄÇÀïÈëÉ³Ä®ÏòÎ÷×ßºÜ¾Ã¾Íµ½ÁË¡£¼Ç×ÅÒªÆïÂæÍÕ¡£\n",
+                "éª†é©¼" : (: ask_camel :),
+                "åéª‘" : (: ask_camel :),
+		"ç™½é©¼å±±åº„" : "ä»è¿™é‡Œå‘è¥¿åŒ—æ–¹èµ°ï¼Œå¿«åˆ°å¤©å±±æ—¶è·¯è¾¹æœ‰ä¸€å—çŸ³ç¢‘ï¼Œä»é‚£é‡Œå…¥æ²™æ¼ å‘è¥¿èµ°å¾ˆä¹…å°±åˆ°äº†ã€‚è®°ç€è¦éª‘éª†é©¼ã€‚\n",
         ]));
-        create_family("°×ÍÕÉ½", 3 , "µÜ×Ó");
+        create_family("ç™½é©¼å±±", 3 , "å¼Ÿå­");
 	setup();
 	carry_object("/clone/armor/wcloth")->wear();
 }
 
 void init()
 {
- 	add_action("return_camel", "»¹");
+ 	add_action("return_camel", "è¿˜");
 	add_action("return_camel", "return");
 }
 int return_camel(string arg)
@@ -69,7 +69,7 @@ int return_camel(string arg)
 
     
     if( arg=="camel" ) {
-	message_vision("$N°ÑÊÖÖĞÂæÍÕµÄçÖÉş½»¸øÁË$n¡£\n", me, this_object());
+	message_vision("$NæŠŠæ‰‹ä¸­éª†é©¼çš„ç¼°ç»³äº¤ç»™äº†$nã€‚\n", me, this_object());
 	add("camel_count", -1);
 
 	if(me->query("rided"))
@@ -87,60 +87,60 @@ void attempt_apprentice(object ob)
 
 	command ("look "+ob->query("id"));
 	if ( ob->query("class")=="bonze" ) {
-             if (ob->query("gender")=="Å®ĞÔ")
-		command ("say Ğ¡Äá¹ÃÁ·¸òó¡¹¦£¬²»ÅÂ±ğÈË½ĞÄãÍºÍ·¸òó¡Âğ£¿");
+             if (ob->query("gender")=="å¥³æ€§")
+		command ("say å°å°¼å§‘ç»ƒè›¤èŸ†åŠŸï¼Œä¸æ€•åˆ«äººå«ä½ ç§ƒå¤´è›¤èŸ†å—ï¼Ÿ");
 	     else
-		command ("say ´óÊ¦¸µÁ·¸òó¡¹¦£¬²»ÅÂ±ğÈË½ĞÄãÍºÍ·¸òó¡Âğ£¿");
+		command ("say å¤§å¸ˆå‚…ç»ƒè›¤èŸ†åŠŸï¼Œä¸æ€•åˆ«äººå«ä½ ç§ƒå¤´è›¤èŸ†å—ï¼Ÿ");
 	     return;
 	}
-        if( ob->query("family/family_name") == "Ø¤°ï") {
-		command ("say ×¯Ö÷Æ½Éú×îºŞ½Ğ»¯×Ó£¬ÎÒ¿É²»ÏëÊÕÄã¡£");
+        if( ob->query("family/family_name") == "ä¸å¸®") {
+		command ("say åº„ä¸»å¹³ç”Ÿæœ€æ¨å«åŒ–å­ï¼Œæˆ‘å¯ä¸æƒ³æ”¶ä½ ã€‚");
 		return;
 	}
-        if ( ob->query("family/family_name") == "Îäµ±ÅÉ") {
-		command ("say ÀÏµÀÁ·¸òó¡¹¦£¬²»ÅÂ±ğÈË½ĞÄãÅ£±Ç×Ó¸òó¡Âğ£¿");
+        if ( ob->query("family/family_name") == "æ­¦å½“æ´¾") {
+		command ("say è€é“ç»ƒè›¤èŸ†åŠŸï¼Œä¸æ€•åˆ«äººå«ä½ ç‰›é¼»å­è›¤èŸ†å—ï¼Ÿ");
 		return;
 	}
 
 	if (ob->query("combat_exp") > 30000) {
 		command ("say "+ RANK_D->query_respect(ob) + 
-                           "ÊÇÎäÁÖ¸ßÊÖ£¬°İÎÒÎªÊ¦£¿±ğÈ¡Ğ¦ÓÚÔÚÏÂÁË¡£");
+                           "æ˜¯æ­¦æ—é«˜æ‰‹ï¼Œæ‹œæˆ‘ä¸ºå¸ˆï¼Ÿåˆ«å–ç¬‘äºåœ¨ä¸‹äº†ã€‚");
 		return;
 	}
 
-	if (ob->query("gender")=="Å®ĞÔ") ttt="æ¾Å®";
-	else  ttt = "¼Ò¶¡";
-	command("say ºÃ°É£¬Äã¾ÍÔÚÎÒÉ½×¯×ö¸ö" + ttt + "°É¡£");
+	if (ob->query("gender")=="å¥³æ€§") ttt="å©¢å¥³";
+	else  ttt = "å®¶ä¸";
+	command("say å¥½å§ï¼Œä½ å°±åœ¨æˆ‘å±±åº„åšä¸ª" + ttt + "å§ã€‚");
         command("recruit " + ob->query("id"));
-	ob->set("title","°×ÍÕÉ½×¯"+ttt);
+	ob->set("title","ç™½é©¼å±±åº„"+ttt);
 	return;
 }
 string ask_camel()
 {
         object ob, me=this_player();
 
-        if (me->query("family/family_name")!="°×ÍÕÉ½") {
-                command("say ÄãÊÇÄÄÀïÀ´µÄ" + RANK_D->query_rude(me) +
-                        "µ½ÎÒÃÇ×¯À´»ìÊ³£¿¿ì¸øÎÒ¹ö£¡");
+        if (me->query("family/family_name")!="ç™½é©¼å±±") {
+                command("say ä½ æ˜¯å“ªé‡Œæ¥çš„" + RANK_D->query_rude(me) +
+                        "åˆ°æˆ‘ä»¬åº„æ¥æ··é£Ÿï¼Ÿå¿«ç»™æˆ‘æ»šï¼");
                 command("kick " + me->query("id"));
-                return ("Ğ¡ĞÄÎÒÔ×ÁËÄã£¡");
+                return ("å°å¿ƒæˆ‘å®°äº†ä½ ï¼");
         }
 
-        if (me->query("rided") || me->query_temp("mark/ÍÕ")){
-                return("Äã²»ÊÇÓĞ×øÆïÁËÂğ£¿");
+        if (me->query("rided") || me->query_temp("mark/é©¼")){
+                return("ä½ ä¸æ˜¯æœ‰åéª‘äº†å—ï¼Ÿ");
         }
 
 	if (query("camel_count") > 20)
-                return("ÂæÍÕ¶¼ÈÃÄãÊ¦ĞÖµÜÃÇÆï×ßÁË£¬"+ RANK_D->query_respect(me)+
-                       "Òª»ØÉ½£¬µÈËûÃÇ»ØÀ´ÔÚËµ°É¡£");
+                return("éª†é©¼éƒ½è®©ä½ å¸ˆå…„å¼Ÿä»¬éª‘èµ°äº†ï¼Œ"+ RANK_D->query_respect(me)+
+                       "è¦å›å±±ï¼Œç­‰ä»–ä»¬å›æ¥åœ¨è¯´å§ã€‚");
 
         ob=new("/clone/horse/btcamel");
         ob->move("/d/xingxiu/btroad");
 	add("camel_count", 1);
         ob->set_lord(me);
         ob->set_leader(me);
-        me->set_temp("mark/ÍÕ", 1);
+        me->set_temp("mark/é©¼", 1);
                 command("nod");
-                say("Âí¹â×ô´ÓÉí±ßµÄÊ÷´ÔÀïÇ£³öÒ»Æ¥ÂæÍÕÀ´½»¸øÄã¡£\n");
-		return(RANK_D->query_respect(me) + "Â·ÉÏĞ¡ĞÄ£¬ÔçÈ¥Ôç¹é£¡");
+                say("é©¬å…‰ä½ä»èº«è¾¹çš„æ ‘ä¸›é‡Œç‰µå‡ºä¸€åŒ¹éª†é©¼æ¥äº¤ç»™ä½ ã€‚\n");
+		return(RANK_D->query_respect(me) + "è·¯ä¸Šå°å¿ƒï¼Œæ—©å»æ—©å½’ï¼");
 }

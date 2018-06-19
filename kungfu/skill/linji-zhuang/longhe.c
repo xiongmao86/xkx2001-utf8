@@ -9,27 +9,27 @@ int exert(object me, object target)
         int level = me->query_skill("linji-zhuang", 1);
         int jingli, jing, extrajing;
 
-        if (level < 90) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+        if (level < 90) return notify_fail("ä½ çš„ä¸´æµŽåäºŒåº„ä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 
         if( (int)me->query("max_neili") < 5*level ) 
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸å¤Ÿå¼ºã€‚\n");
 
         if( (int)me->query("eff_qi") < (int)me->query("max_qi") / 2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
         
         if( (int)me->query("eff_jing") < (int)me->query("max_jing") / 2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼\n");
 
         extrajing = (int)me->query("jing") - (int)me->query("max_jing")/2;
         if (extrajing < 1)
-                return notify_fail("ÄãµÄ¾«ÉñÌ«²î¡£");
+                return notify_fail("ä½ çš„ç²¾ç¥žå¤ªå·®ã€‚");
 
         if( (int)me->query("neili") < 1 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
         jingli = (int)me->query("max_jingli") - (int)me->query("jingli");
         if ( jingli < 10 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦³äÅæ¡£\n");
+                return notify_fail("ä½ çŽ°åœ¨ç²¾åŠ›å……æ²›ã€‚\n");
         jing = 90*jingli/level;
         if (jing < 5) jing = 5;
         if (extrajing < jing) {
@@ -39,9 +39,9 @@ int exert(object me, object target)
         me->add("jing", -jing);
         me->receive_heal("jingli", jingli);
         
-        write( HIY "Äã°µÔËÁúº×Á½×¯£¬ÆôÌìÃÅ£¬±ÕµØ»§£¬¾Û¾«³ÉÁ¦£¬¶Ù¾õÆøÁ¦±¶Ôö¡£\n" NOR);
+        write( HIY "ä½ æš—è¿é¾™é¹¤ä¸¤åº„ï¼Œå¯å¤©é—¨ï¼Œé—­åœ°æˆ·ï¼Œèšç²¾æˆåŠ›ï¼Œé¡¿è§‰æ°”åŠ›å€å¢žã€‚\n" NOR);
         message("vision",
-                HIY + "Ö»¼û" + me->name() + "ÉÔÏÔÆ£·¦£¬µ«×ªË²¼ä±ã¾«Éñ¶¶ËÓ¡£\n" NOR,
+                HIY + "åªè§" + me->name() + "ç¨æ˜¾ç–²ä¹ï¼Œä½†è½¬çž¬é—´ä¾¿ç²¾ç¥žæŠ–æ“žã€‚\n" NOR,
                 environment(me), me);
 
         // if (level > 120) me->improve_skill("linji-zhuang", -1);

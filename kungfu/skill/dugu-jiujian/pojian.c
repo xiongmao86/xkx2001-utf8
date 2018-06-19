@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pojian.c ¶À¹Â¾Å½£¡¸ÆÆ½£Ê½¡¹
+// pojian.c ç‹¬å­¤ä¹å‰‘ã€Œç ´å‰‘å¼ã€
 // qfy July 5, 1996.
 
 #include <ansi.h>
@@ -15,29 +15,29 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÆÆ½£Ê½Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç ´å‰‘å¼åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( !objectp(weapon = target->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword" )
-		return notify_fail("ÆÆ½£Ê½Ö»ÄÜ¶ÔÓÃ½£µÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç ´å‰‘å¼åªèƒ½å¯¹ç”¨å‰‘çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 		
 	if( (int)me->query_skill("dugu-jiujian", 1) < 50 )
-		return notify_fail("ÄãµÄ¶À¹Â¾Å½£ĞŞÎª²»¹»£¬»¹Î´Ñ§³É¡¸ÆÆ½£Ê½¡¹¡£\n");
+		return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘ä¿®ä¸ºä¸å¤Ÿï¼Œè¿˜æœªå­¦æˆã€Œç ´å‰‘å¼ã€ã€‚\n");
 
         if( me->query("neili") <= 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-	msg = CYN "$N¾Ù½£»­»¡£¬Ä¬Ç±¶À¹Â¾Å½£µÄ¡¸ÆÆ½£Ê½¡¹£¬ÃàÃà½£Òâ£¬ÂşÌìÆÌµØÏ®Ïò$n¡£\n";
+	msg = CYN "$Nä¸¾å‰‘ç”»å¼§ï¼Œé»˜æ½œç‹¬å­¤ä¹å‰‘çš„ã€Œç ´å‰‘å¼ã€ï¼Œç»µç»µå‰‘æ„ï¼Œæ¼«å¤©é“ºåœ°è¢­å‘$nã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-		msg += "½á¹û$p²»ÖªÈçºÎÊÇºÃ£¬Î¨ÓĞÉáÆú"+weapon->query("name")+"×Ô±£¡£\n" NOR;
+		msg += "ç»“æœ$pä¸çŸ¥å¦‚ä½•æ˜¯å¥½ï¼Œå”¯æœ‰èˆå¼ƒ"+weapon->query("name")+"è‡ªä¿ã€‚\n" NOR;
 		weapon->move(environment(me));
 		target->start_busy( (int)me->query_skill("sword") / 28 );
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ½£Â·£¬»¹ÕĞµ²¿ª¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„å‰‘è·¯ï¼Œè¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR;
 	me->start_busy(1 + random(3));
 	}
 	message_vision(msg, me, target);

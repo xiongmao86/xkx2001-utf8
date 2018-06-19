@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /kungfu/class/emei/jingzhen.c ¾²ÕæÊ¦Ì«
+// Npc: /kungfu/class/emei/jingzhen.c é™çœŸå¸ˆå¤ª
 // Date: xbc 96/09/22
 // Modified by xQin 8/00
 inherit NPC;
@@ -10,23 +10,23 @@ int auto_perform();
 
 void create()
 {
-        set_name("¾²ÕæÊ¦Ì«", ({
+        set_name("é™çœŸå¸ˆå¤ª", ({
                 "jingzhen shitai",
                 "jingzhen",
                 "shitai",
 	}));
 	set("long",
-		"ËıÊÇÒ»Î»´ÈÏéµÄÄêÇáÊ¦Ì«£¬ÔÚ¸£ÊÙâÖĞŞĞĞ¡£\n"
-		"ËıÊÇÃğ¾øÊ¦Ì«µÄ°Ë´ó¾²×Ö±²µÜ×ÓÖ®°Ë£¬×îÉÃ³¤Ö¸·¨Óëµ¶·¨¡£\n"
+		"å¥¹æ˜¯ä¸€ä½æ…ˆç¥¥çš„å¹´è½»å¸ˆå¤ªï¼Œåœ¨ç¦å¯¿åºµä¿®è¡Œã€‚\n"
+		"å¥¹æ˜¯ç­ç»å¸ˆå¤ªçš„å…«å¤§é™å­—è¾ˆå¼Ÿå­ä¹‹å…«ï¼Œæœ€æ“…é•¿æŒ‡æ³•ä¸åˆ€æ³•ã€‚\n"
 	);
 
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
         set("inquiry",([
-                "³ö¼Ò"  : (: ask_for_join :),
-                "»¹Ë×" : (:ask_for_huansu:),
+                "å‡ºå®¶"  : (: ask_for_join :),
+                "è¿˜ä¿—" : (:ask_for_huansu:),
         ]));
 
 	set("age", 28);
@@ -70,7 +70,7 @@ void create()
 	prepare_skill("finger", "tiangang-zhi");
 	prepare_skill("strike", "jinding-zhang");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
 	set("chat_chance_combat", 50);
 	set("chat_msg_combat", ({
@@ -97,10 +97,10 @@ void init()
 	&& ob->query("shen") < -100 ) 
 	{
        	 	message_vision(
-                "$n¿´×Å$NËµµÀ£ºÄãÔõÃ´ÔÚÍâ±ß×ö»µÊÂ£¿\n",
+                "$nçœ‹ç€$Nè¯´é“ï¼šä½ æ€ä¹ˆåœ¨å¤–è¾¹åšåäº‹ï¼Ÿ\n",
                 ob, this_object() );
-		command("say ÎÒ¶ëáÒÅÉÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬" +
-                        "¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£ÎÒ²»ÄÜÔÙÊÕÁôÄã£¬ÄãÈ¥°É¡£\n");
+		command("say æˆ‘å³¨åµ‹æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œ" +
+                        "å¯¹å¼Ÿå­è¦æ±‚æä¸¥ã€‚æˆ‘ä¸èƒ½å†æ”¶ç•™ä½ ï¼Œä½ å»å§ã€‚\n");
                 command("expell " + ob->query("id"));
                 return;
         }
@@ -110,7 +110,7 @@ void init()
         && ob->query("class") !=  "bonze" )                 
 	{
 		message_vision(
-                        "$n¿´×Å$NËµµÀ£ºÄã¼ÈÈ»»¹ÁËË×£¬»¹ÊÇÈ¥ÕÒÄãË×¼ÒÊ¦ÊåÑ§ÒÕ°É¡£\n");
+                        "$nçœ‹ç€$Nè¯´é“ï¼šä½ æ—¢ç„¶è¿˜äº†ä¿—ï¼Œè¿˜æ˜¯å»æ‰¾ä½ ä¿—å®¶å¸ˆå”å­¦è‰ºå§ã€‚\n");
                 ob->delete("family/master_name");
                 ob->delete("family/master_id");
                 return;

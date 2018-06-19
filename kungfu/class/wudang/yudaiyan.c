@@ -1,5 +1,5 @@
 //Cracked by Roath
-// yudaiyan.c Óáá·ÑÒ
+// yudaiyan.c ä¿žå²±å²©
 // xQin 12/00
 // xQin 04/01
 
@@ -12,12 +12,12 @@ string ask_drug4();
 
 void create()
 {
-        set_name("Óáá·ÑÒ", ({ "yu daiyan", "yu" }));
-        set("nickname", "Îäµ±ÈýÏÀ");
-        set("long", "ËûÊÇÎäµ±ÆßÏÀÖÐµÄÓúÈýÏÀ£¬ÏÖÕÆ¹Üµ¤Ò©·¿¡£\n"
-        	    "Ö»¼ûËûÃæÄ¿ã¾ã²£¬ÓÒÊÖÖ§³Å×Å¹ÕÕÈËÆºõÊ®·Ö³ÔÁ¦¡£\n"
-        	    "¾ÝËµ¶àÄêÇ°Òò±»´õÈËÒÔ´óÁ¦½ð¸ÕÖ¸ÄóËéËÄÖ«£¬ºóÀ´ËäµÃÒÔºÚÓñ¶ÏÐø¸àÖÎÁÆµ«ÈÔÎÞ·¨È¬Óú¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¿žå²±å²©", ({ "yu daiyan", "yu" }));
+        set("nickname", "æ­¦å½“ä¸‰ä¾ ");
+        set("long", "ä»–æ˜¯æ­¦å½“ä¸ƒä¾ ä¸­çš„æ„ˆä¸‰ä¾ ï¼ŒçŽ°æŽŒç®¡ä¸¹è¯æˆ¿ã€‚\n"
+        	    "åªè§ä»–é¢ç›®æ†”æ‚´ï¼Œå³æ‰‹æ”¯æ’‘ç€æ‹æ–ä¼¼ä¹Žååˆ†åƒåŠ›ã€‚\n"
+        	    "æ®è¯´å¤šå¹´å‰å› è¢«æ­¹äººä»¥å¤§åŠ›é‡‘åˆšæŒ‡æç¢Žå››è‚¢ï¼ŒåŽæ¥è™½å¾—ä»¥é»‘çŽ‰æ–­ç»­è†æ²»ç–—ä½†ä»æ— æ³•ç—Šæ„ˆã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -53,13 +53,13 @@ void create()
 
         prepare_skill("strike", "mian-zhang");
 
-        create_family("Îäµ±ÅÉ", 2, "µÜ×Ó");
+        create_family("æ­¦å½“æ´¾", 2, "å¼Ÿå­");
 	set("inquiry", ([
-	"µ¤Ò©·¿" : "ÕâÀï»¹Ã»ÓÃÍêÈ«¿ª·Å£¬ÇëÄÍÐÄµÈ´ý¡£\n",
-	"ÌìÐÄ½â¶¾µ¤" : (:ask_drug1:),
-	"Èý»Æ±¦À°Íè" : (:ask_drug2:),
-	"ÌìÍõ»¤ÐÄµ¤" : (:ask_drug3:),
-	"°×»¢¶áÃüÍè" : (:ask_drug4:),
+	"ä¸¹è¯æˆ¿" : "è¿™é‡Œè¿˜æ²¡ç”¨å®Œå…¨å¼€æ”¾ï¼Œè¯·è€å¿ƒç­‰å¾…ã€‚\n",
+	"å¤©å¿ƒè§£æ¯’ä¸¹" : (:ask_drug1:),
+	"ä¸‰é»„å®è…Šä¸¸" : (:ask_drug2:),
+	"å¤©çŽ‹æŠ¤å¿ƒä¸¹" : (:ask_drug3:),
+	"ç™½è™Žå¤ºå‘½ä¸¸" : (:ask_drug4:),
 	
 	]));
 	
@@ -79,28 +79,28 @@ string ask_drug1()
 	me=this_player();
 	ob=this_object();
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "Îäµ±ÅÉ")
-        return RANK_D->query_respect(this_player()) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ­¦å½“æ´¾")
+        return RANK_D->query_respect(this_player()) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
         
         if (me->query_temp("obtained_drug1"))
         {
       	command("hmm "+me->query("id"));
-        return "ÌìÐÄ½â¶¾µ¤²»ÊÇÒÑ¾­¸ø¹ýÄãÁËÂð£¿";
+        return "å¤©å¿ƒè§£æ¯’ä¸¹ä¸æ˜¯å·²ç»ç»™è¿‡ä½ äº†å—ï¼Ÿ";
 	}
 	
 	obs = filter_array(children("/clone/drug/tianxin.c"), (: clonep :));
         if (sizeof(obs) > 5)
-                return "ÄãÀ´ÍíÁË£¬ÌìÐÄ½â¶¾µ¤¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œå¤©å¿ƒè§£æ¯’ä¸¹éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
 
 	if (query("drug1_count") < 1)
-        return "ÄãÀ´ÍíÁË£¬ÌìÐÄ½â¶¾µ¤¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+        return "ä½ æ¥æ™šäº†ï¼Œå¤©å¿ƒè§£æ¯’ä¸¹éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
         
 	ob=new("/clone/drug/tianxin");
 	ob->move(me);
 	add("drug1_count", -1);
 	me->set_temp("obtained_drug1", 1);
-	message_vision("Óáá·ÑÒ×ªÉíÕÒÁËÕÒ£¬ÔÚ¼Ü×ÓÉÏÄÃÏÂÁËÒ»¸öÐ¡°×Æ¿£¬´ÓÀïÃæµ¹ÁËÒ»¿ÅÒ©Íè³öÀ´¸ø$N¡£\n",me);
-	return "ºÃ°É£¬ÕâÀïÓÐÒ»¿ÅÌìÐÄ½â¶¾µ¤£¬ÇÐ¼ÇÒªÉ÷ÓÃ¡£";
+	message_vision("ä¿žå²±å²©è½¬èº«æ‰¾äº†æ‰¾ï¼Œåœ¨æž¶å­ä¸Šæ‹¿ä¸‹äº†ä¸€ä¸ªå°ç™½ç“¶ï¼Œä»Žé‡Œé¢å€’äº†ä¸€é¢—è¯ä¸¸å‡ºæ¥ç»™$Nã€‚\n",me);
+	return "å¥½å§ï¼Œè¿™é‡Œæœ‰ä¸€é¢—å¤©å¿ƒè§£æ¯’ä¸¹ï¼Œåˆ‡è®°è¦æ…Žç”¨ã€‚";
 }
 	
 string ask_drug2()
@@ -110,28 +110,28 @@ string ask_drug2()
 	me=this_player();
 	ob=this_object();
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "Îäµ±ÅÉ")
-        return RANK_D->query_respect(this_player()) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ­¦å½“æ´¾")
+        return RANK_D->query_respect(this_player()) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
         
         if (me->query_temp("obtained_drug2"))
         {
       	command("hmm "+me->query("id"));
-        return "Èý»Æ±¦À°Íè²»ÊÇÒÑ¾­¸ø¹ýÄãÁËÂð£¿";
+        return "ä¸‰é»„å®è…Šä¸¸ä¸æ˜¯å·²ç»ç»™è¿‡ä½ äº†å—ï¼Ÿ";
 	}
 	
 	obs = filter_array(children("/clone/drug/sanhuang-wan.c"), (: clonep :));
         if (sizeof(obs) > 5)
-                return "ÄãÀ´ÍíÁË£¬Èý»Æ±¦À°Íè¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œä¸‰é»„å®è…Šä¸¸éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
 
 	if (query("drug2_count") < 1)
-        return "ÄãÀ´ÍíÁË£¬Èý»Æ±¦À°Íè¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+        return "ä½ æ¥æ™šäº†ï¼Œä¸‰é»„å®è…Šä¸¸éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
         
 	ob=new("/clone/drug/sanhuang-wan");
 	ob->move(me);
 	add("drug2_count", -1);
 	me->set_temp("obtained_drug2", 1);
-	message_vision("Óáá·ÑÒ×ªÉíÕÒÁËÕÒ£¬ÔÚ¼Ü×ÓÉÏÄÃÏÂÁËÒ»¸öÐ¡°×Æ¿£¬´ÓÀïÃæµ¹ÁËÒ»¿ÅÒ©Íè³öÀ´¸ø$N¡£\n",me);
-	return "ºÃ°É£¬ÕâÀïÓÐÒ»¿ÅÈý»Æ±¦À°Íè£¬ÇÐ¼ÇÒªÉ÷ÓÃ¡£";
+	message_vision("ä¿žå²±å²©è½¬èº«æ‰¾äº†æ‰¾ï¼Œåœ¨æž¶å­ä¸Šæ‹¿ä¸‹äº†ä¸€ä¸ªå°ç™½ç“¶ï¼Œä»Žé‡Œé¢å€’äº†ä¸€é¢—è¯ä¸¸å‡ºæ¥ç»™$Nã€‚\n",me);
+	return "å¥½å§ï¼Œè¿™é‡Œæœ‰ä¸€é¢—ä¸‰é»„å®è…Šä¸¸ï¼Œåˆ‡è®°è¦æ…Žç”¨ã€‚";
 }
 
 string ask_drug3()
@@ -141,28 +141,28 @@ string ask_drug3()
 	me=this_player();
 	ob=this_object();
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "Îäµ±ÅÉ")
-        return RANK_D->query_respect(this_player()) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ­¦å½“æ´¾")
+        return RANK_D->query_respect(this_player()) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
         
         if (me->query_temp("obtained_drug3"))
         {
       	command("hmm "+me->query("id"));
-        return "ÌìÍõ»¤ÐÄµ¤²»ÊÇÒÑ¾­¸ø¹ýÄãÁËÂð£¿";
+        return "å¤©çŽ‹æŠ¤å¿ƒä¸¹ä¸æ˜¯å·²ç»ç»™è¿‡ä½ äº†å—ï¼Ÿ";
 	}
 	
 	obs = filter_array(children("/clone/drug/huxin"), (: clonep :));
         if (sizeof(obs) > 5)
-                return "ÄãÀ´ÍíÁË£¬ÌìÍõ»¤ÐÄµ¤¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œå¤©çŽ‹æŠ¤å¿ƒä¸¹éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
 
 	if (query("drug3_count") < 1)
-        return "ÄãÀ´ÍíÁË£¬ÌìÍõ»¤ÐÄµ¤¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+        return "ä½ æ¥æ™šäº†ï¼Œå¤©çŽ‹æŠ¤å¿ƒä¸¹éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
         
 	ob=new("/clone/drug/huxin");
 	ob->move(me);
 	add("drug3_count", -1);
 	me->set_temp("obtained_drug3", 1);
-	message_vision("Óáá·ÑÒ×ªÉíÕÒÁËÕÒ£¬ÔÚ¼Ü×ÓÉÏÄÃÏÂÁËÒ»¸öÐ¡°×Æ¿£¬´ÓÀïÃæµ¹ÁËÒ»¿ÅÒ©Íè³öÀ´¸ø$N¡£\n",me);
-	return "ºÃ°É£¬ÕâÀïÓÐÒ»¿ÅÌìÍõ»¤ÐÄµ¤£¬ÇÐ¼ÇÒªÉ÷ÓÃ¡£";
+	message_vision("ä¿žå²±å²©è½¬èº«æ‰¾äº†æ‰¾ï¼Œåœ¨æž¶å­ä¸Šæ‹¿ä¸‹äº†ä¸€ä¸ªå°ç™½ç“¶ï¼Œä»Žé‡Œé¢å€’äº†ä¸€é¢—è¯ä¸¸å‡ºæ¥ç»™$Nã€‚\n",me);
+	return "å¥½å§ï¼Œè¿™é‡Œæœ‰ä¸€é¢—å¤©çŽ‹æŠ¤å¿ƒä¸¹ï¼Œåˆ‡è®°è¦æ…Žç”¨ã€‚";
 }
 
 string ask_drug4()
@@ -172,32 +172,32 @@ string ask_drug4()
 	me=this_player();
 	ob=this_object();
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "Îäµ±ÅÉ")
-        return RANK_D->query_respect(this_player()) + "Óë±¾ÅÉËØÎÞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æð£¿";
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "æ­¦å½“æ´¾")
+        return RANK_D->query_respect(this_player()) + "ä¸Žæœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»Žä½•è°ˆèµ·ï¼Ÿ";
         
         if (me->query_temp("obtained_drug2"))
         {
       	command("hmm "+me->query("id"));
-        return "°×»¢¶áÃüÍè²»ÊÇÒÑ¾­¸ø¹ýÄãÁËÂð£¿";
+        return "ç™½è™Žå¤ºå‘½ä¸¸ä¸æ˜¯å·²ç»ç»™è¿‡ä½ äº†å—ï¼Ÿ";
 	}
 	
 	obs = filter_array(children("/clone/drug/baihu.c"), (: clonep :));
         if (sizeof(obs) > 5)
-                return "ÄãÀ´ÍíÁË£¬°×»¢¶áÃüÍè¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+                return "ä½ æ¥æ™šäº†ï¼Œç™½è™Žå¤ºå‘½ä¸¸éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
 
 	if (query("drug2_count") < 1)
-        return "ÄãÀ´ÍíÁË£¬°×»¢¶áÃüÍè¶¼ÒÑ¾­±»ÆäËûÍ¬ÃÇÄÃ×ßÁË£¬ÐèÒªÔÙÐÐÁ·ÖÆ¡£";
+        return "ä½ æ¥æ™šäº†ï¼Œç™½è™Žå¤ºå‘½ä¸¸éƒ½å·²ç»è¢«å…¶ä»–åŒä»¬æ‹¿èµ°äº†ï¼Œéœ€è¦å†è¡Œç»ƒåˆ¶ã€‚";
         
         if (me->query("combat_exp") < 50000 )
         {
         command("look "+me->query("id"));
-        return "°×»¢¶áÃüÍèÅäÖÃ¼«Îª²»Ò×£¬ÒÔÄãÄ¿Ç°µÄ¹¦Á¦Ó¦¸Ã²»»áÐèÒªµÄ£¬ÒÔºóÔÙËµ°É¡£";
+        return "ç™½è™Žå¤ºå‘½ä¸¸é…ç½®æžä¸ºä¸æ˜“ï¼Œä»¥ä½ ç›®å‰çš„åŠŸåŠ›åº”è¯¥ä¸ä¼šéœ€è¦çš„ï¼Œä»¥åŽå†è¯´å§ã€‚";
         }
 	ob=new("/clone/drug/baihu");
 	ob->move(me);
 	add("drug2_count", -1);
 	me->set_temp("obtained_drug2", 1);
-	message_vision("Óáá·ÑÒ×ªÉíÕÒÁËÕÒ£¬ÔÚ¼Ü×ÓÉÏÄÃÏÂÁËÒ»¸öÐ¡°×Æ¿£¬´ÓÀïÃæµ¹ÁËÒ»¿ÅÒ©Íè³öÀ´¸ø$N¡£\n",me);
-	return "ºÃ°É£¬ÕâÀïÓÐÒ»¿Å°×»¢¶áÃüÍè£¬ËüÅäÖÃ²»Ò×ÇÐ¼ÇÒªÉ÷ÓÃ¡£";
+	message_vision("ä¿žå²±å²©è½¬èº«æ‰¾äº†æ‰¾ï¼Œåœ¨æž¶å­ä¸Šæ‹¿ä¸‹äº†ä¸€ä¸ªå°ç™½ç“¶ï¼Œä»Žé‡Œé¢å€’äº†ä¸€é¢—è¯ä¸¸å‡ºæ¥ç»™$Nã€‚\n",me);
+	return "å¥½å§ï¼Œè¿™é‡Œæœ‰ä¸€é¢—ç™½è™Žå¤ºå‘½ä¸¸ï¼Œå®ƒé…ç½®ä¸æ˜“åˆ‡è®°è¦æ…Žç”¨ã€‚";
 }
 // End of file 

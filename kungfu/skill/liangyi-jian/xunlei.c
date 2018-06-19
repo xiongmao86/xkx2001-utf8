@@ -1,5 +1,5 @@
 //Cracked by Roath
-//xunlei.c Ñ¸À×½£
+//xunlei.c è¿…é›·å‰‘
 
 #include <ansi.h>
 
@@ -19,22 +19,22 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-	     return notify_fail("¡¸Ñ¸À×½£¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+	     return notify_fail("ã€Œè¿…é›·å‰‘ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_temp("xunlei_yushi"))
-	     return notify_fail("Äã½£ÊÆÎ´¾¡£¬²»ÄÜÔÙÊ©Õ¹¡¸Ñ¸À×½£¡¹£¡\n");
+	     return notify_fail("ä½ å‰‘åŠ¿æœªå°½ï¼Œä¸èƒ½å†æ–½å±•ã€Œè¿…é›·å‰‘ã€ï¼\n");
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword")
-	     return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+	     return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 
         if( (int)me->query("neili") < 800 )
-	     return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+	     return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( me->query_skill("liangyi-jian", 1) < 150 )
-	     return notify_fail("ÄãµÄ¡¸Á½ÒÇ½£·¨¡¹Î´Õé¸ßÃî¾³½ç£¬ÎÞ·¨Ê¹ÓÃ¡¸Ñ¸À×½£¡¹£¡\n");
+	     return notify_fail("ä½ çš„ã€Œä¸¤ä»ªå‰‘æ³•ã€æœªè‡»é«˜å¦™å¢ƒç•Œï¼Œæ— æ³•ä½¿ç”¨ã€Œè¿…é›·å‰‘ã€ï¼\n");
 
-        msg = HIR "\n$NÊÖÖÐ"+weapon->query("name")+HIR"½£¼âÖ¸Ïò×Ô¼ºÐØ¿Ú£¬½£±úÐ±Ð±ÏòÍâ£¬¹ÖÒìÖ®¼«£¬¾¹ËÆ»Ø½£×ÔãÞÒ»°ã£¡\n\n" NOR;
+        msg = HIR "\n$Næ‰‹ä¸­"+weapon->query("name")+HIR"å‰‘å°–æŒ‡å‘è‡ªå·±èƒ¸å£ï¼Œå‰‘æŸ„æ–œæ–œå‘å¤–ï¼Œæ€ªå¼‚ä¹‹æžï¼Œç«Ÿä¼¼å›žå‰‘è‡ªæˆ•ä¸€èˆ¬ï¼\n\n" NOR;
         message_vision(msg, me,target);
         me->start_busy(1);
         ob = me->select_opponent();
@@ -55,42 +55,42 @@ void checking(object me, object target, int speed, int damage)
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "sword") {
-		tell_object(me, "\nÄãÊÖÖÐÎÞ½££¬µ±ÏÂÍ£Ö¹ÁËÑ¸À×½£µÄ¼ÜÊÆ¡£\n" NOR);
+		tell_object(me, "\nä½ æ‰‹ä¸­æ— å‰‘ï¼Œå½“ä¸‹åœæ­¢äº†è¿…é›·å‰‘çš„æž¶åŠ¿ã€‚\n" NOR);
 		me->delete_temp("xunlei");
 		return;
 	}
 	else if ( weapon->query("weapon_prop") == 0 ) {
-		tell_object(me, "\nÄãµÄ"+weapon->name()+"ÒÑ»Ù£¬ÎÞ·¨³ÖÐøÑ¸À×½£µÄ¹¥ÊÆ£¡\n\n" NOR);
+		tell_object(me, "\nä½ çš„"+weapon->name()+"å·²æ¯ï¼Œæ— æ³•æŒç»­è¿…é›·å‰‘çš„æ”»åŠ¿ï¼\n\n" NOR);
 		call_out("xunlei_end", 5, me);
 		me->delete_temp("xunlei");
 		return;
 	}
 	else if ( (int)me->query("neili") < 400  ) {
-		message_vision(HIR"$NµÄÄÚ¾¢áá¼ÌÎÞÁ¦£¬²»µÃ²»Í£Ö¹Ñ¸À×½£µÄ¹¥ÊÆ£¡\n" NOR, me,target);
+		message_vision(HIR"$Nçš„å†…åŠ²å¾Œç»§æ— åŠ›ï¼Œä¸å¾—ä¸åœæ­¢è¿…é›·å‰‘çš„æ”»åŠ¿ï¼\n" NOR, me,target);
         	call_out("xunlei_end", 5, me);
 		me->delete_temp("xunlei");
 		return;
 	}
 	else if ( me->query_skill_mapped("sword") != "liangyi-jian" ) {
-		tell_object(me, HIR "\nÄã×ª¶øÊ©Õ¹ÆäËû½£·¨£¬ÎÞ·¨ÔÙÒÔÑ¸À×½£¹¥µÐ£¡\n\n" NOR);
+		tell_object(me, HIR "\nä½ è½¬è€Œæ–½å±•å…¶ä»–å‰‘æ³•ï¼Œæ— æ³•å†ä»¥è¿…é›·å‰‘æ”»æ•Œï¼\n\n" NOR);
         	call_out("xunlei_end", 5, me);
 		me->delete_temp("xunlei");
 		return;
 	}
 	else if ( me->is_busy() ) {
-		tell_object(me, HIR "\nÄãÏÖÔÚ¶¯×÷²»¹»Áé»î£¬ÎÞ·¨¼ÌÐøÎ¬³ÖÑ¸À×½£¹¥ÊÆ£¡\n\n" NOR);
+		tell_object(me, HIR "\nä½ çŽ°åœ¨åŠ¨ä½œä¸å¤Ÿçµæ´»ï¼Œæ— æ³•ç»§ç»­ç»´æŒè¿…é›·å‰‘æ”»åŠ¿ï¼\n\n" NOR);
 		call_out("xunlei_end", 5, me);
 		me->delete_temp("xunlei");
 		return;
 	}
 	else if (!me->is_fighting()) {
-		tell_object(me,  "\nÄãÏÖÔÚÃ»ÓÐºÍÈË¹ýÕÐ£¬µ±ÏÂÊÕ»ØÁËÑ¸À×½£µÄ¹¥ÊÆ¡£\n" NOR);
+		tell_object(me,  "\nä½ çŽ°åœ¨æ²¡æœ‰å’Œäººè¿‡æ‹›ï¼Œå½“ä¸‹æ”¶å›žäº†è¿…é›·å‰‘çš„æ”»åŠ¿ã€‚\n" NOR);
 		call_out("xunlei_end", 5, me);
 		me->delete_temp("xunlei");
 		return;
 	}
 	if( environment(target) != environment(me) ) {
-		tell_object(me, "Äã¼û¶Ô·½ÒÑ¾­²»ÔÚÕâÀï£¬µ±ÏÂÍ£Ö¹ÁËÑ¸À×½£µÄ¹¥ÊÆ¡£\n");
+		tell_object(me, "ä½ è§å¯¹æ–¹å·²ç»ä¸åœ¨è¿™é‡Œï¼Œå½“ä¸‹åœæ­¢äº†è¿…é›·å‰‘çš„æ”»åŠ¿ã€‚\n");
 		call_out("xunlei_end", 5, me);
 		me->delete_temp("xunlei");
 		return;
@@ -100,10 +100,10 @@ void checking(object me, object target, int speed, int damage)
         me->add_temp("apply/damage", damage);
         me->add_temp("apply/attack", damage);
 
-        if ( me->query_temp("xunlei") ==4 )message_vision(HIY"\n$N×ÝÉí½üÇ°£¬"+weapon->name()+HIY"¶¸È»ÍäÍäµ¯³ö£¬½£¼âÖ±´Ì$n£¬³öÕÐÖ®¿ìÕæÄËÎªÈÎºÎ½£·¨Ëù²»¼°£¡\n" NOR, me,target);
-        if ( me->query_temp("xunlei") ==3 )message_vision(HIW"\n$NÉìÖ¸ÔÚ"+weapon->name()+HIW"ÉÏÒ»µ¯£¬½£ÉùÎËÎË£¬ÓÐÈôÁúÒ÷£¬"+weapon->name()+HIW"²ü´¦£¬½£·æÀ´ÊÆÉñÃîÎÞ·½£¡\n" NOR, me,target);
-        if ( me->query_temp("xunlei") ==2 )message_vision(HIG"\n$N¶¸È»¼ä´óºÈÒ»Éù£¬"+weapon->name()+HIG"ÉÏº®¹âÉÁ¶¯£¬ºÈµÀ£º¡¸"+target->name()+HIG"£¬¿ÉÐ¡ÐÄÁË£¡¡¹\n" NOR, me,target);
-        if ( me->query_temp("xunlei") ==1 )message_vision(HIR"\nù£¼û$NËæÊÖ»Ó½££¬"+weapon->name()+HIR"²ü´¦£¬Ç°ºó×óÓÒ£¬Ë²Ï¢Ö®¼äÒÑ¹¥³öÁËËÄËÄÒ»Ê®ÁùÕÐ£¡\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==4 )message_vision(HIY"\n$Nçºµèº«è¿‘å‰ï¼Œ"+weapon->name()+HIY"é™¡ç„¶å¼¯å¼¯å¼¹å‡ºï¼Œå‰‘å°–ç›´åˆº$nï¼Œå‡ºæ‹›ä¹‹å¿«çœŸä¹ƒä¸ºä»»ä½•å‰‘æ³•æ‰€ä¸åŠï¼\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==3 )message_vision(HIW"\n$Nä¼¸æŒ‡åœ¨"+weapon->name()+HIW"ä¸Šä¸€å¼¹ï¼Œå‰‘å£°å—¡å—¡ï¼Œæœ‰è‹¥é¾™åŸï¼Œ"+weapon->name()+HIW"é¢¤å¤„ï¼Œå‰‘é”‹æ¥åŠ¿ç¥žå¦™æ— æ–¹ï¼\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==2 )message_vision(HIG"\n$Né™¡ç„¶é—´å¤§å–ä¸€å£°ï¼Œ"+weapon->name()+HIG"ä¸Šå¯’å…‰é—ªåŠ¨ï¼Œå–é“ï¼šã€Œ"+target->name()+HIG"ï¼Œå¯å°å¿ƒäº†ï¼ã€\n" NOR, me,target);
+        if ( me->query_temp("xunlei") ==1 )message_vision(HIR"\nîŠ”è§$Néšæ‰‹æŒ¥å‰‘ï¼Œ"+weapon->name()+HIR"é¢¤å¤„ï¼Œå‰åŽå·¦å³ï¼Œçž¬æ¯ä¹‹é—´å·²æ”»å‡ºäº†å››å››ä¸€åå…­æ‹›ï¼\n" NOR, me,target);
         me->add("neili", -100);
         me->start_busy(1);
         COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
@@ -116,7 +116,7 @@ void checking(object me, object target, int speed, int damage)
         me->add_temp("apply/attack", -damage);
 
         if ( me->query_temp("xunlei") ==1 ) {
-	message_vision(HIY "\n$NË³ÊÆÈ¦×ªÊÖÖÐ"+weapon->name()+HIY"£¬Ò»Ê®ÁùÊÖ¡¸Ñ¸À×½£¡¹ÒÑÈ»¾¡ÊýÊ¹³ö£¡\n" NOR, me, weapon);
+	message_vision(HIY "\n$Né¡ºåŠ¿åœˆè½¬æ‰‹ä¸­"+weapon->name()+HIY"ï¼Œä¸€åå…­æ‰‹ã€Œè¿…é›·å‰‘ã€å·²ç„¶å°½æ•°ä½¿å‡ºï¼\n" NOR, me, weapon);
         me->delete_temp("xunlei");
         call_out("xunlei_end", 10, me);
         me->start_busy(2);
@@ -135,7 +135,7 @@ void xunlei_end(object me)
         object weapon;
         weapon = me->query_temp("weapon");
 
-        tell_object(me, HIR "\nÄã°µ×Ôµ÷Ï¢£¬½¥½¥Æ½¸´ÌÚÓ¿µÄÕæÆø¡£\n\n" NOR);
+        tell_object(me, HIR "\nä½ æš—è‡ªè°ƒæ¯ï¼Œæ¸æ¸å¹³å¤è…¾æ¶Œçš„çœŸæ°”ã€‚\n\n" NOR);
 
         me->delete_temp("xunlei");
         me->delete_temp("xunlei_yushi");

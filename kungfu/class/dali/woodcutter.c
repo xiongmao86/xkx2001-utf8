@@ -1,5 +1,5 @@
 //Cracked by Roath
-// woodcutter.c éÔ·ò
+// woodcutter.c æ¨µå¤«
 // A.P.
 
 inherit NPC;
@@ -8,9 +8,9 @@ string ask_me();
 
 void create()
 {
-	set_name("éÔ·ò", ({ "qiao fu", "qiao", "woodcutter" }));
-	set("long", "Ò»¸öÖÐÄêéÔ·ò£¬¿´ÆðÀ´ÆÕÆÕÍ¨Í¨£¬µ«ÑÛÖÐÒþÒþÉÁ¶¯×ÅÒ»¹É°ÔÆø¡£\n");
-	set("gender", "ÄÐÐÔ");
+	set_name("æ¨µå¤«", ({ "qiao fu", "qiao", "woodcutter" }));
+	set("long", "ä¸€ä¸ªä¸­å¹´æ¨µå¤«ï¼Œçœ‹èµ·æ¥æ™®æ™®é€šé€šï¼Œä½†çœ¼ä¸­éšéšé—ªåŠ¨ç€ä¸€è‚¡éœ¸æ°”ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 35);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -40,7 +40,7 @@ void create()
 	prepare_skill("finger", "yiyang-zhi");
 
 	set("inquiry", ([
-		"ÉÏÉ½" : "ÒªÏëÉÏÉ½£¬ÏÈ¹ýÁËÎÒÕâ¹ØÔÙËµ¡£\n",
+		"ä¸Šå±±" : "è¦æƒ³ä¸Šå±±ï¼Œå…ˆè¿‡äº†æˆ‘è¿™å…³å†è¯´ã€‚\n",
 		]));
 	
 	setup();
@@ -77,7 +77,7 @@ int chat()
 	if (me->is_fighting(ob)) {
 		if (objectp(weapon=me->query_temp("weapon"))) {
 			command("unwield axe");
-			message_vision("éÔ·ò´óºÈÒ»Éù£¬Ïò$NÁ¬µãÁËÈýÖ¸¡£\n", ob);
+			message_vision("æ¨µå¤«å¤§å–ä¸€å£°ï¼Œå‘$Nè¿žç‚¹äº†ä¸‰æŒ‡ã€‚\n", ob);
 			call_out("fast_hit", 1, me, ob, 0);
 			call_out("fast_hit", 2, me, ob, 0);
 			call_out("fast_hit", 3, me, ob, 1);
@@ -90,18 +90,18 @@ int chat()
 	if (me->is_fighting()) return ::chat();
 
 	if (me->query("qi")*2 <= me->query("max_qi")) {
-		command("say "+"¹ûÈ»¸ßÃ÷¡£");
+		command("say "+"æžœç„¶é«˜æ˜Žã€‚");
 		command("thumb "+getuid(ob));
 		axx=new("/d/dali/obj/axe1.c");
 		axx->move(me);
 		command("give "+getuid(ob)+" axe");
-		message_vision("éÔ·ò×ªÉí´ó²½ÏÂÉ½¶øÈ¥£¬Ò»»á¶ù¾Í²»¼ûÁË\n",ob);
+		message_vision("æ¨µå¤«è½¬èº«å¤§æ­¥ä¸‹å±±è€ŒåŽ»ï¼Œä¸€ä¼šå„¿å°±ä¸è§äº†\n",ob);
 		destruct(me);
 		return ::chat();
 	}
 	else {
 		if (ob->query("qi")*2 <= ob->query("max_qi")) {
-			message_vision("éÔ·ò²»Ð¼µØ¶Ô$NÆ²ÁËÆ²×ì£º¡°¾ÍÕâµã¹¦·ò£¬»¹ÏëÉÏÉ½¼ûÎÒÊ¦¸µ£¿¹öÄãµÄ°É£¡¡±\n",ob);
+			message_vision("æ¨µå¤«ä¸å±‘åœ°å¯¹$Næ’‡äº†æ’‡å˜´ï¼šâ€œå°±è¿™ç‚¹åŠŸå¤«ï¼Œè¿˜æƒ³ä¸Šå±±è§æˆ‘å¸ˆå‚…ï¼Ÿæ»šä½ çš„å§ï¼â€\n",ob);
 			ob->move("/d/dali/droad2.c");
 			set("combat_exp",10);
 			if (!present("axe", me)) {

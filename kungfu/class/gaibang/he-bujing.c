@@ -6,12 +6,12 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ºÎ²»¾»", ({"he bujing", "he", "bujing"}));
-	set("title", "Ø¤°ïÆß´üµÜ×Ó");
-	set("gender", "ÄĞĞÔ");
+	set_name("ä½•ä¸å‡€", ({"he bujing", "he", "bujing"}));
+	set("title", "ä¸å¸®ä¸ƒè¢‹å¼Ÿå­");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("long", 
-		"ÕâÊÇÎ»ÒÂÖøååËú£¬ÅîÍ·¹¸ÃæµÄØ¤°ïÆß´üµÜ×Ó¡£\n");
+		"è¿™æ˜¯ä½è¡£è‘—é‚‹å¡Œï¼Œè“¬å¤´å¢é¢çš„ä¸å¸®ä¸ƒè¢‹å¼Ÿå­ã€‚\n");
 	set("attitude", "heroism");
 	set("str", 28);
 	set("int", 18);
@@ -44,7 +44,7 @@ void create()
 	
 	prepare_skill("strike", "xianglong-zhang");
 
-	create_family("Ø¤°ï", 19, "µÜ×Ó");
+	create_family("ä¸å¸®", 19, "å¼Ÿå­");
 	setup();
 
 	carry_object("/d/gaibang/obj/budai")->set_amount(6);
@@ -56,22 +56,22 @@ void attempt_apprentice(object ob)
 	if( ob->query("combat_exp") < 30000 ) return;
 
         if (ob->query("class")=="bonze") {
-                if (ob->query("gender")=="Å®ĞÔ")
-                        command ("say Ê¦Ì«ÊÇÊÇ³ö¼ÒÈË£¬ÔõÃ´ÄÜÔÚ±¾°ï×ö½Ğ»¯×ÓÄØ£¿");
+                if (ob->query("gender")=="å¥³æ€§")
+                        command ("say å¸ˆå¤ªæ˜¯æ˜¯å‡ºå®¶äººï¼Œæ€ä¹ˆèƒ½åœ¨æœ¬å¸®åšå«åŒ–å­å‘¢ï¼Ÿ");
                 return;
         }
 
-	if( ob->query("family/family_name") != "Ø¤°ï" ) 
+	if( ob->query("family/family_name") != "ä¸å¸®" ) 
 	{
 	        if( ob->query("rank") > 1 ) {
-       	         	command("say ±¾°ïÒÔÖÒÒåÎªÏÈ£¬¿ÉÈİ²»ÏÂÄãÕâÖÖÎŞĞÅÎŞÒåµÄ¼Ò»ï£¡\n");
+       	         	command("say æœ¬å¸®ä»¥å¿ ä¹‰ä¸ºå…ˆï¼Œå¯å®¹ä¸ä¸‹ä½ è¿™ç§æ— ä¿¡æ— ä¹‰çš„å®¶ä¼™ï¼\n");
                 	return;
         	}
 
-		command("say ÄãºÜ°®´ò¼Ü°É£¿ ¹ş¹ş¹ş£¬ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË£¡");
+		command("say ä½ å¾ˆçˆ±æ‰“æ¶å§ï¼Ÿ å“ˆå“ˆå“ˆï¼Œå¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ï¼");
 		ob->set("rank", 1); 
 		command("recruit " + ob->query("id"));
-		ob->set("title", "Ø¤°ïÒ»´üµÜ×Ó");
+		ob->set("title", "ä¸å¸®ä¸€è¢‹å¼Ÿå­");
 	} 
 	else
 	{

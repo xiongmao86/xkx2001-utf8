@@ -11,24 +11,24 @@ int update_condition(object me, int duration)
 	string msg;
 
    	if( !living(me) ) {
-      		message("vision", me->name() + "Í´¿àµØÉëÒ÷ÁËÒ»Éù¡£\n", environment(me), me);
+      		message("vision", me->name() + "ç—›è‹¦åœ°å‘»åŸäº†ä¸€å£°ã€‚\n", environment(me), me);
    	}
    	else {
-      		tell_object(me,HIR"ÄãÖ»¾õµ¤ÌïÖĞÒ»¹ÉÕæÆøÄæĞĞ£¬ĞØÖĞ·³¶ñÓûÅ»£¡\n" NOR );
-		message_vision(HIW"$NÑÛ¾¦ÖĞÉä³öÒìÑù¹âÃ¢£¬¿ÚÖĞà«à«×ÔÓï¡£\n"NOR,me);
+      		tell_object(me,HIR"ä½ åªè§‰ä¸¹ç”°ä¸­ä¸€è‚¡çœŸæ°”é€†è¡Œï¼Œèƒ¸ä¸­çƒ¦æ¶æ¬²å‘•ï¼\n" NOR );
+		message_vision(HIW"$Nçœ¼ç›ä¸­å°„å‡ºå¼‚æ ·å…‰èŠ’ï¼Œå£ä¸­å–ƒå–ƒè‡ªè¯­ã€‚\n"NOR,me);
    	}
 
-      	me->receive_wound("qi", 10, "ĞŞÁ¶ÆßÉËÈ­×ß»ğÈëÄ§ËÀÁË");
+      	me->receive_wound("qi", 10, "ä¿®ç‚¼ä¸ƒä¼¤æ‹³èµ°ç«å…¥é­”æ­»äº†");
       	
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++) {
-                if( ob[i]->query("race") != "ÈËÀà" 
+                if( ob[i]->query("race") != "äººç±»" 
 		|| ob[i]==me || !me->visible(ob[i]) ) 
 			continue;
-	        tell_object(me, "\n"+ob[i]->name()+"¶ÔÖøÄãºÈµÀ£º¡¸"
-                + RANK_D->query_rude(me)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n\n");
-	        tell_object(me, HIR "Èç¹ûÄãÒªºÍ" + ob[i]->name()
-                        + "ĞÔÃüÏà²«£¬ÇëÄãÒ²¶ÔÕâ¸öÈËÏÂÒ»´Î kill Ö¸Áî¡£\n"NOR);
+	        tell_object(me, "\n"+ob[i]->name()+"å¯¹è‘—ä½ å–é“ï¼šã€Œ"
+                + RANK_D->query_rude(me)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n\n");
+	        tell_object(me, HIR "å¦‚æœä½ è¦å’Œ" + ob[i]->name()
+                        + "æ€§å‘½ç›¸æï¼Œè¯·ä½ ä¹Ÿå¯¹è¿™ä¸ªäººä¸‹ä¸€æ¬¡ kill æŒ‡ä»¤ã€‚\n"NOR);
 		if (me->query_temp("yield")) me->set_temp("yield", 0);
 		me->kill_ob(ob[i]);
 	}

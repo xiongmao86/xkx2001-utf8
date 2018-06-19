@@ -1,5 +1,5 @@
 //Cracked by Roath
-// hyz_damage.c 混元无极劲伤
+// hyz_damage.c 娣峰厓鏃犳瀬鍔蹭激
 // qfy Nov 11, 96.
 
 #include <ansi.h>
@@ -15,16 +15,16 @@ int update_condition(object me, int duration)
    amt2 = amt1/2;
         
    if( !living(me) ) {
-      message("vision", me->name() + "脸上红班点点，脸色苍白得骇人。\n", environment(me), me);
+      message("vision", me->name() + "鑴镐笂绾㈢彮鐐圭偣锛岃劯鑹茶媿鐧藉緱楠囦汉銆俓n", environment(me), me);
    }
    else {
-      tell_object(me, HIR "忽然你一阵头晕目眩，你所中的混元无极劲内伤发作了！\n" NOR );
-      message("vision", me->name() + "的脸色突然大为苍白，摇摇欲坠，似乎是内伤发作了！\n",
+      tell_object(me, HIR "蹇界劧浣犱竴闃靛ご鏅曠洰鐪╋紝浣犳墍涓殑娣峰厓鏃犳瀬鍔插唴浼ゅ彂浣滀簡锛乗n" NOR );
+      message("vision", me->name() + "鐨勮劯鑹茬獊鐒跺ぇ涓鸿媿鐧斤紝鎽囨憞娆插潬锛屼技涔庢槸鍐呬激鍙戜綔浜嗭紒\n",
             environment(me), me);
    }
 
-   me->receive_damage("qi", amt1, "内伤发作死了");
-   me->receive_wound("qi", amt2, "内伤发作死了");       
+   me->receive_damage("qi", amt1, "鍐呬激鍙戜綔姝讳簡");
+   me->receive_wound("qi", amt2, "鍐呬激鍙戜綔姝讳簡");       
    me->apply_condition("hyz_damage", duration - 1);
 
    if ( !me->query_temp("huashan/hyz_damage") ) {

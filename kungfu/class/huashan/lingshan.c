@@ -1,17 +1,17 @@
 //Cracked by Roath
-// dayou.c ÔÀÁéæ©
+// dayou.c å²³çµå§—
 // qfy July 7, 1996
 
 inherit NPC;
 
 void create()
 {
-	set_name("ÔÀÁéæ©", ({ "yue lingshan", "yue", "lingshan", "shan" }));
+	set_name("å²³çµå§—", ({ "yue lingshan", "yue", "lingshan", "shan" }));
 	//set("nickname", "");
 	set("long", 
-"ÔÀÁéæ©ÊÇ»ªÉ½ÅÉÕÆÃÅÔÀ²»ÈºµÄÅ®¶ù£¬ÊÇ»ªÉ½µÄĞ¡Ê¦ÃÃ¡£³¤µÃÊ®·Ö\n"
-"½¿ÃÀ¿É°®£¬ÎªÈËÉÆÁ¼¡£\n");
-	set("gender", "Å®ĞÔ");
+"å²³çµå§—æ˜¯åå±±æ´¾æŒé—¨å²³ä¸ç¾¤çš„å¥³å„¿ï¼Œæ˜¯åå±±çš„å°å¸ˆå¦¹ã€‚é•¿å¾—ååˆ†\n"
+"å¨‡ç¾å¯çˆ±ï¼Œä¸ºäººå–„è‰¯ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 18);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -52,7 +52,7 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu");
 
-	create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+	create_family("åå±±æ´¾", 14, "å¼Ÿå­");
 
 	setup();
 	if (clonep()) 

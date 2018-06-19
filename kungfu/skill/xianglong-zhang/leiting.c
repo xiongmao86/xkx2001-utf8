@@ -1,5 +1,5 @@
 //Cracked by Roath
-// leiting À×öª½µÁú
+// leiting é›·éœ†é™é¾™
 // qfy Oct 7, 1996
 // kane Oct, 22, 1998
 // sdong , 7/30/1999
@@ -21,36 +21,36 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("À×öª½µÁúÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("é›·éœ†é™é¾™åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( objectp(me->query_temp("weapon")) )
-		return notify_fail("À×öª½µÁúÖ»ÄÜ¿ÕÊÖÔËÓÃ¡£\n");
+		return notify_fail("é›·éœ†é™é¾™åªèƒ½ç©ºæ‰‹è¿ç”¨ã€‚\n");
 
 	if( me->query_str() < 30 )
-		return notify_fail("ÄãµÄ±ÛÁ¦²»×ãÒÔÊ©Õ¹À×öª½µÁú£¡\n");
+		return notify_fail("ä½ çš„è‡‚åŠ›ä¸è¶³ä»¥æ–½å±•é›·éœ†é™é¾™ï¼\n");
 
 	if( me->query_skill_mapped("force") != "huntian-qigong" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç»ìÌìÆø¹¦£¬ÎÞ·¨¼ÓÁ¦Ê©Õ¹À×öª½µÁú£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éžæ··å¤©æ°”åŠŸï¼Œæ— æ³•åŠ åŠ›æ–½å±•é›·éœ†é™é¾™ï¼\n");
 
 	if( me->query_skill("force") < 135 )
-		return notify_fail("ÄãµÄ»ìÌìÆø¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹À×öª½µÁú£¡\n");
+		return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•é›·éœ†é™é¾™ï¼\n");
 
 	if( me->query_skill("strike") < 135 )
-		return notify_fail("Äã½µÁúÊ®°ËÕÆÐÞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÀ×öª½µÁú£¡\n");
+		return notify_fail("ä½ é™é¾™åå…«æŽŒä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨é›·éœ†é™é¾™ï¼\n");
 
 	if( (me->query("neili") - (150+enfor+enfor/2)) <= 350 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÀ×öª½µÁú£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨é›·éœ†é™é¾™ï¼\n");
 
         if( me->query_temp("xianglong",1) )
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃÄÚ¹¦£¬ÎÞ·¨ÊÔÓÃÀ×öª½µÁú£¡\n");
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨å†…åŠŸï¼Œæ— æ³•è¯•ç”¨é›·éœ†é™é¾™ï¼\n");
 
 	if( me->query_temp("sanhui_busy") )
-		return notify_fail("ÄãÎ¢Ò»ÔË¾¢£¬Ö»¾õÐØÖÐÆøÏ¢³Á×Ç£¬ÎÞÁ¦³öÕÆ£¡\n");
+		return notify_fail("ä½ å¾®ä¸€è¿åŠ²ï¼Œåªè§‰èƒ¸ä¸­æ°”æ¯æ²‰æµŠï¼Œæ— åŠ›å‡ºæŽŒï¼\n");
 
 	if ( me->query_condition("hyz_damage") )
-		return notify_fail("ÄãÉíÊÜ»ìÔª¾¢ÄÚÉË£¬Ìá²»ÆðÕæÁ¦Ê©Õ¹À×öª½µÁú£¡\n");
+		return notify_fail("ä½ èº«å—æ··å…ƒåŠ²å†…ä¼¤ï¼Œæä¸èµ·çœŸåŠ›æ–½å±•é›·éœ†é™é¾™ï¼\n");
 
-	message_vision(HIR "\n$NÑöÌì´óºÈ£¬Ë«ÊÖÁ¢ÈÐÀ×öª°ãµØ¶Ô×Å$nÅü³ö£¬ÕÆ·ç¾í¶¯ÎÞÊý·ÉÉ°×ßÊ¯£¬ÌìµØÎªÖ®±äÉ«£¡\n\n" NOR, me, target);
+	message_vision(HIR "\n$Nä»°å¤©å¤§å–ï¼ŒåŒæ‰‹ç«‹åˆƒé›·éœ†èˆ¬åœ°å¯¹ç€$nåŠˆå‡ºï¼ŒæŽŒé£Žå·åŠ¨æ— æ•°é£žç ‚èµ°çŸ³ï¼Œå¤©åœ°ä¸ºä¹‹å˜è‰²ï¼\n\n" NOR, me, target);
 
 	skill = me->query_skill("force");
 	amount = skill/3;

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// douzhuan-xingyi  ¶·×ªĞÇÒÆ
+// douzhuan-xingyi  æ–—è½¬æ˜Ÿç§»
 // arthurgu 1999.9
 
 #include <ansi.h>;
@@ -17,27 +17,27 @@ int valid_learn(object me)
         for (j = 1; j < i / 10; j++) t*= 2;
         if ((int)me->query_skill("force", 1) < 10
           ||(int)me->query_skill("force", 1)/2 < i/3 )
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò²»×ã£¬²»ÄÜÑ§¶·×ªĞÇÒÆÉñ¹¦¡£\n");         
-        if ( me->query("gender") == "ÎŞĞÔ" )
-                return notify_fail("Ì«¼à²»ÄÜÑ§¶·×ªĞÇÒÆÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™ä¸è¶³ï¼Œä¸èƒ½å­¦æ–—è½¬æ˜Ÿç§»ç¥åŠŸã€‚\n");         
+        if ( me->query("gender") == "æ— æ€§" )
+                return notify_fail("å¤ªç›‘ä¸èƒ½å­¦æ–—è½¬æ˜Ÿç§»ç¥åŠŸã€‚\n");
         if ( me->query("class") == "bonze" )
-                return notify_fail("¹ÃËÕÄ½Èİ²»ÊÕ³ö¼ÒÈËÎªµÜ×Ó.");  
+                return notify_fail("å§‘è‹æ…•å®¹ä¸æ”¶å‡ºå®¶äººä¸ºå¼Ÿå­.");  
                 
          if ((int)me->query_skill("literate", 1) < 220 
          && (int)me->query_skill("literate",1) < ((int)me->query_skill("douzhuan-xingyi",1) - 30)) 
-                    return notify_fail("ÄãµÄ¶ÁÊéĞ´×ÖË®Æ½²»¹»£¬ÎŞ·¨½øÒ»²½Ìá¸ß¶·×ªĞÇÒÆÉñ¹¦¡£\n");
+                    return notify_fail("ä½ çš„è¯»ä¹¦å†™å­—æ°´å¹³ä¸å¤Ÿï¼Œæ— æ³•è¿›ä¸€æ­¥æé«˜æ–—è½¬æ˜Ÿç§»ç¥åŠŸã€‚\n");
                              
         
         if ( me->query_skill("buddhism",1) || me->query_skill("taoism",1)
           || me->query_skill("mahayana",1) || me->query_skill("lamaism", 1))
-                return notify_fail("ÄãÁ·ÁËÍºÂ¿Å£±Ç×ÓÃÇµÄĞÄ·¨£¬»¹Ñ§¶·×ªĞÇÒÆ×öÊ²÷á£¡\n");
+                return notify_fail("ä½ ç»ƒäº†ç§ƒé©´ç‰›é¼»å­ä»¬çš„å¿ƒæ³•ï¼Œè¿˜å­¦æ–—è½¬æ˜Ÿç§»åšä»€éº½ï¼\n");
         if ( me->query_skill("hunyuan-yiqi",1) || me->query_skill("linji-zhuang", 1)
         || me->query_skill("huntian-qigong",1) || me->query_skill("longxiang-banruo", 1)
         || me->query_skill("taiji-shengong",1) || me->query_skill("zixia-gong",1)    
         || me->query_skill("dulong-dafa", 1) || me->query_skill("kurong-changong", 1)
         || me->query_skill("bitao-xuangong", 1) || me->query_skill("xiantian-gong",1)  
         || me->query_skill("huagong-dafa",1))  
-                return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§¶·×ªĞÇÒÆÉñ¹¦£¿£¡\n");
+                return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ«æ´¾å†…åŠŸï¼Œæ€èƒ½å­¦æ–—è½¬æ˜Ÿç§»ç¥åŠŸï¼Ÿï¼\n");
         return 1;
 	
 }
@@ -45,7 +45,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-  return notify_fail("¶·×ªĞÇÒÆÖ»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+  return notify_fail("æ–—è½¬æ˜Ÿç§»åªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

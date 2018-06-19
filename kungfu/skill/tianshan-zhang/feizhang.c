@@ -1,5 +1,5 @@
 //Cracked by Roath
-//feizhang.c  ÌìÉ½·ÉÕÈ
+//feizhang.c  å¤©å±±é£æ–
 
 #include <ansi.h>
 
@@ -20,30 +20,30 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÌìÉ½·ÉÕÈÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤©å±±é£æ–åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         weapon = me->query_temp("weapon");
         if( !objectp(weapon) || weapon->query("skill_type") != "staff" )
-                return notify_fail("ÄãÊÖÖĞÎŞÕÈ£¬ÈçºÎÄÜ¹»Ê©Õ¹ÌìÉ½·ÉÕÈ£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— æ–ï¼Œå¦‚ä½•èƒ½å¤Ÿæ–½å±•å¤©å±±é£æ–ï¼Ÿ\n");
 
         if( me->query_skill_mapped("force") != "huagong-dafa" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç»¯¹¦´ó·¨£¬ÎŞ·¨Ê©Õ¹ÌìÉ½·ÉÕÈ£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éåŒ–åŠŸå¤§æ³•ï¼Œæ— æ³•æ–½å±•å¤©å±±é£æ–ï¼\n");
 
         if( me->query_skill("force") < 140 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨»ğºòÎ´µ½£¬ÎŞ·¨ÅäºÏÕÈ·¨Ê©Õ¹·èÄ§·ÉÕÈ£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ç«å€™æœªåˆ°ï¼Œæ— æ³•é…åˆæ–æ³•æ–½å±•ç–¯é­”é£æ–ï¼\n");
 
         if( me->query_skill("tianshan-zhang", 1) < 140 )
-                return notify_fail("ÄãÌìÉ½ÕÈ·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÌìÉ½·ÉÕÈ£¡\n");
+                return notify_fail("ä½ å¤©å±±æ–æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨å¤©å±±é£æ–ï¼\n");
 
         if( me->query("neili") <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹ÌìÉ½·ÉÕÈ£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿæ–½å±•å¤©å±±é£æ–ï¼\n");
         if( me->query("jingli") <= 500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê©Õ¹ÌìÉ½·ÉÕÈ£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿæ–½å±•å¤©å±±é£æ–ï¼\n");
 
         skill = me->query_skill("staff");
 	skill2 = target->query_skill("parry");
         
-        message_vision(HIW "\n$NÉîÉîÎüÁË¿ÚÆø£¬Ò»Éù¿ñºô£¬ ½«ÊÖÖĞµÄ"+weapon->name()+"Ïò$nÖÀ³ö£¡\n\n" NOR, me, target);
+        message_vision(HIW "\n$Næ·±æ·±å¸äº†å£æ°”ï¼Œä¸€å£°ç‹‚å‘¼ï¼Œ å°†æ‰‹ä¸­çš„"+weapon->name()+"å‘$næ·å‡ºï¼\n\n" NOR, me, target);
 
         me->add("neili", -500);
         me->add("jingli", -300);
@@ -52,9 +52,9 @@ int perform(object me, object target)
 
 		limbs = target->query("limbs");
         	limb = limbs[random(sizeof(limbs))];
-	        type = "´ìÉË";
+	        type = "æŒ«ä¼¤";
 
-           	message_vision(HIR+weapon->name()+"¼Ó×ÅÒ»Õó¿ñ·çÃÍµÃ×²ÔÚ$n"+limb+"ÉÏ£¡\n" NOR, target, weapon);
+           	message_vision(HIR+weapon->name()+"åŠ ç€ä¸€é˜µç‹‚é£çŒ›å¾—æ’åœ¨$n"+limb+"ä¸Šï¼\n" NOR, target, weapon);
 
 		damage=(skill+me->query("huagong-dafa"))*3;
 		target->add("qi",-damage);
@@ -69,10 +69,10 @@ int perform(object me, object target)
         	message_vision("($N"+str+")\n", target);
 
 	} else {
-                message_vision(HIY "$N¿´µÃ·ÖÃ÷£¬¼±Ã¦ÏòÅÔ±ßÒ»Ô¾£¬ÉÁ¿ªÁË"+weapon->name()+"µÄ¹¥»÷\n" NOR, target);
+                message_vision(HIY "$Nçœ‹å¾—åˆ†æ˜ï¼Œæ€¥å¿™å‘æ—è¾¹ä¸€è·ƒï¼Œé—ªå¼€äº†"+weapon->name()+"çš„æ”»å‡»\n" NOR, target);
         }
         me->start_busy(random(3)+1);
-	message_vision(HIB+weapon->name()+"×²µ½É½Ê¯ÉÏ£¬¶Ï³ÉÁËÎŞÊı½Ø¡£\n"NOR);
+	message_vision(HIB+weapon->name()+"æ’åˆ°å±±çŸ³ä¸Šï¼Œæ–­æˆäº†æ— æ•°æˆªã€‚\n"NOR);
         weapon->move("/u/wsky/xiaoyao");
         return 1;
 }

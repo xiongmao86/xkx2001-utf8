@@ -1,5 +1,5 @@
 //Cracked by Roath
-// mo.c Ä§°ôµÄ¡¸Ä§¡¹×Ö¾÷
+// mo.c é­”æ£’çš„ã€Œé­”ã€å­—è¯€
 
 #include <ansi.h>
 
@@ -15,26 +15,26 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸Ä§¡¹×Ö¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé­”ã€å­—è¯€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
         weapon = me->query_temp("weapon");
 
         if( weapon->query("skill_type") != "stick" )
-                return notify_fail("ÄãÊÖÖĞÎŞ°ô£¬ÈçºÎÊ¹µÃÄ§°ôµÄ¡¸Ä§¡¹×Ö¾÷£¿£¡\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— æ£’ï¼Œå¦‚ä½•ä½¿å¾—é­”æ£’çš„ã€Œé­”ã€å­—è¯€ï¼Ÿï¼\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( me->query("jingli") <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
 
         if( (int)me->query_skill("stick") < 200 )
-                return notify_fail("ÄãµÄÄ§°ô²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Ä§¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„é­”æ£’ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€Œé­”ã€å­—è¯€ã€‚\n");
 
         if( !objectp(t_weapon = target->query_temp("weapon")) )
-                return notify_fail("Ä§°ôµÄ¡¸Ä§¡¹×Ö¾÷£¬¶ÔÃ»ÓĞÎÕÎäÆ÷µÄ¶ÔÊÖÎŞĞ§¡£\n");
+                return notify_fail("é­”æ£’çš„ã€Œé­”ã€å­—è¯€ï¼Œå¯¹æ²¡æœ‰æ¡æ­¦å™¨çš„å¯¹æ‰‹æ— æ•ˆã€‚\n");
 
-        message_vision(HIR"\n$NÒ»¸±ÕĞ¼ÜÎŞ·½µÄ°¤´òÉñÌ¬£¬È»ÊÖÖĞËù³Ö" + weapon->name() + "Ëù´¦·½Î»ÊµÊÇÇÉÃîµ½ÁË¼«´¦£¡£¡£¡\n"NOR, me);
+        message_vision(HIR"\n$Nä¸€å‰¯æ‹›æ¶æ— æ–¹çš„æŒ¨æ‰“ç¥æ€ï¼Œç„¶æ‰‹ä¸­æ‰€æŒ" + weapon->name() + "æ‰€å¤„æ–¹ä½å®æ˜¯å·§å¦™åˆ°äº†æå¤„ï¼ï¼ï¼\n"NOR, me);
 
         me->add("neili", -80);
         me->add("jingli", -20);
@@ -46,7 +46,7 @@ int perform(object me, object target)
         dp = (int)target->query("combat_exp");
 
         if( random(ap + dp) > dp ) {
-                message_vision(HIR"$N±ğÎŞËü·¨£¬²»µÃ²»Å×ÆúÊÖÖĞ" + t_weapon->name() + "£¬¸©Ê×ÇüÏ¥£¬¹òÔÚ$nÃæÇ°¡£\n\n"NOR, target, me);
+                message_vision(HIR"$Nåˆ«æ— å®ƒæ³•ï¼Œä¸å¾—ä¸æŠ›å¼ƒæ‰‹ä¸­" + t_weapon->name() + "ï¼Œä¿¯é¦–å±ˆè†ï¼Œè·ªåœ¨$né¢å‰ã€‚\n\n"NOR, target, me);
                 if( base_name(target) == "/kungfu/skill/yanxing-dao/copy/user" )
                         destruct(t_weapon);
                 else {
@@ -55,7 +55,7 @@ int perform(object me, object target)
                 }
                 target->start_busy(1 + random(2));
         } else {
-                message_vision(HIG"$N¿´ÆÆÁË$nµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n\n"NOR, target, me);
+                message_vision(HIG"$Nçœ‹ç ´äº†$nçš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“ã€‚\n\n"NOR, target, me);
                 me->start_busy(1);
         }
 

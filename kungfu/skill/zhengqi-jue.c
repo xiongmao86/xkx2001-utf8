@@ -1,5 +1,5 @@
 //Cracked by Roath
-// zhengqi-jue.c 正气诀
+// zhengqi-jue.c 姝ｆ皵璇�
 
 inherit SKILL;
 
@@ -10,12 +10,12 @@ string type() { return "knowledge"; }
 int valid_learn(object me) 
 {
 	if( (int)me->query("shen") < 0 )
-		return notify_fail("你的邪气太重，无法修炼华山正气诀。\n");
+		return notify_fail("浣犵殑閭皵澶噸锛屾棤娉曚慨鐐煎崕灞辨姘旇瘈銆俓n");
 		
 	return 1;
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("华山正气诀只能靠学习来提高。\n");
+	return notify_fail("鍗庡北姝ｆ皵璇�鍙兘闈犲涔犳潵鎻愰珮銆俓n");
 }

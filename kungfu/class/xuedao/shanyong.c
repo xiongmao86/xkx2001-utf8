@@ -4,10 +4,10 @@ inherit F_MASTER;
 inherit NPC;
 void create()
 {
-	set_name("ÉÆÓÂ", ({ "shanyong", "shan", "yong" }));
+	set_name("å–„å‹‡", ({ "shanyong", "shan", "yong" }));
 	set("long", 
-"Ò»¸öÅÖÅÖµÄÎ÷²ØÉ®ÈË£¬Ãæ´øÐ¦ÈÝ£¬È´³£¸ÉÐ¦Àï²Øµ¶µÄÊÂ¡£\n");
-	set("gender", "ÄÐÐÔ");
+"ä¸€ä¸ªèƒ–èƒ–çš„è¥¿è—åƒ§äººï¼Œé¢å¸¦ç¬‘å®¹ï¼Œå´å¸¸å¹²ç¬‘é‡Œè—åˆ€çš„äº‹ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "heroism");
 	set("class","lama");
@@ -39,7 +39,7 @@ void create()
 	map_skill("dodge", "xueshitiao");
 	
 
-	create_family("Ñªµ¶ÃÅ", 5, "µÜ×Ó");
+	create_family("è¡€åˆ€é—¨", 5, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/qilian/obj/miandao")->wield();
@@ -51,30 +51,30 @@ void init()
 
         ::init();
         if( interactive(ob = this_player())
-	&& ob->query("gender") == "Å®ÐÔ"){
-		message_vision("$NÐ±ÑÛÒùÐ¦£¬Ä¿¹â²»×¡ÔÚ$nÉíÉÏ×ªÀ´×ªÈ¥¡£\n", this_object(), ob);
+	&& ob->query("gender") == "å¥³æ€§"){
+		message_vision("$Næ–œçœ¼æ·«ç¬‘ï¼Œç›®å…‰ä¸ä½åœ¨$nèº«ä¸Šè½¬æ¥è½¬åŽ»ã€‚\n", this_object(), ob);
 		command("flirt "+ob->query("id"));
         }
 }
 void attempt_apprentice(object ob)
 {
-        if (ob->query("gender")=="Å®ÐÔ") {
-                command ("say ±¾ÅÉ²»ÊÕÅ®µÜ×Ó£¬Äã»ØÈ¥°É¡£");
+        if (ob->query("gender")=="å¥³æ€§") {
+                command ("say æœ¬æ´¾ä¸æ”¶å¥³å¼Ÿå­ï¼Œä½ å›žåŽ»å§ã€‚");
                 return;
         }
 
-	if( ob->query("family/family_name") != "Ñ©É½ÅÉ"
-        && ob->query("family/family_name") != "Ñªµ¶ÃÅ"
+	if( ob->query("family/family_name") != "é›ªå±±æ´¾"
+        && ob->query("family/family_name") != "è¡€åˆ€é—¨"
         && ob->query("combat_exp") >= 10000 ) {
-                command ("say " + RANK_D->query_respect(this_player()) + "ÊÇ"
-                +ob->query("family/family_name")+"¸ßÊÖ£¬±¾ÅÉ¿É²»¸ÒÊÕÁô£¡");
+                command ("say " + RANK_D->query_respect(this_player()) + "æ˜¯"
+                +ob->query("family/family_name")+"é«˜æ‰‹ï¼Œæœ¬æ´¾å¯ä¸æ•¢æ”¶ç•™ï¼");
                 return;
         }
- if ((string)ob->query("family/family_name") == "Ø¤°ï" && ob->query("rank") > 1 ) {
-                command("say " + RANK_D->query_respect(ob) + "ÊÇØ¤°ï¸ßÊÖ£¬Ë¡ÎÒ²»ÄÜÊÕÄã¡£");
+ if ((string)ob->query("family/family_name") == "ä¸å¸®" && ob->query("rank") > 1 ) {
+                command("say " + RANK_D->query_respect(ob) + "æ˜¯ä¸å¸®é«˜æ‰‹ï¼Œæ•æˆ‘ä¸èƒ½æ”¶ä½ ã€‚");
                 return;
         }
-	command("say ºÃ°É£¬Æ¶É®¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œè´«åƒ§å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 

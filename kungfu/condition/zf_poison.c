@@ -10,76 +10,76 @@ object *ob;
 
    if( duration == 1)
 	{
-	tell_object(me, HIB "ºöÈ»È«ÉíÆøÑªµ¹Á÷£¬ÄãÖĞµÄÉúËÀ·û·¢×÷ÁË£¬¿´À´ÒÑ¾­Ã»¾ÈÁË£¡\n" NOR );
-	message("vision", me->name() +"µÄÉíÌåÒ»Õğ£¬ÉñÉ«·¢É¢£¬ÆßÇÏ¿ªÊ¼ÏòÍâÁ÷Ñª¡£\n", environment(me), me);
-	me->receive_wound("jing", me->query("max_jing")*4, "ÉúËÀ·û·¢×÷ËÀÁË");
-	me->receive_damage("qi",me->query("max_qi")*4,"ÉúËÀ·û·¢×÷ËÀÁË");
+	tell_object(me, HIB "å¿½ç„¶å…¨èº«æ°”è¡€å€’æµï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å‘ä½œäº†ï¼Œçœ‹æ¥å·²ç»æ²¡æ•‘äº†ï¼\n" NOR );
+	message("vision", me->name() +"çš„èº«ä½“ä¸€éœ‡ï¼Œç¥è‰²å‘æ•£ï¼Œä¸ƒçªå¼€å§‹å‘å¤–æµè¡€ã€‚\n", environment(me), me);
+	me->receive_wound("jing", me->query("max_jing")*4, "ç”Ÿæ­»ç¬¦å‘ä½œæ­»äº†");
+	me->receive_damage("qi",me->query("max_qi")*4,"ç”Ÿæ­»ç¬¦å‘ä½œæ­»äº†");
 	}
    if( !living(me) && (duration != 1)) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+      message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
    }	
 else {
    if( (duration <= 10) && (duration >1) && (random(10) >= 6)) 
 {
         switch(random(6)) {
         case(0):       
-                tell_object(me, HIB "ºöÈ»Í·ÔÎÄ¿Ğı£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision", me->name() + "µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬¿ÉÅÂµØĞ¦ÁËÒ»ÏÂ¡£\n",
+                tell_object(me, HIB "å¿½ç„¶å¤´æ™•ç›®æ—‹ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision", me->name() + "çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œå¯æ€•åœ°ç¬‘äº†ä¸€ä¸‹ã€‚\n",
                 environment(me), me);
                 ob = all_inventory(environment(me));
                 for(i=0; i<sizeof(ob); i++) 
                 {
-                        if ((string)ob[i]->query("race") == "ÈËÀà"  && ob[i] != me )
+                        if ((string)ob[i]->query("race") == "äººç±»"  && ob[i] != me )
                         {
-                                message_vision(HIR "$N·¢¿ñËÆµÄ´óºğÒ»Éù£¬Ê§»êÂäÆÇµÄ¹¥»÷ÆğÀ´£¡\n" NOR, me);
+                                message_vision(HIR "$Nå‘ç‹‚ä¼¼çš„å¤§å¼ä¸€å£°ï¼Œå¤±é­‚è½é­„çš„æ”»å‡»èµ·æ¥ï¼\n" NOR, me);
                                 me->kill_ob(ob[i]);
                                 ob[i]->fight_ob(me);
                          }       
                 }
                 break;
         case(1):
-                tell_object(me, HIB "ºöÈ»Í·ÄÔÒ»Õó¾çÍ´£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision",  me->name() +"µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬·è¿ñµÄÒ»ÕÆÅÄÏò×Ô¼¸¡£\n", environment(me), me);
-                me->receive_damage("qi", 50, "ÉúËÀ·û·¢×÷ËÀÁË");
-                me->receive_wound("jing", 30, "ÉúËÀ·û·¢×÷ËÀÁË");
+                tell_object(me, HIB "å¿½ç„¶å¤´è„‘ä¸€é˜µå‰§ç—›ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision",  me->name() +"çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œç–¯ç‹‚çš„ä¸€æŒæ‹å‘è‡ªå‡ ã€‚\n", environment(me), me);
+                me->receive_damage("qi", 50, "ç”Ÿæ­»ç¬¦å‘ä½œæ­»äº†");
+                me->receive_wound("jing", 30, "ç”Ÿæ­»ç¬¦å‘ä½œæ­»äº†");
                 break;
         case(2):
-                tell_object(me, HIB "ºöÈ»Í·ÄÔÒ»Õó¾çÍ´£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision",  me->name() +"µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬ã¯È»²»ÖªËù´ë¡£\n", environment(me), me);
+                tell_object(me, HIB "å¿½ç„¶å¤´è„‘ä¸€é˜µå‰§ç—›ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision",  me->name() +"çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œæƒ˜ç„¶ä¸çŸ¥æ‰€æªã€‚\n", environment(me), me);
                 command("halt");
                 command("remove all");
                 command("drop all");
                 break;
         case(3):
-                tell_object(me, HIB "ºöÈ»Í·ÄÔÒ»Õó¾çÍ´£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision",  me->name() +"µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬ã¯È»²»ÖªËù´ë¡£\n", environment(me), me);
+                tell_object(me, HIB "å¿½ç„¶å¤´è„‘ä¸€é˜µå‰§ç—›ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision",  me->name() +"çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œæƒ˜ç„¶ä¸çŸ¥æ‰€æªã€‚\n", environment(me), me);
                 command("halt");
                 command("dazuo" + me->query("qi"));
                 break;
         case(4):
-                tell_object(me, HIB "ºöÈ»Í·ÄÔÒ»Õó¾çÍ´£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision",  me->name() +"µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬ã¯È»²»ÖªËù´ë¡£\n", environment(me), me);
+                tell_object(me, HIB "å¿½ç„¶å¤´è„‘ä¸€é˜µå‰§ç—›ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision",  me->name() +"çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œæƒ˜ç„¶ä¸çŸ¥æ‰€æªã€‚\n", environment(me), me);
                 command("halt");
                 command("tuna" + me->query("jing"));
                 break;
         case(5):
-                tell_object(me, HIB "ºöÈ»Í·ÄÔÒ»Õó¾çÍ´£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision",  me->name() +"µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬ã¯È»²»ÖªËù´ë¡£\n", environment(me), me);
+                tell_object(me, HIB "å¿½ç„¶å¤´è„‘ä¸€é˜µå‰§ç—›ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision",  me->name() +"çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œæƒ˜ç„¶ä¸çŸ¥æ‰€æªã€‚\n", environment(me), me);
                 ob = all_inventory(environment(me));
                 for(i=0; i<sizeof(ob); i++) 
                 {
-                        if ((string)ob[i]->query("race") == "ÈËÀà"  && ob[i] != me && userp(ob[i]))
+                        if ((string)ob[i]->query("race") == "äººç±»"  && ob[i] != me && userp(ob[i]))
                         {
                                 command("propose" + ob[i]->query("id"));
                         }       
                 }
                 break;
         case(6):
-                tell_object(me, HIB "ºöÈ»Í·ÄÔÒ»Õó¾çÍ´£¬ÄãÖĞµÄÉúËÀ·û¿ªÊ¼·¢×÷ÁË£¡\n" NOR );
-                message("vision",  me->name() +"µÄÄ¿¹âÉ¢ÂÒ£¬ÉñÉ«Òì³££¬ã¯È»²»ÖªËù´ë¡£\n", environment(me), me);
+                tell_object(me, HIB "å¿½ç„¶å¤´è„‘ä¸€é˜µå‰§ç—›ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦å¼€å§‹å‘ä½œäº†ï¼\n" NOR );
+                message("vision",  me->name() +"çš„ç›®å…‰æ•£ä¹±ï¼Œç¥è‰²å¼‚å¸¸ï¼Œæƒ˜ç„¶ä¸çŸ¥æ‰€æªã€‚\n", environment(me), me);
                 for(i=0; i<sizeof(ob); i++) 
                 {
-                        if ((string)ob[i]->query("race") == "ÈËÀà"  && ob[i] != me && userp(ob[i]))
+                        if ((string)ob[i]->query("race") == "äººç±»"  && ob[i] != me && userp(ob[i]))
                         {
                                 command("hit" + ob[i]->query("id"));
                         }       

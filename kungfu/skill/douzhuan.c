@@ -1,5 +1,5 @@
 //Cracked by Roath
-// douzhuan.c ¶·×ªĞÇÒÆ
+// douzhuan.c æ–—è½¬æ˜Ÿç§»
 
 #define DOU_ZHUAN "douzhuan"
 #define DOU_FAKE_NAME "douzhuan/pretend_skill"
@@ -8,20 +8,20 @@
 inherit SKILL;
 
 mapping *action = ({
-  ([  "lvl" :   0,  "skill_name" : "±Ì²İÓ­·ç" ]),
-  ([  "lvl" :  25,  "skill_name" : "ĞÎÓ°²»Àë" ]),
-  ([  "lvl" :  50,  "skill_name" : "ÔÆ·âÎíÈÆ" ]),
-  ([  "lvl" :  75,  "skill_name" : "Ã£Ã£ÈôÃÎ" ]),
-  ([  "lvl" : 100,  "skill_name" : "Ë®ÖĞÓ³ÔÂ" ]),
-  ([  "lvl" : 125,  "skill_name" : "¾µÀïÕªĞÇ" ]),
-  ([  "lvl" : 150,  "skill_name" : "ÒÆ»¨½ÓÄ¾" ]),
-  ([  "lvl" : 175,  "skill_name" : "ÌìÍâÚ¤Ú¤" ]),
-  ([  "lvl" : 200,  "skill_name" : "¶·×ªĞÇÒÆ" ]),
+  ([  "lvl" :   0,  "skill_name" : "ç¢§è‰è¿é£" ]),
+  ([  "lvl" :  25,  "skill_name" : "å½¢å½±ä¸ç¦»" ]),
+  ([  "lvl" :  50,  "skill_name" : "äº‘å°é›¾ç»•" ]),
+  ([  "lvl" :  75,  "skill_name" : "èŒ«èŒ«è‹¥æ¢¦" ]),
+  ([  "lvl" : 100,  "skill_name" : "æ°´ä¸­æ˜ æœˆ" ]),
+  ([  "lvl" : 125,  "skill_name" : "é•œé‡Œæ‘˜æ˜Ÿ" ]),
+  ([  "lvl" : 150,  "skill_name" : "ç§»èŠ±æ¥æœ¨" ]),
+  ([  "lvl" : 175,  "skill_name" : "å¤©å¤–å†¥å†¥" ]),
+  ([  "lvl" : 200,  "skill_name" : "æ–—è½¬æ˜Ÿç§»" ]),
 });
 
-// If level >= 200, can ¶·×ªĞÇÒÆ all weapons and unarmed
-// If level >= 150, can ¶·×ªĞÇÒÆ all short weapons and unarmed
-// else,            can ¶·×ªĞÇÒÆ all unarmed
+// If level >= 200, can æ–—è½¬æ˜Ÿç§» all weapons and unarmed
+// If level >= 150, can æ–—è½¬æ˜Ÿç§» all short weapons and unarmed
+// else,            can æ–—è½¬æ˜Ÿç§» all unarmed
 
 int valid_enable(string usage) 
 {
@@ -47,7 +47,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
   if ((int)me->query("max_neili") < 100)
-	return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·¶·×ªĞÇÒÆ¡£\n");
+	return notify_fail("ä½ çš„å†…åŠ›å¤ªå¼±ï¼Œæ— æ³•ç»ƒæ–—è½¬æ˜Ÿç§»ã€‚\n");
   return 1;
 }
 
@@ -103,9 +103,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
     if ((int)me->query("qi") < 30)
-	return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+	return notify_fail("ä½ çš„ä½“åŠ›å¤ªä½äº†ã€‚\n");
     if ((int)me->query("neili") < 40)
-	return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·¶·×ªĞÇÒÆ¡£\n");
+	return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒæ–—è½¬æ˜Ÿç§»ã€‚\n");
     me->receive_damage("qi", 30);
     me->add("neili", -10);
     return 1;

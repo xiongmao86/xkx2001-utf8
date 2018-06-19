@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /kungfu/class/emei/jingxin.c ¾²ĞÄÊ¦Ì«
+// Npc: /kungfu/class/emei/jingxin.c é™å¿ƒå¸ˆå¤ª
 // Date: xbc 96/09/22
 // Modified by xQin 8/00
 inherit NPC;
@@ -10,22 +10,22 @@ int auto_perform();
 
 void create()
 {
-        set_name("¾²ĞÄÊ¦Ì«", ({
+        set_name("é™å¿ƒå¸ˆå¤ª", ({
                 "jingxin shitai",
                 "jingxin",
                 "shitai",
 	}));
 	set("long",
-		"ËıÊÇÔÚ»ª²ØâÖĞŞĞĞµÄÊ¦Ì«£¬³£¼ûÔÚ²àµîÀïÓëÄêÇá¶ëáÒµÜ×ÓÌÖÂÛÎÊÌâ¡£\n"
+		"å¥¹æ˜¯åœ¨åè—åºµä¿®è¡Œçš„å¸ˆå¤ªï¼Œå¸¸è§åœ¨ä¾§æ®¿é‡Œä¸å¹´è½»å³¨åµ‹å¼Ÿå­è®¨è®ºé—®é¢˜ã€‚\n"
 	);
 
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
         set("inquiry",([
-                "³ö¼Ò"  : (: ask_for_join :),
-                "»¹Ë×" : (:ask_for_huansu:),
+                "å‡ºå®¶"  : (: ask_for_join :),
+                "è¿˜ä¿—" : (:ask_for_huansu:),
         ]));
 
 	set("age", 40);
@@ -69,7 +69,7 @@ void create()
 	prepare_skill("strike", "jinding-zhang");
 	prepare_skill("finger", "tiangang-zhi");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -78,8 +78,8 @@ void create()
 
         set("chat_chance", 1);
         set("chat_msg", ({
-                "¾²ĞÄÊ¦Ì«µÀ£ºÆÕÏÍÆĞÈøÕß£¬ÆÕÊÇ±éÒ»ÇĞ´¦£¬ÏÍÊÇ×îÃîÉÆÒå¡£\n",
-                "¾²ĞÄÊ¦Ì«µÀ£º´ÓÆĞÌáĞÄËùÆğÔ¸ĞĞ£¬¼°Éí¿ÚÒâÈıÒµ£¬½Ô±éÒ»ÇĞ´¦£¬´¿Ò»ÃîÉÆ£¬±¸¾¡ÖÚµÂ¡£\n",
+                "é™å¿ƒå¸ˆå¤ªé“ï¼šæ™®è´¤è©è¨è€…ï¼Œæ™®æ˜¯éä¸€åˆ‡å¤„ï¼Œè´¤æ˜¯æœ€å¦™å–„ä¹‰ã€‚\n",
+                "é™å¿ƒå¸ˆå¤ªé“ï¼šä»è©æå¿ƒæ‰€èµ·æ„¿è¡Œï¼ŒåŠèº«å£æ„ä¸‰ä¸šï¼Œçš†éä¸€åˆ‡å¤„ï¼Œçº¯ä¸€å¦™å–„ï¼Œå¤‡å°½ä¼—å¾·ã€‚\n",
         }) );
 
 

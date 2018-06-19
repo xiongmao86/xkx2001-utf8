@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /kungfu/class/emei/li.c ÀîÃ÷Ï¼
+// Npc: /kungfu/class/emei/li.c ææ˜éœ
 // Date: shan 96/09/22
 
 #include <ansi.h>
@@ -9,10 +9,10 @@ inherit F_MASTER;
 int auto_perform();
 void create()
 {
-        set_name("ÀîÃ÷Ï¼", ({ "li mingxia", "li" }));
+        set_name("ææ˜éœ", ({ "li mingxia", "li" }));
         set("long", 
-		"ËıÊÇÃğ¾øÊ¦Ì«µÄ°Ë´óË×¼ÒµÚ×ÓÖ®Ò»£¬×îÉÃ³¤Ììî¸Ö¸Ñ¨·¨¡£\n");
-	set("gender", "Å®ĞÔ");
+		"å¥¹æ˜¯ç­ç»å¸ˆå¤ªçš„å…«å¤§ä¿—å®¶ç¬¬å­ä¹‹ä¸€ï¼Œæœ€æ“…é•¿å¤©ç½¡æŒ‡ç©´æ³•ã€‚\n");
+	set("gender", "å¥³æ€§");
 	set("age", 36);
 	set("attitude", "peaceful");
 	set("shen_type", 1);
@@ -55,7 +55,7 @@ void create()
 	prepare_skill("finger", "tiangang-zhi");
 	prepare_skill("strike", "jinding-zhang");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -63,8 +63,8 @@ void create()
         }) );
 
         set("inquiry", ([
-		"³ö¼Ò" : "ÄãÈ¥±¾É½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦½ã°É¡£ËıÃÇÔÚ¸£ÊÙâÖ¡¢Ç§·ğâÖ¡¢\nÍòÄêâÖ¡¢ÍòĞĞâÖºÍÎÔÔÆâÖĞŞĞĞ¡£\n",
-            "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
+		"å‡ºå®¶" : "ä½ å»æœ¬å±±çš„åºµå ‚é‡Œæ‰¾æˆ‘é™å­—è¾ˆå¸ˆå§å§ã€‚å¥¹ä»¬åœ¨ç¦å¯¿åºµã€åƒä½›åºµã€\nä¸‡å¹´åºµã€ä¸‡è¡Œåºµå’Œå§äº‘åºµä¿®è¡Œã€‚\n",
+            "ç­ç»å¸ˆå¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé—¨äººï¼Œåœ¨åè—åºµä¿®è¡Œã€‚\n",
         ]));
 
 	setup();
@@ -80,8 +80,8 @@ void init()
         if (interactive(ob=this_player()) && ob->query("family/master_id") == "li mingxia" 
         && ob->query("shen") < -100 ) {
         message_vision(
-                "$n¿´×Å$NËµµÀ£ºÄãÔõÃ´ÔÚÍâ±ß×öÁË»µÊÂ£¿ÎÒ¶ëáÒÅÉÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬" +
-			"¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£ÎÒ²»ÄÜÔÙÊÕÁôÄã£¬ÄãÈ¥°É¡£\n",
+                "$nçœ‹ç€$Nè¯´é“ï¼šä½ æ€ä¹ˆåœ¨å¤–è¾¹åšäº†åäº‹ï¼Ÿæˆ‘å³¨åµ‹æ´¾ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œ" +
+			"å¯¹å¼Ÿå­è¦æ±‚æä¸¥ã€‚æˆ‘ä¸èƒ½å†æ”¶ç•™ä½ ï¼Œä½ å»å§ã€‚\n",
                 ob, this_object() );
                 command("expell " + ob->query("id"));
 		ob->delete("emei_shen");
@@ -89,19 +89,19 @@ void init()
         }
         if (interactive(ob=this_player()) && ob->query("family/master_id") == "li mingxia"
         && ob->query("class") == "bonze" ) {
-		if (ob->query("gender") == "Å®ĞÔ") {
+		if (ob->query("gender") == "å¥³æ€§") {
         	message_vision(
-                	"$n¿´×Å$NËµµÀ£ºÄã¼ÈÈ»³öÁË¼Ò£¬ÔÚÎÒÕâÀïÔõÑùĞŞĞĞ£¿\n",
+                	"$nçœ‹ç€$Nè¯´é“ï¼šä½ æ—¢ç„¶å‡ºäº†å®¶ï¼Œåœ¨æˆ‘è¿™é‡Œæ€æ ·ä¿®è¡Œï¼Ÿ\n",
         		ob, this_object() );
-           	command("say ÎÒ¿´Äã²»ÈçÕÒ¸öâÖÌÃ¸úÎÒ¾²×Ö±²Ê¦½ãÑ§ÒÕ°É¡£\n");
+           	command("say æˆ‘çœ‹ä½ ä¸å¦‚æ‰¾ä¸ªåºµå ‚è·Ÿæˆ‘é™å­—è¾ˆå¸ˆå§å­¦è‰ºå§ã€‚\n");
 		ob->delete("family/master_name");	
                 ob->delete("family/master_id");
 		return;
 		}
                 message_vision(
-                        "$n¿´×Å$NËµµÀ£ºÄã¼ÈÈ»³öÁË¼Ò£¬ÔÚÎÒÕâÀïÔõÑùĞŞĞĞ£¿\n",
+                        "$nçœ‹ç€$Nè¯´é“ï¼šä½ æ—¢ç„¶å‡ºäº†å®¶ï¼Œåœ¨æˆ‘è¿™é‡Œæ€æ ·ä¿®è¡Œï¼Ÿ\n",
                         ob, this_object() );
-                command("say ÎÒ¿´Äã²»ÈçÈ¥ÉÙÁÖËÂÑ°Ê¦°É¡£\n");
+                command("say æˆ‘çœ‹ä½ ä¸å¦‚å»å°‘æ—å¯ºå¯»å¸ˆå§ã€‚\n");
                 ob->delete("family/master_name");
                 ob->delete("family/master_id");
                 return;

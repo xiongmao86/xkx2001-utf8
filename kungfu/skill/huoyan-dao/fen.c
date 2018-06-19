@@ -1,5 +1,5 @@
 //Cracked by Roath
-// /kungfu/skill/huoyan-dao/fen.c  perform ·Ù
+// /kungfu/skill/huoyan-dao/fen.c  perform ç„š
 // Summer, 11/10/96.
 // kane, 25/11/98.
 
@@ -14,32 +14,32 @@ int perform(object me, object target)
         string *limbs, limb, type, result, str, dodge_skill;
 
         my_exp = me->query("combat_exp");
-        type = "ÄÚÉË";
+        type = "å†…ä¼¤";
 
         if( !target ) target = offensive_target(me);
 
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖÐ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ã€‚\n");
 
         if ( objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã²»ÊÇ¿ÕÊÖ¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯ç©ºæ‰‹ã€‚\n");
 
         if( (lvl=(int)me->query_skill("huoyan-dao", 1)) < 120 )
-                return notify_fail("ÄãµÄ»ðÑæµ¶ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç«ç„°åˆ€ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
         if ( me->query_skill_mapped("force") != "xiaowuxiang"
         && me->query_skill_mapped("force") != "longxiang-banruo")
-                                         return notify_fail("ÄãËùÓÃÄÚ¹¦²»¶Ô£¡\n");
+                                         return notify_fail("ä½ æ‰€ç”¨å†…åŠŸä¸å¯¹ï¼\n");
 
         if( me->query("neili") <= lvl*2 )
-                                         return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                                         return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( me->query("jingli") <= 150 )
-                                         return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                                         return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼\n");
 
-        message_vision(HIR "$N³¤ÎüÒ»¿ÚÆø£¬ÉíÉÏÒÂÉÀ»º»ºÕÇÆð£¬Á½ÕÆ±äµÃÍ¨ºì£¬Éä³öÒ»¹É×ÆÈËÈÈÆø¡£$nµÄÉíÓ°±»ÁýÕÖÔÚÒ»ÍÅ»ðÑæÖ®ÖÐ¡£\n\n" NOR, me,target);
+        message_vision(HIR "$Né•¿å¸ä¸€å£æ°”ï¼Œèº«ä¸Šè¡£è¡«ç¼“ç¼“æ¶¨èµ·ï¼Œä¸¤æŽŒå˜å¾—é€šçº¢ï¼Œå°„å‡ºä¸€è‚¡ç¼äººçƒ­æ°”ã€‚$nçš„èº«å½±è¢«ç¬¼ç½©åœ¨ä¸€å›¢ç«ç„°ä¹‹ä¸­ã€‚\n\n" NOR, me,target);
         lvl = (int)(lvl / 5);
         me->add("neili", -lvl*2); 
         me->add("jingli", -100);  
@@ -67,18 +67,18 @@ int perform(object me, object target)
         ap = (ap+random(ap*2))/2.5;
 
         if( ap > dp ) {
-            tell_object(target, RED"ÄãÖ»¾õÒ»¹ÉÈÈÀËÆËÃæ£¬»ôµÄÐØ¿ÚÒ»Õó¾çÍ´¡£\n"NOR);
+            tell_object(target, RED"ä½ åªè§‰ä¸€è‚¡çƒ­æµªæ‰‘é¢ï¼Œéœçš„èƒ¸å£ä¸€é˜µå‰§ç—›ã€‚\n"NOR);
             if( target->query_temp("armor/cloth")){
                 armor = target->query_temp("armor/cloth");
                 if( armor->query("armor_prop/armor") < 150){
                 
 		if( armor->query("id") == "armor")
-                     message_vision(HIY"Ö»¼û$NÉíÉÏµÄ$n"+HIY+"ÒÑ±»ÕðµÃ·ÛËé£¬±ä³ÉÒ»¿é¿éËéÆ¬ËÄÏÂ·ÉÉ¢£¡\n"NOR, target, armor);
-		else message_vision(HIY"Ö»¼û$NÉíÉÏµÄ$n"+HIY+"ÒÑ±»ÕðµÃ·ÛËé£¬±ä³ÉÒ»¿é¿éÆÆ²¼µôÔÚµØÉÏ¡£\n"NOR, target, armor);
+                     message_vision(HIY"åªè§$Nèº«ä¸Šçš„$n"+HIY+"å·²è¢«éœ‡å¾—ç²‰ç¢Žï¼Œå˜æˆä¸€å—å—ç¢Žç‰‡å››ä¸‹é£žæ•£ï¼\n"NOR, target, armor);
+		else message_vision(HIY"åªè§$Nèº«ä¸Šçš„$n"+HIY+"å·²è¢«éœ‡å¾—ç²‰ç¢Žï¼Œå˜æˆä¸€å—å—ç ´å¸ƒæŽ‰åœ¨åœ°ä¸Šã€‚\n"NOR, target, armor);
 
                      armor->unequip();
                      armor->move(environment(target));
-                     armor->set("name", "ÆÆËéµÄ" + armor->query("name"));
+                     armor->set("name", "ç ´ç¢Žçš„" + armor->query("name"));
                      armor->set("value", 0);
                      armor->set("armor_prop/armor", 0);
                      target->reset_action();
@@ -130,7 +130,7 @@ int perform(object me, object target)
         str = SKILL_D(dodge_skill)->query_dodge_msg(limb);
         message_vision(str, me, target);
 */
-            message_vision(HIY "$p¸Ï½ôÏòááÔ¾¿ªÊýÕÉ£¬¶ã¿ª$PµÄ¹¥»÷¡£\n" NOR, me, target);
+            message_vision(HIY "$pèµ¶ç´§å‘å¾Œè·ƒå¼€æ•°ä¸ˆï¼Œèº²å¼€$Pçš„æ”»å‡»ã€‚\n" NOR, me, target);
             me->start_busy(1+random(3));
         }
 

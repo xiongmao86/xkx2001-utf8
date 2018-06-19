@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ½µ·ü·¨
+// é™ä¼æ³•
 
 inherit SKILL;
 

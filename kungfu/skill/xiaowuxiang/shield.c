@@ -1,5 +1,5 @@
 //Cracked by Roath
-// shield.c 护体神功
+// shield.c 鎶や綋绁炲姛
 
 #include <ansi.h>
 
@@ -12,19 +12,19 @@ int exert(object me, object target)
 	int skill;
 
 	if( target != me ) 
-		return notify_fail("你只能用小无相功来运护体神功。\n");
+		return notify_fail("浣犲彧鑳界敤灏忔棤鐩稿姛鏉ヨ繍鎶や綋绁炲姛銆俓n");
 
 	if( (int)me->query("neili") < 100  ) 
-		return notify_fail("你的内力不够。\n");
+		return notify_fail("浣犵殑鍐呭姏涓嶅銆俓n");
 	if( (int)me->query_temp("shield") ) 
-		return notify_fail("你已经在运功\中了。\n");
+		return notify_fail("浣犲凡缁忓湪杩愬姛\涓簡銆俓n");
 
 	skill = me->query_skill("force");
 	me->add("neili", -100);
 	me->receive_damage("qi", 0);
 
 	message_vision(
-	MAG "$N长吸一口气，运起护体神功，身上衣衫缓缓涨起。ⅵ\n" NOR, me);
+	MAG "$N闀垮惛涓�鍙ｆ皵锛岃繍璧锋姢浣撶鍔燂紝韬笂琛ｈ～缂撶紦娑ㄨ捣銆傗叺\n" NOR, me);
 
 	me->add_temp("apply/armor",  skill/2);
 	me->add_temp("apply/defense",  skill/2);
@@ -42,5 +42,5 @@ void remove_effect(object me, int amount)
 	me->add_temp("apply/armor", - amount);
 	me->add_temp("apply/defense", - amount);
 	me->delete_temp("shield");
-	tell_object(me, "你的护体神功运行完毕，将内力收回丹田。\n");
+	tell_object(me, "浣犵殑鎶や綋绁炲姛杩愯瀹屾瘯锛屽皢鍐呭姏鏀跺洖涓圭敯銆俓n");
 }

@@ -22,26 +22,26 @@ int exert(object me, object target)
         ]);
 
         fam = me->query("family");
-        if( fam["family_name"] != "ÉÙÁÖÅÉ" || fam["generation"] != 35 )
-        return notify_fail("Äã²»ÊÇÉÙÁÖ¶É×Ö±²¸ßÉ®²»»áÊ¹ÓÃÒ»Î­¶É½­¹¦£¡\n");
+        if( fam["family_name"] != "å°‘æž—æ´¾" || fam["generation"] != 35 )
+        return notify_fail("ä½ ä¸æ˜¯å°‘æž—æ¸¡å­—è¾ˆé«˜åƒ§ä¸ä¼šä½¿ç”¨ä¸€è‹‡æ¸¡æ±ŸåŠŸï¼\n");
 
         if( me->query_skill("shaolin-shenfa", 1) < 200 )
-        return notify_fail("ÄãµÄÉÙÁÖÉí·¨¹¦Á¦²»¹»£¬ÎÞ·¨Ê©Õ¹Ò»Î­¶É½­¾ø¼¼£¡\n");
+        return notify_fail("ä½ çš„å°‘æž—èº«æ³•åŠŸåŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•ä¸€è‹‡æ¸¡æ±Ÿç»æŠ€ï¼\n");
 
         if( me->query_skill("hunyuan-yiqi", 1) < 160 )
-        return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦¹¦Á¦²»¹»£¬ÎÞ·¨Ê©Õ¹Ò»Î­¶É½­¾ø¼¼£¡\n");
+        return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸåŠŸåŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•ä¸€è‹‡æ¸¡æ±Ÿç»æŠ€ï¼\n");
 
         if( me->query_skill_mapped("dodge") != "shaolin-shenfa" )
-        return notify_fail("ÄãÏÖÔÚÃ»ÓÐÊ¹ÓÃÉÙÁÖÉí·¨×÷ÎªÇá¹¦µÄµÄÌØÊâ¼¼ÄÜ¡£\n");
+        return notify_fail("ä½ çŽ°åœ¨æ²¡æœ‰ä½¿ç”¨å°‘æž—èº«æ³•ä½œä¸ºè½»åŠŸçš„çš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 
         if( me->query("max_neili") < 2000 || me->query("neili") < 1000 )
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê©Õ¹Ò»Î­¶É½­¾ø¼¼£¡\n");
+        return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ–½å±•ä¸€è‹‡æ¸¡æ±Ÿç»æŠ€ï¼\n");
 
         if( undefinedp(dest = bank_bank[base_name(environment(me))]) )
-        return notify_fail("´ËµØ²»ÊÊºÏÊ©Õ¹Ò»Î­¶É½­¾ø¼¼£¡\n");
+        return notify_fail("æ­¤åœ°ä¸é€‚åˆæ–½å±•ä¸€è‹‡æ¸¡æ±Ÿç»æŠ€ï¼\n");
 
-        message_vision("\n$NÊ°Æð°¶±ßµÄÒ»Ö¦Â«Î­£¬Í¶Èë²¨ÌÎ¹ö¹öµÄË®Ãæ¡£\n" +
-        "½ÓÖø$NÒ»Ô¾¶øÆð£¬½Å¼âÔÚÎ­Ö¦ÉÏÒ»µã£¬Á½ÐäÆ®Æ®£¬¼ýÒ»°ãµØÔÚË®ÃæÉÏ´©ÁË¹ýÈ¥¡£\n\n", me);
+        message_vision("\n$Næ‹¾èµ·å²¸è¾¹çš„ä¸€æžèŠ¦è‹‡ï¼ŒæŠ•å…¥æ³¢æ¶›æ»šæ»šçš„æ°´é¢ã€‚\n" +
+        "æŽ¥è‘—$Nä¸€è·ƒè€Œèµ·ï¼Œè„šå°–åœ¨è‹‡æžä¸Šä¸€ç‚¹ï¼Œä¸¤è¢–é£˜é£˜ï¼Œç®­ä¸€èˆ¬åœ°åœ¨æ°´é¢ä¸Šç©¿äº†è¿‡åŽ»ã€‚\n\n", me);
 
         me->add("neili", - (100 + random(200)));
         me->move(dest);

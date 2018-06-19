@@ -1,5 +1,5 @@
 //Cracked by Roath
-//jianzhang.c ½£ÕÆÎåÁ¬»· 
+//jianzhang.c å‰‘æŒäº”è¿ç¯ 
 
 #include <ansi.h>
 
@@ -17,29 +17,29 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("½£ÕÆÎåÁ¬»·Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å‰‘æŒäº”è¿ç¯åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	weapon1 = me->query_temp("weapon");
         if( !objectp(weapon1) || weapon1->query("skill_type") != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÈçºÎÊ¹µÃ½£ÕÆÎåÁ¬»·£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œå¦‚ä½•ä½¿å¾—å‰‘æŒäº”è¿ç¯ï¼Ÿ\n");
 
 	if( me->query_skill_mapped("strike") != "hunyuan-zhang" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç»ìÔªÕÆ£¬²»ÄÜÓë»ªÉ½½£·¨ÅäºÏÊ©Õ¹½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éæ··å…ƒæŒï¼Œä¸èƒ½ä¸åå±±å‰‘æ³•é…åˆæ–½å±•å‰‘æŒäº”è¿ç¯ï¼\n");
 
 	if( me->query_skill_prepared("strike") != "hunyuan-zhang" )
-                return notify_fail("ÄãËù±¸µÄ²¢·Ç»ìÔªÕÆ£¬²»ÄÜÓë»ªÉ½½£·¨ÅäºÏÊ©Õ¹½£ÕÆÎåÁ¬»·£¡\n");
+                return notify_fail("ä½ æ‰€å¤‡çš„å¹¶éæ··å…ƒæŒï¼Œä¸èƒ½ä¸åå±±å‰‘æ³•é…åˆæ–½å±•å‰‘æŒäº”è¿ç¯ï¼\n");
 
 	if( me->query_skill_mapped("force") != "zixia-gong" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç×ÏÏ¼¹¦£¬ÎŞ·¨Ê©Õ¹½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç´«éœåŠŸï¼Œæ— æ³•æ–½å±•å‰‘æŒäº”è¿ç¯ï¼\n");
 
 	if( me->query_skill("zixia-gong", 1) < 60 )
-		return notify_fail("ÄãµÄ×ÏÏ¼¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ çš„ç´«éœåŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•å‰‘æŒäº”è¿ç¯ï¼\n");
 
 	if( (lvl1=me->query_skill("strike")) < 100 )
-		return notify_fail("½£ÕÆÎåÁ¬»·ĞèÒª¾«Õ¿µÄ»ìÔªÕÆÅäºÏ£¬·½ÄÜÓĞĞ§Ê©Õ¹£¡\n");
+		return notify_fail("å‰‘æŒäº”è¿ç¯éœ€è¦ç²¾æ¹›çš„æ··å…ƒæŒé…åˆï¼Œæ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
 	if( (lvl2=me->query_skill("sword")) < 100 )
-		return notify_fail("Äã»ªÉ½½£·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃ½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ åå±±å‰‘æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨å‰‘æŒäº”è¿ç¯ï¼\n");
 
 	amount = (lvl1+lvl2) / 15;
 
@@ -47,9 +47,9 @@ int perform(object me, object target)
 	if ( amount > 80 ) amount = 80;
 
 	if( me->query("neili") <= amount*4 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨å‰‘æŒäº”è¿ç¯ï¼\n");
 	if( me->query("jingli") <= amount*2 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃ½£ÕÆÎåÁ¬»·£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨å‰‘æŒäº”è¿ç¯ï¼\n");
 
 	if( me->query_skill_prepared("cuff") == "pishi-poyu" ) {
 		me->set_temp("restore", 1);
@@ -62,7 +62,7 @@ int perform(object me, object target)
 	me->add_temp("apply/attack", amount*2);
 	me->add_temp("apply/dodge", amount*2);
 
-	message_vision(HIR "\nÍ»È»¼ä$NÉíĞÎµçÉÁ£¬Ë²¼ä±Æ½ü$n£¬½£ÕÆ½»ÌæÖĞÏò$n·ÜÁ¦»÷³öÈı½£Á½ÕÆ£¡\n\n" NOR, me, target);
+	message_vision(HIR "\nçªç„¶é—´$Nèº«å½¢ç”µé—ªï¼Œç¬é—´é€¼è¿‘$nï¼Œå‰‘æŒäº¤æ›¿ä¸­å‘$nå¥‹åŠ›å‡»å‡ºä¸‰å‰‘ä¸¤æŒï¼\n\n" NOR, me, target);
 
 	COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 	weapon->unequip();

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// liangyi.c ¡¸Á½ÒÇ½£·¨¡¹
+// liangyi.c ã€Œä¸¤ä»ªå‰‘æ³•ã€
 // xQin 5/99
 
 #include <ansi.h>
@@ -17,68 +17,68 @@ int perform(object me, object target)
 		yin = me;
 	else if( me->query("wudang/liangyi") == "yang" )
 		yang = me;
-	else return notify_fail("ÄãÉĞÎ´Ñ§»á¡¸Á½ÒÇ½£·¨¡¹¡£\n");
+	else return notify_fail("ä½ å°šæœªå­¦ä¼šã€Œä¸¤ä»ªå‰‘æ³•ã€ã€‚\n");
 
 	sword1 = me->query_temp("weapon");
 	if( !objectp(sword1) || (string)sword1->query("skill_type") != "sword" )
-		return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÔõÄÜ½øĞĞÁ½ÒÇºÏèµ£¿\n");
+		return notify_fail("ä½ æ‰‹ä¸­æ— å‰‘ï¼Œæ€èƒ½è¿›è¡Œä¸¤ä»ªåˆç’§ï¼Ÿ\n");
 
 	if( me->query_skill_mapped("sword") != "wudang-jian" )
-		return notify_fail("ÄãËùÊ¹²¢·ÇÎäµ±½£·¨£¬ÎŞ·¨½øĞĞÁ½ÒÇºÏèµ£¡\n");
+		return notify_fail("ä½ æ‰€ä½¿å¹¶éæ­¦å½“å‰‘æ³•ï¼Œæ— æ³•è¿›è¡Œä¸¤ä»ªåˆç’§ï¼\n");
 
 	if( me->query_temp("wudang/raozhi") )
-		return notify_fail("ÄãÕıÔÚÊ©Õ¹¡¸ÈÆÖ¸Èá½£¡¹£¬ÎŞ·¨Í¬Ê±Ê¹³ö¡¸Á½ÒÇ½£·¨¡¹£¡\n");
+		return notify_fail("ä½ æ­£åœ¨æ–½å±•ã€Œç»•æŒ‡æŸ”å‰‘ã€ï¼Œæ— æ³•åŒæ—¶ä½¿å‡ºã€Œä¸¤ä»ªå‰‘æ³•ã€ï¼\n");
 
 	if( me->query_temp("yield") )
-		return notify_fail("Äã²»³ö½££¬ÈçºÎ½øĞĞÁ½ÒÇºÏèµ£¿\n");
+		return notify_fail("ä½ ä¸å‡ºå‰‘ï¼Œå¦‚ä½•è¿›è¡Œä¸¤ä»ªåˆç’§ï¼Ÿ\n");
 
 	if( !target )
-		return notify_fail("Äã±ØĞëÕÒÒ»¸öÈËÀ´Á½ÒÇºÏèµ¡£\n");
+		return notify_fail("ä½ å¿…é¡»æ‰¾ä¸€ä¸ªäººæ¥ä¸¤ä»ªåˆç’§ã€‚\n");
 
 	if( target == me )
-		return notify_fail("Óë×Ô¼ºÁ½ÒÇºÏèµ£¿¿ÉÏ§Äã²»»á×óÓÒ»¥²«¡£\n");
+		return notify_fail("ä¸è‡ªå·±ä¸¤ä»ªåˆç’§ï¼Ÿå¯æƒœä½ ä¸ä¼šå·¦å³äº’æã€‚\n");
 
 	if( !target->query("wudang/liangyi") )
-		return notify_fail(target->name() +"ÉĞÎ´Ñ§»á¡¸Á½ÒÇ½£·¨¡¹¡£\n");
+		return notify_fail(target->name() +"å°šæœªå­¦ä¼šã€Œä¸¤ä»ªå‰‘æ³•ã€ã€‚\n");
 
-	ji = me->query("wudang/liangyi")=="yin"?"Ñô":"Òõ";
+	ji = me->query("wudang/liangyi")=="yin"?"é˜³":"é˜´";
 	if( objectp(yin) && target->query("wudang/liangyi") == "yang" )
 		yang = target;
 	else if( objectp(yang) && target->query("wudang/liangyi") == "yin" )
 		yin = target;
-	else return notify_fail(target->name() +"²»»áÊ©Õ¹¡¸Á½ÒÇ½£·¨¡¹ÖĞµÄ"
-		+ ji +"¼«£¬ÎŞ·¨ÓëÄãÁ½ÒÇºÏèµ¡£\n");
+	else return notify_fail(target->name() +"ä¸ä¼šæ–½å±•ã€Œä¸¤ä»ªå‰‘æ³•ã€ä¸­çš„"
+		+ ji +"æï¼Œæ— æ³•ä¸ä½ ä¸¤ä»ªåˆç’§ã€‚\n");
 
 	sword2 = target->query_temp("weapon");
 	if( !objectp(sword2) || (string)sword2->query("skill_type") != "sword" )
-		return notify_fail(target->name() +"ÊÖÖĞÎŞ½££¬ÎŞ·¨ÓëÄãÁ½ÒÇºÏèµ£¡\n");
+		return notify_fail(target->name() +"æ‰‹ä¸­æ— å‰‘ï¼Œæ— æ³•ä¸ä½ ä¸¤ä»ªåˆç’§ï¼\n");
 
 	if( target->query_skill_mapped("sword") != "wudang-jian" )
-		return notify_fail(target->name() +"ËùÊ¹²¢·ÇÎäµ±½£·¨£¬ÎŞ·¨ÓëÄãÁ½ÒÇºÏèµ£¡\n");
+		return notify_fail(target->name() +"æ‰€ä½¿å¹¶éæ­¦å½“å‰‘æ³•ï¼Œæ— æ³•ä¸ä½ ä¸¤ä»ªåˆç’§ï¼\n");
 
 	if( target->query_temp("wudang/raozhi") )
 		return notify_fail(target->name() +
-		"ÕıÔÚÊ©Õ¹¡¸ÈÆÖ¸Èá½£¡¹£¬ÎŞ·¨Í¬Ê±Ê¹³ö¡¸Á½ÒÇ½£·¨¡¹£¡\n");
+		"æ­£åœ¨æ–½å±•ã€Œç»•æŒ‡æŸ”å‰‘ã€ï¼Œæ— æ³•åŒæ—¶ä½¿å‡ºã€Œä¸¤ä»ªå‰‘æ³•ã€ï¼\n");
 
 	if( target->query_temp("yield") )
-		return notify_fail(target->name() +"²»ÏëÓëÄãÁ½ÒÇºÏèµ¡£\n");
+		return notify_fail(target->name() +"ä¸æƒ³ä¸ä½ ä¸¤ä»ªåˆç’§ã€‚\n");
 
 	if( me->is_fighting(target) )
-		return notify_fail("ÄãÕıÓë"+ target->name() +"Ïà»¥ÇĞ´èÖĞ£¬ÎŞ·¨½øĞĞÁ½ÒÇºÏèµ¡£\n");
+		return notify_fail("ä½ æ­£ä¸"+ target->name() +"ç›¸äº’åˆ‡ç£‹ä¸­ï¼Œæ— æ³•è¿›è¡Œä¸¤ä»ªåˆç’§ã€‚\n");
 
 	skill1 = yin->query_skill("sword");
 	skill2 = yang->query_skill("sword");
 	amount = ( skill1 + skill2 ) / 8;
 
 	if( skill1*4/5 > skill2 || skill2*4/5 > skill1 )
-		return notify_fail("ÄãÓë"+ target->name() +"µÄ½£·¨Ïà²îÌ«Ô¶£¬ÎŞ·¨½øĞĞÁ½ÒÇºÏèµ¡£\n");
+		return notify_fail("ä½ ä¸"+ target->name() +"çš„å‰‘æ³•ç›¸å·®å¤ªè¿œï¼Œæ— æ³•è¿›è¡Œä¸¤ä»ªåˆç’§ã€‚\n");
 
 	if( me->is_fighting() )
 	{
 		victim = offensive_target(me);
 		if( !target->is_fighting(victim) )
-			return notify_fail(target->name() +"²¢Î´ºÍÄãÒ»ÆëÓë"
-			+ victim->name() +"²«¶·¡£\n");
+			return notify_fail(target->name() +"å¹¶æœªå’Œä½ ä¸€é½ä¸"
+			+ victim->name() +"ææ–—ã€‚\n");
 	}
 	else if( target->is_fighting() )
 	{
@@ -88,16 +88,16 @@ int perform(object me, object target)
 		else
 			me->fight_ob(victim);
 	}
-	else return notify_fail("¡¸Á½ÒÇ½£·¨¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ½øĞĞºÏèµ¡£\n");
+	else return notify_fail("ã€Œä¸¤ä»ªå‰‘æ³•ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­è¿›è¡Œåˆç’§ã€‚\n");
 
 	if( (string)me->query_temp("wudang/ly_partner") == (string)target->query("name") &&
 		(string)target->query_temp("wudang/ly_partner") == (string)me->query("name") &&
 			me->query_temp("wudang/ly_count") == 1 && skill1 >= 250 &&
 		 		target->query_temp("wudang/ly_count") == 1 && skill2 >= 250 )
 	{
-		message_vision(HIY"\nºöÌıµÃ$NÓë$nÆëÉùºôĞ¥£¬½£·¨´ó±ä£¬$N"
+		message_vision(HIY"\nå¿½å¬å¾—$Nä¸$né½å£°å‘¼å•¸ï¼Œå‰‘æ³•å¤§å˜ï¼Œ$N"
 		+ yang->query_temp("weapon")->name() +HIY
-		"´ó¿ª´óãØ£¬ÊÆµÀĞÛ»ë£¬$n¼²Ç÷¼²ÍË£¬½£¼âÉÏ»Ã³öµãµãº®ĞÇ¡£\n"NOR, yang, yin);
+		"å¤§å¼€å¤§é˜–ï¼ŒåŠ¿é“é›„æµ‘ï¼Œ$nç–¾è¶‹ç–¾é€€ï¼Œå‰‘å°–ä¸Šå¹»å‡ºç‚¹ç‚¹å¯’æ˜Ÿã€‚\n"NOR, yang, yin);
 
 		yin->delete_temp("wudang/ly_yin");
 		yin->set_temp("wudang/ly_count", 2);
@@ -115,21 +115,21 @@ int perform(object me, object target)
 	}
 
 	if( me->query_temp("wudang/ly_partner") )
-		return notify_fail("ÄãÕıÔÚÓë"+ (string)me->query_temp("wudang/ly_partner") +
-		"Á½ÒÇºÏèµ¡£\n");
+		return notify_fail("ä½ æ­£åœ¨ä¸"+ (string)me->query_temp("wudang/ly_partner") +
+		"ä¸¤ä»ªåˆç’§ã€‚\n");
 
 	if( target->query_temp("wudang/ly_partner") )
 	{
 		if( (string)target->query_temp("wudang/ly_partner") == (string)me->query("name") )
-			return notify_fail(target->name() +"ÕıÔÚÓëÄãÁ½ÒÇºÏèµ¡£\n");
+			return notify_fail(target->name() +"æ­£åœ¨ä¸ä½ ä¸¤ä»ªåˆç’§ã€‚\n");
 		else
-			return notify_fail(target->name() +"ÕıÔÚÓë"
-			+ (string)target->query_temp("wudang/ly_partner") +"Á½ÒÇºÏèµ¡£\n");
+			return notify_fail(target->name() +"æ­£åœ¨ä¸"
+			+ (string)target->query_temp("wudang/ly_partner") +"ä¸¤ä»ªåˆç’§ã€‚\n");
 	}
 
-	message_vision(HIW"\n$N¶«´ÌÒ»½£¡¢Î÷ÅüÒ»½£µÄÁ·ÁËÆğÀ´£¬Ê¹µÃÈıËÄÏÂ£¬ºöÈ»Íü¼ÇÁË£¬É¦Í·ÄıË¼£¬ÓÖÊ¹ÁË¼¸ÕĞ¡£\n"
+	message_vision(HIW"\n$Nä¸œåˆºä¸€å‰‘ã€è¥¿åŠˆä¸€å‰‘çš„ç»ƒäº†èµ·æ¥ï¼Œä½¿å¾—ä¸‰å››ä¸‹ï¼Œå¿½ç„¶å¿˜è®°äº†ï¼Œæ”å¤´å‡æ€ï¼Œåˆä½¿äº†å‡ æ‹›ã€‚\n"
 	BLK"$n"+ yin->query_temp("weapon")->name() +HIW+BLK+
-	"ÔÚÊÖ£¬±ã¼´ÂÒÅüÂÒ´Ì£¬³öÊÖ¼«¿ì£¬ÓÌÈç·¢·èÒ»°ã¡£\n"NOR, yang, yin);
+	"åœ¨æ‰‹ï¼Œä¾¿å³ä¹±åŠˆä¹±åˆºï¼Œå‡ºæ‰‹æå¿«ï¼ŒçŠ¹å¦‚å‘ç–¯ä¸€èˆ¬ã€‚\n"NOR, yang, yin);
 
 	yin->set_temp("wudang/ly_partner", yang->name());
 	yang->set_temp("wudang/ly_partner", yin->name());
@@ -162,7 +162,7 @@ int checking(object yin, object yang, int amount)
 	if( !yin->is_fighting() && !yang->is_fighting() ) 
 	{
 		remove_effect(yin, yang, amount);
-		message_vision(HIG"\n$NÓë$nÍ¬Ê±Ïòºó×İ³ö£¬±ãÈçÁ½Í·´óÄñÒ»°ã£¬ÎÈÎÈµÄ·É³öÊıÕÉÖ®Íâ¡£\n"NOR, yang, yin);
+		message_vision(HIG"\n$Nä¸$nåŒæ—¶å‘åçºµå‡ºï¼Œä¾¿å¦‚ä¸¤å¤´å¤§é¸Ÿä¸€èˆ¬ï¼Œç¨³ç¨³çš„é£å‡ºæ•°ä¸ˆä¹‹å¤–ã€‚\n"NOR, yang, yin);
 		return 0;
 	}
 	if( yin->query_temp("wudang/ly_yin") &&
@@ -171,17 +171,17 @@ int checking(object yin, object yang, int amount)
 		num = 2+random(2);
 		for( i=1; i <= num; i++ )
                 	COMBAT_D->do_attack(yin, victim, yin->query_temp("weapon"));
-		message_vision(HIW+BLK"\n$NÌáÆğ½£À´Ò»ÕóÂÒ´ÌÂÒÏ÷£¬É²ÄÇ¼ä½ÓÁ¬ÅüÁË"+chinese_number(num)+"½£¡£\n"NOR, yin);
+		message_vision(HIW+BLK"\n$Næèµ·å‰‘æ¥ä¸€é˜µä¹±åˆºä¹±å‰Šï¼Œåˆ¹é‚£é—´æ¥è¿åŠˆäº†"+chinese_number(num)+"å‰‘ã€‚\n"NOR, yin);
         }
 	if( yin->query_temp("wudang/ly_yin") == 3 )
 	{
 		yin->set_temp("wudang/ly_count", 1);
 		yang->set_temp("wudang/ly_count", 1);
-		message_vision(YEL"\n$NÓë$nµÄ½£ÕĞÒ»¸ö³Ù»º£¬Ò»¸öÑ¸½İ£¬¿ÉÊÇ½£·¨ÖĞÆÆÕÀÖ®ÉÙ£¬ÊµËùº±¼û¡£\n"
-		"¶şÈËµÄ×ËÊ½¹ÌÊÇÄÑ¿´Ö®¼«£¬µ«½£ÕĞ¹ÅÆÓ»ëºñ£¬½£ÉÏµÄÍşÁ¦ËÆºõÖ»·¢»ÓµÃÒ»¶ş³É£¬ÆäÓàµÄÈ´ÊÇĞîÊÆÒÔ´ı£¬Éî²Ø²»Â¶¡£\n"NOR, yang, yin);
+		message_vision(YEL"\n$Nä¸$nçš„å‰‘æ‹›ä¸€ä¸ªè¿Ÿç¼“ï¼Œä¸€ä¸ªè¿…æ·ï¼Œå¯æ˜¯å‰‘æ³•ä¸­ç ´ç»½ä¹‹å°‘ï¼Œå®æ‰€ç½•è§ã€‚\n"
+		"äºŒäººçš„å§¿å¼å›ºæ˜¯éš¾çœ‹ä¹‹æï¼Œä½†å‰‘æ‹›å¤æœ´æµ‘åšï¼Œå‰‘ä¸Šçš„å¨åŠ›ä¼¼ä¹åªå‘æŒ¥å¾—ä¸€äºŒæˆï¼Œå…¶ä½™çš„å´æ˜¯è“„åŠ¿ä»¥å¾…ï¼Œæ·±è—ä¸éœ²ã€‚\n"NOR, yang, yin);
 	}
 	if( yin->query_temp("wudang/ly_yin") == 5 )
-		message_vision(WHT"\n$NÓë$n³öÕĞ¹¥»÷Ö®Ê±ËäÈÔÒ»¸ö´ôÖÍ£¬Ò»¸öñ²¿ñ£¬µ«µ±ÉÁ±ÜÕĞ¼ÜÖ®¼Ê£¬ÉíÊÖÈ´ÇáÁé³ÁÎÈ£¬¼æ¶øÓĞÖ®¡£\n"NOR, yang, yin);
+		message_vision(WHT"\n$Nä¸$nå‡ºæ‹›æ”»å‡»ä¹‹æ—¶è™½ä»ä¸€ä¸ªå‘†æ»ï¼Œä¸€ä¸ªç™«ç‹‚ï¼Œä½†å½“é—ªé¿æ‹›æ¶ä¹‹é™…ï¼Œèº«æ‰‹å´è½»çµæ²‰ç¨³ï¼Œå…¼è€Œæœ‰ä¹‹ã€‚\n"NOR, yang, yin);
 
 	if( yin->query_temp("wudang/ly_yin") )
 		yin->add_temp("wudang/ly_yin", 1);

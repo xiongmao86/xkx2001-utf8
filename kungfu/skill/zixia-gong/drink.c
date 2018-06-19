@@ -6,27 +6,27 @@
 int exert(object me, object target)
 {
 	if (!wizardp(me))
-            return notify_fail("Õâ¹¦ÄÜ»¹²»¿ª·Å¡£\n");
+            return notify_fail("è¿™åŠŸèƒ½è¿˜ä¸å¼€æ”¾ã€‚\n");
 	if (!target || !target->query("max_liquid") )
-            return notify_fail("Õâ²»ÊÇ×°Ë®µÄÈÝÆ÷¡£\n");
+            return notify_fail("è¿™ä¸æ˜¯è£…æ°´çš„å®¹å™¨ã€‚\n");
 
 	if (target->query("liquid/remaining") < 1 )
-            return notify_fail(target->name()+"ÀïÃæÃ»Ê²Ã´¿ÉÒÔºÈµÄÁË¡£\n");
+            return notify_fail(target->name()+"é‡Œé¢æ²¡ä»€ä¹ˆå¯ä»¥å–çš„äº†ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖÐºÈÊ²Ã´¶«Î÷£¿\n");
+		return notify_fail("æˆ˜æ–—ä¸­å–ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if ((int)me->query_skill("zixia-gong", 1) < 40)
-		return notify_fail("ÄãµÄ×ÏÏ¼Éñ¹¦ÐÞÎª»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„ç´«éœžç¥žåŠŸä¿®ä¸ºè¿˜ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("neili") < 50 ) // - (int)me->query("max_neili") < 50 )
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
 	if( me->query("water") >= me->max_water_capacity() )
-		return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+		return notify_fail("ä½ å·²ç»å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
 
-        message_vision(MAG "ù£¼û$NÉñÄýµ¤Ìï£¬Ï¢ÓÎ×Ï¸®£¬ÉíÈôÁèÐé¶ø³¬»ªÔÀ£¬ÆøÈç³åÏö¶øº³±±³½£¬½«×ÏÏ¼¹¦Ê¹µÃ³öÉñÈë»¯£¬°ÂÃîÎÞÇî¡£\n" NOR, me, target);
-        message_vision(HIW "$N°Ñ$n"+HIW"´Õµ½×ìÉÏ£¬ÕÅ¿Ú±ãºÈ£¬Ö»ÌýµÃ¹Çà½¹Çà½Ö±Ïì£¬¾¹²»»»Æø£¬ÓÌËÆÎÚÁúÈ¡Ë®£¬°Ñ$n"+HIW"ÀïµÄ"+target->query("liquid/name")+"ºÈµÃµÎä¸²»Ê£¡£\n" NOR, me, target);
+        message_vision(MAG "îŠ”è§$Nç¥žå‡ä¸¹ç”°ï¼Œæ¯æ¸¸ç´«åºœï¼Œèº«è‹¥å‡Œè™šè€Œè¶…åŽå²³ï¼Œæ°”å¦‚å†²éœ„è€Œæ’¼åŒ—è¾°ï¼Œå°†ç´«éœžåŠŸä½¿å¾—å‡ºç¥žå…¥åŒ–ï¼Œå¥¥å¦™æ— ç©·ã€‚\n" NOR, me, target);
+        message_vision(HIW "$NæŠŠ$n"+HIW"å‡‘åˆ°å˜´ä¸Šï¼Œå¼ å£ä¾¿å–ï¼Œåªå¬å¾—éª¨å˜Ÿéª¨å˜Ÿç›´å“ï¼Œç«Ÿä¸æ¢æ°”ï¼ŒçŠ¹ä¼¼ä¹Œé¾™å–æ°´ï¼ŒæŠŠ$n"+HIW"é‡Œçš„"+target->query("liquid/name")+"å–å¾—æ»´æ¶“ä¸å‰©ã€‚\n" NOR, me, target);
 
 	if( me->is_fighting() ) me->start_busy(2);
 

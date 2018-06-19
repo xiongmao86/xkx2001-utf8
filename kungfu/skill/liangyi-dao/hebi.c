@@ -1,5 +1,5 @@
 //Cracked by Roath
-// hebi.c ·´Á½ÒÇµ¶·¨Ö®Ë«µ¶ºÍèµ
+// hebi.c åä¸¤ä»ªåˆ€æ³•ä¹‹åŒåˆ€å’Œç’§
 // by qfy
 // fixed hebi with self and remain dodge after hebi problem, sdong, 07/22/98
 // if one player quit, the other will be able to keep the effect. This got fixed now, sdong, 2/9/2000
@@ -20,39 +20,39 @@ int perform(object me, object target)
 	if( !victim ) victim = offensive_target(me);
 
 	if( !victim || !victim->is_character() || !me->is_fighting(victim) )
-		return notify_fail("Ë«µ¶ºÍèµÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("åŒåˆ€å’Œç’§åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( !target )
-                return notify_fail("ÄãÏëÓëË­½øĞĞË«µ¶ºÍèµ£¿\n");
+                return notify_fail("ä½ æƒ³ä¸è°è¿›è¡ŒåŒåˆ€å’Œç’§ï¼Ÿ\n");
 
 	if( victim->query("id") == target->query("id") )
-		return notify_fail("²»ÄÜÓëµĞÈË½øĞĞË«µ¶ºÍèµ£¡\n");
+		return notify_fail("ä¸èƒ½ä¸æ•Œäººè¿›è¡ŒåŒåˆ€å’Œç’§ï¼\n");
 
 	if( target->query("id") == me->query("id") )
-		return notify_fail("×Ô¼ººÍèµ×Ô¼º£¿¿ÉÏ§Äã²»»á×óÓÒ»¥²«£¡\n");
+		return notify_fail("è‡ªå·±å’Œç’§è‡ªå·±ï¼Ÿå¯æƒœä½ ä¸ä¼šå·¦å³äº’æï¼\n");
 
 	if( !target->is_fighting(victim) )
-		return notify_fail("ÄãÏëÓëÆäË«µ¶ºÍèµµÄ¶ÔÏó²¢Î´ÓëÄãµÄµĞÈË²«¶·£¡\n");
+		return notify_fail("ä½ æƒ³ä¸å…¶åŒåˆ€å’Œç’§çš„å¯¹è±¡å¹¶æœªä¸ä½ çš„æ•Œäººææ–—ï¼\n");
 
 	if( target->query_skill_mapped("blade") != "liangyi-dao" )
-		return notify_fail("ÄãÏëÓëÆäË«µ¶ºÍèµµÄ¶ÔÏóËùÊ¹ÓÃµÄ²¢·Ç·´Á½ÒÇµ¶·¨£¡\n");
+		return notify_fail("ä½ æƒ³ä¸å…¶åŒåˆ€å’Œç’§çš„å¯¹è±¡æ‰€ä½¿ç”¨çš„å¹¶éåä¸¤ä»ªåˆ€æ³•ï¼\n");
 
 	if( (int)target->query_temp("hebi") ) 
-                return notify_fail("ÄãÏëÓëÆäË«µ¶ºÍèµµÄ¶ÔÏóÕıÓëËûÈËºÍ±ÚÕ½¶·ÖĞ£¬ÎŞÏ¾ÓëÄãºÍèµ£¡\n");
+                return notify_fail("ä½ æƒ³ä¸å…¶åŒåˆ€å’Œç’§çš„å¯¹è±¡æ­£ä¸ä»–äººå’Œå£æˆ˜æ–—ä¸­ï¼Œæ— æš‡ä¸ä½ å’Œç’§ï¼\n");
 
 	if(!objectp(weapon = target->query_temp("weapon"))
 		|| (string)weapon->query("skill_type") != "blade" )
-		return notify_fail("ÄãÏëÓëÆäË«µ¶ºÍèµµÄ¶ÔÏó²¢Ã»ÓĞÓÃµ¶£¡\n");
+		return notify_fail("ä½ æƒ³ä¸å…¶åŒåˆ€å’Œç’§çš„å¯¹è±¡å¹¶æ²¡æœ‰ç”¨åˆ€ï¼\n");
 
 	if( (int)me->query_temp("hebi") ) 
-		return notify_fail("ÄãÕıÓë"+target->name()+"½øĞĞ·´Á½ÒÇµ¶·¨Ë«µ¶ºÍèµ¡£\n");
+		return notify_fail("ä½ æ­£ä¸"+target->name()+"è¿›è¡Œåä¸¤ä»ªåˆ€æ³•åŒåˆ€å’Œç’§ã€‚\n");
 
 	skill1 = me->query_skill("blade");
 	skill2 = target->query_skill("blade");
 	skill =  ( skill1 + skill2 ) / 4; 
 
 	message_vision(
-	HIR "$NÓë$nÍ»È»¼äË«µ¶Ò»½»£¬¹¥ÊÆ¼°ÊØÊÆì«È»´óÊ¢£¬ÅäºÏµÃÌìÒÂÎŞ·ì£¡\n" NOR, me, target);
+	HIR "$Nä¸$nçªç„¶é—´åŒåˆ€ä¸€äº¤ï¼Œæ”»åŠ¿åŠå®ˆåŠ¿é£“ç„¶å¤§ç››ï¼Œé…åˆå¾—å¤©è¡£æ— ç¼ï¼\n" NOR, me, target);
 
 	me->add_temp("apply/attack", skill/2);
 	me->add_temp("apply/dodge",  skill/2);
@@ -74,17 +74,17 @@ void check_fight(object me, object target, object victim, int amount)
 	if( !me || !objectp(me) )
 	{
                 remove_effect(target, amount);
-                tell_object(target, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(victim, GRN"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¬Ñ¹Á¦¶Ù¼õ£¬Äã²»ÓÉÈ»µØËÉ
-ÁËÒ»¿ÚÆø¡£\n"NOR);
+                tell_object(target, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(victim, GRN"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼Œå‹åŠ›é¡¿å‡ï¼Œä½ ä¸ç”±ç„¶åœ°æ¾
+äº†ä¸€å£æ°”ã€‚\n"NOR);
 	    return;
 	}
         if( !target || !objectp(target) )
         {
                 remove_effect(me, amount);
-                tell_object(me, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(me, GRN"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¬Ñ¹Á¦¶Ù¼õ£¬Äã²»ÓÉÈ»µØËÉ
-ÁËÒ»¿ÚÆø¡£\n"NOR);
+                tell_object(me, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(me, GRN"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼Œå‹åŠ›é¡¿å‡ï¼Œä½ ä¸ç”±ç„¶åœ°æ¾
+äº†ä¸€å£æ°”ã€‚\n"NOR);
             return;
         }
 
@@ -96,41 +96,41 @@ void check_fight(object me, object target, object victim, int amount)
 	{
 		remove_effect(me, amount);
         remove_effect(target, amount);
-		message_vision(HIG"$NÓë$n¸ö×ÔÊÕÕĞ£¬ÏàÊÓÒ»Ğ¦¡£\n\n"NOR, me, target);
+		message_vision(HIG"$Nä¸$nä¸ªè‡ªæ”¶æ‹›ï¼Œç›¸è§†ä¸€ç¬‘ã€‚\n\n"NOR, me, target);
 				return;
 	}
 	else if( (!present(victim->query("id"), environment(me)) && target->is_fighting(victim)) 
 	|| (!present(target->query("id"), environment(me)) && me->is_fighting(victim)) ) {
 		remove_effect(me, amount);
                 remove_effect(target, amount);
-		tell_object(me, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(target, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(victim, GRN"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¬Ñ¹Á¦¶Ù¼õ£¬Äã²»ÓÉÈ»µØËÉÁËÒ»¿ÚÆø¡£\n"NOR);
+		tell_object(me, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(target, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(victim, GRN"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼Œå‹åŠ›é¡¿å‡ï¼Œä½ ä¸ç”±ç„¶åœ°æ¾äº†ä¸€å£æ°”ã€‚\n"NOR);
 	}
  	else if( !present(target->query("id"), environment(me)) 
 	|| !target->is_fighting() || !me->is_fighting() || !living(target)
 	|| !living(me) || target->is_ghost() || me->is_ghost() ) {
 		remove_effect(me, amount);
                 remove_effect(target, amount);
-		tell_object(me, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-		tell_object(target, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-		tell_object(victim, GRN"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¬Ñ¹Á¦¶Ù¼õ£¬Äã²»ÓÉÈ»µØËÉÁËÒ»¿ÚÆø¡£\n"NOR);
+		tell_object(me, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+		tell_object(target, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+		tell_object(victim, GRN"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼Œå‹åŠ›é¡¿å‡ï¼Œä½ ä¸ç”±ç„¶åœ°æ¾äº†ä¸€å£æ°”ã€‚\n"NOR);
 	}
 	else if( !objectp(weapon = me->query_temp("weapon")) 
 	|| (string)weapon->query("skill_type") != "blade" ) {
 		remove_effect(me, amount);
                 remove_effect(target, amount);
-                tell_object(me, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(target, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(victim, GRN"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¬Ñ¹Á¦¶Ù¼õ£¬Äã²»ÓÉÈ»µØËÉÁËÒ»¿ÚÆø¡£\n"NOR);
+                tell_object(me, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(target, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(victim, GRN"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼Œå‹åŠ›é¡¿å‡ï¼Œä½ ä¸ç”±ç„¶åœ°æ¾äº†ä¸€å£æ°”ã€‚\n"NOR);
 	}
 	else if( !objectp(weapon = target->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "blade" ) {
                 remove_effect(me, amount);
                 remove_effect(target, amount);
-                tell_object(me, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(target, HIR"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¡\n"NOR);
-                tell_object(victim, GRN"Ë«µ¶ºÍèµÒÑÈ»Íß½â£¬Ñ¹Á¦¶Ù¼õ£¬Äã²»ÓÉÈ»µØËÉÁËÒ»¿ÚÆø¡£\n"NOR);
+                tell_object(me, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(target, HIR"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼\n"NOR);
+                tell_object(victim, GRN"åŒåˆ€å’Œç’§å·²ç„¶ç“¦è§£ï¼Œå‹åŠ›é¡¿å‡ï¼Œä½ ä¸ç”±ç„¶åœ°æ¾äº†ä¸€å£æ°”ã€‚\n"NOR);
     }
 
 	call_out("check_fight", 1, me, target, victim, amount);

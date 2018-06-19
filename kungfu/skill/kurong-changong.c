@@ -1,5 +1,5 @@
 //Cracked by Roath
-//kurong-changong.c ¿İÈÙìø¹¦
+//kurong-changong.c æ¯è£ç¦…åŠŸ
 
 #include <ansi.h>
 
@@ -22,20 +22,20 @@ int valid_learn(object me)
 	if (me->query_skill("this_skill") > 99) {
         for(i=0; i<sizeof(skl); i++)
 			if (SKILL_D(sname[i])->check() == "force") k++;
-		if (k >=2) return notify_fail ("ÄãÌåÄÚ²»Í¬ÄÚÁ¦»¥Ïà³å×²£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÎä¹¦¡£\n");
+		if (k >=2) return notify_fail ("ä½ ä½“å†…ä¸åŒå†…åŠ›äº’ç›¸å†²æ’ï¼Œéš¾ä»¥é¢†ä¼šæ›´é«˜æ·±çš„æ­¦åŠŸã€‚\n");
 	}
 
 	nb = (int)me->query_skill("buddhism", 1);
 	nk = (int)me->query_skill("kurong-changong", 1);
 	
-	if (me->query("gender") == "ÎŞĞÔ" && lvl > 49)
-		return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄ¿İÈÙìø¹¦¡£\n");
+	if (me->query("gender") == "æ— æ€§" && lvl > 49)
+		return notify_fail("ä½ æ— æ ¹æ— æ€§ï¼Œé˜´é˜³ä¸è°ƒï¼Œéš¾ä»¥é¢†ä¼šé«˜æ·±çš„æ¯è£ç¦…åŠŸã€‚\n");
 
 	if ((int)me->query_skill("force", 1) < 20)
-		return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+		return notify_fail("ä½ çš„åŸºæœ¬å†…åŠŸç«å€™è¿˜ä¸å¤Ÿã€‚\n");
 
 	if (nb < 120 && nb <= nk)
-		return notify_fail("ÄãµÄìø×ÚĞÄ·¨ĞŞÎª²»¹»£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ¿İÈÙìø¹¦¡£\n");
+		return notify_fail("ä½ çš„ç¦…å®—å¿ƒæ³•ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•é¢†ä¼šæ›´é«˜æ·±çš„æ¯è£ç¦…åŠŸã€‚\n");
 
 	return 1;
 }
@@ -43,21 +43,21 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
 	if ( me->query_skill("kurong-changong", 1) < 150 )
-		return notify_fail("ÄãµÄ¿İÈÙìø¹¦ĞŞÎª²»¹»£¬Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+		return notify_fail("ä½ çš„æ¯è£ç¦…åŠŸä¿®ä¸ºä¸å¤Ÿï¼Œåªèƒ½ç”¨å­¦(learn)çš„æ¥å¢åŠ ç†Ÿç»ƒåº¦ã€‚\n");
 	if ( me->query_temp("weapon") )
-		return notify_fail("ĞŞĞĞ¿İÈÙìø¹¦±ØĞë¿ÕÊÖ¾²×ø¡£\n");
+		return notify_fail("ä¿®è¡Œæ¯è£ç¦…åŠŸå¿…é¡»ç©ºæ‰‹é™åã€‚\n");
 	if ( (int)me->query("jing") < 110 )
-		return notify_fail("ÄãµÄ¾«Éñ²»ºÃ£¬ÎŞ·¨Á·Ï°¿İÈÙìø¹¦¡£\n");
+		return notify_fail("ä½ çš„ç²¾ç¥ä¸å¥½ï¼Œæ— æ³•ç»ƒä¹ æ¯è£ç¦…åŠŸã€‚\n");
 	if ( (int)me->query("jing") < 60 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Á·Ï°¿İÈÙìø¹¦¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿç»ƒä¹ æ¯è£ç¦…åŠŸã€‚\n");
 	if ( (int)me->query("neili") < 110 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ï°¿İÈÙìø¹¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹ æ¯è£ç¦…åŠŸã€‚\n");
 	if ( (int)me->query("potential") < 1)
-		return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¡\n");
+		return notify_fail("ä½ çš„æ½œèƒ½ä¸å¤Ÿï¼\n");
 
 	me->add("neili", -100);
-	me->receive_damage("jingli", 50, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
-	me->receive_damage("jing", 100, "¾«Á¦Í¸Ö§¹ı¶ÈËÀÁË");
+	me->receive_damage("jingli", 50, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
+	me->receive_damage("jing", 100, "ç²¾åŠ›é€æ”¯è¿‡åº¦æ­»äº†");
 	if(random(6) == 1) me->add("potential", -1);
         return 1;
 }

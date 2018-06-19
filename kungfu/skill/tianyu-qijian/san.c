@@ -1,4 +1,4 @@
-// san.c  ÌìÅ®É¢»¨
+// san.c  å¤©å¥³æ•£èŠ±
 
 #include <ansi.h>
 
@@ -16,32 +16,32 @@ int perform(object me, object target)
 	if( !target ) target = offensive_target(me);
 
 	if( !target || !target->is_character() || !me->is_fighting(target) )
-		return notify_fail("¡¸ÌìÅ®É¢»¨¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ã€Œå¤©å¥³æ•£èŠ±ã€åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if (!objectp(weapon = me->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "sword")
-		return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+		return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
 		
 	if( (int)me->query_skill("tianyu-qijian", 1) < 100 )
-		return notify_fail("ÄãµÄÌìÓğÆæ½£²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡£\n");
+		return notify_fail("ä½ çš„å¤©ç¾½å¥‡å‰‘ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸ä¼šä½¿ç”¨ã€‚\n");
 
         if ( me->query_skill_mapped("sword") != "tianyu-qijian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÌìÓğÆæ½£µ½½£·¨ÉÏ£¡\n"); 
+                return notify_fail("ä½ æ²¡æœ‰æ¿€å‘å¤©ç¾½å¥‡å‰‘åˆ°å‰‘æ³•ä¸Šï¼\n"); 
 
 	if ((int)me->query_skill("xiaowu-xiang", 1)<100
 		&& (int)me->query_skill("bahuang-gong", 1)<100
 		&& (int)me->query_skill("beiming-shengong", 1)<100)
-		return notify_fail("ÄãµÄåĞÒ£ÅÉÄÚ¹¦»ğºò²»¹»¡£\n");
+		return notify_fail("ä½ çš„é€é¥æ´¾å†…åŠŸç«å€™ä¸å¤Ÿã€‚\n");
 
 	if ( me->query_skill_mapped("force") != "xiaowu-xiang"
 		&& me->query_skill_mapped("force") != "bahuang-gong"
 		&& me->query_skill_mapped("force") != "beiming-shengong")
-                return notify_fail("ÄãÃ»ÓĞÔËÓÃåĞÒ£ÅÉÄÚ¹¦£¡\n");	
+                return notify_fail("ä½ æ²¡æœ‰è¿ç”¨é€é¥æ´¾å†…åŠŸï¼\n");	
 
 	if( (int)me->query("neili", 1) < damage + 200 )
-		return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÌìÅ®É¢»¨¡¹¡£\n");
+		return notify_fail("ä½ ç°åœ¨å†…åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¤©å¥³æ•£èŠ±ã€ã€‚\n");
 			
-	message_vision(CYN "\n$NÄıÉñÏ¢Æø£¬ÊÖÍó¼²¶¶£¬Íì³öÇ§Íò¸ö½£»¨£¬ÆÌÌì¸ÇµØ·ÉÏò$n¡£\n"NOR, me,target);
+	message_vision(CYN "\n$Nå‡ç¥æ¯æ°”ï¼Œæ‰‹è…•ç–¾æŠ–ï¼ŒæŒ½å‡ºåƒä¸‡ä¸ªå‰‘èŠ±ï¼Œé“ºå¤©ç›–åœ°é£å‘$nã€‚\n"NOR, me,target);
 
 	sp = me->query_skill("sword") + me->query_skill("dodge") + me->query_dex();
 	dp = target->query_skill("parry") + target->query_skill("dodge") + me->query_dex();
@@ -54,7 +54,7 @@ int perform(object me, object target)
 		target->receive_damage("qi", damage);
 		target->receive_wound("qi", damage/2);
 		me->add("neili", -damage);
-		message_vision(HIR "\nÖ»¼û$N½£»¨¾ÛÎªÒ»Ïß£¬´©Ïò$n¡£\n$nÖ»¾õÒ»¹ÉÈÈÁ÷´©ĞÄ¶ø¹ı£¬ºíÍ·Ò»Ìğ£¬ÏÊÑª¿ñÅç¶ø³ö£¡\n\n" NOR, me,target);
+		message_vision(HIR "\nåªè§$Nå‰‘èŠ±èšä¸ºä¸€çº¿ï¼Œç©¿å‘$nã€‚\n$nåªè§‰ä¸€è‚¡çƒ­æµç©¿å¿ƒè€Œè¿‡ï¼Œå–‰å¤´ä¸€ç”œï¼Œé²œè¡€ç‹‚å–·è€Œå‡ºï¼\n\n" NOR, me,target);
 
 		str = COMBAT_D->status_msg((int)target->query("qi") * 100 /(int)target->query("max_qi"));
 		message_vision("($N"+str+")\n", target);
@@ -62,7 +62,7 @@ int perform(object me, object target)
 		me->start_busy(2);
 	} else 
 	{
-		message_vision(CYN "¿ÉÊÇ$pÃÍµØÏòÇ°Ò»Ô¾,Ìø³öÁË$PµÄ¹¥»÷·¶Î§¡£\n"NOR, me,target);
+		message_vision(CYN "å¯æ˜¯$pçŒ›åœ°å‘å‰ä¸€è·ƒ,è·³å‡ºäº†$Pçš„æ”»å‡»èŒƒå›´ã€‚\n"NOR, me,target);
 		me->add("neili", -100);
 		me->start_busy(4);
 	}

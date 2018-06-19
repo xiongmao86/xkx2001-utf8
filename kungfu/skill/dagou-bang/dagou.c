@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dagou.c ´ò¹·Õó·¨
+// dagou.c æ‰“ç‹—é˜µæ³•
 // By lichen@xkx.us
 // For trying to make a dagou zhen. When perform dagou, increase temp damage.
 // Suggestion: Zhenfa can be created in multiple rooms. Maybe we can use
@@ -9,8 +9,8 @@
 #include <ansi.h>
 
 // Define requirement is 4 dai gbdizi
-// maximum number of people in ´ò¹·Õó is 6 people
-// minimum number of people in ´ò¹·Õó is 2 people
+// maximum number of people in æ‰“ç‹—é˜µ is 6 people
+// minimum number of people in æ‰“ç‹—é˜µ is 2 people
 
 #define REQUIRE 4
 #define MAX_INARRAY 6
@@ -20,11 +20,11 @@ inherit F_DBASE;
 inherit F_SSERVER;
 
 string *ran_msg = ({
-	"¸ß½Ğ£º¡°ÀÏÒ¯¡¢Ì«Ì«¡¢Ê©Éá¿ÚÀä·¹£¡¡±",
-	"½ĞµÀ£º¡°ÀÏÒ¯Ì«Ì«ĞĞĞĞºÃ£¬ÉÍ´ÍÆò¶ùÒ»ÎÄÇ®¡£¡±",
-	"³ªµÀ£º¡°ÌìÌÃÓĞÂ·Äã²»×ßÄÄ£¡¡±",
-	"³ªµÀ£º¡°µØÓüÎŞÃÅÄã´³½øÀ´£¡¡±",
-	"³ªµÀ£º¡°Ê©Éá»¯×ÓÒ»Íë·¹ÄÄ£¡¡±",
+	"é«˜å«ï¼šâ€œè€çˆ·ã€å¤ªå¤ªã€æ–½èˆå£å†·é¥­ï¼â€",
+	"å«é“ï¼šâ€œè€çˆ·å¤ªå¤ªè¡Œè¡Œå¥½ï¼Œèµèµä¹å„¿ä¸€æ–‡é’±ã€‚â€",
+	"å”±é“ï¼šâ€œå¤©å ‚æœ‰è·¯ä½ ä¸èµ°å“ªï¼â€",
+	"å”±é“ï¼šâ€œåœ°ç‹±æ— é—¨ä½ é—¯è¿›æ¥ï¼â€",
+	"å”±é“ï¼šâ€œæ–½èˆåŒ–å­ä¸€ç¢—é¥­å“ªï¼â€",
 });
 
 string *ran_color = ({ HIC, HIG, HIY, HIR, HIM });
@@ -48,34 +48,34 @@ int perform(object me)
     leader = 0;
     inarray = ({0, 0 , 0, 0, 0, 0, 0});
     
-    if( me->query("family/family_name") != "Ø¤°ï" )
-		return notify_fail("Äã²»ÊÇØ¤°ïµÜ×Ó£¬Ê¹ÓÃ²»ÁË´ò¹·Õó¡£\n");
+    if( me->query("family/family_name") != "ä¸å¸®" )
+		return notify_fail("ä½ ä¸æ˜¯ä¸å¸®å¼Ÿå­ï¼Œä½¿ç”¨ä¸äº†æ‰“ç‹—é˜µã€‚\n");
 		
     if( (int)me->query_temp("dagou") ) 
-        return notify_fail("ÄãÒÑ¾­ÔÚ²ÎÓë´ò¹·Õó·¨ÁË¡£\n");
+        return notify_fail("ä½ å·²ç»åœ¨å‚ä¸æ‰“ç‹—é˜µæ³•äº†ã€‚\n");
 
 	if( me->query("rank") < REQUIRE ) 
-		return notify_fail("ÄãµÄµÈ¼¶Ì«µÍ£¬²»ÄÜÊ¹ÓÃ´ò¹·Õó·¨£¡\n");
+		return notify_fail("ä½ çš„ç­‰çº§å¤ªä½ï¼Œä¸èƒ½ä½¿ç”¨æ‰“ç‹—é˜µæ³•ï¼\n");
 								
     if( !victim ) victim = offensive_target(me);
 
     if( !victim || !victim->is_character() || !me->is_fighting(victim) )
-        return notify_fail("´ò¹·Õó·¨Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+        return notify_fail("æ‰“ç‹—é˜µæ³•åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
-	if( victim->query("family/family_name") == "Ø¤°ï" )
-		return notify_fail("ÄãÔõÃ´¿ÉÒÔ¶ÔÍ¬ÃÅÊ¹ÓÃ´ò¹·Õó£¿\n");
+	if( victim->query("family/family_name") == "ä¸å¸®" )
+		return notify_fail("ä½ æ€ä¹ˆå¯ä»¥å¯¹åŒé—¨ä½¿ç”¨æ‰“ç‹—é˜µï¼Ÿ\n");
 	
 	if( me->query_skill_mapped("stick") != "dagou-bang" 
 	    || !objectp(weapon = me->query_temp("weapon")) 
         || (string)weapon->query("skill_type") != "stick" ) 
-        return notify_fail("Äã±ØĞëÊ¹ÓÃ´ò¹·°ô·¨²ÅÄÜ¼ÓÈë´ò¹·Õó¡£\n");
+        return notify_fail("ä½ å¿…é¡»ä½¿ç”¨æ‰“ç‹—æ£’æ³•æ‰èƒ½åŠ å…¥æ‰“ç‹—é˜µã€‚\n");
    
    	env = environment(me);
  	obj = all_inventory(env);
 	num = sizeof(obj);
 	partner = 0;
 	
-	// check how many users are in ´ò¹·Õó. If there are someone in the ´ò¹·Õó,
+	// check how many users are in æ‰“ç‹—é˜µ. If there are someone in the æ‰“ç‹—é˜µ,
 	// then get leader and victim.
 	
 	for( int i = 0; i < num; i++ ) {
@@ -91,39 +91,39 @@ int perform(object me)
 	    }
 	}
 	
-	// If in the room there is no one take part in ´ò¹·Õó, then set this user
+	// If in the room there is no one take part in æ‰“ç‹—é˜µ, then set this user
 	// as leader. If any other 4dai or above gb dizi here are fighting the same 
 	// victim, then these gb dizi set_temp("dagou", pointer to the leader ). the 
 	// leader set_temp("dagou") 4 variables. First one is "leader"(indicate he is 
 	// the leader of the array, second one is a pointer point to all people in 
-	// array(´ò¹·Õó), third one is total stick skill of all people who join the 
+	// array(æ‰“ç‹—é˜µ), third one is total stick skill of all people who join the 
 	// arraym, the forth is the number of people who join the array.
 	
 	if( partner == 0 ) {
 		inarray[0] = me;
 		inarray[MAX_INARRAY] = victim;
 			   
-	    message_vision( HIR"$NºöÈ»¸ßÉù½ĞµÀ£º¸÷Î»Ø¤°ïĞÖµÜ£¬½á´ò¹·Õó£¡°ïÎÒ¶Ô¸¶$n£¡\n" NOR, me, victim);
+	    message_vision( HIR"$Nå¿½ç„¶é«˜å£°å«é“ï¼šå„ä½ä¸å¸®å…„å¼Ÿï¼Œç»“æ‰“ç‹—é˜µï¼å¸®æˆ‘å¯¹ä»˜$nï¼\n" NOR, me, victim);
 		
 		user_list = users();
 		user_num = sizeof(user_list);
 
-		// Let all 4 dai(or above) gb dizi who are in the same area know that someone is using ´ò¹·Õó.
+		// Let all 4 dai(or above) gb dizi who are in the same area know that someone is using æ‰“ç‹—é˜µ.
 		// It is to increase the interaction between gb dizi.
-		// ÕıËùÎ½£ºÒ»·½ÓĞÄÑ£¬°Ù·½Ö§Ô®¡£
+		// æ­£æ‰€è°“ï¼šä¸€æ–¹æœ‰éš¾ï¼Œç™¾æ–¹æ”¯æ´ã€‚
 		
 		while( user_num-- ) {
 			if( !environment(user_list[user_num]) ) continue;
-			if( user_list[user_num]->query("family/family_name") != "Ø¤°ï" 
+			if( user_list[user_num]->query("family/family_name") != "ä¸å¸®" 
 				|| user_list[user_num]->query("rank") < REQUIRE ) continue;
 			if( environment(user_list[user_num]) == env ) continue;
 			if( !living(user_list[user_num]) ) continue;
 			if( location(file_name(env)) == location(file_name(environment(user_list[user_num]))) )
-			    tell_object( user_list[user_num], HIG"ÄãÒşÒşÔ¼Ô¼µØÌıµ½ÔÚÔ¶´¦" + me->query("name")
-				    + "ºÃÏóÔÚ·¢¶¯´ò¹·Õó¶Ô¸¶" + victim->query("name") + "¡£"
-				    + "\nÌı·½ÏòºÃÏóÊÇ" + env->query("short") + "¡£\n\n"NOR );
+			    tell_object( user_list[user_num], HIG"ä½ éšéšçº¦çº¦åœ°å¬åˆ°åœ¨è¿œå¤„" + me->query("name")
+				    + "å¥½è±¡åœ¨å‘åŠ¨æ‰“ç‹—é˜µå¯¹ä»˜" + victim->query("name") + "ã€‚"
+				    + "\nå¬æ–¹å‘å¥½è±¡æ˜¯" + env->query("short") + "ã€‚\n\n"NOR );
 		    else 
-   			    tell_object( user_list[user_num], HIG"ÄãÒşÒşÔ¼Ô¼µØÌıµ½ÔÚÔ¶´¦É±ÉùÕğÌì£¬ºÃÏóÓĞØ¤°ïµÜ×ÓÔÚ·¢¶¯´ò¹·Õó£¡\n\n"NOR );
+   			    tell_object( user_list[user_num], HIG"ä½ éšéšçº¦çº¦åœ°å¬åˆ°åœ¨è¿œå¤„æ€å£°éœ‡å¤©ï¼Œå¥½è±¡æœ‰ä¸å¸®å¼Ÿå­åœ¨å‘åŠ¨æ‰“ç‹—é˜µï¼\n\n"NOR );
 		} 
 			
 		partner = 1;
@@ -144,8 +144,8 @@ int perform(object me)
 		        
             inarray[partner] = obj[i];
             message_vision( 
-			    HIR "$NÒ»±ß³¤Éù³ªµÀ£º¡°¸÷Â·µÄµÜĞÖÀ´ÌÖ·¹Ó´£¬°¡Ó´°¥à¡Ó´¡­¡­¡±" + 
-			    "Ò»±ß°üÎ§×Å$n¡£\n" NOR, inarray[partner], victim );
+			    HIR "$Nä¸€è¾¹é•¿å£°å”±é“ï¼šâ€œå„è·¯çš„å¼Ÿå…„æ¥è®¨é¥­å“Ÿï¼Œå•Šå“Ÿå“å”·å“Ÿâ€¦â€¦â€" + 
+			    "ä¸€è¾¹åŒ…å›´ç€$nã€‚\n" NOR, inarray[partner], victim );
             skill += inarray[partner]->query_skill("stick");
             partner++;
             if( partner == MAX_INARRAY ) break;
@@ -173,7 +173,7 @@ int perform(object me)
 	}
 	
 	else if( partner >= MAX_INARRAY ) 
-		return notify_fail("´ò¹·Õó·¨Ö»ÄÜÓÉ¶şÈËÖÁÁùÈË²ÎÓë¡£\n");
+		return notify_fail("æ‰“ç‹—é˜µæ³•åªèƒ½ç”±äºŒäººè‡³å…­äººå‚ä¸ã€‚\n");
 
     else {
     	inarray = leader->query_temp("dagou/data")[0];
@@ -192,10 +192,10 @@ int perform(object me)
 		me->set_temp("dagou/is_leader", -1);
 		me->set_temp("dagou/data", leader);
 		message_vision( 
-	    HIR "$NÒ»±ß³¤Éù³ªµÀ£º¡°ÀÏÒ¯Ì«Ì«ĞĞĞĞºÃ£¬ÉÍ´ÍÆò¶ùÒ»ÎÄÇ®¡£¡±" +
-	    "Ò»±ß¼ÓÈë´ò¹·Õó£¬°üÎ§$n¡£\n" NOR, me, victim );
+	    HIR "$Nä¸€è¾¹é•¿å£°å”±é“ï¼šâ€œè€çˆ·å¤ªå¤ªè¡Œè¡Œå¥½ï¼Œèµèµä¹å„¿ä¸€æ–‡é’±ã€‚â€" +
+	    "ä¸€è¾¹åŠ å…¥æ‰“ç‹—é˜µï¼ŒåŒ…å›´$nã€‚\n" NOR, me, victim );
 	    for( int i = 0; i < partner-1; i++ )
-	    	tell_object(inarray[i], HIG"\nÄã¿´¼ûÓĞÈË¼ÓÈë´ò¹·Õó£¬²»ÓÉµÃ¾«ÉñÎªÖ®Ò»Õñ¡£\n"NOR);
+	    	tell_object(inarray[i], HIG"\nä½ çœ‹è§æœ‰äººåŠ å…¥æ‰“ç‹—é˜µï¼Œä¸ç”±å¾—ç²¾ç¥ä¸ºä¹‹ä¸€æŒ¯ã€‚\n"NOR);
 	}
 
     return 1;
@@ -230,9 +230,9 @@ void check_fight(object leader)
 	ori_partner = partner;
 	
 	// If the victim is dead or run away or the qi less than 50, then
-	// the ´ò¹·Õó is done.
+	// the æ‰“ç‹—é˜µ is done.
 	// If the leader is not fighting with the victim or the leader is not
-	// using dagou-bang skill, then the ´ò¹·Õó is finish too. 
+	// using dagou-bang skill, then the æ‰“ç‹—é˜µ is finish too. 
     
     if( !living(inarray[MAX_INARRAY]) 
         || !present(inarray[MAX_INARRAY]->query("id"), environment(leader)) 
@@ -246,21 +246,21 @@ void check_fight(object leader)
 	    	for ( int i = 0; i < partner; i++ )
 		    	remove_effect(inarray[i], ori_effect);
 		    if (living( leader ))
-		    	message_vision(HIM"$N´óº°Ò»Éù£º¡°ÊÕÕó£¡¡±¡£ÖÚÈË¿Ú³ª¡°Á«»¨Õó¡±£¬¸÷×ÔÊÕÕĞ¡£\n\n"NOR, leader);
+		    	message_vision(HIM"$Nå¤§å–Šä¸€å£°ï¼šâ€œæ”¶é˜µï¼â€ã€‚ä¼—äººå£å”±â€œè²èŠ±é˜µâ€ï¼Œå„è‡ªæ”¶æ‹›ã€‚\n\n"NOR, leader);
 		    else
-		    	message_vision(HIM"ÖÚÈËÊ§È¥ÁË$N£¬ÈºÁúÎŞÊ×£¬ÓÚÊÇÒ»ºå¶øÉ¢¡£\n\n"NOR, leader);
+		    	message_vision(HIM"ä¼—äººå¤±å»äº†$Nï¼Œç¾¤é¾™æ— é¦–ï¼Œäºæ˜¯ä¸€å“„è€Œæ•£ã€‚\n\n"NOR, leader);
 		}
 		else {
 			leader->delete_temp("dagou");
 			if ( living(leader) )
-	    	    message_vision(HIM"$N¿´¼ûÃ»ÓĞÈË¼ÓÈë´ò¹·Õó£¬½Åµ×Ä¨ÓÍ£¬Ò»Éù²»¿ÔµØÁïÁË¡£\n\n"NOR, leader);
+	    	    message_vision(HIM"$Nçœ‹è§æ²¡æœ‰äººåŠ å…¥æ‰“ç‹—é˜µï¼Œè„šåº•æŠ¹æ²¹ï¼Œä¸€å£°ä¸å­åœ°æºœäº†ã€‚\n\n"NOR, leader);
     	}
         return;
     }
 
-	// Else, if the leader is still in the ´ò¹·Õó£¬check all the people who are in
+	// Else, if the leader is still in the æ‰“ç‹—é˜µï¼Œcheck all the people who are in
 	// the array. If someone is not fighting with the victim or is not using dagou-bang
-	// skill, then this guy quit the ´ò¹·Õó¡£After that, reset the effect.
+	// skill, then this guy quit the æ‰“ç‹—é˜µã€‚After that, reset the effect.
 	
     else {
     	for ( int i = 1; i < ori_partner; i++ ) {
@@ -271,8 +271,8 @@ void check_fight(object leader)
           	     || (string)weapon->query("skill_type") != "stick" ) 
           	{
           		message_vision( 
-			    HIG "$NÒ»±ß³¤Éù³ªµÀ£º¡°ÕâÂ·µÄµÜĞÖÌÖÍê·¹Ó´£¬°¡Ó´°¥à¡Ó´¡­¡­¡±£¬"
-			    + "Ò»±ßÍË³öÁË´ò¹·Õó¡£\n"NOR, inarray[i]);
+			    HIG "$Nä¸€è¾¹é•¿å£°å”±é“ï¼šâ€œè¿™è·¯çš„å¼Ÿå…„è®¨å®Œé¥­å“Ÿï¼Œå•Šå“Ÿå“å”·å“Ÿâ€¦â€¦â€ï¼Œ"
+			    + "ä¸€è¾¹é€€å‡ºäº†æ‰“ç‹—é˜µã€‚\n"NOR, inarray[i]);
           		remove_effect(inarray[i], ori_effect);
           		skill -= inarray[i]->query_skill("stick");
           		partner -= 1;
@@ -334,15 +334,15 @@ void random_msg(object leader)
 				ran_usr = random(partner);
 				obj = leader->query_temp("dagou/data")[0][ran_usr];
 				ran = random(5);
-				message_vision( ran_color[ran] + "$NÔÚ´ò¹·ÕóÄÚ" + ran_msg[ran] + "\n" NOR, obj);
+				message_vision( ran_color[ran] + "$Nåœ¨æ‰“ç‹—é˜µå†…" + ran_msg[ran] + "\n" NOR, obj);
 				victim = leader->query_temp("dagou/data")[0][MAX_INARRAY];
 				
-				// This is for °ôÕÆ½áºÏ and Ë«°ô½áºÏ.
+				// This is for æ£’æŒç»“åˆ and åŒæ£’ç»“åˆ.
 				
-				// this is °ôÕÆ½áºÏ¡£
+				// this is æ£’æŒç»“åˆã€‚
 				if ( random(2) == 1 ) {						
 					if( obj->query_skill_prepare()["strike"] == "xianglong-zhang" ) {
-					    message_vision(ran_color[ran] + "$NÍ»È»Ã°ÏÕ½ø»÷£¬µ¥ÊÖ³Ö°ô£¬¹¥Ïò$n¡£\n"NOR, obj, victim);
+					    message_vision(ran_color[ran] + "$Nçªç„¶å†’é™©è¿›å‡»ï¼Œå•æ‰‹æŒæ£’ï¼Œæ”»å‘$nã€‚\n"NOR, obj, victim);
 					    weapon = obj->query_temp("weapon");
 					    COMBAT_D->do_attack(obj, victim, weapon, 1);
 			    		obj->delete_temp("weapon");
@@ -353,14 +353,14 @@ void random_msg(object leader)
 					    if ( obj->query("neili") >= 150 ) obj->add("neili", -10);
 					}
 				}
-				// this is Ë«°ô½áºÏ¡£
+				// this is åŒæ£’ç»“åˆã€‚
 				else {	
 					do {
 						ran_usr1 = random(partner);
 					} while ( ran_usr1 == ran_usr);
 					
 					obj1 = leader->query_temp("dagou/data")[0][ran_usr1];
-					message_vision(ran_color[ran] + "$NºÍ$nÍ»È»Ã°ÏÕ½ø»÷£¬Ë«°ô½áºÏ£¬Îè³ÉÒ»ÍÅ°ôÓ°£¬¹²Í¬½ø¹¥¡£\n"NOR, obj, obj1);
+					message_vision(ran_color[ran] + "$Nå’Œ$nçªç„¶å†’é™©è¿›å‡»ï¼ŒåŒæ£’ç»“åˆï¼Œèˆæˆä¸€å›¢æ£’å½±ï¼Œå…±åŒè¿›æ”»ã€‚\n"NOR, obj, obj1);
 					COMBAT_D->do_attack(obj, victim, obj->query_temp("weapon"), 1);
 					obj1->set_temp("action_flag", 1);
 					COMBAT_D->do_attack(obj1, victim, obj1->query_temp("weapon"), 1);
@@ -370,7 +370,7 @@ void random_msg(object leader)
 				}
 			}
 			else
-				message_vision( ran_color[ran] + "$N¹Â¾ü×÷Õ½£¬" + ran_msg[ran] + "²¢¾¡Á¿ÍÏÑÓÊ±¼ä£¬µÈ´ıÈºØ¤¼ÓÈë¡£\n"NOR, leader);
+				message_vision( ran_color[ran] + "$Nå­¤å†›ä½œæˆ˜ï¼Œ" + ran_msg[ran] + "å¹¶å°½é‡æ‹–å»¶æ—¶é—´ï¼Œç­‰å¾…ç¾¤ä¸åŠ å…¥ã€‚\n"NOR, leader);
 		}
 			
 		call_out("random_msg", 6, leader);

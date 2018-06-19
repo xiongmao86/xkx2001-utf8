@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pojian.c ¶À¹Â¾Å½£¡¸ÆÆ±ŞÊ½¡¹
+// pojian.c ç‹¬å­¤ä¹å‰‘ã€Œç ´é­å¼ã€
 // qfy July 5, 1996.
 
 #include <ansi.h>
@@ -15,32 +15,32 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÆÆ±ŞÊ½Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç ´é­å¼åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( !objectp(weapon = target->query_temp("weapon"))
 	|| (string)weapon->query("skill_type") != "hammer" ) {
 	   if( !objectp(weapon = target->query_temp("weapon"))
 	   || (string)weapon->query("skill_type") != "axe" )
-		return notify_fail("ÆÆ±ŞÊ½Ö»ÄÜ¶ÔÓÃ¸Ö±Ş¡¢é³¡¢´¸¡¢×¶ºÍ¸«µÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç ´é­å¼åªèƒ½å¯¹ç”¨é’¢é­ã€æ§Œã€é”¤ã€é”¥å’Œæ–§çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 	}
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 		
 	if( (int)me->query_skill("dugu-jiujian", 1) < 50 )
-		return notify_fail("ÄãµÄ¶À¹Â¾Å½£ĞŞÎª²»¹»£¬»¹Î´Ñ§³É¡¸ÆÆ±ŞÊ½¡¹¡£\n");
+		return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘ä¿®ä¸ºä¸å¤Ÿï¼Œè¿˜æœªå­¦æˆã€Œç ´é­å¼ã€ã€‚\n");
 
         if( me->query("neili") <= 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
-	msg = CYN "$NÊ¹³ö¶À¹Â¾Å½£µÄ¡¸ÆÆ±ŞÊ½¡¹£¬½£»¯Á÷ĞÇ£¬Ñ¸¼±ÎŞ±ÈµØµãÏò$nµÄÊÖÍó¡£\n";
+	msg = CYN "$Nä½¿å‡ºç‹¬å­¤ä¹å‰‘çš„ã€Œç ´é­å¼ã€ï¼Œå‰‘åŒ–æµæ˜Ÿï¼Œè¿…æ€¥æ— æ¯”åœ°ç‚¹å‘$nçš„æ‰‹è…•ã€‚\n";
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
-		msg += "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¬Î¨ÓĞÉáÆú"+weapon->query("name")+"ÒÔÆÚ×Ô±£¡£\n" NOR;
+		msg += "ç»“æœ$pè¢«$Pæ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼Œå”¯æœ‰èˆå¼ƒ"+weapon->query("name")+"ä»¥æœŸè‡ªä¿ã€‚\n" NOR;
 		weapon->move(environment(me));
 		target->start_busy( (int)me->query_skill("sword") / 28 );
 	} else {
-		msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ½£Â·£¬»¹ÕĞµ²¿ª¡£\n" NOR;
+		msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„å‰‘è·¯ï¼Œè¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR;
 		me->start_busy(1 + random(3));
 	}
 	message_vision(msg, me, target);

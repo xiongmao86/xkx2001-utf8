@@ -1,4 +1,4 @@
-// /d/lingjiu/npc/tbyang.c ÑôÌì²¿ ·ûÃôÒÇ
+// /d/lingjiu/npc/tbyang.c é˜³å¤©éƒ¨ ç¬¦æ•ä»ª
 // By adx @ CuteRabbit 22:21 99-3-19
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit NPC;
 string ask_me();
 void create()
 {
-	set_name("·ûÃôÒÇ", ({ "fu mingyi", "fu"}));
+	set_name("ç¬¦æ•ä»ª", ({ "fu mingyi", "fu"}));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞÑôÌì²¿µÄÊ×Áì.\n"+
-	    "ËıºÅ³Æ¡¸ÕëÉñ¡¹.\n");
-	set("title", "ÑôÌì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
-	set("nickname", HIG "ÕëÉñ" NOR);
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­é˜³å¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹å·ç§°ã€Œé’ˆç¥ã€.\n");
+	set("title", "é˜³å¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
+	set("nickname", HIG "é’ˆç¥" NOR);
 	set("age", 20);
 	set("shen_type",0);
 	set("attitude", "peaceful");
@@ -60,14 +60,14 @@ void create()
 	prepare_skill("hand","zhemei-shou");
 
 	set("inquiry", ([
-		"Ä¾ÈË"     : (: ask_me :),
-		"ĞŞÀí"	   : (: ask_me :),
-		"ĞŞÄ¾ÈË"   : (: ask_me :)
+		"æœ¨äºº"     : (: ask_me :),
+		"ä¿®ç†"	   : (: ask_me :),
+		"ä¿®æœ¨äºº"   : (: ask_me :)
 	]));
 
 	prepare_skill("strike","liuyang-zhang");
 	prepare_skill("hand","zhemei-shou");
-	create_family("ÁéğÕ¹¬",4,"µÜ×Ó");
+	create_family("çµé¹«å®«",4,"å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),
@@ -96,7 +96,7 @@ int repairing_1(object me, object ob)
 {
 	if ( !present(ob, environment()) ) return 1; 
 
-	command("say ÊÇÕâ¸öÄ¾ÈË°É£¿ ßí£¬ÎÒÀ´ÇÆÇÆ£¡ ÄãÔÚ±ßÉÏ´ô×Å£¬¿´ÄÜ°ïÎÒÊ²Ã´Ã¦¡£");
+	command("say æ˜¯è¿™ä¸ªæœ¨äººå§ï¼Ÿ å””ï¼Œæˆ‘æ¥ç§ç§ï¼ ä½ åœ¨è¾¹ä¸Šå‘†ç€ï¼Œçœ‹èƒ½å¸®æˆ‘ä»€ä¹ˆå¿™ã€‚");
 	
 	remove_call_out("repairing_2");
 	call_out("repairing_2", 2+random(3), me, ob);
@@ -110,16 +110,16 @@ int repairing_2(object me, object ob)
 
 	if( ob->query("damaged") )
 	{
-		message_vision(GRN "\n·ûÃôÒÇ¶Ô×ÅÄ¾ÈËÇÆÁËÒ»»á£¬ÓÖÊÔ×Å°â¶¯Ä¾ÈËµÄËÄÖ«ºÍÄÔ´ü£¬×ìÀïà«à«Äîß¶×ÅÊ²Ã´¡£\n\n" NOR, me);
+		message_vision(GRN "\nç¬¦æ•ä»ªå¯¹ç€æœ¨äººç§äº†ä¸€ä¼šï¼Œåˆè¯•ç€æ‰³åŠ¨æœ¨äººçš„å››è‚¢å’Œè„‘è¢‹ï¼Œå˜´é‡Œå–ƒå–ƒå¿µå¨ç€ä»€ä¹ˆã€‚\n\n" NOR, me);
 		remove_call_out("repairing_3");
 		call_out("repairing_3", 2+random(2), me, ob);
 	}
 	else
 	{
-		command("say ÕâÄ¾ÈËºÃ¶Ë¶ËµØÓÖÃ»»µ£¡");
+		command("say è¿™æœ¨äººå¥½ç«¯ç«¯åœ°åˆæ²¡åï¼");
 		command("follow none");
 
-		message_vision(GRN "\n·ûÃôÒÇÆø¹Ä¹ÄµØ×ßÁË¡£\n" NOR, me);
+		message_vision(GRN "\nç¬¦æ•ä»ªæ°”é¼“é¼“åœ°èµ°äº†ã€‚\n" NOR, me);
 		me->move("/d/lingjiu/caifeng");
 
 		remove_call_out("do_back");
@@ -131,8 +131,8 @@ int repairing_2(object me, object ob)
 	
 int repairing_3(object me, object ob)
 {
-	command("say ßí£¬Ô­À´Èç´Ë£¬ÎÒÀ´ĞŞĞŞ¿´°É£¡");
-	message_vision(GRN "\nÖ»¼ûËı½Ó×Å´Ó»³ÀïÌÍ³öÒ»¸ùÏ¸Ï¸µÄ½ğÕë£¬´ò¿ªÄ¾ÈËµÄÉíÌå£¬°ÚÅªÁË¼¸ÏÂ¡£\n\n" NOR, me);
+	command("say å””ï¼ŒåŸæ¥å¦‚æ­¤ï¼Œæˆ‘æ¥ä¿®ä¿®çœ‹å§ï¼");
+	message_vision(GRN "\nåªè§å¥¹æ¥ç€ä»æ€€é‡Œæå‡ºä¸€æ ¹ç»†ç»†çš„é‡‘é’ˆï¼Œæ‰“å¼€æœ¨äººçš„èº«ä½“ï¼Œæ‘†å¼„äº†å‡ ä¸‹ã€‚\n\n" NOR, me);
 
 	remove_call_out("repairing_4");
 	call_out("repairing_4", 3+random(3), me, ob);
@@ -144,19 +144,19 @@ int repairing_4(object me, object ob)
 {
 	if( random(2) == 0 ) 
 	{		
-		command("say ºÃ£¬ĞŞºÃÁË£¡");
+		command("say å¥½ï¼Œä¿®å¥½äº†ï¼");
 		ob->delete("damaged");
 		ob->set("fight_times", 0);	
-		message_vision(GRN "\nÄ¾ÈËµÄÉíÌåÖ¨Ö¨µØÅ¤¶¯ÁË¼¸ÏÂ£¬»Ö¸´ÁËÕı³£Õ¾Á¢µÄ×ËÌ¬¡£\n\n" NOR, me);
+		message_vision(GRN "\næœ¨äººçš„èº«ä½“å±å±åœ°æ‰­åŠ¨äº†å‡ ä¸‹ï¼Œæ¢å¤äº†æ­£å¸¸ç«™ç«‹çš„å§¿æ€ã€‚\n\n" NOR, me);
 	}
 	else 
-		message_vision(GRN "\n·ûÃôÒÇÌ¾ÁË¿ÚÆø£¬ËµµÀ£º¿´À´²»ĞĞ£¬ÕâÄ¾ÈËËğ»µµÃÌ«À÷º¦ÁË£¬Ã»·¨×ÓĞŞÁË£¡\n" NOR, me);
+		message_vision(GRN "\nç¬¦æ•ä»ªå¹äº†å£æ°”ï¼Œè¯´é“ï¼šçœ‹æ¥ä¸è¡Œï¼Œè¿™æœ¨äººæŸåå¾—å¤ªå‰å®³äº†ï¼Œæ²¡æ³•å­ä¿®äº†ï¼\n" NOR, me);
 
-	command("say ºÃ£¬ÄÇÎÒ×ßÁË£¡");
+	command("say å¥½ï¼Œé‚£æˆ‘èµ°äº†ï¼");
 	command("wave");
 	command("follow none");
 
-	message_vision(GRN "\n·ûÃôÒÇ×ßÁË³öÈ¥¡£\n" NOR, me);
+	message_vision(GRN "\nç¬¦æ•ä»ªèµ°äº†å‡ºå»ã€‚\n" NOR, me);
 	me->move("/d/lingjiu/caifeng");
 
 	remove_call_out("do_back");
@@ -178,14 +178,14 @@ string ask_me()
 
 	ob = this_player();
 	
-	if (!(fam = ob->query("family")) || fam["family_name"] != "ÁéğÕ¹¬")
+	if (!(fam = ob->query("family")) || fam["family_name"] != "çµé¹«å®«")
 		return RANK_D->query_respect(ob) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
-	command("say Ä¾ÈË´ò»µÁËÊÇ°É£¿ ºÃ°É£¬ÎÒ¸úÄãÈ¥¿´¿´¡£");
+	command("say æœ¨äººæ‰“åäº†æ˜¯å§ï¼Ÿ å¥½å§ï¼Œæˆ‘è·Ÿä½ å»çœ‹çœ‹ã€‚");
 	command("follow " + ob->query("id"));
 
-	return "ÎÒÃÇ×ß°Õ£¡\n";
+	return "æˆ‘ä»¬èµ°ç½¢ï¼\n";
 }
 
 #include "/kungfu/class/lingjiu/tianbu.h"

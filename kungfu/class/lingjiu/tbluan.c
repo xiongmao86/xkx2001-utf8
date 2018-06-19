@@ -1,4 +1,4 @@
-// /d/lingjiu/npc/tbluan.c ğ½Ìì²¿ ÖÜÆÅÆÅ
+// /d/lingjiu/npc/tbluan.c é¸¾å¤©éƒ¨ å‘¨å©†å©†
 // By adx @ CuteRabbit 22:21 99-3-19
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit NPC;
 int auto_perform();
 void create()
 {
-	set_name("ÖÜÆÅÆÅ", ({ "zhou popo", "zhou", "popo" }));
+	set_name("å‘¨å©†å©†", ({ "zhou popo", "zhou", "popo" }));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞğ½Ìì²¿µÄÊ×Áì.\n"+
-	    "Ëı¸úËæÍ¯ÀÑ¶àÄê, ³öÉúÈëËÀ,±¥¾­·çËª.\n");
-	set("title", "ğ½Ìì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­é¸¾å¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹è·Ÿéšç«¥å§¥å¤šå¹´, å‡ºç”Ÿå…¥æ­»,é¥±ç»é£éœœ.\n");
+	set("title", "é¸¾å¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
 	set("age", 60);
 	set("shen_type",0);
 	set("attitude", "peaceful");
@@ -57,7 +57,7 @@ void create()
 
 	prepare_skill("strike","liuyang-zhang");
 	prepare_skill("hand","zhemei-shou");
-	create_family("ÁéğÕ¹¬",4,"µÜ×Ó");
+	create_family("çµé¹«å®«",4,"å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),

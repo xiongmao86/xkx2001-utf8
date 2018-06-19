@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÈøÄ¾»î·ð", ({ "samu huofo", "samu", "huofo" }));
+	set_name("è¨æœ¨æ´»ä½›", ({ "samu huofo", "samu", "huofo" }));
 	set("long", 
-"Ò»¸öÊÝ¸ßµÄÖÐÄêÀ®Âï£¬Éí´©Ò»Áì»ÆÉ«ôÂôÄ£¬ÃæÎÞ±íÇé¡£±i\n");
+"ä¸€ä¸ªç˜¦é«˜çš„ä¸­å¹´å–‡å˜›ï¼Œèº«ç©¿ä¸€é¢†é»„è‰²è¢ˆè£Ÿï¼Œé¢æ— è¡¨æƒ…ã€‚çœŽ\n");
 	set_weight(10000000);
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "heroism");
 	set("class","lama");
@@ -38,7 +38,7 @@ void create()
 	set_skill("longxiang-banruo", 80);
 	set_skill("necromancy", 80);
 	set("inquiry", ([
-        "³ö¼Ò" : "ÕÒ²ýÆë´óÀ®ÂïÎªÄãÌê¶È°É¡£\n"
+        "å‡ºå®¶" : "æ‰¾æ˜Œé½å¤§å–‡å˜›ä¸ºä½ å‰ƒåº¦å§ã€‚\n"
 	]) );
 
 	map_skill("force", "longxiang-banruo");
@@ -49,7 +49,7 @@ void create()
 	
 	prepare_skill("cuff", "yujiamu-quan");
 
-	create_family("Ñ©É½ÅÉ", 11, "À®Âï");
+	create_family("é›ªå±±æ´¾", 11, "å–‡å˜›");
 
 
 	setup();
@@ -59,28 +59,28 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-	if( ob->query("family/family_name") != "Ñ©É½ÅÉ"
-        && ob->query("family/family_name") != "Ñªµ¶ÃÅ"
+	if( ob->query("family/family_name") != "é›ªå±±æ´¾"
+        && ob->query("family/family_name") != "è¡€åˆ€é—¨"
         && ob->query("combat_exp") >= 10000 ) {
-                command ("say " + RANK_D->query_respect(this_player()) + "ÊÇ"
-                +ob->query("family/family_name")+"¸ßÊÖ£¬±¾ÅÉ¿É²»¸ÒÊÕÁô£¡");
+                command ("say " + RANK_D->query_respect(this_player()) + "æ˜¯"
+                +ob->query("family/family_name")+"é«˜æ‰‹ï¼Œæœ¬æ´¾å¯ä¸æ•¢æ”¶ç•™ï¼");
                 return;
         }
 	if (ob->query("class") != "lama") {
 		command("say " + RANK_D->query_respect(ob) +
-			"ÓûÐÞÁ·ÎÒÃÜ×ÚµÄ¹¦·ò£¬³¾ÔµÎ´¶ÏºÜÄÑÌá¸ß¡£"); 
+			"æ¬²ä¿®ç»ƒæˆ‘å¯†å®—çš„åŠŸå¤«ï¼Œå°˜ç¼˜æœªæ–­å¾ˆéš¾æé«˜ã€‚"); 
 		return;
 	}
         else if ((int)ob->query_skill("longxiang-banruo", 1) < 30) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹Ó¦¸ÃÔÚ°ãÈôÁúÏó¹¦ÉÏ¶àÏÂµã¹¦·ò£¿");
+                        "æ˜¯å¦è¿˜åº”è¯¥åœ¨èˆ¬è‹¥é¾™è±¡åŠŸä¸Šå¤šä¸‹ç‚¹åŠŸå¤«ï¼Ÿ");
 		return;
 	}
         else if ((int)ob->query("max_neili") < 300) {
 		command("say " + RANK_D->query_respect(ob) +
-			"Ó¦¸ÃÔÙ¼ÓÉîÒ»µãÄÚÁ¦ÐÞÎª°É¡£");
+			"åº”è¯¥å†åŠ æ·±ä¸€ç‚¹å†…åŠ›ä¿®ä¸ºå§ã€‚");
 		return;
 	}
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }

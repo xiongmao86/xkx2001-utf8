@@ -1,5 +1,5 @@
 //Cracked by Roath
-// »¯¹¦»¤Ìå
+// åŒ–åŠŸæŠ¤ä½“
 // wsky 05/03/2k
 
 #include <ansi.h>
@@ -13,26 +13,26 @@ int exert(object me, object target)
         int skill;
 
         if( (int)me->query("neili") < 1000  ) 
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ãÊ¹ÓÃ»¤ÌåÉñÍ¨¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ä½¿ç”¨æŠ¤ä½“ç¥žé€šã€‚\n");
 
         if( (int)me->query("max_neili") < 2000  )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
         if( (int)me->query_temp("hua") )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÓÃ»¯¹¦´ó·¨»¤×¡ÖÜÉí´óÑ¨¡£\n");
+                return notify_fail("ä½ å·²ç»åœ¨è¿ç”¨åŒ–åŠŸå¤§æ³•æŠ¤ä½å‘¨èº«å¤§ç©´ã€‚\n");
 
         if( (int)me->query_skill("huagong-dafa", 1) < 150)
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨ÐÞÎª²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ä¿®ä¸ºä¸å¤Ÿï¼\n");
 
         if( (int)me->query("canhua") != 1)
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨ÐÞÎª²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ä¿®ä¸ºä¸å¤Ÿï¼\n");
 
 
         skill = me->query_skill("huagong-dafa", 1);
  
         me->add("neili", -500);
 
-        message_vision(HIB"$NÃæÉ«¶¸±ä£¬Á½Ö»ÊÖ½»²æ²¢ÓëÐØÇ°£¬Ç±ÔËÄÚ¹¦£¬½«»¯¹¦´ó·¨¹¦Á¦²¼ÂúÈ«Éí¡£\n"NOR, me);
+        message_vision(HIB"$Né¢è‰²é™¡å˜ï¼Œä¸¤åªæ‰‹äº¤å‰å¹¶ä¸Žèƒ¸å‰ï¼Œæ½œè¿å†…åŠŸï¼Œå°†åŒ–åŠŸå¤§æ³•åŠŸåŠ›å¸ƒæ»¡å…¨èº«ã€‚\n"NOR, me);
 
         me->add_temp("apply/parry",  skill/3);
         me->set_temp("hua", 1);
@@ -48,6 +48,6 @@ void remove_effect(object me, int skill)
 {
         me->delete_temp("hua",1);
         me->delete_temp("apply/parry",  skill/2);                       
-        message_vision(HIY"$NÎ¢¾õÆ£±¹£¬Ö»ºÃ½«»¤ÌåµÄÄÚÁ¦ÊÕ»Ø¡£\n"NOR,me);
+        message_vision(HIY"$Nå¾®è§‰ç–²æƒ«ï¼Œåªå¥½å°†æŠ¤ä½“çš„å†…åŠ›æ”¶å›žã€‚\n"NOR,me);
 }
 

@@ -1,15 +1,15 @@
 //Cracked by Roath
-// ding-unarmed.c Ò»ºáÒ»¹´È­
+// ding-unarmed.c ä¸€æ¨ªä¸€å‹¾æ‹³
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$N×óÊÖÇáÇáÒ»Ä¨£¬Ïò$nµÄ$lÅÄÈ¥",
+([	"action" : "$Nå·¦æ‰‹è½»è½»ä¸€æŠ¹ï¼Œå‘$nçš„$læ‹å»",
 	"damage" : 80,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ]),
-([	"action" : "$NÓÒÊÖÒ»Ìá£¬²åÏò$nµÄ$l",
+([	"action" : "$Nå³æ‰‹ä¸€æï¼Œæ’å‘$nçš„$l",
 	"damage" : 100,
-        "damage_type" : "ğöÉË"
+        "damage_type" : "ç˜€ä¼¤"
 ])
 });
 
@@ -28,9 +28,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query("jingli") < 30)
-		return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ò»ºáÒ»¹´È­¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¸€æ¨ªä¸€å‹¾æ‹³ã€‚\n");
 	me->receive_damage("jingli", 30);
 	me->add("neili", -10);
 	return 1;

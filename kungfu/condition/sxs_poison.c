@@ -10,15 +10,15 @@ int update_condition(object me, int duration)
 {   if( duration == 1)
         {
 
-tell_object(me,HIR"ÄãÍ»È»È«Éí½©Ó²£¬ºôÎüÒì³£À§ÄÑ£¬Ô­À´ÔÚ²»Öª²»¾õÖÐÖÐÁË±ðÈËµÄ¶¾ÊÖ£¡\n"NOR);
-	me->set_temp("last_damage_from", "ÖÐÁËÈýÐ¦É¢ËÀÁË");
+tell_object(me,HIR"ä½ çªç„¶å…¨èº«åƒµç¡¬ï¼Œå‘¼å¸å¼‚å¸¸å›°éš¾ï¼ŒåŽŸæ¥åœ¨ä¸çŸ¥ä¸è§‰ä¸­ä¸­äº†åˆ«äººçš„æ¯’æ‰‹ï¼\n"NOR);
+	me->set_temp("last_damage_from", "ä¸­äº†ä¸‰ç¬‘æ•£æ­»äº†");
 	me->delete("env/immortal");
 	me->die();
 	
         }
    
    else {
-	message("vision",me->name()+"Í»È»ÏòÄã¹îÒìµØÒ»Ð¦¡£\n",environment(me),({me}) );
+	message("vision",me->name()+"çªç„¶å‘ä½ è¯¡å¼‚åœ°ä¸€ç¬‘ã€‚\n",environment(me),({me}) );
 	}
    me->apply_condition("sxs_poison", duration - 1);
 

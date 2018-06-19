@@ -1,5 +1,5 @@
 //Cracked by Roath
-//±ÙÐ°½£·¨Ö®¹í÷È
+//è¾Ÿé‚ªå‰‘æ³•ä¹‹é¬¼é­…
 //wzfeng@xkx 99 9
 
 #include <ansi.h>
@@ -19,29 +19,29 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if(me->query("canuse_guimei")!=1)
-			    return notify_fail("Ê²Ã´£¿\n");
+			    return notify_fail("ä»€ä¹ˆï¼Ÿ\n");
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸¹í÷È¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé¬¼é­…ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 
 
 		if( (int)me->query_temp("pixie/guimei") )
-                return notify_fail("ÄãÕýÔÚÔË¹¦ÖÐ!\n");
+                return notify_fail("ä½ æ­£åœ¨è¿åŠŸä¸­!\n");
         if( me->query("jingli") <=1000  )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸¹í÷È¡¹¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œé¬¼é­…ã€ã€‚\n");
         if( me->query("neili") <=200  )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸¹í÷È¡¹¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œé¬¼é­…ã€ã€‚\n");
 
 
         if( (level = (int)me->query_skill("pixie-jian", 1)) < 120 )
-                return notify_fail("ÄãµÄ±ÙÐ°½£·¨²»¹»æµÊì£¬²»ÄÜ²»ÄÜ½«ÆäÈÜÈëÉí·¨ÖÐ¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œä¸èƒ½ä¸èƒ½å°†å…¶æº¶å…¥èº«æ³•ä¸­ã€‚\n");
 
         if( (string)me->query_skill_mapped("dodge") != "pixie-jian" )
-                return notify_fail("ÄãÃ»ÓÐ½«±ÙÐ°½£·¨ÔËÔÚÉí·¨ÉÏ£¬ÎÞ·¨Ê¹³ö¡¸¹í÷È¡¹¡£\n");
+                return notify_fail("ä½ æ²¡æœ‰å°†è¾Ÿé‚ªå‰‘æ³•è¿åœ¨èº«æ³•ä¸Šï¼Œæ— æ³•ä½¿å‡ºã€Œé¬¼é­…ã€ã€‚\n");
         if( (string)me->query_skill_mapped("parry") != "pixie-jian" )
-                return notify_fail("ÄãÃ»ÓÐ½«±ÙÐ°½£·¨ÔËÔÚÕÐ¼ÜÉÏ£¬ÎÞ·¨Ê¹³ö¡¸¹í÷È¡¹¡£\n");                
+                return notify_fail("ä½ æ²¡æœ‰å°†è¾Ÿé‚ªå‰‘æ³•è¿åœ¨æ‹›æž¶ä¸Šï¼Œæ— æ³•ä½¿å‡ºã€Œé¬¼é­…ã€ã€‚\n");                
 
-        message_vision(HIB"\n$NºÙºÙºÙÒ»Õó¼âÐ¦£¬ÉíÓ°ÝëµØÀïÖèÈ»¼Ó¿ì£¬Æ®ºö²»¶¨£¬ÐÎÈô¹í÷È£¡\n"NOR, me);
+        message_vision(HIB"\n$Nå˜¿å˜¿å˜¿ä¸€é˜µå°–ç¬‘ï¼Œèº«å½±è“¦åœ°é‡Œéª¤ç„¶åŠ å¿«ï¼Œé£˜å¿½ä¸å®šï¼Œå½¢è‹¥é¬¼é­…ï¼\n"NOR, me);
 		
         me->add("neili", -50);
         me->set_temp("pixie/guimei",level/5);
@@ -60,8 +60,8 @@ void checking(object me)
 			||me->query_skill_mapped("parry") != "pixie-jian"
 			||!objectp(me->query_temp("weapon")))
 	{
-		tell_object(me,"ÄãÊ¹ÓÃÁËÆäËüµÄÎä¹¦£¬¹í÷È½¥½¥Ê§È¥¹¦Ð§¡£\n");
-        message_vision(HIB"\n$N³¤³¤ºôÁË¿Ú£¬Éí·¨½¥½¥ÂýÁËÏÂÀ´¡£\n"NOR, me);
+		tell_object(me,"ä½ ä½¿ç”¨äº†å…¶å®ƒçš„æ­¦åŠŸï¼Œé¬¼é­…æ¸æ¸å¤±åŽ»åŠŸæ•ˆã€‚\n");
+        message_vision(HIB"\n$Né•¿é•¿å‘¼äº†å£ï¼Œèº«æ³•æ¸æ¸æ…¢äº†ä¸‹æ¥ã€‚\n"NOR, me);
         me->delete_temp("pixie/guimei");
 		   me->delete_temp("pixie_noop");
 		   me->delete_temp("pixie_use");
@@ -84,7 +84,7 @@ void checking(object me)
         }
 		if( !me->is_fighting() )
         {
-		        message_vision(HIB"\n$N³¤³¤ºôÁË¿Ú£¬ÊÕ×¡ÄÇ¹í÷È¹îÐ°µÄÉíÐÎ£¡\n"NOR, me);
+		        message_vision(HIB"\n$Né•¿é•¿å‘¼äº†å£ï¼Œæ”¶ä½é‚£é¬¼é­…è¯¡é‚ªçš„èº«å½¢ï¼\n"NOR, me);
                 me->delete_temp("pixie/guimei");
 						   me->delete_temp("pixie_noop");
 		   me->delete_temp("pixie_use");
@@ -95,7 +95,7 @@ void checking(object me)
         }
 		if( me->query_temp("pixie/guimei") <= 0 )
         {
-		        message_vision(HIB"\n$N³¤³¤ºôÁË¿Ú£¬Éí·¨½¥½¥ÂýÁËÏÂÀ´¡£\n"NOR, me);
+		        message_vision(HIB"\n$Né•¿é•¿å‘¼äº†å£ï¼Œèº«æ³•æ¸æ¸æ…¢äº†ä¸‹æ¥ã€‚\n"NOR, me);
                me->delete_temp("pixie/guimei");
 			   		   me->delete_temp("pixie_noop");
 		   me->delete_temp("pixie_use");

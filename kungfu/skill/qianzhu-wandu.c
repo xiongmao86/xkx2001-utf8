@@ -1,52 +1,52 @@
 //Cracked by Roath
-// qianzhu-wandu.c Ç§ÖëÍò¶¾ÊÖ
+// qianzhu-wandu.c åƒè››ä¸‡æ¯’æ‰‹
 
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : MAG "$N×óÕÆĞé»Î, ÓÒÊÖÄóÁË¸öÎå²Ê¾÷, Ê³Ö¸Ö¸Ïò$nµÄÏÂÈıÂ·Òªº¦" NOR,
+([	"action" : MAG "$Nå·¦æŒè™šæ™ƒ, å³æ‰‹æäº†ä¸ªäº”å½©è¯€, é£ŸæŒ‡æŒ‡å‘$nçš„ä¸‹ä¸‰è·¯è¦å®³" NOR,
 	"force" : 100,
 	"dodge" : 5,
 	"lvl" : 0,
 	"damage" : 10,
-	"weapon": "Ö¸Á¦",
-	"skill_name" : "²ÊÖëÅÌÍø",
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡åŠ›",
+	"skill_name" : "å½©è››ç›˜ç½‘",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : BLU "$NÓÒÊÖÊ³Ö¸´ÓµÚ¶şÖ¸½ÚÖÁÖ¸¼âºöÈ»±äµÃÆáºÚ£¬¾¶Íù$n$l·÷È¥" NOR,
+([      "action" : BLU "$Nå³æ‰‹é£ŸæŒ‡ä»ç¬¬äºŒæŒ‡èŠ‚è‡³æŒ‡å°–å¿½ç„¶å˜å¾—æ¼†é»‘ï¼Œå¾„å¾€$n$læ‹‚å»" NOR,
 	"force" : 200,
 	"dodge" : -5,
 	"lvl" : 60,
 	"damage" : 20,
-	"weapon": "Ö¸Á¦",
-	"skill_name" : "ÎÚ³æ³Ë·ç",
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡åŠ›",
+	"skill_name" : "ä¹Œè™«ä¹˜é£",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : YEL "$NÙ¿µØÌ¤Ç°£¬ÔËÖ¸³É·ç£¬Á¬µã$nĞØ¸¹Ö®¼äÎå´¦´óÑ¨" NOR,
+([      "action" : YEL "$Nå€åœ°è¸å‰ï¼Œè¿æŒ‡æˆé£ï¼Œè¿ç‚¹$nèƒ¸è…¹ä¹‹é—´äº”å¤„å¤§ç©´" NOR,
 	"force" : 300,
 	"dodge" : 10,
 	"lvl" : 100,
 	"damage" : 40,
-	"weapon": "Ö¸Á¦",
-	"skill_name" : "Á¬Öé¶¾¼ı",
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡åŠ›",
+	"skill_name" : "è¿ç æ¯’ç®­",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : CYN "$NÁ³ÉÏºÚÆø´óÊ¢£¬Ö¸·çÕÆÓ°ÃÍÈ»±©ÕÅ£¬¿ìÓâµç¹âÊ¯»ğ£¬´ÁÏò$nµÄ$l" NOR,
+([      "action" : CYN "$Nè„¸ä¸Šé»‘æ°”å¤§ç››ï¼ŒæŒ‡é£æŒå½±çŒ›ç„¶æš´å¼ ï¼Œå¿«é€¾ç”µå…‰çŸ³ç«ï¼Œæˆ³å‘$nçš„$l" NOR,
 	"force" : 400,
 	"dodge" : 25,
 	"lvl" : 150,
 	"damage" : 80,
-	"weapon": "Ö¸Á¦",
-	"skill_name" : "ÍòÖë¶¾",
-	"damage_type" : "´ÌÉË"
+	"weapon": "æŒ‡åŠ›",
+	"skill_name" : "ä¸‡è››æ¯’",
+	"damage_type" : "åˆºä¼¤"
 ])
 });
 
 string *dodge_msg = ({
-        "µ«ÊÇ$nÉíĞÎÆ®ºö£¬ÇáÇáÒ»×İ£¬ÔçÒÑ±Ü¿ª¡£\n",
-        "$nÉíËæÒâ×ª£¬Ù¿µØÍùÒ»ÅÔÅ²¿ªÁËÈı³ß£¬±Ü¹ıÁËÕâÒ»ÕĞ¡£\n",
-        "È´¼û$n×ã²»µãµØ£¬ÍùÅÔ´Ü¿ªÊı³ß£¬¶ãÁË¿ªÈ¥¡£\n",
+        "ä½†æ˜¯$nèº«å½¢é£˜å¿½ï¼Œè½»è½»ä¸€çºµï¼Œæ—©å·²é¿å¼€ã€‚\n",
+        "$nèº«éšæ„è½¬ï¼Œå€åœ°å¾€ä¸€æ—æŒªå¼€äº†ä¸‰å°ºï¼Œé¿è¿‡äº†è¿™ä¸€æ‹›ã€‚\n",
+        "å´è§$nè¶³ä¸ç‚¹åœ°ï¼Œå¾€æ—çªœå¼€æ•°å°ºï¼Œèº²äº†å¼€å»ã€‚\n",
 });
 
 string query_dodge_msg(string limb)
@@ -69,7 +69,7 @@ int valid_combine(string combo) { return combo=="qianzhu-wandu"; }
 int valid_learn(object me)
 {
 	if ((int)me->query_skill("qianzhu-wandu", 1) > 10)
-		return notify_fail("Ç§ÖëÍò¶¾ÊÖÖ»ÄÜ×Ô¼ºĞŞÁ·¡£\n");
+		return notify_fail("åƒè››ä¸‡æ¯’æ‰‹åªèƒ½è‡ªå·±ä¿®ç»ƒã€‚\n");
 	return 1;
 }
 
@@ -102,7 +102,7 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-	return notify_fail("Ç§ÖëÍò¶¾ÊÖ²»ÊÇÕâÃ´Á·µÄ¡£\n");
+	return notify_fail("åƒè››ä¸‡æ¯’æ‰‹ä¸æ˜¯è¿™ä¹ˆç»ƒçš„ã€‚\n");
 }
 
 string perform_action_file(string action)
@@ -135,7 +135,7 @@ void skill_improved(object me)
       if ( level%10 == 1) {
 	if (me->query("per") > 0) {
 	    tell_object(me, 
-	        "Äã¾õµÃÌåÄÚµÄÇ§Öë¶¾Æø·­ÌÚ²»Ö¹£¬ÄãÁ³ÉÏ¸¡Ö×ÓÖ¼ÓÖØÁË¡£\n");
+	        "ä½ è§‰å¾—ä½“å†…çš„åƒè››æ¯’æ°”ç¿»è…¾ä¸æ­¢ï¼Œä½ è„¸ä¸Šæµ®è‚¿åˆåŠ é‡äº†ã€‚\n");
 	    me->add("per", -1);
 	}
         me->set("qianzhu-wandu/old_lvl", level);

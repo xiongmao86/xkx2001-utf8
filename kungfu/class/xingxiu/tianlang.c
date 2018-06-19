@@ -1,5 +1,5 @@
 //Cracked by Roath
-// tianlang.c ÌìÀÇ×Ó
+// tianlang.c å¤©ç‹¼å­
 //#include "/kungfu/class/xingxiu/inter_killing.h"
 inherit NPC;
 inherit F_MASTER;
@@ -7,12 +7,12 @@ string ask_me();
 //int inter_killing();
 void create()
 {
-	set_name("ÌìÀÇ×Ó", ({ "tianlang zi", "tianlang" }));
-	set("nickname", "ÐÇËÞÅÉÈýÊ¦ÐÖ");
+	set_name("å¤©ç‹¼å­", ({ "tianlang zi", "tianlang" }));
+	set("nickname", "æ˜Ÿå®¿æ´¾ä¸‰å¸ˆå…„");
 	set("long", 
-		"Ëû¾ÍÊÇ¶¡´ºÇïµÄÈýµÜ×ÓÌìÀÇ×Ó¡£\n"
-		"ËûÉíÐÎÆæ°«¡£\n");
-	set("gender", "ÄÐÐÔ");
+		"ä»–å°±æ˜¯ä¸æ˜¥ç§‹çš„ä¸‰å¼Ÿå­å¤©ç‹¼å­ã€‚\n"
+		"ä»–èº«å½¢å¥‡çŸ®ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -54,7 +54,7 @@ void create()
 			(: inter_killing :),
 	}) );
 */
-	create_family("ÐÇËÞÅÉ", 2, "µÜ×Ó");
+	create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
 	setup();
   	carry_object("/clone/weapon/gangzhang")->wield();
@@ -63,11 +63,11 @@ void create()
 
 void attempt_apprentice(object me)
 {
-	if( me->query("family/family_name") == "Ø¤°ï"
+	if( me->query("family/family_name") == "ä¸å¸®"
         && me->query("combat_exp") >= 10000 ) {
-		command ("say ÎÒÃÇÀÏÏÉ×îºÞ½Ð»¯×Ó£¬ÎÒ¿É²»¸ÒÊÕÄã¡£");
+		command ("say æˆ‘ä»¬è€ä»™æœ€æ¨å«åŒ–å­ï¼Œæˆ‘å¯ä¸æ•¢æ”¶ä½ ã€‚");
                 return;
 	}
-	command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
 	command("recruit " + me->query("id"));
 }

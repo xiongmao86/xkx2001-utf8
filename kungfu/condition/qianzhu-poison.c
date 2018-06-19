@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-                tell_object(me, "ÄãÊÔ×ÅÔËĞĞÕæÆø, ·¢ÏÖÒÑÈ»ÎŞ°­ÁË£¡\n");
+                tell_object(me, "ä½ è¯•ç€è¿è¡ŒçœŸæ°”, å‘ç°å·²ç„¶æ— ç¢äº†ï¼\n");
                 return 0;
         }
 	/*
@@ -16,16 +16,16 @@ int update_condition(object me, int duration)
 	}
 	*/
         me->apply_condition("qianzhu-poison", duration - 1);
-	tell_object(me, YEL "ÄãÖ»¾õµÃÒ»ÕóÍ·ÔÎ, ÑÛÇ°Ö»¿´¼ûÎå²Ê°ßìµµÄÒ»Æ¬Ä£ºı, Ô­À´ÄãÖĞµÄÇ§ÖëÍò¶¾ÊÖ·¢×÷ÁË!\n" NOR);
+	tell_object(me, YEL "ä½ åªè§‰å¾—ä¸€é˜µå¤´æ™•, çœ¼å‰åªçœ‹è§äº”å½©æ–‘æ–“çš„ä¸€ç‰‡æ¨¡ç³Š, åŸæ¥ä½ ä¸­çš„åƒè››ä¸‡æ¯’æ‰‹å‘ä½œäº†!\n" NOR);
 	if (me->query("neili") > duration*duration) {
- 	    message_vision(CYN "$NÆøÄıµ¤Ìï£¬Ç¿ĞĞÑ¹×¡Ç§Öë¶¾Æø£¬¶ÙÊ±¸Ğ¾õºÃ¶àÁË.\n" NOR, me);
+ 	    message_vision(CYN "$Næ°”å‡ä¸¹ç”°ï¼Œå¼ºè¡Œå‹ä½åƒè››æ¯’æ°”ï¼Œé¡¿æ—¶æ„Ÿè§‰å¥½å¤šäº†.\n" NOR, me);
 	    me->add("neili", -duration*duration);
 	    me->receive_wound("qi", duration);
 	    me->receive_wound("jing", duration);
 	}else {
- 	    message_vision(CYN "$NÒ»ÕóÒ¡»Î, ÃÍÌáµ¤ÌïÖ®ÆøÈ´Ìá²»ÉÏÀ´£¬½á¹ûÏÕĞ©Ë¤µ¹.\n" NOR, me);
-	    me->receive_wound("qi", duration*duration/2, "¶¾·¢ÉíÍö");
-	    me->receive_wound("jing", duration*duration/2, "¶¾·¢ÉíÍö");
+ 	    message_vision(CYN "$Nä¸€é˜µæ‘‡æ™ƒ, çŒ›æä¸¹ç”°ä¹‹æ°”å´æä¸ä¸Šæ¥ï¼Œç»“æœé™©äº›æ‘”å€’.\n" NOR, me);
+	    me->receive_wound("qi", duration*duration/2, "æ¯’å‘èº«äº¡");
+	    me->receive_wound("jing", duration*duration/2, "æ¯’å‘èº«äº¡");
 	}
         return 1;
 }

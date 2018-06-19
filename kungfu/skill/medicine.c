@@ -1,5 +1,5 @@
 //Cracked by Roath
-// medicine.c Ò©ÀíÑ§
+// medicine.c è¯ç†å­¦
 
 inherit SKILL;
 
@@ -11,14 +11,14 @@ void skill_improved(object me)
 
 int valid_learn(object me)
 {
-        if( !me->query_temp("mark/Â½") )
-                return notify_fail("ÄãÏÖÔÚ²»ÄÜÑ§Ï°Ò©ÀíÑ§¡£\n");
+        if( !me->query_temp("mark/é™†") )
+                return notify_fail("ä½ ç°åœ¨ä¸èƒ½å­¦ä¹ è¯ç†å­¦ã€‚\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("Ò©ÀíÑ§µÃ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+        return notify_fail("è¯ç†å­¦å¾—é å­¦(learn)æ¥æé«˜ã€‚\n");
 }
 
 /*

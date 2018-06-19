@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jingang.c ½ğ¸ÕÉñÍ¨
+// jingang.c é‡‘åˆšç¥é€š
 
 #include <ansi.h>
 
@@ -12,28 +12,28 @@ int perform(object me, object target)
 	int original, skill;
 
 	if( objectp(target) && target != me ) 
-		return notify_fail("ÄãÖ»ÄÜÓÃ½ğ¸ÕÉñÍ¨À´ÌáÉı×Ô¼ºµÄÕ½Á¦¡£\n");
+		return notify_fail("ä½ åªèƒ½ç”¨é‡‘åˆšç¥é€šæ¥æå‡è‡ªå·±çš„æˆ˜åŠ›ã€‚\n");
 
 	if( !me->is_fighting() ) 
-		return notify_fail("Äã±ØĞëÔÚÕ½¶·ÖĞ²ÅÄÜÊ¹ÓÃ½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ å¿…é¡»åœ¨æˆ˜æ–—ä¸­æ‰èƒ½ä½¿ç”¨é‡‘åˆšç¥é€šï¼\n");
 
 	if( me->query_temp("weapon") )
-		return notify_fail("ÄãÖ»ÄÜÔÚ¿ÕÊÖÊ±Ê¹ÓÃ½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ åªèƒ½åœ¨ç©ºæ‰‹æ—¶ä½¿ç”¨é‡‘åˆšç¥é€šï¼\n");
 
 	if( me->query_skill("hunyuan-yiqi", 1) < 60 )
-		return notify_fail("ÄãµÄ»ìÔªÒ»Æø¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ çš„æ··å…ƒä¸€æ°”åŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•é‡‘åˆšç¥é€šï¼\n");
 
 	if( me->query_skill("jingang-quan", 1) < 90 )
-		return notify_fail("ÄãµÄ½ğ¸ÕÈ­»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ çš„é‡‘åˆšæ‹³ç«å€™æœªåˆ°ï¼Œæ— æ³•æ–½å±•é‡‘åˆšç¥é€šï¼\n");
 
 	if( me->query("max_neili") <= 600 )
-		return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬¾¢Á¦²»ÄÜÔË·¢£¬ÎŞ·¨Ê©Õ¹½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸è¶³ï¼ŒåŠ²åŠ›ä¸èƒ½è¿å‘ï¼Œæ— æ³•æ–½å±•é‡‘åˆšç¥é€šï¼\n");
 
 	if( (int)me->query("neili") < 600  )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query_temp("jingang") )
-		return notify_fail("ÄãÒÑ¾­·¢¶¯ÁË½ğ¸ÕÉñÍ¨£¡\n");
+		return notify_fail("ä½ å·²ç»å‘åŠ¨äº†é‡‘åˆšç¥é€šï¼\n");
 
 	skill = me->query_skill("jingang-quan", 1);
 	original = me->query_str();
@@ -42,7 +42,7 @@ int perform(object me, object target)
 	me->receive_damage("jingli", skill);
 
 	message_vision(
-	HIY "\n$NË«ÊÖºÏÊ®Äî·ğ£¬É²ÄÇ¼äËÄÖÜµØ¶¯É½Ò¡£¬·¢³öÂ¡Â¡¾ŞÏì£¡ $NµÄÉíĞÎ¶ÙÈ»³¤´óÁËĞí¶à±¶£¬ÈçÒ»×ğ½ğ¸Õ°ãÒÙÁ¢ÆğÀ´£¡\n\n" NOR, me);
+	HIY "\n$NåŒæ‰‹åˆåå¿µä½›ï¼Œåˆ¹é‚£é—´å››å‘¨åœ°åŠ¨å±±æ‘‡ï¼Œå‘å‡ºéš†éš†å·¨å“ï¼ $Nçš„èº«å½¢é¡¿ç„¶é•¿å¤§äº†è®¸å¤šå€ï¼Œå¦‚ä¸€å°Šé‡‘åˆšèˆ¬å±¹ç«‹èµ·æ¥ï¼\n\n" NOR, me);
 
 	me->add_temp("apply/strength", original*3);
 
@@ -60,5 +60,5 @@ void remove_effect(object me, int amount)
 
 	me->delete_temp("jingang");
 
-	tell_object(me, "Äã»º»ºÎüÁËÒ»¿ÚÆø£¬ÊÕ»Ø½ğ¸ÕÉñÍ¨£¬ÉíĞÎÓÖ»Ö¸´ÁËÔ­×´¡£\n");
+	tell_object(me, "ä½ ç¼“ç¼“å¸äº†ä¸€å£æ°”ï¼Œæ”¶å›é‡‘åˆšç¥é€šï¼Œèº«å½¢åˆæ¢å¤äº†åŸçŠ¶ã€‚\n");
 }

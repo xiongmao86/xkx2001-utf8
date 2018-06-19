@@ -8,9 +8,9 @@ int update_condition(object me, int duration)
 	if (duration < 1) {
 		me->move("/d/city/yamen");
 		message("vision",
-			HIY "Ö»ÌýÆ¹µØÒ»Éù£¬ÄãÏÅÁËÒ»Ìø£¬¶¨¾¦Ò»¿´£¬\n"
-			"Ô­À´ÊÇÒ»¸ö»è»è³Á³ÁµÄ¼Ò»ï´ÓÑÃÃÅÀï±»ÈÓÁË³öÀ´£¡\n" NOR, environment(me), me);
-		tell_object(me, HIY "Ö»¾õÒ»ÕóÌÚÔÆ¼ÝÎí°ã£¬Äã»è»è³Á³ÁµØ±»ÈÓ³öÁËÑÃÃÅ£¡\n" NOR);
+			HIY "åªå¬ä¹’åœ°ä¸€å£°ï¼Œä½ å“äº†ä¸€è·³ï¼Œå®šç›ä¸€çœ‹ï¼Œ\n"
+			"åŽŸæ¥æ˜¯ä¸€ä¸ªæ˜æ˜æ²‰æ²‰çš„å®¶ä¼™ä»Žè¡™é—¨é‡Œè¢«æ‰”äº†å‡ºæ¥ï¼\n" NOR, environment(me), me);
+		tell_object(me, HIY "åªè§‰ä¸€é˜µè…¾äº‘é©¾é›¾èˆ¬ï¼Œä½ æ˜æ˜æ²‰æ²‰åœ°è¢«æ‰”å‡ºäº†è¡™é—¨ï¼\n" NOR);
 		me->set("startroom", "/d/city/yamen");
 
 		if(me->query_temp("armor/shoulder"))

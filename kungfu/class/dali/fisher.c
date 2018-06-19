@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-	set_name("µã²ÔÓæÒş", ({ "diancang yuyin", "yuyin", "fisher"}));
+	set_name("ç‚¹è‹æ¸”éš", ({ "diancang yuyin", "yuyin", "fisher"}));
 	set("long", 
-		"ËûËÄÊ®À´ËêÄê¼Í£¬Ò»ÕÅºÚÆáÆáµÄ¹øµ×Á³£¬ò°÷×ÂúÈù£¬¸ù¸ùÈçÌú¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ä»–å››åæ¥å²å¹´çºªï¼Œä¸€å¼ é»‘æ¼†æ¼†çš„é”…åº•è„¸ï¼Œè™¬é«¯æ»¡è…®ï¼Œæ ¹æ ¹å¦‚é“ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "heroism");
 	set("shen_type", -1);
@@ -46,14 +46,14 @@ int accept_object(object who, object ob)
 	object thisroom;
 	thisroom=find_object("/d/dali/yideng1.c");
 
-	if((string)ob->query("name")=="½ğÍŞÍŞ" && ob->query("race") == "Ò°ÊŞ") {
+	if((string)ob->query("name")=="é‡‘å¨ƒå¨ƒ" && ob->query("race") == "é‡å…½") {
 		remove_call_out("destroying");
 		call_out("destroying", 1, ob);
 
-	write("µã²ÔÓæÒş½Ó¹ı½ğÍŞÍŞ£¬ÉÏÉÏÏÂÏÂ´òÁ¿ÁËÄã¼¸ÑÛ£¬ºöµÄ½«½ğÍŞÍŞÅ×\n");
-	write("»ØË®ÖĞ£¬ÀäÀäµÄËµµÀ£ºĞİÏëÒÔ´ËÉÏÈ¥º¦ÎÒÊ¦¸¸£¬Æ´×Å¸øÊ¦ÊåÒ»¶Ù\n");
-	write("ÔğÂî¡£ \n");
-	write("Ëû×ªÉíÅ×½ğÍŞÍŞ£¬¼ÓÉÏËµµÃ¿ÚÄ­ºá·É£¬²»Ğ¡ĞÄ°ÑĞ¡´¬µÄÈë¿ÚÈÃÁË³öÀ´¡£\n");
+	write("ç‚¹è‹æ¸”éšæ¥è¿‡é‡‘å¨ƒå¨ƒï¼Œä¸Šä¸Šä¸‹ä¸‹æ‰“é‡äº†ä½ å‡ çœ¼ï¼Œå¿½çš„å°†é‡‘å¨ƒå¨ƒæŠ›\n");
+	write("å›æ°´ä¸­ï¼Œå†·å†·çš„è¯´é“ï¼šä¼‘æƒ³ä»¥æ­¤ä¸Šå»å®³æˆ‘å¸ˆçˆ¶ï¼Œæ‹¼ç€ç»™å¸ˆå”ä¸€é¡¿\n");
+	write("è´£éª‚ã€‚ \n");
+	write("ä»–è½¬èº«æŠ›é‡‘å¨ƒå¨ƒï¼ŒåŠ ä¸Šè¯´å¾—å£æ²«æ¨ªé£ï¼Œä¸å°å¿ƒæŠŠå°èˆ¹çš„å…¥å£è®©äº†å‡ºæ¥ã€‚\n");
 	thisroom->set("exits/enter", "/d/dali/smallboat.c");
 	remove_call_out("closing");
 	call_out("closing", 5, thisroom);
@@ -63,7 +63,7 @@ int accept_object(object who, object ob)
 
 void closing(object thisroom)
 {
-	say("µã²ÔÓæÒşÂîÁË¼¸¾ä£¬»Øµ½ÁËËûÔ­À´×øµÄµØ·½¡£\n");
+	say("ç‚¹è‹æ¸”éšéª‚äº†å‡ å¥ï¼Œå›åˆ°äº†ä»–åŸæ¥åçš„åœ°æ–¹ã€‚\n");
 	thisroom->delete("exits/enter");
 }
 

@@ -1,6 +1,6 @@
 //Cracked by Roath
-// feiyu-bian.c ¡¶¾ÅÒõÕæ¾­¡·±Ş·¨
-// xQin 8/99 ÔİÃû£º·ÉÓêÆ®Æ¼±Ş
+// feiyu-bian.c ã€Šä¹é˜´çœŸç»ã€‹é­æ³•
+// xQin 8/99 æš‚åï¼šé£é›¨é£˜èé­
 
 #include <ansi.h>
 #include <combat.h>
@@ -11,26 +11,26 @@ inherit F_SSERVER;
 int special(object me, object victim, object weapon, int damage);
 
 mapping *action = ({
-([	"action" : "İëµØÀïÖ»¼ûÈËÓ°ÉÁ¶¯£¬$N·ÉÉí¶øÇ°£¬Ò»Ìõ$wÏò$nÓ­Ãæ»÷ÖÁ£¬¿ìËÙÎŞÂ×µÄÁ¬Á¬½øÕĞ",
-	"damage_type" : "±ŞÉË"
+([	"action" : "è“¦åœ°é‡Œåªè§äººå½±é—ªåŠ¨ï¼Œ$Né£èº«è€Œå‰ï¼Œä¸€æ¡$wå‘$nè¿é¢å‡»è‡³ï¼Œå¿«é€Ÿæ— ä¼¦çš„è¿è¿è¿›æ‹›",
+	"damage_type" : "é­ä¼¤"
 ]),
-([	"action" : "$NÉí·¨¹îÒì£¬±Ş·¨Ææ»Ã£¬ÊÖÖĞÄÇ$w±ãÈçÁéÉß²ü¶¯£¬¾¹´Ó°ëÂ·Íä½«¹ıÀ´£¬Ö±±¼$n$l",
-	"damage_type" : "´ÌÉË"
+([	"action" : "$Nèº«æ³•è¯¡å¼‚ï¼Œé­æ³•å¥‡å¹»ï¼Œæ‰‹ä¸­é‚£$wä¾¿å¦‚çµè›‡é¢¤åŠ¨ï¼Œç«Ÿä»åŠè·¯å¼¯å°†è¿‡æ¥ï¼Œç›´å¥”$n$l",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([	"action" : "$NÊÖÖĞµÄ$wÓÌËÆÒ»ÌõÈáË¿£¬¾¹ÈçÃ»°ë·ÖÖØÁ¿£¬Éí×Óºö¶«ºöÎ÷£¬ºö½øºöÍË£¬ÔÚ$nÉíÖÜÆ®µ´²»¶¨",
-	"damage_type" : "±ŞÉË"
+([	"action" : "$Næ‰‹ä¸­çš„$wçŠ¹ä¼¼ä¸€æ¡æŸ”ä¸ï¼Œç«Ÿå¦‚æ²¡åŠåˆ†é‡é‡ï¼Œèº«å­å¿½ä¸œå¿½è¥¿ï¼Œå¿½è¿›å¿½é€€ï¼Œåœ¨$nèº«å‘¨é£˜è¡ä¸å®š",
+	"damage_type" : "é­ä¼¤"
 ]),
-([	"action" : "Í»È»Ö®¼ä£¬$NÉíĞÎÒ»ÉÁÒ»»Î£¬¼²ÍËÊıÕÉ£¬$w´ÓÓÒ¼ç¼±Ë¦Ïòºó£¬¶¸µØ»÷Ïò$n$l£¬ÕıÈçÌìÍâÓÎÁú£¬Ê¸½Ã¶øÖÁ",
-	"damage_type" : "±ŞÉË"
+([	"action" : "çªç„¶ä¹‹é—´ï¼Œ$Nèº«å½¢ä¸€é—ªä¸€æ™ƒï¼Œç–¾é€€æ•°ä¸ˆï¼Œ$wä»å³è‚©æ€¥ç”©å‘åï¼Œé™¡åœ°å‡»å‘$n$lï¼Œæ­£å¦‚å¤©å¤–æ¸¸é¾™ï¼ŒçŸ¢çŸ«è€Œè‡³",
+	"damage_type" : "é­ä¼¤"
 ]),
-([	"action" : "$NºöµØ´Ó$nÉíÅÔÒ»ÉÁ¶ø¹ı£¬ÉĞÎ´»ØÉí£¬È»¶ø±³ºó¾¹ËÆÉúÁËÑÛ¾¦Ò»°ã£¬$wËµµ½±ãµ½£¬Ö±Ö¸$nµÄ$l",
-	"damage_type" : "´ÌÉË"
+([	"action" : "$Nå¿½åœ°ä»$nèº«æ—ä¸€é—ªè€Œè¿‡ï¼Œå°šæœªå›èº«ï¼Œç„¶è€ŒèƒŒåç«Ÿä¼¼ç”Ÿäº†çœ¼ç›ä¸€èˆ¬ï¼Œ$wè¯´åˆ°ä¾¿åˆ°ï¼Œç›´æŒ‡$nçš„$l",
+	"damage_type" : "åˆºä¼¤"
 ]),
-([	"action" : "Ö»¼û$NÉíÓ°ºö¸ßºöµÍ£¬Æ®ºöÁé¶¯¡¢±ä»ÃÎŞ·½£¬$w»Ø½«¹ıÀ´£¬¼²·ç±©Óê°ãÏò$n¹¥»÷",
-	"damage_type" : "±ŞÉË"
+([	"action" : "åªè§$Nèº«å½±å¿½é«˜å¿½ä½ï¼Œé£˜å¿½çµåŠ¨ã€å˜å¹»æ— æ–¹ï¼Œ$wå›å°†è¿‡æ¥ï¼Œç–¾é£æš´é›¨èˆ¬å‘$næ”»å‡»",
+	"damage_type" : "é­ä¼¤"
 ]),
-([	"action" : "$NÉíÔÚ°ë¿Õ£¬ÈçÒ»Ö»Çàº×°ãÁè¿ÕÆË»÷¶øÏÂ£¬Éí·¨ÂşÃîÎŞ±È£¬$w¶¶³ö£¬¶Ô×¼$nÌìÁé¸ÇÔÒÁËÏÂÈ¥£¬ºİÀ±Ñ¸½İÖ®¼«",
-	"damage_type" : "ÄÚÉË"
+([	"action" : "$Nèº«åœ¨åŠç©ºï¼Œå¦‚ä¸€åªé’é¹¤èˆ¬å‡Œç©ºæ‰‘å‡»è€Œä¸‹ï¼Œèº«æ³•æ¼«å¦™æ— æ¯”ï¼Œ$wæŠ–å‡ºï¼Œå¯¹å‡†$nå¤©çµç›–ç ¸äº†ä¸‹å»ï¼Œç‹ è¾£è¿…æ·ä¹‹æ",
+	"damage_type" : "å†…ä¼¤"
 ])
 });
 
@@ -42,7 +42,7 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
 	if( !me->query_temp("emei/top_dizi") )
-		return notify_fail("ÖÜÜÆÈô¿´ÆğÀ´²»´óÏëÖ¸µãÄãÕâÏî¼¼ÄÜ¡£\n");
+		return notify_fail("å‘¨èŠ·è‹¥çœ‹èµ·æ¥ä¸å¤§æƒ³æŒ‡ç‚¹ä½ è¿™é¡¹æŠ€èƒ½ã€‚\n");
 
 	return 1;
 }
@@ -95,15 +95,15 @@ int practice_skill(object me)
 
 	if( !objectp(weapon = me->query_temp("weapon")) 
 	|| (string)weapon->query("skill_type") != "whip" )
-		return notify_fail("ÄãÃ»ÓĞ³ÃÊÖµÄ±øÆ÷À´Á·Ï°·ÉÓêÆ®Æ¼±Ş¡£\n");
+		return notify_fail("ä½ æ²¡æœ‰è¶æ‰‹çš„å…µå™¨æ¥ç»ƒä¹ é£é›¨é£˜èé­ã€‚\n");
 
 	if( (level <= 360 && level > 270) || (level > 180 && level/2*2 == level)
 	|| (level > 90 && level/5*5 == level) || (level/10*10 == level) )
 		if( learned["feiyu-bian"] > (level + 1) * (level + 1) - 200 )
-			return notify_fail("Äã·´¸´Á·Ï°Öø·ÉÓêÆ®Æ¼±Ş£¬È´·¢¾õÎŞÂÛÈçºÎ¶¼Áì»á²»µ½Æä¾«ÒåËùÔÚ¡£\n");
+			return notify_fail("ä½ åå¤ç»ƒä¹ è‘—é£é›¨é£˜èé­ï¼Œå´å‘è§‰æ— è®ºå¦‚ä½•éƒ½é¢†ä¼šä¸åˆ°å…¶ç²¾ä¹‰æ‰€åœ¨ã€‚\n");
 
 	if( (int)me->query("jingli") < 40 )
-		return notify_fail("ÄãµÄÌåÁ¦²»¹»ÓÃÀ´Á·Ï°·ÉÓêÆ®Æ¼±Ş¡£\n");
+		return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç”¨æ¥ç»ƒä¹ é£é›¨é£˜èé­ã€‚\n");
 
 	me->add("jingli", -30);
 	return 1;
@@ -112,7 +112,7 @@ int practice_skill(object me)
 /*
 mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 {
-	return HIB"$n¼ûµ½$NÕâ°ãÉí·¨±Ş·¨£¬Èç·ç´µÁøĞõ£¬Ë®ËÍ¸¡Æ¼£¬Êµ·ÇÈË¼äÆøÏó£¬ö®Ê±¼äÍğÈçÉíÔÚÃÎÖĞ£¬ĞÄÖĞÒ»º®£¡\n"NOR;
+	return HIB"$nè§åˆ°$Nè¿™èˆ¬èº«æ³•é­æ³•ï¼Œå¦‚é£å¹æŸ³çµ®ï¼Œæ°´é€æµ®èï¼Œå®éäººé—´æ°”è±¡ï¼Œéœæ—¶é—´å®›å¦‚èº«åœ¨æ¢¦ä¸­ï¼Œå¿ƒä¸­ä¸€å¯’ï¼\n"NOR;
 }
 */
 
@@ -134,17 +134,17 @@ int special(object me, object victim, object weapon, int damage)
 
 		if( ap > dp * 2 )
 		{
-			message_vision( weapon->name() +HIW"Óë"+ weapon2->name() +
-				HIW"Ïà½»£¬ÇáÇá²ÁµÄÒ»Ïì£¬$NÖ»¾õ»¢¿Ú·¢ÈÈ£¬"+ weapon2->name() +
-				HIW"°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n"NOR, victim);
+			message_vision( weapon->name() +HIW"ä¸"+ weapon2->name() +
+				HIW"ç›¸äº¤ï¼Œè½»è½»æ“¦çš„ä¸€å“ï¼Œ$Nåªè§‰è™å£å‘çƒ­ï¼Œ"+ weapon2->name() +
+				HIW"æŠŠæŒä¸å®šï¼Œè„±æ‰‹é£å‡ºï¼\n"NOR, victim);
 			weapon2->unequip();
 			weapon2->move(environment(victim));
 			victim->reset_action();
 		}
 		else if( ap > dp )
-			message_vision( weapon->name() +"Óë"+ weapon2->name() +
-				"Ïà½»£¬ÇáÇá²ÁµÄÒ»Ïì£¬$NÖ»¾õ»¢¿Ú·¢ÈÈ£¬"+ weapon2->name() +
-				"ÏÕĞ©¶ùÍÑÊÖ£¡\n", victim);
+			message_vision( weapon->name() +"ä¸"+ weapon2->name() +
+				"ç›¸äº¤ï¼Œè½»è½»æ“¦çš„ä¸€å“ï¼Œ$Nåªè§‰è™å£å‘çƒ­ï¼Œ"+ weapon2->name() +
+				"é™©äº›å„¿è„±æ‰‹ï¼\n", victim);
 	}
 
 	if( !me->is_fighting(victim) ) return;

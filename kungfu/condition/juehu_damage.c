@@ -10,25 +10,25 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration)
 {
 	if( !living(me) )
-		message("vision", me->name() + "Í´¿àµØÉëÒ÷ÁËÒ»Éù¡£\n", environment(me), me);
+		message("vision", me->name() + "ç—›è‹¦åœ°å‘»åŸäº†ä¸€å£°ã€‚\n", environment(me), me);
 	else
 	{
 		if( duration > 400 )
 		{
-			tell_object(me, HIR "ÄãÖ»¾õµÃÏÂÌåÌÛÍ´ÄÑÈÌ¡£\n" NOR );
-			message("vision", CYN + me->name() + "Ë«ÊÖÎæ×¡Ğ¡¸¹¶×ÏÂ¡£\n"NOR,
+			tell_object(me, HIR "ä½ åªè§‰å¾—ä¸‹ä½“ç–¼ç—›éš¾å¿ã€‚\n" NOR );
+			message("vision", CYN + me->name() + "åŒæ‰‹æ‚ä½å°è…¹è¹²ä¸‹ã€‚\n"NOR,
 				environment(me), me);
 		}
 		else if( duration > 200 )
 		{
-			tell_object(me, HIR "ÄãÖ»¾õµÃÏÂÌåÌÛÍ´¸ĞÕóÕó´«À´¡£\n" NOR );
-			message("vision", CYN + me->name() + "µÍºßÁËÒ»Éù£¬ËÆºõÊÜµ½ÁËÊ²÷áÍ´³ş¡£\n"NOR,
+			tell_object(me, HIR "ä½ åªè§‰å¾—ä¸‹ä½“ç–¼ç—›æ„Ÿé˜µé˜µä¼ æ¥ã€‚\n" NOR );
+			message("vision", CYN + me->name() + "ä½å“¼äº†ä¸€å£°ï¼Œä¼¼ä¹å—åˆ°äº†ä»€éº½ç—›æ¥šã€‚\n"NOR,
 				environment(me), me);
 		}
 		else
 		{
-			tell_object(me, HIR "ÄãÖ»¾õµÃÏÂÌåÌÛÍ´ÈÔÈ»ÒşÒş´«À´¡£\n" NOR );
-			message("vision", CYN + me->name() + "Ã¼Í·Î¢Î¢Ò»Öå£¬ËÆºõ¸Ğ¾õµ½Ê²÷á¡£\n"NOR,
+			tell_object(me, HIR "ä½ åªè§‰å¾—ä¸‹ä½“ç–¼ç—›ä»ç„¶éšéšä¼ æ¥ã€‚\n" NOR );
+			message("vision", CYN + me->name() + "çœ‰å¤´å¾®å¾®ä¸€çš±ï¼Œä¼¼ä¹æ„Ÿè§‰åˆ°ä»€éº½ã€‚\n"NOR,
 				environment(me), me);
 		}
 
@@ -48,13 +48,13 @@ int update_condition(object me, int duration)
 
 	if( duration < 1 )
 	{
-		tell_object(me, "Äã¾õµÃÏÂÌåµÄÍ´³şËÆºõ¼õÇáÁË¡£\n");
+		tell_object(me, "ä½ è§‰å¾—ä¸‹ä½“çš„ç—›æ¥šä¼¼ä¹å‡è½»äº†ã€‚\n");
                 me->delete_temp("wudang/juehu_damage");
-		if( me->query("ori_gender") == "ÄĞĞÔ" )
+		if( me->query("ori_gender") == "ç”·æ€§" )
 		{
 			me->delete("ori_gender");
-			me->set("gender", "ÄĞĞÔ");
-			tell_object(me, HIY "ÄãÖØĞÂ»Ö¸´ÁËÄĞÈËµÄ×ÔĞÅ£¡\n" NOR );
+			me->set("gender", "ç”·æ€§");
+			tell_object(me, HIY "ä½ é‡æ–°æ¢å¤äº†ç”·äººçš„è‡ªä¿¡ï¼\n" NOR );
 		}
 		return 0;
 	}

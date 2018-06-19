@@ -1,5 +1,5 @@
 //Cracked by Roath
-// pojian.c ¶À¹Â¾Å½£¡¸ÆÆÆøÊ½¡¹
+// pojian.c ç‹¬å­¤ä¹å‰‘ã€Œç ´æ°”å¼ã€
 // qfy July 5, 1996.
 
 #include <ansi.h>
@@ -19,20 +19,20 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÆÆÆøÊ½Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("ç ´æ°”å¼åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( target->is_busy() )
-		return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+		return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡¾ä¸æš‡ï¼Œæ”¾èƒ†æ”»å‡»å§ã€‚\n");
 		
 	if( (int)me->query_skill("dugu-jiujian", 1) < 90 || (int)me->query("max_neili") < 400 )
-		return notify_fail("ÄãµÄ¶À¹Â¾Å½£»òÄÚÁ¦ĞŞÎª²»¹»£¬»¹Î´Ñ§³É¡¸ÆÆÆøÊ½¡¹¡£\n");
+		return notify_fail("ä½ çš„ç‹¬å­¤ä¹å‰‘æˆ–å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œè¿˜æœªå­¦æˆã€Œç ´æ°”å¼ã€ã€‚\n");
 
         if( me->query("neili") <= 100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
 	dugu_skill = me->query_skill("dugu-jiujian",1);
 
-	msg = CYN "$NÇ±ÔË¶À¹Â¾Å½£¡¸ÆÆÆøÊ½¡¹£¬ÔËÆø¹á½£Ê¹ÆäÓÉÀû·µ¶Û£¬ºÁÎŞ»¨ÇÎµØÖ±´Ì$nµÄµ¤Ìï¡£\n";
+	msg = CYN "$Næ½œè¿ç‹¬å­¤ä¹å‰‘ã€Œç ´æ°”å¼ã€ï¼Œè¿æ°”è´¯å‰‘ä½¿å…¶ç”±åˆ©è¿”é’ï¼Œæ¯«æ— èŠ±ä¿åœ°ç›´åˆº$nçš„ä¸¹ç”°ã€‚\n";
 	message_vision(msg, me, target);
 
 	if( random(me->query("combat_exp")) > (int)target->query("combat_exp")/2 ) {
@@ -52,7 +52,7 @@ int perform(object me, object target)
 		target->start_busy( (int)me->query_skill("sword") / 28 );
 
 	} else {
-		msg = "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ½£Â·£¬»¹ÕĞµ²¿ª¡£\n" NOR;
+		msg = "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„å‰‘è·¯ï¼Œè¿˜æ‹›æŒ¡å¼€ã€‚\n" NOR;
 		me->start_busy(1 + random(3));
 		message_vision(msg, me, target);
 	}

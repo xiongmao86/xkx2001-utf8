@@ -1,71 +1,71 @@
 //Cracked by Roath
-// dangyang-qiangfa.c Ñî¼ÒÇ¹·¨ (maco)
+// dangyang-qiangfa.c æ¨å®¶æªæ³• (maco)
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([      "action":"$NÊ¹ÕĞ¡¸¶¾Áú³ö¶´¡¹£¬Ç¹ÉÏºìÓ§¶¶¶¯£¬¾íÆğÍë´óÇ¹»¨£¬Íù$n$lÖ±Ş÷¹ıÈ¥",
+([      "action":"$Nä½¿æ‹›ã€Œæ¯’é¾™å‡ºæ´ã€ï¼Œæªä¸Šçº¢ç¼¨æŠ–åŠ¨ï¼Œå·èµ·ç¢—å¤§æªèŠ±ï¼Œå¾€$n$lç›´æ è¿‡å»",
         "force" : 140,
         "dodge" : 10,
         "damage": 60,
         "lvl" : 8,
-        "skill_name" : "¶¾Áú³ö¶´", 
+        "skill_name" : "æ¯’é¾™å‡ºæ´", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "action":"$Nµ¹×ª$w£¬Ò»ÕĞ¡¸°×ºç¾­Ìì¡¹£¬Ğ±ÉíÒÆ²½£¬Ç¹¸ËÆğ´¦£¬Ô²Ô²Ò»ÍÅºìÓ°£¬Ç¹¼âÉÏÒ»µãº®¹â¼²Ïò$n´ÌÀ´",
+([      "action":"$Nå€’è½¬$wï¼Œä¸€æ‹›ã€Œç™½è™¹ç»å¤©ã€ï¼Œæ–œèº«ç§»æ­¥ï¼Œæªæ†èµ·å¤„ï¼Œåœ†åœ†ä¸€å›¢çº¢å½±ï¼Œæªå°–ä¸Šä¸€ç‚¹å¯’å…‰ç–¾å‘$nåˆºæ¥",
         "force" : 170,
         "dodge" : 20,
         "damage": 70,
         "lvl" : 20,
-        "skill_name" : "°×ºç¾­Ìì", 
+        "skill_name" : "ç™½è™¹ç»å¤©", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "action":"$NÊÖÖĞ$wÒ»¶¶£¬Ê¹³öÒ»ÕĞ¡¸³¯ÌìÒ»ÖùÏã¡¹£¬$wÍ¦µÃ±ÊÖ±£¬Ñ¸½İÎŞÂ×µØ´ÌÏò$nµÄ$l",
+([      "action":"$Næ‰‹ä¸­$wä¸€æŠ–ï¼Œä½¿å‡ºä¸€æ‹›ã€Œæœå¤©ä¸€æŸ±é¦™ã€ï¼Œ$wæŒºå¾—ç¬”ç›´ï¼Œè¿…æ·æ— ä¼¦åœ°åˆºå‘$nçš„$l",
         "force" : 220,
         "dodge" : 10,
         "damage": 80,
         "lvl" : 30,
-        "skill_name" : "³¯ÌìÒ»ÖùÏã", 
+        "skill_name" : "æœå¤©ä¸€æŸ±é¦™", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "action":"$NÍ¦Æğ$w£¬Ò»ÕĞ¡¸·ïµãÍ·¡¹£¬ºìÓ§¶¶¶¯£¬Ç¹¼âÉÁÉÁÍù$n$lµãµ½",
+([      "action":"$NæŒºèµ·$wï¼Œä¸€æ‹›ã€Œå‡¤ç‚¹å¤´ã€ï¼Œçº¢ç¼¨æŠ–åŠ¨ï¼Œæªå°–é—ªé—ªå¾€$n$lç‚¹åˆ°",
         "force" : 270,
         "dodge" : 0,
         "damage": 100,
         "lvl" : 40,
-        "skill_name" : "·ïµãÍ·", 
+        "skill_name" : "å‡¤ç‚¹å¤´", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "action":"$NÒ»ÕĞ¡¸´ºÀ×ÕğÅ­¡¹£¬Ë¢Ë¢Ë¢Á¬»·ÈıÇ¹£¬¼±´Ì¶øÖÁ£¬ÖìÓ§ÂÒ°Ú£¬$wàÍàÍÉùÏì£¬²ü³ÉÒ»¸ö´óºìÈ¦×Ó£¬ÕÖ×¡ÁË$nÉÏÏÂ¸÷Â·",
+([      "action":"$Nä¸€æ‹›ã€Œæ˜¥é›·éœ‡æ€’ã€ï¼Œåˆ·åˆ·åˆ·è¿ç¯ä¸‰æªï¼Œæ€¥åˆºè€Œè‡³ï¼Œæœ±ç¼¨ä¹±æ‘†ï¼Œ$wå—¤å—¤å£°å“ï¼Œé¢¤æˆä¸€ä¸ªå¤§çº¢åœˆå­ï¼Œç½©ä½äº†$nä¸Šä¸‹å„è·¯",
         "force" : 330,
         "dodge" : 30,
         "damage": 140,
         "lvl" : 50,
-        "skill_name" : "´ºÀ×ÕğÅ­", 
+        "skill_name" : "æ˜¥é›·éœ‡æ€’", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "action":"$NÌ¤ÉÏÒ»²½£¬Ê¹³öÒ»ÕĞ¡¸¹ÂÑã³öÈº¡¹£¬$wÀ´ÊÆÈç·ç£¬ÁèÀ÷ÎŞÆ¥µØÏò$nµÄ$l´ÌÈ¥",
+([      "action":"$Nè¸ä¸Šä¸€æ­¥ï¼Œä½¿å‡ºä¸€æ‹›ã€Œå­¤é›å‡ºç¾¤ã€ï¼Œ$wæ¥åŠ¿å¦‚é£ï¼Œå‡Œå‰æ— åŒ¹åœ°å‘$nçš„$låˆºå»",
         "force" : 350,
         "dodge" : 40,
         "damage": 160,
         "lvl" : 8,
-        "skill_name" : "¹ÂÑã³öÈº", 
+        "skill_name" : "å­¤é›å‡ºç¾¤", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ]),
-([      "action":"$NÊ¹¿ª$w£¬Ò»Ê½¡¸ĞĞ²½µÅ»¢¡¹£¬ÔÜ¡¢´Ì¡¢´ò¡¢Ìô¡¢À¹¡¢Ş÷¡¢¼Ü¡¢±Õ£¬Ç¹¼âÒø¹âÉÁÉÁ£¬Ó§´øºì¹âµãµã£¬Â·Êı¾«ÃîÎŞÇî£¬Ïò$nÁ¬Ê©ÃÍ¹¥",
+([      "action":"$Nä½¿å¼€$wï¼Œä¸€å¼ã€Œè¡Œæ­¥è¹¬è™ã€ï¼Œæ”’ã€åˆºã€æ‰“ã€æŒ‘ã€æ‹¦ã€æ ã€æ¶ã€é—­ï¼Œæªå°–é“¶å…‰é—ªé—ªï¼Œç¼¨å¸¦çº¢å…‰ç‚¹ç‚¹ï¼Œè·¯æ•°ç²¾å¦™æ— ç©·ï¼Œå‘$nè¿æ–½çŒ›æ”»",
         "force" : 400,
         "dodge" : 60,
         "damage": 200,
         "lvl" : 8,
-        "skill_name" : "ĞĞ²½µÅ»¢", 
+        "skill_name" : "è¡Œæ­¥è¹¬è™", 
 //        "post_action":  (: call_other, "/adm/daemons/weapond.c", "cut_weapon" :),
-        "damage_type":  "´ÌÉË"
+        "damage_type":  "åˆºä¼¤"
 ])
 });
 
@@ -95,9 +95,9 @@ int practice_skill(object me)
 
         if (!objectp(weapon = me->query_temp("weapon"))
         || (string)weapon->query("skill_type") != "pike")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹ã€‚\n");
         if ((int)me->query("qi") < 50)
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ñî¼ÒÇ¹¡£\n");
+                return notify_fail("ä½ çš„ä½“åŠ›ä¸å¤Ÿç»ƒæ¨å®¶æªã€‚\n");
         me->receive_damage("jingli", 20);
         return 1;
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// huanglong shi »ÆÁúÊ¹
+// huanglong shi é»„é¾™ä½¿
 
 inherit NPC;
 
@@ -10,11 +10,11 @@ int auto_perform();
 
 void create()
 {
-	set_name("Òó½õ", ({ "yin jin", "huanglong shi", "shi", "yin" }));
-	set("nickname", "»ÆÁúÊ¹");
+	set_name("æ®·é”¦", ({ "yin jin", "huanglong shi", "shi", "yin" }));
+	set("nickname", "é»„é¾™ä½¿");
 	set("long",
-		"Ï¸ÑÛ¼âÁ³£¬°Ë³ÉÊÇ¸öÂíÆ¨¾«¡£\n");
-	set("gender", "ÄĞĞÔ");
+		"ç»†çœ¼å°–è„¸ï¼Œå…«æˆæ˜¯ä¸ªé©¬å±ç²¾ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 45);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -53,7 +53,7 @@ void create()
 
 	prepare_skill("strike", "huagu-mianzhang");
 
-	create_family("ÉñÁú½Ì", 2, "Ê¹Õß");
+	create_family("ç¥é¾™æ•™", 2, "ä½¿è€…");
 
         set("chat_msg_combat",({
                 (:auto_perform:),

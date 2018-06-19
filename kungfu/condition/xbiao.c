@@ -25,5 +25,5 @@ int update_condition(object me, int duration)
 
 void let_know(object me)
 {
-		  tell_object(me, HIG "你终于恢复了一点自信！\n" NOR);
+		  tell_object(me, HIG "浣犵粓浜庢仮澶嶄簡涓�鐐硅嚜淇★紒\n" NOR);
 }

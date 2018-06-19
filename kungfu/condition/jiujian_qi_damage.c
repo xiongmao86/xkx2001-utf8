@@ -1,5 +1,5 @@
 //Cracked by Roath
-// jiujian_qi_damage.c ¶À¹Â¾Å½£ÆÆÆøÊ½ÉËÊÆ
+// jiujian_qi_damage.c ç‹¬å­¤ä¹å‰‘ç ´æ°”å¼ä¼¤åŠ¿
 // qfy Nov 11, 96.
 
 #include <ansi.h>
@@ -18,7 +18,7 @@ int update_condition(object me, int duration)
 	   skill = me->query_skill_mapped("force");
 
 	   if ( skill != 0 ) {
-		message_vision("$NÍ»È»¾õµÃÒ»ÕóÑªÆø·­Ó¿£¬Ë¿ºÁÓÃ²»ÉÏÃãÇ¿Ìá¾ÛµÄ"+to_chinese(skill)+"£¡\n", me);
+		message_vision("$Nçªç„¶è§‰å¾—ä¸€é˜µè¡€æ°”ç¿»æ¶Œï¼Œä¸æ¯«ç”¨ä¸ä¸Šå‹‰å¼ºæèšçš„"+to_chinese(skill)+"ï¼\n", me);
 		me->map_skill("force");
 	   }
 	}

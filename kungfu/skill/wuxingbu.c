@@ -5,13 +5,13 @@
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$nÒ»¸ö¡¸ºµµØ°Î´Ð¡¹£¬ÏòÉÏ´ÜÆðÊý³ß£¬±Ü¹ý$N¹¥»÷¡£\n",
+([	"action" : "$nä¸€ä¸ªã€Œæ—±åœ°æ‹”è‘±ã€ï¼Œå‘ä¸Šçªœèµ·æ•°å°ºï¼Œé¿è¿‡$Næ”»å‡»ã€‚\n",
 	"dodge"  : 10
 ]),
-([	"action" : "$nÒ»¸ö¡¸ðÎ×Ó·­Éí¡¹£¬Áè¿ÕÒ»¸ö²à·­£¬ÉÁ¹ýÁË$NµÄÁèÀ÷¹¥ÊÆ¡£\n",
+([	"action" : "$nä¸€ä¸ªã€Œé¹žå­ç¿»èº«ã€ï¼Œå‡Œç©ºä¸€ä¸ªä¾§ç¿»ï¼Œé—ªè¿‡äº†$Nçš„å‡ŒåŽ‰æ”»åŠ¿ã€‚\n",
 	"dodge"  : 20
 ]),
-([	"action" : "$n¼ûÊÆ²»Ãî£¬²»µÃÒÔÊ¹ÕÐ¡¸ÀÁÂ¿´ò¹ö¡¹£¬ÍùµØÉÏÒ»¹ö£¬¶ã¹ý$NµÄ¹¥»÷¡£\n",
+([	"action" : "$nè§åŠ¿ä¸å¦™ï¼Œä¸å¾—ä»¥ä½¿æ‹›ã€Œæ‡’é©´æ‰“æ»šã€ï¼Œå¾€åœ°ä¸Šä¸€æ»šï¼Œèº²è¿‡$Nçš„æ”»å‡»ã€‚\n",
 	"dodge"  : 30
 ]),
 });
@@ -55,5 +55,5 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
 
-	return notify_fail("Äã²»ÄÜÁ·ÎåÐÎ²½¡£\n");
+	return notify_fail("ä½ ä¸èƒ½ç»ƒäº”å½¢æ­¥ã€‚\n");
 }

@@ -1,28 +1,28 @@
 //Cracked by Roath
-// Luan-blade.c ÂÒµ¶
+// Luan-blade.c ä¹±åˆ€
 // Ryu
 inherit SKILL;
 
 mapping *action = ({
-([	"action" : "$NÊÖÖĞ$w×óÒ»»ÓÓÒÒ»À¹£¬¶Ô×¼$nµÄ$l¾ÍÊÇÒ»´Á",
+([	"action" : "$Næ‰‹ä¸­$wå·¦ä¸€æŒ¥å³ä¸€æ‹¦ï¼Œå¯¹å‡†$nçš„$lå°±æ˜¯ä¸€æˆ³",
 	"damage" : 40,
 	"force" : 200,
-        "damage_type" : "´ÌÉË"
+        "damage_type" : "åˆºä¼¤"
 ]),
-([      "action" : "$NÊÖÖĞ$wÉÏÒ»ÌôÏÂÒ»ÁÃ£¬Ïò$nµÄ$lÍ±È¥",
+([      "action" : "$Næ‰‹ä¸­$wä¸Šä¸€æŒ‘ä¸‹ä¸€æ’©ï¼Œå‘$nçš„$læ…å»",
         "damage" : 60,
         "force" : 250,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²ä¼¤"
 ]),
-([      "action" : "$NÊÖÖĞ$w¶«Ò»ÅüÎ÷Ò»²å£¬µ¶·æÖ¸Ïò$nµÄ$l",
+([      "action" : "$Næ‰‹ä¸­$wä¸œä¸€åŠˆè¥¿ä¸€æ’ï¼Œåˆ€é”‹æŒ‡å‘$nçš„$l",
         "damage" : 80,
         "force" : 300,
-        "damage_type" : "´ÌÉË"
+        "damage_type" : "åˆºä¼¤"
 ]),
-([	"action" : "$NÊÖÖĞ$wÇ°Ò»Ö¸ºóÒ»É¨£¬µ¶¼âÌôÏò$nµÄ$l",
+([	"action" : "$Næ‰‹ä¸­$wå‰ä¸€æŒ‡åä¸€æ‰«ï¼Œåˆ€å°–æŒ‘å‘$nçš„$l",
 	"damage" : 100,
 	"force" : 350,
-        "damage_type" : "´ÌÉË"
+        "damage_type" : "åˆºä¼¤"
 ])
 });
 
@@ -41,9 +41,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
 	if ((int)me->query("jingli") < 30)
-		return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
 	if ((int)me->query("neili") < 20)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÂÒµ¶¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿç»ƒä¹±åˆ€ã€‚\n");
 	me->receive_damage("jingli", 30);
 	me->add("neili", -10);
 	return 1;

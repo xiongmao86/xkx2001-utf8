@@ -1,6 +1,6 @@
 //Cracked by Roath
 // /kungfu/class/quanzhen/pi.c
-// pi.c  Æ¤ÇåÐþ
+// pi.c  çš®æ¸…çŽ„
 // sdong 08/01/98
 // Modified by xQin 8/00
 
@@ -17,11 +17,11 @@ int auto_perform();
 
 void create()
 {
-        set_name("Æ¤ÇåÐþ", ({ "pi qingxuan", "pi" }));
+        set_name("çš®æ¸…çŽ„", ({ "pi qingxuan", "pi" }));
         set("long",
-                  "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄ×³ÄêµÀÊ¿£¬ËÆºõÉí»³ÎäÒÕ¡£\n"
+                  "ä»–æ˜¯ä¸€ä½ä½“æ ¼å¼ºå¥çš„å£®å¹´é“å£«ï¼Œä¼¼ä¹Žèº«æ€€æ­¦è‰ºã€‚\n"
                 );
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 36);
         set("attitude", "heroic");
         set("shen_type", 1);
@@ -63,13 +63,13 @@ void create()
         prepare_skill("cuff", "chunyang-quan");
         prepare_skill("strike", "sanhua-juding");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("class", "taoist");
 
         set("inquiry",([
-        	"³ö¼Ò"  : (: ask_for_join :),
-        	"»¹Ë×"  : "ÕâÊÂÆ¶µÀ×÷²»ÁËÖ÷£¬Äã»¹ÊÇÈ¥ÕÒÕÆ½ÌÕæÈË°É¡£",
+        	"å‡ºå®¶"  : (: ask_for_join :),
+        	"è¿˜ä¿—"  : "è¿™äº‹è´«é“ä½œä¸äº†ä¸»ï¼Œä½ è¿˜æ˜¯åŽ»æ‰¾æŽŒæ•™çœŸäººå§ã€‚",
          ]));
 
         setup();
@@ -83,24 +83,24 @@ void attempt_apprentice(object ob)
 
 
         if ((int)ob->query("shen") < 0) {
-                command("say ÎÒÈ«Õæ½ÌÄËÊÇÌÃÌÃÃûÃÅÕýÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂÐÐ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘å…¨çœŸæ•™ä¹ƒæ˜¯å ‚å ‚åé—¨æ­£æ´¾ï¼Œå¯¹å¼Ÿå­è¦æ±‚æžä¸¥ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦è¿˜åšå¾—ä¸å¤Ÿï¼Ÿ");
                 return;
         }
 
-                  if( ob->query("family/family_name") == "È«Õæ½Ì"
+                  if( ob->query("family/family_name") == "å…¨çœŸæ•™"
                   && ob->query("generation") <= this_object()->query("generation") )
                   {
-                                         command("say " + RANK_D->query_respect(ob) + "£¬Æ¶µÀÄÄÀï¸Òµ± !");
+                                         command("say " + RANK_D->query_respect(ob) + "ï¼Œè´«é“å“ªé‡Œæ•¢å½“ !");
                                          return;
                   }
 
 
-                  if( ob->query("family/family_name") != "È«Õæ½Ì"
+                  if( ob->query("family/family_name") != "å…¨çœŸæ•™"
                   &&  (ob->query("combat_exp",1) >= 10000 )        )
                   {
-                                         command ("say ÎÞÁ¿ÊÙ·ð£¡Ê©Ö÷ÊÇ±ðÅÉµÄÎä¹¦¸ßÊÖ£¬±¾¹¬¿É²»¸ÒÊÕÁô£¡");
+                                         command ("say æ— é‡å¯¿ä½›ï¼æ–½ä¸»æ˜¯åˆ«æ´¾çš„æ­¦åŠŸé«˜æ‰‹ï¼Œæœ¬å®«å¯ä¸æ•¢æ”¶ç•™ï¼");
                                          return;
                   }
         
@@ -108,12 +108,12 @@ void attempt_apprentice(object ob)
 
                   if( (string)ob->query("class")!="taoist" )
                   {
-                                         command ("say ÎÞÁ¿ÊÙ·ð£¡Æ¶µÀ¾ÍÊÕÏÂÄã×ö¡ºË×¼ÒµÜ×Ó¡»ÁË¡£");
+                                         command ("say æ— é‡å¯¿ä½›ï¼è´«é“å°±æ”¶ä¸‹ä½ åšã€Žä¿—å®¶å¼Ÿå­ã€äº†ã€‚");
                   }
-                  else    command ("say ÎÞÁ¿ÊÙ·ð£¡");
+                  else    command ("say æ— é‡å¯¿ä½›ï¼");
 
 
-        command("say ºÃ°É£¬Æ¶µÀ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œè´«é“å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 
@@ -126,19 +126,19 @@ string ask_for_join()
                   
 	if( me->query("quit/taoist"))
 	{
-	return "ÕâÎ»"+RANK_D->query_respect(me)+"ÒÑ¾­»¹Ë×£¬ÓëµÀ¼ÒÎÞÔµ£¬²»¿ÉÔÙÇ¿Çó¡£\n";
+	return "è¿™ä½"+RANK_D->query_respect(me)+"å·²ç»è¿˜ä¿—ï¼Œä¸Žé“å®¶æ— ç¼˜ï¼Œä¸å¯å†å¼ºæ±‚ã€‚\n";
 	}
 
 	if( (string)me->query("class")=="taoist" )
-        return "ÄãÎÒÒÑÊÇÍ¬µÀ£¬ºÎ¹Ê¸úÆ¶µÀ¿ªÕâµÈÍæÐ¦£¿\n";
+        return "ä½ æˆ‘å·²æ˜¯åŒé“ï¼Œä½•æ•…è·Ÿè´«é“å¼€è¿™ç­‰çŽ©ç¬‘ï¼Ÿ\n";
 
         if( (string)me->query("class")=="bonze" )
-        return "ÕâÎ»"+RANK_D->query_respect(me)+"¼ÈÒÑð§ÒÀ·ðÃÅ£¬ºÎ¹Ê¸úÆ¶µÀ¿ªÕâµÈÍæÐ¦£¿\n";
+        return "è¿™ä½"+RANK_D->query_respect(me)+"æ—¢å·²çšˆä¾ä½›é—¨ï¼Œä½•æ•…è·Ÿè´«é“å¼€è¿™ç­‰çŽ©ç¬‘ï¼Ÿ\n";
 
         me->set_temp("pending/join_taoist", 1);
 
         add_action("do_kneel", "zhenxin");
-        return "ÎÞÁ¿ÊÙ·ð£¡Ê©Ö÷ÕæÐÄÒª³ö¼Ò£¿(type ÕæÐÄ or zhenxin)\n";
+        return "æ— é‡å¯¿ä½›ï¼æ–½ä¸»çœŸå¿ƒè¦å‡ºå®¶ï¼Ÿ(type çœŸå¿ƒ or zhenxin)\n";
 }
 
 
@@ -149,21 +149,21 @@ int do_kneel()
 
 
                   string *prename =
-                        ({ "¾»" });
+                        ({ "å‡€" });
                   string *postname =
-                        ({ "»ú","³£" });
+                        ({ "æœº","å¸¸" });
                   string name, new_name;
 
                   if( !me->query_temp("pending/join_taoist") )
                                          return 0;
 
                   message_vision(
-                                         "$N¹§¹§¾´¾´µØ¹òÁËÏÂÀ´£¬ËµÁËÉù£º¡°ÎÒÔ¸ÕæÐÄÑ§µÀ¡±¡£\n\n"
-                                         "$n½«$NµÄÍ··¢Êá³ÉÁ½¸ö÷Ù×Ó£¬¸ß¸ßËÊÁ¢ÆðÀ´£¬ÓÖ¸ø$NÒ»Ì×µÀÅÛ¡£\n\n",
+                                         "$Næ­æ­æ•¬æ•¬åœ°è·ªäº†ä¸‹æ¥ï¼Œè¯´äº†å£°ï¼šâ€œæˆ‘æ„¿çœŸå¿ƒå­¦é“â€ã€‚\n\n"
+                                         "$nå°†$Nçš„å¤´å‘æ¢³æˆä¸¤ä¸ªé«»å­ï¼Œé«˜é«˜è€¸ç«‹èµ·æ¥ï¼Œåˆç»™$Nä¸€å¥—é“è¢ã€‚\n\n",
                                          me, this_object() );
                   name = me->query("name");
                   new_name = name[0..01]+prename[random(sizeof(prename))] + name[2..3];
-                  command("say ´Ó½ñÒÔºóÄãµÄµÀÃû½Ð×ö" + new_name + "¡£");
+                  command("say ä»Žä»Šä»¥åŽä½ çš„é“åå«åš" + new_name + "ã€‚");
                   command("smile");
                   me->delete_temp("pending/join_taoist");
                   me->set("name", new_name);

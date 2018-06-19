@@ -1,45 +1,45 @@
 //Cracked by Roath
-// mo-bang.c  Ä§°ô
+// mo-bang.c  é­”æ£’
 // by ALN 2 / 98
 
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$N×ËÊ½Òì³£±¿×¾£¬ÊÖÖÐ$wÖ±Ö¸$nµÄÊÆÍ·",
+([      "action": "$Nå§¿å¼å¼‚å¸¸ç¬¨æ‹™ï¼Œæ‰‹ä¸­$wç›´æŒ‡$nçš„åŠ¿å¤´",
         "force" : 150,
         "dodge" : 30,
         "damage": 80,
         "lvl"   : 30,
         "post_action":  (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :),
-        "damage_type" : "´ìÉË"
+        "damage_type" : "æŒ«ä¼¤"
 ]),
 
-([      "action": "$N³Á¼ç»¬²½£¬ÊÖÖÐ$w·ÉÎèÕÖ×¡$nÏÂÅÌ¸÷´¦",
+([      "action": "$Næ²‰è‚©æ»‘æ­¥ï¼Œæ‰‹ä¸­$wé£žèˆžç½©ä½$nä¸‹ç›˜å„å¤„",
         "force" : 200,
         "dodge":  30,
         "damage": 60,
         "lvl"   : 60,
         "post_action": (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :), 
-        "damage_type" : "´ìÉË"
+        "damage_type" : "æŒ«ä¼¤"
 ]),
 
-([      "action": "$NÒ»ÕÐ¡¸ÒÔ×¾ÓùÇÉ¡¹£¬È«ÉíÖèÈ»Ëõ³ÉÒ»ÍÅ£¬Ëù³Ö¹÷°ôÖ¸Ïò$n¸÷´¦ÒªÑ¨",
+([      "action": "$Nä¸€æ‹›ã€Œä»¥æ‹™å¾¡å·§ã€ï¼Œå…¨èº«éª¤ç„¶ç¼©æˆä¸€å›¢ï¼Œæ‰€æŒæ£æ£’æŒ‡å‘$nå„å¤„è¦ç©´",
         "force" : 300,
         "dodge":  50,
         "damage": 80,
         "lvl"   : 90,
         "post_action": (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :), 
-        "damage_type" : "´ìÉË"
+        "damage_type" : "æŒ«ä¼¤"
 ]),
 
-([      "action": "$NÊÖÖÐ$w¾¶×ÔÖ±µã£¬Óë$n¹¥ÊÆÁª³ÉÁËÒ»ÌõÖ±Ïß",
+([      "action": "$Næ‰‹ä¸­$wå¾„è‡ªç›´ç‚¹ï¼Œä¸Ž$næ”»åŠ¿è”æˆäº†ä¸€æ¡ç›´çº¿",
         "force" : 400,
         "dodge":  40,
         "damage": 60,
         "lvl"   : 120,
         "post_action":  (: call_other, "/adm/daemons/weapond.c", "bash_weapon" :),
-        "damage_type" : "´ìÉË"
+        "damage_type" : "æŒ«ä¼¤"
 ]),
 });
 
@@ -47,7 +47,7 @@ int valid_enable(string usage) { return usage == "stick" || usage == "parry"; }
 
 int valid_learn(object me)
 {
-        return notify_fail("Õâ²»ÊÇÄãÏëÑ§¾ÍÄÜÑ§µÄ¡£\n");
+        return notify_fail("è¿™ä¸æ˜¯ä½ æƒ³å­¦å°±èƒ½å­¦çš„ã€‚\n");
 }
 
 mapping query_action(object me, object weapon)
@@ -61,7 +61,7 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-        return notify_fail("Õâ²»ÊÇÄãÏëÁ·¾ÍÄÜÁ·µÄ¡£\n");
+        return notify_fail("è¿™ä¸æ˜¯ä½ æƒ³ç»ƒå°±èƒ½ç»ƒçš„ã€‚\n");
 }
 
 string perform_action_file(string action)
@@ -86,8 +86,8 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
         dp = (int)victim->query("combat_exp");
 
         if( random(ap + dp) > dp ) {
-                message_vision(HIR"\n$NÒ»¸±ÕÐ¼ÜÎÞ·½µÄ°¤´òÉñÌ¬£¬È»ÊÖÖÐËù³Ö" + my_weapon->name() + "Ëù´¦·½Î»ÊµÊÇÇÉÃîµ½ÁË¼«´¦£¡£¡£¡\n"NOR, me);
-                message_vision(HIR"$N±ðÎÞËü·¨£¬²»µÃ²»Å×ÆúÊÖÖÐ" + v_weapon->name() + "£¬¸©Ê×ÇüÏ¥£¬¹òÔÚ$nÃæÇ°¡£\n\n"NOR, victim, me);
+                message_vision(HIR"\n$Nä¸€å‰¯æ‹›æž¶æ— æ–¹çš„æŒ¨æ‰“ç¥žæ€ï¼Œç„¶æ‰‹ä¸­æ‰€æŒ" + my_weapon->name() + "æ‰€å¤„æ–¹ä½å®žæ˜¯å·§å¦™åˆ°äº†æžå¤„ï¼ï¼ï¼\n"NOR, me);
+                message_vision(HIR"$Nåˆ«æ— å®ƒæ³•ï¼Œä¸å¾—ä¸æŠ›å¼ƒæ‰‹ä¸­" + v_weapon->name() + "ï¼Œä¿¯é¦–å±ˆè†ï¼Œè·ªåœ¨$né¢å‰ã€‚\n\n"NOR, victim, me);
                 v_weapon->unequip();
                 v_weapon->move(environment(victim));
                 victim->start_busy(1 + random(2));

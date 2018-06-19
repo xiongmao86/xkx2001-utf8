@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cimu.c ±ÙÐ°½£·¨¡¸´ÌÄ¿¡¹Ö®¼¼
+// cimu.c è¾Ÿé‚ªå‰‘æ³•ã€Œåˆºç›®ã€ä¹‹æŠ€
 // Modified by xQin 6/99
 // Modified by wzfeng@xkx 99 9
 // Fixed cimu could recover bug, sdong, 12/15/1999
@@ -21,31 +21,31 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ö»ÄÜ´ÌÕ½¶·ÖÐµÄ¶ÔÊÖµÄÑÛ¾¦¡£\n");
+                return notify_fail("åªèƒ½åˆºæˆ˜æ–—ä¸­çš„å¯¹æ‰‹çš„çœ¼ç›ã€‚\n");
         if( (int)target->query_temp("pixie/cimu") )
-                return notify_fail(target->name() +"ÒÑ±»Äã´ÌÖÐ£¡\n");
+                return notify_fail(target->name() +"å·²è¢«ä½ åˆºä¸­ï¼\n");
 
         if( me->query("neili") <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if( !objectp(weapon = me->query_temp("weapon")) )
-                 return notify_fail("ÓÃÊÖÖ¸´ÌÄ¿£¿\n");
+                 return notify_fail("ç”¨æ‰‹æŒ‡åˆºç›®ï¼Ÿ\n");
         if(me->query_skill("pixie-jian",1)<400)
         {
         if( (string)weapon->query("id") != "xiuhua zhen" && 
             (string)weapon->query("id") != "qijue zhen" )
-                        return notify_fail("ÄãÃ»ÓÐ³ÃÊÖµÄ±øÆ÷£¬²»ÄÜÊ©Õ¹¡¸´ÌÄ¿¡¹¾ø¼¼¡£\n");
+                        return notify_fail("ä½ æ²¡æœ‰è¶æ‰‹çš„å…µå™¨ï¼Œä¸èƒ½æ–½å±•ã€Œåˆºç›®ã€ç»æŠ€ã€‚\n");
                         }
 
 
         if( (level = (int)me->query_skill("pixie-jian", 1)) < 80 )
-                return notify_fail("ÄãµÄ±ÙÐ°½£·¨²»¹»æµÊì£¬ÎÞ·¨Ê¹³ö¡¸´ÌÄ¿¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªå‰‘æ³•ä¸å¤Ÿå¨´ç†Ÿï¼Œæ— æ³•ä½¿å‡ºã€Œåˆºç›®ã€ç»æŠ€ã€‚\n");
 
         if( (string)me->query_skill_mapped("dodge") != "pixie-jian" )
-                return notify_fail("ÄãÃ»ÓÐ½«±ÙÐ°½£·¨ÔËÔÚÉí·¨ÉÏ£¬ºÜÄÑ½Ó½ü¶ÔÊÖ¡£\n");    
+                return notify_fail("ä½ æ²¡æœ‰å°†è¾Ÿé‚ªå‰‘æ³•è¿åœ¨èº«æ³•ä¸Šï¼Œå¾ˆéš¾æŽ¥è¿‘å¯¹æ‰‹ã€‚\n");    
 
-         message_vision(HIB"\nÝëµØÀï$N¿ÕÊÖâ®Éí¶øÉÏ£¬Ë«ÊÖÇÜÄÃµãÅÄ£¬¹¥ÊÆÁèÀ÷Ö®¼«£¡\n"NOR, me);
-        tell_object(target, HIR"Äã²»½û´óº§£¬µ«¼ûºìÓ°ÉÁ´¦£¬ËÆÓÐÒ»ÎïÏò×Ô¼ºË«Ä¿´ÁÀ´¡£\n"NOR);
+         message_vision(HIB"\nè“¦åœ°é‡Œ$Nç©ºæ‰‹çŒ±èº«è€Œä¸Šï¼ŒåŒæ‰‹æ“’æ‹¿ç‚¹æ‹ï¼Œæ”»åŠ¿å‡ŒåŽ‰ä¹‹æžï¼\n"NOR, me);
+        tell_object(target, HIR"ä½ ä¸ç¦å¤§éª‡ï¼Œä½†è§çº¢å½±é—ªå¤„ï¼Œä¼¼æœ‰ä¸€ç‰©å‘è‡ªå·±åŒç›®æˆ³æ¥ã€‚\n"NOR);
          perform_name="pixie-cimu";
 
                         me->add("neili", -(20+random(40)));
@@ -72,21 +72,21 @@ int perform(object me, object target)
 
                                 &&random(target->query_int())>random(me->query_int()))
                                 {
-                                message_vision(HIG"$pÏÈÇ°ÒÑÖÐ¹ý´ËÕÐ£¬ÖªµÀÕâ¹ÖÕÐµÄÀ÷º¦£¬ÐÄÖÐÔçÓÐ·À±¸£¬µ±¼´Ò»¸öÌú°åÇÅ£¬±Ü¿ªÕâ¹îÒìÒ»»÷¡£\n" NOR,me);
+                                message_vision(HIG"$på…ˆå‰å·²ä¸­è¿‡æ­¤æ‹›ï¼ŒçŸ¥é“è¿™æ€ªæ‹›çš„åŽ‰å®³ï¼Œå¿ƒä¸­æ—©æœ‰é˜²å¤‡ï¼Œå½“å³ä¸€ä¸ªé“æ¿æ¡¥ï¼Œé¿å¼€è¿™è¯¡å¼‚ä¸€å‡»ã€‚\n" NOR,me);
                                 me->start_busy(1 + random(3));
                                 me->delete_temp("pixie_performtime");
                                 return 1;
                                 }
                         
-                tell_object(target, "ÄãË«ÑÛÒ»ºÚ£¬ÔÙÒ²ÇÆ²»¼ûÉõÃ´¡£\n");
+                tell_object(target, "ä½ åŒçœ¼ä¸€é»‘ï¼Œå†ä¹Ÿçž§ä¸è§ç”šä¹ˆã€‚\n");
                 if( userp(target) )
                                 {
                         target->set_temp("cimu_power", level/3);
                                                 target->apply_condition("blind",1+level/80);
                                 }
 
-                message_vision(HIB"$NÉíÐÎÆ®ºö£¬ÓÐÈç¹í÷È£¬×ªÁË¼¸×ª£¬µ¹×Ý³öÈ¥£¬³öÊÖÖ®ÆæÖ®¿ì£¬Ö±ÊÇ·ËÒÄËùË¼£¡\n"NOR, me);
-                message_vision(HIR"Ö»¼û$NË«ÑÛÖÐÁ÷ÏÂÁ½µÀ¼«Ï¸µÄÑªÏß£¬ºá¹ýÃæ¼Õ£¬Ö±¹Òµ½ÏÂò¤¡£\n"NOR, target);
+                message_vision(HIB"$Nèº«å½¢é£˜å¿½ï¼Œæœ‰å¦‚é¬¼é­…ï¼Œè½¬äº†å‡ è½¬ï¼Œå€’çºµå‡ºåŽ»ï¼Œå‡ºæ‰‹ä¹‹å¥‡ä¹‹å¿«ï¼Œç›´æ˜¯åŒªå¤·æ‰€æ€ï¼\n"NOR, me);
+                message_vision(HIR"åªè§$NåŒçœ¼ä¸­æµä¸‹ä¸¤é“æžç»†çš„è¡€çº¿ï¼Œæ¨ªè¿‡é¢é¢Šï¼Œç›´æŒ‚åˆ°ä¸‹é¢ã€‚\n"NOR, target);
 
 
                 target->add_temp("apply/attack", -level/3);
@@ -118,7 +118,7 @@ me->delete_temp("block_msg/all");
 
         me->add_temp("apply/attack", level);
         me->add_temp("apply/defense", level);
-        tell_object(me, HIC"ÄãµÄÊÓÁ¦»Ö¸´¹ýÀ´ÁË¡£\n"NOR);
+        tell_object(me, HIC"ä½ çš„è§†åŠ›æ¢å¤è¿‡æ¥äº†ã€‚\n"NOR);
         me->delete_temp("pixie/cimu");
 
                 return;

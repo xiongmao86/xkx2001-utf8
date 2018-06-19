@@ -1,4 +1,4 @@
-// /d/lingjiu/npc/tbhao.c ³àÌì²¿ ôÃÆÅÆÅ
+// /d/lingjiu/npc/tbhao.c èµ¤å¤©éƒ¨ è£˜å©†å©†
 // By adx @ CuteRabbit 22:21 99-3-19
 
 #include <ansi.h>
@@ -9,12 +9,12 @@ string ask_me_1(string name);
 string ask_me_2(string name);
 void create()
 {
-	set_name("ôÃÆÅÆÅ", ({ "qiu popo", "qiu", "popo" }));
+	set_name("è£˜å©†å©†", ({ "qiu popo", "qiu", "popo" }));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞ³àÌì²¿µÄÊ×Áì.\n"+
-	    "Ëı¸úËæÍ¯ÀÑ¶àÄê, ³öÉúÈëËÀ,±¥¾­·çËª.\n");
-	set("title", "³àÌì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­èµ¤å¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹è·Ÿéšç«¥å§¥å¤šå¹´, å‡ºç”Ÿå…¥æ­»,é¥±ç»é£éœœ.\n");
+	set("title", "èµ¤å¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
 	set("age", 60);
 	set("shen_type",0);
 	set("attitude", "peaceful");
@@ -62,17 +62,17 @@ void create()
 	prepare_skill("hand","zhemei-shou");
 /*
         set("inquiry", ([
-		"ÁÆÉË" : (: ask_me_1, "towel" :),
-		"Ã«½í" : (: ask_me_1, "towel" :),
-		"Â¹Æ¤¾Æ´ü" : (: ask_me_2, "lpjiudai" :),
-		"°×ÔÆĞÜµ¨Íè" : (: ask_me_2, "baiyunwan" :),
+		"ç–—ä¼¤" : (: ask_me_1, "towel" :),
+		"æ¯›å·¾" : (: ask_me_1, "towel" :),
+		"é¹¿çš®é…’è¢‹" : (: ask_me_2, "lpjiudai" :),
+		"ç™½äº‘ç†Šèƒ†ä¸¸" : (: ask_me_2, "baiyunwan" :),
         ]));
 	set("yaopin_count_1", 5);
 	set("yaopin_count_2", 1);
 */
 	prepare_skill("strike","liuyang-zhang");
 	prepare_skill("hand","zhemei-shou");
-	create_family("ÁéğÕ¹¬",4,"µÜ×Ó");
+	create_family("çµé¹«å®«",4,"å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),
@@ -88,50 +88,50 @@ string ask_me_1(string name)
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÁéğÕ¹¬")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "çµé¹«å®«")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (  present(name, this_player()) )
 		return RANK_D->query_respect(this_player()) + 
-		"ÄãÔõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+		"ä½ æ€éº½åˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	if (query("yaopin_count_1") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ã€‚";
 
 	ob = new("/d/lingjiu/obj/" + name);
 	ob->move(this_player());
 
 	add("yaopin_count_1", -1);
 
-	message_vision("ôÃÆÅÆÅ¸ø$NÒ»Ìõ" + ob->query("name") + "¡£\n", this_player());
+	message_vision("è£˜å©†å©†ç»™$Nä¸€æ¡" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£¸Ï¿ìµ½ÂĞ·ï¸óãåÔ¡ÁÆÉË¡£";
+	return "æ‹¿å»å§ã€‚èµ¶å¿«åˆ°æ»¦å‡¤é˜æ²æµ´ç–—ä¼¤ã€‚";
 }
 string ask_me_2(string name)
 {
 	mapping fam; 
 	object ob;
 	
-	if (!(fam = this_player()->query("family")) || fam["family_name"] != "ÁéğÕ¹¬")
+	if (!(fam = this_player()->query("family")) || fam["family_name"] != "çµé¹«å®«")
 		return RANK_D->query_respect(this_player()) + 
-		"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+		"ä¸æœ¬æ´¾ç´ æ— æ¥å¾€ï¼Œä¸çŸ¥æ­¤è¯ä»ä½•è°ˆèµ·ï¼Ÿ";
 
 	if (  present(name, this_player()) )
 		return RANK_D->query_respect(this_player()) + 
-		"ÄãÏÖÔÚÉíÉÏ²»ÊÇÓĞÂğ£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎŞ÷Ğ£¡";
+		"ä½ ç°åœ¨èº«ä¸Šä¸æ˜¯æœ‰å—ï¼Œæ€éº½åˆæ¥è¦äº†ï¼Ÿ çœŸæ˜¯è´ªå¾—æ— é¤ï¼";
 
 	if (query("yaopin_count_2") < 1)
-		return "±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò¡£";
+		return "æŠ±æ­‰ï¼Œä½ æ¥å¾—ä¸æ˜¯æ—¶å€™ã€‚";
 
 	ob = new("/d/lingjiu/obj/" + name);
 	ob->move(this_player());
 
 	add("yaopin_count_2", -1);
 
-	message_vision("ôÃÆÅÆÅ¸ø$NÒ»¿Å" + ob->query("name") + "¡£\n", this_player());
+	message_vision("è£˜å©†å©†ç»™$Nä¸€é¢—" + ob->query("name") + "ã€‚\n", this_player());
 
-	return "ÄÃÈ¥°É¡£ºÃºÃÁ·¹¦£¬±£ÎÀÁéğÕ¹¬¡£";
+	return "æ‹¿å»å§ã€‚å¥½å¥½ç»ƒåŠŸï¼Œä¿å«çµé¹«å®«ã€‚";
 }
 void init()
 {
@@ -144,16 +144,16 @@ void init()
 	
 	if (interactive(ob) 
 	&& !environment(ob)->query("no_fight")
-	&& ((fam = ob->query("family")) && fam["family_name"] != "ÁéğÕ¹¬" )
+	&& ((fam = ob->query("family")) && fam["family_name"] != "çµé¹«å®«" )
 	&& me->query("biao/owner"))
 	{
 		if( !ob->query_temp("warned") ) {
-		command("say ×ğÖ÷ÓĞÁî£ºÍâÈË²»µÃ½øÈëÁéğÕ¹¬£¬ËÙËÙÀë¿ª£¡");
+		command("say å°Šä¸»æœ‰ä»¤ï¼šå¤–äººä¸å¾—è¿›å…¥çµé¹«å®«ï¼Œé€Ÿé€Ÿç¦»å¼€ï¼");
 			ob->set_temp("warned", 1);
 	}
 		else if( ob->query_temp("stay")<5 ) ob->add_temp("stay",1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸ÒÉÃ´³ÁéğÕ¹¬£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢æ“…é—¯çµé¹«å®«ï¼ï¼ï¼\n");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}

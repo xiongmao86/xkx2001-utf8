@@ -8,18 +8,18 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("ÇåÎª±ÈÇð", ({
+	set_name("æ¸…ä¸ºæ¯”ä¸˜", ({
 		"qingwei biqiu",
 		"qingwei",
 		"biqiu",
 	}));
 	set("long",
-		"ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄ×³ÄêÉ®ÈË£¬ËûÉíµÃ»¢±³ÐÜÑü£¬È«ÉíËÆºõÔÌº¬\n"
-		"×ÅÎÞÇî¾¢Á¦¡£ËûÉí´©Ò»Ï®°×²¼ºÚ±ßôÂôÄ£¬ËÆºõÉí»³ÎäÒÕ¡£\n"
+		"ä»–æ˜¯ä¸€ä½ä½“æ ¼å¼ºå¥çš„å£®å¹´åƒ§äººï¼Œä»–èº«å¾—è™ŽèƒŒç†Šè…°ï¼Œå…¨èº«ä¼¼ä¹Žè•´å«\n"
+		"ç€æ— ç©·åŠ²åŠ›ã€‚ä»–èº«ç©¿ä¸€è¢­ç™½å¸ƒé»‘è¾¹è¢ˆè£Ÿï¼Œä¼¼ä¹Žèº«æ€€æ­¦è‰ºã€‚\n"
 	);
 
 
-	set("gender", "ÄÐÐÔ");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -59,7 +59,7 @@ void create()
 
 	prepare_skill("strike", "banruo-zhang");
 
-	create_family("ÉÙÁÖÅÉ", 40, "µÜ×Ó");
+	create_family("å°‘æž—æ´¾", 40, "å¼Ÿå­");
 
 	setup();
 
@@ -72,24 +72,24 @@ void attempt_apprentice(object ob)
 {
 	mapping fam;
 
-	if( mapp(fam = ob->query("family")) && fam["family_name"] != "ÉÙÁÖÅÉ" 
+	if( mapp(fam = ob->query("family")) && fam["family_name"] != "å°‘æž—æ´¾" 
 	&&  ob->query("combat_exp") >= 10000 )
 	{
-		command ("say °¢ÃÖÍÓ·ð£¡ Ê©Ö÷ÊÇ" + fam["family_name"] + "µÄÎä¹¦¸ßÊÖ£¬±¾ËÂ¿É²»¸ÒÊÕÁô£¡");
+		command ("say é˜¿å¼¥é™€ä½›ï¼ æ–½ä¸»æ˜¯" + fam["family_name"] + "çš„æ­¦åŠŸé«˜æ‰‹ï¼Œæœ¬å¯ºå¯ä¸æ•¢æ”¶ç•™ï¼");
 		return;
 	}
 
-	if( (string)ob->query("gender") == "Å®ÐÔ" )
+	if( (string)ob->query("gender") == "å¥³æ€§" )
 	{
-		command ("say °¢ÃÖÍÓ·ð£¡Å®Ê©Ö÷Ñ½£¬Æ¶É®¿É²»¸Ò¿ªÕâµÈÍæÐ¦°¡¡£");
+		command ("say é˜¿å¼¥é™€ä½›ï¼å¥³æ–½ä¸»å‘€ï¼Œè´«åƒ§å¯ä¸æ•¢å¼€è¿™ç­‰çŽ©ç¬‘å•Šã€‚");
 		return;
 	}
 	
 	if( (string)ob->query("class")!="bonze" )
 	{
-		command ("say °¢ÃÖÍÓ·ð£¡Æ¶É®¾ÍÊÕÏÂÄã×ö¡ºË×¼ÒµÜ×Ó¡»ÁË¡£");
+		command ("say é˜¿å¼¥é™€ä½›ï¼è´«åƒ§å°±æ”¶ä¸‹ä½ åšã€Žä¿—å®¶å¼Ÿå­ã€äº†ã€‚");
 	}
-	else    command ("say °¢ÃÖÍÓ·ð£¬ÉÆÔÕ£¡ÉÆÔÕ£¡");
+	else    command ("say é˜¿å¼¥é™€ä½›ï¼Œå–„å“‰ï¼å–„å“‰ï¼");
 
 	command("recruit " + ob->query("id"));
 }

@@ -6,33 +6,33 @@ int update_condition(object me, int duration)
 {
 	int damage=1;
    if( !living(me) ) {
-      message("vision", me->name() +"Á³É«´ó±ä£¬¿ÚÖÐÏÊÑª¿ñÅç£¬µ¹ÔÚµØÉÏ¡£\n", environment(me), ({me}));
+      message("vision", me->name() +"è„¸è‰²å¤§å˜ï¼Œå£ä¸­é²œè¡€ç‹‚å–·ï¼Œå€’åœ¨åœ°ä¸Šã€‚\n", environment(me), ({me}));
    }
    else {
         switch( random(3) )
         {
                 case 0:
-			tell_object(me, HIR"ÄãÖ»¾õ¼çÍ·ÔÆÃÅÑ¨Î¢Î¢Ò»Í´£¬ÄÔÖÐÎ¢¸ÐÑ£ÔÎ¡£\n" NOR);
+			tell_object(me, HIR"ä½ åªè§‰è‚©å¤´äº‘é—¨ç©´å¾®å¾®ä¸€ç—›ï¼Œè„‘ä¸­å¾®æ„Ÿçœ©æ™•ã€‚\n" NOR);
       			message("vision", me->name() +
-"Á³É«Ò»±ä£¬ÓÐµãÉñ²»ÊØÉáµÄÑù×Ó¡£\n",environment(me), ({me}));
+"è„¸è‰²ä¸€å˜ï¼Œæœ‰ç‚¹ç¥žä¸å®ˆèˆçš„æ ·å­ã€‚\n",environment(me), ({me}));
                        break;
                 case 1:
-			tell_object(me, HIR"ÄãÉÏ±ÛÇàÁéÑ¨ºöÈ»¾õµÃÂéÑ÷ÄÑµ±£¬¾¢Á¦²»ÄÜÄý¾Û£¡\n"NOR );
+			tell_object(me, HIR"ä½ ä¸Šè‡‚é’çµç©´å¿½ç„¶è§‰å¾—éº»ç—’éš¾å½“ï¼ŒåŠ²åŠ›ä¸èƒ½å‡èšï¼\n"NOR );
       			message("vision", me->name() +
-"ÉíÐÎõçõÇ£¬ËÆºõ¾Ù²½Î¬¼èµÄÑù×Ó¡£\n",environment(me), ({me}));
+"èº«å½¢è¹’è·šï¼Œä¼¼ä¹Žä¸¾æ­¥ç»´è‰°çš„æ ·å­ã€‚\n",environment(me), ({me}));
                        break;
                 case 2:
-			tell_object(me, HIR"ÄãÍÈÉÏÎåÀïÑ¨¶Ù¸ÐËáÍ´£¬Á¬²½×ÓÒ²Âõ²»¶¯ÁË£¡\n" NOR);
+			tell_object(me, HIR"ä½ è…¿ä¸Šäº”é‡Œç©´é¡¿æ„Ÿé…¸ç—›ï¼Œè¿žæ­¥å­ä¹Ÿè¿ˆä¸åŠ¨äº†ï¼\n" NOR);
       			message("vision", me->name() +
-"½ÅÏÂÒ»¸öôóôò£¬²îµãÒ»õÓË¤µ¹¡£\n",environment(me), ({me}));
+"è„šä¸‹ä¸€ä¸ªè¶”è¶„ï¼Œå·®ç‚¹ä¸€è·¤æ‘”å€’ã€‚\n",environment(me), ({me}));
                        break;
         }
    }
 	if (duration > 0) damage = duration;
 	else damage =1;
-      me->receive_wound("qi", damage*2, "ÆßÉËÈ­ÄÚÉË·¢×÷ËÀÁË");
-      me->receive_wound("jing", damage, "ÆßÉËÈ­ÄÚÉË·¢×÷ËÀÁË");
-      me->receive_damage("jingli", damage, "ÆßÉËÈ­ÄÚÉË·¢×÷ËÀÁË");
+      me->receive_wound("qi", damage*2, "ä¸ƒä¼¤æ‹³å†…ä¼¤å‘ä½œæ­»äº†");
+      me->receive_wound("jing", damage, "ä¸ƒä¼¤æ‹³å†…ä¼¤å‘ä½œæ­»äº†");
+      me->receive_damage("jingli", damage, "ä¸ƒä¼¤æ‹³å†…ä¼¤å‘ä½œæ­»äº†");
 	
 	if (me->query_condition("qs_damage")>(5+me->query_skill("qishang-quan",1)/10))
 		me->apply_condition("qs_damage", 

@@ -8,29 +8,29 @@ int perform(object me, object target)
 	int my_neili, op_neili, my_exp, op_exp;
 
 	        if( !me->is_fighting() ) 
-                return notify_fail("Äã±ØĞëÔÚÕ½¶·ÖĞ²ÅÄÜÊ¹ÓÃÖĞ³å½£·¨£¡\n");
+                return notify_fail("ä½ å¿…é¡»åœ¨æˆ˜æ–—ä¸­æ‰èƒ½ä½¿ç”¨ä¸­å†²å‰‘æ³•ï¼\n");
 
         if( !target && me->is_fighting() ) target = offensive_target(me);
 
         if( !target || !target->is_character() || target->query("race") 
-!= "ÈËÀà" )
-                return notify_fail("ÄãÒª¶ÔË­ÓÃÖĞ³å½£·¨£¿\n");
+!= "äººç±»" )
+                return notify_fail("ä½ è¦å¯¹è°ç”¨ä¸­å†²å‰‘æ³•ï¼Ÿ\n");
 
         if( environment(target)->query("no_fight") )
-                return notify_fail("Äã²»ÄÜÍµÏ®£¡\n");
+                return notify_fail("ä½ ä¸èƒ½å·è¢­ï¼\n");
 
         if( me->query("neili") <= 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê¹ÓÃÖĞ³å½£·¨£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼Œæ— æ³•ä½¿ç”¨ä¸­å†²å‰‘æ³•ï¼\n");
 
 	if( (int)me->query_skill("liumai-shenjian", 1)< 130)
-	return notify_fail("ÄãÔÚÁùÂöÉñ½£ÉÏµÄĞŞÎª²»¹»£¬ÎŞ·¨Ê¹ÓÃÖĞ³å½£·¨£¡\n");
+	return notify_fail("ä½ åœ¨å…­è„‰ç¥å‰‘ä¸Šçš„ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•ä½¿ç”¨ä¸­å†²å‰‘æ³•ï¼\n");
 	
 	my_neili = me->query("neili", 1);
 	op_neili = target->query("neili", 1);
 	my_exp   = me->query("combat_exp", 1);
 	op_exp   = target->query("combat_exp", 1);
 
-message_vision(HIR "$NË«ÊÖÁ¬µã£¬¶ÙÊ±ÎŞĞÎ½£ÆøÂşÌì£¡\n\n" NOR, me, target);
+message_vision(HIR "$NåŒæ‰‹è¿ç‚¹ï¼Œé¡¿æ—¶æ— å½¢å‰‘æ°”æ¼«å¤©ï¼\n\n" NOR, me, target);
 
 	me->add("neili", -300);
 	if (my_exp>op_exp) {
@@ -40,26 +40,26 @@ message_vision(HIR "$NË«ÊÖÁ¬µã£¬¶ÙÊ±ÎŞĞÎ½£ÆøÂşÌì£¡\n\n" NOR, me, target);
 		me->set("neili", 0);
 		}
 		message_vision(HIR 
-"$n±ÜÎŞ¿É±Ü£¬Ö»µÃË«ÕÆÈ«Á¦»÷³ö£¬Óë$NÄÚÁ¦Ïà²©£¡\n\n" NOR, me, target);
+"$né¿æ— å¯é¿ï¼Œåªå¾—åŒæŒå…¨åŠ›å‡»å‡ºï¼Œä¸$Nå†…åŠ›ç›¸åšï¼\n\n" NOR, me, target);
 		target->set("neili", 0);
-tell_object(target, RED "Äã¶ÙÊ±¾õµÃÈ«ÉíÒ»ÕóĞéÍÑ£¬ÕæÆøµ´È»È«ÎŞ£¡\n"NOR);
+tell_object(target, RED "ä½ é¡¿æ—¶è§‰å¾—å…¨èº«ä¸€é˜µè™šè„±ï¼ŒçœŸæ°”è¡ç„¶å…¨æ— ï¼\n"NOR);
 		me->start_busy(3);
 		target->start_busy(2);
 		}
 	else {
 	message_vision(HIR
-	"$n±ÜÎŞ¿É±Ü£¬Ö»µÃË«ÕÆÈ«Á¦»÷³ö£¬Óë$NÄÚÁ¦Ïà²©£¡\n\n" NOR, me, target);
+	"$né¿æ— å¯é¿ï¼Œåªå¾—åŒæŒå…¨åŠ›å‡»å‡ºï¼Œä¸$Nå†…åŠ›ç›¸åšï¼\n\n" NOR, me, target);
 	me->set("neili",0);
 	target->set("neili", (op_neili/2));
-	tell_object(me, RED "Äã¶ÙÊ±¾õµÃÈ«ÉíÒ»ÕóĞéÍÑ£¬ÕæÆøµ´È»È«ÎŞ£¡\n"NOR);
+	tell_object(me, RED "ä½ é¡¿æ—¶è§‰å¾—å…¨èº«ä¸€é˜µè™šè„±ï¼ŒçœŸæ°”è¡ç„¶å…¨æ— ï¼\n"NOR);
 	tell_object(target,RED 
-"ÄãÒ»ÕÆ»÷³ö£¬½«$NµÄÖ¸Á¦¾¡Êıµ´É¢£¬Ö»¼û$NÁ³É«Ò»Õó²Ò°×£¡\n"NOR);
+"ä½ ä¸€æŒå‡»å‡ºï¼Œå°†$Nçš„æŒ‡åŠ›å°½æ•°è¡æ•£ï¼Œåªè§$Nè„¸è‰²ä¸€é˜µæƒ¨ç™½ï¼\n"NOR);
 	me->start_busy(2); 
         target->start_busy(2);
                 }
 	}
 	else {
-	message_vision(HIR "nÁ¬Ã¦·üµ×£¬ÀÇ±·²»¿°µÄ¶ãÁË¿ªÈ¥£¡\n\n" NOR, 
+	message_vision(HIR "nè¿å¿™ä¼åº•ï¼Œç‹¼ç‹ˆä¸å ªçš„èº²äº†å¼€å»ï¼\n\n" NOR, 
 me, target);   
 	me->start_busy(1);
 	return 1;

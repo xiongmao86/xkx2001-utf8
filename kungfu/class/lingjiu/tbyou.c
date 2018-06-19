@@ -1,4 +1,4 @@
-// /d/lingjiu/npc/tbhao.c ÓÄÌì²¿ ÁõÉ©
+// /d/lingjiu/npc/tbhao.c å¹½å¤©éƒ¨ åˆ˜å«‚
 // By adx @ CuteRabbit 22:21 99-3-19
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit NPC;
 int auto_perform();
 void create()
 {
-	set_name("ÁõÉ©", ({ "liu sao", "liu", "sao" }));
+	set_name("åˆ˜å«‚", ({ "liu sao", "liu", "sao" }));
 	set("long",
-	    "ËıÊÇ¡¸ÁéğÕ¹¬¡¹¾ÅÌì¾Å²¿ÖĞÓÄÌì²¿µÄÊ×Áì.\n"+
-	    "Ëı¸úËæÍ¯ÀÑ¶àÄê, ³öÉúÈëËÀ,±¥¾­·çËª.\n");
-	set("title", "ÓÄÌì²¿Ê×Áì");
-	set("gender", "Å®ĞÔ");
+	    "å¥¹æ˜¯ã€Œçµé¹«å®«ã€ä¹å¤©ä¹éƒ¨ä¸­å¹½å¤©éƒ¨çš„é¦–é¢†.\n"+
+	    "å¥¹è·Ÿéšç«¥å§¥å¤šå¹´, å‡ºç”Ÿå…¥æ­»,é¥±ç»é£éœœ.\n");
+	set("title", "å¹½å¤©éƒ¨é¦–é¢†");
+	set("gender", "å¥³æ€§");
 	set("age", 60);
 	set("shen_type",0);
 	set("attitude", "peaceful");
@@ -57,7 +57,7 @@ void create()
 
 	prepare_skill("strike","liuyang-zhang");
 	prepare_skill("hand","zhemei-shou");
-	create_family("ÁéğÕ¹¬",4,"µÜ×Ó");
+	create_family("çµé¹«å®«",4,"å¼Ÿå­");
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
                 (: auto_perform :),
@@ -79,16 +79,16 @@ void init()
 	
 	if (interactive(ob) 
 	&& !environment(ob)->query("no_fight")
-	&& ((fam = ob->query("family")) && fam["family_name"] != "ÁéğÕ¹¬" )
+	&& ((fam = ob->query("family")) && fam["family_name"] != "çµé¹«å®«" )
 	&& me->query("biao/owner"))
 	{
 		if( !ob->query_temp("warned") ) {
-		command("say ×ğÖ÷ÓĞÁî£ºÍâÈË²»µÃ½øÈëÁéğÕ¹¬£¬ËÙËÙÀë¿ª£¡");
+		command("say å°Šä¸»æœ‰ä»¤ï¼šå¤–äººä¸å¾—è¿›å…¥çµé¹«å®«ï¼Œé€Ÿé€Ÿç¦»å¼€ï¼");
 			ob->set_temp("warned", 1);
 	}
 		else if( ob->query_temp("stay")<5 ) ob->add_temp("stay",1);
 		else {
-			command("say ´óµ¨¿ñÍ½£¬¾¹¸ÒÉÃ´³ÁéğÕ¹¬£¡£¡£¡\n");
+			command("say å¤§èƒ†ç‹‚å¾’ï¼Œç«Ÿæ•¢æ“…é—¯çµé¹«å®«ï¼ï¼ï¼\n");
 			remove_call_out("kill_ob");
 			call_out("kill_ob", 1, ob); 
 		}

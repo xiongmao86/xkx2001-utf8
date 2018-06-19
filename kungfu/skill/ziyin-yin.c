@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ziyin-yin.c ×Ïë³Ò÷
+// ziyin-yin.c ç´«æ°¤åŸ
 
 inherit SKILL;
 
@@ -10,12 +10,12 @@ string type() { return "knowledge"; }
 int valid_learn(object me) 
 {
 	if( (int)me->query("shen") < 0 )
-		return notify_fail("ÄãµÄÐ°ÆøÌ«ÖØ£¬ÎÞ·¨ÐÞÁ¶»ªÉ½×Ïë³Ò÷¡£\n");
+		return notify_fail("ä½ çš„é‚ªæ°”å¤ªé‡ï¼Œæ— æ³•ä¿®ç‚¼åŽå±±ç´«æ°¤åŸã€‚\n");
 		
 	return 1;
 }
 
 int practice_skill(object me)
 {	
-	return notify_fail("»ªÉ½×Ïë³Ò÷Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+	return notify_fail("åŽå±±ç´«æ°¤åŸåªèƒ½é å­¦ä¹ æ¥æé«˜ã€‚\n");
 }

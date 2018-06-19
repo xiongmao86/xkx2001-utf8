@@ -6,22 +6,22 @@
 int update_condition(object me, int duration)
 {
    if( !living(me) ) {
-      message("vision", me->name() + "Í´¿àµØºßÁËÒ»Éù¡£\n", environment(me), me);
+      message("vision", me->name() + "ç—›è‹¦åœ°å“¼äº†ä¸€å£°ã€‚\n", environment(me), me);
    }
    else {
       if(me->query("eff_jing") > me->query("max_jing")/2) {
-      tell_object(me, HIB "Ëæ×ÅÒ»Õó×êÐÄµÄÌÛÍ´£¬Äã¿ªÊ¼¸Ðµ½ËÄÖ«·¢Âé£¬Éß¶¾·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "Í»È»Ãæ²¿³é´¤£¬ËÄÖ«ÉªÉªµØ¶¶ÁËÆðÀ´¡£\n",
+      tell_object(me, HIB "éšç€ä¸€é˜µé’»å¿ƒçš„ç–¼ç—›ï¼Œä½ å¼€å§‹æ„Ÿåˆ°å››è‚¢å‘éº»ï¼Œè›‡æ¯’å‘ä½œäº†ï¼\n" NOR );
+      message("vision", me->name() + "çªç„¶é¢éƒ¨æŠ½æï¼Œå››è‚¢ç‘Ÿç‘Ÿåœ°æŠ–äº†èµ·æ¥ã€‚\n",
             environment(me), me);
       }
       else if(me->query("eff_jing") > me->query("max_jing")/4) {
-      tell_object(me, HIB "Äã¸Ðµ½ºôÎüÀ§ÄÑ£¬ÂéÄ¾µÄ¸Ð¾õË³×ÅËÄÖ«Öð½¥ÉÏÐÐ£¬Éß¶¾·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "Í»È»Á½ÑÛ·¢Ö±£¬È«Éí³é´¤ÆðÀ´¡£\n",
+      tell_object(me, HIB "ä½ æ„Ÿåˆ°å‘¼å¸å›°éš¾ï¼Œéº»æœ¨çš„æ„Ÿè§‰é¡ºç€å››è‚¢é€æ¸ä¸Šè¡Œï¼Œè›‡æ¯’å‘ä½œäº†ï¼\n" NOR );
+      message("vision", me->name() + "çªç„¶ä¸¤çœ¼å‘ç›´ï¼Œå…¨èº«æŠ½æèµ·æ¥ã€‚\n",
             environment(me), me);
       }
       else {
-      tell_object(me, HIB "Äã¿ªÊ¼¸Ðµ½ÌìÐýµØ×ª£¬ËÄÖÜ¾°Îï¶¼ÔÚÂýÂýÀëÄãÔ¶È¥£¬Éß¶¾·¢×÷ÁË£¡\n" NOR );
-      message("vision", me->name() + "Í»È»Ë¤µ¹ÔÚµØ£¬ÕÅ´ó×ì°Í£¬ÊÖ½ÅÎÞÁ¦µØ³é¶¯×Å¡£\n",
+      tell_object(me, HIB "ä½ å¼€å§‹æ„Ÿåˆ°å¤©æ—‹åœ°è½¬ï¼Œå››å‘¨æ™¯ç‰©éƒ½åœ¨æ…¢æ…¢ç¦»ä½ è¿œåŽ»ï¼Œè›‡æ¯’å‘ä½œäº†ï¼\n" NOR );
+      message("vision", me->name() + "çªç„¶æ‘”å€’åœ¨åœ°ï¼Œå¼ å¤§å˜´å·´ï¼Œæ‰‹è„šæ— åŠ›åœ°æŠ½åŠ¨ç€ã€‚\n",
             environment(me), me);
       }
    }
@@ -30,8 +30,8 @@ int update_condition(object me, int duration)
       me->receive_wound("jing", duration/3, me->query("poisoner"));
       }
       else {	
-      me->receive_damage("qi", duration/2, "Éß¶¾¹¥ÐÄËÀÁË");
-      me->receive_wound("jing", duration/3, "Éß¶¾¹¥ÐÄËÀÁË");
+      me->receive_damage("qi", duration/2, "è›‡æ¯’æ”»å¿ƒæ­»äº†");
+      me->receive_wound("jing", duration/3, "è›‡æ¯’æ”»å¿ƒæ­»äº†");
       }
 	if (me->query_condition("snake_poison")>(5+me->query_skill("poison",1)/10))
 		me->apply_condition("snake_poison", 

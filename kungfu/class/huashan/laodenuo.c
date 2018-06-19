@@ -1,16 +1,16 @@
 //Cracked by Roath
-// laodenuo.c �͵�ŵ
+// laodenuo.c 劳德诺
 // qfy July 4, 1996. 
 
 inherit NPC;
 
 void create()
 {
-	set_name("�͵�ŵ", ({ "lao denuo", "lao", "denuo" }));
+	set_name("劳德诺", ({ "lao denuo", "lao", "denuo" }));
 	set("long", 
-"�͵�ŵ�ǻ�ɽ�Ķ����ӣ�������ȴ�������������������Ͷʦ\n"
-"��Ե�ʡ��͵�ŵΪ��������������ɽ�¹ʶ�������㡣\n");
-	set("gender", "����");
+"劳德诺是华山的二弟子，但年龄却是最大，这是由于他带艺投师\n"
+"的缘故。劳德诺为人世故老练，华山事故都由他打点。\n");
+	set("gender", "男性");
 	set("age", 55);
 	set("attitude", "peaceful");
 	set("shen_type", -1);
@@ -51,12 +51,12 @@ void create()
 	prepare_skill("strike", "hunyuan-zhang");
 	prepare_skill("cuff", "pishi-poyu"); 
 
-	create_family("��ɽ��", 14, "����");
+	create_family("华山派", 14, "弟子");
 
 	set("inquiry", ([
-	    "����" : "����ϰ�������Ϊ��ͨ����\n",
-	    "����Ⱥ" : "�����Ǽ�ʦ��\n",
-	    "������" : "������ʦĸ��\n",
+	    "拜帖" : "请呈上拜帖让我为你通传。\n",
+	    "岳不群" : "那正是家师。\n",
+	    "宁中则" : "那是我师母。\n",
 	]));
 
 	setup();
@@ -71,8 +71,8 @@ void init()
 
 	::init();
 
-	if ( interactive(ob) && living(me) && environment(me)->query("short")!="���䳡" ) {
-		message_vision("$N�Ҵ�ææ���뿪�ˡ�\n", me);
+	if ( interactive(ob) && living(me) && environment(me)->query("short")!="练武场" ) {
+		message_vision("$N匆匆忙忙地离开了。\n", me);
 		me->move("/d/huashan/square");
 	}
 
@@ -88,13 +88,13 @@ void init()
 	}
 
 	if ( ( present("zixia book", ob) || found ) && living(me) ) {
-		message_vision("�͵�ŵͻȻ����Ȼ����$N��\n", ob);
+		message_vision("劳德诺突然暴起然攻击$N。\n", ob);
 		if ( char ) {
-			message_vision("���͵�ŵ���͹�֮�£�$N���ð�$n���¡�\n", ob, ob2);
+			message_vision("在劳德诺的猛攻之下，$N不得把$n放下。\n", ob, ob2);
 			ob2->move(environment(me));
 			me->kill_ob(ob2);
 		}
-		tell_object(ob,"�͵�ŵ������ϼ���ţ�\n");
+		tell_object(ob,"劳德诺想抢紫霞秘笈！\n");
 		me->kill_ob(ob);
 		remove_call_out("checking");
 		call_out("checking", 1, me, ob);
@@ -118,8 +118,8 @@ int checking(object me, object ob)
 	if (ob->is_ghost()) {
 	   obj1 = present("corpse", environment(me));
 	   obj2 = present("zixia book", obj1);  
-	   say("�͵�ŵ������������ʬ�����ó���ϼ���ţ�\n");
-	   command("say ������"+obj2->name()+"���������������ˣ�\n");
+	   say("劳德诺弯下身来，由尸体里拿出紫霞秘笈！\n");
+	   command("say 哈哈！"+obj2->name()+"终于落入我手中了！\n");
 	   command("hehe");
 	   destruct(obj2);      
 	   remove_call_out("checking"); 
@@ -134,7 +134,7 @@ int accept_object(object me, object obj)
 
 	object ob = this_player();
 
-	if ( obj->name() == "����" && obj->query("id") == "bai tie" ) {
+	if ( obj->name() == "拜帖" && obj->query("id") == "bai tie" ) {
 	   remove_call_out("say_dest");
 	   call_out("say_dest", 1, obj, ob);
 
@@ -142,7 +142,7 @@ int accept_object(object me, object obj)
 	}
 
 	command( "hmm" );
-	command( "say ������ⶫ����ʲ�᣿" );
+	command( "say 你给我这东西做什麽？" );
 	   
 	return 0;
 }
@@ -150,11 +150,11 @@ int accept_object(object me, object obj)
 int say_dest(object obj, object ob)
 {
 	if ( random(10) == 5 ) {
-	   command( "say ��λ"+RANK_D->query_respect(ob)+"������������ʦ��ʦĸ��");
-	   ob->set_temp("marks/��", 1);
+	   command( "say 这位"+RANK_D->query_respect(ob)+"请进大堂面见家师和师母。");
+	   ob->set_temp("marks/帖", 1);
 	}
 	else {
-	   command( "say ��λ"+RANK_D->query_respect(ob)+"�����治�ɣ���ʦ��ʦĸ��Ҫ�²��˷���������������������Ǹ��" );
+	   command( "say 这位"+RANK_D->query_respect(ob)+"来得真不巧，家师和师母有要事不克分身相见，请改天再来。抱歉！" );
 	}
 
 	destruct(obj);

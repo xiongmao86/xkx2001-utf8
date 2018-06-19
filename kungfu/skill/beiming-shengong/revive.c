@@ -1,9 +1,9 @@
 // revive.c
 // by Xuanyuan   7/2001
-/*ÐéÖñ¼ûÁËËýµÄÉËÊÆ£¬ÏëÆð´Ï±çÏÈÉúËÕÐÇºÓÔø½Ì¹ýËûÕâÃÅÖÎÉËÖ®·¨£¬µ±¼´´ßÍÕ½üÇ°
-£¬×óÊÖÖÐÖ¸Á¬µ¯£¬ÒÑ·â±ÕÁËÄÇÅ®×Ó¶Ï±Û´¦µÄÑ¨µÀ£¬ÑªÁ÷Á¢Ö¹¡£µÚÁù´Îµ¯Ö¸Ê±£¬Ê¹µÄÊÇ
-Í¯ÀÑËù½ÌµÄÒ»ÕÐ¡®ÐÇÍèÌøÖÀ¡¯£¬Ò»¹ÉµÄ±±Ú¤ÕæÆøÉäÈëËýµÄ±Û¸ù¡®ÖÐ¸®Ñ¨¡¯ÖÐ¡£ÄÇÅ®×Ó
-¡°°¡¡±µÄÒ»Éù´ó½Ð£¬ÐÑÁË×ªÀ´£¬
+/*è™šç«¹è§äº†å¥¹çš„ä¼¤åŠ¿ï¼Œæƒ³èµ·èªè¾©å…ˆç”Ÿè‹æ˜Ÿæ²³æ›¾æ•™è¿‡ä»–è¿™é—¨æ²»ä¼¤ä¹‹æ³•ï¼Œå½“å³å‚¬é©¼è¿‘å‰
+ï¼Œå·¦æ‰‹ä¸­æŒ‡è¿žå¼¹ï¼Œå·²å°é—­äº†é‚£å¥³å­æ–­è‡‚å¤„çš„ç©´é“ï¼Œè¡€æµç«‹æ­¢ã€‚ç¬¬å…­æ¬¡å¼¹æŒ‡æ—¶ï¼Œä½¿çš„æ˜¯
+ç«¥å§¥æ‰€æ•™çš„ä¸€æ‹›â€˜æ˜Ÿä¸¸è·³æŽ·â€™ï¼Œä¸€è‚¡çš„åŒ—å†¥çœŸæ°”å°„å…¥å¥¹çš„è‡‚æ ¹â€˜ä¸­åºœç©´â€™ä¸­ã€‚é‚£å¥³å­
+â€œå•Šâ€çš„ä¸€å£°å¤§å«ï¼Œé†’äº†è½¬æ¥ï¼Œ
 */
 
 #include <ansi.h>
@@ -11,24 +11,24 @@
 int exert(object me, object target)
 {	
 	if( !target )		
-		return notify_fail("Äã×Ô¼ºÊÇÇåÐÑµÄÂð£¿\n");	
+		return notify_fail("ä½ è‡ªå·±æ˜¯æ¸…é†’çš„å—ï¼Ÿ\n");	
 
 	if( me->is_fighting() || target->is_fighting())		
-		return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦£¡\n");	
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•è¿åŠŸï¼\n");	
 
 	if(target == me)		
-		return notify_fail("Äã²»ÄÜ¶Ô×Ô¼ºÔË¹¦£¡\n");	
+		return notify_fail("ä½ ä¸èƒ½å¯¹è‡ªå·±è¿åŠŸï¼\n");	
 
 	if( (int)me->query("max_neili") < 1000 )		
-		return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");	
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");	
 
 	if( (int)me->query("neili") < 350 )		
-		return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");        
+		return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");        
 
 	if( living(target) )		
-		return notify_fail( target->name() +"ÒÑ¾­ÊÇÇåÐÑµÄ£¡\n");	
+		return notify_fail( target->name() +"å·²ç»æ˜¯æ¸…é†’çš„ï¼\n");	
 
-	message_vision(HIY "$N×óÊÖÖÐÖ¸Á¬µ¯£¬Ò»ÕÐ¡®ÐÇÍèÌøÖÀ¡¯£¬Ò»¹ÉÕæÆøÉäÈë$nµÄ±Û¸ù¡®ÖÐ¸®Ñ¨¡¯ÖÐ¡£\n\n" NOR,me, target );	
+	message_vision(HIY "$Nå·¦æ‰‹ä¸­æŒ‡è¿žå¼¹ï¼Œä¸€æ‹›â€˜æ˜Ÿä¸¸è·³æŽ·â€™ï¼Œä¸€è‚¡çœŸæ°”å°„å…¥$nçš„è‡‚æ ¹â€˜ä¸­åºœç©´â€™ä¸­ã€‚\n\n" NOR,me, target );	
 
 	target->revive(); 
     	

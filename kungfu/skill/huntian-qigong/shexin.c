@@ -6,30 +6,30 @@
 #define SLEEP_CMD "/cmds/std/sleep"
 
 string *msgs = ({
-	HIY"$NºÍÔÃµØ¶Ô$nËµµÀ£º¡°Íû×ÅÎÒµÄÑÛ¾¦£¬Ç§Íò²»¿É·ÖÉñ¡£ÏÖÔÚÄã¸Ğµ½ÑÛÆ¤³ÁÖØ£¬Í·ÄÔ·¢ÔÎ£¬\n"
-	   "È«ÉíÆ£·¦ÎŞÁ¦£¬ÄÇ¾Í±ÕÉÏÑÛ¾¦Ë¯°Õ¡£¡±$NÔ½ËµÉùÒôÔ½ÊÇÈáºÍÌğÃÀ¡£\n"
-	   "$nÎ¢¾õ²»Í×£¬ÒªÏë×ªÍ·±Ü¿ª$NµÄÑÛ¹â£¬¿ÉÊÇÒ»Ë«ÑÛ¾¦¾¹ËÆ±»$NµÄÄ¿¹âÎü×¡ÁË£¬²»ÓÉ×ÔÖ÷\n"
-	   "µÄÄıÊÓ×Å$N£¬¾¹È»²»Öª²»¾õµÄ¹şÇ·Á¬Á¬¡£\n"NOR,
+	HIY"$Nå’Œæ‚¦åœ°å¯¹$nè¯´é“ï¼šâ€œæœ›ç€æˆ‘çš„çœ¼ç›ï¼Œåƒä¸‡ä¸å¯åˆ†ç¥ã€‚ç°åœ¨ä½ æ„Ÿåˆ°çœ¼çš®æ²‰é‡ï¼Œå¤´è„‘å‘æ™•ï¼Œ\n"
+	   "å…¨èº«ç–²ä¹æ— åŠ›ï¼Œé‚£å°±é—­ä¸Šçœ¼ç›ç¡ç½¢ã€‚â€$Nè¶Šè¯´å£°éŸ³è¶Šæ˜¯æŸ”å’Œç”œç¾ã€‚\n"
+	   "$nå¾®è§‰ä¸å¦¥ï¼Œè¦æƒ³è½¬å¤´é¿å¼€$Nçš„çœ¼å…‰ï¼Œå¯æ˜¯ä¸€åŒçœ¼ç›ç«Ÿä¼¼è¢«$Nçš„ç›®å…‰å¸ä½äº†ï¼Œä¸ç”±è‡ªä¸»\n"
+	   "çš„å‡è§†ç€$Nï¼Œç«Ÿç„¶ä¸çŸ¥ä¸è§‰çš„å“ˆæ¬ è¿è¿ã€‚\n"NOR,
 	 
-	HIW"Ö»¼û$NĞ¦ßäßäµÄÄıÍû$n£¬ÑÛÖĞËÆ·¢¹âÃ¢¡£$nÒ»Õú£¬¾õµÃÔøÔÚÉõÃ´µØ·½ºÍ´ËÈË»á¹ı£¬\n"
-	   "ÓÖ¾õµÃ$NÑÛÉ«ÇÆµÃ×Ô¼º¼«²»Êæ·ş£¬µ±¼´×ªÍ·±Ü¿ª£¬µ«¹ı²»Æ¬¿Ì£¬ÈÌ²»×¡ÓÖÈ¥ÍûÁË$NÒ»ÑÛ\n"
-	   "$NĞ¦µÀ£º¡°ÏÂµÃºÃ´óµÄÑ©°¡£¬ÊÇ²»ÊÇ£¿¡±$nµÀ£º¡°ÊÇ£¬ºÃ´óµÄÑ©¡£¡±$NµÀ£º\n"
-	   "¡°À´£¬ÔÛÃÇÈ¥ÇÆÇÆÑ©¾°¡£¡±$NËµ»°¼«ÊÇºÍÔÃ¶¯Ìı£¬¾¹ÓĞÒ»¹ÉÖĞÈËÓû×íÖ®Òâ£¬$nµÇÊ± \n"
-	   "¾õµÃÉñ¾ëÑÛÀ§£¬È«ÉíÎŞÁ¦¡£\n"NOR,
+	HIW"åªè§$Nç¬‘å’ªå’ªçš„å‡æœ›$nï¼Œçœ¼ä¸­ä¼¼å‘å…‰èŠ’ã€‚$nä¸€æ€”ï¼Œè§‰å¾—æ›¾åœ¨ç”šä¹ˆåœ°æ–¹å’Œæ­¤äººä¼šè¿‡ï¼Œ\n"
+	   "åˆè§‰å¾—$Nçœ¼è‰²ç§å¾—è‡ªå·±æä¸èˆ’æœï¼Œå½“å³è½¬å¤´é¿å¼€ï¼Œä½†è¿‡ä¸ç‰‡åˆ»ï¼Œå¿ä¸ä½åˆå»æœ›äº†$Nä¸€çœ¼\n"
+	   "$Nç¬‘é“ï¼šâ€œä¸‹å¾—å¥½å¤§çš„é›ªå•Šï¼Œæ˜¯ä¸æ˜¯ï¼Ÿâ€$né“ï¼šâ€œæ˜¯ï¼Œå¥½å¤§çš„é›ªã€‚â€$Né“ï¼š\n"
+	   "â€œæ¥ï¼Œå’±ä»¬å»ç§ç§é›ªæ™¯ã€‚â€$Nè¯´è¯ææ˜¯å’Œæ‚¦åŠ¨å¬ï¼Œç«Ÿæœ‰ä¸€è‚¡ä¸­äººæ¬²é†‰ä¹‹æ„ï¼Œ$nç™»æ—¶ \n"
+	   "è§‰å¾—ç¥å€¦çœ¼å›°ï¼Œå…¨èº«æ— åŠ›ã€‚\n"NOR,
 
-	HIM"Í»È»$nÓë$NÄ¿¹âÏà½Ó£¬²»½ûĞÄÖĞÎ¢Î¢Ò»Õğ£¬Ö»¼û$NË«Ä¿ÖĞ¾«¹â±ÆÉä£¬¶¯ÈËĞÄÆÇ¡£\n"
-	   "$NÎ¢Ğ¦µÀ£º¡°ÄúÀÛÀ²£¬ÄúĞªĞª°Õ£¡¡±ÉùÒôÈáºÍ£¬¼«ÊÇÔÃ¶ú¶¯Ìı¡£$n¹û¾õÈ«Éí¾ëµ¡£¬\n"
-	   "ĞÄÏëÀÛÁËÕâ´ó°ëÒ¹£¬Ò²Õæ¸ÃĞªĞªÁË£¬ĞÄÄîÕâÃ´Ò»¶¯£¬¸üÊÇÄ¿Ëá¿ÚÉ¬£¬¾«Æ£ÉñÀ§¡£\n"NOR,
+	HIM"çªç„¶$nä¸$Nç›®å…‰ç›¸æ¥ï¼Œä¸ç¦å¿ƒä¸­å¾®å¾®ä¸€éœ‡ï¼Œåªè§$NåŒç›®ä¸­ç²¾å…‰é€¼å°„ï¼ŒåŠ¨äººå¿ƒé­„ã€‚\n"
+	   "$Nå¾®ç¬‘é“ï¼šâ€œæ‚¨ç´¯å•¦ï¼Œæ‚¨æ­‡æ­‡ç½¢ï¼â€å£°éŸ³æŸ”å’Œï¼Œææ˜¯æ‚¦è€³åŠ¨å¬ã€‚$næœè§‰å…¨èº«å€¦æ€ ï¼Œ\n"
+	   "å¿ƒæƒ³ç´¯äº†è¿™å¤§åŠå¤œï¼Œä¹ŸçœŸè¯¥æ­‡æ­‡äº†ï¼Œå¿ƒå¿µè¿™ä¹ˆä¸€åŠ¨ï¼Œæ›´æ˜¯ç›®é…¸å£æ¶©ï¼Œç²¾ç–²ç¥å›°ã€‚\n"NOR,
 	});
 
 	string *laughMsg = ({
-	    HIW"$NÔ½Ğ¦Ô½À÷º¦£¬Ö±Ğ¦µÃÂúµØÖ±´òµø£¬²îµã±Õ¹ıÆøÈ¥¡£\n"NOR,
-	    HIG"$NÅõ×¡¶Ç×Ó£¬ÎûÎû¹ş¹şµØÖ±Ğ¦µÃÁ½ÑÛ·­°×£¬´­²»¹ıÆøÀ´¡£\n"NOR,
-	    HIY"$N¼ÌĞø¹ş¹ş´óĞ¦£¬Ç°ÑöºóºÏ£¬ËÆÊÇÌıµ½ÁË×î¿ÉĞ¦²»¹ıµÄĞ¦»°¡£\n"NOR,
-	    HIM"µ«¼û$nĞ¦µÃÔ½À´Ô½»¶³©£¬²»ÖªÔõµØ£¬$NÖ»¾õÈ«ÉíÇáÆ®Æ®µÄ¿ìÃÀÒì³££¬²»ÓÉ×ÔÖ÷µÄ\n"
-	       "¹ş¹ş´óĞ¦ÆğÀ´¡£\n"NOR,
-	    HIC"$N¼û$n±ÕÄ¿Á¼¾Ã£¬Ö»µÀÒÑÊÜÁË×Ô¼ºÑÔÓïËù»ó£¬»è³ÁË¯È¥£¬Õı×ÔĞÀÏ²£¬Óû´ı\n"
-	       "ÔÙÊ©½Æ¼Æ£¬Í»¼û$nÕö¿ªË«ÑÛ£¬Ïò×Å×Ô¼ºÎ¢Î¢¶øĞ¦£¬±ãÒ²±¨ÒÔÎ¢Î¢Ò»Ğ¦¡£\n"NOR,
+	    HIW"$Nè¶Šç¬‘è¶Šå‰å®³ï¼Œç›´ç¬‘å¾—æ»¡åœ°ç›´æ‰“è·Œï¼Œå·®ç‚¹é—­è¿‡æ°”å»ã€‚\n"NOR,
+	    HIG"$Næ§ä½è‚šå­ï¼Œå˜»å˜»å“ˆå“ˆåœ°ç›´ç¬‘å¾—ä¸¤çœ¼ç¿»ç™½ï¼Œå–˜ä¸è¿‡æ°”æ¥ã€‚\n"NOR,
+	    HIY"$Nç»§ç»­å“ˆå“ˆå¤§ç¬‘ï¼Œå‰ä»°ååˆï¼Œä¼¼æ˜¯å¬åˆ°äº†æœ€å¯ç¬‘ä¸è¿‡çš„ç¬‘è¯ã€‚\n"NOR,
+	    HIM"ä½†è§$nç¬‘å¾—è¶Šæ¥è¶Šæ¬¢ç•…ï¼Œä¸çŸ¥æ€åœ°ï¼Œ$Nåªè§‰å…¨èº«è½»é£˜é£˜çš„å¿«ç¾å¼‚å¸¸ï¼Œä¸ç”±è‡ªä¸»çš„\n"
+	       "å“ˆå“ˆå¤§ç¬‘èµ·æ¥ã€‚\n"NOR,
+	    HIC"$Nè§$né—­ç›®è‰¯ä¹…ï¼Œåªé“å·²å—äº†è‡ªå·±è¨€è¯­æ‰€æƒ‘ï¼Œæ˜æ²‰ç¡å»ï¼Œæ­£è‡ªæ¬£å–œï¼Œæ¬²å¾…\n"
+	       "å†æ–½ç‹¡è®¡ï¼Œçªè§$nçå¼€åŒçœ¼ï¼Œå‘ç€è‡ªå·±å¾®å¾®è€Œç¬‘ï¼Œä¾¿ä¹ŸæŠ¥ä»¥å¾®å¾®ä¸€ç¬‘ã€‚\n"NOR,
 	});
     
 private delay(object, object);
@@ -48,27 +48,27 @@ int exert(object me, object target)
 	
 	env = environment(me);
 	
-	if( !me->query("GB_SheXin_OK")) return notify_fail("ß×£¬Äã»áÊ¹ÓÃÉåĞÄÊõÂğ£¿\n");
+	if( !me->query("GB_SheXin_OK")) return notify_fail("å’¦ï¼Œä½ ä¼šä½¿ç”¨æ…‘å¿ƒæœ¯å—ï¼Ÿ\n");
 	
 	if( env->query("no_fight") || env->query("no_sleep_room") 
 		|| env->query("sleep_room") || env->query("hotel"))
-		return notify_fail("Äã²»¿ÉÒÔÔÚÕâÀïÊ¹ÓÃÉåĞÄÊõ¡£\n");
+		return notify_fail("ä½ ä¸å¯ä»¥åœ¨è¿™é‡Œä½¿ç”¨æ…‘å¿ƒæœ¯ã€‚\n");
 
 	if( !target )
-		return notify_fail("ÄãÒª¶ÔË­Ê¹ÓÃÉåĞÄÊõ£¿\n");
+		return notify_fail("ä½ è¦å¯¹è°ä½¿ç”¨æ…‘å¿ƒæœ¯ï¼Ÿ\n");
 
-	if( target->query("race") != "ÈËÀà")
-		return notify_fail("ÄãÄÜ¹»´ßÃß¶¯ÎïÂğ£¿²»¼ûµÃ°É£¿\n");
+	if( target->query("race") != "äººç±»")
+		return notify_fail("ä½ èƒ½å¤Ÿå‚¬çœ åŠ¨ç‰©å—ï¼Ÿä¸è§å¾—å§ï¼Ÿ\n");
 
 	if( (int)me->query_skill("huntian-qigong", 1) < 120 )
-		return notify_fail("ÄãµÄ»ìÌìÆø¹¦ĞŞÎª²»¹»£¡\n");
+		return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸä¿®ä¸ºä¸å¤Ÿï¼\n");
 
 	if( target->query("id") == me->query("id") )
-		return notify_fail("Äã²»ÄÜÉå×Ô¼ºµÄĞÄ£¡\n");
+		return notify_fail("ä½ ä¸èƒ½æ…‘è‡ªå·±çš„å¿ƒï¼\n");
 	//////////////not allow player use shexin on wizard////////////////////
 	if( !wizardp(me) && wizardp(target) )
 	{
-		message_vision(RED"´óµ¨£¡¸Ò¶ÔÎ×Ê¦Ê¹ÓÃÉåĞÄÊõ£¡¡£\n"NOR, me); 
+		message_vision(RED"å¤§èƒ†ï¼æ•¢å¯¹å·«å¸ˆä½¿ç”¨æ…‘å¿ƒæœ¯ï¼ã€‚\n"NOR, me); 
 		this_player()->unconcious();
 		this_player()->announce();
 		return 1;
@@ -79,27 +79,27 @@ int exert(object me, object target)
 		|| target->query("id")=="huang zhen"
 		|| target->query("id")=="he hongyao"
 		|| target->query("dealer"))
-		return notify_fail("ÎŞ·¨¶Ô´ËÈËÊ¹ÓÃÉåĞÄÊõ¡£\n");
+		return notify_fail("æ— æ³•å¯¹æ­¤äººä½¿ç”¨æ…‘å¿ƒæœ¯ã€‚\n");
 	//////////////////mantian may/08/2001/////////////////////////////////
 
 	if (target->query("no_shexin"))
-		return notify_fail("ÎŞ·¨¶Ô´ËÈËÊ¹ÓÃÉåĞÄÊõ¡£\n");
+		return notify_fail("æ— æ³•å¯¹æ­¤äººä½¿ç”¨æ…‘å¿ƒæœ¯ã€‚\n");
 
 	if( !living(target) )
-		return notify_fail("Äã²»ÄÜÉåËûµÄĞÄÁË£¡\n");
+		return notify_fail("ä½ ä¸èƒ½æ…‘ä»–çš„å¿ƒäº†ï¼\n");
 
 	if( me->is_fighting() || target->is_fighting())
-		return notify_fail("Õ½¶·ÖĞÎŞ·¨Ê¹ÓÃÉåĞÄÊõ¡£\n");
+		return notify_fail("æˆ˜æ–—ä¸­æ— æ³•ä½¿ç”¨æ…‘å¿ƒæœ¯ã€‚\n");
 	
-	if(target->is_busy()) return notify_fail("´ËÈËÕıÃ¦×ÅÄØ£¡\n");
+	if(target->is_busy()) return notify_fail("æ­¤äººæ­£å¿™ç€å‘¢ï¼\n");
 	
 	if( (int)me->query("max_neili") < 1000 )
-		return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
 	if( (int)me->query("neili") < 500 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 
-	message_vision(CYN"$N·¢³öÒ»ÕóÒõĞ¦¡£\n"NOR, me); 
+	message_vision(CYN"$Nå‘å‡ºä¸€é˜µé˜´ç¬‘ã€‚\n"NOR, me); 
 	// let players prepare: this guy is dangerous!!!
 	me->start_busy(2);
 	if(member_array(me->query("id"), target->query_killer()) != -1)
@@ -116,12 +116,12 @@ private void delay(object me, object target)
 	
 	if( !present(target, environment(me)))
 	{
-		tell_object(me, "ºÜ¿ÉÏ§£¬ÄãµÄÄ¿±êÒÑ¾­²»ÔÚÁË¡£\n");
+		tell_object(me, "å¾ˆå¯æƒœï¼Œä½ çš„ç›®æ ‡å·²ç»ä¸åœ¨äº†ã€‚\n");
 		return;
 	}  
 	
 	if( me->is_fighting() || target->is_fighting()) {
-		tell_object(me,"Õ½¶·ÖĞÎŞ·¨Ê¹ÓÃÉåĞÄÊõ¡£\n");
+		tell_object(me,"æˆ˜æ–—ä¸­æ— æ³•ä½¿ç”¨æ…‘å¿ƒæœ¯ã€‚\n");
 		return;
 	}
 	
@@ -146,19 +146,19 @@ private void delay(object me, object target)
 		return;
 	}
 	  
-	tell_object(target, HIR"\nÄãÖ»¾õµÃ»è»èÓûË¯£¬ÍùµØÏÂ½ÇÂäÒ»ÌÉ£¬¿ªÊ¼Ë¯¾õ¡£\n"NOR);
-	tell_object(target, HIR"²»Ò»»á¶ù£¬Äã¾Í½øÈëÁËÃÎÏç¡£\n"NOR);
-	tell_object(me, "\n"HIY + target->query("name") + "ÍùµØÏÂ½ÇÂäÇüÉíÒ»ÌÉ£¬²»Ò»»á±ã÷ıÉù´ó×÷£¬×öÆğÃÎÀ´¡£\n"NOR);
+	tell_object(target, HIR"\nä½ åªè§‰å¾—æ˜æ˜æ¬²ç¡ï¼Œå¾€åœ°ä¸‹è§’è½ä¸€èººï¼Œå¼€å§‹ç¡è§‰ã€‚\n"NOR);
+	tell_object(target, HIR"ä¸ä¸€ä¼šå„¿ï¼Œä½ å°±è¿›å…¥äº†æ¢¦ä¹¡ã€‚\n"NOR);
+	tell_object(me, "\n"HIY + target->query("name") + "å¾€åœ°ä¸‹è§’è½å±ˆèº«ä¸€èººï¼Œä¸ä¸€ä¼šä¾¿é¼¾å£°å¤§ä½œï¼Œåšèµ·æ¢¦æ¥ã€‚\n"NOR);
 
 	me->start_busy(1);
 	me->set_temp("block_msg/all",1);
 
 	fam = target->query("family/family_name");
-	if(fam != "Ø¤°ï") target->set("family/family_name", "Ø¤°ï");
+	if(fam != "ä¸å¸®") target->set("family/family_name", "ä¸å¸®");
 		
 	SLEEP_CMD->main(target);
 	
-	if(fam != "Ø¤°ï") target->set("family/family_name", fam);
+	if(fam != "ä¸å¸®") target->set("family/family_name", fam);
 	
 	me->delete_temp("block_msg/all");
 	return;
@@ -175,7 +175,7 @@ private void fail(object me, object target, int times)
 	
 	else
 	{
-		message_vision( HIR"\n$NĞ¦µÃºöÈ»±ÕÁËÆø¡£\n"NOR, me);
+		message_vision( HIR"\n$Nç¬‘å¾—å¿½ç„¶é—­äº†æ°”ã€‚\n"NOR, me);
 		me->unconcious();
 
 		if( !userp(target) ) call_out("wait_kill", 3, me, target);
@@ -196,7 +196,7 @@ private void wait_kill(object me, object target)
 
 	else
 	{
-		message_vision(HIR"$N¶Ô×Å$nºßÁËÒ»Éù£º¡°" + RANK_D->query_self_rude(target)+ "Ã÷ÈË²»×ö°µÊÂ£¬ÏÖÔÚÄãĞÑÁË£¬ÄÃÃüÀ´£¡£¡¡±\n"NOR, target, me);
+		message_vision(HIR"$Nå¯¹ç€$nå“¼äº†ä¸€å£°ï¼šâ€œ" + RANK_D->query_self_rude(target)+ "æ˜äººä¸åšæš—äº‹ï¼Œç°åœ¨ä½ é†’äº†ï¼Œæ‹¿å‘½æ¥ï¼ï¼â€\n"NOR, target, me);
 		call_out("start_kill", 1, target, me);
 	}
 	return;

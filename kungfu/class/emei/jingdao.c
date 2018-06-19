@@ -1,5 +1,5 @@
 //Cracked by Roath
-// Npc: /kungfu/class/emei/jingdao.c ¾²µÀÊ¦Ì«
+// Npc: /kungfu/class/emei/jingdao.c é™é“å¸ˆå¤ª
 // Date: xbc 96/09/22
 
 inherit NPC;
@@ -10,22 +10,22 @@ int auto_perform();
 
 void create()
 {
-        set_name("¾²µÀÊ¦Ì«", ({
+        set_name("é™é“å¸ˆå¤ª", ({
                 "jingdao shitai",
                 "jingdao",
                 "shitai",
 	}));
 	set("long",
-		"ËıÊÇÔÚ»ª²ØâÖĞŞĞĞµÄÊ¦Ì«£¬Æ½Ê±ÔÚ²Ø¾­¸óÀï´òµã¶ëáÒÅÉµÄ²ØÊé¡£\n"
+		"å¥¹æ˜¯åœ¨åè—åºµä¿®è¡Œçš„å¸ˆå¤ªï¼Œå¹³æ—¶åœ¨è—ç»é˜é‡Œæ‰“ç‚¹å³¨åµ‹æ´¾çš„è—ä¹¦ã€‚\n"
 	);
 
-	set("gender", "Å®ĞÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
         set("inquiry",([
-                "³ö¼Ò"  : (: ask_for_join :),
-                "»¹Ë×" : (:ask_for_huansu:),
+                "å‡ºå®¶"  : (: ask_for_join :),
+                "è¿˜ä¿—" : (:ask_for_huansu:),
         ]));
 
 	set("age", 40);
@@ -66,7 +66,7 @@ void create()
 	prepare_skill("strike", "jinding-zhang");
 	prepare_skill("finger", "tiangang-zhi");
 
-	create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+	create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({

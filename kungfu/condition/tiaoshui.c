@@ -23,6 +23,6 @@ int update_condition(object me, int duration)
 }
 void let_know(object me)
 {
-	tell_object(me, HIG "你时间已到，任务失败！\n" NOR);
+	tell_object(me, HIG "浣犳椂闂村凡鍒帮紝浠诲姟澶辫触锛乗n" NOR);
 	
 }

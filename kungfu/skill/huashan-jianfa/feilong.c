@@ -1,5 +1,5 @@
 //Cracked by Roath
-//feilong.c ÌìÍâ·ÉÁú
+//feilong.c å¤©å¤–é£é¾™
 
 #include <ansi.h>
 
@@ -17,24 +17,24 @@ int perform(object me, object target)
 	if( !target
 	||	!target->is_character()
 	||	!me->is_fighting(target) )
-		return notify_fail("ÌìÍâ·ÉÁúÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+		return notify_fail("å¤©å¤–é£é¾™åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
 	if( !me->query("huashan/feilong") )
-		return notify_fail("ÌìÍâ·ÉÁúÄËÊÇ»ªÉ½½£×Ú²»´«Ö®ÃÜ£¬Äã²¢Î´»ñµÃ´«ÊÚ£¡\n");
+		return notify_fail("å¤©å¤–é£é¾™ä¹ƒæ˜¯åå±±å‰‘å®—ä¸ä¼ ä¹‹å¯†ï¼Œä½ å¹¶æœªè·å¾—ä¼ æˆï¼\n");
 
 	if( me->query_skill_mapped("force") != "zixia-gong" )
-		return notify_fail("ÄãËùÓÃµÄ²¢·Ç×ÏÏ¼¹¦£¬ÎŞ·¨ÔË¾¢Ê©Õ¹ÌìÍâ·ÉÁú£¡\n");
+		return notify_fail("ä½ æ‰€ç”¨çš„å¹¶éç´«éœåŠŸï¼Œæ— æ³•è¿åŠ²æ–½å±•å¤©å¤–é£é¾™ï¼\n");
 
 	if( me->query_skill("force") < 100 )
-		return notify_fail("ÄãµÄ×ÏÏ¼¹¦»ğºòÎ´µ½£¬ÎŞ·¨ÔË¾¢Ê©Õ¹ÌìÍâ·ÉÁú£¡\n");
+		return notify_fail("ä½ çš„ç´«éœåŠŸç«å€™æœªåˆ°ï¼Œæ— æ³•è¿åŠ²æ–½å±•å¤©å¤–é£é¾™ï¼\n");
 
 	if( me->query_skill("sword") < 150 )
-		return notify_fail("Äã»ªÉ½½£·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃÌìÍâ·ÉÁú£¡\n");
+		return notify_fail("ä½ åå±±å‰‘æ³•ä¿®ä¸ºä¸è¶³ï¼Œè¿˜ä¸ä¼šä½¿ç”¨å¤©å¤–é£é¾™ï¼\n");
 
 	if( me->query("neili") <= 400 )
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÌìÍâ·ÉÁú£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿä½¿ç”¨å¤©å¤–é£é¾™ï¼\n");
 	if( me->query("jingli") <= 200 )
-		return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÌìÍâ·ÉÁú£¡\n");
+		return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤Ÿä½¿ç”¨å¤©å¤–é£é¾™ï¼\n");
 
 	weapon = me->query_temp("weapon");
 
@@ -62,9 +62,9 @@ int perform(object me, object target)
 	}
 	else op_jing = my_jing;
 
-	message_vision(HIG "\n$N½£×ßÁúÉß£¬°×¹âÈçºç£¬ÄıÖØ´¦ÈçÉ½ÔÀÎ¡ÖÅ£¬ÇáÁé´¦ÈôÇå·çÎŞ¼££¬±ä»ÃÄª²â¡£\n"
-			   "Îèµ½¼±´¦£¬$NÒ»Éù´óºÈ£¬"+weapon->name()+"ÍÑÊÖ·É³ö£¬»¯×÷Ò»µÀ¾ªºçÉäÏò$n£¡\n\n" NOR, me, target);
-	tell_object(target, HIR "ÄãÖ»¾õµÃµĞÕĞÀ´ÊÆÃÍ¶ñÎŞÂ×£¬Ñ¹µÃÄãÍ¸²»¹ıÆøÀ´£¡\n" NOR);
+	message_vision(HIG "\n$Nå‰‘èµ°é¾™è›‡ï¼Œç™½å…‰å¦‚è™¹ï¼Œå‡é‡å¤„å¦‚å±±å²³å·å³™ï¼Œè½»çµå¤„è‹¥æ¸…é£æ— è¿¹ï¼Œå˜å¹»è«æµ‹ã€‚\n"
+			   "èˆåˆ°æ€¥å¤„ï¼Œ$Nä¸€å£°å¤§å–ï¼Œ"+weapon->name()+"è„±æ‰‹é£å‡ºï¼ŒåŒ–ä½œä¸€é“æƒŠè™¹å°„å‘$nï¼\n\n" NOR, me, target);
+	tell_object(target, HIR "ä½ åªè§‰å¾—æ•Œæ‹›æ¥åŠ¿çŒ›æ¶æ— ä¼¦ï¼Œå‹å¾—ä½ é€ä¸è¿‡æ°”æ¥ï¼\n" NOR);
 
 	my_power = me->query_skill("sword") + me->query_skill("dodge") + me->query_skill("force")
 		   + me->query_skill("parry") + me->query("combat_exp") / 1000;
@@ -80,56 +80,56 @@ int perform(object me, object target)
 
 	   if ( random(my_li) > random(op_li) ) {
 		if ( objectp(op_weapon) ) {
-	   		message_vision(HIR "$NÉÁ±Ü²»¼°£¬Ö»ºÃÒ§ÑÀ¾ÙÆğ"+op_weapon->name()+"·ÜÆğÈ«Á¦Ç¿½Ó¹¥ÊÆ¡£\n" NOR, target);
-			message_vision(HIR "Ó²ÅéÖ®ÏÂ£¬"+op_weapon->name()+"¾¹¶ÏÎª¼¸½Ø£¬µ«ÈÔ×è²»ÁË·É½£À´ÊÆ£¡\n" NOR, target);
+	   		message_vision(HIR "$Né—ªé¿ä¸åŠï¼Œåªå¥½å’¬ç‰™ä¸¾èµ·"+op_weapon->name()+"å¥‹èµ·å…¨åŠ›å¼ºæ¥æ”»åŠ¿ã€‚\n" NOR, target);
+			message_vision(HIR "ç¡¬ç °ä¹‹ä¸‹ï¼Œ"+op_weapon->name()+"ç«Ÿæ–­ä¸ºå‡ æˆªï¼Œä½†ä»é˜»ä¸äº†é£å‰‘æ¥åŠ¿ï¼\n" NOR, target);
 			op_weapon->unequip();
 			op_weapon->move(environment(me));
-			op_weapon->set("name", "¶ÏµôµÄ" + op_weapon->name());
+			op_weapon->set("name", "æ–­æ‰çš„" + op_weapon->name());
 	  		op_weapon->set("value", 0);
 	  		op_weapon->set("weapon_prop", 0);
 		}
 	   	
-		message_vision(HIR "$N±ÜÎŞ¿É±Ü£¬·¢³öÒ»ÉùÆàÀúµÄ²Òº¿£¬"+weapon->name()+"´©Éí¶ø¹ı£¡\n" NOR, target);
+		message_vision(HIR "$Né¿æ— å¯é¿ï¼Œå‘å‡ºä¸€å£°å‡„å†çš„æƒ¨åšï¼Œ"+weapon->name()+"ç©¿èº«è€Œè¿‡ï¼\n" NOR, target);
 		weapon->move(target);
 		target->receive_wound("qi", target->query("max_qi")*9/10, me);
 //		target->die();
 	   }
 	   else if ( me->query_str() > target->query_str() ) {
 		if ( objectp(op_weapon) ) {
-			message_vision(HIR "Ó²ÅéÖ®ÏÂ£¬"+op_weapon->name()+"¾¹¶ÏÎª¼¸½Ø£¬ÖÕì¶µÖÏûÁË·É½£À´ÊÆ£¡\n" NOR, target);
-			message_vision("·É½£¹¥ÊÆÊÜ×è£¬Á¦¾¡µøÂä¡£$NËäµ²¹ıÒ»»÷£¬È´Ò²Òò¾«Á¦ÄÚÁ¦îÒºÄ£¬Ò¡Ò¡Óû×¹£¡\n", target);
+			message_vision(HIR "ç¡¬ç °ä¹‹ä¸‹ï¼Œ"+op_weapon->name()+"ç«Ÿæ–­ä¸ºå‡ æˆªï¼Œç»ˆæ–¼æŠµæ¶ˆäº†é£å‰‘æ¥åŠ¿ï¼\n" NOR, target);
+			message_vision("é£å‰‘æ”»åŠ¿å—é˜»ï¼ŒåŠ›å°½è·Œè½ã€‚$Nè™½æŒ¡è¿‡ä¸€å‡»ï¼Œå´ä¹Ÿå› ç²¾åŠ›å†…åŠ›é’œè€—ï¼Œæ‘‡æ‘‡æ¬²å ï¼\n", target);
 			weapon->move(environment(me));
 			op_weapon->unequip();
 			op_weapon->move(environment(me));
-			op_weapon->set("name", "¶ÏµôµÄ" + op_weapon->name());
+			op_weapon->set("name", "æ–­æ‰çš„" + op_weapon->name());
 	  		op_weapon->set("value", 0);
 	  		op_weapon->set("weapon_prop", 0);
 	   	}
 		else {
-			message_vision(HIR "$N·ÜÁ¦ÉÁ¶ã£¬µ«È´Á¦ÓĞ²»´ş£¬·¢³öÒ»ÉùÆàÀúµÄ²Òº¿£¬ÖĞ½£ÖØÉË£¡\n" NOR, target);
+			message_vision(HIR "$Nå¥‹åŠ›é—ªèº²ï¼Œä½†å´åŠ›æœ‰ä¸é€®ï¼Œå‘å‡ºä¸€å£°å‡„å†çš„æƒ¨åšï¼Œä¸­å‰‘é‡ä¼¤ï¼\n" NOR, target);
 			target->receive_wound("qi", target->query("max_qi")/2, me);
 		}
 	   }
 	   else if ( random(2) == 1 && objectp(op_weapon) ) {
-		message_vision(HIR "Ó²ÅéÖ®ÏÂ£¬$NµÄ"+weapon->name()+"¼°$nµÄ"+op_weapon->name()+"Ë«Ë«µøÏÂ£¡\n" NOR, me, target);
+		message_vision(HIR "ç¡¬ç °ä¹‹ä¸‹ï¼Œ$Nçš„"+weapon->name()+"åŠ$nçš„"+op_weapon->name()+"åŒåŒè·Œä¸‹ï¼\n" NOR, me, target);
 		weapon->move(environment(me));
 		op_weapon->move(environment(me));
 	   }
 	   else if ( objectp(op_weapon) ) {
-		message_vision(HIR "Ó²ÅéÖ®ÏÂ£¬$NµÄ"+weapon->name()+"¼°$nµÄ"+op_weapon->name()+"Ë«Ë«Ëğ»Ù£¡\n" NOR, me, target);
+		message_vision(HIR "ç¡¬ç °ä¹‹ä¸‹ï¼Œ$Nçš„"+weapon->name()+"åŠ$nçš„"+op_weapon->name()+"åŒåŒæŸæ¯ï¼\n" NOR, me, target);
 		op_weapon->unequip();
 		op_weapon->move(environment(me));
-		op_weapon->set("name", "¶ÏµôµÄ" + op_weapon->name());
+		op_weapon->set("name", "æ–­æ‰çš„" + op_weapon->name());
 	  	op_weapon->set("value", 0);
 	  	op_weapon->set("weapon_prop", 0);
 		weapon->unequip();
 		weapon->move(environment(me));
-		weapon->set("name", "¶ÏµôµÄ" + weapon->name());
+		weapon->set("name", "æ–­æ‰çš„" + weapon->name());
 	  	weapon->set("value", 0);
 	  	weapon->set("weapon_prop", 0);
 	   }
 	   else {
-		message_vision(HIR "$N·ÜÁ¦ÉÁ¶ã£¬µ«È´Á¦ÓĞ²»´ş£¬·¢³öÒ»ÉùÆàÀúµÄ²Òº¿£¬ÖĞ½£ÊÜÉË£¡\n" NOR, target);
+		message_vision(HIR "$Nå¥‹åŠ›é—ªèº²ï¼Œä½†å´åŠ›æœ‰ä¸é€®ï¼Œå‘å‡ºä¸€å£°å‡„å†çš„æƒ¨åšï¼Œä¸­å‰‘å—ä¼¤ï¼\n" NOR, target);
 		target->receive_wound("qi", target->query("max_qi")/4, me);
 	   }
 
@@ -138,8 +138,8 @@ int perform(object me, object target)
 	}
 	else {
 //		weapon->move(environment(me));	
-		message_vision(HIY "$NÉíĞÎÁ¬ÉÁ£¬Ö»ÊØ²»¹¥£¬ºÃ²»ÈİÒ×½«´ËÕĞ±Ü¹ı£¬ÒÑÏÅµÃÍö»êÖ±Ã°£¡\n" NOR, target);
-		message_vision(HIY "Ò»»÷Î´ÖĞ£¬"+weapon->name()+"à²µÄÒ»ÉùÓÖ·É»Ø$NÊÖÖĞ¡£\n" NOR, me);
+		message_vision(HIY "$Nèº«å½¢è¿é—ªï¼Œåªå®ˆä¸æ”»ï¼Œå¥½ä¸å®¹æ˜“å°†æ­¤æ‹›é¿è¿‡ï¼Œå·²å“å¾—äº¡é­‚ç›´å†’ï¼\n" NOR, target);
+		message_vision(HIY "ä¸€å‡»æœªä¸­ï¼Œ"+weapon->name()+"å—–çš„ä¸€å£°åˆé£å›$Næ‰‹ä¸­ã€‚\n" NOR, me);
 	}
 
 	me->add("neili", -my_nei);

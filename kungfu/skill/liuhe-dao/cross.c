@@ -1,5 +1,5 @@
 //Cracked by Roath
-// cross.c  // Ê®×Ö¿³
+// cross.c  // åå­—ç 
 
 #include <ansi.h>
 inherit F_SSERVER;
@@ -15,19 +15,19 @@ int perform(object me, object target)
   if( !target ) target = offensive_target(me);
 
   if( !target || !target->is_character() || !me->is_fighting(target) )
-     return notify_fail("Ê®×Ö¿³Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+     return notify_fail("åå­—ç åªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 
   if( (int)me->query_skill("huntian-qigong", 1) < 150 )
-    return notify_fail("ÄãµÄ»ìÌìÆø¹¦ĞŞÎª²»¹»£¡\n");
+    return notify_fail("ä½ çš„æ··å¤©æ°”åŠŸä¿®ä¸ºä¸å¤Ÿï¼\n");
 
   if( (int)me->query_skill("liuhe-dao", 1) < 150 )
-    return notify_fail("ÄãµÄÁùºÏµ¶·¨»¹²»¹»´¿Êì.\n");
+    return notify_fail("ä½ çš„å…­åˆåˆ€æ³•è¿˜ä¸å¤Ÿçº¯ç†Ÿ.\n");
     
   if( (int)me->query("max_neili") < 500 )
-    return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¡£\n");
+    return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿã€‚\n");
 
   if( (int)me->query("neili") < 150 )
-    return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+    return notify_fail("ä½ çš„çœŸæ°”ä¸å¤Ÿã€‚\n");
 
   inv = all_inventory(me);
   
@@ -38,20 +38,20 @@ int perform(object me, object target)
     }
   }
   
-  if(!SecWeapon) return notify_fail("ÄãÉíÉÏÃ»ÓĞ¶àÓàµÄµ¶¡£\n");
+  if(!SecWeapon) return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰å¤šä½™çš„åˆ€ã€‚\n");
   
   if(!stringp(str = SecWeapon->query("wield_msg")) )
-    str = "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n";
+    str = "$Nã€Œå”°ã€çš„ä¸€å£°æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n";
 
         message_vision(str, me, SecWeapon);
 
   if(random(2))
     message_vision( HIG
-      "½ô½ÓÕßµ±µ±Á½ÉùÏì£¬$NË«µ¶Æë³ö£¬¿ìÈçÆ®·ç°ã½üÇ°£¬Ïò$n¼±¿³Á½µ¶£¬\n"
-      "ÕâÕıÊÇ$N³ÉÃû¾ø¼¼¡°Ê®×Ö¿³¡±£¬²»ÖªÓĞ¶àÉÙ½­ºşºÃººÔøÉ¥ÔÚÕâ¶¾ÕĞÖ®ÏÂ¡£\n"NOR, me, target);
+      "ç´§æ¥è€…å½“å½“ä¸¤å£°å“ï¼Œ$NåŒåˆ€é½å‡ºï¼Œå¿«å¦‚é£˜é£èˆ¬è¿‘å‰ï¼Œå‘$næ€¥ç ä¸¤åˆ€ï¼Œ\n"
+      "è¿™æ­£æ˜¯$Næˆåç»æŠ€â€œåå­—ç â€ï¼Œä¸çŸ¥æœ‰å¤šå°‘æ±Ÿæ¹–å¥½æ±‰æ›¾ä¸§åœ¨è¿™æ¯’æ‹›ä¹‹ä¸‹ã€‚\n"NOR, me, target);
   else 
     message_vision( HIG
-      "$N´óºÈÒ»Éù£¬Í»È»Í¦Æğ$n"+HIG"¼²¿³£¬Ë«µ¶ÉÏÏÂ·­·É£¬Îè³ÉÒ»ÍÅ°×¹â£¬Ê¹³ö¡°Ê®×Ö¿³¡±µÄÁèÀ÷µ¶ÊÆ¡£\n"NOR, me, SecWeapon);
+      "$Nå¤§å–ä¸€å£°ï¼Œçªç„¶æŒºèµ·$n"+HIG"ç–¾ç ï¼ŒåŒåˆ€ä¸Šä¸‹ç¿»é£ï¼Œèˆæˆä¸€å›¢ç™½å…‰ï¼Œä½¿å‡ºâ€œåå­—ç â€çš„å‡Œå‰åˆ€åŠ¿ã€‚\n"NOR, me, SecWeapon);
 
   me->add("neili", -80);
   me->add("jingli", -20);
@@ -79,12 +79,12 @@ void AddFight(int WorkTime, object target, object SecWeapon, object attacker)
      || (string)weapon->query("skill_type") != "blade" )
   {
     message_vision( HIY
-    "Í»È»¼ä$NË«µ¶½»´í£¬¡°Ê®×Ö¿³¡±ÒÑÈ»ÕĞ±Ï£¬ï£µÄÒ»ÉùÏì£¬ÊÕÆğÁË$n"+HIY"¡£\n" NOR, attacker, SecWeapon);
+    "çªç„¶é—´$NåŒåˆ€äº¤é”™ï¼Œâ€œåå­—ç â€å·²ç„¶æ‹›æ¯•ï¼Œé“®çš„ä¸€å£°å“ï¼Œæ”¶èµ·äº†$n"+HIY"ã€‚\n" NOR, attacker, SecWeapon);
 
     attacker->delete_temp("cannot_perform");
           
                 if( !stringp(str = SecWeapon->query("unwield_msg")) )
-      str = "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n";
+      str = "$Nå°†æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n";
         message_vision(str, attacker, SecWeapon);
     
     SecWeapon->delete("equipped");

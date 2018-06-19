@@ -7,14 +7,14 @@ int auto_perform();
 
 void create()
 {
-        set_name("Ã·³¬·ç", ({ "mei chaofeng", "mei", "chaofeng" }));
+        set_name("æ¢…è¶…é£", ({ "mei chaofeng", "mei", "chaofeng" }));
 	set_weight(60000000);
-        set("title", "ºÚ·çË«É·");
-        set("nickname", HIB"ÌúÊ¬"NOR);
+        set("title", "é»‘é£åŒç…");
+        set("nickname", HIB"é“å°¸"NOR);
         set("long",
-"ËıÊÇ»ÆÒ©Ê¦µÄ¶şµÜ×ÓÃ·³¬·ç£¬ËıÃæÉ«´ó¸ÅÒòÎª¾Ã¾Óº£µºÏÔµÃ÷îºÚ£¬\n"
-"Ä£ÑùÈ´ÆÄÎªÇÎÀö¡£ËıÔÚÌÒ»¨µÜ×ÓÖĞÓÈ¾«Í¨±Ş·¨¡£\n");
-        set("gender", "Å®ĞÔ");	
+"å¥¹æ˜¯é»„è¯å¸ˆçš„äºŒå¼Ÿå­æ¢…è¶…é£ï¼Œå¥¹é¢è‰²å¤§æ¦‚å› ä¸ºä¹…å±…æµ·å²›æ˜¾å¾—é»é»‘ï¼Œ\n"
+"æ¨¡æ ·å´é¢‡ä¸ºä¿ä¸½ã€‚å¥¹åœ¨æ¡ƒèŠ±å¼Ÿå­ä¸­å°¤ç²¾é€šé­æ³•ã€‚\n");
+        set("gender", "å¥³æ€§");	
 	set("age", 35);
 	set("attitude", "aggressive");
 	set("shen_type", -1);
@@ -55,7 +55,7 @@ void create()
 		(: auto_perform :),
 	}) );
 */
-	create_family("ÌÒ»¨µº", 2, "µÜ×Ó");
+	create_family("æ¡ƒèŠ±å²›", 2, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/xixia/obj/robe")->wear();
@@ -82,9 +82,9 @@ void die()
 	}
 	
 	if (flag) 
-	message_vision(HIR"Ã·³¬·ç²Ò½ĞÒ»Éù£¬µÀ£ºÔôºº×Ó£¬ÎÒÅãÄãÀ´ÁË£¡£¡£¡\n"NOR, this_object());
+	message_vision(HIR"æ¢…è¶…é£æƒ¨å«ä¸€å£°ï¼Œé“ï¼šè´¼æ±‰å­ï¼Œæˆ‘é™ªä½ æ¥äº†ï¼ï¼ï¼\n"NOR, this_object());
 	else 
-	message_vision(HIR"Ã·³¬·ç²Ò½ĞÒ»Éù£¬µÀ£ºÔôºº×Ó£¬¸øÎÒ±¨³ğ£¡£¡£¡\n"NOR, this_object());
+	message_vision(HIR"æ¢…è¶…é£æƒ¨å«ä¸€å£°ï¼Œé“ï¼šè´¼æ±‰å­ï¼Œç»™æˆ‘æŠ¥ä»‡ï¼ï¼ï¼\n"NOR, this_object());
 
         ::die();
 }

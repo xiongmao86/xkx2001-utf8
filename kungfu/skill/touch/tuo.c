@@ -10,25 +10,25 @@ int perform(object me, object target)
         string *limbs, limb, type, result, str, dodge_skill;
 
         my_exp = me->query("combat_exp");
-        type = "ÄÚÉË";
+        type = "å†…ä¼¤";
 
         if( !target ) target = offensive_target(me);
 
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ˜æ–—ä¸­ã€‚\n");
 
         if ( objectp(me->query_temp("weapon")) )
-                return notify_fail("Äã²»ÊÇ¿ÕÊÖ¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯ç©ºæ‰‹ã€‚\n");
 
        if( !objectp(armor = target->query_temp("armor/cloth") ))
-	        return notify_fail("¶ÔÊÖÏÖÔÚÃ»ÓĞ´©ÒÂ°¡¡«\n");
+	        return notify_fail("å¯¹æ‰‹ç°åœ¨æ²¡æœ‰ç©¿è¡£å•Šï½\n");
 
 	if ( target->query_temp("armor/cloth")=="equipped")
-		return notify_fail("¶ÔÊÖÏÖÔÚÃ»ÓĞ´©ÒÂ°¡¡«\n");
+		return notify_fail("å¯¹æ‰‹ç°åœ¨æ²¡æœ‰ç©¿è¡£å•Šï½\n");
 
-        message_vision(HIM "ºöÈ»Ö®¼ä£¬$N´óºÈÒ»Éù£¬ÆËÏò$pÉíÇ°£¬Ë«ÊÖ·ÉÎèÂÒÃş£¬Ê¹³öÊ®°ËÃşµÄ¡¸ÍÑ¡¹¡±×Ö¾ö£¡\n\n" NOR, me,target);
+        message_vision(HIM "å¿½ç„¶ä¹‹é—´ï¼Œ$Nå¤§å–ä¸€å£°ï¼Œæ‰‘å‘$pèº«å‰ï¼ŒåŒæ‰‹é£èˆä¹±æ‘¸ï¼Œä½¿å‡ºåå…«æ‘¸çš„ã€Œè„±ã€â€å­—å†³ï¼\n\n" NOR, me,target);
         lvl = (int)(lvl / 5);
         me->add("neili", -lvl*2); 
         me->add("jingli", -100);  
@@ -47,13 +47,13 @@ int perform(object me, object target)
 
         if( ap > dp ) {
             if( target->query_temp("armor/cloth")){
-    			tell_object(target,HIY"ÄãÖ»¾õÉíÉÏµÄ·¢Ñ÷£¬»ëÉí²»×ÔÔÚ£¬ÒÑ¾­ÖĞÁË¡¸ÍÑ¡¹×Ö¾÷ÁË£¡\n"NOR);
+    			tell_object(target,HIY"ä½ åªè§‰èº«ä¸Šçš„å‘ç—’ï¼Œæµ‘èº«ä¸è‡ªåœ¨ï¼Œå·²ç»ä¸­äº†ã€Œè„±ã€å­—è¯€äº†ï¼\n"NOR);
                 	armor = target->query_temp("armor/cloth");
 			if( armor->query("id") == "armor")
-                     		message_vision(HIW"Ö»¼û$NÉíÉÏµÄ$n"+HIW+"ÒÑ±»ÍÑ¿ÉÏÂÀ´£¬Â¶³öÁË°×°×µÄ¼¡Èâ£¡\n"NOR, target, armor);
+                     		message_vision(HIW"åªè§$Nèº«ä¸Šçš„$n"+HIW+"å·²è¢«è„±å¯ä¸‹æ¥ï¼Œéœ²å‡ºäº†ç™½ç™½çš„è‚Œè‚‰ï¼\n"NOR, target, armor);
 		        armor->unequip();
             } 
         }
-	else message_vision(HIY"°¥Ñ½¡«$N£¬¡¸ÍÑ¡¹×Ö¾öÊ§°ÜÁË£¡\n"NOR,target);
+	else message_vision(HIY"å“å‘€ï½$Nï¼Œã€Œè„±ã€å­—å†³å¤±è´¥äº†ï¼\n"NOR,target);
         return 1;
 }

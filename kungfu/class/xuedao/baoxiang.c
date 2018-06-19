@@ -6,10 +6,10 @@ string ask_me();
 
 void create()
 {
-	set_name("±¦Ïó", ({ "bao xiang", "bao", "xiang" }));
+	set_name("å®è±¡", ({ "bao xiang", "bao", "xiang" }));
 	set("long", 
-"Ò»¸ö¼«¸ß¼«ÊİµÄÉ®ÈË£¬Á©ÑÛĞ×Ã¢ËÄÉä¡£´ËÈËÔÚÑªµ¶ÀÏ×æÃÅÏÂ£¬×îÊÇĞÄºİÊÖÀ±¡£\n");
-	set("gender", "ÄĞĞÔ");
+"ä¸€ä¸ªæé«˜æç˜¦çš„åƒ§äººï¼Œä¿©çœ¼å‡¶èŠ’å››å°„ã€‚æ­¤äººåœ¨è¡€åˆ€è€ç¥–é—¨ä¸‹ï¼Œæœ€æ˜¯å¿ƒç‹ æ‰‹è¾£ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 30);
 	set("attitude", "heroism");
 	set("class","lama");
@@ -39,7 +39,7 @@ void create()
 	set_skill("longxiang-banruo", 60);
 	set("book_count", 1);
 	set("inquiry", ([
-                "Ñªµ¶ÃØóÅ" : (: ask_me :),
+                "è¡€åˆ€ç§˜ç¬ˆ" : (: ask_me :),
         ]));
 
 	map_skill("force", "longxiang-banruo");
@@ -51,7 +51,7 @@ void create()
 	prepare_skill("cuff", "yujiamu-quan");
 	
 
-	create_family("Ñªµ¶ÃÅ", 5, "µÜ×Ó");
+	create_family("è¡€åˆ€é—¨", 5, "å¼Ÿå­");
 
 	setup();
 	carry_object("/d/qilian/obj/miandao")->wield();
@@ -59,38 +59,38 @@ void create()
 }
 void attempt_apprentice(object ob)
 {
-        if (ob->query("gender")=="Å®ĞÔ") {
-                command ("say ±¾ÅÉ²»ÊÕÅ®µÜ×Ó£¬Äã»ØÈ¥°É¡£");
+        if (ob->query("gender")=="å¥³æ€§") {
+                command ("say æœ¬æ´¾ä¸æ”¶å¥³å¼Ÿå­ï¼Œä½ å›å»å§ã€‚");
                 return;
         }
 
-	if( ob->query("family/family_name") != "Ñ©É½ÅÉ"
-        && ob->query("family/family_name") != "Ñªµ¶ÃÅ"
+	if( ob->query("family/family_name") != "é›ªå±±æ´¾"
+        && ob->query("family/family_name") != "è¡€åˆ€é—¨"
         && ob->query("combat_exp") >= 10000 ) {
-                command ("say " + RANK_D->query_respect(this_player()) + "ÊÇ"
-                +ob->query("family/family_name")+"¸ßÊÖ£¬±¾ÅÉ¿É²»¸ÒÊÕÁô£¡");
+                command ("say " + RANK_D->query_respect(this_player()) + "æ˜¯"
+                +ob->query("family/family_name")+"é«˜æ‰‹ï¼Œæœ¬æ´¾å¯ä¸æ•¢æ”¶ç•™ï¼");
                 return;
         }
 	if ((int)ob->query_skill("longxiang-banruo", 1) < 30) {
                 command("say " + RANK_D->query_respect(ob) +
-                        "µÄÉí°å¶ù¸úÎÒÃÇÕâ¶ù»ì·¹¿É³Ô²»Ïû¡£");
+                        "çš„èº«æ¿å„¿è·Ÿæˆ‘ä»¬è¿™å„¿æ··é¥­å¯åƒä¸æ¶ˆã€‚");
                 return;
 	}
-	command("say ºÃ°É£¬Æ¶É®¾ÍÊÕÏÂÄãÁË¡£");
+	command("say å¥½å§ï¼Œè´«åƒ§å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit " + ob->query("id"));
 }
 string ask_me()
 {
 	mapping fam;
         object ob;
-        if (!(fam = this_player()->query("family")) || fam["family_name"] !="Ñªµ¶ÃÅ")
-                return  "ÎÒ¡£¡£¡£²»ÖªµÀ¡£";
+        if (!(fam = this_player()->query("family")) || fam["family_name"] !="è¡€åˆ€é—¨")
+                return  "æˆ‘ã€‚ã€‚ã€‚ä¸çŸ¥é“ã€‚";
         if (query("book_count") < 1)
-                return "ÎÒ¡£¡£¡£²»ÖªµÀ¡£";
+                return "æˆ‘ã€‚ã€‚ã€‚ä¸çŸ¥é“ã€‚";
         if( (random(30) > 5))
-                return "ÎÒ¡£¡£¡£²»ÖªµÀ¡£\n";
+                return "æˆ‘ã€‚ã€‚ã€‚ä¸çŸ¥é“ã€‚\n";
         add("book_count", -1);
         ob = new("/d/qilian/obj/xuedao_book");
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾Êé¾Í½è¸øÄã¿´¼¸Ìì°É¡£";
+        return "å¥½å§ï¼Œè¿™æœ¬ä¹¦å°±å€Ÿç»™ä½ çœ‹å‡ å¤©å§ã€‚";
 }

@@ -1,5 +1,5 @@
 //Cracked by Roath
-// taiji-gong.c Ì«¼«¹¦
+// taiji-gong.c å¤ªæžåŠŸ
 // xQin 2/00
 
 inherit SKILL;
@@ -10,7 +10,7 @@ int valid_learn(object me)
 {
 	if( me->query_skill("taiji-gong") < 10 || me->query_skill("taiji-jian") < 50
 		|| me->query_skill("taiji-quan") < 50 )
-		return notify_fail("ÄãÏÖÔÚ»¹²»ÄÜÑ§Ï°Ì«¼«ÏµµÄ¹¦·ò¡£\n");
+		return notify_fail("ä½ çŽ°åœ¨è¿˜ä¸èƒ½å­¦ä¹ å¤ªæžç³»çš„åŠŸå¤«ã€‚\n");
 
 	return 1;
 }
