@@ -1,5 +1,5 @@
 # Convert xkx2001 into utf8
-* [ ] convert config.xkx
+* [x] convert config.xkx
 * [x] convert u/
 * [x] convert clone/
 * [x] convert adm/
