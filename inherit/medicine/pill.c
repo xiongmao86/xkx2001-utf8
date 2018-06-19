@@ -16,21 +16,21 @@ int do_pour(string arg)
 	if( !arg
 	||	sscanf(arg, "%s in %s", me, what)!=2
 	||	!id(me) )
-		return notify_fail("Ö¸Áî¸ñÊ½: pour <Ò©·Û> in <ÎïÆ·>\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼: pour <è¯ç²‰> in <ç‰©å“>\n");
 
 	ob = present(what, this_player());
 	if( !ob )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞ " + what + " ÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰ " + what + " è¿™æ ·ä¸œè¥¿ã€‚\n");
 	if( !ob->query("liquid/remaining") ){
-		write(ob->name() + "ÀïÊ²÷áÒ²Ã»ÓĞ£¬ÏÈ×°Ğ©Ë®¾Æ²ÅÄÜÈÜ»¯µô"+this_object()->name()+"¡£\n");
+		write(ob->name() + "é‡Œä»€éº½ä¹Ÿæ²¡æœ‰ï¼Œå…ˆè£…äº›æ°´é…’æ‰èƒ½æº¶åŒ–æ‰"+this_object()->name()+"ã€‚\n");
 		return 1;
 	}
 	// We let call other to call the "master copy" of the object in case the
 	// powder object got destructed after used up.
 	f = (: call_other, base_name(this_object()), "effect_in_liquid" :);
 	ob->set("liquid/drink_func", bind(f, ob));
-	message_vision("$N½«Ò»" +query("unit") + name() + "ÈÓ½ø" + ob->name() 
-		+ "£¬Ò¡»ÎÁË¼¸ÏÂ¡£\n", this_player());
+	message_vision("$Nå°†ä¸€" +query("unit") + name() + "æ‰”è¿›" + ob->name() 
+		+ "ï¼Œæ‘‡æ™ƒäº†å‡ ä¸‹ã€‚\n", this_player());
 	destruct(this_object());
 	return 1;
 }

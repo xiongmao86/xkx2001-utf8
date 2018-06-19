@@ -74,7 +74,7 @@ void heart_beat()
 		if ( !objectp(rum_ob = find_object("/d/city/npc/aqingsao")) )
 			rum_ob = load_object("/d/city/npc/aqingsao");
                                       
-		CHANNEL_D->do_channel(rum_ob,"rumor","因为一次讲话太多，"+name() +"的频道被关闭了。\n");
+		CHANNEL_D->do_channel(rum_ob,"rumor","鍥犱负涓�娆¤璇濆お澶氾紝"+name() +"鐨勯閬撹鍏抽棴浜嗐�俓n");
 		set("chblk_on", 1);
 		}
 		set_temp("channel_msg_cnt", 0); 
@@ -109,7 +109,7 @@ void heart_beat()
 		remove_all_enemy();
 // xuy, die only if falling unconcious (sleeping will have living() return 0 as well)
 		if( living(this_object()) ) unconcious();
-		else if( this_object()->query("disable_type") == " <昏迷不醒>" ) 
+		else if( this_object()->query("disable_type") == " <鏄忚糠涓嶉啋>" ) 
 			die();
 		return;
 	}

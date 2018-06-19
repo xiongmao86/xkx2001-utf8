@@ -36,10 +36,10 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 			damage = - damage;
 			me->receive_damage( "qi", damage * 2, victim);
 			me->receive_wound( "qi", damage, victim );
-			if( damage < 10 ) result = "$NÊÜµ½$nµÄÄÚÁ¦·´Õð£¬ÃÆºßÒ»Éù¡£\n";
-			else if( damage < 20 ) result = "$N±»$nÒÔÄÚÁ¦·´Õð£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n";
-			else if( damage < 40 ) result = "$N±»$nÒÔÄÚÁ¦Ò»Õð£¬ÐØ¿ÚÓÐÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n";
-			else result = "$N±»$nµÄÄÚÁ¦Ò»Õð£¬ÑÛÇ°Ò»ºÚ£¬Éí×ÓÏòºó·É³öÕÉÐí£¡£¡\n";
+			if( damage < 10 ) result = "$Nå—åˆ°$nçš„å†…åŠ›åéœ‡ï¼Œé—·å“¼ä¸€å£°ã€‚\n";
+			else if( damage < 20 ) result = "$Nè¢«$nä»¥å†…åŠ›åéœ‡ï¼Œã€Œå˜¿ã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n";
+			else if( damage < 40 ) result = "$Nè¢«$nä»¥å†…åŠ›ä¸€éœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿žé€€äº†äº”å…­æ­¥ï¼\n";
+			else result = "$Nè¢«$nçš„å†…åŠ›ä¸€éœ‡ï¼Œçœ¼å‰ä¸€é»‘ï¼Œèº«å­å‘åŽé£žå‡ºä¸ˆè®¸ï¼ï¼\n";
 			result += "( $N"+ COMBAT_D->status_msg((int)me->query("qi")*100/(int)me->query("max_qi")) + " )\n";
 			damage_bonus = -5000; // just a number negative enough
 			return ([ "result" : result, "damage" : damage_bonus ]);

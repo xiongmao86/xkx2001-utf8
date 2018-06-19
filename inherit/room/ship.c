@@ -1,5 +1,5 @@
 //Cracked by Roath
-// ship.c º£´¬
+// ship.c æµ·èˆ¹
 // by ALN@XKX
 
 
@@ -23,14 +23,14 @@ string long_desc()
 {
 		  string desc;
 
-		  desc = "ÕâÊÇÒ»ËÒºÜÆÕÍ¨µÄÓæ´¬£¬¼¸ÃûÓæ·ò°ÚÅª×Å·«Åñ£¬¸İ½°£¬ÉşË÷£¬ºÍ´¬Î²Ä¾¶æ¡£\n";
-		  desc += "ÒÔÏÂÖ¸ÁîÓĞÖúÓÚÄãµÄº½ĞĞ£º(1)start, (2)stop, (3)go, (4)lookout, (5)locate¡£\n\n";
+		  desc = "è¿™æ˜¯ä¸€è‰˜å¾ˆæ™®é€šçš„æ¸”èˆ¹ï¼Œå‡ åæ¸”å¤«æ‘†å¼„ç€å¸†ç¯·ï¼Œç¯™æ¡¨ï¼Œç»³ç´¢ï¼Œå’Œèˆ¹å°¾æœ¨èˆµã€‚\n";
+		  desc += "ä»¥ä¸‹æŒ‡ä»¤æœ‰åŠ©äºä½ çš„èˆªè¡Œï¼š(1)start, (2)stop, (3)go, (4)lookout, (5)locateã€‚\n\n";
 
 		  if( !this_object()->query("exits/out") )
 					 switch((int)this_object()->query_temp("navigate/weather")) {
-								case 1: desc += BLU"Ìì¿ÕÖĞÍ®ÔÆÃÜ²¼£¬Ö»ÓĞ¼¸Ö»º£Å¸»¹ÔÚ·ÜÁ¦Õ¹³á£¬º£´¬×óÓÒÒ¡»Î²»ÒÑ£¬Äã¸Ğµ½ÓĞ\nµãÁ¢×ã²»ÎÈ¡£\n"NOR; break;
-								case 2: desc += BLU"º£ÃæĞÚÓ¿ÅìÅÈ£¬¼¸ÕÉ¸ßµÄ¾ŞÀËÅÅÉ½µ¹º£ËÆµÃÑ¹À´£¬ËæÊ±¶¼ÓĞ¿ÉÄÜ½«´¬ÏÆ·­£¬Äã\nÊ±¶ø²»µÃ²»½ô½ô±§×¡´¬¸Ë£¬ÒÔÃâÂäº£¡£\n"NOR; break;
-								default: desc += BLU"ËÄÖÜÊÇÁÉÀ«µÄº£Ãæ£¬º£·çÔÚÄã¶ú±ßÇáÇá´µ¹ı£¬º£ÀËÒ»¸ö½ÓÒ»¸öÏò´¬ÆÃ´ò¹ıÀ´¡£\n"NOR;  break;
+								case 1: desc += BLU"å¤©ç©ºä¸­å½¤äº‘å¯†å¸ƒï¼Œåªæœ‰å‡ åªæµ·é¸¥è¿˜åœ¨å¥‹åŠ›å±•ç¿…ï¼Œæµ·èˆ¹å·¦å³æ‘‡æ™ƒä¸å·²ï¼Œä½ æ„Ÿåˆ°æœ‰\nç‚¹ç«‹è¶³ä¸ç¨³ã€‚\n"NOR; break;
+								case 2: desc += BLU"æµ·é¢æ±¹æ¶Œæ¾æ¹ƒï¼Œå‡ ä¸ˆé«˜çš„å·¨æµªæ’å±±å€’æµ·ä¼¼å¾—å‹æ¥ï¼Œéšæ—¶éƒ½æœ‰å¯èƒ½å°†èˆ¹æ€ç¿»ï¼Œä½ \næ—¶è€Œä¸å¾—ä¸ç´§ç´§æŠ±ä½èˆ¹æ†ï¼Œä»¥å…è½æµ·ã€‚\n"NOR; break;
+								default: desc += BLU"å››å‘¨æ˜¯è¾½é˜”çš„æµ·é¢ï¼Œæµ·é£åœ¨ä½ è€³è¾¹è½»è½»å¹è¿‡ï¼Œæµ·æµªä¸€ä¸ªæ¥ä¸€ä¸ªå‘èˆ¹æ³¼æ‰“è¿‡æ¥ã€‚\n"NOR;  break;
 					 }
 		  return desc;
 }
@@ -48,7 +48,7 @@ void init()
 
 void time_out()
 {
-	 tell_room(this_object(), HIR"\nÍ»È»¼ä¿ñ·ç´ó×÷£¬²»Ò»»á¶ù´¬¾Í·­ÁË£¡\n\n"NOR);
+	 tell_room(this_object(), HIR"\nçªç„¶é—´ç‹‚é£å¤§ä½œï¼Œä¸ä¸€ä¼šå„¿èˆ¹å°±ç¿»äº†ï¼\n\n"NOR);
 	 do_drop();
 }
 
@@ -79,20 +79,20 @@ int do_start()
 
         inv = filter_array(all_inventory(this_object()), "is_owner", this_object(), me);
         if( sizeof(inv) > 0 )
-                return notify_fail("³¤ÕâÃ´´óÁ¬Ò»µã½­ºş¹æ¾Ø¶¼²»¶®£¿\n");
+                return notify_fail("é•¿è¿™ä¹ˆå¤§è¿ä¸€ç‚¹æ±Ÿæ¹–è§„çŸ©éƒ½ä¸æ‡‚ï¼Ÿ\n");
 
 		  if( !stringp(filename = this_object()->query("exits/out")) )
-                return notify_fail("´¬ÒÑ¾­³öº£ÁË¡£\n");
+                return notify_fail("èˆ¹å·²ç»å‡ºæµ·äº†ã€‚\n");
 
         if( !(harbor = find_object(filename)) )
                 harbor = load_object(filename);
 
-        message("vision", "Óæ´¬ÀëÁË°¶£¬Ê»ÏòÃ£Ã£µÄ´óº£¡£\n", harbor);
+        message("vision", "æ¸”èˆ¹ç¦»äº†å²¸ï¼Œé©¶å‘èŒ«èŒ«çš„å¤§æµ·ã€‚\n", harbor);
         filename = base_name(this_object());
         if( sscanf(filename, "%s%d", argg, num) == 2 )
 		  harbor->delete("exits/enter" + num);
 
-        message_vision("$N´óºÈÒ»Éù¡°¿ª´¬¡±£¬ÓÚÊÇ´¬±ãÀëÁË°¶¡£\n", me);
+        message_vision("$Nå¤§å–ä¸€å£°â€œå¼€èˆ¹â€ï¼Œäºæ˜¯èˆ¹ä¾¿ç¦»äº†å²¸ã€‚\n", me);
         this_object()->delete("exits/out");
 
         this_object()->delete_temp("navigate");
@@ -126,7 +126,7 @@ int navigate()
         for(i = 0; i < sizeof(jiaos); i++) {
                 pos = jiaos[i];
                 if( this_object()->query_temp("navigate/locx") == pos[0]+random(3)-1 && this_object()->query_temp("navigate/locy") == pos[1]+random(3)-1 ) {
-                        tell_room(this_object(), HIR"Í»È»¼ä´¬Éí¼¤ÁÒµØÕğÁËÒ»ÏÂ£¬´¥½¸ÁË£¡´¬³ÁÁË£¡\n\n"NOR);
+                        tell_room(this_object(), HIR"çªç„¶é—´èˆ¹èº«æ¿€çƒˆåœ°éœ‡äº†ä¸€ä¸‹ï¼Œè§¦ç¤äº†ï¼èˆ¹æ²‰äº†ï¼\n\n"NOR);
                         do_drop();
                         return 1;
 					 }
@@ -135,49 +135,49 @@ int navigate()
         if( !random(100) && !this_object()->query("exist/out")
         &&  this_object()->query_temp("navigate/weather") == 2 
 	&& drop_factor) {
-                tell_room(this_object(), HIR"\nÍ»È»¼ä¿ñ·ç´ó×÷£¬²»Ò»»á¶ù´¬¾Í·­ÁË£¡\n\n"NOR);
+                tell_room(this_object(), HIR"\nçªç„¶é—´ç‹‚é£å¤§ä½œï¼Œä¸ä¸€ä¼šå„¿èˆ¹å°±ç¿»äº†ï¼\n\n"NOR);
                 do_drop();
 					 return 1;
         }
 
         if( !random(40) && !this_object()->query("exist/out") ) {
 		switch(random(10)) {
-		case 0 : /* monster º£¹Ö*/
+		case 0 : /* monster æµ·æ€ª*/
 			break;
-		case 1 : /* treasure ²Æ±¦*/
+		case 1 : /* treasure è´¢å®*/
 			break;
-		case 2 : /* corsair º£µÁ*/
+		case 2 : /* corsair æµ·ç›—*/
 			break;
 		case 3 :
 			tell_room(this_object(), HIC
-			"Äã¿´¼ûÎ¦¸ËÉÏÉÁ×ÅÇà°×É«µÄ¹â£¬ÍÛ£¡Éñ¼££¡£¡£¡\n"NOR);
+			"ä½ çœ‹è§æ¡…æ†ä¸Šé—ªç€é’ç™½è‰²çš„å…‰ï¼Œå“‡ï¼ç¥è¿¹ï¼ï¼ï¼\n"NOR);
 			break;
                 case 4 :
                         tell_room(this_object(), HIW
-			"´óÎíÃÔÂş£¬Ò»ËÒÆÆ¾ÉµÄ´ó´¬¿ªÁË¹ıÀ´£¬Ò»»á¶ùÓÖÏûÊ§ÁË£¬´¬ÉÏ´«À´ÒşÒşµÄÌ¾Ï¢Éù£¬\n"+
-			"ÄãÒÀÏ¡¼ÇµÃ´¬ÉÏÓĞ¼¸¸ö¹Ö×Ö£¢Titanic£¢£¡£¡£¡\n"NOR);
+			"å¤§é›¾è¿·æ¼«ï¼Œä¸€è‰˜ç ´æ—§çš„å¤§èˆ¹å¼€äº†è¿‡æ¥ï¼Œä¸€ä¼šå„¿åˆæ¶ˆå¤±äº†ï¼Œèˆ¹ä¸Šä¼ æ¥éšéšçš„å¹æ¯å£°ï¼Œ\n"+
+			"ä½ ä¾ç¨€è®°å¾—èˆ¹ä¸Šæœ‰å‡ ä¸ªæ€ªå­—ï¼‚Titanicï¼‚ï¼ï¼ï¼\n"NOR);
                         break;
                 case 5 :
                         tell_room(this_object(), HIR
-			"Äã¿´¼ûÒ»Ö»È¼ÉÕ×ÅµÄ´óÄñÏò´¬³å¹ıÀ´£¬Ôã¸â£¬Òª×²ÉÏÁË£¡£¡£¡\n"NOR);
+			"ä½ çœ‹è§ä¸€åªç‡ƒçƒ§ç€çš„å¤§é¸Ÿå‘èˆ¹å†²è¿‡æ¥ï¼Œç³Ÿç³•ï¼Œè¦æ’ä¸Šäº†ï¼ï¼ï¼\n"NOR);
                         break;
                 case 6 :
                         tell_room(this_object(), HIM
-			"º£ÃæÉÏ´«À´Ò»ÕóÃÀÃîµÄ¸èÉù£¬Äã¶ÙÊ±ÓĞÒ»ÖÖ°´Şà²»×¡ÌøÏÂº£µÄ³å¶¯£¡£¡£¡\n"NOR);
+			"æµ·é¢ä¸Šä¼ æ¥ä¸€é˜µç¾å¦™çš„æ­Œå£°ï¼Œä½ é¡¿æ—¶æœ‰ä¸€ç§æŒ‰æºä¸ä½è·³ä¸‹æµ·çš„å†²åŠ¨ï¼ï¼ï¼\n"NOR);
                         break;
                 case 7 :
                         tell_room(this_object(), HIG
-			"ÄãÍ»È»·¢ÏÖº£ÖĞÓĞÒ»Ö»ÇàÉ«´óÑÛ¾¦ÕıµÉ×ÅÄã£¬¹ıÒ»»á¶ù¾Í²»¼ûÁË£¬ÄãÏÅµÃ»ê²»¸½Ìå£¡£¡£¡\n"NOR);
+			"ä½ çªç„¶å‘ç°æµ·ä¸­æœ‰ä¸€åªé’è‰²å¤§çœ¼ç›æ­£çªç€ä½ ï¼Œè¿‡ä¸€ä¼šå„¿å°±ä¸è§äº†ï¼Œä½ å“å¾—é­‚ä¸é™„ä½“ï¼ï¼ï¼\n"NOR);
 								break;
                 case 8 :
                         tell_room(this_object(), HIY
-			"Äã¿´¼ûÔ¶´¦Ò»¸öÈËÉíÓãÎ²µÄÃÀÀöÉÙÅ®Ô¾³öº£Ãæ£¬ÍÛàç£¡ÃÀÈËÓãßÖ£¡£¡£¡\n"NOR);
+			"ä½ çœ‹è§è¿œå¤„ä¸€ä¸ªäººèº«é±¼å°¾çš„ç¾ä¸½å°‘å¥³è·ƒå‡ºæµ·é¢ï¼Œå“‡å™»ï¼ç¾äººé±¼å’§ï¼ï¼ï¼\n"NOR);
                         break;
 		case 9 :
 			tell_room(this_object(), HIG
-			"ÄãÑÛÇ°Ò»ÁÁ£¬±±·½Ó³³öÒ»Æ¬ÆæÒìÄª¿ÉÃû×´µÄ¹â²Ê£¬"+HIM"ÎŞÊıÆæÀö¾øÂ×µÄ¹âÉ«£¬ÔÚºÚ°µÖĞ\n"+
-			"ºöÉìºöËõ£¬"+YEL"´óÆ¬³È»ÆÖ®ÖĞ"+MAG"¼Ğ×ÅË¿Ë¿µ­×Ï£¬ºö¶ø×ÏÉ«ÓúÉîÓú³¤£¬×ÏÉ«Ö®ÖĞ£¬±ÅÉä³öÒ»\n"+
-			"ÌõÌõ"+HIY"½ğ¹â¡¢"+HIB"À¶¹â¡¢"+HIG"ÂÌ¹â¡¢"+HIR"ºì¹â¡£\n"NOR);
+			"ä½ çœ¼å‰ä¸€äº®ï¼ŒåŒ—æ–¹æ˜ å‡ºä¸€ç‰‡å¥‡å¼‚è«å¯åçŠ¶çš„å…‰å½©ï¼Œ"+HIM"æ— æ•°å¥‡ä¸½ç»ä¼¦çš„å…‰è‰²ï¼Œåœ¨é»‘æš—ä¸­\n"+
+			"å¿½ä¼¸å¿½ç¼©ï¼Œ"+YEL"å¤§ç‰‡æ©™é»„ä¹‹ä¸­"+MAG"å¤¹ç€ä¸ä¸æ·¡ç´«ï¼Œå¿½è€Œç´«è‰²æ„ˆæ·±æ„ˆé•¿ï¼Œç´«è‰²ä¹‹ä¸­ï¼Œè¿¸å°„å‡ºä¸€\n"+
+			"æ¡æ¡"+HIY"é‡‘å…‰ã€"+HIB"è“å…‰ã€"+HIG"ç»¿å…‰ã€"+HIR"çº¢å…‰ã€‚\n"NOR);
 			break;
 		}
 	}
@@ -186,11 +186,11 @@ int navigate()
                 if( !random(100) ) {
                         this_object()->add_temp("navigate/wait", 1);
                         if( this_object()->query_temp("navigate/wait") > 5 ) {
-                                tell_room(this_object(), "´¬·òÃÇ°Ñ´ó¼Ò¶¼ÈÓ½øÁËº£Àï¡£\n");
+                                tell_room(this_object(), "èˆ¹å¤«ä»¬æŠŠå¤§å®¶éƒ½æ‰”è¿›äº†æµ·é‡Œã€‚\n");
                                 do_drop();
                                 return 1;
                         }
-                        tell_room(this_object(), "´¬·òÃÇ²»ÄÍ·³µØËµ£ºÄãµ½µ××ß²»×ß°¡£¿\n");
+                        tell_room(this_object(), "èˆ¹å¤«ä»¬ä¸è€çƒ¦åœ°è¯´ï¼šä½ åˆ°åº•èµ°ä¸èµ°å•Šï¼Ÿ\n");
                 }                   
                 call_out("navigate", 2);
                 return 1;
@@ -200,16 +200,16 @@ int navigate()
         this_object()->delete_temp("navigate/wait");
 
         switch(dir) {
-                case "¶«":
+                case "ä¸œ":
                         this_object()->add_temp("navigate/locx", 1);
                         break;
-                case "ÄÏ":
+                case "å—":
                         this_object()->add_temp("navigate/locy", -1);
                         break;
-                case "Î÷":
+                case "è¥¿":
 								this_object()->add_temp("navigate/locx", -1);
                         break;
-		case "±±":
+		case "åŒ—":
                         this_object()->add_temp("navigate/locy", 1);
                         break;
                 default:
@@ -227,7 +227,7 @@ int navigate()
                 }
 
                 if( i >= sizeof(filenames) ) {
-                        tell_room(this_object(), "´¬·òËµ£ºÌ¾£¡Æ¯µ½ÁËÒ»»Äµº£¬»¹ÊÇ¸Ï½ôÀë¿ª°É¡£\n");
+                        tell_room(this_object(), "èˆ¹å¤«è¯´ï¼šå¹ï¼æ¼‚åˆ°äº†ä¸€è’å²›ï¼Œè¿˜æ˜¯èµ¶ç´§ç¦»å¼€å§ã€‚\n");
                         this_object()->delete_temp("navigate/dir");
                         call_out("navigate", 2);
                         return 1;
@@ -236,7 +236,7 @@ int navigate()
                 if( !(harbor = find_object(filenames[i])) )
                         harbor = load_object(filenames[i]);
 
-                tell_room(this_object(), "´¬·òËµ£º¡°" + harbor->query("short") + "µ½À²£¬ÉÏ°¶°É¡±¡£\n");
+                tell_room(this_object(), "èˆ¹å¤«è¯´ï¼šâ€œ" + harbor->query("short") + "åˆ°å•¦ï¼Œä¸Šå²¸å§â€ã€‚\n");
 
                 this_object()->set("exits/out", filenames[i]);
                 this_object()->delete_temp("navigate");
@@ -247,7 +247,7 @@ int navigate()
                 filename = base_name(this_object());
                 if( sscanf(filename, "%s%d", argg, num) == 2 )
 					 harbor->set("exits/enter" + num, filename);
-                message("vision", "Ò»ÌõÓæ´¬Ê»ÁË¹ıÀ´¡£\n", harbor);
+                message("vision", "ä¸€æ¡æ¸”èˆ¹é©¶äº†è¿‡æ¥ã€‚\n", harbor);
                 return 1;
         }
 
@@ -268,14 +268,14 @@ int navigate()
                 if( sscanf(filename, "%s%d", argg, num) == 2 )
                 harbor->set("exits/enter" + num, filename); 
 
-                tell_room(this_object(), "´¬·òËµ£º¡°" + harbor->query("island") + "µ½À²£¬ÉÏ°¶°É¡±¡£\n");
-                message("vision", "Ò»ÌõÓæ´¬Ê»ÁË¹ıÀ´¡£\n", harbor);
+                tell_room(this_object(), "èˆ¹å¤«è¯´ï¼šâ€œ" + harbor->query("island") + "åˆ°å•¦ï¼Œä¸Šå²¸å§â€ã€‚\n");
+                message("vision", "ä¸€æ¡æ¸”èˆ¹é©¶äº†è¿‡æ¥ã€‚\n", harbor);
                 return 1;
 	        }
 	}
 
 	if( !random(3) )
-                tell_room(this_object(), "´¬ÕıÍù" + dir + "·½ÏòÇ°½ø¡£\n");
+                tell_room(this_object(), "èˆ¹æ­£å¾€" + dir + "æ–¹å‘å‰è¿›ã€‚\n");
 		  call_out("navigate", 2);
 
         return 1;
@@ -288,35 +288,35 @@ int do_go(string arg)
 		  mixed inv;
 
         if( this_object()->query("exits/out") )
-                return notify_fail("´¬»¹Ã»¿ªÄØ¡£\n");
+                return notify_fail("èˆ¹è¿˜æ²¡å¼€å‘¢ã€‚\n");
 
         inv = filter_array(all_inventory(this_object()), "is_owner", this_object(), me);
         if( sizeof(inv) > 0 )
-                return notify_fail("³¤ÕâÃ´´óÁ¬Ò»µã½­ºş¹æ¾Ø¶¼²»¶®£¿\n");
+                return notify_fail("é•¿è¿™ä¹ˆå¤§è¿ä¸€ç‚¹æ±Ÿæ¹–è§„çŸ©éƒ½ä¸æ‡‚ï¼Ÿ\n");
 
         switch(arg) {
                 case "e":
                 case "east": 
-                        dir = "¶«";
+                        dir = "ä¸œ";
                         break;
                 case "s": 
                 case "south": 
-                        dir = "ÄÏ";
+                        dir = "å—";
                         break;
                 case "w": 
                 case "west": 
-                        dir = "Î÷";
+                        dir = "è¥¿";
                         break;
                 case "n": 
                 case "north": 
-                        dir = "±±";
+                        dir = "åŒ—";
                         break;
                 default:
-                        return notify_fail("ÄãÒª´¬ÍùÄÄ¸ö·½Ïò¿ª£¿\n");
+                        return notify_fail("ä½ è¦èˆ¹å¾€å“ªä¸ªæ–¹å‘å¼€ï¼Ÿ\n");
         }
 
 		  this_object()->set_temp("navigate/dir", dir);
-        message_vision("$N¶Ô´¬·òËµ£º´¬ÀÏ´ó£¬Çë³¯" + dir + "¿ª¡£\n", me);
+        message_vision("$Nå¯¹èˆ¹å¤«è¯´ï¼šèˆ¹è€å¤§ï¼Œè¯·æœ" + dir + "å¼€ã€‚\n", me);
         return 1;
 }
 
@@ -327,12 +327,12 @@ int do_stop()
 
         inv = filter_array(all_inventory(this_object()), "is_owner", this_object(), me);
         if( sizeof(inv) > 0 )
-                return notify_fail("³¤ÕâÃ´´óÁ¬Ò»µã½­ºş¹æ¾Ø¶¼²»¶®£¿\n");
+                return notify_fail("é•¿è¿™ä¹ˆå¤§è¿ä¸€ç‚¹æ±Ÿæ¹–è§„çŸ©éƒ½ä¸æ‡‚ï¼Ÿ\n");
 
         if( !this_object()->query_temp("navigate/dir") )
-                return notify_fail("´¬ÒÑ¾­Í£ÁË¡£\n");
+                return notify_fail("èˆ¹å·²ç»åœäº†ã€‚\n");
 
-		  message_vision("$N½Ğ´¬·òÃÇ°Ñ´¬Í£Ò»Í£¡£\n", me);
+		  message_vision("$Nå«èˆ¹å¤«ä»¬æŠŠèˆ¹åœä¸€åœã€‚\n", me);
         this_object()->delete_temp("navigate/dir");
 
         return 1;
@@ -345,19 +345,19 @@ int do_lookout()
         int i, m, locx, locy, tot, dist, *pos;
 
         if( this_object()->query("exits/out") ) {
-                tell_object(this_player(), "´¬»¹Ã»¿ªÄØ¡£\n");
+                tell_object(this_player(), "èˆ¹è¿˜æ²¡å¼€å‘¢ã€‚\n");
                 return 1;
         }
 
         locx = (int)this_object()->query_temp("navigate/locx");
 
         if( locx <= 0 ) {
-                tell_object(this_player(), "ÄãÒÑ¾­ÔÚ°¶±ßÁË¡£\n");
+                tell_object(this_player(), "ä½ å·²ç»åœ¨å²¸è¾¹äº†ã€‚\n");
                 return 1;
 		  }
 
         if( locx < 6 ) {
-                tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬·¢ÏÖÎ÷Ãæ²»Ô¶´¦¾ÍÊÇ°¶±ß¡£\n");
+                tell_object(this_player(), "ä½ æç›®è¿œçœºï¼Œå‘ç°è¥¿é¢ä¸è¿œå¤„å°±æ˜¯å²¸è¾¹ã€‚\n");
                 return 1;
         }
 
@@ -369,7 +369,7 @@ int do_lookout()
                 if( !(harbor = find_object(filenames[i])) )
                         harbor = load_object(filenames[i]);
                 if( locx == pos[0] && locy == pos[1] ) {
-                tell_object(this_player(), "ÄãÒÑ¾­ÔÚ" +  harbor->query("island") + "°¶±ßÁË¡£\n");
+                tell_object(this_player(), "ä½ å·²ç»åœ¨" +  harbor->query("island") + "å²¸è¾¹äº†ã€‚\n");
                 return 1;
 					 }
         }
@@ -384,7 +384,7 @@ int do_lookout()
         }
 
         if( tot > 72 ) {
-                tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬Ö»¾õ´óº£Ã£Ã£¡£\n");
+                tell_object(this_player(), "ä½ æç›®è¿œçœºï¼Œåªè§‰å¤§æµ·èŒ«èŒ«ã€‚\n");
                 return 1;
         }
 
@@ -392,30 +392,30 @@ int do_lookout()
 
         if( (locy >= pos[1] - 6 && locy < pos[1])
             && (locx >= pos[0] - 6 && locx < pos[0] ) )
-                dir = "¶«±±";
+                dir = "ä¸œåŒ—";
 		  else if( (locy >= pos[1] - 6 && locy < pos[1]) && locx == pos[0] )
-                dir = "±±";
+                dir = "åŒ—";
         else if( (locy >= pos[1] - 6 && locy < pos[1])
             && (locx > pos[0] && locx <= pos[0] + 6) )
-                dir = "Î÷±±";
+                dir = "è¥¿åŒ—";
         else if( locy == pos[1] && (locx >= pos[0] - 6 && locx < pos[0]) )
-                dir = "¶«";
+                dir = "ä¸œ";
         else if( locy == pos[1] && (locx > pos[0] && locx <= pos[0] + 6) )
-                dir = "Î÷";
+                dir = "è¥¿";
 		  else if( (locy > pos[1] && locy <= pos[1] + 6)
             && (locx >= pos[0] - 6 && locx < pos[0]) )
-                dir = "¶«ÄÏ";
+                dir = "ä¸œå—";
         else if( (locy > pos[1] && locy <= pos[1] + 6) && locx == pos[0] )
-                dir = "ÄÏ";
+                dir = "å—";
         else if( (locy > pos[1] && locy <= pos[1] + 6)
             && (locx > pos[0] && locx <= pos[0] + 6) )
-                dir = "Î÷ÄÏ";
+                dir = "è¥¿å—";
 
         if( dir ) {
                 if( !(harbor = find_object(filenames[m])) )
                         harbor = load_object(filenames[m]);
-                tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬·¢ÏÖ" + dir + "·½Ïò" + harbor->query("shape") + "\n");
-        } else  tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬Ö»¾õ´óº£Ã£Ã£¡£\n");
+                tell_object(this_player(), "ä½ æç›®è¿œçœºï¼Œå‘ç°" + dir + "æ–¹å‘" + harbor->query("shape") + "\n");
+        } else  tell_object(this_player(), "ä½ æç›®è¿œçœºï¼Œåªè§‰å¤§æµ·èŒ«èŒ«ã€‚\n");
 
         return 1;
 }
@@ -427,7 +427,7 @@ int do_locate()
         object harbor;
 
         if( this_object()->query("exits/out") ) {
-                tell_object(this_player(), "´¬»¹Ã»¿ªÄØ¡£\n");
+                tell_object(this_player(), "èˆ¹è¿˜æ²¡å¼€å‘¢ã€‚\n");
                 return 1;
         }
 
@@ -454,20 +454,20 @@ int do_locate()
 
         if( locx < 1 ) {
                 if( locy > 0 ) 
-                dir = "Õı±±Ô¼" + chinese_number(locy) + "º£Á¨";
+                dir = "æ­£åŒ—çº¦" + chinese_number(locy) + "æµ·å“©";
                 else if( locy < 0 )
-                dir = "ÕıÄÏÔ¼" + chinese_number(-locy) + "º£Á¨";
+                dir = "æ­£å—çº¦" + chinese_number(-locy) + "æµ·å“©";
                 else dir = "";
         } else {
                 if( locy > 0 )
-                dir = "¶«Ô¼" + chinese_number(locx) + "º£Á¨" + "±±Ô¼" + chinese_number(locy) + "º£Á¨";
+                dir = "ä¸œçº¦" + chinese_number(locx) + "æµ·å“©" + "åŒ—çº¦" + chinese_number(locy) + "æµ·å“©";
                 else if( locy < 0 )
-                dir = "¶«Ô¼" + chinese_number(locx) + "º£Á¨" + "ÄÏÔ¼" + chinese_number(-locy) + "º£Á¨";
+                dir = "ä¸œçº¦" + chinese_number(locx) + "æµ·å“©" + "å—çº¦" + chinese_number(-locy) + "æµ·å“©";
                 else 
-                dir = "Õı¶«Ô¼" + chinese_number(locx) + "º£Á¨";
+                dir = "æ­£ä¸œçº¦" + chinese_number(locx) + "æµ·å“©";
         }
 
-        tell_object(this_player(), "ÄãÏÖÔÚÔÚ" + harbor->query("short") + dir + "¡£\n");
+        tell_object(this_player(), "ä½ ç°åœ¨åœ¨" + harbor->query("short") + dir + "ã€‚\n");
 
         return 1;
 }
@@ -527,7 +527,7 @@ void do_drop()
                         }
                         inv[i]->move(keys(harbors)[random(sizeof(harbors))]);
                         message("vision",
-								"Äã·¢ÏÖÒ»¸ö»ëÉíË®ÁÜÁÜµÄ¼Ò»ï±»º£Ë®³åÉÏ°¶À´£¬²»ÓÉµÃ×ß½üÒ»¿´£¬Ô­À´ÊÇ" + inv[i]->query("name") +"¡£\n", environment(inv[i]), ({inv[i]}));
+								"ä½ å‘ç°ä¸€ä¸ªæµ‘èº«æ°´æ·‹æ·‹çš„å®¶ä¼™è¢«æµ·æ°´å†²ä¸Šå²¸æ¥ï¼Œä¸ç”±å¾—èµ°è¿‘ä¸€çœ‹ï¼ŒåŸæ¥æ˜¯" + inv[i]->query("name") +"ã€‚\n", environment(inv[i]), ({inv[i]}));
                 } else  destruct(inv[i]);
         }
 
@@ -562,7 +562,7 @@ void do_ready()
         for(i = 0; i < sizeof(inv); i++) {
                 if( userp(inv[i]) ) {
                         inv[i]->move(harbor);
-                        message_vision("Ö»Ìı¡¸Åé£¡¡¹µÄÒ»Éù£¬$N±»´¬·òÌßÏÂ´¬À´ÀÇ±·²»¿°¡£\n", inv[i]);
+                        message_vision("åªå¬ã€Œç °ï¼ã€çš„ä¸€å£°ï¼Œ$Nè¢«èˆ¹å¤«è¸¢ä¸‹èˆ¹æ¥ç‹¼ç‹ˆä¸å ªã€‚\n", inv[i]);
                 }
         }
 
@@ -572,13 +572,13 @@ void do_ready()
         for(i = 0; i < sizeof(inv); i++) {
                 if( userp(inv[i]) ) {
                         inv[i]->move(harbor);
-                        message_vision("Ö»Ìı¡¸Åé£¡¡¹µÄÒ»Éù£¬$N±»´¬·òÌßÏÂ´¬À´ÀÇ±·²»¿°¡£\n", inv[i]);
+                        message_vision("åªå¬ã€Œç °ï¼ã€çš„ä¸€å£°ï¼Œ$Nè¢«èˆ¹å¤«è¸¢ä¸‹èˆ¹æ¥ç‹¼ç‹ˆä¸å ªã€‚\n", inv[i]);
                 }
         }
         }
         }
 
-        message("vision", "Óæ´¬ÀëÁË°¶£¬Ê»ÏòÃ£Ã£µÄ´óº£¡£\n", harbor);
+        message("vision", "æ¸”èˆ¹ç¦»äº†å²¸ï¼Œé©¶å‘èŒ«èŒ«çš„å¤§æµ·ã€‚\n", harbor);
         filename = base_name(this_object());
         if( sscanf(filename, "%s%d", argg, num) == 2 )
         harbor->delete("exits/enter" + num);
@@ -586,6 +586,6 @@ void do_ready()
         this_object()->delete_temp("trigger");
         this_object()->delete("exits/out");
 
-        message("vision", "´¬·òÃÇÊÕÃªÑï·«£¬ÓÚÊÇ´¬±ãÀëÁË°¶¡£\n", this_object());
+        message("vision", "èˆ¹å¤«ä»¬æ”¶é”šæ‰¬å¸†ï¼Œäºæ˜¯èˆ¹ä¾¿ç¦»äº†å²¸ã€‚\n", this_object());
 }
 

@@ -30,19 +30,19 @@ void hit_weapon(object me, object victim, object weapon, int flag)
 		if (weapon->query("weapon_prop/damage") < 1)
                 //weapon broken
                 {
-                	message_vision(HIW "Ö»Ìı¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖĞµÄ" + 
-				weapon->name() + "ÒÑ¾­±»³ÁÖØµÄ" + name() +
-				"Õğ¶Ï£¡\n" NOR, victim );
+                	message_vision(HIW "åªå¬è§ã€Œå•ªã€åœ°ä¸€å£°ï¼Œ$Næ‰‹ä¸­çš„" + 
+				weapon->name() + "å·²ç»è¢«æ²‰é‡çš„" + name() +
+				"éœ‡æ–­ï¼\n" NOR, victim );
                 	weapon->unequip();
                         weapon->move(environment(victim));
-                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                        weapon->set("name", "æ–­æ‰çš„" + weapon->query("name"));
                         weapon->set("value", (int)weapon->query("value") / 10);
                         weapon->set("weapon_prop", 0);
                         victim->reset_action();
                 }else
                 {
-                	message_vision("$NÊÖÖĞµÄ" + weapon->name() + "ÔÒÔÚ$nµÄ" +
-                		name() + "ÉÏ£¬ÈĞ±»Õğ³öÁËÒ»¸öÈ±¿Ú¡£\n", victim, me);
+                	message_vision("$Næ‰‹ä¸­çš„" + weapon->name() + "ç ¸åœ¨$nçš„" +
+                		name() + "ä¸Šï¼Œåˆƒè¢«éœ‡å‡ºäº†ä¸€ä¸ªç¼ºå£ã€‚\n", victim, me);
                 }
 	}
 }

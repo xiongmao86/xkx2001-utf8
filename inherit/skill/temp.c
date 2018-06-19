@@ -22,7 +22,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 		if ((int)me->query("potential")-(int)me->query("learned_points")<97)
 			victim->add("potential",  3);
 		victim->add("combat_exp", 10);
-		return HIY "$NÔË×ãÄÚÁ¦Ò»»÷ÃüÖÐ£¬È´²»ÁÏÖ»¾õÏ¢¹ØÒ»¿ª£¬Ò»¹ÉÄÚÁ¦$n±»ÎüÁË¹ýÈ¥£¡\n" NOR;
+		return HIY "$Nè¿è¶³å†…åŠ›ä¸€å‡»å‘½ä¸­ï¼Œå´ä¸æ–™åªè§‰æ¯å…³ä¸€å¼€ï¼Œä¸€è‚¡å†…åŠ›$nè¢«å¸äº†è¿‡åŽ»ï¼\n" NOR;
 	}
 
 	me->add("neili", - factor );
@@ -34,10 +34,10 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 			damage = - damage;
 			me->receive_damage( "qi", damage * 2 );
 			me->receive_wound( "qi", damage );
-			if( damage < 10 ) return "$NÊÜµ½$nµÄÄÚÁ¦·´Õð£¬ÃÆºßÒ»Éù¡£\n";
-			else if( damage < 20 ) return "$N±»$nÒÔÄÚÁ¦·´Õð£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n";
-			else if( damage < 40 ) return "$N±»$NÒÔÄÚÁ¦Ò»Õð£¬ÐØ¿ÚÓÐÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n";
-			else return "$N±»$nµÄÄÚÁ¦Ò»Õð£¬ÑÛÇ°Ò»ºÚ£¬Éí×ÓÏòºó·É³öÕÉÐí£¡£¡\n";
+			if( damage < 10 ) return "$Nå—åˆ°$nçš„å†…åŠ›åéœ‡ï¼Œé—·å“¼ä¸€å£°ã€‚\n";
+			else if( damage < 20 ) return "$Nè¢«$nä»¥å†…åŠ›åéœ‡ï¼Œã€Œå˜¿ã€åœ°ä¸€å£°é€€äº†ä¸¤æ­¥ã€‚\n";
+			else if( damage < 40 ) return "$Nè¢«$Nä»¥å†…åŠ›ä¸€éœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è®°é‡é”¤ï¼Œè¿žé€€äº†äº”å…­æ­¥ï¼\n";
+			else return "$Nè¢«$nçš„å†…åŠ›ä¸€éœ‡ï¼Œçœ¼å‰ä¸€é»‘ï¼Œèº«å­å‘åŽé£žå‡ºä¸ˆè®¸ï¼ï¼\n";
 		}
 		if( damage_bonus + damage < 0 ) return - damage_bonus;
 		return damage;

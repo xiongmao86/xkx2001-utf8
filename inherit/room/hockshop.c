@@ -14,10 +14,10 @@ string value_string(int value)
 {
 	if( value < 1 ) value = 1;
 	else if( value < 100 )
-		return chinese_number(value) + "ÎÄÇ®";
+		return chinese_number(value) + "æ–‡é’±";
 	else
-		return chinese_number(value/100) + "Á½"
-			+ (value%100? "ÓÖ" + chinese_number(value%100) + "ÎÄÇ®": "");
+		return chinese_number(value/100) + "ä¸¤"
+			+ (value%100? "åˆ" + chinese_number(value%100) + "æ–‡é’±": "");
 }
 
 void pay_player(object who, int amount)
@@ -44,15 +44,15 @@ int do_value(string arg)
 	int value;
 
 	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ÄãÒªÄÃÊ²Ã´ÎïÆ·¸øµ±ÆÌ¹À¼Û£¿\n");
+		return notify_fail("ä½ è¦æ‹¿ä»€ä¹ˆç‰©å“ç»™å½“é“ºä¼°ä»·ï¼Ÿ\n");
 
 	if( ob->query("money_id") )
-		return notify_fail("ÕâÊÇ¡¸Ç®¡¹£¬ÄãÃ»¼û¹ıÂğ£¿\n");
+		return notify_fail("è¿™æ˜¯ã€Œé’±ã€ï¼Œä½ æ²¡è§è¿‡å—ï¼Ÿ\n");
 
 	value = ob->query("value");
-	if( !value ) printf("%sÒ»ÎÄ²»Öµ¡£\n", ob->query("name"));
+	if( !value ) printf("%sä¸€æ–‡ä¸å€¼ã€‚\n", ob->query("name"));
 	else 
-		printf("%s¼ÛÖµ%s¡£\nÈç¹ûÄãÒªµäµ±(pawn)£¬¿ÉÒÔÄÃµ½%s¼°Ò»ÕÅµ±Æ±¡£\nÈç¹ûÂô¶Ï(sell)£¬¿ÉÒÔÄÃµ½%s¡£\n",
+		printf("%sä»·å€¼%sã€‚\nå¦‚æœä½ è¦å…¸å½“(pawn)ï¼Œå¯ä»¥æ‹¿åˆ°%såŠä¸€å¼ å½“ç¥¨ã€‚\nå¦‚æœå–æ–­(sell)ï¼Œå¯ä»¥æ‹¿åˆ°%sã€‚\n",
 			ob->query("name"), value_string(value),
 			value_string(value * 60 / 100), value_string(value * 80 / 100));
 
@@ -65,15 +65,15 @@ int do_pawn(string arg)
 	int value;
 
 	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ÄãÒªµäµ±Ê²Ã´ÎïÆ·£¿\n");
+		return notify_fail("ä½ è¦å…¸å½“ä»€ä¹ˆç‰©å“ï¼Ÿ\n");
 
-	if( ob->query("money_id") )	return notify_fail("ÄãÒªµ±¡¸Ç®¡¹£¿\n");
+	if( ob->query("money_id") )	return notify_fail("ä½ è¦å½“ã€Œé’±ã€ï¼Ÿ\n");
 
 	value = ob->query("value");
-	if( !value ) return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+	if( !value ) return notify_fail("è¿™æ ·ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
 
-	message_vision("$N°ÑÉíÉÏµÄ" + ob->query("name") + "ÄÃ³öÀ´µäµ±ÁË"
-		+ value_string(value * 60 / 100) + "¡£\n", this_player());
+	message_vision("$NæŠŠèº«ä¸Šçš„" + ob->query("name") + "æ‹¿å‡ºæ¥å…¸å½“äº†"
+		+ value_string(value * 60 / 100) + "ã€‚\n", this_player());
 
 	pay_player(this_player(), value * 60 / 100);
 	destruct(ob);
@@ -87,14 +87,14 @@ int do_sell(string arg)
 	int value;
 
 	if( !arg || !(ob = present(arg, this_player())) )
-		return notify_fail("ÄãÒªÂô¶ÏÊ²Ã´ÎïÆ·£¿\n");
+		return notify_fail("ä½ è¦å–æ–­ä»€ä¹ˆç‰©å“ï¼Ÿ\n");
 
-	if( ob->query("money_id") )	return notify_fail("ÄãÒªÂô¡¸Ç®¡¹£¿\n");
+	if( ob->query("money_id") )	return notify_fail("ä½ è¦å–ã€Œé’±ã€ï¼Ÿ\n");
 	value = ob->query("value");
-	if( !value ) return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+	if( !value ) return notify_fail("è¿™æ ·ä¸œè¥¿ä¸å€¼é’±ã€‚\n");
 
 
-	message_vision("$N°ÑÉíÉÏµÄ" + ob->query("name") + "Âôµô¡£\n",
+	message_vision("$NæŠŠèº«ä¸Šçš„" + ob->query("name") + "å–æ‰ã€‚\n",
 		this_player());
 
 	pay_player(this_player(), value * 80 / 100);

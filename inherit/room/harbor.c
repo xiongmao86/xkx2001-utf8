@@ -39,7 +39,7 @@ int do_yell(string arg)
         int i, tot;
 
         if( !arg || arg != "chuan" )
-                return notify_fail("��󺰴�еĸ�ʲô��\n");
+                return notify_fail("你大喊大叫的干什么？\n");
 
         files = get_dir(SHIPS);
         tot = 0;
@@ -49,11 +49,11 @@ int do_yell(string arg)
 
         for(i = 1; i < tot + 1; i++) {
                 if( this_object()->query("exits/enter" + i) )
-                return notify_fail("����ˣ���ô���۾�û��������\n");
+                return notify_fail("别叫了，这么大眼睛没看见船？\n");
         }
 
         if( member_array(base_name(this_object()), wildharbors) != -1 )
-                return notify_fail("�����ǻĵ��������д�������\n");
+                return notify_fail("这里是荒岛，哪里有船经过？\n");
 
         for(i = 1; i < tot + 1; i++) {
                 if( !(ship = find_object(SHIP + i)) )
@@ -64,13 +64,13 @@ int do_yell(string arg)
         }
 
         if( i > tot )
-                return notify_fail("�㺰�˰��죬Ҳû��һ����������\n");
+                return notify_fail("你喊了半天，也没见一条船过来。\n");
 
         if( stringp(filename = ship->query("exits/out")) ) {
                 if( !(harbor = find_object(filename)) )
                 harbor = load_object(filename);
 
-                message("vision", "�洬���˰���ʻ��ãã�Ĵ󺣡�\n", harbor);
+                message("vision", "渔船离了岸，驶向茫茫的大海。\n", harbor);
                 harbor->delete("exits/enter" + i);
                 ship->delete("exits/out");
         }
@@ -83,12 +83,12 @@ int do_yell(string arg)
         ship->set("exits/out", base_name(this_object()));
 
         if( (int)this_player()->query("age") < 16 )
-                message_vision("$Nʹ�����̵���������һ���������ҡ�\n", this_player());
+                message_vision("$N使出吃奶的力气喊了一声：“船家”\n", this_player());
         else if( (int)this_player()->query("neili") > 500 )
-                message_vision("$N���˿�����һ�������ҡ�����������ƽ�͵�ԶԶ���˳�ȥ��\n", this_player());
-        else    message_vision("$N������������Хһ���������ң���\n", this_player()); 
+                message_vision("$N吸了口气，一声“船家”，声音中正平和地远远传了出去。\n", this_player());
+        else    message_vision("$N鼓足中气，长啸一声：“船家！”\n", this_player()); 
 
-        message("vision", "һ���洬Ӧ������ʻ�˹��������һ��̤�Ű����ɳ̲�ϡ�\n", this_object());
+        message("vision", "一条渔船应声慢慢驶了过来，渔夫将一块踏脚板搭在沙滩上。\n", this_object());
 
         return 1;
 }
@@ -98,9 +98,9 @@ int valid_leave(object me, string dir)
         if( strsrch(dir, "enter") == 0 && !this_object()->query("navigate/locx") ) {
                 switch (MONEY_D->player_pay(this_player(), 1000)) {
                 case 0:
-                        return notify_fail("��⵰��һ�ߴ���ȥ��\n");
+                        return notify_fail("穷光蛋，一边呆着去！\n");
                 case 2:
-                        return notify_fail("������Ǯ�����ˣ���Ʊ��û���ҵÿ���\n");
+                        return notify_fail("您的零钱不够了，银票又没人找得开。\n");
                 default:
                         remove_call_out("do_ready");
                         call_out("do_ready", 10);
@@ -127,7 +127,7 @@ void do_ready(object ship)
         for(i = 0; i < sizeof(inv); i++) {
                 if( userp(inv[i]) ) {
                         inv[i]->move(this_object());
-                        message_vision("ֻ�����飡����һ����$N���������´����Ǳ�������\n", inv[i]);
+                        message_vision("只听「砰！」的一声，$N被船夫踢下船来狼狈不堪。\n", inv[i]);
                 }
         }
 
@@ -137,16 +137,16 @@ void do_ready(object ship)
         for(i = 0; i < sizeof(inv); i++) {
                 if( userp(inv[i]) ) {
                         inv[i]->move(this_object());
-                        message_vision("ֻ�����飡����һ����$N���������´����Ǳ�������\n", inv[i]);
+                        message_vision("只听「砰！」的一声，$N被船夫踢下船来狼狈不堪。\n", inv[i]);
                 }
         }
         }
         }
 
-        message("vision", "�����Ǵ��һ���������������Ǵ������˰���\n", ship);
+        message("vision", "船夫们大喝一声“开船”，于是船便离了岸。\n", ship);
 
         filename = base_name(ship);
         if( sscanf(filename, "%s%d", argg, num) == 2 )
         this_object()->delete("exits/enter" + num);
-        message("vision", "�洬���˰���ʻ��ãã�Ĵ󺣡�\n", this_object());
+        message("vision", "渔船离了岸，驶向茫茫的大海。\n", this_object());
 }

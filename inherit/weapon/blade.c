@@ -43,25 +43,25 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 	j=ob->query("armor_prop/armor");
 
 	if ( j < k/4 || j < 1){
-        ob->set("long", "Ò»¼ş²ĞÆÆ²»¿°µÄ"+ob->query("name")+"\n");
+        ob->set("long", "ä¸€ä»¶æ®‹ç ´ä¸å ªçš„"+ob->query("name")+"\n");
         if (!ob->query("wreck")){
-        ob->set("name", "ÆÆ" + ob->query("name"));
+        ob->set("name", "ç ´" + ob->query("name"));
         ob->set("value", 0);
         ob->add("wreck", 1);
                 }
         }
         if ( j < k/2 && j > k/4){
-        ob->set("long", "Ò»¼ş±»»®¿ªÁË¼¸µÀ´ó·ìµÄ"+ob->query("name")+"\n");
+        ob->set("long", "ä¸€ä»¶è¢«åˆ’å¼€äº†å‡ é“å¤§ç¼çš„"+ob->query("name")+"\n");
         ob->set("value", ob->query("value")/3);
         }
         if ( j < k && j > k/2){
-        ob->set("long", "Ò»¼şÁÑÁË¼¸µÀ¿ÚµÄ"+ob->query("name")+"\n");
+        ob->set("long", "ä¸€ä»¶è£‚äº†å‡ é“å£çš„"+ob->query("name")+"\n");
 	ob->set("value", ob->query("value")/2);
 	     }
 	if (ob->query("material") != "steel" && ob->query("material") != "iron")
-        return HIW"Ö»Ìı¼û¡¸àÍ¡¹µØÒ»Éù£¬$nÉíÉÏµÄ"+ob->query("name")+HIW+"±»»®¿ªÒ»µÀ¿Ú×Ó¡£\n"NOR;
+        return HIW"åªå¬è§ã€Œå—¤ã€åœ°ä¸€å£°ï¼Œ$nèº«ä¸Šçš„"+ob->query("name")+HIW+"è¢«åˆ’å¼€ä¸€é“å£å­ã€‚\n"NOR;
         else
-        return HIW"Ö»Ìı¼û¡¸¿¦¡¹µØÒ»Éù£¬$nÉíÉÏµÄ"+ob->query("name")+HIW+"±»¿³³öÒ»µÀÈ±¿Ú¡£\n"NOR;
+        return HIW"åªå¬è§ã€Œå–€ã€åœ°ä¸€å£°ï¼Œ$nèº«ä¸Šçš„"+ob->query("name")+HIW+"è¢«ç å‡ºä¸€é“ç¼ºå£ã€‚\n"NOR;
         
 	}
     }
