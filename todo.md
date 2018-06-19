@@ -18,8 +18,8 @@
 * [ ] figure out the right edit, and finish adm/etc/welcome_newyear, the origin file is keeped as welcome_newyear.todo
 * [ ] data/letter/x/xfaery.o saved as xfaery.todo
 
-# Procedure **Not through thorough test.**
-## none c or h files **Final**
+# Procedure **May contain mistakes.**
+## none c or h files
 ### 1. Make sure no file name end with bak under the working folder
 ```shell
 find . -name "*.bak"
@@ -33,8 +33,6 @@ find . -type f -not -name "*.c" -and -not -name "*.h" | sed /\.DS_Store/d | sed 
 *Filter* .DS_Store ./log is filtered out with sed which is not needed with *.h and *.c version. If there are other file you don't want to process, add something like `sed /^\.\\/todo$/d` or `sed /^\.\\/log$/d` add it to the command.
 
 Add `sed 's#\ #\\\\\ #g'` to escape space in file name.
-
-
 
 ### 3. Process log file
 ```shell
@@ -116,7 +114,7 @@ rm log processed
 
 ### 9. Git commit
 
-## h files **although test is needed, this should consider to be good**
+## h files
 ### 10. Convert *.h files, if log is empty go to step 14.
 ```shell
 find . -type f -name "*.h" | xargs -I {} sh -c "iconv -f gb18030 -t utf8 {} > {}.bak" 2>log
