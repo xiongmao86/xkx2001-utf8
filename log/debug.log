@@ -1,93 +1,337 @@
-----------------------------------------------------------------------------
-������ (MudOS v22pre11) starting up on Microsoft Windows 95 - Thu Oct 28 03:02:53 2004
+Event backend in use: kqueue
+==== LPC Predefines ====
+#define FLUFFOS 
+#define HAS_DEBUG_LEVEL 
+#define HAS_ED 
+#define HAS_PRINTF 
+#define MAX_FLOAT 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000
+#define MAX_INT 9223372036854775807
+#define MIN_FLOAT 0.000000
+#define MIN_INT -9223372036854775808
+#define MUDOS 
+#define MUD_NAME "侠客行"
+#define SIZEOFINT 8
+#define __ARCH__ "Mac OS X"
+#define __ARGUMENTS_IN_TRACEBACK__ 
+#define __ARRAY_STATS__ 
+#define __AUTO_SETEUID__ 
+#define __CACHE_STATS__ 
+#define __CALLOUT_HANDLES__ 
+#define __CFG_COMPILER_STACK_SIZE__ 600
+#define __CFG_EVALUATOR_STACK_SIZE__ 65536
+#define __CFG_LIVING_HASH_SIZE__ 256
+#define __CFG_MAX_CALL_DEPTH__ 150
+#define __CFG_MAX_GLOBAL_VARIABLES__ 65536
+#define __CFG_MAX_LOCAL_VARIABLES__ 50
+#define __CLASS_STATS__ 
+#define __COMMAND_BUF_SIZE__ 2000
+#define __COMPILER__ "g++"
+#define __CUSTOM_CRYPT__ 
+#define __CXXFLAGS__ "-march=native -Wall -Wextra -Wformat -Werror=format-security -Wno-char-subscripts -Wno-sign-compare -Wno-return-type -Wno-unused-parameter -Wno-missing-field-initializers -Wno-overloaded-virtual -Wno-non-virtual-dtor -fdiagnostics-show-option -fmessage-length=0 -funsigned-char -fwrapv -O3 -funroll-loops -DNDEBUG -g -std=c++11 -D_GNU_SOURCE -fno-omit-frame-pointer -iquote. -flto -fPIE   -I/include "
+#define __DEBUG_MACRO__ 
+#define __DEFAULT_PRAGMAS__ PRAGMA_WARNINGS + PRAGMA_SAVE_TYPES + PRAGMA_ERROR_CONTEXT + PRAGMA_OPTIMIZE
+#define __ED_INDENT_SPACES__ 4
+#define __ED_TAB_WIDTH__ 8
+#define __GET_CHAR_IS_BUFFERED__ 
+#define __HAS_CONSOLE__ 
+#define __LARGEST_PRINTABLE_STRING__ 8192
+#define __LARGE_STRING_SIZE__ 1000
+#define __LOCALS_IN_TRACEBACK__ 
+#define __MAX_SAVE_SVALUE_DEPTH__ 100
+#define __MUDLIB_ERROR_HANDLER__ 
+#define __NDEBUG__ 1
+#define __OLD_ED__ 
+#define __OPTIMIZATION__ "-O3 -funroll-loops"
+#define __PACKAGE_ASYNC__ 
+#define __PACKAGE_COMPRESS__ 
+#define __PACKAGE_CONTRIB__ 
+#define __PACKAGE_CORE__ 
+#define __PACKAGE_DEVELOP__ 
+#define __PACKAGE_EXTERNAL__ 
+#define __PACKAGE_MATH__ 
+#define __PACKAGE_MATRIX__ 
+#define __PACKAGE_MUDLIB_STATS__ 
+#define __PACKAGE_OPS__ 
+#define __PACKAGE_PCRE__ 
+#define __PACKAGE_SHA1__ 
+#define __PACKAGE_SOCKETS__ 
+#define __PACKAGE_TRIM__ 
+#define __PACKAGE_UIDS__ 
+#define __PORT__ 8888
+#define __RANDOMIZED_RESETS__ 
+#define __RECEIVE_SNOOP__ 
+#define __REF_RESERVED_WORD__ 
+#define __RESTRICTED_ED__ 
+#define __SANE_EXPLODE_STRING__ 
+#define __SANE_SORTING__ 
+#define __SAVE_EXTENSION__ ".o"
+#define __SAVE_GZ_EXTENSION__ ".o.gz"
+#define __SMALL_STRING_SIZE__ 100
+#define __STRING_STATS__ 
+#define __STRUCT_CLASS__ 
+#define __STRUCT_STRUCT__ 
+#define __SUPPRESS_ARGUMENT_WARNINGS__ 
+#define __THIS_PLAYER_IN_CALL_OUT__ 
+#define __TRACE__ 
+#define __TRAP_CRASHES__ 
+#define __USE_32BIT_ADDRESSES__ 
+#define __VERSION__ "FluffOS 3.0.20170907 (git-local-65e03b2-1511475922)"
+#define __WARN_OLD_RANGE_BEHAVIOR__ 
+========================
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
+/adm/simul_efun/path.c line 51: Warning: Unused local variable 't2' before the end of line
+/adm/simul_efun/path.c line 51: Warning: Unused local variable 't3' before the end of line
+/adm/simul_efun/path.c line 51: Warning: Unused local variable 't4' before the end of line
+/adm/simul_efun/mkmapping.c line 24: Warning: Unused local variable 'index' before the end of line
+/adm/simul_efun/mkmapping.c line 55: Warning: Unused local variable 'index' before the end of line
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
+Loading preload files ...
+/adm/daemons/securityd...
 
-Can't find "mudos", ignoring old binaries.
-Try invoking the driver using the full pathname.
-System Error: init_addr_server: connect:unknow error 10061
-include/globals.h line 103: Warning: redefinition of #define ROOM
+执行时段错误：*Object cannot be loaded during compilation.
 
-include/globals.h line 103: Warning: redefinition of #define ROOM
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
+执行时段错误：*Object cannot be loaded during compilation.
 
-Loading preloaded files ...
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+执行时段错误：*Object cannot be loaded during compilation.
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
+执行时段错误：*Object cannot be loaded during compilation.
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/feature/treemap.c line 2: Warning: Unknown #pragma, ignored. before the end of line
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+执行时段错误：*Object cannot be loaded during compilation.
 
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+执行时段错误：*Object cannot be loaded during compilation.
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
+执行时段错误：*Object cannot be loaded during compilation.
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+执行时段错误：*Object cannot be loaded during compilation.
 
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/include/globals.h line 103: Warning: redefinition of #define ROOM before #define SHIP		"/inhe
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+执行时段错误：*Object cannot be loaded during compilation.
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 71: Warning: Unused local variable 'wizlist' before the end of line
 
+执行时段错误：*Object cannot be loaded during compilation.
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 71: Warning: Unused local variable 'wiz_name' before the end of line
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+执行时段错误：*Object cannot be loaded during compilation.
 
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 71: Warning: Unused local variable 'wiz_level' before the end of line
 
-ִ��ʱ�δ���*Object cannot be loaded during compilation.
+执行时段错误：*Object cannot be loaded during compilation.
 
-��ʽ��adm/single/simul_efun.c �� 12 ��
-���: adm/single/simul_efun
-�������ԣ�adm/single/master.c �� preload() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� CATCH() �� 104 �У������ adm/single/master
-�������ԣ�adm/single/master.c �� log_error() �� 124 �У������ adm/single/master
-�������ԣ�adm/single/simul_efun.c �� wizardp() �� 12 �У������ adm/single/simul_efun
-include/globals.h line 103: Warning: redefinition of #define ROOM
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 71: Warning: Unused local variable 'wiz_site' before the end of line
 
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 71: Warning: Unused local variable 'i' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 91: Warning: Unused local variable 'uid' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 177: Warning: Unused local variable 'wiz' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 177: Warning: Unused local variable 'wizlist' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 177: Warning: Unused local variable 'i' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 215: Warning: Unused local variable 'uid' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 279: Warning: Unused local variable 'uid' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 342: Warning: Unused local variable 'uid' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 373: Warning: Unused local variable 'uid' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 404: Warning: Unused local variable 'uid' before the end of line
+
+执行时段错误：*Object cannot be loaded during compilation.
+
+程式：/adm/single/simul_efun.c 第 12 行
+物件: /adm/single/simul_efun
+呼叫来自：/adm/single/master.c 的 preload() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 CATCH() 第 104 行，物件： /adm/single/master
+呼叫来自：/adm/single/master.c 的 log_error() 第 124 行，物件： /adm/single/master
+呼叫来自：/adm/single/simul_efun.c 的 wizardp() 第 12 行，物件： /adm/single/simul_efun
+/adm/daemons/securityd.c line 435: Warning: Unused local variable 'uid' before the end of line
+/adm/daemons/virtuald...
+/adm/daemons/logind...
+/adm/daemons/rankd...
+/adm/daemons/commandd...
+/adm/daemons/chinesed...
+/adm/daemons/emoted...
+/adm/daemons/aliasd...
+/adm/daemons/fingerd...
+/adm/daemons/channeld...
+/adm/daemons/natured...
+/adm/daemons/weapond...
+/adm/daemons/network/dns_master...
+/adm/daemons/ftpd...
+/adm/daemons/network/http...
+Accepting connections on 0.0.0.0:8888.
 Initializations complete.
 
-Accepting connections on port 8888.

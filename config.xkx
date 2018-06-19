@@ -80,8 +80,9 @@ maximum local variables : 30
 # bad time. (By Annihilator)
 #maximum evaluation cost : 100000
 #maximum evaluation cost : 300000
-maximum evaluation cost : 600000
- 
+#maximum evaluation cost : 600000
+maximum evaluation cost : 60000000
+
 # This is the maximum array size allowed for one single array.
 maximum array size : 15000
 
