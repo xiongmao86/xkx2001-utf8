@@ -13,6 +13,9 @@
 * [x] convert inherit/
 * [x] convert help/
 
+# Fix mudlib problems
+* [ ] adm/daemons/securityd.c is broken. `create` function is incomplete.
+
 # waiting list
 * [ ] figure out the right edit, and finish adm/etc/welcome_newyear, the origin file is keeped as welcome_newyear.todo
 * [ ] data/letter/x/xfaery.o saved as xfaery.todo

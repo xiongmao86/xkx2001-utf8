@@ -51,23 +51,25 @@ int set_exclude_cmdlist(string dir, string users);
 
 void create()
 {
-	string *wizlist, wiz_name, wiz_level, wiz_site;
-	int i;
+	// string *wizlist, wiz_name, wiz_level, wiz_site;
+	// int i;
 
-	seteuid(ROOT_UID);
+	// seteuid(ROOT_UID);
 
 
+	// if(!restore())
+	// {
+	// 	wiz_status = allocate_mapping(10000);
+	// 	wiz_sites = allocate_mapping(10000);
+	// 	wiz_status["raven"] = "(admin)";
+	// 	wiz_sites["raven"] = ".*";
+	// }
 
-	if(!restore())
-	{
-		wiz_status = allocate_mapping(10000);
-		wiz_sites = allocate_mapping(10000);
-		wiz_status["npc"] = "(admin)";
-		wiz_sites["npc"] = ".*";
-	}
-
- 
-
+    seteuid(ROOT_UID);
+    wiz_status = allocate_mapping(10000);
+    wiz_sites = allocate_mapping(10000);
+    wiz_status["raven"] = "(admin)";
+    wiz_sites["raven"] = ".*";
 }
 
 int remove()
