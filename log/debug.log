@@ -335,3 +335,6 @@ Loading preload files ...
 Accepting connections on 0.0.0.0:8888.
 Initializations complete.
 
+******** FATAL ERROR: SIGINT: Process interrupted
+FluffOS driver attempting to exit gracefully.
+crash() in master called successfully.  Aborting.
