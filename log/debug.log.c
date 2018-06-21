@@ -133,3 +133,6 @@ yangy: call yangy->set_skill(train,400) in /d/city/kedian
 meier: 0 in 
 meier: l in /d/xiakedao/shatan1
 meier: l in /d/xiakedao/shatan1
+raven: l in /d/xiakedao/shatan
+raven: whoami in /d/xiakedao/shatan
+raven: whoami in /d/xiakedao/shatan
