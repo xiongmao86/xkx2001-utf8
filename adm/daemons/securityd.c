@@ -38,8 +38,15 @@ mapping trusted_read;
 mapping exclude_read;
 mapping trusted_write;
 mapping exclude_write;
-mapping authorized_cmds;
-mapping exclude_cmds;
+// mapping authorized_cmds;
+mapping authorized_cmds = ([
+    "cmds/adm":     ({"(admin)"}),
+    "cmds/arch":    ({"(admin)", "(arch)"}),
+    "cmds/wiz":     ({"(admin)", "(arch)", "(wiz)"}),
+    "cmds/imm":     ({"(admin)", "(arch)", "(wiz)", "(imm)"}),
+]);
+// mapping exclude_cmds;
+mapping exclude_cmds = ([]);
 
 int check_redundancy(string *wizlist);
 string query_cmdlist();
@@ -713,8 +720,13 @@ int valid_cmd(string file, mixed user, string func)
 
 	// And then check if we are trusted in one of the directories containing
 	// the file.
-	if( member_array(euid, authorized_cmds["cmds"])!=-1 ) return 1;
-	if( member_array(status, authorized_cmds["cmds"])!=-1 ) return 1;
+	// if( member_array(euid, authorized_cmds["cmds"])!=-1 ) return 1;
+	// if( member_array(status, authorized_cmds["cmds"])!=-1 ) return 1;
+    if( !undefinedp(authorized_cmds["cmds"])) {
+        if( member_array(euid, authorized_cmds["cmds"])!=-1 ) return 1;
+        if( member_array(status, authorized_cmds["cmd"])!=-1 ) return 1;
+    }
+
 	for(i=sizeof(path)-1; i>=0; i--) {
 		dir = implode(path[0..i], "/");
 		//write(dir+"\n");
