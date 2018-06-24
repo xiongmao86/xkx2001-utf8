@@ -1,2 +1,3 @@
 server (admin)
-raven (admin)
+raven (admin) .*
+ceshi (admin)

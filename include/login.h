@@ -13,7 +13,8 @@
 #define UNREG_MOTD		"/adm/etc/unreg_motd"
 #define MOTD			"/adm/etc/motd"
 
-#define WIZLIST			"/adm/etc/wizlist.h"
+// #define WIZLIST			"/adm/etc/wizlist.h"
+#define WIZLIST         "/adm/etc/wizlist"
 #define ACCESSLIST		"/adm/etc/accesslist.h"
 #define CMDLIST			"/adm/etc/cmdlist.h"
 

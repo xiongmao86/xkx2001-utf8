@@ -76,11 +76,31 @@ void create()
 	// 	wiz_sites["raven"] = ".*";
 	// }
 
+    string *wizlist, wiz_name, wiz_level, wiz_site;
+    int n = 0;
+
     seteuid(ROOT_UID);
-    wiz_status = allocate_mapping(10000);
-    wiz_sites = allocate_mapping(10000);
-    wiz_status["raven"] = "(admin)";
-    wiz_sites["raven"] = ".*";
+
+    // wiz_sites = allocate_mapping(10000);
+    // wiz_sites["raven"] = ".*";
+
+    wizlist = explode(read_file(WIZLIST), "\n");
+    wiz_status = allocate_mapping(sizeof(wizlist));
+    wiz_sites = allocate_mapping(sizeof(wizlist));
+    // wiz_status["raven"] = "(admin)";
+    for(int i=0; i<sizeof(wizlist); i++) {
+        // if( wizlist[i][0]=='#'
+        // || sscanf(wizlist[i], "%s %s", wiz_name, wiz_level)!=2 ) continue;
+        if( wizlist[i][0]=='#') continue;
+
+        n = sscanf(wizlist[i], "%s %s %s", wiz_name, wiz_level, wiz_site);
+        
+        if (n == 2) wiz_site = ".*";
+        else if (n != 3) continue;
+
+        wiz_status[wiz_name] = wiz_level;
+        wiz_sites[wiz_name] = wiz_site;
+    }
 }
 
 int remove()
