@@ -285,12 +285,6 @@ Loading preload files ...
 Accepting connections on 0.0.0.0:8888.
 Initializations complete.
 
-apply() with insufficient permission: 
-cob: clone/user/user#1, ob: clone/user/user#1, function: command_hook, origin: efun, needs: private, has: hidden 
-apply() with insufficient permission: 
-cob: d/xiakedao/npc/yufu#3, ob: d/xiakedao/npc/yufu#3, function: command_hook, origin: efun, needs: private, has: hidden 
-apply() with insufficient permission: 
-cob: d/xiakedao/npc/yufu#3, ob: d/xiakedao/npc/yufu#3, function: command_hook, origin: efun, needs: private, has: hidden 
 ******** FATAL ERROR: SIGINT: Process interrupted
 FluffOS driver attempting to exit gracefully.
 crash() in master called successfully.  Aborting.
