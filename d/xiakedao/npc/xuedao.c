@@ -58,7 +58,7 @@ void greeting(object me)
         if (me->query_temp(this_object()->query("id")) == 0 )
 	{	
 	        command("rob");
-		command("say 这位" + RANK_D->query_respect(me) + "缺钱花吗？看你身上也没甚么油水，干脆咱俩一起去抢钱吧，来俺们血刀门最好啦！"+
+		command("say 这位" + RANK_D->query_respect(me) + "缺钱花吗？看你身上也没甚么油水，干脆咱俩一起去抢钱吧，\n来俺们血刀门最好啦！"+
 	     "你有什麽问题问我就好啦。"+HBRED+HIW"(ask blue about 血刀门) (help mizong)"NOR);
 		me->set_temp(this_object()->query("id"), 1);
 	}

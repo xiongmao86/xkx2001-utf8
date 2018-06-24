@@ -29,8 +29,8 @@ LONG );
 	set_temp("opened", 0);
     //call_other("/clone/board/xkd_b", "???");
 	setup();
-    "/clone/board/xkd_b"->foo();
-    "/clone/board/xkd_b"->save();
+    // "/clone/board/xkd_b"->foo();
+    // "/clone/board/xkd_b"->save();
 }
 
 int valid_leave(object me, string dir)
