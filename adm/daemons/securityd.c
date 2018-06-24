@@ -34,10 +34,14 @@ private string *wiz_levels = ({
 // from the current directory to root. And exclude is checked prior than
 // trusted.
 
-mapping trusted_read;
-mapping exclude_read;
-mapping trusted_write;
-mapping exclude_write;
+// mapping trusted_read;
+mapping trusted_read = ([]);
+// mapping exclude_read;
+mapping exclude_read = ([]);
+// mapping trusted_write;
+mapping trusted_write = ([]);
+// mapping exclude_write;
+mapping exclude_write = ([]);
 // mapping authorized_cmds;
 mapping authorized_cmds = ([
     "cmds/adm":     ({"(admin)"}),
@@ -663,8 +667,10 @@ int valid_read(string file, mixed user, string func)
 
 	// And then check if we are trusted in one of the directories containing
 	// the file.
-	if( member_array(euid, trusted_read["/"])!=-1 ) return 1;
-	if( member_array(status, trusted_read["/"])!=-1 ) return 1;
+    if( !undefinedp(trusted_read["/"]) ) {
+        if( member_array(euid, trusted_read["/"])!=-1 ) return 1;
+        if( member_array(status, trusted_read["/"])!=-1 ) return 1;
+    } 
 	for(i=sizeof(path)-1; i>=0; i--) {
 		dir = implode(path[0..i], "/");
 		if( undefinedp(trusted_read[dir]) ) continue;
