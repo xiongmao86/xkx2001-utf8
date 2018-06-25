@@ -9,3 +9,6 @@
 	"/doc/applies/",\
 	})
 
+#define DEFAULT_MAP_SEARCH_PATHS ({\
+    "/doc/help/",\
+    })
