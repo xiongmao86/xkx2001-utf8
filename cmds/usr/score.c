@@ -9,15 +9,14 @@ inherit F_CLEAN_UP;
 
 string bar_string = "■■■■■■■■■■■■";
 string blank_string = "□□□□□□□□□□□□";
-string blank_string2 = "                        ";
+string blank_half_width = "            ";
 //string bar_string = "●〓〓〓〓〓〓〓〓〓〓〓";
 //string blank_string= "●───────────";
 
 string display_attr(int gift, int value);
 string status_color(int current, int max);
 string date_string(int date);
-string tribar_graph(int val, int eff, int max, string color);
-string tribar_graph2(int val, int eff, int max, string color);
+string line_of(string head, int val, int eff, int max, string end);
 
 void create() { seteuid(ROOT_UID); }
 
@@ -85,40 +84,33 @@ int main(object me, string arg)
 			display_attr(my["dex"], ob->query_dex()),
 			display_attr(my["dex"], ob->query("dex")));
 	}
-
-	if( my["max_jing"] >= my["eff_jing"])
-		line += " 精  ：" + tribar_graph(my["jing"], my["eff_jing"], my["max_jing"], status_color(my["jing"], my["max_jing"]) ) + "\t";
-	else
-		line += " 精  ：" + tribar_graph2(my["jing"], my["max_jing"], my["max_jing"], status_color(my["jing"], my["max_jing"]) ) + "\t";
 	
+    line += line_of(" 精  ：", my["jing"], my["eff_jing"], my["max_jing"], "\t");
+
 	if( my["max_jingli"] > 0 )
-		line += " 精力：" + tribar_graph(my["jingli"], my["max_jingli"], my["max_jingli"], status_color(my["jingli"], my["max_jingli"]) ) + "\n";
+		line += line_of(" 精力：", my["jingli"], my["max_jingli"], my["max_jingli"], "\n");
 	else
 		line += " 精力：\n";
-
-	if( my["max_qi"] >= my["eff_qi"])
-		line += " 气  ：" + tribar_graph(my["qi"], my["eff_qi"], my["max_qi"], status_color(my["qi"], my["max_qi"]) ) + "\t";
-	else	
-		line += " 气  ：" + tribar_graph2(my["qi"], my["max_qi"], my["max_qi"], status_color(my["qi"], my["max_qi"]) ) + "\t";
 	
+    line += line_of(" 气  ：", my["qi"], my["eff_qi"], my["max_qi"], "\t");
+
 	if( my["max_neili"] > 0 )
-		line += " 内力：" + tribar_graph(my["neili"], my["max_neili"], my["max_neili"], status_color(my["neili"], my["max_neili"]) ) + "\n";
+		line += line_of(" 内力：", my["neili"], my["max_neili"], my["max_neili"], "\n");
 	else
 		line += " 内力：\n";
 
 	if( ob->max_food_capacity() > 0 )
-		line += " 食物：" + tribar_graph(my["food"], ob->max_food_capacity(), ob->max_food_capacity(), YEL) + "\t";
+		line += line_of(" 食物：", my["food"], ob->max_food_capacity(), ob->max_food_capacity(), "\t");
 	else
 		line += " 食物：\t";
 	
-//	line += sprintf(" 潜能： " HIY "%d / %d\n" NOR, ob->query("potential"), ob->query("max_potential") );
 	if( my["max_potential"] > 0 )
-		line += " 潜能：" + tribar_graph(my["potential"], my["max_potential"], my["max_potential"], GRN) + "\n";
+		line += line_of(" 潜能：", my["potential"], my["max_potential"], my["max_potential"], "\n");
 	else
 		line += " 潜能：\n";
 
 	if( ob->max_water_capacity() > 0 )
-		line += " 饮水：" + tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), CYN) + "\t";
+		line += line_of(" 饮水：", my["water"], ob->max_water_capacity(), ob->max_water_capacity(), "\t");
 	else
 		line += " 饮水：\t";
 		
@@ -174,16 +166,37 @@ string status_color(int current, int max)
 	return RED;
 }
 
-string tribar_graph(int val, int eff, int max, string color)
+// TODO: recently
+
+string tribar_graph(int val, int eff, int max)
 {
-	return color + bar_string[0..(val*12/max)*2-1]
-		+ ((eff > val) ? blank_string[(val*12/max)*2..(eff*12/max)*2-1] : "") + NOR;
+    string color = status_color(val, max);
+    int bar_length = 12;
+    int character_length = 3;
+    // off by one;
+    int end_idx = bar_length * character_length - 1;
+
+    if( val > max ) 
+        return color + bar_string[0..end_idx] + NOR;
+    // val <= max <= eff
+    if( eff >= max ) {
+        int val_idx = (val * bar_length / max) * character_length - 1;
+        return color + bar_string[0..val_idx]
+            + blank_string[val_idx+1..end_idx] + NOR;
+    }
+    // val <= eff < max
+    else {
+        int val_idx = (val * bar_length / max) * character_length - 1;
+        int eff_idx = (eff * bar_length / max) * character_length - 1;
+        int eff_idx_half_width = (eff_idx+1)/3;
+        return color + bar_string[0..val_idx] 
+            + blank_string[val_idx+1..eff_idx]
+            + blank_half_width[eff_idx_half_width..11] + NOR;
+    }   
 }
 
-string tribar_graph2(int val, int eff, int max, string color)
-{
-	return color + bar_string[0..(val*12/max)*2-1]
-		+ ((eff > val) ? blank_string2[(val*12/max)*2..(eff*12/max)*2-1] : "") + NOR;
+string line_of(string head, int val, int eff, int max, string end) {
+    return head + tribar_graph(val, eff, max) + end;
 }
 
 int help(object me)
