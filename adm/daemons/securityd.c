@@ -39,7 +39,9 @@ mapping trusted_read = ([]);
 // mapping exclude_read;
 mapping exclude_read = ([]);
 // mapping trusted_write;
-mapping trusted_write = ([]);
+mapping trusted_write = ([
+    "tmp": ({"(admin)"}),
+]);
 // mapping exclude_write;
 mapping exclude_write = ([]);
 // mapping authorized_cmds;
@@ -621,8 +623,10 @@ int valid_write(string file, mixed user, string func)
 
 	// And then check if we are trusted in one of the directories containing
 	// the file.
-	if( member_array(euid, trusted_write["/"])!=-1 ) return 1;
-	if( member_array(status, trusted_write["/"])!=-1 ) return 1;
+    if( !undefinedp(trusted_write["/"])) {
+        if( member_array(euid, trusted_write["/"])!=-1 ) return 1;
+        if( member_array(status, trusted_write["/"])!=-1 ) return 1;
+    }
 	for(i=sizeof(path)-1; i>=0; i--) {
 		dir = implode(path[0..i], "/");
 		if( undefinedp(trusted_write[dir]) ) continue;
