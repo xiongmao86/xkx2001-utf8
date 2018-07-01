@@ -82,7 +82,7 @@ void update_day_phase()
 // save player data automatically at sunrise
 void event_sunrise()
 {
-/*	object link_ob, *ob;
+	object link_ob, *ob;
 	int i;
 
 	ob = users();
@@ -92,8 +92,8 @@ void event_sunrise()
 		link_ob->save();
 		ob[i]->save();
 	}
-*/
-	"/u/ryu/mudlist"->main();
+
+	// "/u/ryu/mudlist"->main();
 }
 
 // check player inventory at turning points of events.
