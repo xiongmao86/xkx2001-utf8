@@ -11,6 +11,6 @@ void create()
 	set("long", "这是一块寻欢与巫师之间交流用的专用板。\n" );
 	setup();
 	set("capacity", 100);
-	replace_program(BULLETIN_BOARD);
+	// replace_program(BULLETIN_BOARD);
 }
 

@@ -12,6 +12,6 @@ void create()
 	set("long", "这是一个供大家谈论各种话题的留言板。\n" );
 	setup();
 	set("capacity", 200);
-	replace_program(BULLETIN_BOARD);
+	// replace_program(BULLETIN_BOARD);
 }
 

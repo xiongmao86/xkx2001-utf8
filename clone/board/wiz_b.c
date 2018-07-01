@@ -12,6 +12,6 @@ void create()
 	set("wizard_only", 1);
 	setup();
 	set("capacity", 200);
-	replace_program(BULLETIN_BOARD);
+	// replace_program(BULLETIN_BOARD);
 }
 

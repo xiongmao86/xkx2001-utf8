@@ -8,5 +8,5 @@ void create()
         set("long", "一块留言用的板子。\n" );
         setup();
         set("capacity", 100);
-        replace_program(BULLETIN_BOARD);
+        // replace_program(BULLETIN_BOARD);
 }

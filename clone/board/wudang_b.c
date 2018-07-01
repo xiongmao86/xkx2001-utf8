@@ -12,6 +12,6 @@ void create()
 	            "碑文中记录了许多武当过往的大小事件。\n" );
 	setup();
 	set("capacity", 80);
-	replace_program(BULLETIN_BOARD);
+	// replace_program(BULLETIN_BOARD);
 }
 

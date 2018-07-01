@@ -11,6 +11,6 @@ void create()
 	set("long", "这是一块白驼山庄子弟留言用的石碑。\n" );
 	setup();
 	set("capacity", 80);
-	replace_program(BULLETIN_BOARD);
+	// replace_program(BULLETIN_BOARD);
 }
 

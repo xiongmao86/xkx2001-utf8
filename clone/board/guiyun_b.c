@@ -11,6 +11,6 @@ void create()
 	set("long", "这是供归云庄门人留言的板子.\n");
 	setup();
 	set("capacity", 80);
-	replace_program(BULLETIN_BOARD);
+	// replace_program(BULLETIN_BOARD);
 }
 

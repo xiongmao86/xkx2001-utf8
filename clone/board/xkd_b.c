@@ -9,6 +9,6 @@ void create()
         set("long", "一块白杨木的牌子。\n" );
         setup();
         set("capacity", 100);
-        replace_program(BULLETIN_BOARD);
+        // replace_program(BULLETIN_BOARD);
 }
 

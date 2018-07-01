@@ -159,7 +159,8 @@ int do_post(string arg)
 	note["title"] = arg;
 	note["author"] = the_player->name()+"("+the_player->query("id")+")";
 	tune_channels();
-	the_player->edit( (: done_post, the_player, note :) );
+	// the_player->edit( (: done_post, the_player, note :) );
+    the_player->edit((: done_post, the_player, note :));
 	return 1;
 }
 

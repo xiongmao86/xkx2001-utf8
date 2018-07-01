@@ -13,6 +13,6 @@ void create()
         set("intermud", 1);
         setup();
         set("capacity", 200);
-        replace_program(BULLETIN_BOARD);
+        // replace_program(BULLETIN_BOARD);
 }
 

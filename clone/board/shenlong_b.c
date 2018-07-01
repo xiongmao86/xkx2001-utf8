@@ -11,6 +11,6 @@ set("location", "/d/shenlong/tingkou");
 	set("long", "这是一个供神龙教教内交流的留言板。\n" );
         setup();
         set("capacity", 80);
-        replace_program(BULLETIN_BOARD);
+        // replace_program(BULLETIN_BOARD);
 }
 
