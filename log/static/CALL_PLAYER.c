@@ -265,3 +265,15 @@ meirÊÇ¸ö´ó±äÌ¬(xxx) call meirÊÇ¸ö´ó±äÌ¬(xxx)->set_skill(literate,1000) on Mon Ja
 ÑóÑó(yangy) call ÑóÑó(yangy)->set_skill(chanchubu,400) on Tue Jan 02 02:25:08 2001
 ÑóÑó(yangy) call ÑóÑó(yangy)->set_skill(literate,500) on Tue Jan 02 02:29:19 2001
 ÑóÑó(yangy) call ÑóÑó(yangy)->set_skill(literate,490) on Tue Jan 02 02:29:27 2001
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query(age) on Tue Jun 26 23:05:53 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_skill("unarmed") on Sun Jul  1 20:13:54 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_skill("apply/attack") on Sun Jul  1 20:15:07 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_temp("disabled") on Sun Jul  1 20:43:48 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_temp("weapon") on Sun Jul  1 22:25:50 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_temp("weapon") on Sun Jul  1 22:26:34 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_temp("weapon") on Sun Jul  1 22:26:52 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_skill("unarmed") on Sun Jul  1 22:45:10 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query_temp("apply/attack") on Sun Jul  1 22:45:36 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query("jingli") on Sun Jul  1 22:46:33 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query("max_jingli") on Sun Jul  1 22:47:03 2018
+æ¸¡é¸¦(raven) call æ¸¡é¸¦(raven)->query("combat_exp") on Sun Jul  1 22:48:33 2018

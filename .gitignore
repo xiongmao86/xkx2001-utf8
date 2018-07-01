@@ -1,3 +1,6 @@
 # ignore following file & folders
 .DS_Store
 /log/*
+.vscode
+data/*
+tmp/

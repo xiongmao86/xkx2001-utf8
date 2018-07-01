@@ -142,3 +142,85 @@ raven: l in /d/xiakedao/shatan
 raven: l in /d/xiakedao/shatan
 raven: l in /d/xiakedao/shatan
 raven: 0 in 
+raven: xunbu in /d/xiakedao/wanghait
+raven: xunbu in /d/xiakedao/wanghait
+raven: n in /d/xiakedao/wanghait
+raven: update dadong.c in /d/xiakedao/yongdao3
+raven: call dizi->greeting() in /d/xiakedao/caodi
+raven: call dizi->greeting(dizi) in /d/xiakedao/caodi
+raven: call dizi->greeting(xuedao.c) in /d/xiakedao/caodi
+raven: call dizi->greeting(dizi) in /d/xiakedao/caodi
+raven: call dizi->greeting(npc/xuedao.c) in /d/xiakedao/caodi
+raven: call dizi->greeting(/d/npc/xuedao.c) in /d/xiakedao/caodi
+raven: update /cmds/usr/score.c in /d/xiakedao/wanghait
+raven: update score in /d/xiakedao/shatan
+raven: score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/tulu
+raven: update score in /d/xiakedao/tulu
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: update score in /d/xiakedao/shatan
+raven: goto npc/longx in /d/xiakedao/ybting
+raven: eval enviroment(npc/longx) in /d/xiakedao/yongdao3
+raven: update ybting in /clone/misc/void
+raven: call ybting->test_greet_me() in /clone/misc/void
+raven: call long liu->move_next(me, 0) in /clone/misc/void
+raven: call long liu->move_next(this_player(), 0) in /clone/misc/void
+raven: call long liu->move_next(me, 0) in /clone/misc/void
+raven: call long liu->move_next(me, 0) in /clone/misc/void
+raven: call long ba->move_next(me, 8) in /d/xiakedao/yongdao3
+raven: eval environment(me) in /d/xiakedao/dadong
+raven: eval environment(me) in /d/xiakedao/dadong
+raven: eval skill_power(this_player(), "unarmed", SKILL_USAGE_ATTACK) in /d/xiakedao/dadong
+raven: call combatd->skill_power(this_player(), "unarmed", 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power(me, "unarmed", 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power("raven", "unarmed", 1) in /d/xiakedao/dadong
+raven: eval this_player in /d/xiakedao/dadong
+raven: eval /clone/user/user#1 in /d/xiakedao/dadong
+raven: eval undefinedp(/clone/user/user) in /d/xiakedao/dadong
+raven: eval undefinedp(/clone/user/user#1) in /d/xiakedao/dadong
+raven: eval undefinedp(/clone/user/user##1) in /d/xiakedao/dadong
+raven: eval undefinedp(/clone/user/user) in /d/xiakedao/dadong
+raven: eval skill_power() in /d/xiakedao/dadong
+raven: call combatd->report_status(this_player(), 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power(this_player(),"unarmed", 1) in /d/xiakedao/dadong
+raven: eval object->living(this_player()) in /d/xiakedao/dadong
+raven: call combatd->skill_power(me, "unarmed", 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power(me, "unarmed", 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power(me, "unarmed", 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power(this_player(), "unarmed", 1) in /d/xiakedao/dadong
+raven: call combatd->skill_power(raven, "unarmed", 1) in /d/xiakedao/dadong
+raven: update skill_power in /d/xiakedao/dadong
+raven: update skill_power in /d/xiakedao/dadong
+raven: update skill_power in /d/xiakedao/dadong
+raven: update in /d/xiakedao/dadong
+raven: skill_power dizi 1 1 in /d/xiakedao/yongdao3
+raven: update ap in /d/xiakedao/yongdao3
+raven: ap in /d/xiakedao/yongdao3
+raven: dp in /d/xiakedao/yongdao3
+raven: n in /d/shaolin/shijie11
+raven: post 我是这里的第一个巫师 in /d/xiakedao/dadong
+raven: post 我是这里的第一个巫师 in /d/xiakedao/dadong
+raven: update /inherit/misc/bboard in /d/xiakedao/dadong
+raven: update /inherit/misc/bboard in /d/xiakedao/dadong
+raven: post 好说好说 in /d/xiakedao/dadong
+raven: post english seems fine. in /d/xiakedao/dadong
+raven: post 中文 in /d/xiakedao/dadong
+raven: post 中文 in /d/xiakedao/dadong
+raven: post english in /d/xiakedao/dadong
+raven: post shaolinshaolin in /d/shaolin/guangchang1
+raven: post hi in /d/xiakedao/dadong
+raven: post hi in /d/xiakedao/dadong
+raven: post hi in /d/xiakedao/dadong
+raven: update /inherit/misc/bboard in /d/xiakedao/dadong
+raven: post hi in /d/xiakedao/dadong
+raven: post hi in /d/xiakedao/dadong
+raven: post hi in /d/xiakedao/dadong
+raven: post hi in /d/xiakedao/dadong
